@@ -1,0 +1,48 @@
+---
+
+
+import { getCollection, type CollectionEntry, getEntry } from "astro:content";
+import MarkdownWrapper from "../../../layouts/NewsMarkdownWrapper.astro";
+
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+type Props = {
+  entry: CollectionEntry<"posts">;
+};
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+
+---
+
+<style>table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+</style>
+
+
+
+<MarkdownWrapper frontmatter={entry.data}>
+
+<Content />
+     
+</MarkdownWrapper>

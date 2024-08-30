@@ -1,0 +1,140 @@
+---
+import Default from "../../layouts/Default.astro";
+import SideBar from "../../components/SideBar_Resources.astro";
+---
+
+<Default title="ITS JPO - Accelerating ITS Deployment">
+  <div class="AboutBanner">
+    <div class="AboutBannerTitle">
+        <h1>Security Credential Management System (SCMS)</h1>
+    </div>
+</div>
+  <div class="container-fluid h-100 bodyWrap">
+    <div class="row h-100">
+      <aside class="col-12 col-md-3 p-3 bg-light"><SideBar /></aside>
+      <main class="col-9 MainContent">
+
+               
+
+
+        <h2 class="sideways blue">About the Security Credential Management System (SCMS)</h2>
+        <p>The U.S. Department of  Transportation (USDOT) is committed to ensuring that connected vehicle  technologies operate in a safe, secure, and privacy-protective manner. As  connected vehicle applications exchange information among vehicles, roadway  infrastructure, traffic management centers, and wireless mobile devices, a  security system is needed to ensure that users can trust in the validity of  information received from other system users—indistinct users whom they have  never met and do not know personally. For this reason, the Department has  partnered with the automotive industry and industry security experts through  the Crash Avoidance Metrics Partnership (CAMP) to design and develop a  state-of-the-art security system that enables users to have confidence in one  another and the system as a whole. </p>
+        <p>The Security Credential Management System (SCMS)  is a proof-of-concept (POC) message security solution for vehicle-to-vehicle  (V2V) and vehicle-to-infrastructure (V2I) communication. It uses a Public Key  Infrastructure (PKI)-based approach that employs highly innovative methods of  encryption and certificate management to facilitate trusted communication.  Authorized system participants use digital certificates issued by the SCMS POC  to authenticate and validate the safety and mobility messages that form the  foundation for connected vehicle technologies. To protect the privacy of  vehicle owners, these certificates contain no personal or equipment-identifying  information, but serve as system credentials so that other users in the system  can trust the source of each message. The SCMS POC also plays a key function in  protecting the content of each message by identifying and removing misbehaving devices,  while maintaining privacy. </p>
+
+        <div id="portalBox">
+            <div id="portalBox_content">
+                <div class="boxtitle">SCMS Research</div>
+                <ul style="margin-left: 15px; margin-top:10px;">
+                    <li><a href="https://wiki.campllc.org/display/SCP" target="_blank" rel="noopener noreferrer">NEW Security Credential Management System (SCMS)  Proof–of–Concept Implementation EE Requirements and Specifications Supporting SCMS Software Release 1.2.1</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>The Benefits of the SCMS</h3>
+        <p>The SCMS provides several  benefits, including:</p>
+        <ul class="faq_lists">
+            <li>Ensures integrity—so users can trust that the  message was not modified between sender and receiver</li>
+            <li>Ensures authenticity—so users can trust that the  message originates from a trustworthy and legitimate source</li>
+            <li>Ensures privacy—so users can trust that the  message appropriately protects their privacy</li>
+            <li>Helps achieve interoperability—so different  vehicle makes and models will be able to talk to each other and exchange  trusted data without pre-existing agreements or altering vehicle designs</li>
+        </ul>
+        <h3>Research Activities</h3>
+        <p>Several projects are underway in  support of the SCMS and funded by the USDOT: </p>
+        <ul class="faq_lists">
+            <li>Operations of the SCMS </li>
+            <li>Technical Management of the SCMS </li>
+            <li>Governmental Management of the SCMS </li>
+            <li>Misbehavior Detection Development and  Implementation </li>
+            <li>National SCMS Development </li>
+        </ul>
+        <h3>Looking Ahead: What's Next for SCMS?</h3>
+        <p>Connected Vehicle Pilot, Smart  Cities, and other research deployments will interact with the SCMS POC to  ensure the security and privacy of their messages. The SCMS Quality Assurance  environment is available for devices to interact and test their local  certificate management software. In September 2017, the SCMS Operational  Environment (production-ready) became available to coincide with the full-scale  deployment of devices at the <a href="../factsheets/pdf/JPO_CVPilot.pdf" target="_blank" rel="noopener noreferrer">Connected Vehicle  Pilot sites</a>. </p>
+        <p>The USDOT has initiated a National SCMS  Development project that will work with a diverse population of V2X  stakeholders to explore potential pathways (or strategies) for the  establishment and governance of a National SCMS. The policies, procedures, and  lessons learned from the SCMS POC will be leveraged as key inputs to this  project. The goal of the National SCMS Development project is to develop a  National SCMS Deployment Strategy to help USDOT and industry establish a viable  National SCMS ecosystem in support of V2X communications.</p>
+        <h3>FAQs</h3>
+        <p><strong><em>Why Do Connected  Vehicles Need the SCMS? </em></strong></p>
+        <p>
+            Connected vehicle technology  has the potential to transform the way Americans travel by using dedicated  short-range communication (DSRC), GPS, and other wireless technologies to share  safety, mobility, and environmental information. The SCMS is a critical  component of this connected vehicle environment. In contrast to other types of  safety technologies currently found in the vehicle fleet, connected vehicle  applications are cooperative—meaning, vehicles must exchange and analyze data  in real time to realize the benefits of the system. This cooperative exchange  of messages generates data that applications use to issue alerts and warnings  to drivers about the driving situation around them. It also enables applications  to determine mobility and environmental conditions. However, a cooperative  system can only work when drivers are able to trust the alerts and warnings  issued by their connected vehicle devices, which are based, at least in part,  on information received from other connected vehicle devices.
+        </p>
+        <p>
+            The SCMS POC provides the  mechanism for devices to exchange information in a trustworthy and privacy-protective  manner using digital certificates.
+        </p>
+        <p>
+            <strong><em>How Does the SCMS  Work? </em></strong>
+        </p>
+        <p>
+            The SCMS provides the security  infrastructure to issue and manage the security certificates that form the  basis of trust for V2V and V2I communication. Connected vehicle devices enroll  into the SCMS, obtain security certificates from certificate authorities, and  attach those certificates to their messages as part of a digital signature. The  certificates prove the device is a trusted actor in the system, while also  maintaining privacy. Misbehavior detection and reporting allow the system to  identify bad actors and revoke message privileges, when necessary.
+        </p>
+        <p>
+            <strong><em>Who Is Eligible to Enroll in the SCMS POC? </em></strong>
+        </p>
+        <p>
+            Research deployment sites that  derive funding from the USDOT are eligible to request enrollment into the SCMS  POC. Since these deployment sites are research-focused and support USDOT  connected vehicle research activities, they provide a suitable test environment  for the SCMS POC.
+        </p>
+        <p>
+            Participating deployments  understand that the USDOT-funded SCMS is a proof-of-concept system designed to  educate policymakers and industry experts on the challenges associated with  ensuring safe, secure, and privacy-protective V2V and V2I communications.  Lessons learned from the implementation of the system will be used to  facilitate the establishment of an eventual national system by private  industry.
+        </p>
+        <p>
+            The SCMS POC will only support  a select number of connected vehicle applications (mapped by PSID). Deployers  are encouraged to review the list of supported applications by following this  link: https://wiki.campllc.org/display/SCP/SCMS+PoC+Supp  orted+V2X+Applications.
+        </p>
+        <p>
+            The expected lifetime of this  system is through December 2020.
+        </p>
+        <p>
+            <strong><em>How Do I Enroll into  the System?</em></strong>
+        </p>
+        <p>Devices enroll into the system by submitting an  enrollment request to the USDOT. Criteria are being developed for authorizing  devices to participate in the system. Once authorized, devices are considered  trusted actors in the system. A certification process will ensure that devices  meet program requirements and perform as intended. </p>
+        <!--<h2>RELATED FACT SHEETS</h2>
+        <ul>
+            <li><a href="../factsheets/pdf/CV_SCMS.pdf">Security Credential Management System Proof of  Concept</a><u> </u></li>
+            <li><a href="../factsheets/pdf/JPO_CVPilot.pdf">Connected Vehicle Pilot  Deployment Program</a></li>
+            <li><a href="../factsheets/pdf/Privacy_factsheet.pdf">Connected Vehicle and  Your Privacy</a></li>
+            <li><a href="../factsheets/pdf/cybersecurity_factsheet.pdf">Connected Vehicle and  Cybersecurity</a></li>
+            <li><a href="../factsheets/pdf/JPO-033%20STANDARDS%20V5.5%20F.pdf">Standards and Architecture Harmonization</a></li>
+            <li><a href="../factsheets/pdf/JPO-030%20SYSTEMSENG%20V5.5%20F.pdf">Systems Engineering Research Program</a></li>
+        </ul>
+        <h2>RELATED RESEARCH</h2>
+        <ul>
+            <li><a href="../research_archives/interoperability.htm">Interoperability</a><u> </u></li>
+            <li><a href="https://www.standards.its.dot.gov/">ITS Standards  Program</a></li>
+            <li><a href="../research_archives/connected_vehicle/connected_vehicle_coresystems.htm">Core Systems</a></li>
+            <li><a href="../research_archives/connected_vehicle/connected_vehicle_cert.htm">Certification</a></li>
+            <li><a href="http://local.iteris.com/arc-it/">Architecture Reference  for Cooperative and Intelligent Transportation (ARC-IT)</a></li>
+            <li><a href="http://www.itsforge.net/">Open Source  Application Development Portal</a>                          </li>
+        </ul>
+        <h2>RELATED WEBINARS</h2>
+        <p><em>Security Credential Management System (SCMS)  Webinar, September 2017</em></p>
+        <ul>
+            <li><a href="../presentations/2017/OmniAir_SCMS_Webinar.pdf">Connected  Vehicle Plugfest</a></li>
+            <li><a href="../presentations/2017/SCMS_September2017Webinar.pdf">Security  Credential Management System Proof of Concept</a></li>
+        </ul>
+        <p><em>Technical Assistance Webinar Series,  February 2016 </em></p>
+        <ul>
+            <li><a href="../pilots/pdf/TechAssistWebinar_Template_SCMSIIv4.pdf">SCMS  Proof-of-Concept Interface Requirements</a></li>
+        </ul>
+        <p><em>USDOT Plugfest, November 2016</em></p>
+        <ul>
+            <li><a href="../presentations/plugfest_2016/Certification_Overview.pdf">USDOT  Certification Project</a></li>
+            <li><a href="../presentations/plugfest_2016/Danlaw_MxSuite.pdf">Connected  Vehicle DSRC Certification Test System</a></li>
+            <li><a href="../presentations/plugfest_2016/Deployment%20Overview.pdf">Connected  Vehicle Deployments and Device Certification</a></li>
+            <li><a href="../presentations/plugfest_2016/Plugfest2016_OverviewWelcome_Tom.pdf">Welcome to the  USDOT Connected Vehicle Plugfest</a></li>
+            <li><a href="../presentations/plugfest_2016/Plugfest_Gold_2016.pdf">Early Deployer  Technical Assistance</a></li>
+            <li><a href="../presentations/plugfest_2016/Plugfest_TCIoverview.pdf">Test Control  Interface Overview</a></li>
+            <li><a href="../presentations/plugfest_2016/Plugfest_TestSystemOverview.pdf">Connected  Vehicle Certification - Test Systems Overview</a></li>
+            <li><a href="../presentations/plugfest_2016/SCMS_Plugfest.pdf">Secure Credential  Management System (SCMS) Proof of Concept (PoC) Overview</a></li>
+            <li><a href="../presentations/plugfest_2016/SwRI.pdf">Test System  Overview</a></li>
+            <li><a href="../presentations/plugfest_2016/V2x_PlugFest_2016.pdf">Security and  Privacy for Connected Vehicle Environment</a></li>
+        </ul>-->
+        <p><em>For more information on the SCMS please contact:</em>                </p>
+        <p>
+            <strong>Govind Vadakpat</strong><br>
+            Program Manager<br>
+            <a href="mailto:G.Vadakpat@dot.gov">G.Vadakpat@dot.gov</a>                  <br>
+        </p>
+    </main>
+    </div>
+  </div>
+
+
+  
+  </section>
+</Default>

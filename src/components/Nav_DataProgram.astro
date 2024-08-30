@@ -1,0 +1,108 @@
+---
+
+---
+
+<script>
+  var currentUrl = window.location.href;
+  const sidenav = document.querySelector(".subnavITS");
+  var links = sidenav!.querySelectorAll("a");
+  links.forEach(function (link) {
+    if (currentUrl.endsWith(link.href)) {
+      link.classList.add("subnavactive");
+      if (link.parentElement!.className.includes("dropdown") ) {
+        link.parentElement!.parentElement!.classList.add("subnavactive");
+}
+    }
+  });
+</script>
+
+<style>
+   a{
+    transition: all .35s
+  }
+  .subnavITS {
+    padding: 0;
+    margin: 5px 0 20px 0;
+    border-bottom: rgb(220, 220, 220) solid 4px;
+  }
+  @media (width <= 575px) {
+    .subnavITS {
+      padding: 0;
+      margin: 5px 0 10px 0;
+      background: #fff;
+    }
+  }
+  .subnavITS a {
+    color: black;
+  }
+  .subnavITS a:hover {
+    color: #09638c;
+    background: rgb(235, 235, 235);
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  .subnavITS .subnavactive {
+    color: #09638c;
+    font-weight: bolder;
+    background: rgb(220, 220, 220);
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  .dropdown-item {
+    border-radius:  0 !important;
+  }
+  
+</style>
+
+<nav class="subnavITS navbar navbar-expand-xl navbar-light">
+  <div class="container-fluid">
+    <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#subnavbar"
+    aria-controls="navbarToggleExternalContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse navbar-expand-xl" id="subnavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+        <li class="nav-item">
+          <a  class="nav-link pl-3" href="/research/data_program/">Data Program Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Program Resources and Tools</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item " href="/research/data_program/resources_tools/DataHub/">ITS DataHub</a>
+            <a class="dropdown-item" href="/research/data_program/resources_tools/CodeHub/">ITS CodeHub</a>
+            <a class="dropdown-item " href="/research/data_program/resources_tools/V2XHub/">Vehicle-to-Everything (V2X) Hub</a>
+            <a class="dropdown-item " href="/research/data_program/resources_tools/reference/">Reference Documents, Guidelines, and Templates</a>
+            <a class="dropdown-item " href="/research/data_program/resources_tools/publications/">Publications</a>
+          </div>         
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research Projects</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/research/data_program/research_projects/data-exchanges/">Data Exchanges</a>
+            <a class="dropdown-item" href="/research/data_program/research_projects/gap-analysis/">Gap Analysis for High-Value Data Sets</a>
+            <a class="dropdown-item" href="/research/data_program/research_projects/DVI/">Data Valuation Index (DVI)</a>
+            <a class="dropdown-item" href="/research/data_program/research_projects/CMMs/">Data Management Capability Maturity Models (CMMs)</a>
+            <a class="dropdown-item" href="/research/data_program/research_projects/data-governance/">Data Governance, Stewardship, and Preservation Methods</a>
+            <a class="dropdown-item" href="/research/data_program/research_projects/research/">Data and Innovation Research</a>
+            <a class="dropdown-item" href="/research/data_program/research_projects/ROADII/">Research, Operational, and AI Data Integration Initiative (ROADII)</a>
+            <a class="dropdown-item" href="/research/data_program/research_projects/AI-CMM/">AI-Enabled ITS Capability Maturity Model (CMM)</a>
+          </div>         
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link pl-3" href="/research/data_program/data-news/">News and Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pl-3" href="/research/data_program/get-involved/">Get Involved</a>
+        </li>
+
+       
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,41 @@
+---
+const pages = [
+  { name: 'ITS4US', url: '/research/ITS4US/' },
+  { name: 'Vehicle-to-Everything', url: '/deployment/V2X/' },
+  { name: 'Connected Vehicle Pilots', url: 'https://www.its.dot.gov/pilots/index.htm' },
+  { name: 'Connected Vehicle Deployment Assistance', url: 'https://www.its.dot.gov/pilots/events.htm' },
+  { name: 'Connected Vehicle Applications', url: 'https://www.its.dot.gov/pilots/' },
+  { name: 'Sample Deployment Concepts', url: 'https://www.its.dot.gov/pilots/' },
+  { name: 'Connected Vehicle Publications', url: 'https://www.its.dot.gov/pilots/' },
+  { name: 'National ITS Architecture', url: 'https://www.its.dot.gov/pilots/' },
+  { name: 'Smart Communities', url: '/deployment/smart-communities/' },
+  { name: 'Smart Community Resource Center', url: 'https://www.its.dot.gov/scrc/' },
+  { name: 'Intersection Safety Challenge', url: 'https://its.dot.gov/isc/' },
+];
+---
+
+<script>
+  var currentUrl = window.location.href;
+  const sidenav = document.querySelector(".sidebarjs");
+  var links = sidenav!.querySelectorAll("a");
+  links.forEach(function (link) {
+    if (currentUrl.includes(link.href)) {
+      link.parentElement!.classList.add("activated");
+      link.classList.add("active");
+    }
+  });
+</script>
+
+<style>
+  .sidebarjs .active {
+    color: #fff;
+  }
+</style>
+
+  <nav class="sidebarjs navbar navbar-expand navbar-light bg-light flex-row align-items-start Sidebar">
+    <ul class="d-flex flex-column SidebarNav flex-row navbar-nav w-100 justify-content-between">
+  {pages.map(page => (
+    <li class="nav-item"><a class="nav-link pl-3" href={page.url}>{page.name}</a></li>
+  ))}
+</ul>
+</nav>

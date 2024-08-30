@@ -1,0 +1,180 @@
+---
+import { Image } from 'astro:assets';
+import USDOTLogo from '/src/assets/images/US_DepartmentofTransportation-Logo.png';
+import facebookIcon from '/src/assets/images/Facebook.png';
+import instgramIcon from '/src/assets/images/Instagram.png';
+import twitterIcon from '/src/assets/images/Instagram.png';
+import inDeedIcon from '/src/assets/images/inDeed.png';
+---
+
+<script>
+  var currentUrl = window.location.href;
+
+  // Select all <a> tags
+  const nav = document.querySelector(".navbar");
+  var links = nav!.querySelectorAll("a");
+
+  // Loop through each <a> tag
+  links.forEach(function (link) {
+    // Check if the href attribute of the <a> tag is part of the current URL
+    if (currentUrl.includes(link.href)) {
+      // Add the class to the parent <li>
+      link.parentElement!.classList.add("activeMenu");
+    }
+  });
+</script>
+<style>
+   a{
+    transition: all .35s
+  }
+  .dotlogo{
+    max-height: 25px;
+    object-fit: contain;
+    object-position: 0%;
+    padding-right: 10px;
+    margin-top: 14px;
+    margin-left: 30px;
+  }
+</style>
+
+<div class="container-fluid Topbar">
+  <div class="row">
+    <div class="col-lg-10">
+      <a href="https://www.transportation.gov/">
+        
+        <Image src={USDOTLogo} class="dotlogo" alt="U.S Department of Transportation Logo" />
+     
+      </a>
+    </div>
+    <div class="col-lg-2">
+      <div class="row" style="padding-top: 8px">
+        <div class="col-2"></div>
+        <div class="col-2">
+          <a href="https://www.facebook.com/USDOTResearch" target="_blank">
+            <Image src={facebookIcon} class="SocialMediaIcon" alt="Facebook Logo" />
+          </a>
+        </div>
+        <div class="col-2">          
+          <Image src={instgramIcon} class="SocialMediaIcon" alt="Instagram Logo" />
+        </div>
+        <div class="col-2">
+          <Image src={twitterIcon} class="SocialMediaIcon" alt="Twiter Logo" />\
+        </div>
+        <div class="col-2">
+          <Image src={inDeedIcon} class="SocialMediaIcon" alt="LinkedIn Logo" />
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="HeaderBar">
+  <div class="row">
+    <div class="col-lg-10">
+      <p class="siteheader">
+        <a rel="preload" href="/" style="text-decoration: none; color: white">
+          Intelligent Transportation Systems
+          <br />
+          Joint Program Office
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-marginbottom">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarToggleExternalContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li id="menuAbout" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/about/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About ITS JPO</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/about/its_jpo/">ITS Joint Program Office</a>
+          <a class="dropdown-item" href="/about/stratplan2020/">Strategic Plan</a>
+          <a class="dropdown-item" href="/about/history/">History of Intelligent Transportation Systems</a>
+          <a class="dropdown-item" href="/about/itspac/">ITS Program Advisory Committee</a>
+          <a class="dropdown-item" href="/about/faqs/">Frequently Asked Questions</a>
+          <a class="dropdown-item" href="/about/site-map/">Site Map</a>
+        </div>
+      </li>
+      <li id="menuResearch" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/research/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/research/accelerating/">Accelerating ITS Deployment</a>
+          <a class="dropdown-item" href="/research/automation/">Automation</a>
+          <a class="dropdown-item" href="/research/ITS4US/">ITS4US</a>
+          <a class="dropdown-item externalLink" href="research_areas/cybersecurity/index.htm" target="_blank">ITS Cybersecurity Research</a>
+          <a class="dropdown-item" href="/research/data_program/">ITS Data Program</a>
+          <a class="dropdown-item" href="/research/emerging-tech/">Emerging and Enabling Technologies</a>
+          <a class="dropdown-item" href="/research/national-transportation-library/">National Transportation Library</a>
+        </div>
+      </li>
+      <li id="menuDeployment" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/deployment/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ITS Deployment</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/research/ITS4US/">ITS4US</a>
+          <a class="dropdown-item" href="/deployment/V2X/">Vehicle-to-Everything</a>
+          <a class="dropdown-item externalLink" href="pilots/index.htm" target="_blank">Connected Vehicle Pilots</a>
+          <a class="dropdown-item externalLink" href="pilots/events.htm" target="_blank">Connected Vehicle Deployment Assistance</a>
+          <a class="dropdown-item externalLink" href="pilots/cv_pilot_apps.htm" target="_blank">Connected Vehicle Applications</a>
+          <a class="dropdown-item externalLink" href="pilots/cv_pilot_deployment.htm" target="_blank">Sample Deployment Concepts</a>
+          <a class="dropdown-item externalLink" href="pilots/events.htm" target="_blank">Connected Vehicle Publications</a>
+          <a class="dropdown-item externalLink" href="https://www.arc-it.net/" target="_blank" rel="noopener noreferrer">National ITS Architecture</a>
+          <a class="dropdown-item" href="/deployment/smart-communities/">Smart Communities</a>
+          <a class="dropdown-item externalLink" href="https://www.its.dot.gov/scrc/index.html#/" target="_blank" rel="noopener noreferrer">Smart Community Resource Center</a>
+          <a class="dropdown-item externalLink" href="https://its.dot.gov/isc/" target="_blank" rel="noopener noreferrer">Intersection Safety Challenge</a>
+        </div>
+      </li>
+      <li id="menuCommunications" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/news-info/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News & Information</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/news-info/news/">Latest News from ITS JPO</a>
+          <a class="dropdown-item" href="/news-info/blog/">ITS JPO Director's Blog</a>
+          <a class="dropdown-item" href="/news-info/fact-sheet/">ITS Research Fact Sheets</a>
+          <a class="dropdown-item" href="/news-info/infographics/">Infographics</a>
+          <a class="dropdown-item" href="/news-info/video/">Videos</a>
+          <a class="dropdown-item" href="/news-info/image-library">Image Library</a>
+        </div>
+      </li>
+
+      <li id="menuTechTransfer" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology Transfer</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item externalLink" href="https://www.itskrs.its.dot.gov/" target="_blank" rel="noopener noreferrer">ITS Deployment Evaluation</a>
+          <a class="dropdown-item externalLink" href="https://www.pcb.its.dot.gov/default.aspx" target="_blank" rel="noopener noreferrer">ITS Professional Capacity Building</a>
+          <a class="dropdown-item externalLink" href="https://www.standards.its.dot.gov/" target="_blank" rel="noopener noreferrer">ITS Standards Program</a>
+          <a class="dropdown-item externalLink" href="https://www.its.dot.gov/scrc/index.html#/" target="_blank" rel="noopener noreferrer">Smart Community Resource Center</a>
+          <a class="dropdown-item externalLink" href="https://its.dot.gov/isc/" target="_blank" rel="noopener noreferrer">Intersection Safety Challenge</a>
+        </div>
+      </li>
+      <li id="menuResources" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item externalLink" href="https://www.its.dot.gov/code/index.htm" target="_blank">ITS CodeHub</a>
+          <a class="dropdown-item externalLink" href="https://www.its.dot.gov/data/index.htm" target="_blank">ITS DataHub</a>
+          <a class="dropdown-item externalLink" href="https://www.itskrs.its.dot.gov/" target="_blank" rel="noopener noreferrer">ITS Deployment Evaluation</a>
+          <a class="dropdown-item externalLink" href="https://www.itskrs.its.dot.gov/deployment" target="_blank" rel="noopener noreferrer">ITS Deployment Statistics</a>
+          <a class="dropdown-item" href="/resources/SCMS/">Security Credential Management System (SCMS)</a>
+        </div>
+      </li>
+      <li id="menuContacts" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="contact-us/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/contact-us/staff-listing/">ITS JPO Staff Listing</a>
+          <a class="dropdown-item" href="/contact-us/mailinglist/">Join Our Mailing List</a>
+          <a class="dropdown-item externalLink" href="https://www.fhwa.dot.gov/resourcecenter/teams/operations/index.cfm" target="_blank" rel="noopener noreferrer">ITS Specialists in Field Offices</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

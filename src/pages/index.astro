@@ -1,0 +1,371 @@
+---
+import Default from '../layouts/Default.astro';
+import HomeImg from '../components/Img_Home.astro'
+
+---
+
+
+<Default title="ITS JPO">
+    <div class="container-fluid bodyWrap">
+        <div class="container HomepageContainter">
+            <div class="banner">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="false" data-interval="15000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="CarouselButtonContainer Carousel_Slide1">
+                                <button class="Carousel_button_lg externalLink btnDark"
+                                    onclick="window.open('https://www.its.dot.gov/scrc/index.html#/','_blank');">
+                                    Visit the SCRC
+                                </button>
+                            </div>
+                        </div>
+
+                       <!-- Removed carousel item two and three, Removed from "Carousel-Indicators" as well
+                        <div class="carousel-item">
+                            <div class="CarouselButtonContainer Carousel_Slide2">
+                                <button class="Carousel_button_sm externalLink btnLight" onclick="window.open('about/its_jpo.htm','_blank');">Read more about the history of ITS</button> 
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="CarouselButtonContainer Carousel_Slide3">
+                                <button class="Carousel_button_sm externalLink btnDark" onclick="window.open('stratplan2020/index.htm','_blank');">Read the Strategic Plan now!</button> 
+                            </div>
+                        </div>
+                        -->
+                        <div class="carousel-item">
+                            <div class="CarouselButtonContainer Carousel_Slide4">
+                                <button class="Carousel_button_sm externalLink btnLight"
+                                    onclick="window.open('/deployment/smart-communities/','_blank');">
+                                    Read More about Smart cities
+                                </button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="CarouselButtonContainer Carousel_Slide5">
+                                <button class="Carousel_button_sm externalLink btnLight"
+                                    onclick="window.open('/news-info/blog/','_blank');">
+                                    View the ITS JPO Blog
+                                </button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="CarouselButtonContainer Carousel_Slide6">
+                                <button class="Carousel_button_sm externalLink btnLight"
+                                    onclick="window.open('http://www.pcb.its.dot.gov/','_blank');">
+                                    Learn More about ITS4US
+                                </button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="CarouselButtonContainer Carousel_Slide7">
+                                <button class="Carousel_button_sm externalLink btnLight"
+                                    onclick="window.open('https://www.its.dot.gov/cda/index.html','_blank');">
+                                    View Education Resources
+                                </button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="CarouselButtonContainer Carousel_Slide8">
+                                <button class="Carousel_button_sm externalLink btnLight"
+                                    onclick="window.open('https://www.itskrs.its.dot.gov?utm_source=de_banner&utm_medium=banner&utm_campaign=deployment_evaluation_link','_blank');">
+                                    View Deployment Evaluation Resources
+                                </button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="CarouselButtonContainer Carousel_Slide9">
+                                <button class="Carousel_button_sm externalLink btnLight"
+                                    onclick="window.open('https://its.dot.gov/isc/','_blank');">
+                                   Learn more
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                        data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                        data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+
+                        <!--Removed two carousel items, don't need to reshuffle 
+                        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                        -->
+                    </ol>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="NewsImages">
+                        <div class="row">
+                            <div class="col-lg-3 mobileCard">
+                                <a href="https://www.its.dot.gov/its4us/htm/publications.htm" target="_blank">
+                                    <HomeImg imagePath="/src/assets/images/ITS4US_WebsiteHeader_012323.png"
+                                        altText="Link to ITS4US Information" />
+                                </a>
+                                <br />
+                                <a href="https://www.itskrs.its.dot.gov/" target="_blank">
+                                      <HomeImg imagePath="/src/assets/images/ITSEvaluation_Image_050322.png" altText="Link to ITS Deployment Evaluation Wbsite" />
+                                </a>
+                            </div>
+                            <div class="col-lg-4 mobileCard">
+                                <a class="mobileCard"
+                                    href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180"
+                                    target="_blank">
+                                   <HomeImg imagePath="/src/assets/images/ITSJPO_NewsletterWebsiteImage_030123.png"
+                                   altText="Link subscribe to ITS JPO Email Newsletter" />
+                                </a>
+                            </div>
+                            <div class="col-lg-5 mobileCard">
+                                <a href="https://www.its.dot.gov/research_areas/emerging_tech/index.htm" target="_blank">
+                                    <HomeImg imagePath="/src/assets/images/V2X Graphic_Home.png" 
+                                    altText="Link to Information about ITS Vehicle-to-Everything (V2X)" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid GradientContainter">
+            <div class="container HomepageContainter">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="TitleWrapper">
+                            <div class="TitleHeader" style="color: white">
+                                <h2>RESEARCH AREAS</h2>
+                            </div>
+
+                            <div class="TitleBar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <a href="/research/emerging-tech">
+                            <div class="HomeResearchBlock">
+                                <div class="HomeResearchBlockTop"></div>
+
+                                <div style="height: 100%">
+                                    <img src="/src/assets/images/Group 1703.png" class="HomeResearchIcon" />
+
+                                    <div class="vlTall"></div>
+
+                                    <div class="HomeResearchBlockTitle">
+                                        <span>Emerging and Enabling Technologies</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <a href="/research/ITS4US/">
+                            <div class="HomeResearchBlock">
+                                <div class="HomeResearchBlockTop"></div>
+
+                                <div style="height: 100%">
+                                    <img src="/src/assets/images/Group 1707.png" class="HomeResearchIcon" />
+
+                                    <div class="vlTall"></div>
+
+                                    <div class="HomeResearchBlockTitle">
+                                        ITS4US Deployment Program
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="/research/accelerating/">
+                            <div class="HomeResearchBlock">
+                                <div class="HomeResearchBlockTop"></div>
+
+                                <div style="height: 100%">
+                                    <img src="/src/assets/images/Group 1708.png" class="HomeResearchIcon" />
+
+                                    <div class="vlTall"></div>
+
+                                    <div class="HomeResearchBlockTitle">
+                                        Accelerating ITS Deployment
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <a href="/research/data_program/">
+                            <div class="HomeResearchBlock">
+                                <div class="HomeResearchBlockTop"></div>
+
+                                <div style="height: 100%">
+                                    <img src="/src/assets/images/Group 1709.png" class="HomeResearchIcon" />
+
+                                    <div class="vlTall"></div>
+
+                                    <div class="HomeResearchBlockTitle">ITS Data Program</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <a href="https://www.its.dot.gov/research_areas/cybersecurity/index.htm">
+                            <div class="HomeResearchBlock">
+                                <div class="HomeResearchBlockTop"></div>
+
+                                <div style="height: 100%">
+                                    <img src="/src/assets/images/Group 1705.png" class="HomeResearchIcon" />
+
+                                    <div class="vlTall"></div>
+
+                                    <div class="HomeResearchBlockTitle">
+                                        Cybersecurity For ITS
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="/research/automation/">
+                            <div class="HomeResearchBlock">
+                                <div class="HomeResearchBlockTop"></div>
+
+                                <div style="height: 100%">
+                                    <img src="/src/assets/images/Group 1706.png" class="HomeResearchIcon" />
+
+                                    <div class="vlTall"></div>
+
+                                    <div class="HomeResearchBlockTitle">Automation</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4"></div>
+
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container HomepageContainter">
+            <div class="row">
+                <div class="col-12">
+                    <div class="TitleWrapper">
+                        <div class="TitleHeader">
+                            <h2>TOPICS</h2>
+                        </div>
+
+                        <div class="TitleBar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- this is the removed CV deployer Resources section
+                <div class="col-lg-3">
+                    <a href="https://www.pcb.its.dot.gov/CV_deployer_resources.aspx" target="_blank">
+                        <div class="HotTopicBlock">
+                            <div class="HotTopicTitleBanner">
+                                <span class="externalLink_White">Connected Vehicle Deployer Resources</span>
+                            </div>
+                            <img src="/src/assets/images/Mask Group 5.png" style="width:100%;" alt="Connected Vehicle Deployer Resources">
+                        </div>
+                    </a>
+                </div>
+                -->
+
+                <div class="col-lg-3">
+                    <a href="/research/emerging-tech/">
+                        <div class="HotTopicBlock">
+                            <div class="HotTopicTitleBanner">
+                                Interoperable Connectivity (V2X)
+                            </div>
+                            <img src="/src/assets/images/Mask Group 8.png" style="width: 100%"
+                                alt="Interoperable Connectivity (V2X)" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="https://www.its.dot.gov/scrc/index.html" target="_blank">
+                        <div class="HotTopicBlock">
+                            <div class="HotTopicTitleBanner">
+                                <span class="externalLink_White">Smart Community Resource Center</span>
+                            </div>
+                            <img src="/src/assets/images/Mask Group 2.png" style="width: 100%"
+                                alt="Smart Community Resource Center" />
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3">
+                    <a href="https://its.dot.gov/isc/" target="_blank">
+                        <div class="HotTopicBlock">
+                            <div class="HotTopicTitleBanner">
+                                <span class="externalLink_White">Intersection Safety Challenge</span>
+                            </div>
+                            <img src="/src/assets/images/Mask Group 3.png" style="width: 100%"
+                                alt="Intersection Safety Challenge" />
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3">
+                    <a href="https://urldefense.com/v3/__https:/www.itskrs.its.dot.gov/__;!!May37g!I52CHHQW3NlAsLcxohOkXPX-RbhBSRuE_vYYPRiLZo4OcRoNuEBauxXNsmIvQa0YZUNEiOO7mo-XsDQoFLLO12t_$"
+                        target="_blank">
+                        <div class="HotTopicBlock">
+                            <div class="HotTopicTitleBanner">
+                                <span class="externalLink_White">ITS Deployment Evaluation</span>
+                            </div>
+                            <img src="/src/assets/images/Mask Group 9.png" style="width: 100%"
+                                alt="ITS Deployment Evaluation" />
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3">
+                    <a href="https://www.pcb.its.dot.gov/" target="_blank">
+                        <div class="HotTopicBlock">
+                            <div class="HotTopicTitleBanner">
+                                <span class="externalLink_White">Free ITS Training</span>
+                            </div>
+                            <img src="/src/assets/images/Mask Group 7.png" style="width: 100%" alt="Free ITS Training" />
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3">
+                    <a href="https://www.its.dot.gov/pilots/index.htm" target="_blank">
+                        <div class="HotTopicBlock">
+                            <div class="HotTopicTitleBanner">
+                                <span class="externalLink_White">Connected Vehicle Pilots</span>
+                            </div>
+                            <img src="/src/assets/images/Mask Group 4.png" style="width: 100%"
+                                alt="Connected Vehicle Pilots" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</Default>

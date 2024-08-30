@@ -1,0 +1,33 @@
+---
+const pages = [
+  { name: 'Its JPO Staff Listing', url: '/research/ITS4US/' },
+  { name: 'Join Our Mailing List', url: '/deployment/V2X/' },
+  { name: 'Its Specialists in Field Offices', url: 'https://www.fhwa.dot.gov/resourcecenter/teams/operations/index.cfm' },
+  ];
+---
+
+<script>
+  var currentUrl = window.location.href;
+  const sidenav = document.querySelector(".sidebarjs");
+  var links = sidenav!.querySelectorAll("a");
+  links.forEach(function (link) {
+    if (currentUrl.includes(link.href)) {
+      link.parentElement!.classList.add("activated");
+      link.classList.add("active");
+    }
+  });
+</script>
+
+<style>
+  .sidebarjs .active {
+    color: #fff;
+  }
+</style>
+
+  <nav class="sidebarjs navbar navbar-expand navbar-light bg-light flex-row align-items-start Sidebar">
+    <ul class="d-flex flex-column SidebarNav flex-row navbar-nav w-100 justify-content-between">
+  {pages.map(page => (
+    <li class="nav-item"><a class="nav-link pl-3" href={page.url}>{page.name}</a></li>
+  ))}
+</ul>
+</nav>

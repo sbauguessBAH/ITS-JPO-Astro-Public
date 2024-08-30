@@ -1,0 +1,41 @@
+---
+
+import { getEntry, type CollectionEntry } from "astro:content";
+
+type Props = {
+  post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props;
+const { title, date, image } = post.data;
+
+const preview = post.body.slice(0, 400); // Adjust the number of characters as needed
+---
+
+<style>
+  time {
+    font-size: small;
+  }
+  .btn {
+    background-color: #09638c;
+  }
+  .btn:hover {
+    background-color: #009ad6;
+  }
+  h2 {
+    text-wrap: balance
+  }
+  p {
+    display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  overflow: hidden;
+  }
+</style>
+
+<div>
+    <time datetime={date.toISOString()}>{date.toLocaleDateString(undefined, { dateStyle: "medium", timeZone: "UTC" })}</time><br />
+    <h2>{title}</h2> 
+  <p>{preview}</p>
+  <a href={`${post.slug}`} class="btn">Read Post</a>
+</div>

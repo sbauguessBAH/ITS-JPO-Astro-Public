@@ -1,0 +1,87 @@
+[
+  {
+    "awardee": "University of Washington (UW)",
+    "title": "Phase 2 Systems Architecture Document UW SAD (FHWA-JPO-22-984)",
+    "phase": "Phase 2",
+    "date": "2021-02-25",
+    "task": "Task 2-8: Systems Architecture Document",
+    "links": [{ "linkText": "External Link", "URL": "google.com" }],
+    "linkType": [{ "type": "External Links" }]
+  },
+  {
+    "awardee": "University of Washington (UW)",
+    "title": "new title",
+    "phase": "Phase 2",
+    "date": "2021-02-25",
+    "task": "Task 2-8: Systems Architecture Document",
+    "links": [{ "linkText": "External Link", "URL": "google.com" }],
+    "linkType": [{ "type": "External Links" }]
+  },
+  {
+    "awardee": "Heart of Iowa Regional Transit Agency (HIRTA)",
+    "title": "Phase 1 Awardees Technical Kick-Off Meeting (2/23/21 - 2/25/21)",
+    "phase": "Phase 1",
+    "date": "2021-02-25",
+    "task": "Task 1: Program Management",
+    "links": [{ "linkText": "Download Slide Deck", "URL": "www.placeholder.com" }],
+    "linkType": [{ "type": "Presentation Slide Deck" }]
+  },
+  {
+    "awardee": "Atlanta Regional Commission (ARC)",
+    "title": "Phase 1 Awardees Technical Kick-Off Meeting (2123/21- 2/25/21)",
+    "phase": "Phase 1",
+    "date": "2021-02-25",
+    "task": "Task 1: Program Management",
+    "links": [{ "linkText": "Download Slide Deck", "URL": "www.placeholder.com" }],
+    "linkType": [{ "type": "Presentation Slide Deck" }]
+  },
+  {
+    "awardee": "Georgia Department of Transportation (GDOT)",
+    "title": "Phase 2 Outreach Plan (FHWA-JPO-22-978)",
+    "phase": "Phase 2",
+    "date": "2022-09-19",
+    "task": "Task 2-J: Outreach Plan",
+    "links": [{ "linkText": "Download PDF", "URL": "www.placeholder.com" }],
+    "linkType": [{ "type": "Publication" }]
+  },
+  {
+    "awardee": "Heart Of Iowa Regional Transit Agency (HIRTA)",
+    "title": "Phase 2 Outreach Plan (Coming Soon)",
+    "phase": "Phase 2",
+    "date": "Coming Soon",
+    "task": "Task 2-J: Outreach Plan",
+    "links": [{ "linkText": "", "URL": "" }],
+    "linkType": [{ "type": "" }]
+  },
+  {
+    "awardee": "University of Washington (UW)",
+    "title": "Phase 2 Outreach Plan (Coming Soon)",
+    "phase": "Phase 2",
+    "date": "Coming Soon",
+    "task": "Task 2-J: Outreach Plan",
+    "links": [{ "linkText": "", "URL": "" }],
+    "linkType": [{ "type": "" }]
+  },
+  {
+    "awardee": "Niagara Frontier Transportation Authority (NETA)",
+    "title": "Phase 2 Outreach Plan (FHWA-JPO-22-977)",
+    "phase": "Phase 2",
+    "date": "2022-09-19",
+    "task": "Task 2-J: Outreach Plan",
+    "links": [{ "linkText": "Download PDF", "URL": "www.placeholder.com" }],
+    "linkType": [{ "type": "Publication" }]
+  },
+  {
+    "awardee": "Niagara Frontier Transportation Authority (NFTA)",
+    "title": "Webinar: Low-Speed Self-Driving Shuttles — State of the Technology, Sustainability and Equity Implications",
+    "phase": "Phase 2",
+    "date": "2023-05-16",
+    "task": "Task 2-J: Outreach Plan",
+    "links": [
+      { "linkText": "View Webinar", "URL": "https://www.placeholder.com" },
+      { "linkText": "Slide Deck", "URL": ".pdf" },
+      { "linkText": "Download Transcript", "URL": ".pdf" }
+    ],
+    "linkType": [{ "type": "Publication" }, { "type": "Presentation Slide Deck" }, { "type": "Webinars" }]
+  }
+]

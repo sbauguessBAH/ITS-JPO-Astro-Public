@@ -1,0 +1,242 @@
+---
+import tableContent from "../content/publicationsData/resources.json";
+
+const uniqueType = [...new Set(tableContent.map(item => item.type))];
+
+const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployment))];
+---
+ 
+
+<link href="https://cdn.datatables.net/v/bs4/dt-2.1.4/datatables.min.css" rel="stylesheet">
+
+<style>
+ 
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  a:hover {
+    font-weight: normal;
+  }
+  .checkbox-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .checkbox-wrapper li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .checkbox-wrapper input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    accent-color: #005d83; /* For modern browsers */
+    -webkit-appearance: none; /* For older browsers */
+    -moz-appearance: none; /* For older browsers */
+    appearance: none; /* For older browsers */
+    border: 2px solid #005d83;
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+  }
+  .checkbox-wrapper input[type="checkbox"]:checked {
+    background-color: #005d83;
+  }
+  .checkbox-wrapper input[type="checkbox"]:checked::after {
+    content: "\f00c"; /* Unicode for Font Awesome checkmark */
+    font-family: FontAwesome;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    left: 1px;
+  }
+  thead {
+    font-weight: bold;
+    color: rgb(0, 93, 131);
+  }
+
+  thead tr td:hover {
+            background-color: #c8c8c8;
+        }
+
+  table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            padding: 5px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-size: medium;
+            line-height: normal;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .sortformholder {
+          margin: 10px 0;
+        }
+</style>
+
+<div class="sortformholder">
+  
+  <div class="row">
+    <div class="col" id="type">
+      <h3>Filter by Type</h3>
+      <ul class="checkbox-wrapper">
+        <!-- this area loops over the unique Types and Displays them in the check box -->
+      {
+        uniqueType.map((item) => (
+          
+        <li>
+          
+          <input type="checkbox" id={item} name="typ" value={item} />
+          <label for={item}>{item}</label>
+        </li> 
+        ))
+      }
+
+  
+      </ul>
+    </div>
+
+    <div class="col" id="phase">
+      <h3>Filter by Phase</h3>
+      <ul class="checkbox-wrapper">
+        <li>
+          <input type="checkbox" id="pre-deployment" name="pha" value="0" />
+          <label for="pre-deployment">Pre-Deployment Activities</label><br />
+        </li>
+        <li>
+          <input type="checkbox" id="phase-1" name="pha" value="1" />
+          <label for="phase-1">Phase 1 (Concept)</label><br />
+        </li>
+        <li>
+          <input type="checkbox" id="phase-2" name="pha" value="2" />
+          <label for="phase-2">Phase 2 (Design & Testing)</label><br />
+        </li>
+        <li>
+          <input type="checkbox" id="phase-3" name="pha" value="3" />
+          <label for="phase-3">Phase 3 (Operation and Evaluation)</label>
+        </li>
+      </ul>
+    </div>
+    <div class="col-6" id="awardee">
+      <h3>Filter by Awardee/Deployment</h3>
+      <ul class="checkbox-wrapper">
+        <!-- this area loops over the unique Types and Displays them in the check box -->
+      {
+        uniqueAwardee.map((item) => (
+          
+        <li>
+          
+          <input type="checkbox" id={item} name="awa" value={item} />
+          <label for={item}>{item}</label>
+        </li> 
+        ))
+      }
+
+  
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<table class="table" id="pubtable">
+  <thead>
+    <tr>
+      <td>Awardee/Deployment</td>
+      <td>Resource Title</td>
+      <td>Phase</td>
+      <td>Publish Date</td>
+      <td>Task #/ Name</td>
+      <td>Links</td>
+      <td>Type</td>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      tableContent.map((item) => (
+        <tr>
+          <td>{item.awardee_deployment}</td>
+          <td>{item.resource_title}</td>
+          <td>{item.phase}</td>
+        <td>{item.date}</td>
+          <td>{item.task_name}</td>
+          <td style="white-space: nowrap;">
+            {item.links.map((links) => (
+            <a href={links.href}>{links.title}</a><br />))}
+          </td>
+          <td>
+            <ul><li>{item.type}</li></ul>
+          </td>
+          <td>
+            <ul><li>{item.keywords}</li></ul>
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+
+<script is:inline src="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.js"></script>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.5.0/luxon.min.js"></script>
+<script is:inline>
+
+
+//sets up Datatable
+  var table = $("#pubtable").DataTable({
+    columnDefs: [
+     { visible: false, targets: 6 },
+     { visible: false, targets: 7 }, //hides the column that is needed for sorting the awardee
+        {
+        targets: 3,
+                    render: function(data, type, row) {
+                        if (data === 'Coming Soon') {
+                            return type === 'sort' ? Infinity : data;
+                        }
+                        const date = luxon.DateTime.fromISO(data);
+                        return type === 'sort' ? date.toMillis() : date.toFormat('MMM d, yyyy');
+                        
+                    }}// Makes the comming soon text at top and adds a date formatter
+    ],
+    order:[[3, 'dec']],// Make the default order the date decending
+  });
+
+  document.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
+  checkbox.addEventListener('change', function () {
+    // Function to build regex filter string
+    function buildFilterString(name) {
+      return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked'))
+        .map(function (input) {
+          return input.value;
+        })
+        .join("|");
+    }
+
+    // Apply filters
+    table.column(2).search(buildFilterString("pha"), true, false, false).draw(false);
+    table.column(6).search(buildFilterString("typ"), true, false, false).draw(false);
+    table.column(0).search(buildFilterString("awa"), true, false, false).draw(false);
+  });
+});
+
+</script>
