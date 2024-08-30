@@ -1,30 +1,18 @@
 # ITSJPO Astro
 
-## 🚀 Project Structure
+## ITS JPO DOT Website
 
-Inside of your Astro project, you'll see the following folders and files:
+Welcome to the ITS JPO DOT Website project! This repository is dedicated to creating a collaborative platform for building and maintaining the ITS JPO DOT website. Our goal is to streamline the process of site development, making it easier for team members to contribute and create site builds efficiently.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### Key Features
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Collaborative Development**: Leverage GitHub’s powerful collaboration tools to work together seamlessly.
+- **Automated Site Builds**: Utilize continuous integration (CI) to automate the build process, ensuring quick and reliable updates.
+- **Modular Design**: Implement a modular architecture to simplify updates and maintenance.
+- **Responsive Design**: Ensure the website is accessible and user-friendly across all devices.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+Join us in building a robust and user-friendly website for ITS JPO DOT!
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
