@@ -5,4 +5,4 @@ catagory: Safety
 
 Alerts a driver if a pedestrian is crossing ahead in an unsignalized intersection.
 
-![Pedestrian in Signalized Crosswalk](/src/assets/images/infographics/CV_PedCrossing_090413-med01.png)
+![Pedestrian in Signalized Crosswalk](../../assets/images/infographics/CV_PedCrossing_090413-med01.png)
