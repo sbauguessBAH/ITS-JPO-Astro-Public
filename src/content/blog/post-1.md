@@ -6,7 +6,7 @@ We are excited to share our vision for the future of transportation, one that pr
 
 On August 16, 2024, the U.S. Department of Transportation (USDOT) released the [**National V2X Deployment Plan**](https://www.its.dot.gov/research_areas/emerging_tech/pdf/Accelerate_V2X_Deployment_FINAL.pdf) to accelerate the deployment of V2X technology. The Plan is one aspect of the Department’s broader commitment to reduce the number of roadway fatalities to the only acceptable number: zero. The National V2X Deployment Plan seeks to reduce uncertainty among all stakeholders working towards a shared vision of a nationwide, secure interoperable V2X ecosystem by setting USDOT’s vision, goals, and milestones, and issuing a formal call to action for stakeholders, including the USDOT, public agencies, and the private sector.​ 
 
-![Saving Lives with Connectivity A Plan to Accelerate V2X Deployment](press-images/v2x_future.jpg)
+![Saving Lives with Connectivity A Plan to Accelerate V2X Deployment](blog-images/v2x_future.jpg)
 
 Source: USDOT
 
