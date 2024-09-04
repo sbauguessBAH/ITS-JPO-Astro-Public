@@ -4,6 +4,35 @@ import SideBar from "../components/SideBar_News.astro";
 import Default from "./Default.astro";
 const {frontmatter} = Astro.props;
 ---
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  main {
+    color: red;
+  }
+  
+  img {
+      vertical-align: middle;
+      width: 100%;
+      height: auto;
+      max-width: 600px;
+  }
+  
+  </style>
+  
 
 <Default title={frontmatter.title}>
 
