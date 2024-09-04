@@ -4,7 +4,7 @@ import SideBar from "../components/SideBar_News.astro";
 import Default from "./Default.astro";
 const {frontmatter} = Astro.props;
 ---
-<style>
+<style is:global>
   table {
     width: 100%;
     border-collapse: collapse;
@@ -18,10 +18,6 @@ const {frontmatter} = Astro.props;
   th {
     background-color: #f2f2f2;
     text-align: left;
-  }
-  
-  main {
-    color: red;
   }
   
   img {
