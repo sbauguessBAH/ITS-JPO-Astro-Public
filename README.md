@@ -11,7 +11,6 @@ Welcome to the ITS JPO DOT Website project! This repository is dedicated to crea
 - **Modular Design**: Implement a modular architecture to simplify updates and maintenance.
 - **Responsive Design**: Ensure the website is accessible and user-friendly across all devices.
 
-Join us in building a robust and user-friendly website for ITS JPO DOT!
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
