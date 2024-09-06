@@ -1,12 +1,14 @@
 ---
+import base_url from "../lib/base_url";
+
 const pages = [
-  { name: 'ITS4US Home', url: '/research/ITS4US/' },
-  { name: 'Program Overview', url: '/research/ITS4US/overview/' },
-  { name: 'Publications', url: '/research/ITS4US/publications/' },
-  { name: 'Webinars', url: '/research/ITS4US/webinars/' },
-  { name: 'Featured Links', url: '/research/ITS4US/featured_links/' },
-  { name: 'ITS4US in the Media', url: '/research/ITS4US/in_the_media/' },
-  { name: 'Phase 1 Awardees', url: '/research/ITS4US/phase1_awardees' }
+  { name: 'ITS4US Home', url: base_url('/research/ITS4US/') },
+  { name: 'Program Overview', url: base_url('/research/ITS4US/overview/') },
+  { name: 'Publications', url: base_url('/research/ITS4US/publications/') },
+  { name: 'Webinars', url: base_url('/research/ITS4US/webinars/') },
+  { name: 'Featured Links', url: base_url('/research/ITS4US/featured_links/') },
+  { name: 'ITS4US in the Media', url: base_url('/research/ITS4US/in_the_media/') },
+  { name: 'Phase 1 Awardees', url: base_url('/research/ITS4US/phase1_awardees') },
 ];
 ---
 

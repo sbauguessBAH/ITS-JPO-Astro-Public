@@ -2,6 +2,7 @@
 import Default from "../../../layouts/Default.astro";
 import SideBar from "../../../components/SideBar_Research.astro";
 import NavITS4SU from "../../../components/Nav_ITS4US.astro"
+import base_url from "../../../lib/base_url";
 ---
 
 <Default title="ITS JPO - ITS4US">
@@ -11,7 +12,7 @@ import NavITS4SU from "../../../components/Nav_ITS4US.astro"
       <div class="AboutBanner AcceleratingDeployment_bkgd">
         <div class="AboutBannerTitle">
           <h1>
-            <img alt="ITS4US Logo" src="/assets/images/its4us/ITS4US_logo_white.png" style="max-height: 60px; clear: none" />
+            <img alt="ITS4US Logo" src={base_url("/assets/images/its4us/ITS4US_logo_white.png")} style="max-height: 60px; clear: none" />
             &nbsp;| ITS4US
           </h1>
         </div>
