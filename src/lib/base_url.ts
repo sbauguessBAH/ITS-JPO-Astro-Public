@@ -4,5 +4,7 @@
  * @returns the absolute path with the base/subdirectory added
  */
 export default function base_url(abs_path: string): string {
-  return import.meta.env.BASE_URL + abs_path;
+  // If base is set to "", then it will automatically append a trailing /
+  if (import.meta.env.BASE_URL !== "/") return import.meta.env.BASE_URL + abs_path;
+  return abs_path;
 }
