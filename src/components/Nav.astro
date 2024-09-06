@@ -101,41 +101,41 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li id="menuAbout" class={currentPath.includes("about") ? "nav-item dropdown activeMenu" : "nav-item dropdown"} >
-        <a class="nav-link dropdown-toggle" href="/about/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About ITS JPO</a>
+        <a class="nav-link dropdown-toggle" href={base_url("/about/")} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About ITS JPO</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/about/its_jpo/"}>ITS Joint Program Office</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/about/stratplan2020/"}>Strategic Plan</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/about/history/"}>History of Intelligent Transportation Systems</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/about/itspac/"}>ITS Program Advisory Committee</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/about/faqs/"}>Frequently Asked Questions</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/about/site-map/"}>Site Map</a>
+          <a class="dropdown-item" href={base_url("/about/its_jpo/")}>ITS Joint Program Office</a>
+          <a class="dropdown-item" href={base_url("/about/stratplan2020/")}>Strategic Plan</a>
+          <a class="dropdown-item" href={base_url("/about/history/")}>History of Intelligent Transportation Systems</a>
+          <a class="dropdown-item" href={base_url("/about/itspac/")}>ITS Program Advisory Committee</a>
+          <a class="dropdown-item" href={base_url("/about/faqs/")}>Frequently Asked Questions</a>
+          <a class="dropdown-item" href={base_url("/about/site-map/")}>Site Map</a>
         </div>
       </li>
       <li id="menuResearch" class={currentPath.includes("research") ? "nav-item dropdown activeMenu" : "nav-item dropdown"}>
-        <a class="nav-link dropdown-toggle" href="/research/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
+        <a class="nav-link dropdown-toggle" href={base_url("/research/")} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/research/accelerating/"}>Accelerating ITS Deployment</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/research/automation/"}>Automation</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/research/ITS4US/"}>ITS4US</a>
+          <a class="dropdown-item" href={base_url("/research/accelerating/")}>Accelerating ITS Deployment</a>
+          <a class="dropdown-item" href={base_url("/research/automation/")}>Automation</a>
+          <a class="dropdown-item" href={base_url("/research/ITS4US/")}>ITS4US</a>
           <a class="dropdown-item externalLink" href="research_areas/cybersecurity/index.htm" target="_blank">ITS Cybersecurity Research</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/research/data_program/"}>ITS Data Program</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/research/emerging-tech/"}>Emerging and Enabling Technologies</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/research/national-transportation-library/"}>National Transportation Library</a>
+          <a class="dropdown-item" href={base_url("/research/data_program/")}>ITS Data Program</a>
+          <a class="dropdown-item" href={base_url("/research/emerging-tech/")}>Emerging and Enabling Technologies</a>
+          <a class="dropdown-item" href={base_url("/research/national-transportation-library/")}>National Transportation Library</a>
         </div>
       </li>
       <li id="menuDeployment" class={currentPath.includes("deployment") ? "nav-item dropdown activeMenu" : "nav-item dropdown"}>
-        <a class="nav-link dropdown-toggle" href="/deployment/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ITS Deployment</a>
+        <a class="nav-link dropdown-toggle" href={base_url("/deployment/")} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ITS Deployment</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/research/ITS4US/"}>ITS4US</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/deployment/V2X/"}>Vehicle-to-Everything</a>
+          <a class="dropdown-item" href={base_url("/research/ITS4US/")}>ITS4US</a>
+          <a class="dropdown-item" href={base_url("/deployment/V2X/")}>Vehicle-to-Everything</a>
           <a class="dropdown-item externalLink" href="pilots/index.htm" target="_blank">Connected Vehicle Pilots</a>
           <a class="dropdown-item externalLink" href="pilots/events.htm" target="_blank">Connected Vehicle Deployment Assistance</a>
           <a class="dropdown-item externalLink" href="pilots/cv_pilot_apps.htm" target="_blank">Connected Vehicle Applications</a>
           <a class="dropdown-item externalLink" href="pilots/cv_pilot_deployment.htm" target="_blank">Sample Deployment Concepts</a>
           <a class="dropdown-item externalLink" href="pilots/events.htm" target="_blank">Connected Vehicle Publications</a>
           <a class="dropdown-item externalLink" href="https://www.arc-it.net/" target="_blank" rel="noopener noreferrer">National ITS Architecture</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/deployment/smart-communities/"}>Smart Communities</a>
+          <a class="dropdown-item" href={base_url("/deployment/smart-communities/")}>Smart Communities</a>
           <a class="dropdown-item externalLink" href="https://www.its.dot.gov/scrc/index.html#/" target="_blank" rel="noopener noreferrer">Smart Community Resource Center</a>
           <a class="dropdown-item externalLink" href="https://its.dot.gov/isc/" target="_blank" rel="noopener noreferrer">Intersection Safety Challenge</a>
         </div>
@@ -143,12 +143,12 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
       <li id="menuCommunications" class={currentPath.includes("news-info") ? "nav-item dropdown activeMenu" : "nav-item dropdown"}>
         <a class="nav-link dropdown-toggle" href="/news-info/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News & Information</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/news-info/news/"}>Latest News from ITS JPO</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/news-info/blog/"}>ITS JPO Director's Blog</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/news-info/fact-sheet/"}>ITS Research Fact Sheets</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/news-info/infographics/"}>Infographics</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/news-info/video/"}>Videos</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/news-info/image-library"}>Image Library</a>
+          <a class="dropdown-item" href={base_url("/news-info/news/")}>Latest News from ITS JPO</a>
+          <a class="dropdown-item" href={base_url("/news-info/blog/")}>ITS JPO Director's Blog</a>
+          <a class="dropdown-item" href={base_url("/news-info/fact-sheet/")}>ITS Research Fact Sheets</a>
+          <a class="dropdown-item" href={base_url("/news-info/infographics/")}>Infographics</a>
+          <a class="dropdown-item" href={base_url("/news-info/video/")}>Videos</a>
+          <a class="dropdown-item" href={base_url("/news-info/image-library/")}>Image Library</a>
         </div>
       </li>
 
@@ -169,14 +169,14 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
           <a class="dropdown-item externalLink" href="https://www.its.dot.gov/data/index.htm" target="_blank">ITS DataHub</a>
           <a class="dropdown-item externalLink" href="https://www.itskrs.its.dot.gov/" target="_blank" rel="noopener noreferrer">ITS Deployment Evaluation</a>
           <a class="dropdown-item externalLink" href="https://www.itskrs.its.dot.gov/deployment" target="_blank" rel="noopener noreferrer">ITS Deployment Statistics</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/resources/SCMS/"}>Security Credential Management System (SCMS)</a>
+          <a class="dropdown-item" href={base_url("/resources/SCMS/")}>Security Credential Management System (SCMS)</a>
         </div>
       </li>
       <li id="menuContacts" class={currentPath.includes("contact-us") ? "nav-item dropdown activeMenu" : "nav-item dropdown"}>
         <a class="nav-link dropdown-toggle" href="contact-us/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/contact-us/staff-listing/"}>ITS JPO Staff Listing</a>
-          <a class="dropdown-item" href={import.meta.env.BASE_URL + "/contact-us/mailinglist/"}>Join Our Mailing List</a>
+          <a class="dropdown-item" href={base_url("/contact-us/staff-listing/")}>ITS JPO Staff Listing</a>
+          <a class="dropdown-item" href={base_url("/contact-us/mailinglist/")}>Join Our Mailing List</a>
           <a class="dropdown-item externalLink" href="https://www.fhwa.dot.gov/resourcecenter/teams/operations/index.cfm" target="_blank" rel="noopener noreferrer">ITS Specialists in Field Offices</a>
         </div>
       </li>
