@@ -1,14 +1,18 @@
 ---
 import { Image } from 'astro:assets';
-import USDOTLogo from '/src/assets/images/US_DepartmentofTransportation-Logo.png';
-import facebookIcon from '/src/assets/images/Facebook.png';
-import instgramIcon from '/src/assets/images/Instagram.png';
-import twitterIcon from '/src/assets/images/Instagram.png';
-import inDeedIcon from '/src/assets/images/inDeed.png';
+import USDOTLogo from '../assets/images/US_DepartmentofTransportation-Logo.png';
+import facebookIcon from '../assets/images/Facebook.png';
+import instgramIcon from '../assets/images/Instagram.png';
+import twitterIcon from '../assets/images/Instagram.png';
+import inDeedIcon from '../assets/images/inDeed.png';
 import base_url from '../lib/base_url';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // Remove the leading "/"
+
 ---
 
-<script>
+<!-- <script>
   var currentUrl = window.location.href;
 
   // Select all <a> tags
@@ -23,7 +27,7 @@ import base_url from '../lib/base_url';
       link.parentElement!.classList.add("activeMenu");
     }
   });
-</script>
+</script> -->
 <style>
    a{
     transition: all .35s
@@ -96,8 +100,8 @@ import base_url from '../lib/base_url';
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li id="menuAbout" class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href={import.meta.env.BASE_URL + "/about/"} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About ITS JPO</a>
+      <li id="menuAbout" class={currentPath.includes("about") ? "nav-item dropdown activeMenu" : "nav-item dropdown"} >
+        <a class="nav-link dropdown-toggle" href="/about/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About ITS JPO</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/about/its_jpo/"}>ITS Joint Program Office</a>
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/about/stratplan2020/"}>Strategic Plan</a>
@@ -107,8 +111,8 @@ import base_url from '../lib/base_url';
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/about/site-map/"}>Site Map</a>
         </div>
       </li>
-      <li id="menuResearch" class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href={import.meta.env.BASE_URL + "/research/"} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
+      <li id="menuResearch" class={currentPath.includes("research") ? "nav-item dropdown activeMenu" : "nav-item dropdown"}>
+        <a class="nav-link dropdown-toggle" href="/research/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/research/accelerating/"}>Accelerating ITS Deployment</a>
@@ -120,8 +124,8 @@ import base_url from '../lib/base_url';
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/research/national-transportation-library/"}>National Transportation Library</a>
         </div>
       </li>
-      <li id="menuDeployment" class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href={import.meta.env.BASE_URL + "/deployment/"} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ITS Deployment</a>
+      <li id="menuDeployment" class={currentPath.includes("deployment") ? "nav-item dropdown activeMenu" : "nav-item dropdown"}>
+        <a class="nav-link dropdown-toggle" href="/deployment/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ITS Deployment</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/research/ITS4US/"}>ITS4US</a>
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/deployment/V2X/"}>Vehicle-to-Everything</a>
@@ -136,8 +140,8 @@ import base_url from '../lib/base_url';
           <a class="dropdown-item externalLink" href="https://its.dot.gov/isc/" target="_blank" rel="noopener noreferrer">Intersection Safety Challenge</a>
         </div>
       </li>
-      <li id="menuCommunications" class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href={import.meta.env.BASE_URL + "/news-info/"} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News & Information</a>
+      <li id="menuCommunications" class={currentPath.includes("news-info") ? "nav-item dropdown activeMenu" : "nav-item dropdown"}>
+        <a class="nav-link dropdown-toggle" href="/news-info/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News & Information</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/news-info/news/"}>Latest News from ITS JPO</a>
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/news-info/blog/"}>ITS JPO Director's Blog</a>
@@ -148,7 +152,7 @@ import base_url from '../lib/base_url';
         </div>
       </li>
 
-      <li id="menuTechTransfer" class="nav-item dropdown">
+      <li id="menuTechTransfer" class={currentPath.includes("tech-transfer") ? "nav-item dropdown activeMenu" : "nav-item dropdown"}>
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology Transfer</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item externalLink" href="https://www.itskrs.its.dot.gov/" target="_blank" rel="noopener noreferrer">ITS Deployment Evaluation</a>
@@ -158,8 +162,8 @@ import base_url from '../lib/base_url';
           <a class="dropdown-item externalLink" href="https://its.dot.gov/isc/" target="_blank" rel="noopener noreferrer">Intersection Safety Challenge</a>
         </div>
       </li>
-      <li id="menuResources" class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+      <li id="menuResources" class={currentPath.includes("resources") ? "nav-item dropdown activeMenu" : "nav-item dropdown"}>
+        <a class="nav-link dropdown-toggle" href="/resources/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item externalLink" href="https://www.its.dot.gov/code/index.htm" target="_blank">ITS CodeHub</a>
           <a class="dropdown-item externalLink" href="https://www.its.dot.gov/data/index.htm" target="_blank">ITS DataHub</a>
@@ -168,8 +172,8 @@ import base_url from '../lib/base_url';
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/resources/SCMS/"}>Security Credential Management System (SCMS)</a>
         </div>
       </li>
-      <li id="menuContacts" class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href={import.meta.env.BASE_URL + "/contact-us/"} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
+      <li id="menuContacts" class={currentPath.includes("contact-us") ? "nav-item dropdown activeMenu" : "nav-item dropdown"}>
+        <a class="nav-link dropdown-toggle" href="contact-us/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/contact-us/staff-listing/"}>ITS JPO Staff Listing</a>
           <a class="dropdown-item" href={import.meta.env.BASE_URL + "/contact-us/mailinglist/"}>Join Our Mailing List</a>

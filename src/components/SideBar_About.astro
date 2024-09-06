@@ -12,10 +12,10 @@ const pages = [
 <script>
   var currentUrl = window.location.href;
   const sidenav = document.querySelector(".sidebarjs");
-  var links = sidenav.querySelectorAll("a");
+  var links = sidenav!.querySelectorAll("a");
   links.forEach(function (link) {
     if (currentUrl.includes(link.href)) {
-      link.parentElement.classList.add("activated");
+      link.parentElement!.classList.add("activated");
       link.classList.add("active");
     }
   });

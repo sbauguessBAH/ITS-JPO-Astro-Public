@@ -9,4 +9,4 @@ Response, Emergency Staging and Communications, Uniform Management, and Evacuati
 
 **Responder Vehicles** - Warns on-scene responders of vehicles approaching the incident zone at speeds or in lanes that pose a high risk to their safety.
 
-![Response, Emergency Staging and Communications, Uniform Management and Evacuation (R.E.S.C.U.M.E.)](/src/assets/images/infographics/RESCUME_SafetySpeedZone.jpg)
+![Response, Emergency Staging and Communications, Uniform Management and Evacuation (R.E.S.C.U.M.E.)](../../assets/images/infographics/RESCUME_SafetySpeedZone.jpg)

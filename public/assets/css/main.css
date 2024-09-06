@@ -1272,3 +1272,4 @@ main a:has(img)::after{
     content: '' !important;
     display: none !important;
 }
+
