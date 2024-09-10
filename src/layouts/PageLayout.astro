@@ -1,0 +1,41 @@
+---
+// Page Layout used for pages with sidebars and other complex navigation
+import Sidebar from '../components/Sidebar.astro';
+import Tabs from '../components/Tabs.astro';
+import { navigation } from '../lib/navigation';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentSection = navigation.find(page => pathname.includes(page.url));
+const currentItem = currentSection?.pages.find(page => pathname.includes(page.url))
+---
+<BaseLayout title={title}>
+  <div class="container-fluid h-100 bodyWrap">
+    <div class="row h-100">
+      <aside class="col-12 col-md-3 p-3 bg-light">
+        {currentSection && <Sidebar items={currentSection.pages} currentItem={currentItem}/>}
+      </aside>
+      <main class="col-9 MainContent">
+        {currentItem?.pages ? (
+          <div class="row" style="padding-bottom: 20px; margin-bottom: 30px; border-bottom-style: solid; border-block-width: 1px; border-color: gainsboro">
+            <div class="container-fluid">
+              <Tabs items={currentItem.pages}/>
+              <slot/>
+            </div>
+          </div>
+        ) : (
+          <slot/>
+        )}
+        
+        
+      </main>
+    </div>
+  </div>
+  
+</BaseLayout>

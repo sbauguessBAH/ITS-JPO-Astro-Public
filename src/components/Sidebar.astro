@@ -1,0 +1,28 @@
+---
+import type { ChildNavigationItem, NavigationItem } from '../lib/navigation';
+
+interface Props {
+  items: ChildNavigationItem[];
+  currentItem?: ChildNavigationItem;
+}
+
+const { items, currentItem } = Astro.props;
+---
+
+<nav class="sidebarjs navbar navbar-expand navbar-light bg-light flex-row align-items-start Sidebar">
+  <ul class="d-flex flex-column SidebarNav flex-row navbar-nav w-100 justify-content-between">
+    {items.map(item => (
+      <li class:list={["nav-item", {"activated": currentItem?.name === item.name}]}>
+        <a class:list={["nav-link pl-3", {"active": currentItem?.name === item.name}]} href={item.url}>
+          {item.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .sidebarjs .active {
+    color: #fff;
+  }
+</style>
