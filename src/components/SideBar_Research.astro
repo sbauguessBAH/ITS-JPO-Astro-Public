@@ -1,12 +1,14 @@
 ---
+import base_url from "../lib/base_url";
+
 const pages = [
-  { name: 'Accelerating ITS Deployment', url: '/research/accelerating/' },
-  { name: 'Automation', url: '/research/automation/' },
-  { name: 'ITS4US', url: '/research/ITS4US/' },
-  { name: 'ITS Cybersecurity Research', url: 'https://www.its.dot.gov/research_areas/cybersecurity/index.htm' },
-  { name: 'ITS Data Program', url: '/research/data_program/' },
-  { name: 'Emerging and Enabling Technologies', url: '/research/emerging-tech/' },
-  { name: 'National Transportation Library', url: '/research/national-transportation-library/' }
+  { name: 'Accelerating ITS Deployment', url: base_url('/research/accelerating/')},
+  { name: 'Automation', url: base_url('/research/automation/')},
+  { name: 'ITS4US', url: base_url('/research/ITS4US/')},
+  { name: 'ITS Cybersecurity Research', url: 'https://www.its.dot.gov/research_areas/cybersecurity/index.htm'},
+  { name: 'ITS Data Program', url: base_url('/research/data_program/')},
+  { name: 'Emerging and Enabling Technologies', url: base_url('/research/emerging-tech/')},
+  { name: 'National Transportation Library', url: base_url('/research/national-transportation-library/') }
 ];
 ---
 
