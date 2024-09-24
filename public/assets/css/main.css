@@ -6,26 +6,14 @@
     font-family: "Source Sans 3", sans-serif;
 }
 
-.navbar-nav .nav-item .nav-link {
-    color: red;
-}
 
 .navbar-nav .nav-item.active .nav-link,
 .navbar-nav .nav-item:hover .nav-link {
     color: deepskyblue;
 }
 
-.dropdown-menu > li > a:hover {
-    background-image: none;
-    background-color: red;
-}
-
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     background-image: none !important;
-}
-
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    background-color: red;
 }
 
 .container-fluid {
@@ -69,9 +57,6 @@ margin-right: .5rem;
 .navbar{
     width:auto;
 }
-
-
-
 
 
 .navbar-nav .nav-item .nav-link {

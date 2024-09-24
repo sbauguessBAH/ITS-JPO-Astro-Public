@@ -1,14 +1,15 @@
 ---
-import { Image } from "astro:assets";
-import USDOTLogo from "../assets/images/US_DepartmentofTransportation-Logo.png";
-import facebookIcon from "../assets/images/Facebook.png";
-import instgramIcon from "../assets/images/Instagram.png";
-import twitterIcon from "../assets/images/Instagram.png";
-import inDeedIcon from "../assets/images/inDeed.png";
-import base_url from "../lib/base_url";
+import { Image } from 'astro:assets';
+import USDOTLogo from '../assets/images/US_DepartmentofTransportation-Logo.png';
+import facebookIcon from '../assets/images/Facebook.png';
+import instgramIcon from '../assets/images/Instagram.png';
+import twitterIcon from '../assets/images/Instagram.png';
+import inDeedIcon from '../assets/images/inDeed.png';
+import base_url from '../lib/base_url';
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // Remove the leading "/"
+
 ---
 
 <!-- <script>
@@ -28,19 +29,10 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
   });
 </script> -->
 <style>
-  a,
-  ul,
-  li,
-  nav,
-  button
-  .show {
-    transition: all 0.35s;
+   a{
+    transition: all .35s
   }
-  a:active{
-    background: rgb(198, 198, 198);
-    color: black;
-  }
-  .dotlogo {
+  .dotlogo{
     max-height: 25px;
     object-fit: contain;
     object-position: 0%;
@@ -48,51 +40,15 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
     margin-top: 14px;
     margin-left: 30px;
   }
-
-  .dropdown-toggle.show {
-    color: black;
-    background-color: white;
-    border-radius: 10px 10px 0px 0px;
-  }
-
-  .dropdown-toggle .show {
-    color: black;
-  }
-
-  .dropdown-menu {
-    left: -1px;
-  }
-
-  .show.nav-link:focus {
-    color: black;
-  }
-
-  .dropdown-menu li > ul.dropdown-menu {
-    border-radius: 10px;
-  }
-
-  .dropend .dropdown-toggle::after {
-    content: "\f054";
-    border: 0;
-    color: #009ad6;
-  }
-
-  .dropdown-item.dropdown-toggle.show::after {
-    content: "\f078";
-    border: 0;
-    color: #009ad6;
-  }
-  .dropdown-item.dropdown-toggle.show{
-    background: rgb(233, 236, 239);
-    border-radius: 0;
-  }
 </style>
 
 <div class="container-fluid Topbar">
   <div class="row">
     <div class="col-lg-10">
       <a href="https://www.transportation.gov/">
+        
         <Image src={USDOTLogo} class="dotlogo" alt="U.S Department of Transportation Logo" />
+     
       </a>
     </div>
     <div class="col-lg-2">
@@ -103,7 +59,7 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
             <Image src={facebookIcon} class="SocialMediaIcon" alt="Facebook Logo" />
           </a>
         </div>
-        <div class="col-2">
+        <div class="col-2">          
           <Image src={instgramIcon} class="SocialMediaIcon" alt="Instagram Logo" />
         </div>
         <div class="col-2">
@@ -130,7 +86,7 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
     </div>
   </div>
 </div>
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-marginbottom"> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-marginbottom">
   <button
     class="navbar-toggler"
     type="button"
@@ -225,172 +181,5 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
         </div>
       </li>
     </ul>
-  </div>
-</nav>    -->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-marginbottom">
-  <button class="navbar-toggler ms-3 shadow collapsed hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content">
-    <i class="fa-solid fa-bars fa-xl text-white"></i>
-  </button>
-  <div class="menu w-100">
-    <div class="collapse navbar-collapse" id="navbar-content">
-      <ul class="navbar-nav mr-auto mb-lg-0">
-        <!-- Multilevel dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link py-3 px-4 dropdown-toggle" href="/" data-bs-toggle="dropdown" data-bs-auto-close="outside">About</a>
-          <ul class="dropdown-menu mt-0 shadow">
-            <li class="dropend">
-              <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Contact us</a>
-              <ul class="dropdown-menu shadow">
-                <li>
-                  <a class="dropdown-item" href="">ITS JPO Staff Listing</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="">Join our Mailing List</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="">ITS Specialists in Field Offices</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a class="dropdown-item" href="">Staff Presentations</a>
-            </li>
-            <li></li>
-          </ul>
-          <!-- End Multilevel dropdown -->
-        </li>
-      </ul>
-      <ul class="navbar-nav mr-auto mb-lg-0">
-        <!-- Multilevel dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link py-3 px-4 dropdown-toggle" href="/" data-bs-toggle="dropdown" data-bs-auto-close="outside">Research Areas</a>
-          <ul class="dropdown-menu mt-0 shadow">
-            <li class="dropend">
-              <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">ITS Deployments</a>
-              <ul class="dropdown-menu shadow">
-                <li>
-                  <a class="dropdown-item" href={base_url("/research/ITS4US/")}>ITS4US</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href={base_url("/deployment/V2X/")}>Vehicle-to-Everything</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="" style="color:gray; cursor: not-allowed;">V2X Accelerators (coming soon)</a>
-                </li>
-                <li>
-                  <a class="dropdown-item externalLink" href="https://its.dot.gov/csai/">Complete Streets Artificial Intelligence (CSAI) Initiative</a>
-                </li>
-                <li>
-                  <a class="dropdown-item externalLink" href="https://www.its.dot.gov/pilots/">Connected Vehicle Pilot Deployment (CVPD)</a>
-                </li>
-                <li>
-                  <a class="dropdown-item externalLink" href="https://www.itskrs.its.dot.gov/decision-support/infographic/atcmtd-grant-program">ATTAIN/ATCMTD</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a class="dropdown-item" href="">Automation Program</a>
-            </li>
-            <li class="dropend">
-              <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Emerging and Enabling Technologies Program</a>
-              <ul class="dropdown-menu shadow">
-                <li>
-                  <a class="dropdown-item" href="" style="color:gray; cursor: not-allowed;">5.9 GHz Spectrum (coming soon)</a>
-                </li>
-                <li>
-                  <a class="dropdown-item externalLink" href="https://its.dot.gov/isc/" target="_blank" rel="noopener noreferrer">Intersection Safety Challenge</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="" style="color:gray; cursor: not-allowed;">Digital Infrastructure (coming soon)</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="" style="color:gray; cursor: not-allowed;">Environment and Climate Change (coming soon)</a>
-                </li>
-                <li>
-                  <a class="dropdown-item externalLink" href="research_areas/cybersecurity/index.htm" target="_blank">ITS Cybersecurity Research</a>
-                </li>
-              </ul>
-            </li>
-            <li class="dropend">
-              <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Research Program Archive</a>
-              <ul class="dropdown-menu shadow">
-                <li>
-                  <a class="dropdown-item" href="">AERIS</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="">ATTRI</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="">MOD</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="">V2I</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <ul class="navbar-nav mr-auto mb-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link py-3 px-4 dropdown-toggle" href="/" data-bs-toggle="dropdown" data-bs-auto-close="outside">News & Info</a>
-            <ul class="dropdown-menu mt-0 shadow">
-              <li><a class="dropdown-item" href={base_url("/news-info/news/")}>Latest News from ITS JPO</a></li>
-              <li><a class="dropdown-item" href={base_url("/news-info/blog/")}>ITS JPO Director's Blog</a></li>
-              <li><a class="dropdown-item" href={base_url("/news-info/fact-sheet/")}>ITS Research Fact Sheets</a></li>
-              <li><a class="dropdown-item" href={base_url("/news-info/infographics/")}>Infographics</a></li>
-              <li><a class="dropdown-item" href={base_url("/news-info/video/")}>Videos</a></li>
-              <li><a class="dropdown-item" href={base_url("/news-info/image-library/")}>Image Library</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="navbar-nav mr-auto mb-lg-0">
-          <!-- Multilevel dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link py-3 px-4 dropdown-toggle" href="/" data-bs-toggle="dropdown" data-bs-auto-close="outside">Resources/Technical Assistance</a>
-            <ul class="dropdown-menu mt-0 shadow">
-              <li class="dropend">
-                <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Training</a>
-                <ul class="dropdown-menu shadow">
-                  <li>
-                    <a class="dropdown-item" href="">ITS JPO Staff Listing</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="">Join our Mailing List</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="">ITS Specialists in Field Offices</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="dropdown-item" href="">Smart Community Resource Center</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="">National Transportation Library</a>
-              </li>
-              <li class="dropend">
-                <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Accelerating ITS Deployment</a>
-                <ul class="dropdown-menu shadow">
-                  <li>
-                    <a class="dropdown-item" href="">Deployment Evaluation</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="">Architecture and Standards</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="">ITS Data</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="">Analysis Modeling and Simulation</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <!-- End Multilevel dropdown -->
-          </li>
-        </ul>
-      </ul>
-    </div>
   </div>
 </nav>
