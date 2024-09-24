@@ -16,6 +16,9 @@ export type ChildNavigationItem = {
  */
 export type NavigationItem = ChildNavigationItem & { pages: ChildNavigationItem[] }
 
+/**
+ * Navigation Items contains all main menu and sidebar items to display on the site
+ */
 export const navigation: NavigationItem[] = [
   {
     name: 'About ITS JPO',
@@ -92,7 +95,13 @@ export const navigation: NavigationItem[] = [
       { name: 'ITS Deployment Statistics', url: 'https://www.its.dot.gov/pilots/events.htm', isExternal: true },
       { name: 'Security Credential Management System (SCMS)', url: '/resources/SCMS' },
       { name: 'Architecture, Standards, and Cybersecurity (ASC)', url: '/resources/asc', pages: [
-        { name: "ASC Home", url: "/asc"}
+        { name: "ASC Home", url: "/resources/asc" },
+        { name: "ITS Standards", url: "/resources/asc/standards" },
+        { name: "ITS Reference Architecture", url: "/resources/asc/reference-architecture" },
+        { name: "ITS Cybersecurity", url: "/resources/asc/cybersecurity" },
+        { name: "Enabling Legislation & Policy", url: "/resources/asc/legislation-and-policy" },
+        { name: "Resources and Tools", url: "/resources/asc/resources-and-tools" },
+        { name: "Contacts", url: "/resources/asc/contacts" }
       ]}
     ]
   },
@@ -106,3 +115,35 @@ export const navigation: NavigationItem[] = [
     ]
   },
 ]
+
+/**
+ * Removes the trailing slash if it exists and trims the base path from the path name if it exists
+ * @param pathname as string (Astro.url.pathname)
+ * @returns 
+ */
+export function getTrimmedPathname(pathname: string): string {
+  const path = pathname.endsWith("/") ? pathname.slice(0, pathname.length - 1) : pathname;
+  const basePath = import.meta.env.BASE_URL;
+  const trimmedPath = basePath !== "/" ? path.replace(basePath, "") : path;
+  return trimmedPath;
+}
+
+export function findNavigationItem(pathname: string): NavigationItem | ChildNavigationItem | undefined {
+  const trimmedPathname = getTrimmedPathname(pathname);
+
+  // Find the parent section--if it doesn't exist, then there's no matching navigation item
+  const section = navigation.find(section => trimmedPathname.startsWith(section.url));
+  if (!section) return undefined;
+
+  // While the current navigation item has children and there is no exact match found, go down the tree
+  let navigationItem: NavigationItem | ChildNavigationItem = section;
+  while (navigationItem) {
+    // If it's an exact match, return the current item from the function
+    if (navigationItem.url === trimmedPathname) return navigationItem;
+    
+    // If there are child pages, then look through them to see if there's one that matches
+    if (!navigationItem.pages) return undefined;
+
+    
+  }
+}

@@ -1,41 +1,62 @@
 ---
 // Page Layout used for pages with sidebars and other complex navigation
+import Banner from '../components/Banner.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Tabs from '../components/Tabs.astro';
-import { navigation } from '../lib/navigation';
+import base_url from '../lib/base_url';
+import { type ChildNavigationItem, getTrimmedPathname, navigation, type NavigationItem } from '../lib/navigation';
 import BaseLayout from './BaseLayout.astro';
 
 interface Props {
 	title: string;
+  bannerClass?: string;
 }
 
-const { title } = Astro.props;
+const { title, bannerClass } = Astro.props;
 
-const pathname = new URL(Astro.request.url).pathname;
-const currentSection = navigation.find(page => pathname.includes(page.url));
-const currentItem = currentSection?.pages.find(page => pathname.includes(page.url))
+const getTrimmedPath = (path: string): string => path.replaceAll("/", "");
+
+const currentPath = getTrimmedPath(Astro.url.pathname);
+
+const isActive = (item: NavigationItem | ChildNavigationItem): boolean => {
+  if (item.isExternal) return false;
+  const trimmedPath = getTrimmedPath(base_url(item.url));
+  return currentPath.startsWith(trimmedPath);
+}
+
+const isActiveSubpath = (item: ChildNavigationItem): boolean => {
+  if (item.isExternal) return false;
+  const trimmedPath = getTrimmedPath(base_url(item.url));
+  return currentPath === trimmedPath;
+}
+
+const activeSection: NavigationItem | undefined = navigation.find(section => isActive(section));
+const activePage: ChildNavigationItem | undefined = activeSection?.pages.find(page => isActive(page));
+const activeSubpage: ChildNavigationItem | undefined = activePage?.pages?.find(subpage => isActiveSubpath(subpage));
+
 ---
 <BaseLayout title={title}>
+  <Banner className={bannerClass}>
+    <slot name="banner" title="banner"/>
+  </Banner>
   <div class="container-fluid h-100 bodyWrap">
     <div class="row h-100">
       <aside class="col-12 col-md-3 p-3 bg-light">
-        {currentSection && <Sidebar items={currentSection.pages} currentItem={currentItem}/>}
+        {activeSection && <Sidebar items={activeSection.pages} currentItem={activePage}/>}
       </aside>
       <main class="col-9 MainContent">
-        {currentItem?.pages ? (
+        {activePage?.pages ? (
           <div class="row" style="padding-bottom: 20px; margin-bottom: 30px; border-bottom-style: solid; border-block-width: 1px; border-color: gainsboro">
             <div class="container-fluid">
-              <Tabs items={currentItem.pages}/>
+              <Tabs items={activePage.pages} currentItem={activeSubpage}/>
               <slot/>
             </div>
           </div>
         ) : (
           <slot/>
         )}
-        
-        
       </main>
     </div>
   </div>
-  
+  <slot name="footer" title="footer"/>
 </BaseLayout>

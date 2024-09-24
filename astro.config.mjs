@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  // If hosting on a subdomain, set the base here such as /itsjpo, /demo, etc. 
+  // If hosting on a subdomain, set the base here such as /itsjpo, /demo, etc. Otherwise set to "" or "/"
   base: '/itsjpo',
   output: 'static',
 });

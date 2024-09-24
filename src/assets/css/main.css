@@ -521,13 +521,13 @@ Footer {
     }
 
 .carousel-control-prev-icon {
-    background-image: url('../images/rotatorbanner/Carousel_Indicator_Left-01.svg');
+    background-image: url('/public/assets/images/rotatorbanner/Carousel_Indicator_Left-01.svg');
     height:30px;
     width:30px;
 }
 
 .carousel-control-next-icon {
-    background-image: url('../images/rotatorbanner/Carousel_Indicator_Right-01.svg');
+    background-image: url('/public/assets/images/rotatorbanner/Carousel_Indicator_Right-01.svg');
     height:30px;
     width:30px;
 }
@@ -550,48 +550,48 @@ Footer {
 }
 
 .Carousel_Slide1 {
-    background-image: url('../images/rotatorbanner/Group 1704.png');
+    background-image: url('/public/images/rotatorbanner/Group 1704.png');
     background-size:cover;
     min-height:340px;
 }
 .Carousel_Slide2 {
-    background-image: url('../images/rotatorbanner/ITSJPO_30thBanners1.png');
+    background-image: url('/public/images/rotatorbanner/ITSJPO_30thBanners1.png');
     background-size:cover;
     min-height:340px;
 }
 .Carousel_Slide3 {
-    background-image: url('../images/rotatorbanner/banner_StratPlanBanner2020.png');
+    background-image: url('/public/images/rotatorbanner/banner_StratPlanBanner2020.png');
     background-size:cover;
     min-height:340px;
 }
 .Carousel_Slide4 {
-    background-image: url('../images/rotatorbanner/ITSJPO_WebBanner_SmartCities.png');
+    background-image: url('/public/images/rotatorbanner/ITSJPO_WebBanner_SmartCities.png');
     background-size:cover;
     min-height:340px;
 }
 .Carousel_Slide5 {
-    background-image: url('../images/rotatorbanner/ITSJPO_Video_Rotator_Banner.png');
+    background-image: url('/public/images/rotatorbanner/ITSJPO_Video_Rotator_Banner.png');
     background-size:cover;
     min-height:340px;
 }
 .Carousel_Slide6 {
-    background-image: url('../images/rotatorbanner/ITS4US_banner.jpg');
+    background-image: url('/public/images/rotatorbanner/ITS4US_banner.jpg');
     background-size:cover;
     min-height:340px;
 }
 .Carousel_Slide7 {
-    background-image: url('../images/rotatorbanner/ITS_WebBanner_v4_080719_PCB.png');
+    background-image: url('/public/images/rotatorbanner/ITS_WebBanner_v4_080719_PCB.png');
     background-size:cover;
     min-height:340px;
 }
 .Carousel_Slide8 {
-    background-image: url('../images/rotatorbanner/ITSJPO_DeploymentEvaluation_banner.png');
+    background-image: url('/public/images/rotatorbanner/ITSJPO_DeploymentEvaluation_banner.png');
     background-size:cover;
     min-height:340px;
 }
 
 .Carousel_Slide9 {
-    background-image: url('../images/rotatorbanner/ISC_ITSJPO_Rotating Banner_071224.png');
+    background-image: url('/public/images/rotatorbanner/ISC_ITSJPO_Rotating Banner_071224.png');
     background-size:cover;
     min-height:340px;
 }

@@ -1,0 +1,370 @@
+---
+import StandardsHeading from "@/src/components/standards/StandardsHeading.astro";
+import StandardsLayout from "./_StandardsLayout.astro";
+import base_url from "@/src/lib/base_url";
+
+---
+<style>
+	.typography {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+		margin-bottom: 2rem;
+	}
+
+  @media (min-width: 500px) {
+    p {
+      margin-right: 0;
+    }
+  }
+	h3 {
+		margin-top: 2rem;
+	}
+	h4 {
+		margin-top: 1rem;
+	}
+</style>
+<StandardsLayout title="Resources and Tools">
+	<StandardsHeading title="Resources and Tools for Architecture and Standards"/>
+	<div class="typography">
+		<p>General area for tools and resources not available elsewhere</p>
+		<h3>Technical Assistance</h3>
+		<p>
+			For technical assistance with ITS Standards, contact any of the following:
+			<ul>
+				<li>
+					<a href="https://ops.fhwa.dot.gov/int_its_deployment/standards_imp/stdsteam.htm" target="_blank" rel="noopener noreferrer">The ITS Standards Field Support Team</a> for 
+					standards related on-call technical assistance
+				</li>
+				<li>
+					<a href="https://ops.fhwa.dot.gov/int_its_deployment/team.htm" target="_blank" rel="noopener noreferrer">Operations Deployment Team</a> provides 
+					ITS and standards support to agencies on a regional basis
+				</li>
+			</ul>
+		</p>
+		<p>
+			For technical assistance with cybersecurity, 
+			<a href="https://its.dot.gov/research_areas/cybersecurity/tools.htm" target="_blank" rel="noopener noreferrer">
+				USDOT ITS Cybersecurity Research - Tools and Resources
+			</a>
+		</p>
+		<h3>Publications</h3>
+		<p>
+			<em>
+				All resources are free of charge unless otherwise indicated.
+			</em>
+		</p>
+		<h4>
+			<a href="https://www.standards.its.dot.gov/DeploymentResources/BriefStroll" target="_blank" rel="noopener noreferrer">
+				ITS Standards: A Brief Stroll through the Different Document Types
+			</a>
+		</h4>
+		<p>
+			ITS standards are developed and published by standards development organizations (SDO) that use different terms to
+			describe their standards documents. The purpose of this paper is to describe the document types that are collectively
+			known as "Intelligent Transportation Systems (ITS) Standards." The source of information for this document includes
+			individual SDO manuals or Internet home pages.
+		</p>
+		<h4>
+			<a href={base_url("/news-info/fact-sheet")}>
+				ITS Standards Fact Sheets
+			</a>
+		</h4>
+		<p>
+			ITS Standards Fact Sheets are concise, plain English descriptions of ITS standards. Fact Sheet can help you understand and
+			deploy standards-based ITS.
+		</p>
+		<h4>
+			ITS Standards Advisories
+		</h4>
+		<p>
+			ITS Standards Advisories provide the ITS transportation community with information and guidance on the consideration
+			and use of ITS standards.
+			<ul>
+				<li>
+					<a href="https://www.standards.its.dot.gov/Content/documents/advisories/ESS_10-13.aspx" target="_blank" rel="noopener noreferrer">
+						Environmental Sensor Station (ESS) Standard Advisory
+					</a>
+				</li>
+				<li>
+					<a href="https://www.standards.its.dot.gov/Content/documents/advisories/TMDD_2013.aspx" target="_blank" rel="noopener noreferrer">
+						Traffic Management Data Dictionary (TMDD) Advisory
+					</a>
+				</li>
+			</ul>
+		</p>
+		<h4>
+			<a href="https://www.ntcip.org/document-numbers-and-status/" target="_blank" rel="noopener noreferrer">
+				NTCIP Guide
+			</a>
+		</h4>
+		<p>
+			The purpose of this guide is to assist decision-makers, planners, specification writers, and implementers to understand
+			the various NTCIP standards documents and how to use them, as well as the overall motivations behind the use of NTCIP.
+			The latest version of the document is available from the NTCIP on-line library.
+		</p>
+		<h4>TMDD Guide</h4>
+		<p>
+			The purpose of the TMDD Guide is to assist decision makers and practitioners to generally understand the nature, role,
+			and benefits of using the Traffic Management Information Standards. To do that the Guide has the following five specific
+			purposes:
+			<ul>
+				<li>
+					Provide a general awareness to decision makers and managers about the TMDD & MS/ETMCC Standards and serve as a
+					basis for technology transfer and training,
+				</li>
+				<li>
+					Improve understanding to support better resource allocation decision-making,
+				</li>
+				<li>
+					Help identify requirements for new systems,
+				</li>
+				<li>
+					Give a context to system design, and
+				</li>
+				<li>
+					Develop insight for system implementation and operation.
+				</li>
+			</ul>
+		</p>
+		<h3>Tools</h3>
+		<h4>Test Procedure Generator (TPG)</h4>
+		<p>
+			TPG v3 is now available. The TPG automates the development of test procedures for NTCIP Standards. 
+			<br/>
+			<strong>
+				USDOT Announces the Release of the TPG v3 Software Tool
+			</strong>
+		</p>
+		<p>
+			<>TPG v3 updates include:</>
+			<ul>
+				<li>
+					Compatibility with Windows 7 and Windows 10.
+				</li>
+				<li>
+					Compatibility with protected MS Word version of standards available from the Standards Development Organizations.
+					The Word versions of 1203, 1209 and 1211 are now posted online, with more standards being added in the near
+					future. The documents can be found here: https://www.ntcip.org/library/documents/.
+				</li>
+				<li>
+					Support for deprecated and obsolete requirements, dialogs, and objects found in the standard.
+				</li>
+				<li>
+					Inclusion of XML Schema documentation for the TPG produced test procedures in XML format.
+				</li>
+				<li>
+					Compatibility with Microsoft Office 2010.
+				</li>
+				<li>
+					Minor bug fixes.
+				</li>
+			</ul>
+		</p>
+		<p>
+			USDOT is pleased to provide the ITS Standards development and deployment communities with the updated tool. The
+			TPG provides users with two important capabilities for the National Transportation Communications for ITS Protocol
+			(NTCIP) Center-to-Field (C2F) Device Interface Standards with Systems Engineering Content and follow NTCIP 8002 Annex
+			B1 formatting. These capabilities include:
+			<ul>
+				<li>
+					Guiding the development of test procedures for selected requirements in NTCIP C2F standards.
+				</li>
+				<li>
+					Importing draft standards from NTCIP C2F standards developers into the TPG to see a report of any non-compliance to
+					NTCIP 8002 Annex B1. The report provides any breakages between requirement and design detail.
+				</li>
+			</ul>
+		</p>
+		<p>
+			Using the TPG tool will reduce developmental risks, effort, and the cost of developing standards and test procedures,
+			which in turn will encourage the deployment of interoperable NTCIP C2F systems. Agencies can use the test procedures
+			generated by the TPG to help determine an implementation’s conformance to the NTCIP C2F Device Interface Standards.
+			If extensions to the standard have been added for the project, the test procedures generated by the TPG can be used to
+			help determine compliance to a project specification.
+		</p>
+		<p>
+			<strong>Please note this download for TPGv3 is compatible with Windows 7 or Windows 10 and Microsoft Office 2010 (32 bit)
+			only</strong>. The 64-bit version of Microsoft Office has known compatibility issues, for more information please see the user
+			manual.
+		</p>
+		<p>
+			<a href="https://www.standards.its.dot.gov/DeploymentResources/TPGdownload" target="_blank" rel="noopener noreferrer">
+				Download
+			</a>
+			the installation files and user manual for TPG v3.
+		</p>
+		<h4>C2C RI Tool</h4>
+		<p>
+			The ITS C2C RI Tool, Version 3.2, is now available along with the source code and systems engineering documentation on
+			the USDOT ITS JPO Open-Source Application Development Portal (<a href="https://github.com/OSADP/C2C-RI" target="_blank" rel="noopener noreferrer">OSADP/C2C-RI</a>). 
+			This tool supports efficient system deployment using C2C communications by providing a way to verify conformance to C2C standards.
+		</p>
+		<p>
+			The C2C interface may be between any two centers that need to coordinate regionally or locally regarding corridor or
+			arterial management, incident mitigation, or event management (e.g., two traffic management centers). Specifically, the
+			C2C RI tool supports conformance testing for:
+			<ul>
+				<li>
+					<a href="https://www.ite.org/technical-resources/standards/tmdd/3-1/" target="_blank" rel="noopener noreferrer">
+						Traffic Management Data Dictionary (TMDD) v3.1 standard
+					</a>
+				</li>
+				<li>
+					<a href="https://www.ntcip.org/wp-content/uploads/2018/11/NTCIP2306v0169p-1.pdf" target="_blank" rel="noopener noreferrer">
+						National Transportation Communications for ITS Protocol (NTCIP) 2306 v01.69 Application Profile for XML Message
+						Encoding and Transport in ITS C2C Communications standard.
+					</a>
+				</li>
+			</ul>
+		</p>
+		<p>
+			The tool conducts conformance testing of the C2C interface of the system under test (SUT) in two different ways. First, it
+			examines the interface description document to see if it conforms to the two standards mentioned above. Then, the RI
+			tool tests the interface by communicating with the SUT. This communication consists of dialogs between the tool and the
+			SUT. The tool can test a wide range of expected and unexpected (invalid) behaviors since it controls the sequence and
+			contents of the protocol messages sent to the SUT. The tool implements test dialogs based on the user’s selection of
+			needs and requirements.
+		</p>
+		<p>
+			The C2C RI tool can reduce developmental risks, effort, and costs. The tool provides consistent interpretations of the
+			implemented standard, which in turn facilitate the deployment of interoperable NTCIP C2C systems.
+			Version 3.2 of the C2 CRI tool includes the following new features and functional improvements:
+			<ul>
+				<li>
+					Speed up entity emulation initialization
+				</li>
+				<li>
+					Changes to Device-id propagates across all data types
+				</li>
+				<li>
+					Additional useful real-time Test Log information
+				</li>
+				<li>
+					More description on errors encountered during conformance testing
+				</li>
+				<li>
+					Show logged messages being transferred without having to exit the tool
+				</li>
+				<li>
+					Provides an option to allow additional verification test steps to continue after one fails.
+				</li>
+			</ul>
+		</p>
+		<p>
+			For C2C RI support please contact <a href="mailto:CAVSupportServices@dot.gov">CAVSupportServices@dot.gov</a>
+			<br/>
+			To download the installation files and user manual for C2C RI tool (included in the installer),
+			visit: <a href="https://www.standards.its.dot.gov/DeploymentResources/C2CRIdownload" target="_blank" rel="noopener noreferrer">https://www.standards.its.dot.gov/DeploymentResources/C2CRIdownload</a>.
+			<br/>
+			For more information on the TMDD v3.1 standard, visit: <a href="https://www.ite.org/technical-resources/standards/tmdd/3-1/" target="_blank" rel="noopener noreferrer">https://www.ite.org/technical-resources/standards/tmdd/3-1/</a>.
+			<br/>
+			For more information on the NTCIP 2306 v01.69 Application Profile for XML Message Encoding and Transport in ITS C2C
+			Communications standard, visit: <a href="https://www.standards.its.dot.gov/Standard/421" target="_blank" rel="noopener noreferrer">https://www.standards.its.dot.gov/Standard/421</a>.
+			<br/>
+			For more information on the ITS JPO and current sponsored programs, please visit: <a href="www.its.dot.gov" target="_blank" rel="noopener noreferrer">www.its.dot.gov</a>.
+			<br/>
+			Please <a href="https://www.standards.its.dot.gov/DeploymentResources/C2CRIdownload" target="_blank" rel="noopener noreferrer">click here</a> to download the installation files and user manual for C2C RI Tool (included in the installer).
+		</p>
+		<h3>Deployment Resources</h3>
+		<p>
+			<a href="https://www.arc-it.net" target="_blank" rel="noopener noreferrer">
+				<strong>
+					Architecture Reference for Cooperative & Intelligent Transportation (ARC-IT)
+				</strong>
+			</a>
+			<br/>
+			Just as an architect’s plans lay out the
+			design of a house, ARC-IT provides a master blueprint for building an integrated, multimodal, intelligent transportation
+			system. ARC-IT defines the framework for integrated ITS deployments that meet local needs. The Architecture helps state
+			and local decision-makers plan smarter and buy smarter, ultimately saving time and money.
+		</p>
+		<p>
+			<a href="https://www.arc-it.net/html/resources/setit.html" target="_blank" rel="noopener noreferrer">
+				<strong>
+					Systems Engineering Tool for Intelligent Transportation (SET-IT)
+				</strong>
+			</a>
+			<br/>
+			SET-IT provides a single software tool that integrates
+			drawing and database tools with the Architecture Reference for Cooperative & Intelligent Transportation (ARC-IT) so that
+			users can develop project architectures for pilots, test beds, and early deployments.
+		</p>
+		<p>
+			<a href="https://www.arc-it.net/html/resources/radit.html" target="_blank" rel="noopener noreferrer">
+				<strong>
+					Regional Architecture Development Tool for Intelligent Transportation (RAD-IT)
+				</strong>
+			</a>
+			<br/>
+			RAD-IT is a software application that
+			supports development of regional and project ITS architectures using the Architecture Reference for Cooperative &
+			Intelligent Transportation (ARC-IT) as a starting point.
+		</p>
+		<p>
+			<a href="https://ops.fhwa.dot.gov/its_arch_imp/index.htm" target="_blank" rel="noopener noreferrer">
+				<strong>
+					The ITS Architecture Implementation Program
+				</strong>
+			</a>
+			<br/>
+			The Office of Operations, Federal Highway Administration (FHWA),
+			offers ITS architecture implementation 
+			<a href="https://ops.fhwa.dot.gov/its_arch_imp/resources.htm" target="_blank" rel="noopener noreferrer">resources</a>, 
+			<a href="https://ops.fhwa.dot.gov/its_arch_imp/training.htm" target="_blank" rel="noopener noreferrer">training</a>, 
+			<a href="https://ops.fhwa.dot.gov/its_arch_imp/guidance.htm" target="_blank" rel="noopener noreferrer">guidance</a>, 
+			and <a href="https://ops.fhwa.dot.gov/its_arch_imp/index.htm" target="_blank" rel="noopener noreferrer">other information</a> through the ITS Architecture
+			Implementation Program. The ITS Architecture Implementation Program is one of six program areas within the Office of Operations’ 
+			<a href="https://ops.fhwa.dot.gov/int_its_deployment/index.htm" target="_blank" rel="noopener noreferrer">Facilitating Integrated ITS Deployment</a> Program.
+		</p>
+		<h3>Training</h3>
+		<h4>Architecture Reference for Cooperative & Intelligent Transportation (ARC-IT) Training</h4>
+		<p>
+			The U.S. Department of Transportation (USDOT) offers 
+			<a href="https://www.arc-it.net/html/resources/arcitwebtraining.html" target="_blank" rel="noopener noreferrer">training material</a> accompanying its 
+			<a href="https://www.arc-it.net" target="_blank" rel="noopener noreferrer">Architecture Reference for Cooperative and Intelligent Transportation (ARC-IT)</a>, 
+			the <a href="https://www.arc-it.net/html/resources/radit.html" target="_blank" rel="noopener noreferrer">Regional Architecture Development for Intelligent Transportation (RAD-IT)</a> and 
+			the <a href="https://www.arc-it.net/html/resources/setit.html" target="_blank" rel="noopener noreferrer">Systems Engineering Tool for Intelligent Transportation (SET-IT)</a>. 
+			RAD-IT supports development of regional and project ITS architectures using ARC-IT as a starting point. SET-IT integrates drawing and
+			database tools with ARC-IT so that users can develop detailed ITS project architectures. ARC-IT and the accompanying tool
+			sets help implementers develop architectures to effectively meet their needs and facilitate efficient, secure, and
+			interoperable ITS deployments. The online training courses are available directly from the ARC-IT website, providing
+			students with an understanding of how to navigate and use 
+			<a href="https://www.arc-it.net/html/resources/arcitwebtraining.html" target="_blank" rel="noopener noreferrer">ARC-IT</a>, 
+			use the software tools <a href="https://www.arc-it.net/html/resources/raditwebtraining.html" target="_blank" rel="noopener noreferrer">RAD-IT</a> & 
+			<a href="https://www.arc-it.net/html/resources/setitwebtraining.html" target="_blank" rel="noopener noreferrer">SET-IT</a>, and how to 
+			<a href="https://www.arc-it.net/html/resources/useandmainttraining.html" target="_blank" rel="noopener noreferrer">Use & Maintain</a> a 
+			regional ITS architecture.
+		</p>
+		<h4>ITS Standards Training Modules</h4>
+		<p>
+			<a href="https://www.its.dot.gov/pcb/stds_training.aspx" target="_blank" rel="noopener noreferrer">ITS Standards Training Modules</a> are 
+			aimed at practitioners in state and local highway agencies and transit agencies who
+			seek the skills needed to procure, implement, and operate ITS standards-based devices and equipment.
+			<ul>
+				<li>
+					The <strong>60-module training series</strong> is for practitioners in state and local highway agencies and transit agencies who seek
+					the skills needed to procure, test, implement, and operate standards-based ITS systems and devices. Consultants,
+					system designers, integrators, and testers will also find the training informative.
+				</li>
+				<li>
+					The <strong>26-module transit training series</strong> focuses exclusively on standards used in transit applications. Similar to the 60-
+					modules series, the transit modules give practitioners the skills to help them effectively procure and utilize standards
+					used in transit systems and devices.
+				</li>
+			</ul>
+		</p>
+		<h3>Webmaster</h3>
+		<p>
+			If you have questions or comments about the website, or if you have ideas about new resources or deployment tools you
+			would like available on the website, contact the ITS Standards Program webmaster at <a href="mailto:standardsprogram@dot.gov">standardsprogram@dot.gov</a>.
+		</p>
+		<h3>Benefit/Cost</h3>
+		<p>Coming soon...</p>
+		<h3>Evaluation</h3>
+		<p>Coming soon...</p>
+	</div>
+</StandardsLayout>
+
+<style>
+
+</style>

@@ -1,4 +1,5 @@
 ---
+import base_url from '../lib/base_url';
 import type { ChildNavigationItem, NavigationItem } from '../lib/navigation';
 
 interface Props {
@@ -8,20 +9,6 @@ interface Props {
 
 const { items, currentItem } = Astro.props;
 ---
-
-<script>
-  var currentUrl = window.location.href;
-  const sidenav = document.querySelector(".subnavITS");
-  var links = sidenav!.querySelectorAll("a");
-  links.forEach(function (link) {
-    if (currentUrl.endsWith(link.href)) {
-      link.classList.add("subnavactive");
-      if (link.parentElement!.className.includes("dropdown") ) {
-        link.parentElement!.parentElement!.classList.add("subnavactive");
-}
-    }
-  });
-</script>
 
 
 <style>
@@ -74,7 +61,11 @@ const { items, currentItem } = Astro.props;
       <div class="collapse navbar-collapse" id="subnavbar">
         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
           {items.map(page => (
-              <li class="nav-item"><a class="nav-link pl-3" href={page.url}>{page.name}</a></li>
+              <li class="nav-item">
+                <a class:list={["nav-link pl-3", {"subnavactive": currentItem?.name === page.name}]} href={base_url(page.url)}>
+                  {page.name}
+                </a>
+              </li>
             ))}
         </ul>
       </div>

@@ -7,6 +7,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["env.d.ts", "**/*.ts"],
+  "include": ["env.d.ts", "**/*.ts", "**/*.astro"],
   "exclude": ["node_modules"]
 }

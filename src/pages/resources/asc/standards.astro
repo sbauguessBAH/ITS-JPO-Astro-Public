@@ -1,0 +1,157 @@
+---
+import StandardsHeading from '@/src/components/standards/StandardsHeading.astro';
+import PageLayout from '@/src/layouts/PageLayout.astro';
+import standardsImage from "@/src/assets/images/asc/Standards Diagram.png";
+import { Image } from 'astro:assets';
+import base_url from '@/src/lib/base_url';
+import StandardsLayout from './_StandardsLayout.astro';
+---
+<style>
+	.typography {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+		margin-bottom: 2rem;
+	}
+
+  @media (min-width: 500px) {
+    p {
+      margin-right: 0;
+    }
+  }
+</style>
+
+<StandardsLayout title="ITS Standards">
+	<StandardsHeading title="About ITS Standards Program"/>
+	<div class="typography">
+		<p>
+			The U.S. DOT established the ITS Standards Program in 1996 to encourage the widespread use of ITS technologies in our
+			Nation's surface transportation systems. ITS standards exist within technologies deployed under the framework of the
+			<a href={base_url("/resources/asc/reference-architecture")}>National ITS Reference Architecture, also known as "ARC-IT"</a> and 
+			define how system components interconnect and interact. Because ITS standards are based on open, non-proprietary technology, 
+			their use can facilitate the deployment of interoperable ITS systems and make it easier for state and local ITS deployers 
+			to develop and deploy regionally integrated transportation systems.
+		</p>
+		<p>
+			The ITS Standards Program is teaming with standards development organizations (SDOs) and industry groups to facilitate
+			the development and testing of consensus-based standards, protocols, and specifications to enable the exchange and
+			interpretation of data; while working with state and local highway and transit agencies on standards-based ITS
+			implementation strategies.
+		</p>
+		<Image 
+			src={standardsImage} 
+			alt="Diagram showing a complex framework of Connected Vehicle Standards with connections to Infrastructure-related standards" 
+			class="img-fluid"
+		/>
+		<h3 class="mt-4">INTEROPERABILITY</h3>
+		<p>
+			The ability of different ITS devices and components to exchange and interpret data directly through a common
+			communications interface, and to use the exchanged data to operate together effectively, is called <strong><em>interoperability</em></strong>.
+		</p>
+		<p>
+			Interoperability is key to achieving the full potential of ITS. Seamless data exchange would allow an emergency services
+			vehicle to notify a traffic management center to trigger a change in the timing of the traffic signals on the path to a
+			hospital, in order to assist the responding ambulance. A standards-based approach to integration helps to facilitate the
+			exchange of transportation data as well as more easily accommodate future equipment replacements, systems upgrades,
+			and system expansions.
+		</p>
+	</div>
+	<StandardsHeading title="Application of Standards"/>
+	<div class="typography">
+		<p>
+			Standards can be found on each SDO’s website in their standards database.
+			<ul>
+				<li>
+					<strong>AASHTO Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://store.transportation.org/">AASHTO Store: Browse Transportation Publications and Online Training</a>
+				</li>
+				<li>
+					<strong>ANSI Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://webstore.ansi.org/industry/automotive/electric?_ga=2.173952485.718055947.1651151983-1116827362.1651151983&_gl=1*15264xb*_gcl_au*MTkyMzYyMTU0MS4xNzIxNDIwMDU4">Electric Vehicles and Vehicle Electronics (ansi.org)</a>
+				</li>
+				<li>
+					<strong>APTA Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.apta.com/research-technical-resources/standards/">Standards - American Public Transportation Association (apta.com)</a>
+				</li>
+				<li>
+					<strong>ASTM Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.astm.org/products-services/standards-and-publications.html">Standards & Publications - Products & Services (astm.org)</a>
+				</li>
+				<li>
+					<strong>IEEE Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://standards.ieee.org/search/?q=Transportation&type=Standard">IEEE SA - Search</a>
+				</li>
+				<li>
+					<strong>ITE Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.ite.org/technical-resources/topics/standards/">Standards - Institute of Transportation Engineers (ite.org)</a>
+				</li>
+				<li>
+					<strong>NEMA Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.nema.org/standards/Index/0fc813b7-253f-4c8b-b02b-44ba665845cb/">Standards (nema.org)</a>
+				</li>
+				<li>
+					<strong>NTCIP Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.ntcip.org/document-numbers-and-status/">Documents | NTCIP</a>
+				</li>
+				<li>
+					<strong>SAE Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.sae.org/standards/development/ground-vehicle">Ground Vehicle - Standards Development - SAE International</a>
+				</li>
+			</ul>
+		</p>
+	</div>
+	<StandardsHeading title="What are Standards"/>
+	<div class="typography">
+		<p>
+			Standards define an architecture of interrelated systems that work together to deliver transportation services. An ITS
+			architecture defines how systems functionally operate and the interconnection of information exchanges that must take
+			place between these systems to accomplish transportation services. An architecture is functionally oriented and not
+			technology-specific which allows the architecture to remain effective over time. It defines "what must be done," not
+			"how it will be done.“
+		</p>
+		<p>
+			Most standards are voluntary, consensus-based, and open:
+			<ul>
+				<li>Voluntary, meaning their use is not mandated by law</li>
+				<li>Consensus-based, meaning that a published standard has attained general agreement through cooperation and
+					compromise in a process that is inclusive of all interested parties</li>
+				<li>Open, meaning that they are not proprietary and are available for anyone to use</li>
+			</ul>
+		</p>
+		<p>
+			The use of standards encourages industry growth by minimizing development costs, increasing compatibility and
+			interoperability, and increasing buyer and seller confidence in products. It is important to note that ITS standards are
+			not design standards: They do not specify specific products or designs to use. Instead, the use of standards
+			gives transportation agencies confidence that components from different manufacturers will work together, without
+			removing the incentive for designers and manufacturers to compete to provide products that are more efficient or offer
+			more features.
+		</p>
+	</div>
+	<StandardsHeading title="Standards Development Activities"/>
+	<div class="typography">
+		<p>
+			The ITS JPO undertakes a range of activities to support standards development and use:
+			<ul>
+				<li>
+					<strong>Developing standards</strong> &mdash; through cooperative agreements with SDOs and organizations &mdash; for both existing ITS
+					technologies and ITS Standards Focus Areas. The program is also active in international efforts to harmonize ITS
+					standards and architecture to increase commonality of connected vehicle technologies across multiple regions.
+				</li>
+				<li>
+					<strong>Coordinate with SDOs</strong> to promote cooperation and achieve consensus-based standards, increasing interoperability
+					and adoption by deployers. Provide input when needed to inform the appropriate working groups in of
+					improvements, modifications, or changes needed in standards related to the demonstration, deployment, and testing
+					of the standards.
+				</li>
+				<li>
+					<strong>Testing standards</strong> in actual transportation settings (through field testing by state and local transportation agencies).
+				</li>
+				<li>
+					<strong>Providing technical assistance</strong> to state and local ITS deployers (through ITS Specialists at FHWA Resource Centers and
+					through the <a href="https://ops.fhwa.dot.gov/int_its_deployment/standards_imp/stdsteam.htm" rel="noopener noreferrer" target="_blank">ITS Field Support Team</a>.
+				</li>
+				<li>
+					<strong>Delivering ITS standards training</strong> and workshops through the ITS Professional Capacity Building Program and industry
+					partners.
+				</li>
+				<li>
+					<strong>Developing experience-based</strong> deployment guidance and tools such as lessons learned.
+				</li>
+				<li>
+					To request member/observer status in standard working groups (WG) please follow the links above and query the
+					WG POC specifically.
+				</li>
+			</ul>
+		</p>
+	</div>
+</StandardsLayout>

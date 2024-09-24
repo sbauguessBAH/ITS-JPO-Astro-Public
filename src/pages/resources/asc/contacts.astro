@@ -1,0 +1,74 @@
+---
+import StandardsHeading from "@/src/components/standards/StandardsHeading.astro";
+import StandardsLayout from "./_StandardsLayout.astro";
+
+---
+<style>
+	.typography {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+		margin-bottom: 2rem;
+	}
+
+  @media (min-width: 500px) {
+    p {
+      margin-right: 0;
+    }
+  }
+</style>
+<StandardsLayout title="ASC Contacts">
+	<StandardsHeading title="Contacts"/>
+	<div class="typography">
+		<h3>Webmaster</h3>
+		<p>
+			If you have questions or comments about the website, or if you have ideas about new resources or deployment tools you
+			would like available on the website, contact the ITS Standards Program webmaster at <a href="mailto:standardsprogram@dot.gov">standardsprogram@dot.gov</a>.
+		</p>
+		<h3>USDOT ITS Standards Contacts</h3>
+		<p>
+			<ul>
+				<li>
+					<strong><a href="mailto:Robert.Sheehan@dot.gov">Robert Sheehan</a>, P.E., PTOE</strong><br/>
+					Program Manager<br/>
+					Intelligent Transportation Systems (ITS)<br/>
+					Architecture, Standards, and Cybersecurity (ASC)<br/>
+					202-366-6817
+				</li>
+				<li>
+					<strong><a href="mailto:Raj.Wagley@dot.gov">Raj Wagley</a></strong><br/>
+					Senior Transportation Specialist<br/>
+					Federal Transit Administration (FTA)<br/>
+					U.S. Department of Transportation<br/>
+					202-366-5386
+				</li>
+				<li>
+					<strong><a href="mailto:Kingsley.Azubike@dot.gov">Kingsley Azubike</a></strong><br/>
+					Transportation Specialist/Systems Engineer<br/>
+					FHWA Office of Transportation Management<br/>
+					U.S. Department of Transportation<br/>
+					717-221-3701
+				</li>
+			</ul>
+		</p>
+		<h3>Technical Assistance</h3>
+		<p>
+			For technical assistance with ITS Standards, contact any of the following:
+			<ul>
+				<li>
+					<a 
+						href="https://ops.fhwa.dot.gov/int_its_deployment/standards_imp/stdsteam.htm" 
+						target="_blank" 
+						rel="noopener noreferrer"
+					>The ITS Standards Field Support Team</a> for standards related on-call technical assistance
+				</li>
+				<li>
+					<a
+						href="https://ops.fhwa.dot.gov/int_its_deployment/team.htm"
+						target="_blank" 
+						rel="noopener noreferrer"
+					>Operations Deployment Team</a> provides ITS and standards support to agencies on a regional basis
+				</li>
+			</ul>
+		</p>
+	</div>
+</StandardsLayout>

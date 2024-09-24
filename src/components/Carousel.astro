@@ -1,0 +1,44 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import base_url from "../lib/base_url";
+
+interface CarouselImage {
+  image: ImageMetadata;
+  alt: string;
+  path?: string;
+  isExternalLink?: boolean;
+}
+
+interface Props {
+  images: CarouselImage[]
+}
+
+const { images } = Astro.props;
+// if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "../assets/images/*.{jpeg,jpg,png,gif}"`);
+---
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-inner">
+    {images.map((image, index) => (
+      <div class:list={["carousel-item", {"active": index === 0}]}>
+            {/* <button class="Carousel_button_lg externalLink btnDark" onclick="window.open('scrc/index.html','_blank');">Visit the SCRC</button>  */}
+            <a href={image.path ? image.isExternalLink ? image.path : base_url(image.path) : ""}>
+              <img src={image.image.src} alt={image.alt} class="d-block w-100"/>
+            </a>
+      </div>
+    ))}
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <ol class="carousel-indicators">
+    {images.map((_, index) => (
+      <li data-target="#carouselExampleIndicators" data-slide-to={`${index}`} class:list={[{"active": index === 0}]}></li>
+    ))}
+  </ol>
+</div>

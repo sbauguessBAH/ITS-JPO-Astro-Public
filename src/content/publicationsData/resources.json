@@ -292,7 +292,11 @@
     "phase": 1,
     "date": "2021-03-02T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "user needs",
+      "requirements"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -456,7 +460,10 @@
     "phase": 1,
     "date": "2021-03-16T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "ConOps"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -618,16 +625,10 @@
     "date": "2021-07-21T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
-      "ITS4US",
-      "Complete Trip",
-      "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      "NEMT",
       "ConOps",
-      "Systems Engineering",
-      "User Needs",
-      "User Scenarios"
+      "HIRTA",
+      "ITS4US",
+      "Complete Trip"
     ],
     "links": [
       {
@@ -657,14 +658,10 @@
     "date": "2021-07-14T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
-      "Concept of Operations (ConOps)",
-      "Safe Trips in a Connected Transportation Network",
       "ITS4US",
-      "Complete Trip",
-      "Deployment",
-      "ITS",
-      "intelligent transportation systems",
-      ""
+      "ConOps",
+      "systems engineering",
+      "accessibility"
     ],
     "links": [
       {
@@ -694,12 +691,10 @@
     "date": "2021-07-20T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
+      "ConOps",
+      "HIRTA",
       "ITS4US",
-      "Complete Trip",
-      "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      ""
+      "Complete Trip"
     ],
     "links": [
       {
@@ -729,16 +724,9 @@
     "date": "2021-07-26T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
+      "ConOps",
       "ITS4US",
-      "Complete Trip",
-      "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      "Concept of Operations",
-      "Accessibility",
-      "Sidewalks",
-      "Navigation software",
-      "Data Standards"
+      "Complete Trip"
     ],
     "links": [
       {
@@ -768,10 +756,9 @@
     "date": "2021-08-04T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
+      "ITS4US",
       "Complete Trip",
-      "Self-Driving Shuttle",
-      "Open Trip Planner",
-      "Systems Integration"
+      "ConOps"
     ],
     "links": [
       {
@@ -800,7 +787,12 @@
     "phase": 1,
     "date": "2021-05-11T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "data",
+      "data management plan",
+      "accessibility"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -970,7 +962,12 @@
     "phase": 1,
     "date": "2021-05-04T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "ITS",
+      "safety",
+      "accessibility"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -1129,7 +1126,13 @@
     "phase": 1,
     "date": "2021-04-06T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "accessibility",
+      "ITS",
+      "performance measurement",
+      "evaluation"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -1299,12 +1302,7 @@
     "keywords": [
       "ITS4US",
       "Complete Trip",
-      "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      "Performance Measurement",
-      "Independent Evaluation",
-      "Data Management"
+      "PMESP"
     ],
     "links": [
       {
@@ -1329,11 +1327,9 @@
     "date": "2021-11-15T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
-      "Performance Measurement and Evaluation Support Plan (PMESP)",
-      "Safe Trips in a Connected Transportation Network (ST-CTN)",
+      "PMESP",
       "ITS4US",
-      "Complete Trip",
-      "Deployment"
+      "ITS"
     ],
     "links": [
       {
@@ -1359,16 +1355,8 @@
     "type": "Webinar",
     "keywords": [
       "ITS4US",
-      "Complete Trip",
-      "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      "California",
-      "Oregon",
-      "Washington",
-      "Data",
-      "Transit",
-      "GTFS"
+      "PMESP",
+      "Complete Trip"
     ],
     "links": [
       {
@@ -1394,16 +1382,8 @@
     "type": "Webinar",
     "keywords": [
       "ITS4US",
-      "Complete Trip",
-      "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      "Performance Measurement Plan",
-      "Evaluation Support Plan",
-      "Accessibility",
-      "Sidewalks",
-      "Navigation Software",
-      "Data Standards"
+      "PMESP",
+      "Complete Trips"
     ],
     "links": [
       {
@@ -1428,15 +1408,9 @@
     "date": "2021-11-09T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
-      "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      "Complete Trip",
-      "Self-Driving Shuttle",
-      "Open Trip Planner",
-      "Systems Integration",
-      "Performance Measurement",
-      "ITS4US."
+      "ITS4US",
+      "PMESP",
+      "Complete Trip"
     ],
     "links": [
       {
@@ -1460,7 +1434,11 @@
     "phase": 1,
     "date": "2021-06-22T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "System Requirements",
+      "SyRS",
+      "ITS4US"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -1496,7 +1474,8 @@
       "Intelligent Transportation Systems",
       "user scenarios",
       "needs",
-      "system Retrieving data. Wait a few seconds and try to cut or copy again."
+      "system requirements",
+      "traceability"
     ],
     "links": [
       {
@@ -1620,7 +1599,10 @@
     "phase": 1,
     "date": "2021-05-25T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "ETRA"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -1790,7 +1772,10 @@
     "phase": 1,
     "date": "2021-08-24T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "HUA"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -1945,7 +1930,12 @@
     "phase": 1,
     "date": "2021-08-31T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "Training",
+      "Education",
+      "ITS4US",
+      "ITS"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -2103,7 +2093,14 @@
     "phase": 1,
     "date": "2021-04-13T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "insitutional",
+      "finanical",
+      "partnership",
+      "ITS",
+      "accessibility"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -2262,7 +2259,10 @@
     "phase": 1,
     "date": "2021-09-28T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "Outreach",
+      "ITS4US"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -2422,7 +2422,12 @@
     "phase": 1,
     "date": "2021-09-23T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "SEMP",
+      "SE",
+      "ITS",
+      "ITS4US"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -2585,9 +2590,13 @@
     "awardee_deployment": "Program Level",
     "task_name": "Task 13: Integrated Complete Trip Deployment Plan",
     "phase": 1,
-    "date": "2022-11-16T00:00:00.000Z",
+    "date": "2021-11-16T00:00:00.000Z",
     "type": "Training Materials",
-    "keywords": [],
+    "keywords": [
+      "training",
+      "deployment",
+      "accessible transportation"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -2741,20 +2750,16 @@
   {
     "id": 117,
     "resource_title": "ICTDP Webinar 1",
-    "publication_code": "-",
+    "publication_code": null,
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
     "task_name": "Task 13: Integrated Complete Trip Deployment Plan",
     "phase": 1,
     "date": "2022-04-12T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
-      "ITS4US",
-      "Complete Trip",
-      "Deployment",
       "ITS",
-      "Intelligent Transportation Systems",
-      "participant training",
-      "stakeholder education"
+      "Webinar",
+      "Deployment Plan"
     ],
     "links": [
       {
@@ -2772,20 +2777,16 @@
   {
     "id": 118,
     "resource_title": "ICTDP Webinar 5",
-    "publication_code": "-",
+    "publication_code": null,
     "awardee_deployment": "Atlanta Regional Commission",
     "task_name": "Task 13: Integrated Complete Trip Deployment Plan",
     "phase": 1,
     "date": "2022-04-19T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
-      "ITS4US",
       "Complete Trip",
-      "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      "participant training",
-      "stakeholder education"
+      "mobility",
+      "ARC"
     ],
     "links": [
       {
@@ -2803,20 +2804,15 @@
   {
     "id": 119,
     "resource_title": "ICTDP Webinar 4",
-    "publication_code": "-",
+    "publication_code": null,
     "awardee_deployment": "California Association of Coordinated Transportation",
     "task_name": "Task 13: Integrated Complete Trip Deployment Plan",
     "phase": 1,
     "date": "2022-04-26T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
-      "ITS4US",
-      "Complete Trip",
-      "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      "participant training",
-      "stakeholder education"
+      "ICTDP",
+      "Complete Trip"
     ],
     "links": [
       {
@@ -2834,22 +2830,17 @@
   {
     "id": 120,
     "resource_title": "ICTDP Webinar 3",
-    "publication_code": "-",
+    "publication_code": null,
     "awardee_deployment": "University of Washington",
     "task_name": "Task 13: Integrated Complete Trip Deployment Plan",
     "phase": 1,
     "date": "2022-05-03T00:00:00.000Z",
     "type": "Webinar",
     "keywords": [
-      "ITS4US",
       "Complete Trip",
       "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      "Deployment Plan",
-      "Open Sidewalks",
-      "General Transit Feed Specification (GTFS)-Flex",
-      "GTFS-Pathways"
+      "Sidewalks",
+      "Open Data"
     ],
     "links": [
       {
@@ -2867,7 +2858,7 @@
   {
     "id": 121,
     "resource_title": "ICTDP Webinar 2",
-    "publication_code": "-",
+    "publication_code": null,
     "awardee_deployment": "ICF International, Inc.",
     "task_name": "Task 13: Integrated Complete Trip Deployment Plan",
     "phase": 1,
@@ -2875,12 +2866,11 @@
     "type": "Webinar",
     "keywords": [
       "ITS4US",
+      "Buffalo",
+      "Phase 1",
       "Complete Trip",
-      "Deployment",
-      "ITS",
-      "Intelligent Transportation Systems",
-      "participant training",
-      "stakeholder education"
+      "Deployment Plan",
+      "Webinar"
     ],
     "links": [
       {
@@ -2896,7 +2886,32 @@
     ]
   },
   {
-    "id": 128,
+    "id": 124,
+    "resource_title": "Phase 2 Systems Architecture Document",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-B: Systems Architecture Document",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "ITS4US",
+      "Phase 2",
+      "Systems Engineering",
+      "SE",
+      "Systems Architecture",
+      "Design Document"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_SE_Task2-B.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 125,
     "resource_title": "Phase 2 Systems Architecture Document",
     "publication_code": "FHWA-JPO- 22-983",
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
@@ -2922,19 +2937,18 @@
     ]
   },
   {
-    "id": 129,
+    "id": 126,
     "resource_title": "Phase 2 Systems Architecture Document",
     "publication_code": null,
     "awardee_deployment": "Georgia Department of Transportation",
     "task_name": "Task 2-B: Systems Architecture Document",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 130,
+    "id": 127,
     "resource_title": "Phase 2 Systems Architecture Document",
     "publication_code": "FHWA-JPO- 22-984",
     "awardee_deployment": "University of Washington",
@@ -2961,14 +2975,60 @@
     ]
   },
   {
-    "id": 131,
+    "id": 128,
     "resource_title": "Phase 2 Systems Architecture Document",
     "publication_code": null,
     "awardee_deployment": "Niagara Frontier Transportation Authority",
     "task_name": "Task 2-B: Systems Architecture Document",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 130,
+    "resource_title": "Phase 2 Systems Design Document",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-B: Systems Design Document",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "ITS4US",
+      "Phase 2",
+      "Systems Engineering",
+      "SE",
+      "Systems Architecture",
+      "Design Document"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_SE_Task2-B.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "resource_title": "Phase 2 Systems Design Document",
+    "publication_code": null,
+    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
+    "task_name": "Task 2-B: Systems Design Document",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 132,
+    "resource_title": "Phase 2 Systems Design Document",
+    "publication_code": null,
+    "awardee_deployment": "Georgia Department of Transportation",
+    "task_name": "Task 2-B: Systems Design Document",
+    "phase": 2,
+    "date": null,
     "keywords": [],
     "links": []
   },
@@ -2976,11 +3036,10 @@
     "id": 133,
     "resource_title": "Phase 2 Systems Design Document",
     "publication_code": null,
-    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
+    "awardee_deployment": "University of Washington",
     "task_name": "Task 2-B: Systems Design Document",
     "phase": 2,
     "date": null,
-    "type": "n/a",
     "keywords": [],
     "links": []
   },
@@ -2988,52 +3047,53 @@
     "id": 134,
     "resource_title": "Phase 2 Systems Design Document",
     "publication_code": null,
-    "awardee_deployment": "Georgia Department of Transportation",
+    "awardee_deployment": "Niagara Frontier Transportation Authority",
     "task_name": "Task 2-B: Systems Design Document",
     "phase": 2,
     "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 135,
-    "resource_title": "Phase 2 Systems Design Document",
-    "publication_code": null,
-    "awardee_deployment": "University of Washington",
-    "task_name": "Task 2-B: Systems Design Document",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
     "keywords": [],
     "links": []
   },
   {
     "id": 136,
-    "resource_title": "Phase 2 Systems Design Document",
+    "resource_title": "Phase 2 Data Privacy Plan",
     "publication_code": null,
-    "awardee_deployment": "Niagara Frontier Transportation Authority",
-    "task_name": "Task 2-B: Systems Design Document",
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-C: Data Privacy Plan",
     "phase": 2,
-    "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "Data Privacy",
+      "Data Management",
+      "Task 2-C",
+      "ITS4US",
+      "Phase 2",
+      "Performance Measurement",
+      "PfM",
+      "Data"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_Task_2-C.pdf",
+        "type": "download"
+      }
+    ]
   },
   {
-    "id": 138,
+    "id": 137,
     "resource_title": "Phase 2 Data Privacy Plan",
     "publication_code": null,
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
     "task_name": "Task 2-C: Data Privacy Plan",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 139,
+    "id": 138,
     "resource_title": "Phase 2 Data Privacy Plan",
     "publication_code": "FHWA-JPO-22-970",
     "awardee_deployment": "Georgia Department of Transportation",
@@ -3060,7 +3120,7 @@
     ]
   },
   {
-    "id": 140,
+    "id": 139,
     "resource_title": "Phase 2 Data Privacy Plan",
     "publication_code": "FHWA-JPO-22-972",
     "awardee_deployment": "University of Washington",
@@ -3086,7 +3146,7 @@
     ]
   },
   {
-    "id": 141,
+    "id": 140,
     "resource_title": "Phase 2 Data Privacy Plan",
     "publication_code": "FHWA-JPO-22-969",
     "awardee_deployment": "Niagara Frontier Transportation Authority",
@@ -3112,6 +3172,33 @@
     ]
   },
   {
+    "id": 142,
+    "resource_title": "Phase 2 Data Management Plan",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-C: Data Management Plan",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "Data Privacy",
+      "Data Management",
+      "Task 2-C",
+      "ITS4US",
+      "Phase 2",
+      "Performance Measurement",
+      "PfM",
+      "Data"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_Task_2-C.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
     "id": 143,
     "resource_title": "Phase 2 Data Management Plan",
     "publication_code": null,
@@ -3119,7 +3206,6 @@
     "task_name": "Task 2-C: Data Management Plan",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
@@ -3204,28 +3290,50 @@
     "id": 148,
     "resource_title": "Phase 2 Comprehensive Installation Plan",
     "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-D: Comprehensive Installation Plan",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "ITS4US",
+      "Comprehensive Installation",
+      "Comprehensive Acquisition",
+      "Systems Engineering",
+      "SE"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_SE_Task2-D.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "resource_title": "Phase 2 Comprehensive Installation Plan",
+    "publication_code": null,
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
     "task_name": "Task 2-D: Comprehensive Installation Plan",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 149,
+    "id": 150,
     "resource_title": "Phase 2 Comprehensive Installation Plan",
     "publication_code": null,
     "awardee_deployment": "Georgia Department of Transportation",
     "task_name": "Task 2-D: Comprehensive Installation Plan",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 150,
+    "id": 151,
     "resource_title": "Phase 2 Comprehensive Installation Plan",
     "publication_code": "FHWA-JPO-23-994",
     "awardee_deployment": "University of Washington",
@@ -3250,31 +3358,53 @@
     ]
   },
   {
-    "id": 151,
+    "id": 152,
     "resource_title": "Phase 2 Comprehensive Installation Plan",
     "publication_code": null,
     "awardee_deployment": "Niagara Frontier Transportation Authority",
     "task_name": "Task 2-D: Comprehensive Installation Plan",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 153,
+    "id": 154,
+    "resource_title": "Phase 2 Comprehensive Acquisition Plan",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-D: Comprehensive Acquisition Plan",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "ITS4US",
+      "Comprehensive Installation",
+      "Comprehensive Acquisition",
+      "Systems Engineering",
+      "SE"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_SE_Task2-D.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 155,
     "resource_title": "Phase 2 Comprehensive Acquisition Plan",
     "publication_code": null,
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
     "task_name": "Task 2-D: Comprehensive Acquisition Plan",
     "phase": 2,
     "date": null,
-    "type": "n/a",
     "keywords": [],
     "links": []
   },
   {
-    "id": 154,
+    "id": 156,
     "resource_title": "Phase 2 Comprehensive Acquisition Plan",
     "publication_code": "FHWA-JPO-23-111",
     "awardee_deployment": "Georgia Department of Transportation",
@@ -3298,7 +3428,7 @@
     ]
   },
   {
-    "id": 155,
+    "id": 157,
     "resource_title": "Phase 2 Comprehensive Acquisition Plan",
     "publication_code": "FHWA-JPO-23-117",
     "awardee_deployment": "University of Washington",
@@ -3322,215 +3452,387 @@
     ]
   },
   {
-    "id": 156,
+    "id": 158,
     "resource_title": "Phase 2 Comprehensive Acquisition Plan",
     "publication_code": null,
     "awardee_deployment": "Niagara Frontier Transportation Authority",
     "task_name": "Task 2-D: Comprehensive Acquisition Plan",
     "phase": 2,
     "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 158,
-    "resource_title": "Phase 2 Training Materials",
-    "publication_code": null,
-    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
-    "task_name": "Task 2-F: Training Materials",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 159,
-    "resource_title": "Phase 2 Training Materials",
-    "publication_code": null,
-    "awardee_deployment": "Georgia Department of Transportation",
-    "task_name": "Task 2-F: Training Materials",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
     "keywords": [],
     "links": []
   },
   {
     "id": 160,
-    "resource_title": "Phase 2 Training Materials",
+    "resource_title": "Phase 2 Software Development and Integration",
     "publication_code": null,
-    "awardee_deployment": "University of Washington",
-    "task_name": "Task 2-F: Training Materials",
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-E: Software Development and Integration",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "ITS4US",
+      "Phase 2",
+      "SE",
+      "Systems Engineering",
+      "Software Development",
+      "Integration"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_SE_Task2-E.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "resource_title": "Phase 2 Software Development and Integration",
+    "publication_code": null,
+    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
+    "task_name": "Task 2-E: Software Development and Integration",
     "phase": 2,
     "date": null,
-    "type": "n/a",
     "keywords": [],
     "links": []
   },
   {
-    "id": 161,
-    "resource_title": "Phase 2 Training Materials",
+    "id": 162,
+    "resource_title": "Phase 2 Software Development and Integration",
     "publication_code": null,
-    "awardee_deployment": "Niagara Frontier Transportation Authority",
-    "task_name": "Task 2-F: Training Materials",
+    "awardee_deployment": "Georgia Department of Transportation",
+    "task_name": "Task 2-E: Software Development and Integration",
     "phase": 2,
     "date": null,
-    "type": "n/a",
     "keywords": [],
     "links": []
   },
   {
     "id": 163,
-    "resource_title": "Phase 2 System Test Plan",
+    "resource_title": "Phase 2 Software Development and Integration",
     "publication_code": null,
-    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
-    "task_name": "Task 2-G: System Test Plan",
+    "awardee_deployment": "University of Washington",
+    "task_name": "Task 2-E: Software Development and Integration",
     "phase": 2,
     "date": null,
-    "type": "n/a",
     "keywords": [],
     "links": []
   },
   {
     "id": 164,
-    "resource_title": "Phase 2 System Test Plan",
+    "resource_title": "Phase 2 Software Development and Integration",
     "publication_code": null,
-    "awardee_deployment": "Georgia Department of Transportation",
-    "task_name": "Task 2-G: System Test Plan",
+    "awardee_deployment": "Niagara Frontier Transportation Authority",
+    "task_name": "Task 2-E: Software Development and Integration",
     "phase": 2,
     "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 165,
-    "resource_title": "Phase 2 System Test Plan",
-    "publication_code": null,
-    "awardee_deployment": "University of Washington",
-    "task_name": "Task 2-G: System Test Plan",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
     "keywords": [],
     "links": []
   },
   {
     "id": 166,
+    "resource_title": "Phase 2 Training Materials",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-F: Training Materials",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "Phase 2",
+      "ITS4US",
+      "Participant Training",
+      "Staff Training",
+      "2-F"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_Task_2-F.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 167,
+    "resource_title": "Phase 2 Training Materials",
+    "publication_code": null,
+    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
+    "task_name": "Task 2-F: Training Materials",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 168,
+    "resource_title": "Phase 2 Training Materials",
+    "publication_code": null,
+    "awardee_deployment": "Georgia Department of Transportation",
+    "task_name": "Task 2-F: Training Materials",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 169,
+    "resource_title": "Phase 2 Training Materials",
+    "publication_code": null,
+    "awardee_deployment": "University of Washington",
+    "task_name": "Task 2-F: Training Materials",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 170,
+    "resource_title": "Phase 2 Training Materials",
+    "publication_code": null,
+    "awardee_deployment": "Niagara Frontier Transportation Authority",
+    "task_name": "Task 2-F: Training Materials",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 172,
+    "resource_title": "Phase 2 System Test Plan",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-G: System Test Plan",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "ITS4US",
+      "Phase 2",
+      "Systems Engineering: SE",
+      "System Test Planning"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_SE_Task2-G.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 173,
+    "resource_title": "Phase 2 System Test Plan",
+    "publication_code": null,
+    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
+    "task_name": "Task 2-G: System Test Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 174,
+    "resource_title": "Phase 2 System Test Plan",
+    "publication_code": null,
+    "awardee_deployment": "Georgia Department of Transportation",
+    "task_name": "Task 2-G: System Test Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 175,
+    "resource_title": "Phase 2 System Test Plan",
+    "publication_code": null,
+    "awardee_deployment": "University of Washington",
+    "task_name": "Task 2-G: System Test Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 176,
     "resource_title": "Phase 2 System Test Plan",
     "publication_code": null,
     "awardee_deployment": "Niagara Frontier Transportation Authority",
     "task_name": "Task 2-G: System Test Plan",
     "phase": 2,
     "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 168,
-    "resource_title": "Phase 2 Operational Readiness Plan",
-    "publication_code": null,
-    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
-    "task_name": "Task 2-G: Operational Readiness Plan",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 169,
-    "resource_title": "Phase 2 Operational Readiness Plan",
-    "publication_code": null,
-    "awardee_deployment": "Georgia Department of Transportation",
-    "task_name": "Task 2-G: Operational Readiness Plan",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 170,
-    "resource_title": "Phase 2 Operational Readiness Plan",
-    "publication_code": null,
-    "awardee_deployment": "University of Washington",
-    "task_name": "Task 2-G: Operational Readiness Plan",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 171,
-    "resource_title": "Phase 2 Operational Readiness Plan",
-    "publication_code": null,
-    "awardee_deployment": "Niagara Frontier Transportation Authority",
-    "task_name": "Task 2-G: Operational Readiness Plan",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 173,
-    "resource_title": "Phase 2 Comprehensive Maintenance and Operations Plan",
-    "publication_code": null,
-    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
-    "task_name": "Task 2-I: Comprehensive Maintenance and Operations Plan",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 174,
-    "resource_title": "Phase 2 Comprehensive Maintenance and Operations Plan",
-    "publication_code": null,
-    "awardee_deployment": "Georgia Department of Transportation",
-    "task_name": "Task 2-I: Comprehensive Maintenance and Operations Plan",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 175,
-    "resource_title": "Phase 2 Comprehensive Maintenance and Operations Plan",
-    "publication_code": null,
-    "awardee_deployment": "University of Washington",
-    "task_name": "Task 2-I: Comprehensive Maintenance and Operations Plan",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
-    "keywords": [],
-    "links": []
-  },
-  {
-    "id": 176,
-    "resource_title": "Phase 2 Comprehensive Maintenance and Operations Plan",
-    "publication_code": null,
-    "awardee_deployment": "Niagara Frontier Transportation Authority",
-    "task_name": "Task 2-I: Comprehensive Maintenance and Operations Plan",
-    "phase": 2,
-    "date": null,
-    "type": "n/a",
     "keywords": [],
     "links": []
   },
   {
     "id": 178,
-    "resource_title": "Phase 2 Outreach Plan",
+    "resource_title": "Phase 2 Installation Operational Readiness Testing",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-H: Installation Operational Readiness Testing",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "ITS4US",
+      "Phase 2",
+      "Systems Engineering",
+      "SE",
+      "Installation",
+      "Operational Readiness Testing"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_SE_Task2-H.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 179,
+    "resource_title": "Phase 2 Installation Operational Readiness Testing",
+    "publication_code": null,
+    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
+    "task_name": "Task 2-H: Installation Operational Readiness Testing",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 180,
+    "resource_title": "Phase 2 Installation Operational Readiness Testing",
+    "publication_code": null,
+    "awardee_deployment": "Georgia Department of Transportation",
+    "task_name": "Task 2-H: Installation Operational Readiness Testing",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 181,
+    "resource_title": "Phase 2 Installation Operational Readiness Testing",
+    "publication_code": null,
+    "awardee_deployment": "University of Washington",
+    "task_name": "Task 2-H: Installation Operational Readiness Testing",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 182,
+    "resource_title": "Phase 2 Installation Operational Readiness Testing",
+    "publication_code": null,
+    "awardee_deployment": "Niagara Frontier Transportation Authority",
+    "task_name": "Task 2-H: Installation Operational Readiness Testing",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 184,
+    "resource_title": "Phase 2 Comprehensive Maintenance and Operations Plan",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-I: Comprehensive Maintenance and Operations Plan",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "TS4US",
+      "Phase 2",
+      "Systems Engineering",
+      "Comprehensive Maintenance",
+      "Operations Plan",
+      "SE"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_SE_Task2-I.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 185,
+    "resource_title": "Phase 2 Comprehensive Maintenance and Operations Plan",
+    "publication_code": null,
+    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
+    "task_name": "Task 2-I: Comprehensive Maintenance and Operations Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 186,
+    "resource_title": "Phase 2 Comprehensive Maintenance and Operations Plan",
+    "publication_code": null,
+    "awardee_deployment": "Georgia Department of Transportation",
+    "task_name": "Task 2-I: Comprehensive Maintenance and Operations Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 187,
+    "resource_title": "Phase 2 Comprehensive Maintenance and Operations Plan",
+    "publication_code": null,
+    "awardee_deployment": "University of Washington",
+    "task_name": "Task 2-I: Comprehensive Maintenance and Operations Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 188,
+    "resource_title": "Phase 2 Comprehensive Maintenance and Operations Plan",
+    "publication_code": null,
+    "awardee_deployment": "Niagara Frontier Transportation Authority",
+    "task_name": "Task 2-I: Comprehensive Maintenance and Operations Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 190,
+    "resource_title": "Phase 2 Stakeholder Outreach Plan",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-J: Stakeholder Outreach Plan",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "ITS4US",
+      "Phase 2",
+      "Stakeholder Outreach",
+      "2-J"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_Task2-J.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 191,
+    "resource_title": "Phase 2 Stakeholder Outreach Plan",
     "publication_code": "FHWA-JPO-22-979",
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
-    "task_name": "Task 2-J: Outreach Plan",
+    "task_name": "Task 2-J: Stakeholder Outreach Plan",
     "phase": 2,
     "date": "2022-12-16T00:00:00.000Z",
     "type": "Publication",
@@ -3551,11 +3853,11 @@
     ]
   },
   {
-    "id": 179,
-    "resource_title": "Phase 2 Outreach Plan",
+    "id": 192,
+    "resource_title": "Phase 2 Stakeholder Outreach Plan",
     "publication_code": "FHWA-JPO- 22-978",
     "awardee_deployment": "Georgia Department of Transportation",
-    "task_name": "Task 2-J: Outreach Plan",
+    "task_name": "Task 2-J: Stakeholder Outreach Plan",
     "phase": 2,
     "date": "2022-09-19T00:00:00.000Z",
     "type": "Publication",
@@ -3576,23 +3878,22 @@
     ]
   },
   {
-    "id": 180,
-    "resource_title": "Phase 2 Outreach Plan",
+    "id": 193,
+    "resource_title": "Phase 2 Stakeholder Outreach Plan",
     "publication_code": null,
     "awardee_deployment": "University of Washington",
-    "task_name": "Task 2-J: Outreach Plan",
+    "task_name": "Task 2-J: Stakeholder Outreach Plan",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 181,
-    "resource_title": "Phase 2 Outreach Plan",
+    "id": 194,
+    "resource_title": "Phase 2 Stakeholder Outreach Plan",
     "publication_code": "FHWA-JPO- 22-977",
     "awardee_deployment": "Niagara Frontier Transportation Authority",
-    "task_name": "Task 2-J: Outreach Plan",
+    "task_name": "Task 2-J: Stakeholder Outreach Plan",
     "phase": 2,
     "date": "2022-09-09T00:00:00.000Z",
     "type": "Publication",
@@ -3612,103 +3913,199 @@
     ]
   },
   {
-    "id": 183,
-    "resource_title": "Phase 2 Updated Performance Measurement and Evaluation Support Plan",
+    "id": 196,
+    "resource_title": "Phase 2 Updated Performance Measurement and Independent Evaluation Support Plan",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-K: Updated Performance Measurement and Independent Evaluation Support Plan",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "ITS4US",
+      "Phase 2",
+      "Performance Measurement",
+      "IE Support",
+      "Data",
+      "PfM"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_Task2-K.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 197,
+    "resource_title": "Phase 2 Updated Performance Measurement and Independent Evaluation Support Plan",
     "publication_code": null,
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
-    "task_name": "Task 2-K: Updated Performance Measurement and Evaluation Support Plan",
+    "task_name": "Task 2-K: Updated Performance Measurement and Independent Evaluation Support Plan",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 184,
-    "resource_title": "Phase 2 Updated Performance Measurement and Evaluation Support Plan",
+    "id": 198,
+    "resource_title": "Phase 2 Updated Performance Measurement and Independent Evaluation Support Plan",
     "publication_code": null,
     "awardee_deployment": "Georgia Department of Transportation",
-    "task_name": "Task 2-K: Updated Performance Measurement and Evaluation Support Plan",
+    "task_name": "Task 2-K: Updated Performance Measurement and Independent Evaluation Support Plan",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 185,
-    "resource_title": "Phase 2 Updated Performance Measurement and Evaluation Support Plan",
+    "id": 199,
+    "resource_title": "Phase 2 Updated Performance Measurement and Independent Evaluation Support Plan",
     "publication_code": null,
     "awardee_deployment": "University of Washington",
-    "task_name": "Task 2-K: Updated Performance Measurement and Evaluation Support Plan",
+    "task_name": "Task 2-K: Updated Performance Measurement and Independent Evaluation Support Plan",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 186,
-    "resource_title": "Phase 2 Updated Performance Measurement and Evaluation Support Plan",
+    "id": 200,
+    "resource_title": "Phase 2 Updated Performance Measurement and Independent Evaluation Support Plan",
     "publication_code": null,
     "awardee_deployment": "Niagara Frontier Transportation Authority",
-    "task_name": "Task 2-K: Updated Performance Measurement and Evaluation Support Plan",
+    "task_name": "Task 2-K: Updated Performance Measurement and Independent Evaluation Support Plan",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 188,
+    "id": 202,
+    "resource_title": "Phase 2 Updated Human Use Approval Summary",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-K: Updated Human Use Approval Summary",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 203,
     "resource_title": "Phase 2 Updated Human Use Approval Summary",
     "publication_code": null,
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
     "task_name": "Task 2-K: Updated Human Use Approval Summary",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 189,
+    "id": 204,
     "resource_title": "Phase 2 Updated Human Use Approval Summary",
     "publication_code": null,
     "awardee_deployment": "Georgia Department of Transportation",
     "task_name": "Task 2-K: Updated Human Use Approval Summary",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 190,
+    "id": 205,
     "resource_title": "Phase 2 Updated Human Use Approval Summary",
     "publication_code": null,
     "awardee_deployment": "University of Washington",
     "task_name": "Task 2-K: Updated Human Use Approval Summary",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 191,
+    "id": 206,
     "resource_title": "Phase 2 Updated Human Use Approval Summary",
     "publication_code": null,
     "awardee_deployment": "Niagara Frontier Transportation Authority",
     "task_name": "Task 2-K: Updated Human Use Approval Summary",
     "phase": 2,
     "date": null,
-    "type": "Coming Soon",
     "keywords": [],
     "links": []
   },
   {
-    "id": 193,
+    "id": 208,
+    "resource_title": "Phase 2 Standards Development Plan",
+    "publication_code": null,
+    "awardee_deployment": "Program Level",
+    "task_name": "Task 2-L: Standards Development Plan",
+    "phase": 2,
+    "date": "2024-08-22T00:00:00.000Z",
+    "type": "Training Materials",
+    "keywords": [
+      "ITS4US",
+      "Systems Engineering",
+      "SE",
+      "Phase 2",
+      "Standards Development"
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "href": "https://its.dot.gov/its4us/pdf/ITS4US_Phase2_SE_Task2-L.pdf",
+        "type": "download"
+      }
+    ]
+  },
+  {
+    "id": 209,
+    "resource_title": "Phase 2 Standards Development Plan",
+    "publication_code": null,
+    "awardee_deployment": "Heart of Iowa Regional Transit Agency",
+    "task_name": "Task 2-L: Standards Development Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 210,
+    "resource_title": "Phase 2 Standards Development Plan",
+    "publication_code": null,
+    "awardee_deployment": "Georgia Department of Transportation",
+    "task_name": "Task 2-L: Standards Development Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 211,
+    "resource_title": "Phase 2 Standards Development Plan",
+    "publication_code": null,
+    "awardee_deployment": "University of Washington",
+    "task_name": "Task 2-L: Standards Development Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 212,
+    "resource_title": "Phase 2 Standards Development Plan",
+    "publication_code": null,
+    "awardee_deployment": "Niagara Frontier Transportation Authority",
+    "task_name": "Task 2-L: Standards Development Plan",
+    "phase": 2,
+    "date": null,
+    "keywords": [],
+    "links": []
+  },
+  {
+    "id": 214,
     "resource_title": "Phase 2 GDOT Webinar",
     "publication_code": null,
     "awardee_deployment": "Georgia Department of Transportation",
@@ -3716,7 +4113,11 @@
     "phase": 2,
     "date": "2024-03-12T00:00:00.000Z",
     "type": "Webinar",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "Complete trips",
+      "Accessible Routing"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -3736,7 +4137,7 @@
     ]
   },
   {
-    "id": 194,
+    "id": 215,
     "resource_title": "Phase 2 GDOT Webinar",
     "publication_code": null,
     "awardee_deployment": "Georgia Department of Transportation",
@@ -3744,7 +4145,13 @@
     "phase": 2,
     "date": "2023-11-14T00:00:00.000Z",
     "type": "Webinar",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "GDOT",
+      "Stakeholders",
+      "Complete Trips",
+      "Mobility"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -3764,7 +4171,7 @@
     ]
   },
   {
-    "id": 195,
+    "id": 216,
     "resource_title": "Phase 2 GDOT Webinar",
     "publication_code": null,
     "awardee_deployment": "Georgia Department of Transportation",
@@ -3792,7 +4199,7 @@
     ]
   },
   {
-    "id": 197,
+    "id": 218,
     "resource_title": "Phase 2 HIRTA Webinar",
     "publication_code": null,
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
@@ -3800,7 +4207,13 @@
     "phase": 2,
     "date": "2024-04-17T00:00:00.000Z",
     "type": "Webinar",
-    "keywords": [],
+    "keywords": [
+      "Designing for a Complete Mobility Experience",
+      "ITS4US",
+      "Complete Trip",
+      "HIRTA",
+      "Webinar"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -3815,7 +4228,7 @@
     ]
   },
   {
-    "id": 198,
+    "id": 219,
     "resource_title": "Phase 2 HIRTA Webinar",
     "publication_code": null,
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
@@ -3823,7 +4236,13 @@
     "phase": 2,
     "date": "2024-01-24T00:00:00.000Z",
     "type": "Webinar",
-    "keywords": [],
+    "keywords": [
+      "Designing for a Complete Mobility Experience",
+      "ITS4US",
+      "Complete Trip",
+      "HIRTA",
+      "Webinar"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -3843,7 +4262,7 @@
     ]
   },
   {
-    "id": 199,
+    "id": 220,
     "resource_title": "Phase 2 HIRTA Webinar",
     "publication_code": null,
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
@@ -3851,7 +4270,13 @@
     "phase": 2,
     "date": "2023-09-19T00:00:00.000Z",
     "type": "Webinar",
-    "keywords": [],
+    "keywords": [
+      "Designing for a Complete Mobility Experience",
+      "ITS4US",
+      "Complete Trip",
+      "HIRTA",
+      "Webinar"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -3871,7 +4296,7 @@
     ]
   },
   {
-    "id": 200,
+    "id": 221,
     "resource_title": "Phase 2 HIRTA Webinar",
     "publication_code": null,
     "awardee_deployment": "Heart of Iowa Regional Transit Agency",
@@ -3879,7 +4304,12 @@
     "phase": 2,
     "date": "2023-05-03T00:00:00.000Z",
     "type": "Webinar",
-    "keywords": [],
+    "keywords": [
+      "Outreach",
+      "Webinar",
+      "ITS4US",
+      "HIRTA"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -3899,7 +4329,7 @@
     ]
   },
   {
-    "id": 202,
+    "id": 223,
     "resource_title": "Phase 2 NFTA Webinar",
     "publication_code": null,
     "awardee_deployment": "Niagara Frontier Transportation Authority",
@@ -3922,7 +4352,7 @@
     ]
   },
   {
-    "id": 203,
+    "id": 224,
     "resource_title": "Phase 2 NFTA Webinar",
     "publication_code": null,
     "awardee_deployment": "Niagara Frontier Transportation Authority",
@@ -3930,7 +4360,11 @@
     "phase": 2,
     "date": "2024-02-29T00:00:00.000Z",
     "type": "Webinar",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "systems engineering",
+      "NFTA"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -3950,7 +4384,7 @@
     ]
   },
   {
-    "id": 204,
+    "id": 225,
     "resource_title": "Phase 2 NFTA Webinar",
     "publication_code": null,
     "awardee_deployment": "Niagara Frontier Transportation Authority",
@@ -3958,7 +4392,13 @@
     "phase": 2,
     "date": "2023-11-01T00:00:00.000Z",
     "type": "Webinar",
-    "keywords": [],
+    "keywords": [
+      "ITS4US",
+      "NFTA",
+      "Indoor Navigation",
+      "Complete Trips",
+      "Mobility"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -3978,7 +4418,7 @@
     ]
   },
   {
-    "id": 205,
+    "id": 226,
     "resource_title": "Phase 2 NFTA Webinar",
     "publication_code": null,
     "awardee_deployment": "Niagara Frontier Transportation Authority",
@@ -3986,7 +4426,15 @@
     "phase": 2,
     "date": "2023-05-16T00:00:00.000Z",
     "type": "Webinar",
-    "keywords": [],
+    "keywords": [
+      "Buffalo",
+      "New York",
+      "self-driving vehicles",
+      "transporation",
+      "technology",
+      "sustainability",
+      "equity"
+    ],
     "links": [
       {
         "title": "Slide Deck 1",
@@ -4006,7 +4454,7 @@
     ]
   },
   {
-    "id": 207,
+    "id": 228,
     "resource_title": "Phase 2 UW Webinar",
     "publication_code": null,
     "awardee_deployment": "University of Washington",
@@ -4029,7 +4477,30 @@
     ]
   },
   {
-    "id": 208,
+    "id": 229,
+    "resource_title": "Phase 2 UW Webinar",
+    "publication_code": null,
+    "awardee_deployment": "University of Washington",
+    "task_name": "OpenSidewalks: Advancing Pedestrian Data Collection and Interoperability, through an Open Data Collaborative and Accessibility-first Principles",
+    "phase": 2,
+    "date": "2024-02-07T00:00:00.000Z",
+    "type": "Webinar",
+    "keywords": [
+      "Data\""
+    ],
+    "links": [
+      {
+        "title": "Slide Deck 1",
+        "type": "download"
+      },
+      {
+        "title": "View Webinar",
+        "type": "external"
+      }
+    ]
+  },
+  {
+    "id": 230,
     "resource_title": "Phase 2 UW Webinar",
     "publication_code": null,
     "awardee_deployment": "University of Washington",
@@ -4057,7 +4528,7 @@
     ]
   },
   {
-    "id": 209,
+    "id": 231,
     "resource_title": "Phase 2 UW Webinar",
     "publication_code": null,
     "awardee_deployment": "University of Washington",
