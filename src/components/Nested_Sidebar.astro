@@ -4,9 +4,10 @@ import type { ChildNavigationItem, NavigationItem } from '../lib/navigation';
 
 interface Props {
   items: ChildNavigationItem[];
+  currentItem: ChildNavigationItem;
 }
 
-const { items } = Astro.props;
+const { items, currentItem } = Astro.props;
 ---
 
 <nav class="sidebarjs navbar navbar-expand navbar-light bg-light flex-row align-items-start Sidebar">
