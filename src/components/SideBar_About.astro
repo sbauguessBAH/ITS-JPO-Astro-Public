@@ -1,11 +1,14 @@
 ---
+import base_url from "../lib/base_url";
+
+
 const pages = [
-  { name: 'ITS Joint Program Office', url: '/about/its_jpo/' },
-  { name: 'Strategic Plan', url: '/about/stratplan2020/' },
-  { name: 'History of Intelligent Transportation Systems', url: '/about/history/' },
-  { name: 'ITS Program Advisory Committee', url: '/about/itspac/' },
-  { name: 'Frequently Asked Questions', url: '/about/faqs/' },
-  { name: 'Site Map', url: '/about/site-map/' }
+  { name: 'ITS Joint Program Office', url: base_url('/about/its_jpo/') },
+  { name: 'Strategic Plan', url: base_url('/about/stratplan2020/') },
+  { name: 'History of Intelligent Transportation Systems', url: base_url('/about/history/') },
+  { name: 'ITS Program Advisory Committee', url: base_url('/about/itspac/') },
+  { name: 'Frequently Asked Questions', url: base_url('/about/faqs/') },
+  { name: 'Site Map', url: base_url('/about/site-map/') }
 ];
 ---
 

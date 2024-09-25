@@ -1,4 +1,5 @@
 ---
+import base_url from "../lib/base_url";
 
 ---
 
@@ -69,26 +70,26 @@
     <div class="collapse navbar-collapse" id="subnavbar">
       <ul class="navbar-nav me-auto mb-2 mb-sm-0">
         <li class="nav-item">
-          <a class="nav-link pl-3" href="/about/itspac/">ITSPAC Home</a>
+          <a class="nav-link pl-3"  href={base_url("/about/itspac/")}>ITSPAC Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link pl-3" href="/about/itspac/membership/">Membership</a>
+          <a class="nav-link pl-3"  href={base_url("/about/itspac/membership/")}>Membership</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link pl-3" href="/about/itspac/charter/">Charter</a>
+          <a class="nav-link pl-3"  href={base_url("/about/itspac/charter/")}>Charter</a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link pl-3" href="#">Committee Meeting Information (Coming Soon)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link pl-3" href="/about/itspac/archive/">Historical Archive</a>
+          <a class="nav-link pl-3"  href={base_url("/about/itspac/archive/")}>Historical Archive</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reference documents:</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item externalLink" href="https://www.govinfo.gov/content/pkg/USCODE-2021-title23/pdf/USCODE-2021-title23-chap5-sec515.pdf" target="_blank">23 U.S.C. 515(h)(1)</a>
-            <a class="dropdown-item" href="/about/itspac/archive/itspac_ethics/">ITSPAC Ethics Guidelines</a>
+            <a class="dropdown-item"  href={base_url("/about/itspac/archive/itspac_ethics/")}>ITSPAC Ethics Guidelines</a>
             <a
               class="dropdown-item externalLink"
               href="https://www.federalregister.gov/documents/2023/01/30/2023-01769/notice-of-establishment-of-the-intelligent-transportation-systems-program-advisory-committee-and-to"

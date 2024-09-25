@@ -1,14 +1,16 @@
 ---
+import base_url from "../lib/base_url";
+
 const pages = [
-  { name: 'ITS4US', url: '/research/ITS4US/' },
-  { name: 'Vehicle-to-Everything', url: '/deployment/V2X/' },
+  { name: 'ITS4US', url: base_url('/research/ITS4US/') },
+  { name: 'Vehicle-to-Everything', url: base_url('/deployment/V2X/') },
   { name: 'Connected Vehicle Pilots', url: 'https://www.its.dot.gov/pilots/index.htm' },
   { name: 'Connected Vehicle Deployment Assistance', url: 'https://www.its.dot.gov/pilots/events.htm' },
   { name: 'Connected Vehicle Applications', url: 'https://www.its.dot.gov/pilots/' },
   { name: 'Sample Deployment Concepts', url: 'https://www.its.dot.gov/pilots/' },
   { name: 'Connected Vehicle Publications', url: 'https://www.its.dot.gov/pilots/' },
   { name: 'National ITS Architecture', url: 'https://www.its.dot.gov/pilots/' },
-  { name: 'Smart Communities', url: '/deployment/smart-communities/' },
+  { name: 'Smart Communities', url: base_url('/deployment/smart-communities/') },
   { name: 'Smart Community Resource Center', url: 'https://www.its.dot.gov/scrc/' },
   { name: 'Intersection Safety Challenge', url: 'https://its.dot.gov/isc/' },
 ];

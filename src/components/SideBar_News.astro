@@ -1,11 +1,13 @@
 ---
+import base_url from "../lib/base_url";
+
 const pages = [
-  { name: 'Latest News from ITS JPO', url: '/news-info/news/' },
-  { name: 'ITS JPO Director\'s Blog', url: '/news-info/blog/' },
-  { name: 'ITS Research Fact Sheet', url: '/news-info/fact-sheet/' },
-  { name: 'Infographics', url: '/news-info/infographics/' },
-  { name: 'Videos', url: '/news-info/video' },
-  { name: 'Image Library', url: '/news-info/image-library' },
+  { name: 'Latest News from ITS JPO', url: base_url('/news-info/news/') },
+  { name: 'ITS JPO Director\'s Blog', url: base_url('/news-info/blog/') },
+  { name: 'ITS Research Fact Sheet', url: base_url('/news-info/fact-sheet/') },
+  { name: 'Infographics', url: base_url('/news-info/infographics/') },
+  { name: 'Videos', url: base_url('/news-info/video') },
+  { name: 'Image Library', url: base_url('/news-info/image-library') },
 ];
 ---
 
