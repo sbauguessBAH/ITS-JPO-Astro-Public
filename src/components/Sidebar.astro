@@ -1,29 +1,143 @@
 ---
 import base_url from '../lib/base_url';
-import type { ChildNavigationItem, NavigationItem } from '../lib/navigation';
+import { findNavigationItem, getTrimmedPathname, type ChildNavigationItem, type NavigationItem } from '../lib/navigation';
 
 interface Props {
   items: ChildNavigationItem[];
-  currentItem?: ChildNavigationItem;
 }
 
-const { items, currentItem } = Astro.props;
+const { items } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const currentItem = findNavigationItem(currentPath);
 ---
 
-<nav class="sidebarjs navbar navbar-expand navbar-light bg-light flex-row align-items-start Sidebar">
-  <ul class="d-flex flex-column SidebarNav flex-row navbar-nav w-100 justify-content-between">
-    {items.map(item => (
-      <li class:list={["nav-item", {"activated": currentItem?.name === item.name}]}>
-        <a class:list={["nav-link pl-3", {"active": currentItem?.name === item.name}]} href={base_url(item.url)}>
-          {item.name}
-        </a>
-      </li>
-    ))}
+<style>
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .sidebar {
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-list-item:first-of-type {
+    border-top: 1px solid rgba(0,0,0,0.125);
+  }
+
+  .sidebar-list-item {
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+  }
+
+  .sidebar-link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+
+  .sidebar-link:hover, .sidebar-list-item .active {
+    background-color: #f7f7f7;
+  }
+
+  .sidebar-child .sidebar-link {
+    padding-left: 2rem;
+    background-color: #f0f0f0;
+  }
+
+  .sidebar-child .sidebar-link:hover, .sidebar-child .active {
+    background-color: #e8e8e8;
+    text-decoration: underline;
+  }
+
+  .sidebar-icon {
+    font-size: 0.8rem;
+  }
+
+  .sidebar-toggle {
+    padding-top:0px;
+    margin-bottom:1rem;
+    width: 100%;
+    min-height: 3rem;
+    background-color: rgb(255,255,255,.25);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+  }
+
+  .sidebar-toggle-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='black' stroke-opacity='0.65' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+
+</style>
+
+<nav class="sidebar">
+  <button
+    class="sidebar-toggle d-block d-lg-none"
+    type="button"
+    data-toggle="collapse"
+    data-target="#sidebar"
+    aria-expanded="false"
+    aria-controls="sidebar"
+    aria-label="Toggle sidebar navigation"
+  >
+    <span class="sidebar-toggle-icon"></span>
+  </button>
+  <ul class="collapse d-lg-block" id="sidebar">
+    {items.map((item) => {
+      const trimmedPath = item.url.replaceAll("/", "");
+      return (
+        <li class="sidebar-list-item">
+          {item.pages ? (
+            <a 
+              class="sidebar-link" 
+              data-bs-toggle="collapse" 
+              href={`#collapse${trimmedPath}`} 
+              role="button" 
+              aria-controls={`collapse${trimmedPath}`}
+              aria-expanded={currentItem[0]?.name === item.name ? "true" : "false"}
+              aria-label={`Toggle sidebar links for ${item.name}`}
+            >
+              {item.name}
+              <span class="fa fa-angle-down sidebar-icon"></span>
+            </a>
+            <ul 
+              class:list={["collapse sidebar-child", {"show": currentItem[0]?.url === item.url}]} 
+              id={`collapse${trimmedPath}`}
+            >
+              {item.pages.map(childItem => (
+                <li class="sidebar-list-item">
+                  <a 
+                    class:list={["sidebar-link", {"active": currentItem[1]?.url === childItem.url}]} 
+                    href={childItem.isExternal ? childItem.url : base_url(childItem.url)}
+                  >
+                    {childItem.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <a class:list={["sidebar-link", {"active": currentItem[0]?.url === item.url}]} href={item.isExternal ? item.url : base_url(item.url)}>
+              {item.name}
+              {item.isExternal && <span class="fa fa-arrow-up-right-from-square sidebar-icon"></span>}
+            </a>
+          )}
+        </li>
+      )
+    })}
   </ul>
 </nav>
-
-<style>
-  .sidebarjs .active {
-    color: #fff;
-  }
-</style>

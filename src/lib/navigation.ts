@@ -128,22 +128,36 @@ export function getTrimmedPathname(pathname: string): string {
   return trimmedPath;
 }
 
-export function findNavigationItem(pathname: string): NavigationItem | ChildNavigationItem | undefined {
+export function findNavigationItem(pathname: string): [ChildNavigationItem | undefined, ChildNavigationItem | undefined] {
   const trimmedPathname = getTrimmedPathname(pathname);
 
   // Find the parent section--if it doesn't exist, then there's no matching navigation item
   const section = navigation.find(section => trimmedPathname.startsWith(section.url));
-  if (!section) return undefined;
+  if (!section) return [undefined, undefined];
 
-  // While the current navigation item has children and there is no exact match found, go down the tree
-  let navigationItem: NavigationItem | ChildNavigationItem = section;
-  while (navigationItem) {
-    // If it's an exact match, return the current item from the function
-    if (navigationItem.url === trimmedPathname) return navigationItem;
-    
-    // If there are child pages, then look through them to see if there's one that matches
-    if (!navigationItem.pages) return undefined;
-
-    
+  for (const page of section.pages) {
+    // if (trimmedPathname === page.url) return [page, undefined];
+    if (trimmedPathname.startsWith(page.url)) {
+      if (page.pages) {
+        for (const subPage of page.pages) {
+          if (trimmedPathname === subPage.url) return [page, subPage];
+        }
+      } else {
+        return [page, undefined];
+      }
+    }
   }
+  return [undefined, undefined];
+
+  // // While the current navigation item has children and there is no exact match found, go down the tree
+  // let navigationItem: NavigationItem | ChildNavigationItem = section;
+  // while (navigationItem) {
+  //   // If it's an exact match, return the current item from the function
+  //   if (navigationItem.url === trimmedPathname) return navigationItem;
+    
+  //   // If there are child pages, then look through them to see if there's one that matches
+  //   if (!navigationItem.pages) return undefined;
+
+    
+  // }
 }

@@ -22,11 +22,11 @@ const { title } = Astro.props;
 </style>
 
 <PageLayout title={title}>
-  <h1 slot="banner">
+  <Fragment slot="banner">
 		Enabling ITS Resources
 		<br/>
 		Architecture, Standards, & Cybersecurity
-	</h1>
+	</Fragment>
   <slot/>
 	<section slot="footer" class="download bg-primary text-center py-4" id="research">
     <div class="container-fluid">

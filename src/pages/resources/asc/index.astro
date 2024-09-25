@@ -11,7 +11,42 @@ import StandardsHeading from "@/src/components/standards/StandardsHeading.astro"
 import base_url from "@/src/lib/base_url";
 import StandardsLayout from "./_StandardsLayout.astro";
 ---
+<style>
+  .vision {
+    background-color: rgb(192,205,214);
+  }
+  
+  .typography {
+    margin-right: 0.5rem;
+    margin-left: 3.5rem;
+  }
 
+  @media (min-width: 768px) {
+    .typography {
+      margin-left: 3.5rem;
+    }
+  }
+
+  @media (min-width: 500px) {
+    p {
+      margin-right: 0;
+    }
+  }
+
+  .arrow-link::after {
+    content: "\f061";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size:14px;
+  }
+  .Carousel_Slide_ASC {
+    background-image: url('../../../assets/images/ITS_SectionHeaders_021621_AcceleratingDeployment.png');
+    background-size:cover;
+    min-height:300px;
+  }
+</style>
 <StandardsLayout title="ASC Home">
   <Image src={headerImage} alt="Architecture, Standards, and Cybersecurity Header" class="img-fluid mb-4"/>
   <StandardsHeading image={aboutIcon} title="About Enabling ITS Resources"/>
@@ -161,40 +196,3 @@ import StandardsLayout from "./_StandardsLayout.astro";
     </p>
   </div>
 </StandardsLayout>
-
-<style>
-  .vision {
-    background-color: rgb(192,205,214);
-  }
-  
-  .typography {
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .typography {
-      margin-left: 4.5rem;
-    }
-  }
-
-  @media (min-width: 500px) {
-    p {
-      margin-right: 0;
-    }
-  }
-
-  .arrow-link::after {
-    content: "\f061";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: none;
-    font-size:14px;
-  }
-  .Carousel_Slide_ASC {
-    background-image: url('../../../assets/images/ITS_SectionHeaders_021621_AcceleratingDeployment.png');
-    background-size:cover;
-    min-height:340px;
-  }
-</style>

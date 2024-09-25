@@ -11,7 +11,7 @@ const { image, title } = Astro.props;
 ---
 
 <div class="mb-4">
-  <div class="heading hstack gap-2 align-items-end">
+  <div class="heading hstack gap-2 align-items-center">
     {image && (
       <div class="icon rounded-circle d-flex align-items-center justify-content-center">
         <img 
@@ -20,7 +20,7 @@ const { image, title } = Astro.props;
         />
       </div>
     )}
-    <h2 class="mb-2">{title}</h2>
+    <h2 class:list={[{"mb-2": !image}, {"mb-0": image}]}>{title}</h2>
   </div>
   <hr class:list={["heading-border", {"image-border": image}]}/>
 </div>
@@ -28,13 +28,13 @@ const { image, title } = Astro.props;
 <style>
 .icon {
   background-color: rgb(3,48,68);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 .icon img {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
   object-fit: contain;
 }
 
@@ -50,6 +50,6 @@ const { image, title } = Astro.props;
 }
 
 .image-border {
-  margin-left: 2rem;
+  margin-left: 1.5rem;
 }
 </style>

@@ -9,10 +9,9 @@ import BaseLayout from './BaseLayout.astro';
 
 interface Props {
 	title: string;
-  bannerClass?: string;
 }
 
-const { title, bannerClass } = Astro.props;
+const { title } = Astro.props;
 
 const getTrimmedPath = (path: string): string => path.replaceAll("/", "");
 
@@ -24,39 +23,40 @@ const isActive = (item: NavigationItem | ChildNavigationItem): boolean => {
   return currentPath.startsWith(trimmedPath);
 }
 
-const isActiveSubpath = (item: ChildNavigationItem): boolean => {
-  if (item.isExternal) return false;
-  const trimmedPath = getTrimmedPath(base_url(item.url));
-  return currentPath === trimmedPath;
-}
+// const isActiveSubpath = (item: ChildNavigationItem): boolean => {
+//   if (item.isExternal) return false;
+//   const trimmedPath = getTrimmedPath(base_url(item.url));
+//   return currentPath === trimmedPath;
+// }
 
 const activeSection: NavigationItem | undefined = navigation.find(section => isActive(section));
-const activePage: ChildNavigationItem | undefined = activeSection?.pages.find(page => isActive(page));
-const activeSubpage: ChildNavigationItem | undefined = activePage?.pages?.find(subpage => isActiveSubpath(subpage));
+// const activePage: ChildNavigationItem | undefined = activeSection?.pages.find(page => isActive(page));
+// const activeSubpage: ChildNavigationItem | undefined = activePage?.pages?.find(subpage => isActiveSubpath(subpage));
 
 ---
 <BaseLayout title={title}>
-  <Banner className={bannerClass}>
+  <Banner>
     <slot name="banner" title="banner"/>
   </Banner>
-  <div class="container-fluid h-100 bodyWrap">
-    <div class="row h-100">
-      <aside class="col-12 col-md-3 p-3 bg-light">
-        {activeSection && <Sidebar items={activeSection.pages} currentItem={activePage}/>}
+  <div class="page-content container-xl min-h-screen">
+    <div class="row gx-5">
+      <aside class="col-lg-3">
+        {activeSection && <Sidebar items={activeSection.pages}/>}
       </aside>
-      <main class="col-9 MainContent">
-        {activePage?.pages ? (
-          <div class="row" style="padding-bottom: 20px; margin-bottom: 30px; border-bottom-style: solid; border-block-width: 1px; border-color: gainsboro">
-            <div class="container-fluid">
-              <Tabs items={activePage.pages} currentItem={activeSubpage}/>
-              <slot/>
-            </div>
-          </div>
-        ) : (
-          <slot/>
-        )}
+      <main class="col-lg-9">
+        <slot/>
       </main>
     </div>
   </div>
   <slot name="footer" title="footer"/>
 </BaseLayout>
+
+<style>
+  .page-content {
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+  }
+  aside {
+    display: block;
+  }
+</style>
