@@ -1,6 +1,8 @@
 ---
 import Default from "../../layouts/Default.astro";
 import SideBar from "../../components/SideBar_ContactUs.astro";
+import base_url from '../../lib/base_url';
+
 ---
 
 <Default title="ITS JPO - FAQs">
@@ -27,7 +29,7 @@ import SideBar from "../../components/SideBar_ContactUs.astro";
         </p>
         <p></p>
         <a href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" target="_blank" rel="noopener noreferrer">
-          <img src="../../assets/images/ITSJPO_NewsletterWebsiteImage_030123.png" style="width: 80%">
+          <img src={base_url("/assets/images/ITSJPO_NewsletterWebsiteImage_030123.png")} style="width: 80%">
         </a>
         <p></p>
         <p>

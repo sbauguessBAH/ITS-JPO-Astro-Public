@@ -1,6 +1,8 @@
 ---
 import Default from "../../layouts/Default.astro";
 import SideBar from "../../components/SideBar_Deployment.astro";
+import base_url from '../../lib/base_url';
+
 ---
 
 <Default title="ITS JPO - Vehicle-to-Everything (V2X)">
@@ -48,15 +50,43 @@ import SideBar from "../../components/SideBar_Deployment.astro";
           <li><a href="https://www.pcb.its.dot.gov/itscourses/default.aspx" target="_blank">Connected Vehicle Training resources</a></li>
         </ul>
         <p>
-          Visit the <a href="../pilots/index.htm">Connected Vehicle Program</a> section of this website for more information about the U.S. DOT’s Connected Vehicle Program and connected vehicle technologies.
+          Visit the <a href={base_url("/pilots/index.htm")}>Connected Vehicle Program</a> section of this website for more information about the U.S. DOT’s Connected Vehicle Program and connected vehicle technologies.
         </p>
         <p>&nbsp;</p>
-        <p><img src="/src/assets/images/Image38.jpg" alt="Wireless communications will allow connectivity between all modes of transportation" width="558" height="369" /></p>
-        <h2>Program Resources</h2>
+        <p><img src={base_url("/assets/images/Image38.jpg")} alt="Wireless communications will allow connectivity between all modes of transportation" width="558" height="369" /></p>
+        <h2>Publictions</h2>
 
         <ul>
-          <li><a href="v2x.htm">Vehicle-to-Everything (V2X) Publications</a></li>
-        </ul>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/40926" target="_blank" rel="noopener noreferrer">V2I Roadway Geometry Trade Study</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3319" target="_blank" rel="noopener noreferrer">Vehicle Positioning Trade Study</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/23215" target="_blank" rel="noopener noreferrer">SPaT Applications -    Communications</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/26496" target="_blank" rel="noopener noreferrer">V2I Accelerated Safety    Applications - ConOps</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/26495" target="_blank" rel="noopener noreferrer">V2I Accelerated Safety    Applications - SyRS</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/26500" target="_blank" rel="noopener noreferrer">V2I Safety Applications - ConOps</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/26499" target="_blank" rel="noopener noreferrer">V2I Safety Applications - SyRS</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3440" target="_blank" rel="noopener noreferrer">AASHTO V2I Footprint Analysis</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3529" target="_blank" rel="noopener noreferrer">SRI Gap Analysis</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3453" target="_blank" rel="noopener noreferrer">Transit Safety Retrofit Package</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3600" target="_blank" rel="noopener noreferrer">RSU Spec Update v4.0 (superseded    by 4.1)</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3459" target="_blank" rel="noopener noreferrer">V2I Transit Operational Concepts    - Transit Pedestrian Crossing Safety</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3507" target="_blank" rel="noopener noreferrer">V2I Transit Operational Concepts    - Transit Bus Stop Pedestrian Safety</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3562" target="_blank" rel="noopener noreferrer">Smart Roadside Initiative    Prototype</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/4038" target="_blank" rel="noopener noreferrer">SRI Macro-Benefit Analysis</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3544" target="_blank" rel="noopener noreferrer">V2I Transit Operational Concepts    - Transit Vehicle Center Data Exchange</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3567" target="_blank" rel="noopener noreferrer">Transit V2I Assessment</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3592" target="_blank" rel="noopener noreferrer">V2I Safety Applications -    Performance Requirements</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3546" target="_blank" rel="noopener noreferrer">Transit V2I Operational Concepts    - Transit Traveler Information</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/32052" target="_blank" rel="noopener noreferrer">SRI Impacts Assessment</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3577" target="_blank" rel="noopener noreferrer">Recommended Practices for DSRC    Licensing</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/31397" target="_blank" rel="noopener noreferrer">CV Impacts on Transportation    Planning</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/32033" target="_blank" rel="noopener noreferrer">V2I Message Lexicon</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/34763" target="_blank" rel="noopener noreferrer">Overview of USDOT CV RSU    Research</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/31610" target="_blank" rel="noopener noreferrer">TSPW</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/31813" target="_blank" rel="noopener noreferrer">V2I Rail Crossing</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3600" target="_blank" rel="noopener noreferrer">RSU Spec Update v4.1</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/3601" target="_blank" rel="noopener noreferrer">CAMP V2I Safety Applications    Development</a></li>
+          <li><a href="https://rosap.ntl.bts.gov/view/dot/37680" target="_blank" rel="noopener noreferrer">V2I Reference Implementation (RI    of V2I Hub) – V2I Hub Deployment Guide                                  </a></li>
+  </ul>
 
         <div class="contacts">
           <h2>Research Contacts</h2>

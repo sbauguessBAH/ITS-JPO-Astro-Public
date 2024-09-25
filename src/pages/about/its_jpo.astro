@@ -1,6 +1,8 @@
 ﻿---
 import Default from '../../layouts/Default.astro';
 import SideBar from '../../components/SideBar_About.astro';
+import base_url from '../../lib/base_url';
+
 ---
 <Default title="ITS JPO - About">
 
@@ -40,7 +42,7 @@ import SideBar from '../../components/SideBar_About.astro';
               </div>
               <div class="col-lg-3">
                 <a href="/assets/pdf/stratplan2020/ITSJPO_StrategicPlan_2020-2025.pdf" target="_blank" rel="noopener noreferrer">
-                  <img src="../../assets/images/ITSJPO_StratPlanSmallBanner1.png" style="width: 100%; max-width: 500px; margin: auto; margin-right: 40px; display: block; padding-bottom: 20px" />
+                  <img src={base_url("/assets/images/ITSJPO_StratPlanSmallBanner1.png")} style="width: 100%; max-width: 500px; margin: auto; margin-right: 40px; display: block; padding-bottom: 20px" />
                 </a>
                 <button class="Pagebtn externalLink btnDark" onclick="window.open('/assets/pdf/stratplan2020/ITSJPO_StrategicPlan_2020-2025.pdf');">Read the 2020-2025 <br />Strategic Plan</button>
               </div>
