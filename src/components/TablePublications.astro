@@ -1,8 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import tableContent from "../content/publicationsData/resources.json";
 
+const allPublications = await getCollection('publications').then(collection => collection.map(row => row.data));
 const uniqueType = [...new Set(tableContent.map(item => item.type))];
-
 const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployment))];
 ---
  
@@ -174,7 +175,7 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
   </thead>
   <tbody>
     {
-      tableContent.map((item) => (
+      allPublications.map((item) => (
         <tr>
           <td>{item.awardee_deployment}</td>
           <td>{item.resource_title}</td>
