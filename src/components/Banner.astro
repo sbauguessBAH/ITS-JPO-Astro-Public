@@ -6,7 +6,7 @@ interface Props {
 const { className } = Astro.props;
 ---
 
-<div class:list={["AboutBanner", { className: className }]}>
+<div class:list={["AboutBanner", className]}>
   <div class="AboutBannerTitle">
     <slot/>
   </div>

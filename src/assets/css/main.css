@@ -343,6 +343,10 @@ nav-item dropdown show{
     background-size: cover;
 }
 
+.ASC_Bkgd {
+    background-image: url('../images/asc/banner.jpg');
+}
+
 .nav-item .activated {
     background-color: #09638C;
     border-color: #09638C;
