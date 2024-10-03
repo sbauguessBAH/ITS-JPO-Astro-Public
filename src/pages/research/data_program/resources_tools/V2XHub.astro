@@ -1,75 +1,24 @@
 ---
-import Default from "../../../../layouts/Default.astro";
-import SideBar from "../../../../components/SideBar_Research.astro";
-import NavDataProgram from "../../../../components/Nav_DataProgram.astro";
+import DataProgramLayout from "../_DataProgramLayout.astro";
+import base_url from "@/src/lib/base_url";
 ---
-
-<Default title="ITS JPO - ITS Data Program">
-  <!-- InstanceBeginEditable name="AboutBanner" -->
-
-  <div class="AboutBanner DataAccess_bkgd">
-    <div class="AboutBannerTitle">
-      <h1>ITS Data Program</h1>
-    </div>
-  </div>
-  <div class="container-fluid h-100 bodyWrap">
-    <div class="row h-100">
-      <aside class="col-12 col-md-3 p-3 bg-light">
-        <SideBar />
-      </aside>
-      <main class="col-9 MainContent">
-
-        <div class="container-fluid"><NavDataProgram />
-          <h2 class="sideways blue">Vehicle-to-Everything (V2X) Hub</h2>
+<DataProgramLayout title="Vehicle-to-Everyting (V2X) Hub | Resources and Tools">
+  <h2 class="sideways blue">Vehicle-to-Everything (V2X) Hub</h2>
           
-           <div class="row" style="padding-bottom:0px; margin-bottom:20px; border-bottom-style:none; border-block-width:1px; border-color:gainsboro;"> 
-            <div class="col-lg-7">
-              <p>
-                The Vehicle-to-Everything Hub (V2X Hub) was developed as a result of an effort to build a framework of data flows, data exchanges, and the interfaces that will allow CAV information to be shared between relevant components of the transportation infrastructure and mobile devices, including those in vehicles. The V2X Hub was developed with input/feedback from a community of practice that brought together stakeholders from related efforts and ensured that the additions to the V2X Hub software met the needs of the eventual implementors. Essentially, V2X Hub is a repository that provides open-source frameworks for infrastructure components of a connected vehicle deployment. The V2X Hub builds on existing open source software (OSS) applications for communication among all parts of a connected deployment including vehicles, infrastructure, pedestrians, cyclists, and emergency services to create an interoperable software environment for V2X research and deployment.         </p>
-              <ul>
-                  <li>
-                      <a href="https://www.fhwa.dot.gov/publications/research/operations/22047/22047.pdf" target="_blank">Vehicle-to-Everything (V2X) Hub Factsheet</a>
-                  </li>
-              </ul>
-              <button class="Pagebtn externalLink_White btnDark top20Margin" onclick="window.open('https://github.com/usdot-fhwa-OPS/V2X-Hub');">Visit the V2X GitHub Repository</button> 
-      
-            </div>
-            <div class="col-lg-5">
-              <img class="sideColumnImg" src="../../../../assets/images/data_access/V2XHub.png">
-            </div>
-          </div>
-        </div>
-      
-      
-      
-            
-      
-      
-      
-      
-          </main>
-    </div>
-  </div>
-  <section class="download bg-primary text-center" id="research" style="padding-top: 2em">
-    <div class="container-fluid">
-      <div class="container">
-        <div class="col-lg-12">
-          <h2>Contacts</h2>
-          <p style="padding-bottom: 20px">
-            Please explore this site for a more detailed description of the program and progress. We will continue to upload relevant program information for public consumption as it becomes
-            available. For inquiries regarding the program, please contact the USDOT Point of Contact below.
-          </p>
-          <p style="padding-top: 20px; border-top-style: solid; border-color: honeydew; border-width: 2px">
-            <b>Murat Omay</b>
-          </p>
-          <p>Program Manager, ITS Data Program</p>
-          <p>ITS Joint Program Office</p>
-          <p>(202)-366-4374</p>
-          <p>
-            <a class="email-footer" href="mailto:Murat.Omay@dot.gov">Murat.Omay@dot.gov</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-</Default>
+  <div class="row" style="padding-bottom:0px; margin-bottom:20px; border-bottom-style:none; border-block-width:1px; border-color:gainsboro;"> 
+   <div class="col-lg-7">
+     <p>
+       The Vehicle-to-Everything Hub (V2X Hub) was developed as a result of an effort to build a framework of data flows, data exchanges, and the interfaces that will allow CAV information to be shared between relevant components of the transportation infrastructure and mobile devices, including those in vehicles. The V2X Hub was developed with input/feedback from a community of practice that brought together stakeholders from related efforts and ensured that the additions to the V2X Hub software met the needs of the eventual implementors. Essentially, V2X Hub is a repository that provides open-source frameworks for infrastructure components of a connected vehicle deployment. The V2X Hub builds on existing open source software (OSS) applications for communication among all parts of a connected deployment including vehicles, infrastructure, pedestrians, cyclists, and emergency services to create an interoperable software environment for V2X research and deployment.         </p>
+     <ul>
+         <li>
+             <a href="https://www.fhwa.dot.gov/publications/research/operations/22047/22047.pdf" target="_blank">Vehicle-to-Everything (V2X) Hub Factsheet</a>
+         </li>
+     </ul>
+     <button class="Pagebtn externalLink_White btnDark top20Margin" onclick="window.open('https://github.com/usdot-fhwa-OPS/V2X-Hub');">Visit the V2X GitHub Repository</button> 
+
+   </div>
+   <div class="col-lg-5">
+     <img class="sideColumnImg" src={base_url("/assets/images/data_access/V2XHub.png")}>
+   </div>
+ </div>
+</DataProgramLayout>

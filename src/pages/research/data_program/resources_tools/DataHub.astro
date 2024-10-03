@@ -2,8 +2,56 @@
 import Default from "../../../../layouts/Default.astro";
 import SideBar from "../../../../components/SideBar_Research.astro";
 import NavDataProgram from "../../../../components/Nav_DataProgram.astro";
+import DataProgramLayout from "../_DataProgramLayout.astro";
+import base_url from "@/src/lib/base_url";
 ---
+<DataProgramLayout title="ITS DataHub | Resources and Tools">
+  <h2 class="sideways blue">ITS DataHub</h2>
+          
+  <div class="row" style="padding-bottom:0px; margin-bottom:20px; border-bottom-style:none; border-block-width:1px; border-color:gainsboro;"> 
+   <div class="col-lg-7">
+     <p>
+       ITS DataHub was developed and being operated/maintained by the ITS Data Program to provide a single point of entry to discover publicly available ITS research data. ITS DataHub facilitates third-party research into the effectiveness of emerging ITS technologies, preliminary development of third-party applications, promoting the use, reuse, repurposing, and integration of ITS data across projects, and harmonization of data across similar collections.
+       </p><ul>
+         <li>
+             <a href="https://www.its.dot.gov/factsheets/pdf/ITS_ResearchData.pdf" target="_blank">ITS Data Hub Factsheet (2022)</a>
+         </li>
+     </ul>
+     <button class="Pagebtn externalLink_White btnDark top20Margin" onclick="window.open('https://www.its.dot.gov/data/');">Visit the ITS Data Hub</button> 
 
+   </div>
+   <div class="col-lg-5">
+     <img class="sideColumnImg" src={base_url("/assets/images/data_access/ITSDataHub_Template.png")}>
+   </div>
+ </div>
+ <div class="accordion accordion-flush" id="myAccordion">
+  <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne" style="border-bottom:1px solid #d4d4d4;">
+          <button id="FAQ_Anchor" type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+            <img src={base_url("/assets/images/accelerating/ITS_AcceleratingDeploymentMockup_FAQs.png")} alt="FAQs" class="smallDropdownIcon">
+            <h3>Frequently Asked Questions (FAQs)</h3>
+          </button>									
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#myAccordion" style="">
+        <div class="card-body">
+          <h4>
+          What are the benefits of providing access to ITS data from federal research and demonstration projects?
+          </h4>
+          <p class="read-more-wrap">
+          Consistent and timely access to data increases the return on federal investment in ITS research and demonstration projects while helping to inform future investment decisions, which speeds deployment of innovative ITS technologies and produces widespread benefits. By providing access to these data, the USDOT aims to enable third-party research into the effectiveness of emerging ITS technologies, preliminary development of third-party applications, and harmonization of data across similar collections. Data accessible through the ITS DataHub is quality-checked, well-documented, and freely available to the public.
+          </p>
+            
+          <h4>
+          Are there any restrictions of using the data that is made available on ITS DataHub?
+          </h4>
+          <p class="read-more-wrap">
+          Data on <a href="https://www.its.dot.gov/data/">ITS DataHub</a> is free and open to the public. Data can be used for other projects as long as it is properly referenced.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</DataProgramLayout>
 <Default title="ITS JPO - ITS Data Program">
   <!-- InstanceBeginEditable name="AboutBanner" -->
 
@@ -22,56 +70,13 @@ import NavDataProgram from "../../../../components/Nav_DataProgram.astro";
 
         <div class="container-fluid">
           <NavDataProgram/>
-          <h2 class="sideways blue">ITS DataHub</h2>
           
-           <div class="row" style="padding-bottom:0px; margin-bottom:20px; border-bottom-style:none; border-block-width:1px; border-color:gainsboro;"> 
-            <div class="col-lg-7">
-              <p>
-                ITS DataHub was developed and being operated/maintained by the ITS Data Program to provide a single point of entry to discover publicly available ITS research data. ITS DataHub facilitates third-party research into the effectiveness of emerging ITS technologies, preliminary development of third-party applications, promoting the use, reuse, repurposing, and integration of ITS data across projects, and harmonization of data across similar collections.
-                </p><ul>
-                  <li>
-                      <a href="https://www.its.dot.gov/factsheets/pdf/ITS_ResearchData.pdf" target="_blank">ITS Data Hub Factsheet (2022)</a>
-                  </li>
-              </ul>
-              <button class="Pagebtn externalLink_White btnDark top20Margin" onclick="window.open('https://www.its.dot.gov/data/');">Visit the ITS Data Hub</button> 
-      
-            </div>
-            <div class="col-lg-5">
-              <img class="sideColumnImg" src="../../../../assets/images/data_access/ITSDataHub_Template.png">
-            </div>
-          </div>
         </div>
       
       
        
       
-          <div class="accordion accordion-flush" id="myAccordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne" style="border-bottom:1px solid #d4d4d4;">
-                    <button id="FAQ_Anchor" type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"><img src="../../../../assets/images/accelerating/ITS_AcceleratingDeploymentMockup_FAQs.png" alt="FAQs" class="smallDropdownIcon"><h3>Frequently Asked Questions (FAQs)</h3></button>									
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#myAccordion" style="">
-                    <div class="card-body">
-                            <h4>
-                            What are the benefits of providing access to ITS data from federal research and demonstration projects?
-                            </h4>
-                            <p class="read-more-wrap">
-                            Consistent and timely access to data increases the return on federal investment in ITS research and demonstration projects while helping to inform future investment decisions, which speeds deployment of innovative ITS technologies and produces widespread benefits. By providing access to these data, the USDOT aims to enable third-party research into the effectiveness of emerging ITS technologies, preliminary development of third-party applications, and harmonization of data across similar collections. Data accessible through the ITS DataHub is quality-checked, well-documented, and freely available to the public.
-                            </p>
-                              
-                            <h4>
-                            Are there any restrictions of using the data that is made available on ITS DataHub?
-                            </h4>
-                            <p class="read-more-wrap">
-                            Data on <a href="https://www.its.dot.gov/data/">ITS DataHub</a> is free and open to the public. Data can be used for other projects as long as it is properly referenced.
-                            </p>
-                            </div>
-                     </div>
-            </div>
-      
           
-      
-          </div>
       
       
         </main>

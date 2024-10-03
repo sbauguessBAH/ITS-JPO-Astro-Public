@@ -7,6 +7,7 @@ export type ChildNavigationItem = {
   name: string;
   url: string;
   isExternal?: boolean;
+  isDisabled?: boolean;
   pages?: ChildNavigationItem[];
 }
 
@@ -27,7 +28,14 @@ export const navigation: NavigationItem[] = [
       { name: 'ITS Joint Program Office', url: '/about/its_jpo' },
       { name: 'Strategic Plan', url: '/about/stratplan2020' },
       { name: 'History of Intelligent Transportation Systems', url: '/about/history' },
-      { name: 'ITS Program Advisory Committee', url: '/about/itspac' },
+      { name: 'ITS Program Advisory Committee', url: '/about/itspac', pages: [
+        { name: 'ITSPAC Home', url: '/about/itspac' },
+        { name: 'Membership', url: '/about/itspac/membership' },
+        { name: 'Charter', url: '/about/itspac/charter' },
+        { name: 'Committee Meeting Information (Coming Soon)', url: '/about/itspac/committee-meeting', isDisabled: true },
+        { name: 'Historical Archive', url: '/about/itspac/archive' },
+        { name: 'Ethics Guidelines', url: '/about/itspac/itspac_ethics' }
+      ]},
       { name: 'Frequently Asked Questions', url: '/about/faqs' },
       { name: 'Site Map', url: '/about/site-map' }
     ]
@@ -38,9 +46,40 @@ export const navigation: NavigationItem[] = [
     pages: [
       { name: 'Accelerating ITS Deployment', url: '/research/accelerating' },
       { name: 'Automation', url: '/research/automation' },
-      { name: 'ITS4US', url: '/research/ITS4US' },
+      { name: 'ITS4US', url: '/research/ITS4US', pages: [
+        { name: 'ITS4US Home', url: '/research/ITS4US' },
+        { name: 'Program Overview', url: '/research/ITS4US/overview' },
+        { name: 'Publications', url: '/research/ITS4US/publications' },
+        { name: 'Webinars', url: '/research/ITS4US/webinars' },
+        { name: 'Featured Links', url: '/research/ITS4US/featured_links' },
+        { name: 'ITS4US in the Media', url: '/research/ITS4US/in_the_media' },
+        { name: 'Phase 1 Awardees', url: '/research/ITS4US/phase1_awardees' },
+      ]},
       { name: 'ITS Cybersecurity Research', url: 'https://www.its.dot.gov/research_areas/cybersecurity/index.htm', isExternal: true },
-      { name: 'ITS Data Program', url: '/research/data_program' },
+      { name: 'ITS Data Program', url: '/research/data_program', pages: [
+        { name: 'Data Program Home', url: '/research/data_program' },
+        { name: 'Program Resources and Tools', url: '/research/data_program/resources_tools', pages: [
+          { name: 'Program Resources and Tools', url: '/research/data_program/resources_tools' },
+          { name: 'ITS DataHub', url: '/research/data_program/resources_tools/CodeHub' },
+          { name: 'ITS CodeHub', url: '/research/data_program/resources_tools/DataHub' },
+          { name: 'Vehicle-to-Everything (V2X) Hub', url: '/research/data_program/resources_tools/V2XHub' },
+          { name: 'Reference Documents, Guidelines, and Templates', url: '/research/data_program/resources_tools/reference' },
+          { name: 'Publications', url: '/research/data_program/resources_tools/publications' },
+        ] },
+        { name: 'Research Projects', url: '/research/data_program/research_projects', pages: [
+          { name: 'Research Projects', url: '/research/data_program/research_projects' },
+          { name: 'Data Exchanges', url: '/research/data_program/research_projects/data-exchanges' },
+          { name: 'Gap Analysis for High-Value Data Sets', url: '/research/data_program/research_projects/gap-analysis' },
+          { name: 'Data Valuation Index (DVI)', url: '/research/data_program/research_projects/DVI' },
+          { name: 'Data Management Capability Maturity Models (CMMs)', url: '/research/data_program/research_projects/CMMs' },
+          { name: 'Data Governance, Stewardship, and Preservation Methods', url: '/research/data_program/research_projects/data-governance' },
+          { name: 'Data and Innovation Research', url: '/research/data_program/research_projects/research' },
+          { name: 'Research, Operational, and AI Data Integration Initiative (ROADII)', url: '/research/data_program/research_projects/ROADII' },
+          { name: 'AI-Enabled ITS Capability Maturity Model (CMM)', url: '/research/data_program/research_projects/AI-CMM' },
+        ]},
+        { name: 'News and Events', url: '/research/data_program/data-news' },
+        { name: 'Get Involved', url: '/research/data_program/get-involved' },
+      ]},
       { name: 'Emerging and Enabling Technologies', url: '/research/emerging-tech' },
       { name: 'National Transportation Library', url: '/research/national-transportation-library' }
     ]
@@ -64,13 +103,13 @@ export const navigation: NavigationItem[] = [
   },
   {
     name: 'News & Information',
-    url: '/new-info',
+    url: '/news-info',
     pages: [
       { name: 'Latest News from ITS JPO', url: '/news-info/news' },
       { name: 'ITS JPO Director\'s Blog', url: '/news-info/blog' },
-      { name: 'ITS Research Fact Sheet', url: '/news-info/fact-sheet' },
+      { name: 'ITS Research Fact Sheets', url: '/news-info/fact-sheet' },
       { name: 'Infographics', url: '/news-info/infographics' },
-      { name: 'Videos', url: '/news-info/video' },
+      { name: 'Videos', url: '/news-info/videos' },
       { name: 'Image Library', url: '/news-info/image-library' },
     ]
   },
@@ -89,11 +128,11 @@ export const navigation: NavigationItem[] = [
     name: 'Resources',
     url: '/resources',
     pages: [
-      { name: 'ITS CodeHub', url: 'https://www.its.dot.gov/code/index.htm', isExternal: true },
-      { name: 'ITS DataHub', url: 'https://www.its.dot.gov/code/index.htm', isExternal: true },
+      { name: 'ITS CodeHub', url: 'https://www.its.dot.gov/code', isExternal: true },
+      { name: 'ITS DataHub', url: 'https://www.its.dot.gov/data', isExternal: true },
       { name: 'ITS Deployment Evaluation', url: 'https://www.its.dot.gov/pilots/index.htm', isExternal: true },
       { name: 'ITS Deployment Statistics', url: 'https://www.its.dot.gov/pilots/events.htm', isExternal: true },
-      { name: 'Security Credential Management System (SCMS)', url: '/resources/SCMS' },
+      { name: 'Security Credential Management System (SCMS)', url: '/resources/scms' },
       { name: 'Architecture, Standards, and Cybersecurity (ASC)', url: '/resources/asc', pages: [
         { name: "ASC Home", url: "/resources/asc" },
         { name: "ITS Standards", url: "/resources/asc/standards" },
@@ -109,8 +148,8 @@ export const navigation: NavigationItem[] = [
     name: 'Contact Us',
     url: '/contact-us',
     pages: [
-      { name: 'Its JPO Staff Listing', url: '/research/ITS4US' },
-      { name: 'Join Our Mailing List', url: '/deployment/V2X' },
+      { name: 'Its JPO Staff Listing', url: '/contact-us/staff-listing' },
+      { name: 'Join Our Mailing List', url: '/contact-us/mailinglist' },
       { name: 'Its Specialists in Field Offices', url: 'https://www.fhwa.dot.gov/resourcecenter/teams/operations/index.cfm', isExternal: true },
     ]
   },
@@ -128,36 +167,56 @@ export function getTrimmedPathname(pathname: string): string {
   return trimmedPath;
 }
 
-export function findNavigationItem(pathname: string): [ChildNavigationItem | undefined, ChildNavigationItem | undefined] {
+export function findNavigationItem(pathname: string): [ChildNavigationItem | undefined, ChildNavigationItem | undefined, ChildNavigationItem | undefined] {
   const trimmedPathname = getTrimmedPathname(pathname);
 
   // Find the parent section--if it doesn't exist, then there's no matching navigation item
   const section = navigation.find(section => trimmedPathname.startsWith(section.url));
-  if (!section) return [undefined, undefined];
+  if (!section) return [undefined, undefined, undefined];
 
   for (const page of section.pages) {
     // if (trimmedPathname === page.url) return [page, undefined];
     if (trimmedPathname.startsWith(page.url)) {
       if (page.pages) {
         for (const subPage of page.pages) {
-          if (trimmedPathname === subPage.url) return [page, subPage];
+          if (trimmedPathname === subPage.url) return [page, subPage, undefined];
+          if (trimmedPathname.includes(subPage.url) && subPage.pages) {
+            for (const subSubPage of subPage.pages) {
+              if (trimmedPathname === subSubPage.url) return [page, subPage, subSubPage];
+            }
+          }
         }
       } else {
-        return [page, undefined];
+        return [page, undefined, undefined];
       }
     }
   }
-  return [undefined, undefined];
+  return [undefined, undefined, undefined];
+}
 
-  // // While the current navigation item has children and there is no exact match found, go down the tree
-  // let navigationItem: NavigationItem | ChildNavigationItem = section;
-  // while (navigationItem) {
-  //   // If it's an exact match, return the current item from the function
-  //   if (navigationItem.url === trimmedPathname) return navigationItem;
-    
-  //   // If there are child pages, then look through them to see if there's one that matches
-  //   if (!navigationItem.pages) return undefined;
+export function findBreadcrumbItem(pathname: string): [NavigationItem | undefined, ChildNavigationItem | undefined, ChildNavigationItem | undefined, ChildNavigationItem | undefined] {
+  const trimmedPathname = getTrimmedPathname(pathname);
 
-    
-  // }
+  // Find the parent section--if it doesn't exist, then there's no matching navigation item
+  const section = navigation.find(section => trimmedPathname.startsWith(section.url));
+  if (!section) return [undefined, undefined, undefined, undefined];
+
+  for (const page of section.pages) {
+    // if (trimmedPathname === page.url) return [page, undefined];
+    if (trimmedPathname.startsWith(page.url)) {
+      if (page.pages) {
+        for (const subPage of page.pages) {
+          if (trimmedPathname === subPage.url) return [section, page, subPage, undefined];
+          if (trimmedPathname.includes(subPage.url) && subPage.pages) {
+            for (const subSubPage of subPage.pages) {
+              if (trimmedPathname === subSubPage.url) return [section, page, subPage, subSubPage];
+            }
+          }
+        }
+      } else {
+        return [section, page, undefined, undefined];
+      }
+    }
+  }
+  return [section, undefined, undefined, undefined];
 }

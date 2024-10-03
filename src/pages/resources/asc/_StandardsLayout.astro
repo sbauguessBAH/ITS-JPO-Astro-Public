@@ -1,5 +1,6 @@
 ---
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import bannerImage from "@/src/assets/images/asc/banner.jpg";
 
 interface Props {
   title: string
@@ -7,9 +8,9 @@ interface Props {
 
 const { title } = Astro.props;
 ---
-<style>
+<style is:global>
 	.typography {
-		margin-left: 0.5rem;
+		/* margin-left: 0.5rem; */
 		margin-right: 0.5rem;
 		margin-bottom: 2rem;
 	}
@@ -21,7 +22,7 @@ const { title } = Astro.props;
   }
 </style>
 
-<PageLayout title={title}>
+<PageLayout title={`${title} | ASC`} bannerImage={bannerImage}>
   <Fragment slot="banner">
 		Enabling ITS Resources
 		<br/>

@@ -1,0 +1,1023 @@
+BODY {
+	MARGIN: 0px 1px 0px 0px; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #c9c9c9
+}
+.printPageBgcolor {
+	BACKGROUND-COLOR: #ffffff
+}
+TABLE {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+TR {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+TH {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+TD {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+H1 {
+	FONT-SIZE: 185%
+}
+H2 {
+	FONT-SIZE: 150%
+}
+H3 {
+	FONT-SIZE: 125%
+}
+H4 {
+	FONT-SIZE: 115%
+}
+H5 {
+	FONT-SIZE: 100%
+}
+H6 {
+	FONT-SIZE: 90%
+}
+CAPTION {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; TEXT-ALIGN: left
+}
+OL {
+	LIST-STYLE-TYPE: decimal
+}
+OL OL {
+	LIST-STYLE-TYPE: decimal
+}
+OL OL OL {
+	LIST-STYLE-TYPE: decimal
+}
+OL OL OL OL {
+	LIST-STYLE-TYPE: decimal
+}
+UL {
+	LIST-STYLE-TYPE: disc
+}
+UL UL {
+	LIST-STYLE-TYPE: circle
+}
+UL UL UL {
+	LIST-STYLE-TYPE: square
+}
+UL UL UL UL {
+	LIST-STYLE-TYPE: disc
+}
+P {
+	FONT-SIZE: 75%
+}
+BLOCKQUOTE {
+	FONT-SIZE: 75%
+}
+I {
+	FONT-STYLE: italic
+}
+EM {
+	FONT-STYLE: italic
+}
+B {
+	FONT-WEIGHT: bold
+}
+STRONG {
+	FONT-WEIGHT: bold
+}
+SUP {
+	FONT-SIZE: 85%; VERTICAL-ALIGN: super; LINE-HEIGHT: 1.5em
+}
+SUB {
+	FONT-SIZE: 85%; VERTICAL-ALIGN: sub; LINE-HEIGHT: 1.5em
+}
+.outline1 {
+	FONT-SIZE: 75%; LIST-STYLE-TYPE: upper-roman
+}
+.outline2 {
+	LIST-STYLE-TYPE: upper-alpha
+}
+.outline3 {
+	LIST-STYLE-TYPE: lower-roman
+}
+.outline4 {
+	LIST-STYLE-TYPE: lower-alpha
+}
+.nolist {
+	FONT-SIZE: 90%; LIST-STYLE-TYPE: none
+}
+.nolists {
+	LIST-STYLE-TYPE: none
+}
+.header1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 185%
+}
+.header2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 150%
+}
+.header3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 125%
+}
+.header4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 110%
+}
+.header5 {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%
+}
+.btsfont {
+	FONT-SIZE: 75%
+}
+.ritafont {
+	FONT-SIZE: 75%
+}
+.btsfont_java {
+	FONT-SIZE: 87%
+}
+.ritafont_java {
+	FONT-SIZE: 87%
+}
+.btsfontsmall {
+	FONT-SIZE: 70%
+}
+.ritafontsmall {
+	FONT-SIZE: 70%
+}
+.btsfontbig {
+	FONT-SIZE: 90%
+}
+.ritafontbig {
+	FONT-SIZE: 90%
+}
+.indent {
+	MARGIN-LEFT: 6ex
+}
+.indentp2 {
+	MARGIN-LEFT: 10ex
+}
+.indentp3 {
+	MARGIN-LEFT: 14ex
+}
+.indentp4 {
+	MARGIN-LEFT: 18ex
+}
+.indentp5 {
+	MARGIN-LEFT: 22ex
+}
+.indenttext {
+	TEXT-INDENT: 6ex
+}
+.center {
+	TEXT-ALIGN: center
+}
+.transparent {
+	FONT-SIZE: 10%; COLOR: #ffffff; BACKGROUND-COLOR: transparent
+}
+.transparent A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.transparent A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.transparent A:hover {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.note {
+	FONT-SIZE: 70%
+}
+.key {
+	FONT-SIZE: 70%
+}
+.source {
+	FONT-SIZE: 70%
+}
+.smallfooter {
+	FONT-SIZE: 70%
+}
+.important {
+	COLOR: #ff0000; FONT-FAMILY: arial, helvetica, sans-serif
+}
+.letterheadsmall {
+	FONT-SIZE: 70%
+}
+.letterheadregular {
+	FONT-SIZE: 75%
+}
+.forwirelessonly {
+	DISPLAY: none
+}
+.wirelessBgcolor {
+	BACKGROUND-COLOR: #ffffff
+}
+.colheadone {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #cccccc; TEXT-ALIGN: center
+}
+.colheadtwo {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #cccccc; TEXT-ALIGN: center
+}
+.colheadthree {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #cccccc; TEXT-ALIGN: center
+}
+.rowheadone {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.rowheadtwo {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+.rowheadthree {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.rowheadright {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: right
+}
+.rowheadcenter {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+.rowheadleft {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.rowheadrightimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: right
+}
+.rowheadcenterimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+.rowheadleftimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.rowheadoneimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.rowheadtwoimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+.rowheadthreeimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.indent1 {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 1ex; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.indent2 {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 2ex; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.indent3 {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 3ex; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.indent4 {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 4ex; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.indent5 {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 5ex; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.RHlayer1_indent {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 0ex; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.RHlayer2_indent {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 1ex; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.RHlayer3_indent {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 2ex; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.RHlayer4_indent {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 3ex; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.RHlayer5_indent {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 4ex; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.cellone {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: right
+}
+.celltwo {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.cellthree {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+.cellright {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: right
+}
+.cellrightwhite {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-ALIGN: right
+}
+.cellleft {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.cellleftwhite {
+	FONT-SIZE: 75%; COLOR: #000000; TEXT-ALIGN: left
+}
+.cellcenter {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+.cellrightimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: right
+}
+.cellleftimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.cellcenterimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+.celloneimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: right
+}
+.celltwoimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.cellthreeimportant {
+	FONT-SIZE: 75%; COLOR: #ff0000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+.cellrightshade {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #b7b7b7; TEXT-ALIGN: right
+}
+.cellleftshade {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #b7b7b7; TEXT-ALIGN: left
+}
+.cellcentershade {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #b7b7b7; TEXT-ALIGN: center
+}
+.spacerten {
+	LINE-HEIGHT: 10px
+}
+.spacerfive {
+	LINE-HEIGHT: 5px
+}
+.tocheader {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #cccccc; TEXT-ALIGN: center
+}
+.tocsection {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.tocentry {
+	FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.toclink {
+	FONT-SIZE: 75%; WIDTH: 10%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+.tocindent0 {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.tocindent1 {
+	PADDING-LEFT: 15px; FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.tocindent1nobold {
+	PADDING-LEFT: 15px; FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.tocindent2 {
+	PADDING-LEFT: 30px; FONT-SIZE: 75%; COLOR: #000000; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.textboxhead {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-WEIGHT: bold; FONT-SIZE: 90%; PADDING-BOTTOM: 4px; COLOR: #000000; PADDING-TOP: 4px; BACKGROUND-COLOR: #cccccc
+}
+.textboxborder {
+	BORDER-RIGHT: #cccccc thin solid; BORDER-TOP: #cccccc thin solid; BORDER-LEFT: #cccccc thin solid; BORDER-BOTTOM: #cccccc thin solid
+}
+.textbox {
+	COLOR: #000000; BACKGROUND-COLOR: #e6e6e6
+}
+.textboxYellow {
+	COLOR: #000000; BACKGROUND-COLOR: #ffff99
+}
+.ImageBoxRight {
+	PADDING-LEFT: 5px; MARGIN-RIGHT: 0px
+}
+.ImageBoxLeft {
+	PADDING-RIGHT: 5px; MARGIN-LEFT: 0px
+}
+.ImageCaption {
+	FONT-SIZE: 70%; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; FONT-FAMILY: arial, helvetica, sans-serif
+}
+A:active {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #800080; TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #0000ff; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: underline
+}
+A.collapsible:visited {
+	COLOR: #000000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.collapsible:link {
+	COLOR: #000000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.collapsible:hover {
+	COLOR: #cc0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.nodec:visited {
+	COLOR: #000000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.nodec:link {
+	COLOR: #000000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.nodec:hover {
+	COLOR: #000000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+A.nodec2:visited {
+	COLOR: #000000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.nodec2:link {
+	COLOR: #000000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.nodec2:hover {
+	COLOR: #000000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+A.skip:active {
+	FONT-SIZE: 1%; COLOR: #c9c9c9; LINE-HEIGHT: 1px; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.skip:visited {
+	FONT-SIZE: 1%; COLOR: #c9c9c9; LINE-HEIGHT: 1px; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.skip:link {
+	FONT-SIZE: 1%; COLOR: #c9c9c9; LINE-HEIGHT: 1px; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.skip:hover {
+	FONT-SIZE: 1%; COLOR: #c9c9c9; LINE-HEIGHT: 1px; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+.skips {
+	FONT-SIZE: 1%; COLOR: #c9c9c9; LINE-HEIGHT: 1px; BACKGROUND-COLOR: transparent
+}
+.linkbutton {
+	BORDER-RIGHT: #ffffff 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ffffff 0px solid; PADDING-LEFT: 0px; FONT-SIZE: 100%; PADDING-BOTTOM: 0px; BORDER-LEFT: #ffffff 0px solid; COLOR: #0000ff; PADDING-TOP: 0px; BORDER-BOTTOM: #ffffff 0px solid; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.buttons {
+	FONT-SIZE: 70%; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+.buttonsOn {
+	FONT-SIZE: 70%; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+.pdcrightaligntextform {
+	FONT-SIZE: 100%; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right
+}
+.pdcbuttons {
+	FONT-SIZE: 70%; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+.pdcbuttonsOn {
+	FONT-SIZE: 70%; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+.pdcinvoicefont1 {
+	FONT-SIZE: 8pt; FONT-FAMILY: arial
+}
+.pdcinvoicefont2 {
+	FONT-SIZE: 10pt; FONT-FAMILY: arial
+}
+.pdcinvoicefont3 {
+	FONT-SIZE: 12pt; FONT-FAMILY: arial
+}
+.pdcinvoiceline {
+	FONT-SIZE: 10pt; BORDER-BOTTOM: #000000 1px solid
+}
+.inputwidth {
+	FONT-SIZE: 87%; WIDTH: 171px; HEIGHT: 19px; max-width: 170px; max-height: 19px
+}
+A.pdclogin:active {
+	COLOR: #cc0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+A.pdclogin:visited {
+	COLOR: #cc0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+A.pdclogin:link {
+	COLOR: #cc0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+A.pdclogin:hover {
+	COLOR: #cc0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+A.pdclogout:active {
+	COLOR: #ff0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+A.pdclogout:visited {
+	COLOR: #ff0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+A.pdclogout:link {
+	COLOR: #ff0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+A.pdclogout:hover {
+	COLOR: #ff0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+.tsanavbar {
+	FONT-SIZE: 75%; COLOR: #ffffff; BACKGROUND-COLOR: #000066
+}
+.tsaheader {
+	FONT-SIZE: 90%; BACKGROUND-COLOR: #a2b5cd
+}
+.tsainputbox {
+	FONT-SIZE: 75%; BACKGROUND-COLOR: #e5e5e5
+}
+.error {
+	FONT-WEIGHT: bold; COLOR: #ff0000
+}
+A.tsaskip:active {
+	FONT-SIZE: 60%; COLOR: #000066; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.tsaskip:visited {
+	FONT-SIZE: 60%; COLOR: #000066; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.tsaskip:link {
+	FONT-SIZE: 60%; COLOR: #000066; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.tsaskip:hover {
+	FONT-SIZE: 60%; COLOR: #000066; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+.globalnavbar {
+	FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #0066cc
+}
+.globalnavbar A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.globalnavbar A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.globalnavbar A:hover {
+	COLOR: #ffff00; TEXT-DECORATION: none
+}
+.GlobalTopNavBar2 {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #ffffff
+}
+.GlobalTopNavBar {
+	FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #2175d9
+}
+.pdcLoginNavBar {
+	FONT-SIZE: 70%; COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #ffffff
+}
+.GlobalTopNavBar A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.GlobalTopNavBar A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.GlobalTopNavBar A:hover {
+	COLOR: #ffff00; TEXT-DECORATION: none
+}
+A.login:active {
+	COLOR: #ffff00; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.login:visited {
+	COLOR: #ffff00; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.login:link {
+	COLOR: #ffff00; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.login:hover {
+	COLOR: #ffff00; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+.globalheadermiddle {
+	FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #2175d9
+}
+.globalheadermiddle A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.globalheadermiddle A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.globalheadermiddle A:hover {
+	COLOR: #ffff00; TEXT-DECORATION: none
+}
+.GlobalLeftNavBar {
+	BACKGROUND-COLOR: #cfe4fa
+}
+.LocalLeftNavBar1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; BORDER-BOTTOM: #00308f 1px solid; FONT-FAMILY: verdana, arial, helvetica
+}
+.LocalLeftNavBar1 A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.LocalLeftNavBar1 A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.LocalLeftNavBar1 A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+.LocalLeftNavBar2 {
+	FONT-SIZE: 75%; COLOR: #000000; BORDER-BOTTOM: #00308f 1px solid; FONT-FAMILY: verdana, arial, helvetica
+}
+.LocalLeftNavBar2 A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.LocalLeftNavBar2 A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.LocalLeftNavBar2 A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+.LocalLeftNavBar3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; BORDER-BOTTOM: #00308f 3px solid; FONT-FAMILY: verdana, arial, helvetica
+}
+.LocalLeftNavBar3 A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.LocalLeftNavBar3 A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.LocalLeftNavBar3 A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+.breadcrumbs {
+	FONT-SIZE: 65%; COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica
+}
+.breadcrumb A:active {
+	COLOR: #ff0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+.breadcrumb A:visited {
+	COLOR: #800080; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+.breadcrumb A:link {
+	COLOR: #0000ff; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+.breadcrumb A:hover {
+	COLOR: #ff0000; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+.RotateImg {
+	PADDING-RIGHT: 8px
+}
+.nopadlist {
+	MARGIN-LEFT: 20px
+}
+.featureboxcontent {
+	FONT-SIZE: 75%; BACKGROUND-COLOR: #ffffff
+}
+.headlineboxcontent {
+	FONT-SIZE: 110%
+}
+.searchboxcontentTopNavBar {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #2175d9
+}
+.searchboxcontent {
+	BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 75%; COLOR: #ffffff; BORDER-BOTTOM: #ffffff 1px solid; BACKGROUND-COLOR: #2175d9
+}
+.searchboxcontent A:visited {
+	FONT-SIZE: 90%; COLOR: #ffffff; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+.searchboxcontent A:link {
+	FONT-SIZE: 90%; COLOR: #ffffff; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+.searchboxcontent A:hover {
+	FONT-SIZE: 90%; COLOR: #ffff00; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+.ontimebox {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+.ontimeboxtitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #00308f
+}
+.ontimeboxcontent {
+	FONT-SIZE: 70%; BACKGROUND-IMAGE: url(/images/on_time_bk.jpg); BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #ececec
+}
+.boxQuickVote {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+.boxQuickVotetitle {
+	BORDER-TOP: #00308f 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; BORDER-BOTTOM: #00308f 1px solid; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #e6e6e6
+}
+.boxQuickVotecontent {
+	FONT-SIZE: 75%; BORDER-BOTTOM: #00308f 1px solid; BACKGROUND-COLOR: #e6e6e6
+}
+.blue {
+	FONT-WEIGHT: bold; COLOR: #00308f; FONT-FAMILY: verdana, arial, helvetica
+}
+.bluenobold {
+	COLOR: #00308f; FONT-FAMILY: verdana, arial, helvetica
+}
+.box1 {
+	BORDER-RIGHT: #00308f 1px solid; BORDER-TOP: #00308f 1px solid; BORDER-LEFT: #00308f 1px solid; BORDER-BOTTOM: #00308f 1px solid
+}
+.box1title {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #00308f
+}
+.box1content {
+	FONT-SIZE: 75%
+}
+.box2 {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+.box2title {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #00308f
+}
+.box2content {
+	FONT-SIZE: 75%
+}
+.box3 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+.box3title {
+	BORDER-TOP: #cc0000 3px solid; FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; BORDER-BOTTOM: #cc0000 1px solid; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #9fd0fa
+}
+.box3content {
+	FONT-SIZE: 75%; BACKGROUND-COLOR: #9fd0fa
+}
+.box4 {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+.box4title {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #cc0000
+}
+.box4content {
+	FONT-SIZE: 75%
+}
+.box5 {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+.box5title {
+	BORDER-TOP: #00308f 3px solid; FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; BORDER-BOTTOM: #00308f 1px solid; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #e6e6e6
+}
+.box5content {
+	FONT-SIZE: 75%; BORDER-BOTTOM: #00308f 1px solid; BACKGROUND-COLOR: #e6e6e6
+}
+.box6 {
+	BORDER-RIGHT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-BOTTOM: #cc0000 1px solid
+}
+.box6title {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #cc0000
+}
+.box6content {
+	FONT-SIZE: 75%
+}
+.box7 {
+	BORDER-RIGHT: #e6e6e6 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: #e6e6e6 1px solid
+}
+.box7title {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #cccccc
+}
+.box7content {
+	FONT-SIZE: 75%
+}
+.box8 {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+.box8title {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #00308f
+}
+.box8content {
+	FONT-SIZE: 75%; BACKGROUND-COLOR: #cfe4fa
+}
+.box9 {
+	BORDER-RIGHT: #ffcc33 1px solid; BORDER-TOP: #ffcc33 1px solid; BORDER-LEFT: #ffcc33 1px solid; BORDER-BOTTOM: #ffcc33 1px solid
+}
+.box9title {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #ffcc33
+}
+.box9content {
+	FONT-SIZE: 75%; BACKGROUND-COLOR: #ffffcc
+}
+.box10 {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+.box10title {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #cccccc
+}
+.box10content {
+	FONT-SIZE: 75%
+}
+.box11 {
+	BORDER-RIGHT: #64a9ae 1px solid; BORDER-TOP: #64a9ae 1px solid; BORDER-LEFT: #64a9ae 1px solid; BORDER-BOTTOM: #64a9ae 1px solid
+}
+.box11title {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #64a9ae
+}
+.box11content {
+	FONT-SIZE: 75%; BACKGROUND-COLOR: #e7efef
+}
+.box12 {
+	BORDER-RIGHT: #e6e6e6 1px solid; BORDER-TOP: #e6e6e6 1px solid; BORDER-LEFT: #e6e6e6 1px solid; BORDER-BOTTOM: #e6e6e6 1px solid
+}
+.box12title {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #e6e6e6
+}
+.box12content {
+	FONT-SIZE: 75%
+}
+.box13 {
+	BACKGROUND-COLOR: #e6e6e6
+}
+.printthispage {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica; BACKGROUND-COLOR: #00308f
+}
+.printthispage A:visited {
+	FONT-SIZE: 75%; COLOR: #ffffff; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+.printthispage A:link {
+	FONT-SIZE: 75%; COLOR: #ffffff; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+.printthispage A:hover {
+	FONT-SIZE: 75%; COLOR: #ffff00; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+.DicEntry {
+	FONT-WEIGHT: bold
+}
+.DicMatch {
+	FONT-WEIGHT: bold
+}
+.DicMatchBold {
+	FONT-WEIGHT: bold
+}
+.DicMatchBoldItalic {
+	FONT-WEIGHT: bold; FONT-STYLE: italic
+}
+.DicMatchBgYellow {
+	BACKGROUND-COLOR: #ffff66
+}
+.DicRef {
+	
+}
+.decellone {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: courier new, courier, monospace; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: right
+}
+.decelltwo {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: courier new, courier, monospace; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: left
+}
+.decellthree {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: courier new, courier, monospace; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+TH.matrixcolhead {
+	FONT-SIZE: 75%; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #cccccc; TEXT-ALIGN: center
+}
+.matrixcellone {
+	FONT-SIZE: 75%; WIDTH: 10%; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #e6e6e6; TEXT-ALIGN: center
+}
+.italicstyle {
+	FONT-STYLE: italic
+}
+.boldstyle {
+	FONT-WEIGHT: bold
+}
+.bolditalicstyle {
+	FONT-WEIGHT: bold; FONT-STYLE: italic
+}
+.superitalic {
+	VERTICAL-ALIGN: super; FONT-STYLE: italic
+}
+.subitalic {
+	VERTICAL-ALIGN: sub; FONT-STYLE: italic
+}
+.negative {
+	COLOR: #cc0000
+}
+.positive {
+	COLOR: #009900
+}
+.neutral {
+	COLOR: #000000
+}
+.tris {
+	FONT-WEIGHT: bolder; FONT-SIZE: 18pt; COLOR: #660066; FONT-FAMILY: none; TEXT-DECORATION: underline
+}
+.online {
+	FONT-WEIGHT: bolder; FONT-SIZE: 18pt; COLOR: #99cc00; FONT-STYLE: italic; FONT-FAMILY: none; TEXT-DECORATION: underline
+}
+.button {
+	BORDER-RIGHT: #000066 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #000066 0px solid; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 80%; PADDING-BOTTOM: 0px; BORDER-LEFT: #000066 0px solid; COLOR: #000000; PADDING-TOP: 0px; BORDER-BOTTOM: #000066 0px solid; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #000066; TEXT-ALIGN: center
+}
+A.buttonlink:active {
+	COLOR: #ffffff; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.buttonlink:visited {
+	COLOR: #ffffff; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.buttonlink:link {
+	COLOR: #ffffff; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A.buttonlink:hover {
+	COLOR: #ffff00; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+.inputbox {
+	FONT-SIZE: 85%; HEIGHT: 20px
+}
+.verticalbar {
+	BORDER-LEFT: #636262 1px solid
+}
+.footerblacksmall {
+	FONT-WEIGHT: bold; FONT-SIZE: 65%; COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica
+}
+.footerblacksmall A:visited {
+	COLOR: #800080; TEXT-DECORATION: none
+}
+.footerblacksmall A:link {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+.footerblacksmall A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+.mainTable {
+	WIDTH: 960px; BACKGROUND-COLOR: #ffffff
+}
+.leftNavLocalOne {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 12px; FONT-WEIGHT: bold; FONT-SIZE: 75%; PADDING-BOTTOM: 5px; COLOR: #00349a; PADDING-TOP: 5px; BORDER-BOTTOM: #efefef 1px solid; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+.leftNavLocalOne A:visited {
+	COLOR: #00349a; TEXT-DECORATION: none
+}
+.leftNavLocalOne A:link {
+	COLOR: #00349a; TEXT-DECORATION: none
+}
+.leftNavLocalOne A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+.leftNavLocalTwo {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 12px; FONT-SIZE: 75%; PADDING-BOTTOM: 5px; COLOR: #00349a; PADDING-TOP: 5px; BORDER-BOTTOM: #efefef 1px solid; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+.leftNavLocalTwo A:visited {
+	COLOR: #00349a; TEXT-DECORATION: none
+}
+.leftNavLocalTwo A:link {
+	COLOR: #00349a; TEXT-DECORATION: none
+}
+.leftNavLocalTwo A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+.leftNavLocalThree {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 12px; FONT-SIZE: 75%; PADDING-BOTTOM: 5px; COLOR: #00349a; PADDING-TOP: 5px; BORDER-BOTTOM: #efefef 1px solid; FONT-STYLE: italic; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+.leftNavLocalThree A:visited {
+	COLOR: #00349a; TEXT-DECORATION: none
+}
+.leftNavLocalThree A:link {
+	COLOR: #00349a; TEXT-DECORATION: none
+}
+.leftNavLocalThree A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+.leftNavLocalFour {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 20px; FONT-SIZE: 75%; PADDING-BOTTOM: 5px; COLOR: #00349a; PADDING-TOP: 5px; BORDER-BOTTOM: #efefef 1px solid; FONT-STYLE: italic; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+.leftNavLocalFour A:visited {
+	COLOR: #00349a; TEXT-DECORATION: none
+}
+.leftNavLocalFour A:link {
+	COLOR: #00349a; TEXT-DECORATION: none
+}
+.leftNavLocalFour A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+.tdLeftNavHost {
+	VERTICAL-ALIGN: top; WIDTH: 171px; BACKGROUND-COLOR: #efefef
+}
+.footer1 {
+	FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: arial, helvetica, sans-serif
+}
+.footer1 A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.footer1 A:link {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.footer1 A:hover {
+	COLOR: #ffff33; TEXT-DECORATION: underline
+}
+.footer2 {
+	FONT-SIZE: 65%; COLOR: #ffffff; FONT-FAMILY: arial, helvetica, sans-serif
+}
+.footer2 A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.footer2 A:link {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.footer2 A:hover {
+	COLOR: #ffff33; TEXT-DECORATION: underline
+}
+.tdFooter {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #003399
+}
+.topFooterBackground {
+	BACKGROUND-IMAGE: url(../images/bottom_top_footer.jpg)
+}
+.bannerExtension {
+	BACKGROUND-IMAGE: url(../images/end_banner.jpg)
+}
+.ritaTopNavBar {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; BACKGROUND-IMAGE: url(../images/top_nav_bckgrnd.jpg); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; HEIGHT: 38px
+}
+.topNavText {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #ffffff; FONT-FAMILY: arial, helvetica, sans-serif
+}
+.topNavText A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.topNavText A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.topNavText A:hover {
+	COLOR: #ffff33; TEXT-DECORATION: none
+}
+.searchField {
+	FONT-WEIGHT: normal; FONT-SIZE: 70%; COLOR: #000000; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff
+}
+.searchFieldPdc {
+	FONT-WEIGHT: normal; FONT-SIZE: 70%; COLOR: #000000; FONT-FAMILY: Arial; BACKGROUND-COLOR: #ffffff
+}
+.goButton {
+	FONT-WEIGHT: bold; FONT-SIZE: 65%; WIDTH: 60px; COLOR: #0033a3; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+.searchBookstore {
+	FONT-WEIGHT: bold; FONT-SIZE: 65%; WIDTH: 125px; COLOR: #0033a3; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+.tdMainContent {
+	PADDING-BOTTOM: 15px
+}
+.tableHostContent {
+	BORDER-RIGHT: #000000 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #000000 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: #000000 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #000000 1px solid
+}
+.contentTitleBlue {
+	PADDING-RIGHT: 5px; BORDER-TOP: #c9c9c9 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 85%; PADDING-BOTTOM: 5px; COLOR: #0033a3; PADDING-TOP: 5px; BORDER-BOTTOM: #c9c9c9 1px solid; FONT-FAMILY: arial, helvetica, sans-serif
+}
+.updateStamp {
+	FONT-WEIGHT: bold; FONT-SIZE: 65%; COLOR: #949494; FONT-FAMILY: verdana, arial, helvetica
+}
+.rss {
+	FONT-SIZE: 1%; COLOR: #ffffff; LINE-HEIGHT: 1px; BACKGROUND-COLOR: transparent
+}

@@ -1,5 +1,4 @@
-import { imageConfig } from "astro:assets";
-import { z, defineCollection, reference } from "astro:content";
+import { z, defineCollection } from "astro:content";
 
 export const collections = {
   posts: defineCollection({

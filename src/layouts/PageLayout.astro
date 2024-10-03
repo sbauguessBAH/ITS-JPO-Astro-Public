@@ -1,17 +1,20 @@
 ---
 // Page Layout used for pages with sidebars and other complex navigation
+import type { ImageMetadata } from 'astro';
 import Banner from '../components/Banner.astro';
 import Sidebar from '../components/Sidebar.astro';
-import Tabs from '../components/Tabs.astro';
 import base_url from '../lib/base_url';
-import { type ChildNavigationItem, getTrimmedPathname, navigation, type NavigationItem } from '../lib/navigation';
+import { type ChildNavigationItem, navigation, type NavigationItem } from '../lib/navigation';
 import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 interface Props {
+  bannerImage?: ImageMetadata;
 	title: string;
+  currentBreadcrumb?: string;
 }
 
-const { title } = Astro.props;
+const { title, bannerImage, currentBreadcrumb } = Astro.props;
 
 const getTrimmedPath = (path: string): string => path.replaceAll("/", "");
 
@@ -23,25 +26,18 @@ const isActive = (item: NavigationItem | ChildNavigationItem): boolean => {
   return currentPath.startsWith(trimmedPath);
 }
 
-// const isActiveSubpath = (item: ChildNavigationItem): boolean => {
-//   if (item.isExternal) return false;
-//   const trimmedPath = getTrimmedPath(base_url(item.url));
-//   return currentPath === trimmedPath;
-// }
-
 const activeSection: NavigationItem | undefined = navigation.find(section => isActive(section));
-// const activePage: ChildNavigationItem | undefined = activeSection?.pages.find(page => isActive(page));
-// const activeSubpage: ChildNavigationItem | undefined = activePage?.pages?.find(subpage => isActiveSubpath(subpage));
-
 ---
 <BaseLayout title={title}>
-  <Banner>
+  <Banner image={bannerImage}>
     <slot name="banner" title="banner"/>
   </Banner>
-  <div class="page-content container-xl min-h-screen">
-    <div class="row gx-5">
+  <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl min-vh-100">
+    <Breadcrumbs currentBreadcrumb={currentBreadcrumb}/>
+    <div class="row gx-5 mt-4">
       <aside class="col-lg-3">
         {activeSection && <Sidebar items={activeSection.pages}/>}
+        <slot name="side" title="side"/>
       </aside>
       <main class="col-lg-9">
         <slot/>
@@ -53,8 +49,9 @@ const activeSection: NavigationItem | undefined = navigation.find(section => isA
 
 <style>
   .page-content {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 6rem;
+    flex: 1;
   }
   aside {
     display: block;

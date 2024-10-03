@@ -1,127 +1,54 @@
 ---
-import Default from "../../../layouts/Default.astro";
-import SideBar from "../../../components/SideBar_Research.astro";
-import NavITS4SU from "../../../components/Nav_ITS4US.astro"
 import base_url from "../../../lib/base_url";
+import ITS4USLayout from "./_ITS4USLayout.astro";
 ---
+<ITS4USLayout title="Program Overview">
+  <h2 class="sideways blue">Program Overview</h2>
+  <h3>Vision</h3>
+  <p class="read-more-wrap" style="padding-top: 0px">
+    Innovative and integrated complete trip deployment to support seamless travel for all users across all modes, regardless of location, income, or disability.
+  </p>
 
-<Default title="ITS JPO - ITS4US Program Overview">
+  <h3>Goals</h3>
+  <p class="read-more-wrap" style="padding-top: 0px"></p>
+  <ul>
+    <li>Spur high-impact integrated Complete Trip deployments nationwide</li>
+    <li>Identify needs and challenges by populations</li>
+    <li>Develop and deploy mobility solutions that meet user needs</li>
+    <li>Measure impact of integrated deployments</li>
+    <li>Identify replicable solutions and disseminate lessons learned</li>
+  </ul>
+  <p></p>
+  <h3>Overview</h3>
+  <p class="read-more-wrap" style="padding-top: 0px">
+    The ITS4US Deployment Program aims to solve mobility challenges of all travelers, regardless of location, income, or disability, in accessing jobs, education, healthcare, and
+    other activities.
+  </p>
+  <p>
+    In October 2019, U.S. DOT announced $50 million in new initiatives to expand access to transportation for people with disabilities, older adults, and individuals of low income,
+    including up to $40 Million for the ITS4US Deployment Program. The Complete Trip portfolio will identify ways to provide more efficient, affordable, and accessible transportation
+    services for people with disabilities, older adults and other underserved communities that often face greater challenges in accessing essential services.
+  </p>
+  <p>
+    As part of the Complete Trip Portfolio, the ITS4US Deployment Program is a multimodal effort let by the ITS JPO with support from OST, FTA, and FHWA. This program will make up to
+    $40 million available to enable communities to showcase innovative business partnerships, technologies, and practices that promote independent mobility for all.
+  </p>
+  <p>
+    Building from the U.S. DOT’s previous and ongoing foundational research work in concert with emerging technologies, practices and other critical inputs gathered from all sources,
+    the Program is designed to bring publicly and privately sponsored research together to create large-scale, replicable deployments to address the challenges of planning and
+    executing all segments of a complete trip for all travelers regardless of location, income, or disability
+  </p>
 
-      <!-- InstanceBeginEditable name="AboutBanner" -->
-
-      <div class="AboutBanner AcceleratingDeployment_bkgd">
-        <div class="AboutBannerTitle">
-          <h1>
-            <img alt="ITS4US Logo" src={base_url("/assets/images/its4us/ITS4US_logo_white.png")} style="max-height: 60px; clear: none" />
-            &nbsp;| ITS4US
-          </h1>
-        </div>
-      </div>
-      <!-- InstanceEndEditable -->
-
-      <!-- End Research ARea  Header ---------------------->
-      <div class="container-fluid h-100 bodyWrap">
-        <div class="row h-100">
-          <aside class="col-12 col-md-3 p-3 bg-light"><SideBar /></aside>
-          <!-- InstanceEndEditable -->
-
-          <!-- InstanceBeginEditable name="mainbody" -->
-          <main class="col-9 MainContent">
-            <div class="row" style="padding-bottom: 20px; margin-bottom: 30px; border-bottom-style: solid; border-block-width: 1px; border-color: gainsboro">
-              <div class="container-fluid">
-                <NavITS4SU />
-                <h2 class="sideways blue">Program Overview</h2>
-                
-                <div class="row">
-                  <div class="col-lg-12">
-                    <h3>Vision</h3>
-                    <p class="read-more-wrap" style="padding-top: 0px">
-                      Innovative and integrated complete trip deployment to support seamless travel for all users across all modes, regardless of location, income, or disability.
-                    </p>
-
-                    <h3>Goals</h3>
-                    <p class="read-more-wrap" style="padding-top: 0px"></p>
-                    <ul>
-                      <li>Spur high-impact integrated Complete Trip deployments nationwide</li>
-                      <li>Identify needs and challenges by populations</li>
-                      <li>Develop and deploy mobility solutions that meet user needs</li>
-                      <li>Measure impact of integrated deployments</li>
-                      <li>Identify replicable solutions and disseminate lessons learned</li>
-                    </ul>
-                    <p></p>
-                    <h3>Overview</h3>
-                    <p class="read-more-wrap" style="padding-top: 0px">
-                      The ITS4US Deployment Program aims to solve mobility challenges of all travelers, regardless of location, income, or disability, in accessing jobs, education, healthcare, and
-                      other activities.
-                    </p>
-                    <p>
-                      In October 2019, U.S. DOT announced $50 million in new initiatives to expand access to transportation for people with disabilities, older adults, and individuals of low income,
-                      including up to $40 Million for the ITS4US Deployment Program. The Complete Trip portfolio will identify ways to provide more efficient, affordable, and accessible transportation
-                      services for people with disabilities, older adults and other underserved communities that often face greater challenges in accessing essential services.
-                    </p>
-                    <p>
-                      As part of the Complete Trip Portfolio, the ITS4US Deployment Program is a multimodal effort let by the ITS JPO with support from OST, FTA, and FHWA. This program will make up to
-                      $40 million available to enable communities to showcase innovative business partnerships, technologies, and practices that promote independent mobility for all.
-                    </p>
-                    <p>
-                      Building from the U.S. DOT’s previous and ongoing foundational research work in concert with emerging technologies, practices and other critical inputs gathered from all sources,
-                      the Program is designed to bring publicly and privately sponsored research together to create large-scale, replicable deployments to address the challenges of planning and
-                      executing all segments of a complete trip for all travelers regardless of location, income, or disability
-                    </p>
-
-                    <h3>Complete Trip Concept</h3>
-                    <p class="read-more-wrap" style="padding-top: 0px">
-                      The concept of a complete trip is that an individual can travel from origin to destination without gaps in the travel chain. A complete trip includes multiple links or trip
-                      segments. If one segment of the trip is inaccessible, unreliable, or inefficient, then the trip cannot be completed.
-                    </p>
-                    <img
-                      src={base_url("/assets/images/its4us/Complete Trip Graphic.png")}
-                      alt="Complete Trip Graphic"
-                      width="100%"
-                      class="img-responsive trip-graphic"
-                      style="padding-bottom: 20px; max-width: 80%"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
-
-          <!-- large engagement section at the bottom-->
-
-          <section class="download bg-primary text-center" id="research" style="padding-top: 2em">
-            <div class="container-fluid">
-              <div class="container">
-                <div class="col-lg-12">
-                  <h2>Contacts</h2>
-                  <p style="padding-bottom: 20px">
-                    Please explore this site for a more detailed description of the program and progress. We will continue to upload relevant program information for public consumption as it becomes
-                    available. For inquiries regarding the program, please contact the USDOT Point of Contact below.
-                  </p>
-                  <p style="padding-top: 20px; border-top-style: solid; border-color: honeydew; border-width: 2px">
-                    <b>Elina Zlotchenko</b>
-                  </p>
-                  <p>Program Manager</p>
-                  <p>ITS4US, STATS, and Program Management Office</p>
-                  <p>202-366-1697</p>
-                  <p>
-                    <a class="email-footer" href="mailto:Elina.Zlotchenko@dot.gov">Elina.Zlotchenko@dot.gov</a>
-                  </p>
-
-                  <!--<div class="badges">
-            <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-            <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
-          </div>-->
-                </div>
-              </div>
-            </div>
-
-            <!-- these are the icons below engagement-->
-
-            
-          </section>
-        </div>
-      </div>
-    </div>
-
-</Default>
+  <h3>Complete Trip Concept</h3>
+  <p class="read-more-wrap" style="padding-top: 0px">
+    The concept of a complete trip is that an individual can travel from origin to destination without gaps in the travel chain. A complete trip includes multiple links or trip
+    segments. If one segment of the trip is inaccessible, unreliable, or inefficient, then the trip cannot be completed.
+  </p>
+  <img
+    src={base_url("/assets/images/its4us/Complete Trip Graphic.png")}
+    alt="Complete Trip Graphic"
+    width="100%"
+    class="img-responsive trip-graphic"
+    style="padding-bottom: 20px; max-width: 80%"
+  />
+</ITS4USLayout>

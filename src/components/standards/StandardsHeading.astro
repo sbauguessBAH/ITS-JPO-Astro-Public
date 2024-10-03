@@ -11,7 +11,7 @@ const { image, title } = Astro.props;
 ---
 
 <div class="mb-4">
-  <div class="heading hstack gap-2 align-items-center">
+  <div class="heading">
     {image && (
       <div class="icon rounded-circle d-flex align-items-center justify-content-center">
         <img 
@@ -30,6 +30,7 @@ const { image, title } = Astro.props;
   background-color: rgb(3,48,68);
   height: 3rem;
   width: 3rem;
+  margin-right: 0;
 }
 
 .icon img {
@@ -40,6 +41,9 @@ const { image, title } = Astro.props;
 
 .heading {
   color: rgb(3,48,68);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .heading-border {
@@ -47,6 +51,8 @@ const { image, title } = Astro.props;
   border-width: 4px;
   border-color: rgb(3,48,68);
   opacity: 1.0;
+  height: 4px;
+  border-radius: 2px;
 }
 
 .image-border {

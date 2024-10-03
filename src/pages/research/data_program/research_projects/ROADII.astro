@@ -1,91 +1,40 @@
 ---
-import Default from "../../../../layouts/Default.astro";
-import SideBar from "../../../../components/SideBar_Research.astro";
-import NavDataProgram from "../../../../components/Nav_DataProgram.astro";
+import DataProgramLayout from "../_DataProgramLayout.astro";
+import base_url from "@/src/lib/base_url";
 ---
+<DataProgramLayout title="ROADII | Research Projects">
+  <h2 class="sideways blue">Research, Operational, and AI Data Integration Initiative (ROADII)
+      
+  </h2>
+  
+   <div class="row" style="padding-bottom:0px; margin-bottom:20px; border-bottom-style:none; border-block-width:1px; border-color:gainsboro;"> 
+    <div class="col-lg-12">
+      <p>
+        The Research, Operational, and AI Data Integration Initiative (ROADII) is a multi-year initiative with a focus on research-to-operations activities to support ITS Data Program's objectives of promoting use, reuse, and repurposing of ITS data. ROADII seeks to identify and prioritize research problems, identify potential solutions using advanced data analytics, and rapidly test the feasibility of solutions. It is envisioned to be an ongoing initiative that will identify and build a set of specific products to further the integration of transportation data and advanced analytics. 
+      </p>
+      <p>
+        ROADII includes three main teams that operate collaboratively, with each providing input and feedback for the other tasks. The Intake and Evaluation team evaluates ITS problems (use cases) and determines whether they are well suited for ROADII. The ROADII-Lab team focuses on development of example solutions, including documentation, code, and datasets, for specific use cases. The Stakeholder team works with external organizations to match use cases with an example solution already developed by the Internal ROADII Development Team or another platform and helps State and local agencies gain access to existing datasets and solutions. 
+      </p>
+      <img src={base_url("/assets/images/data_access/ROADII_Graphic.png")} alt="ROADII INtake Transfer Cycle" style="width: 100%;">
 
-<Default title="ITS JPO - ITS Data Program">
-  <!-- InstanceBeginEditable name="AboutBanner" -->
+      <!-- Additional Information for when it's needed
+      <ul>
+          <li>
+              <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Factsheet</a>
+          </li>
+          <li>
+              <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Publication</a>
+          </li>
+          <li>
+              <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Policy</a>
+          </li>
+      </ul>
+      <button class="Pagebtn externalLink_White btnDark top20Margin" onclick="window.open('../stratplan2020/ITSJPO_StratPlanFactSheet.pdf');">View ROADII
+      </button> 
 
-  <div class="AboutBanner DataAccess_bkgd">
-    <div class="AboutBannerTitle">
-      <h1>ITS Data Program</h1>
+      -->
+
     </div>
+    
   </div>
-  <div class="container-fluid h-100 bodyWrap">
-    <div class="row h-100">
-      <aside class="col-12 col-md-3 p-3 bg-light">
-        <SideBar />
-      </aside> 
-      <main class="col-12 MainContent">
-
-        <div class="container-fluid"><NavDataProgram />
-          <h2 class="sideways blue">Research, Operational, and AI Data Integration Initiative (ROADII)
-      
-          </h2>
-          
-           <div class="row" style="padding-bottom:0px; margin-bottom:20px; border-bottom-style:none; border-block-width:1px; border-color:gainsboro;"> 
-            <div class="col-lg-12">
-              <p>
-                The Research, Operational, and AI Data Integration Initiative (ROADII) is a multi-year initiative with a focus on research-to-operations activities to support ITS Data Program's objectives of promoting use, reuse, and repurposing of ITS data. ROADII seeks to identify and prioritize research problems, identify potential solutions using advanced data analytics, and rapidly test the feasibility of solutions. It is envisioned to be an ongoing initiative that will identify and build a set of specific products to further the integration of transportation data and advanced analytics. 
-              </p>
-              <p>
-                ROADII includes three main teams that operate collaboratively, with each providing input and feedback for the other tasks. The Intake and Evaluation team evaluates ITS problems (use cases) and determines whether they are well suited for ROADII. The ROADII-Lab team focuses on development of example solutions, including documentation, code, and datasets, for specific use cases. The Stakeholder team works with external organizations to match use cases with an example solution already developed by the Internal ROADII Development Team or another platform and helps State and local agencies gain access to existing datasets and solutions. 
-              </p>
-              <img src="../../../../assets/images/data_access/ROADII_Graphic.png" alt="ROADII INtake Transfer Cycle" style="width: 100%;">
-      
-              <!-- Additional Information for when it's needed
-              <ul>
-                  <li>
-                      <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Factsheet</a>
-                  </li>
-                  <li>
-                      <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Publication</a>
-                  </li>
-                  <li>
-                      <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Policy</a>
-                  </li>
-              </ul>
-              <button class="Pagebtn externalLink_White btnDark top20Margin" onclick="window.open('../stratplan2020/ITSJPO_StratPlanFactSheet.pdf');">View ROADII
-              </button> 
-      
-              -->
-      
-            </div>
-            
-          </div>
-        </div>
-      
-      
-      
-            
-      
-      
-      
-      
-          </main>
-    </div>
-  </div>
-  <section class="download bg-primary text-center" id="research" style="padding-top: 2em">
-    <div class="container-fluid">
-      <div class="container">
-        <div class="col-lg-12">
-          <h2>Contacts</h2>
-          <p style="padding-bottom: 20px">
-            Please explore this site for a more detailed description of the program and progress. We will continue to upload relevant program information for public consumption as it becomes
-            available. For inquiries regarding the program, please contact the USDOT Point of Contact below.
-          </p>
-          <p style="padding-top: 20px; border-top-style: solid; border-color: honeydew; border-width: 2px">
-            <b>Murat Omay</b>
-          </p>
-          <p>Program Manager, ITS Data Program</p>
-          <p>ITS Joint Program Office</p>
-          <p>(202)-366-4374</p>
-          <p>
-            <a class="email-footer" href="mailto:Murat.Omay@dot.gov">Murat.Omay@dot.gov</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-</Default>
+</DataProgramLayout>

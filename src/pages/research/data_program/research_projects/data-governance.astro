@@ -1,93 +1,41 @@
 ---
-import Default from "../../../../layouts/Default.astro";
-import SideBar from "../../../../components/SideBar_Research.astro";
-import NavDataProgram from "../../../../components/Nav_DataProgram.astro";
+import DataProgramLayout from "../_DataProgramLayout.astro";
+import base_url from "@/src/lib/base_url";
 ---
+<DataProgramLayout title="Data Governance | Research Projects">
+  <h2 class="sideways blue">Data Governance, Stewardship, and Preservation Methods
+  </h2>
+  
+   <div class="row" style="padding-bottom:0px; margin-bottom:20px; border-bottom-style:none; border-block-width:1px; border-color:gainsboro;"> 
+    <div class="col-lg-7">
+      <p>
+        Among many other aspects, data management involves strategic decisions and investments for infrastructure/assets, ingestion and use processes, access control, data quality, and full lifecycle planning from needs assessment to acquisition to disposition. Governance of data is the backbone of data strategies to be implemented and to function effectively. The Data Governance, Stewardship, and Preservation Methods Report was developed to inform the ITS JPO and the transportation community's understanding of necessary policies, actions, and practices for improving how data are managed, accessed, and used throughout the transportation ecosystem to support the next generation of ITS technologies. The report was supported by an extensive literature review, stakeholder and industry expert interviews, distributed questionnaires, and structured stakeholder engagements during industry events.
+      </p>   
+      <p>
+        The document primarily focuses on privacy preserving computation (PPC) methods, challenges around data governance, stewardship, and long-term preservation costs specific to research data, and barriers to data gathering, sharing, exchange, and access. Where possible, the report covers lessons learned and provides suggested actions and conclusions that go beyond advancing the state of the practice to provide a pragmatic approach for ITS JPO and USDOT in consideration of data governance, stewardship, and preservation.  
+      </p>     
+      
 
-<Default title="ITS JPO - ITS Data Program">
-  <!-- InstanceBeginEditable name="AboutBanner" -->
+      <!-- Additional Information for when it's needed 
+      <ul>
+          <li>
+              <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Factsheet</a>
+          </li>
+          <li>
+              <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Publication</a>
+          </li>
+          <li>
+              <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Policy</a>
+          </li>
+      </ul>
+      <button class="Pagebtn externalLink_White btnDark top20Margin" onclick="window.open('../stratplan2020/ITSJPO_StratPlanFactSheet.pdf');">View More Data Governance, Stewardship, and Preservation Methods
+      </button> 
 
-  <div class="AboutBanner DataAccess_bkgd">
-    <div class="AboutBannerTitle">
-      <h1>ITS Data Program</h1>
+      -->
+      
+    </div>
+    <div class="col-lg-5">
+      <img class="sideColumnImg" src={base_url("/assets/images/data_access/ITS_DataProgram_ResourcePreivew_ComingSoon.png")}>
     </div>
   </div>
-  <div class="container-fluid h-100 bodyWrap">
-    <div class="row h-100">
-      <aside class="col-12 col-md-3 p-3 bg-light">
-        <SideBar />
-      </aside>
-      <main class="col-9 MainContent">
-
-        <div class="container-fluid">
-          <NavDataProgram />
-          <h2 class="sideways blue">Data Governance, Stewardship, and Preservation Methods
-          </h2>
-          
-           <div class="row" style="padding-bottom:0px; margin-bottom:20px; border-bottom-style:none; border-block-width:1px; border-color:gainsboro;"> 
-            <div class="col-lg-7">
-              <p>
-                Among many other aspects, data management involves strategic decisions and investments for infrastructure/assets, ingestion and use processes, access control, data quality, and full lifecycle planning from needs assessment to acquisition to disposition. Governance of data is the backbone of data strategies to be implemented and to function effectively. The Data Governance, Stewardship, and Preservation Methods Report was developed to inform the ITS JPO and the transportation community's understanding of necessary policies, actions, and practices for improving how data are managed, accessed, and used throughout the transportation ecosystem to support the next generation of ITS technologies. The report was supported by an extensive literature review, stakeholder and industry expert interviews, distributed questionnaires, and structured stakeholder engagements during industry events.
-              </p>   
-              <p>
-                The document primarily focuses on privacy preserving computation (PPC) methods, challenges around data governance, stewardship, and long-term preservation costs specific to research data, and barriers to data gathering, sharing, exchange, and access. Where possible, the report covers lessons learned and provides suggested actions and conclusions that go beyond advancing the state of the practice to provide a pragmatic approach for ITS JPO and USDOT in consideration of data governance, stewardship, and preservation.  
-              </p>     
-              
-      
-              <!-- Additional Information for when it's needed 
-              <ul>
-                  <li>
-                      <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Factsheet</a>
-                  </li>
-                  <li>
-                      <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Publication</a>
-                  </li>
-                  <li>
-                      <a href="../../factsheets/pdf/nameofPDF" target="_blank">This is the title of a Policy</a>
-                  </li>
-              </ul>
-              <button class="Pagebtn externalLink_White btnDark top20Margin" onclick="window.open('../stratplan2020/ITSJPO_StratPlanFactSheet.pdf');">View More Data Governance, Stewardship, and Preservation Methods
-              </button> 
-      
-              -->
-              
-            </div>
-            <div class="col-lg-5">
-              <img class="sideColumnImg" src="/src/assets/images/data_access/ITS_DataProgram_ResourcePreivew_ComingSoon.png">
-            </div>
-          </div>
-        </div>
-      
-      
-      
-            
-      
-      
-      
-      
-          </main>
-    </div>
-  </div>
-  <section class="download bg-primary text-center" id="research" style="padding-top: 2em">
-    <div class="container-fluid">
-      <div class="container">
-        <div class="col-lg-12">
-          <h2>Contacts</h2>
-          <p style="padding-bottom: 20px">
-            Please explore this site for a more detailed description of the program and progress. We will continue to upload relevant program information for public consumption as it becomes
-            available. For inquiries regarding the program, please contact the USDOT Point of Contact below.
-          </p>
-          <p style="padding-top: 20px; border-top-style: solid; border-color: honeydew; border-width: 2px">
-            <b>Murat Omay</b>
-          </p>
-          <p>Program Manager, ITS Data Program</p>
-          <p>ITS Joint Program Office</p>
-          <p>(202)-366-4374</p>
-          <p>
-            <a class="email-footer" href="mailto:Murat.Omay@dot.gov">Murat.Omay@dot.gov</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-</Default>
+</DataProgramLayout>

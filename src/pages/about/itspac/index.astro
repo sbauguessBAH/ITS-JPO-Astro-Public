@@ -1,79 +1,46 @@
 ---
-import Default from "../../../layouts/Default.astro";
-import SideBar from "../../../components/SideBar_About.astro";
-import NavITSPAC from "../../../components/Nav_ITSPAC.astro";
+import ITSPACLayout from "./_ITSPACLayout.astro";
 ---
-
-<Default title="ITS JPO - ITSPAC">
-      <!-- InstanceBeginEditable name="AboutBanner" -->
-
-      <div class="AboutBanner">
-        <div class="AboutBannerTitle">
-          <h1>ITS Program Advisory Committee (ITSPAC)</h1>
-        </div>
-      </div>
-      <!-- InstanceEndEditable -->
-
-      <!-- Sidebar -->
-      <!-- InstanceBeginEditable name="sidenav" -->
-
-      <div class="container-fluid h-100 bodyWrap">
-        <div class="row h-100">
-          <aside class="col-12 col-md-3 p-3 bg-light"><SideBar /></aside>
-          <!-- InstanceEndEditable -->
-          <!-- InstanceBeginEditable name="MainContent" -->
-
-          <main class="col-9 MainContent">
-            <div class="row">
-              <div class="col-lg-12">
-                <NavITSPAC />
-                <h2>Overview</h2>
-                <p>
-                  The ITSPAC was established to provide information, advice, and recommendations to the Secretary on matters relating to Intelligent Transportation Systems (ITS) program needs,
-                  objectives, plans, approaches, contents, and progress.
-                </p>
-                <h2>Mission Statement</h2>
-                <p>
-                  The mission of the Intelligent Transportation Systems (ITS) Program Advisory Committee (PAC) is to inform the Secretary, through expert advice and recommendations, on ITS deployment,
-                  emerging trends and technology, and industry challenges. With these insights, the ITS PAC will strengthen the USDOTs ITS research portfolio and enhance the development and
-                  implementation of ITS across the Nation. Deployment and knowledge transfer activities will be strengthened through an advisory committee of experts who share real world and academic
-                  expertise on topics related to ITS and emerging transportation.
-                </p>
-                <h2>Background</h2>
-                <p>
-                  Pursuant to 23 U.S.C. § 515 (h)(1) as amended by Sections 13008 and 25001 of the Infrastructure Investment and Jobs Act (IIJA) (November 16, 2021) - “The Secretary shall establish an
-                  Advisory Committee (referred to in this subsection as the ‘Advisory Committee’) to advise the Secretary on carrying out sections 512 through 518.”
-                </p>
-                <p>
-                  The ITSPAC shall be responsive to specific assignments and may conduct studies, inquiries, and workshops as the Secretary may authorize or direct. At a minimum, ITSPAC will be
-                  expected to perform the following duties:
-                </p>
-                <ol class="body">
-                  <li>Provide input into the development of ITS aspects of the U.S. DOT Strategic Plan under 49 U.S.C. 6503.</li>
-                  <li>Review, at least annually, areas of ITS programs and research being considered for funding by the Department, to determine:</li>
-                  <ol>
-                    <li style="list-style-type: upper-alpha">whether these activities are likely to advance either the state-of-the-practice or state-of-the-art in ITS;</li>
-                    <li style="list-style-type: upper-alpha">whether the ITS technologies are likely to be deployed by users, and if not, to determine the barriers to deployment; and,</li>
-                    <li style="list-style-type: upper-alpha">the appropriate roles for Government and the private sector in investing in the programs, research, and technologies being considered.</li>
-                  </ol>
-                </ol>
-                
-              </div>
-
-              <!-- Removed this untill there is a meeting
-                    <div class="col-lg-3">
-                        <div class="PACMeetingDate">
-                        <h3>
-                            Next Meeting
-                        </h3>
-                        <p style="margin-bottom:0px;">
-                            <b>Monday</b><br/>June XX, 202X
-                        </p>
-                    </div>-->
-            </div>
-          </main>
-        </div>
-      </div>
+<ITSPACLayout title="Home">
+  <h2>Overview</h2>
+  <p>
+    The ITSPAC was established to provide information, advice, and recommendations to the Secretary on matters relating to Intelligent Transportation Systems (ITS) program needs,
+    objectives, plans, approaches, contents, and progress.
+  </p>
+  <h2>Mission Statement</h2>
+  <p>
+    The mission of the Intelligent Transportation Systems (ITS) Program Advisory Committee (PAC) is to inform the Secretary, through expert advice and recommendations, on ITS deployment,
+    emerging trends and technology, and industry challenges. With these insights, the ITS PAC will strengthen the USDOTs ITS research portfolio and enhance the development and
+    implementation of ITS across the Nation. Deployment and knowledge transfer activities will be strengthened through an advisory committee of experts who share real world and academic
+    expertise on topics related to ITS and emerging transportation.
+  </p>
+  <h2>Background</h2>
+  <p>
+    Pursuant to 23 U.S.C. § 515 (h)(1) as amended by Sections 13008 and 25001 of the Infrastructure Investment and Jobs Act (IIJA) (November 16, 2021) - “The Secretary shall establish an
+    Advisory Committee (referred to in this subsection as the ‘Advisory Committee’) to advise the Secretary on carrying out sections 512 through 518.”
+  </p>
+  <p>
+    The ITSPAC shall be responsive to specific assignments and may conduct studies, inquiries, and workshops as the Secretary may authorize or direct. At a minimum, ITSPAC will be
+    expected to perform the following duties:
+  </p>
+  <ol class="body">
+    <li>Provide input into the development of ITS aspects of the U.S. DOT Strategic Plan under 49 U.S.C. 6503.</li>
+    <li>Review, at least annually, areas of ITS programs and research being considered for funding by the Department, to determine:</li>
+    <ol>
+      <li style="list-style-type: upper-alpha">whether these activities are likely to advance either the state-of-the-practice or state-of-the-art in ITS;</li>
+      <li style="list-style-type: upper-alpha">whether the ITS technologies are likely to be deployed by users, and if not, to determine the barriers to deployment; and,</li>
+      <li style="list-style-type: upper-alpha">the appropriate roles for Government and the private sector in investing in the programs, research, and technologies being considered.</li>
+    </ol>
+  </ol>
+  <!-- Removed this untill there is a meeting
+    <div class="col-lg-3">
+      <div class="PACMeetingDate">
+      <h3>
+          Next Meeting
+      </h3>
+      <p style="margin-bottom:0px;">
+          <b>Monday</b><br/>June XX, 202X
+      </p>
     </div>
-    <!-- InstanceEndEditable -->
-</Default>
+  -->
+</ITSPACLayout>

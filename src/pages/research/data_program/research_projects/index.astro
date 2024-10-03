@@ -1,0 +1,16 @@
+---
+import DataAccessCard from "@/src/components/DataAccessCard.astro";
+import { researchProjects } from "@/src/lib/data";
+import DataProgramLayout from "../_DataProgramLayout.astro";
+---
+
+<DataProgramLayout title="Resources and Tools">
+  <h2 class="sideways blue mb-4">Research Projects</h2>
+  <div class="row gy-4 mb-4">
+    {researchProjects.map(resource => (
+      <div class="col-md-6 col-xl-4">
+        <DataAccessCard dataAccessResource={resource}/>
+      </div>
+    ))}
+  </div>
+</DataProgramLayout>

@@ -1,6 +1,6 @@
 ---
 import base_url from '../lib/base_url';
-import { findNavigationItem, getTrimmedPathname, type ChildNavigationItem, type NavigationItem } from '../lib/navigation';
+import { findNavigationItem, type ChildNavigationItem } from '../lib/navigation';
 
 interface Props {
   items: ChildNavigationItem[];
@@ -25,7 +25,7 @@ const currentItem = findNavigationItem(currentPath);
     margin-bottom: 2rem;
   }
 
-  .sidebar-list-item:first-of-type {
+  .sidebar-child:first-of-type {
     border-top: 1px solid rgba(0,0,0,0.125);
   }
 
@@ -44,7 +44,8 @@ const currentItem = findNavigationItem(currentPath);
     padding: 0.5rem;
   }
 
-  .sidebar-link:hover, .sidebar-list-item .active {
+  .sidebar-link:hover, 
+  .sidebar-list-item .active {
     background-color: #f7f7f7;
   }
 
@@ -53,9 +54,19 @@ const currentItem = findNavigationItem(currentPath);
     background-color: #f0f0f0;
   }
 
-  .sidebar-child .sidebar-link:hover, .sidebar-child .active {
+  .sidebar-child .sidebar-link:hover, 
+  .sidebar-child .active {
     background-color: #e8e8e8;
     text-decoration: underline;
+  }
+
+  .sidebar-list-item .disabled, 
+  .sidebar-list-item:hover .disabled,
+  .sidebar-child .disabled
+  .sidebar-child:hover .disabled {
+    color: #515151;
+    text-decoration: none;
+    cursor: default;
   }
 
   .sidebar-icon {
@@ -116,14 +127,27 @@ const currentItem = findNavigationItem(currentPath);
               <span class="fa fa-angle-down sidebar-icon"></span>
             </a>
             <ul 
-              class:list={["collapse sidebar-child", {"show": currentItem[0]?.url === item.url}]} 
+              class:list={[
+                "collapse sidebar-child", 
+                {"show": currentItem[0]?.url === item.url}
+              ]} 
               id={`collapse${trimmedPath}`}
             >
               {item.pages.map(childItem => (
                 <li class="sidebar-list-item">
                   <a 
-                    class:list={["sidebar-link", {"active": currentItem[1]?.url === childItem.url}]} 
-                    href={childItem.isExternal ? childItem.url : base_url(childItem.url)}
+                    class:list={[
+                      "sidebar-link", 
+                      {"active": currentItem[1]?.url === childItem.url},
+                      {"disabled": childItem.isDisabled}
+                    ]} 
+                    href={
+                      childItem.isDisabled
+                        ? "#"
+                        : childItem.isExternal 
+                          ? childItem.url 
+                          : base_url(childItem.url)
+                    }
                   >
                     {childItem.name}
                   </a>
@@ -131,7 +155,21 @@ const currentItem = findNavigationItem(currentPath);
               ))}
             </ul>
           ) : (
-            <a class:list={["sidebar-link", {"active": currentItem[0]?.url === item.url}]} href={item.isExternal ? item.url : base_url(item.url)}>
+            <a 
+              class:list={[
+                "sidebar-link", 
+                {"active": currentItem[0]?.url === item.url},
+                {"disabled": item.isDisabled}
+              ]} 
+              href={
+                item.isDisabled
+                  ? "#"
+                  : item.isExternal 
+                    ? item.url 
+                    : base_url(item.url)
+              }
+              aria-disabled={item.isDisabled}
+            >
               {item.name}
               {item.isExternal && <span class="fa fa-arrow-up-right-from-square sidebar-icon"></span>}
             </a>

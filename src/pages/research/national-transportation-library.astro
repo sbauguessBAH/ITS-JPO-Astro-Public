@@ -1,41 +1,28 @@
 ---
-import Default from "../../layouts/Default.astro";
-import SideBar from "../../components/SideBar_Research.astro";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import banner from "@/src/assets/images/NTL_Banner.png";
 ---
+<PageLayout title="National Transportation Library" bannerImage={banner}>
+  <Fragment slot="banner">
+    National Transportation Library
+  </Fragment>
+  <p>
+    The <a href="https://ntl.bts.gov/" target="_blank" rel="noopener noreferrer">National Transportation Library (NTL)</a>and the <a
+      href="https://rosap.ntl.bts.gov/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Repository &amp; Open Science Access Portal (ROSA P)
+    </a> contains documents on Intelligent Transportation Systems topics published or sponsored by the U.S. DOT. Most of the documents are in PDF format.
+  </p>
 
-<Default title="ITS JPO - Emerging and Enabling Technologies">
-  <div class="AboutBanner NTL_bkgd">
-    <div class="AboutBannerTitle">
-        <h1>National Transportation Library</h1>
-    </div>
-</div>
-  <div class="container-fluid h-100 bodyWrap">
-    <div class="row h-100">
-      <aside class="col-12 col-md-3 p-3 bg-light"><SideBar /></aside>
-      <main class="col-9 MainContent">
-        <p>
-          The <a href="https://ntl.bts.gov/" target="_blank" rel="noopener noreferrer">National Transportation Library (NTL)</a>and the <a
-            href="https://rosap.ntl.bts.gov/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Repository &amp; Open Science Access Portal (ROSA P)
-          </a> contains documents on Intelligent Transportation Systems topics published or sponsored by the U.S. DOT. Most of the documents are in PDF format.
-        </p>
-
-        <h3>National Transportation Library</h3>
-        <ul>
-          <li><a href="https://rosap.ntl.bts.gov/" target="_blank" rel="noopener noreferrer" class="externalLink">Simple Search of ITSJPO Digital Library Collection</a></li>
-          <li><a href="https://rosap.ntl.bts.gov/advancesearch" target="_blank" rel="noopener noreferrer" class="externalLink">Advanced Search</a></li>
-          <li><a href="https://rosap.ntl.bts.gov/help" target="_blank" rel="noopener noreferrer" class="externalLink">Search Tips</a></li>
-        </ul>
-      </main>
-    </div>
-  </div>
-
-  <!-- large engagement section at the bottom-->
-
-  <section class="download bg-primary text-center" id="research" style="padding-top: 2em">
+  <h3>National Transportation Library</h3>
+  <ul>
+    <li><a href="https://rosap.ntl.bts.gov/" target="_blank" rel="noopener noreferrer" class="externalLink">Simple Search of ITSJPO Digital Library Collection</a></li>
+    <li><a href="https://rosap.ntl.bts.gov/advancesearch" target="_blank" rel="noopener noreferrer" class="externalLink">Advanced Search</a></li>
+    <li><a href="https://rosap.ntl.bts.gov/help" target="_blank" rel="noopener noreferrer" class="externalLink">Search Tips</a></li>
+  </ul>
+  <section slot="footer" class="download bg-primary text-center" id="research" style="padding-top: 2em">
     <div class="container-fluid">
       <div class="container">
         <div class="col-lg-12">
@@ -62,14 +49,8 @@ import SideBar from "../../components/SideBar_Research.astro";
           <p>
             <a class="email-footer" href="mailto:Mike.Pina@dot.gov">Mike.Pina@dot.gov</a>
           </p>
-          <!--<div class="badges">
-              <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-              <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
-              </div>-->
         </div>
       </div>
     </div>
-
-    <!-- these are the icons below engagement-->
   </section>
-</Default>
+</PageLayout>

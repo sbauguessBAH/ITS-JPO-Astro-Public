@@ -1,139 +1,83 @@
 ---
-import Default from "../../../layouts/Default.astro";
-import SideBar from "../../../components/SideBar_Research.astro";
-import NavITS4US from "../../../components/Nav_ITS4US.astro";
 import base_url from "../../../lib/base_url";
+import ITS4USLayout from "./_ITS4USLayout.astro";
 ---
+<style>
+  @media (min-width: 1024px) {
+    .media-links {
+      max-width: 80%;
+    }
+  }
+</style>
+<ITS4USLayout title="Featured Links">
+  <h2 class="sideways blue">Featured Links</h2>
+  <br />
+  <h3>ITS4US Program Factsheets</h3>
+  <ul class="media-links">
+    <li><a href={base_url("/assets/pdf/factsheets/ITS4US_Factsheet.pdf")} target="_blank" rel="noopener noreferrer">ITS4US Phase 2 Program Overview</a></li>
+  </ul>
+  <h3>ITS4US Deployment Site’s Factsheets</h3>
+  <ul class="media-links">
+    <li>
+      <a href={base_url("/assets/pdf/factsheets/ITS4US_GDOTSafeTrip.pdf")} target="_blank" rel="noopener noreferrer">
+        Georgia Department of Transportation (GDOT) Safe Trips in a Connected Transportation Network
+      </a>
+    </li>
+    <li>
+      <a href={base_url("/assets/pdf/factsheets/ITS4US_HIRTA.pdf")} target="_blank" rel="noopener noreferrer">
+        Heart of Iowa Regional Transit Agency (HIRTA) Health Connector for the Most Vulnerable: An Inclusive Mobility Experience from Beginning to End
+      </a>
+    </li>
+    <li>
+      <a href={base_url("/assets/pdf/factsheets/ITS4US_NFTABuffalo.pdf")} target="_blank" rel="noopener noreferrer">Niagara Frontier Transportation Authority (NFTA) BuffALLo All Access Project</a>
+    </li>
+    <li><a href={base_url("/assets/pdf/factsheets/ITS4US_UW_TDEI.pdf")} target="_blank" rel="noopener noreferrer">University of Washington Transportation Data Equity Initiative</a></li>
+  </ul>
+  <h3>ITS4US Conference Presentations</h3>
+  <ul class="media-links">
+    <li>
+      2024 Conferences
+      <ul class="media-links">
+        <li><a href="../pdf/ITSA2024_SIS39.pdf" target="_blank" rel="noopener noreferrer">ITS America Annual Meeting 2024</a></li>
+        <li><a href="../pdf/ASHE_2024.pdf" target="_blank" rel="noopener noreferrer">American Society of Highway Engineers 2024</a></li>
+        <li><a href="../pdf/CTAA2024_FINAL.pdf" target="_blank" rel="noopener noreferrer">Community Transportation Association of America (CTAA) 2024</a></li>
+      </ul>
+    </li>
+    <li>
+      2023 Conferences
+      <ul class="media-links">
+        <li><a href="../pdf/ITS4US_Session_RuralSummit2023.pdf" target="_blank" rel="noopener noreferrer">NADO Rural Conference ITS Summit 2023 - Rural Road Safety Summit</a></li>
+        <li><a href="../pdf/ITS4US_Session_FAV2023.pdf" target="_blank" rel="noopener noreferrer">Florida Automated Vehicle Summit (FAV) 2023</a></li>
+        <li><a href="../pdf/GRITS_2023.pdf" target="_blank" rel="noopener noreferrer">Gulf Region Intelligent Transportation Society (GRITS) Annual Meeting2023</a></li>
+        <li><a href="../pdf/ITS_Midwest_2023.pdf" target="_blank" rel="noopener noreferrer">ITS Midwest 2023</a></li>
+        <li><a href="../pdf/TAM_2023.pdf" target="_blank" rel="noopener noreferrer">Transportation Association of Maryland (TAM) Inc., Annual Conference 2023</a></li>
+        <li><a href="../pdf/ITS4US_Session_ June2023_CTAA.pdf" target="_blank" rel="noopener noreferrer">Community Transportation Association of America (CTAA) 2023</a></li>
+        <li><a href="../pdf/ITS4US_Sessions_ITSA2023.pdf" target="_blank" rel="noopener noreferrer">ITS America Annual Meeting 2023</a></li>
+        <li><a href="../pdf/ITS4US_ITS4Equity_Carolinas2023.pdf" target="_blank" rel="noopener noreferrer">ITS Carolinas Annual Meeting 2023</a></li>
+        <li><a href="../pdf/ITS4US_TRB_2023_slidedeck.pdf" target="_blank" rel="noopener noreferrer">Transportation Research Board (TRB) Annual Meeting 2023</a></li>
+      </ul>
+    </li>
+    <li>
+      2022 Conferences
+      <ul class="media-links">
+        <li><a href="../../presentations/ampo2022/AMPO2022_its4us.pdf" target="_blank" rel="noopener noreferrer">Association of Metropolitan Planning Organizations (AMPO) 2022</a></li>
+        <li><a href="../../presentations/world_congress2022/ITSWC2022_its4us.pdf" target="_blank" rel="noopener noreferrer">ITS World Congress 2022</a></li>
+      </ul>
+    </li>
+  </ul>
 
-<Default title="ITS JPO - ITS4US">
-  <!-- InstanceBeginEditable name="AboutBanner" -->
-
-  <div class="AboutBanner AcceleratingDeployment_bkgd">
-    <div class="AboutBannerTitle">
-      <h1>
-        <img alt="ITS4US Logo" src={base_url("/assets/images/its4us/ITS4US_logo_white.png")} style="max-height: 60px; clear: none" />
-        &nbsp;| ITS4US
-      </h1>
-    </div>
-  </div>
-  <div class="container-fluid h-100 bodyWrap">
-    <div class="row h-100">
-      <aside class="col-12 col-md-3 p-3 bg-light"><SideBar /></aside>
-      <main class="col-9 MainContent">
-        <div class="row" style="padding-bottom: 20px; margin-bottom: 30px; border-bottom-style: solid; border-block-width: 1px; border-color: gainsboro">
-          <div class="container-fluid">
-            <NavITS4US />
-            <h2 class="sideways blue">Featured Links</h2>
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="col-lg-9" style="padding-left: 38px;">
-                  <br />
-                  <h2>ITS4US Program Factsheets</h2>
-                  <ul>
-                    <li><a href={base_url("/assets/pdf/factsheets/ITS4US_Factsheet.pdf")} target="_blank" rel="noopener noreferrer">ITS4US Phase 2 Program Overview</a></li>
-                  </ul>
-                  <h2>ITS4US Deployment Site’s Factsheets</h2>
-                  <ul>
-                    <li>
-                      <a href={base_url("/assets/pdf/factsheets/ITS4US_GDOTSafeTrip.pdf")} target="_blank" rel="noopener noreferrer">
-                        Georgia Department of Transportation (GDOT) Safe Trips in a Connected Transportation Network
-                      </a>
-                    </li>
-                    <li>
-                      <a href={base_url("/assets/pdf/factsheets/ITS4US_HIRTA.pdf")} target="_blank" rel="noopener noreferrer">
-                        Heart of Iowa Regional Transit Agency (HIRTA) Health Connector for the Most Vulnerable: An Inclusive Mobility Experience from Beginning to End
-                      </a>
-                    </li>
-                    <li>
-                      <a href={base_url("/assets/pdf/factsheets/ITS4US_NFTABuffalo.pdf")} target="_blank" rel="noopener noreferrer">Niagara Frontier Transportation Authority (NFTA) BuffALLo All Access Project</a>
-                    </li>
-                    <li><a href={base_url("/assets/pdf/factsheets/ITS4US_UW_TDEI.pdf")} target="_blank" rel="noopener noreferrer">University of Washington Transportation Data Equity Initiative</a></li>
-                  </ul>
-                  <h2>ITS4US Conference Presentations</h2>
-                  <ul>
-                    <li>
-                      2024 Conferences
-                      <ul>
-                        <li><a href="../pdf/ITSA2024_SIS39.pdf" target="_blank" rel="noopener noreferrer">ITS America Annual Meeting 2024</a></li>
-                        <li><a href="../pdf/ASHE_2024.pdf" target="_blank" rel="noopener noreferrer">American Society of Highway Engineers 2024</a></li>
-                        <li><a href="../pdf/CTAA2024_FINAL.pdf" target="_blank" rel="noopener noreferrer">Community Transportation Association of America (CTAA) 2024</a></li>
-                      </ul>
-                    </li>
-                    <li>
-                      2023 Conferences
-                      <ul>
-                        <li><a href="../pdf/ITS4US_Session_RuralSummit2023.pdf" target="_blank" rel="noopener noreferrer">NADO Rural Conference ITS Summit 2023 - Rural Road Safety Summit</a></li>
-                        <li><a href="../pdf/ITS4US_Session_FAV2023.pdf" target="_blank" rel="noopener noreferrer">Florida Automated Vehicle Summit (FAV) 2023</a></li>
-                        <li><a href="../pdf/GRITS_2023.pdf" target="_blank" rel="noopener noreferrer">Gulf Region Intelligent Transportation Society (GRITS) Annual Meeting2023</a></li>
-                        <li><a href="../pdf/ITS_Midwest_2023.pdf" target="_blank" rel="noopener noreferrer">ITS Midwest 2023</a></li>
-                        <li><a href="../pdf/TAM_2023.pdf" target="_blank" rel="noopener noreferrer">Transportation Association of Maryland (TAM) Inc., Annual Conference 2023</a></li>
-                        <li><a href="../pdf/ITS4US_Session_ June2023_CTAA.pdf" target="_blank" rel="noopener noreferrer">Community Transportation Association of America (CTAA) 2023</a></li>
-                        <li><a href="../pdf/ITS4US_Sessions_ITSA2023.pdf" target="_blank" rel="noopener noreferrer">ITS America Annual Meeting 2023</a></li>
-                        <li><a href="../pdf/ITS4US_ITS4Equity_Carolinas2023.pdf" target="_blank" rel="noopener noreferrer">ITS Carolinas Annual Meeting 2023</a></li>
-                        <li><a href="../pdf/ITS4US_TRB_2023_slidedeck.pdf" target="_blank" rel="noopener noreferrer">Transportation Research Board (TRB) Annual Meeting 2023</a></li>
-                      </ul>
-                    </li>
-                    <li>
-                      2022 Conferences
-                      <ul>
-                        <li><a href="../../presentations/ampo2022/AMPO2022_its4us.pdf" target="_blank" rel="noopener noreferrer">Association of Metropolitan Planning Organizations (AMPO) 2022</a></li>
-                        <li><a href="../../presentations/world_congress2022/ITSWC2022_its4us.pdf" target="_blank" rel="noopener noreferrer">ITS World Congress 2022</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-
-                  <h2>Site Websites</h2>
-                  <ul>
-                    <li><a href="https://bnmc.org/allaccess/" target="_blank" rel="noopener noreferrer">Niagara Frontier Transportation Authority (NFTA)</a></li>
-                    <li><a href="https://transithealthconnector.org/" target="_blank" rel="noopener noreferrer">Heart of Iowa Regional Transit Agency (HIRTA)</a></li>
-                    <li><a href="https://transitequity.cs.washington.edu/" target="_blank" rel="noopener noreferrer">University of Washington (UW)</a></li>
-                    <li><a href="https://georgia-map.com/" target="_blank" rel="noopener noreferrer">Georgia Department of Transportation (GDOT)</a></li>
-                  </ul>
-                  <h2>Resources</h2>
-                  <ul>
-                    <li><a href="faqs.htm">ITS4US Program Procurement and Phase 1 FAQs</a></li>
-                    <li>
-                      <a href="https://www.itskrs.its.dot.gov/" target="_blank" rel="noopener noreferrer">USDOT ITS Knowledge Resources</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-
-      <!-- large engagement section at the bottom-->
-
-      <section class="download bg-primary text-center" id="research" style="padding-top: 2em">
-        <div class="container-fluid">
-          <div class="container">
-            <div class="col-lg-12">
-              <h2>Contacts</h2>
-              <p style="padding-bottom: 20px">
-                Please explore this site for a more detailed description of the program and progress. We will continue to upload relevant program information for public consumption as it becomes
-                available. For inquiries regarding the program, please contact the USDOT Point of Contact below.
-              </p>
-              <p style="padding-top: 20px; border-top-style: solid; border-color: honeydew; border-width: 2px">
-                <b>Elina Zlotchenko</b>
-              </p>
-              <p>Program Manager</p>
-              <p>ITS4US, STATS, and Program Management Office</p>
-              <p>202-366-1697</p>
-              <p>
-                <a class="email-footer" href="mailto:Elina.Zlotchenko@dot.gov">Elina.Zlotchenko@dot.gov</a>
-              </p>
-
-              <!--<div class="badges">
-            <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-            <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
-          </div>-->
-            </div>
-          </div>
-        </div>
-
-        <!-- these are the icons below engagement-->
-      </section>
-    </div>
-  </div>
-</Default>
+  <h3>Site Websites</h3>
+  <ul class="media-links">
+    <li><a href="https://bnmc.org/allaccess/" target="_blank" rel="noopener noreferrer">Niagara Frontier Transportation Authority (NFTA)</a></li>
+    <li><a href="https://transithealthconnector.org/" target="_blank" rel="noopener noreferrer">Heart of Iowa Regional Transit Agency (HIRTA)</a></li>
+    <li><a href="https://transitequity.cs.washington.edu/" target="_blank" rel="noopener noreferrer">University of Washington (UW)</a></li>
+    <li><a href="https://georgia-map.com/" target="_blank" rel="noopener noreferrer">Georgia Department of Transportation (GDOT)</a></li>
+  </ul>
+  <h3>Resources</h3>
+  <ul class="media-links">
+    <li><a href="faqs.htm">ITS4US Program Procurement and Phase 1 FAQs</a></li>
+    <li>
+      <a href="https://www.itskrs.its.dot.gov/" target="_blank" rel="noopener noreferrer">USDOT ITS Knowledge Resources</a>
+    </li>
+  </ul>
+</ITS4USLayout>

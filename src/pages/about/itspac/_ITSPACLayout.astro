@@ -1,0 +1,14 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+interface Props {
+  title: string
+}
+const { title } = Astro.props;
+---
+<PageLayout title={`${title} | ITSPAC`}>
+  <Fragment slot="banner">
+    ITS PROGRAM ADVISORY COMMITTEE (ITSPAC)
+  </Fragment>
+  <slot/>
+</PageLayout>
