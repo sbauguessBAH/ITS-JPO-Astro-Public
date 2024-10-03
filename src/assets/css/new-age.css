@@ -152,7 +152,7 @@ section h2.sideways{
   font-weight: 500;
 }
 
-#mainNav {
+/* #mainNav {
   border-color: rgba(34, 34, 34, 0.9);
   background-color: rgba(29, 52, 83, 0.9);
   transition: all .35s;
@@ -203,7 +203,7 @@ section h2.sideways{
   background-color: #13386e;
   display: block;
   top: 0px;
-}
+} */
 
 .engagement img {
   width: 250px;
@@ -227,7 +227,7 @@ section h2.sideways{
      background-color: transparent;
     
    } */
-  #mainNav .navbar-brand {
+  /* #mainNav .navbar-brand {
     color: fade(white, 70%);
   }
   #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
@@ -254,7 +254,7 @@ section h2.sideways{
   }
   #mainNav.navbar-shrink .navbar-nav>li>a:hover, #mainNav.navbar-shrink .navbar-nav>li>a:focus:hover {
     color: #fdcc52;
-  }
+  } */
 }
 
 ul.list-nav {

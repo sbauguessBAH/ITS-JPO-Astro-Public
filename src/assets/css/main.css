@@ -6,7 +6,7 @@
     font-family: "Source Sans 3", sans-serif;
 }
 
-.navbar-nav .nav-item .nav-link {
+/* .navbar-nav .nav-item .nav-link {
     color: red;
 }
 
@@ -26,7 +26,7 @@
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     background-color: red;
-}
+} */
 
 .container-fluid {
     padding-right: 0px;
@@ -51,18 +51,14 @@
     padding-right: 1.5rem;
 }
 
-.navbar-nav
+/* .navbar-nav
 {
 margin-right: .5rem;
 
-}
+} */
 
 .Sidebar {
     margin-top:10px;
-}
-
-.navbar{
-    width:auto;
 }
 
 
@@ -98,11 +94,11 @@ margin-right: .5rem;
     color:black;
 }
 
-    .navbar a {
-        color: black;
-        text-decoration: none;
-        background-color: transparent;
-    }
+.navbar a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+}
 
 .nav-link {
     color: #f8f9fa;
