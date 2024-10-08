@@ -1,0 +1,237 @@
+---
+import Accordion from "@/src/components/Accordion.astro";
+import PcbLayout from "./_pcb-layout.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import { externalLink } from "@/src/lib/props";
+import Link from "@/src/components/Link.astro";
+
+---
+<PcbLayout title="V2X Tools">
+  <h2>V2X Tools</h2>
+  <p>
+    Leverage tools that facilitate V2X communications.
+  </p>
+  <p>
+    The Connected Vehicle Deployer Resources page seeks to assist the deployer community 
+    in deploying interoperable connected vehicle solutions. Interoperability ensures 
+    that connected vehicles and roadside infrastructure from different manufacturers 
+    can exchange information and use the information in a consistent manner.
+  </p>
+  <section>
+    <h3>Equipment Loan Program and Help Desk</h3>
+    <p>
+      The USDOT’s Connected and Automated Vehicle Support Services provide infrastructure owner operators (IOOs), 
+      equipment manufacturers, and device vendors with technical assistance and equipment loans 
+      during connected and automated vehicle (CAV) deployments. By providing knowledge and equipment, 
+      the services advance CAV deployments without any cost for users. Support services are provided 
+      to all levels of users, including IOOs interested in testing CAV technologies as they consider deployment, 
+      vendors interested in bench testing time and space at the Turner-Fairbank Highway Research Center (TFHRC), 
+      and organizations in the later stages of CAV deployment, such as the Connected Vehicle Pilot Sites.
+    </p>
+    <p>
+      For more information, email <Link href="mailto:CAVSupportServices@dot.gov" isExternal>CAVSupportServices@dot.gov</Link> or 
+      review the <Link href="">Equipment Loan Program and Help Desk Technical Primer</Link>. 
+      Please note that our previous online ticketing system has been discontinued in order 
+      to consolidate all requests under our email address.
+    </p>
+    <div class="mx-md-4">
+      <Accordion id="accordion-1">
+        <AccordionItem title="Equipment Loan Program" parentId="accordion-1" index={0}>
+          <p>
+            The Equipment Loan Program provides a CAV user with the opportunity to become familiar 
+            with the types of equipment typically used in connected vehicle deployment. 
+            Available equipment includes:
+            <ul>
+              <li>Roadside Units (RSUs)</li>
+              <li>Onboard Units (OBUs)</li>
+              <li>Packet Sniffers</li>
+              <li>Signal Phase and Timing (SPaT) and MCAP Message Test Devices</li>
+              <li>
+                Connected and Automated Vehicle Education (CAVe)-In-a-Box – CAVe-in-a-box 
+                is a hands-on learning experience to aid curriculum, and support instruction 
+                for community colleges and trade schools, facilitate benchmarking 
+                connected vehicle equipment, and support onboarding of ITS technicians. 
+                The toolkit features two prototype designs for roadside and in-vehicle installations 
+                as well as a detailed system design document for configuration and deployment. 
+                To learn more about CAVe-in-a-box or borrow one to test on your own, 
+                email <Link href="mailto:CAVSupportServices@dot.gov" isExternal>CAVSupportServices@dot.gov</Link>
+              </li>
+            </ul>
+          </p>
+        </AccordionItem>
+        <AccordionItem title="Help Desk" parentId="accordion-1" index={1}>
+          <p>
+            The Help Desk provides technical assistance during CAV testing and deployments, including:
+            <ul>
+              <li>
+                Device Configuration Support
+                <ul>
+                  <li>Output review &mdash; assistance with submission of case and review of logs</li>
+                  <li>J2735 messages &mdash; assistance with interpretations of standard, content, and structure</li>
+                </ul>
+              </li>
+              <li>
+                MAP/Traveler Information Message (TIM) Tool Application Support
+                <ul>
+                  <li>First-level support for questions or issues related to MAP/TIM generation tools</li>
+                </ul>
+              </li>
+              <li>
+                Device Testing Support
+                <ul>
+                  <li>Dedicated short-range communications (DSRC) wireless sniffer access</li>
+                  <li>Global Positioning Satellite (GPS) location support</li>
+                  <li>Internet Protocol Version 6 (IPv6) assistance</li>
+                </ul>
+              </li>
+              <li>
+                Infrastructure Implementation Support
+                <ul>
+                  <li>IPv6 network design recommendations</li>
+                  <li>Physical installation guidance</li>
+                </ul>
+              </li>
+              <li>
+                Security Support
+                <ul>
+                  <li>Network security guidance</li>
+                  <li>Security Credential Management System (SCMS) questions and updates</li>
+                </ul>
+              </li>
+              <li>
+                Vehicle-to-Everything (V2X) Hub
+                <ul>
+                  <li>Support for V2X Hub User Group</li>
+                  <li>V2X Hub installation and setup</li>
+                </ul>
+              </li>
+              <li>
+                Work Zone Data Exchange (WZDx)
+                <ul>
+                  <li>First-level support for questions and issues related to WZDx specifications</li>
+                </ul>
+              </li>
+            </ul>
+          </p>
+          <p>
+            To submit a help desk or equipment loan request, please email us 
+            at <Link href="mailto:CAVSupportServices@dot.gov" isExternal>CAVSupportServices@dot.gov</Link>. 
+            Please note that our previous online ticketing system has been 
+            discontinued in order to consolidate all requests under our email address.
+          </p>
+        </AccordionItem>
+      </Accordion>
+    </div>
+  </section>
+  <section class="mt-4">
+    <h3>Open Source Connected Vehicle Tools</h3>
+    <p>
+      Open Source Software for Intelligent Transportation Systems (OSS4ITS) is an ecosystem 
+      that advances the deployment of interoperable transportation systems. The software suite 
+      provides infrastructure owner operators (IOOs), software companies, and device manufacturers 
+      a clear picture of the available open source software tools for both technical and business audiences. 
+      OSS4ITS provides the ITS deployment community with robust, flexible, and extensible open-source 
+      software products that are easier to implement and maintain and encourages collaboration 
+      by contributing back to accelerate the future deployments. These products include CARMASM, V2X Hub, 
+      Operational Data Environment (ODE), and Secure Data Commons (SDC). For more information 
+      on Open Source Connected Vehicle Tools, visit the
+      <Link href="https://usdot-carma.atlassian.net/wiki/spaces/CAR/overview" isExternal>OSS4ITS Confluence Page</Link>.
+    </p>
+    <div class="mx-md-4">
+      <Accordion id="accordion-2">
+        <AccordionItem title="CARMA<sup>SM</sup>" titleHtml parentId="accordion-2" index={0}>
+          <p>
+            The Federal Highway Administration (FHWA) developed the innovative CARMA<sup>SM</sup> Platform 
+            to encourage collaboration with the goal of improving transportation efficiency and safety. 
+            FHWA's interest in advancing transportation systems management and operations (TSMO) strategies 
+            with automated driving technology is focused on how infrastructure can move traffic more efficiently. 
+            The CARMASM Platform is built on robot operating system (ROS) and utilizes open source software 
+            that enables Cooperative Driving Automation (CDA) features to allow Automated Driving Systems (ADS) 
+            to interact and cooperate with infrastructure and other vehicles through communication. 
+            For more information, visit:
+            <ul>
+              <li>
+                <Link href="https://highways.dot.gov/research/operations/CARMA" isExternal>
+                  CARMA<sup>SM</sup> Website
+                </Link>
+              </li>
+              <li>
+                <Link href="https://usdot-carma.atlassian.net/wiki/spaces/CAR/overview" isExternal>
+                  CARMA<sup>SM</sup> Confluence Page
+                </Link>
+              </li>
+              <li>
+                <Link href="https://www.its.dot.gov/pcb/PageRedirect.aspx?RedirectedURL=https://github.com/usdot-fhwa-stol" isExternal>
+                  CARMA<sup>SM</sup> GitHub Site
+                </Link>
+              </li>
+            </ul>
+          </p>
+        </AccordionItem>
+        <AccordionItem title="V2X Hub" parentId="accordion-2" index={1}>
+          <p>
+            The Vehicle-to-Everything (V2X) Hub builds on existing open source software applications 
+            for communication among all parts of a connected deployment including vehicles, infrastructure, 
+            pedestrians, cyclists, and emergency services to create an interoperable software environment 
+            for V2X research and deployment. The V2X Hub is a message handler that acts as a translator 
+            and data aggregator/disseminator for infrastructure components of a connected vehicle deployment. 
+            For more information, visit:
+            <ul>
+              <li>
+                <Link href="https://usdot-carma.atlassian.net/wiki/spaces/CH/overview" isExternal>
+                  V2X Hub Confluence Page
+                </Link>
+              </li>
+              <li>
+                <Link href="https://github.com/usdot-fhwa-OPS/V2X-Hub" isExternal>
+                  V2X Hub GitHub Site
+                </Link>
+              </li>
+            </ul>
+          </p>
+        </AccordionItem>
+        <AccordionItem title="Operational Data Environment (ODE)" parentId="accordion-2" index={2}>
+          <p>
+            The ITS Operational Data Environment (ODE) is a real-time virtual data router that ingests 
+            and processes operational data from various connected devices – including vehicles, 
+            infrastructure, and traffic management centers – and distributes the data to other devices 
+            and subscribing transportation management applications. Using the ITS ODE within 
+            intelligent transportation deployments increases data fluidity and interoperability 
+            while meeting operational needs and protecting user privacy. The software’s microservices 
+            architecture makes it easier to add new capabilities to meet local needs. 
+            For more information, visit:
+            <ul>
+              <li>
+                <Link href="https://usdot-oss4its.atlassian.net/wiki/spaces/DCD/overview" isExternal>
+                  ODE Confluence Page
+                </Link>
+              </li>
+              <li>
+                <Link href="https://github.com/usdot-jpo-ode" isExternal>
+                  ODE GitHub Site
+                </Link>
+              </li>
+            </ul>
+          </p>
+        </AccordionItem>
+        <AccordionItem title="Secure Data Commons (SDC)" parentId="accordion-2" index={3}>
+          <p>
+            The Secure Data Commons (SDC) is a cloud-based analytics platform that enables traffic engineers, 
+            researchers, and data scientists to access transportation-related datasets. The USDOT created 
+            the SDC to provide a secure platform for sharing and collaborating on research, tools, algorithms, 
+            and analysis involving moderate sensitivity level (personally identifiable information 
+            and confidential business information) datasets using commercially available tools, without needing 
+            to install tools or software locally.
+            <ul>
+              <li>
+                <Link href="https://www.transportation.gov/data/secure" isExternal>
+                  Secure Data Commons (SDC)
+                </Link>
+              </li>
+            </ul>
+          </p>
+        </AccordionItem>
+      </Accordion>
+    </div>
+  </section>
+</PcbLayout>

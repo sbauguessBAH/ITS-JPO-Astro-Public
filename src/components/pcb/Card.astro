@@ -1,0 +1,141 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import base_url from '@/src/lib/base_url';
+
+interface Props extends HTMLAttributes<'div'>{
+  /** Vertical shows image on top, horizontal shows image on left side */
+  orientation?: "horizontal" | "vertical";
+  /** Disable the box shadow for the card */
+  disableShadow?: boolean;
+  /** Disable the border for the card */
+  disableBorder?: boolean;
+  /** Show an image above or below the content */
+  image?: ImageMetadata;
+  /** Title for the card */
+  title?: string;
+  /** Card description */
+  description?: string;
+  /** Adding a link will make the card clickable */
+  href?: string;
+  /** Set the height of horizontal cards to ensure consistent card height */
+  height?: number;
+  /** Set the image width of horizontal cards to ensure consistent image size */
+  imageWidth?: number;
+  /** Set to true if the link goes to an external site (uses https instead of Astro) */
+  isExternalLink?: boolean;
+}
+
+const { 
+  orientation, 
+  disableShadow, 
+  disableBorder,
+  image, 
+  title,
+  description,
+  href,
+  isExternalLink,
+  height,
+  imageWidth,
+  ...attrs 
+} = Astro.props;
+
+const Root = href ? "a" : "div";
+const props = {
+  ...(href && { "href": base_url(href) }),
+  ...(href && isExternalLink && { "href": href, "target": "_blank", "rel": "noopener noreferrer" }),
+  ...(orientation == "horizontal" && height && { "style": `height: ${height}px;` }),
+}
+const imgProps = {
+  ...(orientation === "horizontal" && height && { "style": `height: ${height}px;`}),
+  ...(orientation === "horizontal" && imageWidth && { "style": `width: ${imageWidth}px;`}),
+}
+---
+<style>
+  .card {
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+  a.card:hover {
+    transform: scale(1.01);
+    background-color: var(--border-light);
+  }
+  .card-vertical {
+    flex-direction: column;
+  }
+  .card-horizontal {
+    flex-direction: row;
+    align-items: center;
+  }
+  .card-shadow {
+    -moz-box-shadow: 0px 4px 8px var(--border-light); 
+    -webkit-box-shadow: 0px 4px 8px var(--border-light); 
+    box-shadow: 0px 4px 8px var(--border-light);
+  }
+  .card-border {
+    border: 0.5px solid var(--border-light);
+  }
+  .card-vertical > .card-content {
+    padding: 1rem 1rem;
+  }
+  .card-horizontal > .card-content {
+    padding: 0 0.5rem 0 1rem;
+  }
+  /* .card-content {
+    height: 100%;
+  } */
+  .card-content > h3 {
+    font-weight: 600;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+  }
+  .card-content > p {
+    margin: 0;
+    padding: 0;
+  }
+  .card-image {
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+  }
+  .card-vertical > .card-image {
+    height: 150px;
+    width: auto;
+  }
+  .card-horizontal > .card-image {
+    height: 100%;
+    width: 150px;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  a:hover {
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+</style>
+<Root 
+  class:list={[
+    "card d-flex card-vertical",
+    {"card-horizontal": orientation === "horizontal"},
+    {"card-shadow": !disableShadow},
+    {"card-border": !disableBorder}
+  ]} 
+  {...props}
+  {...attrs}
+>
+  {image && <Image src={image} alt={title ?? "No alt provided"} class="card-image" {...imgProps}/>}
+  <div class="card-content">
+    {title && <h3>{title}</h3>}
+    {description && <p>{description}</p>}
+  </div>
+</Root>

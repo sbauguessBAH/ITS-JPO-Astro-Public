@@ -115,10 +115,18 @@ export const navigation: NavigationItem[] = [
   },
   {
     name: 'Technology Transfer',
-    url: '#',
+    url: '/technology-transfer',
     pages: [
       { name: 'ITS Deployment Evaluation', url: 'https://www.itskrs.its.dot.gov/', isExternal: true },
-      { name: 'ITS Professional Capacity Building', url: 'https://www.pcb.its.dot.gov/default.aspx', isExternal: true },
+      { name: 'ITS Professional Capacity Building', url: '/technology-transfer/pcb', pages: [
+        { name: 'ITS PCB Home', url: '/technology-transfer/pcb' },
+        { name: 'Trainings', url: '/technology-transfer/pcb/trainings' },
+        { name: 'Microlearning Videos', url: '/technology-transfer/pcb/microlearning' },
+        { name: 'Academic Resources', url: '/technology-transfer/pcb/resources' },
+        { name: 'Peer Exchanges', url: '/technology-transfer/pcb/peer-exchanges' },
+        { name: 'V2X Tools', url: '/technology-transfer/pcb/v2x-tools' },
+        { name: 'Webinars', url: '/technology-transfer/pcb/webinars' },
+      ] },
       { name: 'ITS Standards Program', url: 'https://www.standards.its.dot.gov/', isExternal: true },
       { name: 'Smart Community Resource Center', url: 'https://www.its.dot.gov/scrc/index.html#/', isExternal: true },
       { name: 'Intersection Safety Challenge', url: 'https://its.dot.gov/isc/', isExternal: true },

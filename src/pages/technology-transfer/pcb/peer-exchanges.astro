@@ -1,0 +1,40 @@
+---
+import PcbLayout from "./_pcb-layout.astro";
+import qwarnImage from "@/src/assets/images/pcb/q-warn-peer-exchange.png";
+import modImage from "@/src/assets/images/pcb/mod-peer-exchange.png";
+import Card from "@/src/components/pcb/Card.astro";
+---
+
+<PcbLayout title="Peer Exchanges">
+  <h2>Peer Exchanges</h2>
+  <p>
+    Providing technical assistance to agencies, facilitating knowledge transfer
+    to address ITS planning and operational challenges
+  </p>
+  <div class="row gy-4 mb-4 justify-content-start">
+    <div class="col-md-4">
+      <Card
+        image={modImage}
+        title="Mobility on Demand (MOD) Peer Exchange"
+        description="Focuses on community engagement, knowledge sharing, and promoting safety to improve outreach, align with values, and build public trust."
+        href="https://its.dot.gov"
+        isExternalLink
+      />
+    </div>
+    <div class="col-md-4">
+      <Card
+        image={qwarnImage}
+        title="Queue Warning Peer Exchange"
+        description="Focuses on sharing best practices and lessons learned in the planning and implementation of queue warning systems to enhance roadway safety and traffic flow."
+        href="https://its.dot.gov"
+        isExternalLink
+      />
+    </div>
+  </div>
+  <p>
+    For more information, please contact the ITS PCB team at 
+    <a href="mailto:John.Schneeberger@dot.gov">
+      John.Schneeberger@dot.gov
+    </a>.
+  </p>
+</PcbLayout>
