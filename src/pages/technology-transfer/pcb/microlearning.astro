@@ -1,85 +1,13 @@
 ---
-import type { Resource, ResourceGroup } from "@/src/types";
 import PcbLayout from "./_pcb-layout.astro";
 import Accordion from "@/src/components/Accordion.astro";
 import AccordionItem from "@/src/components/AccordionItem.astro";
 import Card from "@/src/components/pcb/Card.astro";
-import safeSystemImage from "@/src/assets/images/pcb/microlearning/safe-system.png";
-import saferPeopleImage from "@/src/assets/images/pcb/microlearning/safer-people.png";
-import saferVehiclesImage from "@/src/assets/images/pcb/microlearning/safer-vehicles.png";
-import saferRoadsImage from "@/src/assets/images/pcb/microlearning/safer-roads.png";
-import saferSpeedsImage from "@/src/assets/images/pcb/microlearning/safer-speeds.png";
-import postCrashImage from "@/src/assets/images/pcb/microlearning/post-crash-care.png";
-import seImage from "@/src/assets/images/pcb/microlearning/systems-engineering.png";
-import seItsImage from "@/src/assets/images/pcb/microlearning/applying-systems-engineering.png";
-import seApproachImage from "@/src/assets/images/pcb/microlearning/systems-engineering-approach.png";
+import { getEntry } from "astro:content";
 
-const microlearning: ResourceGroup[] = [
-  {
-    title: "ITS and Safety",
-    resources: [
-      { 
-        title: "ITS and Safe System Approach", 
-        href: "", 
-        image: safeSystemImage,
-        description: "U.S. roadway fatalities have stagnated in the past decade, prompting the USDOT's National Roadway Safety Strategy to promote ITS technologies and the Safe System Approach to enhance transportation safety, especially for vulnerable users.",
-      },
-      { 
-        title: "ITS and Safer People", 
-        href: "", 
-        image: saferPeopleImage,
-        description: "The video highlights how Intelligent Transportation Systems (ITS) enhance road safety by encouraging responsible driving and providing alerts for pedestrian, cyclist, and visually-impaired users, using technologies like V2I communication, flashing beacons, and signal systems.",
-      },
-      { 
-        title: "ITS and Safer Vehicles", 
-        href: "", 
-        image: saferVehiclesImage,
-        description: "Intelligent Transportation Systems (ITS) enhance vehicle safety by expanding crash prevention technologies and minimizing crash impacts for both occupants and non-occupants. Examples include advanced vehicle systems that improve overall safety.",
-      },
-      { 
-        title: "ITS and Safer Speeds", 
-        href: "", 
-        image: saferSpeedsImage,
-        description: "Intelligent Transportation Systems (ITS) enhance safety by promoting safer speeds through speed warnings, variable limits, and automated enforcement, reducing collisions and improving driver behavior.",
-      },
-      { 
-        title: "ITS and Safer Roads", 
-        href: "", 
-        image: saferRoadsImage,
-        description: "Intelligent Transportation Systems (ITS) improve road safety by mitigating human errors and promoting safer behaviors through technologies like active traffic management, collision alerts, and smart work zones.",
-      },
-      { 
-        title: "ITS and Post-Crash Care", 
-        href: "", 
-        image: postCrashImage,
-        description: "Intelligent Transportation Systems (ITS) improve post-crash care by enabling faster emergency response and safer working conditions for first responders through strategies like emergency vehicle preemption and unmanned aircraft systems for crash reconstruction.",
-      },
-    ]
-  },
-  {
-    title: "The Principles of Systems Engineering",
-    resources: [
-      {
-        title: "The Principles of Systems Engineering",
-        href: "",
-        image: seImage,
-        description: "Placeholder",
-      },
-      {
-        title: "Applying Systems Engineering to ITS Projects",
-        href: "",
-        image: seItsImage,
-        description: "Placeholder",
-      },
-      {
-        title: "Systems Engineering Approach Resources",
-        href: "",
-        image: seApproachImage,
-        description: "Placeholder"
-      }
-    ]
-  }
-]
+const trainingCategories = await getEntry("trainings", "microlearnings");
+
+const images = import.meta.glob<{ default: ImageMetadata }>("../../../assets/images/pcb/microlearning/*.{jpeg,jpg,png,gif}");
 ---
 
 <PcbLayout title="Microlearning Videos">
@@ -87,19 +15,19 @@ const microlearning: ResourceGroup[] = [
   <p>Access brief videos for quick, focused learning on ITS topics.</p>
   <div class="mx-4">
     <Accordion id="accordion-1">
-      {microlearning.map((group, index) => (
-        <AccordionItem title={group.title} index={index} showOnLoad={index === 0}>
+      {trainingCategories.data.map(({ title, trainings }, index) => (
+        <AccordionItem title={title} index={index} showOnLoad={index === 0}>
           <div class="d-flex flex-column gap-4">
-            {group.resources.map(resource => (
+            {trainings.map(training => (
               <Card
-                image={resource.image}
-                title={resource.title}
-                description={resource.description}
-                href={resource.href}
+                image={images[`../../../assets/images/pcb/microlearning/${training.image?.src}`]()}
+                title={training.title}
+                description={training.description}
+                href={training.url}
                 orientation="horizontal"
                 height={150}
                 imageWidth={250}
-                isExternalLink={resource.isExternalLink}
+                isExternalLink={training.isExternal}
               />
             ))}
           </div>

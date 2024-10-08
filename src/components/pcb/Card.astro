@@ -11,8 +11,8 @@ interface Props extends HTMLAttributes<'div'>{
   disableShadow?: boolean;
   /** Disable the border for the card */
   disableBorder?: boolean;
-  /** Show an image above or below the content */
-  image?: ImageMetadata;
+  /** Show an image on the card; accepts ImageMetadata or a Promise containing ImageMetadata */
+  image?: ImageMetadata | Promise<{ default: ImageMetadata }>;
   /** Title for the card */
   title?: string;
   /** Card description */
