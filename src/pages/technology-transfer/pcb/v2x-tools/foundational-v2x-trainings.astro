@@ -1,0 +1,32 @@
+---
+import PcbLayout from "../_pcb-layout.astro";
+import Link from "@/src/components/Link.astro";
+import trainingImage from "@/src/assets/images/pcb/foundational-v2x-trainings.png";
+import { Image } from "astro:assets";
+---
+<PcbLayout title="V2X Tools">
+  <h2>Foundational V2X Trainings</h2>
+  <div class="row">
+    <div class="col-8">
+      <p>
+        Vehicle-to-everything (V2X) is the use of wireless communications technologies to enable vehicles 
+        to communicate with each other, other road users such as pedestrians and bicyclists, and infrastructure. 
+        These technologies have the potential to make significant impacts improving safety, enhancing mobility, 
+        and reducing transportation's environmental impact. This foundational-level course provides participants 
+        with a basic understanding of V2X concepts. Participants are introduced to the key components 
+        that enable a V2X ecosystem, the potential benefits of the technology, and example use cases and the messages 
+        and standards supporting them while ensuring safety and privacy. This 4-hour introductory course 
+        is currently be offered in collaboration with ITS America to ITS State Chapters&mdash;as well as others&mdash;
+        across the United States. Entities interested in this training should reach out 
+        to J.D. Schneeberger (<Link isExternal href="mailto:john.schneeberger@dot.gov">john.schneeberger@dot.gov</Link>).
+      </p>
+    </div>
+    <div class="col-4">
+      <Image 
+        class="img-fluid"
+        src={trainingImage} 
+        alt="Vehicles at an intersection with yellow circles around each, indicating the use of V2X technologies"
+      />
+    </div>
+  </div>
+</PcbLayout>

@@ -16,9 +16,7 @@ const { image } = Astro.props;
   />
   <div class="banner-text-container">
     <div class="banner-text">
-      <h1>
-        <slot/>
-      </h1>
+      <slot/>
     </div>
   </div>
 </div>
@@ -62,39 +60,41 @@ const { image } = Astro.props;
     padding: 0 1rem;
   }
 
-  .banner-text h1 {
+  .banner-text {
     font-size: 3rem;
     color: white;
+    font-weight:bold;
     line-height: 0.9;
     margin-bottom: 0;
+    text-transform:uppercase;
     transition: font-size 0.2s ease;
   }
 
   /* 1200, 992, 768, 576 */
 @media (max-width: 1200px) {
-  .banner-text h1 {
+  .banner-text {
     font-size: 2.4rem;
   }
 }
 
 @media (max-width: 1040px) {
-  .banner-text h1 {
+  .banner-text {
     font-size: 1.8rem;
   }
 }
 @media (max-width: 992px) {
-  .banner-text h1 {
+  .banner-text {
     font-size: 1.6rem;
   }
 }
 @media (max-width: 768px) {
-  .banner-text h1 {
+  .banner-text {
     font-size: 1.4rem;
   }
 }
 
 @media (max-width: 576px) {
-  .banner-text h1 {
+  .banner-text {
     font-size: 1.2rem;
   }
 }

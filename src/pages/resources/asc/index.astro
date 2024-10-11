@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import headerImage from "@/src/assets/images/asc/overview.jpg";
+import headerImage from "@/src/assets/images/asc/overview.png";
 import aboutIcon from "@/src/assets/images/asc/About.png";
 import cyberIcon from "@/src/assets/images/asc/Cyber.png";
 import policyIcon from "@/src/assets/images/asc/Policy.png";
@@ -9,7 +9,7 @@ import standardsIcon from "@/src/assets/images/asc/Standards.png";
 import toolsIcon from "@/src/assets/images/asc/Tools.png";
 import StandardsHeading from "@/src/components/standards/StandardsHeading.astro";
 import base_url from "@/src/lib/base_url";
-import StandardsLayout from "./_StandardsLayout.astro";
+import AscLayout from "./_asc-layout.astro";
 ---
 <style>
   .vision {
@@ -47,7 +47,7 @@ import StandardsLayout from "./_StandardsLayout.astro";
     min-height:300px;
   }
 </style>
-<StandardsLayout title="Home">
+<AscLayout title="Home">
   <Image src={headerImage} alt="Architecture, Standards, and Cybersecurity Header" class="img-fluid mb-4"/>
   <StandardsHeading image={aboutIcon} title="About Enabling ITS Resources"/>
 	<div class="typography">
@@ -195,4 +195,4 @@ import StandardsLayout from "./_StandardsLayout.astro";
       </a>
     </p>
   </div>
-</StandardsLayout>
+</AscLayout>

@@ -3,7 +3,7 @@ import StandardsHeading from '@/src/components/standards/StandardsHeading.astro'
 import standardsImage from "@/src/assets/images/asc/Standards Diagram.png";
 import { Image } from 'astro:assets';
 import base_url from '@/src/lib/base_url';
-import StandardsLayout from './_StandardsLayout.astro';
+import AscLayout from './_asc-layout.astro';
 ---
 <style>
 	.typography {
@@ -18,7 +18,7 @@ import StandardsLayout from './_StandardsLayout.astro';
   }
 </style>
 
-<StandardsLayout title="ITS Standards">
+<AscLayout title="ITS Standards">
 	<StandardsHeading title="About ITS Standards Program"/>
 	<div class="typography">
 		<p>
@@ -152,4 +152,4 @@ import StandardsLayout from './_StandardsLayout.astro';
 			</ul>
 		</p>
 	</div>
-</StandardsLayout>
+</AscLayout>

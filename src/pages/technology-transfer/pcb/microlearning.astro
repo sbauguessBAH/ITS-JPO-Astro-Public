@@ -5,11 +5,33 @@ import AccordionItem from "@/src/components/AccordionItem.astro";
 import Card from "@/src/components/pcb/Card.astro";
 import { getEntry } from "astro:content";
 
-const trainingCategories = await getEntry("trainings", "microlearnings");
+const trainingCategories = await getEntry("microlearning", "microlearning");
 
 const images = import.meta.glob<{ default: ImageMetadata }>("../../../assets/images/pcb/microlearning/*.{jpeg,jpg,png,gif}");
+//images[`../../../assets/images/pcb/microlearning/${training.image?.src}`]()
 ---
-
+<style is:global>
+  .microlearning-base {
+    height: 150px;
+  }
+  .microlearning-image {
+    width: 250px;
+    height: 150px;
+  }
+  @media (max-width: 768px) {
+    .microlearning-base {
+      height: 100%;
+      flex-direction: column;
+      align-items: start;
+    }
+    .microlearning-content {
+      padding: 1rem 1rem;
+    }
+    .microlearning-image {
+      width: 100%;
+    }
+  }
+</style>
 <PcbLayout title="Microlearning Videos">
   <h2>Microlearning Videos</h2>
   <p>Access brief videos for quick, focused learning on ITS topics.</p>
@@ -20,13 +42,16 @@ const images = import.meta.glob<{ default: ImageMetadata }>("../../../assets/ima
           <div class="d-flex flex-column gap-4">
             {trainings.map(training => (
               <Card
-                image={images[`../../../assets/images/pcb/microlearning/${training.image?.src}`]()}
+                image={training.image} 
                 title={training.title}
                 description={training.description}
                 href={training.url}
                 orientation="horizontal"
-                height={150}
-                imageWidth={250}
+                classNames={{
+                  image: "microlearning-image",
+                  base: "microlearning-base",
+                  content: "microlearning-content"
+                }}
                 isExternalLink={training.isExternal}
               />
             ))}

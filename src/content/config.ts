@@ -27,56 +27,56 @@ export const collections = {
     }),
   }),
 
-  training: defineCollection({
+  // training: defineCollection({
+  //   type: 'data',
+  //   schema: z.object({
+  //     title: z.string(),
+  //     description: z.string(),
+  //     image: z.object({
+  //       src: z.string(),
+  //       alt: z.string().optional()
+  //     }),
+  //     url: z.string().url().optional()
+  //   })
+  // }),
+  // trainingCategory: defineCollection({
+  //   type: 'data',
+  //   schema: z.object({
+  //     title: z.string(),
+  //     trainings: z.array(reference('training'))
+  //   })
+  // }),
+  microlearning: defineCollection({
     type: 'data',
-    schema: z.object({
-      title: z.string(),
-      description: z.string(),
-      image: z.object({
-        src: z.string(),
-        alt: z.string().optional()
-      }),
-      url: z.string().url().optional()
-    })
-  }),
-  trainingCategory: defineCollection({
-    type: 'data',
-    schema: z.object({
-      title: z.string(),
-      trainings: z.array(reference('training'))
-    })
-  }),
-  microlearnings: defineCollection({
-    type: 'data',
-    schema: z.array(z.object({
-      title: z.string(),
-      trainings: z.array(z.object({
+    schema: ({ image }) => z.array(
+      z.object({
         title: z.string(),
-        description: z.string(),
-        image: z.object({
-          src: z.string(),
-          alt: z.string()
-        }).optional(),
-        url: z.string().url().optional(),
-        isExternal: z.boolean().optional()
-      }))
-    }))
+        trainings: z.array(
+          z.object({
+            title: z.string(),
+            description: z.string(),
+            image: image().optional(),
+            url: z.string().url().optional(),
+            isExternal: z.boolean().optional()
+          })
+        )
+      })
+    )
   }),
   trainings: defineCollection({
     type: 'data',
-    schema: z.array(z.object({
-      title: z.string(),
-      trainings: z.array(z.object({
+    schema: ({ image }) => z.array(
+      z.object({
         title: z.string(),
-        description: z.string(),
-        image: z.object({
-          src: z.string(),
-          alt: z.string()
-        }).optional(),
-        url: z.string().url().optional(),
-        isExternal: z.boolean().optional()
-      }))
-    }))
+        trainings: z.array(z.object({
+          title: z.string(),
+          description: z.string(),
+          image: image().optional(),
+          url: z.string().url().optional(),
+          isExternal: z.boolean().optional()
+        }))
+      })
+    )
   })
 
 };

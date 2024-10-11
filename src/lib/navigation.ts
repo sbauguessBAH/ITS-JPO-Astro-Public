@@ -124,7 +124,10 @@ export const navigation: NavigationItem[] = [
         { name: 'Microlearning Videos', url: '/technology-transfer/pcb/microlearning' },
         { name: 'Academic Resources', url: '/technology-transfer/pcb/resources' },
         { name: 'Peer Exchanges', url: '/technology-transfer/pcb/peer-exchanges' },
-        { name: 'V2X Tools', url: '/technology-transfer/pcb/v2x-tools' },
+        { name: 'V2X Tools', url: '/technology-transfer/pcb/v2x-tools', pages: [
+          { name: 'Foundational V2X Trainings', url: '/technology-transfer/pcb/v2x-tools/foundational-v2x-trainings' },
+          { name: 'V2X Cohorts', url: '/technology-transfer/pcb/v2x-tools/v2x-cohorts'}
+        ] },
         { name: 'Webinars', url: '/technology-transfer/pcb/webinars' },
       ] },
       { name: 'ITS Standards Program', url: 'https://www.standards.its.dot.gov/', isExternal: true },
