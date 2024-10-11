@@ -6,58 +6,29 @@ import Card from "@/src/components/pcb/Card.astro";
 import { getEntry } from "astro:content";
 
 const trainingCategories = await getEntry("microlearning", "microlearning");
-
-const images = import.meta.glob<{ default: ImageMetadata }>("../../../assets/images/pcb/microlearning/*.{jpeg,jpg,png,gif}");
-//images[`../../../assets/images/pcb/microlearning/${training.image?.src}`]()
 ---
-<style is:global>
-  .microlearning-base {
-    height: 150px;
-  }
-  .microlearning-image {
-    width: 250px;
-    height: 150px;
-  }
-  @media (max-width: 768px) {
-    .microlearning-base {
-      height: 100%;
-      flex-direction: column;
-      align-items: start;
-    }
-    .microlearning-content {
-      padding: 1rem 1rem;
-    }
-    .microlearning-image {
-      width: 100%;
-    }
-  }
-</style>
 <PcbLayout title="Microlearning Videos">
   <h2>Microlearning Videos</h2>
   <p>Access brief videos for quick, focused learning on ITS topics.</p>
-  <div class="mx-4">
-    <Accordion id="accordion-1">
-      {trainingCategories.data.map(({ title, trainings }, index) => (
-        <AccordionItem title={title} index={index} showOnLoad={index === 0}>
-          <div class="d-flex flex-column gap-4">
-            {trainings.map(training => (
+  <Accordion id="accordion-1">
+    {trainingCategories.data.map(({ title, trainings }, index) => (
+      <AccordionItem title={title} index={index} showOnLoad={index === 0}>
+        <div class="row gy-4">
+          {trainings.map(training => (
+            <div class="col-sm-6 col-md-12">
               <Card
                 image={training.image} 
                 title={training.title}
                 description={training.description}
                 href={training.url}
-                orientation="horizontal"
-                classNames={{
-                  image: "microlearning-image",
-                  base: "microlearning-base",
-                  content: "microlearning-content"
-                }}
+                orientation="responsive"
+                imageSize="wide"
                 isExternalLink={training.isExternal}
               />
-            ))}
-          </div>
-        </AccordionItem>
-      ))}
-    </Accordion>
-  </div>
+            </div>
+          ))}
+        </div>
+      </AccordionItem>
+    ))}
+  </Accordion>
 </PcbLayout>

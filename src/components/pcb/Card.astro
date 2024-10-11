@@ -3,29 +3,27 @@ import type { HTMLAttributes } from 'astro/types';
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import base_url from '@/src/lib/base_url';
-import "./Card.css";
 
 interface Props extends HTMLAttributes<'div'>{
-  /** Vertical shows image on top, horizontal shows image on left side */
-  orientation?: "horizontal" | "vertical";
-  /** Disable the box shadow for the card */
+  /** Vertical shows image on top, horizontal shows image on left side, responsive is horizontal at large screens and vertical on small */
+  orientation?: "horizontal" | "vertical" | "responsive";
+  /** Set the image size for responsive components */
+  imageSize?: "normal" | "wide";
+  /** Disable the hover shadow for the card */
   disableShadow?: boolean;
-  /** Disable the border for the card */
-  disableBorder?: boolean;
   /** Show an image on the card; accepts ImageMetadata or a Promise containing ImageMetadata */
   image?: ImageMetadata | Promise<{ default: ImageMetadata }>;
+  /** Include alt text for any images used */
+  imageAlt?: string;
   /** Title for the card */
   title?: string;
   /** Card description */
   description?: string;
   /** Adding a link will make the card clickable */
   href?: string;
-  /** Set the height of horizontal cards to ensure consistent card height */
-  // cardHeight?: `${number}px` | `${number}%`;
-  /** Set the image width of horizontal cards to ensure consistent image size */
-  // imageWidth?: `${number}px` | `${number}%`;
   /** Set to true if the link goes to an external site (uses https instead of Astro) */
   isExternalLink?: boolean;
+  /** Base goes to component body, content goes to title and description. May need to use !important to override default styles */
   classNames?: {
     image?: string,
     base?: string,
@@ -36,15 +34,14 @@ interface Props extends HTMLAttributes<'div'>{
 const { 
   orientation, 
   disableShadow, 
-  disableBorder,
   image, 
+  imageAlt,
   title,
   description,
   href,
   isExternalLink,
   classNames,
-  // cardHeight,
-  // imageWidth,
+  imageSize,
   ...rest 
 } = Astro.props;
 
@@ -52,16 +49,10 @@ const Root = href ? "a" : "div";
 const props = {
   ...(href && { "href": base_url(href) }),
   ...(href && isExternalLink && { "href": href, "target": "_blank", "rel": "noopener noreferrer" }),
-  // ...(orientation == "horizontal" && cardHeight && { "style": `height: ${cardHeight};` }),
 }
-// const imgProps = {
-//   ...(orientation === "horizontal" && cardHeight && { "style": `height: ${cardHeight};`}),
-//   ...(orientation === "horizontal" && imageWidth && { "style": `width: ${imageWidth}px;`}),
-// }
-// const cheight = cardHeight ?? "100%";
-// const iwidth = imageWidth ?? "150px";
 ---
 <style>
+  /** CSS resets */
   img {
     padding: 0;
     margin: 0;
@@ -76,13 +67,94 @@ const props = {
     text-decoration: none;
     font-weight: normal;
   }
+
+  /** Basic card styles */
+  .card {
+    border-radius: var(--card-border-radius);
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    border: 1px solid var(--border-light);
+  }
+  .card-vertical {
+    flex-direction: column;
+  }
+  .card-horizontal, .card-responsive {
+    flex-direction: row;
+    align-items: center;
+    height: 150px;
+  }
+
+  /** Add hover for link cards */
+  a.card:hover {
+    /* transform: scale(1.01); */
+    background-color: var(--background-light);
+  }
+  a.card-shadow:hover {
+    -moz-box-shadow: 0px 4px 8px var(--border-light); 
+    -webkit-box-shadow: 0px 4px 8px var(--border-light); 
+    box-shadow: 0px 4px 8px var(--border-light);
+  }
+
+  /** Styles for the card content */
+  .card-content > h3 {
+    font-weight: 600;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+  }
+  .card-content > p {
+    margin: 0;
+    padding: 0;
+  }
+  .card-vertical > .card-content {
+    padding: 1rem 1rem;
+  }
+  .card-horizontal > .card-content, .card-responsive > .card-content {
+    padding: 0 0.5rem 0 1rem;
+  }
+
+  /** Styles for the card image */
+  .card-image, .card-image-wide {
+    padding: 0;
+    margin: 0;
+  }
+  .card-vertical > .card-image {
+    height: 150px;
+    width: auto;
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0 0 ;
+    object-fit: cover;
+  }
+  .card-horizontal > .card-image, .card-responsive > .card-image {
+    width: 150px;
+    border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
+    height: 100%;
+    object-fit: cover;
+  }
+  .card-horizontal > .card-image-wide, .card-responsive > .card-image-wide {
+    width: 250px;
+  }
+  @media (max-width: 768px) {
+    .card-responsive {
+      height: 100%;
+      flex-direction: column;
+      align-items: start;
+    }
+    .card-responsive > .card-content {
+      padding: 1rem 1rem;
+    }
+    .card-responsive > .card-image, .card-responsive > .card-image-wide {
+      width: 100%;
+      border-radius: var(--card-border-radius) var(--card-border-radius) 0 0 ;
+    }
+  }
 </style>
 <Root 
   class:list={[
     "card d-flex",
-    {"card-vertical": orientation !== "horizontal", "card-horizontal": orientation === "horizontal"},
+    orientation ? `card-${orientation}` : "card-vertical",
     {"card-shadow": !disableShadow},
-    {"card-border": !disableBorder},
     classNames?.base
   ]} 
   {...props}
@@ -91,19 +163,15 @@ const props = {
   {image && 
     <Image 
       src={image} 
-      alt={title ?? "No alt provided"} 
+      alt={imageAlt ?? title ?? "No alt provided"} 
       class:list={[
-        {"card-vertical-image": orientation !== "horizontal", "card-horizontal-image": orientation === "horizontal"}, 
+        "card-image",
+        {"card-image-wide": imageSize === "wide" && orientation === "responsive"},
         classNames?.image
       ]}
     />
   }
-  <div 
-    class:list={[
-      {"card-vertical-content": orientation !== "horizontal", "card-horizontal-content": orientation === "horizontal"},
-      classNames?.content
-    ]}
-  >
+  <div class:list={["card-content", classNames?.content]}>
     {title && <h3>{title}</h3>}
     {description && <p>{description}</p>}
   </div>

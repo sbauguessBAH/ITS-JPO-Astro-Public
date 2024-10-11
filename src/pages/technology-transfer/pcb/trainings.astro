@@ -19,7 +19,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>("../../../assets/ima
       <AccordionItem title={title} index={index} showOnLoad={index === 0}>
         <div class="row gy-4">
           {trainings.map(training => (
-            <div class="col-md-6 col-lg-4">
+            <div class="col-sm-6 col-lg-4">
               <Card
                 title={training.title}
                 description={training.description}
