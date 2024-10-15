@@ -239,22 +239,25 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
         <li class="nav-item dropdown">
           <a class="nav-link py-3 px-4 dropdown-toggle" href="/" data-bs-toggle="dropdown" data-bs-auto-close="outside">About</a>
           <ul class="dropdown-menu mt-0 shadow">
+            <li>
+              <a class="dropdown-item" href={base_url("/about/its_jpo")}>About ITS JPO</a>
+            </li>
             <li class="dropend">
               <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Contact us</a>
               <ul class="dropdown-menu shadow">
                 <li>
-                  <a class="dropdown-item" href="">ITS JPO Staff Listing</a>
+                  <a class="dropdown-item" href={base_url("/about/contact-us/staff-listing/")}>ITS JPO Staff Listing</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="">Join our Mailing List</a>
+                  <a class="dropdown-item" href={base_url("/about/contact-us/mailinglist/")}>Join our Mailing List</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="">ITS Specialists in Field Offices</a>
+                  <a class="dropdown-item externalLink" href="https://www.fhwa.dot.gov/resourcecenter/teams/operations/">ITS Specialists in Field Offices</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a class="dropdown-item" href="">Staff Presentations</a>
+              <a class="dropdown-item" href={base_url("/about/staff-presentations")}>Staff Presentations</a>
             </li>
             <li></li>
           </ul>
@@ -270,13 +273,10 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
               <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">ITS Deployments</a>
               <ul class="dropdown-menu shadow">
                 <li>
-                  <a class="dropdown-item" href={base_url("/research/ITS4US/")}>ITS4US</a>
+                  <a class="dropdown-item" href={base_url("/research-areas/ITS4US/")}>ITS4US</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href={base_url("/deployment/V2X/")}>Vehicle-to-Everything</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="" style="color:gray; cursor: not-allowed;">V2X Accelerators (coming soon)</a>
+                  <a class="dropdown-item" href={base_url("/research-areas/V2X/")}>Vehicle-to-Everything</a>
                 </li>
                 <li>
                   <a class="dropdown-item externalLink" href="https://its.dot.gov/csai/">Complete Streets Artificial Intelligence (CSAI) Initiative</a>
@@ -290,25 +290,16 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
               </ul>
             </li>
             <li>
-              <a class="dropdown-item" href="">Automation Program</a>
+              <a class="dropdown-item" href={base_url("/research-areas/automation/")}>Automation Program</a>
             </li>
             <li class="dropend">
               <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Emerging and Enabling Technologies Program</a>
               <ul class="dropdown-menu shadow">
                 <li>
-                  <a class="dropdown-item" href="" style="color:gray; cursor: not-allowed;">5.9 GHz Spectrum (coming soon)</a>
-                </li>
-                <li>
                   <a class="dropdown-item externalLink" href="https://its.dot.gov/isc/" target="_blank" rel="noopener noreferrer">Intersection Safety Challenge</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="" style="color:gray; cursor: not-allowed;">Digital Infrastructure (coming soon)</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="" style="color:gray; cursor: not-allowed;">Environment and Climate Change (coming soon)</a>
-                </li>
-                <li>
-                  <a class="dropdown-item externalLink" href="research_areas/cybersecurity/index.htm" target="_blank">ITS Cybersecurity Research</a>
+                  <a class="dropdown-item externalLink" href="https://www.its.dot.gov/research_areas/cybersecurity/" target="_blank">ITS Cybersecurity Research</a>
                 </li>
               </ul>
             </li>
@@ -324,9 +315,6 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
                 <li>
                   <a class="dropdown-item" href="">MOD</a>
                 </li>
-                <li>
-                  <a class="dropdown-item" href="">V2I</a>
-                </li>
               </ul>
             </li>
           </ul>
@@ -337,7 +325,6 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
             <ul class="dropdown-menu mt-0 shadow">
               <li><a class="dropdown-item" href={base_url("/news-info/news/")}>Latest News from ITS JPO</a></li>
               <li><a class="dropdown-item" href={base_url("/news-info/blog/")}>ITS JPO Director's Blog</a></li>
-              <li><a class="dropdown-item" href={base_url("/news-info/fact-sheet/")}>ITS Research Fact Sheets</a></li>
               <li><a class="dropdown-item" href={base_url("/news-info/infographics/")}>Infographics</a></li>
               <li><a class="dropdown-item" href={base_url("/news-info/video/")}>Videos</a></li>
               <li><a class="dropdown-item" href={base_url("/news-info/image-library/")}>Image Library</a></li>
@@ -353,21 +340,15 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
                 <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Training</a>
                 <ul class="dropdown-menu shadow">
                   <li>
-                    <a class="dropdown-item" href="">ITS JPO Staff Listing</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="">Join our Mailing List</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="">ITS Specialists in Field Offices</a>
+                    <a class="dropdown-item externalLink" href="https://www.pcb.its.dot.gov/default.aspx" target="_blank" rel="noopener noreferrer">ITS Professional Capacity Building</a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a class="dropdown-item" href="">Smart Community Resource Center</a>
+                <a class="dropdown-item externalLink" href="https://www.its.dot.gov/scrc/index.html#/" target="_blank" rel="noopener noreferrer">Smart Community Resource Center</a>
               </li>
               <li>
-                <a class="dropdown-item" href="">National Transportation Library</a>
+                <a class="dropdown-item" href={base_url("/research/national-transportation-library/")}>National Transportation Library</a>
               </li>
               <li class="dropend">
                 <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Accelerating ITS Deployment</a>
@@ -382,7 +363,10 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
                     <a class="dropdown-item" href="">ITS Data</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="">Analysis Modeling and Simulation</a>
+                    <a class="dropdown-item" href="">ITS DataHub</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="">ITS CodeHub</a>
                   </li>
                 </ul>
               </li>
