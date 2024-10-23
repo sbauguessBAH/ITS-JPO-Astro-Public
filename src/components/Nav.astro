@@ -5,6 +5,7 @@ import facebookIcon from "../assets/images/Facebook.png";
 import instgramIcon from "../assets/images/Instagram.png";
 import twitterIcon from "../assets/images/twitter.png";
 import inDeedIcon from "../assets/images/inDeed.png";
+import youtubeIcon from "../assets/images/youtube.png";
 import base_url from "../lib/base_url";
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -86,33 +87,40 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
     background: rgb(233, 236, 239);
     border-radius: 0;
   }
+  .dropdown-menu{
+    border: none;
+  }
 </style>
 
 <div class="container-fluid Topbar">
   <div class="row">
-    <div class="col-lg-10">
+    <div class="col-9">
       <a href="https://www.transportation.gov/">
         <Image src={USDOTLogo} class="dotlogo" alt="U.S Department of Transportation Logo" />
       </a>
     </div>
-    <div class="col-lg-2">
-      <div class="row" style="padding-top: 8px">
-        <div class="col-2"></div>
-        <div class="col-2">
+    <div class="col-sm-3">
+      <div class="d-flex flex-row-reverse" style="padding-top: 8px">
+        <div class="d-inline-flex  mx-1">
+          <a href="https://www.facebook.com/USDOTResearch" target="_blank">
+            <Image src={youtubeIcon} class="SocialMediaIcon" alt="Facebook Logo" />
+          </a>
+        </div>
+        <div class="d-inline-flex  mx-1">
           <a href="https://www.facebook.com/USDOTResearch" target="_blank">
             <Image src={facebookIcon} class="SocialMediaIcon" alt="Facebook Logo" />
           </a>
         </div>
-        <div class="col-2">
+        <div class="d-inline-flex  mx-1">
           <Image src={instgramIcon} class="SocialMediaIcon" alt="Instagram Logo" />
         </div>
-        <div class="col-2">
+        <div class="d-inline-flex  mx-1">
           <Image src={twitterIcon} class="SocialMediaIcon" alt="Twiter Logo" />
         </div>
-        <div class="col-2">
+        <div class="d-inline-flex  mx-1">
           <Image src={inDeedIcon} class="SocialMediaIcon" alt="LinkedIn Logo" />
         </div>
-        <div class="col-2"></div>
+        
       </div>
     </div>
   </div>

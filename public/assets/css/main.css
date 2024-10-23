@@ -47,7 +47,7 @@ margin-right: .5rem;
     
 .Topbar {
     background-color: #091F61;
-    height: 50px;
+    padding-bottom: 8px;
 }
 
 .Sidebar {
@@ -303,7 +303,7 @@ nav-item dropdown show{
     height: 8px;
     width: 100%;
     background-color: #FFC500;
-    margin-top: 22px;
+    margin-top: 15px;
     margin-left:15px;
 }
 
