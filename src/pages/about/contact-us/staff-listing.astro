@@ -1,129 +1,108 @@
 ---
-import Default from "../../../layouts/Default.astro";
-import SideBar from "../../../components/SideBar_ContactUs.astro";
+import PageLayout from "@/src/layouts/PageLayout.astro";
 ---
+<PageLayout title="Staff Listing">
+  <Fragment slot="banner">
+    ITS JPO Staff Listing
+  </Fragment>
+  <div class="row">
+    <div class="col-lg-6">
+      <strong>Colbert, Delores</strong><br>
+      Staff Assistant<br>
+      202-493-0555<br>
+      <a href="mailto:delores.colbert@dot.gov">Delores.Colbert@dot.gov</a>
+      <br><br>
 
-<Default title="ITS JPO - FAQs">
-  <div class="AboutBanner">
-    <div class="AboutBannerTitle">
-      <h1>ITS JPO Staff Listing</h1>
+      <strong>Hartman, Katherine K</strong>.<br>
+      Chief, Research &amp; Evaluation<br>
+
+      (202) 366-2742 <br>
+      <a href="mailto:kate.hartman@dot.gov">Kate.Hartman@dot.gov </a>
+      <br><br>
+
+      <strong>Omay, Murat</strong><br>
+      Program Manager<br>
+      Data Access and Exchanges<br>
+      (202) 366-4374 <br>
+      <a href="mailto:murat.omay@dot.gov">Murat.Omay@dot.gov </a>
+      <br>
+      <br>
+
+      <strong>Park, Hyungjun, Ph.D.  </strong><br>
+      Program Manager<br>
+      Automation<br>
+      (202) 366-9126 <br>
+      <a href="mailto:Hyungjun.Park@dot.gov">Hyungjun.Park@dot.gov </a>
+      <br>
+      <br>
+
+      <strong>Pina, Mike</strong><br>
+      Program Manager<br>
+      Communications<br>
+      (202) 366-3700 <br>
+      <a href="mailto:michael.pina@dot.gov">Michael.Pina@dot.gov </a>
+      <br>
+      <br>
+      <strong>Pincus, Marcia</strong><br>
+      Program Manager<br>
+      ITS Deployment Evaluation<br>
+      (202) 366-9230 <br>
+      <a href="mailto:marcia.pincus@dot.gov">Marcia.Pincus@dot.gov</a>
+      <br>
+      <br>
+      <strong>Schneeberger, J.D.</strong><br>
+      Program Manager<br>
+      Knowledge and Technology Transfer <br>
+      202-366-8034 <br>
+      <a href="mailto:john.schneeberger@dot.gov">John.Schneeberger@dot.gov</a>
+      <br>
+
+      <br>
+
+    </div>
+
+    <div class="col-lg-6">
+      <strong>Sheehan, Robert, P.E., PTOE</strong><br>
+      Program Manager<br>
+      Architecture, Standards, and Cybersecurity<br>
+      (202) 366-6817 <br>
+      <a href="mailto:robert.sheehan@dot.gov">Robert.Sheehan@dot.gov </a>
+      <br><br>
+
+      <strong>Smith, Egan</strong> <br>
+      Acting  Director<br>
+      (202) 366-9224<br>
+      <a href="mailto:Egan.Smith@dot.gov">Egan.Smith@dot.gov</a><br><br>
+      
+          <strong>Solter, Michael</strong><br>
+          Chief Program &amp; Resource Management<br>
+          (202) 366-4259<br>
+          <a href="mailto:michael.solter@dot.gov">Michael.Solter@dot.gov</a>
+          <br><br>
+      
+      
+          <strong>Vadakpat, Govind, Ph.D., P.E., PTOE, PMP </strong><br>
+          Program  Manager<br>
+          Smart Infrastructure<br>
+          (202) 366-5004<br>
+          <a href="mailto:g.vadakpat@dot.gov">G.Vadakpat@dot.gov</a>
+          <br><br>
+
+
+
+          <strong>Williams, Dana</strong><br>
+          Administrative Officer<br>
+
+          (202) 366-2180 <br>
+          <a href="mailto:dana.williams@dot.gov">Dana.Williams@dot.gov </a>
+          <br><br>
+
+          <strong>Zlotchenko, Elina, PMP, FAC/PPM III</strong><br>
+          Program Manager<br>
+          ITS4US, ITS4Equity, and Program Management Office<br>
+          202-366-1697<br>
+          <a href="mailto:Elina.Zlotchenko@dot.gov">Elina.Zlotchenko@dot.gov</a>
+      <p></p>
     </div>
   </div>
-  <!-- InstanceEndEditable -->
-  <div class="container-fluid h-100 bodyWrap">
-    <div class="row h-100">
-      <aside class="col-12 col-md-3 p-3 bg-light"><SideBar /></aside>
-      <!-- InstanceEndEditable -->
-      <!-- InstanceBeginEditable name="MainContent" -->
-
-      <main class="col-9 MainContent">
-
-        <div class="row">
-
-            <div class="col-lg-6">
-
-                    <strong>Colbert, Delores</strong><br>
-                    Staff Assistant<br>
-                    202-493-0555<br>
-                    <a href="mailto:delores.colbert@dot.gov">Delores.Colbert@dot.gov</a>
-                    <br><br>
-
-                    <strong>Hartman, Katherine K</strong>.<br>
-                    Chief, Research &amp; Evaluation<br>
-
-                    (202) 366-2742 <br>
-                    <a href="mailto:kate.hartman@dot.gov">Kate.Hartman@dot.gov </a>
-                    <br><br>
-
-                    <strong>Omay, Murat</strong><br>
-                    Program Manager<br>
-                    Data Access and Exchanges<br>
-                    (202) 366-4374 <br>
-                    <a href="mailto:murat.omay@dot.gov">Murat.Omay@dot.gov </a>
-                    <br>
-                    <br>
-
-                    <strong>Park, Hyungjun, Ph.D.  </strong><br>
-                    Program Manager<br>
-                    Automation<br>
-                    (202) 366-9126 <br>
-                    <a href="mailto:Hyungjun.Park@dot.gov">Hyungjun.Park@dot.gov </a>
-                    <br>
-                    <br>
-
-                    <strong>Pina, Mike</strong><br>
-                    Program Manager<br>
-                    Communications<br>
-                    (202) 366-3700 <br>
-                    <a href="mailto:michael.pina@dot.gov">Michael.Pina@dot.gov </a>
-                    <br>
-                    <br>
-                    <strong>Pincus, Marcia</strong><br>
-                    Program Manager<br>
-                    ITS Deployment Evaluation<br>
-                    (202) 366-9230 <br>
-                    <a href="mailto:marcia.pincus@dot.gov">Marcia.Pincus@dot.gov</a>
-                    <br>
-                    <br>
-                    <strong>Schneeberger, J.D.</strong><br>
-                    Program Manager<br>
-                    Knowledge and Technology Transfer <br>
-                    202-366-8034 <br>
-                    <a href="mailto:john.schneeberger@dot.gov">John.Schneeberger@dot.gov</a>
-                    <br>
-
-                    <br>
-
-            </div>
-
-            <div class="col-lg-6">
-                    <strong>Sheehan, Robert, P.E., PTOE</strong><br>
-                    Program Manager<br>
-                    Architecture, Standards, and Cybersecurity<br>
-                    (202) 366-6817 <br>
-                    <a href="mailto:robert.sheehan@dot.gov">Robert.Sheehan@dot.gov </a>
-                    <br><br>
-
-                    <strong>Smith, Egan</strong> <br>
-                    Acting  Director<br>
-                    (202) 366-9224<br>
-                    <a href="mailto:Egan.Smith@dot.gov">Egan.Smith@dot.gov</a><br><br>
-                    
-                        <strong>Solter, Michael</strong><br>
-                        Chief Program &amp; Resource Management<br>
-                        (202) 366-4259<br>
-                        <a href="mailto:michael.solter@dot.gov">Michael.Solter@dot.gov</a>
-                        <br><br>
-                   
-                    
-                        <strong>Vadakpat, Govind, Ph.D., P.E., PTOE, PMP </strong><br>
-                        Program  Manager<br>
-                        Smart Infrastructure<br>
-                        (202) 366-5004<br>
-                        <a href="mailto:g.vadakpat@dot.gov">G.Vadakpat@dot.gov</a>
-                        <br><br>
-
-
-
-                        <strong>Williams, Dana</strong><br>
-                        Administrative Officer<br>
-
-                        (202) 366-2180 <br>
-                        <a href="mailto:dana.williams@dot.gov">Dana.Williams@dot.gov </a>
-                        <br><br>
-
-                        <strong>Zlotchenko, Elina, PMP, FAC/PPM III</strong><br>
-                        Program Manager<br>
-                        ITS4US, ITS4Equity, and Program Management Office<br>
-                        202-366-1697<br>
-                        <a href="mailto:Elina.Zlotchenko@dot.gov">Elina.Zlotchenko@dot.gov</a>
-                    <p></p>
-            </div>
-
-        </div>
-
-
-    </main>
-    </div>
-  </div>
-</Default>
+</PageLayout>

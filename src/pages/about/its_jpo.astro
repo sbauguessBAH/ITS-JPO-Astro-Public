@@ -1,104 +1,103 @@
 ﻿---
-import Default from '../../layouts/Default.astro';
-import SideBar from '../../components/SideBar_About.astro';
-import base_url from '../../lib/base_url';
+import PageLayout from '@/src/layouts/PageLayout.astro';
+import base_url from '@/src/lib/base_url';
+import stratplanImage from "@/src/assets/images/ITSJPO_StratPlanSmallBanner1.png";
 
-import Image from '../../components/Img_Home.astro'
-
+const stratplanUrl = base_url('/assets/pdf/stratplan2020/ITSJPO_StrategicPlan_2020-2025.pdf');
 ---
-<Default title="ITS JPO - About">
+<PageLayout title="About">
+  <Fragment slot="banner">
+    ITS Joint Program Office
+  </Fragment>
+  <div class="row">
+    <div class="col-lg-9">
+      <h2>About Us</h2>
+      <p>
+        The Intelligent Transportation System (ITS) Joint Program Office (JPO), plans and coordinates the U.S. DOT’s multimodal technology research program, working toward improving
+        transportation safety, mobility, and efficiency and enhancing productivity through the integration of innovative technologies into the nation’s transportation system.
+      </p>
 
-      <div class="AboutBanner">
-        <div class="AboutBannerTitle">
-          <h1>ITS Joint Program Office</h1>
-        </div>
-      </div>
-      <!-- Sidebar -->
-      <div class="container-fluid h-100 bodyWrap">
-        <div class="row h-100">
-          <aside class="col-12 col-md-3 p-3 bg-light"><SideBar /></aside>
-          <!-- MainContent -->
+      <h2>Our Vision</h2>
 
-          <main class="col-9 MainContent">
-            <div class="row">
-              <div class="col-lg-9">
-                <h2>About Us</h2>
-                <p>
-                  The Intelligent Transportation System (ITS) Joint Program Office (JPO), plans and coordinates the U.S. DOT’s multimodal technology research program, working toward improving
-                  transportation safety, mobility, and efficiency and enhancing productivity through the integration of innovative technologies into the nation’s transportation system.
-                </p>
+      <p>
+        The ITS JPO’s vision is to accelerate the use of ITS to transform the way society moves. The ITS JPO’s purpose is to spur the development and use of ITS to move people and goods more
+        safely and efficiently.
+      </p>
 
-                <h2>Our Vision</h2>
+      <h2>Our Mission</h2>
 
-                <p>
-                  The ITS JPO’s vision is to accelerate the use of ITS to transform the way society moves. The ITS JPO’s purpose is to spur the development and use of ITS to move people and goods more
-                  safely and efficiently.
-                </p>
-
-                <h2>Our Mission</h2>
-
-                <p>
-                  The ITS JPO’s mission is to lead collaborative and innovative research, development, and implementation of intelligent transportation systems to improve the safety and mobility of
-                  people and goods.
-                </p>
-              </div>
-              <div class="col-lg-3">
-                <a href="/assets/pdf/stratplan2020/ITSJPO_StrategicPlan_2020-2025.pdf" target="_blank" rel="noopener noreferrer">
-                  <Image imagePath="../assets/images/ITSJPO_StratPlanSmallBanner1.png" altText='' width={800} />
-                </a>
-                <button class="Pagebtn externalLink btnDark" onclick="window.open('/assets/pdf/stratplan2020/ITSJPO_StrategicPlan_2020-2025.pdf');">Read the 2020-2025 <br />Strategic Plan</button>
-              </div>
-            </div>
-
-            <h2>Our Organization and Leadership</h2>
-
-            <p>
-              The ITS JPO collaborates across modal administrations to coordinate and plan the U.S. DOT’s multimodal ITS technology research program, working toward improving transportation safety,
-              mobility, and efficiency and enhancing productivity through the integration of innovative technologies into the nation’s transportation system. These agencies include:
-            </p>
-
-            <ul>
-              <li>
-                <a href="https://ops.fhwa.dot.gov/index.asp" target="_blank" rel="noopener noreferrer">Federal Highway Administration (FHWA)</a>
-              </li>
-              <li>
-                <a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener noreferrer">Federal Motor Carrier Safety Administration (FMCSA)</a>
-              </li>
-              <li>
-                <a href="https://www.transit.dot.gov/" target="_blank" rel="noopener noreferrer">Federal Transit Administration (FTA)</a>
-              </li>
-              <li>
-                <a href="https://railroads.dot.gov/" target="_blank" rel="noopener noreferrer">Federal Railroad Administration (FRA)</a>
-              </li>
-              <li>
-                <a href="https://www.nhtsa.gov/" target="_blank" rel="noopener noreferrer">National Highway Traffic Safety Administration (NHTSA)</a>
-              </li>
-              <li>
-                <a href="https://www.maritime.dot.gov/" target="_blank" rel="noopener noreferrer">Maritime Administration (MARAD)</a>
-              </li>
-              <li>
-                <a href="https://www.phmsa.dot.gov/" target="_blank" rel="noopener noreferrer">Pipeline and Hazardous Materials Safety Administration</a>
-              </li>
-              <li>
-                <a href="https://www.seaway.dot.gov/" target="_blank" rel="noopener noreferrer">St. Lawrence Seaway Development Corporation</a>
-              </li>
-            </ul>
-
-            <p>
-              Led by the ITS JPO director, the ITS JPO is comprised of program managers and coordinators of the U.S. DOT’s multimodal ITS initiatives. In addition, individual staff members manage
-              technology transfer functions, such as National ITS Architecture development and maintenance, Standards development, professional capacity building and program assessment.
-            </p>
-
-            <h3>Resource</h3>
-
-            <ul>
-              <li>
-                <a href="/assets/pdf/factsheets/ITSJPO_overview.pdf" target="_blank" rel="noopener noreferrer">Intelligent Transportation Systems (ITS) Program Overview Fact Sheet</a>
-              </li>
-            </ul>
-          </main>
-        </div>
-      </div>
-      <!-- InstanceEndEditable -->
+      <p>
+        The ITS JPO’s mission is to lead collaborative and innovative research, development, and implementation of intelligent transportation systems to improve the safety and mobility of
+        people and goods.
+      </p>
     </div>
-  </Default>
+    <div class="col-lg-3">
+      <a href={stratplanUrl} target="_blank" rel="noopener noreferrer">
+        <img src={stratplanImage.src} style="width: 100%; max-width: 500px; margin: auto; margin-right: 40px; display: block; padding-bottom: 20px" />
+      </a>
+      <button class="Pagebtn externalLink btnDark" data-url={stratplanUrl} id="stratplanButton">
+        Read the 2020-2025 Strategic Plan
+      </button>
+    </div>
+  </div>
+
+  <h2>Our Organization and Leadership</h2>
+
+  <p>
+    The ITS JPO collaborates across modal administrations to coordinate and plan the U.S. DOT’s multimodal ITS technology research program, working toward improving transportation safety,
+    mobility, and efficiency and enhancing productivity through the integration of innovative technologies into the nation’s transportation system. These agencies include:
+  </p>
+
+  <ul>
+    <li>
+      <a href="https://ops.fhwa.dot.gov/index.asp" target="_blank" rel="noopener noreferrer">Federal Highway Administration (FHWA)</a>
+    </li>
+    <li>
+      <a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener noreferrer">Federal Motor Carrier Safety Administration (FMCSA)</a>
+    </li>
+    <li>
+      <a href="https://www.transit.dot.gov/" target="_blank" rel="noopener noreferrer">Federal Transit Administration (FTA)</a>
+    </li>
+    <li>
+      <a href="https://railroads.dot.gov/" target="_blank" rel="noopener noreferrer">Federal Railroad Administration (FRA)</a>
+    </li>
+    <li>
+      <a href="https://www.nhtsa.gov/" target="_blank" rel="noopener noreferrer">National Highway Traffic Safety Administration (NHTSA)</a>
+    </li>
+    <li>
+      <a href="https://www.maritime.dot.gov/" target="_blank" rel="noopener noreferrer">Maritime Administration (MARAD)</a>
+    </li>
+    <li>
+      <a href="https://www.phmsa.dot.gov/" target="_blank" rel="noopener noreferrer">Pipeline and Hazardous Materials Safety Administration</a>
+    </li>
+    <li>
+      <a href="https://www.seaway.dot.gov/" target="_blank" rel="noopener noreferrer">St. Lawrence Seaway Development Corporation</a>
+    </li>
+  </ul>
+
+  <p>
+    Led by the ITS JPO director, the ITS JPO is comprised of program managers and coordinators of the U.S. DOT’s multimodal ITS initiatives. In addition, individual staff members manage
+    technology transfer functions, such as National ITS Architecture development and maintenance, Standards development, professional capacity building and program assessment.
+  </p>
+
+  <h3>Resource</h3>
+
+  <ul>
+    <li>
+      <a href={base_url("/assets/pdf/factsheets/ITSJPO_overview.pdf")} target="_blank" rel="noopener noreferrer">Intelligent Transportation Systems (ITS) Program Overview Fact Sheet</a>
+    </li>
+  </ul>
+</PageLayout>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('stratplanButton');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const url = btn.getAttribute('data-url');
+        if (url) {
+          window.open(url);
+        }
+      })
+    }
+  })
+</script>

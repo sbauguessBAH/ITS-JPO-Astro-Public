@@ -1,0 +1,56 @@
+---
+import base_url from '@/src/lib/base_url';
+import { findBreadcrumbItem } from '@/src/lib/navigation';
+
+interface Props {
+  currentBreadcrumb?: string
+}
+
+const { currentBreadcrumb } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+// Get the full navigation path, remove undefined options, concatenate any additional passed-in links (such as from dynamically generated content)
+const items = findBreadcrumbItem(currentPath)
+  .filter(item => item !== undefined)
+  .map(item => ({ title: item?.name, href: item?.url }))
+const breadcrumbs = currentBreadcrumb ? [...items, {title: currentBreadcrumb, href: ""}] : items;
+---
+<style>
+  a:hover {
+    font-weight: normal;
+  }
+  @media (max-width: 1023px) {
+    .breadcrumb-item:last-child > span {
+      max-width: 150px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+    }
+  }
+  @media (max-width: 767px) {
+    .breadcrumb-item:last-child {
+      display: none;
+    }
+  }
+</style>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb w-full">
+    {breadcrumbs.map((item, index) => (
+      // The last item here will be the active one on any given page
+      <li 
+        class:list={["breadcrumb-item", {"active": index === breadcrumbs.length - 1}]}
+        aria-current={index === breadcrumbs.length - 1 ? "page" : "false"}
+      >
+        {index === breadcrumbs.length - 1 ? (
+          <span>{item.title}</span>
+        ) : (
+          <a href={index === 0 ? "" : base_url(item.href)}>
+            {item.title}
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

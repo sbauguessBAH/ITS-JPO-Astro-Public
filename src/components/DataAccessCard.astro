@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets';
+import type { DataAccessResource } from '../types';
+import base_url from '../lib/base_url';
+
+interface Props {
+  dataAccessResource: DataAccessResource;
+}
+
+const { dataAccessResource: { title, href, image, alt, color } } = Astro.props;
+
+const fullPath = "../assets/images/data_access/" + image;
+const images = import.meta.glob<{ default: ImageMetadata }>("../assets/images/data_access/*.{jpeg,jpg,png,gif}");
+if (!images[fullPath]) throw new Error(`"${fullPath}" does not exist in glob: "@/src/assets/images/data_access/*.{jpeg,jpg,png,gif}"`);
+---
+<style>
+  .resource-card {
+    background-color: #f5f5f5;
+    border-radius: 24px;
+    filter: drop-shadow(5px 5px 4px #ececec);
+    border: none;
+    text-align: left;
+    padding-top: 12px;
+    height: 100%;
+  }
+  .resource-card:hover {
+    background-color: #e4f0fb;
+    transform: scale(1.03);
+    transition: ease;
+  }
+  .resource-card.yellow:hover {
+    background-color: #fbfae4;
+  }
+  .resource-card.green:hover {
+    background-color: #e4fbf1;
+  }
+  .resource-card.purple:hover {
+    background-color: #f1e4fb;
+  }
+  .resource-card.red:hover {
+    background-color: #fbe4e4;
+  }
+  .resource-card-image {
+    width: 100%;
+    height: auto;
+    padding: 0px 0px 10px 20px;
+    float: right;
+    text-align: right;
+  }
+  .resource-card-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    margin-bottom: 0.5rem;
+    font-weight: bolder;
+    color: black;
+  }
+  .resource-card-description {
+    font-size: 12px;
+    color: #002383;
+  }
+  .resource-card-description::after {
+    content: '\f054';
+    padding-left: 2px;
+    font-family: FontAwesome;
+  }
+  .reset-link {
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+    outline: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    cursor: pointer;
+  }
+  .reset-link:hover {
+    font-weight: normal;
+  }
+</style>
+
+<a href={base_url(href)} class="reset-link">
+  <div class:list={["resource-card d-flex align-items-center", color]}>
+    <div class="row d-flex align-items-center">
+      <div class="col-5">
+        <Image src={images[fullPath]()} class="resource-card-image" alt={alt || title}/>
+      </div>
+      <div class="col-7">
+        <p class="resource-card-title">
+          {title}
+        </p>
+        <p class="resource-card-description">
+          Learn more about this Resource
+        </p>
+      </div>
+    </div>
+  </div>
+</a>

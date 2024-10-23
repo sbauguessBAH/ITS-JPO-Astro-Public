@@ -1,0 +1,67 @@
+---
+import base_url from '@/src/lib/base_url';
+import { getTrimmedPathname, navigation } from "@/src/lib/navigation";
+
+const pathname = Astro.url.pathname;
+const trimmedPathname = getTrimmedPathname(pathname);
+---
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-marginbottom">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        {navigation.map(link => (
+          <li class:list={["nav-item dropdown", {"activeMenu": trimmedPathname.startsWith(link.url)}]}>
+            <a 
+              class="nav-link dropdown-toggle" 
+              id="navbarDropdown" 
+              role="button" 
+              data-toggle="dropdown" 
+              aria-haspopup="true" 
+              aria-expanded="false"
+            >
+              {link.name}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {link.pages.map(pageLink => pageLink.isExternal ? (
+                <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
+                  {pageLink.name}
+                </a>
+              ) : (
+                <a class="dropdown-item" href={base_url(pageLink.url)}>
+                  {pageLink.name}
+                </a>
+              ))}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  a {
+    transition: all .35s
+  }
+
+  @media (max-width: 992px) {
+    .navbar-marginbottom {
+      margin-bottom: 0;
+    }
+  }
+  .navbar-nav .nav-item.dropdown.show > .nav-link {
+    font-weight: bold;
+  }
+
+</style>
