@@ -1,6 +1,6 @@
 ---
 import base_url from '@/src/lib/base_url';
-import { findBreadcrumbItem } from '@/src/lib/navigation';
+import { findBreadcrumbItem, findBreadcrumbItems } from '@/src/lib/navigation';
 
 interface Props {
   currentBreadcrumb?: string
@@ -8,13 +8,14 @@ interface Props {
 
 const { currentBreadcrumb } = Astro.props;
 
-const currentPath = Astro.url.pathname;
+const path = Astro.url.pathname;
 
 // Get the full navigation path, remove undefined options, concatenate any additional passed-in links (such as from dynamically generated content)
-const items = findBreadcrumbItem(currentPath)
-  .filter(item => item !== undefined)
-  .map(item => ({ title: item?.name, href: item?.url }))
-const breadcrumbs = currentBreadcrumb ? [...items, {title: currentBreadcrumb, href: ""}] : items;
+// const items = findBreadcrumbItem(currentPath)
+//   .filter(item => item !== undefined)
+//   .map(item => ({ title: item?.name, href: item?.url }))
+const items = findBreadcrumbItems(path)
+const breadcrumbs = currentBreadcrumb ? [...items, { name: currentBreadcrumb, url: "", isDisabled: true }] : items;
 ---
 <style>
   a:hover {
@@ -44,10 +45,10 @@ const breadcrumbs = currentBreadcrumb ? [...items, {title: currentBreadcrumb, hr
         aria-current={index === breadcrumbs.length - 1 ? "page" : "false"}
       >
         {index === breadcrumbs.length - 1 ? (
-          <span>{item.title}</span>
+          <span>{item.name}</span>
         ) : (
-          <a href={index === 0 ? "" : base_url(item.href)}>
-            {item.title}
+          <a href={item.isDisabled ? "" : base_url(item.url)}>
+            {item.name}
           </a>
         )}
       </li>
