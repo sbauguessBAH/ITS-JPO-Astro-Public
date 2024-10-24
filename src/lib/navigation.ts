@@ -92,8 +92,8 @@ export const navigation: NavigationItem[] = [
           { name: "Resources and Tools", url: "/resources/accelerating/asc/resources-and-tools" },
           { name: "Contacts", url: "/resources/accelerating/asc/contacts" }
         ]},
-        { name: 'ITS Data Program', url: '/resources/accelerating/data-program', pages: [
-          { name: 'Data Program Home', url: '/resources/accelerating/data-program' },
+        { name: 'ITS Data', url: '/resources/accelerating/data-program', pages: [
+          { name: 'Data Home', url: '/resources/accelerating/data-program' },
           { name: 'Program Resources and Tools', url: '/resources/accelerating/data-program/resources-tools', pages: [
             { name: 'ITS DataHub', url: '/resources/accelerating/data-program/resources-tools/CodeHub' },
             { name: 'ITS CodeHub', url: '/resources/accelerating/data-program/resources-tools/DataHub' },
