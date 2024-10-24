@@ -1,7 +1,8 @@
 ---
 import type { ChildNavigationItem } from '@/src/types';
 import base_url from '@/src/lib/base_url';
-import { findNavigationItem } from '@/src/lib/navigation';
+import { comparePathname, findNavigationItem } from '@/src/lib/navigation';
+import { getTrimmedPathname } from '@/src/lib/navigation';
 
 interface Props {
   items: ChildNavigationItem[];
@@ -9,8 +10,8 @@ interface Props {
 
 const { items } = Astro.props;
 
-const currentPath = Astro.url.pathname;
-const currentItem = findNavigationItem(currentPath);
+const path = Astro.url.pathname;
+// const currentItem = findNavigationItem(currentPath);
 ---
 
 <style>
@@ -129,6 +130,8 @@ const currentItem = findNavigationItem(currentPath);
   <ul class="collapse d-lg-block" id="sidebar">
     {items.map((item) => {
       const trimmedPath = item.url.replaceAll("/", "");
+      const showCollapsedItems = item.pages !== undefined && getTrimmedPathname(path).startsWith(item.url);
+      console.log(showCollapsedItems);
       return (
         <li class="sidebar-list-item">
           {item.pages ? (
@@ -138,7 +141,7 @@ const currentItem = findNavigationItem(currentPath);
               href={`#collapse${trimmedPath}`} 
               role="button" 
               aria-controls={`collapse${trimmedPath}`}
-              aria-expanded={currentItem[0]?.name === item.name ? "true" : "false"}
+              aria-expanded={showCollapsedItems ? "true" : "false"}
               aria-label={`Toggle sidebar links for ${item.name}`}
             >
               {item.name}
@@ -147,7 +150,7 @@ const currentItem = findNavigationItem(currentPath);
             <ul 
               class:list={[
                 "collapse sidebar-child", 
-                {"show": currentItem[0]?.url === item.url}
+                {"show": showCollapsedItems}
               ]} 
               id={`collapse${trimmedPath}`}
             >
@@ -156,7 +159,7 @@ const currentItem = findNavigationItem(currentPath);
                   <a 
                     class:list={[
                       "sidebar-link", 
-                      {"active": currentItem[1]?.url === childItem.url},
+                      {"active": comparePathname(path, childItem.url)},
                       {"disabled": childItem.isDisabled}
                     ]} 
                     href={
@@ -176,7 +179,7 @@ const currentItem = findNavigationItem(currentPath);
             <a 
               class:list={[
                 "sidebar-link", 
-                {"active": currentItem[0]?.url === item.url},
+                {"active": comparePathname(path, item.url)},
                 {"disabled": item.isDisabled}
               ]} 
               href={

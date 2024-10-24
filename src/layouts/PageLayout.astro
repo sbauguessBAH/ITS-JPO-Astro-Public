@@ -36,15 +36,7 @@ const activeSection: NavigationItem | undefined = navigation.find(section => isA
   <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl min-vh-100">
     <Breadcrumbs currentBreadcrumb={currentBreadcrumb}/>
     <div class="mt-4">
-      <div class="row gx-5">
-        <aside class="col-lg-3">
-          {activeSection && <Sidebar items={activeSection.pages}/>}
-          <slot name="side" title="side"/>
-        </aside>
-        <main class="col-lg-9">
-          <slot/>
-        </main>
-      </div>
+      <slot/>
     </div>
   </div>
   <slot name="footer" title="footer"/>
@@ -55,8 +47,5 @@ const activeSection: NavigationItem | undefined = navigation.find(section => isA
     margin-top: 1rem;
     margin-bottom: 6rem;
     flex: 1;
-  }
-  aside {
-    display: block;
   }
 </style>

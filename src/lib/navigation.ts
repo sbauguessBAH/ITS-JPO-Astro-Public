@@ -41,10 +41,10 @@ export const navigation: NavigationItem[] = [
         { name: 'Intersection Safety Challenge', url: 'https://its.dot.gov/isc', isExternal: true },
         { name: 'ITS Cybersecurity Research', url: 'https://www.its.dot.gov/research_areas/cybersecurity/index.htm', isExternal: true },
       ] },
-      { name: 'Research Program Archive', url: '', pages: [
-        { name: 'AERIS', url: '' },
-        { name: 'ATTRI', url: '' },
-        { name: 'MOD', url: '' },
+      { name: 'Research Program Archive', url: '/research-areas/archive', pages: [
+        { name: 'AERIS', url: '/research-areas/archive/aeris' },
+        { name: 'ATTRI', url: '/research-areas/archive/attri' },
+        { name: 'MOD', url: '/research-areas/archive/mod' },
       ]}
     ]
   },
@@ -65,20 +65,31 @@ export const navigation: NavigationItem[] = [
     url: '/resources',
     pages: [
       { name: 'Training', url: '/resources/training', pages: [
-        { name: 'ITS Professional Capacity Building', url: '/resources/training/pcb' }
+        { name: 'ITS Professional Capacity Building', url: '/resources/training/pcb', pages: [
+          { name: 'ITS PCB Home', url: '/resources/training/pcb' },
+          { name: 'Trainings', url: '/resources/training/pcb/trainings' },
+          { name: 'Microlearning Videos', url: '/resources/training/pcb/microlearning' },
+          { name: 'Academic Resources', url: '/resources/training/pcb/resources' },
+          { name: 'Peer Exchanges', url: '/resources/training/pcb/peer-exchanges' },
+          { name: 'V2X Tools', url: '/resources/training/pcb/v2x-tools', pages: [
+            { name: 'Foundational V2X Trainings', url: '/resources/training/pcb/v2x-tools/foundational-v2x-trainings' },
+            { name: 'V2X Cohorts', url: '/resources/training/pcb/v2x-tools/v2x-cohorts'}
+          ] },
+          { name: 'Webinars', url: '/resources/training/pcb/webinars' },
+        ] }
       ] },
       { name: 'National Transportation Library', url: '/resources/national-transportation-library' },
       { name: 'Smart Community Resource Center', url: 'https://www.its.dot.gov/scrc/index.html#/', isExternal: true },
       { name: 'Accelerating ITS Deployment', url: '/resources/accelerating', pages: [
         { name: 'ITS Deployment Evaluation', url: 'https://www.its.dot.gov/pilots/index.htm', isExternal: true },
         { name: 'Architecture, Standards, and Cybersecurity (ASC)', url: '/resources/accelerating/asc', pages: [
-          { name: "ASC Home", url: "/resources/asc" },
-          { name: "ITS Standards", url: "/resources/asc/standards" },
-          { name: "ITS Reference Architecture", url: "/resources/asc/reference-architecture" },
-          { name: "ITS Cybersecurity", url: "/resources/asc/cybersecurity" },
-          { name: "Enabling Legislation & Policy", url: "/resources/asc/legislation-and-policy" },
-          { name: "Resources and Tools", url: "/resources/asc/resources-and-tools" },
-          { name: "Contacts", url: "/resources/asc/contacts" }
+          { name: "ASC Home", url: "/resources/accelerating/asc" },
+          { name: "ITS Standards", url: "/resources/accelerating/asc/standards" },
+          { name: "ITS Reference Architecture", url: "/resources/accelerating/asc/reference-architecture" },
+          { name: "ITS Cybersecurity", url: "/resources/accelerating/asc/cybersecurity" },
+          { name: "Enabling Legislation & Policy", url: "/resources/accelerating/asc/legislation-and-policy" },
+          { name: "Resources and Tools", url: "/resources/accelerating/asc/resources-and-tools" },
+          { name: "Contacts", url: "/resources/accelerating/asc/contacts" }
         ]},
         { name: 'ITS Data Program', url: '/resources/accelerating/data-program', pages: [
           { name: 'Data Program Home', url: '/resources/accelerating/data-program' },
@@ -109,6 +120,32 @@ export const navigation: NavigationItem[] = [
   },
 ]
 
+/** Check if there are any duplicate URLs in the navigation list */
+function checkIfDuplicateExists(pages: NavigationItem[] | ChildNavigationItem[]) {
+  const urls = pages.map((page: ChildNavigationItem) => page.url);
+  return new Set(urls).size !== urls.length
+}
+
+/** Validate navigation across multiple dimensions:
+ *  - Make sure there are no duplicate URLs in the same page list
+ *  - Make sure that every child page includes the full parent page path
+ */
+export function validateNavigation(navigationItems: NavigationItem[] | ChildNavigationItem[], parentItem?: NavigationItem | ChildNavigationItem) {
+  if (checkIfDuplicateExists(navigationItems)) {
+    throw new Error(`Duplicate page routes exist under section: ${parentItem ? `${parentItem.name} (${parentItem.url})` : "Main"}`)
+  }
+  for (const item of navigationItems) {
+    if (parentItem && !item.isExternal) {
+      if (!item.url.startsWith(parentItem.url)) {
+        throw new Error(`Page route for ${item.name} (${item.url}) does not include parent route: ${parentItem.url}`)
+      }
+    }
+    if (item.pages) {
+      validateNavigation(item.pages, item);
+    }
+  }
+}
+
 /**
  * Removes the trailing slash if it exists and trims the base path from the path name if it exists
  * @param pathname as string (Astro.url.pathname)
@@ -119,6 +156,51 @@ export function getTrimmedPathname(pathname: string): string {
   const basePath = import.meta.env.BASE_URL;
   const trimmedPath = basePath !== "/" ? path.replace(basePath, "") : path;
   return trimmedPath;
+}
+
+export function comparePathname(currentPath: string, pageUrl: string, startsWith?: boolean): boolean {
+  return startsWith ? getTrimmedPathname(currentPath).startsWith(pageUrl) : getTrimmedPathname(currentPath) === pageUrl
+}
+
+/**
+ * Attempts to locate the desired navigation section by pathname. 
+ * @param pathname as string
+ * @return the navigation item with any nested pages
+ */
+export function findSection(pathname: string): NavigationItem | ChildNavigationItem | undefined {
+  // Trim path name in case any extra characters are included
+  const trimmedPathname = getTrimmedPathname(pathname);
+
+  let navigationItem: NavigationItem | ChildNavigationItem | undefined = 
+    navigation.find(section => trimmedPathname.startsWith(section.url));
+
+  while (navigationItem !== undefined) {
+    // If the item is an exact match, return it now
+    if (trimmedPathname === navigationItem.url) return navigationItem;
+
+    // If there are no child pages, there's nothing left to match. Return undefined;
+    if (!navigationItem.pages) return undefined;
+
+    // If it's not an exact match, look through child items to see if there's an exact match
+    for (const page of navigationItem.pages) {
+      if (trimmedPathname === page.url) return page;
+      if (trimmedPathname.startsWith(page.url)) {
+        navigationItem = page;
+      }
+    }
+  }
+
+  // Catch undefined navigation item and return it
+  return navigationItem
+
+  // for (const page of section.pages) {
+  //   if (trimmedPathname.startsWith(page.url)) {
+  //     if (trimmedPathname === page.url) return page;
+  //     for (const subPage of page.pages) {
+
+  //     }
+  //   }
+  // }
 }
 
 export function findNavigationItem(pathname: string): [ChildNavigationItem | undefined, ChildNavigationItem | undefined, ChildNavigationItem | undefined] {
