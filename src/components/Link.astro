@@ -1,0 +1,36 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import base_url from '../lib/base_url';
+
+interface Props extends HTMLAttributes<'a'> {
+  /** 
+   * Use if the href provided is not an internal Astro path (/*).
+   * This will prevent the href from being modified during site build
+   */
+   isExternal?: boolean;
+  /**
+   * External links will open in a new window by default.
+   * Setting this will open them in the same window
+   */
+  isSameWindow?: boolean;
+  href: string;
+}
+
+const { isExternal, isSameWindow, type, href, ...rest } = Astro.props;
+
+// If the link starts with mailto: or tel:, we don't need these additional props
+const telOrMail = href.startsWith("mailto:") || href.startsWith("tel:");
+const rel = {...(!telOrMail && isExternal && { rel: "noopener noreferrer" })};
+const target = {...(!telOrMail && isExternal && !isSameWindow && { target: "_blank" })}
+---
+<a
+  href={isExternal
+    ? href 
+    : base_url(href)
+  }
+  {...rel}
+  {...target}
+  {...rest}
+>
+  <slot/>
+</a>

@@ -1,0 +1,168 @@
+---
+import StandardsHeading from "@/src/components/standards/StandardsHeading.astro";
+import base_url from "@/src/lib/base_url";
+import AscLayout from "./_asc-layout.astro";
+---
+<style>
+	.typography {
+		margin-right: 0.5rem;
+		margin-bottom: 2rem;
+	}
+
+  @media (min-width: 500px) {
+    p {
+      margin-right: 0;
+    }
+  }
+</style>
+<AscLayout title="ITS Cybersecurity">
+	<StandardsHeading title="About ITS Cybersecurity Program"/>
+	<div class="typography">
+		<p>
+			The past few decades have witnessed a tremendous growth in data availability, system and device connectivity, and 
+			interoperability through the pervasive spread of computers, the internet, portable smart phones, tablets, and 
+			wireless technology. These systems are now integral to our daily lives, and so is the potential for attacks on 
+			these systems. Cybersecurity is now necessary to protect these vital systems and the information they contain.
+		</p>
+		<p>
+			Transportation is following the path of connectivity. In addition to integrating wireless connectivity into existing, 
+			broader Intelligent Transportation Systems (ITS), exciting next-generation ITS includes advancements such as connected 
+			and automated vehicle environments based on real-time data exchange between vehicles (vehicle-to-vehicle, or V2V), 
+			vehicles and infrastructure (vehicle-to-infrastructure, or V2I), vehicles and portable devices such as smartphones 
+			and tablets, aftermarket devices, and other sensors (vehicle-to-everything, or V2X). These advancements make travel safer, 
+			cleaner, and more efficient, and are being deployed on our nation’s roads and highways, in our personal vehicles, 
+			in public fleets (buses, emergency response vehicles, and others), in private fleet vehicles, with pedestrians, 
+			and on vehicles such as bicycles, wheelchairs, and motorcycles. The U.S. Department of Transportation (U.S. DOT) understands 
+			that cybersecurity has an even more important role—this broad and diverse range of systems, devices, components, 
+			and communications must be protected from malicious attacks, unauthorized access, damage, or anything else that might interfere 
+			with their intended safety functions.
+		</p>
+	</div>
+	<StandardsHeading title="What is the goal of the ITS Cybersecurity Research Program?"/>
+	<div class="typography">
+		<p>
+			Transportation system manufacturers, integrators, and operators—both public and private—must systematically assess risks 
+			at all levels so that the vulnerabilities, malfunctions, or opportunities for malfeasance associated with ITS deployments 
+			are mitigated. This assumes that resiliency plans exist and are used, and that the workforce is trained and has the 
+			necessary tools and resources to monitor, identify, protect, respond, and recover from cyberattacks and other challenges.
+		</p>
+		<p>
+			The goal of the ITS Cybersecurity Research Program is to make resources, information, and tools available to 
+			stakeholder communities to support secure and cyber-resilient ITS implementations.
+		</p>
+		<p>
+			The ITS Cybersecurity Research Program was developed in response to the urgent need to protect ITS from cyberattacks. 
+			Both public and private sectors must share the responsibility of securing transportation’s critical assets and 
+			infrastructure against cyber threats. <a href="https://www.cisa.gov/executive-order-strengthening-cybersecurity-federal-networks-and-critical-infrastructure" target="_blank" rel="noopener noreferrer">Executive Order 13800</a>, 
+			issued May 11, 2017, encourages federal agencies to work with industries and all entities to adopt 
+			the National Institute of Standards and Technology (NIST) Cybersecurity Framework.
+		</p>
+		<p>
+			The ITS Cybersecurity Research Program was established to work with the transportation community to (among other initiatives):
+			<ul>
+				<li>
+					Identify needs and gaps that prevent secure and resilient ITS.
+				</li>
+				<li>
+					Advance the technical research that adopts or adapts implementation practices from other industries 
+					or develops new transportation approaches.
+				</li>
+				<li>
+					Tailor the <a href="https://www.its.dot.gov/research_areas/cybersecurity/guides.htm#nist" target="_blank" rel="noopener noreferrer">National Institute of Standards and Technology (NIST) Cybersecurity Framework</a> to ITS, 
+					including connected and automated transportation technologies. The framework provides voluntary guidance based on existing standards, 
+					guidelines, and practices for organizations to better manage and reduce cybersecurity risk. The framework offers a 
+					common language for understanding, managing, and expressing cybersecurity risk to internal and external stakeholders.
+				</li>
+				<li>
+					It focuses on integrating transportation systems into broader “smart cities and communities” as part of the growth 
+					in systems known as the Internet of Things (IoT).
+				</li>
+				<li>
+					Create the tools and resources to effectively manage cyber risk in public transportation systems.
+				</li>
+				<li>
+					Provide technology and knowledge transfer to the transportation workforce so they understand cyber issues and mitigations.
+				</li>
+			</ul>
+		</p>
+	</div>
+	<StandardsHeading title="What is the ITS JPO Role in ITS Cybersecurity Research?"/>
+	<div class="typography">
+		<p>
+			The ITS Joint Program Office (ITS JPO) works across the U.S. DOT modes to develop and coordinate research focused on 
+			cyber vulnerabilities from an integrated, multimodal transportation perspective. This role includes defining shared 
+			priorities, analyzing and developing policy options, and identifying and addressing cross-modal cyber issues, in addition 
+			to sharing implementation practices and information. The ITS JPO also offers leadership, information, and resources to 
+			state, local, and tribal transportation agencies that cross modal boundaries to ensure risk management across the transportation system.
+		</p>
+		<p>
+			<a href={base_url("/assets/pdf/factsheets/PR_CyberSecurity_Factsheet.pdf")}>View the Cybersecurity for ITS Fact Sheet</a> for more information about cybersecurity research at the ITS JPO.
+		</p>
+	</div>
+	<StandardsHeading title="How does the ITS JPO's Strategic Plan 2020-2025 advance ITS Cybersecurity?"/>
+	<div class="typography">
+		<p>
+			<a href={base_url("/about/stratplan2020")}>The ITS JPO Strategic Plan 2020-2025</a> recognizes the critical importance of ITS cybersecurity, and:
+			<ul>
+				<li>
+					Adapts the <a href="https://www.its.dot.gov/research_areas/cybersecurity/guides.htm#nist">NIST Cybersecurity Framework</a> to 
+					create ITS-specific companion resources to guide decision making for state, local, and tribal transportation agencies to 
+					identify and mobilize organizational resources to focus on cybersecurity.
+				</li>
+				<li>
+					Pursues <a href="https://www.its.dot.gov/research_areas/cybersecurity/research.htm">research</a> into advanced security 
+					and cybersecurity technologies and approaches to ensure that critical ITS infrastructure meets the increasing challenge 
+					of cyber resilience.
+				</li>
+				<li>
+					Creates <a href="https://www.its.dot.gov/research_areas/cybersecurity/workforce.htm">training</a> and <a href="https://www.its.dot.gov/research_areas/cybersecurity/workforce.htm#resources">resources</a> to 
+					increase workforce and industry proficiency in installing, operating, and maintaining secure ITS and information systems.
+				</li>
+				<li>
+					Maintains this ITS Cybersecurity Research Program, where technical resources and information about research, 
+					educational materials, and training opportunities inform and aid public and private sector users responsible 
+					for deploying safe and secure ITS infrastructure and devices. Specifically, the website’s content supports the activities 
+					of these key audiences to improve the cyber resilience of ITS systems:
+					<ul>
+						<li>
+							ITS Deployment Agencies: The U.S. DOT has conducted projects that can help state, local, and tribal transportation agencies 
+							deploy ITS systems to improve their overall security posture. These include the NIST Cybersecurity Framework tailored 
+							for connected vehicle and ITS environments, best practices and guidance for conducting penetration testing, 
+							and professional capacity building (PCB) training. Find these in the 
+							<a href="https://www.its.dot.gov/research_areas/cybersecurity/tools.htm">Tools and Resources</a> and 
+							<a href="https://www.its.dot.gov/research_areas/cybersecurity/workforce.htm">Workforce Development</a> pages.
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</p>
+		<p>
+			Click below to learn more about how previous projects have resulted in:
+			<ul>
+				<li>
+					<a href="https://www.its.dot.gov/research_areas/cybersecurity/implementation.htm">
+						Implementation practices for the transportation community
+					</a>
+				</li>
+				<li>
+					<a href="https://www.its.dot.gov/research_areas/cybersecurity/workforce.htm#resources">
+						Tools and resources for the transportation workforce
+					</a>
+				</li>
+			</ul>
+		</p>
+	</div>
+	<StandardsHeading title="Program Contact"/>
+	<div class="typography">
+		<p>
+			For more information about the ITS Cybersecurity Research Program, contact:
+		</p>
+		<p>
+			<a href="mailto:ITS_CybersecurityResearch@usdot.onmicrosoft.com">ITS_CybersecurityResearch@usdot.onmicrosoft.com</a>
+		</p>
+	</div>
+</AscLayout>
+
+<style>
+
+</style>

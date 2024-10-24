@@ -1,6 +1,7 @@
 ---
 
-import { getEntry, type CollectionEntry } from "astro:content";
+import { type CollectionEntry } from "astro:content";
+import base_url from "../lib/base_url";
 
 type Props = {
   post: CollectionEntry<"blog">;
@@ -37,5 +38,5 @@ const preview = post.body.slice(0, 400); // Adjust the number of characters as n
     <time datetime={date.toISOString()}>{date.toLocaleDateString(undefined, { dateStyle: "medium", timeZone: "UTC" })}</time><br />
     <h2>{title}</h2> 
   <p>{preview}</p>
-  <a href={`${post.slug}`} class="btn">Read Post</a>
+  <a href={base_url(`/news-info/blog/${post.slug}`)} class="btn">Read Post</a>
 </div>

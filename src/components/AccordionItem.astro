@@ -1,0 +1,52 @@
+---
+interface Props {
+  /** Title of the accordion */
+  title: string;
+  /** Parse the title string as HTML */
+  titleHtml?: boolean;
+  /** If parent ID is included, this will make sure only one item can be open at a time */
+  parentId?: string;
+  /** Index must be unique for each element */
+  index: number;
+  /** Accordion item will default to being open when the page loads */
+  showOnLoad?: boolean;
+}
+
+const { title, titleHtml, parentId, index, showOnLoad } = Astro.props;
+const itemId = parentId ? `${parentId}-item-${index}` : `item-${index}`;
+const parentProps = { ...(parentId && {'data-bs-parent': `#${parentId}`}) };
+---
+<style>
+  .accordion-header button {
+    font-weight: 600;
+    color: #505050;
+  }
+  .accordian-item img {
+    padding: 0;
+    margin: 0;
+  }
+</style>
+<div class="accordion-item">
+  <h2 class="accordion-header" id={`heading-${itemId}`}>
+    <button 
+      class:list={["accordion-button", { collapsed: !showOnLoad}]} 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target={`#${itemId}`}
+      aria-expanded={showOnLoad ? "true" : "false"}
+      aria-controls={itemId}
+    >
+      {titleHtml ? <Fragment set:html={title}/> : title}
+    </button>
+  </h2>
+  <div 
+    id={itemId} 
+    class:list={["accordion-collapse collapse", { show: showOnLoad }]}
+    aria-labelledby={`heading-${itemId}`}
+    {...parentProps}
+  >
+    <div class="accordion-body">
+      <slot/>
+    </div>
+  </div>
+</div>

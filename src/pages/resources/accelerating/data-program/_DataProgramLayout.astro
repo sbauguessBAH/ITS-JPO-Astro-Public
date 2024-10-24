@@ -1,0 +1,43 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import banner from "@/src/assets/images/data_access/DataAccess_Banner.png";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+interface Props {
+  title: string
+}
+const { title } = Astro.props;
+---
+<PageLayout title={`${title} | Data Program`} bannerImage={banner}>
+  <Fragment slot="banner">
+    ITS Data Program
+  </Fragment>
+  <Fragment slot="side">
+    <slot name="side" title="side"/>
+  </Fragment>
+  <SidebarLayout path="/resources/accelerating/data-program">
+    <slot/>
+  </SidebarLayout>
+  <section slot="footer" class="download bg-primary text-center" id="research" style="padding-top: 2em">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="col-lg-12">
+          <h2>Contacts</h2>
+          <p style="padding-bottom: 20px">
+            Please explore this site for a more detailed description of the program and progress. We will continue to upload relevant program information for public consumption as it becomes
+            available. For inquiries regarding the program, please contact the USDOT Point of Contact below.
+          </p>
+          <p style="padding-top: 20px; border-top-style: solid; border-color: honeydew; border-width: 2px">
+            <b>Elina Zlotchenko</b>
+          </p>
+          <p>Program Manager</p>
+          <p>ITS4US, STATS, and Program Management Office</p>
+          <p>202-366-1697</p>
+          <p>
+            <a class="email-footer" href="mailto:Elina.Zlotchenko@dot.gov">Elina.Zlotchenko@dot.gov</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

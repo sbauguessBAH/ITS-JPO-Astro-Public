@@ -1,0 +1,22 @@
+---
+import PcbLayout from "../_pcb-layout.astro";
+import cohortImage from "@/src/assets/images/pcb/v2x-cohorts.jpeg";
+import { Image } from "astro:assets";
+---
+<PcbLayout title="V2X Tools">
+  <h2>V2X Cohorts</h2>
+  <div class="row">
+    <div class="col-8">
+      <p>
+        Placeholder
+      </p>
+    </div>
+    <div class="col-4">
+      <Image 
+        class="img-fluid"
+        src={cohortImage} 
+        alt="Board meeting with multiple people in the background"
+      />
+    </div>
+  </div>
+</PcbLayout>

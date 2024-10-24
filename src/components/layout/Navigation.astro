@@ -1,0 +1,167 @@
+---
+import base_url from '@/src/lib/base_url';
+import { getTrimmedPathname, navigation } from "@/src/lib/navigation";
+
+const pathname = Astro.url.pathname;
+const trimmedPathname = getTrimmedPathname(pathname);
+---
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-marginbottom">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbar-content"
+      aria-controls="navbar-content"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <ul class="navbar-nav mb-lg-0">
+        {navigation.map(link => (
+          <li class:list={["nav-item dropdown", {"activeMenu": trimmedPathname.startsWith(link.url)}]}>
+            <a 
+              class="nav-link py-3 px-4 dropdown-toggle" 
+              id="navbarDropdown" 
+              role="button" 
+              data-bs-toggle="dropdown" 
+              data-bs-auto-close="outside"
+            >
+              {link.name}
+            </a>
+            <ul class="dropdown-menu mt-0 shadow" aria-labelledby="navbarDropdown">
+              {link.pages.map(pageLink => {
+                if (pageLink.isExternal) return (
+                  <li>
+                    <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
+                      {pageLink.name}
+                    </a>
+                  </li>
+                );
+                if (pageLink.pages) return (
+                  <li class="dropend">
+                    <a 
+                      href="#" 
+                      class="dropdown-item dropdown-toggle" 
+                      data-bs-toggle="dropdown" 
+                      data-bs-auto-close="outside"
+                    >
+                      {pageLink.name}
+                    </a>
+                    <ul class="dropdown-menu shadow">
+                      {pageLink.pages.map(subPageLink => {
+                        if (subPageLink.isExternal) return (
+                          <li>
+                            <a 
+                              class="dropdown-item externalLink" 
+                              href={subPageLink.url}
+                            >
+                              {subPageLink.name}
+                            </a>
+                          </li>
+                        )
+                        return (
+                          <li>
+                            <a 
+                              class="dropdown-item" 
+                              href={base_url(subPageLink.url)}
+                            >
+                              {subPageLink.name}
+                            </a>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </li>
+                )
+                return (
+                  <li>
+                    <a class="dropdown-item" href={base_url(pageLink.url)}>
+                      {pageLink.name}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  a,
+  ul,
+  li,
+  nav,
+  button
+  .show {
+    transition: all 0.35s;
+  }
+  a:active{
+    background: rgb(198, 198, 198);
+    color: black;
+  }
+  .dotlogo {
+    max-height: 25px;
+    object-fit: contain;
+    object-position: 0%;
+    padding-right: 10px;
+    margin-top: 14px;
+    margin-left: 30px;
+  }
+
+  .dropdown-toggle.show {
+    color: black;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .dropdown-toggle .show {
+    color: black;
+  }
+
+  .dropdown-menu {
+    left: -1px;
+  }
+
+  .show.nav-link:focus {
+    color: black;
+  }
+
+  .dropdown-menu li > ul.dropdown-menu {
+    border-radius: 10px;
+  }
+
+  .dropend .dropdown-toggle::after {
+    content: "\f054";
+    border: 0;
+    color: #009ad6;
+  }
+
+  .dropdown-item.dropdown-toggle.show::after {
+    content: "\f078";
+    border: 0;
+    color: #009ad6;
+  }
+  .dropdown-item.dropdown-toggle.show{
+    background: rgb(233, 236, 239);
+    border-radius: 0;
+  }
+  .dropdown-menu{
+    border: none;
+  }
+
+  @media (max-width: 992px) {
+    .navbar-marginbottom {
+      margin-bottom: 0;
+    }
+  }
+  .navbar-nav .nav-item.dropdown.show > .nav-link {
+    font-weight: bold;
+  }
+
+</style>

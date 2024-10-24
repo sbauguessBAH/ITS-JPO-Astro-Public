@@ -4,11 +4,10 @@
 // remember to add the catagory in the markdown files frontmatter
 
 
-import SideBar from "../../../components/SideBar_News.astro";
-import Default from "../../../layouts/Default.astro";
 import Infographic_Card from "../../../components/Card_Infographic.astro";
 
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import PageLayout from "@/src/layouts/PageLayout.astro";
 
 const generalInfographics = await getCollection("infographics", ({ data }) => {
   return data.catagory === "General";
@@ -43,58 +42,44 @@ safetyInfographics.sort((a, b) => a.data.title.localeCompare(b.data.title));
 
 ---
 
-<Default title="ITS JPO">
-  <div class="AboutBanner">
-    <div class="AboutBannerTitle">
-      <h1>Infographics</h1>
-    </div>
+<PageLayout title="Infographics">
+  <Fragment slot="banner">
+    Infographics
+  </Fragment>
+  <div>
+    <h2>General</h2>
+    <ul>
+      {generalInfographics.map((i) => <Infographic_Card infographic={i} />)}
+    </ul>
   </div>
-  <div class="container-fluid h-100 bodyWrap">
-    <div class="row h-100">
-      <aside class="col-12 col-md-3 p-3 bg-light">
-        <SideBar />
-      </aside>
-      <!-- InstanceEndEditable -->
-      <!-- InstanceBeginEditable name="MainContent" -->
-
-      <main class="col-9 MainContent">
-        <div>
-          <h2>General</h2>
-          <ul>
-            {generalInfographics.map((i) => <Infographic_Card infographic={i} />)}
-          </ul>
-        </div>
-        <div>
-          <h2>Data Capture</h2>
-          <ul>
-            {dataCaptureInfographics.map((i) => <Infographic_Card infographic={i} />)}
-          </ul>
-        </div>
-        <div>
-          <h2>Environment</h2>
-          <ul>
-            {environmentInfographics.map((i) => <Infographic_Card infographic={i} />)}
-          </ul>
-        </div>
-        <div>
-          <h2>Mobility</h2>
-          <ul>
-            {mobilityInfographics.map((i) => <Infographic_Card infographic={i} />)}
-          </ul>
-        </div>
-        <div>
-          <h2>Road Weather</h2>
-          <ul>
-            {roadWeatherInfographics.map((i) => <Infographic_Card infographic={i} />)}
-          </ul>
-        </div>
-        <div>
-          <h2>Safety</h2>
-          <ul>
-            {safetyInfographics.map((i) => <Infographic_Card infographic={i} />)}
-          </ul>
-        </div>
-      </main>
-    </div>
+  <div>
+    <h2>Data Capture</h2>
+    <ul>
+      {dataCaptureInfographics.map((i) => <Infographic_Card infographic={i} />)}
+    </ul>
   </div>
-</Default>
+  <div>
+    <h2>Environment</h2>
+    <ul>
+      {environmentInfographics.map((i) => <Infographic_Card infographic={i} />)}
+    </ul>
+  </div>
+  <div>
+    <h2>Mobility</h2>
+    <ul>
+      {mobilityInfographics.map((i) => <Infographic_Card infographic={i} />)}
+    </ul>
+  </div>
+  <div>
+    <h2>Road Weather</h2>
+    <ul>
+      {roadWeatherInfographics.map((i) => <Infographic_Card infographic={i} />)}
+    </ul>
+  </div>
+  <div>
+    <h2>Safety</h2>
+    <ul>
+      {safetyInfographics.map((i) => <Infographic_Card infographic={i} />)}
+    </ul>
+  </div>
+</PageLayout>

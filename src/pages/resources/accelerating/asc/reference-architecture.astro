@@ -1,0 +1,117 @@
+---
+import StandardsHeading from "@/src/components/standards/StandardsHeading.astro";
+import arcitStandardsImage from "@/src/assets/images/asc/its_arch_relationship.png";
+import architectureFlowImage from "@/src/assets/images/asc/architectureflow.png";
+import arcitLayersImage from "@/src/assets/images/asc/arc-it_layers.png"
+import { Image } from "astro:assets";
+import AscLayout from "./_asc-layout.astro";
+---
+<style>
+	.typography {
+		margin-right: 0.5rem;
+		margin-bottom: 2rem;
+	}
+
+  @media (min-width: 500px) {
+    p {
+      margin-right: 0;
+    }
+  }
+</style>
+
+<AscLayout title="ITS Reference Architecture">
+	<StandardsHeading title="About ITS Reference Architecture Program"/>
+	<div class="typography">
+		<p>
+			The National ITS Reference Architecture, also known as the “Architecture Reference for Cooperative and 
+			Intelligent Transportation” or simply “ARC-IT” provides a common framework for planning, defining, and 
+			integrating intelligent transportation systems. ARC-IT is a reference architecture providing a common basis 
+			for planners and engineers with differing concerns to conceive, design and implement systems using a common 
+			language as a basis for delivering ITS, but does not mandate any particular implementation. ARC-IT includes 
+			artifacts that answer concerns relevant to a large variety of stakeholders, and provides tools intended for 
+			transportation planners, regional architects and systems engineers to conceive of and develop regional 
+			architectures, and scope and develop projects. ARC-IT includes a set of interconnected components that are 
+			organized into four views that focus on four different architecture perspectives: Enterprise, 
+			Functional, Physical, and Communications.
+		</p>
+		<p>
+			<a target="_blank" rel="noopener noreferrer" href="https://www.arc-it.net">ARC-IT Version 9.1</a> is 
+			the current release of the National ITS Reference Architecture. ARC-IT Version 9.1 fully 
+			defines and upgrades the four architecture views, focusing on improvements that support design and requirements 
+			specification. Learn more about the recent enhancements for ARC-IT. 
+			<a target="_blank" rel="noopener noreferrer" href="https://www.arc-it.net/html/whatsnew/whatsnew.html">Learn more</a> about 
+			the most significant enhancements for Version 9.0.
+		</p>
+		<h4 class="text-center">Architecture Reference for Cooperative and Intelligent Transportation (ARC-IT)</h4>
+		<a href="https://www.arc-it.net/html/architecture/architecture.html" target="_blank" rel="noopener noreferrer">
+			<Image
+				src={arcitLayersImage} 
+				alt="Diagram showing 4 views (4 rectangles with icons for each view) that makeup the Architecture Reference for Cooperative and Intelligent Transportation. Enterprise View depicts Relationships between Organizations. Functional View depicts Logical interactions between Functions. Physical view depicts Connections between Physical Objects. Communications view depicts layered protocols facilitating data exchange between Physical Objects." 
+				class="img-fluid mx-auto d-block"
+			/>
+		</a>
+		
+	</div>
+	<StandardsHeading title="Connecting ITS Standards to the National ITS Reference Architecture"/>
+	<div class="typography">
+		<p>
+			One of the main goals for the creation of the National ITS Reference Architecture (ARC-IT) was to define the 
+			key interfaces for standardization. Information flows (and their constituent detailed data flows) serve as 
+			the basis for much of the standards work on the ITS Standards Program. ITS Standards have been developed for 
+			many of the information flows in ARC-IT, and this mapping of standards to information flows is available in 
+			the Physical View on the <a target="_blank" rel="noopener noreferrer" href="https://www.arc-it.net/html/architecture/architecture.html">ARC-IT</a> website. 
+			By selecting an information flow triple, potential ITS and other 
+			communications standards to consider during deployment are listed on the Communications Diagrams.
+		</p>
+		<a href="https://www.arc-it.net/html/architecture/architecture.html" target="_blank" rel="noopener noreferrer">
+			<Image 
+				src={architectureFlowImage} 
+				alt="Figure depicts the 4 views of the architecture (Enterprise, Functional, Physical and Communications) on the left with each view broken out in the center of the figure to show the constituent parts of each view. Enterprise includes Stakeholders, Roles, Needs, and Relationships. Functional View includes Processes, Requirements, and Data Flows. Physical view includes physical objects, information flows, and functional objects. Communications view includes standards, solutions, and profiles. Arrows from the 4 views point to Service Packages. A final box says Security with pointers to Communications view and Service packages. A footnote also indicates that Functional View and Enterprise view were not included in v8 release." 
+				class="img-fluid mx-auto d-block"
+			/>
+		</a>
+	</div>
+	<StandardsHeading title="Connecting ITS Standards to the Regional and Project ITS Architectures"/>
+	<div class="typography">
+		<p>
+			ITS planners, deployers and other stakeholders tailor the National ITS Reference Architecture (ARC-IT) to create 
+			Regional ITS Architectures that meet their specific needs. Regional ITS Architectures therefore consist of functions 
+			within ITS elements and information flows that interconnect each of the ITS elements in the region 
+			(and with ITS elements outside the region). Since information flows are mapped to ITS standards in ARC-IT, and 
+			since a Regional ITS Architecture is based on ARC-IT, the standards mapping to information flows is also readily available. 
+			The same holds true when developing ITS Architectures for a project.
+		</p>
+		<Image 
+			src={arcitStandardsImage} 
+			alt="ITS Architectural Relationships graphic. Graphic is described in paragraph immediately before graphic." 
+			class="img-fluid mx-auto d-block"
+		/>
+	</div>
+	<StandardsHeading title="Additional Links"/>
+	<div class="typography">
+		<p>
+			<ul>
+				<li>
+					<a href="https://www.arc-it.net" target="_blank" rel="noopener noreferrer">
+						The National ITS Reference Architecture (ARC-IT) Homepage
+					</a>
+				</li>
+				<li>
+					<a href="https://www.arc-it.net/html/resources/documents.html" target="_blank" rel="noopener noreferrer">
+						The National ITS Reference Architecture (ARC-IT) Documents
+					</a>
+				</li>
+				<li>
+					<a href="https://www.arc-it.net/html/resources/arcitwebtraining.html" target="_blank" rel="noopener noreferrer">
+						ARC-IT Training Page
+					</a> (free)
+				</li>
+			</ul>
+		</p>
+	</div>
+	
+</AscLayout>
+
+<style>
+
+</style>

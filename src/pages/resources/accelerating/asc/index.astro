@@ -1,0 +1,198 @@
+---
+import { Image } from "astro:assets";
+import headerImage from "@/src/assets/images/asc/overview.png";
+import aboutIcon from "@/src/assets/images/asc/About.png";
+import cyberIcon from "@/src/assets/images/asc/Cyber.png";
+import policyIcon from "@/src/assets/images/asc/Policy.png";
+import refarcIcon from "@/src/assets/images/asc/Ref Arc.png";
+import standardsIcon from "@/src/assets/images/asc/Standards.png";
+import toolsIcon from "@/src/assets/images/asc/Tools.png";
+import StandardsHeading from "@/src/components/standards/StandardsHeading.astro";
+import base_url from "@/src/lib/base_url";
+import AscLayout from "./_asc-layout.astro";
+---
+<style>
+  .vision {
+    background-color: rgb(192,205,214);
+  }
+  
+  .typography {
+    margin-right: 0.5rem;
+    /* margin-left: 3.5rem; */
+  }
+
+  @media (min-width: 768px) {
+    .typography {
+      margin-left: 3.5rem;
+    }
+  }
+
+  @media (min-width: 500px) {
+    p {
+      margin-right: 0;
+    }
+  }
+
+  .arrow-link::after {
+    content: "\f061";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size:14px;
+  }
+  .Carousel_Slide_ASC {
+    background-image: url('../../../assets/images/ITS_SectionHeaders_021621_AcceleratingDeployment.png');
+    background-size:cover;
+    min-height:300px;
+  }
+</style>
+<AscLayout title="Home">
+  <Image src={headerImage} alt="Architecture, Standards, and Cybersecurity Header" class="img-fluid mb-4"/>
+  <StandardsHeading image={aboutIcon} title="About Enabling ITS Resources"/>
+	<div class="typography">
+    <p>
+      Intelligent Transportation Systems (ITS) rely on many aspects of technology, logistics, and bureaucracy to function
+      successfully. Enabling resources, such as US government policy and legislation, guide ITS efforts and assist in the
+      effective implementation of interoperable ITS technology applications. National ITS policies in addition to
+      Architecture, Standards, and Cybersecurity (ASC) resources, comprise the foundational elements or tools needed
+      to enable agencies to plan, design and manage regional ITS developments.
+    </p>
+    <p>
+      ITS Architecture, Standards, and Cybersecurity research and activities support the resiliency, interoperability, and
+      successful deployment of intelligent transportation systems through the development of ITS standards,
+      specifications, and protocols; maintenance and evolution of the National ITS Architecture reference; and making
+      resources, information, and tools available to stakeholder communities to support secure and cyber-resilient ITS
+      implementations.
+    </p>
+    <p>
+      The ASC program conducts research and engages relevant organizations to foster a comprehensive set of
+      standards that support the ITS and connected/automated vehicle architecture reference sets that incorporate
+      modern cybersecurity principles for the wide-scale deployment and integration of ITS technologies.
+    </p>
+    <div class="row justify-content-center mb-4">
+      <div class="vision text-center py-4 col-8 shadow">
+        <p class="fw-bold mb-0">Vision</p>
+        <p class="mb-0">
+          Enable secure interoperability within a complex, multimodal, connected
+          transportation network, including both vehicles and infrastructure.
+        </p>
+      </div>
+    </div>
+    <p>
+      One of the main goals for the creation of the National ITS Reference Architecture (ARC-IT) was to define the key
+      interfaces for standardization. Information flows (and their constituent detailed data flows) serve as the basis for
+      much of the standards work on the ITS Standards Program.
+    </p>
+    <p>
+      Within the framework of the National ITS Reference Architecture, ITS standards developers can identify standards
+      for development that will meet the user’s needs, ITS planners can integrate regional ITS elements using these ITS
+      standards and achieve their interoperability goals, and ITS deployers can select the ITS standards that reduce risk
+      to their deployment and thus help to manage costs and schedule.
+    </p>
+    <div class="banner">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="false" data-interval="15000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="CarouselButtonContainer Carousel_Slide_ASC">
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+	<StandardsHeading image={standardsIcon} title="ITS Standards"/>
+  <div class="typography">
+    <p>
+      The U.S. DOT established the ITS Standards Program in 1996 to encourage the widespread use of ITS technologies
+      in our Nation's surface transportation systems. ITS standards exist within technologies deployed under the
+      framework of the <a href="https://www.standards.its.dot.gov/LearnAboutStandards/NationalITSArchitecture">National ITS Reference 
+      Architecture, also known as "ARC-IT"</a> and define how system
+      components interconnect and interact. Because ITS standards are based on open, non-proprietary technology,
+      their use can facilitate the deployment of interoperable ITS systems and make it easier for state and local ITS
+      deployers to develop and deploy regionally integrated transportation systems.
+    </p>
+    <p>
+      The ITS Standards Program is teaming with standards development organizations (SDOs) and industry groups to
+      accelerate the development and testing of consensus-based standards, protocols, and specifications while
+      working with state and local highway and transit agencies on standards-based ITS implementation strategies.
+    </p>
+    <p>
+      <a href={base_url("/resources/asc/standards")} class="arrow-link">
+        Visit the ITS Standards Page
+      </a>
+    </p>
+  </div>
+	<StandardsHeading image={refarcIcon} title="ITS Reference Architecture"/>
+	<div class="typography">
+    <p>
+      The Architecture Reference for Cooperative and Intelligent Transportation (ARC-IT) provides a common
+      framework for planning, defining, and integrating intelligent transportation systems. It is a mature reference
+      architecture providing a common basis for planners and engineers with differing concerns to conceive, design and
+      implement systems using a common language as a basis for delivering ITS, but does not mandate any specific
+      implementation. It defines "what must be done," not "how it will be done”. An architecture is functionally
+      oriented and not technology-specific which allows the architecture to remain effective over time.
+    </p>
+    <p>
+      <a href={base_url("/resources/asc/reference-architecture")} class="arrow-link">
+        Visit the National ITS Reference Architecture Page
+      </a>
+    </p>
+  </div>
+	<StandardsHeading image={cyberIcon} title="ITS Cybersecurity"/>
+  <div class="typography">
+    <p>
+      Cybersecurity is the practice of protecting computer systems, networks, and data from digital attacks,
+      unauthorized access, and data breaches. ITS manufacturers, integrators, and operators must systematically assess
+      risks at all levels to mitigate the vulnerabilities, malfunctions, or opportunities for exploitation.
+    </p>
+    <p>
+      The ITS Cybersecurity program was developed in response to this urgent need to protect ITS from cyber-attacks. It
+      makes resources, information, and tools available to stakeholder communities to support secure and cyber-
+      resilient ITS deployments.
+    </p>
+    <p>
+      <a href={base_url("/resources/asc/cybersecurity")} class="arrow-link">
+        Visit the ITS Cybersecurity Page
+      </a>
+    </p>
+  </div>
+  <StandardsHeading image={policyIcon} title="ITS ASC Enabling Legislation and Policy"/>
+	<div class="typography">
+    <p>
+      Enabling policy and legislation provide guidelines on the adoption and utilization of architecture, standards, and
+      cybersecurity principles in ITS systems. By following them, SDOs, deployers, and OEMs work together to improve
+      interoperability and reliability throughout our transportation systems nationwide.
+    </p>
+    <p>
+      <a href={base_url("/resources/asc/legislation-and-policy")} class="arrow-link">
+        Visit the Enabling Legislation and Policy Page
+      </a>
+    </p>
+  </div>
+  <StandardsHeading image={toolsIcon} title="ITS ASC Resources and Tools"/>
+	<div class="typography">
+    <p>
+      The ITS ASC Program offers a wide array of valuable resources and tools to enable the successful deployment of
+      ITS efforts across the United States. The primary focus of these resources and tools is to guide and assist
+      deployers as they develop their projects, provide best practices and lessons learned from previous deployments,
+      and increase efficiency and cost-effectiveness.
+    </p>
+    <p>
+      <a href={base_url("/resources/asc/resources-and-tools")} class="arrow-link">
+        Visit the Resources and Tools Page
+      </a>
+    </p>
+  </div>
+</AscLayout>
