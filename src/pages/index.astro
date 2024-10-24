@@ -14,6 +14,7 @@ import spotlight7 from '../assets/images/Spotlight7.png';
 import spotlight8 from '../assets/images/Spotlight8.png';
 import spotlight9 from '../assets/images/Spotlight9.png';
 import spotlight10 from '../assets/images/Spotlight10.png';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const optimizedBG = await getImage({ src: HeroBG });
 
@@ -36,7 +37,7 @@ const optimizedBG = await getImage({ src: HeroBG });
     height:auto;
   }
 </style>
-<Default title="ITS JPO">
+<BaseLayout title="ITS JPO">
   <div class="container-fluid bodyWrap">
     <div class="hero-container" style={`background-image: url(${optimizedBG.src});`}>
   <div style="background-color: rgba(7, 46, 85, 0.85)">

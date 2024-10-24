@@ -28,4 +28,37 @@ export const collections = {
     }),
   }),
 
+  microlearning: defineCollection({
+    type: 'data',
+    schema: ({ image }) => z.array(
+      z.object({
+        title: z.string(),
+        trainings: z.array(
+          z.object({
+            title: z.string(),
+            description: z.string(),
+            image: image().optional(),
+            url: z.string().url().optional(),
+            isExternal: z.boolean().optional()
+          })
+        )
+      })
+    )
+  }),
+  trainings: defineCollection({
+    type: 'data',
+    schema: ({ image }) => z.array(
+      z.object({
+        title: z.string(),
+        trainings: z.array(z.object({
+          title: z.string(),
+          description: z.string(),
+          image: image().optional(),
+          url: z.string().url().optional(),
+          isExternal: z.boolean().optional()
+        }))
+      })
+    )
+  })
+
 };

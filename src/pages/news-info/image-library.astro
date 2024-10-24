@@ -1,7 +1,6 @@
 ---
-import Default from "../../layouts/Default.astro";
-import SideBar from "../../components/SideBar_News.astro";
 import LibraryImg from '../../components/Img_Library.astro'
+import PageLayout from "@/src/layouts/PageLayout.astro";
 
 // To update this page add the image to the "imageLibrary" folder then add its src to this array and give it some alt text. The alt text is used for the image title.
 
@@ -56,59 +55,31 @@ const ImagesArray = [
 }
 
 </style>
-
-<Default title="ITS JPO - Image Library">
-  <!-- InstanceBeginEditable name="AboutBanner" -->
-
-  <div class="AboutBanner">
-    <div class="AboutBannerTitle">
-        <h1>Image Library</h1>
-    </div>
-</div>
-
-  <div class="container-fluid h-100 bodyWrap">
-    <div class="row h-100">
-      <aside class="col-12 col-md-3 p-3 bg-light"><SideBar /></aside>
-    
-
-      <main class="col-9 MainContent">
-        
-        <h2 class="sideways blue">Images courtesy of the U.S. Department of Transportation</h2>
-        <p>Click image for downloadable image or dowload a <a href="media_zip.htm">zip file</a> for available high resolution photos. </p>
-        <div class="d-flex flex-wrap">
-            
-                {ImagesArray.map((ImagesArray) => (
-                    <div class="p-2">
-                            <LibraryImg imagePath={ImagesArray.src} altText={ImagesArray.alt} />
-                   
-                    <p>{ImagesArray.alt}</p> 
-                    </div>
-            ))}
-            
-            
-          </div>
-
-
-                     
-        
-     
-
-        <h4>For additional images please contact</h4>
-        <p>
-            <strong>Mike Pina</strong><br>
-            Program Manager, Communications &amp; Outreach<br>
-            U.S. Department of Transportation<br>
-            FHWA/Office of the Assistant Secretary for Research and Technology<br>
-            HOIT-1 E33 - 409<br>
-            1200 New Jersey Avenue, SE<br>
-            Washington, DC 20590<br>
-            (202) 366 3700<br>
-            (202)  493 2027 (fax)<br>
-            <a href="mailto:mike.pina@dot.gov">mike.pina@dot.gov</a>
-        </p>
-        
-
-</main>
-    </div>
+<PageLayout title="Image Library">
+  <Fragment slot="banner">
+    Image Library
+  </Fragment>
+  <h2 class="sideways blue">Images courtesy of the U.S. Department of Transportation</h2>
+  <p>Click image for downloadable image or dowload a <a href="media_zip.htm">zip file</a> for available high resolution photos. </p>
+  <div class="d-flex flex-wrap">
+    {ImagesArray.map((ImagesArray) => (
+      <div class="p-2">
+        <LibraryImg imagePath={ImagesArray.src} altText={ImagesArray.alt} />
+        <p>{ImagesArray.alt}</p> 
+      </div>
+    ))}
   </div>
-</Default>
+  <h4>For additional images please contact</h4>
+  <p>
+      <strong>Mike Pina</strong><br>
+      Program Manager, Communications &amp; Outreach<br>
+      U.S. Department of Transportation<br>
+      FHWA/Office of the Assistant Secretary for Research and Technology<br>
+      HOIT-1 E33 - 409<br>
+      1200 New Jersey Avenue, SE<br>
+      Washington, DC 20590<br>
+      (202) 366 3700<br>
+      (202)  493 2027 (fax)<br>
+      <a href="mailto:mike.pina@dot.gov">mike.pina@dot.gov</a>
+  </p>
+</PageLayout>

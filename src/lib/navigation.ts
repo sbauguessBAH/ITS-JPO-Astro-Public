@@ -18,68 +18,38 @@ export const navigation: NavigationItem[] = [
     ]
   },
   {
-    name: 'Research',
-    url: '/research',
+    name: 'Research Areas',
+    url: '/research-areas',
     pages: [
-      { name: 'Accelerating ITS Deployment', url: '/research/accelerating' },
-      { name: 'Automation', url: '/research/automation' },
-      { name: 'ITS4US', url: '/research/ITS4US', pages: [
-        { name: 'ITS4US Home', url: '/research/ITS4US' },
-        { name: 'Program Overview', url: '/research/ITS4US/overview' },
-        { name: 'Publications', url: '/research/ITS4US/publications' },
-        { name: 'Webinars', url: '/research/ITS4US/webinars' },
-        { name: 'Featured Links', url: '/research/ITS4US/featured_links' },
-        { name: 'ITS4US in the Media', url: '/research/ITS4US/in_the_media' },
-        { name: 'Phase 1 Awardees', url: '/research/ITS4US/phase1_awardees' },
-      ]},
-      { name: 'ITS Cybersecurity Research', url: 'https://www.its.dot.gov/research_areas/cybersecurity/index.htm', isExternal: true },
-      { name: 'ITS Data Program', url: '/research/data_program', pages: [
-        { name: 'Data Program Home', url: '/research/data_program' },
-        { name: 'Program Resources and Tools', url: '/research/data_program/resources_tools', pages: [
-          { name: 'Program Resources and Tools', url: '/research/data_program/resources_tools' },
-          { name: 'ITS DataHub', url: '/research/data_program/resources_tools/CodeHub' },
-          { name: 'ITS CodeHub', url: '/research/data_program/resources_tools/DataHub' },
-          { name: 'Vehicle-to-Everything (V2X) Hub', url: '/research/data_program/resources_tools/V2XHub' },
-          { name: 'Reference Documents, Guidelines, and Templates', url: '/research/data_program/resources_tools/reference' },
-          { name: 'Publications', url: '/research/data_program/resources_tools/publications' },
-        ] },
-        { name: 'Research Projects', url: '/research/data_program/research_projects', pages: [
-          { name: 'Research Projects', url: '/research/data_program/research_projects' },
-          { name: 'Data Exchanges', url: '/research/data_program/research_projects/data-exchanges' },
-          { name: 'Gap Analysis for High-Value Data Sets', url: '/research/data_program/research_projects/gap-analysis' },
-          { name: 'Data Valuation Index (DVI)', url: '/research/data_program/research_projects/DVI' },
-          { name: 'Data Management Capability Maturity Models (CMMs)', url: '/research/data_program/research_projects/CMMs' },
-          { name: 'Data Governance, Stewardship, and Preservation Methods', url: '/research/data_program/research_projects/data-governance' },
-          { name: 'Data and Innovation Research', url: '/research/data_program/research_projects/research' },
-          { name: 'Research, Operational, and AI Data Integration Initiative (ROADII)', url: '/research/data_program/research_projects/ROADII' },
-          { name: 'AI-Enabled ITS Capability Maturity Model (CMM)', url: '/research/data_program/research_projects/AI-CMM' },
+      { name: 'ITS Deployments', url: '/research-areas/deployments', pages: [
+        { name: 'ITS4US', url: '/research-areas/deployments/its4us', pages: [
+          { name: 'ITS4US Home', url: '/research-areas/deployments/its4us' },
+          { name: 'Program Overview', url: '/research-areas/deployments/its4us/overview' },
+          { name: 'Publications', url: '/research-areas/deployments/its4us/publications' },
+          { name: 'Webinars', url: '/research-areas/deployments/its4us/webinars' },
+          { name: 'Featured Links', url: '/research-areas/deployments/its4us/featured_links' },
+          { name: 'ITS4US in the Media', url: '/research-areas/deployments/its4us/in_the_media' },
+          { name: 'Phase 1 Awardees', url: '/research-areas/deployments/its4us/phase1_awardees' },
         ]},
-        { name: 'News and Events', url: '/research/data_program/data-news' },
-        { name: 'Get Involved', url: '/research/data_program/get-involved' },
-      ]},
-      { name: 'Emerging and Enabling Technologies', url: '/research/emerging-tech' },
-      { name: 'National Transportation Library', url: '/research/national-transportation-library' }
+        { name: 'Vehicle-to-Everything', url: '/research-areas/deployments/v2x' },
+        { name: 'Complete Streets Artificial Intelligence (CSAI) Initiative', url: 'https://its.dot.gov/csai/', isExternal: true },
+        { name: 'Connected Vehicle Pilot Deployment (CVPD)', url: 'https://www.its.dot.gov/pilots/', isExternal: true },
+        { name: 'ATTAIN/ATCMTD', url: 'https://www.itskrs.its.dot.gov/decision-support/infographic/atcmtd-grant-program', isExternal: true }
+      ] },
+      { name: 'Automation Program', url: '/research-areas/automation' },
+      { name: 'Emerging and Enabling Technologies Program', url: '/research-areas/emerging-tech', pages: [
+        { name: 'Intersection Safety Challenge', url: 'https://its.dot.gov/isc', isExternal: true },
+        { name: 'ITS Cybersecurity Research', url: 'https://www.its.dot.gov/research_areas/cybersecurity/index.htm', isExternal: true },
+      ] },
+      { name: 'Research Program Archive', url: '', pages: [
+        { name: 'AERIS', url: '' },
+        { name: 'ATTRI', url: '' },
+        { name: 'MOD', url: '' },
+      ]}
     ]
   },
   {
-    name: 'ITS Deployment',
-    url: '/deployment',
-    pages: [
-      { name: 'ITS4US', url: '/research/ITS4US/' },
-      { name: 'Vehicle-to-Everything', url: '/deployment/V2X' },
-      { name: 'Connected Vehicle Pilots', url: 'https://www.its.dot.gov/pilots/index.htm', isExternal: true },
-      { name: 'Connected Vehicle Deployment Assistance', url: 'https://www.its.dot.gov/pilots/events.htm', isExternal: true },
-      { name: 'Connected Vehicle Applications', url: 'https://www.its.dot.gov/pilots', isExternal: true },
-      { name: 'Sample Deployment Concepts', url: 'https://www.its.dot.gov/pilots', isExternal: true },
-      { name: 'Connected Vehicle Publications', url: 'https://www.its.dot.gov/pilots', isExternal: true },
-      { name: 'National ITS Architecture', url: 'https://www.its.dot.gov/pilots', isExternal: true },
-      { name: 'Smart Communities', url: '/deployment/smart-communities' },
-      { name: 'Smart Community Resource Center', url: 'https://www.its.dot.gov/scrc', isExternal: true },
-      { name: 'Intersection Safety Challenge', url: 'https://its.dot.gov/isc', isExternal: true },
-    ]
-  },
-  {
-    name: 'News & Information',
+    name: 'News & Info',
     url: '/news-info',
     pages: [
       { name: 'Latest News from ITS JPO', url: '/news-info/news' },
@@ -91,44 +61,49 @@ export const navigation: NavigationItem[] = [
     ]
   },
   {
-    name: 'Technology Transfer',
-    url: '/technology-transfer',
-    pages: [
-      { name: 'ITS Deployment Evaluation', url: 'https://www.itskrs.its.dot.gov/', isExternal: true },
-      { name: 'ITS Professional Capacity Building', url: '/technology-transfer/pcb', pages: [
-        { name: 'ITS PCB Home', url: '/technology-transfer/pcb' },
-        { name: 'Trainings', url: '/technology-transfer/pcb/trainings' },
-        { name: 'Microlearning Videos', url: '/technology-transfer/pcb/microlearning' },
-        { name: 'Academic Resources', url: '/technology-transfer/pcb/resources' },
-        { name: 'Peer Exchanges', url: '/technology-transfer/pcb/peer-exchanges' },
-        { name: 'V2X Tools', url: '/technology-transfer/pcb/v2x-tools', pages: [
-          { name: 'Foundational V2X Trainings', url: '/technology-transfer/pcb/v2x-tools/foundational-v2x-trainings' },
-          { name: 'V2X Cohorts', url: '/technology-transfer/pcb/v2x-tools/v2x-cohorts'}
-        ] },
-        { name: 'Webinars', url: '/technology-transfer/pcb/webinars' },
-      ] },
-      { name: 'ITS Standards Program', url: 'https://www.standards.its.dot.gov/', isExternal: true },
-      { name: 'Smart Community Resource Center', url: 'https://www.its.dot.gov/scrc/index.html#/', isExternal: true },
-      { name: 'Intersection Safety Challenge', url: 'https://its.dot.gov/isc/', isExternal: true },
-    ]
-  },
-  {
-    name: 'Resources',
+    name: 'Resources/Technical Assistance',
     url: '/resources',
     pages: [
-      { name: 'ITS CodeHub', url: 'https://www.its.dot.gov/code', isExternal: true },
-      { name: 'ITS DataHub', url: 'https://www.its.dot.gov/data', isExternal: true },
-      { name: 'ITS Deployment Evaluation', url: 'https://www.its.dot.gov/pilots/index.htm', isExternal: true },
-      { name: 'ITS Deployment Statistics', url: 'https://www.its.dot.gov/pilots/events.htm', isExternal: true },
-      { name: 'Security Credential Management System (SCMS)', url: '/resources/scms' },
-      { name: 'Architecture, Standards, and Cybersecurity (ASC)', url: '/resources/asc', pages: [
-        { name: "ASC Home", url: "/resources/asc" },
-        { name: "ITS Standards", url: "/resources/asc/standards" },
-        { name: "ITS Reference Architecture", url: "/resources/asc/reference-architecture" },
-        { name: "ITS Cybersecurity", url: "/resources/asc/cybersecurity" },
-        { name: "Enabling Legislation & Policy", url: "/resources/asc/legislation-and-policy" },
-        { name: "Resources and Tools", url: "/resources/asc/resources-and-tools" },
-        { name: "Contacts", url: "/resources/asc/contacts" }
+      { name: 'Training', url: '/resources/training', pages: [
+        { name: 'ITS Professional Capacity Building', url: '/resources/training/pcb' }
+      ] },
+      { name: 'National Transportation Library', url: '/resources/national-transportation-library' },
+      { name: 'Smart Community Resource Center', url: 'https://www.its.dot.gov/scrc/index.html#/', isExternal: true },
+      { name: 'Accelerating ITS Deployment', url: '/resources/accelerating', pages: [
+        { name: 'ITS Deployment Evaluation', url: 'https://www.its.dot.gov/pilots/index.htm', isExternal: true },
+        { name: 'Architecture, Standards, and Cybersecurity (ASC)', url: '/resources/accelerating/asc', pages: [
+          { name: "ASC Home", url: "/resources/asc" },
+          { name: "ITS Standards", url: "/resources/asc/standards" },
+          { name: "ITS Reference Architecture", url: "/resources/asc/reference-architecture" },
+          { name: "ITS Cybersecurity", url: "/resources/asc/cybersecurity" },
+          { name: "Enabling Legislation & Policy", url: "/resources/asc/legislation-and-policy" },
+          { name: "Resources and Tools", url: "/resources/asc/resources-and-tools" },
+          { name: "Contacts", url: "/resources/asc/contacts" }
+        ]},
+        { name: 'ITS Data Program', url: '/resources/accelerating/data-program', pages: [
+          { name: 'Data Program Home', url: '/resources/accelerating/data-program' },
+          { name: 'Program Resources and Tools', url: '/resources/accelerating/data-program/resources-tools', pages: [
+            { name: 'ITS DataHub', url: '/resources/accelerating/data-program/resources-tools/CodeHub' },
+            { name: 'ITS CodeHub', url: '/resources/accelerating/data-program/resources-tools/DataHub' },
+            { name: 'Vehicle-to-Everything (V2X) Hub', url: '/resources/accelerating/data-program/resources-tools/V2XHub' },
+            { name: 'Reference Documents, Guidelines, and Templates', url: '/resources/accelerating/data-program/resources-tools/reference' },
+            { name: 'Publications', url: '/resources/accelerating/data-program/resources-tools/publications' },
+          ] },
+          { name: 'Research Projects', url: '/resources/accelerating/data-program/research-projects', pages: [
+            { name: 'Data Exchanges', url: '/resources/accelerating/data-program/research-projects/data-exchanges' },
+            { name: 'Gap Analysis for High-Value Data Sets', url: '/resources/accelerating/data-program/research-projects/gap-analysis' },
+            { name: 'Data Valuation Index (DVI)', url: '/resources/accelerating/data-program/research-projects/DVI' },
+            { name: 'Data Management Capability Maturity Models (CMMs)', url: '/resources/accelerating/data-program/research-projects/CMMs' },
+            { name: 'Data Governance, Stewardship, and Preservation Methods', url: '/resources/accelerating/data-program/research-projects/data-governance' },
+            { name: 'Data and Innovation Research', url: '/resources/accelerating/data-program/research-projects/research' },
+            { name: 'Research, Operational, and AI Data Integration Initiative (ROADII)', url: '/resources/accelerating/data-program/research-projects/ROADII' },
+            { name: 'AI-Enabled ITS Capability Maturity Model (CMM)', url: '/resources/accelerating/data-program/research-projects/AI-CMM' },
+          ]},
+          { name: 'News and Events', url: '/resources/accelerating/data-program/data-news' },
+          { name: 'Get Involved', url: '/resources/accelerating/data-program/get-involved' },
+        ]},
+        { name: 'ITS CodeHub', url: 'https://www.its.dot.gov/code', isExternal: true },
+        { name: 'ITS DataHub', url: 'https://www.its.dot.gov/data', isExternal: true },
       ]}
     ]
   },

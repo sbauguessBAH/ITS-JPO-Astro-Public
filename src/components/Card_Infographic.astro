@@ -1,6 +1,6 @@
 ---
-
-import { getEntry, type CollectionEntry } from "astro:content";
+import { type CollectionEntry } from "astro:content";
+import base_url from "../lib/base_url";
 
 type Props = {
   infographic: CollectionEntry<"infographics">;
@@ -32,6 +32,8 @@ const preview = infographic.body.slice(0, 400); // Adjust the number of characte
   overflow: hidden;
   }
 </style>
-
-
-    <li><a href={`${infographic.slug}`}>{title}</a></li>
+<li>
+  <a href={base_url(`/news-info/infographics/${infographic.slug}`)}>
+    {title}
+  </a>
+</li>

@@ -1,0 +1,36 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import bannerImage from "@/src/assets/images/pcb/banner.png";
+import bannerText from "@/src/assets/images/pcb/banner-text.png";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+<style is:global>
+  section {
+    padding: 0;
+    margin: 0;
+  }
+</style>
+<PageLayout title={`${title} | Professional Capacity Building (PCB)`} bannerImage={bannerImage}>
+  <Fragment slot="banner">
+    ITS Professional 
+    <br/>
+    Capacity Building
+    <!-- <div style="border-left: 2px solid white; padding-left: 1rem;">
+      <h1 style="font-weight: 600; line-height:0.9;margin:0;padding:0;">
+        ITS Professional
+        <br/>
+        Capacity Building
+      </h1>
+      <p style="font-weight:400;text-transform:none; margin:0;padding:0;">
+        Providing transportation professionals, educators, and students with comprehensive
+        <br/>
+        training and technical assistance to build expertise in ITS.
+      </p>
+    </div> -->
+  </Fragment>
+  <slot/>
+</PageLayout>

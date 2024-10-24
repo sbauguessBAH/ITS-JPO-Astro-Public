@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import USDOTLogo from '@/src/assets/images/US_DepartmentofTransportation-Logo.png';
+import youtubeIcon from "@/src/assets/images/Youtube.png";
 import facebookIcon from '@/src/assets/images/Facebook.png';
 import instgramIcon from '@/src/assets/images/Instagram.png';
 import twitterIcon from '@/src/assets/images/Twitter.png';
@@ -39,6 +40,9 @@ import base_url from '@/src/lib/base_url';
     <Image src={USDOTLogo} class="dot-logo" alt="U.S Department of Transportation Logo" />
   </a>
   <div class="d-none d-sm-flex flex-row align-items-center gap-2">
+    <a href="https://www.facebook.com/USDOTResearch" target="_blank">
+      <Image src={youtubeIcon} class="SocialMediaIcon" alt="Youtube Logo" />
+    </a>
     <a href="https://www.facebook.com/USDOTResearch" target="_blank">
       <Image src={facebookIcon} class="SocialMediaIcon" alt="Facebook Logo" />
     </a>
