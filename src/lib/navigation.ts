@@ -25,7 +25,14 @@ export const navigation: NavigationItem[] = [
         { name: 'ITS4US', url: '/research-areas/deployments/its4us', pages: [
           { name: 'ITS4US Home', url: '/research-areas/deployments/its4us' },
           { name: 'Program Overview', url: '/research-areas/deployments/its4us/overview' },
-          { name: 'Publications', url: '/research-areas/deployments/its4us/publications' },
+          { name: 'Deployments', url: '/research-areas/deployments/its4us/deployments' , pages: [
+            { name: 'Deployments Overview', url: '/research-areas/deployments/its4us/deployments/' },
+            { name: 'University of Washington', url: '/research-areas/deployments/its4us/deployments/washington' },
+            { name: 'Heart of Ioway Regional Transit Agency', url: '/research-areas/deployments/its4us/deployments/its4us/iowa' },
+            { name: 'Georgia Department of Transportation', url: '/research-areas/deployments/its4us/deployments/its4us/georiga' },
+            { name: 'Niagara Frontier Transportation Authority', url: '/research-areas/deployments/its4us/deployments/its4us/newYork' },
+          ] },
+          { name: 'Resources', url: '/research-areas/deployments/its4us/resources' },
           { name: 'Webinars', url: '/research-areas/deployments/its4us/webinars' },
           { name: 'Featured Links', url: '/research-areas/deployments/its4us/featured_links' },
           { name: 'ITS4US in the Media', url: '/research-areas/deployments/its4us/in_the_media' },
