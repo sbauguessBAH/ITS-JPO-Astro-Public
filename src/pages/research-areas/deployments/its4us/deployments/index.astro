@@ -2,35 +2,78 @@
 import base_url from "@/src/lib/base_url";
 import ITS4USLayout from "../_ITS4USLayout.astro";
 ---
-<ITS4USLayout title="Deployments">
 
-<p>The ITS4US Program is currently in Phase 2. The awardees being the Heart of Iowa Regional Transit Agency, Georgia Department of Transportation, the University of Washington, the Niagara Frontier Transportation Authority. Select the individual awardee from the menu above to view the deployment details and their current news and projects.
+<style>
+  .deployment div {
+    width: 70%;
+    display: inline-block;
+  }
+  .deployment h3 {
+    text-align: left;
+    font-weight: bold;
+    font-size: smaller;
+    margin: 0;
+    text-wrap: pretty;
+    text-transform: none;
+    text-decoration: underline;
+  }
+a:hover h3{
+  font-weight: bolder;
+  color: #005D83;
+  
+}
+  .deployment p {
+    text-align: left;
+    font-weight: normal;
+    font-size: small;
+    text-wrap: pretty;
+  }
+
+  .deployment::before {
+    content: "";
+    display: inline-block;
+    width: 20%;
+    max-width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .WA::before {
+    background-color: #3881af;
+    border: 1px solid #193e55;
+  }
+  .IA::before {
+    background-color: #f69884;
+    border: 1px solid #c97866;
+  }
+  .GA::before {
+    background-color: #8ed3da;
+    border: 1px solid #71abb2;
+  }
+  .NY::before {
+    background-color: #fbe673;
+    border: 1px solid #c4b24c;
+  }
+</style>
+
+<ITS4USLayout title="Deployments">
+  <p>
+    The ITS4US Program is currently in Phase 2. The awardees being the Heart of Iowa Regional Transit Agency, Georgia Department of Transportation, the University of Washington, the Niagara Frontier
+    Transportation Authority. Select the individual awardee from the menu above to view the deployment details and their current news and projects.
   </p><p>
-  While the California Association of Coordinated Transportation (CALACT) project did not continue into Phases 2 and 3, CALACT’s Phase 1 publications and webinars can still be referenced on the Resources page. Learn more about the phased program approach on the About page.
+    While the California Association of Coordinated Transportation (CALACT) project did not continue into Phases 2 and 3, CALACT’s Phase 1 publications and webinars can still be referenced on the
+    Resources page. Learn more about the phased program approach on the About page.
   </p>
   <div class="row" style="padding-bottom: 20px; margin-bottom: 30px; border-bottom-style: solid; border-block-width: 1px; border-color: gainsboro">
     <div class="col-lg-12">
       <div class="map-container">
         <div class="map-container">
-          <div class="row map-links">
-            <div class="col-lg-3">
-              <a href="#HIRTA"><img class="mapNavigation" src={base_url("/assets/images/its4us/map-HIRTA.png")} alt="Heart of Iowa Regional Transit Agency" /></a>
-            </div>
-            <div class="col-lg-2">
-              <a href="#ARC"><img class="mapNavigation" src={base_url("/assets/images/its4us/map-ARC.png")} alt="ATLANTA REGIONAL COMMISSION" /></a>
-            </div>
-            <div class="col-lg-3">
-              <a href="#CACT">
-                <img class="mapNavigation" src={base_url("/assets/images/its4us/map-CALACT.png")} alt="
-              CALIFORNIA ASSOCIATION OF COORDINATED TRANSPORTATION" />
-              </a>
-            </div>
-            <div class="col-lg-2">
-              <a href="#UW"><img class="mapNavigation" src={base_url("/assets/images/its4us/map-UW.png")} alt="UNIVERSITY OF WASHINGTON" /></a>
-            </div>
-            <div class="col-lg-2">
-              <a href="#ICF"><img class="mapNavigation" src={base_url("/assets/images/its4us/map-ICF.png")} alt="ICF INTERNATIONAL, INC." /></a>
-            </div>
+          <div class="row">
+            <div class="col-lg-3 deployment WA"><a href="washington"><div><h3>University of Washington</h3><p>OR, WA, MD</p></div></a></div>
+            <div class="col-lg-3 deployment IA"><a href="iowa"><div><h3>Heart of Iowa Reginal Transit Agency</h3><p>Dallas Count, IA</p></div></a></div>
+            <div class="col-lg-3 deployment GA"><a href="georga"><div><h3>Georga Depoartment of Transportation</h3><p>Gwinnet County, GA</p></div></a></div>
+            <div class="col-lg-3 deployment NY"><a href="newYork"><div><h3>Niagara Frontier Transportation Authority</h3><p>Buffalo, NY</p></div></a></div>
           </div>
           <div class="map-image">
             <!-- <img src="img/map.pn/g")} class="img-fluid"> -->
@@ -89,14 +132,16 @@ import ITS4USLayout from "../_ITS4USLayout.astro";
                   d="M935.2,512.9l-1.8,1l-2.6-1.3l-0.6-2.1l-1.3-3.6l-2.3-2.1l-2.6-0.6l-1.6-4.8l-2.7-6l-4.2-1.9   l-2.1-1.9l-1.3-2.6L910,485l-2.3-1.3l-2.3-2.9l-3.1-2.3l-4.5-1.8l-0.5-1.5l-2.4-2.9l-0.5-1.5l-3.4-5.2l-3.4,0.2l-4-2.4l-1.3-1.3   l-0.3-1.8l0.8-1.9l2.3-1l-0.3-2.1l6.1-2.6l9.1-4.5l7.3-0.8l16.5-0.5l2.3,1.9l1.6,3.2l4.4-0.5l12.6-1.5l2.9,0.8l12.6,7.6l10.1,8.1   l-5.4,5.5l-2.6,6.1l-0.5,6.3l-1.6,0.8l-1.1,2.7l-2.4,0.6l-2.1,3.6l-2.7,2.7l-2.3,3.4l-1.6,0.8l-3.6,3.4l-2.9,0.2l1,3.2l-5,5.5   L935.2,512.9z"
                 >
                 </path>
+                <a href="georga">
                 <path
                   id="GA"
                   class="clickable active"
                   data-info="ARC"
-                  fill="#D3D3D3"
+                  fill="#8ed3da"
                   d="M863.6,458l-4.8,0.8l-8.4,1.1l-8.6,0.9v2.2l0.2,2.1l0.6,3.4l3.4,7.9l2.4,9.9l1.5,6.1l1.6,4.8l1.5,7   l2.1,6.3l2.6,3.4l0.5,3.4l1.9,0.8l0.2,2.1l-1.8,4.8l-0.5,3.2l-0.2,1.9l1.6,4.4l0.3,5.3l-0.8,2.4l0.6,0.8l1.5,0.8l0.6,3.4l2.6,3.9   l1.5,1.5l7.9,0.2l10.8-0.6l21.5-1.3l5.4-0.7l4.6,0l0.2,2.9l2.6,0.8l0.3-4.4l-1.6-4.5l1.1-1.6l5.8,0.8l5,0.3l-0.8-6.3l2.3-10   l1.5-4.2l-0.5-2.6l3.3-6.2l-0.5-1.4l-1.9,0.7l-2.6-1.3l-0.6-2.1l-1.3-3.6l-2.3-2.1l-2.6-0.6l-1.6-4.8l-2.9-6.3l-4.2-1.9l-2.1-1.9   l-1.3-2.6l-2.1-1.9l-2.3-1.3l-2.3-2.9l-3.1-2.3l-4.5-1.8l-0.5-1.5l-2.4-2.9l-0.5-1.5l-3.4-4.9l-3.4,0.2l-4.1-3l-1.3-1.3l-0.3-1.8   l0.8-1.9l2.4-1.2l-1.1-1.2l0.1-0.3l-5.8,1l-7,0.8L863.6,458z"
                 >
                 </path>
+                </a>
                 <path
                   id="AL"
                   class="inactive"
@@ -169,14 +214,16 @@ import ITS4USLayout from "../_ITS4USLayout.astro";
                   d="M1018.3,253.7l-0.8-5.7l-2.4-10l-0.6-0.3l-2.9-1.3l0.8-2.9l-0.8-2.1l-2.7-4.6l1-3.9l-0.8-5.2   l-2.4-6.5l-0.8-4.9l26.2-6.7l0.3,5.8l1.9,2.7v4l-3.7,4l-2.6,1.1v1.1l1.1,1.8v8.6l-0.8,9.2l-0.2,4.8l1,1.3l-0.2,4.5l-0.5,1.8   l0.7,1.6l-7,1.4L1018.3,253.7z"
                 >
                 </path>
+                <a href="newYork">
                 <path
                   id="NY"
                   class="clickable active"
                   data-info="ICF"
-                  fill="#D3D3D3"
+                  fill="#fbe673"
                   d="M1002.6,289.4l-1.1-1l-2.6-0.2l-2.3-1.9l-1.6-6.1l-3.5,0.1l-2.4-2.7l-19.4,4.4l-43,8.7l-7.5,1.2   l-0.7-6.5l1.4-1.1l1.3-1.1l1-1.6l1.8-1.1l1.9-1.8l0.5-1.6l2.1-2.7l1.1-1l-0.2-1l-1.3-3.1l-1.8-0.2l-1.9-6.1l2.9-1.8l4.4-1.5l4-1.3   l3.2-0.5l6.3-0.2l1.9,1.3l1.6,0.2l2.1-1.3l2.6-1.1l5.2-0.5l2.1-1.8l1.8-3.2l1.6-1.9h2.1l1.9-1.1l0.2-2.3l-1.5-2.1l-0.3-1.5l1.1-2.1   v-1.5h-1.8l-1.8-0.8l-0.8-1.1l-0.2-2.6l5.8-5.5l0.6-0.8l1.5-2.9l2.9-4.5l2.7-3.7l2.1-2.4l2.4-1.8l3.1-1.2l5.5-1.3l3.2,0.2l4.5-1.5   l7.6-2.1l0.5,5l2.4,6.5l0.8,5.2l-1,3.9l2.6,4.5l0.8,2.1l-0.8,2.9l2.9,1.3l0.6,0.3l3.1,11l-0.5,5.1l-0.5,10.8l0.8,5.5l0.8,3.6   l1.5,7.3v8.1l-1.1,2.3l1.8,2l0.8,1.7l-1.9,1.8l0.3,1.3l1.3-0.3l1.5-1.3l2.3-2.6l1.1-0.6l1.6,0.6l2.3,0.2l7.9-3.9l2.9-2.7l1.3-1.5   l4.2,1.6l-3.4,3.6l-3.9,2.9l-7.1,5.3l-2.6,1l-5.8,1.9l-4,1.1l-1.2-0.5l-0.2-3.7l0.5-2.7l-0.2-2.1l-2.8-1.7l-4.5-1l-3.9-1.1   L1002.6,289.4z"
                 >
                 </path>
+                </a>
                 <path
                   id="NJ"
                   class="inactive"
@@ -201,14 +248,16 @@ import ITS4USLayout from "../_ITS4USLayout.astro";
                   d="M996.4,330.4l0.6-2.1l0-1.2l-1.3-0.1l-2.1,1.6l-1.5,1.5l1.5,4.2l2.3,5.7l2.1,9.7l1.6,6.3l5-0.2   l6.1-1.2l-2.3-7.4l-1,0.5l-3.6-2.4l-1.8-4.7l-1.9-3.6l-2.3-1l-2.1-3.6L996.4,330.4z"
                 >
                 </path>
-                <path
-                  id="MD"
-                  class="active"
-                  data-info="UW"
-                  fill="#D3D3D3"
-                  d="M1011,355.3l-6.1,1.3l-5.8,0.2l-1.8-7.1l-2.1-9.7l-2.3-5.7l-1.3-4.4l-7.5,1.6l-14.9,2.8l-37.5,7.6   l1.1,5l1,5.7l0.3-0.3l2.1-2.4l2.3-2.6l2.4-0.6l1.5-1.5l1.8-2.6l1.3,0.6l2.9-0.3l2.6-2.1l2-1.5l1.8-0.5l1.6,1.1l2.9,1.5l1.9,1.8   l1.2,1.5l4.1,1.7v2.9l5.5,1.3l1.1,0.5l1.4-2l2.9,2l-1.3,2.5l-0.8,4l-1.8,2.6v2.1l0.6,1.8l5.1,1.4l4.3-0.1l3.1,1l2.1,0.3l1-2.1   l-1.5-2.1v-1.8l-2.4-2.1l-2.1-5.5l1.3-5.3l-0.2-2.1l-1.3-1.3c0,0,1.5-1.6,1.5-2.3c0-0.6,0.5-2.1,0.5-2.1l1.9-1.3l1.9-1.6l0.5,1   l-1.5,1.6l-1.3,3.7l0.3,1.1l1.8,0.3l0.5,5.5l-2.1,1l0.3,3.6l0.5-0.2l1.1-1.9l1.6,1.8l-1.6,1.3l-0.3,3.4l2.6,3.4l3.9,0.5l1.6-0.8   l3.2,4.2l1.4,0.5l6.7-2.8l2-4L1011,355.3z M994.3,364.3l1.1,2.5l0.2,1.8l1.1,1.9c0,0,0.9-0.9,0.9-1.2c0-0.3-0.7-3.1-0.7-3.1   l-0.7-2.3L994.3,364.3z"
-                >
-                </path>
+                <a href="washington">
+                  <path
+                    id="MD"
+                    class="active clickable"
+                    data-info="UW"
+                    fill="#D3D3D3"
+                    d="M1011,355.3l-6.1,1.3l-5.8,0.2l-1.8-7.1l-2.1-9.7l-2.3-5.7l-1.3-4.4l-7.5,1.6l-14.9,2.8l-37.5,7.6   l1.1,5l1,5.7l0.3-0.3l2.1-2.4l2.3-2.6l2.4-0.6l1.5-1.5l1.8-2.6l1.3,0.6l2.9-0.3l2.6-2.1l2-1.5l1.8-0.5l1.6,1.1l2.9,1.5l1.9,1.8   l1.2,1.5l4.1,1.7v2.9l5.5,1.3l1.1,0.5l1.4-2l2.9,2l-1.3,2.5l-0.8,4l-1.8,2.6v2.1l0.6,1.8l5.1,1.4l4.3-0.1l3.1,1l2.1,0.3l1-2.1   l-1.5-2.1v-1.8l-2.4-2.1l-2.1-5.5l1.3-5.3l-0.2-2.1l-1.3-1.3c0,0,1.5-1.6,1.5-2.3c0-0.6,0.5-2.1,0.5-2.1l1.9-1.3l1.9-1.6l0.5,1   l-1.5,1.6l-1.3,3.7l0.3,1.1l1.8,0.3l0.5,5.5l-2.1,1l0.3,3.6l0.5-0.2l1.1-1.9l1.6,1.8l-1.6,1.3l-0.3,3.4l2.6,3.4l3.9,0.5l1.6-0.8   l3.2,4.2l1.4,0.5l6.7-2.8l2-4L1011,355.3z M994.3,364.3l1.1,2.5l0.2,1.8l1.1,1.9c0,0,0.9-0.9,0.9-1.2c0-0.3-0.7-3.1-0.7-3.1   l-0.7-2.3L994.3,364.3z"
+                  >
+                  </path>
+                </a>
                 <path
                   id="WV"
                   class="inactive"
@@ -265,14 +314,16 @@ import ITS4USLayout from "../_ITS4USLayout.astro";
                   d="M336.1,281c-22.6-4.3-14.1-2.8-21.1-4.4l4.4-17.5l4.3-17.7l1.4-4.2l2.5-5.9l-1.3-2.3l-2.5,0.1   l-0.8-1l0.5-1.1l0.3-3.1l4.5-5.5l1.8-0.5l1.1-1.1l0.6-3.2l0.9-0.7l3.9-5.8l3.9-4.3l0.2-3.8l-3.4-2.6l-1.3-4.4l0.4-9.7l3.7-16.5   l4.5-20.8l3.8-13.5l0.8-3.8l13,2.5l-4.2,21.5l2.9,7.7l-1.1,4.6l2,4.6l3.2,1.7l4.5,9.8l2.7,3.8l0.6,1.1l3.4,1.1l0.5,2.5l-6.9,16.8   l0.3,3.3l2.7,2.9l1.9,0.5l4.8-3.6l0.4-0.5l0.2,0.8l0.3,4.1l2.6,12.9l3.5,2.7l0.4,0.8l2.1,2.4l-0.8,2.8l0.7,3.8l1.9,0.9l2.1-1.6   l2.6-0.5l3.4,1.6l2.5-0.6l3.8-0.2l4,1.6l2.7-0.3l0.9-2.3l2.5-1.6l0.7,1.7l0.6,2.2l2.3,2.5l-3.8,24l-5.1,29l-4.2-0.3l-8.2-1.5   l-9.8-1.8l-12.2-2.4l-12.5-2.5l-8.5-1.8l-9.3-1.7L336.1,281z"
                 >
                 </path>
+                <a href="washington">
                 <path
                   id="WA"
                   class="clickable active"
                   data-info="UW"
-                  fill="url(#pnwhatch)"
+                  fill="#3881af"
                   d="M267.6,106.4l4.4,1.5l9.7,2.7l8.6,1.9l20,5.7l23,5.7l15.2,3.4l-1,3.9l-4.1,13.8l-4.5,20.8   l-3.2,16.1l-0.4,9.4l-13.2-3.9l-15.6-3.4l-13.7,0.6l-1.6-1.5l-5.3,1.9l-4-0.3l-2.7-1.8l-1.6,0.5l-4.2-0.2l-1.9-1.4l-4.8-1.7   l-1.4-0.2l-5-1.3l-1.8,1.5l-5.7-0.3l-4.8-3.8l0.2-0.8l0.1-7.9l-2.1-3.9l-4.1-0.7l-0.4-2.4l-2.5-0.6l-2.9-0.5l-1.8,1l-2.3-2.9   l0.3-2.9l2.7-0.3l1.6-4l-2.6-1.1l0.2-3.7l4.4-0.6l-2.7-2.7l-1.5-7.1l0.6-2.9v-7.9l-1.8-3.2l2.3-9.4l2.1,0.5l2.4,2.9l2.7,2.6   l3.2,1.9l4.5,2.1l3.1,0.6l2.9,1.5l3.4,1l2.3-0.2v-2.4l1.3-1.1l2.1-1.3l0.3,1.1l0.3,1.8l-2.3,0.5l-0.3,2.1l1.8,1.5l1.1,2.4l0.6,1.9   l1.5-0.2l0.2-1.3l-1-1.3l-0.5-3.2l0.8-1.8l-0.6-1.5V119l1.8-3.6l-1.1-2.6l-2.4-4.8l0.3-0.8L267.6,106.4z M258.1,112.3l2-0.2   l0.5,1.4l1.5-1.6h2.3l0.8,1.5l-1.5,1.7l0.6,0.8l-0.7,2l-1.4,0.4c0,0-0.9,0.1-0.9-0.2s1.5-2.6,1.5-2.6l-1.7-0.6l-0.3,1.5l-0.7,0.6   l-1.5-2.3L258.1,112.3z"
                 >
                 </path>
+                </a>
                 <path
                   id="TX"
                   class="inactive"
@@ -283,7 +334,7 @@ import ITS4USLayout from "../_ITS4USLayout.astro";
                 </path>
                 <path
                   id="CA"
-                  class="clickable active"
+                  class="inactive"
                   filter=""
                   data-info="CALACT"
                   fill="#D3D3D3"
@@ -330,14 +381,16 @@ import ITS4USLayout from "../_ITS4USLayout.astro";
                   d="M456.7,531l-0.7-6.1l8.6,0.5l29.5,3.1l28.4,1.4l2-22.3l3.7-55.9l1.1-19.4l2,0.3l0-11.1l-32.2-2.4   l-36.9-4.4l-34.5-4.1l-4.2,30.8l-7,53.2l-3.8,26.9l-2,13.3l15.5,2l1.3-10l16.7,2.6L456.7,531z"
                 >
                 </path>
+                <a href="washington">
                 <path
                   id="OR"
-                  class="active"
+                  class="active clickable"
                   data-info="UW"
-                  fill="url(#pnwhatch)"
+                  fill="#3881af"
                   d="M314.3,276.7l4.3-17.9l4.7-17.9l1.1-4.2l2.4-5.6l-0.6-1.2l-2.5,0l-1.3-1.7l0.5-1.5l0.5-3.2l4.5-5.5   l1.8-1.1l1.1-1.1l1.5-3.6l4-5.7l3.6-3.9l0.2-3.5l-3.3-2.5l-1.2-4.5l-13.2-3.7l-15.1-3.5l-15.4,0.1l-0.5-1.4l-5.5,2.1l-4.5-0.6   l-2.4-1.6l-1.3,0.7L273,184l-1.7-1.4l-5.3-2.1l-0.8,0.1l-4.3-1.5l-1.9,1.8l-6.2-0.3l-5.9-4.1l0.7-0.8l0.2-7.8l-2.3-3.9l-4.1-0.6   l-0.7-2.5l-2.4-0.5l-5.8,2.1l-2.3,6.5l-3.2,10l-3.2,6.5l-5,14.1l-6.5,13.6l-8.1,12.6l-1.9,2.9l-0.8,8.6l-1.3,6l2.7,3.5l6.7,2.3   l11.6,3.3l7.9,2.5l12.4,3.6l13.3,3.6l13.2,3.6"
                 >
                 </path>
+                </a>
                 <path
                   id="ND"
                   class="inactive"
@@ -362,14 +415,16 @@ import ITS4USLayout from "../_ITS4USLayout.astro";
                   d="M658.2,347l1.4,2.7l0.1,2.1l2.4,3.7l2.7,3.2h-5l-43.5-0.9l-40.8-0.9l-21.2-1l1.1-21.3l-33.4-2.7   l4.3-44l15.5,1L562,290l17.8,1.1l23.8,1.1l10.7-0.5l2.1,2.3l4.8,3l1.1,0.9l4.3-1.4l3.9-0.5l2.7-0.2l1.8,1.4l5,1.6l3,1.6l0.5,1.6   l0.9,2.1h1.8l0.8,0l1,5.2l2.7,8l1.2,4.6l2.1,3.8l0.5,4.9l1.4,4.3l0.5,6.5"
                 >
                 </path>
+                <a href="iowa">
                 <path
                   id="IA"
                   class="clickable active"
                   data-info="HIRTA"
-                  fill="#D3D3D3"
+                  fill="#f69884"
                   d="M740.6,301.6l0.2,1.9l2.3,1.1l1.1,1.3l0.3,1.3l3.9,3.2l0.7,2.2l-0.8,2.9l-1.5,3.5l-0.8,2.7   l-2.2,1.6l-1.7,0.6l-5.5,1.5l-0.7,2.3l-0.8,2.3l0.6,1.4l1.7,1.7l0,3.7l-2.2,1.6l-0.5,1.5v2.5l-1.5,0.5l-1.7,1.4l-0.5,1.5l0.5,1.7   l-1.4,1.2l-2.3-2.7l-1.5-2.6l-8.3,0.8l-10.2,0.6l-25,0.7l-13,0.2l-9.4,0.2l-1.3,0.1l-1.7-4.5l-0.2-6.6l-1.6-4.1l-0.7-5.3l-2.3-3.7   l-0.9-4.8l-2.7-7.5l-1.1-5.4l-1.4-2.2l-1.6-2.7l1.8-4.3l1.4-5.7l-2.7-2.1l-0.5-2.7l0.9-2.5h1.7h11.5l49.6-0.7l19.9-0.7l1.9,2.7   l1.8,2.6l0.5,0.8l-1.8,2.7l0.5,4.2l2.5,3.9l3,1.8l2.4,0.2L740.6,301.6z"
                 >
                 </path>
+                </a>
                 <path
                   id="MS"
                   class="inactive"
@@ -466,161 +521,7 @@ import ITS4USLayout from "../_ITS4USLayout.astro";
             </svg>
           </div>
         </div>
-        <button
-          class="Pagebtn externalLink_White btnDark buttonPadding"
-          onclick="window.open('https://www.transportation.gov/briefing-room/us-department-transportation-selects-four-projects-receive-over-27-million-improve');"
-        >
-          View the ITS4US Phases 2 &amp; 3 Sites Press Release
-        </button>
       </div>
     </div>
-    <div class="col-lg-2">
-      <img src={base_url("/assets/images/its4us/ITSfUSMockup_011221_Iowa.png")} alt="ITS Evaluation" width="100%" class="img-responsive" style="padding-bottom: 20px" />
-
-      <!--This is a button for later inclustion, it will link to the specific awardeee's website-->
-
-      <!--
-            
-            <a class="btn" href="https://www.its.dot.gov/" style="width:100%">Learn More</a>
-
-          -->
-    </div>
-    <div class="col-lg-10">
-      <h3 id="HIRTA">Heart of Iowa Regional Transit Agency</h3>
-      <p style="font-weight: bolder">Proposal Overview</p>
-      <p>
-        The “Health Connector for the Most Vulnerable: An Inclusive Mobility Experience from Beginning to End” (Health Connector) Complete Trip deployment project in Dallas County, Iowa is
-        led by the Heart of Iowa Regional Transit Agency (HIRTA).  This project will implement a scalable and replicable solution that enables inclusive transportation access to healthcare
-        for all underserved populations and their caregivers by resolving access to barriers with the use of advanced technologies. Further, this solution will include information and
-        wayfinding services to guide users for every step of their trip. This deployment will provide enhanced access to healthcare options for “all travelers” in Dallas County.
-      </p>
-    </div>
-  </div>
-
-  <div class="row" style="padding-bottom: 20px; margin-bottom: 30px; border-bottom-style: solid; border-block-width: 1px; border-color: gainsboro">
-    <div class="col-lg-2">
-      <img src={base_url("/assets/images/its4us/ITSfUSMockup_011221_Georgia.png")} alt="ITS Evaluation" width="100%" class="img-responsive" style="padding-bottom: 20px" />
-
-      <!--This is a button for later inclustion, it will link to the specific awardeee's website-->
-
-      <!--
-              
-              <a class="btn" href="https://www.its.dot.gov/" style="width:100%">Learn More</a>
-
-            -->
-    </div>
-    <div class="col-lg-10">
-      <h3 id="ARC">Atlanta Regional Commission</h3>
-      <p style="font-weight: bolder">Proposal Overview</p>
-      <p>
-        The Complete Trip Deployment in Buffalo, NY led by the Niagara Frontier Transportation Authority (NFTA), will improve mobility to, from and within the Buffalo Niagara Medical Campus
-        (BNMC) by deploying new and advanced technologies focused on addressing existing mobility and accessibility challenges. The project integrates an accessible trip planning tool with
-        current transit services, indoor/outdoor wayfinding, community-based on-demand shuttle services that include a fleet of fully autonomous shuttles, and intersection pedestrian safety
-        technologies aimed at providing complete trip support to travelers with disabilities in BNMC and neighboring communities. Central to the project is a complete trip platform that is
-        able to factor in travelers’ preferences and accessibility-related needs in providing comprehensive trip planning and execution support to registered users. The platform, accessed
-        both offline and online via multiple interfaces including an app, will integrate with multiple enabling technologies and services including fixed route transit, community shuttles,
-        smart intersections that use tactile and mobile technologies that assist travelers with disabilities navigate intersections safely, and wayfinding Infrastructure such as smart signs
-        and information hubs to support outdoor and indoor navigation.
-      </p>
-    </div>
-  </div>
-
-  <div class="row" style="padding-bottom: 20px; margin-bottom: 30px; border-bottom-style: solid; border-block-width: 1px; border-color: gainsboro">
-    <div class="col-lg-2">
-      <img src={base_url("/assets/images/its4us/ITSfUSMockup_011221_California.png")} alt="ITS Evaluation" width="100%" class="img-responsive" style="padding-bottom: 20px" />
-
-      <!--This is a button for later inclustion, it will link to the specific awardeee's website-->
-
-      <!--
-            
-            <a class="btn" href="https://www.its.dot.gov/" style="width:100%">Learn More</a>
-
-          -->
-    </div>
-    <div class="col-lg-10">
-      <h3 id="CACT">California Association of Coordinated Transportation</h3>
-      <p style="font-weight: bolder">Proposal Overview</p>
-      <p>
-        The Complete Trip deployment project, Trip Planning for All, led by the California Association of Coordinated Transport (CALACT), will deploy in an area covering three states:
-        California, Oregon, and Washington. The project will improve underserved travelers’ access to information about available transportation modes and to streamline their ability to book
-        and pay for multimodal trips. The project will define extensions to the General Transit Feed Specification (GTFS) in response to the trip planning needs of underserved riders and
-        develop new data standards related to demand responsive booking integration. Implementation assistance will include developing guidelines for data producing systems and providing
-        technical assistance to agencies and vendors in order to encourage use of these new standards. The project will produce an official list of the transportation services in the three
-        state region and publish the data produced according to the guidelines through publicly accessible APIs.
-      </p>
-    </div>
-  </div>
-
-  <div class="row" style="padding-bottom: 20px; margin-bottom: 30px; border-bottom-style: solid; border-block-width: 1px; border-color: gainsboro">
-    <div class="col-lg-2">
-      <img src={base_url("/assets/images/its4us/ITSfUSMockup_011221_Washington.png")} alt="ITS Evaluation" width="100%" class="img-responsive" style="padding-bottom: 20px" />
-
-      <!--This is a button for later inclustion, it will link to the specific awardeee's website-->
-
-      <!--
-            
-            <a class="btn" href="https://www.its.dot.gov/" style="width:100%">Learn More</a>
-
-          -->
-    </div>
-    <div class="col-lg-10">
-      <h3 id="UW">University of Washington</h3>
-      <p style="font-weight: bolder">Proposal Overview</p>
-      <p>
-        The Transportation Data Equity Initiative, a Complete Trip deployment project led by the University of Washington, will span three states: Washington, Oregon, and Maryland. The
-        project aims to create the foundational data tools necessary for both public and private entities to collect, share, manage, and use transportation data that provide equitable
-        outcomes to all travelers regardless of location, income, or disability. This effort includes: 1) working with existing standards committees to extend and update three existing,
-        early-stage international data standards: OpenSidewalks, GTFS-Flex, and GTFS-Pathways; 2) developing a series of tools that help agencies, jurisdictions, and other stakeholders
-        collect the data that can be stored with these refined data standards; and 3) using three unique accessible mobility applications to demonstrate these three very different uses of
-        the data.
-      </p>
-    </div>
-  </div>
-
-  <div class="row" style="padding-bottom: 20px; margin-bottom: 30px; border-bottom-style: solid; border-block-width: 1px; border-color: gainsboro">
-    <div class="col-lg-2">
-      <img src={base_url("/assets/images/its4us/ITSfUSMockup_011221_NewYork.png")} alt="ITS Evaluation" width="100%" class="img-responsive" style="padding-bottom: 20px" />
-
-      <!--This is a button for later inclustion, it will link to the specific awardeee's website-->
-
-      <!--
-            
-            <a class="btn" href="https://www.its.dot.gov/" style="width:100%">Learn More</a>
-
-          -->
-    </div>
-    <div class="col-lg-10">
-      <h3 id="ICF">ICF International, INC.</h3>
-      <p style="font-weight: bolder">Proposal Overview</p>
-      <p>
-        The Complete Trip Deployment in Buffalo, NY will improve mobility to, from and within the Buffalo Niagara Medical Campus (BNMC) by deploying new and advanced technologies focused on
-        addressing existing mobility and accessibility challenges. The project integrates an accessible trip planning tool with current transit services, indoor/outdoor wayfinding,
-        community-based on-demand shuttle services that include a fleet of fully autonomous shuttles, and intersection pedestrian safety technologies aimed at providing complete trip support
-        to travelers with disabilities in BNMC and neighboring communities. Central to the project is a complete trip platform that is able to factor in travelers’ preferences and
-        accessibility-related needs in providing comprehensive trip planning and execution support to registered users. The platform, accessed both offline and online via multiple interfaces
-        including an app, will integrate with multiple enabling technologies and services including fixed route transit, community shuttles, smart intersections that use tactile and mobile
-        technologies that assist travelers with disabilities navigate intersections safely, and wayfinding Infrastructure such as smart signs and information hubs to support outdoor and
-        indoor navigation.
-      </p>
-    </div>
-  </div>
-  <h2 class="sideways blue">U.S. DOT Partners</h2>
-  <div class="row">
-    <div class="col-lg-3">
-      <img class="partnerImage" src={base_url("/assets/images/its4us/ITSfUSMockup_011221_ITSJPO.png")} />
-      <a href="https://www.its.dot.gov/">Intelligent Transportation Systems Joint Program Office (ITS JPO)</a>
-    </div>
-    <div class="col-lg-3">
-      <img class="partnerImage" src={base_url("/assets/images/its4us/TechnologyBus_011421.png")} />
-      <a href="https://www.transit.dot.gov/">Federal Transit Administration (FTA)</a>
-    </div>
-    <div class="col-lg-3">
-      <img class="partnerImage" src={base_url("/assets/images/its4us/ITSfUSMockup_011221_FHWA.png")} />
-      <a href="https://highways.dot.gov/">Federal Highway Administration (FHWA)</a>
-    </div>
-    <div class="col-lg-3">
-      <img class="partnerImage" src={base_url("/assets/images/its4us/ITSfUSMockup_011221_OST.png")} />
-      <a href="https://www.transportation.gov/administrations/assistant-secretary-research-and-technology/ost-rs-programs">Office of the Secretary (OST)</a>
-    </div>
-  </div>
-</ITS4USLayout>
+  </div></ITS4USLayout
+>
