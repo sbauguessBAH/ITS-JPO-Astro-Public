@@ -28,15 +28,13 @@ export const navigation: NavigationItem[] = [
           { name: 'Deployments', url: '/research-areas/deployments/its4us/deployments' , pages: [
             { name: 'Deployments Overview', url: '/research-areas/deployments/its4us/deployments/' },
             { name: 'University of Washington', url: '/research-areas/deployments/its4us/deployments/washington' },
-            { name: 'Heart of Ioway Regional Transit Agency', url: '/research-areas/deployments/its4us/deployments/its4us/iowa' },
-            { name: 'Georgia Department of Transportation', url: '/research-areas/deployments/its4us/deployments/its4us/georiga' },
-            { name: 'Niagara Frontier Transportation Authority', url: '/research-areas/deployments/its4us/deployments/its4us/newYork' },
+            { name: 'Heart of Iowa Regional Transit Agency', url: '/research-areas/deployments/its4us/deployments/iowa' },
+            { name: 'Georgia Department of Transportation', url: '/research-areas/deployments/its4us/deployments/georgia' },
+            { name: 'Niagara Frontier Transportation Authority', url: '/research-areas/deployments/its4us/deployments/newYork' },
           ] },
           { name: 'Resources', url: '/research-areas/deployments/its4us/resources' },
           { name: 'Webinars', url: '/research-areas/deployments/its4us/webinars' },
-          { name: 'Featured Links', url: '/research-areas/deployments/its4us/featured_links' },
-          { name: 'ITS4US in the Media', url: '/research-areas/deployments/its4us/in_the_media' },
-          { name: 'Phase 1 Awardees', url: '/research-areas/deployments/its4us/phase1_awardees' },
+          { name: 'Newsroom', url: '/research-areas/deployments/its4us/in_the_media' },
         ]},
         { name: 'Vehicle-to-Everything', url: '/research-areas/deployments/v2x' },
         { name: 'Complete Streets Artificial Intelligence (CSAI) Initiative', url: 'https://its.dot.gov/csai/', isExternal: true },
@@ -50,7 +48,13 @@ export const navigation: NavigationItem[] = [
       ] },
       { name: 'Research Program Archive', url: '/research-areas/archive', pages: [
         { name: 'AERIS', url: '/research-areas/archive/aeris' },
-        { name: 'ATTRI', url: '/research-areas/archive/attri' },
+        { name: 'ATTRI', url: '/research-areas/archive/attri' , pages: [
+          { name: 'Wayfinding & Navigation', url: '/research-areas/archive/attri/wayfinding' },
+          { name: 'Pre-Trip Concierge & Virtualization', url: '/research-areas/archive/attri/concierge' },
+          { name: 'Safe Intersection Crossing', url: '/research-areas/archive/attri/street-crossing' },
+          { name: 'Robotics & Automation', url: '/research-areas/archive/attri/automation' },
+
+        ]},
         { name: 'MOD', url: '/research-areas/archive/mod' },
       ]}
     ]

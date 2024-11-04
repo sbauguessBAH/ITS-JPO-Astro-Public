@@ -17,7 +17,6 @@ import Map from "./src/assets/images/its4us/UWMap.png";
   figure {
     margin: auto;
     width: 40%;
-    text-align: center;
     float: right;
     margin: 10px;
   }
@@ -28,16 +27,29 @@ import Map from "./src/assets/images/its4us/UWMap.png";
     padding: 10px;
   }
 
+  figcaption p {
+    padding: 0;
+    margin: 0;
+    font-size: small;
+  }
+  iframe {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
 </style>
 <ITS4USLayout title="University of Washington">
+  <h2 class="sideways blue">UW Deployment Overview</h2>
   <figure>
     <Image src={Takashi} alt="Senior Hispanic man using public transportation" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
     <figcaption>
-      “With my vision impairment a voice-activated mobile app helps me know if my route includes well paved sidewalks, intersections that have signalized and marked crosswalks, and stairs-free paths
-      to the buildings.”
+      <p>
+        “With my vision impairment a voice-activated mobile app helps me know if my route includes well paved sidewalks, intersections that have signalized and marked crosswalks, and stairs-free paths
+        to the buildings.”
+      </p>
+      <p class="text-end">- Takashi Seattle, WA</p>
     </figcaption>
   </figure>
-  <h2 class="sideways blue">UW Deployment Overview</h2>
   <p>
     Millions of Americans, such as those with disabilities, older adults, or those living in rural or suburban locales, cannot or do not use private vehicles or fixed-route transit. Yet, while many of
     the new mobility tools (such as trip planning, digital mapping, and navigation applications) provide users amazing capabilities to access travel directions, locate transit services, learn about
@@ -60,10 +72,23 @@ import Map from "./src/assets/images/its4us/UWMap.png";
   </p>
 
   <h2 class="sideways blue">Overview Video</h2>
-  Insert iframe link
-
+  <iframe width="640" height="360"  src="https://www.youtube.com/embed/fA2GDSSEtzA" title="Transportation Data Equity Initiative TRB2023" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   <h2 class="sideways blue">Approach – Project Challenges and Solutions</h2>
-  <Image src={Map} alt="Senior Hispanic man using public transportation" width={800} class="center float-sm-end mr-3 img-fluid col-6-sm m-2" />
+
+  <figure>
+    <Image
+      src={Map}
+      alt="An image of a map showing the six pilot counties in three states: King and Snohomish counties in Washington state, Multnomah and Columbia counties in Oregon, and Harford and Baltimore counties in Maryland. "
+      width={800}
+      class="float-sm-end img-fluid col-6-sm mb-2"
+    />
+    <figcaption>
+      <p>
+        The TDEI project focuses on six pilot counties in three states: King and Snohomish counties in Washington state, Multnomah and Columbia counties in Oregon, and Harford and Baltimore counties
+        in Maryland.
+      </p>
+    </figcaption>
+  </figure>
   <p>
     This project aims to develop a complete data ecosystem that allows third-party providers to build applications for all travelers to complete trips more effectively and efficiently. This system is
     specifically designed to scale nationally. The TDEI will achieve this aim through:

@@ -1,0 +1,158 @@
+---
+import { Image } from "astro:assets";
+import base_url from "@/src/lib/base_url";
+import ITS4USLayout from "../_ITS4USLayout.astro";
+import Andre from "./src/assets/images/its4us/andre.png";
+import Map from "./src/assets/images/its4us/ST-CTN-map.png";
+---
+
+<style>
+  hr {
+    margin: 10px 0;
+  }
+  .blue {
+    display: grid;
+  }
+
+  figure {
+    margin: auto;
+    width: 40%;
+    float: right;
+    margin: 10px;
+  }
+  figcaption {
+    color: #333;
+    font-style: italic;
+    font-size: small;
+    padding: 10px;
+  }
+
+  figcaption p {
+    padding: 0;
+    margin: 0;
+    font-size: small;
+  }
+  iframe {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+</style>
+<ITS4USLayout title="Georgia Department of Transportation">
+  <h2 class="sideways blue">HIRTA Deployment Overview</h2>
+  <figure>
+    <Image src={Andre} alt="Senior Hispanic man using public transportation" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
+    <figcaption>
+      <p>
+        “I am a disabled veteran who needs to make occasional trips to the Northside Hospital at Gwinnett. The G-MAP app allows me to create a personalized plan to navigate around unexpected
+        obstacles.”
+      </p>
+      <p class="text-end">- Andre, Metro Atlanta, GA</p>
+    </figcaption>
+  </figure>
+  <p>
+    Safe Trips in a Connected Transportation Network (ST-CTN) seeks to enhance the travel experience for underserved communities, including people with disabilities, older adults, and travelers with
+    limited English proficiency. It will leverage innovative solutions and existing systems such as connected vehicle (CV) deployments, an advanced trip routing engine, and a regional trip planner -
+    all developed within an open-sourced application called the Georgia Mobility and Accessibility Planner (G-MAP). The application will allow travelers to create a personalized trip plan to navigate
+    physical infrastructure, resolve unexpected obstacles, and ensure visibility throughout their travel.
+  </p>
+  <p>
+    The deployment pilot project is led by the Georgia Department of Transportation (GDOT) with support from the Atlanta Regional Commission in Gwinnett County, Georgia, which is a suburban county
+    northeast of Atlanta. The ST-CTN system will provide Gwinnett County travelers with detailed information and step-by-step navigation tailored for users’ specific needs along with a range of other
+    features geared to improve trip efficiency and safety. This concept is comprised of an integrated set of advanced transportation technology solutions including CVs, transit signal priority,
+    machine learning, and predictive analytics to support safe and complete trips.
+  </p>
+  <br /><br />
+
+  <h2 class="sideways blue">Overview Video</h2>
+  <iframe src="https://player.vimeo.com/video/863329944" width="640" height="360"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <h2 class="sideways blue">Approach – Project Challenges and Solutions</h2>
+
+  <figure>
+    <Image src={Map} alt="Image of a map of ST-CTN Study Area in Gwinnett County" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
+    <figcaption>
+      <p>ST-CTN Study Area in Gwinnett County</p>
+    </figcaption>
+  </figure>
+  <p>
+    The ST-CTN project aims to upgrade and integrate existing technologies and services to assist underserved populations with completing their trip successfully, safely, and reliably. The vision of
+    the project is to provide travelers with directions, conditions, and status on the links between trip legs that are personalized based on their preferences and capabilities, while connecting them
+    to CV infrastructure to provide safer trips and greater transportation network awareness. The ST-CTN project includes the following key elements that will address identified stakeholder
+    challenges:
+  </p>
+  <ul>
+    <li>
+      <strong>Accessible Route Planning:</strong>
+      <p>
+        Comprehensive data collected on sidewalk conditions and the ability to customize trip preferences based on specific needs (e.g., sidewalk width, sidewalk slope, available elevators) will give
+        users reliable trips and greater confidence.
+      </p>
+    </li>
+    <li>
+      <strong>Navigation:</strong>
+      <p>
+        Users will benefit from personalized navigation settings for hands-free and accessible options including haptic, voice, and text. Turn-by-turn directions will include building entrances and
+        indoor navigation.
+      </p>
+    </li>
+    <li>
+      <strong>Safety:</strong>
+      <p>
+        Information flows between systems, which enables remote service requests to transit vehicles, information about intersection crossings and pedestrian crossing time extensions if needed, and
+        alerts to CVs and users increasing traveler awareness.
+      </p>
+    </li>
+  </ul>
+  <h2 class="sideways blue">Measuring Deployment Impact</h2>
+  <p>Some of the key performance goals and targets for ST-CTN include:</p>
+  <ul>
+    <li>
+      <strong>Enhancing the traveler’s multimodal complete trip experience:</strong>
+      <p>
+        Enhancements include accessible ST-CTN system functions and features, enroute traveler support, and the ability for travelers to seamlessly transfer between modes while considering changes in
+        routes due to unplanned events. Travel experience surveys, unique user logins, anonymized user data, and GCT complaints logs will be used to understand impact.
+      </p>
+    </li>
+    <li>
+      <strong>Enhancing safety:</strong>
+      <p>
+        The project aims to reduce transportation-related incidents, injuries, and near misses along pedestrian routes and at intersections; increase driver awareness of pedestrians; and improve
+        pedestrian awareness of connected and emergency vehicles at intersections.
+      </p>
+    </li>
+    <li>
+      <strong>Improving mobility and accessibility:</strong>
+      <p>
+        Improvements include optimized transit schedules and travel times as part of TSP operations, traveler knowledge of accessible routes, automated actuation of walk phase requests, transit stop
+        requests through travelers' mobile device or automated based on a traveler's planned route within the application, and identification of existing barriers for infrastructure enhancements.
+      </p>
+    </li>
+  </ul>
+  <h2 class="sideways blue">Project Partners</h2>
+  <div class="row">
+    <div class="col-6">
+      <ul>
+        <li>Georgia Department of Transportation</li>
+        <li>Atlanta Regional Commission</li>
+        <li>Gwinnett County</li>
+        <li>Statewide Independent Living Council of Georgia</li>
+        <li>Georgia Institute of Technology</li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul>
+        <li>ICF</li>
+        <li>Kimley-Horn Associates</li>
+        <li>GO Systems and Solutions</li>
+        <li>Arcadis | IBI Group</li>
+        <li>HNTB</li>
+      </ul>
+    </div>
+  </div>
+  <h2 class="sideways blue">UW Links and Resources</h2>
+  <ul>
+    <li>Visit the <a href="https://www.nfta.com">GDOT Project Website</a>.</li>
+    <li>Download the <a href="UW_Project_FactSheet.pdf">GDOT Project FactSheet (PDF, 939 Kb)</a>.</li>
+    <li>Download the <a href="ITS4US_Program_Overview_FactSheet.pdf">ITS4US Program Overview FactSheet (PDF, 1.5 Mb)</a>.</li>
+  </ul>
+</ITS4USLayout>

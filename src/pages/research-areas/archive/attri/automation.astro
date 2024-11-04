@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import infographic from "@/src/assets/images/attri/AutoomationRobatics.jpg";
+---
+
+<style></style>
+<PageLayout title="ATTRI Automation & Robotics">
+  <Fragment slot="banner"> Accessible Transportation Technologies Research Initiative (ATTRI)</Fragment>
+  <main>
+    <h2 class="sideways blue">Automation & Robotics    </h2>
+    <Image src={infographic} alt="Automation & Robotics illustrative graphic on a robot assiting a blind individual at an airport" class="float-end m-2" />
+    <p>
+      Applications in robotics could include collaborative robots that not only assist with activities of daily life such as walking, butAutomation & Robotics also work with individual travelers and human transportation services to provide related services at different points of travel, thereby improving personal mobility across the entire transportation network – at terminals, home, work, school and other destinations.
+    </p>
+    <p>
+      Technologies being considered include fully automated vehicles for those unable or unwilling to drive, solving first mile/last mile issues, providing connections to existing public transportation or other transportation hubs, and addressing “door to door” travel needs.
+
+    </p>
+    <p>A key ATTRI partner, the <a href="https://www.acl.gov/node/425">National Institute on Disability, Independent Living, and Rehabilitation Research</a> under the Administration for Community Living within the Department of Health and Human Services, will make a separate announcement for applications in the robotics and automation technology area. </p>
+    </ul>
+  </main>
+</PageLayout>
