@@ -47,7 +47,15 @@ export const navigation: NavigationItem[] = [
         { name: 'ITS Cybersecurity Research', url: 'https://www.its.dot.gov/research_areas/cybersecurity/index.htm', isExternal: true },
       ] },
       { name: 'Research Program Archive', url: '/research-areas/archive', pages: [
-        { name: 'AERIS', url: '/research-areas/archive/aeris' },
+        { name: 'AERIS', url: '/research-areas/archive/aeris' , pages: [
+          { name: 'AERIS Research Program Overview', url: '/research-areas/archive/aeris/' },
+          { name: 'Capstone Report (2009-2014)', url: '/research-areas/archive/aeris/capstone_report' },
+          { name: 'Operational Scenarios and Apps', url: '/research-areas/archive/aeris/scenarios_applications' },
+          { name: 'Analysis, Modeling, and Simulation', url: '/research-areas/archive/aeris/analysis' },
+          { name: 'Prototypes', url: '/research-areas/archive/aeris/prototypes' },
+          { name: 'Workshops and Webinars', url: '/research-areas/archive/aeris/webinars' },
+          { name: 'Research Approach', url: '/research-areas/archive/aeris/approach' },
+        ]},
         { name: 'ATTRI', url: '/research-areas/archive/attri' , pages: [
           { name: 'Wayfinding & Navigation', url: '/research-areas/archive/attri/wayfinding' },
           { name: 'Pre-Trip Concierge & Virtualization', url: '/research-areas/archive/attri/concierge' },

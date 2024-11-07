@@ -1,59 +1,28 @@
 ---
-title: blogGDOT’s ITS4US Deployment Program Phase 2 Webinar, Georgia Mobility and Accessibility Planner Replicability
-date: 2024-07-22
+title: 'Intersection Safety Challenge Teams Use U.S. DOT Data to Predict Conflicts: A Message from ITS JPO Director Brian Cronin'
+date: 2024-10-24
 ---
+Quickly and accurately predicting conflicts between vehicles and vulnerable road users at intersections is no easy task, but this capability could transform intersection safety. To better understand the maturity of intersection safety systems with this capability and to encourage innovation, the U.S. Department of Transportation’s (U.S. DOT)** [Intersection Safety Challenge](https://www.its.dot.gov/isc/index.html)** (ISC) is moving ahead with Stage 1B: System Assessment and Virtual Testing.
 
-On behalf of the Georgia Department of Transportation (GDOT), the U.S. Department of Transportation (U.S. DOT) Intelligent Transportation Systems Joint Program Office (ITS JPO) ITS4US Deployment Program invites you to the upcoming webinar, ITS4US Deployment Program Phase 2 Webinar: Georgia Mobility and Accessibility Planner Replicability.
+In Stage 1A: Concept Assessment, competing teams submitted 120 innovative concepts for proposed intersection safety systems. The U.S. DOT [**announced**](https://www.transportation.gov/briefing-room/us-dot-announces-winners-intersection-safety-challenge) 15 winning teams at the Transportation Research Board Annual Meeting in January 2024. Each winning team received a prize of $100,000 and an invitation to participate in Stage 1B.
 
-*This webinar is free and open to the public, but advance registration is required.*
+Now in Stage 1B, I am excited to see how these teams push the boundaries of two key technical elements of intersection safety systems operations: (1) the detection, localization, and classification of vulnerable road users and vehicles; and (2) path and conflict prediction among identified vulnerable road users and vehicles. To do so, the teams are using never-before-seen, U.S. DOT-supplied sensor data collected at a controlled intersection at the Turner-Fairbank Highway Research Center.
 
-Date: **14 August 2024**  
-Time: **2:00 – 3:30 PM ET**  
-Cost: **Free of charge** [**Register Here**](https://www.eventbrite.com/e/georgia-mobility-and-accessibility-planner-g-map-replicability-webinar-registration-938564490657?aff=oddtdtcreator)
+![ITS JPO Director Brian Cronin, third from right, and colleagues participate in a data collection demonstration](blog-images/blog_img_12.png)  
 
-### Webinar Topic
+ITS JPO Director Brian Cronin, third from right, and colleagues participate in a data collection demonstration at a controlled intersection  
+at the Turner-Fairbank Highway Research Center. The figure wearing a safety vest is a surrogate vulnerable road user.  
+Source: U.S. DOT
 
-**<u>Georgia Mobility and Accessibility Planner (G-MAP) Replicability</u>**<u><br></u>**GDOT – Safe Trips in a Connected Transportation Network (ST-CTN)**
+Researchers collected data for Stage 1B over a series of months by staging various scenarios involving vehicles and vulnerable road users interacting at the intersection. *Please note that no one was harmed in the data collection process. *Surrogate vulnerable road users (i.e., pedestrian dummies) were used in some scenarios, especially when safety was a potential concern during simulations of near or actual collisions.Check out the video below that shows a few sample data runs at the controlled test intersection.
 
-The ST-CTN project seeks to enhance the travel experience for underserved communities, including people with disabilities, older adults, and travelers with limited English proficiency (LEP) through the development of an open-sourced application called the Georgia Mobility and Accessibility Planner (G-MAP). The application will allow travelers to create a personalized trip plan to navigate physical infrastructure, resolve unexpected obstacles, and ensure visibility, and accessibility throughout their travel.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/csirVHFa2Cc?si=yYfLoosday6bGHRl&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.its.dot.gov" title="U.S. DOT Intersection Safety Challenge – Stage 1B Data Collection" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" data-gtm-yt-inspected-11586669_11="true" id="811607881" data-gtm-yt-inspected-10="true"></iframe>
 
-G-MAP, an open-source application, will be available for anyone around the country or internationally to leverage. As an illustration of how the G-MAP application will be used, transit-based trips were delineated into six segments to allow for easier understanding and a greater breakdown of priorities and goals. Key features and functionality available for replicability within each step will be shared during this webinar.
+As you can see in the video, the scenes contain different conflict and non-conflict situations, times of day, vulnerable road users, and props such as strollers and walkers. The U.S. DOT placed particular emphasis on collecting data with a variety of vulnerable road users and props, since they are often not well represented in currently available datasets.
 
-The webinar will discuss the following topics:
+While the video illustrates a few scenes from the perspective of a single visual camera at the intersection, these data contain a variety of other sensors as well, including a total of eight visual cameras, two lidars, four radars, and five thermal cameras. I am excited to see what the Stage 1B teams will accomplish in the coming weeks as they analyze, fuse, and use these multi-sensor data to train and refine their detection, classification, and prediction algorithms.
 
-- Project Introduction
-- Replicability Features, Functions, Resources (includes trip segments diagram)
-    - Systems Engineering Documentation, OpenStreetMap, OpenTripPlanner, GitHub sites, pedestrian data, etc.
-- Steps 1-6 Features and Functions Deep Dive
+It is my hope that Stage 1B of the ISC with these multi-sensor data will allow the teams to demonstrate what is possible, help us better understand the deployment readiness of intersection safety systems, and inform next steps for the program, including potential prototype development and testing.
+While the data are only currently available to the participating teams, U.S. DOT intends to make them publicly available in 2025 following the official close of Stage 1B. Please stay tuned as the ISC progresses in the coming months, and thank you for your continued engagement.
 
-### Presenters
-
-**Norah Ocel**, ITS JPO/Federal Highway Administration;  
-**Alan Davis**, GDOT, ITS4US ST-CTN Project Management Lead;  
-**Natalie Smusz-Mengelkoch**, ICF, ITS4US ST-CTN Co-Deployment Lead;  
-**Dr. Randy Guensler**, Georgia Tech, ITS4US ST-CTN Pedestrian Impedance Lead;  
-**Jon Campbell**, Arcadis, ITS4US ST-CTN Application Developer Lead
-
-### Background
-
-The ITS4US Deployment Program, led by the ITS JPO at the U.S. DOT, expands access to transportation for all travelers with a specific focus on underserved communities, including people with disabilities, older adults, veterans, individuals of low income, people in rural communities and those with limited English proficiency. This program embodies the Administration’s priorities of transportation equity, economic growth, sustainability, and most importantly, compassion and inclusivity. The program funds multiple large-scale replicable deployments in three phases:
-
-- Phase 1: concept development
-- Phase 2: design and testing
-- Phase 3: operations and evaluation.
-
-In June 2022, the deployment sites completed the concept development phase of each of their projects. The U.S. DOT awarded four teams with Phase 2 funding to support the design and testing of their projects based on their Phase 1 concepts. The four deployment sites are:
-
-- GDOT
-- Heart of Iowa Regional Transit Agency
-- Niagara Frontier Transportation Authority/Buffalo
-- University of Washington
-
-For more details on the ITS4US Deployment program, see the program’s website at:** [https://its.dot.gov/its4us/](https://www.its.dot.gov/its4us/index.htm)**.
-
-ITS JPO is hosting a series of free, public webinars to allow each of the four Phase 2 deployment sites to publicly share topics and experiences that would be of interest to deployers considering innovative technology solutions to solve mobility challenges of underserved communities. These webinars will be an opportunity for each site to discuss their experiences during the Design/Build Test/Phase and engage the broader ITS4US Deployment Program Community about their efforts so far in Phase 2. At the end of the presentation, there will be an opportunity for the audience to ask the site questions about their project. Future deployers can benefit from lessons learned and experiences from the ITS4US deployment teams.
-
-Please use this [**link**](https://www.eventbrite.com/e/georgia-mobility-and-accessibility-planner-g-map-replicability-webinar-registration-938564490657?aff=oddtdtcreator) to register for the webinar. Live closed captioning will be provided for all webinars. When registering for the webinar, you will be able to request additional accessibility accommodations to participate. The deadline to request accommodations for each webinar will be <u>5 business days</u> prior to the live event.
-
-*Reference in this webinar to any specific commercial products, processes, or services, or the use of any trade, firm, or corporation name is for the information and convenience of the public, and does not constitute endorsement, recommendation, or favoring by the U.S. DOT.*
-
+**Brian Cronin, Director, ITS JPO**

@@ -1,59 +1,29 @@
 ---
-title: blogGDOT’s ITS4US Deployment Program Phase 2 Webinar, Georgia Mobility and Accessibility Planner Replicability
-date: 2024-07-22
+title: 'Saving Lives with Connectivity: U.S. DOT’s Plan to Accelerate V2X Deployment: A Message from ITS JPO Director Brian Cronin'
+date: 2024-08-22
 ---
+As you may have heard, on Friday, August 16, the U.S. Department of Transportation (U.S. DOT) announced the release of the National V2X Deployment Plan. The National V2X Deployment Plan provides a vision of how vehicle-to-everything (V2X) deployments will enable a safer, secure, and more efficient transportation system, while maintaining privacy and consumer protection, with the goal of reducing the number of roadway fatalities to the only acceptable number: zero.
 
-On behalf of the Georgia Department of Transportation (GDOT), the U.S. Department of Transportation (U.S. DOT) Intelligent Transportation Systems Joint Program Office (ITS JPO) ITS4US Deployment Program invites you to the upcoming webinar, ITS4US Deployment Program Phase 2 Webinar: Georgia Mobility and Accessibility Planner Replicability.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hC6ZGheGE3I?si=flcSSKstNy2cgBgg&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.its.dot.gov" title="Press Conference - V2X Deployment Call To Action" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" data-gtm-yt-inspected-11586669_11="true" id="652614607" data-gtm-yt-inspected-10="true"></iframe>
 
-*This webinar is free and open to the public, but advance registration is required.*
+In the fall of 2023 the U.S. DOT presented the Draft National V2X Deployment Plan to accelerate the deployment of V2X in conjunction with the **[National Roadway Safety Strategy (NRSS)](https://www.transportation.gov/NRSS)** and its adopted Safe System Approach. Following the release of the Draft Plan, stakeholders were given an opportunity to react and submit feedback to the Intelligent Transportation Systems Joint Program Office (ITS JPO). The more than 800 responses gave the ITS JPO an opportunity to address stakeholder concerns and refine the plan.
 
-Date: **14 August 2024**  
-Time: **2:00 – 3:30 PM ET**  
-Cost: **Free of charge** [**Register Here**](https://www.eventbrite.com/e/georgia-mobility-and-accessibility-planner-g-map-replicability-webinar-registration-938564490657?aff=oddtdtcreator)
+![Projected timeline of interoperable V2X deployments and actions taken by USDOT, Infrastructure Owner-Operators, and private sector.](https://www.its.dot.gov/communications/images/blog11_img_1.jpg)  
+Source: USDOT
 
-### Webinar Topic
+Respondents offered constructive and critical feedback that the ITS JPO took into consideration as it finalized the National V2X Deployment Plan. Key feedback addressed coordinating with other entities (including the Federal Communications Commission and Original Equipment Manufacturers), ensuring cybersecurity and interoperability on a national level, tracking deployment progress and measuring benefits, providing funding and training opportunities for deployers, and more.
 
-**<u>Georgia Mobility and Accessibility Planner (G-MAP) Replicability</u>**<u><br></u>**GDOT – Safe Trips in a Connected Transportation Network (ST-CTN)**
+The National V2X Deployment Plan represents a major part of the ITS JPO’s vision of enabling a safe, secure, efficient, equitable, and sustainable transportation system through the national, widespread deployment of secure, interoperable V2X technologies. The Plan presents a proposal to accelerate the deployment of V2X and sets the U.S. DOT’s vision, aspirational goals, and milestones, issuing a call to action for stakeholders, including government at all levels.
 
-The ST-CTN project seeks to enhance the travel experience for underserved communities, including people with disabilities, older adults, and travelers with limited English proficiency (LEP) through the development of an open-sourced application called the Georgia Mobility and Accessibility Planner (G-MAP). The application will allow travelers to create a personalized trip plan to navigate physical infrastructure, resolve unexpected obstacles, and ensure visibility, and accessibility throughout their travel.
+V2X is a part of NRSS’s comprehensive approach to reducing the number of roadway fatalities to zero. The NRSS specifically calls for the advancement of V2X wireless communications to further roadway safety.
 
-G-MAP, an open-source application, will be available for anyone around the country or internationally to leverage. As an illustration of how the G-MAP application will be used, transit-based trips were delineated into six segments to allow for easier understanding and a greater breakdown of priorities and goals. Key features and functionality available for replicability within each step will be shared during this webinar.
+Deployers can find information in this Plan on how to start deploying now with specific actions needed with stakeholder groups. This Plan identifies support available from the DOT and other resources and technical assistance as well as vital information to accelerate investment, research, and deployment in V2X technologies and helps stakeholders plan priorities.
 
-The webinar will discuss the following topics:
+The Department recently awarded $60 million under the Saving Lives with Connectivity: Accelerating V2X Deployment grant opportunity to advance connected and interoperable vehicle technologies in Arizona, Texas, and Utah. The initiative is intended to improve safety for the traveling public by enabling vehicles and wireless devices to communicate with each other and with roadside infrastructure. The grants are leading the way to make this broadscale V2X deployment a reality.
 
-- Project Introduction
-- Replicability Features, Functions, Resources (includes trip segments diagram)
-    - Systems Engineering Documentation, OpenStreetMap, OpenTripPlanner, GitHub sites, pedestrian data, etc.
-- Steps 1-6 Features and Functions Deep Dive
+With this Plan, the U.S. DOT signals its commitment to pursuing a comprehensive approach to reduce the number of roadway fatalities to zero.
 
-### Presenters
-
-**Norah Ocel**, ITS JPO/Federal Highway Administration;  
-**Alan Davis**, GDOT, ITS4US ST-CTN Project Management Lead;  
-**Natalie Smusz-Mengelkoch**, ICF, ITS4US ST-CTN Co-Deployment Lead;  
-**Dr. Randy Guensler**, Georgia Tech, ITS4US ST-CTN Pedestrian Impedance Lead;  
-**Jon Campbell**, Arcadis, ITS4US ST-CTN Application Developer Lead
-
-### Background
-
-The ITS4US Deployment Program, led by the ITS JPO at the U.S. DOT, expands access to transportation for all travelers with a specific focus on underserved communities, including people with disabilities, older adults, veterans, individuals of low income, people in rural communities and those with limited English proficiency. This program embodies the Administration’s priorities of transportation equity, economic growth, sustainability, and most importantly, compassion and inclusivity. The program funds multiple large-scale replicable deployments in three phases:
-
-- Phase 1: concept development
-- Phase 2: design and testing
-- Phase 3: operations and evaluation.
-
-In June 2022, the deployment sites completed the concept development phase of each of their projects. The U.S. DOT awarded four teams with Phase 2 funding to support the design and testing of their projects based on their Phase 1 concepts. The four deployment sites are:
-
-- GDOT
-- Heart of Iowa Regional Transit Agency
-- Niagara Frontier Transportation Authority/Buffalo
-- University of Washington
-
-For more details on the ITS4US Deployment program, see the program’s website at:** [https://its.dot.gov/its4us/](https://www.its.dot.gov/its4us/index.htm)**.
-
-ITS JPO is hosting a series of free, public webinars to allow each of the four Phase 2 deployment sites to publicly share topics and experiences that would be of interest to deployers considering innovative technology solutions to solve mobility challenges of underserved communities. These webinars will be an opportunity for each site to discuss their experiences during the Design/Build Test/Phase and engage the broader ITS4US Deployment Program Community about their efforts so far in Phase 2. At the end of the presentation, there will be an opportunity for the audience to ask the site questions about their project. Future deployers can benefit from lessons learned and experiences from the ITS4US deployment teams.
-
-Please use this [**link**](https://www.eventbrite.com/e/georgia-mobility-and-accessibility-planner-g-map-replicability-webinar-registration-938564490657?aff=oddtdtcreator) to register for the webinar. Live closed captioning will be provided for all webinars. When registering for the webinar, you will be able to request additional accessibility accommodations to participate. The deadline to request accommodations for each webinar will be <u>5 business days</u> prior to the live event.
-
-*Reference in this webinar to any specific commercial products, processes, or services, or the use of any trade, firm, or corporation name is for the information and convenience of the public, and does not constitute endorsement, recommendation, or favoring by the U.S. DOT.*
+You can read the National V2X Deployment Plan [**here**](https://www.its.dot.gov/research_areas/emerging_tech/pdf/Accelerate_V2X_Deployment_FINAL.pdf).
+As ITS technology continues to evolve and V2X deployments continue to find success, the U.S. DOT is working with industry and other stakeholders to continue adopting these technologies and strategies nationwide. Together, we can create a safer and more reliable transportation network for all road users.
+**Brian Cronin, Director, ITS JPO**
 
