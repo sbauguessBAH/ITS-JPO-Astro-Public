@@ -8,6 +8,7 @@ import base_url from "@/src/lib/base_url";
   <Fragment slot="banner">
     Automation
   </Fragment>
+  <main>
   <div class="row gx-5">
     <div class="col-lg-6">
       <h2 class="sideways blue">Featured Project</h2>
@@ -1106,12 +1107,12 @@ import base_url from "@/src/lib/base_url";
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
                           <div class="card-body">
                             <ul class="ritafont">
-                              <li class="externalLink">
+                              <li>
                                 <a href="https://www.youtube.com/watch?v=fQ3B_KucEH8" target="_blank" rel="noopener noreferrer">
                                   <b>Connected and Automated Vehicle Education Research Software (CAVERS)</b>
                                 </a>
                               </li>
-                              <li class="externalLink">
+                              <li>
                                 <a href="https://www.youtube.com/playlist?list=PL5_sm9g9d4T2MK54sZh5iV0vKKFuvgzBH" target="_blank" rel="noopener noreferrer">
                                   <b>Carma Video Series</b>
                                 </a>
@@ -1120,15 +1121,7 @@ import base_url from "@/src/lib/base_url";
                           </div>
                         </div>
 
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingThree">
-                            <button type="button" class="accordion-button collapsed" onclick=" window.open('https://www.its.dot.gov/press/news.htm','_blank')">
-                              <img src={base_url("/assets/images/accelerating/ITS_AcceleratingDeploymentMockup_NewsEvents.png")} alt="News" class="smallDropdownIcon" /><h3 class="externalLink">
-                                Updates
-                              </h3>
-                            </button>
-                          </h2>
-                        </div>
+                       
                       </div>
                     </div>
                   </div>
@@ -1141,6 +1134,7 @@ import base_url from "@/src/lib/base_url";
       </div>
     </div>
   </div>
+</main>
   <section slot="footer" class="download bg-primary text-center" id="research" style="padding-top:2em;">
     <div class="container-fluid">
       <div class="container">

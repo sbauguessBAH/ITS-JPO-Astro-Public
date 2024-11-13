@@ -1,50 +1,50 @@
 ---
-import LibraryImg from '../../components/Img_Library.astro'
+import LibraryImg from '@/src/components/Img_Library.astro'
 import PageLayout from "@/src/layouts/PageLayout.astro";
 
 // To update this page add the image to the "imageLibrary" folder then add its src to this array and give it some alt text. The alt text is used for the image title.
 
 const ImagesArray = [
-{src: '../assets/images/imageLibrary/img_1.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_2.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_3.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_4.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_5.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_6.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_7.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_8.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_9.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_10.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_11.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_12.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_13.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_14.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_15.png', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_16.png', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_17.png', alt: 'placeholder'},
+{src: '../assets/images/imageLibrary/img_1.jpg', alt: 'Trucks'},
+{src: '../assets/images/imageLibrary/img_2.jpg', alt: 'Freight and Transit Connected Vehicles'},
+{src: '../assets/images/imageLibrary/img_3.jpg', alt: 'Connected Traffic Signal'},
+{src: '../assets/images/imageLibrary/img_4.jpg', alt: 'Street Car'},
+{src: '../assets/images/imageLibrary/img_5.jpg', alt: 'Rush Hour Connected Vehicle Exit'},
+{src: '../assets/images/imageLibrary/img_6.jpg', alt: 'Port'},
+{src: '../assets/images/imageLibrary/img_7.jpg', alt: 'Eco-lane Platooning'},
+{src: '../assets/images/imageLibrary/img_8.jpg', alt: 'Passenger Car'},
+{src: '../assets/images/imageLibrary/img_9.jpg', alt: 'Merging'},
+{src: '../assets/images/imageLibrary/img_10.jpg', alt: 'Truck Convoy'},
+{src: '../assets/images/imageLibrary/img_11.jpg', alt: 'Sample Connected Vehicle Applications'},
+{src: '../assets/images/imageLibrary/img_12.jpg', alt: 'Connected Vehicles Traveling on Highway'},
+{src: '../assets/images/imageLibrary/img_13.jpg', alt: 'Connected Vehicle Intersection Stop'},
+{src: '../assets/images/imageLibrary/img_14.jpg', alt: 'Train Intersection'},
+{src: '../assets/images/imageLibrary/img_15.png', alt: 'Semi Rural'},
+{src: '../assets/images/imageLibrary/img_16.png', alt: 'Loading Truck Port'},
+{src: '../assets/images/imageLibrary/img_17.png', alt: 'Intersection Wheelchair'},
 {src: '../assets/images/imageLibrary/img_18.png', alt: 'Intersection Bike'},
 {src: '../assets/images/imageLibrary/img_19.png', alt: 'Inside Smart Bus'},
 {src: '../assets/images/imageLibrary/img_20.png', alt: 'Automated Vehicle Highway'},
-{src: '../assets/images/imageLibrary/img_22.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_24.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_25.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_35.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_42.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_43.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_44.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_46.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_47.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_48.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_51.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_52.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_53.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_55.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_57.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/img_58.jpg', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/V2X_KidSkateboard.png', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/V2X_MotherKid.png', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/V2X_WheelchairBus.png', alt: 'placeholder'},
-{src: '../assets/images/imageLibrary/V2X_WomanBike.png', alt: 'placeholder'},
+{src: '../assets/images/imageLibrary/img_22.jpg', alt: 'Connected Vehicles Intersection'},
+{src: '../assets/images/imageLibrary/img_24.jpg', alt: 'Connected Vehicles Intersection'},
+{src: '../assets/images/imageLibrary/img_25.jpg', alt: 'CV Do Not Pass Dashboard Warning'},
+{src: '../assets/images/imageLibrary/img_35.jpg', alt: 'CV Intersection Stop'},
+{src: '../assets/images/imageLibrary/img_42.jpg', alt: 'CV Construction Zone Warning'},
+{src: '../assets/images/imageLibrary/img_43.jpg', alt: 'CV Technology Assessment'},
+{src: '../assets/images/imageLibrary/img_44.jpg', alt: 'Connected Vehicles Communicating at Intersection'},
+{src: '../assets/images/imageLibrary/img_46.jpg', alt: 'Dynamic Road Side Platooning'},
+{src: '../assets/images/imageLibrary/img_47.jpg', alt: 'Automated University Ride Sharing'},
+{src: '../assets/images/imageLibrary/img_48.jpg', alt: 'How an Automated Vehicle Works'},
+{src: '../assets/images/imageLibrary/img_51.jpg', alt: 'Connected Freight Carrier Highway'},
+{src: '../assets/images/imageLibrary/img_52.jpg', alt: 'Connected Freight Carrier and Car'},
+{src: '../assets/images/imageLibrary/img_53.jpg', alt: 'Truck Safety'},
+{src: '../assets/images/imageLibrary/img_55.jpg', alt: 'Connected Vehicles Intersection'},
+{src: '../assets/images/imageLibrary/img_57.jpg', alt: 'CV Approaching Warning'},
+{src: '../assets/images/imageLibrary/img_58.jpg', alt: 'CV Technology Assessment'},
+{src: '../assets/images/imageLibrary/V2X_KidSkateboard.png', alt: 'Skateboard interacting with a vehicle'},
+{src: '../assets/images/imageLibrary/V2X_MotherKid.png', alt: 'Stroller interacting with a vehicle	'},
+{src: '../assets/images/imageLibrary/V2X_WheelchairBus.png', alt: 'Wheelchair interacting with a bus	'},
+{src: '../assets/images/imageLibrary/V2X_WomanBike.png', alt: 'Bicycle interacting with a vehicle'},
 ];
 ---
 
@@ -52,6 +52,17 @@ const ImagesArray = [
 
 .grid-container {
     display: grid;
+    vertical-align: top;
+}
+
+.widthcontroller {
+  display: inline-block;
+}
+
+.widthcontroller p {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 </style>
@@ -63,7 +74,7 @@ const ImagesArray = [
   <p>Click image for downloadable image or dowload a <a href="media_zip.htm">zip file</a> for available high resolution photos. </p>
   <div class="d-flex flex-wrap">
     {ImagesArray.map((ImagesArray) => (
-      <div class="p-2">
+      <div class="p-2 widthcontroller">
         <LibraryImg imagePath={ImagesArray.src} altText={ImagesArray.alt} />
         <p>{ImagesArray.alt}</p> 
       </div>
