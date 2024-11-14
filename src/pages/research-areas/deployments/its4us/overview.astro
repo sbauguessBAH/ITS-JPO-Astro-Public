@@ -2,9 +2,9 @@
 import { Image } from "astro:assets";
 import base_url from "@/src/lib/base_url";
 import ITS4USLayout from "./_ITS4USLayout.astro";
-import Photo1 from "./src/assets/images/its4us/accessible-signal.jpeg";
-import ProgramPhase from "./src/assets/images/its4us/ITS4US-Program-Phases.png";
-
+import Photo1 from "@/src/assets/images/its4us/accessible-signal.jpeg";
+import ProgramPhase from "@/src/assets/images/its4us/ITS4US-Program-Phases.png";
+import TravelerMap from "@/src/assets/images/its4us/TravelerMap.jpeg";
 ---
 
 <style>
@@ -14,80 +14,96 @@ import ProgramPhase from "./src/assets/images/its4us/ITS4US-Program-Phases.png";
   .blue {
     display: grid;
   }
+  .center {
+    width: 40%;
+  }
 </style>
 
 <ITS4USLayout title="Program Overview">
   <main>
-  <Image src={Photo1} alt="Senior Hispanic man using public transportation" width={800} class="center float-sm-end mr-3 img-fluid col-6-sm ms-4" />
+    <Image src={Photo1} alt="Pushbutton crosswalk signal for blind pedestrians" width={800} class="center float-sm-end mr-3 img-fluid col-6-sm ms-4" />
 
-  <h2 class="sideways blue">Program Overview</h2>
-  <p class="read-more-wrap" style="padding-top: 0px">
-    The ITS4US Deployment Program aims to address mobility challenges for all travelers. Building from the USDOT’s previous and ongoing foundational research work along with emerging technologies,
-    practices, and other critical inputs gathered from various sources, the ITS4US Program is designed to bring publicly and privately sponsored research together to create large-scale, replicable
-    deployments to address the challenges of planning and executing all segments of a trip for all travelers regardless of location, income, disability, employment, education, healthcare, and other
-    factors.
-  </p>
-  <hr />
-  <h3>The Program Targets</h3>
-  <p class="read-more-wrap" style="padding-top: 0px">
-    For most of us, getting to work, to the store, or visiting family is as easy as getting in your vehicle and driving to your destination. Yet for some, these trips can be challenging and stressful,
-    especially if some transportation options are unavailable or difficult to access.
-  </p>
+    <h2 class="sideways blue">Program Overview</h2>
+    <p class="read-more-wrap" style="padding-top: 0px">
+      The ITS4US Deployment Program aims to address <strong>mobility challenges</strong> for all travelers. Building from the USDOT’s previous and ongoing foundational research work along with <strong
+      >
+        emerging technologies,
+      </strong> practices, and other critical inputs gathered from various sources, the ITS4US Program is designed to bring publicly and privately sponsored research together to create large-scale, replicable
+      deployments to address the challenges of <strong>planning and executing all segments of a trip</strong> for all travelers regardless of location, income, disability, employment, education, healthcare,
+      and other factors.
+    </p>
 
-  <p class="read-more-wrap" style="padding-top: 0px">
-    Underserved communities encounter these challenges. Including people with disabilities, older adults, low-income Individuals, rural residents, veterans, and limited English proficiency. Getting
-    from place to place — being independently mobile — is important to everyone. Having a transportation system in place that is reliable and accessible to all travelers is necessary to help people
-    get where they need to go, when they need to get there.
-  </p>
-  <p class="read-more-wrap" style="padding-top: 0px">
-    The ITS4US project aims to solve these challenges by introducing technology solutions to these underserved communities by providing options and connecting different modes of transportation so
-    individuals in these communities can travel from origin to destination without gaps in their travel chain.
-  </p>
+    <hr />
+    <h3>The Program Targets</h3>
+    <Image
+      src={TravelerMap}
+      alt="Traveler use map on mobile phone app to search for route location of place with gps on street when travel in city,"
+      width={800}
+      class="center float-sm-end mr-3 img-fluid col-6-sm ms-4"
+    />
 
-  <h3>The Program Response</h3>
-  <p class="read-more-wrap" style="padding-top: 0px">
-    In October 2019, USDOT announced $50 million in new initiatives to expand access to transportation for people with disabilities, older adults, and individuals of low income, including up to $40
-    Million for the ITS4US Deployment Program to deploy a multimodal effort led by The Intelligent Transportations Systems Joint Program Office (ITS JPO) and supported by The Office of the Secretary
-    (OST), The Federal Highway Administration (FHWA), and The Federal Transit Administration (FTA). The ITS4US portfolio will identify ways to provide more efficient, affordable, and accessible
-    transportation services with a focus for people in underserved communities that often face greater challenges in accessing essential services and to enable communities to showcase innovative
-    business partnerships, technologies, and practices that promote independent mobility for all.
-  </p>
-  <p class="read-more-wrap" style="padding-top: 0px">
-    This program will enable communities to build local partnerships, develop and deploy integrated and replicable mobility solutions to achieve multimodal cooperative trips supported by developing
-    intelligent transportation systems.
-  </p>
-  <h3>The Program Overview Fact Sheet</h3>
-  <p class="read-more-wrap" style="padding-top: 0px">
-    Download the ITS4US <a href="#">Overview FactSheet (PDF, 1.5 Mb)</a>
-  </p>
-  <h2 class="sideways blue">Vision and Goals</h2>
-  <h3>Vision</h3>
-  <p class="read-more-wrap" style="padding-top: 0px">
-    “Innovative and integrated multimodal cooperative trip deployment to support seamless travel for all users across all modes, regardless of location, income, or disability.”
-  </p>
-  <h3>Goals</h3>
+    <p class="read-more-wrap" style="padding-top: 0px">
+      For most of us, getting to work, to the store, or visiting family is as easy as getting in your vehicle and driving to your destination. Yet for some, these trips can be challenging and
+      stressful, especially if some transportation options are unavailable or difficult to access.
+    </p>
 
-  <ul>
-    <li>Spur high-impact integrated multimodal cooperative trip deployments nationwide.</li>
-    <li>Identify needs and challenges by populations.</li>
-    <li>Develop and deploy mobility solutions that meet user needs.</li>
-    <li>Measure impact of integrated deployments.</li>
-    <li>Identify replicable solutions and disseminate lessons learned.</li>
-  </ul>
-  <h2 class="sideways blue">The Program Phases
-  </h2>
+    <p class="read-more-wrap" style="padding-top: 0px">
+      <strong>Underserved communities</strong> encounter these challenges, including people with disabilities, older adults, low-income Individuals, rural residents, veterans, and people with limited English
+      proficiency. Getting from place to place – being independently mobile – is important to everyone. Having a transportation system in place that is reliable and accessible to all travelers is necessary
+      to help people get where they need to go, when they need to get there.
+    </p>
+    <p class="read-more-wrap" style="padding-top: 0px">
+      The ITS4US project aims to solve these challenges by introducing technology solutions to these underserved communities by providing options and connecting different modes of transportation so
+      individuals in these communities can travel from origin to destination without gaps in their travel chain.
+    </p>
 
-  <p class="read-more-wrap" style="padding-top: 0px">
-    The program, to be executed in three phases, has procured and awarded multiple large scale, replicable, real-world deployments of integrated innovative technologies to address the challenges of planning and executing multimodal cooperative trips:
+    <h3>The Program Response</h3>
+    <p class="read-more-wrap" style="padding-top: 0px">
+      In October 2019, USDOT announced $50 million in new initiatives to expand access to transportation for people with disabilities, older adults, and individuals of low income, including up to <strong
+      >
+        $40 million
+      </strong> for the ITS4US Deployment Program to deploy a <strong>multimodal effort</strong> led by the Intelligent Transportation Systems Joint Program Office (ITS JPO) and supported by the Office
+      of the Secretary, the Federal Highway Administration (FHWA), and the Federal Transit Administration (FTA). The ITS4US portfolio will identify ways to provide more efficient, affordable, and accessible
+      transportation services with a focus for people in <strong>underserved communities</strong> that often face greater challenges in accessing essential services and to enable communities to showcase
+      innovative business partnerships, technologies, and practices that promote independent mobility for all.
+    </p>
+
+    <p class="read-more-wrap" style="padding-top: 0px">
+      This program will enable communities to build local partnerships and to develop and deploy integrated and replicable mobility solutions to achieve <strong>multimodal cooperative trips</strong> supported by <strong>developing intelligent transportation systems.</strong></p>
+    
+    <h3>The Program Overview Fact Sheet</h3>
+    <p class="read-more-wrap" style="padding-top: 0px">
+      Download the ITS4US <a href="https://www.its.dot.gov/factsheets/pdf/ITS4US_Factsheet.pdf">Overview FactSheet (PDF, 1.5 Mb)</a>
+    </p>
+    <h2 class="sideways blue">Vision and Goals</h2>
+    <h3>Vision</h3>
+    <p class="read-more-wrap" style="padding-top: 0px">
+      “Innovative and integrated multimodal cooperative trip deployment to support seamless travel for all users across all modes, regardless of location, income, or disability.”
+    </p>
+    <h3>Goals</h3>
+
     <ul>
-      <li><a href="#">Pre-Deployment Activities</a></li>
-      <li><a href="#">Phase 1: Deployment Concept</a></li>
-      <li><a href="#">Phase 2: Design and Test (Current Phase)</a></li>
-      <li><a href="#">Phase 3: Operate and Evaluate</a></li>
-      <li>Measure impact of integrated deployments</li>
-      <li>Post-Deployment Operations & Maintenance</li>
-  </ul>
+      <li>Spur high-impact integrated multimodal cooperative trip deployments nationwide.</li>
+      <li>Identify needs and challenges by populations.</li>
+      <li>Develop and deploy mobility solutions that meet user needs.</li>
+      <li>Measure impact of integrated deployments.</li>
+      <li>Identify replicable solutions and disseminate lessons learned.</li>
+    </ul>
+    <h2 class="sideways blue">The Program Phases</h2>
 
-  <Image src={ProgramPhase} alt="Senior Hispanic man using public transportation" width={2000} class="img-fluid" />
-</main>
+    <p class="read-more-wrap" style="padding-top: 0px">
+      The program, to be executed in three phases, has procured and awarded multiple large scale, replicable, real-world deployments of integrated innovative technologies to address the challenges of
+      planning and executing multimodal cooperative trips:
+      <ul>
+        <li>Pre-Deployment Activities</li>
+        <li>Phase 1: Deployment Concept</li>
+        <li>Phase 2: Design and Test (Current Phase)</li>
+        <li>Phase 3: Operate and Evaluate</li>
+        <li>Measure impact of integrated deployments</li>
+        <li>Post-Deployment Operations & Maintenance</li>
+      </ul>
+
+      <Image src={ProgramPhase} alt="Senior Hispanic man using public transportation" width={2000} class="img-fluid" />
+    </p>
+  </main>
 </ITS4USLayout>

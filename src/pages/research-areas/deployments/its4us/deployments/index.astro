@@ -1,6 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import base_url from "@/src/lib/base_url";
 import ITS4USLayout from "../_ITS4USLayout.astro";
+import letitia from "@/src/assets/images/its4us/LetitiaSlide4.png";
+import Andre from "@/src/assets/images/its4us/AndreSlide2.png";
+import Waukee from "@/src/assets/images/its4us/WaukeeSlide1.png";
+import Takashi from "@/src/assets/images/its4us/TakashiSlide3.png";
 ---
 
 <style>
@@ -54,11 +59,130 @@ import ITS4USLayout from "../_ITS4USLayout.astro";
     background-color: #fbe673;
     border: 1px solid #c4b24c;
   }
+  .carousel-indicators {
+    position: absolute;
+  }
+  .carousel-control-prev {
+    z-index: 1000;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    width: 10%;
+  }
+
+  .carousel-control-next {
+    z-index: 1000;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    width: 10%;
+  }
+  .carousel-caption {
+    background-color: rgba(25, 62, 85, 0.9);
+    padding: 10px;
+    margin: 0;
+    width: 40%;
+    left: 10%;
+    bottom: 18%;
+  }
+  .carousel-caption p {
+    font-size: smaller;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  .btn {
+    margin: 0;
+  }
+  h2 {
+    text-wrap: pretty;
+  }
 </style>
 
 <ITS4USLayout title="Deployments">
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4" class=""></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <Image src={Waukee} alt="Senior Hispanic man using public transportation" width={1200} class="img-fluid col-6-sm mb-2" />
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h2>Heart of Iowa Reginal Transit Agency</h2>
+            <p>
+              "I am visually impaired and unable to drive. My family is not close and I rely on HIRTA for all transportation needs. HIRTA provides me with rides to and from doctor visits. I had been
+              getting discouraged in getting transportation. HIRTA and the Health Connector help tremendously."
+            </p>
+            <p class="text-end float-end">- Carolyn | Waukee, Iowa</p>
+            <a class="btn btn-lg btn-primary text-dark" href="iowa">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <Image src={Andre} alt="Senior Hispanic man using public transportation" width={1200} class="img-fluid col-6-sm mb-2" />
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h2>Georgia Depoartment of Transportation</h2>
+
+            <p>
+              “We often hear about mobility and accessibility barriers that individuals are facing, or we live out those barriers ourselves. G-MAP will allow individuals to plan their trip to be fully
+              accessible for them while increasing safety. This project is empowering because G-MAP is creating a whole new level of independence for people.”
+            </p>
+            <p class="text-end float-end">- Andre | Metro Atlanta, GA</p>
+
+            <a class="btn btn-lg btn-primary text-dark" href="georgia">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <Image src={Takashi} alt="Senior Hispanic man using public transportation" width={1200} class="img-fluid col-6-sm mb-2" />
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h2>University of Washington</h2>
+
+            <p>
+              “With my vision impairment, a speech-enabled web app on my phone helps me know if my route includes well-paved sidewalks, intersections that have signalized and marked crosswalks, and
+              stairs-free paths to the buildings.”
+            </p>
+            <p class="text-end float-end">- Takashi | Seattle, WA</p>
+            <a class="btn btn-lg btn-primary text-dark" href="washington">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <Image src={letitia} alt="Senior Hispanic man using public transportation" width={1200} class="img-fluid col-6-sm mb-2" />
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h2>Niagara Frontier Transportation Authority</h2>
+            <p>
+              “I am a nurse at Buffalo General Medical Center who uses the Buffalo All Access community shuttle service along with the Complete Trip Platform app to get from my home in Masten Park to
+              the hospital on the BNMC campus.”
+            </p>
+            <p class="text-end float-end">- Letitia | Buffalo, New York</p>
+            <a class="btn btn-lg btn-primary text-dark" href="newYork">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
   <p>
-    The ITS4US Program is currently in Phase 2. The awardees being the Heart of Iowa Regional Transit Agency, Georgia Department of Transportation, the University of Washington, the Niagara Frontier
+    The ITS4US Program is currently in Phase 2. The awardees are the Heart of Iowa Regional Transit Agency, Georgia Department of Transportation, the University of Washington, and the Niagara Frontier
     Transportation Authority. Select the individual awardee from the menu above to view the deployment details and their current news and projects.
   </p>
   <p>
@@ -72,7 +196,7 @@ import ITS4USLayout from "../_ITS4USLayout.astro";
           <div class="row">
             <div class="col-lg-3 deployment WA"><a href="washington"><div><h3>University of Washington</h3><p>OR, WA, MD</p></div></a></div>
             <div class="col-lg-3 deployment IA"><a href="iowa"><div><h3>Heart of Iowa Reginal Transit Agency</h3><p>Dallas Count, IA</p></div></a></div>
-            <div class="col-lg-3 deployment GA"><a href="georga"><div><h3>Georga Depoartment of Transportation</h3><p>Gwinnet County, GA</p></div></a></div>
+            <div class="col-lg-3 deployment GA"><a href="georgia"><div><h3>Georgia Depoartment of Transportation</h3><p>Gwinnet County, GA</p></div></a></div>
             <div class="col-lg-3 deployment NY"><a href="newYork"><div><h3>Niagara Frontier Transportation Authority</h3><p>Buffalo, NY</p></div></a></div>
           </div>
           <div class="map-image">

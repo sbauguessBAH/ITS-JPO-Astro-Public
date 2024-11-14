@@ -130,7 +130,6 @@ export const navigation: NavigationItem[] = [
             { name: 'Data Management Capability Maturity Models (CMMs)', url: '/resources/accelerating/data-program/research-projects/CMMs' },
             { name: 'AI-Enabled ITS Capability Maturity Model (CMM)', url: '/resources/accelerating/data-program/research-projects/AI-CMM' },
           ]},
-          { name: 'News and Events', url: '/resources/accelerating/data-program/data-news' },
           { name: 'Get Involved', url: '/resources/accelerating/data-program/get-involved' },
         ]},
         { name: 'ITS CodeHub', url: 'https://www.its.dot.gov/code', isExternal: true },
