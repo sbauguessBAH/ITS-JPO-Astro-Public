@@ -49,6 +49,7 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     margin-bottom: 5px;
   }
   .checkbox-wrapper input[type="checkbox"] {
+    flex: 0 0 20px;
     width: 20px;
     height: 20px;
     margin-right: 5px;
@@ -74,6 +75,12 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     top: 0;
     left: 1px;
   }
+  label{
+    display: block;
+    width: auto;
+    flex: 2;
+  }
+ 
   thead {
     font-weight: bold;
     color: rgb(0, 93, 131);
