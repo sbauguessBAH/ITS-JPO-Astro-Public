@@ -3,7 +3,62 @@ import StandardsHeading from '@/src/components/standards/StandardsHeading.astro'
 import standardsImage from "@/src/assets/images/asc/Standards Diagram.png";
 import { Image } from 'astro:assets';
 import base_url from '@/src/lib/base_url';
-import AscLayout from './_asc-layout.astro';
+import AscLayout from '../_asc-layout.astro';
+import type { Resource } from '@/src/types';
+import StandardsCard from '@/src/components/standards/StandardsCard.astro';
+
+const categories: Resource[] = [
+  {
+    title: "Emerging Technology",
+    href: "/",
+    image: "emerging-technology.png"
+  },
+  {
+    title: "Public Mobility",
+    href: "/",
+    image: "public-mobility.png"
+  },
+  {
+    title: "Operations/Safety",
+    href: "/",
+    image: "operations-safety.png"
+  },
+  {
+    title: "Data/Trusted Exchanges",
+    href: "/",
+    image: "data-trusted-exchanges.png"
+  },
+  {
+    title: "Vehicle-to-Everything (V2X)",
+    href: "/resources/accelerating/asc/standards/v2x",
+    image: "v2x.png"
+  },
+	{
+    title: "Vulnerable Road User (VRU)",
+    href: "/",
+    image: "vru.png"
+  },
+	{
+    title: "Cybersecurity Controls",
+    href: "/",
+    image: "cybersecurity.png"
+  },
+	{
+    title: "Positioning, Navigation, and Timing (PNT)",
+    href: "/",
+    image: "pnt.png"
+  },
+	{
+    title: "Supply Chain",
+    href: "/",
+    image: "supply-chain.png"
+  },
+	{
+    title: "Automation",
+    href: "/",
+    image: "emerging-technology.png"
+  }
+]
 ---
 <style>
 	.typography {
@@ -24,7 +79,7 @@ import AscLayout from './_asc-layout.astro';
 		<p>
 			The U.S. DOT established the ITS Standards Program in 1996 to encourage the widespread use of ITS technologies in our
 			Nation's surface transportation systems. ITS standards exist within technologies deployed under the framework of the
-			<a href={base_url("/resources/asc/reference-architecture")}>National ITS Reference Architecture, also known as "ARC-IT"</a> and 
+			<a href={base_url("/resources/accelerating/asc/reference-architecture")}>National ITS Reference Architecture, also known as "ARC-IT"</a> and 
 			define how system components interconnect and interact. Because ITS standards are based on open, non-proprietary technology, 
 			their use can facilitate the deployment of interoperable ITS systems and make it easier for state and local ITS deployers 
 			to develop and deploy regionally integrated transportation systems.
@@ -35,11 +90,11 @@ import AscLayout from './_asc-layout.astro';
 			interpretation of data; while working with state and local highway and transit agencies on standards-based ITS
 			implementation strategies.
 		</p>
-		<Image 
+		<!-- <Image 
 			src={standardsImage} 
 			alt="Diagram showing a complex framework of Connected Vehicle Standards with connections to Infrastructure-related standards" 
 			class="img-fluid mx-auto d-block"
-		/>
+		/> -->
 		<h3 class="mt-4">INTEROPERABILITY</h3>
 		<p>
 			The ability of different ITS devices and components to exchange and interpret data directly through a common
@@ -53,6 +108,41 @@ import AscLayout from './_asc-layout.astro';
 			and system expansions.
 		</p>
 	</div>
+	
+	<StandardsHeading title="What are Standards"/>
+	<div class="typography">
+		<p>
+			Standards define an architecture of interrelated systems that work together to deliver transportation services. An ITS
+			architecture defines how systems functionally operate and the interconnection of information exchanges that must take
+			place between these systems to accomplish transportation services. An architecture is functionally oriented and not
+			technology-specific which allows the architecture to remain effective over time. It defines "what must be done," not
+			"how it will be done.“
+		</p>
+		<p>
+			Most standards are voluntary, consensus-based, and open:
+			<ul>
+				<li>Voluntary, meaning their use is not mandated by law</li>
+				<li>Consensus-based, meaning that a published standard has attained general agreement through cooperation and
+					compromise in a process that is inclusive of all interested parties</li>
+				<li>Open, meaning that they are not proprietary and are available for anyone to use</li>
+			</ul>
+		</p>
+		<p>
+			The use of standards encourages industry growth by minimizing development costs, increasing compatibility and
+			interoperability, and increasing buyer and seller confidence in products. It is important to note that ITS standards are
+			not design standards: They do not specify specific products or designs to use. Instead, the use of standards
+			gives transportation agencies confidence that components from different manufacturers will work together, without
+			removing the incentive for designers and manufacturers to compete to provide products that are more efficient or offer
+			more features.
+		</p>
+	</div>
+	<div class="row gy-4 mb-4">
+    {categories.map(project => (
+      <div class="col-md-6 col-xl-4">
+        <StandardsCard resource={project}/>
+      </div>
+    ))}
+  </div>
 	<StandardsHeading title="Application of Standards"/>
 	<div class="typography">
 		<p>
@@ -86,33 +176,6 @@ import AscLayout from './_asc-layout.astro';
 					<strong>SAE Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.sae.org/standards/development/ground-vehicle">Ground Vehicle - Standards Development - SAE International</a>
 				</li>
 			</ul>
-		</p>
-	</div>
-	<StandardsHeading title="What are Standards"/>
-	<div class="typography">
-		<p>
-			Standards define an architecture of interrelated systems that work together to deliver transportation services. An ITS
-			architecture defines how systems functionally operate and the interconnection of information exchanges that must take
-			place between these systems to accomplish transportation services. An architecture is functionally oriented and not
-			technology-specific which allows the architecture to remain effective over time. It defines "what must be done," not
-			"how it will be done.“
-		</p>
-		<p>
-			Most standards are voluntary, consensus-based, and open:
-			<ul>
-				<li>Voluntary, meaning their use is not mandated by law</li>
-				<li>Consensus-based, meaning that a published standard has attained general agreement through cooperation and
-					compromise in a process that is inclusive of all interested parties</li>
-				<li>Open, meaning that they are not proprietary and are available for anyone to use</li>
-			</ul>
-		</p>
-		<p>
-			The use of standards encourages industry growth by minimizing development costs, increasing compatibility and
-			interoperability, and increasing buyer and seller confidence in products. It is important to note that ITS standards are
-			not design standards: They do not specify specific products or designs to use. Instead, the use of standards
-			gives transportation agencies confidence that components from different manufacturers will work together, without
-			removing the incentive for designers and manufacturers to compete to provide products that are more efficient or offer
-			more features.
 		</p>
 	</div>
 	<StandardsHeading title="Standards Development Activities"/>

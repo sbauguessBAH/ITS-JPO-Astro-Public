@@ -104,8 +104,22 @@ export const navigation: NavigationItem[] = [
         { name: 'ITS Deployment Evaluation', url: 'https://www.its.dot.gov/pilots/index.htm', isExternal: true },
         { name: 'Architecture, Standards, and Cybersecurity (ASC)', url: '/resources/accelerating/asc', pages: [
           { name: "ASC Home", url: "/resources/accelerating/asc" },
-          { name: "ITS Standards", url: "/resources/accelerating/asc/standards" },
           { name: "ITS Reference Architecture", url: "/resources/accelerating/asc/reference-architecture" },
+          { name: "ITS Standards", url: "/resources/accelerating/asc/standards", hasGeneratedChildItems: true, 
+          //   pages: [
+          //   { name: "About ITS Standards Program", url: "/resources/accelerating/asc/standards" },
+          //   { name: "Emerging Technology", url: "/resources/accelerating/asc/standards/emerging-technology" },
+          //   { name: "Public Mobility", url: "/resources/accelerating/asc/standards/public-mobility" },
+          //   { name: "Operations/Safety", url: "/resources/accelerating/asc/standards/operations-safety" },
+          //   { name: "Data/Trusted Exchanges", url: "/resources/accelerating/asc/standards/data-trusted-exchanges" },
+          //   { name: "Vehicle-to-Everything (V2X)", url: "/resources/accelerating/asc/standards/v2x" },
+          //   { name: "Vulnerable Road User (VRU)", url: "/resources/accelerating/asc/standards/vru" },
+          //   { name: "Cybersecurity Controls", url: "/resources/accelerating/asc/standards/cybersecurity-controls" },
+          //   { name: "Positioning, Navigation, and Timing (PNT)", url: "/resources/accelerating/asc/standards/pnt" },
+          //   { name: "Supply Chain", url: "/resources/accelerating/asc/standards/supply-chain" },
+          //   { name: "Automation", url: "/resources/accelerating/asc/standards/automation" }
+          // ]
+          },
           { name: "ITS Cybersecurity", url: "/resources/accelerating/asc/cybersecurity" },
           { name: "Enabling Legislation & Policy", url: "/resources/accelerating/asc/legislation-and-policy" },
           { name: "Resources and Tools", url: "/resources/accelerating/asc/resources-and-tools" },

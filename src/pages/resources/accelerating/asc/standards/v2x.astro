@@ -1,0 +1,55 @@
+---
+import StandardsHeading from "@/src/components/standards/StandardsHeading.astro";
+import AscLayout from "../_asc-layout.astro";
+import { Image } from 'astro:assets';
+import v2xStandardsImage from "@/src/assets/images/asc/v2x-standards.png";
+import { getEntry } from "astro:content";
+
+const standards = await getEntry("standards", "v2x");
+---
+<style>
+  .table th, .table td {
+    text-align: left;
+  }
+</style>
+
+<AscLayout title="ITS Standards">
+	<StandardsHeading title="V2X Standards"/>
+  <div class="typography">
+    <p>Insert text here explaining more about V2X Standards</p>
+    <Image 
+			src={v2xStandardsImage} 
+			alt="Diagram showing a complex framework of Connected Vehicle Standards. Names of all Standards in the images are provided below" 
+			class="img-fluid mx-auto d-block"
+		/>
+  </div>
+  <StandardsHeading title="List of Standards"/>
+  <div class="typography">
+    <p>Insert text here explaining how these resources work (Standards are created by a number of SDOs. Access may required payment. Etc.)</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Code</th>
+          <th scope="col">Title</th>
+          <th scope="col">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {standards.data.map(standard => (
+          <tr>
+            <th scope="row">
+              {standard.code}
+            </th>
+            <td>
+              {standard.title}
+            </td>
+            <td>
+              <a href={standard.url} rel="noopener noreferrer" target="_blank">
+              </a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</AscLayout>
