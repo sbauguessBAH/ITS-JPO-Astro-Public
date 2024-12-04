@@ -25,6 +25,7 @@ console.log(code, standard?.title)
     data-bs-toggle="tooltip" 
     data-bs-title={standard.title} 
     data-bs-custom-class="custom-tooltip"
+    aria-label={`External link to ${standard.code} (${standard.title})`}
     isExternal
   >
     {code}
