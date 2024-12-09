@@ -69,7 +69,7 @@ export const collections = {
           title: z.string(),
           description: z.string(),
           image: image().optional(),
-          url: z.string().url().optional(),
+          url: z.string().optional(),
           isExternal: z.boolean().optional()
         }))
       })

@@ -86,15 +86,14 @@ export const navigation: NavigationItem[] = [
       { name: 'Training', url: '/resources/training', pages: [
         { name: 'ITS Professional Capacity Building', url: '/resources/training/pcb', pages: [
           { name: 'ITS PCB Home', url: '/resources/training/pcb' },
-          { name: 'Trainings', url: '/resources/training/pcb/trainings' },
+          { name: 'Trainings', url: '/resources/training/pcb/trainings', hasGeneratedChildItems: true },
           { name: 'Microlearning Videos', url: '/resources/training/pcb/microlearning' },
           { name: 'Academic Resources', url: '/resources/training/pcb/resources' },
           { name: 'Peer Exchanges', url: '/resources/training/pcb/peer-exchanges' },
-          { name: 'V2X Tools', url: '/resources/training/pcb/v2x-tools', pages: [
-            { name: 'Tools', url: '/resources/training/pcb/v2x-tools' },
+          { name: 'Vehicle-to-Everything (V2X)', url: '/resources/training/pcb/v2x-tools', pages: [
+            { name: 'V2X Tools', url: '/resources/training/pcb/v2x-tools' },
             { name: 'Equipment and Loan Desk', url: '/resources/training/pcb/v2x-tools/equipment-loan-desk' },
             { name: 'Connected and Automated Vehicle Education (CAVe)-in-a-box', url: '/resources/training/pcb/v2x-tools/cave' },
-            { name: 'Foundational V2X Trainings', url: '/resources/training/pcb/v2x-tools/foundational-v2x-trainings' },
             { name: 'V2X Cohort', url: '/resources/training/pcb/v2x-tools/v2x-cohort'}
           ] },
           { name: 'Webinars', url: '/resources/training/pcb/webinars' },

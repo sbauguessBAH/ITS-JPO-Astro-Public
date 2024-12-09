@@ -2,128 +2,165 @@
 import Accordion from "@/src/components/Accordion.astro";
 import PcbLayout from "../_pcb-layout.astro";
 import AccordionItem from "@/src/components/AccordionItem.astro";
-import { externalLink } from "@/src/lib/props";
 import Link from "@/src/components/Link.astro";
+import { Image } from "astro:assets";
+import v2xHubImage from "@/src/assets/images/pcb/v2x/v2x-hub.png";
+import odeImage from "@/src/assets/images/pcb/v2x/ode.png";
+import mapImage from "@/src/assets/images/pcb/v2x/map.png";
+import cavImage from "@/src/assets/images/pcb/v2x/cav-telematics.png";
 
 ---
+<style scoped>
+  article {
+    padding: 2rem 0 2rem 0;
+  }
+  article:first-child {
+    padding-top: 0;
+  }
+  article:not(:last-child) {
+    border-bottom: 1px solid var(--border-light);
+  }
+</style>
 <PcbLayout title="V2X Tools">
-  <h2>V2X Tools</h2>
-  <p>
-    Leverage tools that facilitate V2X communications.
-  </p>
-  <p>
-    The Connected Vehicle Deployer Resources page seeks to assist the deployer community 
-    in deploying interoperable connected vehicle solutions. Interoperability ensures 
-    that connected vehicles and roadside infrastructure from different manufacturers 
-    can exchange information and use the information in a consistent manner.
-  </p>
   <section>
-    <h3>Equipment Loan Program and Help Desk</h3>
-    <p>
-      The USDOT’s Connected and Automated Vehicle Support Services provide infrastructure owner operators (IOOs), 
-      equipment manufacturers, and device vendors with technical assistance and equipment loans 
-      during connected and automated vehicle (CAV) deployments. By providing knowledge and equipment, 
-      the services advance CAV deployments without any cost for users. Support services are provided 
-      to all levels of users, including IOOs interested in testing CAV technologies as they consider deployment, 
-      vendors interested in bench testing time and space at the Turner-Fairbank Highway Research Center (TFHRC), 
-      and organizations in the later stages of CAV deployment, such as the Connected Vehicle Pilot Sites.
-    </p>
-    <p>
-      For more information, email <Link href="mailto:CAVSupportServices@dot.gov" isExternal>CAVSupportServices@dot.gov</Link> or 
-      review the <Link href="">Equipment Loan Program and Help Desk Technical Primer</Link>. 
-      Please note that our previous online ticketing system has been discontinued in order 
-      to consolidate all requests under our email address.
-    </p>
-    <div class="mx-md-4">
-      <Accordion id="accordion-1">
-        <AccordionItem title="Equipment Loan Program" parentId="accordion-1" index={0}>
+    <h2>V2X Tools</h2>
+    <article>
+      <div class="row align-items-center">
+        <div class="col-8">
+          <h3>Vehicle-to-Everything (V2X) Hub</h3>
           <p>
-            The Equipment Loan Program provides a CAV user with the opportunity to become familiar 
-            with the types of equipment typically used in connected vehicle deployment. 
-            Available equipment includes:
-            <ul>
-              <li>Roadside Units (RSUs)</li>
-              <li>Onboard Units (OBUs)</li>
-              <li>Packet Sniffers</li>
-              <li>Signal Phase and Timing (SPaT) and MCAP Message Test Devices</li>
-              <li>
-                Connected and Automated Vehicle Education (CAVe)-In-a-Box – CAVe-in-a-box 
-                is a hands-on learning experience to aid curriculum, and support instruction 
-                for community colleges and trade schools, facilitate benchmarking 
-                connected vehicle equipment, and support onboarding of ITS technicians. 
-                The toolkit features two prototype designs for roadside and in-vehicle installations 
-                as well as a detailed system design document for configuration and deployment. 
-                To learn more about CAVe-in-a-box or borrow one to test on your own, 
-                email <Link href="mailto:CAVSupportServices@dot.gov" isExternal>CAVSupportServices@dot.gov</Link>
-              </li>
-            </ul>
+            <Link href="https://www.fhwa.dot.gov/publications/research/operations/22047/22047.pdf" isExternal>Vehicle-to-Everything (V2X) Hub</Link> is 
+            an open-source software facilitating real-time communication 
+            between connected vehicles and transportation infrastructure, enabling information exchange 
+            to enhance safety, coordinate vehicle actions based on traffic conditions, improve traffic management, 
+            and facilitate the integration of automated vehicles into the transportation system.
           </p>
-        </AccordionItem>
-        <AccordionItem title="Help Desk" parentId="accordion-1" index={1}>
+          <ul>
+            <li>
+              <Link href="https://usdot-carma.atlassian.net/wiki/spaces/CH/overview" isExternal>
+                Access the V2X Hub Confluence Page
+              </Link>
+            </li>
+            <li>
+              <Link href="https://github.com/usdot-fhwa-OPS/V2X-Hub" isExternal>
+                Access the V2X Hub GitHub Site
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <Image 
+            class="img-fluid"
+            src={v2xHubImage} 
+            alt="V2X Hub Logo"
+          />
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="row align-items-center">
+        <div class="col-8">
+          <h3>MAP Creation Tool</h3>
           <p>
-            The Help Desk provides technical assistance during CAV testing and deployments, including:
-            <ul>
-              <li>
-                Device Configuration Support
-                <ul>
-                  <li>Output review &mdash; assistance with submission of case and review of logs</li>
-                  <li>J2735 messages &mdash; assistance with interpretations of standard, content, and structure</li>
-                </ul>
-              </li>
-              <li>
-                MAP/Traveler Information Message (TIM) Tool Application Support
-                <ul>
-                  <li>First-level support for questions or issues related to MAP/TIM generation tools</li>
-                </ul>
-              </li>
-              <li>
-                Device Testing Support
-                <ul>
-                  <li>Dedicated short-range communications (DSRC) wireless sniffer access</li>
-                  <li>Global Positioning Satellite (GPS) location support</li>
-                  <li>Internet Protocol Version 6 (IPv6) assistance</li>
-                </ul>
-              </li>
-              <li>
-                Infrastructure Implementation Support
-                <ul>
-                  <li>IPv6 network design recommendations</li>
-                  <li>Physical installation guidance</li>
-                </ul>
-              </li>
-              <li>
-                Security Support
-                <ul>
-                  <li>Network security guidance</li>
-                  <li>Security Credential Management System (SCMS) questions and updates</li>
-                </ul>
-              </li>
-              <li>
-                Vehicle-to-Everything (V2X) Hub
-                <ul>
-                  <li>Support for V2X Hub User Group</li>
-                  <li>V2X Hub installation and setup</li>
-                </ul>
-              </li>
-              <li>
-                Work Zone Data Exchange (WZDx)
-                <ul>
-                  <li>First-level support for questions and issues related to WZDx specifications</li>
-                </ul>
-              </li>
-            </ul>
+            The open-source MAP Creation Tool simplifies the development of SAE International® J2735™ MAP messages, 
+            crucial for connected intersections, with features such as a user-friendly interface, support 
+            for multiple output formats, and visual inspection capabilities. Ongoing efforts aim to enhance this tool's flexibility 
+            and add support for forthcoming SAE J2945/A™ Road Geometry Attributes messages.
           </p>
           <p>
-            To submit a help desk or equipment loan request, please email us 
-            at <Link href="mailto:CAVSupportServices@dot.gov" isExternal>CAVSupportServices@dot.gov</Link>. 
-            Please note that our previous online ticketing system has been 
-            discontinued in order to consolidate all requests under our email address.
+            <Link href="">
+              Access the MAP Creation Tool
+            </Link>
           </p>
-        </AccordionItem>
-      </Accordion>
-    </div>
+        </div>
+        <div class="col-4">
+          <Image 
+            class="img-fluid"
+            src={mapImage} 
+            alt="Map of a four-way intersection with yellow lines replacing lanes and orange dots replacing stop lines"
+          />
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="row align-items-center">
+        <div class="col-8">
+          <h3>Connected and Automated Vehicle (CAV) Telematics Tool</h3>
+          <p>
+            The Connected and Automated Vehicle (CAV) Telematics Tool provides real-time data to create customized dashboards 
+            for visualizing message data. The telematics dashboards allow real-time monitoring and analysis 
+            of CDA use case testing, including vehicle and traffic data.
+          </p>
+          <p>
+            <Link href="https://www.youtube.com/watch?v=kZi15fF5TnA" isExternal>
+              Access the CAV Tool
+            </Link>
+          </p>
+        </div>
+        <div class="col-4">
+          <Image 
+            class="img-fluid"
+            src={cavImage} 
+            alt="Black car with sensor mounted on top"
+          />
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="row align-items-center">
+        <div class="col-12">
+          <h3>Traveler Information Message (TIM) Tool</h3>
+          <p>
+            The open-source Traveler Information Message (TIM) Tool simplifies the development 
+            of SAE International® J2735™ TIM messages, crucial for connected infrastructure, 
+            with features such as a user-friendly interface, support for multiple output formats, 
+            and visual inspection capabilities.
+          </p>
+          <p>
+            <Link href="">
+              Access the TIM Tool
+            </Link>
+          </p>
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="row align-items-center">
+        <div class="col-8">
+          <h3>Operational Data Environment</h3>
+          <p>
+            The ITS Operational Data Environment (ODE) is a real-time virtual data router that ingests and processes operational data 
+            from various connected devices &mdash; including vehicles, infrastructure, and traffic management centers &mdash; and distributes 
+            the data to other devices and subscribing transportation management applications. Using the ITS ODE 
+            within intelligent transportation deployments increases data fluidity and interoperability while meeting operational needs 
+            and protecting user privacy. The software's microservices architecture makes it easier 
+            to add new capabilities to meet local needs. For more information, visit:
+          </p>
+          <ul>
+            <li>
+              <Link href="https://usdot-oss4its.atlassian.net/wiki/spaces/DCD/overview" isExternal>
+                Access the ODE Confluence Page
+              </Link>
+            </li>
+            <li>
+              <Link href="https://github.com/usdot-jpo-ode" isExternal>
+                Access the ODE GitHub Site
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <Image 
+            class="img-fluid"
+            src={odeImage} 
+            alt="Control room with multiple computers and a large screen at the front"
+          />
+        </div>
+      </div>
+    </article>
   </section>
-  <section class="mt-4">
+
+  <!-- <section class="mt-4">
     <h3>Open Source Connected Vehicle Tools</h3>
     <p>
       Open Source Software for Intelligent Transportation Systems (OSS4ITS) is an ecosystem 
@@ -233,5 +270,5 @@ import Link from "@/src/components/Link.astro";
         </AccordionItem>
       </Accordion>
     </div>
-  </section>
+  </section> -->
 </PcbLayout>

@@ -1,6 +1,6 @@
 ---
 import Accordion from "@/src/components/Accordion.astro";
-import PcbLayout from "./_pcb-layout.astro";
+import PcbLayout from "../_pcb-layout.astro";
 import AccordionItem from "@/src/components/AccordionItem.astro";
 import Card from "@/src/components/pcb/Card.astro";
 import { getEntry } from "astro:content";
@@ -23,7 +23,8 @@ const images = import.meta.glob<{ default: ImageMetadata }>("../../../assets/ima
               <Card
                 title={training.title}
                 description={training.description}
-                href={""}
+                href={training.url}
+                isExternalLink={training.isExternal}
                 image={training.image}
               />
             </div>
