@@ -384,9 +384,7 @@ nav-item dropdown show{
     height: 90px;
     float: left;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
     text-transform: uppercase;
     font-weight: bolder;
 }
@@ -484,7 +482,7 @@ Footer {
     margin-top: 0;
     color: white;
     padding: 50px;
-    background-image: linear-gradient(to right, #000000, #262626 );
+    background-image: linear-gradient(to right, #081334, #091F61 );
     text-align: center;
     font-size: 14px;
 }

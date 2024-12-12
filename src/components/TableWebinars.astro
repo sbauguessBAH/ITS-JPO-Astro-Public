@@ -49,6 +49,7 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     margin-bottom: 5px;
   }
   .checkbox-wrapper input[type="checkbox"] {
+    flex: 0 0 20px;
     width: 20px;
     height: 20px;
     margin-right: 5px;
@@ -74,6 +75,12 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     top: 0;
     left: 1px;
   }
+  label{
+    display: block;
+    width: auto;
+    flex: 2;
+  }
+ 
   thead {
     font-weight: bold;
     color: rgb(0, 93, 131);
@@ -159,35 +166,23 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
         <input type="checkbox" id="Program Level" name="awa" value="Program Level" />
         <label for="Program Level">Program Level</label><br />
       </li>
-      <hr>
       <li>
         <input type="checkbox" id="California Association of Coordinated Transportation" name="awa" value="California Association of Coordinated Transportation" />
-        <label for="California Association of Coordinated Transportation">California Association of Coordinated Transportation)</label>
+        <label for="California Association of Coordinated Transportation">California Association of Coordinated Transportation</label>
       </li>
-      <hr>
       <li>
-        <input type="checkbox" id="Georgia Department of Transportation" name="awa" value="Georgia Department of Transportation" />
-        <label for="Georgia Department of Transportation">Georgia Department of Transportation</label>
+        <input type="checkbox" id="Georgia" name="awa" value="Georgia Department of Transportation|Atlanta Regional Commission"/>
+        <label for="Georgia Department of Transportation">Georgia Department of Transportation / Atlanta Regional Commission</label>
       </li> 
-      <li>
-        <input type="checkbox" id="Atlanta Regional Commission" name="awa" value="Atlanta Regional Commission" />
-        <label for="Atlanta Regional Commission">Atlanta Regional Commission </label><br />
-      </li>
-      <hr>
+      
       <li>
         <input type="checkbox" id="Heart of Iowa Regional Transit Agency" name="awa" value="Heart of Iowa Regional Transit Agency" />
         <label for="Heart of Iowa Regional Transit Agency">Heart of Iowa Regional Transit Agency </label><br />
       </li>
-      <hr>      
       <li>
-        <input type="checkbox" id="Niagara Frontier Transportation Authority" name="awa" value="Niagara Frontier Transportation Authority" />
-        <label for="Niagara Frontier Transportation Authority">Niagara Frontier Transportation Authority</label>
+        <input type="checkbox" id="Niagara Frontier Transportation Authority" name="awa" value="Niagara Frontier Transportation Authority|ICF International, Inc." />
+        <label for="Niagara Frontier Transportation Authority">Niagara Frontier Transportation Authority / ICF International, Inc.</label>
       </li>
-      <li>
-        <input type="checkbox" id="ICF International, Inc." name="awa" value="ICF International, Inc." />
-        <label for="ICF International, Inc.">ICF International, Inc.</label>
-      </li>
-      <hr>
       <li>
         <input type="checkbox" id="University of Washington" name="awa" value="University of Washington" />
         <label for="University of Washington">University of Washington</label>
@@ -240,20 +235,23 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.5.0/luxon.min.js"></script>
 <script is:inline>
 // groups the connected deployments
-function syncCheckboxes(checkbox1Id, checkbox2Id) {
-            document.getElementById(checkbox1Id).addEventListener('change', function() {
-                document.getElementById(checkbox2Id).checked = this.checked;
-            });
+// function syncCheckboxes(checkbox1Id, checkbox2Id) {
+//             document.getElementById(checkbox1Id).addEventListener('change', function() {
+//                 document.getElementById(checkbox2Id).checked = this.checked;
+//             });
 
-            document.getElementById(checkbox2Id).addEventListener('change', function() {
-                document.getElementById(checkbox1Id).checked = this.checked;
-            });
-        }
+//             document.getElementById(checkbox2Id).addEventListener('change', function() {
+//                 document.getElementById(checkbox1Id).checked = this.checked;
+//             });
+//         }
 
-        syncCheckboxes('Georgia Department of Transportation', 'Atlanta Regional Commission');
-        syncCheckboxes('Niagara Frontier Transportation Authority', 'ICF International, Inc.');
+//         syncCheckboxes('Georgia Department of Transportation', 'Atlanta Regional Commission');
+//         syncCheckboxes('Niagara Frontier Transportation Authority', 'ICF International, Inc.');
 
 //sets up Datatable
+
+
+
   var table = $("#pubtable").DataTable({
     columnDefs: [
      { visible: false, targets: 4 },
@@ -279,7 +277,9 @@ function syncCheckboxes(checkbox1Id, checkbox2Id) {
     function buildFilterString(name) {
       return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked'))
         .map(function (input) {
+         
           return input.value;
+          
         })
         .join("|");
     }
