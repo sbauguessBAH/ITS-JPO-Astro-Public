@@ -159,7 +159,8 @@
       {
         "title": "Standards Trainings",
         "description": "Placeholder",
-        "image": "./images/standards.png"
+        "image": "./images/standards.png",
+        "url": "/resources/training/pcb/trainings/standards"
       },
       {
         "title": "Transit Standards Trainings",

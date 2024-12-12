@@ -87,14 +87,13 @@ export const navigation: NavigationItem[] = [
         { name: 'ITS Professional Capacity Building', url: '/resources/training/pcb', pages: [
           { name: 'ITS PCB Home', url: '/resources/training/pcb' },
           { name: 'Trainings', url: '/resources/training/pcb/trainings', hasGeneratedChildItems: true },
-          { name: 'Microlearning Videos', url: '/resources/training/pcb/microlearning' },
-          { name: 'Academic Resources', url: '/resources/training/pcb/resources' },
-          { name: 'Peer Exchanges', url: '/resources/training/pcb/peer-exchanges' },
-          { name: 'Vehicle-to-Everything (V2X)', url: '/resources/training/pcb/v2x-tools', pages: [
-            { name: 'V2X Tools', url: '/resources/training/pcb/v2x-tools' },
+          { name: 'Microlearning Videos', url: '/resources/training/pcb/microlearning'},
+          { name: 'Academic Resources', url: '/resources/training/pcb/academic-resources', hasGeneratedChildItems: true },
+          { name: 'Peer Exchanges', url: '/resources/training/pcb/peer-exchanges', hasGeneratedChildItems: true  },
+          { name: 'V2X Tools', url: '/resources/training/pcb/v2x-tools', pages: [
+            { name: 'Tools', url: '/resources/training/pcb/v2x-tools' },
             { name: 'Equipment and Loan Desk', url: '/resources/training/pcb/v2x-tools/equipment-loan-desk' },
             { name: 'Connected and Automated Vehicle Education (CAVe)-in-a-box', url: '/resources/training/pcb/v2x-tools/cave' },
-            { name: 'V2X Cohort', url: '/resources/training/pcb/v2x-tools/v2x-cohort'}
           ] },
           { name: 'Webinars', url: '/resources/training/pcb/webinars' },
         ] }

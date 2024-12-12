@@ -171,8 +171,10 @@ const props = {
       ]}
     />
   }
+  {isExternalLink && <span class="badge rounded-0 top-0 position-absolute bg-secondary text-bg-secondary my-1">External Link</span>}
   <div class:list={["card-content", classNames?.content]}>
     {title && <h3>{title}</h3>}
     {description && <p>{description}</p>}
+    
   </div>
 </Root>
