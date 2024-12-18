@@ -1,0 +1,51 @@
+---
+import Card from "@/src/components/pcb/Card.astro";
+import scrcImage from "@/src/assets/images/pcb/resources/scrc.png";
+import v2xImage from "@/src/assets/images/pcb/resources/v2x.png";
+import microlearningImage from "@/src/assets/images/pcb/resources/microlearning.png";
+import cohortImage from "@/src/assets/images/pcb/resources/cohorts.jpeg";
+
+const resources = [
+  {
+    title: "Smart Community Resource Center",
+    description: "Hub connecting communities with transportation resources.",
+    href: "https://www.its.dot.gov/scrc/index.html#/",
+    image: scrcImage,
+    isExternalLink: true,
+  },
+  {
+    title: "Vehicle-to-Everything (V2X) Trainings",
+    description: "Interactive sessions on V2X technology.",
+    href: "/technology-transfer/pcb/v2x-tools/foundational-v2x-trainings",
+    image: v2xImage,
+  },
+  {
+    title: "Microlearning Videos",
+    description: "Short videos on ITS safety and the principles of systems engineering.",
+    href: "/technology-transfer/pcb/microlearning",
+    image: microlearningImage,
+  },
+  {
+    title: "Accelerating V2X Cohorts",
+    description: "Collaborative groups focused on V2X technology deployment.",
+    href: "/technology-transfer/pcb/v2x-tools/v2x-cohorts",
+    image: cohortImage,
+  }
+]
+---
+<section>
+  <h2 class="text-center mb-4">Spotlight on Training and Technical Assistance Resources</h2>
+  <div class="row gy-4">
+    {resources.map(resource => (
+      <div class="col-sm-6 col-lg-3">
+        <Card
+          image={resource.image}
+          title={resource.title}
+          description={resource.description}
+          {...(resource.href && { "href": resource.href })}
+          isExternalLink={resource.isExternalLink}
+        />
+      </div>
+    ))}
+  </div>
+</section>

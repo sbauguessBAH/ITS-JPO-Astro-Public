@@ -1,0 +1,100 @@
+---
+import DataAccessCard from "@/src/components/DataAccessCard.astro";
+import DataProgramLayout from "./_DataProgramLayout.astro";
+import base_url from "@/src/lib/base_url";
+import { researchProjects, resourcesTools } from "@/src/lib/data";
+---
+<DataProgramLayout title="Home">
+  <Fragment slot="side">
+    <div class="row dataAccessGradient d-none d-lg-block">
+      <div class="col-lg-12 dataAccess_goals">
+        <img src={base_url("/assets/images/data_access/DataAccess_CardIcons_Vision.png")} class="center" alt="Vision Icon" style="width:40%;">
+        <h3>Vision</h3>
+        <p>
+          ITS Data Program envisiones cultivating and fostering leading-edge ITS data research and management, data platforms, and supporting systems that enable burdenless access to, sharing, use, and reuse of ITS data and code to facilitate research, deployment, and operations of ITS for a safe, equitable, effective, sustainable, and resilient multimodal transportation network.
+        </p>   
+        <hr>       
+      </div>
+      <div class="dataAccess_goals">
+        <img src={base_url("/assets/images/data_access/DataAccess_CardIcons_Mission.png")} class="center" alt="Mission Icon" style="width:40%;">
+          <h3>Mission</h3>
+          <p>
+            Facilitate effective generation, acquisition, governance, management, and analysis of ITS data and code to advance the state of multimodal ITS research and enable operational deployments focused on ITS JPO-funded efforts. </p>
+           
+      </div>
+      
+    </div>
+  </Fragment>
+  <h2 class="sideways blue">About the ITS Data Program</h2>
+  <p style="margin-right:10px;">
+    Access to ITS data is critical for public agencies, private companies, academia, and anyone who would like to conduct research and create innovative ITS solutions or services.
+    Consistent and timely access to data increases the return on federal investment in ITS research and demonstration projects. Widespread access and use/reuse of data also helps to inform
+    future investment decisions, which enable rapid deployment of innovative ITS technologies at larger scales and generating maximized benefits as a result.
+  </p>
+  <p style="margin-right:10px;">
+    The ITS Data Program focuses on enabling access to core transportation data across the ITS ecosystem. Access to harmonized and high-quality research data is essential to the
+    integration of ITS with connected and automated vehicles, advanced analytics and decision-support systems, and other emerging ITS areas that are highly data dependent. The ITS Data
+    Program, therefore, seeks to foster the adoption of modern technology and best practices essential to trusted data exchanges and effective use, reuse, and analysis of data. As vehicles
+    and travelers cross jurisdictional boundaries and interact with complex systems of systems, data become a key component of and crucial for the next generation of interoperable
+    transportation systems.
+  </p>
+  <h2 class="sideways blue mb-4">Program Resources and Tools</h2>
+  <div class="row gy-4 mb-4">
+    {resourcesTools.map(resource => (
+      <div class="col-md-6 col-xl-4">
+        <DataAccessCard dataAccessResource={resource}/>
+      </div>
+    ))}
+  </div>
+  <h2 class="sideways blue mb-4 pt-4">Research Projects</h2>
+  <div class="row gy-4 mb-4">
+    {researchProjects.map(project => (
+      <div class="col-md-6 col-xl-4">
+        <DataAccessCard dataAccessResource={project}/>
+      </div>
+    ))}
+  </div>
+  <h2 id="AdditionalInformation" class="sideways blue pt-4">Additional Information</h2>
+  <div class="row engagement-row">
+    <div class="col-lg-12">
+      <div class="accordion accordion-flush" id="myAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button id="FAQ_Anchor" type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              <img src={base_url("/assets/images/accelerating/ITS_AcceleratingDeploymentMockup_FAQs.png")} alt="FAQs" class="smallDropdownIcon" /><h3>Frequently Asked Questions (FAQs)</h3>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+              <div class="card-body">
+                <h4>How is the ITS Data Program different than other USDOT Data Programs?</h4>
+                <p class="read-more-wrap">
+                  This Program is strictly focused on intelligent transportation systems (ITS) data and code, as directed by the latest ITS JPO Strategic Plan. For more information, please
+                  visit this website: <a href="https://www.its.dot.gov/stratplan2020/index.htm">https://www.its.dot.gov/stratplan2020/index.htm</a>.
+                  <h4>I have a question about the ITS Data Program in general, data, and/or code, what is the best way to contact the Program with my question?</h4>
+                  <p class="read-more-wrap">
+                    Please see the Get Involved page for the appropriate contact information: *Include webpage link: <a
+                      href="https://www.its.dot.gov/RE_DESIGN_91523/research_areas/data_access/getInvolved.htm"
+                    >
+                      https://www.its.dot.gov/RE_DESIGN_91523/research_areas/data_access/getInvolved.htm
+                    </a>*
+                  </p>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button type="button" class="accordion-button collapsed" onclick=" window.open('https://www.its.dot.gov/press/news.htm','_blank')">
+                <img src={base_url("/assets/images/accelerating/ITS_AcceleratingDeploymentMockup_NewsEvents.png")} alt="News" class="smallDropdownIcon" /><h3 class="externalLink">
+                  ITS JPO News and Events
+                </h3>
+              </button>
+            </h2>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</DataProgramLayout>

@@ -1,0 +1,178 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import base_url from '@/src/lib/base_url';
+
+interface Props extends HTMLAttributes<'div'>{
+  /** Vertical shows image on top, horizontal shows image on left side, responsive is horizontal at large screens and vertical on small */
+  orientation?: "horizontal" | "vertical" | "responsive";
+  /** Set the image size for responsive components */
+  imageSize?: "normal" | "wide";
+  /** Disable the hover shadow for the card */
+  disableShadow?: boolean;
+  /** Show an image on the card; accepts ImageMetadata or a Promise containing ImageMetadata */
+  image?: ImageMetadata | Promise<{ default: ImageMetadata }>;
+  /** Include alt text for any images used */
+  imageAlt?: string;
+  /** Title for the card */
+  title?: string;
+  /** Card description */
+  description?: string;
+  /** Adding a link will make the card clickable */
+  href?: string;
+  /** Set to true if the link goes to an external site (uses https instead of Astro) */
+  isExternalLink?: boolean;
+  /** Base goes to component body, content goes to title and description. May need to use !important to override default styles */
+  classNames?: {
+    image?: string,
+    base?: string,
+    content?: string,
+  }
+}
+
+const { 
+  orientation, 
+  disableShadow, 
+  image, 
+  imageAlt,
+  title,
+  description,
+  href,
+  isExternalLink,
+  classNames,
+  imageSize,
+  ...rest 
+} = Astro.props;
+
+const Root = href ? "a" : "div";
+const props = {
+  ...(href && { "href": base_url(href) }),
+  ...(href && isExternalLink && { "href": href, "target": "_blank", "rel": "noopener noreferrer" }),
+}
+---
+<style>
+  /** CSS resets */
+  img {
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  a:hover {
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  /** Basic card styles */
+  .card {
+    border-radius: var(--card-border-radius);
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    border: 1px solid var(--border-light);
+  }
+  .card-vertical {
+    flex-direction: column;
+  }
+  .card-horizontal, .card-responsive {
+    flex-direction: row;
+    align-items: center;
+    height: 150px;
+  }
+
+  /** Add hover for link cards */
+  a.card:hover {
+    /* transform: scale(1.01); */
+    background-color: var(--background-light);
+  }
+  a.card-shadow:hover {
+    -moz-box-shadow: 0px 4px 8px var(--border-light); 
+    -webkit-box-shadow: 0px 4px 8px var(--border-light); 
+    box-shadow: 0px 4px 8px var(--border-light);
+  }
+
+  /** Styles for the card content */
+  .card-content > h3 {
+    font-weight: 600;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+  }
+  .card-content > p {
+    margin: 0;
+    padding: 0;
+  }
+  .card-vertical > .card-content {
+    padding: 1rem 1rem;
+  }
+  .card-horizontal > .card-content, .card-responsive > .card-content {
+    padding: 0 0.5rem 0 1rem;
+  }
+
+  /** Styles for the card image */
+  .card-image, .card-image-wide {
+    padding: 0;
+    margin: 0;
+  }
+  .card-vertical > .card-image {
+    height: 150px;
+    width: auto;
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0 0 ;
+    object-fit: cover;
+  }
+  .card-horizontal > .card-image, .card-responsive > .card-image {
+    width: 150px;
+    border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
+    height: 100%;
+    object-fit: cover;
+  }
+  .card-horizontal > .card-image-wide, .card-responsive > .card-image-wide {
+    width: 250px;
+  }
+  @media (max-width: 768px) {
+    .card-responsive {
+      height: 100%;
+      flex-direction: column;
+      align-items: start;
+    }
+    .card-responsive > .card-content {
+      padding: 1rem 1rem;
+    }
+    .card-responsive > .card-image, .card-responsive > .card-image-wide {
+      width: 100%;
+      border-radius: var(--card-border-radius) var(--card-border-radius) 0 0 ;
+    }
+  }
+</style>
+<Root 
+  class:list={[
+    "card d-flex",
+    orientation ? `card-${orientation}` : "card-vertical",
+    {"card-shadow": !disableShadow},
+    classNames?.base
+  ]} 
+  {...props}
+  {...rest}
+>
+  {image && 
+    <Image 
+      src={image} 
+      alt={imageAlt ?? title ?? "No alt provided"} 
+      class:list={[
+        "card-image",
+        {"card-image-wide": imageSize === "wide" && orientation === "responsive"},
+        classNames?.image
+      ]}
+    />
+  }
+  <div class:list={["card-content", classNames?.content]}>
+    {title && <h3>{title}</h3>}
+    {description && <p>{description}</p>}
+  </div>
+</Root>

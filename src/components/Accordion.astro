@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  /** 
+   * Add an id to the accordion that won't be used anywhere else on the page
+   * This ensures accordion items will function properly in the accordion
+   */
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<div class="accordion accordion-flush" id={id}>
+  <slot/>
+</div>

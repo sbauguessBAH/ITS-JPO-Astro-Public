@@ -1,0 +1,132 @@
+[
+  {
+    "title": "ITS Basics",
+    "trainings": [
+      {
+        "title": "FHWA-NHI-137049. ITS Procurement - WEB-BASED",
+        "description": "This course provides an overview of strategies for deploying ITS projects, focusing on systems engineering principles and the procurement stage, from identifying needs to contractor selection.",
+        "image": "./images/its-basics-procurement.jpeg"
+      },
+      {
+        "title": "FHWA-NHI-137050. ITS What, Why, and How",
+        "description": "This course equips professionals responsible for ITS programs with an understanding of ITS capabilities, planning and procurement processes, operations management, and workforce needs for long-term success.",
+        "image": "./images/its-basics-what-why-how.png"
+      },
+      {
+        "title": "ITS ePrimer: Introduction to ITS",
+        "description": "The ITS ePrimer is an online resource that provides foundational knowledge on integrating ITS technologies into transportation systems for professionals and students.",
+        "image": "./images/its-basics-introduction.png"
+      }
+    ]
+  },
+  {
+    "title": "Systems Engineering and Architecture",
+    "trainings": [
+      {
+        "title": "ARC-IT Training",
+        "description": "This online ARC-IT training introduces ITS professionals to the architecture's background, structure, and use, providing a web-based alternative to on-site workshops and enabling effective navigation of the ARC-IT website for project definition.",
+        "image": "./images/arc-it.jpeg"
+      },
+      {
+        "title": "RAD-IT Web-Based Training",
+        "description": "This online RAD-IT training offers ITS professionals an alternative to on-site sessions, providing hands-on experience with the tool for developing and maintaining regional and project architectures.",
+        "image": "./images/rad-it.jpeg"
+      },
+      {
+        "title": "SET-IT Web-Based Training",
+        "description": "This online SET-IT training offers ITS professionals an alternative to on-site sessions, providing hands-on experience with the tool for developing ITS project architectures based on ARC-IT.",
+        "image": "./images/set-it.jpeg"
+      },
+      {
+        "title": "ITS Architecture Use & Maintenance Training",
+        "description": "This web-based training offers ITS professionals an alternative to on-site workshops, guiding them in using and maintaining regional ITS architectures with instructor-led exercises.",
+        "image": "./images/use-and-maintenance.jpeg"
+      },
+      {
+        "title": "# FHWA-NHI-137051. Systems Engineering Fundamentals for ITS",
+        "description": "\"Systems Engineering Fundamentals\" is an 8-hour NHI course introducing ITS project staff to key systems engineering concepts and best practices like modeling, testing, and risk assessment.",
+        "image": "./images/sys-eng-fundamentals.jpeg"
+      },
+      {
+        "title": "Foundational Systems Engineering Activities to Support ITS Procurement",
+        "description": "This course guides transportation professionals in applying systems engineering to support ITS project development, focusing on planning and needs-based scoping.",
+        "image": "./images/sys-eng-activities.jpeg"
+      }
+    ]
+  },
+  {
+    "title": "Vehicle-to-Everything (V2X)",
+    "trainings": [
+      {
+        "title": "# FHWA-NHI-137060. Introduction to Connected Vehicles and Automated Vehicles",
+        "description": "This course offers practitioners a foundational understanding of connected and automated vehicle technology, emphasizing USDOT's research and applications.",
+        "image": "./images/connected-vehicles.png"
+      }
+    ]
+  },
+  {
+    "title": "Transportation Systems Management and Operations (TSMO)",
+    "trainings": [
+      {
+        "title": "# FHWA-NHI-137072. Weather Responsive Traffic Management (WRTM)",
+        "description": "WRTM is a 6-hour NHI web training for transportation managers on strategies to manage traffic flow during adverse weather, including implementation and performance evaluation tools.",
+        "image": "./images/weather-responsive-traffic-management.jpeg"
+      },
+      {
+        "title": "# FHWA-NHI-137073. Principles and Tools for Road Weather Management",
+        "description": "The course covers road weather problems, basic meteorology, and strategies like RWIS and decision support systems for traffic and emergency management.",
+        "image": "./images/road-weather-management.jpeg"
+      },
+      {
+        "title": "# FHWA-NHI-137074. Road Weather Information Systems (RWIS) Equipment and Operations",
+        "description": "RWIS Equipment and Operations is a 4-hour NHI web training on managing adverse weather challenges in road maintenance, focusing on RWIS initiatives and deployment action plans.",
+        "image": "./images/rwis.png"
+      },
+      {
+        "title": "# FHWA-NHI-133126A. National Traffic Incident Management Responder Training",
+        "description": "This web-based training [WBT] consists of five content lessons and a final assessment. Each lesson consists of multiple topics that focus on a particular concept.",
+        "image": "./images/responder-training.jpeg"
+      },
+      {
+        "title": "# FHWA-NHI-133131. Planning for TSMO - Introduction",
+        "description": "This 2-hour web-based course focuses on integrating TSMO into planning, covering performance-driven approaches, collaboration methods, and institutionalization strategies.",
+        "image": "./images/tsmo-introduction.png"
+      },
+      {
+        "title": "# FHWA-NHI-133132. Planning for TSMO - Concepts and Applications",
+        "description": "This 6-hour web course builds on Course 1 (NHI-133131 Planning for TSMO) and covers integrating TSMO into transportation planning and implementing an objectives-driven performance-based approach.",
+        "image": "./images/tsmo-concepts-applications.png"
+      },
+      {
+        "title": "Crowdsourcing for Operations Course as a Webinar Series",
+        "description": "The \"Crowdsourcing for Advancing Operations\" webinar series provides insights from practitioners on using crowdsourced data to improve transportation operations.",
+        "image": "./images/crowdsourcing-operations.png"
+      }
+    ]
+  },
+  {
+    "title": "Cybersecurity",
+    "trainings": [
+      {
+        "title": "# FHWA-NHI-137055. Transportation Cyber Security",
+        "description": "The \"Transportation Cyber Security\" course is a 4-hour training that equips transportation professionals with key knowledge on cyber threats and vulnerabilities.",
+        "image": "./images/cybersecurity.jpeg"
+      }
+    ]
+  },
+  {
+    "title": "Standards",
+    "trainings": [
+      {
+        "title": "Standards Trainings",
+        "description": "Placeholder",
+        "image": "./images/standards-trainings.png"
+      },
+      {
+        "title": "Transit Standards Trainings",
+        "description": "Placeholder",
+        "image": "./images/transit-standards-trainings.jpeg"
+      }
+    ]
+  }
+]

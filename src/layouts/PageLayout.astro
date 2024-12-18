@@ -1,0 +1,51 @@
+---
+// Page Layout used for pages with sidebars and other complex navigation
+import type { ImageMetadata } from 'astro';
+import Banner from '@/src/components/layout/Banner.astro';
+import Sidebar from '@/src/components/layout/Sidebar.astro';
+import base_url from '@/src/lib/base_url';
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '@/src/components/layout/Breadcrumbs.astro';
+import type { ChildNavigationItem, NavigationItem } from '@/src/types';
+import { navigation } from '@/src/lib/navigation';
+
+interface Props {
+  bannerImage?: ImageMetadata;
+	title: string;
+  currentBreadcrumb?: string;
+}
+
+const { title, bannerImage, currentBreadcrumb } = Astro.props;
+
+const getTrimmedPath = (path: string): string => path.replaceAll("/", "");
+
+const currentPath = getTrimmedPath(Astro.url.pathname);
+
+const isActive = (item: NavigationItem | ChildNavigationItem): boolean => {
+  if (item.isExternal) return false;
+  const trimmedPath = getTrimmedPath(base_url(item.url));
+  return currentPath.startsWith(trimmedPath);
+}
+
+const activeSection: NavigationItem | undefined = navigation.find(section => isActive(section));
+---
+<BaseLayout title={title}>
+  <Banner image={bannerImage}>
+    <slot name="banner" title="banner"/>
+  </Banner>
+  <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl min-vh-100">
+    <Breadcrumbs currentBreadcrumb={currentBreadcrumb}/>
+    <div class="mt-4">
+      <slot/>
+    </div>
+  </div>
+  <slot name="footer" title="footer"/>
+</BaseLayout>
+
+<style>
+  .page-content {
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+    flex: 1;
+  }
+</style>

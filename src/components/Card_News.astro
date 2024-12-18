@@ -1,6 +1,7 @@
 ---
 
-import { getEntry, type CollectionEntry } from "astro:content";
+import { type CollectionEntry } from "astro:content";
+import base_url from "../lib/base_url";
 
 type Props = {
   post: CollectionEntry<"posts">;
@@ -9,7 +10,27 @@ type Props = {
 const { post } = Astro.props;
 const { title, date, image } = post.data;
 
-const preview = post.body.slice(0, 400); // Adjust the number of characters as needed
+const markdownString = post.body.slice(0, 600);
+
+// Define a function to remove Markdown syntax
+function removeMarkdownSyntax(str) {
+  return str
+  .replace(/\*\*([^*]+)\*\*/g, '$1')
+  .replace(/\*([^*]+)\*/g, '$1')
+  .replace(/__([^_]+)__/g, '$1')
+  .replace(/_([^_]+)_/g, '$1')
+  // Remove inline code 
+  .replace(/`([^`]+)`/g, '$1') 
+  // Remove links and images, keep the text 
+  .replace(/! \[([^\] ]+)\] \([^)]*\)/g, '$1') 
+  .replace(/ \[([^\] ]+)\] \([^)]*\)/g, '$1'); 
+}
+
+const preview = removeMarkdownSyntax(markdownString);
+
+
+
+
 ---
 
 <style>
@@ -28,7 +49,7 @@ const preview = post.body.slice(0, 400); // Adjust the number of characters as n
   p {
     display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-line-clamp: 3; /* Number of lines to show */
   overflow: hidden;
   }
 </style>
@@ -37,5 +58,5 @@ const preview = post.body.slice(0, 400); // Adjust the number of characters as n
     <time datetime={date.toISOString()}>{date.toLocaleDateString(undefined, { dateStyle: "medium", timeZone: "UTC" })}</time><br />
     <h2>{title}</h2> 
   <p>{preview}</p>
-  <a href={`${post.slug}`} class="btn">Read Post</a>
+  <a href={base_url(`/news-info/news/${post.slug}`)} class="btn">Read Post</a>
 </div>

@@ -1,45 +1,55 @@
 ---
-import Default from "../../../layouts/Default.astro";
-import SideBar from "../../../components/SideBar_ContactUs.astro";
-import base_url from '../../../lib/base_url';
-
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import newsletterImage from "@/src/assets/images/ITSJPO_NewsletterWebsiteImage_030123.png";
+import { Image } from "astro:assets";
 ---
+<style>
+  .newsletterImage {
+    max-width: 80%;
+  }
+</style>
 
-<Default title="ITS JPO - FAQs">
-  <div class="AboutBanner">
-    <div class="AboutBannerTitle">
-      <h1>ITS JPO MAILING LIST</h1>
-    </div>
-  </div>
-  <!-- InstanceEndEditable -->
-  <div class="container-fluid h-100 bodyWrap">
-    <div class="row h-100">
-      <aside class="col-12 col-md-3 p-3 bg-light"><SideBar /></aside>
-      <!-- InstanceEndEditable -->
-      <!-- InstanceBeginEditable name="MainContent" -->
-
-      <main class="col-9 MainContent">
-        <h2>Join our ITS JPO Mailing List</h2>
-        <p>
-          Thank you for your interest in receiving ITS Program updates. Please join our
-          <a href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" target="_blank" rel="noopener noreferrer">
-            <strong>ITS Joint Program Office Mailing list</strong>
-          </a>
-          .
-        </p>
-        <p></p>
-        <a href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" target="_blank" rel="noopener noreferrer">
-          <img src={base_url("/assets/images/ITSJPO_NewsletterWebsiteImage_030123.png")} style="width: 80%">
-        </a>
-        <p></p>
-        <p>
-          You can also choose to receive updates from the ITS Program via
-          <a href="https://twitter.com/ITS_USDOT" target="_blank" rel="noopener noreferrer"><strong>Twitter</strong></a>
-          and
-          <a href="https://www.facebook.com/USDOTResearch" target="_blank" rel="noopener noreferrer"><strong>Facebook</strong></a>
-          .
-        </p>
-      </main>
-    </div>
-  </div>
-</Default>
+<PageLayout title="Mailing List">
+  <Fragment slot="banner">
+    ITS JPO Mailing List
+  </Fragment>
+  <main>
+  <h2>Join our ITS JPO Mailing List</h2>
+  <p>
+    Thank you for your interest in receiving ITS Program updates. Please join our
+    <a 
+      href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      ITS Joint Program Office Mailing list
+    </a>.
+  </p>
+  <a 
+    href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <Image 
+      src={newsletterImage} 
+      alt="Get updates on ITS JPO News and Events by clicking this image to sign up for the mailing list." 
+      class="img-fluid newsletterImage"
+    />
+  </a>
+  <p class="mt-4">
+    You can also choose to receive updates from the ITS Program via
+    <a 
+      href="https://twitter.com/ITS_USDOT" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      X</a> and
+    <a 
+      href="https://www.facebook.com/USDOTResearch" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      Facebook</a>.
+  </p>
+</main>
+</PageLayout>

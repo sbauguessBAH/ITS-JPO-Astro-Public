@@ -1,25 +1,32 @@
 ---
-title: blog Join Us in Shaping the Future of Vehicle-to-Everything Technology
-date: 2024-08-28
+title: 'Newest Grant Awardees Maintain the Momentum with Vehicle-to-Everything Deployment Projects: A Message from ITS JPO Director Brian Cronin'
+date: 2024-11-01
 ---
-We are excited to share our vision for the future of transportation, one that promises to transform the way we travel: the era of connectivity via vehicle-to-everything (V2X) technology.
+n June, the U.S. Department of Transportation (U.S. DOT) announced $60 million in grants under the [**Saving Lives with Connectivity: Accelerating V2X Deployment program**](https://highways.dot.gov/newsroom/usdot-releases-national-deployment-plan-vehicle-everything-v2x-technologies-reduce-death) with plans to leverage future discretionary grant program funding and encourage the use of federal formulae funding, and local funding to further advance vehicle-to-everything (V2X) technologies and the overall connectivity of our transportation systems.
 
-On August 16, 2024, the U.S. Department of Transportation (USDOT) released the [**National V2X Deployment Plan**](https://www.its.dot.gov/research_areas/emerging_tech/pdf/Accelerate_V2X_Deployment_FINAL.pdf) to accelerate the deployment of V2X technology. The Plan is one aspect of the Department’s broader commitment to reduce the number of roadway fatalities to the only acceptable number: zero. The National V2X Deployment Plan seeks to reduce uncertainty among all stakeholders working towards a shared vision of a nationwide, secure interoperable V2X ecosystem by setting USDOT’s vision, goals, and milestones, and issuing a formal call to action for stakeholders, including the USDOT, public agencies, and the private sector.​ 
+As part of its commitment to reducing deaths and serious injuries on our nation’s roadways, in August 2024 U.S. DOT announced the [**Saving Lives with Connectivity: A Plan to Accelerate V2X Deployment**](https://www.its.dot.gov/research_areas/emerging_tech/htm/ITS_V2X_CommunicationSummit.htm). This plan will guide the implementation of vehicle-to-everything technologies across the nation, and was created following several public meetings and extensive stakeholder recommendations and collaboration. On Thursday, October 24, the [**U.S. DOT Federal Highway Administration (FHWA) announced an additional $96.5 million in grants**](https://highways.dot.gov/newsroom/biden-harris-administration-announces-96-million-in-advanced-technology-grants) for 20 projects across 16 states through the Advanced Transportation Technology and Innovation (ATTAIN) program. The program is funded through the Bipartisan Infrastructure Law and administered by the Federal Highway Administration with additional research support from the Intelligent Transportation Systems Joint Program Office (ITS JPO).
 
-![Saving Lives with Connectivity A Plan to Accelerate V2X Deployment](blog-images/v2x_future.jpg)
+The ATTAIN program provides competitive grants to deploy, install, and operate advanced transportation technologies to improve safety, mobility, efficiency, system performance, intermodal connectivity, and infrastructure return on investment.
 
-Source: USDOT
+Of the 20 ATTAIN awardees, seven will utilize connected vehicle (CV) or V2X technologies:
 
-The USDOT is seeking realized operational interoperability in the field among 12+ deployments by 2028 that inform a national reference implementation, eventually growing into a cadre of 50+ mature, interoperable deployments by 2036. ​With this Plan, the USDOT commits to modernizing and transforming the future of transportation both for today and for tomorrow. 
+- The **California Department of Transportation** will receive $5.6 million for its interoperable V2X deployment and CV infrastructure enhancement by providing opportunities for interoperability with additional CV technologies.
+- **Hillsborough County**, Florida, will receive $2.96 million to integrate smart traffic technology to improve safety, mobility, and CV readiness along 40 miles of arterial streets in Hillsborough County.
+- **Pinellas County,** Florida, will receive $2 million to use artificial intelligence (AI) technology to optimize signal timing plans, improve safety through smart sensors and detection systems for predictive analytics, increase transportation reliability through transit signal priority, and enhance transportation communication through CV roadside units.
+- The **University of Hawaii** and the **Hawaii Department of Transportation** will receive $4.2 million to develop, deploy, and validate AI-driven, CV technology-enabled, adaptive integrated corridor management and control coordination strategies for enhancing corridor-wide mobility and safety.
+- The **Maine Department of Transportation** will receive $5.2 million for a statewide CV hazard notification project. The project will leverage standardized cellular V2X (C-V2X) technology to send warning messages in areas with bridge height restrictions, congestion, and where hazardous weather may impact travel.
+- The** City of Cedar Park, **Texas, will receive $4.42 million to address vehicular congestion, enhance road user safety, and expedite emergency response through the deployment of various advanced transportation technology, including V2X, AI, emergency vehicle preemption, and automated traffic signal performance metrics (ATSPM).
+- The **City of Madison**, Wisconsin, will receive over $5 million for its project that targets two critical safety needs and deploys next-generation traffic signal preemption for emergency vehicles and red-light running collision warning systems through 37 signalized intersections.
 
-However, we cannot embrace this vision without everyone doing their part. The Department has shown its commitment to V2X by including it as part of the National Roadway Safety Strategy. Since the first V2X Summit held in 2022, we have been working actively and dedicating resources to gather data, collect stakeholder feedback, and develop a plan. We plan to keep the momentum going by:
+As outlined in the [**National V2X Deployment Plan**](https://www.its.dot.gov/research_areas/emerging_tech/htm/ITS_V2X_CommunicationSummit.htm), which precisely calls for additional deployment of CV and V2X technologies, each of these ATTAIN grant awardees and their seven projects work towards one or more goals, including:
 
-* Providing seed funding and investment to accelerate V2X deployments.
-* Convening and facilitating stakeholders to share information and best practices.
-* Providing support for standards, architecture, and testing to accelerate interoperability.
+- increased infrastructure deployments,
+- widespread interoperability,
+- use or testing of the 5.9 GHz band,
+- improved security credentials management or cybersecurity,
+- additional case studies to further showcase the benefits of V2X,
+- increased use of signalized intersections with V2X capabilities, and more.
 
-You can learn more about how to get involved and stay up to date on progress on achieving this vision by visiting the USDOT’s [**V2X Program page**](https://www.its.dot.gov/research_areas/emerging_tech/htm/Next_Landing.htm) or by sending a message to [**V2XDeploymentPlan@dot.gov**](mailto:V2XDeploymentPlan@dot.gov).
+Each grant, deployment, test, and collaboration is a catalyst for achieving the overarching goal of the Plan, which is saving lives with connectivity. Together, we can reduce the number of roadway fatalities to the only acceptable number: zero.
 
-Thank you for your continued support. Together, we are paving the way for a safer, more efficient future of travel.
-
-Posted 8/28/24
+**Brian Cronin, Director, ITS JPO**

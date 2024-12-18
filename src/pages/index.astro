@@ -1,57 +1,53 @@
 ---
+
 import Default from "../layouts/Default.astro";
 import base_url from "../lib/base_url";
-import { Image } from 'astro:assets';
-import { getImage } from 'astro:assets';
-import HeroBG from '../assets/images/HeroBG.jpeg';
-import spotlight1 from '../assets/images/Spotlight1.png';
-import spotlight2 from '../assets/images/Spotlight2.png';
-import spotlight3 from '../assets/images/Spotlight3.png';
-import spotlight4 from '../assets/images/Spotlight4.png';
-import spotlight5 from '../assets/images/Spotlight5.png';
-import spotlight6 from '../assets/images/Spotlight6.png';
-import spotlight7 from '../assets/images/Spotlight7.png';
-import spotlight8 from '../assets/images/Spotlight8.png';
-import spotlight9 from '../assets/images/Spotlight9.png';
-import spotlight10 from '../assets/images/Spotlight10.png';
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+import HeroBG from "../assets/images/Hero3.jpeg";
+import spotlight1 from "../assets/images/Spotlight1.png";
+import spotlight2 from "../assets/images/Spotlight2.png";
+import spotlight3 from "../assets/images/Spotlight3.png";
+import spotlight4 from "../assets/images/Spotlight4.png";
+import spotlight5 from "../assets/images/Spotlight5.png";
+import spotlight6 from "../assets/images/Spotlight6.png";
+import spotlight7 from "../assets/images/Spotlight7.png";
+import spotlight8 from "../assets/images/Spotlight8.png";
+import spotlight9 from "../assets/images/Spotlight9.png";
+import spotlight10 from "../assets/images/Spotlight10.png";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const optimizedBG = await getImage({ src: HeroBG });
-
 ---
+
 <style>
-    .hero-container {
-        background-position: center; 
-        background-size: cover;
-        padding: 60px 35% 150px 60px;
-        }
-        
-        @media only screen and (max-width: 600px) {
-            .hero-container {
-                padding: 24px;
+  .hero-container {
+    background-position: center;
+    background-size: cover;
+    padding: 50px 0 100px 0;
   }
   
-}
-.HotTopicBlock img {
-    width: 100%; 
-    height:auto;
+  .HotTopicBlock img {
+    width: 100%;
+    height: auto;
   }
 </style>
-<Default title="ITS JPO">
+<BaseLayout title="ITS JPO">
   <div class="container-fluid bodyWrap">
     <div class="hero-container" style={`background-image: url(${optimizedBG.src});`}>
-  <div style="background-color: rgba(7, 46, 85, 0.85)">
-    <div class="d-flex align-items-center p-3">
-      <div class="text-white">
-        <h2 class="mb-3">Intelligent Transportation Systems Joint Program Office</h1>
-        <p class="mb-3 text-white">The Intelligent Transportation Systems Joint Program Office (ITS JPO) seeks to transform the way society moves. Explore our website for information on research and deployments that advance the use of ITS to move people and goods more safely and efficiently.
-        </p>
-        <a class="btn btn-outline-light btn-lg text-dark m-0" href="#" role="button">LEARN MORE ABOUT THE ITS JPO
-        </a>
+      <div class="container ">
+          <div class="d-flex align-items-center p-3 col-md-7"  style="background-color: rgba(7, 46, 85, 0.85)">
+            <div class="text-white">
+              <h2 class="mb-3">Intelligent Transportation Systems Joint Program Office</h2>
+              <p class="mb-3 text-white">
+                The Intelligent Transportation Systems Joint Program Office (ITS JPO) seeks to transform the way society moves. Explore our website for information on research and deployments that
+                advance the use of ITS to move people and goods more safely and efficiently.
+              </p>
+              <a class="btn btn-outline-light btn-lg text-dark m-0" href={base_url("/about/its_jpo/")} role="button">LEARN MORE ABOUT THE ITS JPO</a>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
 
     <div class="container HomepageContainter">
       <div class="row">
@@ -68,10 +64,10 @@ const optimizedBG = await getImage({ src: HeroBG });
 
       <div class="row">
         <div class="col-lg-3">
-          <a href="/research/emerging-tech/">
+          <a href={base_url("/research-areas/deployments/v2x")}>
             <div class="HotTopicBlock">
-              <div class="HotTopicTitleBanner">Interoperable Connectivity (V2X)</div>
-              <Image src={spotlight1} alt="Interoperable Connectivity (V2X)"/>
+              <div class="HotTopicTitleBanner">Vehicle-to-Everything (V2X)</div>
+              <Image src={spotlight1} alt="Vehicle-to-Everything (V2X)" />
             </div>
           </a>
         </div>
@@ -81,8 +77,7 @@ const optimizedBG = await getImage({ src: HeroBG });
               <div class="HotTopicTitleBanner">
                 <span class="externalLink_White">Smart Community Resource Center</span>
               </div>
-              <Image src={spotlight2} alt="Smart Community Resource Center"/>
-
+              <Image src={spotlight2} alt="Smart Community Resource Center" />
             </div>
           </a>
         </div>
@@ -93,59 +88,54 @@ const optimizedBG = await getImage({ src: HeroBG });
               <div class="HotTopicTitleBanner">
                 <span class="externalLink_White">Intersection Safety Challenge</span>
               </div>
-              <Image src={spotlight3} alt="Intersection Safety Challenge"/>
-
+              <Image src={spotlight3} alt="Intersection Safety Challenge" />
             </div>
           </a>
         </div>
 
         <div class="col-lg-3">
-            <a href="https://www.its.dot.gov/pilots/index.htm" target="_blank">
-              <div class="HotTopicBlock">
-                <div class="HotTopicTitleBanner">
-                  <span class="externalLink_White">Connected Vehicle Pilots</span>
-                </div>
-                <Image src={spotlight4} alt="Connected Vehicle Pilots"/>
-
+          <a href="https://www.its.dot.gov/pilots/index.htm" target="_blank">
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                <span class="externalLink_White">Connected Vehicle Pilot Deployments</span>
               </div>
-            </a>
-          </div>
+              <Image src={spotlight4} alt="Connected Vehicle Pilot Deployments" />
+            </div>
+          </a>
+        </div>
 
-          <div class="col-lg-3">
-            <a href="#" target="_blank">
-              <div class="HotTopicBlock">
-                <div class="HotTopicTitleBanner">
-                  <span class="externalLink_White">ITS4US</span>
-                </div>
-                <Image src={spotlight5} alt="ITS4US"/>
-
+        <div class="col-lg-3">
+          <a href={base_url("/research-areas/deployments/its4us")} target="_blank">
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                <span class="">ITS4US</span>
               </div>
-            </a>
-          </div>
+              <Image src={spotlight5} alt="ITS4US" />
+            </div>
+          </a>
+        </div>
 
-          <div class="col-lg-3">
-            <a href="#" target="_blank">
-              <div class="HotTopicBlock">
-                <div class="HotTopicTitleBanner">
-                  <span class="externalLink_White">Complete Streets Artificial Intelligence</span>
-                </div>
-                <Image src={spotlight6} alt="Complete Streets Artificial Intelligence"/>
+        <div class="col-lg-3">
+          <a href="https://its.dot.gov/csai/" target="_blank">
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                <span class="externalLink_White">Complete Streets Artificial Intelligence</span>
               </div>
-            </a>
-          </div>
+              <Image src={spotlight6} alt="Complete Streets Artificial Intelligence" />
+            </div>
+          </a>
+        </div>
 
-          <div class="col-lg-3">
-            <a href="https://www.pcb.its.dot.gov/" target="_blank">
-              <div class="HotTopicBlock">
-                <div class="HotTopicTitleBanner">
-                  <span class="externalLink_White">Foundational ITS Trainings</span>
-                </div>
-                <Image src={spotlight7} alt="Foundational ITS Trainings"/>
-
+        <div class="col-lg-3">
+          <a href="https://www.pcb.its.dot.gov/" target="_blank">
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                <span class="externalLink_White">Foundational ITS Trainings</span>
               </div>
-            </a>
-          </div>
-
+              <Image src={spotlight7} alt="Foundational ITS Trainings" />
+            </div>
+          </a>
+        </div>
 
         <div class="col-lg-3">
           <a href="https://urldefense.com/v3/__https:/www.itskrs.its.dot.gov/__;!!May37g!I52CHHQW3NlAsLcxohOkXPX-RbhBSRuE_vYYPRiLZo4OcRoNuEBauxXNsmIvQa0YZUNEiOO7mo-XsDQoFLLO12t_$" target="_blank">
@@ -153,38 +143,32 @@ const optimizedBG = await getImage({ src: HeroBG });
               <div class="HotTopicTitleBanner">
                 <span class="externalLink_White">ITS Deployment Evaluation</span>
               </div>
-              <Image src={spotlight8} alt="ITS Deployment Evaluation"/>
-
+              <Image src={spotlight8} alt="ITS Deployment Evaluation" />
             </div>
           </a>
         </div>
 
         <div class="col-lg-3">
-            <a href="#" target="_blank">
-              <div class="HotTopicBlock">
-                <div class="HotTopicTitleBanner">
-                  <span class="externalLink_White">Artificial Intelligence (AI)</span>
-                </div>
-                <Image src={spotlight9} alt="Artificial Intelligence (AI)"/>
+          <a href="#" target="_blank">
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                <span class="externalLink_White">Artificial Intelligence (AI)</span>
               </div>
-            </a>
-          </div>
+              <Image src={spotlight9} alt="Artificial Intelligence (AI)" />
+            </div>
+          </a>
+        </div>
 
-
-          <div class="col-lg-3">
-            <a href="#" target="_blank">
-              <div class="HotTopicBlock">
-                <div class="HotTopicTitleBanner">
-                  <span class="externalLink_White">Cybersecurity</span>
-                </div>
-                <Image src={spotlight10} alt="Cybersecurity"/>
+        <div class="col-lg-3">
+          <a href="https://www.its.dot.gov/research_areas/cybersecurity" target="_blank">
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                <span class="externalLink_White">Cybersecurity</span>
               </div>
-            </a>
-          </div>
-
-      
-
-       
+              <Image src={spotlight10} alt="Cybersecurity" />
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -210,10 +194,9 @@ const optimizedBG = await getImage({ src: HeroBG });
 
               <div style="height: 100%">
                 <img src={base_url("/assets/images/Group 1703.png")} class="HomeResearchIcon" />
-                <div class="vlTall"></div>
 
-                <div class="HomeResearchBlockTitle">
-                  <span>Emerging and Enabling Technologies</span>
+                <div class="HomeResearchBlockTitle text-start">
+                  Emerging and Enabling Technologies
                 </div>
               </div>
             </div>
@@ -225,12 +208,11 @@ const optimizedBG = await getImage({ src: HeroBG });
             <div class="HomeResearchBlock">
               <div class="HomeResearchBlockTop"></div>
 
-              <div style="height: 100%">
+              <div style="height: 100%" class="">
                 <img src={base_url("/assets/images/Group 1707.png")} class="HomeResearchIcon" />
 
-                <div class="vlTall"></div>
 
-                <div class="HomeResearchBlockTitle">ITS4US Deployment Program</div>
+                <div class="HomeResearchBlockTitle text-start">ITS4US Deployment Program</div>
               </div>
             </div>
           </a>
@@ -243,25 +225,23 @@ const optimizedBG = await getImage({ src: HeroBG });
               <div style="height: 100%">
                 <img src={base_url("/assets/images/Group 1708.png")} class="HomeResearchIcon" />
 
-                <div class="vlTall"></div>
 
-                <div class="HomeResearchBlockTitle">Accelerating ITS Deployment</div>
+                <div class="HomeResearchBlockTitle text-start">Accelerating ITS Deployment</div>
               </div>
             </div>
           </a>
         </div>
 
         <div class="col-lg-4">
-          <a href="/research/data_program/">
+          <a href={base_url("/resources/accelerating/data-program")}>
             <div class="HomeResearchBlock">
               <div class="HomeResearchBlockTop"></div>
 
               <div style="height: 100%">
                 <img src={base_url("/assets/images/Group 1709.png")} class="HomeResearchIcon" />
 
-                <div class="vlTall"></div>
 
-                <div class="HomeResearchBlockTitle">ITS Data Program</div>
+                <div class="HomeResearchBlockTitle text-start">ITS Data Program</div>
               </div>
             </div>
           </a>
@@ -275,24 +255,22 @@ const optimizedBG = await getImage({ src: HeroBG });
               <div style="height: 100%">
                 <img src={base_url("/assets/images/Group 1705.png")} class="HomeResearchIcon" />
 
-                <div class="vlTall"></div>
 
-                <div class="HomeResearchBlockTitle">Cybersecurity For ITS</div>
+                <div class="HomeResearchBlockTitle text-start">Cybersecurity For ITS</div>
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4">
-          <a href="/research/automation/">
+          <a href={base_url("/research-areas/automation")}>
             <div class="HomeResearchBlock">
               <div class="HomeResearchBlockTop"></div>
 
               <div style="height: 100%">
                 <img src={base_url("/assets/images/Group 1706.png")} class="HomeResearchIcon" />
 
-                <div class="vlTall"></div>
 
-                <div class="HomeResearchBlockTitle">Automation</div>
+                <div class="HomeResearchBlockTitle text-start">Automation</div>
               </div>
             </div>
           </a>
@@ -304,4 +282,4 @@ const optimizedBG = await getImage({ src: HeroBG });
       </div>
     </div>
   </div>
-</Default>
+</BaseLayout>

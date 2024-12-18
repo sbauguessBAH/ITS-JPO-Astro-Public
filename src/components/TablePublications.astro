@@ -1,5 +1,5 @@
 ---
-import tableContent from "../content/publicationsData/resources.json";
+import tableContent from "@/src/content/publicationsData/resources.json";
 
 const uniqueType = [...new Set(tableContent.map(item => item.type))];
 
@@ -8,6 +8,21 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
  
 
 <link href="https://cdn.datatables.net/v/bs4/dt-2.1.4/datatables.min.css" rel="stylesheet">
+
+
+<style is:global>
+.page-item.active .page-link  {
+          background-color: #005D83 !important;
+        }
+
+
+.page-link{
+  color: #005D83;
+}
+label{
+  text-wrap: pretty;
+}
+</style>
 
 <style>
  
@@ -34,6 +49,7 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     margin-bottom: 5px;
   }
   .checkbox-wrapper input[type="checkbox"] {
+    flex: 0 0 20px;
     width: 20px;
     height: 20px;
     margin-right: 5px;
@@ -58,6 +74,11 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     position: absolute;
     top: 0;
     left: 1px;
+  }
+  label{
+    display: block;
+    width: auto;
+    flex: 2;
   }
   thead {
     font-weight: bold;
@@ -92,6 +113,10 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
 
         .sortformholder {
           margin: 10px 0;
+        }
+        hr{
+          margin: 0 0 8px 0;
+          padding: 0;
         }
 </style>
 
@@ -141,7 +166,10 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     <div class="col-6" id="awardee">
       <h3>Filter by Awardee/Deployment</h3>
       <ul class="checkbox-wrapper">
-        <!-- this area loops over the unique Types and Displays them in the check box -->
+        <!-- this area loops over the unique Types and Displays them in the check box
+
+        Could be usefull for trouble shooting incase a value is assinged the wrong name
+
       {
         uniqueAwardee.map((item) => (
           
@@ -152,8 +180,37 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
         </li> 
         ))
       }
+        -->
+      
 
-  
+        <li>
+          <input type="checkbox" id="Program Level" name="awa" value="Program Level" />
+          <label for="Program Level">Program Level</label><br />
+        </li>
+        <li>
+          <input type="checkbox" id="California Association of Coordinated Transportation" name="awa" value="California Association of Coordinated Transportation" />
+          <label for="California Association of Coordinated Transportation">California Association of Coordinated Transportation)</label>
+        </li>
+        <li>
+          <input type="checkbox" id="Georgia Department of Transportation" name="awa" value="Georgia Department of Transportation|Atlanta Regional Commission" />
+          <label for="Georgia Department of Transportation">Georgia Department of Transportation / Atlanta Regional Commission </label>
+        </li>
+        <li>
+          <input type="checkbox" id="Heart of Iowa Regional Transit Agency" name="awa" value="Heart of Iowa Regional Transit Agency" />
+          <label for="Heart of Iowa Regional Transit Agency">Heart of Iowa Regional Transit Agency </label><br />
+        </li>
+        <li>
+          <input type="checkbox" id="Niagara Frontier Transportation Authority" name="awa" value="Niagara Frontier Transportation Authority|ICF International, Inc." />
+          <label for="Niagara Frontier Transportation Authority">Niagara Frontier Transportation Authority / ICF International, Inc.</label>
+        </li>
+      
+        <li>
+          <input type="checkbox" id="University of Washington" name="awa" value="University of Washington" />
+          <label for="University of Washington">University of Washington</label>
+        </li>
+      
+
+
       </ul>
     </div>
   </div>
@@ -201,7 +258,6 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.5.0/luxon.min.js"></script>
 <script is:inline>
 
-
 //sets up Datatable
   var table = $("#pubtable").DataTable({
     columnDefs: [
@@ -238,5 +294,7 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     table.column(0).search(buildFilterString("awa"), true, false, false).draw(false);
   });
 });
+
+
 
 </script>

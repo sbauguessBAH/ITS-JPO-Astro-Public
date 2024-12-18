@@ -1,6 +1,5 @@
 ---
-import tableContent from "../content/publicationsData/resources.json";
-import Webinars from "../pages/research/ITS4US/webinars.astro";
+import tableContent from "@/src/content/publicationsData/resources.json";
 
 const filerForWebinars = tableContent.filter(item => item.type === "Webinar")
 const uniqueType = [...new Set(tableContent.map(item => item.type))];
@@ -10,8 +9,23 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
 
 <link href="https://cdn.datatables.net/v/bs4/dt-2.1.4/datatables.min.css" rel="stylesheet">
 
+
+<style is:global>
+.page-item.active .page-link  {
+          background-color: #005D83 !important;
+        }
+
+
+.page-link{
+  color: #005D83;
+}
+</style>
+
 <style>
  
+
+ 
+
   ul {
     padding: 0;
     margin: 0;
@@ -35,6 +49,7 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     margin-bottom: 5px;
   }
   .checkbox-wrapper input[type="checkbox"] {
+    flex: 0 0 20px;
     width: 20px;
     height: 20px;
     margin-right: 5px;
@@ -60,6 +75,12 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     top: 0;
     left: 1px;
   }
+  label{
+    display: block;
+    width: auto;
+    flex: 2;
+  }
+ 
   thead {
     font-weight: bold;
     color: rgb(0, 93, 131);
@@ -94,6 +115,10 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
         .sortformholder {
           margin: 10px 0;
         }
+        hr{
+          margin: 0 0 8px 0;
+          padding: 0;
+        }
 </style>
 
 <div class="sortformholder">
@@ -125,7 +150,7 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     <div class="col-8" id="awardee">
       <h3>Filter by Awardee/Deployment</h3>
       <ul class="checkbox-wrapper">
-        <!-- this area loops over the unique Types and Displays them in the check box -->
+        <!-- this area loops over the unique Types and Displays them in the check box 
       {
         uniqueAwardee.map((item) => (
           
@@ -135,8 +160,33 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
           <label for={item}>{item}</label>
         </li> 
         ))
-      }
+      }-->
 
+      <li>
+        <input type="checkbox" id="Program Level" name="awa" value="Program Level" />
+        <label for="Program Level">Program Level</label><br />
+      </li>
+      <li>
+        <input type="checkbox" id="California Association of Coordinated Transportation" name="awa" value="California Association of Coordinated Transportation" />
+        <label for="California Association of Coordinated Transportation">California Association of Coordinated Transportation</label>
+      </li>
+      <li>
+        <input type="checkbox" id="Georgia" name="awa" value="Georgia Department of Transportation|Atlanta Regional Commission"/>
+        <label for="Georgia Department of Transportation">Georgia Department of Transportation / Atlanta Regional Commission</label>
+      </li> 
+      
+      <li>
+        <input type="checkbox" id="Heart of Iowa Regional Transit Agency" name="awa" value="Heart of Iowa Regional Transit Agency" />
+        <label for="Heart of Iowa Regional Transit Agency">Heart of Iowa Regional Transit Agency </label><br />
+      </li>
+      <li>
+        <input type="checkbox" id="Niagara Frontier Transportation Authority" name="awa" value="Niagara Frontier Transportation Authority|ICF International, Inc." />
+        <label for="Niagara Frontier Transportation Authority">Niagara Frontier Transportation Authority / ICF International, Inc.</label>
+      </li>
+      <li>
+        <input type="checkbox" id="University of Washington" name="awa" value="University of Washington" />
+        <label for="University of Washington">University of Washington</label>
+      </li>
   
       </ul>
     </div>
@@ -184,9 +234,24 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
 <script is:inline src="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.js"></script>
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.5.0/luxon.min.js"></script>
 <script is:inline>
+// groups the connected deployments
+// function syncCheckboxes(checkbox1Id, checkbox2Id) {
+//             document.getElementById(checkbox1Id).addEventListener('change', function() {
+//                 document.getElementById(checkbox2Id).checked = this.checked;
+//             });
 
+//             document.getElementById(checkbox2Id).addEventListener('change', function() {
+//                 document.getElementById(checkbox1Id).checked = this.checked;
+//             });
+//         }
+
+//         syncCheckboxes('Georgia Department of Transportation', 'Atlanta Regional Commission');
+//         syncCheckboxes('Niagara Frontier Transportation Authority', 'ICF International, Inc.');
 
 //sets up Datatable
+
+
+
   var table = $("#pubtable").DataTable({
     columnDefs: [
      { visible: false, targets: 4 },
@@ -212,7 +277,9 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
     function buildFilterString(name) {
       return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked'))
         .map(function (input) {
+         
           return input.value;
+          
         })
         .join("|");
     }

@@ -1,0 +1,64 @@
+---
+import Card from "@/src/components/pcb/Card.astro";
+import microlearningImage from "@/src/assets/images/pcb/actions/microlearning.jpeg";
+import peerExchangesImage from "@/src/assets/images/pcb/actions/peer-exchanges.jpeg";
+import resourcesImage from "@/src/assets/images/pcb/actions/resources.jpeg";
+import trainingsImage from "@/src/assets/images/pcb/actions/trainings.jpeg";
+import v2xToolsImage from "@/src/assets/images/pcb/actions/v2x-tools.png";
+import webinarsImage from "@/src/assets/images/pcb/actions/webinars.jpeg";
+
+const resources = [
+  {
+    title: "Explore ITS Trainings",
+    description: "Discover available training sessions to enhance your ITS knowledge.",
+    href: "/technology-transfer/pcb/trainings",
+    image: trainingsImage,
+  },
+  {
+    title: "Explore Microlearning Videos",
+    description: "Access brief videos for quick, focused learning on ITS topics.",
+    href: "/technology-transfer/pcb/microlearning",
+    image: microlearningImage,
+  },
+  {
+    title: "Access Academic Resources",
+    description: "Connect with tools and materials to support students and faculty in preparing for careers in ITS.",
+    href: "/technology-transfer/pcb/resources",
+    image: resourcesImage,
+  },
+  {
+    title: "Collaborate through ITS Peer Exchanges",
+    description: "Share knowledge and receive technical assistance for ITS planning and deployment challenges.",
+    href: "/technology-transfer/pcb/peer-exchanges",
+    image: peerExchangesImage,
+  },
+  {
+    title: "Utilize V2X Tools",
+    description: "Leverage tools that facilitate V2X communications",
+    href: "/technology-transfer/pcb/v2x-tools",
+    image: v2xToolsImage
+  },
+  {
+    title: "View or Register for Webinars",
+    description: "Join live sessions to explore current trends and developments in ITS",
+    href: "/technology-transfer/pcb/webinars",
+    image: webinarsImage
+  }
+]
+---
+<section>
+  <h2 class="text-center mb-4">What Do You Want to Do?</h2>
+  <div class="row gy-4">
+    {resources.map(resource => (
+      <div class="col-lg-6">
+        <Card
+          image={resource.image}
+          title={resource.title}
+          description={resource.description}
+          orientation="horizontal"
+          {...(resource.href && { "href": resource.href })}
+        />
+      </div>
+    ))}
+  </div>
+</section>

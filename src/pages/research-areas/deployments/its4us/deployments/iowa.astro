@@ -1,0 +1,180 @@
+---
+import { Image } from "astro:assets";
+import base_url from "@/src/lib/base_url";
+import ITS4USLayout from "../_ITS4USLayout.astro";
+import Waukee from "@/src/assets/images/its4us/waukee.png";
+import Map from "@/src/assets/images/its4us/HIRTA-map.png";
+---
+
+<style>
+  hr {
+    margin: 10px 0;
+  }
+  .blue {
+    display: grid;
+  }
+
+  figure {
+    margin: auto;
+    width: 40%;
+    float: right;
+    margin: 10px;
+  }
+  figcaption {
+    color: #333;
+    font-style: italic;
+    font-size: small;
+    padding: 10px;
+  }
+
+  figcaption p {
+    padding: 0;
+    margin: 0;
+    font-size: small;
+  }
+  iframe {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+</style>
+<ITS4USLayout title="Heart of Iowa Regional Transit Agency">
+  <h2 class="sideways blue">HIRTA Deployment Overview</h2>
+  <figure>
+    <Image src={Waukee} alt="A smiling woman with arms folded" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
+    <figcaption>
+      <p>“I need to see my doctor frequently since I have diabetes, and without transportation of my own, I can use HIRTA’s Health Connector app to schedule low cost rides at only $2.50 per fare.”</p>
+      <p class="text-end">- Illustrative Example of Potential User</p>
+    </figcaption>
+  </figure>
+  <p>
+    Health Connector is an innovative solution that will address various bottlenecks associated with transportation access to healthcare for HIRTA communities. Some of these challenges are key reasons
+    behind missed appointments or the unacceptable level of preventive or as-needed healthcare in the HIRTA service area. For this deployment, the HIRTA team plans to implement a scalable and
+    replicable solution that enables inclusive, affordable access to transportation to healthcare for all underserved populations and their caregivers by resolving transportation access barriers with
+    the use of advanced technologies.
+  </p>
+  <p>
+    This solution will allow Dallas County residents without access to transportation who may be seeking a medical appointment to identify and book available transportation through a smart device
+    (e.g., smartphone, smartwatch) application, and healthcare staff will have access to the same trip planning and booking features, allowing them to schedule a patient’s transportation at the same
+    time that a medical appointment is booked. Further, this solution will include information and wayfinding services to guide them at every step of their trip.
+  </p>
+  <br /><br />
+
+  <h2 class="sideways blue">Overview Video</h2>
+  <iframe
+  width="640" height="360" 
+    src="https://www.youtube.com/embed/xRbNLpA6IQs"
+    title="HIRTA Health Connector Explainer"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  >
+  </iframe>
+  <h2 class="sideways blue">Approach – Project Challenges and Solutions</h2>
+
+  <figure>
+    <Image src={Map} alt="HIRTA ITS4US Health Connector Site Deployment Map " width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
+    <figcaption>
+      <p>HIRTA ITS4US Health Connector Site Deployment Map</p>
+    </figcaption>
+  </figure>
+  <p>
+    Health Connector is an innovative solution that will utilize advanced transportation technologies to improve healthcare access for Dallas County residents. This solution is envisioned to address
+    the following key issues:
+  </p>
+  <ul>
+    <li>
+      <strong>Lack of Awareness About Available Transportation Options:</strong>
+      <p>
+        Travelers have limited information on options beyond personal (or arranged via family or friends) transportation for medical trips. Health Connector will provide a platform that will allow
+        customers to explore the availability of HIRTA and its partner vehicles through a “trip planning and discovery” feature.
+      </p>
+    </li>
+    <li>
+      <strong>Lack of Integrated Booking and Trip Management Experience:</strong>
+      <p>
+        Health Connector will address a longstanding need to integrate transportation and healthcare services. Health Connector will allow travelers, caregivers, healthcare staff, and other authorized
+        users to easily discover and book transportation services through the Health Connector app, online platform, or via phone, at the same time that they are scheduling a medical appointment,
+        ensuring that access to transportation is not a barrier to accessing healthcare. Health Connector will allow HIRTA staff to monitor changes to healthcare appointment times to ensure that
+        Health Connector transportation services are updated as needed.
+      </p>
+    </li>
+    <li>
+      <strong>Limited Capabilities with Current Transportation Modes:</strong>
+      <p>
+        Apart from HIRTA vehicles, there are limited modes that can meet the needs of underserved groups. HIRTA intends to partner with local third-party providers (e.g., taxi companies) for added
+        capacity to address the travel needs of Dallas County residents, as required.
+      </p>
+    </li>
+    <li>
+      <strong>Limited Wayfinding Capabilities:</strong>
+      <p>
+        Another missing link in medical transportation has been wayfinding both for locating the vehicle on arrival or wayfinding/navigating to the correct destination inside a facility upon arrival.
+        Health Connector will provide an accessible wayfinding experience for travelers.
+      </p>
+    </li>
+  </ul>
+  <h2 class="sideways blue">Measuring Deployment Impact</h2>
+  <p>Some of the key performance goals and targets for the Health Connector include:</p>
+  <ul>
+    <li>
+      <strong>Reducing medical appointment deferment due to lack of transportation:</strong>
+      <p>
+        The convenient access to transportation services provided by HIRTA, through Health Connector, will help Dallas County residents attend their medical appointments. One target for this
+        performance goal is at least a 30-percent reduction in the number of missed medical appointments that are related to transportation access during the 18-month evaluation period. Another target
+        is at least 80 percent of residents responding by indicating that transportation did not present a barrier to healthcare access 6 months after the launch of Health Connector, and at least 90
+        percent of residents responding by indicating that transportation did not present a barrier to healthcare access 12 months after the launch of Health Connector.
+      </p>
+    </li>
+    <li>
+      <strong>Reducing trips unfulfilled due to system unreliability:</strong>
+      <p>
+        Health Connector will help reduce the number of unfulfilled healthcare trip requests by improving system reliability through improved transportation management capabilities. Targets include at
+        least a 30-percent reduction in the number of trips where HIRTA was unable to fulfill the traveler’s request after Health Connector is in use, and at least a 20-percent reduction in the number
+        of missed trip events by travelers after Health Connector deployment.
+      </p>
+    </li>
+    <li>
+      <strong>Improving travel-time prediction accuracy:</strong>
+      <p>
+        Health Connector will assist in calculating onboard (in-vehicle) travel time for a trip accurately and reliably at the time of scheduling. Travel time accuracy in this context refers to the
+        number of minutes and seconds spent onboard, boarding, and alighting. The target for this goal is travel-time accuracy within 10 minutes of scheduled times 90 percent of the time, not counting
+        delays due to external factors.
+      </p>
+    </li>
+    <li>
+      <strong>Improving coordination among HIRTA, healthcare providers:</strong>
+      <p>
+        Health Connector will automate tasks to minimize the number of person-minutes spent in coordinating a trip by HIRTA and partners. Healthcare partners will have access to the same trip booking
+        and dispatching software as HIRTA dispatchers and will be able to register customers and book or modify trips, as authorized. It is expected that Health Connector will help achieve a target of
+        5 minutes or less in coordination time for customers calling in to book their transportation appointment for healthcare needs.
+      </p>
+    </li>
+  </ul>
+  <h2 class="sideways blue">Project Partners</h2>
+  <div class="row">
+    <div class="col-6">
+      <ul>
+        <li>HIRTA</li>
+        <li>Arcadis IBI Group</li>
+        <li>Community Transportation Association of America</li>
+        <li>Dallas County Health Department</li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul>
+        <li>Iowa State University (ISU)</li>
+        <li>Capture Management Solutions</li>
+        <li>NaviLens</li>
+        <li>Via</li>
+      </ul>
+    </div>
+  </div>
+  <h2 class="sideways blue">UW Links and Resources</h2>
+  <ul>
+    <li>Visit the <a href="https://www.nfta.com">HIRTA Project Website</a></li>
+    <li>Download the <a href="UW_Project_FactSheet.pdf">HIRTA Project FactSheet (PDF, 2 Mb).</a></li>
+    <li>Download the <a href="ITS4US_Program_Overview_FactSheet.pdf">ITS4US Program Overview FactSheet (PDF, 1.5 Mb).</a></li>
+  </ul>
+</ITS4USLayout>

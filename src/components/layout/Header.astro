@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+import USDOTLogo from '@/src/assets/images/US_DepartmentofTransportation-Logo.png';
+import youtubeIcon from "@/src/assets/images/Youtube.png";
+import facebookIcon from '@/src/assets/images/Facebook.png';
+import instgramIcon from '@/src/assets/images/Instagram.png';
+import twitterIcon from '@/src/assets/images/Twitter.png';
+import inDeedIcon from '@/src/assets/images/inDeed.png';
+import base_url from '@/src/lib/base_url';
+---
+<style>
+  .top-bar {
+    background-color: #091F61;
+    height: 50px;
+    width: 100%;
+  }
+  .header-bar {
+    min-height: 90px;
+    background-image: linear-gradient(to right, #0A1E62, #09638C );
+    padding: 10px 30px;
+    color: white;
+    text-transform: uppercase;
+  }
+  a {
+    transition: all .35s
+  }
+ .dot-logo {
+    max-height: 2rem;
+    object-fit: contain;
+    object-position: 0%;
+  }
+  @media (max-width: 768px) {
+    .header-bar {
+      min-height: 60px;
+    }
+  }
+</style>
+<div class="top-bar d-flex justify-content-between align-items-center px-4">
+  <a href="https://www.transportation.gov/">
+    <Image src={USDOTLogo} class="dot-logo" alt="U.S Department of Transportation Logo" />
+  </a>
+  <div class="d-none d-sm-flex flex-row align-items-center gap-2">
+    <a href="https://www.youtube.com/@itsjpo" target="_blank">
+      <Image src={youtubeIcon} class="SocialMediaIcon" alt="Youtube Logo" />
+    </a>
+    <a href="https://www.facebook.com/USDOTResearch" target="_blank">
+      <Image src={facebookIcon} class="SocialMediaIcon" alt="Facebook Logo" />
+    </a>
+    <!-- <a href="https://x.com/ITS_USDOT" target="_blank">
+    <Image src={instgramIcon} class="SocialMediaIcon" alt="Instagram Logo" />
+    </a> -->
+    <a href="https://x.com/ITS_USDOT" target="_blank">
+    <Image src={twitterIcon} class="SocialMediaIcon" alt="Twiter Logo" />
+    </a>
+    <a href="https://www.linkedin.com/company/usdot/"  target="_blank">
+    <Image src={inDeedIcon} class="SocialMediaIcon" alt="LinkedIn Logo" />
+  </a>
+  </div>
+</div>
+<div class="header-bar">
+  <div class="row">
+    <div class="col-lg-10">
+      <p class="siteheader">
+        <a rel="preload" href={base_url("/")} style="text-decoration: none; color: white">
+          Intelligent Transportation Systems
+          <br />
+          Joint Program Office
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
