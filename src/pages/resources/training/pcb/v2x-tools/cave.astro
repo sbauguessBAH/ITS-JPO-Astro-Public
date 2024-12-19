@@ -1,0 +1,41 @@
+---
+import Link from "@/src/components/Link.astro";
+import PcbLayout from "../_pcb-layout.astro";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import { Image } from "astro:assets";
+import caveImage from "@/src/assets/images/pcb/v2x/cave-in-a-box.jpg"
+---
+
+<style scoped>
+  article {
+    padding-top: 1rem;
+  }
+</style>
+<PcbLayout title="Equipment and Loan Desk">
+  <section>
+    <h2>Connected and Automated Vehicle Education (CAVe)-in-a-box</h2>
+    <div class="row align-items-start">
+      <div class="col-8">
+        <p>
+          Connected and Automated Vehicle Education (CAVe)-in-a-box provides hands-on learning experiences, system design documentation, 
+          instructions, and training videos to support curriculum development for connected and automated vehicle education. 
+          These resources aid community colleges and trade schools in equipping students with the necessary skills and knowledge for the ITS field.
+        </p>
+        <p>
+          <Link href="" isExternal>
+            Access CAVe-in-a-box Resources
+          </Link>
+        </p>
+      </div>
+      <div class="col-4">
+        <Image 
+          class="img-fluid"
+          src={caveImage} 
+          alt="A large black open hard-shell case with a laptop and antenna inside"
+        />
+      </div>
+    </div>
+  </section>
+</PcbLayout>
+

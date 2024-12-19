@@ -65,7 +65,13 @@ const trimmedPathname = getTrimmedPathname(pathname);
                         return (
                           <li>
                             <a 
-                              class="dropdown-item" 
+                              class:list={[
+                                "dropdown-item", 
+                                {"disabled": [
+                                    "ITS Professional Capacity Building", 
+                                    "Architecture, Standards, and Cybersecurity (ASC)"
+                                  ].includes(subPageLink.name)
+                                }]} 
                               href={base_url(subPageLink.url)}
                             >
                               {subPageLink.name}

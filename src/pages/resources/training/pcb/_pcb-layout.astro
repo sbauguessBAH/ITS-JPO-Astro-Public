@@ -5,9 +5,10 @@ import bannerText from "@/src/assets/images/pcb/banner-text.png";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 interface Props {
   title: string;
+  currentBreadcrumb?: string;
 }
 
-const { title } = Astro.props;
+const { title, currentBreadcrumb } = Astro.props;
 ---
 <style is:global>
   section {
@@ -15,7 +16,11 @@ const { title } = Astro.props;
     margin: 0;
   }
 </style>
-<PageLayout title={`${title} | Professional Capacity Building (PCB)`} bannerImage={bannerImage}>
+<PageLayout 
+  title={`${title} | Professional Capacity Building (PCB)`} 
+  bannerImage={bannerImage}
+  currentBreadcrumb={currentBreadcrumb}
+>
   <Fragment slot="banner">
     ITS Professional 
     <br/>
@@ -34,6 +39,9 @@ const { title } = Astro.props;
     </div> -->
   </Fragment>
   <SidebarLayout path="/resources/training/pcb">
+    <div class="alert alert-danger" role="alert">
+      WORK IN PROGRESS
+    </div>
     <slot/>
   </SidebarLayout>
 </PageLayout>
