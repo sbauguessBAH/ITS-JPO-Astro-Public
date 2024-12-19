@@ -25,11 +25,14 @@ const { title } = Astro.props;
 
 <PageLayout title={`${title} | ASC`} bannerImage={bannerImage}>
   <Fragment slot="banner">
-		Accelerating ITS Deployment
+		Enabling ITS Resources:
 		<br/>
 		Architecture, Standards, & Cybersecurity
 	</Fragment>
   <SidebarLayout path="/resources/accelerating/asc">
+    <div class="alert alert-danger" role="alert">
+      WORK IN PROGRESS
+    </div>
     <slot/>
   </SidebarLayout>
 	<section slot="footer" class="download bg-primary text-center py-4" id="research">

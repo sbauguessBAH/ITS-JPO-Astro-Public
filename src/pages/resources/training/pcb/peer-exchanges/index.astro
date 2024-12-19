@@ -1,0 +1,37 @@
+---
+import Card from "@/src/components/pcb/Card.astro";
+import PcbLayout from "../_pcb-layout.astro"
+
+import { getCollection } from "astro:content";
+const entries = await getCollection("pcb", (entry) =>
+  entry.id.startsWith("peer-exchanges")
+);
+---
+
+<PcbLayout title="Peer Exchanges">
+  <h2>Peer Exchanges</h2>
+  <p>
+    Providing technical assistance to agencies, facilitating knowledge transfer
+    to address ITS planning and operational challenges
+  </p>
+  <div class="row gy-4 mb-4 justify-content-start">
+    {entries.toSorted((one, two) => 
+      one.data.order - two.data.order
+    ).map(entry => (
+      <div class="col-sm-6">
+        <Card
+          image={entry.data.image}
+          title={entry.data.title}
+          description={entry.data.description}
+          href={`/resources/training/pcb/peer-exchanges/${entry.slug.split("/")[1]}`}
+        />
+      </div>
+    ))}
+  </div>
+  <p>
+    For more information, please contact the ITS PCB team at 
+    <a href="mailto:John.Schneeberger@dot.gov">
+      John.Schneeberger@dot.gov
+    </a>.
+  </p>
+</PcbLayout>

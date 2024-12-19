@@ -86,14 +86,14 @@ export const navigation: NavigationItem[] = [
       { name: 'Training', url: '/resources/training', pages: [
         { name: 'ITS Professional Capacity Building', url: '/resources/training/pcb', pages: [
           { name: 'ITS PCB Home', url: '/resources/training/pcb' },
-          { name: 'Trainings', url: '/resources/training/pcb/trainings' },
-          { name: 'Microlearning Videos', url: '/resources/training/pcb/microlearning' },
-          { name: 'Academic Resources', url: '/resources/training/pcb/resources' },
-          { name: 'Peer Exchanges', url: '/resources/training/pcb/peer-exchanges' },
-          { name: 'Vehicle-to-Everything (V2X)', url: '/resources/training/pcb/v2x-tools', pages: [
-            { name: 'V2X Tools', url: '/resources/training/pcb/v2x-tools' },
-            { name: 'Foundational V2X Trainings', url: '/resources/training/pcb/v2x-tools/foundational-v2x-trainings' },
-            { name: 'V2X Cohorts', url: '/resources/training/pcb/v2x-tools/v2x-cohorts'}
+          { name: 'Trainings', url: '/resources/training/pcb/trainings', hasGeneratedChildItems: true },
+          { name: 'Microlearning Videos', url: '/resources/training/pcb/microlearning'},
+          { name: 'Academic Resources', url: '/resources/training/pcb/academic-resources', hasGeneratedChildItems: true },
+          { name: 'Peer Exchanges', url: '/resources/training/pcb/peer-exchanges', hasGeneratedChildItems: true  },
+          { name: 'V2X Tools', url: '/resources/training/pcb/v2x-tools', pages: [
+            { name: 'Tools', url: '/resources/training/pcb/v2x-tools' },
+            { name: 'Equipment and Loan Desk', url: '/resources/training/pcb/v2x-tools/equipment-loan-desk' },
+            { name: 'Connected and Automated Vehicle Education (CAVe)-in-a-box', url: '/resources/training/pcb/v2x-tools/cave' },
           ] },
           { name: 'Webinars', url: '/resources/training/pcb/webinars' },
         ] }
@@ -104,8 +104,22 @@ export const navigation: NavigationItem[] = [
         { name: 'ITS Deployment Evaluation', url: 'https://www.its.dot.gov/pilots/index.htm', isExternal: true },
         { name: 'Architecture, Standards, and Cybersecurity (ASC)', url: '/resources/accelerating/asc', pages: [
           { name: "ASC Home", url: "/resources/accelerating/asc" },
-          { name: "ITS Standards", url: "/resources/accelerating/asc/standards" },
           { name: "ITS Reference Architecture", url: "/resources/accelerating/asc/reference-architecture" },
+          { name: "ITS Standards", url: "/resources/accelerating/asc/standards", hasGeneratedChildItems: true, 
+          //   pages: [
+          //   { name: "About ITS Standards Program", url: "/resources/accelerating/asc/standards" },
+          //   { name: "Emerging Technology", url: "/resources/accelerating/asc/standards/emerging-technology" },
+          //   { name: "Public Mobility", url: "/resources/accelerating/asc/standards/public-mobility" },
+          //   { name: "Operations/Safety", url: "/resources/accelerating/asc/standards/operations-safety" },
+          //   { name: "Data/Trusted Exchanges", url: "/resources/accelerating/asc/standards/data-trusted-exchanges" },
+          //   { name: "Vehicle-to-Everything (V2X)", url: "/resources/accelerating/asc/standards/v2x" },
+          //   { name: "Vulnerable Road User (VRU)", url: "/resources/accelerating/asc/standards/vru" },
+          //   { name: "Cybersecurity Controls", url: "/resources/accelerating/asc/standards/cybersecurity-controls" },
+          //   { name: "Positioning, Navigation, and Timing (PNT)", url: "/resources/accelerating/asc/standards/pnt" },
+          //   { name: "Supply Chain", url: "/resources/accelerating/asc/standards/supply-chain" },
+          //   { name: "Automation", url: "/resources/accelerating/asc/standards/automation" }
+          // ]
+          },
           { name: "ITS Cybersecurity", url: "/resources/accelerating/asc/cybersecurity" },
           { name: "Enabling Legislation & Policy", url: "/resources/accelerating/asc/legislation-and-policy" },
           { name: "Resources and Tools", url: "/resources/accelerating/asc/resources-and-tools" },
