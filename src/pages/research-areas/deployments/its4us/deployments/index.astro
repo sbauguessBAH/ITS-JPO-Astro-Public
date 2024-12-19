@@ -96,6 +96,23 @@ import Takashi from "@/src/assets/images/its4us/TakashiSlide3.png";
   h2 {
     text-wrap: pretty;
   }
+
+  @media screen and (max-width: 1400px) {
+
+  .carousel .carousel-item {
+  height: 400px;
+}
+
+.carousel-item img {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+}
+  }
+
+
 </style>
 
 <ITS4USLayout title="Deployments">
@@ -113,7 +130,7 @@ import Takashi from "@/src/assets/images/its4us/TakashiSlide3.png";
         <div class="container">
           <div class="carousel-caption text-start">
             <h2>Heart of Iowa Reginal Transit Agency</h2>
-            <p>
+            <p class="d-none d-sm-block">
               "I am visually impaired and unable to drive. My family is not close and I rely on HIRTA for all transportation needs. HIRTA provides me with rides to and from doctor visits. I had been getting discouraged in getting transportation. HIRTA and the Health Connector help tremendously."
             </p>
             <p class="text-end float-end">- Illustrative Example<br />of Potential User</p>
@@ -128,7 +145,7 @@ import Takashi from "@/src/assets/images/its4us/TakashiSlide3.png";
           <div class="carousel-caption text-start">
             <h2>Georgia Depoartment of Transportation</h2>
 
-            <p>
+            <p class="d-none d-sm-block">
               “We often hear about mobility and accessibility barriers that individuals are facing, or we live out those barriers ourselves. G-MAP will allow individuals to plan their trip to be fully
               accessible for them while increasing safety. This project is empowering because G-MAP is creating a whole new level of independence for people.”
             </p>
@@ -145,7 +162,7 @@ import Takashi from "@/src/assets/images/its4us/TakashiSlide3.png";
           <div class="carousel-caption text-start">
             <h2>University of Washington</h2>
 
-            <p>
+            <p class="d-none d-sm-block">
               “With my vision impairment, a speech-enabled web app on my phone helps me know if my route includes well-paved sidewalks, intersections that have signalized and marked crosswalks, and
               stairs-free paths to the buildings.”
             </p>
@@ -160,7 +177,7 @@ import Takashi from "@/src/assets/images/its4us/TakashiSlide3.png";
         <div class="container">
           <div class="carousel-caption text-start">
             <h2>Niagara Frontier Transportation Authority</h2>
-            <p>
+            <p class="d-none d-sm-block">
               “I am a nurse at Buffalo General Medical Center who uses the Buffalo All Access community shuttle service along with the Complete Trip Platform app to get from my home in Masten Park to
               the hospital on the BNMC campus.”
             </p>
