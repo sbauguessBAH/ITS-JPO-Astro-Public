@@ -214,6 +214,7 @@ export function hasMatchingPageOrGeneratedChildItems(navigationItem: AnyNavigati
   if (navigationItem.pages?.some(page => page.url === navigationItem.url)) return true;
   if (navigationItem.hasGeneratedChildItems) return true;
   return false;
+  return console.log('false')
 }
 
 export function generateBreadcrumbItem(navigationItem: AnyNavigationItem) {

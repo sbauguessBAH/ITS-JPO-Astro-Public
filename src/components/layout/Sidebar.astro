@@ -132,7 +132,7 @@ const path = Astro.url.pathname;
     {items.map((item) => {
       const trimmedPath = item.url.replaceAll("/", "");
       const showCollapsedItems = item.pages !== undefined && getTrimmedPathname(path).startsWith(item.url);
-      console.log(showCollapsedItems);
+      // console.log(showCollapsedItems); Removed but can be useful for future troubleshooting 
       return (
         <li class="sidebar-list-item">
           {item.pages ? (

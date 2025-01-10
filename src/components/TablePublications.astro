@@ -125,20 +125,24 @@ label{
   <div class="row">
     <div class="col" id="type">
       <h3>Filter by Type</h3>
-      <ul class="checkbox-wrapper">
-        <!-- this area loops over the unique Types and Displays them in the check box -->
-      {
-        uniqueType.map((item) => (
-          
-        <li>
-          
-          <input type="checkbox" id={item} name="typ" value={item} />
-          <label for={item}>{item}</label>
-        </li> 
-        ))
-      }
-
   
+      <ul class="checkbox-wrapper">
+        <li>
+          <input type="checkbox" id="Webinar" name="typ" value="Webinar" />
+          <label for="Webinar">Webinar</label><br />
+        </li>
+        <li>
+          <input type="checkbox" id="Training Materials" name="typ" value="Training Materials" />
+          <label for="Training Materials">Training Materials</label><br />
+        </li>
+        <li>
+          <input type="checkbox" id="Presentation Slide Deck" name="typ" value="Presentation Slide Deck" />
+          <label for="Presentation Slide Deck">Presentation Slide Deck</label><br />
+        </li>
+        <li>
+          <input type="checkbox" id="Publication" name="typ" value="Publication" />
+          <label for="Publication">Publication</label>
+        </li>
       </ul>
     </div>
 
