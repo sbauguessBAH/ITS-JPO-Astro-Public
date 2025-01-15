@@ -1,8 +1,40 @@
 ---
 import Link from "@/src/components/Link.astro";
 import PcbLayout from "./_pcb-layout.astro";
----
+import { getEntry } from "astro:content";
+import Card from "@/src/components/pcb/Card.astro";
+import { Image } from 'astro:assets';
 
+
+const pcbCategories = await getEntry("pcb_categories", "pcb_categories");
+---
+<style>
+  .category-image {
+    height:4rem;
+    width:4rem;
+  }
+  .category-link {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.25rem;
+    border: 1px solid var(--border-light);
+    border-radius: 1rem;
+    width:100%;
+    background-color: white;
+  }
+  .category-title {
+    margin: 0 0.5rem;
+  }
+  .category-link:hover {
+    font-weight: normal;
+    background-color: var(--background-light);
+    -moz-box-shadow: 0px 2px 4px var(--border-light); 
+    -webkit-box-shadow: 0px 2px 4px var(--border-light); 
+    box-shadow: 0px 2px 4px var(--border-light);
+    transition: all ease-in 0.25s;
+    cursor:pointer;
+  }
+</style>
 <PcbLayout title="Webinars">
   <h2>ITS Webinars for Academics</h2>
   <p>
@@ -30,11 +62,52 @@ import PcbLayout from "./_pcb-layout.astro";
     </ul>
   </p>
   <p>
-    If you have any questions about the archive or suggestions about future T3 Webinar topics, 
+    If you have any questions about the archive or suggestions about future Webinar topics, 
     <Link isExternal href="mailto:Tara.Reel@dot.gov">
       please contact us
     </Link>
   </p>
+
+  <div class="row gy-2 gx-2" id="pills-tab" role="tablist">
+    {pcbCategories.data.map((category, index) => (
+      <div class="col-4" role="presentation">
+        <button 
+          class="category-link d-flex align-items-center" 
+          id={`pills-${category.slug}-tab`}
+          data-bs-toggle="pill" 
+          data-bs-target={`#pills-${category.slug}`}
+          type="button"
+          role="tab"
+          aria-controls={`pills-${category.slug}`}
+          aria-selected={index === 0 ? "true" : "false"}
+        >
+          <Image 
+            src={category.image}
+            alt={category.title}
+            class="category-image"
+          />
+          <span class="category-title">
+            {category.title}
+          </span>
+        </button>
+      </div>
+    ))}
+  </div>
+  <div class="tab-content" id="pills-tabContent">
+    {pcbCategories.data.map((category, index) => (
+      <div
+        class:list={[
+          "tab-pane fade",
+          {"show active": index === 0}
+        ]}
+        role="tabpanel"
+        id={`pills-${category.slug}`}
+        aria-labelledby={`pills-${category.slug}-tab`}
+      >
+        {category.title}
+      </div>
+    ))}
+  </div>
 
   <pre>
     Table of all the webinars goes here. 

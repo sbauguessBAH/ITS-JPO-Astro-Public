@@ -93,9 +93,10 @@ export const navigation: NavigationItem[] = [
           { name: 'V2X Tools', url: '/resources/training/pcb/v2x-tools', pages: [
             { name: 'Tools', url: '/resources/training/pcb/v2x-tools' },
             { name: 'Equipment and Loan Desk', url: '/resources/training/pcb/v2x-tools/equipment-loan-desk' },
-            { name: 'Connected and Automated Vehicle Education (CAVe)-in-a-box', url: '/resources/training/pcb/v2x-tools/cave' },
+            // { name: 'Connected and Automated Vehicle Education (CAVe)-in-a-box', url: '/resources/training/pcb/v2x-tools/cave' },
           ] },
-          { name: 'Webinars', url: '/resources/training/pcb/webinars' },
+          //{ name: 'Webinars', url: '/resources/training/pcb/webinars' },
+          { name: 'Webinars', url: 'https://www.its.dot.gov/pcb/itscourses/default.aspx', isExternal: true }
         ] }
       ] },
       { name: 'National Transportation Library', url: '/resources/national-transportation-library' },

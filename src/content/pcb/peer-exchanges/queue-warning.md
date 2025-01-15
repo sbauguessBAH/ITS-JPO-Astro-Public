@@ -1,6 +1,6 @@
 ---
 title: "Queue Warning Peer Exchange"
-description: "Focuses on sharing best practices and lessons learned in the planning and implementation of queue warning systems to enhance roadway safety and traffic flow."
+description: "This peer exchange focused on sharing best practices and lessons learned in the planning and implementation of queue warning systems to enhance roadway safety and traffic flow."
 image: "./images/queue-warning.png"
 order: 2
 ---
