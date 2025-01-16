@@ -61,9 +61,10 @@ export const navigation: NavigationItem[] = [
           { name: 'Pre-Trip Concierge & Virtualization', url: '/research-areas/archive/attri/concierge' },
           { name: 'Safe Intersection Crossing', url: '/research-areas/archive/attri/street-crossing' },
           { name: 'Robotics & Automation', url: '/research-areas/archive/attri/automation' },
-
         ]},
-        { name: 'MOD', url: '/research-areas/archive/mod' },
+        { name: 'MOD', url: '/research-areas/archive/mod', pages: [
+          { name: 'Mobility On Demand (MOD)', url: '/research-areas/archive/mod/' },
+        ]},
       ]}
     ]
   },
@@ -214,7 +215,6 @@ export function hasMatchingPageOrGeneratedChildItems(navigationItem: AnyNavigati
   if (navigationItem.pages?.some(page => page.url === navigationItem.url)) return true;
   if (navigationItem.hasGeneratedChildItems) return true;
   return false;
-  return console.log('false')
 }
 
 export function generateBreadcrumbItem(navigationItem: AnyNavigationItem) {

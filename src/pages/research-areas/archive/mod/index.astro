@@ -1,0 +1,253 @@
+---
+import { Image } from "astro:assets";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import ModLogo from "@/src/assets/images/mod/MOD_Logo.jpg";
+---
+
+<style>
+  #portalBox_right {
+    font-size: smaller;
+    width: 30%;
+    float: right;
+    border: 1px solid #d0d0d0;
+    background-color: #eeeeee;
+    margin-bottom: 12px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  #portalBox_right a:hover {
+  }
+
+  #portalBox_right ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+  }
+
+  #portalBox_right ul li {
+    margin: 0;
+    padding-left: 10px;
+    position: relative;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+
+  #portalBox_right ul li::before {
+    content: ""; /* Custom bullet for main list */
+    display: inline-block;
+    position: absolute;
+    left: 0;
+  }
+
+  #portalBox_right ul ul li::before {
+    content: "▸"; /* Custom bullet for nested list */
+  }
+
+  #portalBox_right ul ul ul li::before {
+    content: "◦"; /* Custom bullet for deeper nested list */
+    color: #2ecc71; /* Bullet color for deeper nested list */
+  }
+  hr {
+    margin: 10px 0;
+  }
+  .blue {
+    display: grid;
+  }
+</style>
+<PageLayout title="Mobility On Demand (MOD)">
+  <Fragment slot="banner"> Mobility On Demand (MOD) </Fragment>
+  <main>
+    <div class="col_right_main" style="margin-left: 12px;">
+      <div id="portalBox_right">
+        <h2 class="text-center p-0 m-0">MOD Portal</h2>
+        <p class="text-center p-0 m-0 mb-3">
+            <Image src={ModLogo} alt="Video screenshot"  class="w-100 h-auto"/>
+        </p>
+        <ul >
+          <li>
+            <strong>Highlights</strong>
+            <ul >
+              <li><a href="https://www.transit.dot.gov/IMI" target="_blank" rel="noopener noreferrer">FTA Integrated Mobility Innovation Program</a></li>
+              <!--<li><a href="https://www.transit.dot.gov/research-innovation/mobility-demand-mod-sandbox-program.html" target="_blank" rel="noopener noreferrer">FTA MOD Sandbox Program</a></li>-->
+              <li><a href="https://rosap.ntl.bts.gov/view/dot/34258" target="_blank" rel="noopener noreferrer">Mobility on Demand Operational Concept Report</a></li>
+            </ul>
+          </li>
+          <li>
+            <strong>Recent Reports</strong>
+            <ul >
+              <li>
+                <a href="https://rosap.ntl.bts.gov/view/dot/53933" target="_blank" rel="noopener noreferrer">
+                  New Publication: Multimodal and Accessible Travel Standards Assessment: Forward-Looking Assessment White Paper
+                </a>
+              </li>
+              <li>
+                <a href="https://www.transit.dot.gov/sites/fta.dot.gov/files/2020-11/FTA-Report-No-0175.pdf" target="_blank" rel="noopener noreferrer">
+                  New Publication: MOD Sandbox Valley Metro Evaluation Report
+                </a>
+              </li>
+              <li>
+                <a href="https://rosap.ntl.bts.gov/view/dot/53343" target="_blank" rel="noopener noreferrer">
+                  New Publication: Mobility Marketplace Connecting Travelers: Concept of Operations Blueprint
+                </a>
+              </li>
+            </ul>
+          </li><li>
+            <strong>New Publications: Mobility on Demand Fact Sheets</strong>
+            <ul >
+              <li><a href="../../factsheets/pdf/MobilityonDemand.pdf" target="_blank" rel="noopener noreferrer">Mobility on Demand (MOD) Program Overview</a></li>
+              <li><a href="../../factsheets/pdf/MOD_BusinessModelsAnalysis.pdf" target="_blank" rel="noopener noreferrer">MOD Business Models</a></li>
+              <li><a href="../../factsheets/pdf/MOD_IntegratedPayment.pdf" target="_blank" rel="noopener noreferrer">MOD Marketplace: Integrated Payment</a></li>
+              <li><a href="../../factsheets/pdf/MOD_Micromobility.pdf" target="_blank" rel="noopener noreferrer">MOD Special Studies: Micromobility</a></li>
+              <li><a href="../../factsheets/pdf/MOD_OffPeakTransit.pdf" target="_blank" rel="noopener noreferrer">MOD Special Studies: Off-peak Transit</a></li>
+            </ul>
+          </li>
+          <li>
+            <strong>Recent Events</strong>
+            <ul >
+              <li>
+                <a href="https://www.pcb.its.dot.gov/t3/s191120_MOD_Series_1_TSMO_and_MOD_Vision.aspx" target="_blank" rel="noopener noreferrer">
+                  MOD Webinar #1: TSMO and the MOD Vision: Concepts and Examples
+                </a>
+              </li>
+              <li>
+                <a href="https://www.pcb.its.dot.gov/t3/s191211_MOD_Series_2_Past_Present_and_Future.aspx" target="_blank" rel="noopener noreferrer">
+                  MOD Webinar #2: Mobility on Demand: Past, Present, and Future
+                </a>
+              </li>
+              <li>
+                <a href="https://www.pcb.its.dot.gov/t3/s200122_MOD_Series_3_Current_Practices.aspx" target="_blank" rel="noopener noreferrer">
+                  MOD Webinar #3: Current Practices in MOD Planning and Implementation
+                </a>
+              </li>
+              <li>
+                <a href="https://www.pcb.its.dot.gov/t3/s200212_MOD_Series_4_Business_Models_Analysis.aspx" target="_blank" rel="noopener noreferrer">MOD Webinar #4: Business Models Analysis</a>
+              </li>
+              <li>
+                <a href="https://www.pcb.its.dot.gov/t3/s200325_MOD_Series_5_Micromobility_An_Increasing_Mobility_Option.aspx" target="_blank" rel="noopener noreferrer">
+                  MOD Webinar #5: Micromobility: An Increasing Mobility
+                </a>
+              </li>
+              <li>
+                <a href="https://www.pcb.its.dot.gov/t3/s200617_MOD_Series_6_Mobility_Marketplace_Integration.aspx" target="_blank" rel="noopener noreferrer">
+                  MOD Webinar #6: Mobility Marketplace: Integration, Integration, Integration
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Upcoming Events</strong>
+            <ul >
+              <li><a href="https://www.itsamericaevents.com/world-congress/en-us/for-exhibitors.html" target="_blank" rel="noopener noreferrer">2020 ITS World Congress Virtual Conference</a></li>
+              <li><a href="http://www.trb.org/AnnualMeeting/AnnualMeeting.aspx" target="_blank" rel="noopener noreferrer">2021 TRB Annual Meeting – A Virtual Event</a></li>
+            </ul>
+          </li>
+          <li><a href="mod_resources.htm"><strong>All MOD Resources</strong></a></li>
+          <li>
+            <strong>Featured Links</strong>
+            <ul >
+              <li>
+                <a href="https://energy.gov/sites/prod/files/2017/01/f34/The Transforming Mobility Ecosystem Report.pdf" target="_blank" rel="noopener noreferrer">
+                  The Transforming Mobility Ecosystem, U.S. Department of Energy
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- <div class="latest_news">
+      
+      <h2 class="sideways blue">ATTRI News and Events</h2>
+      <ul>
+        <li><a href="../../exit/attri_5.htm">ATTRI Update Webinar #5 – Robotics and Automation recording is now available</a></li>
+        <li><a href="https://rosap.ntl.bts.gov/view/dot/34721" target="_blank" rel="noopener noreferrer">ATTRI Institutional and Policy Issues Assessment Now Available</a></li>
+        <li><a href="ad2_webinar2017.htm">ATTRI Application Development Webinars Recordings Now Available</a></li>
+        <li><a href="../../exit/naric.htm">NIDILRR Announces Robotics and Automation Grant Recipient</a></li>
+        <li>
+          <a href="https://ntlrepository.blob.core.windows.net/lib/61000/61000/61018/FHWA-JPO-17-499.pdf" target="_blank" rel="noopener noreferrer">
+            Now Available – ATTRI International Innovation Coordination Plan
+          </a>
+        </li>
+        <li><a href="pdf/ATTRI_BAA_AwardsAnnouncement.pdf" target="_blank" rel="noopener noreferrer">ATTRI Application Development Awards</a></li>
+      </ul>
+      <p class="morenews"><a href="../../press/news.htm">More news <img src="../../images/arrow_double_right.png" width="7" height="7" alt="double right arrow" /></a></p>
+      <p></p>
+     
+    </div>  -->
+
+    <h2 class="sideways blue">About Mobility on Demand</h2>
+    <p>
+      The United States Department of Transportation (USDOT) uses the term Mobility on Demand (MOD) to represent its vision for future mobility. MOD envisions a safe, reliable and carefree mobility
+      ecosystem that supports complete trips for all, both personalized mobility and goods delivery. USDOT achieves this vision by leveraging innovative technologies and facilitating public private
+      partnerships to allow for a user-centric approach that improves mobility options for all travelers, and delivery of goods and services.
+    </p>
+    <h2 class="sideways blue">About the Mobility on Demand Research Program</h2>
+    <p>
+      The Mobility on Demand (MOD) Research Program is a joint U.S. DOT initiative, co-led by the ITS JPO and the Federal Transit Administration (FTA). The MOD Research Program supports state and
+      local public agencies as they navigate the dynamic, evolving landscape of personal mobility and integrated multimodal transportation network.
+    </p>
+    <p>
+      The MOD Research Program is an innovative, user-focused research initiative with a transformative approach to travel, leveraging emerging mobility services, integrated transportation networks
+      and operations, real-time data, connected travelers, and existing transit services and infrastructure.
+    </p>
+    <p>
+      In collaboration with stakeholders, the program will investigate opportunities where the individual traveler can experience several high-quality mobility choices to complete trips and improve
+      their access to destinations. MOD leverages advances in technology and operations to create an environment where all travelers have safe mobility options ensuring reliable, informed, and
+      efficient travel in a multimodal network that prioritizes individual, on-demand mobility within the context of a complete transportation network.
+    </p>
+    <h2 class="sideways blue">The MOD Operational Concept Report</h2>
+    <p>
+      This operational concept report provides an overview of the Mobility on Demand (MOD) concept and its evolution, description of the MOD ecosystem in a supply and demand framework, and its
+      stakeholders and enablers.&nbsp; Leveraging the MOD ecosystem framework, this report reviews the key enablers of the system including business models and partnerships, land use and different
+      urbanization scenarios, social equity and environmental justice, policies and standards, and enabling technologies. This review is mostly focused on the more recent forms of MOD (e.g., shared
+      mobility). The <a href="https://rosap.ntl.bts.gov/view/dot/34258" target="_blank" rel="noopener noreferrer">MOD Operational Concept Report</a> is available on the National Transportation Library.
+    </p>
+    <div class="contacts">
+      <h2>Research Contacts</h2>
+      <p>
+        <strong>Robert Sheehan</strong>, P.E., PTOE<br />
+        Multimodal ITS Program Manager<br />
+        ITS Joint Program Office<br />
+        U.S. Department of Transportation<br />
+        (202) 366-6817<br />
+        <a href="mailto:Robert.Sheehan@dot.gov">Robert.Sheehan@dot.gov</a>
+      </p>
+      <p>
+        <strong>Gwo-Wei Torng</strong>, PhD<br />
+        Director of Mobility Innovation<br />
+        Federal Transit Administration<br />
+        (202) 366-2378<br />
+        <a href="mailto:Gwo-Wei.Torng@dot.gov">Gwo-Wei.Torng@dot.gov</a>
+      </p>
+
+      <p>
+        <strong>Jim Hunt</strong><br />
+        Office of Operations<br />
+        Federal Highway Administration<br />
+        (717) 221-4422<br />
+
+        <a href="mailto:jim.hunt@dot.gov">Jim.Hunt@dot.gov</a>
+      </p>
+      <p>
+        <strong>Ralph P. Volpe</strong><br />
+        Resource Center – Operations Technical Service Team<br />
+        Federal Highway Administration<br />
+        (202) 366-2378<br />
+
+        <a href="mailto:ralph.volpe@dot.gov">Ralph.Volpe@dot.gov</a>
+      </p>
+      <p>
+        <strong>Corbin Davis</strong><br />
+        Office of Planning, Environment, and Realty <br />
+        Federal Highway Administration <br />
+        202-366-6072<br />
+        <a href="mailto:corbin.davis@dot.gov">Corbin.Davis@dot.gov</a>
+      </p>
+      <div>
+        <div></div>
+      </div>
+      <div class="clearboth"></div>
+    </div>
+  </main>
+</PageLayout>
