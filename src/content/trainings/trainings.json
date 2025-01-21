@@ -79,10 +79,10 @@
     "title": "Vehicle-to-Everything (V2X)",
     "trainings": [
       {
-        "title": "Foundational V2X Training",
+        "title": "Vehicle-to-Everything (V2X) Training",
         "description": "Participants are introduced to the key components that enable a V2X ecosystem, the potential benefits of the technology, and example use cases and the messages and standards supporting them while ensuring safety and privacy.",
-        "image": "./images/foundational-v2x.jpg",
-        "url": "/resources/training/pcb/trainings/foundational-v2x",
+        "image": "./images/v2x-training.jpg",
+        "url": "/resources/training/pcb/trainings/v2x-training",
         "isExternal": false
       },
       {
@@ -108,6 +108,7 @@
         "title": "FHWA-NHI-133128: Making the Business Case for Institutional, Organizational, and Procedural Changes for TSMO",
         "description": "This 1-hour course is designed to teach state and local TSMO champions how and why they need to make a business case for TSMO implementation.",
         "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&key=TSMO&sf=0&course_no=133128",
+        "image": "./images/tsmo-business-case.jpg",
         "isExternal": true
       },
       {
@@ -128,6 +129,7 @@
         "title": "FHWA-NHI-133133: Planning for TSMO - Putting Concepts into Action",
         "description": "This 6-hour web conference training session builds on Course 2 (NHI-133132) and uses interactive activities to engage participants and bring the concepts of planning for TSMO to life.",
         "url": "https://www.nhi.fhwa.dot.gov/course-search?sf=0&course_no=133133",
+        "image": "./images/tsmo-concepts-into-action.jpg",
         "isExternal": true
       },
       {

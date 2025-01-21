@@ -75,16 +75,6 @@ export const collections = {
       })
     )
   }),
-  pcb_categories: defineCollection({
-    type: 'data',
-    schema: ({ image }) => z.array(
-      z.object({
-        title: z.string(),
-        image: image(),
-        slug: z.string()
-      })
-    )
-  }),
   pcb: defineCollection({
     type: 'content', // v2.5.0 and later
     schema: ({ image }) => z.object({

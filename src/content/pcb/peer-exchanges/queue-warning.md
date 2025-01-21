@@ -1,6 +1,6 @@
 ---
 title: "Queue Warning Peer Exchange"
-description: "This peer exchange focused on sharing best practices and lessons learned in the planning and implementation of queue warning systems to enhance roadway safety and traffic flow."
+description: "The U.S. Department of Transportation (U.S. DOT) facilitated a series of virtual peer exchanges designed to share best practices and lessons learned in planning and deploying Queue Warning Systems (QWS)."
 image: "./images/queue-warning.png"
 order: 2
 ---
