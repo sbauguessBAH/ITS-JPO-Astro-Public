@@ -198,12 +198,15 @@
         "title": "Standards Trainings",
         "description": "Placeholder",
         "image": "./images/standards.png",
-        "url": "/resources/training/pcb/trainings/standards"
+        "url": "https://www.its.dot.gov/pcb/stds_modules.aspx",
+        "isExternal": true
       },
       {
         "title": "Transit Standards Trainings",
         "description": "Placeholder",
-        "image": "./images/transit-standards.jpg"
+        "image": "./images/transit-standards.jpg",
+        "url": "https://www.its.dot.gov/pcb/stds_modules_transit.aspx",
+        "isExternal": true
       }
     ]
   }
