@@ -3,14 +3,14 @@
     "title": "ITS Basics",
     "trainings": [
       {
-        "title": "FHWA-NHI-137049. ITS Procurement - WEB-BASED",
+        "title": "FHWA-NHI-137049: ITS Procurement - WEB-BASED",
         "description": "This course provides an overview of strategies for deploying ITS projects, focusing on systems engineering principles and the procurement stage, from identifying needs to contractor selection.",
         "image": "./images/its-basics-procurement.jpg",
         "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137049",
         "isExternal": true
       },
       {
-        "title": "FHWA-NHI-137050. ITS What, Why, and How",
+        "title": "FHWA-NHI-137050: ITS What, Why, and How",
         "description": "This course equips professionals responsible for ITS programs with an understanding of ITS capabilities, planning and procurement processes, operations management, and workforce needs for long-term success.",
         "image": "./images/its-basics-what-why-how.jpg",
         "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137050",
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "title": "Systems Engineering and Architecture",
+    "title": "ITS Architecture",
     "trainings": [
       {
         "title": "ARC-IT Training",
@@ -55,9 +55,14 @@
         "image": "./images/use-and-maintenance.jpg",
         "url": "https://www.arc-it.net/html/resources/useandmainttraining.html",
         "isExternal": true
-      },
+      }
+    ]
+  },
+  {
+    "title": "Systems Engineering",
+    "trainings": [
       {
-        "title": "# FHWA-NHI-137051. Systems Engineering Fundamentals for ITS",
+        "title": "FHWA-NHI-137051: Systems Engineering Fundamentals for ITS",
         "description": "\"Systems Engineering Fundamentals\" is an 8-hour NHI course introducing ITS project staff to key systems engineering concepts and best practices like modeling, testing, and risk assessment.",
         "image": "./images/sys-eng-fundamentals.jpg",
         "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137051",
@@ -74,14 +79,21 @@
     "title": "Vehicle-to-Everything (V2X)",
     "trainings": [
       {
-        "title": "Foundational V2X Training",
+        "title": "Vehicle-to-Everything (V2X) Training",
         "description": "Participants are introduced to the key components that enable a V2X ecosystem, the potential benefits of the technology, and example use cases and the messages and standards supporting them while ensuring safety and privacy.",
-        "image": "./images/foundational-v2x.png",
-        "url": "/resources/training/pcb/trainings/foundational-v2x",
+        "image": "./images/v2x-training.jpg",
+        "url": "/resources/training/pcb/trainings/v2x-training",
         "isExternal": false
       },
       {
-        "title": "# FHWA-NHI-137060. Introduction to Connected Vehicles and Automated Vehicles",
+        "title": "Connected and Automated Vehicle Education (CAVe)",
+        "description": "Connected and Automated Vehicle education (CAVe) seeks to provide community colleges, trade schools, universities, and other academic stakeholders with unique tools and resources for the development of an intelligent ransportation workforce.",
+        "image": "./images/cave.jpg",
+        "url": "/resources/training/pcb/trainings/cave",
+        "isExternal": false
+      },
+      {
+        "title": "FHWA-NHI-137060: Introduction to Connected Vehicles and Automated Vehicles",
         "description": "This course offers practitioners a foundational understanding of connected and automated vehicle technology, emphasizing USDOT's research and applications.",
         "image": "./images/connected-vehicles.jpg",
         "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137060",
@@ -93,51 +105,77 @@
     "title": "Transportation Systems Management and Operations (TSMO)",
     "trainings": [
       {
-        "title": "# FHWA-NHI-137072. Weather Responsive Traffic Management (WRTM)",
-        "description": "WRTM is a 6-hour NHI web training for transportation managers on strategies to manage traffic flow during adverse weather, including implementation and performance evaluation tools.",
-        "image": "./images/tsmo-wrtm.jpg",
-        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137072",
+        "title": "FHWA-NHI-133128: Making the Business Case for Institutional, Organizational, and Procedural Changes for TSMO",
+        "description": "This 1-hour course is designed to teach state and local TSMO champions how and why they need to make a business case for TSMO implementation.",
+        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&key=TSMO&sf=0&course_no=133128",
+        "image": "./images/tsmo-business-case.jpg",
         "isExternal": true
       },
       {
-        "title": "# FHWA-NHI-137073. Principles and Tools for Road Weather Management",
-        "description": "The course covers road weather problems, basic meteorology, and strategies like RWIS and decision support systems for traffic and emergency management.",
-        "image": "./images/tsmo-rwm.jpg",
-        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&key=weather&srt=0&sf=0&course_no=137073",
-        "isExternal": true
-      },
-      {
-        "title": "# FHWA-NHI-137074. Road Weather Information Systems (RWIS) Equipment and Operations",
-        "description": "RWIS Equipment and Operations is a 4-hour NHI web training on managing adverse weather challenges in road maintenance, focusing on RWIS initiatives and deployment action plans.",
-        "image": "./images/tsmo-rwis.jpg",
-        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137074",
-        "isExternal": true
-      },
-      {
-        "title": "# FHWA-NHI-133126A. National Traffic Incident Management Responder Training",
-        "description": "This web-based training [WBT] consists of five content lessons and a final assessment. Each lesson consists of multiple topics that focus on a particular concept.",
-        "image": "./images/tsmo-responder-training.jpg",
-        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&key=133126A&sf=0&course_no=133126A",
-        "isExternal": true
-      },
-      {
-        "title": "# FHWA-NHI-133131. Planning for TSMO - Introduction",
+        "title": "FHWA-NHI-133131: Planning for TSMO - Introduction",
         "description": "This 2-hour web-based course focuses on integrating TSMO into planning, covering performance-driven approaches, collaboration methods, and institutionalization strategies.",
         "image": "./images/tsmo-introduction.png",
         "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&key=133129&sf=0&course_no=133131",
         "isExternal": true
       },
       {
-        "title": "# FHWA-NHI-133132. Planning for TSMO - Concepts and Applications",
+        "title": "FHWA-NHI-133132: Planning for TSMO - Concepts and Applications",
         "description": "This 6-hour web course builds on Course 1 (NHI-133131 Planning for TSMO) and covers integrating TSMO into transportation planning and implementing an objectives-driven performance-based approach.",
         "image": "./images/tsmo-concepts-applications.png",
         "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&key=133129&sf=0&course_no=133132",
         "isExternal": true
       },
       {
+        "title": "FHWA-NHI-133133: Planning for TSMO - Putting Concepts into Action",
+        "description": "This 6-hour web conference training session builds on Course 2 (NHI-133132) and uses interactive activities to engage participants and bring the concepts of planning for TSMO to life.",
+        "url": "https://www.nhi.fhwa.dot.gov/course-search?sf=0&course_no=133133",
+        "image": "./images/tsmo-concepts-into-action.jpg",
+        "isExternal": true
+      },
+      {
         "title": "Crowdsourcing for Operations Course as a Webinar Series",
         "description": "The \"Crowdsourcing for Advancing Operations\" webinar series provides insights from practitioners on using crowdsourced data to improve transportation operations.",
-        "image": "./images/tsmo-crowdsourcing.jpg"
+        "image": "./images/tsmo-crowdsourcing.jpg",
+        "url": "https://www.its.dot.gov/pcb/t3/CS4Ops/CS4Ops.aspx",
+        "isExternal": true
+      }
+    ]
+  },
+  {
+    "title": "Road Weather Management (RWM)",
+    "trainings": [
+      {
+        "title": "FHWA-NHI-137072: Weather Responsive Traffic Management (WRTM)",
+        "description": "WRTM is a 6-hour NHI web training for transportation managers on strategies to manage traffic flow during adverse weather, including implementation and performance evaluation tools.",
+        "image": "./images/tsmo-wrtm.jpg",
+        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137072",
+        "isExternal": true
+      },
+      {
+        "title": "FHWA-NHI-137073: Principles and Tools for Road Weather Management",
+        "description": "The course covers road weather problems, basic meteorology, and strategies like RWIS and decision support systems for traffic and emergency management.",
+        "image": "./images/tsmo-rwm.jpg",
+        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&key=weather&srt=0&sf=0&course_no=137073",
+        "isExternal": true
+      },
+      {
+        "title": "FHWA-NHI-137074: Road Weather Information Systems (RWIS) Equipment and Operations",
+        "description": "RWIS Equipment and Operations is a 4-hour NHI web training on managing adverse weather challenges in road maintenance, focusing on RWIS initiatives and deployment action plans.",
+        "image": "./images/tsmo-rwis.jpg",
+        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137074",
+        "isExternal": true
+      }
+    ]
+  },
+  {
+    "title": "Traffic Incident Management (TIM)",
+    "trainings": [
+      {
+        "title": "FHWA-NHI-133126A: National Traffic Incident Management Responder Training",
+        "description": "This web-based training [WBT] consists of five content lessons and a final assessment. Each lesson consists of multiple topics that focus on a particular concept.",
+        "image": "./images/tsmo-responder-training.jpg",
+        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&key=133126A&sf=0&course_no=133126A",
+        "isExternal": true
       }
     ]
   },
@@ -145,7 +183,7 @@
     "title": "Cybersecurity",
     "trainings": [
       {
-        "title": "# FHWA-NHI-137055. Transportation Cyber Security",
+        "title": "FHWA-NHI-137055: Transportation Cyber Security",
         "description": "The \"Transportation Cyber Security\" course is a 4-hour training that equips transportation professionals with key knowledge on cyber threats and vulnerabilities.",
         "image": "./images/cybersecurity.jpg",
         "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&key=137&sf=0&course_no=137055",
@@ -160,12 +198,15 @@
         "title": "Standards Trainings",
         "description": "Placeholder",
         "image": "./images/standards.png",
-        "url": "/resources/training/pcb/trainings/standards"
+        "url": "https://www.its.dot.gov/pcb/stds_modules.aspx",
+        "isExternal": true
       },
       {
         "title": "Transit Standards Trainings",
         "description": "Placeholder",
-        "image": "./images/transit-standards.jpg"
+        "image": "./images/transit-standards.jpg",
+        "url": "https://www.its.dot.gov/pcb/stds_modules_transit.aspx",
+        "isExternal": true
       }
     ]
   }

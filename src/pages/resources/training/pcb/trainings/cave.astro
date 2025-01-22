@@ -1,0 +1,84 @@
+---
+import Link from "@/src/components/Link.astro";
+import PcbLayout from "../_pcb-layout.astro";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import { Image } from "astro:assets";
+import caveImage from "@/src/assets/images/pcb/resources/cave.jpg"
+---
+
+<style scoped>
+  article {
+    padding-top: 1rem;
+  }
+</style>
+<PcbLayout title="Connected and Automated Vehicle Education (CAVe) | Trainings" currentBreadcrumb="Connected and Automated Vehicle Education (CAVe)">
+  <section>
+    <h2>Connected and Automated Vehicle Education (CAVe)</h2>
+    <p>
+      Connected and Automated Vehicle education (CAVe) seeks to provide community colleges, trade schools, universities, 
+      and other academic stakeholders with unique tools and resources for the development of an intelligent transportation workforce.
+    </p>
+    <p>
+      The ITS PCB Program offers the following CAVe educational resources:
+    </p>
+    <h3>
+      Connected and Automated Vehicle Education (CAVe)-in-a-box Hands-On Learning
+    </h3>
+    <p>
+      CAVe-in-a-box is a hands-on learning experience to aid curriculum, and support instruction for community colleges 
+      and trade schools, facilitate benchmarking connected vehicle equipment, and support onboarding of ITS technicians. 
+      The CAVe-in-a-box infrastructure and onboard kits are equipped with all of the necessary transportation radios, 
+      networking equipment, traffic control devices, and software to train, deploy, and test 
+      a scaled intelligent transportation system in your classroom.
+    </p>
+    <h3>CAVe-in-a-box System Design Document</h3>
+    <p>
+      The Connected and Automated Vehicle Education (CAVe)-in-a-box System Design Document (April 2022; PDF HTML) provides setup 
+      and software configuration guides for original connected vehicle (CV) test tools. The document also serves as a valuable resource 
+      to gain an understanding of how intelligent transportation systems (ITS) are designed. The System Design Document:
+      <ul>
+        <li>Introduces CAVe-in-a-box as a technical tool for education purposes.</li>
+        <li>Provides detailed documentation of all aspects related to CAVe-in-a-box, from required electrical and mechanical components to physical connections.</li>
+        <li>Provides information on software requirements for the kit, including testing and debugging.</li>
+        <li>Provides hands-on use cases and examples related to CAVe-in-a-box.</li>
+      </ul>
+    </p>
+    <p>
+      To learn more about how you can bring CAVe-in-a-box to your curriculum, email <Link href="mailto:CAVSupportServices@dot.gov" isExternal>CAVSupportServices@dot.gov</Link>
+    </p>
+    <h3>CAVe-in-a-box Do It Yourself (DIY) Instructions</h3>
+    <p>
+      <ul>
+        <li>Build your own CAVe-in-a-box from scratch.</li>
+        <li>Learn to setup and configure your own CAVe-in-a-box toolkit</li>
+      </ul>
+    </p>
+    <h3>The CAVe-in-a-box Training Video Series</h3>
+    <p>
+      The CAVe-in-a-box training video series is a compendium to the one-of-a-kind intelligent transportation training tool 
+      that can supplement curriculum with dynamic hands-on instructional videos. This series covers everything 
+      from vehicle radio configuration, installation, and mounting to data flows in a full deployed transportation management system. 
+      By following along with the series and reading the CAVe-in-a-box system design document, you will be ready to deploy CAVe-in-a-box 
+      in a classroom setting. The July 2021 videos cover the following topics:
+    </p>
+    <!-- <div class="row align-items-start">
+      <div class="col-4">
+        <Image 
+          class="img-fluid"
+          src={caveImage} 
+          alt="A large black open hard-shell case with a laptop and antenna inside"
+        />
+      </div>
+      <div class="col-8">
+        <p>
+          Connected and Automated Vehicle Education (CAVe)-in-a-box provides hands-on learning experiences, system design documentation, 
+          instructions, and training videos to support curriculum development for connected and automated vehicle education. 
+          These resources aid community colleges and trade schools in equipping students with the necessary skills and knowledge for the ITS field.
+        </p>
+      </div>
+      
+    </div> -->
+  </section>
+</PcbLayout>
+

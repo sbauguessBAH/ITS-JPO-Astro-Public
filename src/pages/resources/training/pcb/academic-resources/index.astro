@@ -1,28 +1,52 @@
 ---
 import Card from "@/src/components/pcb/Card.astro";
-import PcbLayout from "../_pcb-layout.astro"
+import PcbLayout from "../_pcb-layout.astro";
+import academicWorkshopsImage from "@/src/assets/images/pcb/academic-resources/academic-workshops.jpg";
+import careerPathsImage from "@/src/assets/images/pcb/academic-resources/career-paths.jpg";
+import caseStudiesImage from "@/src/assets/images/pcb/academic-resources/case-studies.jpg";
+import studentCompetitionsImage from "@/src/assets/images/pcb/academic-resources/student-competitions.png";
 
-import { getCollection } from "astro:content";
-const entries = await getCollection("pcb", (entry) =>
-  entry.id.startsWith("academic-resources")
-);
+const resources = [
+  {
+    title: "Case Studies and Lesson Plans",
+    description: "Academic case studies and lesson plans on ITS, V2X, and Automated Vehicle (AV) technologies are available, with instructor access requiring registration and student materials open to all.",
+    image: caseStudiesImage,
+    slug: "case-studies"
+  },
+  {
+    title: "Student Competitions",
+    description: "The Transportation Technology Tournament (TTT) enables ITS students to collaborate with public agencies, applying ITS and TSMO solutions to solve real-world transportation challenges.",
+    image: studentCompetitionsImage,
+    slug: "student-competitions"
+  },
+  {
+    title: "Academic Workshops",
+    description: "Collaborative sessions where educators and organization representatives explore strategies for integrating ITS education into curricula and provide feedback for developing new learning tools.",
+    image: academicWorkshopsImage,
+    slug: "workshops"
+  },
+  {
+    title: "Career Paths",
+    description: "Coming soon...",
+    image: careerPathsImage,
+    slug: ""
+  },
+]
 ---
 
 <PcbLayout title="Academic Resources">
   <h2>Academic Resources</h2>
   <p>
-    Connect with tools and materials to support students and faculty in preparing for careers in ITS.
+    Connect faculty and instructors with tools and materials to support students in preparing for careers in ITS. 
   </p>
   <div class="row gy-4 mb-4 justify-content-start">
-    {entries.toSorted((one, two) => 
-      one.data.order - two.data.order
-    ).map(entry => (
+    {resources.map(resource => (
       <div class="col-sm-6">
         <Card
-          image={entry.data.image}
-          title={entry.data.title}
-          description={entry.data.description}
-          href={`/resources/training/pcb/academic-resources/${entry.slug.split("/")[1]}`}
+          image={resource.image}
+          title={resource.title}
+          description={resource.description}
+          href={`/resources/training/pcb/academic-resources/${resource.slug}`}
         />
       </div>
     ))}

@@ -1,6 +1,6 @@
 ---
 title: "Mobility on Demand (MOD) Peer Exchange"
-description: "Focuses on community engagement, knowledge sharing, and promoting safety to improve outreach, align with values, and build public trust."
+description: "The U.S. Department of Transportation (U.S. DOT) facilitated a series of Mobility on Demand (MOD) virtual peer exchanges highlighting the critical role of collaboration in advancing MOD awareness and safety."
 image: "./images/mod.jpg"
 order: 1
 ---
