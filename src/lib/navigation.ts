@@ -14,58 +14,13 @@ export const navigation: NavigationItem[] = [
         { name: 'Join Our Mailing List', url: '/about/contact-us/mailinglist' },
         { name: 'ITS Specialists in Field Offices', url: 'https://www.fhwa.dot.gov/resourcecenter/teams/operations/index.cfm', isExternal: true },
       ]},
-      { name: 'Staff Presentations', url: '/about/staff-presentations' },
     ]
   },
   {
     name: 'Research Areas',
     url: '/research-areas',
     pages: [
-      { name: 'ITS Deployments', url: '/research-areas/deployments', pages: [
-        { name: 'ITS4US', url: '/research-areas/deployments/its4us', pages: [
-          { name: 'ITS4US Home', url: '/research-areas/deployments/its4us' },
-          { name: 'Program Overview', url: '/research-areas/deployments/its4us/overview' },
-          { name: 'Deployments', url: '/research-areas/deployments/its4us/deployments' , pages: [
-            { name: 'Deployments Overview', url: '/research-areas/deployments/its4us/deployments/' },
-            { name: 'University of Washington', url: '/research-areas/deployments/its4us/deployments/washington' },
-            { name: 'Heart of Iowa Regional Transit Agency', url: '/research-areas/deployments/its4us/deployments/iowa' },
-            { name: 'Georgia Department of Transportation', url: '/research-areas/deployments/its4us/deployments/georgia' },
-            { name: 'Niagara Frontier Transportation Authority', url: '/research-areas/deployments/its4us/deployments/newYork' },
-          ] },
-          { name: 'Resources', url: '/research-areas/deployments/its4us/resources' },
-          { name: 'Webinars', url: '/research-areas/deployments/its4us/webinars' },
-          { name: 'Newsroom', url: '/research-areas/deployments/its4us/in_the_media' },
-        ]},
-        { name: 'Vehicle-to-Everything', url: '/research-areas/deployments/v2x' },
-        { name: 'Complete Streets Artificial Intelligence (CSAI) Initiative', url: 'https://its.dot.gov/csai/', isExternal: true },
-        { name: 'Connected Vehicle Pilot Deployment (CVPD)', url: 'https://www.its.dot.gov/pilots/', isExternal: true },
-        { name: 'ATTAIN/ATCMTD', url: 'https://www.itskrs.its.dot.gov/decision-support/infographic/atcmtd-grant-program', isExternal: true }
-      ] },
       { name: 'Automation Program', url: '/research-areas/automation' },
-      { name: 'Emerging and Enabling Technologies Program', url: '/research-areas/emerging-tech', pages: [
-        { name: 'Intersection Safety Challenge', url: 'https://its.dot.gov/isc', isExternal: true },
-        { name: 'ITS Cybersecurity Research', url: 'https://www.its.dot.gov/research_areas/cybersecurity/index.htm', isExternal: true },
-      ] },
-      { name: 'Research Program Archive', url: '/research-areas/archive', pages: [
-        { name: 'AERIS', url: '/research-areas/archive/aeris' , pages: [
-          { name: 'AERIS Research Program Overview', url: '/research-areas/archive/aeris/' },
-          { name: 'Capstone Report (2009-2014)', url: '/research-areas/archive/aeris/capstone_report' },
-          { name: 'Operational Scenarios and Apps', url: '/research-areas/archive/aeris/scenarios_applications' },
-          { name: 'Analysis, Modeling, and Simulation', url: '/research-areas/archive/aeris/analysis' },
-          { name: 'Prototypes', url: '/research-areas/archive/aeris/prototypes' },
-          { name: 'Workshops and Webinars', url: '/research-areas/archive/aeris/webinars' },
-          { name: 'Research Approach', url: '/research-areas/archive/aeris/approach' },
-        ]},
-        { name: 'ATTRI', url: '/research-areas/archive/attri' , pages: [
-          { name: 'Wayfinding & Navigation', url: '/research-areas/archive/attri/wayfinding' },
-          { name: 'Pre-Trip Concierge & Virtualization', url: '/research-areas/archive/attri/concierge' },
-          { name: 'Safe Intersection Crossing', url: '/research-areas/archive/attri/street-crossing' },
-          { name: 'Robotics & Automation', url: '/research-areas/archive/attri/automation' },
-        ]},
-        { name: 'MOD', url: '/research-areas/archive/mod', pages: [
-          { name: 'Mobility On Demand (MOD)', url: '/research-areas/archive/mod/' },
-        ]},
-      ]}
     ]
   },
   {
@@ -73,10 +28,6 @@ export const navigation: NavigationItem[] = [
     url: '/news-info',
     pages: [
       { name: 'Latest News from ITS JPO', url: '/news-info/news', hasGeneratedChildItems: true },
-      { name: 'ITS JPO Director\'s Blog', url: '/news-info/blog', hasGeneratedChildItems: true },
-      { name: 'ITS Research Fact Sheets', url: '/news-info/fact-sheet' },
-      { name: 'Infographics', url: '/news-info/infographics', hasGeneratedChildItems: true },
-      { name: 'Videos', url: '/news-info/videos' },
       { name: 'Image Library', url: '/news-info/image-library' },
     ]
   },
@@ -84,50 +35,8 @@ export const navigation: NavigationItem[] = [
     name: 'Resources/Technical Assistance',
     url: '/resources',
     pages: [
-      { name: 'Training', url: '/resources/training', pages: [
-        { name: 'ITS Professional Capacity Building', url: '/resources/training/pcb', pages: [
-          { name: 'ITS PCB Home', url: '/resources/training/pcb' },
-          { name: 'Trainings', url: '/resources/training/pcb/trainings', hasGeneratedChildItems: true },
-          { name: 'Microlearning Videos', url: '/resources/training/pcb/microlearning'},
-          { name: 'Academic Resources', url: '/resources/training/pcb/academic-resources', hasGeneratedChildItems: true },
-          { name: 'Peer Exchanges', url: '/resources/training/pcb/peer-exchanges', hasGeneratedChildItems: true  },
-          // { name: 'V2X Tools', url: '/resources/training/pcb/v2x-tools', pages: [
-          { name: 'Accelerating V2X Cohort', url: '/resources/training/pcb/v2x-cohort'},
-          //   { name: 'Tools', url: '/resources/training/pcb/v2x-tools' },
-          //   { name: 'Equipment and Loan Desk', url: '/resources/training/pcb/v2x-tools/equipment-loan-desk' },
-          //   { name: 'Connected and Automated Vehicle Education (CAVe)-in-a-box', url: '/resources/training/pcb/v2x-tools/cave' },
-          // ] },
-          //{ name: 'Webinars', url: '/resources/training/pcb/webinars' },
-          { name: 'Webinars', url: 'https://www.its.dot.gov/pcb/itscourses/default.aspx', isExternal: true }
-        ] }
-      ] },
       { name: 'National Transportation Library', url: '/resources/national-transportation-library' },
-      { name: 'Smart Community Resource Center', url: 'https://www.its.dot.gov/scrc/index.html#/', isExternal: true },
       { name: 'Accelerating ITS Deployment', url: '/resources/accelerating', pages: [
-        { name: 'ITS Deployment Evaluation', url: 'https://www.its.dot.gov/pilots/index.htm', isExternal: true },
-        { name: 'Architecture, Standards, and Cybersecurity (ASC)', url: '/resources/accelerating/asc', pages: [
-          { name: "ASC Home", url: "/resources/accelerating/asc" },
-          { name: "ITS Reference Architecture", url: "/resources/accelerating/asc/reference-architecture" },
-          { name: "ITS Standards", url: "/resources/accelerating/asc/standards", hasGeneratedChildItems: true, 
-          //   pages: [
-          //   { name: "About ITS Standards Program", url: "/resources/accelerating/asc/standards" },
-          //   { name: "Emerging Technology", url: "/resources/accelerating/asc/standards/emerging-technology" },
-          //   { name: "Public Mobility", url: "/resources/accelerating/asc/standards/public-mobility" },
-          //   { name: "Operations/Safety", url: "/resources/accelerating/asc/standards/operations-safety" },
-          //   { name: "Data/Trusted Exchanges", url: "/resources/accelerating/asc/standards/data-trusted-exchanges" },
-          //   { name: "Vehicle-to-Everything (V2X)", url: "/resources/accelerating/asc/standards/v2x" },
-          //   { name: "Vulnerable Road User (VRU)", url: "/resources/accelerating/asc/standards/vru" },
-          //   { name: "Cybersecurity Controls", url: "/resources/accelerating/asc/standards/cybersecurity-controls" },
-          //   { name: "Positioning, Navigation, and Timing (PNT)", url: "/resources/accelerating/asc/standards/pnt" },
-          //   { name: "Supply Chain", url: "/resources/accelerating/asc/standards/supply-chain" },
-          //   { name: "Automation", url: "/resources/accelerating/asc/standards/automation" }
-          // ]
-          },
-          { name: "ITS Cybersecurity", url: "/resources/accelerating/asc/cybersecurity" },
-          { name: "Enabling Legislation & Policy", url: "/resources/accelerating/asc/legislation-and-policy" },
-          { name: "Resources and Tools", url: "/resources/accelerating/asc/resources-and-tools" },
-          { name: "Contacts", url: "/resources/accelerating/asc/contacts" }
-        ]},
         { name: 'ITS Data', url: '/resources/accelerating/data-program', pages: [
           { name: 'Data Home', url: '/resources/accelerating/data-program' },
           { name: 'Program Resources and Tools', url: '/resources/accelerating/data-program/resources-tools', pages: [

@@ -1,9 +1,5 @@
 ﻿---
 import PageLayout from '@/src/layouts/PageLayout.astro';
-import base_url from '@/src/lib/base_url';
-import stratplanImage from "@/src/assets/images/ITSJPO_StratPlanSmallBanner1.png";
-
-const stratplanUrl = base_url('/assets/pdf/stratplan2020/ITSJPO_StrategicPlan_2020-2025.pdf');
 ---
 <PageLayout title="About">
   <Fragment slot="banner">
@@ -11,7 +7,7 @@ const stratplanUrl = base_url('/assets/pdf/stratplan2020/ITSJPO_StrategicPlan_20
   </Fragment>
   <main>
   <div class="row">
-    <div class="col-lg-9">
+    <div class="col">
       <h2>About Us</h2>
       <p>
         The Intelligent Transportation System (ITS) Joint Program Office (JPO), plans and coordinates the U.S. DOT’s multimodal technology research program, working toward improving
@@ -32,14 +28,7 @@ const stratplanUrl = base_url('/assets/pdf/stratplan2020/ITSJPO_StrategicPlan_20
         people and goods.
       </p>
     </div>
-    <div class="col-lg-3">
-      <a href={stratplanUrl} target="_blank" rel="noopener noreferrer">
-        <img src={stratplanImage.src} style="width: 100%; max-width: 500px; margin: auto; margin-right: 40px; display: block; padding-bottom: 20px" />
-      </a>
-      <button class="Pagebtn externalLink btnDark" data-url={stratplanUrl} id="stratplanButton">
-        Read the 2020-2025 Strategic Plan
-      </button>
-    </div>
+
   </div>
 
   <h2>Our Organization and Leadership</h2>
@@ -81,25 +70,5 @@ const stratplanUrl = base_url('/assets/pdf/stratplan2020/ITSJPO_StrategicPlan_20
     technology transfer functions, such as National ITS Architecture development and maintenance, Standards development, professional capacity building and program assessment.
   </p>
 
-  <h3>Resource</h3>
-
-  <ul>
-    <li>
-      <a href={base_url("/assets/pdf/factsheets/ITSJPO_overview.pdf")} target="_blank" rel="noopener noreferrer">Intelligent Transportation Systems (ITS) Program Overview Fact Sheet</a>
-    </li>
-  </ul>
 </main>
 </PageLayout>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('stratplanButton');
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const url = btn.getAttribute('data-url');
-        if (url) {
-          window.open(url);
-        }
-      })
-    }
-  })
-</script>
