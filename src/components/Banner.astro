@@ -1,0 +1,145 @@
+---
+const usaFlag = "https://www.transportation.gov/themes/custom/dot_cms/images/assets/us_flag_small.svg";
+const dotGovIcon = "https://www.transportation.gov/themes/custom/dot_cms/images/assets/icon-dot-gov.svg";
+const lockIcon = "https://www.transportation.gov/themes/custom/dot_cms/images/assets/icon-https.svg";
+---
+
+<div class="container" id="gov-banner">
+  <div class="row">
+    <div class="col">
+      <img src={usaFlag} class="usa-banner-flag" alt="" />
+      <span>
+        An official website of the United States government <button
+          data-bs-toggle="collapse"
+          data-bs-target="#info"
+          class="toggle-button"
+        >
+          Here's how you know<i class="fa-solid arrow-icon fa-angle-down"></i>
+        </button>
+      </span>
+    </div>
+  </div>
+  <div class="row collapse" id="info">
+    <div class="row padding-div py-3">
+      <div class="col-6">
+        <div class="row">
+          <div class="col-3 col-md-2 col-lg-1">
+            <div class="official-img">
+              <img src={dotGovIcon} alt="dot gov icon" />
+            </div>
+          </div>
+          <div class="col">
+            <div class="official-text">
+              <p class="fw-semibold">Official websites use .gov</p>
+              <p>
+                A <span class="fw-semibold">.gov</span> website belongs to an official government organization in the United
+                States.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-3 col-md-2 col-lg-1">
+            <div class="secure-img">
+              <img src={lockIcon} alt="" />
+            </div>
+          </div>
+          <div class="col">
+            <div class="secure-text">
+              <p class="fw-semibold">Secure .gov websites use HTTPS</p>
+              <p>
+                A <span class="fw-semibold">lock</span> ( <i class="fa-solid fa-lock fa-xs"></i> ) or
+                <span class="fw-semibold">https://</span> means you've safely connected to the .gov website. Share sensitive
+                information only on official, secure websites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+import { arrow } from "@popperjs/core";
+
+  const button = document.querySelector(".toggle-button");
+  const infoDiv = document.querySelector("#info");
+  const arrowIcon = document.querySelector(".arrow-icon");
+
+  button?.addEventListener("click", () => {
+    arrowIcon?.classList.toggle("fa-angle-down");
+    arrowIcon?.classList.toggle("fa-angle-up");
+  });
+</script>
+
+<style>
+  .fw-semibold {
+    font-weight: 600;
+  }
+
+  #gov-banner {
+    margin: 0 auto;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+  }
+
+  .usa-banner-flag {
+    width: 1rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+    position: relative;
+    top: -1px;
+  }
+
+  button {
+    color: #005ea2;
+    text-decoration: underline;
+    border: none;
+    background-color: transparent;
+  }
+
+  .arrow-icon {
+    font-size: 0.8rem;
+    margin-left: 0.2rem;
+    position: relative;
+    top: -2px;
+  }
+
+  #info {
+    overflow: hidden;
+  }
+
+  #info p,
+  #info span,
+  #info button {
+    font-size: 0.9rem;
+  }
+
+  #info img {
+    width: 1.5rem;
+    display: inline-block;
+    position: relative;
+    top: 0.25rem;
+    left: 1rem;
+  }
+
+  .secure-img img {
+    width: 1.5rem;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    left: 1rem;
+  }
+
+  p {
+    margin: 0.15rem 0;
+  }
+
+  @media (min-width: 1364px) {
+    #gov-banner {
+      padding: 0.3rem 3rem;
+    }
+  }
+</style>
