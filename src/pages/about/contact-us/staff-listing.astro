@@ -1,11 +1,14 @@
 ---
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import Brian_Cronin from "../../../assets/images/staff/Brian_Cronin.png";
+import Egan_Smith from "../../../assets/images/staff/Egan_Smith.jpg";
 ---
 
 <PageLayout title="Staff Listing">
   <Fragment slot="banner"> ITS JPO Staff Listing </Fragment>
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-4">
       <strong>Anderson, Justin, PMP, CSEP, CISSP</strong><br />
       Program Manager<br />
       Next Generation Wireless Communications and SCMS<br />
@@ -48,7 +51,7 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
       <br /><br />
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-4">
       <strong>Sheehan, Robert, P.E., PTOE</strong><br />
       Program Manager<br />
       Architecture and Standards<br />
@@ -73,7 +76,7 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
       ITS4US, STATS, and Program Management Office<br />
       202-366-1697<br />
       <a href="mailto:Elina.Zlotchenko@dot.gov">Elina.Zlotchenko@dot.gov</a>
-      <br><br />
+      <br /><br />
 
       <strong>Reimnitz, Amber PMP</strong><br />
       Program Manager<br />
@@ -88,6 +91,24 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
       202-366-8034<br />
       <a href="mailto:john.schneeberger@dot.gov">John.Schneeberger@dot.gov</a>
       <br /><br />
+    </div>
+
+    <div class="col-lg-4">
+      <p><Image src={Brian_Cronin} width="200"  alt="Brian Cronin"/></p>
+      <h4>Brian Cronin, Director</h4>
+      202-493-3269<br />
+      <a href="mailto:brian.cronin@dot.gov">Brian.Cronin@dot.gov</a>
+      <p>
+        Brian is the Director of<br />the Intelligent Transportation Systems (ITS) <br />Joint Program Office (JPO).
+        <br />
+      </p>
+
+      <br />
+
+      <p><Image src={Egan_Smith} width="200"  alt="Egan Smith"/></p>
+      <h4>Egan Smith, Managing Director</h4>
+      202-366-9224<br />
+      <a href="mailto:Egan.Smith@dot.gov">Egan.Smith@dot.gov</a><br />
     </div>
   </div>
 </PageLayout>

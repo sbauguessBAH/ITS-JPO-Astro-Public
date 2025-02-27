@@ -37,27 +37,6 @@ export const navigation: NavigationItem[] = [
     pages: [
       { name: 'National Transportation Library', url: '/resources/national-transportation-library' },
       { name: 'Accelerating ITS Deployment', url: '/resources/accelerating', pages: [
-        { name: 'ITS Data', url: '/resources/accelerating/data-program', pages: [
-          { name: 'Data Home', url: '/resources/accelerating/data-program' },
-          { name: 'Program Resources and Tools', url: '/resources/accelerating/data-program/resources-tools', pages: [
-            { name: 'ITS DataHub', url: '/resources/accelerating/data-program/resources-tools/DataHub' },
-            { name: 'ITS CodeHub', url: '/resources/accelerating/data-program/resources-tools/CodeHub' },
-            { name: 'Vehicle-to-Everything (V2X) Hub', url: '/resources/accelerating/data-program/resources-tools/V2XHub' },
-            { name: 'Reference Documents, Guidelines, and Templates', url: '/resources/accelerating/data-program/resources-tools/reference' },
-            { name: 'Publications', url: '/resources/accelerating/data-program/resources-tools/publications' },
-          ] },
-          { name: 'Research Projects', url: '/resources/accelerating/data-program/research-projects', pages: [
-            { name: 'Data Exchanges', url: '/resources/accelerating/data-program/research-projects/data-exchanges' },
-            { name: 'Data Governance, Stewardship, and Preservation Methods', url: '/resources/accelerating/data-program/research-projects/data-governance' },
-            { name: 'Data Valuation Index (DVI)', url: '/resources/accelerating/data-program/research-projects/DVI' },
-            { name: 'Gap Analysis for High-Value Data Sets', url: '/resources/accelerating/data-program/research-projects/gap-analysis' },
-            { name: 'Data and Innovation Research', url: '/resources/accelerating/data-program/research-projects/research' },
-            { name: 'Research, Operational, and AI Data Integration Initiative (ROADII)', url: '/resources/accelerating/data-program/research-projects/ROADII' },
-            { name: 'Data Management Capability Maturity Models (CMMs)', url: '/resources/accelerating/data-program/research-projects/CMMs' },
-            { name: 'AI-Enabled ITS Capability Maturity Model (CMM)', url: '/resources/accelerating/data-program/research-projects/AI-CMM' },
-          ]},
-          { name: 'Get Involved', url: '/resources/accelerating/data-program/get-involved' },
-        ]},
         { name: 'ITS CodeHub', url: 'https://www.its.dot.gov/code', isExternal: true },
         { name: 'ITS DataHub', url: 'https://www.its.dot.gov/data', isExternal: true },
       ]}
