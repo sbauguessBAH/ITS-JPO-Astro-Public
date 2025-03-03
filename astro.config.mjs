@@ -6,5 +6,8 @@ export default defineConfig({
   // If hosting on a subdomain, set the base here such as /itsjpo, /demo, etc. 
   base: 'itstest_environment',
   output: 'static',
+  experimental: {
+    contentLayer: true,
+  }
 });
 
