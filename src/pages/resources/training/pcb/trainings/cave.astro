@@ -5,51 +5,188 @@ import Accordion from "@/src/components/Accordion.astro";
 import AccordionItem from "@/src/components/AccordionItem.astro";
 import { Image } from "astro:assets";
 import caveImage from "@/src/assets/images/pcb/resources/cave.jpg"
+import caveLogo from "@/src/assets/images/pcb/cave/cave-logo.png"
+import caveTransparent from "@/src/assets/images/pcb/cave/cave-transparent.png"
+import caveDesignDocuments from "@/src/assets/images/pcb/cave/cave-design-documents.jpg"
+import caveDiy from "@/src/assets/images/pcb/cave/cave-diy.jpg"
+import caveConfiguration from "@/src/assets/images/pcb/cave/cave-configuration.jpg"
 ---
 
 <style scoped>
+  :root {
+    --cave-light-blue: #1c6da6;
+    --cave-yellow: #edbb1d;
+    --cave-dark-blue: rgb(37, 64, 121);
+    --corner-offset: 1.5rem;
+  }
   article {
     padding-top: 1rem;
   }
   .video-container {
-    background-color:#1c6da6;
+    background-color: var(--cave-light-blue);
     padding: 2rem;
     color: white;
     text-align:center;
   }
   .video-link {
     text-align:left;
-    background-color:#edbb1d;
+    background-color: var(--cave-yellow);
     padding: 1rem;
     display:flex;
     color: black;
     text-decoration: none;
     border-radius:10px;
   }
+  .btn-pcb-blue {
+    background-color: white;
+    border-radius: 8px;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    color: var(--cave-dark-blue);
+    border: 2px solid var(--cave-dark-blue);
+    text-transform: uppercase;
+    transition: 0.2s ease-in-out;
+  }
+  .btn-pcb-blue::after {
+    color: var(--cave-dark-blue);
+    transition: 0.2s ease-in-out;
+  }
+  .btn-pcb-blue:hover {
+    background-color: var(--cave-dark-blue);
+    color: white;
+    font-weight: 400;
+  }
+  .btn-pcb-blue:hover::after {
+    color: white;
+  }
+  .btn-pcb-yellow {
+    background-color: var(--cave-yellow);
+    border-radius: 8px;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    color: var(--cave-dark-blue);
+    text-transform: uppercase;
+    transition: 0.2s ease-in-out;
+  }
+  .btn-pcb-yellow::after {
+    color: var(--cave-dark-blue);
+    transition: 0.2s ease-in-out;
+  }
+  .btn-pcb-yellow:hover {
+    background-color: var(--cave-yellow);
+    color: var(--cave-dark-blue);
+    font-weight: 400;
+  }
+  .btn-pcb-yellow:hover::after {
+    color: var(--cave-dark-blue);
+  }
+
+  .card-img-top {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  .card {
+    background: var(--cave-light-blue);
+    border: none;
+    border-radius: 0;
+    color: white;
+    h5 {
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+  .card-body {
+    text-align: center;
+  }
+  section p {
+    padding: 0;
+  }
+  .card-footer {
+    margin-bottom: 1rem;
+    background: none;
+    border: none;
+  }
+  .spacer {
+    padding-top: 2rem;
+    display: block;
+  }
+  .spacer-1 {
+    padding-top: 1rem;
+    display: block;
+  }
 </style>
 <PcbLayout title="Connected and Automated Vehicle Education (CAVe) | Trainings" currentBreadcrumb="Connected and Automated Vehicle Education (CAVe)">
   <section>
-    <div class="row align-items-center">
+    <div class="row align-items-center mb-4">
       <div class="col-lg-8">
-        <h2>Connected and Automated Vehicle Education (CAVe)-in-a-box</h2>
-        <p>
+        <h2 class="d-flex align-items-end flex-row gap-2">
+          What is 
+          <Image src={caveLogo} alt="CAVe Logo" height="40"/>
+          ?
+        </h2>
+        <p class="mt-4">
           CAVe-in-a-box, short for connected and automated vehicle education in a box, offers a comprehensive, hands-on learning experience
           designed to enhance curricula at community colleges and trade schools. It supports instructors in teaching intelligent transportation
           system concepts, helps benchmark connected vehicle equipment, and streamlines onboarding for intelligent transportation system technicians.
         </p>
-        <p>
+        <p class="mb-4">
           Each kit includes a complete infrastructure setup and onboard equipment, featuring transportation radios, networking devices,
           traffic control equipment, and software. With SAVe-in-a-box, educators can train, deploy, and test scaled intelligent transportation
           systems directly in the classroom, providing students with practical real-world experience.
         </p>
+        <span class="spacer-1"></span>
+        <a 
+          href="https://usdot-carma.atlassian.net/wiki/spaces/CMNT/pages/2628485130/CAVe-in-a-box+Training" 
+          class="btn-pcb-blue"
+        >
+          Learn More
+        </a>
       </div>
       <div class="col-lg-4">
-        
+        <Image src={caveTransparent} alt="CAVe-in-a-box" class="img-fluid"/>
       </div>
     </div>
-    <h2>Open-Source Resources for Educators</h2>
-
-    <div class="video-container">
+    <span class="spacer"></span>
+    <h2 class="mb-4">Open-Source Resources for Educators</h2>
+    <div class="row row-cols-1 row-cols-lg-3 g-4">
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src={caveDesignDocuments.src} alt="CAVe-in-a-box" class="card-img-top"/>
+          <div class="card-body">
+            <h5>Design Documents</h5>
+            <p>Learn how to set up, configure, and explore all that CAVe-in-a-box has to offer.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a class="btn-pcb-yellow" href="">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src={caveDiy.src} alt="Two people standing over a CAVe-in-a-box" class="card-img-top"/>
+          <div class="card-body">
+            <h5>Do-It-Yourself Guides</h5>
+            <p>Build your own CAVe-in-a-box from the ground up.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a class="btn-pcb-yellow" href="">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src={caveConfiguration.src} alt="A laptop connected to a CAVe-in-a-box" class="card-img-top"/>
+          <div class="card-body">
+            <h5>Configuration Instructions</h5>
+            <p>Explore how you can setup and configure your CAVe-in-a-box toolkit.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a class="btn-pcb-yellow" href="">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="spacer"></span>
+    <div class="video-container shadow">
       <h2>CAVe-in-a-box Video Series</h2>
       <p>
         The video series is designed to make learning easy and practical. These videos show you how to setup and use the CAVe-in-a-box system,
@@ -88,9 +225,8 @@ import caveImage from "@/src/assets/images/pcb/resources/cave.jpg"
           <a class="video-link" href="https://www.youtube.com/watch?v=t2qyqzunsRI">CAVe Lite</a>
         </div>
       </div>
-
     </div>
-
+    <span class="spacer"></span>
     <div class="row align-items-center">
       <div class="col-lg-8">
         <h2>Need equipment? We've got you covered!</h2>

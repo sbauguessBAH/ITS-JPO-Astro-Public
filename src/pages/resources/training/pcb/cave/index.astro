@@ -1,0 +1,232 @@
+---
+import PcbLayout from "../_pcb-layout.astro";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import { Image } from "astro:assets";
+import caveImage from "@/src/assets/images/pcb/resources/cave.jpg"
+import caveLogo from "@/src/assets/images/pcb/cave/cave-logo.png"
+import caveTransparent from "@/src/assets/images/pcb/cave/cave-transparent.png"
+import caveDesignDocuments from "@/src/assets/images/pcb/cave/cave-design-documents.jpg"
+import caveDiy from "@/src/assets/images/pcb/cave/cave-diy.jpg"
+import caveConfiguration from "@/src/assets/images/pcb/cave/cave-configuration.jpg"
+import Videos from "./_videos.astro";
+import { renderUniqueStylesheet } from "astro/runtime/server/index.js";
+import rsu from "@/src/assets/images/pcb/cave/rsu.png"
+import Link from "@/src/components/Link.astro";
+import base_url from "@/src/lib/base_url";
+---
+<style is:global>
+  :root {
+    --cave-light-blue: #1c6da6;
+    --cave-yellow: #edbb1d;
+    --cave-dark-blue: rgb(37, 64, 121);
+    --corner-offset: 1.5rem;
+  }
+</style>
+<style scoped>
+  
+  article {
+    padding-top: 1rem;
+  }
+  
+  .btn-pcb-blue {
+    background-color: white;
+    border-radius: 8px;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    color: var(--cave-dark-blue);
+    border: 2px solid var(--cave-dark-blue);
+    text-transform: uppercase;
+    transition: 0.2s ease-in-out;
+  }
+  .btn-pcb-blue::after {
+    color: var(--cave-dark-blue);
+    transition: 0.2s ease-in-out;
+  }
+  .btn-pcb-blue:hover {
+    background-color: var(--cave-dark-blue);
+    color: white;
+    font-weight: 400;
+  }
+  .btn-pcb-blue:hover::after {
+    color: white;
+  }
+  .btn-pcb-yellow {
+    background-color: var(--cave-yellow);
+    border-radius: 8px;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    color: var(--cave-dark-blue);
+    text-transform: uppercase;
+    transition: 0.2s ease-in-out;
+  }
+  .btn-pcb-yellow::after {
+    color: var(--cave-dark-blue);
+    transition: 0.2s ease-in-out;
+  }
+  .btn-pcb-yellow:hover {
+    background-color: var(--cave-yellow);
+    color: var(--cave-dark-blue);
+    font-weight: 400;
+  }
+  .btn-pcb-yellow:hover::after {
+    color: var(--cave-dark-blue);
+  }
+
+  .card-img-top {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  .card {
+    background: var(--cave-light-blue);
+    border: none;
+    border-radius: 0;
+    color: white;
+    h5 {
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+  .card-body {
+    text-align: center;
+  }
+  section p {
+    padding: 0;
+  }
+  .card-footer {
+    margin-bottom: 1rem;
+    background: none;
+    border: none;
+  }
+  .spacer {
+    padding-top: 2rem;
+    display: block;
+  }
+  .spacer-1 {
+    padding-top: 1rem;
+    display: block;
+  }
+  .img-rsu {
+    max-height: 300px;
+    transform: rotate(10deg);
+  }
+  .cav-contact {
+    background: var(--cave-light-blue);
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+</style>
+<PcbLayout title="Connected and Automated Vehicle Education (CAVe) | Trainings" currentBreadcrumb="Connected and Automated Vehicle Education (CAVe)">
+  <section>
+    <div class="row align-items-center mb-4">
+      <div class="col-lg-8">
+        <h2 class="d-flex align-items-end flex-row gap-2 text-uppercase">
+          What is 
+          <Image src={caveLogo} alt="CAVe Logo" height="40"/>
+          ?
+        </h2>
+        <p class="mt-4">
+          CAVe-in-a-box, short for connected and automated vehicle education in a box, offers a comprehensive, hands-on learning experience
+          designed to enhance curricula at community colleges and trade schools. It supports instructors in teaching intelligent transportation
+          system concepts, helps benchmark connected vehicle equipment, and streamlines onboarding for intelligent transportation system technicians.
+        </p>
+        <p class="">
+          Each kit includes a complete infrastructure setup and onboard equipment, featuring transportation radios, networking devices,
+          traffic control equipment, and software. With SAVe-in-a-box, educators can train, deploy, and test scaled intelligent transportation
+          systems directly in the classroom, providing students with practical real-world experience.
+        </p>
+        <span class="spacer-1"></span>
+        <a 
+          href="https://usdot-carma.atlassian.net/wiki/spaces/CMNT/pages/2628485130/CAVe-in-a-box+Training" 
+          class="btn-pcb-blue"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn More
+        </a>
+      </div>
+      <div class="col-lg-4">
+        <Image src={caveTransparent} alt="CAVe-in-a-box" class="img-fluid"/>
+      </div>
+    </div>
+    <span class="spacer"></span>
+    <h2 class="mb-4 text-uppercase">Open-Source Resources for Educators</h2>
+    <div class="row row-cols-1 row-cols-lg-3 g-4">
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src={caveDesignDocuments.src} alt="CAVe-in-a-box" class="card-img-top"/>
+          <div class="card-body">
+            <h5>Design Documents</h5>
+            <p>Learn how to set up, configure, and explore all that CAVe-in-a-box has to offer.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a class="btn-pcb-yellow" target="_blank" href={base_url("/assets/pcb/cave/CAVe_Box_SysDes_April2022.pdf")}>Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src={caveDiy.src} alt="Two people standing over a CAVe-in-a-box" class="card-img-top"/>
+          <div class="card-body">
+            <h5>Do-It-Yourself Guides</h5>
+            <p>Build your own CAVe-in-a-box from the ground up.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a class="btn-pcb-yellow" target="_blank" href={base_url("/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf")}>Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src={caveConfiguration.src} alt="A laptop connected to a CAVe-in-a-box" class="card-img-top"/>
+          <div class="card-body">
+            <h5>Configuration Instructions</h5>
+            <p>Explore how you can setup and configure your CAVe-in-a-box toolkit.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a class="btn-pcb-yellow" target="_blank" href={base_url("/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf")}>Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="spacer"></span>
+    <Videos/>
+    <span class="spacer"></span>
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h2 class="text-uppercase">Need equipment? We've got you covered!</h2>
+        <p>
+          The CAV Support Services Program provides technical assistance and equipment loans to help accelerate your deployments.
+          Whether you're testing new technologies, seeking bench testing space, or in the later stages of deployment,
+          we offer cost-free resources to support your progress.
+        </p>
+        <p>
+          Get the tools and knowledge you need to bring your connected and automated vehicle projects to life!
+        </p>
+        <span class="spacer-1"></span>
+        <a 
+          href={base_url("/assets/pcb/cave/EquipmentLoan_HelpDesk_Primer.pdf")} 
+          class="btn-pcb-blue"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get Equipment
+        </a>
+      </div>
+      <div class="col-lg-4">
+        <img src={rsu.src} class="img-fluid img-rsu"/>
+      </div>
+    </div>
+    <span class="spacer"></span>
+    <div class="cav-contact shadow">
+      <p>Have questions? Contact the Help Desk at <Link href="mailto:cavsupportservices@dot.gov" isExternal class="text-white">cavsupportservices@dot.gov</Link></p>
+    </div>
+  </section>
+</PcbLayout>
+

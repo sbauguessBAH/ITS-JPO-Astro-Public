@@ -1,0 +1,135 @@
+---
+import rsu from "@/src/assets/images/pcb/cave/videos/rsu.png"
+import obu from "@/src/assets/images/pcb/cave/videos/obu.png"
+import building from "@/src/assets/images/pcb/cave/videos/building-cave.png"
+import lite from "@/src/assets/images/pcb/cave/videos/cave-lite.png"
+import maintenance from "@/src/assets/images/pcb/cave/videos/cave-maintenance.png"
+import cavers from "@/src/assets/images/pcb/cave/videos/cavers.png"
+import spat from "@/src/assets/images/pcb/cave/videos/spat.png"
+import tmc from "@/src/assets/images/pcb/cave/videos/tmc.png"
+import cave from "@/src/assets/images/pcb/cave/videos/cave.png"
+import v2x from "@/src/assets/images/pcb/cave/videos/v2x-hub.png"
+
+const cards = [
+  {
+    title: "Roadside Unit (RSU)",
+    image: rsu,
+    link: "https://www.youtube.com/watch?v=a-nF9jiZ1X0"
+  },
+  {
+    title: "Traffic Management Center",
+    image: tmc,
+    link: "https://www.youtube.com/watch?v=ldlinRdd-nI",
+  },
+  {
+    title: "Onboard Unit (OBU)",
+    image: obu,
+    link: "https://www.youtube.com/watch?v=Q3xH-XKT-_8",
+  },
+  {
+    title: "Maintenance",
+    image: maintenance,
+    link: "https://www.youtube.com/watch?v=He2RPhztg4Q",
+  },
+  {
+    title: "Vehicle-to-Everything (V2X) Hub",
+    image: v2x,
+    link: "https://www.youtube.com/watch?v=fhKiyVSrnWM",
+  },
+  {
+    title: "How to build CAVe-in-a-box",
+    image: building,
+    link: "https://www.youtube.com/watch?v=zWO6NB6nxXw",
+  },
+  {
+    title: "CAVe-in-a-box",
+    image: cave,
+    link: "https://www.youtube.com/watch?v=EbqgJtJVh-4",
+  },
+  {
+    title: "CAVe Research Center",
+    image: cavers,
+    link: "https://www.youtube.com/watch?v=fQ3B_KucEH8",
+  },
+  {
+    title: "Signal Phasing and Timing (SPaT) and MAP",
+    image: spat,
+    link: "https://www.youtube.com/watch?v=2Ss90y2qldo",
+  },
+  {
+    title: "CAVe Lite",
+    image: lite,
+    link: "https://www.youtube.com/watch?v=t2qyqzunsRI"
+  }
+]
+---
+<style scoped>
+  .video-container {
+    background-color: var(--cave-light-blue);
+    padding: 2rem;
+    color: white;
+    text-align:center;
+  }
+  .video-link {
+    text-align:left;
+    background-color: var(--cave-yellow);
+    padding: 1rem;
+    display:flex;
+    color: black;
+    text-decoration: none;
+    border-radius:10px;
+  }
+  .card {
+    background: var(--cave-yellow);
+    color: black;
+    text-align: left;
+    border: none;
+    height: 5rem;
+    /* img {
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    } */
+    img {
+      height: 5rem;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .card p {
+    color: var(--cave-dark-blue);
+    padding: 0;
+    margin: 0;
+  }
+  a:hover {
+    font-weight: 400;
+  }
+  
+</style>
+<div class="video-container shadow">
+  <h2 class="text-uppercase">CAVe-in-a-box Video Series</h2>
+  <p>
+    The video series is designed to make learning easy and practical. These videos show you how to setup and use the CAVe-in-a-box system,
+    covering everything from installing and mounting vehicle radios to understanding how data flows in a transportation management system.
+    By watching the videos, you'll have all the tools you need to successfully use CAVe-in-a-box.
+  </p>
+  <div class="row row-cols-1 row-cols-xl-2 g-3">
+    {cards.map(card => 
+      <div class="col">
+        <a href={card.link} target="_blank" rel="noreferrer noopener">
+          <div class="card shadow">
+            <div class="row g-0 align-items-center">
+              <div class="col-4">
+                <img src={card.image.src} class="img-fluid rounded-start"/>
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <p>{card.title}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    )}
+  </div>
+</div>
