@@ -1,0 +1,257 @@
+---
+import PcbLayout from "../_pcb-layout.astro";
+import DocsLayout from "./_docs-layout.astro";
+import f1 from "@/src/assets/images/pcb/cave/assembly-guide/f1.jpg"
+import f2 from "@/src/assets/images/pcb/cave/assembly-guide/f2.jpg"
+import f3 from "@/src/assets/images/pcb/cave/assembly-guide/f3.jpg"
+import f4a from "@/src/assets/images/pcb/cave/assembly-guide/f4a.jpg"
+import f5 from "@/src/assets/images/pcb/cave/assembly-guide/f5.jpg"
+import f6 from "@/src/assets/images/pcb/cave/assembly-guide/f6.jpg"
+import f7 from "@/src/assets/images/pcb/cave/assembly-guide/f7.jpg"
+import f8 from "@/src/assets/images/pcb/cave/assembly-guide/f8.jpg"
+import f9 from "@/src/assets/images/pcb/cave/assembly-guide/f9.jpg"
+import f10 from "@/src/assets/images/pcb/cave/assembly-guide/f10.jpg"
+import f11 from "@/src/assets/images/pcb/cave/assembly-guide/f11.jpg"
+import f12 from "@/src/assets/images/pcb/cave/assembly-guide/f12.jpg"
+import f13 from "@/src/assets/images/pcb/cave/assembly-guide/f13.jpg"
+import f14 from "@/src/assets/images/pcb/cave/assembly-guide/f14.jpg"
+import f15 from "@/src/assets/images/pcb/cave/assembly-guide/f15.jpg"
+import f16 from "@/src/assets/images/pcb/cave/assembly-guide/f16.jpg"
+import f17 from "@/src/assets/images/pcb/cave/assembly-guide/f17.jpg"
+import f18 from "@/src/assets/images/pcb/cave/assembly-guide/f18.jpg"
+import f19 from "@/src/assets/images/pcb/cave/assembly-guide/f19.jpg"
+import f20 from "@/src/assets/images/pcb/cave/assembly-guide/f20.jpg"
+import f21 from "@/src/assets/images/pcb/cave/assembly-guide/f21.jpg"
+import f22 from "@/src/assets/images/pcb/cave/assembly-guide/f22.jpg"
+import f23 from "@/src/assets/images/pcb/cave/assembly-guide/f23.jpg"
+import f24 from "@/src/assets/images/pcb/cave/assembly-guide/f24.jpg"
+import f25 from "@/src/assets/images/pcb/cave/assembly-guide/f25.jpg"
+import f26 from "@/src/assets/images/pcb/cave/assembly-guide/f26.jpg"
+import f27 from "@/src/assets/images/pcb/cave/assembly-guide/f27.jpg"
+import f28 from "@/src/assets/images/pcb/cave/assembly-guide/f28.jpg"
+---
+<!-- 
+<figure class="figure">
+  <img src={f2.src} class="figure-img img-fluid rounded"/>
+  <figcaption class="figure-caption">Figure :</figcaption>
+</figure>
+-->
+<style scoped>
+  .figure {
+    max-width: 20rem;
+  }
+</style>
+<PcbLayout title="Assembly Guide">
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"
+  />
+<section data-bs-spy="scroll" data-bs-target="#toc">
+  <div class="row">
+    <div class="col-sm-9">
+    <h1>Bill of Materials</h1>
+    <ul>
+      <li>Travel case.</li>
+      <li>Traffic signal controller (TSC).</li>
+      <li>LAN network switch.</li>
+      <li>Vehicle-to-everything (V2X) Hub computer or Intel NUC computer.</li>
+      <li>Roadside Unit (RSU).</li>
+      <li>Three N-male to N-female LMR-400 Coaxial Cable.</li>
+      <li>Two 6 dBi omnidirectional antenna.</li>
+      <li>GPS antenna.</li>
+      <li>Tablet.</li>
+      <li>Hardware &mdash; cap screws.</li>
+      <li>Tablet mount assembly.</li>
+      <li>Cradlepoint router.</li>
+      <li>Power over Ethernet (PoE) injector.</li>
+      <li>Ethernet cables &mdash; 2 ft.</li>
+    </ul>
+    <p>
+      <strong>Note:</strong> If you are constructing the kit on your own, double-sided hook and loop fasteners 
+      are an acceptable means to fasten components. For our purposes and shipping concerns, all in-house kits 
+      have their devices mechanically fastened with cap screws.
+    </p>
+    <h1>Construction</h1>
+    <ol>
+      <li>Begin with a blank shelf (figure 1). This is the basis for building both the component shelf and the traffic controller shelf.</li>
+      <figure class="figure">
+        <img src={f1.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 1:</figcaption>
+      </figure>
+    </ol>
+    <h2>V2X Computer Style 1</h2>
+    <ol start="2">
+      <li>The first item mounted is the V2X Hub computer. The four mounting holes for the fan cover are modified to attach the device to the component shelf. Refer to figure 2.</li>
+      <figure class="figure">
+        <img src={f2.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 2: Computer fan cover</figcaption>
+      </figure>
+      <li>Mounting holes are drilled into the computer, around the fan, to allow for a 4–40 thread. Refer to figure 3.</li>
+      <figure class="figure">
+        <img src={f3.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 3: Drilling the computer</figcaption>
+      </figure>
+      <li>Measurements are taken for best placement on the component shelf. Figure 4 shows placement of the V2X Hub computer.</li>
+      <figure class="figure">
+        <img src={f4a.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 4: Measuring the placement</figcaption>
+      </figure>
+      <li>Use the fan cover and a center punch to mark the locations of the holes on the component shelf (figure 5).</li>
+      <figure class="figure">
+        <img src={f5.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 5: Center punching</figcaption>
+      </figure>
+      <li>Mount the V2X Hub computer to its final placement on the component shelf. Refer to figure 6 for proper placement.</li>
+      <figure class="figure">
+        <img src={f6.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 6: V2X Hub computer final placement</figcaption>
+      </figure>
+    </ol>
+    <h2>V2X Computer Style 2</h2>
+    <ol start="7">
+      <li>A NUC computer may be used in lieu of a V2X Hub computer (figure 7).</li>
+      <figure class="figure">
+        <img src={f7.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 7:</figcaption>
+      </figure>
+      <li>To mount, the bottom plate of the NUC computer must be removed as well as the solid-state drive (SSD) that is attached. Holes need to be drilled and tapped three-fourths of an inch from the end with the SSD connectors, and three-eighths of an inch from the other side. This is to provide clearance of contacting the SSD. Refer to figure 8 for hole placement.</li>
+      <figure class="figure">
+        <img src={f8.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 8:</figcaption>
+      </figure>
+      <li>Use the holes you just drilled and a center punch to match hole placement to the shelf (see figure 9).</li>
+      <figure class="figure">
+        <img src={f9.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 9:</figcaption>
+      </figure>
+    </ol>
+    <h2>Tablet Mount</h2>
+    <ol start="10">
+      <li>It is critical to use the tablet as a locator for mounting the tablet mount assembly to the shelf (see figure 10).</li>
+      <figure class="figure">
+        <img src={f10.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 10:</figcaption>
+      </figure>
+      <li>Attach the tablet to the center of the mount (figure 11).</li>
+      <figure class="figure">
+        <img src={f11.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 11:</figcaption>
+      </figure>
+      <li>Center the assembly between the edge of the shelf and the V2X Hub computer. The tablet mount is mounted using 10-24 screws threaded into the shelf (figure 12).</li>
+      <figure class="figure">
+        <img src={f12.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 12:</figcaption>
+      </figure>
+    </ol>
+    <h2>Cradlepoint Router</h2>
+    <ol start="13">
+      <li>Following the tablet mount assembly is the Cradlepoint router. The rear face of the router is mounted flush with the edge of the shelf. This device is secured with 8-32 screws threaded into the shelf. Refer to figure 13.</li>
+      <figure class="figure">
+        <img src={f13.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 13:</figcaption>
+      </figure>
+    </ol>
+    <h2>Network Switch</h2>
+    <ol start="14">
+      <li>The network switch is mounted adjacent to the Cradlepoint. It is also mounted flush with the back edge of the shelf (figure 14).</li>
+      <figure class="figure">
+        <img src={f14.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 14:</figcaption>
+      </figure>
+      <li>The network switch is mounted to the shelf utilizing the mounting holes circled. M3 screws are required for fastening. Refer to figure 15.</li>
+      <figure class="figure">
+        <img src={f15.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 15:</figcaption>
+      </figure>
+    </ol>
+    <h2>PoE Injector</h2>
+    <ol start="16">
+      <li>Lastly, the PoE Injector, shown as the bottom-left device in figure 16, is mounted offset from the edge of the shelf using 6-32 screws with threads tapped into the shelf. The circles on the image indicate the screw locations. An example of cable routing is also shown in figure 16.</li>
+      <figure class="figure">
+        <img src={f16.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 16:</figcaption>
+      </figure>
+    </ol>
+    <h2>Traffic Controller</h2>
+    <ol start="17">
+      <li>Remove the bottom panel from the traffic controller to drill three holes. Holes are drilled and tapped for 10-24 screws, see figure 17 below for hole positioning.</li>
+      <figure class="figure">
+        <img src={f17.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 17:</figcaption>
+      </figure>
+      <li>Utilizing the bottom of the traffic controller for placement, mark and drill holes into the shelf to secure the traffic controller to the shelf, refer to figure 18.</li>
+      <figure class="figure">
+        <img src={f18.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 18:</figcaption>
+      </figure>
+      <li>The TSC and RSU are both mounted on the lower shelf of the box for better stability of the kit. Mount the TSC at the edge of the shelf (figure 19).</li>
+      <figure class="figure">
+        <img src={f19.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 19:</figcaption>
+      </figure>
+    </ol>
+    <h2>Roadside Unit</h2>
+    <ol start="20">
+      <li>The RSU is mounted roughly centered on the lower shelf near the backside to allow the TSC to fit (figure 20).</li>
+      <figure class="figure">
+        <img src={f20.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 20:</figcaption>
+      </figure>
+    </ol>
+    <h2>Box Assembly</h2>
+    <ol start="21">
+      <li>Secure the upper shelf with Cradlepoint router, tablet, and other components in the upper portion of the travel case with included screws (figure 21).</li>
+      <figure class="figure">
+        <img src={f21.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 21:</figcaption>
+      </figure>
+      <li>Secure power strip to travel case immediately below the upper shelf to allow clearance for TSC (figure 22).</li>
+      <figure class="figure">
+        <img src={f22.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 22:</figcaption>
+      </figure>
+      <li>Plug in the power cables to the power strip and secure the cabling so it is neat and out of the way. An example of this can be seen below in figure 23.</li>
+      <figure class="figure">
+        <img src={f23.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 23:</figcaption>
+      </figure>
+      <li>Attach the lower shelf with the TSC and RSU lower in the case, connecting RSU power once it is attached (figure 24).</li>
+      <figure class="figure">
+        <img src={f24.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 24:</figcaption>
+      </figure>
+    </ol>
+    <h2>Antenna Mounting</h2>
+    <ol start="25">
+      <li>The final step is to run the LMR-400 coaxial cables from the RSU to the outside of the travel case. See figure 25 to see the mentioned cables.</li>
+      <figure class="figure">
+        <img src={f25.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 25:</figcaption>
+      </figure>
+      <li>The hole placement for the RSU antenna is estimated by the path that allows the cables in figure 23 to reach the top of the case in a straight path. The holes are drilled to a diameter of five-eighths of an inch with a step drill bit. Refer to figure 26 to see cables reaching the top of the travel case.</li>
+      <figure class="figure">
+        <img src={f26.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 26:</figcaption>
+      </figure>
+      <li>Antenna are mounted on the outside for the RSU to not be inhibited. Refer to figure 27 below.</li>
+      <figure class="figure">
+        <img src={f27.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 27:</figcaption>
+      </figure>
+    </ol>
+    <h2>Completed Box</h2>
+    <ol start="28">
+      <li>Connect the ethernet and power cables the traffic controller. Refer to figure 28 to see the final cable connections and finished CAVe-in-a-box unit.</li>
+      <figure class="figure">
+        <img src={f28.src} class="figure-img img-fluid rounded"/>
+        <figcaption class="figure-caption">Figure 28:</figcaption>
+      </figure>
+    </ol>
+  </div>
+  <div class="col-sm-3">
+    <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+  </div>
+</div>
+</section>
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+</PcbLayout>

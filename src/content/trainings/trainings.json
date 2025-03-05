@@ -3,13 +3,6 @@
     "title": "ITS Basics",
     "trainings": [
       {
-        "title": "FHWA-NHI-137049: ITS Procurement - WEB-BASED",
-        "description": "This course provides an overview of strategies for deploying ITS projects, focusing on systems engineering principles and the procurement stage, from identifying needs to contractor selection.",
-        "image": "./images/its-basics-procurement.jpg",
-        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137049",
-        "isExternal": true
-      },
-      {
         "title": "FHWA-NHI-137050: ITS What, Why, and How",
         "description": "This course equips professionals responsible for ITS programs with an understanding of ITS capabilities, planning and procurement processes, operations management, and workforce needs for long-term success.",
         "image": "./images/its-basics-what-why-how.jpg",
@@ -17,10 +10,10 @@
         "isExternal": true
       },
       {
-        "title": "ITS ePrimer: Introduction to ITS",
-        "description": "The ITS ePrimer is an online resource that provides foundational knowledge on integrating ITS technologies into transportation systems for professionals and students.",
-        "image": "./images/its-basics-introduction.png",
-        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137050",
+        "title": "FHWA-NHI-137049: ITS Procurement",
+        "description": "This course provides an overview of strategies for deploying ITS projects, focusing on systems engineering principles and the procurement stage, from identifying needs to contractor selection.",
+        "image": "./images/its-basics-procurement.jpg",
+        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137049",
         "isExternal": true
       }
     ]
@@ -84,20 +77,6 @@
         "image": "./images/v2x-training.jpg",
         "url": "/resources/training/pcb/trainings/v2x-trainings",
         "isExternal": false
-      },
-      {
-        "title": "Connected and Automated Vehicle Education (CAVe)",
-        "description": "Connected and Automated Vehicle education (CAVe) seeks to provide community colleges, trade schools, universities, and other academic stakeholders with unique tools and resources for the development of an intelligent ransportation workforce.",
-        "image": "./images/cave.jpg",
-        "url": "/resources/training/pcb/trainings/cave",
-        "isExternal": false
-      },
-      {
-        "title": "FHWA-NHI-137060: Introduction to Connected Vehicles and Automated Vehicles",
-        "description": "This course offers practitioners a foundational understanding of connected and automated vehicle technology, emphasizing USDOT's research and applications.",
-        "image": "./images/connected-vehicles.jpg",
-        "url": "https://www.nhi.fhwa.dot.gov/course-search?tab=0&cat=8&srt=10&sf=0&course_no=137060",
-        "isExternal": true
       }
     ]
   },
