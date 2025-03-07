@@ -1,14 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import { getImage } from "astro:assets";
-import banner from "@/src/assets/images/banners/Default_Banner.png";
+import banner from "@/src/assets/images/banners/DataAccess_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 ---
 
 <link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
-<PageLayout title="Automation" bannerImage={banner}>
+<PageLayout title="Digital Infrastructure" bannerImage={banner}>
   <Fragment slot="banner">Digital Infrastructure</Fragment>
   <SidebarLayout path="/research-areas/">
     <main>
