@@ -1,0 +1,20 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import banner from "@/src/assets/images/banners/NTL_Banner.png";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+---
+
+<PageLayout title="National Transportation Library" bannerImage={banner}>
+  <Fragment slot="banner"> Architecture and Standards </Fragment>
+  <SidebarLayout path="/resources/">
+    <h2 class="sideways blue">ITS Architecture and Standards:</h2>
+    <p>
+      This Program provides a reference system architecture along with voluntary technical standards, tools, and deployment support. These efforts
+      guide safe, secure, efficient, and interoperable deployment of infrastructure, connected, and automated ITS technologies as outlined in <a
+        href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section517&num=0&edition=prelim"
+      >
+        23 USC Sect. 517
+      </a>.
+    </p>
+  </SidebarLayout>
+</PageLayout>

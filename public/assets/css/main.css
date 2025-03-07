@@ -1221,33 +1221,7 @@ main a[href$=".pdf"]::after {
     color:#009ad6;
 }
 
-.SidebarNav li a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
 
-.SidebarNav li a::after {
-    content: "\f061"; 
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: none;
-    font-size: 14px;
-    color: #009ad6;
-} 
-
-.SidebarNav li a[href^="http://"]:after, 
-.SidebarNav li a[href^="https://"]:after {
-    content: "\f08e"; /* Unicode for Font Awesome icon */
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: none;
-    font-size: 14px;
-    color: #009ad6;
-}
 
 
 main a:has(img)::after{

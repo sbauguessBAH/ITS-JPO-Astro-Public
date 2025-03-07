@@ -20,7 +20,13 @@ export const navigation: NavigationItem[] = [
     name: 'Research Areas',
     url: '/research-areas',
     pages: [
-      { name: 'Automation Program', url: '/research-areas/automation' },
+      { name: "Artificial Intelligence", url: "/research-areas/Artificial-Intelligence" },
+      { name: "Automation Program", url: "/research-areas/Automation-Program" },
+      { name: "Complete Streets Artificial Intelligence Initiative", url: "/research-areas/Complete-Streets-AI" },
+      { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
+      { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
+      { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
+      { name: "V2X Deployment", url: "/research-areas/V2X-Deployment" },
     ]
   },
   {
@@ -35,11 +41,12 @@ export const navigation: NavigationItem[] = [
     name: 'Resources/Technical Assistance',
     url: '/resources',
     pages: [
+      { name: 'Architecture and Standards', url: '/resources/Architecture-and-Standards' },
+      { name: 'Deployment Evaluation', url: '/resources/Deployment-Evaluation' },
       { name: 'National Transportation Library', url: '/resources/national-transportation-library' },
-      { name: 'Accelerating ITS Deployment', url: '/resources/accelerating', pages: [
-        { name: 'ITS CodeHub', url: 'https://www.its.dot.gov/code', isExternal: true },
-        { name: 'ITS DataHub', url: 'https://www.its.dot.gov/data', isExternal: true },
-      ]}
+      { name: 'Professional Capacity Building', url: '/resources/Professional-Capacity-Building' },
+      { name: 'ITS CodeHub', url: 'https://www.its.dot.gov/code', isExternal: true },
+      { name: 'ITS DataHub', url: 'https://www.its.dot.gov/data', isExternal: true },
     ]
   },
 ]

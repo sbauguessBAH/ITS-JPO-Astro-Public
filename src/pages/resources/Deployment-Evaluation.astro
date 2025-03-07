@@ -1,0 +1,20 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import banner from "@/src/assets/images/NTL_Banner.png";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+---
+
+<PageLayout title="National Transportation Library" bannerImage={banner}>
+  <Fragment slot="banner"> Deployment Evaluation </Fragment>
+  <SidebarLayout path="/resources/">
+    <h2 class="sideways blue">Deployment Evaluation Program (DEP)</h2>
+    <p>
+      This Program addresses stakeholder needs through the full ITS deployment lifecycle and provides information to assist communities with making evidence-based decisions on ITS investment,
+      deployment, and performance assessment.&nbsp; A central objective of the DEP is to determine the extent, effectiveness, and benefits/costs of deployed ITS and, ultimately, the value/return on
+      investment of ITS program interventions and deployment support activities. Evaluation and deployment tracking activities are critical to an understanding of the value, effectiveness, and impacts
+      of the ITS Program activities in alignment with U.S. DOT goals. <a href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section515&num=0&edition=prelim">
+        23 USC Sect 515</a> paragraph (g) outlines the requirement to maintain a repository for technical and safety data collected as a result of the federal projects carried out
+      under the ITS program and the ITS Benefits, Costs, and Lessons Learned (BCLL) Database, created in 1999, does that by tracking and documenting the effectiveness of deployed ITS.
+    </p>
+  </SidebarLayout>
+</PageLayout>

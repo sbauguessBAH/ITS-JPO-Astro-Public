@@ -3,11 +3,13 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
 import { Image } from "astro:assets";
 import Brian_Cronin from "../../../assets/images/staff/Brian_Cronin.png";
 import Egan_Smith from "../../../assets/images/staff/Egan_Smith.jpg";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 ---
 
 <PageLayout title="Staff Listing">
   <Fragment slot="banner"> ITS JPO Staff Listing </Fragment>
-  <div class="row">
+  <SidebarLayout path="/about/">
+    <div class="row">
     <div class="col-lg-4">
       <strong>Anderson, Justin, PMP, CSEP, CISSP</strong><br />
       Program Manager<br />
@@ -111,4 +113,5 @@ import Egan_Smith from "../../../assets/images/staff/Egan_Smith.jpg";
       <a href="mailto:Egan.Smith@dot.gov">Egan.Smith@dot.gov</a><br />
     </div>
   </div>
+</SidebarLayout>
 </PageLayout>
