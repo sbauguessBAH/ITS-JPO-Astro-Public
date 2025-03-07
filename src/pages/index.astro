@@ -16,6 +16,8 @@ import spotlight7 from "../assets/images/Spotlight7.png";
 import spotlight8 from "../assets/images/Spotlight8.png";
 import spotlight9 from "../assets/images/Spotlight9.png";
 import spotlight10 from "../assets/images/Spotlight10.png";
+import spotlight12 from "../assets/images/Spotlight12.png";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const optimizedBG = await getImage({ src: HeroBG2 });
@@ -32,12 +34,12 @@ const optimizedBG = await getImage({ src: HeroBG2 });
     width: 100%;
     height: auto;
   }
-  h2{
+  h2 {
     text-wrap: pretty;
   }
 </style>
 <BaseLayout title="ITS JPO">
-  <div class=" bodyWrap">
+  <div class="bodyWrap">
     <div class="hero-container" style={`background-image: url(${optimizedBG.src});`}>
       <div class="container">
         <div class="d-flex align-items-center p-4 col-md-7" style="background-color: rgba(7, 46, 85, 0.85)">
@@ -53,7 +55,97 @@ const optimizedBG = await getImage({ src: HeroBG2 });
       </div>
     </div>
 
-    
+    <div class="container HomepageContainter">
+      <div class="row">
+        <div class="col-12">
+          <div class="TitleWrapper">
+            <div class="TitleHeader">
+              <h2 class="text-nowrap">Spotlight on ITS Research Areas</h2>
+            </div>
+
+            <div class="TitleBar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3">
+          <a href={base_url("/research-areas/Artificial-Intelligence")}>
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                <span class="externalLink_White">Artificial Intelligence (AI)</span>
+              </div>
+              <Image src={spotlight9} alt="Artificial Intelligence (AI)" />
+            </div>
+          </a>
+        </div> 
+
+        <div class="col-lg-3">
+          <a href={base_url("/research-areas/Automation-Program")}>
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">Automation Program</div>
+              <Image src={spotlight1} alt="Automation Program" />
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3">
+          <a href={base_url("/research-areas/Complete-Streets-AI")}>
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                Complete Streets Artificial Intelligence
+              </div>
+              <Image src={spotlight6} alt="Complete Streets Artificial Intelligence" />
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3">
+          <a href={base_url("/research-areas/Digital-Infrastructure")}>
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                Digital Infrastructure
+              </div>
+              <Image src={spotlight8} alt="Digital Infrastructure" />
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3">
+          <a href={base_url("/research-areas/Interoperable-Connectivity-Spectrum")}>
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                Interoperable Connectivity/Spectrum
+              </div>
+              <Image src={spotlight12} alt="Interoperable Connectivity/Spectrum" />
+            </div>
+          </a>
+        </div>
+        
+        <div class="col-lg-3">
+          <a href={base_url("/research-areas/Intersection-Safety-Challenge")} >
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                Intersection Safety Challenge
+              </div>
+              <Image src={spotlight3} alt="Intersection Safety Challenge" />
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3">
+          <a href={base_url("/research-areas/V2X-Deployment")} >
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                V2X Deployment
+              </div>
+              <Image src={spotlight4} alt="V2X Deployment" />
+            </div>
+          </a>
+        </div>
+
+      
+      </div>
+    </div>
   </div>
-  
 </BaseLayout>
