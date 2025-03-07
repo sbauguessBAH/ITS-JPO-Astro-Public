@@ -1,7 +1,6 @@
 ---
 import News_Card from '../../../components/Card_News.astro'
-
-
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 import { getCollection, type CollectionEntry } from 'astro:content';
 import type { Page } from 'astro';
 import PageLayout from "@/src/layouts/PageLayout.astro";
@@ -52,6 +51,7 @@ const { page } = Astro.props;
   <Fragment slot="banner">
     Latest News from ITS JPO
   </Fragment>
+  <SidebarLayout path="/news-info/">
   <div>
     {page.data.map((allposts) => <News_Card post={allposts}/>)} 
   </div> 
@@ -114,4 +114,5 @@ const { page } = Astro.props;
       )}
     </ul>
   </nav>
+  </SidebarLayout>
 </PageLayout>
