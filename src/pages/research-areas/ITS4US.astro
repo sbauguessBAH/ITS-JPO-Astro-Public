@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+import banner from "@/src/assets/images/banners/Automation_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+---
+
+<link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
+<PageLayout title="ITS4US" bannerImage={banner}>
+  <Fragment slot="banner">ITS4US</Fragment>
+  <SidebarLayout path="/research-areas/">
+    <main>
+      <div>
+        <h2 class="sideways blue">About the ITS4US Deployment Program</h2>
+        <p class="read-more-wrap" style="padding-top:0px">
+          In 2019, the Trump Administration launched the Complete Trip - ITS4US Deployment program, investing $38 million to enhance transportation availability across American communities. Led by the ITS JPO, this multimodal initiative leverages innovative technology to improve transportation efficiency while creating strong public-private partnerships, implementing cutting-edge solutions, and delivering cost-saving, scalable results that other communities can replicate.
+          </p>
+          <p class="read-more-wrap" style="padding-top:0px">
+
+          The Program awarded funding to four organizations - the Heart of Iowa Regional Transit Agency, Georgia Department of Transportation, University of Washington, and Niagara Frontier Transportation Authority - to develop and deploy innovative, multimodal mobility solutions. These projects focus on addressing complete trip challenges through integrated technology; with implementations either in final pre-operations testing or already serving the public; and ultimately improving Americans' access to healthcare, jobs, and other essential services.
+        </p>
+      </div>
+    </main></SidebarLayout
+  >
+</PageLayout>
