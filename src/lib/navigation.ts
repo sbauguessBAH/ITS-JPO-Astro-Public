@@ -25,8 +25,8 @@ export const navigation: NavigationItem[] = [
       { name: "Complete Streets Artificial Intelligence Initiative", url: "/research-areas/Complete-Streets-AI" },
       { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
-      { name: "ITS4US Program", url: "/research-areas/ITS4US" },
       { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
+      { name: "ITS4US Program", url: "/research-areas/ITS4US" },
       { name: "V2X Deployment", url: "/research-areas/V2X-Deployment" },
     ]
   },
