@@ -10,7 +10,10 @@ export const navigation: NavigationItem[] = [
     pages: [
       { name: 'About ITS JPO', url: '/about/its_jpo' },
       { name: 'Contact Us', url: '/about/contact-us', pages: [
-        { name: 'ITS JPO Staff Listing', url: '/about/contact-us/staff-listing' },
+        { name: 'ITS JPO Staff Listing', url: '/about/contact-us/staff-listing', pages:[
+          { name: 'Brian Cronin', url: '/about/contact-us/staff-listing/Brian-Cronin'},
+          { name: 'Egan Smith', url: '/about/contact-us/staff-listing/Egan-Smith'}
+        ]},
         { name: 'Join Our Mailing List', url: '/about/contact-us/mailinglist' },
         { name: 'ITS Specialists in Field Offices', url: 'https://www.fhwa.dot.gov/resourcecenter/teams/operations/index.cfm', isExternal: true },
       ]},
@@ -20,9 +23,11 @@ export const navigation: NavigationItem[] = [
     name: 'Research Areas',
     url: '/research-areas',
     pages: [
-      { name: "Artificial Intelligence", url: "/research-areas/Artificial-Intelligence" },
+      { name: "Artificial Intelligence", url: "/research-areas/Artificial-Intelligence", pages: [
+        { name: "Artificial Intelligence in Transportation", url: "/research-areas/Artificial-Intelligence/" },
+        { name: "Complete Streets Artificial Intelligence Initiative", url: "/research-areas/Artificial-Intelligence/Complete-Streets-AI" }
+      ]},
       { name: "Automation Program", url: "/research-areas/Automation-Program" },
-      { name: "Complete Streets Artificial Intelligence Initiative", url: "/research-areas/Complete-Streets-AI" },
       { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
       { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
@@ -34,7 +39,7 @@ export const navigation: NavigationItem[] = [
     name: 'News & Info',
     url: '/news-info',
     pages: [
-      { name: 'Latest News from ITS JPO', url: '/news-info/news', hasGeneratedChildItems: true },
+      { name: 'Latest News from USDOT', url: 'https://www.transportation.gov/newsroom', isExternal: true },
       { name: 'Image Library', url: '/news-info/image-library' },
     ]
   },
@@ -43,6 +48,7 @@ export const navigation: NavigationItem[] = [
     url: '/resources',
     pages: [
       { name: 'Architecture and Standards', url: '/resources/Architecture-and-Standards' },
+      { name: 'Cybersecurity', url: '/resources/Cybersecurity' },
       { name: 'Deployment Evaluation', url: '/resources/Deployment-Evaluation' },
       { name: 'National Transportation Library', url: '/resources/national-transportation-library' },
       { name: 'Professional Capacity Building', url: '/resources/Professional-Capacity-Building' },

@@ -1,15 +1,21 @@
 ---
 import { Image } from "astro:assets";
 import { getImage } from "astro:assets";
-import banner from "@/src/assets/images/banners/Automation_Banner.png";
+import banner from "@/src/assets/images/banners/ITS4US_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+
 ---
 
 <link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
 <PageLayout title="ITS4US" bannerImage={banner}>
-  <Fragment slot="banner">ITS4US</Fragment>
+  <Fragment slot="banner"> <img 
+    alt="ITS4US Logo" 
+    src={logo.src} 
+    style="max-height: 60px; clear: none" 
+  /> | ITS4US</Fragment>
   <SidebarLayout path="/research-areas/">
     <main>
       <div>

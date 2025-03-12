@@ -1,0 +1,18 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import banner from "@/src/assets/images/banners/NTL_Banner.png";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+---
+
+<PageLayout title="ITS Architecture and Standards" bannerImage={banner}>
+  <Fragment slot="banner"> Cybersecurity  </Fragment>
+  <SidebarLayout path="/resources/">
+    <h2 class="sideways blue">Cybersecurity</h2>
+       <p>
+      Cybersecurity is the practice of protecting computer systems, networks, and data from digital attacks, unauthorized access, and data breaches. ITS manufacturers, integrators, and operators must systematically assess risks at all levels to mitigate the vulnerabilities, malfunctions, or opportunities for exploitation. 
+    </p>
+    <p>
+      The goal of the ITS Cybersecurity Research Program is to make resources, information, and tools available to stakeholder communities to support secure and cyber-resilient ITS implementations.  The program works across the U.S. DOT modes to develop and coordinate research focused on cyber vulnerabilities from an integrated, multimodal transportation perspective. This role includes defining shared priorities, analyzing program options, and identifying and addressing cross-modal cyber issues, in addition to sharing implementation practices and information.
+    </p>
+  </SidebarLayout>
+</PageLayout>

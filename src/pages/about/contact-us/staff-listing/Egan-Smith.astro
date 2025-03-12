@@ -1,0 +1,31 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import Brian_Cronin from "../../../../assets/images/staff/Brian_Cronin.png";
+import Egan_Smith from "../../../../assets/images/staff/Egan_Smith.jpg";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+---
+
+<PageLayout title="Staff Listing">
+  <Fragment slot="banner"> ITS JPO Staff Listing </Fragment>
+  <SidebarLayout path="/about/">
+    <Image src={Egan_Smith} width="200" alt="Egan Smith" class="float-end m-2"/>
+    <h4>Egan Smith, Managing Director</h4>
+    <p>202-366-9224<br />
+    <a href="mailto:Egan.Smith@dot.gov">Egan.Smith@dot.gov</a></p>
+    <p>
+      Egan is the Managing Director of the Intelligent Transportation Systems (ITS) Joint Program Office (JPO), where he assists in facilitating research, development, and adoption of transportation
+      technology solutions across the US through a collaborative agenda working with USDOT modal partners and transportation stakeholders.
+    </p>
+    <p>
+      Egan also supports managing the JPO annual $110 million multimodal research portfolio, providing technical leadership with the ITS JPO team on research and technology development and transfer;
+      and interpreting standards, regulations, policies, procedures, and guidelines to integrate innovations in safety and mobility effectively into the national highway program while promoting
+      international cooperation opportunities beneficial to US interests.
+    </p>
+    <p>
+      Egan's extensive background spans decades of experience in ITS, transportation program management, and transportation planning. He holds credentials as a Professional Engineer, Professional
+      Traffic Operations Engineer, and Professional Transportation Planner. His academic background includes a Bachelor of Science in Civil Engineering, a Master of Engineering in Traffic Engineering
+      and Operations Research, and a Master of Science in Technology Management.
+    </p>
+  </SidebarLayout>
+</PageLayout>
