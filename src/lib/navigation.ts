@@ -32,7 +32,7 @@ export const navigation: NavigationItem[] = [
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
       { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
       { name: "ITS4US Program", url: "/research-areas/ITS4US" },
-      { name: "V2X Deployment", url: "/research-areas/V2X-Deployment" },
+      { name: "Vehicle-to-Everything (V2X)", url: "/research-areas/V2X-Deployment" },
     ]
   },
   {
