@@ -9,7 +9,7 @@ export type ChildNavigationItem = {
   name: string;
   url: string;
   isExternal?: boolean;
-  isDisabled?: boolean;
+  isEnabled?: boolean;
   pages?: ChildNavigationItem[];
   hasGeneratedChildItems?: boolean;
 }
@@ -25,7 +25,7 @@ export type AnyNavigationItem = NavigationItem | ChildNavigationItem;
 export type BreadcrumbItem = {
   name: string;
   url: string;
-  isDisabled?: boolean;
+  isEnabled?: boolean;
 }
 
 export type Link = {

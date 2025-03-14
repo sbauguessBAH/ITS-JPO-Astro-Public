@@ -7,10 +7,11 @@ export const navigation: NavigationItem[] = [
   {
     name: 'About',
     url: '/about',
+    isEnabled: true,
     pages: [
-      { name: 'About ITS JPO', url: '/about/its_jpo' },
+      { name: 'About ITS JPO', url: '/about', isEnabled: true, },
       { name: 'Contact Us', url: '/about/contact-us', pages: [
-        { name: 'ITS JPO Staff Listing', url: '/about/contact-us/staff-listing', pages:[
+        { name: 'ITS JPO Staff Listing', url: '/about/contact-us/staff-listing', isEnabled: true, pages:[
           { name: 'Brian Cronin', url: '/about/contact-us/staff-listing/Brian-Cronin'},
           { name: 'Egan Smith', url: '/about/contact-us/staff-listing/Egan-Smith'}
         ]},
@@ -23,8 +24,8 @@ export const navigation: NavigationItem[] = [
     name: 'Research Areas',
     url: '/research-areas',
     pages: [
-      { name: "Artificial Intelligence", url: "/research-areas/Artificial-Intelligence", pages: [
-        { name: "Artificial Intelligence in Transportation", url: "/research-areas/Artificial-Intelligence/AI-In-Transportation" },
+      { name: "Artificial Intelligence", url: "/research-areas/Artificial-Intelligence", isEnabled: true, pages: [
+        { name: "Artificial Intelligence in Transportation", url: "/research-areas/Artificial-Intelligence" },
         { name: "Complete Streets Artificial Intelligence Initiative", url: "/research-areas/Artificial-Intelligence/Complete-Streets-AI" }
       ]},
       { name: "Automation Program", url: "/research-areas/Automation-Program" },
@@ -108,24 +109,12 @@ export function comparePathname(currentPath: string, pageUrl: string, startsWith
   return startsWith ? getTrimmedPathname(currentPath).startsWith(pageUrl) : getTrimmedPathname(currentPath) === pageUrl
 }
 
-/**
- * Check if there is a page under the navigation item with the smae URL
- * If so, that means the navigation item should be selectable as it will navigate
- * to the current page
- * @param navigationItem Current navigation item
- */
-export function hasMatchingPageOrGeneratedChildItems(navigationItem: AnyNavigationItem) {
-  // Can use some since navigation validation ensures no duplicates
-  if (navigationItem.pages?.some(page => page.url === navigationItem.url)) return true;
-  if (navigationItem.hasGeneratedChildItems) return true;
-  return false;
-}
-
+// Generate a breadcrumb item type from a navigation item
 export function generateBreadcrumbItem(navigationItem: AnyNavigationItem) {
   return {
     name: navigationItem.name, 
     url: navigationItem.url, 
-    isDisabled: navigationItem.isDisabled || !hasMatchingPageOrGeneratedChildItems(navigationItem)
+    isEnabled: navigationItem.isEnabled || false
   }
 }
 

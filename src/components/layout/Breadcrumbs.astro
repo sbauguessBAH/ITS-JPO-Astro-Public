@@ -15,9 +15,7 @@ const path = Astro.url.pathname;
 //   .filter(item => item !== undefined)
 //   .map(item => ({ title: item?.name, href: item?.url }))
 const items = findBreadcrumbItems(path);
-const breadcrumbs = currentBreadcrumb ? [...items, { name: currentBreadcrumb, url: "", isDisabled: true }] : items;
-console.log("items: ", items);
-console.log("path: ", Astro.url.pathname);
+const breadcrumbs = currentBreadcrumb ? [...items, { name: currentBreadcrumb, url: ""}] : items;
 ---
 
 <style>
@@ -48,10 +46,10 @@ console.log("path: ", Astro.url.pathname);
           class:list={["breadcrumb-item", { active: index === breadcrumbs.length - 1 }]}
           aria-current={index === breadcrumbs.length - 1 ? "page" : "false"}
         >
-          {index === breadcrumbs.length - 1 || item.isDisabled ? (
+          {index === breadcrumbs.length - 1 || !item.isEnabled ? (
             <span>{item.name}</span>
           ) : (
-            <a href={base_url(item.url)} />
+            <a href={base_url(item.url)} >{item.name}</a>
           )}
         </li>
       ))
