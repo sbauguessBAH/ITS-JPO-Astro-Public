@@ -24,7 +24,7 @@ export const navigation: NavigationItem[] = [
     url: '/research-areas',
     pages: [
       { name: "Artificial Intelligence", url: "/research-areas/Artificial-Intelligence", pages: [
-        { name: "Artificial Intelligence in Transportation", url: "/research-areas/Artificial-Intelligence/" },
+        { name: "Artificial Intelligence in Transportation", url: "/research-areas/Artificial-Intelligence/AI-In-Transportation" },
         { name: "Complete Streets Artificial Intelligence Initiative", url: "/research-areas/Artificial-Intelligence/Complete-Streets-AI" }
       ]},
       { name: "Automation Program", url: "/research-areas/Automation-Program" },
