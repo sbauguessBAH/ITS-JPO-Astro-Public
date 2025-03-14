@@ -10,6 +10,7 @@ export type ChildNavigationItem = {
   url: string;
   isExternal?: boolean;
   isEnabled?: boolean;
+  isDisabled?: boolean;
   pages?: ChildNavigationItem[];
   hasGeneratedChildItems?: boolean;
 }
