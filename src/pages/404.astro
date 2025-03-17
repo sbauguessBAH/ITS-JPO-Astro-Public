@@ -1,0 +1,71 @@
+---
+import Default from "../layouts/Default.astro";
+import base_url from "../lib/base_url";
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+import HeroBG from "../assets/images/Hero3.jpeg";
+import HeroBG2 from "../assets/images/Hero-Image-02.jpg";
+import HeroBG3 from "../assets/images/Hero-Image-03.jpg";
+import spotlight1 from "../assets/images/Spotlight1.png";
+import spotlight2 from "../assets/images/Spotlight2.png";
+import spotlight3 from "../assets/images/Spotlight3.png";
+import spotlight4 from "../assets/images/Spotlight4.png";
+import spotlight5 from "../assets/images/Spotlight5.png";
+import spotlight6 from "../assets/images/Spotlight6.png";
+import spotlight7 from "../assets/images/Spotlight7.png";
+import spotlight8 from "../assets/images/Spotlight8.png";
+import spotlight9 from "../assets/images/Spotlight9.png";
+import spotlight10 from "../assets/images/Spotlight10.png";
+import spotlight12 from "../assets/images/Spotlight12.png";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const optimizedBG = await getImage({ src: HeroBG2 });
+---
+
+<style>
+  .hero-container {
+    background-position: center;
+    background-size: cover;
+    padding: 50px 0 100px 0;
+  }
+
+  .HotTopicBlock img {
+    width: 100%;
+    height: auto;
+  }
+  h2 {
+    text-wrap: pretty;
+  }
+</style>
+<BaseLayout title="ITS JPO">
+  <div class="bodyWrap">
+    <div class="container">
+      <div class="usa-prose">
+        <!-- This template can be used for most types of error pages -->
+        <!-- Remove these comments when you build your error pages -->
+
+        <!-- Describe the error in the main heading -->
+        <h1>Page not found</h1>
+
+        <!-- Explain what caused the error in the lead text -->
+        <p class="usa-intro">We’re sorry, we can’t find the page you're looking for. The site administrator may have removed it, changed its location, or made it otherwise unavailable.</p>
+
+        <!-- Provide instructions how the user can address or fix the error -->
+        <p>If you typed the URL directly, check your spelling and capitalization. Our URLs look like this: <strong>&lt;its.dot.gov/example-one&gt;</strong>.</p><p>
+          Visit our homepage for helpful tools and resources
+        </p>
+
+        <!-- Use buttons for main actions user can take, such as visiting the homepage or a contact page -->
+        <div class="margin-y-5">
+          
+              <a href="/" class="btn btn btn-secondary">Visit homepage</a>
+           
+        </div>
+
+        <!-- Error code if appropriate -->
+        <p class=""><strong>Error code:</strong> 404</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
