@@ -1,0 +1,22 @@
+﻿---
+import { Image } from "astro:assets";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+---
+
+<PageLayout title="About - ITS Joint Program Office">
+  <Fragment slot="banner">ITS Joint Program Office</Fragment>
+  <SidebarLayout path="/about/">
+  <main>
+    <div class="row">
+      <div class="col">
+        <h2>About Us</h2>
+        <p>
+          Mandated by United States Code Title 23 Chapter 5 and subject to provisions outlined in Sections 512-518, the Secretary of Transportation is directed to conduct an ongoing intelligent transportation system (ITS) program to research, develop and operationally test ITS and provide technical assistance in the nationwide application of ITS as a component of the surface transportation system (23 USC Sect 515 ). To meet that directive, the Intelligent Transportation Systems Joint Program Office (ITS JPO) collaborates across modal administrations to coordinate and plan the U.S. DOT’s multimodal ITS technology research program, working toward improving transportation safety, mobility, efficiency, and enhancing productivity through the integration of innovative technologies into the nation’s transportation system.
+        </p>
+      </div>
+    </div>
+  </main></SidebarLayout>
+  </PageLayout
+>
