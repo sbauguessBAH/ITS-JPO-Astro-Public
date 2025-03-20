@@ -1,5 +1,4 @@
 ---
-
 import { type CollectionEntry } from "astro:content";
 import base_url from "../lib/base_url";
 
@@ -13,24 +12,22 @@ const { title, date, image } = post.data;
 const markdownString = post.body.slice(0, 600);
 
 // Define a function to remove Markdown syntax
-function removeMarkdownSyntax(str) {
+function removeMarkdownSyntax(str: String) {
   return str
-  .replace(/\*\*([^*]+)\*\*/g, '$1')
-  .replace(/\*([^*]+)\*/g, '$1')
-  .replace(/__([^_]+)__/g, '$1')
-  .replace(/_([^_]+)_/g, '$1')
-  // Remove inline code 
-  .replace(/`([^`]+)`/g, '$1') 
-  // Remove links and images, keep the text 
-  .replace(/! \[([^\] ]+)\] \([^)]*\)/g, '$1') 
-  .replace(/ \[([^\] ]+)\] \([^)]*\)/g, '$1'); 
+    .replace(/\*\*([^*]+)\*\*/g, "$1") // bold
+    .replace(/\*([^*]+)\*/g, "$1") // italic
+    .replace(/__([^_]+)__/g, "$1") // double underscore bold
+    .replace(/_([^_]+)_/g, "$1") // single underscore italic
+    .replace(/`([^`]+)`/g, "$1") // inline code
+    .replace(/!\[([^\]]*)\]\([^\)]+\)/g, "") // image
+    .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1") // link
+    .replace(/^#+\s*(.*)/gm, "") // headers
+    .replace(/^> /gm, "") // blockquotes
+    .replace(/^- /gm, "") // unordered lists
+    .replace(/^(\d+)\. /gm, ""); // ordered lists
 }
 
 const preview = removeMarkdownSyntax(markdownString);
-
-
-
-
 ---
 
 <style>
@@ -44,19 +41,21 @@ const preview = removeMarkdownSyntax(markdownString);
     background-color: #009ad6;
   }
   h2 {
-    text-wrap: balance
+    text-wrap: balance;
   }
   p {
     display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Number of lines to show */
-  overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    overflow: hidden;
   }
 </style>
 
 <div>
-    <time datetime={date.toISOString()}>{date.toLocaleDateString(undefined, { dateStyle: "medium", timeZone: "UTC" })}</time><br />
-    <h2>{title}</h2> 
+  <time datetime={date.toISOString()}>
+    {date.toLocaleDateString(undefined, { dateStyle: "medium", timeZone: "UTC" })}
+  </time><br />
+  <h2>{title}</h2>
   <p>{preview}</p>
   <a href={base_url(`/news-info/news/${post.slug}`)} class="btn">Read Post</a>
 </div>
