@@ -1,6 +1,6 @@
 ---
 import type { ImageMetadata } from 'astro';
-import defaultBannerImage from "@/src/assets/images/Mask Group 12.png";
+import defaultBannerImage from "@/src/assets/images/banners/Default_Banner.png";
 
 interface Props {
   image?: ImageMetadata;
@@ -15,7 +15,7 @@ const { image } = Astro.props;
     class="banner-image"
   />
   <div class="banner-text-container">
-    <div class="banner-text">
+    <div class="banner-text container-xl">
       <slot/>
     </div>
   </div>
@@ -40,6 +40,7 @@ const { image } = Astro.props;
 
   .banner-text-container {
     position: absolute;
+    text-wrap: pretty;
     top: 0;
     left: 0;
     right: 0;
@@ -54,8 +55,6 @@ const { image } = Astro.props;
   }
 
   .banner-text {
-    width: 100%;
-    max-width: 1320px;
     margin: 0 auto;
     padding: 0 1rem;
   }
@@ -68,6 +67,7 @@ const { image } = Astro.props;
     margin-bottom: 0;
     text-transform:uppercase;
     transition: font-size 0.2s ease;
+    text-wrap: pretty;
   }
 
   /* 1200, 992, 768, 576 */

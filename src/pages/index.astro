@@ -1,5 +1,4 @@
 ---
-
 import Default from "../layouts/Default.astro";
 import base_url from "../lib/base_url";
 import { Image } from "astro:assets";
@@ -17,6 +16,8 @@ import spotlight7 from "../assets/images/Spotlight7.png";
 import spotlight8 from "../assets/images/Spotlight8.png";
 import spotlight9 from "../assets/images/Spotlight9.png";
 import spotlight10 from "../assets/images/Spotlight10.png";
+import spotlight12 from "../assets/images/Spotlight12.png";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const optimizedBG = await getImage({ src: HeroBG2 });
@@ -28,25 +29,27 @@ const optimizedBG = await getImage({ src: HeroBG2 });
     background-size: cover;
     padding: 50px 0 100px 0;
   }
-  
+
   .HotTopicBlock img {
     width: 100%;
     height: auto;
   }
+  h2 {
+    text-wrap: pretty;
+  }
 </style>
 <BaseLayout title="ITS JPO">
-  <div class="container-fluid bodyWrap">
     <div class="hero-container" style={`background-image: url(${optimizedBG.src});`}>
-      <div class="container ">
-          <div class="d-flex align-items-center p-3 col-md-7"  style="background-color: rgba(7, 46, 85, 0.85)">
-            <div class="text-white">
-              <h2 class="mb-3">Intelligent Transportation Systems Joint Program Office</h2>
-              <p class="mb-3 text-white">
-                The Intelligent Transportation Systems Joint Program Office (ITS JPO) seeks to transform the way society moves. Explore our website for information on research and deployments that
-                advance the use of ITS to move people and goods more safely and efficiently.
-              </p>
-              <a class="btn btn-outline-light btn-lg text-dark m-0" href={base_url("/about/its_jpo/")} role="button">LEARN MORE ABOUT THE ITS JPO</a>
-            </div>
+      <div class="container-xl">
+        <div class="d-flex align-items-center p-4 col-md-7" style="background-color: rgba(7, 46, 85, 0.85)">
+          <div class="text-white">
+            <h2 class="mb-4 fs-2">Intelligent Transportation Systems Joint Program Office</h2>
+            <p class="mb-4 fs-4 text-white">
+              The Intelligent Transportation Systems Joint Program Office (ITS JPO) seeks to transform the way society moves. Explore our website for information on research and deployments that
+              advance the use of ITS to move people and goods more safely and efficiently.
+            </p>
+            <a class="btn btn-outline-light btn-lg text-dark m-0 fs-4" href={base_url("/about/")} role="button">LEARN MORE ABOUT THE ITS JPO</a>
+          </div>
         </div>
       </div>
     </div>
@@ -56,7 +59,7 @@ const optimizedBG = await getImage({ src: HeroBG2 });
         <div class="col-12">
           <div class="TitleWrapper">
             <div class="TitleHeader">
-              <h2>SPOTLIGHT ON ITS DEPLOYMENT ACTIVITIES</h2>
+              <h2 class="text-nowrap">Spotlight on ITS Research Areas</h2>
             </div>
 
             <div class="TitleBar"></div>
@@ -66,62 +69,30 @@ const optimizedBG = await getImage({ src: HeroBG2 });
 
       <div class="row">
         <div class="col-lg-3">
-          <a href={base_url("/research-areas/deployments/v2x")}>
-            <div class="HotTopicBlock">
-              <div class="HotTopicTitleBanner">Vehicle-to-Everything (V2X)</div>
-              <Image src={spotlight1} alt="Vehicle-to-Everything (V2X)" />
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3">
-          <a href="https://www.its.dot.gov/scrc/index.html" target="_blank">
+          <a href={base_url("/research-areas/Artificial-Intelligence")}>
             <div class="HotTopicBlock">
               <div class="HotTopicTitleBanner">
-                <span class="externalLink_White">Smart Community Resource Center</span>
+                Artificial Intelligence (AI)
               </div>
-              <Image src={spotlight2} alt="Smart Community Resource Center" />
+              <Image src={spotlight9} alt="Artificial Intelligence (AI)" />
+            </div>
+          </a>
+        </div> 
+
+        <div class="col-lg-3">
+          <a href={base_url("/research-areas/Automation-Program")}>
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">Automation Program</div>
+              <Image src={spotlight1} alt="Automation Program" />
             </div>
           </a>
         </div>
 
         <div class="col-lg-3">
-          <a href="https://its.dot.gov/isc/" target="_blank">
+          <a href={base_url("/research-areas/Artificial-Intelligence/Complete-Streets-AI")}>
             <div class="HotTopicBlock">
               <div class="HotTopicTitleBanner">
-                <span class="externalLink_White">Intersection Safety Challenge</span>
-              </div>
-              <Image src={spotlight3} alt="Intersection Safety Challenge" />
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-3">
-          <a href="https://www.its.dot.gov/pilots/index.htm" target="_blank">
-            <div class="HotTopicBlock">
-              <div class="HotTopicTitleBanner">
-                <span class="externalLink_White">Connected Vehicle Pilot Deployments</span>
-              </div>
-              <Image src={spotlight4} alt="Connected Vehicle Pilot Deployments" />
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-3">
-          <a href={base_url("/research-areas/deployments/its4us")} target="_blank">
-            <div class="HotTopicBlock">
-              <div class="HotTopicTitleBanner">
-                <span class="">ITS4US</span>
-              </div>
-              <Image src={spotlight5} alt="ITS4US" />
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-3">
-          <a href="https://its.dot.gov/csai/" target="_blank">
-            <div class="HotTopicBlock">
-              <div class="HotTopicTitleBanner">
-                <span class="externalLink_White">Complete Streets Artificial Intelligence</span>
+                Complete Streets Artificial Intelligence
               </div>
               <Image src={spotlight6} alt="Complete Streets Artificial Intelligence" />
             </div>
@@ -129,120 +100,62 @@ const optimizedBG = await getImage({ src: HeroBG2 });
         </div>
 
         <div class="col-lg-3">
-          <a href="https://www.pcb.its.dot.gov/" target="_blank">
+          <a href={base_url("/research-areas/Digital-Infrastructure")}>
             <div class="HotTopicBlock">
               <div class="HotTopicTitleBanner">
-                <span class="externalLink_White">Foundational ITS Trainings</span>
+                Digital Infrastructure
               </div>
-              <Image src={spotlight7} alt="Foundational ITS Trainings" />
+              <Image src={spotlight8} alt="Digital Infrastructure" />
             </div>
           </a>
         </div>
 
         <div class="col-lg-3">
-          <a href="https://urldefense.com/v3/__https:/www.itskrs.its.dot.gov/__;!!May37g!I52CHHQW3NlAsLcxohOkXPX-RbhBSRuE_vYYPRiLZo4OcRoNuEBauxXNsmIvQa0YZUNEiOO7mo-XsDQoFLLO12t_$" target="_blank">
+          <a href={base_url("/research-areas/Interoperable-Connectivity-Spectrum")}>
             <div class="HotTopicBlock">
               <div class="HotTopicTitleBanner">
-                <span class="externalLink_White">ITS Deployment Evaluation</span>
+                Interoperable Connectivity/Spectrum
               </div>
-              <Image src={spotlight8} alt="ITS Deployment Evaluation" />
+              <Image src={spotlight12} alt="Interoperable Connectivity/Spectrum" />
             </div>
           </a>
         </div>
-<!-- 
+        
         <div class="col-lg-3">
-          <a href="#" target="_blank">
+          <a href={base_url("/research-areas/Intersection-Safety-Challenge")} >
             <div class="HotTopicBlock">
               <div class="HotTopicTitleBanner">
-                <span class="externalLink_White">Artificial Intelligence (AI)</span>
+                Intersection Safety Challenge
               </div>
-              <Image src={spotlight9} alt="Artificial Intelligence (AI)" />
+              <Image src={spotlight3} alt="Intersection Safety Challenge" />
             </div>
           </a>
-        </div> -->
+        </div>
 
         <div class="col-lg-3">
-          <a href="https://www.its.dot.gov/research_areas/cybersecurity" target="_blank">
+          <a href={base_url("/research-areas/ITS4US")} >
             <div class="HotTopicBlock">
               <div class="HotTopicTitleBanner">
-                <span class="externalLink_White">Cybersecurity</span>
+                ITS4US
               </div>
-              <Image src={spotlight10} alt="Cybersecurity" />
+              <Image src={spotlight5} alt="ITS4US" />
             </div>
           </a>
         </div>
+
+        <div class="col-lg-3">
+          <a href={base_url("/research-areas/V2X-Deployment")} >
+            <div class="HotTopicBlock">
+              <div class="HotTopicTitleBanner">
+                Vehicle-to-Everything (V2X) Deployment
+              </div>
+              <Image src={spotlight4} alt="V2X Deployment" />
+            </div>
+          </a>
+        </div>
+
+      
       </div>
     </div>
-  </div>
-  <div class="container-fluid GradientContainter">
-    <div class="container HomepageContainter">
-      <div class="row">
-        <div class="col-12">
-          <div class="TitleWrapper">
-            <div class="TitleHeader" style="color: white">
-              <h2>RESEARCH AREAS</h2>
-            </div>
-
-            <div class="TitleBar"></div>
-          </div>
-        </div>
-      </div>
-
-<div class="row">
-  <div class="col-lg-6">
-    <a href="/research/accelerating/">
-      <div class="HomeResearchBlock">
-        <div class="HomeResearchBlockTop"></div>
-        <div style="height: 100%">
-          <img src={base_url("/assets/images/Group 1708.png")} class="HomeResearchIcon" alt="ITS Deployment icon of a graph" />
-          <div class="vlTall HomeResearchBlockTitle text-start">ITS Deployment</div>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <div class="col-lg-6">
-    <a href={base_url("/research-areas/automation")}>
-      <div class="HomeResearchBlock">
-        <div class="HomeResearchBlockTop"></div>
-        <div style="height: 100%">
-          <img src={base_url("/assets/images/Group 1706.png")} class="HomeResearchIcon" alt="Automation icon of a brain" />
-          <div class="vlTall HomeResearchBlockTitle text-start">Automation</div>
-        </div>
-      </div>
-    </a>
-  </div>
-
-    <div class="col-lg-6">
-      <a href="/research/emerging-tech">
-        <div class="HomeResearchBlock">
-          <div class="HomeResearchBlockTop"></div>
-          <div style="height: 100%">
-            <img src={base_url("/assets/images/Group 1703.png")} class="HomeResearchIcon" alt="Emerging and Enabling Technologies icon of a cloud and lightbulb" />
-            <div class="vlTall HomeResearchBlockTitle text-start">
-              Emerging and Enabling Technologies
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="col-lg-6">
-      <a href="/research/emerging-tech">
-        <div class="HomeResearchBlock">
-          <div class="HomeResearchBlockTop"></div>
-          <div style="height: 100%">
-            <img src={base_url("/assets/images/TechAssistanceIcon.png")} class="HomeResearchIcon" alt="Emerging and Enabling Technologies icon of a cloud and lightbulb" />
-            <div class="vlTall HomeResearchBlockTitle text-start">
-              Technical Assistance
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-</div>
-
-
-  </div>
+ 
 </BaseLayout>

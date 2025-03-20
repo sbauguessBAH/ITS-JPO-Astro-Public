@@ -1,0 +1,23 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import banner from "@/src/assets/images/banners/NTL_Banner.png";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+---
+
+<PageLayout title="ITS Architecture and Standards" bannerImage={banner}>
+  <Fragment slot="banner"> Cybersecurity </Fragment>
+  <SidebarLayout path="/resources/">
+    <h2 class="sideways blue">Cybersecurity</h2>
+    <p>
+      Cybersecurity is the practice of protecting computer systems, networks, and data from digital attacks, unauthorized access, and data breaches. ITS manufacturers, integrators, and operators must
+      systematically assess risks at all levels to mitigate the vulnerabilities, malfunctions, or opportunities for exploitation.
+    </p>
+    <p>
+      The goal of the ITS Cybersecurity Research Program is to make resources, information, and tools available to stakeholder communities to support secure and cyber-resilient ITS implementations.
+      The program identified in <a
+        href="https://urldefense.com/v3/__https:/uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section514&num=0&edition=prelim__;!!May37g!LPTlQ4yi06pjCQ4Q4dB2Uh2wIhTcTNd2pk5gvYr-PzStoKAHaNyXKkLt9R25ah4RrGdKqY3X6S9nNeZAZEVgHdGU-YYI$"
+      >USC Sect. 514</a> works across the U.S. DOT modes to develop and coordinate research focused on cyber vulnerabilities from an integrated, multimodal transportation perspective. This role includes defining shared
+      priorities, analyzing program options, and identifying and addressing cross-modal cyber issues, in addition to sharing implementation practices and information.
+    </p>
+  </SidebarLayout>
+</PageLayout>

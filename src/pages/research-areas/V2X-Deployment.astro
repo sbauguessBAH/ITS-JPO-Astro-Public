@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+import banner from "@/src/assets/images/banners/Automation_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+---
+
+<link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
+<PageLayout title="V2X Deployment" bannerImage={banner}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+  <SidebarLayout path="/research-areas/">
+    <main>
+      <div>
+        <h2 class="sideways blue">V2X Accelerator Program</h2>
+        <p class="read-more-wrap" style="padding-top:0px">
+          The V2X Accelerator Program is a new program area dedicated to accelerating the adoption and deployment of interoperable connectivity nationwide. U.S. DOT will pursue
+          opportunities to support Interoperable Connectivity Accelerator(s) through this program. By presenting opportunities to deploy, operate, and showcase integrated, advanced deployments
+          featuring applications enabled by interoperable connectivity that substantially and quantitatively improve system safety; enhance traveler
+          mobility; improve the efficiency of goods movement; and demonstrate a significant return on (public and private) investment.
+        </p>
+      </div>
+    </main></SidebarLayout
+  >
+</PageLayout>

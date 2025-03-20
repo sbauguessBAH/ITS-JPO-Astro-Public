@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+---
+
+<link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
+<PageLayout title="Complete Streets Artificial Intelligence" bannerImage={banner}>
+  <Fragment slot="banner">Complete Streets Artificial Intelligence (CSAI) Initiative</Fragment>
+  <SidebarLayout path="/research-areas/">
+    <main>
+      <div>
+        <h2 class="sideways blue">Complete Streets Artificial Intelligence (CSAI) Initiative</h2>
+        <p class="read-more-wrap" style="padding-top:0px">
+          The Complete Streets Artificial Intelligence Initiative is a multi-phase effort to develop a suite of powerful new decision support tools for state, local, and tribal transportation agencies
+          that assist in the siting, design, and deployment of Complete Streets. The initiative is nested within U.S. DOT’s Small Business Innovation Research (SBIR) program. U.S. DOT anticipates
+          funding small businesses for up to three phases of activity. These phases, in their entirety, will propel early-stage concepts out of research and development and into nation-wide products
+          for public and private use.
+        </p>
+      </div>
+    </main></SidebarLayout
+  >
+</PageLayout>

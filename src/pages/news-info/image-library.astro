@@ -1,5 +1,6 @@
 ---
-import LibraryImg from '@/src/components/Img_Library.astro'
+import LibraryImg from '@/src/components/Img_Library.astro';
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 
 // To update this page add the image to the "imageLibrary" folder then add its src to this array and give it some alt text. The alt text is used for the image title.
@@ -11,7 +12,7 @@ const ImagesArray = [
 {src: '../assets/images/imageLibrary/img_4.jpg', alt: 'Street Car'},
 {src: '../assets/images/imageLibrary/img_5.jpg', alt: 'Rush Hour Connected Vehicle Exit'},
 {src: '../assets/images/imageLibrary/img_6.jpg', alt: 'Port'},
-{src: '../assets/images/imageLibrary/img_7.jpg', alt: 'Eco-lane Platooning'},
+{src: '../assets/images/imageLibrary/img_7.jpg', alt: 'Vehicle Platooning'},
 {src: '../assets/images/imageLibrary/img_8.jpg', alt: 'Passenger Car'},
 {src: '../assets/images/imageLibrary/img_9.jpg', alt: 'Merging'},
 {src: '../assets/images/imageLibrary/img_10.jpg', alt: 'Truck Convoy'},
@@ -70,6 +71,7 @@ const ImagesArray = [
   <Fragment slot="banner">
     Image Library
   </Fragment>
+  <SidebarLayout path="/news-info/">
   <h2 class="sideways blue">Images courtesy of the U.S. Department of Transportation</h2>
   <p>Click image for downloadable high resolution version. </p>
   <div class="d-flex flex-wrap">
@@ -93,5 +95,5 @@ const ImagesArray = [
       (202) 366 3700<br>
       (202)  493 2027 (fax)<br>
       <a href="mailto:mike.pina@dot.gov">mike.pina@dot.gov</a>
-  </p>
+  </p></SidebarLayout>
 </PageLayout>

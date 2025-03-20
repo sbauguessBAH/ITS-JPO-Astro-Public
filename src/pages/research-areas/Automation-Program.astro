@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+import banner from "@/src/assets/images/banners/Automation_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+---
+
+<link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
+<PageLayout title="Automation Program" bannerImage={banner}>
+  <Fragment slot="banner">Automation Program</Fragment>
+  <SidebarLayout path="/research-areas/">
+    <main>
+      <div>
+        <h2 class="sideways blue">Automation Program</h2>
+        <p class="read-more-wrap" style="padding-top:0px">
+          Driving automation is one of the major transportation industry trends of this decade. Through close collaboration and monitoring of current industry and academic technology innovators and
+          leaders in automation the ITS JPO continues the pursuit of an automation program that will support the safe deployment of an automated future. Advanced Driver Assistance Systems (ADAS) with
+          automation of lateral or longitudinal controls are widely available in passenger vehicles, although their development and refinement continue. Automated Driving System (ADS)-equipped
+          vehicles are being piloted in passenger vehicles, commercial motor vehicles, and transit buses. While driving automation research has been, to some degree, mainstreamed across the
+          Department's Operating Administrations, research needs are evolving alongside the technology. The technological and practical challenges of translating research breakthroughs into daily
+          transportation are significant and often are not fully understood at the outset. Many foundational questions around ADS and ADAS cannot be resolved until more and better data are available.
+          The ITS JPO Automation Program’s collaborative and multi-modal research portfolio provides cross-cutting support across the U.S. DOT.
+        </p>
+      </div>
+    </main></SidebarLayout
+  >
+</PageLayout>

@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+import banner from "@/src/assets/images/banners/Headers_Accelerating_Deployment_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+---
+
+<link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
+<PageLayout title="Intersection Safety Challenge" bannerImage={banner}>
+  <Fragment slot="banner">Intersection Safety Challenge</Fragment>
+  <SidebarLayout path="/research-areas/">
+    <main>
+      <div>
+        <h2 class="sideways blue">Intersection Safety Challenge</h2>
+        <p class="read-more-wrap" style="padding-top:0px">
+          The U.S. DOT Intersection Safety Challenge aims to transform intersection safety by incentivizing the innovative application of new and emerging technologies to identify and mitigate unsafe
+          conditions involving vehicles and vulnerable road users at intersections. The Challenge complements other Federal efforts to improve intersection safety, with the Challenge specifically
+          focused on the use of technology. Further, the intersection environment itself is well-suited to innovative mitigative approaches leveraging, utilizing, and potentially repurposing existing
+          traffic control and support infrastructure.
+        </p>
+      </div>
+    </main></SidebarLayout
+  >
+</PageLayout>

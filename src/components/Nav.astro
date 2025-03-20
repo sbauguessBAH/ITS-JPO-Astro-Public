@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import USDOTLogo from "../assets/images/US_DepartmentofTransportation-Logo.png";
+import USDOTLogo from "../assets/images/Logo.svg";
 import facebookIcon from "../assets/images/Facebook.png";
 import instgramIcon from "../assets/images/Instagram.png";
 import twitterIcon from "../assets/images/twitter.png";
@@ -43,7 +43,6 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
   }
   .dotlogo {
     max-height: 25px;
-    object-fit: contain;
     object-position: 0%;
     padding-right: 10px;
     margin-top: 14px;
@@ -96,7 +95,7 @@ const currentPath = pathname.slice(1); // Remove the leading "/"
   <div class="row">
     <div class="col-9">
       <a href="https://www.transportation.gov/">
-        <Image src={USDOTLogo} class="dotlogo" alt="U.S Department of Transportation Logo" />
+        <Image src={USDOTLogo} class="dotlogo" alt="U.S Department of Transportation Logo 2" />
       </a>
     </div>
     <div class="col-sm-3">

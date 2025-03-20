@@ -1,9 +1,9 @@
 ---
-import base_url from '@/src/lib/base_url';
-import { findBreadcrumbItem, findBreadcrumbItems } from '@/src/lib/navigation';
+import base_url from "@/src/lib/base_url";
+import { findBreadcrumbItems } from "@/src/lib/navigation";
 
 interface Props {
-  currentBreadcrumb?: string
+  currentBreadcrumb?: string;
 }
 
 const { currentBreadcrumb } = Astro.props;
@@ -14,9 +14,10 @@ const path = Astro.url.pathname;
 // const items = findBreadcrumbItem(currentPath)
 //   .filter(item => item !== undefined)
 //   .map(item => ({ title: item?.name, href: item?.url }))
-const items = findBreadcrumbItems(path)
-const breadcrumbs = currentBreadcrumb ? [...items, { name: currentBreadcrumb, url: "", isDisabled: true }] : items;
+const items = findBreadcrumbItems(path);
+const breadcrumbs = currentBreadcrumb ? [...items, { name: currentBreadcrumb, url: ""}] : items;
 ---
+
 <style>
   a:hover {
     font-weight: normal;
@@ -38,20 +39,20 @@ const breadcrumbs = currentBreadcrumb ? [...items, { name: currentBreadcrumb, ur
 </style>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb w-full">
-    {breadcrumbs.map((item, index) => (
-      // The last item here will be the active one on any given page
-      <li 
-        class:list={["breadcrumb-item", {"active": index === breadcrumbs.length - 1}]}
-        aria-current={index === breadcrumbs.length - 1 ? "page" : "false"}
-      >
-        {index === breadcrumbs.length - 1 ? (
-          <span>{item.name}</span>
-        ) : (
-          <a href={item.isDisabled ? "" : base_url(item.url)}>
-            {item.name}
-          </a>
-        )}
-      </li>
-    ))}
+    {
+      breadcrumbs.map((item, index) => (
+        // The last item here will be the active one on any given page
+        <li
+          class:list={["breadcrumb-item", { active: index === breadcrumbs.length - 1 }]}
+          aria-current={index === breadcrumbs.length - 1 ? "page" : "false"}
+        >
+          {index === breadcrumbs.length - 1 || !item.isEnabled ? (
+            <span>{item.name}</span>
+          ) : (
+            <a href={base_url(item.url)} >{item.name}</a>
+          )}
+        </li>
+      ))
+    }
   </ol>
 </nav>

@@ -50,7 +50,7 @@
 
 @media (min-width: 500px) {
   section p {
-    padding: 0px 30px 0px 0px;
+    padding: 0;
     margin: 0px 0px 10px 0px;
   }
 }
@@ -715,7 +715,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
-  color: white;
+  color: black;
   border-color: #EFBD27;
   background-color: #EFBD27;
   text-decoration: none;
@@ -727,7 +727,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   padding: 8px 25px 6px 25px;
   background-color: #EFBD27;
   font-size: 10pt;
-  color: white;
+  color: black;
   font-weight: 800;
   border-color: transparent;
   margin: 15px 0px 60px 0px;
