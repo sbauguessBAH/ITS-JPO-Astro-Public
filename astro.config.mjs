@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-
+import pagefind from 'astro-pagefind'
 
 import partytown from '@astrojs/partytown';
 
@@ -10,5 +10,5 @@ export default defineConfig({
   base: '',
 
   output: 'static',
-  integrations: [partytown()],
+  integrations: [partytown(), pagefind()],
 });
