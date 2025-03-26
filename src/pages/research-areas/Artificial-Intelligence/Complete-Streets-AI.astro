@@ -7,11 +7,9 @@ import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 ---
 
-<link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
 <PageLayout title="Complete Streets Artificial Intelligence" bannerImage={banner}>
   <Fragment slot="banner">Complete Streets Artificial Intelligence (CSAI) Initiative</Fragment>
   <SidebarLayout path="/research-areas/">
-    <main>
       <div>
         <h2 class="sideways blue">Complete Streets Artificial Intelligence (CSAI) Initiative</h2>
         <p class="read-more-wrap" style="padding-top:0px">
@@ -21,6 +19,5 @@ import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
           for public and private use.
         </p>
       </div>
-    </main></SidebarLayout
-  >
+    </SidebarLayout>
 </PageLayout>

@@ -7,11 +7,9 @@ import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 ---
 
-<link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
 <PageLayout title="V2X Deployment" bannerImage={banner}>
   <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
   <SidebarLayout path="/research-areas/">
-    <main>
       <div>
         <h2 class="sideways blue">V2X Accelerator Program</h2>
         <p class="read-more-wrap" style="padding-top:0px">
@@ -21,6 +19,5 @@ import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
           mobility; improve the efficiency of goods movement; and demonstrate a significant return on (public and private) investment.
         </p>
       </div>
-    </main></SidebarLayout
-  >
+    </SidebarLayout>
 </PageLayout>

@@ -7,11 +7,9 @@ import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 ---
 
-<link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
 <PageLayout title="Automation Program" bannerImage={banner}>
   <Fragment slot="banner">Automation Program</Fragment>
   <SidebarLayout path="/research-areas/">
-    <main>
       <div>
         <h2 class="sideways blue">Automation Program</h2>
         <p class="read-more-wrap" style="padding-top:0px">
@@ -24,6 +22,5 @@ import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
           The ITS JPO Automation Program’s collaborative and multi-modal research portfolio provides cross-cutting support across the U.S. DOT.
         </p>
       </div>
-    </main></SidebarLayout
-  >
+    </SidebarLayout>
 </PageLayout>
