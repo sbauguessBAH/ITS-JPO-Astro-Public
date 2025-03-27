@@ -63,8 +63,10 @@
       },
       {
         "title": "Foundational Systems Engineering Activities to Support ITS Procurement",
-        "description": "This course guides transportation professionals in applying systems engineering to support ITS project development, focusing on planning and needs-based scoping.",
-        "image": "./images/sys-eng-activities.jpg"
+        "description": "This course guides transportation agencies in applying systems engineering to support ITS project development, focusing on planning and needs-based scoping. If your agency is interested, click here to email J.D. Schneeberger.",
+        "image": "./images/sys-eng-activities.jpg",
+        "isExternal": true,
+        "url": "mailto:John.Schneeberger@dot.gov"
       }
     ]
   },
