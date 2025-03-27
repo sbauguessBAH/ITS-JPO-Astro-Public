@@ -1,0 +1,44 @@
+---
+import StandardsHeading from "@/src/components/standards/StandardsHeading.astro";
+import AscLayout from "../_asc-layout.astro";
+import { getEntry } from "astro:content";
+import V2XStandardLink from "@/src/components/standards/V2XStandardLink.astro";
+import { getEntries } from "astro:content";
+import { getCollection } from "astro:content";
+
+const standards = await getCollection("standardsList")
+  .then(collection => collection.map(row => row.data).filter(row => row.category === "Emerging Technology"))
+---
+<style>
+  .table th, .table td {
+    text-align: left;
+  }
+</style>
+
+<AscLayout title="ITS Standards" currentBreadcrumb="Emerging Technology">
+  <StandardsHeading title="Emerging Technology"/>
+  <div class="typography">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">SDO</th>
+          <th scope="col">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {standards.map(standard => (
+          <tr>
+            <th scope="row">
+              {standard.sdo}
+            </th>
+            <td>
+              <a href={standard.link} rel="noopener noreferrer" target="_blank">
+                {standard.name}
+              </a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</AscLayout>

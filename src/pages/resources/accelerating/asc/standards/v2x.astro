@@ -534,8 +534,7 @@ const standards = await getEntry("standards", "v2x");
       <thead>
         <tr>
           <th scope="col">Code</th>
-          <th scope="col">Title</th>
-          <th scope="col">Link</th>
+          <th scope="col">Name</th>
         </tr>
       </thead>
       <tbody>
@@ -545,10 +544,8 @@ const standards = await getEntry("standards", "v2x");
               {standard.code}
             </th>
             <td>
-              {standard.title}
-            </td>
-            <td>
               <a href={standard.url} rel="noopener noreferrer" target="_blank">
+                {standard.title}
               </a>
             </td>
           </tr>

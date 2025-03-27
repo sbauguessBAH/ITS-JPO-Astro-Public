@@ -5,9 +5,10 @@ import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 
 interface Props {
   title: string
+  currentBreadcrumb?: string;
 }
 
-const { title } = Astro.props;
+const { title, currentBreadcrumb } = Astro.props;
 ---
 <style is:global>
 	.typography {
@@ -23,7 +24,7 @@ const { title } = Astro.props;
   }
 </style>
 
-<PageLayout title={`${title} | ASC`} bannerImage={bannerImage}>
+<PageLayout title={`${title} | ASC`} bannerImage={bannerImage} currentBreadcrumb={currentBreadcrumb}>
   <Fragment slot="banner">
 		Enabling ITS Resources:
 		<br/>
