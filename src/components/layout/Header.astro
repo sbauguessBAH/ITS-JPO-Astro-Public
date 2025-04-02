@@ -14,13 +14,13 @@ import base_url from "@/src/lib/base_url";
     background-color: #091f61;
     width: 100%;
   }
-  .top-bar-container{
+  .top-bar-container {
     height: 50px;
   }
   .header-bar {
     min-height: 90px;
     background-image: linear-gradient(to right, #0a1e62, #09638c);
-    padding: 10px ;
+    padding: 10px;
     color: white;
     text-transform: uppercase;
   }
@@ -64,13 +64,24 @@ import base_url from "@/src/lib/base_url";
 <div class="header-bar">
   <div class="container-xl">
     <div class="col-lg-10">
-      <p class="siteheader">
-        <a rel="preload" href={base_url("/")} style="text-decoration: none; color: white">
-          Intelligent Transportation Systems
-          <br />
-          Joint Program Office
-        </a>
-      </p>
+      <div class="row">
+        <div class="col-8">
+          <p class="siteheader">
+            <a rel="preload" href={base_url("/")} style="text-decoration: none; color: white">
+              Intelligent Transportation Systems
+              <br />
+              Joint Program Office
+            </a>
+          </p>
+        </div>
+        <div class="col-4">
+          <form id="search_form" action="https://search.usa.gov/search" accept-charset="UTF-8" method="get">
+            <input type="hidden" name="affiliate" id="affiliate" value="itsdot" autocomplete="off" />
+            <input type="text" name="query" id="query" />
+            <input type="submit" name="commit" value="Search" data-disable-with="Search" />
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>
