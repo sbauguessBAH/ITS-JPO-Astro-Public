@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image, imageConfig } from "astro:assets";
 import USDOTLogo from "@/src/assets/images/DOT-Logo.svg";
 import youtubeIcon from "@/src/assets/images/Youtube.png";
 import facebookIcon from "@/src/assets/images/Facebook.png";
@@ -7,6 +7,7 @@ import instgramIcon from "@/src/assets/images/Instagram.png";
 import twitterIcon from "@/src/assets/images/Twitter.png";
 import inDeedIcon from "@/src/assets/images/inDeed.png";
 import base_url from "@/src/lib/base_url";
+import searchicon from "@/src/assets/images/usa-icons-bg/search--white.svg"
 ---
 
 <style>
@@ -36,6 +37,13 @@ import base_url from "@/src/lib/base_url";
       min-height: 60px;
     }
   }
+  .btn-search {
+    padding: 2px;
+    border-radius: 4px;
+  }
+  .btn-search:hover {
+  }
+
 </style>
 <div class="top-bar">
   <div class="container-xl d-flex justify-content-between align-items-center top-bar-container">
@@ -63,9 +71,9 @@ import base_url from "@/src/lib/base_url";
 </div>
 <div class="header-bar">
   <div class="container-xl">
-    <div class="col-lg-10">
+    <div class="col-lg-12">
       <div class="row">
-        <div class="col-8">
+        <div class="col-lg-9">
           <p class="siteheader">
             <a rel="preload" href={base_url("/")} style="text-decoration: none; color: white">
               Intelligent Transportation Systems
@@ -74,11 +82,14 @@ import base_url from "@/src/lib/base_url";
             </a>
           </p>
         </div>
-        <div class="col-4">
-          <form id="search_form" action="https://search.usa.gov/search" accept-charset="UTF-8" method="get">
+        <div class="col-lg-3 text-end">
+          <form class="input-group input-group-sm m-1" id="search_form" action="https://search.usa.gov/search" accept-charset="UTF-8" method="get">
+           
             <input type="hidden" name="affiliate" id="affiliate" value="itsdot" autocomplete="off" />
-            <input type="text" name="query" id="query" />
-            <input type="submit" name="commit" value="Search" data-disable-with="Search" />
+            <input class="form-control" type="text" name="query" id="query" />
+            <button class="m-0 btn btn-search" type="submit" name="commit" value="Search" data-disable-with="Search">
+              <Image src={searchicon} class="searchbutton" alt="Search icon"/>
+            </button>
           </form>
         </div>
       </div>

@@ -735,7 +735,6 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .btn:hover {
-  padding: 8px 25px 6px 25px !important;
   background-color: #66a3cc;
   color: white;
   border-color: transparent;
