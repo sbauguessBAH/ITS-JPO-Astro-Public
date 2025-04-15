@@ -32,7 +32,13 @@ export const navigation: NavigationItem[] = [
       { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
       { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
-      { name: "ITS4US Program", url: "/research-areas/ITS4US" },
+      { name: "ITS4US Program", url: "/research-areas/ITS4US", isEnabled: true, pages: [
+        { name: "Program Overview", url: "/research-areas/ITS4US" },
+        { name: "Deployments", url: "/research-areas/ITS4US/deployments", isEnabled: true, pages: [
+          { name: "Deployments Overview", url: "/research-areas/ITS4US/deployments" },
+        ]},
+       
+      ]},
       { name: "Vehicle-to-Everything (V2X)", url: "/research-areas/V2X-Deployment" },
     ]
   },
