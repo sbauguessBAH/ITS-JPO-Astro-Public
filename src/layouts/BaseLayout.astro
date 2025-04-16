@@ -17,9 +17,15 @@ import { navigation } from "../lib/navigation";
 
 interface Props {
   title: string;
+  description?: string;
+  keywords?: string[] | string;
 }
 
-const { title } = Astro.props;
+const { title, description, keywords } = Astro.props;
+
+const formattedKeywords = Array.isArray(keywords)
+  ? keywords.join(", ")
+  : keywords;
 
 validateNavigation(navigation);
 
@@ -39,7 +45,8 @@ const isTestEnv = import.meta.env.VITE_ENVIRONMENT === "test";
       gtag("config", "G-RDS3HSK4R8");
     </script>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={formattedKeywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={base_url("/favicon.svg")} />
     <meta name="generator" content={Astro.generator} />

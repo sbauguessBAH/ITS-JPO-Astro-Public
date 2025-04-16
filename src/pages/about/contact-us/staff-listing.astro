@@ -4,9 +4,18 @@ import { Image } from "astro:assets";
 import Brian_Cronin from "../../../assets/images/staff/Brian_Cronin.png";
 import Egan_Smith from "../../../assets/images/staff/Egan_Smith.jpg";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "ITS JPO Staff Listing",
+  "ITS JPO",
+  "Staff Listing",
+  "Contact Us",
+  "About Us",
+  "Intelligent Transportation Systems Joint Program Office",
+];
 ---
 
-<PageLayout title="Staff Listing">
+<PageLayout title="Staff Listing" keywords={keywords}>
   <Fragment slot="banner"> ITS JPO Staff Listing </Fragment>
   <SidebarLayout path="/about/">
     <div class="row">

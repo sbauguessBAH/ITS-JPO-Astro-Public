@@ -3,6 +3,16 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
 import newsletterImage from "@/src/assets/images/ITSJPO_NewsletterWebsiteImage_030123.png";
 import { Image } from "astro:assets";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "ITS JPO",
+  "mailing list",
+  "newsletter",
+  "updates",
+  "news",
+  "events",
+];
+
 ---
 <style>
   .newsletterImage {
@@ -10,7 +20,7 @@ import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
   }
 </style>
 
-<PageLayout title="Mailing List">
+<PageLayout title="Mailing List" keywords={keywords}>
   <Fragment slot="banner">
     ITS JPO Mailing List
   </Fragment>
