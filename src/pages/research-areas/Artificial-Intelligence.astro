@@ -1,13 +1,16 @@
 ---
-import { Image } from "astro:assets";
-import { getImage } from "astro:assets";
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "Artificial Intelligence",
+  "AI",
+  "Transportation Research",
+];
 ---
 
-<PageLayout title="Artificial Intelligence" bannerImage={banner}>
+<PageLayout title="Artificial Intelligence" bannerImage={banner} keywords={keywords}>
   <Fragment slot="banner">Artificial Intelligence</Fragment>
   <SidebarLayout path="/research-areas/">
       <div>

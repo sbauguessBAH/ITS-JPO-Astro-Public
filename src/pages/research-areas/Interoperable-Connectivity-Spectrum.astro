@@ -1,13 +1,23 @@
 ---
-import { Image } from "astro:assets";
-import { getImage } from "astro:assets";
 import banner from "@/src/assets/images/banners/Default_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "Interoperable Connectivity",
+  "Spectrum",
+  "ITS",
+  "Wi-Fi",
+  "LTE-V2X",
+  "5G NR",
+  "5G NRU",
+  "V2X",
+  "SCMS",
+  "Security Credential Management System",
+];
 ---
 
-<PageLayout title="Interoperable Connectivity/Spectrum" bannerImage={banner}>
+<PageLayout title="Interoperable Connectivity/Spectrum" bannerImage={banner} keywords={keywords}>
   <Fragment slot="banner">Interoperable Connectivity/Spectrum</Fragment>
   <SidebarLayout path="/research-areas/">
       <div>

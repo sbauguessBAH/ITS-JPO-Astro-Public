@@ -1,14 +1,21 @@
 ---
-import { Image } from "astro:assets";
-import { getImage } from "astro:assets";
 import banner from "@/src/assets/images/banners/Headers_Accelerating_Deployment_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "Intersection Safety Challenge",
+  "Intersection Safety",
+  "Safety Challenge",
+  "Intersection Safety Technologies",
+  "Vulnerable Road Users",
+  "Traffic Control",
+  "Traffic Safety",
+];
 ---
 
 <link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
-<PageLayout title="Intersection Safety Challenge" bannerImage={banner}>
+<PageLayout title="Intersection Safety Challenge" bannerImage={banner} keywords={keywords}>
   <Fragment slot="banner">Intersection Safety Challenge</Fragment>
   <SidebarLayout path="/research-areas/">
       <div>

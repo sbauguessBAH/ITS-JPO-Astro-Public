@@ -1,11 +1,18 @@
 ---
 import { Image } from "astro:assets";
-import { getImage } from "astro:assets";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 import screenshot from "@/src/assets/images/DEP/Screenshot_itskrs.jpeg";
 
+const keywords = [
+  "ITS Deployment Evaluation Program",
+  "ITS Deployment Evaluation Program (DEP)",
+  "ITS Benefits, Costs, and Lessons Learned (BCLL) Database",
+  "ITS KRS",
+  "ITS Knowledge Resource System",
+  "ITS DEP",
+];
 ---
 <style>
   .card-img-top{
@@ -27,7 +34,8 @@ import screenshot from "@/src/assets/images/DEP/Screenshot_itskrs.jpeg";
     margin-left:6px;
   }
 </style>
-<PageLayout title="Deployment Evaluation Program" bannerImage={banner}>
+
+<PageLayout title="Deployment Evaluation Program" bannerImage={banner} keywords={keywords}>
   <Fragment slot="banner"> Deployment Evaluation </Fragment>
   <SidebarLayout path="/resources/">
     <h2 class="sideways blue">Deployment Evaluation Program (DEP)</h2>
