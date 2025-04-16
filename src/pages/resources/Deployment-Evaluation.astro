@@ -7,25 +7,58 @@ import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 import screenshot from "@/src/assets/images/DEP/Screenshot_itskrs.jpeg";
 
 ---
-
+<style>
+  .card-img-top{
+    max-height: 200px;
+    min-height: 150px;
+    object-fit: cover;
+  }
+  .external-button{
+    text-wrap: balance;
+  }
+  .external-button:after{
+  content: '\f08e';
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    display: inline-block;
+    font-size:12px;
+    margin-left:6px;
+  }
+</style>
 <PageLayout title="Deployment Evaluation Program" bannerImage={banner}>
   <Fragment slot="banner"> Deployment Evaluation </Fragment>
   <SidebarLayout path="/resources/">
     <h2 class="sideways blue">Deployment Evaluation Program (DEP)</h2>
-    <figure class="float-sm-end text-center col-12 col-md-6 ms-0 ms-md-4 mb-2">
+    <!-- <figure class="float-sm-end text-center col-12 col-md-6 ms-0 ms-md-4 mb-2">
     <Image src={screenshot} alt="Screen shot of web site for ITS Deployment Evaluation" width="500" class="figure-image img-fluid"/>
     <figcaption class="figure-caption text-center">ITS Deployment Evaluation Program website</figcaption>
-  </figure>
+  </figure> -->
+
+  <div class="card mb-4 box-shadow float-sm-end text-center col-12 col-md-5 ms-0 ms-md-4 mb-2">
+    <a href="https://www.itskrs.its.dot.gov/"><Image src={screenshot} alt="Screen shot of web site for ITS Deployment Evaluation" width="500" class="img-fluid"/></a>
+    <div class="card-body ">
+      <p class="card-text text-start">Visit the ITS Deployment Evaluation Program website to access data and other resources.</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <form action="https://www.itskrs.its.dot.gov/" method="get" target="_blank">
+          <button type="submit" class="btn btn-sm btn-outline-secondary m-0 external-button w-100">Visit the ITS Deployment Evaluation Website</button>
+        </form>
+      </div>
+    </div>
+  </div>
     <p>
       This Program addresses stakeholder needs through the full ITS deployment lifecycle and provides information to assist communities with making evidence-based decisions on ITS investment,
       deployment, and performance assessment.&nbsp; A central objective of the DEP is to determine the extent, effectiveness, and benefits/costs of deployed ITS and, ultimately, the value/return on
-      investment of ITS program interventions and deployment support activities. Evaluation and deployment tracking activities are critical to an understanding of the value, effectiveness, and impacts
+      investment of ITS program interventions and deployment support activities. 
+      </p>
+      <p>
+      Evaluation and deployment tracking activities are critical to an understanding of the value, effectiveness, and impacts
       of the ITS Program activities in alignment with U.S. DOT goals. <a href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section515&num=0&edition=prelim">
-        23 USC Sect 515</a> paragraph (g) outlines the requirement to maintain a repository for technical and safety data collected as a result of the federal projects carried out
+      23 USC Sect 515</a> paragraph (g) outlines the requirement to maintain a repository for technical and safety data collected as a result of the federal projects carried out
       under the ITS program and the ITS Benefits, Costs, and Lessons Learned (BCLL) Database, created in 1999, does that by tracking and documenting the effectiveness of deployed ITS.
     </p>
-    <p>
-      To access the ITS Deployment Evaluation Program data and other resources, please click <a href="https://www.itskrs.its.dot.gov/">HERE</a>.
-    </p>
+
+    
   </SidebarLayout>
 </PageLayout>
