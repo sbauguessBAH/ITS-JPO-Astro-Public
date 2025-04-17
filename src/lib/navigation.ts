@@ -33,9 +33,14 @@ export const navigation: NavigationItem[] = [
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
       { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
       { name: "ITS4US Program", url: "/research-areas/ITS4US", isEnabled: true, pages: [
-        { name: "Program Overview", url: "/research-areas/ITS4US" },
+        { name: "ITS4US Home", url: "/research-areas/ITS4US" },
+        { name: "Program Overview", url: "/research-areas/ITS4US/overview" },
         { name: "Deployments", url: "/research-areas/ITS4US/deployments", isEnabled: true, pages: [
           { name: "Deployments Overview", url: "/research-areas/ITS4US/deployments" },
+          { name: "Georgia", url: "/research-areas/ITS4US/deployments/georgia" },
+          { name: "Iowa", url: "/research-areas/ITS4US/deployments/iowa" },
+          { name: "New York", url: "/research-areas/ITS4US/deployments/newYork" },
+          { name: "Washington", url: "/research-areas/ITS4US/deployments/washington" },
         ]},
        
       ]},
