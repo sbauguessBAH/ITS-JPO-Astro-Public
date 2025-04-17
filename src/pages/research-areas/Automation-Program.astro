@@ -1,13 +1,18 @@
 ---
-import { Image } from "astro:assets";
-import { getImage } from "astro:assets";
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "Automation Program",
+  "Transportation Research",
+  "Automated Driving Systems",
+  "Advanced Driver Assistance Systems",
+  "ADAS",
+];
 ---
 
-<PageLayout title="Automation Program" bannerImage={banner}>
+<PageLayout title="Automation Program" bannerImage={banner} keywords={keywords}>
   <Fragment slot="banner">Automation Program</Fragment>
   <SidebarLayout path="/research-areas/">
       <div>

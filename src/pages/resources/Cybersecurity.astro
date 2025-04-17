@@ -2,9 +2,20 @@
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "ITS Architecture",
+  "ITS Standards",
+  "ITS Cybersecurity",
+  "Cybersecurity Research Program",
+  "Cybersecurity Resources",
+  "Cybersecurity Information",
+  "Cybersecurity Tools",
+  "Cybersecurity Implementation Practices",
+];
 ---
 
-<PageLayout title="ITS Architecture and Standards" bannerImage={banner}>
+<PageLayout title="ITS Architecture and Standards" bannerImage={banner} keywords={keywords}>
   <Fragment slot="banner"> Cybersecurity </Fragment>
   <SidebarLayout path="/resources/">
     <h2 class="sideways blue">Cybersecurity</h2>

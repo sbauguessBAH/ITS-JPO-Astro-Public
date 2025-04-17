@@ -5,10 +5,21 @@ import banner from "@/src/assets/images/banners/DataAccess_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "Digital Infrastructure",
+  "Transportation Systems",
+  "Data",
+  "Information",
+  "Technology Assets",
+  "Public and Private",
+  "Collective",
+  "Research Areas"
+];
 ---
 
 <link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
-<PageLayout title="Digital Infrastructure" bannerImage={banner}>
+<PageLayout title="Digital Infrastructure" bannerImage={banner} keywords={keywords} >
   <Fragment slot="banner">Digital Infrastructure</Fragment>
   <SidebarLayout path="/research-areas/">
       <div>
