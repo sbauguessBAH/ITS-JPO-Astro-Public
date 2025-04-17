@@ -1,13 +1,21 @@
 ---
-import { Image } from "astro:assets";
-import { getImage } from "astro:assets";
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import base_url from "@/src/lib/base_url";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "V2X",
+  "Vehicle-to-Everything",
+  "V2X Deployment",
+  "interoperable connectivity",
+  "safety",
+  "goods movement",
+  "public investment",
+  "private investment",
+];
 ---
 
-<PageLayout title="V2X Deployment" bannerImage={banner}>
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords}>
   <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
   <SidebarLayout path="/research-areas/">
       <div>
