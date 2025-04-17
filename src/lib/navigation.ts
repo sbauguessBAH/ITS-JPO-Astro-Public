@@ -36,7 +36,7 @@ export const navigation: NavigationItem[] = [
         { name: "ITS4US Home", url: "/research-areas/ITS4US" },
         { name: "Program Overview", url: "/research-areas/ITS4US/overview" },
         { name: "Deployments", url: "/research-areas/ITS4US/deployments", isEnabled: true, pages: [
-          { name: "Deployments Overview", url: "/research-areas/ITS4US/deployments" },
+          { name: "ITS4US Deployments", url: "/research-areas/ITS4US/deployments" },
           { name: "Georgia", url: "/research-areas/ITS4US/deployments/georgia" },
           { name: "Iowa", url: "/research-areas/ITS4US/deployments/iowa" },
           { name: "New York", url: "/research-areas/ITS4US/deployments/newYork" },
