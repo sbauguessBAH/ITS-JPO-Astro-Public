@@ -48,7 +48,11 @@ export const navigation: NavigationItem[] = [
     name: 'Resources/Technical Assistance',
     url: '/resources',
     pages: [
-      { name: 'Architecture and Standards', url: '/resources/Architecture-and-Standards' },
+      { name: 'Architecture and Standards', url: '/resources/architecture-and-standards', pages: [
+        { name: "ITS Architecture and Standards", url: "/resources/architecture-and-standards" },
+        { name: "National ITS Reference Architecture", url: "/resources/architecture-and-standards/reference-architecture" },
+        { name: "ITS Standards Program", url: "/resources/architecture-and-standards/standards"}
+      ] },
       { name: 'Cybersecurity', url: '/resources/Cybersecurity' },
       { name: 'Deployment Evaluation', url: '/resources/Deployment-Evaluation' },
       { name: 'National Transportation Library', url: '/resources/national-transportation-library' },
