@@ -37,10 +37,10 @@ export const navigation: NavigationItem[] = [
         { name: "Program Overview", url: "/research-areas/ITS4US/overview" },
         { name: "Deployments", url: "/research-areas/ITS4US/deployments", isEnabled: true, pages: [
           { name: "ITS4US Deployments", url: "/research-areas/ITS4US/deployments" },
-          { name: "Georgia", url: "/research-areas/ITS4US/deployments/georgia" },
-          { name: "Iowa", url: "/research-areas/ITS4US/deployments/iowa" },
-          { name: "New York", url: "/research-areas/ITS4US/deployments/newYork" },
-          { name: "Washington", url: "/research-areas/ITS4US/deployments/washington" },
+          { name: "Georgia Depoartment of Transportation", url: "/research-areas/ITS4US/deployments/georgia" },
+          { name: "Heart of Iowa Reginal Transit Agency", url: "/research-areas/ITS4US/deployments/iowa" },
+          { name: "Niagara Frontier Transportation Authority", url: "/research-areas/ITS4US/deployments/newYork" },
+          { name: "University of Washington", url: "/research-areas/ITS4US/deployments/washington" },
         ]},
        
       ]},
