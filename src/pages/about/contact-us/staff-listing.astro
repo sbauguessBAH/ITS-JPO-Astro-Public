@@ -13,9 +13,12 @@ const keywords = [
   "About Us",
   "Intelligent Transportation Systems Joint Program Office",
 ];
+
+const description =
+  "The ITS JPO staff listing provides contact information for key personnel involved in the Intelligent Transportation Systems Joint Program Office. Reach out to us for inquiries, collaboration, and more.";
 ---
 
-<PageLayout title="Staff Listing" keywords={keywords}>
+<PageLayout title="Staff Listing" keywords={keywords} description={description}>
   <Fragment slot="banner"> ITS JPO Staff Listing </Fragment>
   <SidebarLayout path="/about/">
     <div class="row">

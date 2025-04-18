@@ -13,6 +13,9 @@ const keywords = [
   "ITS Knowledge Resource System",
   "ITS DEP",
 ];
+
+const description =
+  "The ITS Deployment Evaluation Program (DEP) provides information to assist communities with making evidence-based decisions on ITS investment, deployment, and performance assessment.";
 ---
 <style>
   .card-img-top{
@@ -35,7 +38,7 @@ const keywords = [
   }
 </style>
 
-<PageLayout title="Deployment Evaluation Program" bannerImage={banner} keywords={keywords}>
+<PageLayout title="Deployment Evaluation Program" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner"> Deployment Evaluation </Fragment>
   <SidebarLayout path="/resources/">
     <h2 class="sideways blue">Deployment Evaluation Program (DEP)</h2>

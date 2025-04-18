@@ -1,5 +1,4 @@
 ﻿---
-import { Image } from "astro:assets";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 
@@ -13,9 +12,12 @@ const keywords = [
   "transportation safety",
   "technology research program",
 ];
+
+const description =
+  "The ITS JPO coordinates U.S. DOT’s ITS research to improve transportation safety, mobility, efficiency, and productivity through technology.";
 ---
 
-<PageLayout title="About - ITS Joint Program Office">
+<PageLayout title="About - ITS Joint Program Office" keywords={keywords} description={description}>
   <Fragment slot="banner">ITS Joint Program Office</Fragment>
   <SidebarLayout path="/about/">
     <div class="row">
