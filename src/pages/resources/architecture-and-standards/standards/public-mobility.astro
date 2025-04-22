@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import StandardsLayout from "./_standards-layout.astro";
+
+const standards = await getCollection("standardsList")
+  .then(collection => collection
+    .map(row => row.data)
+    .filter(row => row.category === "Public Mobility")
+  )
+---
+<style>
+  .table th, .table td {
+    text-align: left;
+  }
+</style>
+
+<StandardsLayout>
+  <h2 class="blue">Public Mobility</h2>
+  <p>
+    Public Mobility standards focus on the buses, trains, and other mobility options for road users beyond personal vehicles. These standards focus on the interfaces and communication between disparate transit systems, or transit systems and their riders. 
+  </p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">SDO</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {standards.map(standard => (
+        <tr>
+          <th scope="row">
+            {standard.sdo}
+          </th>
+          <td>
+            <a 
+              href={standard.link} 
+              rel="noopener noreferrer" 
+              target="_blank"
+              class="link"
+            >
+              {standard.name}
+            </a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</StandardsLayout>

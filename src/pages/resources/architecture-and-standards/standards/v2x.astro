@@ -1,0 +1,559 @@
+---
+import { getEntry } from "astro:content";
+import V2XStandardLink from "@/src/components/standards/V2XStandardLink.astro";
+import StandardsLayout from "./_standards-layout.astro";
+
+const standards = await getEntry("standards", "v2x");
+---
+<style>
+  .table th, .table td {
+    text-align: left;
+  }
+</style>
+
+<StandardsLayout>
+	<h2 class="blue">Vehicle-to-Everything (V2X)</h2>
+  <div class="typography">
+    <p>
+      The V2X subgroup of standards covers messaging, security, applications, equipment, connectivity, and data sharing in the context of connecting vehicles to infrastructure, other vehicles, other road users, and all other traffic management related systems.  
+    </p>
+    <!-- <Image 
+			src={v2xStandardsImage} 
+			alt="Diagram showing a complex framework of Connected Vehicle Standards. Names of all Standards in the images are provided below" 
+			class="img-fluid mx-auto d-block"
+		/> -->
+    <div class="">
+      <svg class="w-100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="155 50 740 475">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #d9e7c4;
+            }
+      
+            .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+              stroke-width: 0px;
+            }
+      
+            .cls-8 {
+              stroke-width: 1.5px;
+            }
+      
+            .cls-8, .cls-2, .cls-9 {
+              fill: none;
+            }
+      
+            .cls-8, .cls-9 {
+              stroke: #000;
+            }
+      
+            .cls-10 {
+              clip-path: url(#clippath-2);
+            }
+      
+            .cls-11 {
+              font-size: 13.99px;
+            }
+      
+            .cls-11, .cls-12 {
+              font-family: SourceSansPro-Regular, 'Source Sans Pro';
+            }
+      
+            .cls-3 {
+              fill: #fbffa5;
+            }
+      
+            .cls-13 {
+              clip-path: url(#clippath-1);
+            }
+      
+            .cls-14 {
+              clip-path: url(#clippath-4);
+            }
+      
+            .cls-4 {
+              fill: #fdd496;
+            }
+      
+            .cls-15 {
+              clip-path: url(#clippath);
+            }
+      
+            .cls-5 {
+              fill: #7affe2;
+            }
+      
+            .cls-16 {
+              clip-path: url(#clippath-3);
+            }
+      
+            .cls-12 {
+              font-size: 10px;
+            }
+      
+            .cls-6 {
+              fill: #ccd8fe;
+            }
+      
+            .cls-17 {
+              clip-path: url(#clippath-5);
+            }
+      
+            .cls-9 {
+              stroke-width: 1.5px;
+            }
+      
+            .cls-7 {
+              opacity: 0;
+            }
+          </style>
+          <clipPath id="clippath">
+            <rect class="cls-2" x="216.74" y="150.67" width="118.59" height="119.56"/>
+          </clipPath>
+          <clipPath id="clippath-1">
+            <rect class="cls-2" x="216.74" y="334.02" width="118.59" height="119.56"/>
+          </clipPath>
+          <clipPath id="clippath-2">
+            <rect class="cls-2" x="436.88" y="253.09" width="118.59" height="119.56"/>
+          </clipPath>
+          <clipPath id="clippath-3">
+            <rect class="cls-2" x="665.73" y="150.67" width="118.59" height="119.56"/>
+          </clipPath>
+          <clipPath id="clippath-4">
+            <rect class="cls-2" x="665.73" y="334.02" width="118.59" height="119.56"/>
+          </clipPath>
+          <clipPath id="clippath-5">
+            <rect class="cls-2" width="1024.5" height="576"/>
+          </clipPath>
+        </defs>
+        <g class="cls-15">
+          <rect class="cls-1" x="216.74" y="150.67" width="118.59" height="119.51"/>
+        </g>
+        <g class="cls-13">
+          <rect class="cls-5" x="216.74" y="334.02" width="118.59" height="119.51"/>
+        </g>
+        <g class="cls-10">
+          <rect class="cls-4" x="436.88" y="253.09" width="118.59" height="119.51"/>
+        </g>
+        <g class="cls-16">
+          <rect class="cls-3" x="665.73" y="150.67" width="118.59" height="119.51"/>
+        </g>
+        <g class="cls-14">
+          <rect class="cls-6" x="665.73" y="334.02" width="118.59" height="119.51"/>
+        </g>
+        <rect class="cls-7" x="93.65" y="27.1" width="363.72" height="3"/>
+        <rect class="cls-7" x="195.77" y="87.64" width="523.57" height="281.39"/>
+        <rect class="cls-7" x="208.16" y="144.72" width="43.26" height="43.27"/>
+        <rect class="cls-7" x="216.74" y="150.67" width="118.59" height="119.56"/>
+        <rect class="cls-7" x="334.02" y="160.71" width="332.7" height="2.73"/>
+        <rect class="cls-7" x="526.98" y="188" width="168.22" height="160.3"/>
+        <rect class="cls-7" x="275.29" y="270.23" width="1.5" height="63.79"/>
+        <rect class="cls-7" x="704.77" y="120.9" width="172.11" height="235.38"/>
+        <rect class="cls-7" x="784.32" y="132.56" width="43.92" height="41.92"/>
+        <rect class="cls-7" x="724.28" y="270.23" width="1.5" height="63.79"/>
+        <rect class="cls-7" x="312.72" y="132.15" width="407.11" height="30.53"/>
+        <rect class="cls-7" x="665.73" y="150.67" width="118.59" height="119.56"/>
+        <rect class="cls-7" x="436.88" y="253.09" width="118.59" height="119.56"/>
+        <rect class="cls-7" x="531.08" y="279.64" width="159.04" height="147.39"/>
+        <rect class="cls-7" x="567.47" y="321.87" width="110.26" height="85.44"/>
+        <rect class="cls-7" x="309.64" y="280.63" width="152.93" height="145.4"/>
+        <rect class="cls-7" x="216.74" y="334.02" width="118.59" height="119.56"/>
+        <rect class="cls-7" x="665.73" y="334.02" width="118.59" height="119.56"/>
+        <rect class="cls-7" x="166.39" y="431.95" width="363.72" height="3"/>
+        <rect class="cls-7" x="334.6" y="438" width="332.7" height="2.73"/>
+        <rect class="cls-7" x="772.06" y="452.41" width="43.92" height="41.92"/>
+        <g class="cls-17">
+          <path class="cls-8" d="M216.74,174.49h-14.59c-2.49,0-4.5-2.01-4.5-4.5v-31.27c0-2.49,2.01-4.5,4.5-4.5h31.26c1.19,0,2.34.47,3.18,1.32.84.84,1.32,1.99,1.32,3.18v11.96"/>
+          <path class="cls-8" d="M238.58,453.58v9.9c0,2.49-2.01,4.5-4.5,4.5h-31.92c-2.49,0-4.5-2.01-4.5-4.5v-29.92c0-2.49,2.01-4.5,4.5-4.5h13.3"/>
+          <path class="cls-8" d="M784.32,429.06h11.14c2.49,0,4.5,2.01,4.5,4.5v29.92c0,2.49-2.01,4.5-4.5,4.5h-30.34c-2.49,0-4.5-2.01-4.5-4.5v-9.9"/>
+          <path class="cls-8" d="M760.61,150.67v-11.96c0-2.49,2.01-4.5,4.5-4.5h30.34c2.49,0,4.5,2.01,4.5,4.5v29.77c0,2.49-2.01,4.5-4.5,4.5h-11.14"/>
+          <path class="cls-8" d="M215.45,355.53h-25.68c-2.49,0-4.5-2.01-4.5-4.5V81.64c0-2.49,2.01-4.5,4.5-4.5h511.25c2.49,0,4.5,2.01,4.5,4.5v69.5s.02.08.05.11c.03.03.07.05.11.05h.16"/>
+          <path class="cls-8" d="M302.22,150.67v-24.53c0-2.49,2.01-4.5,4.5-4.5h394.3c1.19,0,2.34.47,3.18,1.32.84.84,1.32,1.99,1.32,3.18v23.31c0,.11.04.21.12.29s.18.12.29.12h.41"/>
+          <path class="cls-8" d="M705.52,152.3v-26.15c0-2.49,2.01-4.5,4.5-4.5h146.15c2.49,0,4.5,2.01,4.5,4.5v224.88c0,2.49-2.01,4.5-4.5,4.5h-71.85"/>
+          <path class="cls-8" d="M335.33,235.82h11.77c2.49,0,4.5,2.01,4.5,4.5v43.18c0,2.49,2.01,4.5,4.5,4.5h80.78"/>
+          <path class="cls-8" d="M666.72,223.44h-88.94c-2.49,0-4.5,2.01-4.5,4.5v72.27s0,.05.03.07c.02.02.04.03.07.03s.05,0,.07.03c.02.02.03.04.03.07v7.97c0,2.49-2.01,4.5-4.5,4.5h-13.5"/>
+          <path class="cls-8" d="M665.73,393.8h-87.95c-2.49,0-4.5-2.01-4.5-4.5v-71.94c0-2.49-2.01-4.5-4.5-4.5h-13.31"/>
+          <path class="cls-8" d="M514.97,372.3v17c0,2.49-2.01,4.5-4.5,4.5h-27.9c-2.49,0-4.5-2.01-4.5-4.5v-17.17"/>
+          <path class="cls-8" d="M436.88,312.87h-12.65c-2.49,0-4.5,2.01-4.5,4.5v71.94c0,2.49-2.01,4.5-4.5,4.5h-79.9"/>
+          <line class="cls-8" x1="276.03" y1="334.02" x2="276.03" y2="270.23"/>
+          <line class="cls-9" x1="667.29" y1="439.98" x2="334.6" y2="438.75"/>
+          <line class="cls-8" x1="725.02" y1="334.02" x2="725.02" y2="270.23"/>
+          <line class="cls-9" x1="666.71" y1="162.69" x2="334.02" y2="161.46"/>
+          <text class="cls-12" transform="translate(291.66 72.94)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2735"/>
+            </tspan>
+          </text>
+          <text class="cls-11" transform="translate(252.08 176.58)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="Support"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(248.36 203.93)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2.1"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(220.25 290.84)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(212.79 304.05)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2.1"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(225.31 317.25)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3268"/>
+            </tspan>
+          </text>
+          <text class="cls-11" transform="translate(256.73 368.12)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="Center"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(189.1 479.9)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IETF RFC 7159"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(189.1 493.5)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IETF RFC 8446"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(189.1 507.11)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="NMEA 0183"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(362.62 258.28)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(358.88 270.73)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2.1"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(365.78 283.18)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="ISO 21177"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(362.42 298.91)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="NTCIP 1218"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(360.44 312.59)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/A"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(364.91 326.27)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3268"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(364.14 387.39)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2735"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(361.65 404.92)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="NTCIP 1218"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(473.48 156.29)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(469.75 173.06)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2.1"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(476.01 184.88)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3268"/>
+            </tspan>
+          </text>
+          <text class="cls-11" transform="translate(482.39 278.96)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="Field"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(478.94 300.69)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="CTI 4501"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(473.58 405.04)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="NTCIP 1218"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(476.7 434.95)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="ISO 21177"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(476.07 449.9)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2735"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(573.05 91.81)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(569.32 103.55)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2.1"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(571.11 115.28)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/A"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(575.58 132.15)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3268"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(575.58 144.75)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3287"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(576.22 157.35)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="ISO 21177"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(601.64 179.47)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="CTI 4501"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(598.7 192.17)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="ISO 19091"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(595.53 204.87)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(591.8 217.57)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2.1"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(593.59 234.54)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/A"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(593.37 248.41)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/B"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(601.64 272.05)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="CTI 4501"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(595.53 284.9)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.2"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(595.53 297.75)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="IEEE 1609.3"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(598.7 310.61)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="ISO 19091"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(598.06 323.46)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2735"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(593.83 336.31)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/1"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(593.83 349.16)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/3"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(593.83 362.02)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/4"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(593.83 374.87)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/6"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(593.59 387.72)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/A"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(593.37 405.04)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/B"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(593.83 418.47)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3161/1"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(598.06 431.9)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3224"/>
+            </tspan>
+          </text>
+          <text class="cls-11" transform="translate(695.21 181.73)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="Personal"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(803.91 147.41)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2735"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(803.91 160.71)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/9"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(728.23 283.3)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2735"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(728.23 296.69)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/1"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(728.23 310.07)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/9"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(728.23 323.46)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3161/1"/>
+            </tspan>
+          </text>
+          <text class="cls-11" transform="translate(704.15 359.9)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="Vehicle"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(685.5 384.36)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="ISO/SAE PAS 22736"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(703.86 397.36)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3016"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(703.86 410.37)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3216"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(703.86 423.37)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3286"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(804.12 416.81)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2735"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(804.12 429.73)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/1"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(804.12 442.66)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/2"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(804.12 455.58)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J2945/6"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(804.12 468.51)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3186"/>
+            </tspan>
+          </text>
+          <text class="cls-12" transform="translate(804.12 481.43)">
+            <tspan x="0" y="0">
+              <V2XStandardLink code="SAE J3224"/>
+            </tspan>
+          </text>
+        </g>
+        
+      </svg>
+    </div>
+  </div>
+  <h2 class="blue">List of Standards</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {standards.data.map(standard => (
+        <tr>
+          <th scope="row">
+            {standard.code}
+          </th>
+          <td>
+            <a 
+              href={standard.url} 
+              rel="noopener noreferrer" 
+              target="_blank"
+              class="link"
+            >
+              {standard.title}
+            </a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</StandardsLayout>
