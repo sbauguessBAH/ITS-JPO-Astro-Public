@@ -36,11 +36,11 @@ export const navigation: NavigationItem[] = [
         { name: "ITS4US Home", url: "/research-areas/ITS4US" },
         { name: "Program Overview", url: "/research-areas/ITS4US/overview" },
         { name: "Deployments", url: "/research-areas/ITS4US/deployments", isEnabled: true, pages: [
-          { name: "ITS4US Deployments", url: "/research-areas/ITS4US/deployments" },
-          { name: "Georgia Depoartment of Transportation", url: "/research-areas/ITS4US/deployments/georgia" },
+          { name: "Deployments", url: "/research-areas/ITS4US/deployments" },
           { name: "Heart of Iowa Reginal Transit Agency", url: "/research-areas/ITS4US/deployments/iowa" },
-          { name: "Niagara Frontier Transportation Authority", url: "/research-areas/ITS4US/deployments/newYork" },
+          { name: "Georgia Depoartment of Transportation", url: "/research-areas/ITS4US/deployments/georgia" },
           { name: "University of Washington", url: "/research-areas/ITS4US/deployments/washington" },
+          { name: "Niagara Frontier Transportation Authority", url: "/research-areas/ITS4US/deployments/newYork" },
         ]},
        
       ]},
