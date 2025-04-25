@@ -1,0 +1,48 @@
+@ -1,47 +0,0 @@
+---
+import banner from "@/src/assets/images/banners/ITS4US_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+
+const keywords = [
+  "ITS4US",
+  "ITS4US Deployment Program",
+  "Complete Trip",
+  "multimodal initiative",
+  "transportation availability",
+  "public-private partnerships",
+  "innovative technology",
+  "transportation efficiency",
+  "cost-saving solutions",
+  "scalable results",
+  "Heart of Iowa Regional Transit Agency",
+  "Georgia Department of Transportation",
+  "University of Washington",
+  "Niagara Frontier Transportation Authority",
+];
+
+---
+
+<PageLayout title="ITS4US" bannerImage={banner}>
+  <Fragment slot="banner"> <img 
+    alt="ITS4US Logo" 
+    src={logo.src} 
+    style="max-height: 60px; clear: none" 
+  /> | ITS4US</Fragment>
+  <SidebarLayout path="/research-areas/">
+      <div>
+        <h2 class="sideways blue">About the ITS4US Deployment Program</h2>
+        <p class="read-more-wrap" style="padding-top:0px">
+          In 2019, the Trump Administration launched the Complete Trip - ITS4US Deployment program, investing $38 million to enhance transportation availability across American communities. Led by the
+          ITS JPO, this multimodal initiative leverages innovative technology to improve transportation efficiency while creating strong public-private partnerships, implementing cutting-edge
+          solutions, and delivering cost-saving, scalable results that other communities can replicate.
+        </p>
+        <p class="read-more-wrap" style="padding-top:0px">
+          The Program awarded funding to four organizations - the Heart of Iowa Regional Transit Agency, Georgia Department of Transportation, University of Washington, and Niagara Frontier
+          Transportation Authority - to develop and deploy innovative, multimodal mobility solutions. These projects focus on addressing complete trip challenges through integrated technology; with
+          implementations either in final pre-operations testing or already serving the public; and ultimately improving Americans' access to healthcare, jobs, and other essential services.
+        </p>
+      </div>
+  </SidebarLayout>
+</PageLayout>
