@@ -38,7 +38,7 @@ export const navigation: NavigationItem[] = [
         { name: "Deployments", url: "/research-areas/ITS4US/deployments", isEnabled: true, pages: [
           { name: "Deployments", url: "/research-areas/ITS4US/deployments" },
           { name: "Heart of Iowa Reginal Transit Agency", url: "/research-areas/ITS4US/deployments/iowa" },
-          { name: "Georgia Depoartment of Transportation", url: "/research-areas/ITS4US/deployments/georgia" },
+          { name: "Georgia Department of Transportation", url: "/research-areas/ITS4US/deployments/georgia" },
           { name: "University of Washington", url: "/research-areas/ITS4US/deployments/washington" },
           { name: "Niagara Frontier Transportation Authority", url: "/research-areas/ITS4US/deployments/newYork" },
         ]},
