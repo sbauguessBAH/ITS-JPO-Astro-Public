@@ -4,14 +4,81 @@ import PcbLayout from "../_pcb-layout.astro";
 import AccordionItem from "@/src/components/AccordionItem.astro";
 import Card from "@/src/components/pcb/Card.astro";
 import { getEntry } from "astro:content";
+import base_url from "@/src/lib/base_url";
+
+const DEFAULT_CATEGORY = "All Courses"
 
 const trainingCategories = await getEntry("trainings", "trainings");
----
+const categories = [DEFAULT_CATEGORY, ...trainingCategories.data.map(({ title }) => title)]
 
+console.log(categories)
+---
+<style>
+  .category-container {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    gap: 0.4rem;
+  }
+  .category-item-button {
+    padding: 0.5rem;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    transition: all;
+    transition-duration: 200ms;
+    text-align: left;
+    box-shadow: none;
+    border: none;
+
+    /* background: white;
+    border: 1px solid black;
+    border-radius: 12px; */
+    
+    font-weight: 600;
+  }
+
+  .category-menu-item.active .category-item-button {
+    background: black;
+    color: white;
+  }
+</style>
 <PcbLayout title="Trainings">
-  <h2>Trainings</h2>
-  <p>Discover available training sessions to enhance your ITS knowledge.</p>
-  <Accordion id="accordion-1">
+  <h2 class="blue">Trainings</h2>
+  <p>
+    The ITS PCB Program offers a comprehensive suite of trainings covering a range of topics from foundational concepts to emerging transportation technologies. 
+    Discover and take these free trainings to help enhance your ITS knowledge and skills.
+  </p>
+  <category-menu data-default-category={DEFAULT_CATEGORY}>
+    <div class="category-container">
+      {categories.map(category => (
+        <category-menu-item 
+          data-category={category} 
+          class="category-menu-item"
+          aria-selected={category === DEFAULT_CATEGORY ? 'true' : 'false'}
+        >
+          <a 
+            class="category-item-button"
+            title={category}
+            href={base_url("/resources/training/pcb/trainings/" + "its-basics")}
+          >
+            {category}
+            <span class="badge text-bg-light">
+              10
+            </span>
+          </a>
+        </category-menu-item>
+      ))}
+    </div>
+    <div class="courses-container">
+    </div>
+  </category-menu>
+  <h2 class="blue">All Courses <span class="badge">1</span></h2>
+  <!-- <Accordion id="accordion-1">
     {trainingCategories.data.map(({ title, trainings }, index) => (
       <AccordionItem title={title} index={index} showOnLoad={index === 0}>
         <div class="row gy-4">
@@ -29,5 +96,96 @@ const trainingCategories = await getEntry("trainings", "trainings");
         </div>
       </AccordionItem>
     ))}
-  </Accordion>
+  </Accordion> -->
 </PcbLayout>
+
+<script>
+  interface CategorySelectedEventDetail {
+    category: string;
+  }
+
+  interface CategorySelectedEvent extends CustomEvent {
+    detail: CategorySelectedEventDetail
+  }
+
+  class CategoryMenu extends HTMLElement {
+    _selectedCategory: string;
+    _items: never[];
+    _categoryItems: HTMLElement[];
+
+    constructor() {
+      super();
+      this._selectedCategory = "";
+      this._items = [];
+      this._categoryItems = [];
+    }
+
+    connectedCallback() {
+      this._selectedCategory = this.dataset.defaultCategory || "All Courses";
+
+      this._categoryItems = Array.from(
+        this.querySelectorAll('.category-menu-item')
+      ) as HTMLElement[];
+
+      this._updateView();
+
+      this.addEventListener('category-selected', ((event: CategorySelectedEvent) => {
+        this._selectedCategory = event.detail.category;
+        this._updateView();
+      }) as EventListener);
+    }
+
+    _updateView() {
+      this._categoryItems.forEach(item => {
+        if (item.dataset.category === this._selectedCategory) {
+          item.classList.add('active')
+          item.setAttribute('aria-selected', 'true')
+        } else {
+          item.classList.remove('active')
+          item.setAttribute('aria-selected', 'false');
+        }
+      });
+
+      // this._items
+    }
+  }
+
+  class CategoryMenuItem extends HTMLElement {
+    private _button: HTMLButtonElement | null = null;
+
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this._button = this.querySelector('.category-item-button');
+
+      if (this._button) {
+        this._button.addEventListener('click', this._handleClick.bind(this));
+      }
+
+      this.addEventListener('keydown', this._handleClick.bind(this));
+    }
+
+    _handleClick() {
+      const event = new CustomEvent('category-selected', {
+        bubbles: true,
+        detail: {
+          category: this.dataset.category
+        }
+      } as CustomEventInit<CategorySelectedEventDetail>);
+
+      this.dispatchEvent(event);
+    }
+
+    _handleKeydown(event: KeyboardEvent) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        this._handleClick();
+      }
+    }
+  }
+
+  customElements.define('category-menu', CategoryMenu)
+  customElements.define('category-menu-item', CategoryMenuItem)
+</script>

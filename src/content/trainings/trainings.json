@@ -1,6 +1,7 @@
 [
   {
     "title": "ITS Basics",
+    "slug": "its-basics",
     "trainings": [
       {
         "title": "FHWA-NHI-137050: ITS What, Why, and How",
@@ -20,6 +21,7 @@
   },
   {
     "title": "ITS Architecture",
+    "slug": "its-architecture",
     "trainings": [
       {
         "title": "ARC-IT Training",
@@ -53,6 +55,7 @@
   },
   {
     "title": "Systems Engineering",
+    "slug": "systems-engineering",
     "trainings": [
       {
         "title": "FHWA-NHI-137051: Systems Engineering Fundamentals for ITS",
@@ -72,6 +75,7 @@
   },
   {
     "title": "Vehicle-to-Everything (V2X)",
+    "slug": "v2x",
     "trainings": [
       {
         "title": "Vehicle-to-Everything (V2X) Training",
@@ -84,6 +88,7 @@
   },
   {
     "title": "Transportation Systems Management and Operations (TSMO)",
+    "slug": "tsmo",
     "trainings": [
       {
         "title": "FHWA-NHI-133128: Making the Business Case for Institutional, Organizational, and Procedural Changes for TSMO",
@@ -124,6 +129,7 @@
   },
   {
     "title": "Road Weather Management (RWM)",
+    "slug": "rwm",
     "trainings": [
       {
         "title": "FHWA-NHI-137072: Weather Responsive Traffic Management (WRTM)",
@@ -150,6 +156,7 @@
   },
   {
     "title": "Traffic Incident Management (TIM)",
+    "slug": "tim",
     "trainings": [
       {
         "title": "FHWA-NHI-133126A: National Traffic Incident Management Responder Training",
@@ -162,6 +169,7 @@
   },
   {
     "title": "Cybersecurity",
+    "slug": "cybersecurity",
     "trainings": [
       {
         "title": "FHWA-NHI-137055: Transportation Cyber Security",
@@ -174,6 +182,7 @@
   },
   {
     "title": "Standards",
+    "slug": "standards",
     "trainings": [
       {
         "title": "Standards Trainings",

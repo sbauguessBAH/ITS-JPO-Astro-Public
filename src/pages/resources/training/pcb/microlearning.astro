@@ -8,7 +8,7 @@ import { getEntry } from "astro:content";
 const trainingCategories = await getEntry("microlearning", "microlearning");
 ---
 <PcbLayout title="Microlearning Videos">
-  <h2>Microlearning Videos</h2>
+  <h2 class="blue">Microlearning Videos</h2>
   <p>Access brief videos for quick, focused learning on ITS topics.</p>
   <Accordion id="accordion-1">
     {trainingCategories.data.map(({ title, trainings }, index) => (

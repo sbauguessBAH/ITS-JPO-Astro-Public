@@ -23,7 +23,7 @@ import caveConfiguration from "@/src/assets/images/pcb/cave/cave-configuration.j
     padding-top: 1rem;
   }
   .video-container {
-    background-color: var(--cave-light-blue);
+    background-color: var(--cave-dark-blue);
     padding: 2rem;
     color: white;
     text-align:center;
@@ -85,7 +85,7 @@ import caveConfiguration from "@/src/assets/images/pcb/cave/cave-configuration.j
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   }
   .card {
-    background: var(--cave-light-blue);
+    background: var(--cave-dark-blue);
     border: none;
     border-radius: 0;
     color: white;
@@ -113,11 +113,15 @@ import caveConfiguration from "@/src/assets/images/pcb/cave/cave-configuration.j
     padding-top: 1rem;
     display: block;
   }
+  .test {
+    background: var(--cave-dark-blue)
+  }
 </style>
 <PcbLayout title="Connected and Automated Vehicle Education (CAVe) | Trainings" currentBreadcrumb="Connected and Automated Vehicle Education (CAVe)">
   <section>
     <div class="row align-items-center mb-4">
       <div class="col-lg-8">
+        <div class="test">Test</div>
         <h2 class="d-flex align-items-end flex-row gap-2">
           What is 
           <Image src={caveLogo} alt="CAVe Logo" height="40"/>

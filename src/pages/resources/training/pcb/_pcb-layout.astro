@@ -15,6 +15,12 @@ const { title, currentBreadcrumb } = Astro.props;
     padding: 0;
     margin: 0;
   }
+  .pcb-header {
+    color: #055581;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 0px;
+  }
 </style>
 <PageLayout 
   title={`${title} | Professional Capacity Building (PCB)`} 
@@ -39,9 +45,9 @@ const { title, currentBreadcrumb } = Astro.props;
     </div> -->
   </Fragment>
   <SidebarLayout path="/resources/training/pcb">
-    <div class="alert alert-danger" role="alert">
+    <!-- <div class="alert alert-danger" role="alert">
       WORK IN PROGRESS
-    </div>
+    </div> -->
     <slot/>
   </SidebarLayout>
 </PageLayout>

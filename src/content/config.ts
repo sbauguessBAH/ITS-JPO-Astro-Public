@@ -65,6 +65,7 @@ export const collections = {
     schema: ({ image }) => z.array(
       z.object({
         title: z.string(),
+        slug: z.string(),
         trainings: z.array(z.object({
           title: z.string(),
           description: z.string(),

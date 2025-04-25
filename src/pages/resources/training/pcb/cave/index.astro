@@ -19,8 +19,10 @@ import base_url from "@/src/lib/base_url";
   :root {
     --cave-light-blue: #1c6da6;
     --cave-yellow: #edbb1d;
-    --cave-dark-blue: rgb(37, 64, 121);
+    --cave-dark-blue: #003e7e;
     --corner-offset: 1.5rem;
+    --jpo-blue: #005d83;
+    --dot-blue: rgb(15, 29, 85)
   }
 </style>
 <style scoped>
@@ -56,33 +58,38 @@ import base_url from "@/src/lib/base_url";
     border-radius: 8px;
     padding: 0.5rem 2rem;
     text-decoration: none;
-    color: var(--cave-dark-blue);
+    /* color: var(--cave-dark-blue); */
     text-transform: uppercase;
     transition: 0.2s ease-in-out;
+    color: white;
   }
   .btn-pcb-yellow::after {
-    color: var(--cave-dark-blue);
+    /* color: var(--cave-dark-blue); */
+    color: white;
     transition: 0.2s ease-in-out;
   }
   .btn-pcb-yellow:hover {
     background-color: var(--cave-yellow);
-    color: var(--cave-dark-blue);
+    /* color: var(--cave-dark-blue); */
+    color: white;
     font-weight: 400;
   }
   .btn-pcb-yellow:hover::after {
-    color: var(--cave-dark-blue);
+    /* color: var(--cave-dark-blue); */
+    color: white;
   }
 
   .card-img-top {
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   }
   .card {
-    background: var(--cave-light-blue);
+    background: var(--cave-dark-blue);
     border: none;
     border-radius: 0;
     color: white;
     h5 {
       color: white;
+      /* color: var(--cave-dark-blue); */
       text-transform: uppercase;
     }
   }
@@ -96,6 +103,7 @@ import base_url from "@/src/lib/base_url";
     margin-bottom: 1rem;
     background: none;
     border: none;
+    background: white;
   }
   .spacer {
     padding-top: 2rem;
@@ -110,7 +118,7 @@ import base_url from "@/src/lib/base_url";
     transform: rotate(10deg);
   }
   .cav-contact {
-    background: var(--cave-light-blue);
+    background: var(--cave-dark-blue);
     color: white;
     padding: 0.8rem;
     text-align: center;
