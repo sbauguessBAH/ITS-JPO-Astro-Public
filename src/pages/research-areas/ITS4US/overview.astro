@@ -1,0 +1,99 @@
+---
+import { Image } from "astro:assets";
+import base_url from "@/src/lib/base_url";
+import Photo1 from "@/src/assets/images/its4us/accessible-signal.jpeg";
+import ProgramPhase from "@/src/assets/images/its4us/ITS4US-Program-Phases3.png";
+import TravelerMap from "@/src/assets/images/its4us/TravelerMap.jpeg";
+
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+---
+
+<style>
+  hr {
+    margin: 10px 0;
+  }
+  .blue {
+    display: grid;
+  }
+  .center {
+    width: 40%;
+  }
+</style>
+
+<PageLayout title="Program Overview">
+  <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
+  <SidebarLayout path="/research-areas/">
+    <Image src={Photo1} alt="Pushbutton crosswalk signal for blind pedestrians" width={800} class="center float-sm-end mr-3 img-fluid col-6-sm ms-4" />
+
+    <h2 class="sideways blue">Program Overview</h2>
+    <p class="read-more-wrap" style="padding-top: 0px">
+      <p>
+        The ITS4US Deployment Program aims to address&nbsp;mobility challenges&nbsp;<strong>for all travelers</strong>. The Program builds upon the USDOT&rsquo;s previous and ongoing foundational
+        research, along with&nbsp;<strong>emerging technologies,&nbsp;</strong>practices, and other critical inputs gathered from various sources. The ITS4US Program is designed to bring <strong>
+          publicly and privately sponsored research
+        </strong>together to create <strong>large-scale, replicable deployments</strong> to address the challenges of&nbsp;planning and executing all segments of a trip.
+      </p>
+    </p>
+
+    <hr />
+    <h3>The Program Targets</h3>
+    <Image
+      src={TravelerMap}
+      alt="Traveler use map on mobile phone app to search for route location of place with gps on street when travel in city."
+      width={800}
+      class="center float-sm-end mr-3 img-fluid col-6-sm ms-4"
+    />
+
+    <p>
+      For most of us, getting to work, to the store, or visiting family is as easy as getting in your vehicle and driving to your destination. Yet for some, these trips can be challenging and
+      stressful, especially if some transportation options are unavailable or difficult to access.
+    </p>
+    <p>
+      Many Americans encounter these challenges, including older adults, rural residents, and veterans. Getting from place to place &ndash; being independently mobile &ndash; is important to everyone.
+      Having a transportation system in place that is reliable and available for all travelers is necessary to help people get where they need to go, when they need to get there.
+    </p>
+    <p>
+      The ITS4US program aims to solve these challenges through technology solutions; providing options and connecting different modes of transportation so individuals can travel from origin to
+      destination without gaps in their travel plan.
+    </p>
+
+    <h3>The Program Response</h3>
+    <p>
+      In 2019, the Trump Administration launched the ITS4US Deployment program, investing $38 million to enhance transportation availability across American communities. Led by the ITS JPO, this
+      multimodal initiative leverages innovative technology to improve transportation efficiency while creating strong public-private partnerships, implementing cutting-edge solutions, and delivering
+      cost-saving, scalable results that other communities can replicate.
+    </p>
+    
+    <h2 class="sideways blue">Vision and Goals</h2>
+    <h3>Vision</h3>
+    <p>
+      “Innovative and integrated multimodal technology deployments to support safe and seamless travel for all users across all modes.”    
+    </p>
+    <h3>Goals</h3>
+
+    <ul>
+      <li>Spur high-impact integrated multimodal technology deployments nationwide.</li>
+      <li>Identify transportation needs and challenges for all travelers.</li>
+      <li>Develop and deploy mobility solutions that meet user needs.</li>
+      <li>Measure impact of integrated deployments.</li>
+      <li>Identify replicable solutions and disseminate lessons learned.</li>
+      </ul>
+    <h2 class="sideways blue">The Program Phases</h2>
+
+    <p>
+      The program, to be executed in three phases, has procured and awarded multiple large-scale, replicable, real-world deployments of integrated innovative technologies to address the challenges of planning and executing multimodal trips:
+      <ul>
+        <li>Pre-Deployment Activities</li>
+        <li>Phase 1: Deployment Concept</li>
+        <li>Phase 2: Design and Test</li>
+        <li>Phase 3: Operate and Evaluate (Current Phase)</li>
+        <li>Measure impact of integrated deployments</li>
+        <li>Post-Deployment Operations &amp; Maintenance</li>
+      </ul>
+
+      <Image src={ProgramPhase} alt="A diagram of ITS4US program phases." width={2000} class="img-fluid" />
+    </p>
+  </SidebarLayout>
+</PageLayout>
