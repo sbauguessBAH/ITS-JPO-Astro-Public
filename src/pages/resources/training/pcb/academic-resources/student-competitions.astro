@@ -1,20 +1,16 @@
 ---
 import Link from "@/src/components/Link.astro";
 import PcbLayout from "../_pcb-layout.astro";
+import studentCompetitionsImage from "@/src/assets/images/pcb/academic-resources/competitions-banner.png";
+import { Image } from "astro:assets";
 ---
 <style scoped>
   .table th, .table td {
     text-align: left;
   }
   .table {
-    margin-top:2rem;
+    margin-top:1rem;
     margin-bottom:2rem;
-  }
-  .banner-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    object-position: 0% 40%;
   }
 </style>
 <style is:global>
@@ -25,88 +21,87 @@ import PcbLayout from "../_pcb-layout.astro";
 <PcbLayout title="ITS Student Competitions | Academic Resources" currentBreadcrumb="ITS Student Competitions">
   <section>
     <h2 class="pcb-title">ITS Student Competitions</h2>
-    <p>
+    <Image 
+      src={studentCompetitionsImage} 
+      alt="" 
+      class="img img-fluid"
+    />
+    <p class="mt-2">
       ITS PCB Program and the National Operations Center of Excellence (NOCoE) developed a student competition, 
       the Transportation Technology Tournament (TTT) to assist ITS students in working directly with public agencies 
       to solve real-world transportation problems utilizing ITS and TSMO solutions. The competition allows student teams 
       to leverage their experience, education, and ITS PCB materials to develop a solution or suite of solutions 
       to directly address the transportation problem.
     </p>
-    <p>
+    <p class="">
       A detailed description of the TTT, its deadlines, and a list of the student teams participating 
       is available <Link href="https://transportationops.org/transportation-technology-tournament" isExternal>here</Link>.
     </p>
+    
+    <h3 class="pcb-title mt-4">Previous Winners</h3>
     <table class="table">
       <thead class="thead-dark">
         <tr>
+          <th scope="col">Year</th>
           <th scope="col">Winner</th>
-          <th scope="col">Competition</th>
-          <th scope="col">Status</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>University of Michigan</td>
+          <td>2024</td>
           <td>
             <Link href="https://transportationops.org/transportation-technology-tournament/2024" isExternal>
-              2024 Transportation Technology Tournament
+              University of Michigan
             </Link>
           </td>
-          <td>Closed</td>
         </tr>
         <tr>
-          <td>Florida International University &amp; Florida Atlantic University</td>
+          <td>2023</td>
           <td>
             <Link href="https://transportationops.org/transportation-technology-tournament/2023" isExternal>
-              2023 Transportation Technology Tournament
+              Florida International University &amp; Florida Atlantic University
             </Link>
           </td>
-          <td>Closed</td>
         </tr>
         <tr>
-          <td>University of Michigan</td>
+          <td>2022</td>
           <td>
             <Link href="https://transportationops.org/transportation-technology-tournament/2022" isExternal>
-              2022 Transportation Technology Tournament
+              University of Michigan
             </Link>
           </td>
-          <td>Closed</td>
         </tr>
         <tr>
-          <td>University of Massachusetts - Lowell</td>
+          <td>2021</td>
           <td>
             <Link href="https://transportationops.org/transportation-technology-tournament/2021" isExternal>
-              2021 Transportation Technology Tournament
+              University of Massachusetts - Lowell
             </Link>
           </td>
-          <td>Closed</td>
         </tr>
         <tr>
-          <td>University of Michigan</td>
+          <td>2020</td>
           <td>
             <Link href="https://transportationops.org/transportation-technology-tournament/2020" isExternal>
-              2020 Transportation Technology Tournament
+              University of Michigan
             </Link>
           </td>
-          <td>Closed</td>
         </tr>
         <tr>
-          <td>University of Michigan</td>
+          <td>2019</td>
           <td>
             <Link href="https://transportationops.org/transportation-technology-tournament/2019" isExternal>
-              2019 Transportation Technology Tournament
+              University of Michigan
             </Link>
           </td>
-          <td>Closed</td>
         </tr>
         <tr>
-          <td>University of Texas, University of Wyoming, and University of Kansas</td>
+          <td>2018</td>
           <td>
             <Link href="https://transportationops.org/transportation-technology-tournament/2018" isExternal>
-              2018 Transportation Technology Tournament
+              University of Texas, University of Wyoming, and University of Kansas
             </Link>
           </td>
-          <td>Closed</td>
         </tr>
       </tbody>
     </table>

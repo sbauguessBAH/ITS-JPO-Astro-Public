@@ -52,9 +52,18 @@ const resources = [
   }
 ]
 ---
+<style>
+  .card-custom {
+    background: #055581;
+    background-image: linear-gradient(to right,#09638C, #0A1E62);
+  }
+  .card-custom:hover {
+    background: #055581 !important;
+  }
+</style>
 <section>
-  <h2 class="text-center mb-4">What Do You Want to Do?</h2>
-  <div class="row gy-4">
+  <h3 class="pcb-title text-center mb-4">What Do You Want to Do?</h3>
+  <div class="row gy-2 gx-2">
     {resources.map(resource => (
       <div class="col-lg-6">
         <Card
@@ -63,6 +72,7 @@ const resources = [
           description={resource.description}
           orientation="horizontal"
           {...(resource.href && { "href": resource.href })}
+          classNames={{base: "card-custom", content: "text-white", title: "text-white"}}
         />
       </div>
     ))}

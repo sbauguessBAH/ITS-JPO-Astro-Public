@@ -34,7 +34,7 @@ const courses = await getEntry("trainings", "trainings")
 </style>
 <TrainingsLayout path={path}>
   <div class="pcb-header-container">
-    <h2 class="pcb-header-text">{title}</h2>
+    <h3 class="pcb-title">{title}</h3>
     <div class="category-badge">{courses.length}{" "}{courses.length === 1 ? "course" : "courses"}</div>
   </div>
   <div class="course-container">

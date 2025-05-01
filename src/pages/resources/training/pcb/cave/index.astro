@@ -25,6 +25,30 @@ import base_url from "@/src/lib/base_url";
     --dot-blue: rgb(15, 29, 85)
   }
 </style>
+
+<style>
+  .course-card-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: #055581;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+    justify-self: end;
+  }
+
+  .course-card-button::after {
+    color: white;
+  }
+
+  .course-card-button:hover {
+    text-decoration: none;
+    font-weight: 400
+  }
+
+</style>
 <style scoped>
   
   article {
@@ -54,11 +78,11 @@ import base_url from "@/src/lib/base_url";
     color: white;
   }
   .btn-pcb-yellow {
-    background-color: var(--cave-yellow);
+    background: var(--cave-yellow);
     border-radius: 8px;
     padding: 0.5rem 2rem;
     text-decoration: none;
-    /* color: var(--cave-dark-blue); */
+    color: var(--cave-yellow);
     text-transform: uppercase;
     transition: 0.2s ease-in-out;
     color: white;
@@ -83,7 +107,7 @@ import base_url from "@/src/lib/base_url";
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   }
   .card {
-    background: var(--cave-dark-blue);
+    background: var(--dot-blue);
     border: none;
     border-radius: 0;
     color: white;
@@ -103,7 +127,7 @@ import base_url from "@/src/lib/base_url";
     margin-bottom: 1rem;
     background: none;
     border: none;
-    background: white;
+    /* background: white; */
   }
   .spacer {
     padding-top: 2rem;
@@ -129,17 +153,29 @@ import base_url from "@/src/lib/base_url";
       font-weight: 600;
     }
   }
+  .cave-container {
+    position: relative;
+  }
+  .cave-logo {
+    position: absolute;
+    left:85px;
+    top:20px;
+  }
 </style>
 <PcbLayout title="Connected and Automated Vehicle Education (CAVe) | Trainings" currentBreadcrumb="Connected and Automated Vehicle Education (CAVe)">
   <section>
-    <div class="row align-items-center mb-4">
+    <!-- <h2 class="pcb-title">
+      What is CAVE-in-a-box?
+    </h2> -->
+    <div class="row mb-4">
       <div class="col-lg-8">
+        
         <h2 class="d-flex align-items-end flex-row gap-2 text-uppercase">
           What is 
           <Image src={caveLogo} alt="CAVe Logo" height="40"/>
           ?
         </h2>
-        <p class="mt-4">
+        <p class="">
           CAVe-in-a-box, short for connected and automated vehicle education in a box, offers a comprehensive, hands-on learning experience
           designed to enhance curricula at community colleges and trade schools. It supports instructors in teaching intelligent transportation
           system concepts, helps benchmark connected vehicle equipment, and streamlines onboarding for intelligent transportation system technicians.
@@ -159,8 +195,9 @@ import base_url from "@/src/lib/base_url";
           Learn More
         </a>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-4 cave-container">
         <Image src={caveTransparent} alt="CAVe-in-a-box" class="img-fluid"/>
+        <!-- <Image src={caveLogo} alt="CAVe Logo" height="40" class="cave-logo"/> -->
       </div>
     </div>
     <span class="spacer"></span>
