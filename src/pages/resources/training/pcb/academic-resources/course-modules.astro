@@ -1,0 +1,55 @@
+---
+import Link from "@/src/components/Link.astro";
+import PcbLayout from "../_pcb-layout.astro";
+import courseModulesImage from "@/src/assets/images/pcb/academic-resources/case-studies.jpg";
+import { Image } from "astro:assets";
+---
+<style>
+  .banner-image {
+    width: 50%;
+    height: 250px;
+    object-fit: cover;
+    object-position: 0% 40%;
+  }
+</style>
+<PcbLayout title="ITS Academic Course Modules | Academic Resources" currentBreadcrumb="ITS Academic Course Modules">
+  <section>
+    <h2 class="pcb-title">ITS Academic Course Modules</h2>
+    <Image 
+      src={courseModulesImage} 
+      alt="" 
+      class="banner-image"
+    />
+    <p>
+      ITS provide promising solutions for improving traffic safety and mobility in the transportation network. 
+      Educating future transportation professionals about ITS ensures they are equipped to think critically 
+      and develop novel approaches for the most pressing transportation issues and needs. ITS academic course modules aim 
+      to advance knowledge of ITS for college and university students. An ITS academic course module is a freestanding class (or component) 
+      of a course that provides structure to students' learning through organized learning content. Each course module focuses 
+      on a specific ITS theme, concept, or technology. Instructor and student materials focused on ensuring 
+      an engaging experience supporting the course module outcomes in the structure of 90 minutes of instruction 
+      are provided for each course module and include: 
+    </p>
+    <ul>
+      <li>
+        <strong>Instructor Guide</strong> containing upfront information that explains the basic course module information 
+        (purpose of the course module, learning outcomes, intended target audience, intended class size, 
+        how to prepare deliver the course module, etc.) as well as detailed instruction notes for each slide in the presentation. 
+      </li>
+      <li>
+        <strong>PowerPoint Presentation</strong> to be used by the instructor during course module delivery. 
+      </li>
+      <li>
+        <strong>Student Participant Materials</strong> that may contain items such as handouts, exercise instructions, 
+        reference materials, or other activities commensurate with the course module. 
+      </li>
+      <li>
+        <strong>Other delivery materials</strong> as needed to facilitate course module activities. 
+      </li>
+    </ul>
+
+    <p>
+      <em>Additional content coming soon.</em>
+    </p>
+  </section>
+</PcbLayout>

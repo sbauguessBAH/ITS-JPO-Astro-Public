@@ -1,0 +1,124 @@
+---
+import { categories } from "@/src/lib/pcb/categories";
+import PcbLayout from "../_pcb-layout.astro";
+import base_url from "@/src/lib/base_url";
+import { getEntry } from "astro:content";
+
+interface Props {
+  path?: string
+}
+
+const courses = await getEntry("trainings", "trainings").then(row => row.data);
+const getCourseCount = (path?: string) => courses.filter(course => 
+  path === undefined || path === course.category
+).length;
+
+const { path } = Astro.props;
+---
+<style is:global>
+  .category-badge {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 1rem;
+    height: 24px;
+    width: fit-content;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+  }
+  .category-menu-wrapper {
+    border: 1px solid #00000012;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  .category-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    gap: 0.4rem;
+  }
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(1, 100%);
+  }
+  .category-menu-item {
+    padding: 0.6rem 0.8rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;;
+    transition: all;
+    transition-duration: 200ms;
+    text-align: left;
+    box-shadow: none;
+    border: 1px solid #00000012;
+    text-decoration: none;
+
+    font-weight: 600;
+  }
+
+  .category-menu-item-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 0.2rem;
+  }
+
+  .category-menu-item:hover {
+    border: 1px solid #05558150;
+    background: #05558110;
+    font-weight: 600;
+  }
+
+  .category-menu-item.active {
+    border: 1px solid #05558150;
+    background: #05558110;
+  }
+  .category-menu-item.active .category-badge {
+    background: #055581;
+    color: white;
+  }
+</style>
+
+<PcbLayout title="Trainings">
+  <h2 class="pcb-title">Training Courses</h2>
+  <p class="mb-4">
+    The ITS PCB Program offers a comprehensive suite of trainings covering a range 
+    of topics from foundational concepts to emerging transportation technologies. 
+    Discover and take these free trainings to help enhance your ITS knowledge and skills.
+  </p>
+  <div class="category-menu-wrapper">
+    <h3>Categories</h3>
+    <nav class="category-menu">
+      {categories.map(item => (
+        <a 
+          class:list={["category-menu-item", {"active": item.category === path }]}
+          href={base_url(`/resources/training/pcb/trainings/${item.category ?? ""}`)}
+          data-bs-toggle="tooltip" 
+          data-bs-title={item.title} 
+        >
+          <div class="category-menu-item-text">
+            {item.title}
+          </div>
+          <div class="category-badge">
+            {getCourseCount(item.category)}
+          </div>
+        </a>
+      ))}
+    </nav>
+  </div>
+  <slot/>
+</PcbLayout>
+
+<script>
+  import Tooltip from 'bootstrap/js/dist/tooltip';
+  const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]',
+  );
+  const tooltipList = [...tooltipTriggerList].map(
+    (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl),
+  );
+</script>

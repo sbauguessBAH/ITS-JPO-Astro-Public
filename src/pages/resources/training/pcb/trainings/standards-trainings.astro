@@ -1,0 +1,157 @@
+---
+import { getCollection } from "astro:content";
+import PcbLayout from "../_pcb-layout.astro";
+import type { CollectionEntry } from "astro:content";
+import { isTemplateExpression } from "typescript";
+
+const trainings: CollectionEntry<"standardsTrainings">[] = 
+  await getCollection("standardsTrainings")
+
+const previewLength = 150;
+---
+<style>
+  .training-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .training-card {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .training-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .training-card-subheading {
+    font-weight: bold;
+  }
+  .training-card-heading {
+    color: #2e5b7a;
+  }
+  .training-card-length {
+    background: #efefef;
+    border-radius: 16px;
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+  }
+  .training-card-preview {
+    mask-image: linear-gradient(rgb(0, 0, 0) calc(100% - 40px), rgba(0, 0, 0, 0));
+  }
+  .training-card-button {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #2e5b7a;
+    text-decoration: underline;
+    padding: 5px 15px 5px 0px;
+    text-transform: uppercase;
+  }
+  .training-card-button:hover {
+    border: none;
+    color: #2b7cde;
+    background-color: white;
+    cursor: pointer;
+  }
+</style>
+<PcbLayout title="Trainings">
+  <h2 class="pcb-title">Standards Trainings</h2>
+  <p>
+    The ITS Professional Capacity Building Program (ITS PCB) is pleased 
+    to offer FREE ITS standards training. This 64-module series (listed in the table below) 
+    is for practitioners in state and local highway agencies and transit agencies 
+    who seek the skills needed to procure, test, implement, and operate 
+    standards-based systems and devices. Consultants, system designers, integrators, 
+    and testers will also find the training informative.
+  </p>
+  <div class="training-list">
+    {trainings
+      .toSorted((a, b) => a.data.module - b.data.module)
+      .map(async training => {
+        const { Content } = await training.render();
+        return (
+          <article class="training-card">
+            <div class="training-card-header">
+              <p class="training-card-subheading">MODULE {training.data.module} | {training.data.code}</p>
+              <div class="training-card-length">{training.data.length}</div>
+            </div>
+            <h2 class="training-card-heading">{training.data.title}</h2>
+            <div class="training-card-body">
+              <div 
+                class="training-card-preview" 
+                id={`preview-${training.slug}`}
+              >
+                {training.body.substring(0, previewLength) + "..."}
+              </div>
+              <div 
+                class="training-card-full" 
+                id={`full-${training.slug}`}
+                hidden
+              >
+                <Content/>
+              </div>
+              <button 
+                class="training-card-button"
+                aria-controls={`full-${training.slug}`}
+                data-preview-id={`preview-${training.slug}`}
+                data-full-id={`full-${training.slug}`}
+              >
+                Show More
+              </button>
+            </div>
+          </article>
+        )
+    })}
+  </div>
+</PcbLayout>
+
+<script>
+  class ContentExpander extends HTMLElement {
+    constructor() {
+      super();
+      this.init();
+    }
+
+    init() {
+      const toggleButtons = document.querySelectorAll<HTMLButtonElement>(".training-card-button");
+      
+      toggleButtons.forEach(button => {
+        button.addEventListener("click", () => this.toggleContent(button))
+      })
+    }
+
+    toggleContent(button: HTMLButtonElement) {
+      const previewId = button.dataset.previewId
+      const fullId = button.dataset.fullId
+
+      if (!previewId || !fullId) return;
+
+      const previewElement = document.getElementById(previewId);
+      const fullElement = document.getElementById(fullId);
+
+      if (!previewElement || !fullElement) return;
+
+      const isExpanded = button.getAttribute('aria-expanded') === "true";
+
+      if (isExpanded) {
+        previewElement.removeAttribute("hidden");
+        fullElement.setAttribute("hidden", "");
+        button.setAttribute("aria-expanded", "false");
+        button.textContent = "Show More"
+      } else {
+        previewElement.setAttribute("hidden", "");
+        fullElement.removeAttribute("hidden");
+        button.setAttribute("aria-expanded", "true");
+        button.textContent = "Show Less";
+      }
+    }
+  }
+
+  customElements.define("content-expander", ContentExpander);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new ContentExpander();
+  })
+</script>

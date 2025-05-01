@@ -1,0 +1,55 @@
+---
+import { categories } from "@/src/lib/pcb/categories";
+import PcbLayout from "../_pcb-layout.astro";
+import { getEntry } from "astro:content";
+import TrainingsLayout from "./_trainings-layout.astro";
+import CourseCard from "./_course-card.astro";
+
+export function getStaticPaths() {
+  return categories.map(item => ({
+    params: {
+      path: item.category
+    },
+    props: {
+      title: item.title
+    }
+  }))
+}
+
+const { path } = Astro.params;
+const { title } = Astro.props;
+
+const courses = await getEntry("trainings", "trainings")
+  .then(row => row.data
+    .filter(row => path === undefined || row.category === path)
+  );
+---
+<style>
+  .course-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+</style>
+<TrainingsLayout path={path}>
+  <div class="pcb-header-container">
+    <h2 class="pcb-header-text">{title}</h2>
+    <div class="category-badge">{courses.length}{" "}{courses.length === 1 ? "course" : "courses"}</div>
+  </div>
+  <div class="course-container">
+    {courses.map(course => (
+      <CourseCard
+        title={course.title}
+        alt={course.alt}
+        image={course.image}
+        description={course.description}
+        isExternal={course.isExternal}
+        href={course.url}
+        category={course.category}
+        type={course.type}
+        action={course.action}
+      />
+    ))}
+  </div>
+</TrainingsLayout>

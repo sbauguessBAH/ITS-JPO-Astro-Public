@@ -1,11 +1,26 @@
 ---
 import Link from "@/src/components/Link.astro";
 import PcbLayout from "../_pcb-layout.astro";
+import academicWorkshopsImage from "@/src/assets/images/pcb/academic-resources/academic-workshops.jpg";
+import { Image } from "astro:assets";
 ---
+<style>
+  .banner-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: 0% 40%;
+  }
+</style>
 <PcbLayout title="ITS Academic Workshops | Academic Resources" currentBreadcrumb="ITS Academic Workshops">
   <section>
-    <h2>ITS Academic Workshops</h2>
-    <p>
+    <h2 class="pcb-title">ITS Academic Workshops</h2>
+    <Image 
+      src={academicWorkshopsImage} 
+      alt="" 
+      class="banner-image"
+    />
+    <p class="mt-2">
       The ITS PCB team hosted workshops with faculty from universities, community colleges, and technical institutions, 
       as well as public, private, and professional organization representatives. The purpose of these workshops was 
       to identify strategies for incorporating ITS education into school curricula and to gather vital feedback 

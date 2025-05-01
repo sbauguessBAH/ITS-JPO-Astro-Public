@@ -3,45 +3,45 @@ import Card from "@/src/components/pcb/Card.astro";
 import PcbLayout from "../_pcb-layout.astro";
 import academicWorkshopsImage from "@/src/assets/images/pcb/academic-resources/academic-workshops.jpg";
 import careerPathsImage from "@/src/assets/images/pcb/academic-resources/career-paths.jpg";
-import caseStudiesImage from "@/src/assets/images/pcb/academic-resources/case-studies.jpg";
+import courseModulesImage from "@/src/assets/images/pcb/academic-resources/case-studies.jpg";
 import studentCompetitionsImage from "@/src/assets/images/pcb/academic-resources/student-competitions.png";
 
 const resources = [
   // {
   //   title: "Case Studies and Lesson Plans",
   //   description: "Academic case studies and lesson plans on ITS, V2X, and Automated Vehicle (AV) technologies are available, with instructor access requiring registration and student materials open to all.",
-  //   image: caseStudiesImage,
+  //   image: courseModulesImage,
   //   slug: "case-studies"
   // },
   {
-    title: "Academic Modules",
-    description: "Coming soon...",
-    image: caseStudiesImage,
-    slug: "academic-modules"
+    title: "ITS Academic Course Modules",
+    description: "ITS Academic Course Modules aim to advance knowledge of ITS by providing instructor and student content targeted to college and university students. Content includes Instructor Guides, PowerPoint Presentations, Student Participant Materials, and more.",
+    image: courseModulesImage,
+    slug: "course-modules"
   },
   {
     title: "Student Competitions",
-    description: "The Transportation Technology Tournament (TTT) enables ITS students to collaborate with public agencies, applying ITS and TSMO solutions to solve real-world transportation challenges.",
+    description: "The Transportation Technology Tournament (TTT) is an annual student competition conducted by the USDOT, NOCoE, and ITE allowing students to work with public agencies to apply ITS and TSMO solutions to real-world transportation challenges.",
     image: studentCompetitionsImage,
     slug: "student-competitions"
   },
   {
-    title: "Academic Workshops",
-    description: "Collaborative sessions where educators and organization representatives explore strategies for integrating ITS education into curricula and provide feedback for developing new learning tools.",
+    title: "ITS Academic Workshops",
+    description: "ITS Academic Workshops provide educators and representatives from public and private entities to explore strategies for integrating ITS education into curricula and provide input for advancing the ITS workforce.",
     image: academicWorkshopsImage,
     slug: "workshops"
   },
   {
-    title: "Career Paths",
-    description: "Coming soon...",
+    title: "ITS Career Pathways",
+    description: "ITS Career Pathways provides a snapshot overview of ITS careers including key details on specific roles, responsibilities, skills/education, and example career paths",
     image: careerPathsImage,
-    slug: ""
+    slug: "career-pathways"
   },
 ]
 ---
 
 <PcbLayout title="Academic Resources">
-  <h2 class="blue">Academic Resources</h2>
+  <h2 class="pcb-title mb-2">Academic Resources</h2>
   <p>
     Connect faculty and instructors with tools and materials to support students in preparing for careers in ITS. 
   </p>

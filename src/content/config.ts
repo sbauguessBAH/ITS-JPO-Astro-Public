@@ -65,16 +65,25 @@ export const collections = {
     schema: ({ image }) => z.array(
       z.object({
         title: z.string(),
-        slug: z.string(),
-        trainings: z.array(z.object({
-          title: z.string(),
-          description: z.string(),
-          image: image().optional(),
-          url: z.string().optional(),
-          isExternal: z.boolean().optional()
-        }))
+        description: z.string(),
+        image: image().optional(),
+        alt: z.string().optional(),
+        url: z.string().optional(),
+        isExternal: z.boolean().optional(),
+        category: z.string(),
+        type: z.string(),
+        action: z.string().optional()
       })
     )
+  }),
+  standardsTrainings: defineCollection({
+    type: 'content', // v2.5.0 and later
+    schema: z.object({
+      title: z.string(),
+      code: z.string(),
+      module: z.number(),
+      length: z.string()
+    }),
   }),
   pcb: defineCollection({
     type: 'content', // v2.5.0 and later
