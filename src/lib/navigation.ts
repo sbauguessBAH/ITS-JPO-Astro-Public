@@ -28,7 +28,16 @@ export const navigation: NavigationItem[] = [
         { name: "Artificial Intelligence in Transportation", url: "/research-areas/Artificial-Intelligence" },
         { name: "Complete Streets Artificial Intelligence Initiative", url: "/research-areas/Artificial-Intelligence/Complete-Streets-AI" },
       ]},
-      { name: "Automation Program", url: "/research-areas/Automation-Program" },
+      { name: "Automation Program", url: "/research-areas/automation-program", hideChildrenInNavbar: true, pages: [
+        { name: "Automation Program", url: "/research-areas/automation-program" },
+        { name: "Focus Areas", url: "/research-areas/automation-program/focus-areas", pages: [
+          { name: "Cooperative Driving Automation (CDA)", url: "/research-areas/automation-program/focus-areas/cda", },
+          { name: "Analysis, Modeling and Simulation (AMS)", url: "/research-areas/automation-program/focus-areas/ams", },
+          { name: "Human Factors", url: "/research-areas/automation-program/focus-areas/human-factors", },
+          { name: "Automated Driving System (ADS) Integration", url: "/research-areas/automation-program/focus-areas/ads", },
+        ] },
+        { name: "Resources", url: "/research-areas/automation-program/resources" }
+      ] },
       { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
       { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
