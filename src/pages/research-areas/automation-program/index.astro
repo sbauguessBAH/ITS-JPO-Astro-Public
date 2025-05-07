@@ -65,6 +65,40 @@ const description =
   }
 </style>
 <style>
+  .strategy-container {
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .strategy-header {
+    color: #055581;
+    text-transform: none;
+  }
+  .strategy {
+    display: flex;
+    gap: 1rem;
+  }
+  .strategy-icon {
+    background: #055581;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+    font-weight: 600;
+  }
+  .strategy-description {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<style>
   .focus-area-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -167,7 +201,7 @@ const description =
   <SidebarLayout path="/research-areas/automation-program">
       <div>
         <h2 class="sideways blue">Automation Program</h2>
-        <p class="" style="padding-top:0px">
+        <p>
           Driving automation is one of the major transportation industry trends 
           of this decade. Through close collaboration and monitoring of current industry 
           and academic technology innovators and leaders in automation the ITS JPO continues 
@@ -176,6 +210,8 @@ const description =
           of lateral or longitudinal controls are widely available in passenger vehicles, 
           although their development and refinement continue. Automated Driving System (ADS)-equipped 
           vehicles are being piloted in passenger vehicles, commercial motor vehicles, and transit buses. 
+        </p>
+        <p>
           While driving automation research has been, to some degree, mainstreamed 
           across the Department's Operating Administrations, research needs are evolving 
           alongside the technology. The technological and practical challenges of translating 
@@ -185,33 +221,54 @@ const description =
           The ITS JPO Automation Program's collaborative and multi-modal research portfolio 
           provides cross-cutting support across the U.S. DOT with the following strategies:
         </p>
-        <ul>
-          <li>
+      </div>
+      <div class="strategy-container">
+        <h3 class="strategy-header">Research Strategies</h3>
+        <div class="strategy">
+          <div class="strategy-icon">
+            1
+          </div>
+          <p class="strategy-description">
             Research potential applications of vehicle automation technologies 
             to achieve safety, mobility, and efficiency benefits through advanced 
             wireless communications and interactions with interoperable connectivity 
             and develop supporting standards and assessment tools to enable private 
             and public sector deployment.
-          </li>
-          <li>
+          </p>
+        </div>
+        <div class="strategy">
+          <div class="strategy-icon">
+            2
+          </div>
+          <p class="strategy-description">
             Collaborate with stakeholders to document and prioritize 
             Analysis, Modeling and Simulation (AMS) capabilities for ITS, conduct research 
             and development to enhance these capabilities, and provide resources to support 
             their understanding and use.
-          </li>
-          <li>
+          </p>
+        </div>
+        <div class="strategy">
+          <div class="strategy-icon">
+            3
+          </div>
+          <p class="strategy-description">
             Study human interactions with vehicle automation technologies to identify 
             potential mismatches and best practices for realizing safe and effective 
             automation operations for all users in the roadway environment.
-          </li>
-          <li>
+          </p>
+        </div>
+        <div class="strategy">
+          <div class="strategy-icon">
+            4
+          </div>
+          <p class="strategy-description">
             Identify challenges/issues that can negatively impact safe and efficient 
             integration of Automated Driving System (ADS) technologies, such as lack 
             of AV preparedness, limited understanding of ADS use cases that can 
             maximize benefits, and not-well-understood ADS capabilities/safety protocols 
             that vary between manufacturers and across ODDs.
-          </li>
-        </ul>
+          </p>
+        </div>
       </div>
       <h2 class="blue">
         Focus Areas
