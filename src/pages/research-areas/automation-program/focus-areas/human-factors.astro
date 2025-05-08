@@ -2,6 +2,11 @@
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import BullseyeIcon from "../_bullseye-icon.astro";
+import CompassIcon from "../_compass-icon.astro";
+import CheckIcon from "../_check-icon.astro";
+import ListIcon from "../_list-icon.astro";
+import Layout from "../_layout.astro";
 
 const keywords = [
   "Automation Program",
@@ -15,23 +20,167 @@ const description =
   "The ITS JPO Automation Program focuses on the safe deployment of automated driving systems and advanced driver assistance systems through collaboration and research.";
 ---
 
-<PageLayout 
-  title="Automation Program" 
-  bannerImage={banner} 
-  keywords={keywords} 
-  description={description}
->
-  <Fragment slot="banner">
-    Automation Program
-  </Fragment>
-  <SidebarLayout path="/research-areas/automation-program">
-      <div>
-        <h2 class="sideways blue">
-          Human Factors
-        </h2>
-        <p class="" style="padding-top:0px">
-          
-        </p>
+<style>
+  /* General Styles */
+  .subtitle {
+    color: #055581;
+    font-size: 22px;
+    text-transform: none;
+  }
+</style>
+<style>
+  /* Focus Area Cards */
+  .area-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .area-card {
+    border: 1px solid var(--border-light);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 8px;
+  }
+  .area-card-header {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    color: #055581;
+  }
+  .area-card-title {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    color: inherit;
+  }
+  .area-card-content {
+    padding: 0;
+    margin: 0;
+  }
+</style>
+<style>
+  .highlight-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  /* Highlight Cards */
+  .highlight-card {
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border-left: 4px solid #055581;
+  }
+  .highlight-card-header {
+    background: #f8f8f8;
+    padding: 1rem 1rem;
+    margin: 0;
+    color: #055581;
+    font-size: 18px;
+    font-weight: medium;
+  }
+  .highlight-card-content {
+    padding: 1rem;
+    margin: 0;
+  }
+</style>
+<Layout title="Automation Program">
+  <main class="container-xl program-container">
+    <section>
+      <h2 class="program-title">
+        Cooperative Driving Automation (CDA)
+      </h2>
+      <p class="max-w-lg">
+        Cooperative Driving Automation enables automated vehicles to communicate with other vehicles, infrastructure, and road users to coordinate movements and improve safety, efficiency, and mobility.
+      </p>
+      <div class="area-container max-w-lg">
+        <div class="area-card">
+          <div class="area-card-header">
+            <BullseyeIcon/>
+            <h3 class="area-card-title">Goal</h3>
+          </div>
+          <p class="area-card-content">
+            Assess the feasibility of conducting a small-scale Cooperative Driving Automation pilot (focusing on L0-2 with Interoperable Connectivity) and package the accomplishments for design and architecture.
+          </p>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            <CompassIcon/>
+            <h3 class="area-card-title">Approach</h3>
+          </div>
+          <p class="area-card-content">
+            Facilitate selected multimodal deployment use cases where infrastructure and AVs face clear operational challenges, without overlapping industry R&D.
+          </p>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            <CheckIcon/>
+            <h3 class="area-card-title">Anticipated Outcomes</h3>
+          </div>
+          <p class="area-card-content">
+            Reduced AV incidents/impacts and more successful overall deployment.
+          </p>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            <ListIcon/>
+            <h3 class="area-card-title">Near-Term Actions</h3>
+          </div>
+          <p class="area-card-content">
+            Address foundational CDA research such as in architecture and standards, research and assess potential CDA use cases, and support cross-cutting activities such as related analysis, modeling, and simulation across modes and use case scenarios.
+          </p>
+        </div>
       </div>
-    </SidebarLayout>
-</PageLayout>
+    </section>
+    <section class="max-w-lg">
+      <h3 class="program-title">
+        Current Project Highlights
+      </h3>
+      <div class="highlight-container">
+        <div class="highlight-card">
+          <h4 class="highlight-card-header">
+            CDA Design and Architecture
+          </h4>
+          <div class="highlight-card-content">
+            The objectives of this project are to:
+            <ol>
+              <li>
+                Develop and/or improve the CARMA Ecosystem's architecture and interfaces
+              </li>
+              <li>
+                Develop a CDA domain achievable within the next 5-7 years
+              </li>
+              <li>
+                Develop an understanding of spectrum requirements for the deployment 
+                of the use cases/applications developed thus far in the CDA Program. 
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <h4 class="highlight-card-header">
+            Near Term CDA Small Scale Prototype Planning
+          </h4>
+          <div class="highlight-card-content">
+            This project engages IOOs, OEMs, industry members and SDOs to assess readiness 
+            for CDA prototypes and/or pilot using stakeholder engagement and planning.
+          </div>
+        </div>
+        <div class="highlight-card">
+          <h4 class="highlight-card-header">
+            Truck Platooning Impacts on Bridges, Phase II: Structural Serviceability
+          </h4>
+          <div class="highlight-card-content">
+            Structural Serviceability will investigate potential impacts on service and fatigue limit states of common bridge types from most probable truck platoon configurations identified in Phase I.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

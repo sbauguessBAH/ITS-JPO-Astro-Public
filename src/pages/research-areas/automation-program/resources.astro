@@ -2,6 +2,7 @@
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import Layout from "./_layout.astro";
 
 const keywords = [
   "Automation Program",
@@ -15,21 +16,6 @@ const description =
   "The ITS JPO Automation Program focuses on the safe deployment of automated driving systems and advanced driver assistance systems through collaboration and research.";
 ---
 
-<PageLayout 
-  title="Automation Program" 
-  bannerImage={banner} 
-  keywords={keywords} 
-  description={description}
->
-  <Fragment slot="banner">
-    Automation Program
-  </Fragment>
-  <SidebarLayout path="/research-areas/automation-program">
-      <div>
-        <h2 class="sideways blue">Automation Program</h2>
-        <p class="" style="padding-top:0px">
-          
-        </p>
-      </div>
-    </SidebarLayout>
-</PageLayout>
+<Layout title="Automation Program">
+
+</Layout>
