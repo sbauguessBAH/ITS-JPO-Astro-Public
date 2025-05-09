@@ -12,7 +12,9 @@ import Layout from "./_layout.astro";
 import cdaIcon from "@/src/assets/images/automation/cda-icon.svg";
 import adsIcon from "@/src/assets/images/automation/ads-icon.svg";
 import humanIcon from "@/src/assets/images/automation/human-icon.svg";
+import humanImage from "@/src/assets/images/automation/human-factors.jpg";
 import amsIcon from "@/src/assets/images/automation/ams-icon.svg";
+import Roadmap from "./_roadmap.astro";
 
 const focusAreas = [
   { 
@@ -37,7 +39,7 @@ const focusAreas = [
     name: "Human Factors", 
     description: "Identify likely safety-relevant scenarios where human performance and interaction behaviors with vehicle automation technologies have a mismatch and develop corresponding Human Factors best practices.",
     path: "/research-areas/automation-program/focus-areas/human-factors",
-    background: automationImage,
+    background: humanImage,
     alt: "",
     icon: humanIcon,
     color: "orange",
@@ -72,12 +74,14 @@ const description =
   }
   .roadmap-container {
     width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
     /* overflow:hidden; */
   }
 </style>
 <style>
   .strategy-container {
-    background: #f7f7f7;
+    background: var(--background-light);
     border-radius: 8px;
     padding: 2rem;
     display: flex;
@@ -99,14 +103,14 @@ const description =
     gap: 0.5rem;
   }
   .strategy-title {
-    color: #055581;
+    color: var(--color-brand-dark);
     font-weight: 600;
     font-size: 1.2rem;
     margin: 0;
     padding: 0;
   }
   .strategy-icon {
-    background: #055581;
+    background: var(--color-brand-dark);
     color: white;
     display: flex;
     align-items: center;
@@ -141,13 +145,20 @@ const description =
   }
   .focus-area-card {
     position: relative;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
   }
+
+  .focus-area-card:hover {
+    font-weight: inherit;
+    text-decoration: none;
+  }
+  
   .focus-area-image {
     width: 100%;
     height: 100%;
     position: absolute;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     top: 0;
     left: 0;
     z-index: -2;
@@ -156,7 +167,7 @@ const description =
     /* 0.85 on homepage */
     background-image: linear-gradient(
       to bottom, 
-      rgba(7, 46, 85, 0.50), 
+      rgba(7, 46, 85, 0.4), 
       rgba(7, 46, 85, 1)
     ); 
     position: absolute;
@@ -164,12 +175,36 @@ const description =
     height: 100%;
     top: 0;
     left: 0;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     z-index: -1;
   }
+
+  .focus-area-image-overlay::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    border-radius: var(--border-radius);
+    -moz-transition: opacity var(--transition-duration) ease-in-out;
+    -o-transition: opacity var(--transition-duration) ease-in-out;
+    -webkit-transition: opacity var(--transition-duration) ease-in-out;
+    transition: opacity var(--transition-duration) ease-in-out;
+  }
+
+  .focus-area-card:hover .focus-area-image-overlay::after {
+    background-image: linear-gradient(
+      to bottom, 
+      rgba(78, 193, 224, 0.2), 
+      rgba(78, 193, 224, 0.4)
+    ); 
+    opacity: 1;
+  }
+
   .focus-area-body {
     display: flex;
     flex-direction: column;
+    /* justify-content: space-between; */
     padding: 1rem 1rem 2rem 1rem;
     height: 100%;
     width: 100%;
@@ -204,30 +239,17 @@ const description =
   .focus-area-description {
     color: white;
   }
-  .focus-area-button {
-    background: #f5c400;
-    color: rgba(7, 46, 85, 1);
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 800;
-    padding: 0.4rem 1rem;
-    color: white;
-  }
-  .focus-area-button:hover {
-    text-decoration: none;
-    font-weight: 800;
-  }
   .focus-area-blue {
-    background: rgba(78, 193, 224, 1);
+    background: var(--color-blue);
   }
   .focus-area-green {
-    background: rgba(186, 191, 16, 1);
+    background: var(--color-green-light);
   }
   .focus-area-purple {
-    background: rgba(134, 37, 79, 1);
+    background: var(--color-purple);
   }
   .focus-area-orange {
-    background: rgba(226, 132, 50, 1);
+    background: var(--color-orange);
   }
 </style>
 <Layout 
@@ -260,13 +282,13 @@ const description =
         The ITS JPO Automation Program's collaborative and multi-modal research portfolio 
         provides cross-cutting support across the U.S. DOT with the following strategies:
       </p>
-      <div class="strategy-container mt-4">
+      <div class="strategy-container mt-4" role="list">
         <h3 class="program-title">Research Strategies</h3>
         <div class="strategy">
-          <div class="strategy-icon">
+          <div class="strategy-icon" aria-hidden="true">
             1
           </div>
-          <div class="strategy-content">
+          <div class="strategy-content" role="listitem">
             <h4 class="strategy-title">
               Applications of Vehicle Automation Technologies
             </h4>
@@ -280,10 +302,10 @@ const description =
           </div>
         </div>
         <div class="strategy">
-          <div class="strategy-icon">
+          <div class="strategy-icon" aria-hidden="true">
             2
           </div>
-          <div class="strategy-content">
+          <div class="strategy-content" role="listitem">
             <h4 class="strategy-title">
               Analysis, Modeling, and Simulation (AMS) Capabilities
             </h4>
@@ -296,10 +318,10 @@ const description =
           </div>
         </div>
         <div class="strategy">
-          <div class="strategy-icon">
+          <div class="strategy-icon" aria-hidden="true">
             3
           </div>
-          <div class="strategy-content">
+          <div class="strategy-content" role="listitem">
             <h4 class="strategy-title">
               Human Interactions
             </h4>
@@ -311,10 +333,10 @@ const description =
           </div>
         </div>
         <div class="strategy">
-          <div class="strategy-icon">
+          <div class="strategy-icon" aria-hidden="true">
             4
           </div>
-          <div class="strategy-content">
+          <div class="strategy-content" role="listitem">
             <h4 class="strategy-title">
               Automated Driving Systems (ADS) Technologies
             </h4>
@@ -336,19 +358,21 @@ const description =
         near-term research focus areas to directly address strategies stated above, 
         and achieve desired outcomes across four current focus areas:
       </p>
-      <div class="focus-area-container mt-4">
+      <div class="focus-area-container mt-4" role="directory">
         {focusAreas.map(focusArea => (
-          <div class="focus-area-card shadow">
+          <a 
+            class="focus-area-card shadow" 
+            href={base_url(focusArea.path)}
+            aria-label={`Link to Focus Area: ${focusArea.name}`}
+          >
             <Image 
               src={focusArea.background} 
               alt={focusArea.alt} 
               class="focus-area-image"
             />
-            <div class:list={[
-              "focus-area-image-overlay",
-            ]}/>
+            <div class="focus-area-image-overlay"/>
             <div class="focus-area-body">
-              <div class="focus-area-icon-container">
+              <div class="focus-area-icon-container" aria-hidden="true">
                 <div
                   class:list={[
                     "focus-area-icon",
@@ -360,7 +384,7 @@ const description =
                 >
                   <Image 
                     src={focusArea.icon} 
-                    alt="Icon" 
+                    alt={focusArea.name} 
                     class="focus-area-icon-image"
                   />
                 </div>
@@ -372,8 +396,9 @@ const description =
                 <p class="focus-area-description">
                   {focusArea.description}
                 </p>
-                <a 
+                {/* <a 
                   href={base_url(focusArea.path)}
+                  aria-label={`Link to Focus Area: ${focusArea.name}`}
                   class:list={[
                     "focus-area-button",
                     { "focus-area-purple": focusArea.color === "purple" },
@@ -383,10 +408,10 @@ const description =
                   ]}
                 >
                   EXPLORE
-                </a>
+                </a> */}
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
@@ -397,12 +422,8 @@ const description =
         near-term research focus areas to directly address strategies stated above, 
         and achieve desired outcomes across four current focus areas:
       </p>
-      <div class="roadmap-container mt-4 shadow p-2">
-        <Image 
-          src={roadmapImage} 
-          alt="Roadmap"
-          class="img img-fluid roadmap-image"
-        />
+      <div class="roadmap-container mt-4 shadow">
+        <Roadmap/>
       </div>
     </section>
   </main>

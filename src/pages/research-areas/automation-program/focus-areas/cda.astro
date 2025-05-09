@@ -34,7 +34,6 @@ const description =
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
-    padding: 1rem;
   }
   @media (min-width: 992px) {
     .area-container {
@@ -68,7 +67,7 @@ const description =
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+    /* padding: 1rem; */
   }
   /* Highlight Cards */
   .highlight-card {
@@ -92,7 +91,7 @@ const description =
   }
 </style>
 <Layout title="Automation Program">
-  <main class="container-xl program-container">
+  <main class="container-xl program-container gap-md">
     <section>
       <h2 class="program-title">
         Cooperative Driving Automation (CDA)
@@ -100,7 +99,7 @@ const description =
       <p class="max-w-lg program-text">
         Cooperative Driving Automation enables automated vehicles to communicate with other vehicles, infrastructure, and road users to coordinate movements and improve safety, efficiency, and mobility.
       </p>
-      <div class="area-container">
+      <div class="area-container mt-4">
         <div class="area-card">
           <div class="area-card-header">
             <BullseyeIcon/>
@@ -143,7 +142,7 @@ const description =
       <h3 class="program-title">
         Current Project Highlights
       </h3>
-      <div class="highlight-container">
+      <div class="highlight-container mt-4">
         <div class="highlight-card">
           <h4 class="highlight-card-header">
             CDA Design and Architecture
