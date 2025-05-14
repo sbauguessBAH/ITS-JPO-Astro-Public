@@ -16,7 +16,6 @@ export const navigation: NavigationItem[] = [
           { name: 'Egan Smith', url: '/about/contact-us/staff-listing/Egan-Smith'}
         ]},
         { name: 'Join Our Mailing List', url: '/about/contact-us/mailinglist' },
-        { name: 'ITS Specialists in Field Offices', url: 'https://www.fhwa.dot.gov/resourcecenter/teams/operations/index.cfm', isExternal: true },
       ]},
     ]
   },
