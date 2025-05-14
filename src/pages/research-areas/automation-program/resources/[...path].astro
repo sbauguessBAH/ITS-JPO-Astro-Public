@@ -1,0 +1,255 @@
+---
+import Layout from "../_layout.astro";
+import { getEntry } from "astro:content";
+import base_url from "@/src/lib/base_url";
+
+export const areas = [
+  {
+    title: "All",
+    path: undefined
+  },
+  {
+    title: "Analysis, Modeling, and Simulation (AMS)",
+    path: "ams"
+  },
+  {
+    title: "Automated Driving System (ADS) Integration",
+    path: "ads"
+  },
+  {
+    title: "Cooperative Driving Automation (CDA)",
+    path: "cda"
+  },
+  {
+    title: "Human Factors",
+    path: "human-factors"
+  },
+  {
+    title: "Other",
+    path: "other"
+  }
+]
+
+export async function getStaticPaths() {
+  return areas.map(area => ({
+    params: {
+      path: area.path
+    },
+    props: {
+      title: area.title
+    }
+  }))
+}
+
+const { path } = Astro.params;
+const { title } = Astro.props;
+
+const resources = await getEntry("automation", "automation").then(entry => entry.data);
+
+interface Deliverable {
+  title: string;
+  url: string;
+  year: number;
+}
+
+interface Project {
+  area: string;
+  title: string;
+  deliverables: Deliverable[]
+}
+
+const projects = resources
+  .filter(resource => title === "All" || resource.area === title)
+  .reduce((acc, curr) => {
+    const index = acc.findIndex(prev => prev.title === curr.project);
+
+    if (index >= 0) {
+      acc[index].deliverables.push({
+        title: curr.deliverable,
+        year: curr.year,
+        url: curr.url
+      })
+    } else {
+      acc.push({
+        title: curr.project,
+        area: curr.area,
+        deliverables: [
+          {
+            title: curr.deliverable,
+            year: curr.year,
+            url: curr.url
+          }
+        ]
+      })
+    }
+
+    return acc;
+  }, [] as Project[])
+---
+<style>
+  .resource-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .resource-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .resource-menu-item {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-light);
+    font-weight: 600;
+  }
+  .resource-menu-item:hover {
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .resource-menu-item-active {
+    background: rgb(var(--color-brand));
+    color: white;
+  }
+
+  .resource-project {
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+  }
+
+  .resource-project-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .resource-area-badge {
+    background: rgb(var(--color-gray-light));
+    border: 1px solid var(--border-light);
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    height: 24px;
+    width: fit-content;
+    padding: 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  .resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .deliverable-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .deliverable-list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .deliverable-title {
+    flex-basis: calc(9/10 * 100%);
+  }
+
+  .deliverable-title:hover {
+    font-weight: 400;
+  }
+
+  .deliverable-year {
+    font-weight: 600;
+  }
+
+  @media (min-width: 992px) {
+    .resource-container {
+      flex-direction: row;
+    }
+    .resource-menu {
+      flex-basis: calc(1/4 * 100%);
+    }
+    .resource-menu-item {
+
+    }
+    .resource-list {
+      flex-basis: calc(3/4 * 100%);
+    }
+  }
+</style>
+<style>
+
+</style>
+<Layout 
+  title="Automation Program"
+>
+  <main class="container-xl program-container gap-md">
+    <section>
+      <h2 class="program-title">Resources</h2>
+      <div class="resource-container mt-4">
+        <nav class="resource-menu">
+          {areas.map(area => (
+            <a
+              class:list={[
+                "resource-menu-item",
+                { "resource-menu-item-active": area.title === title }
+              ]}
+              href={base_url(`/research-areas/automation-program/resources/${area.path ?? ""}`)}
+              aria-label={`Show resources for ${area.title}`}
+            >
+              {area.title}
+            </a>
+          ))}
+        </nav>
+        <div class="resource-list">
+          {projects.map(project => {
+            const sortedDeliverables = project.deliverables.toSorted((a, b) => b.year - a.year)
+            return (
+              <div class="resource-project">
+                <div class="resource-project-header">
+                  <div class="resource-area-badge">
+                    {project.area}
+                  </div>
+                  <h3 class="program-title">
+                    {project.title}
+                  </h3>
+                </div>
+                <ul class="deliverable-list">
+                  {sortedDeliverables.map(deliverable => (
+                    <li class="deliverable-list-item">
+                      <a 
+                        class="deliverable-title" 
+                        href={deliverable.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        {deliverable.title}
+                      </a>
+                      <div class="deliverable-year">
+                        {deliverable.year}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

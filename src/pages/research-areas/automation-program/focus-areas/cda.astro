@@ -1,29 +1,15 @@
 ---
-import banner from "@/src/assets/images/banners/Automation_Banner.png";
-import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
-import BullseyeIcon from "../_bullseye-icon.astro";
-import CompassIcon from "../_compass-icon.astro";
-import CheckIcon from "../_check-icon.astro";
-import ListIcon from "../_list-icon.astro";
+import BullseyeIcon from "@/src/components/programs/icons/bullseye-icon.astro";
+import CompassIcon from "@/src/components/programs/icons/compass-icon.astro";
+import CheckIcon from "@/src/components/programs/icons/check-icon.astro";
+import ListIcon from "@/src/components/programs/icons/list-icon.astro";
 import Layout from "../_layout.astro";
-
-const keywords = [
-  "Automation Program",
-  "Transportation Research",
-  "Automated Driving Systems",
-  "Advanced Driver Assistance Systems",
-  "ADAS",
-];
-
-const description =
-  "The ITS JPO Automation Program focuses on the safe deployment of automated driving systems and advanced driver assistance systems through collaboration and research.";
 ---
 
 <style>
   /* General Styles */
   .subtitle {
-    color: #055581;
+    color: rgb(var(--color-brand-dark));
     font-size: 22px;
     text-transform: none;
   }
@@ -53,7 +39,7 @@ const description =
     flex-direction: row;
     gap: 0.5rem;
     align-items: center;
-    color: #055581;
+    color: rgb(var(--color-brand-dark));
   }
   .area-card-title {
     margin: 0;
@@ -75,19 +61,20 @@ const description =
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    border-left: 4px solid #055581;
+    border-left: 4px solid rgb(var(--color-brand-dark));
   }
   .highlight-card-header {
-    background: #f8f8f8;
+    background: rgb(var(--color-gray-light));
     padding: 1rem 1rem;
     margin: 0;
-    color: #055581;
+    color: rgb(var(--color-brand-dark));
     font-size: 18px;
     font-weight: medium;
   }
   .highlight-card-content {
     padding: 1rem;
     margin: 0;
+    font-size: 1.1rem;
   }
 </style>
 <Layout title="Automation Program">
@@ -102,7 +89,7 @@ const description =
       <div class="area-container mt-4">
         <div class="area-card">
           <div class="area-card-header">
-            <BullseyeIcon/>
+            <BullseyeIcon size={24}/>
             <h3 class="area-card-title">Goal</h3>
           </div>
           <p class="program-text">
@@ -111,7 +98,7 @@ const description =
         </div>
         <div class="area-card">
           <div class="area-card-header">
-            <CompassIcon/>
+            <CompassIcon size={24}/>
             <h3 class="area-card-title">Approach</h3>
           </div>
           <p class="program-text">
@@ -120,7 +107,7 @@ const description =
         </div>
         <div class="area-card">
           <div class="area-card-header">
-            <CheckIcon/>
+            <CheckIcon size={24}/>
             <h3 class="area-card-title">Anticipated Outcomes</h3>
           </div>
           <p class="program-text">
@@ -129,7 +116,7 @@ const description =
         </div>
         <div class="area-card">
           <div class="area-card-header">
-            <ListIcon/>
+            <ListIcon size={24}/>
             <h3 class="area-card-title">Near-Term Actions</h3>
           </div>
           <p class="program-text">

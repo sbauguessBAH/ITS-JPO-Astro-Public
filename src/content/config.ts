@@ -85,4 +85,17 @@ export const collections = {
     }),
   }),
 
+  // Automation Resources
+  automation: defineCollection({
+    type: 'data',
+    schema: z.array(
+      z.object({
+        area: z.string(),
+        deliverable: z.string(),
+        project: z.string(),
+        url: z.string().url(),
+        year: z.number().int()
+      })
+    )
+  })
 };

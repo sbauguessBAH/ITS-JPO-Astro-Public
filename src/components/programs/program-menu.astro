@@ -1,0 +1,190 @@
+---
+import base_url from "@/src/lib/base_url";
+import { getTrimmedPathname } from "@/src/lib/navigation";
+import type { ChildNavigationItem } from "@/src/types";
+
+const pathname = Astro.url.pathname;
+const trimmedPathname = getTrimmedPathname(pathname);
+
+interface Props {
+  items: ChildNavigationItem[]
+}
+
+const { items } = Astro.props
+---
+<style>
+  .menu-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: white;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+  .menu-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  @media (min-width: 1200px) {
+    .menu-container {
+      padding: 0;
+    }
+  }
+  /* .menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 50px;
+  } */
+  /* .menu-nav {
+    padding: 0;
+    margin: 0;
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+  } */
+
+  .menu {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .menu-toggle {
+    width: 100%;
+    background: white;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    color: black;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .menu-toggle-icon {
+    font-size: 1.5rem;
+  }
+
+  .menu-nav {
+    padding: 0;
+    margin: 0;
+    /* display: none; */
+    flex-direction: column;
+  }
+
+  @media (min-width: 992px) {
+    .menu {
+      flex-direction: row;
+      align-items: center;
+    }
+    .menu-nav {
+      display: flex;
+      justify-content: start;
+      flex-direction: row;
+    }
+  }
+
+  .menu-list-item {
+    list-style: none;
+  }
+  .menu-item {
+    padding: 0.5rem 1rem;
+    color: rgb(var(--color-brand-dark));
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+  .menu-item:hover {
+    background: #e9ecef;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .menu-item-active {
+    background: rgb(var(--color-brand-dark));
+    color: white;
+  }
+  .menu-item-active:hover {
+    background: rgb(var(--color-brand-dark));
+    color: white;
+  }
+</style>
+<style>
+  .dropdown-menu {
+    border-radius: var(--border-radius);
+    padding: 0.25rem;
+  }
+  .dropdown-item {
+    border-radius: var(--border-radius-sm);
+  }
+  .dropdown-item:hover {
+    font-weight: 400;
+  }
+</style>
+<div class="menu-wrapper">
+  <div class="menu-container">
+    <nav class="menu">
+      <button 
+        class="menu-toggle d-flex d-lg-none" 
+        type="button" 
+        data-toggle="collapse" 
+        data-target="#menu" 
+        aria-controls="menu"
+        aria-expanded="false" 
+        aria-label="Toggle Program Menu"
+      >
+        Program Menu <i class="menu-toggle-icon fa-solid fa-plus"></i>
+      </button>
+      <ul class="menu-nav collapse" id="menu">
+        {items.map(item => (
+          <>
+            <li class="menu-list-item">
+              <a
+                class:list={[
+                  "menu-item",
+                  { "menu-item-active": 
+                    item.pages || item.hasGeneratedChildItems
+                      ? trimmedPathname.startsWith(item.url) 
+                      : trimmedPathname === item.url 
+                  },
+                  { "dropdown-toggle": item.pages }
+                ]}
+                href={
+                  item.pages 
+                    ? "#" 
+                    : item.isExternal
+                      ? item.url
+                      : base_url(item.url)
+                }
+                ...{...(item.pages && { "role": "button", "data-bs-toggle": "dropdown", "aria-expanded": "false" })}
+              >
+                {item.name}
+              </a>
+              {item.pages && (
+                <ul class="dropdown-menu mt-1">
+                  {item.pages.map(page => (
+                    <li>
+                      <a 
+                        class="dropdown-item"
+                        href={
+                          page.isExternal
+                            ? page.url 
+                            : base_url(page.url)
+                        }
+                      >
+                        {page.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          </>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</div>

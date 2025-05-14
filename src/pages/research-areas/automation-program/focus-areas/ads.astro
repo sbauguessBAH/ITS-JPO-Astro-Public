@@ -1,29 +1,15 @@
 ---
-import banner from "@/src/assets/images/banners/Automation_Banner.png";
-import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
-import BullseyeIcon from "../_bullseye-icon.astro";
-import CompassIcon from "../_compass-icon.astro";
-import CheckIcon from "../_check-icon.astro";
-import ListIcon from "../_list-icon.astro";
+import BullseyeIcon from "@/src/components/programs/icons/bullseye-icon.astro";
+import CompassIcon from "@/src/components/programs/icons/compass-icon.astro";
+import CheckIcon from "@/src/components/programs/icons/check-icon.astro";
+import ListIcon from "@/src/components/programs/icons/list-icon.astro";
 import Layout from "../_layout.astro";
-
-const keywords = [
-  "Automation Program",
-  "Transportation Research",
-  "Automated Driving Systems",
-  "Advanced Driver Assistance Systems",
-  "ADAS",
-];
-
-const description =
-  "The ITS JPO Automation Program focuses on the safe deployment of automated driving systems and advanced driver assistance systems through collaboration and research.";
 ---
 
 <style>
   /* General Styles */
   .subtitle {
-    color: #055581;
+    color: rgb(var(--color-brand-dark));
     font-size: 22px;
     text-transform: none;
   }
@@ -53,7 +39,7 @@ const description =
     flex-direction: row;
     gap: 0.5rem;
     align-items: center;
-    color: #055581;
+    color: rgb(var(--color-brand-dark));
   }
   .area-card-title {
     margin: 0;
@@ -75,65 +61,66 @@ const description =
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    border-left: 4px solid #055581;
+    border-left: 4px solid rgb(var(--color-brand-dark));
   }
   .highlight-card-header {
-    background: #f8f8f8;
+    background: rgb(var(--color-gray-light));
     padding: 1rem 1rem;
     margin: 0;
-    color: #055581;
+    color: rgb(var(--color-brand-dark));
     font-size: 18px;
     font-weight: medium;
   }
   .highlight-card-content {
     padding: 1rem;
     margin: 0;
+    font-size: 1.1rem;
   }
 </style>
 <Layout title="Automation Program">
   <main class="container-xl program-container gap-md">
     <section>
       <h2 class="program-title">
-        Cooperative Driving Automation (CDA)
+        Automated Driving System (ADS) Integration
       </h2>
       <p class="max-w-lg program-text">
-        Cooperative Driving Automation enables automated vehicles to communicate with other vehicles, infrastructure, and road users to coordinate movements and improve safety, efficiency, and mobility.
+        ADS Integration research focuses on addressing challenges and developing approaches for the safe and efficient integration of Automated Driving Systems into the transportation ecosystem.
       </p>
       <div class="area-container mt-4">
         <div class="area-card">
           <div class="area-card-header">
-            <BullseyeIcon/>
+            <BullseyeIcon size={24}/>
             <h3 class="area-card-title">Goal</h3>
           </div>
           <p class="program-text">
-            Assess the feasibility of conducting a small-scale Cooperative Driving Automation pilot (focusing on L0-2 with Interoperable Connectivity) and package the accomplishments for design and architecture.
+            Explore recommended practices to address safe and efficient Automated Driving System (ADS) Integration into the transportation system.
           </p>
         </div>
         <div class="area-card">
           <div class="area-card-header">
-            <CompassIcon/>
+            <CompassIcon size={24}/>
             <h3 class="area-card-title">Approach</h3>
           </div>
           <p class="program-text">
-            Facilitate selected multimodal deployment use cases where infrastructure and AVs face clear operational challenges, without overlapping industry R&D.
+            Address gaps in transportation system oversight and understanding of ADS performance inhibiting safe and efficient ADS integration.
           </p>
         </div>
         <div class="area-card">
           <div class="area-card-header">
-            <CheckIcon/>
+            <CheckIcon size={24}/>
             <h3 class="area-card-title">Anticipated Outcomes</h3>
           </div>
           <p class="program-text">
-            Reduced AV incidents/impacts and more successful overall deployment.
+            Enhance safety and efficiency around AV operations and system user acceptance with national-level consistency.
           </p>
         </div>
         <div class="area-card">
           <div class="area-card-header">
-            <ListIcon/>
+            <ListIcon size={24}/>
             <h3 class="area-card-title">Near-Term Actions</h3>
           </div>
           <p class="program-text">
-            Address foundational CDA research such as in architecture and standards, research and assess potential CDA use cases, and support cross-cutting activities such as related analysis, modeling, and simulation across modes and use case scenarios.
+            Develop a deeper understanding of ADS technology capabilities, applications/use cases, and relevant gaps in oversight that affect safe AV operations.
           </p>
         </div>
       </div>
@@ -145,39 +132,26 @@ const description =
       <div class="highlight-container mt-4">
         <div class="highlight-card">
           <h4 class="highlight-card-header">
-            CDA Design and Architecture
+            ADS & Traffic Regulations Voluntary Specifications Development Playbook 
           </h4>
           <div class="highlight-card-content">
-            The objectives of this project are to:
-            <ol>
-              <li>
-                Develop and/or improve the CARMA Ecosystem's architecture and interfaces
-              </li>
-              <li>
-                Develop a CDA domain achievable within the next 5-7 years
-              </li>
-              <li>
-                Develop an understanding of spectrum requirements for the deployment 
-                of the use cases/applications developed thus far in the CDA Program. 
-              </li>
-            </ol>
+            This project uses the prototype traffic regulation data framework completed in a previous project to advance the conversation about the development of a voluntary data specification for traffic regulations.
           </div>
         </div>
         <div class="highlight-card">
           <h4 class="highlight-card-header">
-            Near Term CDA Small Scale Prototype Planning
+            Develop Innovative Techniques/Methods-Support Changeable Roadway Testing Environment 
           </h4>
           <div class="highlight-card-content">
-            This project engages IOOs, OEMs, industry members and SDOs to assess readiness 
-            for CDA prototypes and/or pilot using stakeholder engagement and planning.
+            This project will evaluate the feasibility of mimicking roadway features that will facilitate depiction of realistic roadway scenarios to all road users that can be easily custom configured or changed to a different scenario without permanently changing basic test facilities roadway configurations.
           </div>
         </div>
         <div class="highlight-card">
           <h4 class="highlight-card-header">
-            Truck Platooning Impacts on Bridges, Phase II: Structural Serviceability
+            ADS Integration – Recommended Practices 
           </h4>
           <div class="highlight-card-content">
-            Structural Serviceability will investigate potential impacts on service and fatigue limit states of common bridge types from most probable truck platoon configurations identified in Phase I.
+            USDOT aims to establish initial national-level recommended practices for integration of ADS into the transportation system to provide states, localities, automation companies, and other road users with a well-supported, consistent basis for ADS expectations and assurances that operations will be safe and efficient.
           </div>
         </div>
       </div>
