@@ -1,0 +1,66 @@
+---
+import Card from "@/src/components/pcb/Card.astro";
+import scrcImage from "@/src/assets/images/pcb/resources/scrc.png";
+import v2xImage from "@/src/assets/images/pcb/resources/v2x.jpg";
+import caveImage from "@/src/assets/images/pcb/resources/cave.jpg";
+import cohortImage from "@/src/assets/images/pcb/resources/cohort.jpg";
+import { Image } from "astro:assets";
+import base_url from "@/src/lib/base_url";
+import OverlayCard, { type OverlayResource } from "@/src/components/programs/overlay-card.astro";
+
+const resources: OverlayResource[] = [
+  {
+    name: "Smart Community Resource Center",
+    description: "An online resource connecting states, tribal governments, and local communities with resources to help develop intelligent transportation systems for smart community transportation programs.",
+    path: "https://www.its.dot.gov/scrc/index.html#/",
+    background: scrcImage,
+    alt: "",
+    isExternalLink: true,
+    color: "blue"
+  },
+  {
+    name: "Vehicle-to-Everything (V2X) Training",
+    description: "A comprehensive training program provides foundational trainings for practitioners as well as technical trainings on V2X standards.",
+    path: "/resources/pcb/trainings/v2x-trainings",
+    background: v2xImage,
+    alt: "",
+    color: "green"
+  },
+  {
+    name: "Connected and Automated Vehicle Education (CAVe)",
+    description: "Hands-on learning experience to aid curriculum, and support instruction for community colleges and trade schools, facilitate benchmarking connected vehicle equipment, and support onboarding of ITS technicians.",
+    path: "/resources/pcb/cave",
+    background: caveImage,
+    alt: "",
+    color: "orange"
+  },
+  {
+    name: "Accelerating V2X Cohort",
+    description: "A community of practice of state and local agencies -- and other infrastructure owners and operators (IOOs) -- sharing best practices and lessons learned to  accelerate the deployment of V2X technologies.",
+    path: "/resources/pcb/v2x-cohort",
+    background: cohortImage,
+    alt: "",
+    color: "purple"
+  }
+]
+---
+<style>
+  .resource-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(100px, 300px);
+    gap: var(--size);
+  }
+
+  @media (min-width: 992px) {
+    .resource-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+</style>
+<div class="resource-container" role="directory">
+  {resources.map(resource => (
+    <OverlayCard {...resource} />
+  ))}
+</div>

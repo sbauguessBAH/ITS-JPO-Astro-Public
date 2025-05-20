@@ -1,0 +1,78 @@
+---
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import { Image } from "astro:assets";
+import { academicResources } from "./resources";
+---
+<style>
+  .resource-card:hover {
+    background: rgba(var(--color-brand-light), 0.5);
+    box-shadow: var(--box-shadow-lg);
+  }
+
+  .resource-card-image {
+    width: 100%;
+    object-fit: cover;
+    height: 140px;
+  }
+
+  .resource-card-body {
+    overflow: visible;
+    padding: 0;
+  }
+
+  .resource-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    height: 100%;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--size);
+  }
+
+  @media (min-width: 992px) {
+    .card-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .resource-section {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
+  @media (min-width: 1200px) {
+    .resource-section {
+      padding: 2rem 2rem 4rem 2rem;
+    }
+  }
+</style>
+<section class="background-light">
+  <div class="container-xl resource-section">
+    <h2 class="program-title-lg mb-4 text-center">
+      All Academic Resources
+    </h2>
+    <div class="card-grid">
+      {academicResources.map(resource => (
+        <Card href={`/resources/pcb/academic-resources/${resource.slug}`} shadow="none" radius="md" class="resource-card">
+          <CardBody class="resource-card-body">
+            <Image 
+              src={resource.image}
+              alt={resource.title}
+              class="resource-card-image"
+            />
+          </CardBody>
+          <CardFooter class="resource-card-footer">
+            <h3 class="program-title-xs text-foreground">
+              {resource.title}
+            </h3>
+          </CardFooter>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

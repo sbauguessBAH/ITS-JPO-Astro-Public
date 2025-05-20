@@ -1,0 +1,193 @@
+---
+import base_url from '@/src/lib/base_url';
+import { Image } from 'astro:assets';
+import { categories } from './[...path].astro';
+
+interface Props {
+  title: string;
+  description: string;
+  url?: string;
+  isExternal?: boolean;
+  image?: ImageMetadata | Promise<{ default: ImageMetadata }>;
+  alt?: string;
+  category: string;
+  type: string;
+  action?: string;
+}
+
+const {
+  title,
+  description,
+  url,
+  isExternal,
+  image,
+  alt,
+  category,
+  type,
+  action
+} = Astro.props;
+
+const props = {
+  ...(url && { "href": base_url(url) }),
+  ...(url && isExternal && { "href": url, "target": "_blank", "rel": "noopener noreferrer" }),
+}
+
+const originalCategoryTitle = categories.find(item => item.category === category)?.title;
+const categoryTitle = originalCategoryTitle === "Transportation Systems Management and Operations (TSMO)" 
+  ? "TSMO"
+  : originalCategoryTitle
+---
+<style>
+  .course-card {
+    border: 1px solid #10020215;
+    border-radius: var(--radius-md);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 200ms;
+    background: white;
+    position: relative;
+    /* box-shadow: var(--box-shadow) */
+  }
+
+  .course-card:hover {
+    box-shadow: var(--box-shadow-lg)
+  }
+
+  .course-card-content {
+    padding: 1rem 1rem 0.4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .course-card-type {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #7d7d7d;
+  }
+
+  .course-card-title {
+    font-weight: 600;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .course-card-description-container {
+    flex-grow: 1;
+  }
+
+  .course-card-description {
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 1rem;
+  }
+
+  .course-card-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: #055581;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+    justify-self: end;
+  }
+
+  .course-card-button::after {
+    color: white;
+  }
+
+  .course-card-button:hover {
+    text-decoration: none;
+    font-weight: 400
+  }
+
+  .course-card-image-container {
+    position: relative;
+    background: var(--border-light);
+  }
+
+  .course-card-image {
+    padding: 0;
+    margin: 0;
+    height: 150px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .course-card-external-badge {
+    position: absolute;
+    top: 0;
+    margin: 0.2rem 0;
+    z-index: 10;
+  }
+
+  .course-card-footer {
+    border-top: 1px solid var(--border-light);
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0.4rem 0.4rem 0.4rem;
+  }
+
+  .course-card-badge {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 1rem;
+    width: fit-content;
+    padding: 0.1rem 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: black;
+    margin-top: 0.5rem;
+    left: 0.5rem;
+    position: absolute;
+    z-index: 10;
+  }
+
+</style>
+<div class="course-card">
+  {image && 
+    <Image
+      src={image}
+      alt={alt ?? "No alt provided"}
+      class="course-card-image"
+    />
+  }
+  {categoryTitle &&
+    <div class="course-card-badge">
+      {categoryTitle}
+    </div>
+  }
+  <div class="course-card-content">
+    <p class="course-card-type">
+      {type}
+    </p>
+    <h3 class="course-card-title">
+      {title}
+    </h3>
+    <div class="course-card-description-container">
+      <p class="course-card-description">
+        {description}
+      </p>
+    </div>
+    <div class="course-card-footer">
+      {url ? (
+        <a class="course-card-button" {...props}>
+          {action ?? "Learn More"}
+        </a>
+      ) : (
+        <p>Contact the PCB Program.</p>
+      )}
+    </div>
+  </div>
+</div>

@@ -60,13 +60,12 @@ const items: ChildNavigationItem[] = [
   description={description}
 >
   <ProgramBanner 
-    breadcrumbs={[
-      "Research Areas", 
-      "Automation Program"
-    ]}
     hasOverlay
     image={banner}
   >
+    <Fragment slot="section">
+      Research Areas
+    </Fragment>
     <Fragment slot="title">
       AUTOMATION PROGRAM
     </Fragment>

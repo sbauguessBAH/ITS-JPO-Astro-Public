@@ -1,0 +1,36 @@
+---
+import base_url from '@/src/lib/base_url';
+
+interface Props {
+  items: { name: string, path?: string }[]
+}
+
+const { items } = Astro.props;
+---
+<style>
+  a:hover {
+    font-weight: normal;
+    color: rgb(var(--color-brand-dark))
+  }
+  a {
+    color: rgb(var(--color-brand));
+  }
+</style>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb w-full mb-2">
+    {
+      items.map((item, index) => (
+        <li
+          class:list={["breadcrumb-item", { active: index === items.length - 1 }]}
+          aria-current={index === items.length - 1 ? "page" : "false"}
+        >
+          {index === items.length - 1 || !item.path ? (
+            <span>{item.name}</span>
+          ) : (
+            <a href={base_url(item.path)} >{item.name}</a>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

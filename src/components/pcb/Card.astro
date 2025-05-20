@@ -28,6 +28,7 @@ interface Props extends HTMLAttributes<'div'>{
     image?: string,
     base?: string,
     content?: string,
+    title?: string
   }
 }
 
@@ -173,7 +174,7 @@ const props = {
   }
   {isExternalLink && <span class="badge rounded-0 top-0 position-absolute bg-secondary text-bg-secondary my-1">External Link</span>}
   <div class:list={["card-content", classNames?.content]}>
-    {title && <h3>{title}</h3>}
+    {title && <h3 class={classNames?.title}>{title}</h3>}
     {description && <p>{description}</p>}
     
   </div>

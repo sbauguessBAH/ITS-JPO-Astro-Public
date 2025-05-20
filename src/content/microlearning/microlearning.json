@@ -4,42 +4,42 @@
     "trainings": [
       { 
         "title": "ITS and Safe System Approach", 
-        "description": "U.S. roadway fatalities have stagnated in the past decade, prompting the USDOT's National Roadway Safety Strategy to promote ITS technologies and the Safe System Approach to enhance transportation safety, especially for vulnerable users.",
+        "description": "This video provides an overview of how intelligent transportation systems (ITS) aligns with the Safe System Approach (SSA) - a guiding framework to enhance safety on our surface transportation system.",
         "url": "https://www.youtube.com/watch?v=DF5GxvMGvNs", 
         "isExternal": true,
         "image": "./images/safe-system.png"
       },
       { 
         "title": "ITS and Safer People", 
-        "description": "The video highlights how Intelligent Transportation Systems (ITS) enhance road safety by encouraging responsible driving and providing alerts for pedestrian, cyclist, and visually-impaired users, using technologies like V2I communication, flashing beacons, and signal systems.",
+        "description": "This video highlights how ITS can be used to encourage safe, responsible driving and behavior by people who use our roads and create conditions that prioritize their ability to reach their destination unharmed.",
         "url": "https://www.youtube.com/watch?v=N5qZcglApEo", 
         "isExternal": true,
         "image": "./images/safer-people.png"
       },
       { 
         "title": "ITS and Safer Vehicles", 
-        "description": "Intelligent Transportation Systems (ITS) enhance vehicle safety by expanding crash prevention technologies and minimizing crash impacts for both occupants and non-occupants. Examples include advanced vehicle systems that improve overall safety.",
+        "description": "This video highlights how ITS can expand the availability of vehicle systems and features that help to prevent crashes and minimize the impact of crashes on both occupants and non-occupants.",
         "url": "https://www.youtube.com/watch?v=4Gi_6KVJzD8", 
         "isExternal": true,
         "image": "./images/safer-vehicles.png"
       },
       { 
         "title": "ITS and Safer Speeds", 
-        "description": "Intelligent Transportation Systems (ITS) enhance safety by promoting safer speeds through speed warnings, variable limits, and automated enforcement, reducing collisions and improving driver behavior.",
+        "description": "This video discusses how ITS promotes safer speeds in all roadway environments by supporting a combination of thoughtful, context-appropriate roadway design, appropriate speed-limit setting, targeted education, outreach campaigns, and enforcement.",
         "url": "https://www.youtube.com/watch?v=5l8M7vAESPE", 
         "isExternal": true,
         "image": "./images/safer-speeds.png"
       },
       { 
         "title": "ITS and Safer Roads", 
-        "description": "Intelligent Transportation Systems (ITS) improve road safety by mitigating human errors and promoting safer behaviors through technologies like active traffic management, collision alerts, and smart work zones.",
+        "description": "This video highlights how ITS enables design of roadway environments that mitigate human mistakes and account for injury tolerances, encourage safer behaviors, and facilitate safe travel by the most vulnerable users.",
         "url": "https://www.youtube.com/watch?v=jaFAltGvMe0", 
         "isExternal": true,
         "image": "./images/safer-roads.png"
       },
       { 
         "title": "ITS and Post-Crash Care", 
-        "description": "Intelligent Transportation Systems (ITS) improve post-crash care by enabling faster emergency response and safer working conditions for first responders through strategies like emergency vehicle preemption and unmanned aircraft systems for crash reconstruction.",
+        "description": "This video highlights how ITS enhances the survivability of crashes by allowing expedient access to emergency medical care while creating a safe working environment for vital first responders and preventing secondary crashes through robust traffic incident management practices.",
         "url": "https://www.youtube.com/watch?v=lZBQ9nHTras", 
         "isExternal": true,
         "image": "./images/post-crash-care.png"

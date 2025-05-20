@@ -1,0 +1,74 @@
+---
+import Layout from "./_layout.astro";
+import { Image } from "astro:assets";
+import cohortImage from "@/src/assets/images/pcb/cohort-map.jpg";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+---
+<style>
+  .map-card-image {
+    width: 100%;
+    height: auto;
+  }
+  .map-card-body {
+    overflow: visible;
+  }
+
+  .map-card-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+    background: rgb(var(--color-gray-light));
+  }
+</style>
+<Layout>
+  <main class="container-xl program-main program-padding">
+    <section class="program-section">
+      <Breadcrumb items={[
+        { name: "Overview", path: "/resources/pcb" },
+        { name: "Accelerating V2X Cohort" }
+      ]}/>
+      <h2 class="program-title-lg">
+        Accelerating V2X Cohort
+      </h2>
+      <p class="program-text">
+        The Accelerating V2X Cohort is a collaborative initiative to bring 
+        together public agencies as they advance the deployment of 
+        vehicle-to-everything (V2X) technologies. The cohort allows state DOTs, 
+        local agencies, and other infrastructure owners and operators (IOOs) 
+        to share their experiences, challenges, and best practices as they deploy 
+        this technology to enhance safety and improve efficiency. This community 
+        of practice offers a platform for peer learning and collaboration to 
+        ensure successful and interoperable V2X deployments across the nation.
+      </p>
+      <p class="program-text">
+        Through virtual meetings, members discuss topics such as concept planning, 
+        design, procurement, testing, deployment,  and maintenance, facilitated 
+        by the U.S. DOT providing technical support and resources. The initiative offers 
+        a platform for peer learning and collaboration to ensure 
+        that V2X deployments deliver on their intended safety and efficiency goals. 
+      </p>
+      <p class="program-text">
+        Organizations interested in joining the cohort should contact the ITS PCB Program.
+      </p>
+    </section>
+    <section class="max-w-lg mx-auto">
+      <Card class="map-card">
+        <CardBody>
+          <Image 
+            class="map-card-image"
+            src={cohortImage} 
+            alt="Map of the United States with cohort states shaded in and yellow points with the names of each cohort agency"
+          />
+        </CardBody>
+        <CardFooter class="map-card-footer">
+          Last Updated: January 2025
+        </CardFooter>
+      </Card>
+    </section>
+  </main>
+</Layout>

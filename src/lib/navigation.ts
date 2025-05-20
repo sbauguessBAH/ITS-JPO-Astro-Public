@@ -63,7 +63,7 @@ export const navigation: NavigationItem[] = [
       { name: 'Cybersecurity', url: '/resources/Cybersecurity' },
       { name: 'Deployment Evaluation', url: '/resources/Deployment-Evaluation' },
       { name: 'National Transportation Library', url: '/resources/national-transportation-library' },
-      { name: 'Professional Capacity Building', url: '/resources/Professional-Capacity-Building' },
+      { name: 'Professional Capacity Building', url: '/resources/pcb' },
       { name: 'ITS CodeHub', url: 'https://www.its.dot.gov/code', isExternal: true },
       { name: 'ITS DataHub', url: 'https://www.its.dot.gov/data', isExternal: true },
     ]

@@ -1,0 +1,108 @@
+---
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import Layout from "../_layout.astro";
+import base_url from "@/src/lib/base_url";
+import v2xImage from "@/src/assets/images/pcb/v2x-training.jpg";
+---
+
+<Layout>
+  <div class="container-xl program-main program-padding">
+    <section class="program-section pb-2">
+      <Breadcrumb items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        { name: "V2X Trainings" }
+      ]}/>
+      <h2 class="program-title-lg">
+        Vehicle-to-Everything (V2X) Trainings
+      </h2>
+      <p class="program-text">
+        The ITS Professional Capacity Building Program developed curriculum designed for professionals who are eager to understand 
+        and implement the latest advancements in vehicle-to-everything (V2X) technology. Our V2X Trainings cover everything 
+        from the basics of V2X technology to technical trainings on V2X standards. Participants will gain a deep understanding 
+        of how V2X works, the types of communication (vehicle-to-vehicle, vehicle-to-infrastructure, vehicle-to-pedestrian, etc.), 
+        and the potential impact on the transportation ecosystem. Trainings cover the following topics:
+      </p>
+      <ul class="program-list">
+        <li>
+          <strong>Introduction to V2X Technology</strong>: Understand the fundamentals of V2X, including the different communication types, 
+          the underlying technologies, and their role in the future of transportation.
+        </li>
+        <li>
+          <strong>V2X Standards</strong>: Learn about the key standards and how they ensure seamless and secure communication between vehicles and infrastructure.
+        </li>
+        <li>
+          <strong>Security and Privacy</strong>: Understand the critical importance of securing V2X systems, protecting data integrity, 
+          and safeguarding privacy in connected transportation ecosystems.
+        </li>
+        <li>
+          <strong>V2X Deployment and Testing</strong>: Gain hands-on experience in setting up, testing, and deploying V2X systems for real-world use cases.
+        </li>
+      </ul>
+    </section>
+    <section class="program-section py-2">
+      <h3 class="program-title-md">
+        Foundational V2X Training
+      </h3>
+      <p class="program-text">
+        Vehicle-to-everything (V2X) is the use of wireless communications technologies to enable vehicles 
+        to communicate with each other, other road users such as pedestrians and bicyclists, and infrastructure. 
+        These technologies have the potential to make significant impacts improving safety and enhancing mobility. This foundational-level course provides participants 
+        with a basic understanding of V2X concepts. Participants are introduced to the key components 
+        that enable a V2X ecosystem, the potential benefits of the technology, and example use cases and the messages 
+        and standards supporting them while ensuring safety and privacy. This 4-hour introductory course 
+        is currently be offered in collaboration with ITS America to ITS State Chapters&mdash;as well as others&mdash;
+        across the United States. 
+      </p>
+      <p class="program-text">
+        Entities interested in this training should contact the ITS PCB Program.
+      </p>
+    </section>
+    <section class="program-section py-2">
+      <h3 class="program-title-md">
+        V2X Standards Trainings
+      </h3>
+      <ul class="program-list">
+        <li>
+          <a href={base_url("/resources/pcb/trainings/standards-trainings#module-38")}>
+            Vehicle-to-Vehicle (V2V) ITS Standards for Project Managers (Updated 2021)
+          </a>
+        </li>
+        <li>
+          <a href={base_url("/resources/pcb/trainings/standards-trainings#module-51")}>
+            Using the ISO TS 19091 Standard to Implement V2I Intersection Applications Introduction
+          </a>
+        </li>
+        <li>
+          <a href={base_url("/resources/pcb/trainings/standards-trainings#module-57")}>
+            Connected Vehicles Certification Testing Introduction
+          </a>
+        </li>
+        <li>
+          <a href={base_url("/resources/pcb/trainings/standards-trainings#module-62")}>
+            Introduction to SPaT/MAP Messages
+          </a>
+        </li>
+        <li>
+          <a href={base_url("/resources/pcb/trainings/standards-trainings#module-63")}>
+            Introduction to IEEE 1609 Family of Standards for Wireless Access in a Vehicular Environments (WAVE)
+          </a>
+        </li>
+        <li>
+          <a href={base_url("/resources/pcb/trainings/standards-trainings#module-64")}>
+            Introduction to Cybersecurity for Transportation Agencies
+          </a>
+        </li>
+        <li>
+          <a href={base_url("/resources/pcb/trainings/standards-trainings#module-66")}>
+            Introduction to Security Credentials Management System (SCMS) Part 1 of 2
+          </a>
+        </li>
+        <li>
+          <a href={base_url("/resources/pcb/trainings/standards-trainings#module-67")}>
+            Introduction to Security Credentials Management System (SCMS) Part 2 of 2
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</Layout>

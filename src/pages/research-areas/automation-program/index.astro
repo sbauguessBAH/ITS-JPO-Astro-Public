@@ -11,10 +11,11 @@ import humanImage from "@/src/assets/images/automation/human-factors.jpg";
 import amsIcon from "@/src/assets/images/automation/ams-icon.svg";
 import amsImage from "@/src/assets/images/automation/ams.png";
 import Roadmap from "./_roadmap.astro";
-import DownloadIcon from "@/src/components/programs/icons/download-icon.astro";
+import DownloadIcon from "@/src/components/programs/icons/DownloadIcon.astro";
 import Layout from "./_layout.astro";
+import OverlayCard, { type OverlayResource } from "@/src/components/programs/overlay-card.astro";
 
-const focusAreas = [
+const focusAreas: OverlayResource[] = [
   { 
     name: "Cooperative Driving Automation (CDA)", 
     description: "Assess the feasibility of conducting a small-scale CDA pilot (focusing on L0-2 with Interoperable Connectivity) and package the accomplishments for design and architecture.",
@@ -63,7 +64,7 @@ const focusAreas = [
   .roadmap-image-container {
     width: 100%;
     padding: 1rem;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
     overflow-x: auto;
   }
 
@@ -72,13 +73,13 @@ const focusAreas = [
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
-    border-radius: var(--border-radius);
+    border-radius: var(--radius-md);
     max-width: fit-content;
   }
 
   .roadmap-footer {
     background: rgb(var(--color-gray-light));
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
     padding: 0.8rem;
     display: flex;
     justify-content: space-between;
@@ -89,7 +90,7 @@ const focusAreas = [
 <style>
   .strategy-container {
     background: rgb(var(--color-gray-light));
-    border-radius: var(--border-radius);
+    border-radius: var(--radius-md);
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -141,174 +142,11 @@ const focusAreas = [
       grid-template-columns: repeat(2, 1fr);
     }
   }
-
-  .focus-area-card {
-    position: relative;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    box-shadow: var(--box-shadow)
-  }
-
-  .focus-area-card:hover {
-    font-weight: inherit;
-    text-decoration: none;
-    box-shadow: var(--box-shadow-lg)
-  }
-  
-  .focus-area-image {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    object-fit: cover;
-    border-radius: var(--border-radius);
-    top: 0;
-    left: 0;
-    z-index: -2;
-  }
-  .focus-area-image-overlay {
-    /* 0.85 on homepage */
-    background-image: linear-gradient(
-      to bottom, 
-      rgba(7, 46, 85, 0.4), 
-      rgba(7, 46, 85, 1)
-    ); 
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: var(--border-radius);
-    z-index: -1;
-  }
-
-  .gradient-blue::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0;
-    border-radius: var(--border-radius);
-    -moz-transition: opacity var(--transition-duration) ease-in-out;
-    -o-transition: opacity var(--transition-duration) ease-in-out;
-    -webkit-transition: opacity var(--transition-duration) ease-in-out;
-    transition: opacity var(--transition-duration) ease-in-out;
-  }
-  .gradient-green::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0;
-    border-radius: var(--border-radius);
-    -moz-transition: opacity var(--transition-duration) ease-in-out;
-    -o-transition: opacity var(--transition-duration) ease-in-out;
-    -webkit-transition: opacity var(--transition-duration) ease-in-out;
-    transition: opacity var(--transition-duration) ease-in-out;
-  }
-  .gradient-purple::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0;
-    border-radius: var(--border-radius);
-    -moz-transition: opacity var(--transition-duration) ease-in-out;
-    -o-transition: opacity var(--transition-duration) ease-in-out;
-    -webkit-transition: opacity var(--transition-duration) ease-in-out;
-    transition: opacity var(--transition-duration) ease-in-out;
-  }
-  .gradient-orange::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0;
-    border-radius: var(--border-radius);
-    -moz-transition: opacity var(--transition-duration) ease-in-out;
-    -o-transition: opacity var(--transition-duration) ease-in-out;
-    -webkit-transition: opacity var(--transition-duration) ease-in-out;
-    transition: opacity var(--transition-duration) ease-in-out;
-  }
-
-  .focus-area-card:hover .gradient-blue::after {
-    opacity: 1;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(var(--color-blue), 0.2),
-      rgba(var(--color-blue), 0.4)
-    )
-  }
-
-  .focus-area-card:hover .gradient-green::after {
-    opacity: 1;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(var(--color-green), 0.2),
-      rgba(var(--color-green), 0.4)
-    )
-  }
-
-  .focus-area-card:hover .gradient-orange::after {
-    opacity: 1;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(var(--color-orange), 0.2),
-      rgba(var(--color-orange), 0.4)
-    )
-  }
-
-  .focus-area-card:hover .gradient-purple::after {
-    opacity: 1;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(var(--color-purple), 0.2),
-      rgba(var(--color-purple), 0.4)
-    )
-  }
-
-  .focus-area-body {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    padding: 1rem 1rem 2rem 1rem;
-    height: 100%;
-    width: 100%;
-  }
-  .focus-area-icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 0;
-  }
-  .focus-area-icon {
-    border-radius: 100%;
-    width: 120px;
-    height: 120px;
-    color: white;
-    font-size: 48px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .focus-area-icon-image {
-    width: 60%;
-    height: auto;
-  }
-  .focus-area-content {
-    padding: 0 1rem;
-  }
-  .focus-area-title {
-    color: white;
-  }
-  .focus-area-description {
-    color: white;
-  }
 </style>
 <Layout>
-  <main class="container-xl program-container">
-    <section>
-      <h2 class="program-title">Program Overview</h2>
+  <main class="container-xl program-main program-padding">
+    <section class="program-section">
+      <h2 class="program-title-lg">Program Overview</h2>
       <p class="program-text">
         Driving automation is one of the major transportation industry trends 
         of this decade. Through close collaboration and monitoring of current industry 
@@ -332,7 +170,7 @@ const focusAreas = [
         provides cross-cutting support across the U.S. DOT with the following strategies:
       </p>
       <div class="strategy-container mt-4" role="list">
-        <h3 class="program-title">Research Strategies</h3>
+        <h3 class="program-title-md">Research Strategies</h3>
         <div class="strategy">
           <div class="strategy-icon" aria-hidden="true">
             1
@@ -400,8 +238,8 @@ const focusAreas = [
         </div>
       </div>
     </section>
-    <section>
-      <h2 class="program-title text-center">Focus Areas</h2>
+    <section class="program-section">
+      <h2 class="program-title-lg text-center">Focus Areas</h2>
       <p class="program-text text-center max-w-lg mx-auto">
         In collaboration with the Operating Administrations, ITS JPO prioritized 
         near-term research focus areas to directly address strategies stated above, 
@@ -409,57 +247,12 @@ const focusAreas = [
       </p>
       <div class="focus-area-container mt-4" role="directory">
         {focusAreas.map(focusArea => (
-          <a 
-            class="focus-area-card" 
-            href={base_url(focusArea.path)}
-            aria-label={`Link to Focus Area: ${focusArea.name}`}
-          >
-            <Image 
-              src={focusArea.background} 
-              alt={focusArea.alt} 
-              class="focus-area-image"
-            />
-            <div class:list={[
-                "focus-area-image-overlay",
-                { "gradient-purple": focusArea.color === "purple" },
-                { "gradient-orange": focusArea.color === "orange" },
-                { "gradient-green": focusArea.color === "green" },
-                { "gradient-blue": focusArea.color === "blue" }
-              ]}
-            />
-            <div class="focus-area-body">
-              <div class="focus-area-icon-container" aria-hidden="true">
-                <div
-                  class:list={[
-                    "focus-area-icon",
-                    { "background-purple": focusArea.color === "purple" },
-                    { "background-orange": focusArea.color === "orange" },
-                    { "background-green": focusArea.color === "green" },
-                    { "background-blue": focusArea.color === "blue" }
-                  ]}
-                >
-                  <Image 
-                    src={focusArea.icon} 
-                    alt={focusArea.name} 
-                    class="focus-area-icon-image"
-                  />
-                </div>
-              </div>
-              <div class="focus-area-content">
-                <h3 class="focus-area-title">
-                  {focusArea.name}
-                </h3>
-                <p class="focus-area-description">
-                  {focusArea.description}
-                </p>
-              </div>
-            </div>
-          </a>
+          <OverlayCard {...focusArea}/>
         ))}
       </div>
     </section>
-    <section>
-      <h2 class="program-title text-center">Program Roadmap</h2>
+    <section class="program-section">
+      <h2 class="program-title-lg text-center">Program Roadmap</h2>
       <p class="program-text text-center max-w-lg mx-auto">
         In collaboration with the Operating Administrations, ITS JPO prioritized 
         near-term research focus areas to directly address strategies stated above, 

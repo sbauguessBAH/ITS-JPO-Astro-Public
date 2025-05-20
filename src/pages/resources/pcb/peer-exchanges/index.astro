@@ -1,0 +1,107 @@
+---
+import Layout from "../_layout.astro";
+import qWarnImage from "@/src/assets/images/pcb/peer-exchanges/queue-warning.png";
+import modImage from "@/src/assets/images/pcb/peer-exchanges/mod.jpg";
+
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import { Image } from "astro:assets";
+
+const resources = [
+  {
+    title: "Queue Warning Peer Exchange",
+    description: "The U.S. Department of Transportation (U.S. DOT) facilitated a series of virtual peer exchanges designed to share best practices and lessons learned in planning and deploying Queue Warning Systems (QWS).",
+    image: qWarnImage,
+    slug: "queue-warning"
+  },
+  {
+    title: "Mobility on Demand (MOD) Peer Exchange",
+    description: "Brief description needs to be added that aligns with new directives",
+    image: modImage,
+    slug: "mod"
+  }
+]
+---
+<style>
+  /* .resource-card:hover {
+    background: rgba(var(--color-brand-light), 0.5);
+    box-shadow: var(--box-shadow-lg);
+  } */
+  .resource-card-image {
+    width: 100%;
+    object-fit: cover;
+    height: 220px;
+  }
+
+  .resource-card-header {
+    overflow: visible;
+    padding: 0;
+  }
+  .resource-card-footer {
+    background: rgb(var(--color-gray-light));
+    padding: 1.5rem;
+  }
+
+  .resource-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.4rem;
+    height: 100%;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--size);
+  }
+
+  @media (min-width: 992px) {
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+<Layout>
+  <main class="container-xl program-main program-padding">
+    <section class="program-section">
+      <h2 class="program-title-lg">
+        Peer Exchanges
+      </h2>
+      <p class="program-text">
+        The Peer Exchange program connects ITS practitioners with a specific area of expertise with other practitioners 
+        needing assistance in that area. The U.S. DOT facilitate knowledge transfer to address ITS and V2X planning, 
+        deployment and operational challenges. These exchanges may take the form of in-person or virtual exchanges either on or off-site. 
+      </p>
+      <p class="program-text">
+        If your agency is interested in conducting a peer exchange, please contact the ITS PCB Program.
+      </p>
+      <div class="card-grid">
+        <!-- href={`/resources/pcb/academic-resources/${resource.slug}`}  -->
+        {resources.map(resource => (
+          <Card shadow="none" radius="lg" class="resource-card">
+            <CardHeader class="resource-card-header">
+              <Image 
+                src={resource.image}
+                alt={resource.title}
+                class="resource-card-image radius-none shadow"
+              />
+            </CardHeader>
+            <CardBody class="resource-card-body">
+              <h3 class="program-title-sm mb-2 text-foreground">
+                {resource.title}
+              </h3>
+              <p class="program-text">
+                {resource.description}
+              </p>
+            </CardBody>
+            <CardFooter class="resource-card-footer">
+              Page coming soon.
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>

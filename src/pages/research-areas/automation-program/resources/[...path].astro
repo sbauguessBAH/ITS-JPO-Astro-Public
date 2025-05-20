@@ -103,7 +103,7 @@ const projects = resources
     padding: 0.5rem 1rem;
     width: 100%;
     text-decoration: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--radius-md);
     border: 1px solid var(--border-light);
     font-weight: 600;
   }
@@ -119,7 +119,7 @@ const projects = resources
 
   .resource-project {
     border: 1px solid var(--border-light);
-    border-radius: var(--border-radius);
+    border-radius: var(--radius-md);
     padding: 1rem;
   }
 
@@ -197,9 +197,11 @@ const projects = resources
 <Layout 
   title="Automation Program"
 >
-  <main class="container-xl program-container gap-md">
-    <section>
-      <h2 class="program-title">Resources</h2>
+  <main class="container-xl program-main program-padding gap-md">
+    <section class="program-section">
+      <h2 class="program-title-lg">
+        Resources
+      </h2>
       <div class="resource-container mt-4">
         <nav class="resource-menu">
           {areas.map(area => (
@@ -224,7 +226,7 @@ const projects = resources
                   <div class="resource-area-badge">
                     {project.area}
                   </div>
-                  <h3 class="program-title">
+                  <h3 class="program-title-md">
                     {project.title}
                   </h3>
                 </div>

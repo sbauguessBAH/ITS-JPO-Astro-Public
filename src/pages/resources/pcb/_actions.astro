@@ -1,0 +1,109 @@
+---
+import microlearningImage from "@/src/assets/images/pcb/actions/microlearning.jpg";
+import peerExchangesImage from "@/src/assets/images/pcb/actions/peer-exchanges.jpg";
+import resourcesImage from "@/src/assets/images/pcb/actions/resources.jpg";
+import trainingsImage from "@/src/assets/images/pcb/actions/trainings.jpg";
+import v2xToolsImage from "@/src/assets/images/pcb/actions/v2x-tools.png";
+import webinarsImage from "@/src/assets/images/pcb/actions/webinars.jpg";
+
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import { Image } from "astro:assets";
+import base_url from "@/src/lib/base_url";
+
+const resources = [
+  {
+    title: "Explore ITS Trainings",
+    description: "Discover available training sessions to enhance your ITS knowledge.",
+    path: "/resources/pcb/trainings",
+    image: trainingsImage,
+  },
+  {
+    title: "Explore Microlearning Videos",
+    description: "Access brief videos for quick, focused learning on ITS topics.",
+    path: "/resources/pcb/microlearning",
+    image: microlearningImage,
+  },
+  {
+    title: "Access Academic Resources",
+    description: "Connect with tools and materials to support students and faculty in preparing for careers in ITS.",
+    path: "/resources/pcb/academic-resources",
+    image: resourcesImage,
+  },
+  {
+    title: "Collaborate through ITS Peer Exchanges",
+    description: "Engage with your peers to share your challenges, best practices, and experiences advancing ITS technologies.",
+    path: "/resources/pcb/peer-exchanges",
+    image: peerExchangesImage,
+  },
+  {
+    title: "Access V2X Educational Resources",
+    description: "Access educational resources for testing and deploying V2X technologies.",
+    path: "/resources/pcb/cave",
+    image: v2xToolsImage
+  },
+  {
+    title: "View or Register for Webinars",
+    description: "Learn about upcoming webinars on ITS and emerging transportation technologies, or view past webinars.",
+    path: "/resources/pcb/webinars",
+    image: webinarsImage
+  }
+]
+---
+<style>
+  .resource-card:hover {
+    background: rgba(var(--color-brand-light), 0.5);
+  }
+  .resource-card-image {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+  }
+
+  .resource-card-body {
+    overflow: visible;
+    padding: 0;
+  }
+
+  .resource-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem 1rem 1rem;
+    height: 100%;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    gap: var(--size)
+  }
+
+  @media (min-width: 992px) {
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+<div class="card-grid">
+  {resources.map(resource => (
+    <Card href={resource.path} shadow="md" radius="md" class="resource-card">
+      <CardBody class="resource-card-body">
+        <Image 
+          src={resource.image}
+          alt={resource.title}
+          class="resource-card-image shadow"
+        />
+      </CardBody>
+      <CardFooter class="resource-card-footer">
+        <h3 class="program-title-sm mb-2 text-foreground">
+          {resource.title}
+        </h3>
+        <p class="program-text">
+          {resource.description}
+        </p>
+      </CardFooter>
+    </Card>
+  ))}
+</div>

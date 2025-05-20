@@ -1,0 +1,79 @@
+---
+import ProgramBanner from "@/src/components/programs/program-banner.astro";
+import ProgramLayout from "@/src/components/programs/program-layout.astro";
+import banner from "@/src/assets/images/pcb/banner.png";
+import ProgramMenu from "@/src/components/programs/program-menu.astro";
+import type { ChildNavigationItem } from "@/src/types";
+
+const keywords = [
+  "ITS Professional Capacity Building Program", 
+  "ITS PCB Program"
+];
+
+const description = `
+  The ITS PCB Program supports activities that deliver multimodal 
+  ITS learning opportunities to transportation professionals 
+  by providing ITS trainings and webinars, fostering cohorts, 
+  and providing technical assistance to agencies deploying ITS technologies 
+  as identified in 23 USC Sect 514.
+`
+
+const items: ChildNavigationItem[] = [
+  { 
+    name: 'Overview', 
+    url: '/resources/pcb' 
+  },
+  { 
+    name: 'Trainings', 
+    url: '/resources/pcb/trainings', 
+    hasGeneratedChildItems: true 
+  },
+  { 
+    name: 'Microlearning Videos', 
+    url: '/resources/pcb/microlearning'
+  },
+  { 
+    name: 'Academic Resources', 
+    url: '/resources/pcb/academic-resources', 
+    hasGeneratedChildItems: true 
+  },
+  { 
+    name: 'Peer Exchanges', 
+    url: '/resources/pcb/peer-exchanges', 
+    hasGeneratedChildItems: true  
+  },
+  // { 
+  //   name: 'Accelerating V2X Cohort', 
+  //   url: '/resources/pcb/v2x-cohort'
+  // },
+  // { 
+  //   name: 'Webinars', 
+  //   url: 'https://www.its.dot.gov/pcb/itscourses/default.aspx', 
+  //   isExternal: true
+  //  }
+]
+---
+<ProgramLayout
+  title="ITS Professional Capacity Building"
+  keywords={keywords}
+  description={description}
+>
+  <ProgramBanner 
+    hasOverlay={false}
+    image={banner}
+  >
+    <Fragment slot="section">
+      Resources/Technical Assistance
+    </Fragment>
+    <Fragment slot="title">
+      ITS PROFESSIONAL CAPACITY BUILDING
+    </Fragment>
+    <Fragment slot="description">
+      Providing transportation professionals, educators, and students
+      with comprehensive training and technical assistance to build
+      expertise in ITS.
+    </Fragment>
+  </ProgramBanner>
+  <ProgramMenu items={items} />
+  <slot/>
+</ProgramLayout>
