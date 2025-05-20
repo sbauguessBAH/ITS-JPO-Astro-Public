@@ -9,8 +9,8 @@ import webinarsImage from "@/src/assets/images/pcb/actions/webinars.jpg";
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
 import { Image } from "astro:assets";
-import base_url from "@/src/lib/base_url";
 
 const resources = [
   {
@@ -55,6 +55,11 @@ const resources = [
   .resource-card:hover {
     background: rgba(var(--color-brand-light), 0.5);
   }
+
+  .resource-card-header {
+    padding: 0;
+  }
+
   .resource-card-image {
     width: 100%;
     object-fit: cover;
@@ -62,11 +67,6 @@ const resources = [
   }
 
   .resource-card-body {
-    overflow: visible;
-    padding: 0;
-  }
-
-  .resource-card-footer {
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem 1rem 1rem 1rem;
@@ -89,21 +89,21 @@ const resources = [
 <div class="card-grid">
   {resources.map(resource => (
     <Card href={resource.path} shadow="md" radius="md" class="resource-card">
-      <CardBody class="resource-card-body">
+      <CardHeader class="resource-card-header">
         <Image 
           src={resource.image}
           alt={resource.title}
           class="resource-card-image shadow"
         />
-      </CardBody>
-      <CardFooter class="resource-card-footer">
+      </CardHeader>
+      <CardBody class="resource-card-body">
         <h3 class="program-title-sm mb-2 text-foreground">
           {resource.title}
         </h3>
         <p class="program-text">
           {resource.description}
         </p>
-      </CardFooter>
+      </CardBody>
     </Card>
   ))}
 </div>
