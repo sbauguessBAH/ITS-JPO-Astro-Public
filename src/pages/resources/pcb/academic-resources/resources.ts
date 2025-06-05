@@ -16,16 +16,22 @@ export const academicResources = [
     image: studentCompetitionsImage,
     slug: "student-competitions"
   },
+  // {
+  //   title: "Academic Workshops",
+  //   description: "ITS Academic Workshops provide educators and representatives from public and private entities to explore strategies for integrating ITS education into curricula and provide input for advancing the ITS workforce.",
+  //   image: academicWorkshopsImage,
+  //   slug: "workshops"
+  // },
   {
-    title: "Academic Workshops",
-    description: "ITS Academic Workshops provide educators and representatives from public and private entities to explore strategies for integrating ITS education into curricula and provide input for advancing the ITS workforce.",
+    title: "Academic Cohort",
+    description: "The ITS Academic Cohort brings together teaching practitioners and the ITS PCB Program to jointly develop academic resources.",
     image: academicWorkshopsImage,
-    slug: "workshops"
+    slug: "academic-cohort"
   },
   {
-    title: "Career Pathways",
-    description: "ITS Career Pathways provides a snapshot overview of ITS careers including key details on specific roles, responsibilities, skills/education, and example career paths",
+    title: "Career Paths",
+    description: "ITS Career Paths provides a snapshot overview of ITS careers including key details on specific roles, responsibilities, skills/education, and example career paths",
     image: careerPathsImage,
-    slug: "career-pathways"
+    slug: "career-paths"
   },
 ]

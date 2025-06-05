@@ -1,0 +1,63 @@
+---
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Layout from "../_layout.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import { Image } from "astro:assets";
+import arlingtonImage from "@/src/assets/images/pcb/peer-exchanges/arlington-mod.jpg";
+---
+<style>
+  .overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+  .overview-image {
+    border-radius: var(--border-radius);
+  }
+
+  @media (min-width: 992px) {
+    .overview-section {
+      flex-direction: row;
+      align-items: start;
+    }
+    .overview-image {
+      flex-basis: 40%;
+    }
+    .overview-text {
+      flex-basis: 60%;
+    }
+  }
+</style>
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <Breadcrumb items={[
+        { name: "Peer Exchanges", path: "/resources/pcb/peer-exchanges" },
+        { name: "Mobility on Demand" }
+      ]}/>
+      <div class="overview-section">
+        <div class="overview-text">
+          <h2 class="program-title-lg">
+            Mobility on Demand (MOD) Peer Exchange
+          </h2>
+          <p class="program-text">
+            The Mobility on Demand (MOD) Peer Exchange Series, hosted by the U.S. Department 
+            of Transportation (USDOT), facilitated interactive dialogues that brought together 
+            stakeholders to discuss key, targeted topics that impact MOD deployment and adoption. 
+          </p>
+          <p class="program-text">
+            This series aimed to support state-of-the-industry knowledge sharing 
+            regarding topic-specific needs and lessons learned, as well as opportunities 
+            for growth to advance MOD as a tool to support mobility and efficiency. 
+            These virtual peer exchanges featured presentations by subject matter experts 
+            and opportunities for attendees to engage with these experts as well 
+            as other peers in the space.
+          </p>
+        </div>
+        <div class="overview-image">
+          <Image src={arlingtonImage} alt="Arlington MOD Vehicle" class="img-fluid radius-md shadow" />
+        </div>
+      </div>
+    </ProgramSection>
+  </main>
+</Layout>

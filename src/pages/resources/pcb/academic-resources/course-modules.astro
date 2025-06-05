@@ -3,27 +3,31 @@ import base_url from "@/src/lib/base_url";
 import Layout from "../_layout.astro";
 import ResourceFooter from "./_ResourceFooter.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 ---
 
 <Layout>
-  <main class="program-main program-padding">
-    <section class="container-xl program-section">
+  <main class="program-main pb-0">
+    <ProgramSection>
       <Breadcrumb items={[
         { name: "Academic Resources", path: "/resources/pcb/academic-resources" },
-        { name: "Academic Course Modules" }
+        { name: "Course Modules" }
       ]}/>
       <h2 class="program-title-lg">
-        Academic Course Modules
+        ITS Academic Course Modules
       </h2>
       <p class="program-text">
-        ITS provide promising solutions for improving traffic safety and mobility in the transportation network. 
-        Educating future transportation professionals about ITS ensures they are equipped to think critically 
-        and develop novel approaches for the most pressing transportation issues and needs. ITS academic course modules aim 
-        to advance knowledge of ITS for college and university students. An ITS academic course module is a freestanding class (or component) 
-        of a course that provides structure to students' learning through organized learning content. Each course module focuses 
-        on a specific ITS theme, concept, or technology. Instructor and student materials focused on ensuring 
-        an engaging experience supporting the course module outcomes in the structure of 90 minutes of instruction 
-        are provided for each course module and include: 
+        ITS provide promising solutions for improving traffic safety and mobility in 
+        the transportation network. Educating future transportation professionals 
+        about ITS ensures they are equipped to think critically and develop novel approaches 
+        for the most pressing transportation issues and needs. ITS academic course modules aim 
+        to advance knowledge of ITS for college and university students. An ITS academic 
+        course module is a freestanding class (or component) of a course that provides structure 
+        to students' learning through organized learning content. Each course module would focus 
+        on a specific ITS theme, concept, or technology. Instructor and student materials focused 
+        on ensuring an engaging experience supporting the course module outcomes in the structure 
+        of 90 minutes of instruction are anticipated to be provided 
+        for each course module and include: 
       </p>
       <ul class="program-list">
         <li>
@@ -43,10 +47,9 @@ import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
         </li>
       </ul>
       <p class="program-text">
-        <em>Additional content coming soon.</em>
+        <em>Status: Under Development</em>
       </p>
-    </section>
-    
+    </ProgramSection>
+    <ResourceFooter/>
   </main>
-  <ResourceFooter/>
 </Layout>

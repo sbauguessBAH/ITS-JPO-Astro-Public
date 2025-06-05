@@ -9,6 +9,7 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
 import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 
 const trainings: CollectionEntry<"standardsTrainings">[] = 
   await getCollection("standardsTrainings")
@@ -120,8 +121,8 @@ const previewLength = 150;
   }
 </style>
 <Layout>
-  <div class="container-xl program-main program-padding">
-    <section class="program-section">
+  <div class="program-main">
+    <ProgramSection>
       <Breadcrumb items={[
         { name: "Trainings", path: "/resources/pcb/trainings" },
         { name: "Standards Trainings" }
@@ -224,7 +225,7 @@ const previewLength = 150;
             )
         })}
       </div>
-    </section>
+    </ProgramSection>
   </div>
 </Layout>
 

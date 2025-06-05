@@ -76,15 +76,6 @@ export const collections = {
       })
     )
   }),
-  pcb: defineCollection({
-    type: 'content', // v2.5.0 and later
-    schema: ({ image }) => z.object({
-      title: z.string(),
-      description: z.string(),
-      image: image(),
-      order: z.number().int()   
-    }),
-  }),
   standardsTrainings: defineCollection({
     type: 'content', // v2.5.0 and later
     schema: z.object({

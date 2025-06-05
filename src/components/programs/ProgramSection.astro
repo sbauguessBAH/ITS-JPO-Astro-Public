@@ -1,0 +1,33 @@
+---
+interface Props {
+  isGray?: boolean;
+  fullWidth?: boolean;
+  class?: string;
+}
+
+const { isGray, fullWidth, class: className }: Props = Astro.props;
+---
+<style>
+  .program-section {
+    padding: 2rem 1rem 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 1200px) {
+    .program-section {
+      padding: 2rem;
+    }
+  }
+</style>
+<section class:list={[
+  isGray ? "background-light" : "background-white"
+]}>
+  <div class:list={[
+    fullWidth ? "container-fluid" : "container-xl",
+    "program-section",
+    className
+  ]}>
+    <slot />
+  </div>
+</section>

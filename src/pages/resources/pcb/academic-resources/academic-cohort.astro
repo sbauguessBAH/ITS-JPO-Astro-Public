@@ -1,0 +1,35 @@
+---
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import Layout from "../_layout.astro";
+import ResourceFooter from "./_ResourceFooter.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+---
+
+<Layout>
+  <main class="program-main pb-0">
+    <ProgramSection>
+      <Breadcrumb items={[
+        { name: "Academic Resources", path: "/resources/pcb/academic-resources" },
+        { name: "Academic Cohort" }
+      ]}/>
+      <h2 class="program-title-lg">
+        ITS Academic Cohort
+      </h2>
+      <p class="program-text">
+        The ITS Academic Cohort was formed in September 2023 to bring teaching practitioners 
+        and the ITS PCB Program together to jointly develop academic resources.
+        The ITS PCB Program proposes to work with the academic stakeholders to:
+      </p>
+      <ul class="program-list">
+        <li>Meet and discuss teaching practices and adaptations with instructors/faculty teaching ITS-related topics.</li>
+        <li>Review and potentially pilot in-progress and existing ITS PCB academic resources.</li>
+        <li>Solicit input and feedback to the ITS PCB Program so that resources may be adapted to best meet faculty needs and interests.</li>
+        <li>Identify critical gaps and opportunities for potentially developing new resources.</li>
+      </ul>
+      <p class="program-text">
+        <em>Status: Reengagement Under Review</em>
+      </p>
+    </ProgramSection>
+    <ResourceFooter/>
+  </main>
+</Layout>

@@ -5,6 +5,7 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import { Image } from "astro:assets";
 import { academicResources } from "./resources";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 
 ---
 <style>
@@ -44,8 +45,8 @@ import { academicResources } from "./resources";
   }
 </style>
 <Layout>
-  <main class="container-xl program-layout program-padding">
-    <section class="program-section">
+  <main class="program-main">
+    <ProgramSection>
       <h2 class="program-title-lg">
         Academic Resources
       </h2>
@@ -73,6 +74,6 @@ import { academicResources } from "./resources";
           </Card>
         ))}
       </div>
-    </section>
+    </ProgramSection>
   </main>
 </Layout>

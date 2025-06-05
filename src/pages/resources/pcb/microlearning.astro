@@ -3,6 +3,7 @@ import Layout from "./_layout.astro";
 import Card from "@/src/components/programs/card/Card.astro"
 import CardBody from "@/src/components/programs/card/CardBody.astro"
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import { Image } from "astro:assets";
 
 import { getEntry } from "astro:content";
@@ -45,8 +46,8 @@ const trainingCategories = await getEntry("microlearning", "microlearning");
   }
 </style>
 <Layout>
-  <main class="container-xl program-main program-padding">
-    <section class="program-section">
+  <main class="program-main">
+    <ProgramSection>
       <h2 class="program-title-lg">
         Microlearning Videos
       </h2>
@@ -83,6 +84,6 @@ const trainingCategories = await getEntry("microlearning", "microlearning");
           </div>
         ))}
       </div>
-    </section>
+    </ProgramSection>
   </main>
 </Layout>

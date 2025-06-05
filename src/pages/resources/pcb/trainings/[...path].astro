@@ -6,6 +6,7 @@ import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
 import { Image } from "astro:assets";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 // import TrainingsLayout from "./_trainings-layout.astro";
 // import CourseCard from "./_course-card.astro";
 
@@ -164,8 +165,8 @@ const getCourseCount = (path?: string) => courses.filter(course =>
   }
 </style>
 <Layout>
-  <main class="container-xl program-main program-padding">
-    <section class="program-section">
+  <main class="program-main">
+    <ProgramSection>
       <h2 class="program-title-lg">
         ITS Trainings
       </h2>
@@ -178,7 +179,7 @@ const getCourseCount = (path?: string) => courses.filter(course =>
         For NHI Trainings, the link will take you to the NHI catalog. From there, you can
         search for the course you're interested in.
       </p>
-      <div class="trainings-container mt-4">
+      <div class="trainings-container">
         <div class="trainings-panel">
           <nav class="panel">
             <h3 class="panel-title">Categories</h3>
@@ -200,7 +201,6 @@ const getCourseCount = (path?: string) => courses.filter(course =>
           </nav>
         </div>
         <div class="trainings">
-          
           <!-- <div class="course-grid">
             {filteredCourses.map(course => (
               <CourseCard {...course}/>
@@ -243,6 +243,6 @@ const getCourseCount = (path?: string) => courses.filter(course =>
           </div>
         </div>
       </div>
-    </section>
+    </ProgramSection>
   </main>
 </Layout>

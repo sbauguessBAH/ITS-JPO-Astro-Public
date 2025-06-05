@@ -5,14 +5,14 @@
       { 
         "title": "ITS and Safe System Approach", 
         "description": "This video provides an overview of how intelligent transportation systems (ITS) aligns with the Safe System Approach (SSA) - a guiding framework to enhance safety on our surface transportation system.",
-        "url": "https://www.youtube.com/watch?v=DF5GxvMGvNs", 
+        "url": "https://youtu.be/kJ5A7DpEOOc?si=5-OsrGmRct3Xp7bQ", 
         "isExternal": true,
         "image": "./images/safe-system.png"
       },
       { 
         "title": "ITS and Safer People", 
         "description": "This video highlights how ITS can be used to encourage safe, responsible driving and behavior by people who use our roads and create conditions that prioritize their ability to reach their destination unharmed.",
-        "url": "https://www.youtube.com/watch?v=N5qZcglApEo", 
+        "url": "https://youtu.be/Ho8zG_IEqB4?si=ztUHQNJXJyuxQK3C", 
         "isExternal": true,
         "image": "./images/safer-people.png"
       },
@@ -26,7 +26,7 @@
       { 
         "title": "ITS and Safer Speeds", 
         "description": "This video discusses how ITS promotes safer speeds in all roadway environments by supporting a combination of thoughtful, context-appropriate roadway design, appropriate speed-limit setting, targeted education, outreach campaigns, and enforcement.",
-        "url": "https://www.youtube.com/watch?v=5l8M7vAESPE", 
+        "url": "https://youtu.be/6S_VGgVJcLI?si=lOsDBpmt8QLhvAVC", 
         "isExternal": true,
         "image": "./images/safer-speeds.png"
       },
@@ -51,21 +51,21 @@
     "trainings": [
       {
         "title": "The Principles of Systems Engineering",
-        "description": "Placeholder",
+        "description": "",
         "url": "https://youtu.be/n1qDeWLOEHU",
         "isExternal": true,
         "image": "./images/systems-engineering.png"
       },
       {
         "title": "Applying Systems Engineering to ITS Projects",
-        "description": "Placeholder",
+        "description": "",
         "url": "https://youtu.be/8ft5Dlw9p2k",
         "isExternal": true,
         "image": "./images/applying-systems-engineering.png"
       },
       {
         "title": "Systems Engineering Approach Resources",
-        "description": "Placeholder",
+        "description": "",
         "url": "https://youtu.be/ETTAIQHgIqs",
         "isExternal": true,
         "image": "./images/systems-engineering-approach.png"
