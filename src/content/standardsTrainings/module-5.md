@@ -3,6 +3,10 @@ module: 5
 code: T101
 title: "Introduction to ITS Standards Testing"
 length: "1 hour, 7 minutes"
+presentation: "/assets/pcb/standards-trainings/module-5/m05ppt.pdf"
+chat: "/assets/pcb/standards-trainings/module-5/m05chat.pdf"
+transcript: "/assets/pcb/standards-trainings/module-5/m05trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-5/m05sup.pdf"
 ---
 This module provides participants with an introduction to the need for and applicability of ITS standards testing. Concepts related to conformance to requirements to design, documents to be merged, systems tests and interface testing are discussed. While this module focuses on testing requirements for conformance to standards, it also helps distinguish conformance testing from compliance testing at a high level. The focus is on functionality and not on specific hardware or devices that could be built. The focus is also on testing required versus optional elements of the standards and the distinct impact these would have on interoperability and fulfilling requirements of standards.
 

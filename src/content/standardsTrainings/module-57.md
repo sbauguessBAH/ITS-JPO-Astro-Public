@@ -3,6 +3,9 @@ module: 57
 code: "CV T160"
 title: "Connected Vehicles Certification Testing Introduction"
 length: "1 hour, 38 minutes"
+presentation: "/assets/pcb/standards-trainings/module-57/m57ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-57/m57trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-57/m57sup.pdf"
 ---
 The connected vehicles (CV) environment has the potential to transform surface transportation systems such that vehicular crashes are significantly reduced, operators of the surface transportation systems have access to more accurate system performance data, travelers have access to specific traveler information, and allow the surface transportation systems to be optimized to minimize environmental impacts.
 

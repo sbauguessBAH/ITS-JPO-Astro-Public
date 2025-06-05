@@ -3,6 +3,9 @@ module: 10
 code: A311a
 title: "Understanding User Needs for DMS Systems Based on NTCIP 1203 Standard v03"
 length: "1 hour, 30 minutes"
+presentation: "/assets/pcb/standards-trainings/module-10/m10ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-10/m10trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-10/m10sup.pdf"
 ---
 The purpose of this **updated module** is to incorporate necessary changes made by the updated NTCIP standard v03 (from v02), and assist technical staff in writing unambiguous, complete, and well-written user needs based on NTCIP 1213 Standard v03. This module provides participants with information on how to identify the appropriate use of the NTCIP 1213 Standard v03 and acquire a DMS system based on what the user is seeking to accomplish.
 

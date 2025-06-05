@@ -3,6 +3,9 @@ module: 18
 code: T313
 title: "Applying Your Test Plan to the Environmental Sensor Stations Based on the NTCIP 1204 ESS Standard v04"
 length: "1 hour, 16 minutes"
+presentation: "/assets/pcb/standards-trainings/module-18/m18ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-18/m18trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-18/m18sup.pdf"
 ---
 An environmental sensor station (ESS) consists of a remote micro-processor coupled with any number of sensors that monitor the surrounding environment, which may include weather, pavement, water levels, and/or air quality conditions. An ESS may also be used to control related equipment, such as pavement treatment systems and/or cameras.
 

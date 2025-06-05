@@ -3,6 +3,9 @@ module: 22
 code: A312a
 title: "Understanding User Needs for Transportation Sensor Systems (TSS) Based on NTCIP 1209 Standard"
 length: "1 hour, 57 minutes"
+presentation: "/assets/pcb/standards-trainings/module-22/m22ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-22/m22trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-22/m22sup.pdf"
 ---
 Transportation Sensor Systems (TSS) is defined as any system capable of sensing and communicating near real-time traffic parameters using the National Transportation Communications for ITS Protocol (NTCIP). Transportation system managers use TSS in a variety of ways to improve transportation system operations. To facilitate efficient movement within a transportation system, system operators need timely and accurate information on traffic flow within the system. This is typically accomplished by measuring traffic parameters at desired locations within the transportation system.
 

@@ -3,6 +3,9 @@ module: 34
 code: "A317b"
 title: "Understanding Requirements for CCTV Systems Based on NTCIP 1205 Standard"
 length: "1 hour, 54 minutes"
+presentation: "/assets/pcb/standards-trainings/module-34/m34ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-34/m34trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-34/m34sup.pdf"
 ---
 The purpose of this module is to teach students how to develop well-formed requirements specific to the NTCIP 1205 v01 CCTV Standard.
 

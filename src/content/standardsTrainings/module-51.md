@@ -3,6 +3,9 @@ module: 51
 code: "CV271"
 title: "Using the ISO TS 19091 Standard to Implement V2I Intersection Applications Introduction"
 length: "1 hour, 16 minutes"
+presentation: "/assets/pcb/standards-trainings/module-51/m51ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-51/m51trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-51/m51sup.pdf"
 ---
 The connected vehicles (CV), a component of the Cooperative Intelligent Transportation System (C-ITS) environment, has the potential to significantly reduce vehicular crashes, provide operators of surface transportation systems with more timely and accurate system performance data to better manage their systems, and provide travelers with access to specific traveler information. In order to achieve these benefits, it is essential that agencies use standards in deploying connected vehicle technologies to maximize the benefits from the connected vehicle environment. Proper deployment of standards will support interoperability, minimize future integration costs, make procurements easier, and facilitate regional and national integration.
 

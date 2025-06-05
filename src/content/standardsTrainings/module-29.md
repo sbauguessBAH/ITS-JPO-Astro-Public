@@ -3,6 +3,9 @@ module: 29
 code: A207b, Part 2 of 2
 title: "Building an ITS Infrastructure Based on the Advanced Transportation Controller (ATC) 5201 Standard - Part 2 of 2"
 length: "1 hour, 37 minutes"
+presentation: "/assets/pcb/standards-trainings/module-29/m29ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-29/m29trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-29/m29sup.pdf"
 ---
 The Advanced Transportation Controller (ATC) family of standards provides an open architecture hardware and software platform that can support a wide variety of Intelligent Transportation Systems (ITS) field applications including traffic management, safety, security, and other applications. These standards are characterized by their modularity, support of multiple and current application programs, and design to facilitate the adoption of new technologies.
 

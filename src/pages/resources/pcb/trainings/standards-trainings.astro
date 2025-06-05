@@ -10,6 +10,7 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
 import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
 
 const trainings: CollectionEntry<"standardsTrainings">[] = 
   await getCollection("standardsTrainings")
@@ -208,18 +209,30 @@ const previewLength = 150;
                   </div>
                 </CardBody>
                 <CardFooter class="training-card-footer">
-                  <a class="training-card-button" href="">
-                    <PdfIcon/>
-                    Presentation
-                  </a>
-                  <a class="training-card-button" href="">
-                    <PdfIcon/>
-                    Student Supplement
-                  </a>
-                  <a class="training-card-button" href="">
-                    <PdfIcon/>
-                    Course Transcript
-                  </a>
+                  {training.data.presentation && (
+                    <a class="training-card-button" href={base_url(training.data.presentation)}>
+                      <PdfIcon/>
+                      Presentation
+                    </a>
+                  )}
+                  {training.data.supplement && (
+                    <a class="training-card-button" href={base_url(training.data.supplement)}>
+                      <PdfIcon/>
+                      Student Supplement
+                    </a>
+                  )}
+                  {training.data.transcript && (
+                    <a class="training-card-button" href={base_url(training.data.transcript)}>
+                      <PdfIcon/>
+                      Course Transcript
+                    </a>
+                  )}
+                  {training.data.chat && (
+                    <a class="training-card-button" href={base_url(training.data.chat)}>
+                      <PdfIcon/>
+                      Chat Transcript
+                    </a>
+                  )}
                 </CardFooter>
               </Card>
             )

@@ -3,6 +3,10 @@ module: 6
 code: A201
 title: "Details on Acquiring Standards-based ITS Systems"
 length: "1 hour, 50 minutes"
+presentation: "/assets/pcb/standards-trainings/module-6/m06ppt.pdf"
+chat: "/assets/pcb/standards-trainings/module-6/m06chat.pdf"
+transcript: "/assets/pcb/standards-trainings/module-6/m06trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-6/m06sup.pdf"
 ---
 The module provides guidance on selecting the appropriate standard for acquiring standards-based systems that take into account the specifications, processes, and roles of users and staff.
 

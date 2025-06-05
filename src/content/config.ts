@@ -82,7 +82,11 @@ export const collections = {
       title: z.string(),
       code: z.string(),
       module: z.number(),
-      length: z.string()
+      length: z.string(),
+      presentation: z.string().optional(),
+      supplement: z.string().optional(),
+      transcript: z.string().optional(),
+      chat: z.string().optional()
     }),
   }),
 

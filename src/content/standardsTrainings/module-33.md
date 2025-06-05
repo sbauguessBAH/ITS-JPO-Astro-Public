@@ -3,6 +3,9 @@ module: 33
 code: "A317a"
 title: "Understanding User Needs for CCTV Systems Based on NTCIP 1205 Standard"
 length: "1 hour, 53 minutes"
+presentation: "/assets/pcb/standards-trainings/module-33/m33ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-33/m33trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-33/m33sup.pdf"
 ---
 The purpose of this module is to teach the students how to identify and write user needs specific to the NTCIP 1205 v01 CCTV Standard, which does not currently contain user needs.
 

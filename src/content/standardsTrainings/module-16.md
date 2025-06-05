@@ -3,6 +3,10 @@ module: 16
 code: A321b
 title: "Specifying Requirements for Traffic Management Systems Based on TMDD v03 Standard"
 length: "1 hour, 36 minutes"
+presentation: "/assets/pcb/standards-trainings/module-16/m16ppt.pdf"
+chat: "/assets/pcb/standards-trainings/module-16/m16chat.pdf"
+transcript: "/assets/pcb/standards-trainings/module-16/m16trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-16/m16sup.pdf"
 ---
 This module focuses on assisting technical staff in specifying clear requirements from the list of requirements that exist in TMDD v3 and meeting identified user needs. This module provides participants with information on how to identify the appropriate use of the TMDD v3 standard and acquire a traffic management system based on what the user is seeking to accomplish as identified by tracing the user needs to the requirements with support from tools and resources such as a requirements traceability matrix (RTM) and protocol requirements list (PRL) in following a systems engineering process. The module reviews the pros and cons of selecting requirements not covered by the standard and the need to avoid an orphaned user need or requirement for a system.
 

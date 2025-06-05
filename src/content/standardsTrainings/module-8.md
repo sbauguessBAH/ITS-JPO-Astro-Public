@@ -3,6 +3,10 @@ module: 8
 code: A203
 title: "Writing Requirements When ITS Standards Do Not Have SEP Content"
 length: "1 hour, 17 minutes"
+presentation: "/assets/pcb/standards-trainings/module-8/m08ppt.pdf"
+chat: "/assets/pcb/standards-trainings/module-8/m08chat.pdf"
+transcript: "/assets/pcb/standards-trainings/module-8/m08trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-8/m08sup.pdf"
 ---
 This module provides guidance on how to write requirements if they do not already exist within the standard and distinguish user needs from requirements when they are mixed in non-SEP environments. This module assists participants in selecting relevant requirements by studying examples from SEP-based standards. This module is recommended to be taken in conjunction with A202 Identifying and Writing User Needs When ITS Standards Do Not Have SEP Content.
 

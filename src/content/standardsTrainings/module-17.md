@@ -3,6 +3,9 @@ module: 17
 code: T311
 title: "Applying Your Test Plan to the NTCIP 1203 v03 DMS Standard"
 length: "1 hour, 18 minutes"
+presentation: "/assets/pcb/standards-trainings/module-17/m17ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-17/m17trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-17/m17sup.pdf"
 ---
 This **updated module** assists user agencies in creating a test plan specific to their dynamic message system needs based on the NTCIP 1203 v03 standard. NTCIP 1202 v03 builds on the NTCIP 1202 v02 standard by adding test procedures for testing conformance to the standard. Prior to developing such a test plan, the user is expected to be knowledgeable of the NTCIP 1203 v03 standard and testing methodologies. This module will cover material related to elements of the 1203 standard required to apply test plans to verify that an agency’s product or system meets design specifications and other requirements of the NTCIP 1203 DMS standard, while following standard testing methodologies.
 

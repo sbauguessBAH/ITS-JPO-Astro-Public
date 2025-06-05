@@ -3,6 +3,10 @@ module: 9
 code: T201
 title: "How to Write a Test Plan"
 length: "51 minutes"
+presentation: "/assets/pcb/standards-trainings/module-9/m09ppt.pdf"
+chat: "/assets/pcb/standards-trainings/module-9/m09chat.pdf"
+transcript: "/assets/pcb/standards-trainings/module-9/m09trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-9/m09sup.pdf"
 ---
 This course provides participants with an understanding of the need for a test plan when developing/deploying systems based on ITS standards within the context of an overall systems testing process/life cycle. This module identifies key elements of a test plan and its relevance in the context of the overall testing process/life cycle using IEEE 829 and FHWA VEE diagrams as reference with one or more examples of well-written test plans in a standard format.
 

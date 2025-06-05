@@ -3,6 +3,10 @@ module: 2
 code: A101
 title: "Introduction to Acquiring Standards-based ITS Systems"
 length: "1 hour, 2 minutes"
+presentation: "/assets/pcb/standards-trainings/module-2/m02ppt.pdf"
+chat: "/assets/pcb/standards-trainings/module-2/m02chat.pdf"
+transcript: "/assets/pcb/standards-trainings/module-2/m02trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-2/m02sup.pdf"
 ---
 The module provides key reference points and information for participants to be able to communicate procurement strategies for standards-compliant systems.
 

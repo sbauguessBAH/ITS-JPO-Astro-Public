@@ -3,6 +3,9 @@ module: 38
 code: "CV262"
 title: "Vehicle-to-Vehicle (V2V) ITS Standards for Project Managers (Updated 2021)"
 length: "1 hour, 43 minutes"
+presentation: "/assets/pcb/standards-trainings/module-38/m38ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-38/m38trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-38/m38sup.pdf"
 ---
 Connected vehicles have the potential to improve the safety, sustainability, efficiency, reliability, and comfort of transportation. Creating an environment that promotes this technology will result in significant benefits to transportation agencies and society as a whole. While most of the costs involved in realizing V2V communications are borne by vehicle owners, agency personnel should be aware of the capabilities of these vehicles and how they might enhance agency operations.
 

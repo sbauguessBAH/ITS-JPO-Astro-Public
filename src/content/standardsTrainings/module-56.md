@@ -3,6 +3,9 @@ module: 56
 code: "T351"
 title: "Center-to-Center (C2C) Reference Implementation (RI): Apply C2C Reference Implementation"
 length: "1 hour, 2 minutes"
+presentation: "/assets/pcb/standards-trainings/module-56/m56ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-56/m56trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-56/m56sup.pdf"
 ---
 Traffic Management Data Dictionary (TMDD) Standard v3.03 is an information level standard jointly developed and published by ITE and ASHTO to provide data elements necessary to build a communications interface between multiple centers to exchange information in real-time. Traffic Management Centers (TMCs) often implement such interfaces to communicate with other centers (external centers) within the overall ITS applications. Such applications are termed as Center-to-Center communications (C2C). Previously developed Modules A321 and A321b cover the details of TMDD user needs and requirements respectively.
 

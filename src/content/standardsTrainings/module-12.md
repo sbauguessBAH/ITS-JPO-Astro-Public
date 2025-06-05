@@ -3,6 +3,10 @@ module: 12
 code: A321a
 title: "Understanding User Needs for Traffic Management Systems Based on TMDD v03 Standard"
 length: "1 hour, 50 minutes"
+presentation: "/assets/pcb/standards-trainings/module-12/m12ppt.pdf"
+chat: "/assets/pcb/standards-trainings/module-12/m12chat.pdf"
+transcript: "/assets/pcb/standards-trainings/module-12/m12trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-12/m12sup.pdf"
 ---
 This module provides participants with information on how to identify the appropriate use of the TMDD v3 standard and acquire a traffic management system based on what the user is seeking to accomplish with support from tools and resources such as the needs to requirements traceability matrix (NRTM) in following a systems engineering process.
 

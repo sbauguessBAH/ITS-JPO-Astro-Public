@@ -3,6 +3,10 @@ module: 13
 code: T202
 title: "Overview of Test Design Specifications, Test Cases, and Test Procedures"
 length: "1 hour, 36 minutes"
+presentation: "/assets/pcb/standards-trainings/module-13/m13ppt.pdf"
+chat: "/assets/pcb/standards-trainings/module-13/m13chat.pdf"
+transcript: "/assets/pcb/standards-trainings/module-13/m13trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-13/m13sup.pdf"
 ---
 This module covers material related to the three elements required to develop testing specifications (test design specifications, test cases, and test procedures). The participant learns what goes into the test design specification distinct from interface specifications. The role of developing test specifications in the verification and validation life cycle is briefly explained. The module identifies key elements of test design specifications, test cases, and test procedures in the context of the overall testing process/life cycle using IEEE 829 as a reference, with one or more examples of each.
 

@@ -3,6 +3,9 @@ module: 67
 code: "CSE 201, Part 2 of 2"
 title: "Introduction to Security Credentials Management System (SCMS) Part 2 of 2 (New 2021)"
 length: "1 hour, 3 minutes"
+presentation: "/assets/pcb/standards-trainings/module-67/m67ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-67/m67trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-67/m67sup.pdf"
 ---
 SCMS is a form of Public Key Infrastructure (PKI) that issues and manages the security certificates that form the basis of trust for V2X communications. The SCMS is distinguished from traditional PKI in several aspects—its size and the balance among security, privacy, and efficiency. V2X devices enroll into the SCMS after completing device certification processes that validate the devices as trusted players in the system; obtain security certificates from certificate authorities (CAs); and attach those certificates to their transmitted messages as part of a digital signature. Authorized system participants use digital certificates issued by the SCMS to authenticate and validate the safety and mobility messages that form the foundation for connected vehicle eco-system. As well as authorizing baseline application activities, these credentials provide special permissions to first responders to prioritize their V2X messages.
 

@@ -3,6 +3,9 @@ module: 58
 code: "T307"
 title: "Applying Your Test Plan to the Advanced Traffic Controller Based on ATC 5201 Standard v06"
 length: "1 hour, 45 minutes"
+presentation: "/assets/pcb/standards-trainings/module-58/m58ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-58/m58trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-58/m58sup.pdf"
 ---
 The Advanced Transportation Controller (ATC) family of standards provides an open architecture hardware and software platform that can support a wide variety of Intelligent Transportation Systems (ITS) field applications. These standards are characterized by their modularity, support of multiple and concurrent application programs, and design to facilitate the adoption of new technologies.
 

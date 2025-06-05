@@ -3,6 +3,9 @@ module: 54
 code: "T304"
 title: "Applying Your Test Plan to the FMS-Part 1 Signal System Masters Based on NTCIP 1210 Standard v01"
 length: "1 hour, 14 minutes"
+presentation: "/assets/pcb/standards-trainings/module-54/m54ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-54/m54trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-54/m54sup.pdf"
 ---
 Signal System Master (SSM) is a traffic controller device used in the field as a supervising device and operates above intersection traffic controllers. As a Field Management Station (FMS), a Signal System Master (SSM) acts as a traffic controller device assigned to supervise several Signal System Locals (SSLs) located at intersections in close vicinity. The current NTCIP 1210 v01 SSM standard is systems engineering (SE) process-based and provides for the SSM needs and requirements and related design content.
 

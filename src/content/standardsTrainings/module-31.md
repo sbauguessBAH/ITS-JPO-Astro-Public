@@ -3,6 +3,9 @@ module: 31
 code: "A315a"
 title: "Understanding User Needs for ASC Based on NTCIP 1202 v03 Standard (Updated 2021)"
 length: "1 hour, 18 minutes"
+presentation: "/assets/pcb/standards-trainings/module-31/m31ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-31/m31trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-31/m31sup.pdf"
 ---
 NTCIP 1202 v03, Object Definitions for Actuated Signal Controllers (ASC), was recently updated and published. This standard defines object to allow transportation professionals to monitor, configure, and control traffic signal controllers. Version 3 of the standard was developed using a Systems Engineering Process (SEP) and contains user needs, requirements, and design content.
 

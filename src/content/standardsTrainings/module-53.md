@@ -3,6 +3,9 @@ module: 53
 code: "T251"
 title: "Center-to-Center (C2C) Reference Implementation (RI) Introduction"
 length: "1 hour, 23 minutes"
+presentation: "/assets/pcb/standards-trainings/module-53/m53ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-53/m53trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-53/m53sup.pdf"
 ---
 The Center-to-Center-(C2C) Reference Implementation (RI) is a tool developed under contract to the U.S. DOT that mimics an operational traffic management system that provides a traffic management data dictionary (TMDD) conformant interface to external systems. It supports all features defined in the TMDD v3.03 standard and serves as a useful development and testing tool to verify that new software is able to interoperate with a known reference.
 

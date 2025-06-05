@@ -3,6 +3,9 @@ module: 55
 code: "T308"
 title: "Acceptance Testing for Advanced Transportation Controller (ATC) Application Programming Interface (API) Software"
 length: "1 hour, 19 minutes"
+presentation: "/assets/pcb/standards-trainings/module-55/m55ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-55/m55trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-55/m55sup.pdf"
 ---
 The Advanced Transportation Controller (ATC) family of standards provides an open architecture hardware and software platform that can support a wide variety of Intelligent Transportation Systems (ITS) field applications. These standards are characterized by their modularity, support of multiple and concurrent application programs, and design to facilitate the adoption of new technologies.
 

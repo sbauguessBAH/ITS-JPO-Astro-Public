@@ -3,6 +3,9 @@ module: 14
 code: A311b
 title: "Specifying Requirements for DMS Systems Based on NTCIP 1203 Standard v03"
 length: "1 hour, 36 minutes"
+presentation: "/assets/pcb/standards-trainings/module-14/m14ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-14/m14trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-14/m14sup.pdf"
 ---
 This **updated module** reflects changes made in the latest DMS standard v03 under Part 1: User needs/requirements and object definitions-dialogs; and Part 2 documentation, which contains test procedures. This module focuses on specifying DMS requirements and associated design content (dialogs, objects, and other references and/or special project requirements if any) using RTM, and show the participants how to continue building a project-level RTM. This module also stresses that agencies require a project-level RTM and must be included in the DMS specification. RTM discussion will also point out key aspects of interoperability among agencies in a regional context as it is a common practice to share each other's DMSs during emergencies for messages coordination.
 

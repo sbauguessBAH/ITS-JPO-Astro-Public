@@ -3,6 +3,10 @@ module: 4
 code: A103
 title: "Introduction to ITS Standards Requirements Development"
 length: "1 hour, 11 minutes"
+presentation: "/assets/pcb/standards-trainings/module-4/m04ppt.pdf"
+chat: "/assets/pcb/standards-trainings/module-4/m04chat.pdf"
+transcript: "/assets/pcb/standards-trainings/module-4/m04trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-4/m04sup.pdf"
 ---
 This module introduces what requirements are; where they fit in the life cycle, specifically operational needs and standard needs; and how the user determines if they are correct.
 

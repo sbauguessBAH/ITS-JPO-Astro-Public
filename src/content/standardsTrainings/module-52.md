@@ -3,6 +3,9 @@ module: 52
 code: "T306"
 title: "Applying Your Test Plan to the Electrical and Lighting Management Systems based on NTCIP 1213 ELMS Standard v03"
 length: "55 minutes"
+presentation: "/assets/pcb/standards-trainings/module-52/m52ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-52/m52trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-52/m52sup.pdf"
 ---
 An electric and lighting management system (ELMS) is defined as any system that is able to automatically control and manage roadside electrical and lighting devices using the National Transportation Communications for Intelligent Transportation System Protocol (NTCIP). In general, an ELMS is composed of a set of field devices (luminaires, electric circuits, electric vehicle chargers, connected vehicle, smart grid connectivity, etc.) that are controlled by one or more management stations (computing platforms).
 

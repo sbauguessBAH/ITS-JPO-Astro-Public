@@ -3,6 +3,10 @@ module: 7
 code: A202
 title: "Identifying and Writing User Needs When ITS Standards Do Not Have SEP Content"
 length: "1 hour, 30 minutes"
+presentation: "/assets/pcb/standards-trainings/module-7/m07ppt.pdf"
+chat: "/assets/pcb/standards-trainings/module-7/m07chat.pdf"
+transcript: "/assets/pcb/standards-trainings/module-7/m07trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-7/m07sup.pdf"
 ---
 This module provides guidance on how to identify user needs if they do not already exist and distinguish user needs from requirements when they are mixed in non-SEP environments. This module assists participants in writing user needs by studying examples from SEP-based standards. This module is recommended to be taken in conjunction with A203 Writing Requirements When ITS Standards Do Not Have SEP Content.
 

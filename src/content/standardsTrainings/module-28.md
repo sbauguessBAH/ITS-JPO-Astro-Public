@@ -3,6 +3,9 @@ module: 28
 code: A207a, Part 1 of 2
 title: "Building an ITS Infrastructure Based on the Advanced Transportation Controller (ATC) 5201 Standard - Part 1 of 2 (Updated 2021)"
 length: "59 minutes"
+presentation: "/assets/pcb/standards-trainings/module-28/m28ppt.pdf"
+transcript: "/assets/pcb/standards-trainings/module-28/m28trans.pdf"
+supplement: "/assets/pcb/standards-trainings/module-28/m28sup.pdf"
 ---
 The focus of this module is on the ATC Standard. The module details the ATC Standard's features and capabilities, it discusses how the ATC Standard works with other ITS standards, and it provides deployment considerations and migration strategies for users. This module also provides a general understanding of how field cabinet systems work as context for the ATC Standard.
 
