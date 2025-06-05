@@ -44,6 +44,7 @@ export type Resource = {
   image: string | ImageMetadata;
   alt?: string;
   isExternalLink?: boolean;
+  disabled?: boolean;
 };
 
 export type ResourceGroup = {

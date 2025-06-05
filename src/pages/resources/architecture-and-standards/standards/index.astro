@@ -13,12 +13,14 @@ const categories: Resource[] = [
   {
     title: "Emerging Technology",
     href: "/resources/architecture-and-standards/standards/emerging-technology",
-    image: "emerging-technology.png"
+    image: "emerging-technology.png",
+    disabled: true
   },
   {
     title: "Public Mobility",
     href: "/resources/architecture-and-standards/standards/public-mobility",
-    image: "public-mobility.png"
+    image: "public-mobility.png",
+    disabled: true
   },
   {
     title: "Operations/Safety",
@@ -28,7 +30,8 @@ const categories: Resource[] = [
   {
     title: "Data/Trusted Exchanges",
     href: "/resources/architecture-and-standards/standards/data-trusted-exchanges",
-    image: "data-trusted-exchanges.png"
+    image: "data-trusted-exchanges.png",
+    disabled: true
   },
   {
     title: "Vehicle-to-Everything (V2X)",
@@ -43,22 +46,26 @@ const categories: Resource[] = [
 	{
     title: "Cybersecurity Controls",
     href: "/resources/architecture-and-standards/standards/cybersecurity-controls",
-    image: "cybersecurity.png"
+    image: "cybersecurity.png",
+    disabled: true
   },
 	{
     title: "Positioning, Navigation, and Timing (PNT)",
     href: "/resources/architecture-and-standards/standards/pnt",
-    image: "pnt.png"
+    image: "pnt.png",
+    disabled: true
   },
 	{
     title: "Supply Chain",
     href: "/resources/architecture-and-standards/standards/supply-chain",
-    image: "supply-chain.png"
+    image: "supply-chain.png",
+    disabled: true
   },
 	{
     title: "Automation",
     href: "/resources/architecture-and-standards/standards/automation",
-    image: "emerging-technology.png"
+    image: "emerging-technology.png",
+    disabled: true
   }
 ]
 ---
@@ -125,7 +132,7 @@ const categories: Resource[] = [
   <div class="row gy-4 mb-5">
     {categories.map(category => (
       <div class="col-md-6 col-xl-4">
-        <StandardsCard resource={category}/>
+        <StandardsCard resource={category} disabled={category.disabled}/>
       </div>
     ))}
   </div>
@@ -136,31 +143,64 @@ const categories: Resource[] = [
   </p>
   <ul>
     <li>
-      <strong>AASHTO Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://store.transportation.org/">AASHTO Store: Browse Transportation Publications and Online Training</a>
+      <strong>AASHTO Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://store.transportation.org/">
+        American Assocation of State Highway and Transportation Officials
+      </a>
     </li>
     <li>
-      <strong>ANSI Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://webstore.ansi.org/industry/automotive/electric?_ga=2.173952485.718055947.1651151983-1116827362.1651151983&_gl=1*15264xb*_gcl_au*MTkyMzYyMTU0MS4xNzIxNDIwMDU4">Electric Vehicles and Vehicle Electronics (ansi.org)</a>
+      <strong>ANSI Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://webstore.ansi.org/industry/automotive/electric?_ga=2.173952485.718055947.1651151983-1116827362.1651151983&_gl=1*15264xb*_gcl_au*MTkyMzYyMTU0MS4xNzIxNDIwMDU4">
+        American National Standards Institute
+      </a>
     </li>
     <li>
-      <strong>APTA Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.apta.com/research-technical-resources/standards/">Standards - American Public Transportation Association (apta.com)</a>
+      <strong>APTA Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.apta.com/research-technical-resources/standards/">
+        American Public Transportation Association
+      </a>
     </li>
     <li>
-      <strong>ASTM Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.astm.org/products-services/standards-and-publications.html">Standards & Publications - Products & Services (astm.org)</a>
+      <strong>ASTM Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.astm.org/products-services/standards-and-publications.html">
+        Advancing Standards Transforming Markets &mdash; ASTM International
+      </a>
     </li>
     <li>
-      <strong>IEEE Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://standards.ieee.org/search/?q=Transportation&type=Standard">IEEE SA - Search</a>
+      <strong>IEEE Transportation Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://standards.ieee.org/search/?q=Transportation&type=Standard">
+        Institute of Electrical and Electronics Engineers (IEEE) Standards Association
+      </a>
     </li>
     <li>
-      <strong>ITE Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.ite.org/technical-resources/topics/standards/">Standards - Institute of Transportation Engineers (ite.org)</a>
+      <strong>ITE Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.ite.org/technical-resources/topics/standards/">
+        Institute of Transportation Engineers
+      </a>
     </li>
     <li>
-      <strong>NEMA Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.nema.org/standards/Index/0fc813b7-253f-4c8b-b02b-44ba665845cb/">Standards (nema.org)</a>
+      <strong>NEMA Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.makeitelectric.org/technologies/nema-standards/">
+        National Electrical Manufacturers Association
+      </a>
     </li>
     <li>
-      <strong>NTCIP Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.ntcip.org/document-numbers-and-status/">Documents | NTCIP</a>
+      <strong>NTCIP Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.ntcip.org/document-numbers-and-status/">
+        National Transportation Communications for ITS Protocol
+      </a>
     </li>
     <li>
-      <strong>SAE Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.sae.org/standards/development/ground-vehicle">Ground Vehicle - Standards Development - SAE International</a>
+      <strong>SAE Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.sae.org/standards/development/ground-vehicle">
+        SAE International
+      </a>
+    </li>
+    <li>
+      <strong>ISO Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.iso.org/standards.html">
+        International Organization for Standardization
+      </a>
+    </li>
+    <li>
+      <strong>IETF Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.ietf.org/">
+        Internet Engineering Task Force
+      </a>
+    </li>
+    <li>
+      <strong>OMG Standards</strong>: <a rel="noopener noreferrer" target="_blank" href="https://www.omg.org/">
+        Object Management Group
+      </a>
     </li>
   </ul>
 
