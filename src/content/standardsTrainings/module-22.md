@@ -14,13 +14,24 @@ This module provides participants with information on how to identify and use th
 This module is to be placed in the context of the SE as well as in the acquisition curriculum path with A312B: Specifying Requirements for Transportation Sensor Systems (TSS) Based on NTCIP 1209 Standard following this module.
 
 ### Instructor(s)
-
+* Ralph W. Boaz
+* President
+* Pillar Consulting, Inc.
+* San Diego, CA
 
 ### Target Audiences
-* 
+* System Developers
+* Traffic Management Center and Operations Staff
 
 ### Prerequisite(s)
-* 
+* I101: Using ITS Standards: An Overview
+* A101: Introduction to Acquiring Standards-based ITS Systems
+* A102: Introduction to User Needs Identification
+* A201: Details On Acquiring Standards-based ITS Systems
+* C101: Introduction to the Communications Protocols and Their Uses in ITS Applications
 
 ### Learning Objectives/Key Elements
-1. 
+1. Review the structure of the NTCIP 1209 v02 Standard.
+2. Identify TSS specific user needs.
+3. Use the Protocol Requirements List (PRL) to select the user needs and link to requirements.
+4. Explain how the PRL table in the TSS Standard integrates into the specification. 

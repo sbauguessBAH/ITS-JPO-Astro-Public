@@ -14,13 +14,36 @@ This module assists user agencies in creating and applying a test plan specific 
 This module includes a brief description of the ELMS standard with examples on how to perform the verification mentioned above. This module covers the role of other modes of testing including compliance, manufacturing and acceptance tests, and verification and validation as part of the testing life cycle.
 
 ### Instructor(s)
-
+* James J. Frazer
+* President
+* Gridaptive Technologies
+* Pompano Beach, FL, USA
 
 ### Target Audiences
-* 
+* Engineering Staff
+* Maintenance Staff
+* Operational Staff
+* Private and Public Sector Users including Manufacturers
+* Private Sector Consultants
+* Public Sector Project Managers
+* System Developers
+* System Integrators
+* Testing Personnel/Contractors
+* Traffic Management Center and Operations Staff
 
 ### Prerequisite(s)
-* 
+* T101: Introduction to ITS Standards Testing
+* T201: How to Write a Test Plan
+* T202: Overview of Test Design Specifications, Test Cases, and Test Procedures
+* T203 Part 1 of 2: How to Develop Test Cases for an ITS Standards-based Test Plan, Part 1 of 2
+* T203 Part 2 of 2: How to Develop Test Cases for an ITS Standards-based Test Plan, Part 2 of 2
+* T204 Part 1 of 2: How to Develop a Test Procedure for ITS Standards-based Test Plan, Part 1 of 2
+* T204 Part 2 of 2: How to Develop Test Procedures for ITS Standards-based Test Plan, Part 2 of 2
+* A306a: Understanding User Needs for ELMS Systems Based on NTCIP 1213 Standard
+* A306b: Specifying Requirements for ESS Systems Based on NTCIP 1213 Standard
 
 ### Learning Objectives/Key Elements
-1. 
+1. Describe within the context of the testing lifecycle the role of test plans and the testing to be undertaken for ELMS
+2. Describe the application of a good test plan to an ELMS system being procured
+3. Identify key elements of NTCIP 1213 v03 relevant to the test plan
+4. Describe a process of adapting a test plan based on the selected user needs and requirements

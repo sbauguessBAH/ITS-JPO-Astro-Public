@@ -12,13 +12,22 @@ This module explains how the NTCIP Framework offers design solutions through use
 Upon taking this course, a student should be able to understand how the remote management of ITS field devices from a central management station works at a very high level and how various devices can share the same system environment and be compatible. This will help students in understanding device standards used in ITS applications and the testing phase of system acceptance.
 
 ### Instructor(s)
-
+* Raman K. Patel, Ph.D., P.E.
+* President
+* RK Patel Associates, Inc.
+* New York, NY
 
 ### Target Audiences
-* 
+* Engineering Staff
+* System Developers
+* Traffic Management Center and Operations Staff
 
 ### Prerequisite(s)
-* 
+* I101: Using ITS Standards: An Overview
+* A101: Introduction to Acquiring Standards-based ITS Systems
 
 ### Learning Objectives/Key Elements
-1. 
+1. Be familiar with the basic terminology of the communications process used in NTCIP
+2. Explain how the NTCIP Framework (Stack) fulfills functional requirements to meet operational needs
+3. Describe center-to-field (C2F) Applications and their related NTCIP Standards
+4. Describe center-to-center (C2C) Applications and their related NTCIP Standards 

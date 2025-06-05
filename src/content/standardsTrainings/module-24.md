@@ -12,13 +12,24 @@ This module provides participants with information on how to identify the user n
 This module helps the user understand the scope of FMS user needs within NTCIP 1210 SSM Standard and the ConOps it supports. This module is to be placed in the context of the SE-based standards as well as in the acquisition curriculum path with A304B: Specifying Requirements for Field Management Stations - Part 1 Object Definitions for Signal System Masters Based on NTCIP 1210 Standard following this module.
 
 ### Instructor(s)
-
+* Kenneth L. Vaughn, P.E.
+* President
+* Trevilon Corporation
+* Herndon, VA
 
 ### Target Audiences
-* 
+* System Developers
+* Traffic Management Center and Operations Staff
 
 ### Prerequisite(s)
-* 
+* I101: Using ITS Standards: An Overview
+* A101: Introduction to Acquiring Standards-based ITS Systems
+* A102: Introduction to User Needs Identification
+* A201: Details On Acquiring Standards-based ITS Systems
+* C101: Introduction to the Communications Protocols and Their Uses in ITS Applications
 
 ### Learning Objectives/Key Elements
-1. 
+1. Review the structure of the NTCIP 1210 Standard
+2. Identify Specific FMS User Needs within the context of Signal System Master (SSM)
+3. Use the Protocol Requirements List (PRL) to select the user needs and link to requirements.
+4. Explain how the PRL table of the NTCIP1210 Standard integrates into the FMS Specification 

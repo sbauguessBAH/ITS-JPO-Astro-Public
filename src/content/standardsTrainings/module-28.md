@@ -19,13 +19,30 @@ Some of the questions answered for users:
 * How does the standard support interchangeability?
 
 ### Instructor(s)
-
+* Ralph W. Boaz
+* President
+* Pillar Consulting, Inc.
+* San Diego, CA
 
 ### Target Audiences
-* 
+* Device Manufacturers
+* Engineering Staff
+* Maintenance Staff
+* Private Sector Consultants
+* Public Sector Project Managers
+* System Developers
+* Traffic Management Center and Operations Staff
 
 ### Prerequisite(s)
-* 
+* I101: Using ITS Standards: An Overview
+* A101: Introduction to Acquiring Standards-based ITS Systems
+* A102: Introduction to User Needs Identification
+* A201: Details On Acquiring Standards-based ITS Systems
+* A202: Identifying and Writing User Needs When ITS Standards Do Not Have SEP Content
+* A103: Introduction to ITS Standards Requirements Development
+* A203: Writing Requirements When ITS Standards Do Not Have SEP Content
+* C101: Introduction to the Communications Protocols and Their Uses in ITS Applications
 
 ### Learning Objectives/Key Elements
-1. 
+1. Explain the purpose of the ATC family of standards
+2. Identify the basic components and operation of transportation field cabinet systems 

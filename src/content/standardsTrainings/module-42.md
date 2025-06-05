@@ -14,13 +14,32 @@ The module is provided in two parts, Part 1 and Part 2 and a continuation with t
 Part 2 extends these previous discussions by focusing on additional considerations when specifying NTCIP 1202 v03, and the unique aspects of the NTCIP 1202 device standard when compared to other NTCIP device standards. Part 2 also discusses how to define extensions for ASC systems to address user needs and requirements that are not supported by the NTCIP 1202 v03 standard. This module concludes by introducing the latest developments related to testing ASCs.
 
 ### Instructor(s)
-
+* Kenneth L. Vaughn, P.E.
+* President
+* Trevilon LLC
+* Magnolia, TX, USA
 
 ### Target Audiences
-* 
+* Engineering Staff
+* Private and Public Sector Users including Manufacturers
+* System Developers
+* Traffic Management and Engineering Staff
+* Traffic Management Center and Operations Staff
+* Traffic Signal Maintenance Staff
 
 ### Prerequisite(s)
-* 
+* I101: Using ITS Standards: An Overview
+* A101: Introduction to Acquiring Standards-based ITS Systems
+* A102: Introduction to User Needs Identification
+* A201: Details On Acquiring Standards-based ITS Systems
+* C101: Introduction to the Communications Protocols and Their Uses in ITS Applications
+* A315a: Understanding User Needs for Actuated Traffic Signal Controllers (ASC) Based on NTCIP 1202 Standard
+* A315b, Part 1: Understanding Requirements for Actuated Traffic Signal Controllers (ASC) Based on NTCIP 1202 v03 Standard Part 1 of 2
+
+General Knowledge: Need a basic understanding of traffic controller technology standards such as NEMA TS2 and a basic understanding of the Advanced Transportation Controller (ATC) Standards family
 
 ### Learning Objectives/Key Elements
-1. 
+1. Manage special considerations for NTCIP 1202: Infrastructure
+2. Manage special considerations for NTCIP 1202: Functionality
+3. Incorporate requirements not supported by standardized objects
+4. Testing NTCIP 1202 v03 conformance

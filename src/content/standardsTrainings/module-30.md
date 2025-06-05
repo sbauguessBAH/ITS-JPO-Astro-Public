@@ -14,13 +14,31 @@ This module will cover the role of other modes of testing, including compliance,
 This module will use a sample test plan for TMDD based on IEEE 829 to demonstrate the proper way to create a test plan specific to the user needs and requirements based on the DMS Standard, including test procedures. It will walk through the process of correctly creating a test plan.
 
 ### Instructor(s)
-
+* Patrick Chan, P.E.
+* Senior Technical Staff
+* Consensus Systems Technologies (ConSysTec)
+* Flushing, NY
 
 ### Target Audiences
-* 
+* Device Manufacturers
+* Engineering Staff
+* Maintenance Staff
+* Operational Staff
+* System Integrators
+* Testing Personnel/Contractors
 
 ### Prerequisite(s)
-* 
+* T101: Introduction to ITS Standards Testing
+* T201: How to Write a Test Plan
+* T202: Overview of Test Design Specifications, Test Cases, and Test Procedures
+* C101: Introduction to the Communications Protocols and Their Uses in ITS Applications
+* A321a: Understanding User Needs for Traffic Management Systems Based on TMDD v03 Standard
+* A321b: Specifying Requirements for Traffic Management Systems Based on TMDD v03 Standard
 
 ### Learning Objectives/Key Elements
-1. 
+1. Describe within the context of a testing life cycle the role of a test plan and the testing to be undertaken
+2. Recognize the purpose, structure, and content of a well-written test plan for TMDD-based system interface
+3. Describe the application of a good test plan to a TMDD-based system being procured using a sample TMDD Test plan
+4. Identify process to write a test plan to verify TMDD requirements
+5. Analyze how to ensure conformance with the TMDD Standard
+6. Describe test documentation for TMDD: Test Plan, Test Design Specification, Test Case Specification, Test Procedure Specifications, and Test Reports 

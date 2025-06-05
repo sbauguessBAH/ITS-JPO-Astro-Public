@@ -14,13 +14,27 @@ The purpose of this updated module is to incorporate necessary changes made by t
 This module provides participants with information to understand the scope of the NTCIP 1202 v03 Standard, identifies the appropriate use of the Standard to acquire an Actuated Traffic Signal Controller or ASC system, and how to prepare (tailor) their ASC project specification based on the information provided by the Standard.
 
 ### Instructor(s)
-
+* Patrick Chan P.E.
+* Senior Technical Staff
+* Consensus Systems Technologies (ConSysTec)
+* Flushing, NY, USA
 
 ### Target Audiences
-* 
+* Private and Public Sector Users including Manufacturers
+* Public Sector Project Managers
+* System Developers
+* Traffic Management and Engineering Staff
+* Traffic Management Center and Operations Staff
+* Traffic Signal Maintenance Staff
 
 ### Prerequisite(s)
-* 
+* A101: Introduction to Acquiring Standards-based ITS Systems
+* A102: Introduction to User Needs Identification
+* A201: Details On Acquiring Standards-based ITS Systems
+* Basic understanding of traffic controller technology standards (such as NEMA TS2)
 
 ### Learning Objectives/Key Elements
-1. 
+1. Review the Structure of the NTCIP 1202 v03 Standard
+2. Identify specific ASC operational needs
+3. Describe the purpose of the Protocol Requirements List (PRL) Matrix and Benefits
+4. Discuss how to prepare a project level PRL 

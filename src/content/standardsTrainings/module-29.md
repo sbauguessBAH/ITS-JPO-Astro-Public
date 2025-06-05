@@ -12,13 +12,33 @@ The Advanced Transportation Controller (ATC) family of standards provides an ope
 The focus of this module is on the ATC 5201 Standard. The module details the ATC 5201 Standard’s features and capabilities; it discusses how the ATC 5201 Standard works with other ITS standards; and it provides deployment considerations and migration strategies for users. This module is the continuation of A207a: Building an ITS Infrastructure Based on the ATC 5201 Standard Part 1 of 2.
 
 ### Instructor(s)
-
+* Ralph W. Boaz
+* President
+* Pillar Consulting, Inc.
+* San Diego, CA
 
 ### Target Audiences
-* 
+* Device Manufacturers
+* Engineering Staff
+* Maintenance Staff
+* Private Sector Consultants
+* Public Sector Project Managers
+* System Developers
+* Traffic Management Center and Operations Staff
 
 ### Prerequisite(s)
-* 
+* I101: Using ITS Standards: An Overview
+* A101: Introduction to Acquiring Standards-based ITS Systems
+* A102: Introduction to User Needs Identification
+* A201: Details On Acquiring Standards-based ITS Systems
+* A202: Identifying and Writing User Needs When ITS Standards Do Not Have SEP Content
+* A103: Introduction to ITS Standards Requirements Development
+* A203: Writing Requirements When ITS Standards Do Not Have SEP Content
+* C101: Introduction to the Communications Protocols and Their Uses in ITS Applications
+* A207a: Building an ITS Infrastructure Based on the Advanced Transportation Controller (ATC) 5201 Standard - Part 1 of 2
 
 ### Learning Objectives/Key Elements
-1. 
+1. Identify the features of the ATC 5201 Advanced Transportation Controller Standard
+2. Describe the ATC 5201 architecture
+3. Describe how the ATC 5201 standard works with other ITS standards
+4. Specify ATC equipment for system and equipment procurements 

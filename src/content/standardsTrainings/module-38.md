@@ -16,13 +16,34 @@ This module then presents the intelligent transportation system (ITS) Standards 
 
 
 ### Instructor(s)
-
+* Kenneth Vaughn, P.E.
+* President
+* Trevilon LLC
+* Magnolia, TX, USA
 
 ### Target Audiences
-* 
+* Engineering Staff
+* Maintenance Staff
+* Operational Staff
+* Private and Public Sector Users including Manufacturers
+* Procurement Managers/Decision Makers
+* Procurement Officials for Surface Transportation Agencies
+* Public Sector Managers of Surface Transportation Systems and Agencies
+* Public Sector Project Managers
+* System Integrators
+* Traffic Management Center and Operations Staff
 
 ### Prerequisite(s)
-* 
+* I101 - Using ITS Standards - An Overview
+* CV261 - Vehicle-to-Infrastructure (V2I) ITS Standards for Project Managers
+* CV263 - Roadside Equipment Requirements
+* CV265 - Introduction to IEEE 1609 for WAVE
+* CV273 - Introduction to SPaT/MAP Messages
+* CSE201 - Introduction to SCMS
 
 ### Learning Objectives/Key Elements
-1. 
+1. Describe the connected vehicle environment
+2. Discuss V2V communications
+3. Describe the roles of standards for V2V communications
+4. Address challenges in realizing a V2V environment
+5. Describe the current status of connected vehicles 

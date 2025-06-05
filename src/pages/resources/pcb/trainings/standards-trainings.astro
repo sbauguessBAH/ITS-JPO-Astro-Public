@@ -210,25 +210,25 @@ const previewLength = 150;
                 </CardBody>
                 <CardFooter class="training-card-footer">
                   {training.data.presentation && (
-                    <a class="training-card-button" href={base_url(training.data.presentation)}>
+                    <a class="training-card-button" href={base_url(training.data.presentation)} target="_blank" rel="noopener noreferrer">
                       <PdfIcon/>
                       Presentation
                     </a>
                   )}
                   {training.data.supplement && (
-                    <a class="training-card-button" href={base_url(training.data.supplement)}>
+                    <a class="training-card-button" href={base_url(training.data.supplement)} target="_blank" rel="noopener noreferrer">
                       <PdfIcon/>
                       Student Supplement
                     </a>
                   )}
                   {training.data.transcript && (
-                    <a class="training-card-button" href={base_url(training.data.transcript)}>
+                    <a class="training-card-button" href={base_url(training.data.transcript)} target="_blank" rel="noopener noreferrer">
                       <PdfIcon/>
                       Course Transcript
                     </a>
                   )}
                   {training.data.chat && (
-                    <a class="training-card-button" href={base_url(training.data.chat)}>
+                    <a class="training-card-button" href={base_url(training.data.chat)} target="_blank" rel="noopener noreferrer">
                       <PdfIcon/>
                       Chat Transcript
                     </a>
