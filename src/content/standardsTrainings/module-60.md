@@ -1,7 +1,7 @@
 ---
 module: 60
 code: "A322b"
-title: "Understanding Requirements for Transportation Field Cabinet Systems Using ATC 5301 v02 (New 2020)"
+title: "Understanding Requirements for Transportation Field Cabinet Systems Using ATC 5301 v02 (2020)"
 length: "1 hour, 22 minutes"
 presentation: "/assets/pcb/standards-trainings/module-60/m60ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-60/m60trans.pdf"

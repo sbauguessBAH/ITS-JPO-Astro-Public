@@ -1,0 +1,40 @@
+---
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Layout from "../_layout.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+---
+
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <Breadcrumb items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        { name: "Crowdsourcing for Operations" }
+      ]}/>
+      <h2 class="program-title-lg mb-4">
+        Crowdsourcing for Operations
+      </h2>
+      <p class="program-text">
+        Most public agencies and private companies use crowdsourcing, which is the practice of addressing a need or a problem by enlisting the services of large numbers of people through technology. Organizations crowdsource product reviews, idea generation, feature detection, funding, and much more. With the proliferation of location-based technologies, an unprecedented wave of crowdsourced data is available to transportation agencies. Moreover, analytics tools and services make processing and using crowdsourced data a true game-changer for advancing intelligent transportation systems (ITS) solutions and transportation systems management and operations (TSMO).
+      </p>
+      <p class="program-text">
+        Since 2019, the FHWA Every Day Counts (EDC) Innovation, Crowdsourcing for Advancing Operations, has been supporting the adoption of crowdsourced data and tools to advance transportation operations across 35+ States and their local agencies to improve traffic incident, road weather, work zone, traffic signal, traveler information and emergency management, along with a host of other ITS and TSMO practices.
+      </p>
+      <p class="program-text">
+        The Crowdsourcing Innovation Team in collaboration with the ITS Joint Program Office (JPO) Professional Capacity Building (PCB) Program is delivering an introductory Crowdsourcing course through a series of five webinars, featuring State and local practitioner perspectives.
+      </p>
+      <h3 class="program-title-md">
+        Webinar Series
+      </h3>
+      <p class="program-text">
+        <em>Coming Soon</em>
+      </p>
+      <h3 class="program-title-md">
+        Target Audience
+      </h3>
+      <p class="program-text">
+        The target audience for this webinar series includes transportation professionals with an interest in or responsibility for the management and operations of roadway systems, including local, State, or Federal Departments of Transportation or Public Works as well as consultant, university, or contractor support. No prior experience is required to attend this webinar series; however, participants are advised to attend the first two and the final webinars in this series either during the live delivery or as a recorded event.
+      </p>
+    </ProgramSection>
+  </main>
+</Layout>

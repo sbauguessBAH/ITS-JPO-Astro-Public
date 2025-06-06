@@ -1,7 +1,7 @@
 ---
 module: 67
 code: "CSE 201, Part 2 of 2"
-title: "Introduction to Security Credentials Management System (SCMS) Part 2 of 2 (New 2021)"
+title: "Introduction to Security Credentials Management System (SCMS) Part 2 of 2 (2021)"
 length: "1 hour, 3 minutes"
 presentation: "/assets/pcb/standards-trainings/module-67/m67ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-67/m67trans.pdf"

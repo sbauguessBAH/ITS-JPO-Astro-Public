@@ -1,7 +1,7 @@
 ---
 module: 31
 code: "A315a"
-title: "Understanding User Needs for ASC Based on NTCIP 1202 v03 Standard (Updated 2021)"
+title: "Understanding User Needs for ASC Based on NTCIP 1202 v03 Standard (2021)"
 length: "1 hour, 18 minutes"
 presentation: "/assets/pcb/standards-trainings/module-31/m31ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-31/m31trans.pdf"

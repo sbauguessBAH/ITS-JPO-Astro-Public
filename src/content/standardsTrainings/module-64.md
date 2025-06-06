@@ -1,7 +1,7 @@
 ---
 module: 64
 code: "CSE 202"
-title: "Introduction to Cybersecurity for Transportation Agencies (New 2020)"
+title: "Introduction to Cybersecurity for Transportation Agencies (2020)"
 length: "1 hour, 18 minutes"
 presentation: "/assets/pcb/standards-trainings/module-64/m64ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-64/m64trans.pdf"

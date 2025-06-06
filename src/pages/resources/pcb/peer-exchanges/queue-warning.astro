@@ -2,8 +2,32 @@
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "../_layout.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import { Image } from "astro:assets";
+import qwsImage from "@/src/assets/images/pcb/peer-exchanges/qws.png";
 ---
+<style>
+  .overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+  .overview-image {
+    border-radius: var(--border-radius);
+  }
 
+  @media (min-width: 992px) {
+    .overview-section {
+      flex-direction: row;
+      align-items: start;
+    }
+    .overview-image {
+      flex-basis: 40%;
+    }
+    .overview-text {
+      flex-basis: 60%;
+    }
+  }
+</style>
 <Layout>
   <main class="program-main">
     <ProgramSection>
@@ -11,22 +35,24 @@ import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
         { name: "Peer Exchanges", path: "/resources/pcb/peer-exchanges" },
         { name: "Queue Warning" }
       ]}/>
-      <h2 class="program-title-lg">
-        Queue Warning Peer Exchange
-      </h2>
-      <p class="program-text">
-        Queue warning systems (QWS) help improve roadway safety and traffic flow 
-        by providing real-time alerts on downstream congestion. They reduce crash risks 
-        and travel times by giving drivers early warnings and allowing them to react, 
-        find alternate routes, and minimize sudden braking. 
-      </p>
-      <p class="program-text">
-        The U.S. Department of Transportation (U.S. DOT) hosts Queue Warning Peer Exchanges 
-        to connect State DOTs, share best practices, explore challenges, 
-        support future deployments, and communicate findings. Experts present on key topics 
-        like planning, design, operations, maintenance, and evaluation, fostering collaboration 
-        and knowledge-sharing among transportation professionals. 
-      </p>
+      <div class="overview-section">
+        <div class="overview-text">
+          <h2 class="program-title-lg">Queue Warning Peer Exchange</h2>
+          <p class="program-text">
+            The Queue Warning Peer Exchange, hosted by the U.S. Department of Transportation (USDOT), 
+            brought together transportation professionals to discuss the implementation and benefits 
+            of queue warning systems. These systems are designed to alert drivers of potential hazards 
+            caused by stopped or slow-moving traffic ahead, enhancing safety and reducing the risk of rear-end collisions.
+          </p>
+          <p class="program-text">
+            Participants shared experiences, challenges, and best practices in deploying queue warning technologies 
+            across various jurisdictions, fostering a collaborative environment for knowledge exchange.
+          </p>
+        </div>
+        <div class="overview-image">
+          <Image src={qwsImage} alt="Queue Warning System" class="img-fluid radius-md shadow" />
+        </div>
+      </div>
     </ProgramSection>
   </main>
 </Layout>

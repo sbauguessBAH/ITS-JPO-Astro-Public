@@ -167,7 +167,7 @@ const getCourseCount = (path?: string) => courses.filter(course =>
 <Layout>
   <main class="program-main">
     <ProgramSection>
-      <h2 class="program-title-lg">
+      <h2 class="program-title-lg mb-4">
         ITS Trainings
       </h2>
       <p class="program-text">
@@ -176,7 +176,7 @@ const getCourseCount = (path?: string) => courses.filter(course =>
         Discover and take these free trainings to help enhance your ITS knowledge and skills.
       </p>
       <p class="program-text mb-4">
-        For NHI Trainings, the link will take you to the NHI catalog. From there, you can
+        For National Highway Institute (NHI) Trainings, the link will take you to the NHI catalog. From there, you can
         search for the course you're interested in.
       </p>
       <div class="trainings-container">
@@ -211,7 +211,7 @@ const getCourseCount = (path?: string) => courses.filter(course =>
               <Card 
                 href={course.url} 
                 isExternal={course.isExternal} 
-                shadow="none" 
+                shadow="sm" 
                 radius="md"
                 class="course-card"
               >

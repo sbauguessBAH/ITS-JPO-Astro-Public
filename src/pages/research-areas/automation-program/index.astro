@@ -14,6 +14,7 @@ import Roadmap from "./_roadmap.astro";
 import DownloadIcon from "@/src/components/programs/icons/DownloadIcon.astro";
 import Layout from "./_layout.astro";
 import OverlayCard, { type OverlayResource } from "@/src/components/programs/OverlayCard.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 
 const focusAreas: OverlayResource[] = [
   { 
@@ -144,9 +145,11 @@ const focusAreas: OverlayResource[] = [
   }
 </style>
 <Layout>
-  <main class="container-xl program-main program-padding">
-    <section class="program-section">
-      <h2 class="program-title-lg">Program Overview</h2>
+  <main class="program-main">
+    <ProgramSection>
+      <h2 class="program-title-lg">
+        Program Overview
+      </h2>
       <p class="program-text">
         Driving automation is one of the major transportation industry trends 
         of this decade. Through close collaboration and monitoring of current industry 
@@ -237,8 +240,8 @@ const focusAreas: OverlayResource[] = [
           </div>
         </div>
       </div>
-    </section>
-    <section class="program-section">
+    </ProgramSection>
+    <ProgramSection color="gray">
       <h2 class="program-title-lg text-center">Focus Areas</h2>
       <p class="program-text text-center max-w-lg mx-auto">
         In collaboration with the Operating Administrations, ITS JPO prioritized 
@@ -250,8 +253,8 @@ const focusAreas: OverlayResource[] = [
           <OverlayCard {...focusArea}/>
         ))}
       </div>
-    </section>
-    <section class="program-section">
+    </ProgramSection>
+    <ProgramSection>
       <h2 class="program-title-lg text-center">Program Roadmap</h2>
       <p class="program-text text-center max-w-lg mx-auto">
         In collaboration with the Operating Administrations, ITS JPO prioritized 
@@ -275,6 +278,6 @@ const focusAreas: OverlayResource[] = [
           </a>
         </div>
       </div>
-    </section>
+    </ProgramSection>
   </main>
 </Layout>

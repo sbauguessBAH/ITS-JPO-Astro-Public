@@ -1,7 +1,7 @@
 ---
 module: 62
 code: "CV273"
-title: "Introduction to SPaT/MAP Messages (New 2021)"
+title: "Introduction to SPaT/MAP Messages (2021)"
 length: "1 hour, 33 minutes"
 presentation: "/assets/pcb/standards-trainings/module-62/m62ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-62/m62trans.pdf"

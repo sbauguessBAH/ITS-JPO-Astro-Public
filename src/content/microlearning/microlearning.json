@@ -4,7 +4,7 @@
     "trainings": [
       { 
         "title": "ITS and Safe System Approach", 
-        "description": "This video provides an overview of how intelligent transportation systems (ITS) aligns with the Safe System Approach (SSA) - a guiding framework to enhance safety on our surface transportation system.",
+        "description": "An overview of how intelligent transportation systems (ITS) aligns with the Safe System Approach (SSA) - a guiding framework to enhance safety on our surface transportation system.",
         "url": "https://youtu.be/kJ5A7DpEOOc?si=5-OsrGmRct3Xp7bQ", 
         "isExternal": true,
         "image": "./images/safe-system.png"

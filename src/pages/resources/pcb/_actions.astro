@@ -25,39 +25,35 @@ const resources = [
     path: "/resources/pcb/microlearning",
     image: microlearningImage,
   },
+  // {
+  //   title: "Access Academic Resources",
+  //   description: "Connect with tools and materials to support students and faculty in preparing for careers in ITS.",
+  //   path: "/resources/pcb/academic-resources",
+  //   image: resourcesImage,
+  // },
   {
-    title: "Access Academic Resources",
-    description: "Connect with tools and materials to support students and faculty in preparing for careers in ITS.",
-    path: "/resources/pcb/academic-resources",
-    image: resourcesImage,
-  },
-  {
-    title: "Collaborate through ITS Peer Exchanges",
+    title: "Collaborate through Peer Exchanges",
     description: "Engage with your peers to share your challenges, best practices, and experiences advancing ITS technologies.",
     path: "/resources/pcb/peer-exchanges",
     image: peerExchangesImage,
   },
-  {
-    title: "Access V2X Educational Resources",
-    description: "Access educational resources for testing and deploying V2X technologies.",
-    path: "/resources/pcb/cave",
-    image: v2xToolsImage
-  },
-  {
-    title: "View or Register for Webinars",
-    description: "Learn about upcoming webinars on ITS and emerging transportation technologies, or view past webinars.",
-    path: "/resources/pcb/webinars",
-    image: webinarsImage
-  }
+  // {
+  //   title: "Access V2X Educational Resources",
+  //   description: "Access educational resources for testing and deploying V2X technologies.",
+  //   path: "/resources/pcb/cave",
+  //   image: v2xToolsImage
+  // },
+  // {
+  //   title: "View or Register for Webinars",
+  //   description: "Learn about upcoming webinars on ITS and emerging transportation technologies, or view past webinars.",
+  //   path: "/resources/pcb/webinars",
+  //   image: webinarsImage
+  // }
 ]
 ---
 <style>
   .resource-card:hover {
     background: rgba(var(--color-brand-light), 0.5);
-  }
-
-  .resource-card-header {
-    padding: 0;
   }
 
   .resource-card-image {
@@ -89,7 +85,7 @@ const resources = [
 <div class="card-grid">
   {resources.map(resource => (
     <Card href={resource.path} shadow="md" radius="md" class="resource-card">
-      <CardHeader class="resource-card-header">
+      <CardHeader class="p-0">
         <Image 
           src={resource.image}
           alt={resource.title}

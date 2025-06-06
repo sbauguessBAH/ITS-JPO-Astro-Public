@@ -2,10 +2,29 @@
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Layout from "../_layout.astro";
 import base_url from "@/src/lib/base_url";
-import v2xImage from "@/src/assets/images/pcb/v2x-training.jpg";
+import v2xImage from "@/src/assets/images/pcb/v2x.jpg";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import { Image } from "astro:assets";
 ---
+<style>
+  .overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
 
+  @media (min-width: 992px) {
+    .overview-section {
+      flex-direction: row;
+    }
+    .overview-image {
+      flex-basis: 40%;
+    }
+    .overview-text {
+      flex-basis: 60%;
+    }
+  }
+</style>
 <Layout>
   <div class="program-main">
     <ProgramSection class="pb-0">
@@ -13,35 +32,44 @@ import ProgramSection from "@/src/components/programs/ProgramSection.astro";
         { name: "Trainings", path: "/resources/pcb/trainings" },
         { name: "V2X Trainings" }
       ]}/>
-      <h2 class="program-title-lg">
+      <h2 class="program-title-lg mb-4">
         Vehicle-to-Everything (V2X) Trainings
       </h2>
-      <p class="program-text">
-        The ITS Professional Capacity Building Program developed curriculum designed for professionals who are eager to understand 
-        and implement the latest advancements in vehicle-to-everything (V2X) technology. Our V2X Trainings cover everything 
-        from the basics of V2X technology to technical trainings on V2X standards. Participants will gain a deep understanding 
-        of how V2X works, the types of communication (vehicle-to-vehicle, vehicle-to-infrastructure, vehicle-to-pedestrian, etc.), 
-        and the potential impact on the transportation ecosystem. Trainings cover the following topics:
-      </p>
-      <ul class="program-list">
-        <li>
-          <strong>Introduction to V2X Technology</strong>: Understand the fundamentals of V2X, including the different communication types, 
-          the underlying technologies, and their role in the future of transportation.
-        </li>
-        <li>
-          <strong>V2X Standards</strong>: Learn about the key standards and how they ensure seamless and secure communication between vehicles and infrastructure.
-        </li>
-        <li>
-          <strong>Security and Privacy</strong>: Understand the critical importance of securing V2X systems, protecting data integrity, 
-          and safeguarding privacy in connected transportation ecosystems.
-        </li>
-        <li>
-          <strong>V2X Deployment and Testing</strong>: Gain hands-on experience in setting up, testing, and deploying V2X systems for real-world use cases.
-        </li>
-      </ul>
-    </ProgramSection>
-    <ProgramSection class="pb-0 pt-2">
-      <h3 class="program-title-md">
+      <div class="overview-section">
+        <div class="overview-text">
+          <p class="program-text">
+            The ITS Professional Capacity Building Program developed curriculum designed for professionals who are eager to understand 
+            and implement the latest advancements in vehicle-to-everything (V2X) technology. Our V2X Trainings cover everything 
+            from the basics of V2X technology to technical trainings on V2X standards. Participants will gain a deep understanding 
+            of how V2X works, the types of communication (vehicle-to-vehicle, vehicle-to-infrastructure, vehicle-to-pedestrian, etc.), 
+            and the potential impact on the transportation ecosystem. Trainings cover the following topics:
+          </p>
+          <ul class="program-list">
+            <li>
+              <strong>Introduction to V2X Technology</strong>: Understand the fundamentals of V2X, including the different communication types, 
+              the underlying technologies, and their role in the future of transportation.
+            </li>
+            <li>
+              <strong>V2X Standards</strong>: Learn about the key standards and how they ensure seamless and secure communication between vehicles and infrastructure.
+            </li>
+            <li>
+              <strong>Security and Privacy</strong>: Understand the critical importance of securing V2X systems, protecting data integrity, 
+              and safeguarding privacy in connected transportation ecosystems.
+            </li>
+            <li>
+              <strong>V2X Deployment and Testing</strong>: Gain hands-on experience in setting up, testing, and deploying V2X systems for real-world use cases.
+            </li>
+          </ul>
+        </div>
+        <div class="overview-image">
+          <Image 
+            src={v2xImage} 
+            alt="V2X Training Overview" 
+            class="img-fluid radius-md shadow"
+          />
+        </div>
+      </div>
+      <h3 class="program-title-md mb-2 mt-4">
         Foundational V2X Training
       </h3>
       <p class="program-text">
@@ -57,22 +85,20 @@ import ProgramSection from "@/src/components/programs/ProgramSection.astro";
       <p class="program-text">
         Entities interested in this training should contact the ITS PCB Program.
       </p>
-    </ProgramSection>
-    <ProgramSection class="pb-0 pt-2">
-      <h3 class="program-title-md">
+      <h3 class="program-title-md mb-2 mt-4">
         V2X Standards Trainings
       </h3>
       <ul class="program-list">
-        <li>
+        <!-- <li>
           <a href={base_url("/resources/pcb/trainings/standards-trainings#module-38")}>
             Vehicle-to-Vehicle (V2V) ITS Standards for Project Managers (Updated 2021)
           </a>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <a href={base_url("/resources/pcb/trainings/standards-trainings#module-51")}>
             Using the ISO TS 19091 Standard to Implement V2I Intersection Applications Introduction
           </a>
-        </li>
+        </li> -->
         <li>
           <a href={base_url("/resources/pcb/trainings/standards-trainings#module-57")}>
             Connected Vehicles Certification Testing Introduction

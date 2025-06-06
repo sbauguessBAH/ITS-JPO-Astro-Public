@@ -1,7 +1,7 @@
 ---
 module: 61
 code: "A325"
-title: "Determining Known Risks with Standards in Your Development (New 2021)"
+title: "Determining Known Risks with Standards in Your Development (2021)"
 length: "1 hour, 22 minutes"
 presentation: "/assets/pcb/standards-trainings/module-61/m61ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-61/m61trans.pdf"

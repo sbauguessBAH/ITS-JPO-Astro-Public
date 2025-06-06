@@ -15,7 +15,6 @@ import base_url from "@/src/lib/base_url";
 const trainings: CollectionEntry<"standardsTrainings">[] = 
   await getCollection("standardsTrainings")
 
-const previewLength = 150;
 ---
 <style>
   
@@ -128,10 +127,10 @@ const previewLength = 150;
         { name: "Trainings", path: "/resources/pcb/trainings" },
         { name: "Standards Trainings" }
       ]}/>
-      <h2 class="program-title-lg">Standards Trainings</h2>
+      <h2 class="program-title-lg mb-4">Standards Trainings</h2>
       <p class="program-text">
         The ITS Professional Capacity Building Program (ITS PCB) is pleased 
-        to offer FREE ITS standards training. This 64-module series (listed in the table below) 
+        to offer FREE ITS transit standards training. This series
         is for practitioners in state and local highway agencies and transit agencies 
         who seek the skills needed to procure, test, implement, and operate 
         standards-based systems and devices. Consultants, system designers, integrators, 
@@ -139,7 +138,7 @@ const previewLength = 150;
       </p>
       <p class="program-text mb-4">
         Documents linked below were last updated in 2021. They remain available in their original published format
-        to ensure public access.
+        to ensure public access. Click the title to view additional information about each training module.
       </p>
       <div class="training-list">
         {trainings
@@ -218,7 +217,7 @@ const previewLength = 150;
                   {training.data.supplement && (
                     <a class="training-card-button" href={base_url(training.data.supplement)} target="_blank" rel="noopener noreferrer">
                       <PdfIcon/>
-                      Student Supplement
+                      Supplement
                     </a>
                   )}
                   {training.data.transcript && (

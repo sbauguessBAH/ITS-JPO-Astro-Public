@@ -19,7 +19,7 @@ const {
   isExternal,
   hideBorder,
   class: className,
-  ...props
+  ...rest
 } = Astro.props
 
 const Tag = href ? "a" : "div";
@@ -42,16 +42,6 @@ const linkAttrs = href && isExternal
   : href 
     ? { href: base_url(href)} 
     : undefined;
-
-const classes = [
-  "astro-card",
-  Object.entries(shadowClass).find(([, isActive]) => isActive)?.[0],
-  Object.entries(radiusClass).find(([, isActive]) => isActive)?.[0],
-  href && "astro-card-link",
-  fullWidth && "astro-card-full-width",
-  hideBorder && "astro-card-no-border",
-  className
-].filter(Boolean);
 
 ---
 <style>
@@ -87,9 +77,17 @@ const classes = [
   
 </style>
 <Tag
-  class:list={classes}
+  class:list={[
+    "astro-card",
+    Object.entries(shadowClass).find(([, isActive]) => isActive)?.[0],
+    Object.entries(radiusClass).find(([, isActive]) => isActive)?.[0],
+    href && "astro-card-link",
+    fullWidth && "astro-card-full-width",
+    hideBorder && "astro-card-no-border", 
+    className
+  ]}
   {...linkAttrs}
-  {...props}
+  {...rest}
 >
   <slot/>
 </Tag>

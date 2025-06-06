@@ -1,7 +1,7 @@
 ---
 module: 63
 code: "CV265"
-title: "Introduction to IEEE 1609 Family of Standards for Wireless Access in a Vehicular Environments (WAVE) (New 2021)"
+title: "Introduction to IEEE 1609 Family of Standards for Wireless Access in a Vehicular Environments (WAVE) (2021)"
 length: "1 hour, 29 minutes"
 presentation: "/assets/pcb/standards-trainings/module-63/m63ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-63/m63trans.pdf"

@@ -24,38 +24,38 @@ const items: ChildNavigationItem[] = [
     url: '/resources/pcb' 
   },
   { 
-    name: 'Trainings & Assistance', 
+    name: 'Trainings', 
     url: '/resources/pcb/trainings', 
     hasGeneratedChildItems: true,
-    pages: [
-      { 
-        name: 'ITS Trainings', 
-        url: '/resources/pcb/trainings'
-      },
-      { 
-        name: 'Connected and Automated Vehicle Education (CAVe)', 
-        url: '/resources/pcb/cave'
-      },
-      { 
-        name: 'Accelerating V2X Cohort', 
-        url: '/resources/pcb/v2x-cohort'
-      }
-    ]
   },
   { 
     name: 'Microlearning Videos', 
     url: '/resources/pcb/microlearning'
+  },
+  {
+    name: 'Technical Assistance',
+    url: '/resources/pcb/technical-assistance',
+    pages: [
+      { 
+        name: 'Connected and Automated Vehicle Education (CAVe)', 
+        url: '/resources/pcb/technical-assistance/cave'
+      },
+      { 
+        name: 'Accelerating V2X Cohort', 
+        url: '/resources/pcb/technical-assistance/v2x-cohort'
+      }
+    ]
   },
   { 
     name: 'Peer Exchanges', 
     url: '/resources/pcb/peer-exchanges', 
     hasGeneratedChildItems: true  
   },
-  { 
-    name: 'Academic Resources', 
-    url: '/resources/pcb/academic-resources', 
-    hasGeneratedChildItems: true 
-  },
+  // { 
+  //   name: 'Academic Resources', 
+  //   url: '/resources/pcb/academic-resources', 
+  //   hasGeneratedChildItems: true 
+  // },
   // { 
   //   name: 'Accelerating V2X Cohort', 
   //   url: '/resources/pcb/v2x-cohort'
@@ -83,9 +83,8 @@ const items: ChildNavigationItem[] = [
       ITS PROFESSIONAL CAPACITY BUILDING
     </Fragment>
     <Fragment slot="description">
-      Providing transportation professionals, educators, and students
-      with comprehensive training and technical assistance to build
-      expertise in ITS.
+      Providing transportation professionals with comprehensive training and technical assistance 
+      to advance the deployment of Intelligent Transportation Systems (ITS).
     </Fragment>
   </ProgramBanner>
   <ProgramMenu items={items} />

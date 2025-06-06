@@ -4,6 +4,8 @@ import CompassIcon from "@/src/components/programs/icons/CompassIcon.astro";
 import CheckIcon from "@/src/components/programs/icons/CheckIcon.astro";
 import ListIcon from "@/src/components/programs/icons/ListIcon.astro";
 import Layout from "../_layout.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 ---
 
 <style>
@@ -78,8 +80,12 @@ import Layout from "../_layout.astro";
   }
 </style>
 <Layout title="Automation Program">
-  <main class="container-xl program-main program-padding">
-    <section class="program-section">
+  <main class="program-main">
+    <ProgramSection size="small">
+      <Breadcrumb items={[
+        { name: "Focus Areas" },
+        { name: "Automated Driving System (ADS) Integration" }
+      ]}/>
       <h2 class="program-title-lg">
         Automated Driving System (ADS) Integration
       </h2>
@@ -124,8 +130,8 @@ import Layout from "../_layout.astro";
           </p>
         </div>
       </div>
-    </section>
-    <section class="program-section">
+    </ProgramSection>
+    <ProgramSection>
       <h3 class="program-title-md">
         Current Project Highlights
       </h3>
@@ -148,13 +154,13 @@ import Layout from "../_layout.astro";
         </div>
         <div class="highlight-card">
           <h4 class="highlight-card-header">
-            ADS Integration – Recommended Practices 
+            ADS Integration &amp; Recommended Practices 
           </h4>
           <div class="highlight-card-content">
             USDOT aims to establish initial national-level recommended practices for integration of ADS into the transportation system to provide states, localities, automation companies, and other road users with a well-supported, consistent basis for ADS expectations and assurances that operations will be safe and efficient.
           </div>
         </div>
       </div>
-    </section>
+    </ProgramSection>
   </main>
 </Layout>

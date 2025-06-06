@@ -7,7 +7,7 @@ presentation: "/assets/pcb/standards-trainings/module-57/m57ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-57/m57trans.pdf"
 supplement: "/assets/pcb/standards-trainings/module-57/m57sup.pdf"
 ---
-The connected vehicles (CV) environment has the potential to transform surface transportation systems such that vehicular crashes are significantly reduced, operators of the surface transportation systems have access to more accurate system performance data, travelers have access to specific traveler information, and allow the surface transportation systems to be optimized to minimize environmental impacts.
+The connected vehicles (CV) environment has the potential to transform surface transportation systems such that vehicular crashes are significantly reduced, operators of the surface transportation systems have access to more accurate system performance data, travelers have access to specific traveler information, and allow the surface transportation systems to be optimized.
 
 This module begins with an introduction to the certification testing process of RSU and OBU devices to insure that communications between vehicles and roadside equipment is private, secure, and interoperable throughout North America. It is essential that agencies use standards certification tests in deploying connected vehicle technologies to maximize the benefits from the connected vehicle environment. By taking this module, participants will learn how to specify certification requirements in contract terms and conditions. Deploying certified Connected Vehicles equipment will support interoperability, minimize future integration costs, make procurements easier, and facilitate regional and national integration.
 

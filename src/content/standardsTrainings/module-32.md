@@ -1,7 +1,7 @@
 ---
 module: 32
 code: "A315b, Part 1 of 2"
-title: "Specifying Requirements for Actuated Traffic Signal Controllers (ASC) Based on NTCIP 1202 v03 Standard (Updated 2021)"
+title: "Specifying Requirements for Actuated Traffic Signal Controllers (ASC) Based on NTCIP 1202 v03 Standard (2021)"
 length: "1 hour, 25 minutes"
 presentation: "/assets/pcb/standards-trainings/module-32/m32ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-32/m32trans.pdf"

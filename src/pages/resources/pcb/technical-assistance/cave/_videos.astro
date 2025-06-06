@@ -1,0 +1,164 @@
+---
+import rsu from "@/src/assets/images/pcb/cave/videos/rsu.png"
+import obu from "@/src/assets/images/pcb/cave/videos/obu.png"
+import building from "@/src/assets/images/pcb/cave/videos/building-cave.png"
+import lite from "@/src/assets/images/pcb/cave/videos/cave-lite.png"
+import maintenance from "@/src/assets/images/pcb/cave/videos/cave-maintenance.png"
+import cavers from "@/src/assets/images/pcb/cave/videos/cavers.png"
+import spat from "@/src/assets/images/pcb/cave/videos/spat.png"
+import tmc from "@/src/assets/images/pcb/cave/videos/tmc.png"
+import cave from "@/src/assets/images/pcb/cave/videos/cave.png"
+import v2x from "@/src/assets/images/pcb/cave/videos/v2x-hub.png"
+import Card from "@/src/components/programs/card/Card.astro"
+import CardBody from "@/src/components/programs/card/CardBody.astro"
+import { Image } from "astro:assets"
+
+const cards = [
+  {
+    title: "Roadside Unit (RSU)",
+    image: rsu,
+    link: "https://www.youtube.com/watch?v=a-nF9jiZ1X0",
+    description: "How to set up and operate a roadside unit, also known as an RSU."
+  },
+  {
+    title: "Traffic Management Center",
+    image: tmc,
+    link: "https://www.youtube.com/watch?v=ldlinRdd-nI",
+    description: "How CAVe-in-a-box can enhance Traffic Management Center (TMC) operations."
+  },
+  {
+    title: "Onboard Unit (OBU)",
+    image: obu,
+    link: "https://www.youtube.com/watch?v=Q3xH-XKT-_8",
+    description: "How to set up and operate an Onboard Unit, commonly known as an OBU."
+  },
+  {
+    title: "Maintenance",
+    image: maintenance,
+    link: "https://www.youtube.com/watch?v=He2RPhztg4Q",
+    description: "Overview of troubleshooting and maintenance processes for connected and autonomous vehicle devices."
+  },
+  {
+    title: "Vehicle-to-Everything (V2X) Hub",
+    image: v2x,
+    link: "https://www.youtube.com/watch?v=fhKiyVSrnWM",
+    description: "How to download and use V2X Hub on your device."
+  },
+  {
+    title: "How to build CAVe-in-a-box",
+    image: building,
+    link: "https://www.youtube.com/watch?v=zWO6NB6nxXw",
+    description: "Building CAVe-in-a-box and identifying key components along the way."
+  },
+  {
+    title: "CAVe-in-a-box",
+    image: cave,
+    link: "https://www.youtube.com/watch?v=EbqgJtJVh-4",
+    description: "Connected and Automated education (CAVe)-In-a-Box testing and educational tool kit."
+  },
+  {
+    title: "CAVe Research Software",
+    image: cavers,
+    link: "https://www.youtube.com/watch?v=fQ3B_KucEH8",
+    description: "Overview of CAVERS, a visualization and analysis tool for intelligent transportation systems' messages."
+  },
+  {
+    title: "Signal Phasing and Timing (SPaT) and MAP",
+    image: spat,
+    link: "https://www.youtube.com/watch?v=2Ss90y2qldo",
+    description: "How to set up a SPaT, or Signal Phase and Timing, and MAP messages."
+  },
+  // {
+  //   title: "CAVe Lite",
+  //   image: lite,
+  //   linkOld: "https://www.youtube.com/watch?v=t2qyqzunsRI",
+  //   description: "This video is not curently available"
+  // }
+]
+---
+<style>
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--size);
+  }
+
+  @media (min-width: 992px) {
+    .video-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .video-card-body {
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    gap: var(--size-sm);
+    height: 120px;
+    background: rgba(var(--color-brand), 0.15);
+    /* color: white; */
+    transition: background 0.3s ease;
+  }
+
+  .video-card:hover .video-card-body {
+    background: rgba(var(--color-brand), 0.3);
+  }
+
+  .video-card-thumbnail {
+    flex-basis: 30%;
+  }
+
+  .video-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video-card-content {
+    flex-basis: 70%;
+    padding: var(--size-sm);
+    align-self: center;
+  }
+</style>
+    <div class="video-grid pb-4">
+      {cards.map(card => 
+        <Card class="video-card" href={card.link} isExternal>
+          <CardBody class="p-0">
+            <div class="video-card-body">
+              <div class="video-card-thumbnail">
+                <Image 
+                  src={card.image} 
+                  alt={card.title} 
+                  class="video-card-image"
+                />
+              </div>
+              <div class="video-card-content">
+                <h4 class="program-title-xs mb-1">
+                  {card.title}
+                </h4>
+                <p class="video-card-text">
+                  {card.description}
+                </p>
+              </div>
+            </div>
+          </CardBody>
+        </Card>
+        // <div class="col">
+        //   <a href={card.link} target="_blank" rel="noreferrer noopener">
+        //     <div class="card shadow">
+        //       <div class="row g-0 align-items-center">
+        //         <div class="col-4">
+        //           <img src={card.image.src} class="img-fluid rounded-start"/>
+        //         </div>
+        //         <div class="col-8">
+        //           <div class="card-body">
+        //             <p>{card.title}</p>
+        //             <p>{card.description}</p>
+        //           </div>
+        //         </div>
+        //       </div>
+        //     </div>
+        //   </div>
+        // </a>
+      )}
+    </div>

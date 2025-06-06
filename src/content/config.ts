@@ -48,6 +48,7 @@ export const collections = {
     schema: ({ image }) => z.array(
       z.object({
         title: z.string(),
+        description: z.string().optional(),
         trainings: z.array(
           z.object({
             title: z.string(),
@@ -81,6 +82,18 @@ export const collections = {
     schema: z.object({
       title: z.string(),
       code: z.string(),
+      module: z.number(),
+      length: z.string(),
+      presentation: z.string().optional(),
+      supplement: z.string().optional(),
+      transcript: z.string().optional(),
+      chat: z.string().optional()
+    }),
+  }),
+  transitStandardsTrainings: defineCollection({
+    type: 'content', // v2.5.0 and later
+    schema: z.object({
+      title: z.string(),
       module: z.number(),
       length: z.string(),
       presentation: z.string().optional(),

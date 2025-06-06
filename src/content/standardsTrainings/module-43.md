@@ -1,7 +1,7 @@
 ---
 module: 43
 code: "I261"
-title: "Vehicle-to-Infrastructure (V2I) ITS Standards for Project Managers (Updated 2021)"
+title: "Vehicle-to-Infrastructure (V2I) ITS Standards for Project Managers (2021)"
 length: "1 hour, 44 minutes"
 presentation: "/assets/pcb/standards-trainings/module-43/m43ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-43/m43trans.pdf"

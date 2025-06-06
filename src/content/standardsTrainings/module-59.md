@@ -1,7 +1,7 @@
 ---
 module: 59
 code: "A322a"
-title: "Understanding User Needs for Transportation Field Cabinet Systems Using ATC 5301 v02 (New 2020)"
+title: "Understanding User Needs for Transportation Field Cabinet Systems Using ATC 5301 v02 (2020)"
 length: "1 hour, 20 minutes"
 presentation: "/assets/pcb/standards-trainings/module-59/m59ppt.pdf"
 transcript: "/assets/pcb/standards-trainings/module-59/m59trans.pdf"
