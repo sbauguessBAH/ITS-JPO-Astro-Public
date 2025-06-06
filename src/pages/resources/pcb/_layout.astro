@@ -24,9 +24,23 @@ const items: ChildNavigationItem[] = [
     url: '/resources/pcb' 
   },
   { 
-    name: 'Trainings', 
+    name: 'Trainings & Assistance', 
     url: '/resources/pcb/trainings', 
-    hasGeneratedChildItems: true 
+    hasGeneratedChildItems: true,
+    pages: [
+      { 
+        name: 'ITS Trainings', 
+        url: '/resources/pcb/trainings'
+      },
+      { 
+        name: 'Connected and Automated Vehicle Education (CAVe)', 
+        url: '/resources/pcb/cave'
+      },
+      { 
+        name: 'Accelerating V2X Cohort', 
+        url: '/resources/pcb/v2x-cohort'
+      }
+    ]
   },
   { 
     name: 'Microlearning Videos', 

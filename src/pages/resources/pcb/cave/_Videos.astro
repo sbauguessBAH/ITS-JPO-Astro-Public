@@ -117,16 +117,7 @@ const cards = [
     align-self: center;
   }
 </style>
-<div class="background-light">
-  <section class="container-xl program-section">
-    <h2 class="program-title-lg text-center">
-      CAVe-in-a-box Video Series
-    </h2>
-    <p class="program-text text-center max-w-lg mx-auto mb-4">
-      The video series is designed to make learning easy and practical. These videos show you how to setup and use the CAVe-in-a-box system,
-      covering everything from installing and mounting vehicle radios to understanding how data flows in a transportation management system.
-      By watching the videos, you'll have all the tools you need to successfully use CAVe-in-a-box.
-    </p>
+    
     <div class="video-grid pb-4">
       {cards.map(card => 
         <Card class="video-card" href={card.link} isExternal>
@@ -167,5 +158,3 @@ const cards = [
         // </a>
       )}
     </div>
-  </div>
-</section>

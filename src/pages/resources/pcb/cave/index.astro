@@ -10,6 +10,7 @@ import Videos from "./_videos.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import base_url from "@/src/lib/base_url";
 import rsu from "@/src/assets/images/pcb/cave/rsu.png"
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 ---
 <style>
   .overview-section {
@@ -18,26 +19,49 @@ import rsu from "@/src/assets/images/pcb/cave/rsu.png"
     gap: var(--size);
   }
 
+  .overview-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   @media (min-width: 992px) {
     .overview-section {
       flex-direction: row;
-      align-items: start;
+      align-items: center;
     }
     .overview-image {
-      flex-basis: 30%;
+      flex-basis: 35%;
+      display: flex;
+      justify-content: center;
     }
     .overview-text {
-      flex-basis: 70%;
+      flex-basis: 65%;
     }
+  }
+
+  .cave-transparent-image {
+    max-width: 350px;
+  }
+
+  .cave-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.5rem 1.4rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+  }
+  .cave-button:hover {
+    font-weight: inherit;
+    background: rgb(var(--color-brand-dark))
   }
 </style>
 <Layout>
-  <main class="program-container program-padding">
-    <section class="container-xl program-section">
-      <Breadcrumb items={[
-        { name: "Overview", path: "/resources/pcb" },
-        { name: "CAVe-in-a-box" }
-      ]}/>
+  <main class="program-main">
+    <ProgramSection>
       <div class="overview-section">
         <div class="overview-text">
           <h2 class="program-title-lg">
@@ -53,21 +77,23 @@ import rsu from "@/src/assets/images/pcb/cave/rsu.png"
             traffic control equipment, and software. With CAVe-in-a-box, educators can train, deploy, and test scaled intelligent transportation
             systems directly in the classroom, providing students with practical real-world experience.
           </p>
-          <a 
-            class="program-button-brand" 
-            href="https://usdot-carma.atlassian.net/wiki/spaces/CMNT/pages/2628485130/CAVe-in-a-box+Training"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn More
-          </a>
+          <div class="pt-2">
+            <a 
+              class="cave-button" 
+              href="https://usdot-carma.atlassian.net/wiki/spaces/CMNT/pages/2628485130/CAVe-in-a-box+Training"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn More
+            </a>
+          </div>
         </div>
         <div class="overview-image">
-          <Image src={caveTransparent} alt="CAVe-in-a-box" class="img-fluid"/>
+          <Image src={caveTransparent} alt="CAVe-in-a-box" class="img-fluid cave-transparent-image"/>
         </div>
       </div>
-    </section>
-    <section class="container-xl program-section">
+    </ProgramSection>
+    <ProgramSection>
       <h2 class="program-title-lg text-center mb-4">
         Open-Source Resources for Educators
       </h2>
@@ -110,9 +136,19 @@ import rsu from "@/src/assets/images/pcb/cave/rsu.png"
           </div>
         </div>
       </div>
-    </section>
-    <Videos/>
-    <section class="container-xl program-section">
+    </ProgramSection>
+    <ProgramSection isGray>
+      <h2 class="program-title-lg text-center">
+        CAVe-in-a-box Video Series
+      </h2>
+      <p class="program-text text-center max-w-lg mx-auto mb-4">
+        The video series is designed to make learning easy and practical. These videos show you how to setup and use the CAVe-in-a-box system,
+        covering everything from installing and mounting vehicle radios to understanding how data flows in a transportation management system.
+        By watching the videos, you'll have all the tools you need to successfully use CAVe-in-a-box.
+      </p>
+      <Videos/>
+    </ProgramSection>
+    <ProgramSection>
       <div class="overview-section">
         <div class="overview-text">
           <h2 class="program-title-lg">
@@ -131,6 +167,6 @@ import rsu from "@/src/assets/images/pcb/cave/rsu.png"
           <Image src={rsu} alt="CAVe-in-a-box" class="img-fluid"/>
         </div>
       </div>
-    </section>
+    </ProgramSection>
   </main>
 </Layout>
