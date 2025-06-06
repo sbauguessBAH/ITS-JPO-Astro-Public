@@ -12,10 +12,10 @@ This module provides participants with information on how to identify the user n
 This module helps the user understand the scope of FMS user needs within NTCIP 1210 SSM Standard and the ConOps it supports. This module is to be placed in the context of the SE-based standards as well as in the acquisition curriculum path with A304B: Specifying Requirements for Field Management Stations - Part 1 Object Definitions for Signal System Masters Based on NTCIP 1210 Standard following this module.
 
 ### Instructor(s)
-* Kenneth L. Vaughn, P.E.
-* President
-* Trevilon Corporation
-* Herndon, VA
+Kenneth L. Vaughn, P.E.  
+President  
+Trevilon Corporation  
+Herndon, VA
 
 ### Target Audiences
 * System Developers

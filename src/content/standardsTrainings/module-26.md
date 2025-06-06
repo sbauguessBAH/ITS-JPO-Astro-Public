@@ -10,10 +10,10 @@ supplement: "/assets/pcb/standards-trainings/module-26/m26sup.pdf"
 The purpose of this updated module is to incorporate necessary changes resulting from new user needs and capabilities such as connected vehicles, SMART Grid, and others included in the updated NTCIP 1213 standard v03 (from v02). It also assists technical staff in writing unambiguous, complete, and well-written user needs based on the NTCIP 1213 Standard v03. This module provides participants with information on how to identify the appropriate use of the NTCIP 1213 standard and acquire an ELMS system based on what the user is seeking to accomplish.
 
 ### Instructor(s)
-* James J. Frazer
-* President
-* Gridaptive Technologies
-* Pompano Beach, FL
+James J. Frazer  
+President  
+Gridaptive Technologies  
+Pompano Beach, FL
 
 ### Target Audiences
 * Engineering Staff

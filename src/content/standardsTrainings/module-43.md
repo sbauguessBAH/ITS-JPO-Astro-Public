@@ -12,10 +12,10 @@ This module provides an introduction to the connected vehicle environment and a 
 The module then presents the ITS Standards that help support the deployment of a V2I application and a V2I infrastructure. The module also introduces some of the challenges to designing and implementing a V2I infrastructure, and provides some strategies and approaches to deploying the V2I infrastructure.
 
 ### Instructor(s)
-* Patrick Chan P.E.
-* Senior Technical Staff
-* Consensus Systems Technologies (ConSysTec)
-* Flushing, NY
+Patrick Chan P.E.  
+Senior Technical Staff  
+Consensus Systems Technologies (ConSysTec)  
+Flushing, NY
 
 ### Target Audiences
 * Private and Public Sector Users including Manufacturers

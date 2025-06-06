@@ -12,10 +12,10 @@ This module will cover material related to elements of the 1205 Standard require
 This module will cover the role of other modes of testing including manufacturing and acceptance tests. The module will cover how verification and validation works as part of the testing life cycle.
 
 ### Instructor(s)
-* Joey Yang, P.E.
-* Senior ITS Project Manager
-* HDR Engineering, Inc.
-* Seattle, WA, USA
+Joey Yang, P.E.  
+Senior ITS Project Manager  
+HDR Engineering, Inc.  
+Seattle, WA, USA
 
 ### Target Audiences
 * Device Manufacturers

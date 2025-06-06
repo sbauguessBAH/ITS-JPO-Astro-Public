@@ -12,10 +12,10 @@ T203.2, Part 2 of 2, will instruct the student how to develop a test case specif
 Subsequent modules will define how to prepare test procedures and how to perform tests.
 
 ### Instructor(s)
-* Manny Insignares
-* Vice President, Technology
-* Consensus Systems Technologies
-* New York, NY
+Manny Insignares  
+Vice President, Technology  
+Consensus Systems Technologies  
+New York, NY
 
 ### Target Audiences
 * Engineering Staff

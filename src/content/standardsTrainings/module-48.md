@@ -10,13 +10,13 @@ supplement: "/assets/pcb/standards-trainings/module-48/m48sup.pdf"
 The purpose of this module is to teach the student how to develop a Test Procedure Specification (TPS) and how said document fits into the testing process and relates to the Test Plan, Test Design Specification, and Test Case Specification. In addition, the student will be taught how to develop the TPS to meet the specific project requirements for the interface as found in the Protocol Requirements List (PRL) or Needs to Requirements Traceability Matrix (NRTM).
 
 ### Instructor(s)
-* Dave Miller
-* Chair: NEMA/AASHTO/ITE Joint Committee on ATC
-* Chair: 3TS Technical Committee
-* Principal Systems Engineer
-* Siemans Industries, Inc.
-* RC-US MO MM-ITS R&D
-* Austin, TX
+Dave Miller  
+Chair: NEMA/AASHTO/ITE Joint Committee on ATC  
+Chair: 3TS Technical Committee  
+Principal Systems Engineer  
+Siemans Industries, Inc.  
+RC-US MO MM-ITS R&D  
+Austin, TX
 
 ### Target Audiences
 * Engineering Staff

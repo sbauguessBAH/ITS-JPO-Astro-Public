@@ -12,10 +12,10 @@ This module explains how the NTCIP Framework offers design solutions through use
 Upon taking this course, a student should be able to understand how the remote management of ITS field devices from a central management station works at a very high level and how various devices can share the same system environment and be compatible. This will help students in understanding device standards used in ITS applications and the testing phase of system acceptance.
 
 ### Instructor(s)
-* Raman K. Patel, Ph.D., P.E.
-* President
-* RK Patel Associates, Inc.
-* New York, NY
+Raman K. Patel, Ph.D., P.E.  
+President  
+RK Patel Associates, Inc.  
+New York, NY
 
 ### Target Audiences
 * Engineering Staff

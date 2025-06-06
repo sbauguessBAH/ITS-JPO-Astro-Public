@@ -11,6 +11,10 @@ import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import base_url from "@/src/lib/base_url";
 import rsu from "@/src/assets/images/pcb/cave/rsu.png"
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 ---
 <style>
   .overview-section {
@@ -58,6 +62,47 @@ import ProgramSection from "@/src/components/programs/ProgramSection.astro";
     font-weight: inherit;
     background: rgb(var(--color-brand-dark))
   }
+  .document-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+  }
+  .document-button:hover {
+    font-weight: inherit;
+    background: rgb(var(--color-brand-dark))
+  }
+</style>
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    gap: var(--size);
+  }
+  @media (min-width: 992px) {
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .resource-card-image {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+  }
+  .resource-card-header {
+    padding: 0;
+  }
+  .resource-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem 1rem 1rem;
+    height: 100%;
+  }
 </style>
 <Layout>
   <main class="program-main">
@@ -97,44 +142,56 @@ import ProgramSection from "@/src/components/programs/ProgramSection.astro";
       <h2 class="program-title-lg text-center mb-4">
         Open-Source Resources for Educators
       </h2>
-      <div class="row row-cols-1 row-cols-lg-3 g-4">
-        <div class="col">
-          <div class="card h-100 shadow">
-            <img src={caveDesignDocuments.src} alt="CAVe-in-a-box" class="card-img-top"/>
-            <div class="card-body">
-              <h5>Design Documents</h5>
-              <p>Learn how to set up, configure, and explore all that CAVe-in-a-box has to offer.</p>
-            </div>
-            <div class="card-footer text-center">
-              <a class="btn-pcb-yellow" target="_blank" href={base_url("/assets/pcb/cave/CAVe_Box_SysDes_April2022.pdf")}>Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 shadow">
-            <img src={caveDiy.src} alt="Two people standing over a CAVe-in-a-box" class="card-img-top"/>
-            <div class="card-body">
-              <h5>Do-It-Yourself Guides</h5>
-              <p>Build your own CAVe-in-a-box from the ground up.</p>
-            </div>
-            <div class="card-footer text-center">
-              <a class="btn-pcb-yellow" target="_blank" href={base_url("/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf")}>Learn More</a>
-              <!-- <a class="btn-pcb-yellow" href={base_url("/resources/training/pcb/cave/assembly-guide")}>Assembly Guide</a> -->
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 shadow">
-            <img src={caveConfiguration.src} alt="A laptop connected to a CAVe-in-a-box" class="card-img-top"/>
-            <div class="card-body">
-              <h5>Configuration Instructions</h5>
-              <p>Explore how you can setup and configure your CAVe-in-a-box toolkit.</p>
-            </div>
-            <div class="card-footer text-center">
-              <a class="btn-pcb-yellow" target="_blank" href={base_url("/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf")}>Learn More</a>
-            </div>
-          </div>
-        </div>
+      <div class="card-grid">
+        <Card>
+          <CardHeader class="resource-card-header">
+            <Image src={caveDesignDocuments} alt="CAVe-in-a-box" class="resource-card-image"/>
+          </CardHeader>
+          <CardBody class="resource-card-body">
+            <h3 class="program-title-sm mb-2">Design Documents</h3>
+            <p>
+              Learn how to set up, configure, and explore 
+              all that CAVe-in-a-box has to offer.
+            </p>
+          </CardBody>
+          <CardFooter class="background-light py-4">
+            <a class="document-button" target="_blank" href={base_url("/assets/pcb/cave/CAVe_in_a_box_SysDes_April2022.pdf")}>
+              View PDF
+            </a>
+          </CardFooter>
+        </Card>
+        <Card>
+          <CardHeader class="resource-card-header">
+            <Image src={caveDiy} alt="Two people standing over CAVe-in-a-box" class="resource-card-image"/>
+          </CardHeader>
+          <CardBody class="resource-card-body">
+            <h3 class="program-title-sm mb-2">Do-It-Yourself Guides</h3>
+            <p>
+              Build your own CAVe-in-a-box from the ground up.
+            </p>
+          </CardBody>
+          <CardFooter class="background-light py-4">
+            <a class="document-button" target="_blank" href={base_url("/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf")}>
+              View PDF
+            </a>
+          </CardFooter>
+        </Card>
+        <Card>
+          <CardHeader class="resource-card-header">
+            <Image src={caveConfiguration} alt="A laptop connected to a CAVe-in-a-box" class="resource-card-image"/>
+          </CardHeader>
+          <CardBody class="resource-card-body">
+            <h3 class="program-title-sm mb-2">Configuration Instructions</h3>
+            <p>
+              Explore how you can setup and configure your CAVe-in-a-box toolkit.
+            </p>
+          </CardBody>
+          <CardFooter class="background-light py-4">
+            <a class="document-button" target="_blank" href={base_url("/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf")}>
+              View PDF
+            </a>
+          </CardFooter>
+        </Card>
       </div>
     </ProgramSection>
     <ProgramSection isGray>

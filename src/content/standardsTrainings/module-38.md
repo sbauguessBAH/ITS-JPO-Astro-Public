@@ -14,12 +14,11 @@ This module provides a high-level overview of vehicle-to-vehicle communications 
 This module then presents the intelligent transportation system (ITS) Standards that help support the deployment of the V2V environment and V2V applications. This module also introduces some of the challenges to implementing the V2V environment and how surface transportation systems can support the V2V environment.
 
 
-
 ### Instructor(s)
-* Kenneth Vaughn, P.E.
-* President
-* Trevilon LLC
-* Magnolia, TX, USA
+Kenneth Vaughn, P.E.  
+President  
+Trevilon LLC  
+Magnolia, TX, USA
 
 ### Target Audiences
 * Engineering Staff

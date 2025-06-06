@@ -14,10 +14,10 @@ This module provides participants with information on how to identify and use th
 This module is to be placed in the context of the SE as well as in the acquisition curriculum path with A312B: Specifying Requirements for Transportation Sensor Systems (TSS) Based on NTCIP 1209 Standard following this module.
 
 ### Instructor(s)
-* Ralph W. Boaz
-* President
-* Pillar Consulting, Inc.
-* San Diego, CA
+Ralph W. Boaz  
+President  
+Pillar Consulting, Inc.  
+San Diego, CA
 
 ### Target Audiences
 * System Developers

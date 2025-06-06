@@ -14,10 +14,10 @@ The module is provided in two parts, Part 1 and Part 2 and a continuation with t
 Part 2 extends these previous discussions by focusing on additional considerations when specifying NTCIP 1202 v03, and the unique aspects of the NTCIP 1202 device standard when compared to other NTCIP device standards. Part 2 also discusses how to define extensions for ASC systems to address user needs and requirements that are not supported by the NTCIP 1202 v03 standard. This module concludes by introducing the latest developments related to testing ASCs.
 
 ### Instructor(s)
-* Kenneth L. Vaughn, P.E.
-* President
-* Trevilon LLC
-* Magnolia, TX, USA
+Kenneth L. Vaughn, P.E.  
+President  
+Trevilon LLC  
+Magnolia, TX, USA
 
 ### Target Audiences
 * Engineering Staff

@@ -14,10 +14,10 @@ This module will cover the role of other modes of testing, including compliance,
 This module will use a sample test plan for TMDD based on IEEE 829 to demonstrate the proper way to create a test plan specific to the user needs and requirements based on the DMS Standard, including test procedures. It will walk through the process of correctly creating a test plan.
 
 ### Instructor(s)
-* Patrick Chan, P.E.
-* Senior Technical Staff
-* Consensus Systems Technologies (ConSysTec)
-* Flushing, NY
+Patrick Chan, P.E.  
+Senior Technical Staff  
+Consensus Systems Technologies (ConSysTec)  
+Flushing, NY
 
 ### Target Audiences
 * Device Manufacturers

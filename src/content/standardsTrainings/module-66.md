@@ -12,13 +12,35 @@ This module explains how a Security Credential Management System (SCMS) is a cri
 After taking this course, participants will be able to understand the application of a transportation-oriented SCMS and how the security certificates provide the mechanism for devices to exchange messages in a trustworthy and privacy-protected manner. This course will help participants to understand the standards used to ensure the security of the V2X communications exchanges, including the interoperability among devices operating in a connected vehicle environment. Finally, participants will understand technical and organizational challenges associated with obtaining credentials for use by devices that participate in deployments and will be positioned to specify implementation or deployment requirements related to SCMS-based certificate management.
 
 ### Instructor(s)
-
+Dr. William Whyte  
+Senior Director, Technical Standards  
+Qualcomm Technologies, Inc.  
+San Diego, CA, USA  
+  
+Dr. Virendra Kumar  
+Senior Staff Engineer, Technical Standards  
+Qualcomm Technologies, Inc.  
+San Diego, CA, USA
 
 ### Target Audiences
-* 
+*   IT/Tech Support
+*   Private and Public Sector Users including Manufacturers
+*   Procurement Managers/Decision Makers
+*   Public Sector Project Managers
+*   System Developers
+*   System Integrators
+*   Traffic Management and Engineering Staff
+*   Traffic Management Center and Operations Staff
+*   Transit Managers
+*   Transit Planning, Operations, and Maintenance Staff
+*   Transportation Planners
 
 ### Prerequisite(s)
-* 
+*   CV262: Vehicle-to-Vehicle ITS Standards for Project Managers
+*   CV261: Vehicle-to-Infrastructure ITS Standards for Project Managers
+*   CV265: Introduction to IEEE 1609 Family of Standards for Wireless Access in Vehicular Environments
 
 ### Learning Objectives/Key Elements
-1. 
+1.  Define communications security requirements in the Connected Vehicle (CV) environment
+2.  Describe how the Security Credential Management System (SCMS) uses cryptographic building blocks to provide trust
+3.  Understand how to get devices interacting with the SCMS in a deployment

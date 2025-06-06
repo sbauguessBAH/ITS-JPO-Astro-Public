@@ -14,13 +14,36 @@ SCMS also plays a key function in protecting the system as a whole by identifyin
 After taking this course, participants will be able to understand the application of a transportation-oriented SCMS and how the security certificates provide the mechanism for devices to exchange messages in a trustworthy and privacy-protected manner. This course will help participants in understanding the standards used to ensure the security of the V2X communications exchanges, including the interoperability among devices operating in a connected vehicle environment. Finally, participants will understand technical and organizational challenges associated with obtaining credentials for use by devices that participate in deployments and will be positioned to specify implementation or deployment requirements related to SCMS-based certificate management. To protect the privacy of vehicle owners, these certificates contain no personal or equipment-identifying information and limit the ability to track an individual vehicle without external resources.
 
 ### Instructor(s)
+Dr. William Whyte
+Senior Director, Technical Standards
+Qualcomm Technologies, Inc.
+San Diego, CA, USA
 
+Dr. Virendra Kumar
+Senior Staff Engineer, Technical Standards
+Qualcomm Technologies, Inc.
+San Diego, CA, USA
 
 ### Target Audiences
-* 
+* Private and Public Sector Users including Manufacturers
+* Procurement Managers/Decision Makers
+* Project Managers
+* Public Sector Project Managers
+* Specification Writers
+* System Developers
+* System Integrators
+* Traffic Management and Engineering Staff
+* Traffic Management Center and Operations Staff
+* Transit Managers
+* Transit Planning, Operations, and Maintenance Staff
+* Transportation Planners
 
 ### Prerequisite(s)
-* 
+* CSE201: Introduction to Security Credentials Management System (SCMS) Part 1
+* CV262: Vehicle-to-Vehicle ITS Standards for Project Managers
+* CV261: Vehicle-to-Infrastructure ITS Standards for Project Managers
+* CV265: Introduction to IEEE 1609 Family of Standards for Wireless Access in Vehicular Environments
 
 ### Learning Objectives/Key Elements
-1. 
+1. Identify the Vehicle-to-Everything (V2X) certification process for a device to enroll in the SCMS
+2. Illustrate how to make a deployment plan that uses SCMS services

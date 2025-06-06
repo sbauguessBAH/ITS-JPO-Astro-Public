@@ -10,10 +10,10 @@ supplement: "/assets/pcb/standards-trainings/module-45/m45sup.pdf"
 The purpose of this module is to teach students how to identify and develop well-formed requirements specific to the NTCIP 1207 v02 RMC Standard, which does not currently contain requirements, and points out where RMC are currently in operation (e.g.: CA, AZ, NY, MN, etc.). Building on the user needs identified in A309a module, this module deals with the subject of requirements—the next step of the systems life cycle—that will develop well-formed requirements specific to the RMC Standard, independent of the type of traffic controllers (ASC, ATC, 2070 or 170).
 
 ### Instructor(s)
-* Raman K. Patel, Ph.D., P.E.
-* President
-* RK Patel Associates, Inc.
-* New York City, NY
+Raman K. Patel, Ph.D., P.E.  
+President  
+RK Patel Associates, Inc.  
+New York City, NY
 
 ### Target Audiences
 * Engineering Staff

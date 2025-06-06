@@ -14,10 +14,10 @@ This module is part of the SEP path; thus students must learn how to specify req
 Part 1 focuses on specifying ASC requirements and introduces the design content (dialogs, objects and other references, and/or special project requirements, if any) using tools and resources in the Standard such as the Protocol Requirements List (PRL), the Requirements Traceability Matrix (RTM), the Management Information Base (MIB) and the SEP. Part 1 provides participants with information on how to understand the scope of the NTCIP 1202 v03 Standard, identifies the appropriate use of the Standard to acquire an Actuated Traffic Signal Controller or ASC system and how to prepare (tailor) their ASC project specification based on the information provided by the Standard, such as building a project level RTM in addition to the project level PRL introduced in Module 315a. The module also stresses that agencies require a project level PRL, which must be included in the ASC specification.
 
 ### Instructor(s)
-* Kenneth L. Vaughn, P.E.
-* President
-* Trevilon LLC
-* Magnolia, TX, USA
+Kenneth L. Vaughn, P.E.  
+President  
+Trevilon LLC  
+Magnolia, TX, USA
 
 ### Target Audiences
 * Private and Public Sector Users including Manufacturers

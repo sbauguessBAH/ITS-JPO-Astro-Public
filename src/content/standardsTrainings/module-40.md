@@ -12,10 +12,10 @@ The purpose of this module is to help users learn how to identify and prepare we
 This module (and the following module, A309b) focuses on the communications interface aspects—how to configure, monitor, and control ramp meters remotely from a Transportation Management Center (TMC) or locally at the front-panel—using data objects provided by the NTCIP 1207 v02 standard. It will provide participants with information on how to identify the appropriate use of the NTCIP 1207 v02 Standard and acquire ramp meter control (RMC) units based on what the user is seeking to accomplish.
 
 ### Instructor(s)
-* Raman K. Patel, Ph.D., P.E.
-* President
-* RK Patel Associates, Inc.
-* New York City, NY
+Raman K. Patel, Ph.D., P.E.  
+President  
+RK Patel Associates, Inc.  
+New York City, NY
 
 ### Target Audiences
 * Engineering Staff

@@ -12,10 +12,10 @@ This module assists user agencies in their efforts to create test plans specific
 This module will review sample test documentation that should result from performing the tests identified including test logs, test summary, and test incident reports.
 
 ### Instructor(s)
-* Kenneth L. Vaughn, P.E.
-* President
-* Trevilon LLC
-* Magnolia, TX, USA
+Kenneth L. Vaughn, P.E.  
+President  
+Trevilon LLC  
+Magnolia, TX, USA
 
 ### Target Audiences
 * Device Manufacturers

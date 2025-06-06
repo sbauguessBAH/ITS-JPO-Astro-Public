@@ -14,13 +14,30 @@ The Center-to-Center (C2C) Reference Implementation (RI) is a tool developed und
 The focus of this module is to explain how to use the Center-to-Center (C2C) Reference Implementation (RI) to test a system for conformance to the TMDD v3.03 standard. It describes installation, configuration, operation, and reporting features of the software; it also alerts participants to the limitations of the software and the resources required for its proper use. This module is intended for hands-on users of the software. This module uses sample TMDD v3.03 data exchanges and explains how the tool can be used to verify that a deployed system conforms to the standardized exchanges as per TMDD v03.03 and NTCIP 2306 XML v1.69.
 
 ### Instructor(s)
-
+Kenneth Vaughn, P.E.  
+President  
+Trevilon LLC  
+Magnolia, TX, USA
 
 ### Target Audiences
-* 
+*   Software Developers
+*   System Integrators
+*   Testing Personnel/Contractors
 
 ### Prerequisite(s)
-* 
+*   I101: Using ITS Standards: An Overview
+*   T101: Introduction to ITS Standards Testing
+*   T201: How to Write a Test Plan
+*   A321a: Understanding User Needs for Traffic Management Systems Based on TMDD v3 Standard
+*   A321b: Specifying Requirements for Traffic Management Systems Based on TMDD v3 Standard
+*   T202: Overview of Test Design Specifications, Test Cases, and Test Procedures
+*   T203 Part 1 of 2: How to Develop Test Cases for an ITS Standards-based Test Plan, Part 1 of 2
+*   T203 Part 2 of 2: How to Develop Test Cases for an ITS Standards-based Test Plan, Part 2 of 2
+*   T204 Part 1 of 2: How to Develop a Test Procedure for ITS Standards-based Test Plan, Part 1 of 2
+*   T204 Part 2 of 2: How to Develop Test Procedures for ITS Standards-based Test Plan, Part 2 of 2
 
 ### Learning Objectives/Key Elements
-1. 
+1.  Install and configure the C2C RI on a host system
+2.  Operate the C2C RI
+3.  Retrieve the C2C RI results from a test
+4.  Prepare a report based on the C2C RI results

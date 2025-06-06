@@ -10,10 +10,10 @@ supplement: "/assets/pcb/standards-trainings/module-37/m37sup.pdf"
 The focus of this module is on the API Standard. The module details the API Standard's features and capabilities, it discusses how the API Standard works with other ITS standards, and it provides deployment considerations and migration strategies for users. This module also provides guidance on how to write requirements for custom applications that are built to run on API software.
 
 ### Instructor(s)
-* Ralph W. Boaz
-* President
-* Pillar Consulting, Inc.
-* San Diego, CA
+Ralph W. Boaz  
+President  
+Pillar Consulting, Inc.  
+San Diego, CA
 
 ### Target Audiences
 * Device Manufacturers

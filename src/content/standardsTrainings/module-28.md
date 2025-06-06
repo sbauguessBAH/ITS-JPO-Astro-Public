@@ -19,10 +19,10 @@ Some of the questions answered for users:
 * How does the standard support interchangeability?
 
 ### Instructor(s)
-* Ralph W. Boaz
-* President
-* Pillar Consulting, Inc.
-* San Diego, CA
+Ralph W. Boaz  
+President  
+Pillar Consulting, Inc.  
+San Diego, CA
 
 ### Target Audiences
 * Device Manufacturers

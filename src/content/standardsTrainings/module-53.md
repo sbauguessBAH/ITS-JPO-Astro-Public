@@ -16,10 +16,10 @@ This module also explains how students can obtain a copy of the C2C RI. The focu
 Participants that plan on being hands-on users of the C2C RI are encouraged to follow this course with T351. Those in a more managerial role may choose to make this their final module in the series.
 
 ### Instructor(s)
-* Kenneth Vaughn, P.E.
-* President
-* Trevilon LLC
-* Magnolia, TX, USA
+Kenneth Vaughn, P.E.  
+President  
+Trevilon LLC  
+Magnolia, TX, USA
 
 ### Target Audiences
 * Engineering Staff
@@ -31,20 +31,20 @@ Participants that plan on being hands-on users of the C2C RI are encouraged to f
 * Traffic Management Center and Operations Staff
 
 ### Prerequisite(s)
-* I101: Using ITS Standards: An Overview
-* T101: Introduction to ITS Standards Testing
-* A321a: Understanding User Needs for Traffic Management Systems Based on TMDD v3 Standard
-* A321b: Specifying Requirements for Traffic Management Systems Based on TMDD v3 Standard
-* T201: How to Write a Test Plan
-* T202: Overview of Test Design Specifications, Test Cases, and Test Procedures
-* T203 Part 1 of 2: How to Develop Test Cases for an ITS Standards-based Test Plan, Part 1 of 2
-* T203 Part 2 of 2: How to Develop Test Cases for an ITS Standards-based Test Plan, Part 2 of 2
-* T204 Part 1 of 2: How to Develop a Test Procedure for ITS Standards-based Test Plan, Part 1 of 2
-* T204 Part 2 of 2: How to Develop Test Procedures for ITS Standards-based Test Plan, Part 2 of 2
-* T321: Applying Your Test Plan to the TMDD Standard
+*   I101: Using ITS Standards: An Overview
+*   T101: Introduction to ITS Standards Testing
+*   A321a: Understanding User Needs for Traffic Management Systems Based on TMDD v3 Standard
+*   A321b: Specifying Requirements for Traffic Management Systems Based on TMDD v3 Standard
+*   T201: How to Write a Test Plan
+*   T202: Overview of Test Design Specifications, Test Cases, and Test Procedures
+*   T203 Part 1 of 2: How to Develop Test Cases for an ITS Standards-based Test Plan, Part 1 of 2
+*   T203 Part 2 of 2: How to Develop Test Cases for an ITS Standards-based Test Plan, Part 2 of 2
+*   T204 Part 1 of 2: How to Develop a Test Procedure for ITS Standards-based Test Plan, Part 1 of 2
+*   T204 Part 2 of 2: How to Develop Test Procedures for ITS Standards-based Test Plan, Part 2 of 2
+*   T321: Applying Your Test Plan to the TMDD Standard
 
 ### Learning Objectives/Key Elements
-1. Recognize the purpose of the C2C Reference Implementation (RI)
-2. Acknowledge key capabilities and limitations of the C2C RI
-3. Follow a defined process for producing test documentation that relies upon the C2C RI
-4. Recognize the type of results a tester might produce after using the C2C RI
+1.  Recognize the purpose of the C2C Reference Implementation (RI)
+2.  Acknowledge key capabilities and limitations of the C2C RI
+3.  Follow a defined process for producing test documentation that relies upon the C2C RI
+4.  Recognize the type of results a tester might produce after using the C2C RI

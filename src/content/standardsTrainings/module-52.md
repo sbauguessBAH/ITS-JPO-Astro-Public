@@ -14,10 +14,10 @@ This module assists user agencies in creating and applying a test plan specific 
 This module includes a brief description of the ELMS standard with examples on how to perform the verification mentioned above. This module covers the role of other modes of testing including compliance, manufacturing and acceptance tests, and verification and validation as part of the testing life cycle.
 
 ### Instructor(s)
-* James J. Frazer
-* President
-* Gridaptive Technologies
-* Pompano Beach, FL, USA
+James J. Frazer  
+President  
+Gridaptive Technologies  
+Pompano Beach, FL, USA
 
 ### Target Audiences
 * Engineering Staff

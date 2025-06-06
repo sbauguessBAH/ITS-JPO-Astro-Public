@@ -18,13 +18,25 @@ The intent of this module is to introduce technical details of the IEEE 1609 fam
 Network engineers, hardware engineers, and application designers supporting CV environment will gain further insight into WAVE standards as they cooperatively define the communications architecture for DSRC-based V2V and V2I interactions, and as the basis for the low-latency interface design of WAVE devices (OBU-ASD-RSU).
 
 ### Instructor(s)
-
+Raman K Patel, Ph.D., P.E.  
+President  
+RK Patel Associates, Inc.  
+New York, NY, USA
 
 ### Target Audiences
-* 
+*   Private and Public Sector Users including Manufacturers
+*   Procurement Managers/Decision Makers
+*   Public Sector Project Managers
+*   System Integrators
+*   Transit Managers
+*   Transit Planning, Operations, and Maintenance Staff
 
 ### Prerequisite(s)
-* 
+*   CV261: Vehicle-to-Infrastructure (V2I) ITS Standards for Project Managers
+*   CV262: Vehicle-to-Vehicle (V2V) ITS Standards for Project Managers
 
 ### Learning Objectives/Key Elements
-1. 
+1.  Describe Wireless Access in Vehicular Environments (WAVE)
+2.  Discuss role of IEEE 1609.2: Security Services and IEEE 1609.3: Networking Services
+3.  Discuss role of IEEE 1609.4: Multi-Channel Operations
+4.  Discuss role of 1609.2 Security Services and identify WAVE implementation issues

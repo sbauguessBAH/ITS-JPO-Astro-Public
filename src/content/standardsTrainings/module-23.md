@@ -12,10 +12,10 @@ The focus of this module is to assist technical staff in specifying clear requir
 This module also helps the user understand the scope of the TSS Standard and in continuation with the previous module: A312a-Understanding User Needs for TSS Based on NTCIP 1209 Standard. This module is to be placed in the context of the SEP as well as in the acquisition curriculum path with I101, A101, A102, A201, and A312a being the prerequisites. This completes the acquisition life cycle leading to the user being able to write specifications.
 
 ### Instructor(s)
-* Ralph W. Boaz
-* President
-* Pillar Consulting, Inc.
-* San Diego, CA
+Ralph W. Boaz  
+President  
+Pillar Consulting, Inc.  
+San Diego, CA
 
 ### Target Audiences
 * Device Manufacturers
