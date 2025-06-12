@@ -11,7 +11,7 @@ The Accessible Transportation Technologies Research Initiative (ATTRI) is a join
 
 ATTRI leverages recent advances in vehicle, infrastructure, and pedestrian-based technologies, as well as accessible data, mobile computing, robotics, artificial intelligence, object detection, and navigation. The technology is enabled by wireless communications that connect travelers and their mobile devices, vehicles, and infrastructure. The technologies used by ATTRI provide almost ubiquitous access to a wealth of Realtime situational data sources, including data specific to transportation, municipalities, point of interest, crowd-sourced information, and accessibility data. Five (5) technology areas have emerged as ATTRI focus areas: wayfinding and navigation, assistive technologies, automation and robotics, data integration, and enhanced human service transportation. This module will provide current status of these technologies.
 
-The purpose of Module 17 is to provide the background and scope of the ATTRI and specific activities. This module will discuss the five technology focus areas of the initiative and the four applications selected for prototype development. Discussion will include the ITS standards relevant to the application areas.
+The purpose of Module 18 is to provide the background and scope of the ATTRI and specific activities. This module will discuss the five technology focus areas of the initiative and the four applications selected for prototype development. Discussion will include the ITS standards relevant to the application areas.
 
 ### Instructor(s)
 

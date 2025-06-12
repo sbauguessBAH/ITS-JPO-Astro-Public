@@ -10,7 +10,7 @@ On-board Transit Management for buses covers technologies and systems that are l
 
 An on-board system can include a vehicle area network (VAN), mobile data terminal (MDT), vehicle logic unit (VLU), equipment for supervisor/support vehicles, an Automated Vehicle Announcement (AVA) System (covered in Modules 6 and 7), an Automatic Passenger Counter (APC) System (covered in Modules 2 and 5), an Event Data Recorder System (EDRS), and Vehicle Component Monitoring (VCM) (covered in Modules 2 and 5), and On-board Video Surveillance System (covered in Modules 2 and 5).
 
-The purpose of Module 19 is to provide details of on-board hardware and software standards. The information provided in this module will help participants further understand those standards that support On-board Transit Management functions for buses, specifically SAE J1587, J1708, and J1939 profiles, and how to procure systems using these standards. Topics covered in this module include single point logon/logoff, data upload/download from an on-board device, and the use of an interface control document (ICD).
+The purpose of Module 20 is to provide details of on-board hardware and software standards. The information provided in this module will help participants further understand those standards that support On-board Transit Management functions for buses, specifically SAE J1587, J1708, and J1939 profiles, and how to procure systems using these standards. Topics covered in this module include single point logon/logoff, data upload/download from an on-board device, and the use of an interface control document (ICD).
 
 ### Instructor(s)
 Carol Schweiger  

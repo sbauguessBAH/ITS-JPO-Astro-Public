@@ -11,7 +11,7 @@ Transit agencies are implementing more ITS and information technology (IT) syste
 
 The use of Enterprise Architecture (EA) principles and tools provide managers and staff better visibility into the components of their organization and the overall relationships among their enterprise's people, processes, applications, data, and technology components.
 
-The purpose of Module 16 is to provide an introduction to Enterprise Architecture (EA) for transit managers and staff. It describes the four layers commonly seen in transit enterprise architectures:
+The purpose of Module 17 is to provide an introduction to Enterprise Architecture (EA) for transit managers and staff. It describes the four layers commonly seen in transit enterprise architectures:
 1. Business Architecture
 2. Data or Information Architecture
 3. Applications Architecture
