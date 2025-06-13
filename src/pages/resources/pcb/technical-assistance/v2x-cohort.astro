@@ -3,6 +3,7 @@ import Layout from "../_layout.astro";
 import { Image } from "astro:assets";
 import cohortImage from "@/src/assets/images/pcb/cohort-map.png";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Link from "@/src/components/Link.astro";
 ---
 <style>
   .map-card-image {
@@ -51,7 +52,7 @@ import ProgramSection from "@/src/components/programs/ProgramSection.astro";
         to assist participants in achieving their project objectives.
       </p>
       <p class="program-text">
-        If your agency is interested in joining or has any questions, please contact the SCRC team at <a href="mailto:scrc@dot.gov">scrc@dot.gov</a>.
+        If your agency is interested in joining or has any questions, please contact the ITS PCB Program at <Link isExternal href="mailto:itspcb@dot.gov">itspcb@dot.gov</Link>.
       </p>
     </ProgramSection>
     <ProgramSection class="max-w-lg">

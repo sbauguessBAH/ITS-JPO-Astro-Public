@@ -5,6 +5,20 @@ import base_url from "@/src/lib/base_url";
 import v2xImage from "@/src/assets/images/pcb/v2x.jpg";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import { Image } from "astro:assets";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import Link from "@/src/components/Link.astro";
+
+const v2XModules = [57, 63, 64, 66, 67]
+
+const trainings: CollectionEntry<"standardsTrainings">[] = 
+  await getCollection("standardsTrainings").then(entries => 
+    entries.filter(entry => v2XModules.includes(entry.data.module))
+  );
 ---
 <style>
   .overview-section {
@@ -23,6 +37,67 @@ import { Image } from "astro:assets";
     .overview-text {
       flex-basis: 60%;
     }
+  }
+</style>
+<style>
+  .training-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+  .card-metadata {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .card-module-number {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(var(--color-gray));
+  }
+  .card-module-length {
+    background: #efefef;
+    border-radius: 16px;
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+  }
+  .training-card-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.2rem;
+    background: none;
+    border: none;
+    padding: var(--size);
+    padding-bottom: var(--size-sm);
+    text-align: left;
+  }
+  .training-card-footer {
+    background: rgb(var(--color-gray-light));
+    display: flex;
+    gap: var(--size-sm)
+  }
+  .training-card-body {
+    padding: var(--size);
+    padding-top: var(--size-sm);
+  }
+  .training-card-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+  }
+  .training-card-button:hover {
+    font-weight: inherit;
+    background: rgb(var(--color-brand-dark))
   }
 </style>
 <Layout>
@@ -83,22 +158,132 @@ import { Image } from "astro:assets";
         across the United States. 
       </p>
       <p class="program-text">
-        Entities interested in this training should contact the ITS PCB Program.
+        Entities interested in this training should contact the ITS PCB Program at <Link isExternal href="mailto:itspcb@dot.gov">itspcb@dot.gov</Link>.
       </p>
       <h3 class="program-title-md mb-2 mt-4">
         V2X Standards Trainings
       </h3>
-      <ul class="program-list">
-        <!-- <li>
+      <p class="program-text">
+        The ITS Professional Capacity Building Program (ITS PCB) is pleased 
+        to offer FREE ITS transit standards training. This series
+        is for practitioners in state and local highway agencies and transit agencies 
+        who seek the skills needed to procure, test, implement, and operate 
+        standards-based systems and devices. Consultants, system designers, integrators, 
+        and testers will also find the training informative.
+      </p>
+      <p class="program-text">
+        Documents linked below were last updated in 2021. They remain available 
+        in their original published format to ensure public access. Click the title 
+        to view additional information about each training module.
+      </p>
+      <div class="training-list mt-4">
+        {trainings
+          .toSorted((a, b) => a.data.module - b.data.module)
+          .map(async training => {
+            const { Content } = await training.render();
+            return (
+              // <article class="training-card">
+              //   <div class="training-card-header">
+              //     <p class="training-card-subheading">MODULE {training.data.module} | {training.data.code}</p>
+              //     <div class="training-card-length">{training.data.length}</div>
+              //   </div>
+              //   <h2 class="training-card-heading">{training.data.title}</h2>
+              //   <div class="training-card-body">
+              //     <div 
+              //       class="training-card-preview" 
+              //       id={`preview-${training.slug}`}
+              //     >
+              //       {training.body.substring(0, previewLength) + "..."}
+              //     </div>
+              //     <div 
+              //       class="training-card-full" 
+              //       id={`full-${training.slug}`}
+              //       hidden
+              //     >
+              //       <Content/>
+              //     </div>
+              //     <button 
+              //       class="training-card-button"
+              //       aria-controls={`full-${training.slug}`}
+              //       data-preview-id={`preview-${training.slug}`}
+              //       data-full-id={`full-${training.slug}`}
+              //     >
+              //       Show More
+              //     </button>
+              //   </div>
+              // </article>
+              <Card id={training.slug}>
+                <CardHeader class="p-0">
+                  <button 
+                    class="training-card-header" 
+                    data-toggle="collapse" 
+                    type="button" 
+                    data-target={`#collapse-${training.slug}`}
+                    aria-controls={`collapse-${training.slug}`}
+                    aria-expanded="false"
+                  >
+                    <div class="card-metadata">
+                      <p class="card-module-number">
+                        MODULE {training.data.module} | {training.data.code}
+                      </p>
+                      <div class="card-module-length">
+                        {training.data.length}
+                      </div>
+                    </div>
+                    <h3 class="program-title-md">
+                      {training.data.title}
+                    </h3>
+                  </button>
+                </CardHeader>
+                <CardBody class="p-0">
+                  <div
+                    id={`collapse-${training.slug}`} 
+                    class="collapse training-card-body"  
+                  >
+                    <Content/>
+                  </div>
+                </CardBody>
+                <CardFooter class="training-card-footer">
+                  {training.data.presentation && (
+                    <a class="training-card-button" href={base_url(training.data.presentation)} target="_blank" rel="noopener noreferrer">
+                      <PdfIcon/>
+                      Presentation
+                    </a>
+                  )}
+                  {training.data.supplement && (
+                    <a class="training-card-button" href={base_url(training.data.supplement)} target="_blank" rel="noopener noreferrer">
+                      <PdfIcon/>
+                      Supplement
+                    </a>
+                  )}
+                  {training.data.transcript && (
+                    <a class="training-card-button" href={base_url(training.data.transcript)} target="_blank" rel="noopener noreferrer">
+                      <PdfIcon/>
+                      Course Transcript
+                    </a>
+                  )}
+                  {training.data.chat && (
+                    <a class="training-card-button" href={base_url(training.data.chat)} target="_blank" rel="noopener noreferrer">
+                      <PdfIcon/>
+                      Chat Transcript
+                    </a>
+                  )}
+                </CardFooter>
+              </Card>
+            )
+        })}
+      </div>
+      <!-- <ul class="program-list">
+        <li>
           <a href={base_url("/resources/pcb/trainings/standards-trainings#module-38")}>
             Vehicle-to-Vehicle (V2V) ITS Standards for Project Managers (Updated 2021)
           </a>
-        </li> -->
-        <!-- <li>
+        </li>
+        <li>
           <a href={base_url("/resources/pcb/trainings/standards-trainings#module-51")}>
             Using the ISO TS 19091 Standard to Implement V2I Intersection Applications Introduction
           </a>
-        </li> -->
+        </li> 
         <li>
           <a href={base_url("/resources/pcb/trainings/standards-trainings#module-57")}>
             Connected Vehicles Certification Testing Introduction
@@ -129,7 +314,56 @@ import { Image } from "astro:assets";
             Introduction to Security Credentials Management System (SCMS) Part 2 of 2
           </a>
         </li>
-      </ul>
+      </ul> -->
     </ProgramSection>
   </div>
 </Layout>
+
+<script>
+  class ContentExpander extends HTMLElement {
+    constructor() {
+      super();
+      this.init();
+    }
+
+    init() {
+      const toggleButtons = document.querySelectorAll<HTMLButtonElement>(".training-card-button");
+      
+      toggleButtons.forEach(button => {
+        button.addEventListener("click", () => this.toggleContent(button))
+      })
+    }
+
+    toggleContent(button: HTMLButtonElement) {
+      const previewId = button.dataset.previewId
+      const fullId = button.dataset.fullId
+
+      if (!previewId || !fullId) return;
+
+      const previewElement = document.getElementById(previewId);
+      const fullElement = document.getElementById(fullId);
+
+      if (!previewElement || !fullElement) return;
+
+      const isExpanded = button.getAttribute('aria-expanded') === "true";
+
+      if (isExpanded) {
+        previewElement.removeAttribute("hidden");
+        fullElement.setAttribute("hidden", "");
+        button.setAttribute("aria-expanded", "false");
+        button.textContent = "Show More"
+      } else {
+        previewElement.setAttribute("hidden", "");
+        fullElement.removeAttribute("hidden");
+        button.setAttribute("aria-expanded", "true");
+        button.textContent = "Show Less";
+      }
+    }
+  }
+
+  customElements.define("content-expander", ContentExpander);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new ContentExpander();
+  })
+</script>

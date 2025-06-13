@@ -90,18 +90,18 @@ export const collections = {
       chat: z.string().optional()
     }),
   }),
-  transitStandardsTrainings: defineCollection({
-    type: 'content', // v2.5.0 and later
-    schema: z.object({
-      title: z.string(),
-      module: z.number(),
-      length: z.string(),
-      presentation: z.string().optional(),
-      supplement: z.string().optional(),
-      transcript: z.string().optional(),
-      chat: z.string().optional()
-    }),
-  }),
+  // transitStandardsTrainings: defineCollection({
+  //   type: 'content', // v2.5.0 and later
+  //   schema: z.object({
+  //     title: z.string(),
+  //     module: z.number(),
+  //     length: z.string(),
+  //     presentation: z.string().optional(),
+  //     supplement: z.string().optional(),
+  //     transcript: z.string().optional(),
+  //     chat: z.string().optional()
+  //   }),
+  // }),
 
   // Automation Resources
   automation: defineCollection({

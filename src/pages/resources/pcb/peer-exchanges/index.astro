@@ -11,6 +11,7 @@ import { Image } from "astro:assets";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import arlingtonImage from "@/src/assets/images/pcb/peer-exchanges/arlington-mod.jpg";
 import qwsImage from "@/src/assets/images/pcb/peer-exchanges/qws.png";
+import Link from "@/src/components/Link.astro";
 
 const resources = [
   {
@@ -101,7 +102,7 @@ const resources = [
         deployment and operational challenges. These exchanges may take the form of in-person or virtual exchanges either on or off-site. 
       </p>
       <p class="program-text">
-        If your agency is interested in conducting a peer exchange, please contact the <a href="mailto:itspcb@dot.gov">ITS PCB Program</a>.
+        If your agency is interested in conducting a peer exchange, please contact the ITS PCB Program at <Link isExternal href="mailto:itspcb@dot.gov">itspcb@dot.gov</Link>.
       </p>
       <!-- <div class="card-grid">
         {resources.map(resource => (

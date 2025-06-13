@@ -87,6 +87,8 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    padding: var(--size-sm) var(--size-sm) var(--size) var(--size-sm);
+    gap: var(--size);
     /* background-color: rgb(var(--color-gray-light)); */
   }
   .rsu-image {
@@ -138,17 +140,23 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
             <Image src={caveDesignDocuments} alt="CAVe-in-a-box" class="resource-card-image"/>
           </CardHeader>
           <CardBody>
-            <div class=resource-card-body">
+            <div class="resource-card-body">
               <div>
                 <h3 class="program-title-sm mb-2">Design Documents</h3>
-                <p>
+                <p class="program-text">
                   Learn how to set up, configure, and explore 
                   all that CAVe-in-a-box has to offer.
                 </p>
               </div>
-              <a class="cave-button" target="_blank" href={base_url("/assets/pcb/cave/CAVe_in_a_box_SysDes_April2022.pdf")}>
-                View PDF
-              </a>
+              <div>
+                <a 
+                  class="cave-button" 
+                  target="_blank" 
+                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_SysDes_April2022.pdf")}
+                >
+                  View PDF
+                </a>
+              </div>
             </div>
           </CardBody>
         </Card>
@@ -157,16 +165,22 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
             <Image src={caveDiy} alt="Two people standing over CAVe-in-a-box" class="resource-card-image"/>
           </CardHeader>
           <CardBody>
-            <div class=resource-card-body">
+            <div class="resource-card-body">
               <div>
                 <h3 class="program-title-sm mb-2">Do-It-Yourself Guides</h3>
-                <p>
+                <p class="program-text">
                   Build your own CAVe-in-a-box from the ground up.
                 </p>
               </div>
-              <a class="cave-button" target="_blank" href={base_url("/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf")}>
-                View PDF
-              </a>
+              <div>
+                <a 
+                  class="cave-button" 
+                  target="_blank" 
+                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf")}
+                >
+                  View PDF
+                </a>
+              </div>
             </div>
           </CardBody>
         </Card>
@@ -175,16 +189,22 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
             <Image src={caveConfiguration} alt="A laptop connected to a CAVe-in-a-box" class="resource-card-image"/>
           </CardHeader>
           <CardBody>
-            <div class=resource-card-body">
+            <div class="resource-card-body">
               <div>
                 <h3 class="program-title-sm mb-2">Configuration Instructions</h3>
-                <p>
+                <p class="program-text">
                   Explore how you can setup and configure your CAVe-in-a-box toolkit.
                 </p>
               </div>
-              <a class="cave-button" target="_blank" href={base_url("/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf")}>
-                View PDF
-              </a>
+              <div>
+                <a 
+                  class="cave-button" 
+                  target="_blank" 
+                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf")}
+                >
+                  View PDF
+                </a>
+              </div>
             </div>
           </CardBody>
         </Card>
@@ -201,7 +221,7 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
       </p>
       <Videos/>
     </ProgramSection>
-    <ProgramSection color="gray" class="pb-5">
+    <ProgramSection color="gray" class="pb-2">
       <div class="overview-section">
         <div class="overview-text">
           <h2 class="program-title-lg">
