@@ -116,6 +116,14 @@ section {
   padding: var(--size-lg);
 }
 
+.padding-size {
+  padding: var(--size);
+}
+
+.padding-size-lg {
+  padding: var(--size-lg);
+}
+
 /*****************************
   Program Classes
 *****************************/

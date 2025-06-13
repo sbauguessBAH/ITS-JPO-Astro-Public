@@ -7,71 +7,17 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
 import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
 import { Image } from "astro:assets";
 import Link from "@/src/components/Link.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
-import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.astro";
 ---
 <style>
-  tbody tr td {
-    text-align: left;
-  }
-<style>
-  
   .stage-header {
-    /* width: 100%;
-    padding: var(--size);
-    background: rgb(var(--color-brand-dark)); */
-    /* background-image: linear-gradient(to right,#0a1e62,#09638c); */
-  }
-
-  .stage-header-1a {
-    background-image: linear-gradient(to right,#0a1e62,#09638c);
     width: 100%;
     padding: var(--size);
+    background: rgb(var(--color-brand-dark))
   }
-  
-  .stage-header-1b {
-    background-image: linear-gradient(to right,#09638c, #0a1e62);
-    width: 100%;
-    padding: var(--size);
-  }
-
   .stage-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: 1fr;
-    gap: var(--size);
-  }
-
-  .prize-container {
-    background: rgba(152, 194, 86, 0.3);
-    border: 1px solid rgb(80, 154, 53);
-    border-radius: var(--radius-md);
-    padding: var(--size-sm);
-    text-align: center;
-    width: 100%;
-  }
-
-  .prize-container-amount {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgb(80, 154, 53);
-  }
-
-  .challenge-element-list {
-    display: flex;
-    flex-direction: column;
-    
-  }
-
-  .challenge-element {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    display: flex;
-    padding: 8px 0;
-    gap: var(--size-sm);
-  }
-
-  .challenge-element-icon {
-    color: rgb(80, 154, 53);
   }
 
   @media (min-width: 1200px) {
@@ -80,58 +26,27 @@ import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.a
     }
   }
 </style>
-<style>
-  .stage-wrapper {
-    background: rgb(var(--color-gray-light));
-    border-radius: var(--radius-md);
-  }
-
-  .data-collection-wrapper {
-    background: rgb(var(--color-brand-light));
-    /* border-radius: var(--radius-md); */
-    padding: var(--size-lg);
-  }
-
-  .data-collection {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-lg); 
-  }
-
-  .data-collection-video-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size);
-  }
-
-  .data-collection-video {
-    border-radius: var(--radius-md);
-    max-width: 500px;
-  }
-
-  .data-collection-content {
-    font-size: 1rem;
-  }
-
-  @media (min-width: 992px) {
-    .data-collection {
-      flex-direction: row;
-      align-items: start;
-      justify-content: space-between;
-    }
-    .data-collection-content {
-      flex-basis: 60%;
-    }
-    .data-collection-video-container {
-      flex-basis: 40%;
-      
-    }
-  }
-  
-</style>
 <Layout>
   <main class="program-main">
     <ProgramSection>
+      <p>
+        POTENTIAL OTHER SECTIONS TO INCLUDE:
+      </p>
+      <ul>
+        <li>
+          Latest Updates and/or Resources related to the ISC: Would replicate the old news and events section and/or resources section
+          since most of those were specific to the ISC.
+        </li>
+        <li>
+          Some stats about road safety or information about scoring/outcomes if we want to share any of that.
+        </li>
+        <li>
+          A section about the technology focus areas and some cards/icons for them (AI/ML, data fusion, trajectory prediction, something like that.)
+        </li>
+        <li>
+          Move the dataset information to a separate section at the bottom with more thorough details about it so it's more prominent.
+        </li>
+      </ul>
       <h2 class="program-title-lg">
         Competition Summary
       </h2>
@@ -158,204 +73,89 @@ import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.a
     </ProgramSection>
     <ProgramSection color="gray">
       <h2 class="program-title-lg text-center">
-        Challenge Structure
+        Competition Stages
       </h2>
       <p class="program-text mb-4 max-w-lg mx-auto text-center">
-        The competition was split into two stages with Stage 1A focused on concept assessment 
-        and Stage 1B focused on system assessment and virtual testing.
+        The competition was split into two stages ... (more text here probably)
       </p>
-      <div class="stage-container">
-        <Card>
-          <CardHeader class="p-0">
-            <div class="stage-header stage-header-1a">
-              <h3 class="program-title-md text-white text-center mb-0">
-                Stage 1A
-              </h3>
-              <p class="program-text text-white text-center mb-0">
-                Concept Assessment
-              </p>
-            </div>
-          </CardHeader>
-          <CardBody class="p-4">
-            <p class="program-text">
-              Stage 1A brought together non-traditional teams combining expertise in emerging technologies
-              with experience in traffic and safety engineering to develop new and potentially transformative
-              intersection safety approaches. Participants submitted concept papers on 
-              their proposed intersection safety system designs.
+      <Card>
+        <CardHeader class="p-0">
+          <div class="stage-header">
+            <h3 class="program-title-md text-white text-center">
+              Stage 1A: Concept Assessment
+            </h3>
+            <p class="program-text text-white text-center mb-0">
+              Results Announced January 2024
             </p>
-            <div class="challenge-element-list">
-              <div class="challenge-element">
-                <div class="challenge-element-icon">
-                  <Check2CircleIcon size={20} />
-                </div>
-                <p class="program-text mb-0">
-                  120 innovative concept papers submitted
-                </p>
-              </div>
-              <div class="challenge-element">
-                <div class="challenge-element-icon">
-                  <Check2CircleIcon size={20} />
-                </div>
-                <p class="program-text mb-0">
-                  15 teams selected for prizes
-                </p>
-              </div>
-            </div>
-          </CardBody>
-          <CardFooter class="p-4">
-            <div class="prize-container">
-              <div class="prize-container-amount">
-                $100,000
-              </div>
-              <p class="program-text mb-0">
-                Prize per winning team
-              </p>
-            </div>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader class="p-0">
-            <div class="stage-header stage-header-1b">
-              <h3 class="program-title-md text-white text-center mb-0">
-                Stage 1B
-              </h3>
-              <p class="program-text text-white text-center mb-0">
-                System Assessment and Virtual Testing
-              </p>
-            </div>
-          </CardHeader>
-          <CardBody class="p-4">
-            <p class="program-text">
-              Stage 1B challenged the 15 winning teams from Stage 1A to develop, and train, and improve
-              algorithms for the detection, localization, and classification of vulnerable road users and vehicles
-              utilizing U.S. DOT-provided real world sensor data collected on a closed course at the Federal Highway Administration (FHWA)
-              Turner-Fairbank Highway Research Center (TFHRC).
-            </p>
-            <div class="challenge-element-list">
-              <div class="challenge-element">
-                <div class="challenge-element-icon">
-                  <Check2CircleIcon size={20} />
-                </div>
-                <p class="program-text mb-0">
-                  15 teams developed and trained algorithms
-                </p>
-              </div>
-              <div class="challenge-element">
-                <div class="challenge-element-icon">
-                  <Check2CircleIcon size={20} />
-                </div>
-                <p class="program-text mb-0">
-                  10 teams selected for prizes
-                </p>
-              </div>
-            </div>
-          </CardBody>
-          <CardFooter class="p-4">
-            <div class="prize-container">
-              <div class="prize-container-amount">
-                $4,000,000
-              </div>
-              <p class="program-text mb-0">
-                Total prize pool
-              </p>
-            </div>
-          </CardFooter>
-        </Card>
-      </div>
-    </ProgramSection>
-    <ProgramSection>
-      <h2 class="program-title-lg mb-4">
-        Stage 1A &mdash; Concept Assessment
-      </h2>
-      <div class="stage-wrapper padding-size-lg">
-        <h3 class="program-title-md my-2">
-          Summary
-        </h3>
+          </div>
+        </CardHeader>
+        <CardBody class="p-4">
+          <h4 class="program-title-sm my-2">
+            Competition Structure
+          </h4>
           <p class="program-text">
-          Stage 1A brought together non-traditional teams combining expertise in emerging technologies
-          with experience in traffic and safety engineering to develop new and potentially transformative
-          intersection safety approaches. Participants submitted concept papers on 
-          their proposed intersection safety system designs that helped identify and mitigate unsafe
-          conditions involving vehicles and vulnerable road users.
-        </p>
-        <h3 class="program-title-md my-2">
-          Results
-        </h3>
-        <p class="program-text">
-          The U.S. DOT evaluated 120 innovative concept papers, selecting 15 teams for prizes.
-          Of these 15 teams, 2 were led by State DOTs, 7 by academic institutions, and 6 by other organizations. 
-          Following final verification of elibility, these teams received a prize of $100,000 each and were
-          invited to participate in Stage 1B: System Assessment and Virtual Testing. View the official press release 
-          <Link isExternal href="https://www.transportation.gov/briefing-room/us-dot-announces-winners-intersection-safety-challenge">here</Link>.
-        </p>
-        <h3 class="program-title-md mt-4">
-          Additional Resources
-        </h3>
-      </div>
-    </ProgramSection>
-    <div class="container-xl">
-      <hr class="m-0 p-0"/>
-    </div>
-    <ProgramSection>
-      <h2 class="program-title-lg mb-4">
-        Stage 1B &mdash; System Assessment and Virtual Testing
-      </h2>
-      <div class="stage-wrapper">
-        <div class="padding-size-lg">
-          <h3 class="program-title-md">
-            Summary
-          </h3>
+            Stage 1A brought together non-traditional teams combining expertise in emerging technologies
+            with experience in traffic and safety engineering to develop new and potentially transformative
+            intersection safety approaches. Participants submitted concept papers on 
+            their proposed intersection safety system designs that helped identify and mitigate unsafe
+            conditions involving vehicles and vulnerable road users.
+          </p>
+          <h4 class="program-title-sm my-2">
+            Results
+          </h4>
+          <p class="program-text">
+            The U.S. DOT evaluated 120 innovative concept papers, selecting 15 teams for prizes.
+            Of these 15 teams, 2 were led by State DOTs, 7 by academic institutions, and 6 by other organizations. 
+            Following final verification of elibility, these teams received a prize of $100,000 each and were
+            invited to participate in Stage 1B: System Assessment and Virtual Testing.
+          </p>
+          <p class="program-text">
+            View the official press release 
+            <Link isExternal href="https://www.transportation.gov/briefing-room/us-dot-announces-winners-intersection-safety-challenge">here</Link>.
+          </p>
+        </CardBody>
+      </Card>
+      <Card class="mt-4">
+        <CardHeader class="p-0">
+          <div class="stage-header">
+            <h3 class="program-title-md text-white text-center">
+              Stage 1B: System Assessment and Virtual Testing
+            </h3>
+            <p class="program-text text-white text-center mb-0">
+              Results Announced January 2025
+            </p>
+          </div>
+        </CardHeader>
+        <CardBody class="p-4">
+          <h4 class="program-title-sm my-2">
+            Competition Structure
+          </h4>
           <p class="program-text">
             Stage 1B challenged the 15 winning teams from Stage 1A to develop, and train, and improve
             algorithms for the detection, localization, and classification of vulnerable road users and vehicles
             utilizing U.S. DOT-provided real world sensor data colleced on a closed course at the Federal Highway Administration (FHWA)
             Turner-Fairbank Highway Research Center (TFHRC).
           </p>
-        </div>
-        <div class="data-collection-wrapper">
-          <h3 class="program-title-md my-2">
+          <h4 class="program-title-sm my-2">
             Data Collection
-          </h3>
-          <div class="data-collection">
-            <div class="data-collection-content">
-              <p class="program-text">
-                The Intersection Safety Challenge Dataset features a comprehensive collection of conflict/non-conflict scenario data involving various road users, captured under various weather and lighting
-                conditions captured by visual and thermal cameras, LiDAR, and radar sensors.
-              </p>
-              <p class="program-text">
-                The data can be used to develop and train models that can anticipate potential conflicts and provide enough time for warnings or other real-time countermeasures. This rich and unique dataset
-                lays the foundation for key research efforts aimed at improving intersection safety.
-              </p>
-              <p class="program-text">
-                Interested users can download sample data and request access to the full challenge dataset from the
-                <Link isExternal href="https://data.transportation.gov/Roadways-and-Bridges/Intersection-Safety-Challenge-Stage-1B-Sample/vq7s-mv3v/about_data">
-                  U.S. DOT's public data portal
-                </Link>.
-              </p>
-            </div>
-            <div class="data-collection-video-container">
-              <iframe 
-                src="https://www.youtube.com/embed/csirVHFa2Cc?si=IqFVBNr4ofam0D-o" 
-                title="YouTube video player" 
-                height="250"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen
-                class="data-collection-video"
-              ></iframe>
-              <!-- <p class="data-collection-content">
-                Learn how the U.S. DOT collected multi-sensor data at the Federal Highway Administration (FHWA) 
-                Turner-Fairbank Highway Research Center (TFHRC) to lay the foundation for key research efforts 
-                aimed at improving intersection safety.
-              </p> -->
-            </div>
-          </div>
-        </div>
-        <div class="padding-size-lg">
-          <h3 class="program-title-md mt-4">
+          </h4>
+          <p class="program-text">
+            The Intersection Safety Challenge Dataset features a comprehensive collection of conflict/non-conflict scenario data involving various road users, captured under various weather and lighting
+            conditions captured by visual and thermal cameras, LiDAR, and radar sensors.
+          </p>
+          <p class="program-text">
+            The data can be used to develop and train models that can anticipate potential conflicts and provide enough time for warnings or other real-time countermeasures. This rich and unique dataset
+            lays the foundation for key research efforts aimed at improving intersection safety.
+          </p>
+          <p class="program-text">
+            Interested users can download sample data and request access to the full challenge dataset from the
+            <Link isExternal href="https://data.transportation.gov/Roadways-and-Bridges/Intersection-Safety-Challenge-Stage-1B-Sample/vq7s-mv3v/about_data">
+              U.S. DOT's public data portal
+            </Link>.
+          </p>
+          <h4 class="program-title-sm my-2">
             Results
-          </h3>
+          </h4>
           <p class="program-text">
             Stage 1B demonstrated that many teams could perform acceptable detection, localization, and classification under ideal conditions.
             However, there is room for improvement for night and low-visibility conditions, along with speed and reliability of path and conflict prediction.
@@ -671,17 +471,16 @@ import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.a
                           </ul>
                         </td>
                       </tr>
+                      
+                      
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
-          <h3 class="program-title-md mt-4">
-            Additional Resources
-          </h3>
-        </div>
-      </div>
+        </CardBody>
+      </Card>
     </ProgramSection>
   </main>
 </Layout>

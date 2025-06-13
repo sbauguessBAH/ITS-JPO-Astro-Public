@@ -20,6 +20,7 @@ import equalsIcon from "@/src/assets/images/intersection-safety/equals.png";
 import dataFusionIcon from "@/src/assets/images/intersection-safety/data-fusion.png";
 import aiIcon from "@/src/assets/images/intersection-safety/ai.png";
 import integrationIcon from "@/src/assets/images/intersection-safety/integration.png";
+import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-intersection.jpg";
 
 const stages: OverlayResource[] = [
   {
@@ -42,6 +43,29 @@ const stages: OverlayResource[] = [
   }
 ]
 ---
+<style>
+  .overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+  .overview-image {
+    border-radius: var(--border-radius);
+  }
+
+  @media (min-width: 992px) {
+    .overview-section {
+      flex-direction: row;
+      align-items: start;
+    }
+    .overview-image {
+      flex-basis: 40%;
+    }
+    .overview-text {
+      flex-basis: 60%;
+    }
+  }
+</style>
 <style>
   .vision-container {
     background: rgb(var(--color-gray-light));
@@ -141,6 +165,10 @@ const stages: OverlayResource[] = [
     align-items: center;
   }
 
+  .solution-card {
+    padding: var(--size);
+  }
+
   @media (min-width: 1200px) {
     .solution-container {
       display: grid;
@@ -164,18 +192,25 @@ const stages: OverlayResource[] = [
 <Layout>
   <main class="program-main">
     <ProgramSection>
-      <h2 class="program-title-lg">
-        Program Overview
-      </h2>
-      <p class="program-text">
-        The U.S. DOT Intersection Safety Challenge aims to transform intersection safety 
-        by incentivizing the innovative application of new and emerging technologies 
-        to identify and mitigate unsafe conditions involving vehicles and vulnerable road users 
-        at intersections. The Challenge complements other Federal efforts to improve intersection safety, 
-        with the Challenge specifically focused on the use of technology. Further, 
-        the intersection environment itself is well-suited to innovative mitigative approaches leveraging, 
-        utilizing, and potentially repurposing existing traffic control and support infrastructure.
-      </p>
+      <div class="overview-section">
+        <div class="overview-text">
+          <h2 class="program-title-lg">
+            Program Overview
+          </h2>
+          <p class="program-text">
+            The U.S. DOT Intersection Safety Challenge aims to transform intersection safety 
+            by incentivizing the innovative application of new and emerging technologies 
+            to identify and mitigate unsafe conditions involving vehicles and vulnerable road users 
+            at intersections. The Challenge complements other Federal efforts to improve intersection safety, 
+            with the Challenge specifically focused on the use of technology. Further, 
+            the intersection environment itself is well-suited to innovative mitigative approaches leveraging, 
+            utilizing, and potentially repurposing existing traffic control and support infrastructure.
+          </p>
+        </div>
+        <div class="overview-image">
+          <Image src={safeIntersectionImage} alt="Safe Intersection Image" class="img-fluid radius-md shadow" />
+        </div>
+      </div>
       <div class="vision-container mt-4">
         <h3 class="program-title-md mb-0">Vision</h3>
         <p class="program-text">
@@ -242,23 +277,23 @@ const stages: OverlayResource[] = [
         Leverage emerging technologies to improve intersection safety at scale in a new way.
       </p>
       <div class="solution-container mt-4">
-          <Card class="solution-card">
-            <CardHeader class="solution-header">
-              <Image src={dataFusionIcon} alt="Data Fusion Icon" class="img-fluid solution-icon" />
-            </CardHeader>
-            <CardBody>
-              <h3 class="program-title-md">
-                Data Fusion Utilizing Existing and Emerging Sensors
-              </h3>
-            </CardBody>
-            <CardFooter>
-              <p class="program-text">
-                Emerging, low-cost sensors can be deployed at intersections for 
-                <strong>improved sensing of vulnerable road users</strong>. Data 
-                from these sensors can be fused and used in new ways by AI.
-              </p>
-            </CardFooter>
-          </Card>
+        <Card class="solution-card">
+          <CardHeader class="solution-header">
+            <Image src={dataFusionIcon} alt="Data Fusion Icon" class="img-fluid solution-icon" />
+          </CardHeader>
+          <CardBody>
+            <h3 class="program-title-md">
+              Data Fusion Utilizing Existing and Emerging Sensors
+            </h3>
+          </CardBody>
+          <CardFooter>
+            <p class="program-text">
+              Emerging, low-cost sensors can be deployed at intersections for 
+              <strong>improved sensing of vulnerable road users</strong>. Data 
+              from these sensors can be fused and used in new ways by AI.
+            </p>
+          </CardFooter>
+        </Card>
         <div class="solution-symbol">
           <Image src={plusIcon} alt="Plus Icon" class="img-fluid" />
         </div>
