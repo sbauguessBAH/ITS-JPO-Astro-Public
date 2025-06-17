@@ -95,6 +95,9 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
     max-width: 250px;
     transform: rotate(20deg)
   }
+  .text-right {
+    text-align: right;
+  }
 </style>
 <Layout>
   <main class="program-main pb-0">
@@ -126,7 +129,12 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
           </div>
         </div>
         <div class="overview-image">
-          <Image src={caveTransparent} alt="CAVe-in-a-box" class="img-fluid cave-transparent-image"/>
+          <figure class="figure">
+            <Image src={caveTransparent} alt="CAVe-in-a-box" class="img-fluid cave-transparent-image"/>
+            <figcaption class="figure-caption text-right">
+              Source: FHWA
+            </figcaption>
+          </figure>
         </div>
       </div>
     </ProgramSection>
@@ -228,8 +236,9 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
             Need equipment? We've got you covered!
           </h2>
           <p class="program-text">
-            The CAV Support Services Program provides technical assistance and equipment loans to help accelerate your deployments.
-            Whether you're testing new technologies, seeking bench testing space, or in the later stages of deployment,
+            The Connected and Automated Vehicles (CAV) Support Services Program provides technical assistance 
+            and equipment loans to help accelerate your deployments.
+            Whether you're testing new technologies, seeking bench-testing space, or in the later stages of deployment,
             we offer cost-free resources to support your progress.
           </p>
           <p class="program-text">
