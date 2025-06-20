@@ -1,0 +1,67 @@
+---
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Layout from "./_layout.astro";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
+import { Image } from "astro:assets";
+import Link from "@/src/components/Link.astro";
+---
+
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <h2 class="program-title-lg">
+        Intersection Safety Systems (ISS) Prototype Development and Testing
+      </h2>
+      <div class="row">
+        <div class="col-8">
+          <p class="program-text">
+            Building on the success of the Intersection Safety Challenge,
+            the Intersection Safety Systems (ISS) Prototyping effort focuses on prototyping
+            and demonstrating innovative intersection safety systems under real-world conditions.
+            The goal is to develop full end-to-end prototype ISS, including
+            sensor fusion, AI-based decision-making, and conflict mitigation.
+          </p>
+        </div>
+        <div class="col-4">
+          <Image
+            src={issLogo}
+            alt="Intersection Safety Systems Logo"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+      <h2 class="program-title-lg mt-4">
+        Key Research Questions
+      </h2>
+      <ol class="program-list">
+        <li>
+          Conflict Prediction Reliability and Speed: Can an ISS reliably predict conflicts early enough and fast enough to take mitigating actions? If no, which component(s) of the ISS require additional R&D to improve speed and reliability? How much improvement is needed to implement potential mitigations (see below)? 
+        </li>
+        <li>
+          Mitigation Strategies and Effectiveness: Given ISS response speed, what are possible conflict mitigation strategies (e.g., warnings, prohibiting unprotected turns, others)? Which types of conflict mitigations (or combinations of mitigations) are most effective at preventing vulnerable road user-vehicle conflicts? 
+        </li>
+        <li>
+          ISS Cost Effectiveness: Which ISS components are most expensive? Can existing sensors be repurposed for use in an ISS? What are other strategies to reduce overall ISS costs? Can such a system be deployed cost-effectively today? Under what conditions and for which particular intersection geometries? 
+        </li>
+        <li>
+          ISS Potential for Broader Deployment: Given the current state of ISS technology, are narrow ISSs (e.g., for a specific ODD or use case) or a general-purpose ISS more practical for near-term deployment? 
+        </li>
+      </ol>
+      <h2 class="program-title-lg my-4">
+        Additional Resources
+      </h2>
+      <ul class="list-unstyled">
+        <li>
+          Intersection Safety System (ISS) Prototyping 
+          <Link isExternal href="https://sam.gov/opp/aaedf98452c64392b5e7669d95c33db6/view">
+            Sources Sought Notice
+          </Link>
+          issued on April 25, 2025 and closed on May 9, 2025.
+        </li>
+      </ul>
+    </ProgramSection>
+  </main>
+</Layout>
