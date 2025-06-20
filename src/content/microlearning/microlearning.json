@@ -25,7 +25,7 @@
       },
       { 
         "title": "ITS and Safer Speeds", 
-        "description": "Explore how ITS technology can be used to encourage drivers to comply with posted speed limits, dynamically set speed limits based on travel conditions, or enforce posted speed limits.",
+        "description": "Exploring how ITS technology can be used to encourage drivers to comply with posted speed limits, dynamically set speed limits based on travel conditions, or enforce posted speed limits.",
         "url": "https://youtu.be/6S_VGgVJcLI?si=lOsDBpmt8QLhvAVC", 
         "isExternal": true,
         "image": "./images/safer-speeds.png"
@@ -51,7 +51,7 @@
     "trainings": [
       {
         "title": "The Principles of Systems Engineering",
-        "description": "An accessible overview of systems engineering's foundations, spotlighting concept of operations, requirements management, system architecture, and lifecycle verification.",
+        "description": "An overview of systems engineering's foundations, spotlighting concept of operations, requirements management, system architecture, and lifecycle verification.",
         "url": "https://youtu.be/n1qDeWLOEHU",
         "isExternal": true,
         "image": "./images/systems-engineering.png"

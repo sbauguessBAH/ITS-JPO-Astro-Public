@@ -67,7 +67,7 @@
   },
   {
     "title": "On-Site Trainings and Workshops",
-    "description": "U.S. DOT offers on-site, facilitated courses and workshops on several topic areas",
+    "description": "USDOT offers on-site, facilitated courses and workshops on several topic areas",
     "image": "./images/academic-workshops.jpg",
     "alt": "",
     "url": "https://www.arc-it.net/html/resources/training.html",
@@ -157,8 +157,8 @@
     "description": "The \"Crowdsourcing for Advancing Operations\" webinar series provides insights from practitioners on using crowdsourced data to improve transportation operations.",
     "image": "./images/tsmo-crowdsourcing.jpg",
     "alt": "",
-    "url": "/resources/pcb/trainings/cs4ops",
-    "isExternal": false,
+    "url": "https://ops.fhwa.dot.gov/crowdsourcing/course.cfm",
+    "isExternal": true,
     "category": "tsmo",
     "type": "web-based"
   },

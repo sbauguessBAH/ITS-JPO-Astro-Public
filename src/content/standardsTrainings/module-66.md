@@ -36,8 +36,8 @@ San Diego, CA, USA
 *   Transportation Planners
 
 ### Prerequisite(s)
-*   CV262: Vehicle-to-Vehicle ITS Standards for Project Managers
-*   CV261: Vehicle-to-Infrastructure ITS Standards for Project Managers
+<!-- *   CV262: Vehicle-to-Vehicle ITS Standards for Project Managers
+*   CV261: Vehicle-to-Infrastructure ITS Standards for Project Managers -->
 *   CV265: Introduction to IEEE 1609 Family of Standards for Wireless Access in Vehicular Environments
 
 ### Learning Objectives/Key Elements

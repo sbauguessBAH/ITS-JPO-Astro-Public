@@ -26,10 +26,10 @@ Austin, Texas, USA
 *   Procurement Officials and Specification Writers for Traffic Signal Systems
 *   Public Sector Project Managers
 
-### Prerequisite(s)
+<!-- ### Prerequisite(s)
 *   I101: Using ITS Standards, An Overview
 *   CV I261: Vehicle-to-Infrastructure (V2I) ITS Standards for Project Managers
-*   CV I262: Vehicle to Vehicle (V2V) ITS Standards for Project Managers
+*   CV I262: Vehicle to Vehicle (V2V) ITS Standards for Project Managers -->
 
 ### Learning Objectives/Key Elements
 1.  Identify necessary Connected Vehicles equipment needed for a typical signalized intersection

@@ -31,9 +31,9 @@ New York, NY, USA
 *   Transit Managers
 *   Transit Planning, Operations, and Maintenance Staff
 
-### Prerequisite(s)
+<!-- ### Prerequisite(s)
 *   CV261: Vehicle-to-Infrastructure (V2I) ITS Standards for Project Managers
-*   CV262: Vehicle-to-Vehicle (V2V) ITS Standards for Project Managers
+*   CV262: Vehicle-to-Vehicle (V2V) ITS Standards for Project Managers -->
 
 ### Learning Objectives/Key Elements
 1.  Describe Wireless Access in Vehicular Environments (WAVE)
