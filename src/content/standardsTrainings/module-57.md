@@ -33,6 +33,6 @@ Austin, Texas, USA
 
 ### Learning Objectives/Key Elements
 1.  Identify necessary Connected Vehicles equipment needed for a typical signalized intersection
-2.  Identify relevant U.S. DOT Requirements Specifications for both RSU hardware and RSU software for inclusion in procurements’ contract terms and conditions
+2.  Identify relevant USDOT Requirements Specifications for both RSU hardware and RSU software for inclusion in procurements’ contract terms and conditions
 3.  Understand the role of Certification Testing within the context of a systems lifecycle
 4.  Develop a Certification Plan
