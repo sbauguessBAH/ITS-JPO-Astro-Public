@@ -22,26 +22,6 @@ import aiIcon from "@/src/assets/images/intersection-safety/ai.png";
 import integrationIcon from "@/src/assets/images/intersection-safety/integration.png";
 import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-intersection.jpg";
 
-const stages: OverlayResource[] = [
-  {
-    name: "Intersection Safety Challenge",
-    description: "Multiple teams competed against each other utilizing machine learning algorithms to detect, localize, and classify vulnerable road users and vehicles.",
-    background: iscBackground,
-    path: "/research-areas/intersection-safety/challenge",
-    alt: "",
-    icon: iscLogo,
-    color: "blue"
-  },
-  {
-    name: "Intersection Safety Systems",
-    description: "",
-    background: issBackground,
-    path: "/research-areas/intersection-safety/prototype",
-    alt: "",
-    icon: issLogo,
-    color: "purple"
-  }
-]
 ---
 <style>
   .overview-section {
@@ -111,7 +91,7 @@ const stages: OverlayResource[] = [
 
     .problem-image {
       flex-basis: 30%;
-      
+      padding: 0.5rem;
       height: auto;
     }
   }
@@ -201,7 +181,8 @@ const stages: OverlayResource[] = [
             The USDOT aims to transform intersection safety by incentivizing the innovative application 
             of emerging technologies to identify and mitigate unsafe conditions involving vehicles and vulnerable road users 
             at intersections. This initiative, which is specifically focused on the use of technology, 
-            complements other federal efforts to improve intersection safety, such as the National Roadway Safety Strategy.
+            complements other federal efforts to improve intersection safety, such as 
+            the <Link isExternal href="https://www.transportation.gov/NRSS">National Roadway Safety Strategy</Link>.
             The intersection environment is well-suited to innovative mitigative approaches that leverage and potentially repurpose
             existing traffic control and support infrastructure.
           </p>
@@ -228,7 +209,7 @@ const stages: OverlayResource[] = [
         Intersection safety is a growing issue, especially for vulnerable road users.
       </p>
       <div class="problem-container mt-4">
-        <Card shadow="none" hideBorder>
+        <Card>
           <CardBody>
             <div class="problem">
               <div class="problem-image">
@@ -247,7 +228,7 @@ const stages: OverlayResource[] = [
             </div>
           </CardBody>
         </Card>
-        <Card shadow="none" hideBorder>
+        <Card>
           <CardBody>
             <div class="problem">
               <div class="problem-image">
@@ -259,8 +240,8 @@ const stages: OverlayResource[] = [
                 </h3>
                 <p class="program-text">
                   Vulnerable road user fatalities are on the rise with pedestrian fatalities 
-                  up 13% and pedalcyclist fatalities up 2% in 2021 compared to 2020
-                  <Link href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813435" isExternal>(NHTSA)</Link>.
+                  in 2022 (7,522) at the highest level since 1981, and increasing significantly since 2013 (4,779).
+                  <Link href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813661" isExternal>(NHTSA)</Link>.
                 </p>
               </div>
             </div>
@@ -345,6 +326,20 @@ const stages: OverlayResource[] = [
       <div class="stage-container mt-4">
         <div class="stage">
           <div class="stage-image">
+            <Image src={iscLogo} alt="Intersection Safety Challenge Logo" class="img-fluid" />
+          </div>
+          <div class="stage-content">
+            <p class="program-text">
+              Multiple teams competed against each other utilizing sensor fustion and machine learning algorithms 
+              to detect, localize, and classify vulnerable road users and vehicles.
+            </p>
+            <a class="program-button" href={base_url("/research-areas/intersection-safety/challenge")}>
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="stage-image">
             <Image src={issLogo} alt="Intersection Safety Challenge Logo" class="img-fluid" />
           </div>
           <div class="stage-content">
@@ -355,20 +350,6 @@ const stages: OverlayResource[] = [
               and conflict mitigation.
             </p>
             <a class="program-button" href={base_url("/research-areas/intersection-safety/prototype")}>
-              Learn More
-            </a>
-          </div>
-        </div>
-        <div class="stage">
-          <div class="stage-image">
-            <Image src={iscLogo} alt="Intersection Safety Challenge Logo" class="img-fluid" />
-          </div>
-          <div class="stage-content">
-            <p class="program-text">
-              Multiple teams competed against each other utilizing sensor fustion and machine learning algorithms 
-              to detect, localize, and classify vulnerable road users and vehicles.
-            </p>
-            <a class="program-button" href={base_url("/research-areas/intersection-safety/challenge")}>
               Learn More
             </a>
           </div>
