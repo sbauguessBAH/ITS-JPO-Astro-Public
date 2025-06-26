@@ -18,7 +18,7 @@ The Department also awarded $3 million to 10 semifinalists through its [Inclusiv
     -   **Project:** _Plan, Book, and Pay for Demand-responsive Transit Agencies in CA, OR, or WA_
     -   **Award:** $5,311,000
 -   **Atlanta Regional Commission (ARC)**
-    -   **Location: Gwinnet County, Georgia**
+    -   **Location: Gwinnett County, Georgia**
     -   **Project:** _Safe Trips in Connected Transportation Network_
     -   **Award:** $9,388,404
 -   **Heart of Iowa Regional Transit Agency (HITRA)**

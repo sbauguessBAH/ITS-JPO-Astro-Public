@@ -23,11 +23,11 @@ This project will implement a scalable and replicable solution that enables incl
 
 **Georgia Department of Transportation (GDOT)** 
 
--   **Location: Gwinnett County, Georgia** 
+-   **Location: Gwinnettt County, Georgia** 
 -   **Project**: Safe Trips in a Connected Transportation Network (ST-CTN) 
 -   **Award**: $8,051,200 
 
-GDOT leads this project with support from the Atlanta Regional Commission. The ST-CTN system will provide Gwinnett County residents with detailed information and step-by-step navigation tailored for users' specific needs along with a range of other features geared to improve trip efficiency and safety. This concept is comprised of an integrated set of advanced transportation technology solutions including connected vehicles, transit signal priority, machine learning, and predictive analytics to support safe and complete trips, with a focus on accessibility for those with disabilities, aging adults, and those with limited English proficiency. The ST-CTN system includes a mobile application that will provide users with the ability to create a personalized trip plan with information regarding the navigation of physical infrastructure, the ability to provide safe alternative trip routes when encountering unexpected obstacles, and the ability to ensure user safety throughout the trip. 
+GDOT leads this project with support from the Atlanta Regional Commission. The ST-CTN system will provide Gwinnettt County residents with detailed information and step-by-step navigation tailored for users' specific needs along with a range of other features geared to improve trip efficiency and safety. This concept is comprised of an integrated set of advanced transportation technology solutions including connected vehicles, transit signal priority, machine learning, and predictive analytics to support safe and complete trips, with a focus on accessibility for those with disabilities, aging adults, and those with limited English proficiency. The ST-CTN system includes a mobile application that will provide users with the ability to create a personalized trip plan with information regarding the navigation of physical infrastructure, the ability to provide safe alternative trip routes when encountering unexpected obstacles, and the ability to ensure user safety throughout the trip. 
 
 **University of Washington (UW)** 
 

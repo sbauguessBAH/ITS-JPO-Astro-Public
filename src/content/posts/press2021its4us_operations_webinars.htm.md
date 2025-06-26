@@ -21,7 +21,7 @@ Each webinar will be held from 1:30 PM to 3:00 PM (EDT) and will feature a diffe
 
 ## Complete Trip – ITS4US Deployment Program – Concept of Operations Webinar 1: Safe Trips in a Connected Transportation Network
 
-The Atlanta Regional Commission’s proposed ITS4US deployment, which is known as “Safe Trips in a Connected Transportation Network,” will provide Gwinnett County residents with detailed information and step-by-step navigation tailored for a user’s specific needs, along with a range of other features geared to improve trip efficiency and safety.
+The Atlanta Regional Commission’s proposed ITS4US deployment, which is known as “Safe Trips in a Connected Transportation Network,” will provide Gwinnettt County residents with detailed information and step-by-step navigation tailored for a user’s specific needs, along with a range of other features geared to improve trip efficiency and safety.
 
 **Date:** Wednesday, July 14, 2021  
 **Time:** 1:30 PM– 3:00 PM (EDT)  
