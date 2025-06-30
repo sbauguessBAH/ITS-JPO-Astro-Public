@@ -1,0 +1,165 @@
+---
+import { Image } from "astro:assets";
+import base_url from "@/src/lib/base_url";
+import letitia from "@/src/assets/images/its4us/letitia.png";
+import Map from "@/src/assets/images/its4us/buffalo-map.png";
+
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+---
+
+<style>
+  hr {
+    margin: 10px 0;
+  }
+  .blue {
+    display: grid;
+  }
+
+  figure {
+    margin: auto;
+    width: 40%;
+    float: right;
+    margin: 10px;
+  }
+  figcaption {
+    color: #333;
+    font-style: italic;
+    font-size: small;
+    padding: 10px;
+  }
+
+  figcaption p {
+    padding: 0;
+    margin: 0;
+    font-size: small;
+  }
+  iframe {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+</style>
+<PageLayout title="Niagara Frontier Transportation Authority">
+  <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
+  <SidebarLayout path="/research-areas/ITS4US/deployments/">
+    <h2 class="sideways blue">NFTA Deployment Overview</h2>
+    <figure>
+      <Image src={letitia} alt="A nurse standing outside a building" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
+      <figcaption>
+        <p>
+          “I am a nurse at the Buffalo Niagara Medical Campus and use the Buffalo All Access community shuttle service along with the Complete Trip Platform app to get from my home in Masten Park to
+          the BNMC campus.”
+        </p>
+        <p class="text-end">- Illustrative Example of Potential User</p>
+      </figcaption>
+    </figure>
+    <p>
+      The Buffalo All Access project aims to solve mobility challenges for all travelers by deploying an integrated set of travel support services and systems within neighborhoods surrounding the
+      Buffalo Niagara Medical Campus (BNMC). The Medical Campus is located on 120 acres adjacent to downtown Buffalo and includes nearly 9 million square feet of clinical, laboratory, and office
+      space. More than 16,000 people work or study at the BNMC and more than 1.5 million people visit each year for healthcare and other services. The Buffalo All Access project, led by Niagara
+      Frontier Transportation Authority, addresses the challenges facing travelers in the area by:
+      <ul>
+        <li>Providing transit access to healthcare and jobs to all residents and allowing them to share in the economic development in downtown Buffalo.</li>
+        <li>Leveraging technology and developing a scalable model for integrating transportation technology, transit, and connected automation to solve a transportation need.</li>
+      </ul>
+    </p>
+
+    <br /><br />
+
+    <h2 class="sideways blue">Approach – Project Challenges and Solutions</h2>
+
+    <figure>
+      <Image src={Map} alt="Image of a map of Deployment Area in Buffalo, New York" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
+      <figcaption>
+        <p>Deployment Area in Buffalo, New York</p>
+      </figcaption>
+    </figure>
+    <p>
+      Within and around the BNMC, there are access- and pedestrian-related transportation and mobility challenges that hinder residents’ and visitors’ ability to access safe and reliable
+      transportation from BNMC and local or regional transportation agencies. Common challenges include, unsafe street crossings, lack of connections between modes, high volumes of visitors to the
+      BNMC campus, and lack of information for navigating the BNMC campus. These issues and problems have a direct impact on people’s ability to reach BNMC’s facilities and get to their appointments
+      on time, or even make the trip/appointment at all. This solution is envisioned to address the following key issues:
+    </p>
+    <ul>
+      <li>
+        <strong>Traffic safety issues at street crossings and lack of usable infrastructure in street rights of way.</strong>
+        <p>
+          A door-to-door travel planning app, the Buffalo All Access App, includes a comprehensive array of online and offline ways for travelers to receive real-time information on services,
+          infrastructure usability, and access to understand the current conditions of their trip and how best to react to necessary but spontaneous deviations from their original route.
+        </p>
+      </li>
+      <li>
+        <strong>Lack of efficient and reliable circulation paths between facilities on the campus and in surrounding neighborhoods.</strong>
+        <p>
+          The deployment aims to increase safety and improve the capability for travelers to cross specific intersections and use specific prioritized pathways that are slip resistant; offer smooth
+          paths of travel for accessing BNMC campus entities; and make travel safe, efficient, and compatible with user-defined preferences and capabilities.
+        </p>
+      </li>
+    </ul>
+    <h2 class="sideways blue">Measuring Deployment Impact</h2>
+    <p>Some of the key performance goals and targets for All Access include:</p>
+    <ul>
+      <li>
+        <strong>Improved ability of the All Access users to make satisfactory complete trips in the study area.</strong>
+        <p>
+          To achieve this metric, system user ratings will be used to assess: (1) how achievable door-to-door travel is for trips to, from, and within the BNMC; (2) how safe door-to-door travel paths
+          are for trips to, from, and within the BNMC, including prevalence of level, slip-resistant paths; (3) the adequacy and usefulness of information for making trips to, from, and within the
+          BNMC; and (4) the ability to make trips using integrated transit services to, from, and within the BNMC.
+        </p>
+      </li>
+      <li>
+        <strong>Improved ability to find destinations efficiently using the All Access wayfinding functionality.</strong>
+        <p>
+          To meet this goal, the project will track the fraction of Complete Trip Platform users that elect to receive outdoor and indoor wayfinding notifications as well as the system user
+          self-reported frequency of using these notifications. The project will monitor the utility of the outdoor and indoor wayfinding functionality in assisting users in reaching their destination
+          on time. The team will also employ user ratings of various dimensions of using the All Access indoor and outdoor wayfinding functionality.
+        </p>
+      </li>
+      <li>
+        <strong>Improved ability to cross specific intersections safely using All Access smart signal functionality.</strong>
+        <p>
+          To achieve this goal, the team will measure the percentage of All Access trips crossing at the relevant intersections that use the smart signal remote activation function. The self-reported
+          fraction of people who cross at the relevant intersections who use the All Access smart signal activation functionality will also be tracked. Further, the project will also measure the
+          perceived ease of use and assess the ratings of other aspects regarding the responsiveness of the smart signals, as the perceived safety of crossing the intersections with smart signals.
+        </p>
+      </li>
+      <li>
+        <strong>Provision of an efficient, reliable, and safe new on-demand community shuttle system.</strong>
+        <p>
+          To achieve this target, the team will track the percentage of on-demand community shuttle (CS) trips that arrive at stops within the targeted time allowance of a scheduled arrival time.
+          System user ratings of how reliable the transit system is in reaching their BNMC trip destination on time will also be used, as well as the self-reported frequency of use of all transit
+          services, including the CS, paratransit access line (PAL) services, and NFTA bus and rail lines. Additionally, the project will track the user ratings of CS service in terms of key service
+          aspects – safety, convenience, and affordability - and the cost-efficiency of shuttle services in terms of operating cost per passenger trip. The percentage of CS bookings for which the
+          earliest available pickup time is within 45 minutes of the request time will be monitored to ensure this target is met.
+        </p>
+      </li>
+    </ul>
+    <h2 class="sideways blue">Project Partners</h2>
+    <div class="row">
+      <div class="col-6">
+        <ul>
+          <li>City of Buffalo</li>
+          <li>Buffalo Niagara Medical Campus</li>
+          <li>VIA - Visually Impaired Advancement</li>
+          <li>Kaleida Health</li>
+          <li>University at Buffalo</li>
+          <li>Greater Buffalo Niagara Regional Transportation Council</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <ul>
+          <li>Fruit of the City</li>
+          <li>Heart of the City Neighborhoods Inc.</li>
+          <li>Niagara International Transportation Technology Coalition&nbsp;(NITTEC)</li>
+          <li>Buffalo Hearing and Speech Center (BHSC)</li>
+        </ul>
+      </div>
+    </div>
+    <h2 class="sideways blue">NFTA Links and Resources</h2>
+    <ul>
+      <li>Visit the <a href="https://bnmc.org/allaccess/">NFTA Project Website</a></li>
+    </ul>
+  </SidebarLayout>
+</PageLayout>

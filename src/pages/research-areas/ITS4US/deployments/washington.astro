@@ -1,0 +1,179 @@
+---
+import { Image } from "astro:assets";
+import base_url from "@/src/lib/base_url";
+import Takashi from "@/src/assets/images/its4us/Takashi.png";
+import Map from "@/src/assets/images/its4us/UWMap.png";
+
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+---
+
+<style>
+  hr {
+    margin: 10px 0;
+  }
+  .blue {
+    display: grid;
+  }
+
+  figure {
+    margin: auto;
+    width: 40%;
+    float: right;
+    margin: 10px;
+  }
+  figcaption {
+    color: #333;
+    font-style: italic;
+    font-size: small;
+    padding: 10px;
+  }
+
+  figcaption p {
+    padding: 0;
+    margin: 0;
+    font-size: small;
+  }
+  iframe {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+</style>
+<PageLayout title="University of Washington">
+  <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
+  <SidebarLayout path="/research-areas/ITS4US/deployments/">
+    <h2 class="sideways blue">UW Deployment Overview</h2>
+    <figure>
+      <Image src={Takashi} alt="A man standing with a cane" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
+      <figcaption>
+        <p>
+          “With my vision impairment a voice-activated mobile app helps me know if my route includes well paved sidewalks, intersections that have signalized and marked crosswalks, and stairs-free
+          paths to the buildings.”
+        </p>
+        <p class="text-end">- Illustrative Example of Potential User</p>
+      </figcaption>
+    </figure>
+    <p>
+      Millions of Americans, such as older adults, or those living in rural or suburban locales, cannot or do not use private vehicles or fixed-route transit. Yet, while many of the new mobility tools
+      (such as trip planning, digital mapping, and navigation applications) provide users amazing capabilities to access travel directions, locate transit services, learn about amenities along
+      segments of their trip, and compare travel options within one application, they are only informative about scheduled transit services and private vehicle modes.
+    </p>
+    <p>
+      All travelers need reliable, consistent information to inform safe, comfortable, and efficient travel in all transportation environments and services, including information needed to find
+      appropriate paths along sidewalks, in transit stations, and when using flexible modes of transport like shuttles and paratransit. Today, useful information about travel environments and many
+      travel modes is neither consistently collected nor shared. Current transportation data cannot answer traveler questions such as:
+    </p>
+    <ul>
+      <li>Is there a sidewalk or curb ramp there to support travel?</li>
+      <li>Does this intersection have crosswalks that are signalized and marked?</li>
+      <li>Is there lighting at this bus stop?</li>
+      <li>Where is the stairs-free path to the platform?</li>
+    </ul>
+    <p>
+      The Transportation Data Exchange Initiative (TDEI) project, led by the University of Washington&rsquo;s Taskar Center for Accessible Technology (TCAT) and the Washington State Transportation
+      Center (TRAC), has created data infrastructure to introduce data interoperability and consistency in travel environments and services that are not currently systematically collected or shared.
+    </p>
+
+   
+    <h2 class="sideways blue">Approach – Project Challenges and Solutions</h2>
+
+    <figure>
+      <Image
+        src={Map}
+        alt="An image of a map showing the six pilot counties in three states: King and Snohomish counties in Washington state, Multnomah and Columbia counties in Oregon, and Harford and Baltimore counties in Maryland. "
+        width={800}
+        class="float-sm-end img-fluid col-6-sm mb-2"
+      />
+      <figcaption>
+        <p>
+          The TDEI project focuses on six pilot counties in three states: King and Snohomish counties in Washington state, Multnomah and Columbia counties in Oregon, and Harford and Baltimore counties
+          in Maryland.
+        </p>
+      </figcaption>
+    </figure>
+    <p>
+      This project develops a complete data ecosystem that allows third-party providers to build applications for all travelers to complete trips more effectively and efficiently. This system is specifically designed to scale nationally. The project will achieve this aim through:
+    </p>
+    <ul>
+      <li>
+        <strong>Data standard coordinated releases.</strong>
+        <p>
+          The project team is working with existing standards committees to extend and update three data standards to digitally specify data about routable sidewalk and outdoor path data, routable paths through multilevel transit stations, and on-demand transit services. This work will enable consistent collection and reporting of data.
+        </p>
+      </li>
+      <li>
+        <strong>Publishing and maintaining interoperable data infrastructure, data collection and vetting tools and data governance policies.</strong>
+        <p>
+          The project team has developed open-source tools that help stakeholders collect standardized data, lower the cost, and improve data quality. The project is also developing documented, open-source tools, policies, and procedures that allow sharing and governance of the data. Finally, the project has developed a publicly available data repository.
+        </p>
+      </li>
+      <li>
+        <strong>Deploying and sustaining datasets and three mobility applications.</strong>
+        <p>
+          The project is demonstrating the value, usability, and interoperability of the project data and infrastructure through example applications that provide travel information throughout the complete trip. This will show other developers how the data can be used for the development of additional applications.
+        </p>
+      </li>
+    </ul>
+    <h2 class="sideways blue">Measuring Deployment Impact</h2>
+    <p>
+      The project evaluation focuses on the project infrastructure and its ability to collect, combine into coherent travel networks, store, and publish the data using sustainable and scalable software and procedures. Downstream evaluations will focus on the ability of application developers to access the data in an interoperable manner in six different counties through multiple types of travel regions, interpret the data for distinct types of travel applications, and deliver the information in a coherent way to travelers. Some of the key performance goals and targets include:
+    </p>
+    <ul>
+      <li>
+        <strong>Capacity for collection of three data standards by agencies.</strong>
+        <p>
+          The project introduces usable data standards that are manageable and data that is collectible for agencies across six deployment counties. The team will measure the target by the capacity of municipalities and travel agencies to collect and disseminate data.
+        </p>
+      </li>
+      <li>
+        <strong>Evaluating data collection and vetting.</strong>
+        <p>
+          The project incorporates tools producing high-quality data that can be used for routing purposes. This target will be measured by the ability to collect new data within variable transportation environments.
+        </p>
+      </li>
+      <li>
+        <strong>Measuring performance of data dissemination procedures and evaluating third-party access to data via APIs.</strong>
+        <p>
+          The project creates an interoperable data-sharing system with high availability. This target will be measured by the success rate and efficiency of data requests made against the system.
+        </p>
+      </li>
+      <li>
+        <strong>Travel outcomes and performance of three demonstration applications using TDEI data.</strong>
+        <p>
+          The downstream consuming applications will be evaluated by measuring traveler outcomes when using the data, with the primary analysis based on the benefits obtained from 40 travelers using the AccessMap Multimodal demonstration.
+        </p>
+      </li>
+    </ul>
+    <h2 class="sideways blue">Project Partners</h2>
+    <div class="row">
+      <div class="col-6">
+        <ul>
+          <li>Sound Transit</li>
+          <li>Cambridge Systematics</li>
+          <li>Gaussian Solutions</li>
+          <li>Smith-Kettlewell / XR Navigation</li>
+          <li>Microsoft</li>
+          <li>Studio Pacifica</li>
+          <li>Hopelink</li>
+          </ul>
+      </div>
+      <div class="col-6">
+        <ul>
+          <li>Cities of Bellevue, Seattle, Portland</li>
+          <li>Washington Department of Transportation</li>
+          <li>Oregon Department of Transportation</li>
+          <li>Maryland Department of Transportation</li>
+          <li>Maryland Transit Administration</li>
+          <li>Google</li>
+          <li>King County Metro Access</li>
+        </ul>
+      </div>
+    </div>
+    <h2 class="sideways blue">UW Links and Resources</h2>
+    <ul>
+      <li>Visit the <a href="https://tcat.cs.washington.edu/tdei/">UW Project Website</a></li>
+    </ul>
+  </SidebarLayout>
+</PageLayout>

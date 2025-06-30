@@ -13,6 +13,9 @@ const keywords = [
   "ITS Knowledge Resource System",
   "ITS DEP",
 ];
+
+const description =
+  "The ITS Deployment Evaluation Program (DEP) provides information to assist communities with making evidence-based decisions on ITS investment, deployment, and performance assessment.";
 ---
 <style>
   .card-img-top{
@@ -32,10 +35,11 @@ const keywords = [
     display: inline-block;
     font-size:12px;
     margin-left:6px;
+    color: inherit;
   }
 </style>
 
-<PageLayout title="Deployment Evaluation Program" bannerImage={banner} keywords={keywords}>
+<PageLayout title="Deployment Evaluation Program" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner"> Deployment Evaluation </Fragment>
   <SidebarLayout path="/resources/">
     <h2 class="sideways blue">Deployment Evaluation Program (DEP)</h2>
@@ -45,13 +49,11 @@ const keywords = [
   </figure> -->
 
   <div class="card mb-4 box-shadow float-sm-end text-center col-12 col-md-5 ms-0 ms-md-4 mb-2">
-    <a href="https://www.itskrs.its.dot.gov/" target="_blank"><Image src={screenshot} alt="Screen shot of web site for ITS Deployment Evaluation" width="500" class="img-fluid"/></a>
+    <a href="https://www.itskrs.its.dot.gov?utm_campaign=its-jpo&utm_source=de-landing-page&utm_medium=image-button" target="_blank"><Image src={screenshot} alt="Screen shot of web site for ITS Deployment Evaluation" width="500" class="img-fluid"/></a>
     <div class="card-body ">
       <p class="card-text text-start">Visit the ITS Deployment Evaluation Program website to access data and other resources.</p>
       <div class="d-flex justify-content-between align-items-center">
-        <form action="https://www.itskrs.its.dot.gov/" method="get" target="_blank">
-          <button type="submit" class="btn btn-sm btn-outline-secondary m-0 external-button w-100">Visit the ITS Deployment Evaluation Website</button>
-        </form>
+          <a  href="https://www.itskrs.its.dot.gov?utm_campaign=its-jpo&utm_source=de-landing-page&utm_medium=image-button" class="btn btn-sm btn-outline-secondary m-0 external-button w-100">Visit the ITS Deployment Evaluation Website</a>
       </div>
     </div>
   </div>

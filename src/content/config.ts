@@ -1,6 +1,5 @@
 import { imageConfig } from "astro:assets";
 import { z, defineCollection, reference } from "astro:content";
-import { fetchStandardsData } from "../lib/fetch-standards";
 
 export const collections = {
   posts: defineCollection({
@@ -85,19 +84,5 @@ export const collections = {
       order: z.number().int()   
     }),
   }),
-
-  standardsList: defineCollection({
-    loader: async () => {
-      const data = await fetchStandardsData("src/data/List of ASC Supported Standards.xlsx");
-      return data;
-    },
-    schema: z.object({
-      id: z.string(),
-      sdo: z.string(),
-      name: z.string(),
-      category: z.string(),
-      link: z.string().url().optional()
-    })
-  })
 
 };

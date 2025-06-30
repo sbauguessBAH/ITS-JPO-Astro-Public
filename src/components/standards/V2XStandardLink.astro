@@ -11,6 +11,7 @@ interface Props {
 const { code } = Astro.props
 
 const standard = standards.data.find(standard => standard.code === code);
+console.log(code, standard?.title)
 ---
 <style>
 .custom-tooltip {

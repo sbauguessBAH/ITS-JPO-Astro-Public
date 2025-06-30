@@ -63,7 +63,12 @@ const keywords = [
   'Connected Vehicle Research',
   'Automated Vehicle Research'
 ];
+
+const description =
+  'Explore our image library showcasing connected and automated vehicle technologies, applications, and research. Download high-resolution images for your projects.';
 ---
+
+
 
 <style>
 
@@ -83,7 +88,7 @@ const keywords = [
 }
 
 </style>
-<PageLayout title="Image Library">
+<PageLayout title="Image Library" keywords={keywords} description={description}>
   <Fragment slot="banner">
     Image Library
   </Fragment>
@@ -98,18 +103,14 @@ const keywords = [
       </div>
     ))}
   </div>
-  <br>
-  <h4>For additional images please contact</h4>
-  <p>
-      <strong>Mike Pina</strong><br>
-      Program Manager, Communications &amp; Outreach<br>
-      U.S. Department of Transportation<br>
-      FHWA/Office of the Assistant Secretary for Research and Technology<br>
-      HOIT-1 E33 - 409<br>
-      1200 New Jersey Avenue, SE<br>
-      Washington, DC 20590<br>
-      (202) 366 3700<br>
-      (202)  493 2027 (fax)<br>
-      <a href="mailto:mike.pina@dot.gov">mike.pina@dot.gov</a>
-  </p></SidebarLayout>
+
+<h3>For additional images please contact</h3>
+<p>
+<strong>Ocel, Norah P.E. PMP</strong><br/>
+Program Manager<br/>
+ITS Safety and Stakeholder Engagement and Communications<br/>
+202-366-2639<br/>
+<a href="mailto:Norah.Ocel@dot.gov">Norah.Ocel@dot.gov</a>
+</p>
+</SidebarLayout>
 </PageLayout>
