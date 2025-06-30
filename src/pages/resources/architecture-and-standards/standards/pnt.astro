@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import StandardsLayout from "./_standards-layout.astro";
+
+const standards = await getCollection("standardsList")
+  .then(collection => collection
+    .map(row => row.data)
+    .filter(row => row.category === "Positioning Navigation and Timing (PNT)")
+  )
+---
+<style>
+  .table th, .table td {
+    text-align: left;
+  }
+</style>
+
+<StandardsLayout>
+  <h2 class="blue">Positioning, Navigation, and Timing (PNT)</h2>
+  <p>
+    Position, Navigation, and Timing (PNT) standards detail the requirements for accurate PNT through use of GPS and other technologies. 
+  </p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">SDO</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {standards.map(standard => (
+        <tr>
+          <th scope="row">
+            {standard.sdo}
+          </th>
+          <td>
+            <a 
+              href={standard.link} 
+              rel="noopener noreferrer" 
+              target="_blank"
+              class="link"
+            >
+              {standard.name}
+            </a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</StandardsLayout>
