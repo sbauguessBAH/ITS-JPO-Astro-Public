@@ -11,6 +11,54 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.astro";
 ---
 <style>
+  .resource-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--size);
+  }
+
+  .resource-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .resource-card-title {
+    text-transform: none;
+  }
+  .resource-card-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+  .resource-button {
+    border: 1px solid #dee2e6;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: black;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-duration) ease-in-out;
+  }
+  .resource-button::after {
+    content: "";
+  }
+  .resource-button:hover {
+    font-weight: 600;
+    background: #dee2e6;
+  }
+
+  @media (min-width: 1200px) {
+    .resource-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+<style>
   tbody tr td {
     text-align: left;
   }
@@ -799,26 +847,40 @@ import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.a
       <h2 class="program-title-lg mb-4">
         Additional Resources
       </h2>
-      <ul class="list-unstyled">
-        <li>
-          DOT Webinar (July 27, 2023): "Intersection Safety Challenge &mdash; From Conceptualization to Initial Testing"
-          <Link isExternal href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar">
-            presentation material
-          </Link>
-          and <Link isExternal href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation">
-            recording
-          </Link>.
-        </li>
-        <li>
-          DOT Webinar (May 22, 2023): "Intersection Safety Challenge Prize Competition"
-          <Link isExternal href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar">
-            presentation material
-          </Link>
-          and <Link isExternal href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation">
-            recording 
-          </Link>.
-        </li>
-      </ul>
+      <div class="resource-container">
+        <Card>
+          <CardHeader class="resource-card-header">
+            <h3 class="resource-card-title">Intersection Safety Challenge &mdash; From Conceptualization to Initial Testing</h3>
+            <p class="resource-card-subtitle">DOT Webinar | July 27, 2023</p>
+          </CardHeader>
+          <CardBody>
+            <div>
+              <a class="resource-button" href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar">
+                Presentation Material
+              </a>
+              <a class="resource-button" href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation">
+                Recording
+              </a>
+            </div>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader class="resource-card-header">
+            <h3 class="resource-card-title">Intersection Safety Challenge Prize Competition</h3>
+            <p class="resource-card-subtitle">DOT Webinar | May 22, 2023</p>
+          </CardHeader>
+          <CardBody>
+            <div>
+              <a class="resource-button" href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar">
+                Presentation Material
+              </a>
+              <a class="resource-button" href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation">
+                Recording
+              </a>
+            </div>
+          </CardBody>
+        </Card>
+      </div>
     </ProgramSection>
   </main>
 </Layout>

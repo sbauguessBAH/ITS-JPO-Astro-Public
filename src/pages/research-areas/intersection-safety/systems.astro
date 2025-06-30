@@ -8,18 +8,65 @@ import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
 import { Image } from "astro:assets";
 import Link from "@/src/components/Link.astro";
 ---
+<style>
+  .resource-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--size);
+  }
 
+  .resource-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .resource-card-title {
+    text-transform: none;
+  }
+  .resource-card-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+  .resource-button {
+    border: 1px solid #dee2e6;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: black;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-duration) ease-in-out;
+  }
+  .resource-button::after {
+    content: "";
+  }
+  .resource-button:hover {
+    font-weight: 600;
+    background: #dee2e6;
+  }
+
+  @media (min-width: 1200px) {
+    .resource-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
 <Layout>
   <main class="program-main">
     <ProgramSection>
       <h2 class="program-title-lg">
-        Intersection Safety Systems (ISS) Initiative
+        Intersection Safety Systems (ISS) Development
       </h2>
       <div class="row">
         <div class="col-8">
           <p class="program-text">
             Building on the success of the Intersection Safety Challenge, the Intersection Safety Systems 
-            (ISS) initiative aims to support development of innovative ISS that can operate effectively 
+            (ISS) development initiative aims to support development of innovative ISS that can operate effectively 
             under real-world conditions. The goal is to accelerate the development of full end-to-end 
             prototype ISS and its components, including sensor fusion, AI-based decision-making, and conflict mitigation. 
           </p>
@@ -62,15 +109,21 @@ import Link from "@/src/components/Link.astro";
       <h2 class="program-title-lg my-4">
         Additional Resources
       </h2>
-      <ul class="list-unstyled">
-        <li>
-          Intersection Safety System (ISS) Prototyping 
-          <Link isExternal href="https://sam.gov/opp/aaedf98452c64392b5e7669d95c33db6/view">
-            Sources Sought Notice
-          </Link>
-          issued on April 25, 2025 and closed on May 9, 2025.
-        </li>
-      </ul>
+      <div class="resource-container">
+        <Card>
+          <CardHeader class="resource-card-header">
+            <h3 class="resource-card-title">Intersection Safety System (ISS) Prototyping</h3>
+            <p class="resource-card-subtitle">Issued on April 25, 2025 | Closed on May 9, 2025</p>
+          </CardHeader>
+          <CardBody>
+            <div>
+              <a class="resource-button" href="https://sam.gov/opp/aaedf98452c64392b5e7669d95c33db6/view">
+                Sources Sought Notice
+              </a>
+            </div>
+          </CardBody>
+        </Card>
+      </div>
     </ProgramSection>
   </main>
 </Layout>

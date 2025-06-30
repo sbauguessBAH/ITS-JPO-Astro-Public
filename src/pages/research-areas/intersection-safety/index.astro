@@ -21,13 +21,16 @@ import dataFusionIcon from "@/src/assets/images/intersection-safety/data-fusion.
 import aiIcon from "@/src/assets/images/intersection-safety/ai.png";
 import integrationIcon from "@/src/assets/images/intersection-safety/integration.png";
 import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-intersection.jpg";
+import BoxArrowUpRightIcon from "@/src/components/programs/icons/BoxArrowUpRightIcon.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
 
 ---
 <style>
   .overview-section {
     display: flex;
     flex-direction: column;
-    gap: var(--size);
+    gap: var(--size-lg);
   }
   .overview-image {
     border-radius: var(--border-radius);
@@ -36,7 +39,7 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
   @media (min-width: 992px) {
     .overview-section {
       flex-direction: row;
-      align-items: start;
+      align-items: center;
     }
     .overview-image {
       flex-basis: 40%;
@@ -100,7 +103,11 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
   .stage-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: var(--size);
+    /* gap: var(--size); */
+  }
+
+  .stage-image {
+    padding: var(--size)
   }
 
   @media (min-width: 1200px) {
@@ -120,6 +127,62 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
 
     .stage-content {
 
+    }
+    .stage-left {
+      padding-right: var(--size);
+      border-right: 1px solid var(--border-light);
+    }
+
+    .stage-right {
+      padding-left: var(--size);
+    }
+  }
+</style>
+<style>
+  .resource-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--size);
+  }
+
+  .resource-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .resource-card-title {
+    text-transform: none;
+  }
+  .resource-card-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+  .resource-button {
+    border: 1px solid #dee2e6;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: black;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-duration) ease-in-out;
+  }
+  .resource-button::after {
+    content: "";
+  }
+  .resource-button:hover {
+    font-weight: 600;
+    background: #dee2e6;
+  }
+
+  @media (min-width: 1200px) {
+    .resource-container {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
@@ -181,8 +244,7 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
             The USDOT aims to transform intersection safety by incentivizing the innovative application 
             of emerging technologies to identify and mitigate unsafe conditions involving vehicles and vulnerable road users 
             at intersections. This initiative, which is specifically focused on the use of technology, 
-            complements other federal efforts to improve intersection safety, such as 
-            the <Link isExternal href="https://www.transportation.gov/NRSS">National Roadway Safety Strategy</Link>.
+            complements other federal efforts to improve intersection safety.
             The intersection environment is well-suited to innovative mitigative approaches that leverage and potentially repurpose
             existing traffic control and support infrastructure.
           </p>
@@ -191,9 +253,9 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
           <Image src={safeIntersectionImage} alt="Safe Intersection Image" class="img-fluid radius-md shadow" />
         </div>
       </div>
-      <div class="vision-container mt-4">
-        <h3 class="program-title-md mb-0">Vision</h3>
-        <p class="program-text">
+      <div class="vision-container mt-5">
+        <h3 class="program-title-md mb-0 text-center">Vision</h3>
+        <p class="program-text max-w-lg text-center mx-auto">
           <strong>Transform intersection safety</strong> through the innovative application 
           of emerging technologies including machine vision, sensor fusion, 
           and real-time decision-making to identify and mitigate unsafe conditions 
@@ -209,7 +271,7 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
         Intersection safety is a growing issue, especially for vulnerable road users.
       </p>
       <div class="problem-container mt-4">
-        <Card>
+        <Card shadow="sm">
           <CardBody>
             <div class="problem">
               <div class="problem-image">
@@ -228,7 +290,7 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
             </div>
           </CardBody>
         </Card>
-        <Card>
+        <Card shadow="sm">
           <CardBody>
             <div class="problem">
               <div class="problem-image">
@@ -257,7 +319,7 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
         Accelerate intersection safety deployments nationwide with Artificial Intelligence (AI).
       </p>
       <div class="solution-container mt-4">
-        <Card class="solution-card">
+        <Card class="solution-card" shadow="sm">
           <CardHeader class="solution-header">
             <Image src={dataFusionIcon} alt="Data Fusion Icon" class="img-fluid solution-icon" />
           </CardHeader>
@@ -277,7 +339,7 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
         <div class="solution-symbol">
           <Image src={plusIcon} alt="Plus Icon" class="img-fluid" />
         </div>
-          <Card class="solution-card">
+          <Card class="solution-card" shadow="sm">
             <CardHeader class="solution-header">
               <Image src={aiIcon} alt="AI Icon" class="img-fluid solution-icon" />
             </CardHeader>
@@ -297,7 +359,7 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
         <div class="solution-symbol">
           <Image src={equalsIcon} alt="Equals Icon" class="img-fluid" />
         </div>
-          <Card class="solution-card">
+          <Card class="solution-card" shadow="sm">
             <CardHeader class="solution-header">
               <Image src={integrationIcon} alt="Integration Icon" class="img-fluid solution-icon" />
             </CardHeader>
@@ -318,13 +380,13 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
     </ProgramSection>
     <ProgramSection>
       <h2 class="program-title-lg">
-        Projects
+        Initiatives
       </h2>
       <p class="program-text">
         AI innovation could make our nation's intersections safer for all road users.
       </p>
       <div class="stage-container mt-4">
-        <div class="stage">
+        <div class="stage stage-left">
           <div class="stage-image">
             <Image src={iscLogo} alt="Intersection Safety Challenge Logo" class="img-fluid" />
           </div>
@@ -338,7 +400,7 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
             </a>
           </div>
         </div>
-        <div class="stage">
+        <div class="stage stage-right">
           <div class="stage-image">
             <Image src={issLogo} alt="Intersection Safety Challenge Logo" class="img-fluid" />
           </div>
@@ -360,25 +422,68 @@ import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-
       <h2 class="program-title-lg">
         Additional Resources
       </h2>
-      <ul class="list-unstyled">
-        <li>
-          <Link isExternal href="">
-            Summary Report
-          </Link>
-          on <Link isExternal href="">
-            Request for Information
-          </Link>: Enhancing the Safety of Vulnerable Road Users at Intersections
-        </li>
-        <li>
-          DOT Webinar (March 17, 2023): "Enhancing the Safety of Vulnerable Road Users at Intersections"
-          <Link isExternal href="">
-            presentation material
-          </Link>
-          and <Link isExternal href="">
-            recording
-          </Link>.
-        </li>
-      </ul>
+      <div class="resource-container">
+        <Card shadow="sm">
+          <CardHeader>
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Enhancing the Safety of Vulnerable Road Users at Intersections</h3>
+              <p class="resource-card-subtitle">February 2023</p>
+            </div>
+          </CardHeader>
+          <CardBody>
+            <div class="p-2 d-flex gap-2">
+              <a 
+                class="resource-button" 
+                href="https://rosap.ntl.bts.gov/view/dot/66622" 
+                rel="noopener noreferrer" 
+                target="_blank"
+              >
+                <BoxArrowUpRightIcon size={12} />
+                Summary Report
+              </a>
+              <a 
+                class="resource-button" 
+                href="https://www.federalregister.gov/documents/2022/09/16/2022-20188/enhancing-the-safety-of-vulnerable-road-users-at-intersections-request-for-information" 
+                rel="noopener noreferrer" 
+                target="_blank"
+              >
+                <BoxArrowUpRightIcon size={12} />
+                Request for Information (RFI)
+              </a>
+            </div>
+          </CardBody>
+        </Card>
+        <Card shadow="sm">
+          <CardHeader>
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Enhancing the Safety of Vulnerable Road Users at Intersections</h3>
+              <p class="resource-card-subtitle">DOT Webinar | March 17, 2023</p>
+            </div>
+          </CardHeader>
+          <CardBody>
+            <div class="p-2 d-flex gap-2">
+              <a 
+                class="resource-button" 
+                href={base_url("/assets/intersection-safety/Intersection_Safety_Webinar.pdf")} 
+                rel="noopener noreferrer" 
+                target="_blank"
+              >
+                <PdfIcon size={12}/>
+                Presentation Material
+              </a>
+              <a 
+                class="resource-button" 
+                href="https://itsa.adobeconnect.com/pzkh0m71kitt/" 
+                rel="noopener noreferrer" 
+                target="_blank"
+              >
+                <FilmIcon size={12} />
+                Recording
+              </a>
+            </div>
+          </CardBody>
+        </Card>
+      </div>
     </ProgramSection>
   </main>
 </Layout>
