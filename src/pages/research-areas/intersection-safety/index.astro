@@ -180,6 +180,12 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
     background: #dee2e6;
   }
 
+  .resource-link-container {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 4px;
+  }
+
   @media (min-width: 1200px) {
     .resource-container {
       grid-template-columns: repeat(3, 1fr);
@@ -424,14 +430,14 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
       </h2>
       <div class="resource-container">
         <Card shadow="sm">
-          <CardHeader>
+          <CardBody>
             <div class="resource-card-header p-2">
               <h3 class="resource-card-title">Enhancing the Safety of Vulnerable Road Users at Intersections</h3>
               <p class="resource-card-subtitle">February 2023</p>
             </div>
-          </CardHeader>
-          <CardBody>
-            <div class="p-2 d-flex gap-2">
+          </CardBody>
+          <CardFooter>
+            <div class="resource-link-container">
               <a 
                 class="resource-button" 
                 href="https://rosap.ntl.bts.gov/view/dot/66622" 
@@ -451,17 +457,17 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
                 Request for Information (RFI)
               </a>
             </div>
-          </CardBody>
+          </CardFooter>
         </Card>
         <Card shadow="sm">
-          <CardHeader>
+          <CardBody>
             <div class="resource-card-header p-2">
               <h3 class="resource-card-title">Enhancing the Safety of Vulnerable Road Users at Intersections</h3>
               <p class="resource-card-subtitle">DOT Webinar | March 17, 2023</p>
             </div>
-          </CardHeader>
-          <CardBody>
-            <div class="p-2 d-flex gap-2">
+          </CardBody>
+          <CardFooter>
+            <div class="resource-link-container px-2">
               <a 
                 class="resource-button" 
                 href={base_url("/assets/intersection-safety/Intersection_Safety_Webinar.pdf")} 
@@ -481,7 +487,7 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
                 Recording
               </a>
             </div>
-          </CardBody>
+          </CardFooter>
         </Card>
       </div>
     </ProgramSection>

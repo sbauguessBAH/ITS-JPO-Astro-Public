@@ -7,6 +7,8 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
 import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
 import { Image } from "astro:assets";
 import Link from "@/src/components/Link.astro";
+import BoxArrowUpRightIcon from "@/src/components/programs/icons/BoxArrowUpRightIcon.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 ---
 <style>
   .resource-container {
@@ -48,6 +50,12 @@ import Link from "@/src/components/Link.astro";
   .resource-button:hover {
     font-weight: 600;
     background: #dee2e6;
+  }
+
+  .resource-link-container {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 4px;
   }
 
   @media (min-width: 1200px) {
@@ -110,18 +118,26 @@ import Link from "@/src/components/Link.astro";
         Additional Resources
       </h2>
       <div class="resource-container">
-        <Card>
-          <CardHeader class="resource-card-header">
-            <h3 class="resource-card-title">Intersection Safety System (ISS) Prototyping</h3>
-            <p class="resource-card-subtitle">Issued on April 25, 2025 | Closed on May 9, 2025</p>
-          </CardHeader>
+        <Card shadow="sm">
           <CardBody>
-            <div>
-              <a class="resource-button" href="https://sam.gov/opp/aaedf98452c64392b5e7669d95c33db6/view">
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Intersection Safety System (ISS) Prototyping</h3>
+              <p class="resource-card-subtitle">Issued on April 25, 2025 | Closed on May 9, 2025</p>
+            </div>
+          </CardBody>
+          <CardFooter>
+            <div class="resource-link-container px-2">
+              <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://sam.gov/opp/aaedf98452c64392b5e7669d95c33db6/view"
+              >
+                <BoxArrowUpRightIcon size={12} />
                 Sources Sought Notice
               </a>
             </div>
-          </CardBody>
+          </CardFooter>
         </Card>
       </div>
     </ProgramSection>

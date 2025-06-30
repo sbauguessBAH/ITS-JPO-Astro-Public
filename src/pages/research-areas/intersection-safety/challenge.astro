@@ -9,6 +9,8 @@ import { Image } from "astro:assets";
 import Link from "@/src/components/Link.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
 ---
 <style>
   .resource-container {
@@ -50,6 +52,12 @@ import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.a
   .resource-button:hover {
     font-weight: 600;
     background: #dee2e6;
+  }
+
+  .resource-link-container {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 4px;
   }
 
   @media (min-width: 1200px) {
@@ -848,37 +856,65 @@ import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.a
         Additional Resources
       </h2>
       <div class="resource-container">
-        <Card>
-          <CardHeader class="resource-card-header">
-            <h3 class="resource-card-title">Intersection Safety Challenge &mdash; From Conceptualization to Initial Testing</h3>
-            <p class="resource-card-subtitle">DOT Webinar | July 27, 2023</p>
-          </CardHeader>
+        <Card shadow="sm">
           <CardBody>
-            <div>
-              <a class="resource-button" href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar">
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Intersection Safety Challenge Overview</h3>
+              <p class="resource-card-subtitle">DOT Webinar | March 28, 2023</p>
+            </div>
+          </CardBody>
+          <CardFooter>
+            <div class="resource-link-container px-2">
+              <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar"
+              >
+                <PdfIcon size={12}/>
                 Presentation Material
               </a>
-              <a class="resource-button" href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation">
+              <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation"
+              >
+                <FilmIcon size={12} />
                 Recording
               </a>
             </div>
-          </CardBody>
+          </CardFooter>
         </Card>
-        <Card>
-          <CardHeader class="resource-card-header">
-            <h3 class="resource-card-title">Intersection Safety Challenge Prize Competition</h3>
-            <p class="resource-card-subtitle">DOT Webinar | May 22, 2023</p>
+        <Card shadow="sm">
+          <CardHeader>
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Intersection Safety Challenge Prize Competition</h3>
+              <p class="resource-card-subtitle">DOT Webinar | May 22, 2023</p>
+            </div>
           </CardHeader>
-          <CardBody>
-            <div>
-              <a class="resource-button" href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar">
+          <CardFooter>
+            <div class="resource-link-container px-2">
+              <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar"
+              >
+                <PdfIcon size={12}/>
                 Presentation Material
               </a>
-              <a class="resource-button" href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation">
+              <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation"
+              >
+                <FilmIcon size={12} />
                 Recording
               </a>
             </div>
-          </CardBody>
+          </CardFooter>
         </Card>
       </div>
     </ProgramSection>

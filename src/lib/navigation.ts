@@ -31,7 +31,7 @@ export const navigation: NavigationItem[] = [
       { name: "Automation Program", url: "/research-areas/automation-program" },
       { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
-      { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
+      { name: "Intersection Safety", url: "/research-areas/intersection-safety" },
       { name: "ITS4US Program", url: "/research-areas/ITS4US", isEnabled: true, pages: [
         { name: "ITS4US Home", url: "/research-areas/ITS4US" },
         { name: "Program Overview", url: "/research-areas/ITS4US/overview" },
