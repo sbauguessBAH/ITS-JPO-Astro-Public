@@ -10,6 +10,10 @@ const { currentBreadcrumb } = Astro.props;
 
 const path = Astro.url.pathname;
 
+// Get the full navigation path, remove undefined options, concatenate any additional passed-in links (such as from dynamically generated content)
+// const items = findBreadcrumbItem(currentPath)
+//   .filter(item => item !== undefined)
+//   .map(item => ({ title: item?.name, href: item?.url }))
 const items = findBreadcrumbItems(path);
 const breadcrumbs = currentBreadcrumb ? [...items, { name: currentBreadcrumb, url: ""}] : items;
 ---

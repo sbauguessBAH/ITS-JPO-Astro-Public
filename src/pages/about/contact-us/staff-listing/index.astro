@@ -5,109 +5,100 @@ import Brian_Cronin from "../../../../assets/images/staff/Brian_Cronin.png";
 import Egan_Smith from "../../../../assets/images/staff/Egan_Smith.jpg";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 import base_url from "@/src/lib/base_url";
-
-const keywords = [
-  "ITS JPO Staff Listing",
-  "ITS JPO",
-  "Staff Listing",
-  "Contact Us",
-  "About Us",
-  "Intelligent Transportation Systems Joint Program Office",
-];
-
-const description =
-  "The ITS JPO staff listing provides contact information for key personnel involved in the Intelligent Transportation Systems Joint Program Office. Reach out to us for inquiries, collaboration, and more.";
-
 ---
 
-<style>
-p {
-  text-wrap: pretty;
-
-}
-</style>
-<PageLayout title="Staff Listing" keywords={keywords} description={description}>
+<PageLayout title="Staff Listing">
   <Fragment slot="banner"> ITS JPO Staff Listing </Fragment>
   <SidebarLayout path="/about/">
     <div class="row">
       <div class="col-md-8 order-2 order-md-1">
         <div class="row">
           <div class="col-lg-6">
-            <p>
             <strong>Anderson, Justin, PMP, CSEP, CISSP</strong><br />
             Program Manager<br />
             Next Generation Wireless Communications and SCMS<br />
             202-366-9198<br />
             <a href="mailto:Justin.Anderson@dot.gov">Justin.Anderson@dot.gov</a>
-            </p>
+            <br /><br />
           </div>
           <div class="col-lg-6">
-            <p>
             <strong>Ocel, Norah P.E. PMP</strong><br />
             Program Manager<br />
-            ITS Safety and Stakeholder Engagement and Communications<br />
+            ITS Safety and Stakeholder Engagement<br />
             202-366-2639<br />
             <a href="mailto:Norah.Ocel@dot.gov">Norah.Ocel@dot.gov</a>
-            </p>
+            <br /><br />
           </div>
           <div class="col-lg-6">
-            <p>
             <strong>Park, Hyungjun, Ph.D.</strong><br />
             Program Manager<br />
             Automation<br />
             202-366-9126<br />
             <a href="mailto:Hyungjun.Park@dot.gov">Hyungjun.Park@dot.gov</a>
-            </p>
+            <br /><br />
           </div>
           <div class="col-lg-6">
-            <p>
-            <strong>Randall, Lisa</strong><br />
-            415-748-8399<br />
-            <a href="mailto:Lisa.Randall@dot.gov">Lisa.Randall@dot.gov</a>
-            </p>
+            <strong>Pina, Mike</strong><br />
+            Program Manager<br />
+            Communications<br />
+            202-366-3700<br />
+            <a href="mailto:michael.pina@dot.gov">Michael.Pina@dot.gov</a>
+            <br /><br />
           </div>
           <div class="col-lg-6">
-            <p>
-            <strong>Schneeberger, John, PMP, PSPO </strong><br />
+            <strong>Pincus, Marcia, FAC/PPM III, FAC/COR III</strong><br />
+            Program Manager<br />
+            ITS Deployment Evaluation<br />
+            202-366-9230<br />
+            <a href="mailto:marcia.pincus@dot.gov">Marcia.Pincus@dot.gov</a>
+            <br /><br />
+          </div>
+          <div class="col-lg-6">
+            <strong>Reimnitz, Amber PMP</strong><br />
+            Program Manager<br />
+            ITS Multimodal Digital Infrastructure<br />
+            202-366-2997<br />
+            <a href="mailto:Amber.Reimnitz@dot.gov">Amber.Reimnitz@dot.gov</a>
+            <br /><br />
+          </div>
+          <div class="col-lg-6">
+            <strong>Schneeberger, John</strong><br />
             Program Manager<br />
             Knowledge and Technology Transfer<br />
             202-366-8034<br />
             <a href="mailto:john.schneeberger@dot.gov">John.Schneeberger@dot.gov</a>
-            </p>
+            <br /><br />
           </div>
           <div class="col-lg-6">
-            <p>
             <strong>Sheehan, Robert, P.E., PTOE</strong><br />
             Program Manager<br />
             Architecture and Standards<br />
             202-366-6817<br />
             <a href="mailto:robert.sheehan@dot.gov">Robert.Sheehan@dot.gov</a>
-            </p>
+            <br /><br />
           </div>
           <div class="col-lg-6">
-            <p>
             <strong>Solter, Michael</strong><br />
-            Chief Program and Resource Management<br />
+            Chief Program & Resource Management<br />
             202-366-4259<br />
             <a href="mailto:Michael.Solter@dot.gov">Michael.Solter@dot.gov</a>
-            </p>
+            <br /><br />
           </div>
           <div class="col-lg-6">
-            <p>
             <strong>Williams, Dana</strong><br />
             Administrative Officer<br />
             202-366-2180<br />
             <a href="mailto:dana.williams@dot.gov">Dana.Williams@dot.gov</a>
-            </p>
+            <br /><br />
           </div>
           <div class="col-lg-6">
-            <p>
             <strong>Zlotchenko, Elina, PMP, FAC/PPM III</strong><br />
             Program Manager<br />
             ITS4US, EPMO, NRITS, DATA/CODE HUBs<br />
             202-366-1697<br />
             <a href="mailto:Elina.Zlotchenko@dot.gov">Elina.Zlotchenko@dot.gov</a>
-            </p>
+
+            <br /><br />
           </div>
         </div>
       </div>
@@ -118,9 +109,19 @@ p {
         202-493-3269<br />
         <a href="mailto:brian.cronin@dot.gov">Brian.Cronin@dot.gov</a>
         <p>
+          
           <a href={base_url("/about/contact-us/staff-listing/Brian-Cronin")}>View Bio</a>
         </p>
+
         <br />
+
+        <p><Image src={Egan_Smith} width="200" alt="Egan Smith" /></p>
+        <h4>Egan Smith, Managing Director</h4>
+        202-366-9224<br />
+        <a href="mailto:Egan.Smith@dot.gov">Egan.Smith@dot.gov</a><br />
+        <p>
+          
+          <a href={base_url("/about/contact-us/staff-listing/Egan-Smith")}>View Bio</a>
         </p>
       </div>
     </div>

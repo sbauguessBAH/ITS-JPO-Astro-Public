@@ -1,9 +1,0 @@
----
-title: U.S. Department of Transportation Launches Website for ITS Cybersecurity Research Program
-date: 2021-09-08
----
-
-August 2021 – The United States Department of Transportation (USDOT) has launched a new addition to the ITS JPO website for their [ITS Cybersecurity Research Program](https://www.its.dot.gov/research_areas/cybersecurity/index.htm). The site contains resources, information, and tools for stakeholder communities, including State, Tribal and local transportation agencies to support secure and cyber-resilient Intelligent Transportation Systems (ITS) implementations. Through the ITS Cybersecurity Research Program, USDOT continues to focus on supporting stakeholder needs for their deployments of secure and resilient ITS. In addition to general information about ITS cybersecurity research, the site includes [Informative References Tailored for the ITS Environment](https://www.its.dot.gov/research_areas/cybersecurity/references.htm), a collection of tools and resources that the ITS JPO and its modal partners have tailored specifically to address cybersecurity in an ITS environment.
-
-The ITS Cybersecurity Research Program was developed in response to the need for State, Tribal and local agencies to prepare for and address cyberattacks to ITS installations and operations. Both public and private sectors share the responsibility of securing transportation’s critical assets and infrastructure against cyber threats. [Executive Order 13800](https://www.cisa.gov/executive-order-strengthening-cybersecurity-federal-networks-and-critical-infrastructure), issued May 11, 2017, encourages federal agencies to work with industries and all entities to adopt the National Institute of Standards and Technology (NIST) Cybersecurity Framework. The ITS Cybersecurity Research Program is one of the USDOT’s high-priority research areas underway within the ITS Joint Program Office.
-

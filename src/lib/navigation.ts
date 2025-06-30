@@ -16,6 +16,7 @@ export const navigation: NavigationItem[] = [
           { name: 'Egan Smith', url: '/about/contact-us/staff-listing/Egan-Smith'}
         ]},
         { name: 'Join Our Mailing List', url: '/about/contact-us/mailinglist' },
+        { name: 'ITS Specialists in Field Offices', url: 'https://www.fhwa.dot.gov/resourcecenter/teams/operations/index.cfm', isExternal: true },
       ]},
     ]
   },
@@ -31,18 +32,7 @@ export const navigation: NavigationItem[] = [
       { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
       { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
-      { name: "ITS4US Program", url: "/research-areas/ITS4US", isEnabled: true, pages: [
-        { name: "ITS4US Home", url: "/research-areas/ITS4US" },
-        { name: "Program Overview", url: "/research-areas/ITS4US/overview" },
-        { name: "Deployments", url: "/research-areas/ITS4US/deployments", isEnabled: true, pages: [
-          { name: "Deployments", url: "/research-areas/ITS4US/deployments" },
-          { name: "Heart of Iowa Regional Transit Agency", url: "/research-areas/ITS4US/deployments/iowa" },
-          { name: "Georgia Department of Transportation", url: "/research-areas/ITS4US/deployments/georgia" },
-          { name: "University of Washington", url: "/research-areas/ITS4US/deployments/washington" },
-          { name: "Niagara Frontier Transportation Authority", url: "/research-areas/ITS4US/deployments/newYork" },
-        ]},
-       
-      ]},
+      { name: "ITS4US Program", url: "/research-areas/ITS4US" },
       { name: "Vehicle-to-Everything (V2X)", url: "/research-areas/V2X-Deployment" },
     ]
   },
@@ -58,7 +48,11 @@ export const navigation: NavigationItem[] = [
     name: 'Resources/Technical Assistance',
     url: '/resources',
     pages: [
-      { name: 'Architecture and Standards', url: '/resources/Architecture-and-Standards' },
+      { name: 'Architecture and Standards', url: '/resources/architecture-and-standards', pages: [
+        { name: "Architecture and Standards", url: "/resources/architecture-and-standards" },
+        { name: "Reference Architecture", url: "/resources/architecture-and-standards/reference-architecture" },
+        { name: "ITS Standards", url: "/resources/architecture-and-standards/standards"}
+      ] },
       { name: 'Cybersecurity', url: '/resources/Cybersecurity' },
       { name: 'Deployment Evaluation', url: '/resources/Deployment-Evaluation' },
       { name: 'National Transportation Library', url: '/resources/national-transportation-library' },
