@@ -11,6 +11,7 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.astro";
 import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
 import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
+import base_url from "@/src/lib/base_url";
 ---
 <style>
   .resource-container {
@@ -194,11 +195,14 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
       <div class="row">
         <div class="col-8">
           <p class="program-text">
-            The two-staged Intersection Safety Challenge launched in April 2023 and concluded in January 2025. 
-            The Challenge aimed to incentivize the development of new, cost-effective, real-time 
-            roadway Intersection Safety System (ISS) concepts. Further, to set the stage for future deployment nationwide, 
-            the potential safety benefits relative to the estimated costs of deploying new system concepts were assessed 
-            in terms of if they were compelling enough to motivate at-scale deployment across the nation. 
+            In response to growing concerns regarding the safety of vulnerable road users at intersections, 
+            the U.S. DOT launched the Intersection Safety Challenge to transform intersection safety 
+            through the development of innovative intersection safety systems (ISS) that can identify, 
+            predict, and mitigate unsafe conditions involving vehicles and vulnerable road users in real time. 
+            The Challenge was organized as a multi-stage prize competition that launched in April 2023 
+            and concluded in January 2025. The Challenge aimed to assess the maturity and incentivize 
+            the development of new, cost-effective, real-time roadway ISS concepts that leverage 
+            sensor fusion and AI.
           </p>
         </div>
         <div class="col-4">
@@ -232,7 +236,7 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
           </CardHeader>
           <CardBody class="p-4">
             <p class="program-text">
-              Stage 1A brought together non-traditional teams combining expertise in emerging technologies
+              Stage 1A brought together innovative teams combining expertise in emerging technologies
               with traffic and safety engineering to develop new and potentially transformative
               intersection safety approaches. Participants submitted concept papers on 
               their proposed intersection safety system designs.
@@ -280,10 +284,11 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
           </CardHeader>
           <CardBody class="p-4">
             <p class="program-text">
-              Stage 1B challenged the winning teams from Stage 1A to develop, and train, and improve
-              algorithms for the detection, localization, and classification of vulnerable road users and vehicles
-              utilizing U.S. DOT-provided real world sensor data collected on a closed course at the Federal Highway Administration (FHWA)
-              Turner-Fairbank Highway Research Center (TFHRC).
+              Stage 1B challenged the winning teams from Stage 1A to develop, train, and 
+              improve algorithms for the detection, localization, classification, path prediction, 
+              and conflict prediction of vulnerable road users and vehicles utilizing 
+              U.S. DOT-provided real-world sensor data collected on a closed course at 
+              the Federal Highway Administration (FHWA) Turner-Fairbank Highway Research Center (TFHRC).
             </p>
             <div class="challenge-element-list">
               <div class="challenge-element">
@@ -363,39 +368,9 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">University of Washington</th>
-                        <td>
-                          Comprehensive and Cooperative Intersection Safety Systems 
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">DENSO International America </th>
-                        <td>
-                          Driving Behavior Integrated Intersection Safety System for Vulnerable Road Users 
-                        </td>
-                      </tr>
-                      <tr>
                         <th scope="row">CNA</th>
                         <td>
                           Safe Warnings for Intersections Forecasting Tool (SWIFT) 
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">University of Michigan</th>
-                        <td>
-                          SAFETI: Safety Actions for Everyone at Traffic Intersections 
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">University of California, Los Angeles </th>
-                        <td>
-                          InfraShield: Pioneering Safe Intersections for All Road Users through AI-Powered Infrastructure Solutions 
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">University of Hawaii </th>
-                        <td>
-                          Toward Vision Zero: Sensing, Predicting, and Preventing Intersection Collisions 
                         </td>
                       </tr>
                       <tr>
@@ -405,15 +380,15 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row">Derq USA </th>
+                        <th scope="row">DENSO International America </th>
                         <td>
-                          Derq's Intersection Safety System 
+                          Driving Behavior Integrated Intersection Safety System for Vulnerable Road Users 
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row">Utah Department of Transportation </th>
+                        <th scope="row">Derq USA </th>
                         <td>
-                          Improving Intersection Safety with Light Detection and Ranging (LiDAR)
+                          Derq's Intersection Safety System 
                         </td>
                       </tr>
                       <tr>
@@ -429,15 +404,9 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row">Texas Department of Transportation </th>
+                        <th scope="row">Ohio State University </th>
                         <td>
-                          Applying LiDAR-based Multimodal Tracking to Improve Vulnerable Road User Safety at Signalized Intersections 
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">University of California, Riverside </th>
-                        <td>
-                          Safety Assurance System for Vulnerable Road Users at Signalized Intersections (SAINT) 
+                          Transforming Intersection Safety Through Emerging Technologies for All Road Users 
                         </td>
                       </tr>
                       <tr>
@@ -447,9 +416,45 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row">Ohio State University </th>
+                        <th scope="row">Texas Department of Transportation </th>
                         <td>
-                          Transforming Intersection Safety Through Emerging Technologies for All Road Users 
+                          Applying LiDAR-based Multimodal Tracking to Improve Vulnerable Road User Safety at Signalized Intersections 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of California, Los Angeles </th>
+                        <td>
+                          InfraShield: Pioneering Safe Intersections for All Road Users through AI-Powered Infrastructure Solutions 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of California, Riverside </th>
+                        <td>
+                          Safety Assurance System for Vulnerable Road Users at Signalized Intersections (SAINT) 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of Hawaii </th>
+                        <td>
+                          Toward Vision Zero: Sensing, Predicting, and Preventing Intersection Collisions 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of Michigan</th>
+                        <td>
+                          SAFETI: Safety Actions for Everyone at Traffic Intersections 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of Washington</th>
+                        <td>
+                          Comprehensive and Cooperative Intersection Safety Systems 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Utah Department of Transportation </th>
+                        <td>
+                          Improving Intersection Safety with Light Detection and Ranging (LiDAR)
                         </td>
                       </tr>
                     </tbody>
@@ -476,9 +481,11 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
             Summary
           </h3>
           <p class="program-text">
-            Stage 1B challenged the 15 winning teams from Stage 1A to develop, train, and improve
-            algorithms for the detection, localization, and classification of vulnerable road users and vehicles
-            utilizing U.S. DOT-provided real-world sensor data colleced on a closed course at the Federal Highway Administration (FHWA)
+            Stage 1B challenged the winning teams from Stage 1A to develop, train, 
+            and improve algorithms for the detection, localization, classification, 
+            path prediction, and conflict prediction of vulnerable road users and 
+            vehicles utilizing U.S. DOT-provided real-world sensor data collected 
+            on a closed course at the Federal Highway Administration (FHWA) 
             Turner-Fairbank Highway Research Center (TFHRC).
           </p>
         </div>
@@ -496,12 +503,12 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
               <p class="program-text">
                 Teams used the data to develop and train models that predict potential conflicts and provide enough time for warnings 
                 or other real-time countermeasures. This rich and unique dataset
-                sets the foundation for key research efforts aimed at improving intersection safety.
+                lays the foundation for key research efforts aimed at improving intersection safety.
               </p>
               <p class="program-text">
                 Interested users can download sample data and request access to the full challenge dataset from the
                 <Link isExternal href="https://data.transportation.gov/Roadways-and-Bridges/Intersection-Safety-Challenge-Stage-1B-Sample/vq7s-mv3v/about_data">
-                  USDOT's public data portal
+                  U.S. DOT's public data portal
                 </Link>.
               </p>
             </div>
@@ -859,8 +866,8 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
         <Card shadow="sm">
           <CardBody>
             <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">Intersection Safety Challenge Overview</h3>
-              <p class="resource-card-subtitle">DOT Webinar | March 28, 2023</p>
+              <h3 class="resource-card-title">Intersection Safety Challenge &mdash; From Conceptualization to Initial Testing</h3>
+              <p class="resource-card-subtitle">Webinar | July 27, 2023</p>
             </div>
           </CardBody>
           <CardFooter>
@@ -869,12 +876,12 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
                 class="resource-button" 
                 rel="noopener noreferrer" 
                 target="_blank"
-                href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar"
+                href={base_url("/assets/intersection-safety/USDOT_IntersectionSafetyWebinar3.pdf")}
               >
                 <PdfIcon size={12}/>
                 Presentation Material
               </a>
-              <a 
+              <!-- <a 
                 class="resource-button" 
                 rel="noopener noreferrer" 
                 target="_blank"
@@ -882,7 +889,7 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
               >
                 <FilmIcon size={12} />
                 Recording
-              </a>
+              </a> -->
             </div>
           </CardFooter>
         </Card>
@@ -890,7 +897,7 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
           <CardHeader>
             <div class="resource-card-header p-2">
               <h3 class="resource-card-title">Intersection Safety Challenge Prize Competition</h3>
-              <p class="resource-card-subtitle">DOT Webinar | May 22, 2023</p>
+              <p class="resource-card-subtitle">Webinar | May 22, 2023</p>
             </div>
           </CardHeader>
           <CardFooter>
@@ -899,20 +906,20 @@ import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
                 class="resource-button" 
                 rel="noopener noreferrer" 
                 target="_blank"
-                href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar"
+                href={base_url("/assets/intersection-safety/Intersection_Safety_Webinar.pdf")}
               >
                 <PdfIcon size={12}/>
                 Presentation Material
               </a>
-              <a 
+              <!-- <a 
                 class="resource-button" 
                 rel="noopener noreferrer" 
                 target="_blank"
-                href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation"
+                href="https://itsa.adobeconnect.com/p9rpflh67mnj/"
               >
                 <FilmIcon size={12} />
                 Recording
-              </a>
+              </a> -->
             </div>
           </CardFooter>
         </Card>

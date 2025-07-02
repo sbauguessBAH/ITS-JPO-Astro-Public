@@ -90,30 +90,46 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
       <h2 class="program-title-lg mt-4">
         Key Research Questions
       </h2>
-      <ol class="program-list">
+      <ul class="program-list">
         <li>
-          Conflict Prediction Reliability and Speed: Can an ISS reliably predict conflicts early enough 
-          and fast enough to take mitigating actions? If no, which component(s) of the ISS require additional 
-          R&D to improve speed and reliability? How much improvement is needed to implement potential mitigations (see below)? 
+          <em>Conflicts.</em> Can an ISS reliably predict conflicts among vehicles and vulnerable road users?
         </li>
+        <ul>
+          <li>How far in advance can conflicts be predicted?</li>
+          <li>Under what conditions can reliable conflict predictions be made?</li>
+        </ul>
         <li>
-          Mitigation Strategies and Effectiveness: Given ISS response speed, what are possible conflict 
-          mitigation strategies (e.g., warnings, prohibiting unprotected turns, others)? Which types 
-          of conflict mitigations (or combinations of mitigations) are most effective 
-          at preventing vulnerable road user-vehicle conflicts? 
+          <em>Unsafe Conditions.</em> Can an ISS reliably identify conflicts and characterize unsafe conditions?
         </li>
+        <ul>
+          <li>What types of unsafe conditions can be reliably identified or anticipated?</li>
+          <li>How quickly can unsafe conditions be reliably identified or anticipated?</li>
+        </ul>
         <li>
-          ISS Cost Effectiveness: Which ISS components are most expensive? Can existing 
-          sensors be repurposed for use in an ISS? What are other strategies to reduce 
-          overall ISS costs? Can such a system be deployed cost-effectively today? 
-          Under what conditions and for which particular intersection geometries? 
+          <em>Mitigating Strategies.</em> Can an ISS take meaningful mitigating actions, either in the form
+          of warnings or changes to intersection control, to mitigate conflicts and/or unsafe conditions?
         </li>
-        <li>
-          ISS Potential for Broader Deployment: Given the current state of ISS technology, 
-          are narrow ISSs (e.g., for a specific ODD or use case) or a general-purpose 
-          ISS more practical for near-term deployment? 
-        </li>
-      </ol>
+        <ul>
+          <li>
+            Can changes to intersection control be implemented in real-time to mitigate
+            unsafe conditions (e.g., eliminating permissive vehicle turning movements
+            traversing busy crosswalks)? What changes to control are most effective?
+          </li>
+          <li>
+            Can warnings be issued in real-time to mitigate conflicts? What types of warnings
+            are most effective (e.g., visual, auditory, haptic)?
+          </li>
+          <li>
+            Can modifications to intersection control be utilized to mitigate individual
+            conflicts (e.g., delay the illumination of a WALK signal until all approaching
+            vehicles have safely cleared the crosswalk)?
+          </li>
+          <li>
+            What are potential safety and congestion-reduction impacts resulting from these
+            mitigating strategies?
+          </li>
+        </ul>
+      </ul>
       <h2 class="program-title-lg my-4">
         Additional Resources
       </h2>
@@ -131,7 +147,7 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
                 class="resource-button" 
                 rel="noopener noreferrer" 
                 target="_blank"
-                href="https://sam.gov/opp/aaedf98452c64392b5e7669d95c33db6/view"
+                href="https://sam.gov/opp/8573bb118a5e4343a9512fed8b393d63/view"
               >
                 <BoxArrowUpRightIcon size={12} />
                 Sources Sought Notice
