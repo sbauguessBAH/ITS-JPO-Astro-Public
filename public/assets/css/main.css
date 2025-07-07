@@ -1229,3 +1229,8 @@ main a:has(img)::after{
     display: none !important;
 }
 
+/* For the whole page */
+html {
+    overflow-y: scroll;
+  }
+  

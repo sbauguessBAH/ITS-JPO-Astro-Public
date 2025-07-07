@@ -9,17 +9,6 @@ import Breadcrumbs from '@/src/components/layout/Breadcrumbs.astro';
 import type { ChildNavigationItem, NavigationItem } from '@/src/types';
 import { findSection, navigation } from '@/src/lib/navigation';
 
-// const getTrimmedPath = (path: string): string => path.replaceAll("/", "");
-
-// const currentPath = getTrimmedPath(Astro.url.pathname);
-
-// const isActive = (item: NavigationItem | ChildNavigationItem): boolean => {
-//   if (item.isExternal) return false;
-//   const trimmedPath = getTrimmedPath(base_url(item.url));
-//   return currentPath.startsWith(trimmedPath);
-// }
-
-// const activeSection: NavigationItem | undefined = navigation.find(section => isActive(section));
 interface Props {
   path: string
 }
