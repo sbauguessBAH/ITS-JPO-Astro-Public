@@ -11,8 +11,11 @@ import Resources from "./_resources.astro";
     flex-direction: column;
     gap: var(--size);
   }
-  .overview-video {
-    border-radius: var(--border-radius);
+  /* .overview-video {
+    border-radius: var(--radius-md);
+  } */
+  .video {
+    border-radius: var(--radius-lg);
   }
 
   @media (min-width: 992px) {
@@ -32,8 +35,8 @@ import Resources from "./_resources.astro";
 <Layout>
   <main class="program-main">
     <ProgramSection size="small">
-      <!-- <div class="overview-section">
-        <div class="overview-text"> -->
+      <div class="overview-section">
+        <div class="overview-text">
           <h2 class="program-title-lg mb-4">Program Overview</h2>
           <p class="program-text">
             The ITS Professional Capacity Building (PCB) Program supports activities 
@@ -54,17 +57,17 @@ import Resources from "./_resources.astro";
             for consideration in the transportation planning process and that the United States 
             has a workforce capable of developing, operating, and maintaining ITS.
           </p>
-        <!-- </div> -->
-        <!-- <div class="ratio ratio-16x9 overview-video">
+        </div>
+        <div class="ratio ratio-16x9 overview-video">
           <iframe
             class="video"
-            src="https://www.youtube.com/embed/26k5ppegR6E?si=kTsmTnpGudR7e-1f"
+            src="https://www.youtube.com/embed/fzfd7gedUX8?si=FnfAF_GAE1iOWFQx"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-          ></iframe> -->
-        <!-- </div>
-      </div> -->
+          ></iframe>
+        </div>
+      </div>
     </ProgramSection>
     <ProgramSection>
       <h2 class="program-title-lg text-center mb-4">
