@@ -69,6 +69,49 @@ const trimmedPathname = getTrimmedPathname(pathname);
                                   </a>
                                 </li>
                               );
+                            if (subPageLink.pages)
+                              return (
+                                <li class="dropend">
+                                  <a
+                                    href="#"
+                                    class="dropdown-item dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    data-bs-auto-close="outside"
+                                  >
+                                    {subPageLink.name}
+                                  </a>
+                                  <ul class="dropdown-menu shadow">
+                                    {subPageLink.pages.map((ggcPageLink) => {
+                                      if (ggcPageLink.isExternal)
+                                        return (
+                                          <li>
+                                            <a class="dropdown-item externalLink" href={ggcPageLink.url}>
+                                              {ggcPageLink.name}
+                                            </a>
+                                          </li>
+                                        );
+                                      return (
+                                        <li>
+                                          <a
+                                            class:list={[
+                                              "dropdown-item",
+                                              {
+                                                disabled: [
+                                                  "ITS Professional Capacity Building",
+                                                  "Architecture, Standards, and Cybersecurity (ASC)",
+                                                ].includes(ggcPageLink.name),
+                                              },
+                                            ]}
+                                            href={base_url(ggcPageLink.url)}
+                                          >
+                                            {ggcPageLink.name}
+                                          </a>
+                                        </li>
+                                      );
+                                    })}
+                                  </ul>
+                                </li>
+                              );
                             return (
                               <li>
                                 <a
