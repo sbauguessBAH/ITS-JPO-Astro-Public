@@ -27,9 +27,7 @@ const trimmedPathname = getTrimmedPathname(pathname);
               <a
                 class="nav-link py-3 px-4 dropdown-toggle"
                 id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                data-bs-auto-close="outside"
+                href={base_url(link.url)}
               >
                 {link.name}
               </a>
@@ -40,7 +38,7 @@ const trimmedPathname = getTrimmedPathname(pathname);
                       <li>
                         <a
                           class="dropdown-item externalLink"
-                          href={pageLink.url}
+                          href={base_url(pageLink.url)}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -52,10 +50,8 @@ const trimmedPathname = getTrimmedPathname(pathname);
                     return (
                       <li class="dropend">
                         <a
-                          href="#"
+                          href={base_url(pageLink.url)}
                           class="dropdown-item dropdown-toggle"
-                          data-bs-toggle="dropdown"
-                          data-bs-auto-close="outside"
                         >
                           {pageLink.name}
                         </a>
@@ -67,49 +63,6 @@ const trimmedPathname = getTrimmedPathname(pathname);
                                   <a class="dropdown-item externalLink" href={subPageLink.url}>
                                     {subPageLink.name}
                                   </a>
-                                </li>
-                              );
-                            if (subPageLink.pages)
-                              return (
-                                <li class="dropend">
-                                  <a
-                                    href="#"
-                                    class="dropdown-item dropdown-toggle"
-                                    data-bs-toggle="dropdown"
-                                    data-bs-auto-close="outside"
-                                  >
-                                    {subPageLink.name}
-                                  </a>
-                                  <ul class="dropdown-menu shadow">
-                                    {subPageLink.pages.map((ggcPageLink) => {
-                                      if (ggcPageLink.isExternal)
-                                        return (
-                                          <li>
-                                            <a class="dropdown-item externalLink" href={ggcPageLink.url}>
-                                              {ggcPageLink.name}
-                                            </a>
-                                          </li>
-                                        );
-                                      return (
-                                        <li>
-                                          <a
-                                            class:list={[
-                                              "dropdown-item",
-                                              {
-                                                disabled: [
-                                                  "ITS Professional Capacity Building",
-                                                  "Architecture, Standards, and Cybersecurity (ASC)",
-                                                ].includes(ggcPageLink.name),
-                                              },
-                                            ]}
-                                            href={base_url(ggcPageLink.url)}
-                                          >
-                                            {ggcPageLink.name}
-                                          </a>
-                                        </li>
-                                      );
-                                    })}
-                                  </ul>
                                 </li>
                               );
                             return (
@@ -152,22 +105,37 @@ const trimmedPathname = getTrimmedPathname(pathname);
 </nav>
 
 <script>
-  import { Dropdown } from "bootstrap";
-  const dropdownLinks = document.querySelectorAll(".dropdown-toggle");
-  dropdownLinks.forEach((dropdownLink) => {
-    dropdownLink.addEventListener("mouseenter", () => {
-      console.log("dropdownLink mouseenter");
-      console.log(dropdownLink.closest(".dropdown-menu"))
-      const dropdownMenu = dropdownLink.closest(".dropdown-menu");
-      if (dropdownMenu) {
-        const dropdown = Dropdown.getOrCreateInstance(dropdownMenu);
-        dropdown.show();
+  // Makes navbar dropdowns open on hover
+
+  // Ensure the DOM is fully loaded before running the script because Bootstrap's dropdown requires it
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".navbar");
+    if (!navbar) return;
+
+    const dropdownLinks = navbar.querySelectorAll(".dropdown-toggle");
+    dropdownLinks.forEach((dropdownLink) => {
+      // Initialize Bootstrap dropdown instance
+      const dropdown = bootstrap.Dropdown.getOrCreateInstance(dropdownLink);
+
+      dropdownLink.addEventListener("mouseenter", () => dropdown.show());
+
+      dropdownLink.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        const href = dropdownLink.getAttribute("href");
+        if (!href || href === "#") return; // Ignore if no href or just a hash
+        window.location.href = href; // Navigate to the link
+      })
+
+      // Add mouseleave listener to parent so that the dropdown closes when exiting link/sibling elements (dropdown menu)
+      const parentElem = dropdownLink.closest("li");
+      if (parentElem) {
+        parentElem.addEventListener("mouseleave", (e) => dropdown.hide());
       }
     });
   });
 </script>
 
-<style>
+<style scoped>
   a,
   ul,
   li,
@@ -188,18 +156,14 @@ const trimmedPathname = getTrimmedPathname(pathname);
     margin-left: 30px;
   }
 
+  .dropdown-menu {
+    left: -1px;
+  }
+
   .dropdown-toggle.show {
     color: black;
     background-color: white;
     border-radius: 10px 10px 0px 0px;
-  }
-
-  .dropdown-toggle .show {
-    color: black;
-  }
-
-  .dropdown-menu {
-    left: -1px;
   }
 
   .show.nav-link:focus {
@@ -225,6 +189,7 @@ const trimmedPathname = getTrimmedPathname(pathname);
     background: rgb(233, 236, 239);
     border-radius: 0;
   }
+
   .dropdown-menu {
     border: none;
   }
@@ -236,5 +201,9 @@ const trimmedPathname = getTrimmedPathname(pathname);
   }
   .navbar-nav .nav-item.dropdown.show > .nav-link {
     font-weight: bold;
+  }
+
+  .dropend ul {
+    margin-left: -0.1px; /* Prevents gap between dropend and menu items, which closes dropend on hover */
   }
 </style>

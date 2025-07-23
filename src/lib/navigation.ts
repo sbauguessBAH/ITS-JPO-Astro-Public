@@ -13,7 +13,6 @@ export const navigation: NavigationItem[] = [
       { name: 'Contact Us', url: '/about/contact-us', pages: [
         { name: 'ITS JPO Staff Listing', url: '/about/contact-us/staff-listing', isEnabled: true, pages:[
           { name: 'Brian Cronin', url: '/about/contact-us/staff-listing/Brian-Cronin'},
-          { name: 'Egan Smith', url: '/about/contact-us/staff-listing/Egan-Smith'}
         ]},
         { name: 'Join Our Mailing List', url: '/about/contact-us/mailinglist' },
       ]},
