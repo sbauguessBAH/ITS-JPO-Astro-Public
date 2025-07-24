@@ -28,7 +28,6 @@ const path = Astro.url.pathname;
 
     <!-- TOP-LEVEL ITEMS -->
     {items.map((item) => {
-      const trimmedPath = item.url.replaceAll("/", "");
       const showCollapsedItems = item.pages !== undefined && getTrimmedPathname(path).startsWith(item.url);
       return (
         <li class="sidebar-list-item">
@@ -36,12 +35,9 @@ const path = Astro.url.pathname;
             // ITEM W/SUBPAGES
             <a 
               class="sidebar-link" 
-              data-bs-toggle="collapse" 
-              href={`#collapse${trimmedPath}`} 
-              role="button" 
-              aria-controls={`collapse${trimmedPath}`}
               aria-expanded={showCollapsedItems ? "true" : "false"}
               aria-label={`Toggle sidebar links for ${item.name}`}
+              href={base_url(item.url)}
             >
               {item.name}
               <span class="fa fa-angle-down sidebar-icon"></span>
@@ -51,7 +47,6 @@ const path = Astro.url.pathname;
                 "collapse sidebar-child", 
                 {"show": showCollapsedItems}
               ]} 
-              id={`collapse${trimmedPath}`}
             >
 
               {/* CHILDREN W/OUT SUBPAGES */}
@@ -79,7 +74,7 @@ const path = Astro.url.pathname;
 
               {/* CHILDREN W/SUBPAGES */}
               {item.pages.filter(childItem => childItem.pages).map(childItem => {
-                const showCollapsedChildren = childItem.pages?.some(grandChildItem => comparePathname(path, grandChildItem.url));
+                const showCollapsedChildren = childItem.pages !== undefined && getTrimmedPathname(path).startsWith(childItem.url);
                 return (
                 <li class="sidebar-list-item">
                   <a 
@@ -88,8 +83,7 @@ const path = Astro.url.pathname;
                       {"active": comparePathname(path, childItem.url)},
                       {"disabled": childItem.isDisabled}
                     ]} 
-                    data-bs-toggle="collapse" 
-                    href={`#collapse${childItem.url.replaceAll("/", "")}`}
+                    href={base_url(childItem.url)}
                   >
                     {childItem.name}
                     <span class="fa fa-angle-down sidebar-icon"></span>
@@ -99,9 +93,7 @@ const path = Astro.url.pathname;
                 "collapse", 
                 {"show": showCollapsedChildren}
               ]} 
-              id={`collapse${childItem.url.replaceAll("/", "")}`}
             >
-
               {/* GRANDCHILDREN ITEMS W/OUT SUBPAGES */}
                 { childItem.pages &&
                   childItem.pages.map(grandChildItem => (

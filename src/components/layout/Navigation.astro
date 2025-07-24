@@ -24,11 +24,7 @@ const trimmedPathname = getTrimmedPathname(pathname);
         {
           navigation.map((link) => (
             <li class:list={["nav-item dropdown", { activeMenu: trimmedPathname.startsWith(link.url) }]}>
-              <a
-                class="nav-link py-3 px-4 dropdown-toggle"
-                id="navbarDropdown"
-                href={base_url(link.url)}
-              >
+              <a class="nav-link py-3 px-4 dropdown-toggle" id="navbarDropdown" href={base_url(link.url)}>
                 {link.name}
               </a>
               <ul class="dropdown-menu mt-0 shadow" aria-labelledby="navbarDropdown">
@@ -49,10 +45,7 @@ const trimmedPathname = getTrimmedPathname(pathname);
                   if (pageLink.pages)
                     return (
                       <li class="dropend">
-                        <a
-                          href={base_url(pageLink.url)}
-                          class="dropdown-item dropdown-toggle"
-                        >
+                        <a href={base_url(pageLink.url)} class="dropdown-item dropdown-toggle">
                           {pageLink.name}
                         </a>
                         <ul class="dropdown-menu shadow">
@@ -65,24 +58,43 @@ const trimmedPathname = getTrimmedPathname(pathname);
                                   </a>
                                 </li>
                               );
-                            return (
-                              <li>
-                                <a
-                                  class:list={[
-                                    "dropdown-item",
-                                    {
-                                      disabled: [
-                                        "ITS Professional Capacity Building",
-                                        "Architecture, Standards, and Cybersecurity (ASC)",
-                                      ].includes(subPageLink.name),
-                                    },
-                                  ]}
-                                  href={base_url(subPageLink.url)}
-                                >
-                                  {subPageLink.name}
-                                </a>
-                              </li>
-                            );
+                            if (subPageLink.pages) {
+                              return (
+                                <li class="dropend">
+                                  <a href={base_url(subPageLink.url)} class="dropdown-item dropdown-toggle">
+                                    {subPageLink.name}
+                                  </a>
+                                  <ul class="dropdown-menu shadow">
+                                    {subPageLink.pages.map((grandChildLink) => (
+                                      <li>
+                                        <a class="dropdown-item" href={base_url(grandChildLink.url)}>
+                                          {grandChildLink.name}
+                                        </a>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </li>
+                              );
+                            } else {
+                              return (
+                                <li>
+                                  <a
+                                    class:list={[
+                                      "dropdown-item",
+                                      {
+                                        disabled: [
+                                          "ITS Professional Capacity Building",
+                                          "Architecture, Standards, and Cybersecurity (ASC)",
+                                        ].includes(subPageLink.name),
+                                      },
+                                    ]}
+                                    href={base_url(subPageLink.url)}
+                                  >
+                                    {subPageLink.name}
+                                  </a>
+                                </li>
+                              );
+                            }
                           })}
                         </ul>
                       </li>
@@ -124,7 +136,7 @@ const trimmedPathname = getTrimmedPathname(pathname);
         const href = dropdownLink.getAttribute("href");
         if (!href || href === "#") return; // Ignore if no href or just a hash
         window.location.href = href; // Navigate to the link
-      })
+      });
 
       // Add mouseleave listener to parent so that the dropdown closes when exiting link/sibling elements (dropdown menu)
       const parentElem = dropdownLink.closest("li");

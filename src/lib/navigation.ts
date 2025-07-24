@@ -33,7 +33,7 @@ export const navigation: NavigationItem[] = [
       { name: "ITS4US Program", url: "/research-areas/ITS4US", isEnabled: true, pages: [
         { name: "ITS4US Home", url: "/research-areas/ITS4US" },
         { name: "Program Overview", url: "/research-areas/ITS4US/overview" },
-        { name: "Deployments", url: "/research-areas/ITS4US/deployments", pages: [
+        { name: "Deployments", url: "/research-areas/ITS4US/deployments", isEnabled: true, pages: [
           { name: "Heart of Iowa Regional Transit Agency", url: "/research-areas/ITS4US/deployments/iowa" },
           { name: "Georgia Department of Transportation", url: "/research-areas/ITS4US/deployments/georgia" },
           { name: "University of Washington", url: "/research-areas/ITS4US/deployments/washington" },
