@@ -124,12 +124,29 @@ const trimmedPathname = getTrimmedPathname(pathname);
     const navbar = document.querySelector(".navbar");
     if (!navbar) return;
 
+    let dropdownShowTimeout;
+    let dropdownHideTimeout;
+
+    let currentDropdown;
+    let lastDropdown;
+
     const dropdownLinks = navbar.querySelectorAll(".dropdown-toggle");
     dropdownLinks.forEach((dropdownLink) => {
       // Initialize Bootstrap dropdown instance
       const dropdown = bootstrap.Dropdown.getOrCreateInstance(dropdownLink);
 
-      dropdownLink.addEventListener("mouseenter", () => dropdown.show());
+      dropdownLink.addEventListener("mouseenter", () => {
+        currentDropdown = dropdownLink;
+        if (currentDropdown === lastDropdown && dropdownHideTimeout) {
+          clearTimeout(dropdownHideTimeout); // Clear the hide timeout if we're re-hovering the same dropdown
+        }
+        if (dropdownShowTimeout) {
+          clearTimeout(dropdownShowTimeout); // Clear any existing timeout
+        }
+        dropdownShowTimeout = setTimeout(() => {
+          dropdown.show();
+        }, 200); // Delay before showing on hover
+      });
 
       dropdownLink.addEventListener("click", (e) => {
         e.preventDefault(); // Prevent default link behavior
@@ -141,7 +158,15 @@ const trimmedPathname = getTrimmedPathname(pathname);
       // Add mouseleave listener to parent so that the dropdown closes when exiting link/sibling elements (dropdown menu)
       const parentElem = dropdownLink.closest("li");
       if (parentElem) {
-        parentElem.addEventListener("mouseleave", (e) => dropdown.hide());
+        parentElem.addEventListener("mouseleave", () => {
+          lastDropdown = currentDropdown;
+          if (dropdownShowTimeout) {
+            clearTimeout(dropdownShowTimeout); // Clear the timeout when leaving
+          }
+          dropdownHideTimeout = setTimeout(() => {
+            dropdown.hide();
+          }, 500); // Delay before hiding on mouse leave
+        });
       }
     });
   });
