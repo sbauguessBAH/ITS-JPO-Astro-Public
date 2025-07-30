@@ -131,11 +131,16 @@ const trimmedPathname = getTrimmedPathname(pathname);
     let lastDropdown;
 
     const dropdownLinks = navbar.querySelectorAll(".dropdown-toggle");
+
     dropdownLinks.forEach((dropdownLink) => {
       // Initialize Bootstrap dropdown instance
       const dropdown = bootstrap.Dropdown.getOrCreateInstance(dropdownLink);
+      const dropdownMenu = dropdownLink.nextElementSibling;
 
       dropdownLink.addEventListener("mouseenter", () => {
+        dropdownMenu!.classList.remove("fade-out");
+        dropdownMenu!.classList.add("fade-in");
+
         currentDropdown = dropdownLink;
         if (currentDropdown === lastDropdown && dropdownHideTimeout) {
           clearTimeout(dropdownHideTimeout); // Clear the hide timeout if we're re-hovering the same dropdown
@@ -159,12 +164,27 @@ const trimmedPathname = getTrimmedPathname(pathname);
       const parentElem = dropdownLink.closest("li");
       if (parentElem) {
         parentElem.addEventListener("mouseleave", () => {
-          lastDropdown = currentDropdown;
+          lastDropdown = currentDropdown; // Store the last hovered dropdown
+
           if (dropdownShowTimeout) {
             clearTimeout(dropdownShowTimeout); // Clear the timeout when leaving
           }
+
           dropdownHideTimeout = setTimeout(() => {
+            dropdownMenu!.classList.remove("fade-in");
+            dropdownMenu!.classList.add("fade-out");
+
+            (dropdownLink as HTMLAnchorElement).blur(); // Removes :focus state from link
+
+            dropdownMenu!.classList.add("keep-visible"); // Prevents dropdown menu from immediately disappearing from dropdown.hide()
             dropdown.hide();
+            dropdownMenu!.addEventListener(
+              "animationend",
+              () => {
+                dropdownMenu!.classList.remove("fade-out", "keep-visible");
+              },
+              { once: true }
+            );
           }, 500); // Delay before hiding on mouse leave
         });
       }
@@ -178,12 +198,18 @@ const trimmedPathname = getTrimmedPathname(pathname);
   li,
   nav,
   button .show {
-    transition: all 0.35s;
+    transition: all 0.35s ease-in-out;
   }
+
+  .dropdown-menu.keep-visible {
+    display: block !important; /* Keep it visible even after Bootstrap removes 'show' */
+  }
+
   a:active {
     background: rgb(198, 198, 198);
     color: black;
   }
+
   .dotlogo {
     max-height: 25px;
     object-fit: contain;
@@ -227,8 +253,30 @@ const trimmedPathname = getTrimmedPathname(pathname);
     border-radius: 0;
   }
 
-  .dropdown-menu {
-    border: none;
+  .fade-in {
+    animation: fade-in 0.35s ease-in-out;
+  }
+
+  .fade-out {
+    animation: fade-out 0.35s ease-in-out;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
   @media (max-width: 992px) {
