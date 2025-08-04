@@ -1,0 +1,44 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from "astro:assets";
+
+interface Props {
+  name: string;
+  title: string;
+  description: string
+  image: ImageMetadata
+}
+
+const { name, title, description, image } = Astro.props;
+---
+<style>
+  .host-card {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: var(--size);
+    margin-bottom: var(--size);
+  }
+
+  .host-card-image {
+    min-width: 120px;
+    width: 120px;
+    height: auto;
+  }
+</style>
+<div class="host-card">
+  <Image 
+    src={image}
+    alt={`Headshot of ${name}`}
+    class="host-card-image"
+  />
+  <div>
+    <h4 class="program-title-xs">
+      {name}
+    </h4>
+    <p>{title}</p>
+    <p class="program-text">
+      {description}
+    </p>
+  </div>
+</div>

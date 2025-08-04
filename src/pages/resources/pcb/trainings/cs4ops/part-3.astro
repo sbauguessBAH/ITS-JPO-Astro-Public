@@ -1,0 +1,266 @@
+---
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Layout from "../../_layout.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import Link from "@/src/components/Link.astro";
+import base_url from "@/src/lib/base_url";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+
+import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
+import salCowan from "@/src/assets/images/pcb/webinars/headshots/sal-cowan.jpg";
+import vaishaliShah from "@/src/assets/images/pcb/webinars/headshots/vaishali-shah.png";
+import johnParker from "@/src/assets/images/pcb/webinars/headshots/john-parker.png";
+import HostCard from "./_host-card.astro";
+import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
+import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+
+const hosts = [
+  {
+    name: "Ralph Volpe",
+    title: "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist",
+    description: "Mr. Volpe is responsible for providing technical assistance, training, and deploying strategies and techniques to FHWA's internal and external customers on topics such as TSMO, integrated corridor management, active transportation and demand management, operations performance management, and organizing/planning for operations. Before joining FHWA in 2001, Mr. Volpe was a specialist in planning and public transportation for the Tennessee Department of Transportation. Mr. Volpe holds a Bachelor of Science in Logistics and Master of Science in civil engineering from the University of Tennessee, Knoxville.",
+    image: ralphVolpe
+  },
+]
+
+const presenters = [
+  {
+    name: "Sal Cowan",
+    title: "New Jersey Department of Transportation, Senior Director of Mobility, Traveler Information Instructor",
+    description: "In his role, Mr. Cowan oversees the Department's TSM&O programs, including the Office of Emergency Management, Security, and Response where the State's TIM program is managed.",
+    image: salCowan
+  },
+  {
+    name: "Vaishali Shah",
+    title: "AEM Corporation, Sr. Director of Transportation Systems Corporation, TIM Instructor, Support Lead for the EDC-5/6 Crowdsourcing Innovation",
+    description: "Ms. Shah has led and contributed to FHWA, USDOT ITS JPO, FAA, and National Cooperative Highway Research Program efforts, helping public agencies improve decision-making through new technologies, tools, and processes. Ms. Shah holds a BS degree from the University of Maryland and an MS degree from the University of Texas.",
+    image: vaishaliShah
+  },
+  {
+    name: "John Parker",
+    title: "Pennsylvania Turnpike Commission (PTC), Senior Traffic Operations Project Manager, TIM Subject Matter Expert",
+    description: "Mr. Parker is responsible for Information Technology (IT) and Geographic Information Systems projects, as well as operational and safety studies. His projects include Truck Parking Management System, third-party navigation app integration, Emergency Vehicle Warning System (HAAS alert) implementation, and various ITS projects for the Turnpike. Before joining the PTC, John worked at Pennsylvania Department of Transportation for 17 years where he was responsible for the management of the Statewide Bridge Program and IT projects for the Program Center. Mr. Parker currently serves as a member of the Innovation Council for the PTC and is a member of the Eastern Transportation Coalition's third-party navigation and mapping initiative.",
+    image: johnParker
+  },
+]
+---
+<style>
+  .resource-container {
+    background: rgb(var(--color-gray-light));
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .resource-card-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-sm);
+    align-items: center;
+  }
+  .resource-card-button:hover {
+    font-weight: inherit;
+    background: rgb(var(--color-brand-dark))
+  }
+  .resource-links {
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-sm)
+  }
+  a::after {
+    content: "" !important;
+  }
+</style>
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <Breadcrumb items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        { name: "Crowdsourcing for Operations", path: "/resources/pcb/trainings/cs4ops" },
+        { name: "Part 3" }
+      ]}/>
+      <h2 class="program-title-lg">
+        Traveler Information and Traffic Incident Management (TIM)
+      </h2>
+      <p>July 18, 2023</p>
+      <div class="resource-container mb-4">
+        <h3 class="program-title-md">Presentation</h3>
+        <p class="program-text">
+          Crowdsourcing Course (Part 3 of 5): Traveler Information and Traffic Incident Management (TIM)
+          <br/>
+          (Volpe, Cowan, Shah, Parker)
+        </p>
+        <div class="resource-links">
+          <a 
+            class="resource-card-button" 
+            href="https://usdot.zoomgov.com/rec/play/L-LJM258S-zzuAK7XPdQJ2Jm-xU1VZ2khZeuZZN3r9t7bsT8Y8YnBpSxkiwloSAorqg1LXUOTT_AD-ox.CxTZrofJLj9jDlfM?startTime=1684256417000" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <FilmIcon/>
+            Webinar Replay
+          </a>
+          <a 
+            class="resource-card-button" 
+            href={base_url("/assets/pcb/cs4ops/part-3/s230718_Crowdsourcing_Course_Traveler_Information_and_Traffic_Incident_Management_presentation.pptx")} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <PptIcon/>
+            PowerPoint
+          </a>
+          <a 
+            class="resource-card-button" 
+            href={base_url("/assets/pcb/cs4ops/part-3/s230718_Crowdsourcing_Course_Traveler_Information_and_Traffic_Incident_Management_presentation.pdf")} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <PdfIcon/>
+            PDF
+          </a>
+        </div>
+      </div>
+      <h3 class="program-title-md">
+        Learning Objectives
+      </h3>
+      <ul class="program-list">
+        <li>
+          Identify components of and challenges faced by State and local TIM and Traveler Information Programs.
+        </li>
+        <li>
+          Understand how crowdsourced data can enhance key aspects of Traffic Incident Management (TIM) and Traveler Information programs.
+        </li>
+        <li>
+          Share peer experiences regarding crowdsourced data for TIM and Traveler Information.
+        </li>
+      </ul>
+      <h3 class="program-title-md">
+        Question and Answer Discussion
+      </h3>
+      <p class="program-text">
+        This webinar featured a question and answer session. A transcript of the questions asked and responses provided are below.
+      </p>
+      <Accordion id="part-3">
+        <AccordionItem
+          index={1}
+          title="Why use a phone system in a moving vehicle?"
+        >
+          <strong>Sal Cowan:</strong>
+          <p class="program-text">
+            The conversation does take place more and more. People are using newer technology, but it is not one hundred percent. You still have people who are using hands-free, is the goal to pursue and push them towards. The four-million-dollar stats that we have over the last several years still show that the 511 system is being used. Along our highways, we have our status 511 signs. That is still a part of the FCC (Federal Communications Commission). It is still available, and we do encourage people to use it hands-free and it goes towards what I was saying earlier, every single way you can get to anybody or get your information to anyone is a value. There are going to be conversations about cost technology that as things change, but if you have several 100,000 people that are using the system, then why not?
+          </p>
+          <strong>Ralph Volpe:</strong>
+          <p class="program-text">
+            I will add to this. One of the things that in our federal regulation we have what we call 23 CFR (Code of Federal Regulations) 511. And although we have been seeing some state agencies moving away from the telephone, use that part of the system, but we still encourage our state agencies and local agencies to continue to use the 511 platform or at least because you never know what you may need that frequency again for some other purposes. We have seen a lot of technology come into play here. One of the things our agencies are thinking about doing is revisiting that memo to where things are today with that particular regulation.
+          </p>
+          <strong>Vaishali Shah:</strong>
+          <p class="program-text">
+            The other thing that is oftentimes with the 511 system are all the data feeds that new stations and others latch on to further broadcast. So maybe those aspects of the 511 system are going to continue to be highly valuable.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={2}
+          title="Why don't all police wear reflective gear?"
+        >
+          <strong>Ralph Volpe:</strong>
+          <p class="program-text">
+            You know, I guess that it's highly encouraged, but I don't know if we all could answer that one as it is individual choice.
+          </p>
+          <strong>Vaishali Shah:</strong>
+          <p class="program-text">
+            I think it is also, why don't all responders take TIM training? It is hard to get everybody to do everything that they should and could do when they are responding to a roadway crash or other incident like that. Most agencies still try to work towards that.
+          </p>
+          <strong>Sal Cowan:</strong>
+          <p class="program-text">
+            It is a great point. Yes, everyone should get TIM training. We've actually had the conversations here we've rolled it into working world, into various disciplinary training. Firefighter one and getting into the Police Training Commission is now a part of the State Police's Academy. We have made it mandatory that if you're going to be towing on any state operated roadways meaning the State police patrol roadways, it is now a part of their agreement with the State police that all of their towers will have TIM training as far as the best circumstances are concerned. I've heard a number of different explanations. It can go from the “that is what construction people wear” down to the “if I don't know the situation I'm encountering, why am I making myself a target?” So, I know a lot of troopers who once they are on a scene, and there's a crash, and the safety is present, and things are there, they will make sure that they have their vests on. They want to make sure that it does not become a safety or a security concern for them walking up and being a bright visible shield.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={3}
+          title="In the past week, the Pennsylvania turnpike designated a road closure. A segment of a turnpike about eighty miles worth and how did that communicate? How to travel information and your work help spur getting that information out?"
+        >
+          <strong>John Parker:</strong>
+          <p class="program-text">
+            This goes back to our relationship with Waze. We can do a preplanned detour so Waze users that usually take that route will get a message saying that the route is going to be closed this weekend that's through our map editors. We have two or three map editors in our TOC. I will tell someone in the DOTs that someone needs to be a map editor at some point in time in your operation center. It does help us out, especially if we have road closures. Waze is done by Google and Google is said, if that pre-planned thing comes through that they will pick it up and they did. We also have that relationship through the recent coalition through Eric at Google that I can reach out to him and say, this is coming up and we will be closed. This is what's going to happen if it doesn't close, and we have an issue. I can easily just email him. I don't like the email thing and would like to disseminate our information as much as we possibly can without me actually saying it or pushing it out through ATMS. We have our press releases, which is, everybody does. We have a Twitter that everybody does, and people pick up on it. I will say our Waze connect to partner and our Google partnership, and even our partnership with Apple. Apple really stepped up to the plate in the last couple of months here and I have a contact at Apple that will do it for me right away. We've had navigation issues that people trying to get on the turnpike through access gates and they're one of the first people that will come as soon as I email them within 15 or 20 minutes. They're either have that road shut down. I don't know who put it private in Apple, but somebody has done in Google. I don't know Waze in Google and Apple do sometimes I think they do like a payment-to-payment thing. If payment is touching, they think they can navigate to it. We have that issue probably every 6 or 7 months that people try and use a road that shouldn't be used. It's a private road, so I'm sure every DOT has the same issue. Just through those contacts we've been pretty blessed in having that Waze editing community that a lot of our editors can have that conversation and even through the Eastern coalition, I can easily email or set something up. Again, that 4-day closure that we had happen, I emailed the guy who was supposed to do it, but he was on vacation. So, you have those issues, that is what I am trying to get to. We had a huge data share. Open data portal that those guys knew they can get to, and it was the same format and that's what WGDX is doing, and TIM DX is doing. We had that open, one place where all those navigation companies can go, and I'm hoping we get there released in coalition, or with FWHA. There are all kinds of different networks out there. SSDX is out there. There are all kinds of people trying to get into that kind of field, but I just want to share my information. I don't know how to do it. I don't know the best way to do it, but I just want it out there for everybody to consume it. That is how we communicate now, and it's gotten pretty good reviews. An eighty-mile detour is not something we like, but it's just something we had to deal with.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={4}
+          title="What would you say to some of the local agencies, especially some of the smaller ones, if they wanted to go at it?"
+        >
+          <strong>Sal Cowan:</strong>
+          <p class="program-text">
+            I used to work with planning partners and everybody's got some sort of MPO RPO in their region. Tri-county reached out to me and even DVRBC reached out to me, and they asked to become Waze connected partners. So that conversation happened because they knew we were a connected partner, and they are sharing information out that they've never had before. Even getting the information out to news agencies is pretty important. My brother-in-law actually works for an ABC affiliate here and he reached out to Waze and said they are using this Waze broadcasting where they get the information in and use it on their traffic. I will tell you the planning partners have used that information and love it. We love being that connected partner. They love getting the information and it helps them do their job more efficiently and they have more information that they could use for the public. So, I would say, especially in PA, the planning partners have really taken a bite out of Waze and become a connected partner.
+          </p>
+          <strong>Vaishali Shah:</strong>
+          <p class="program-text">
+            One other thing for agencies that are local agencies, a lot of states now access the vehicle pro data and have analytics tools to support the use of that data and can share it with local agencies. So, an example, Ohio, Arizona, and others where there's a local agency, they would actually pull that data actively monitor that data. So that's another way for cities is a great way to start that's low tech. There are actually a couple of webinars on the adventures and Crowdsourcing Webinar Series on NOCoE, on how to jump start and make use of that not only for real time monitoring but now quickly setting up email alerts or archiving that data for a broader planning use. There are a lot of agencies just starting out that can access and make a go of it.
+          </p>
+          <strong>John Parker:</strong>
+          <p class="program-text">
+            I will point out, even in Waze, they have a crisis response that they can Geofence and close blocks and streets. A lot of DOTs have used it and even a lot of agencies have started using it.
+          </p>
+          <strong>Vaishali Shah:</strong>
+          <p class="program-text">
+            I think we're going to plug that into the next webinar in this five-part series for emergency management so perfect teeing up of that.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={5}
+          title="What are North Carolina DOT's analysis of commercial vehicle alerts?"
+        >
+          <strong>Sal Cowan:</strong>
+          <p class="program-text">
+            Since a lot of us have a lot of the same roads that are just divided by a river or boundary or border, we have to talk all the time. John, I think it was the Saturday or Sunday in a meeting about a problem on 95 a couple weeks ago. A lot of us gain our experience from others. So, North Carolina had a major project that I want to say it was 95, where they did the analysis of the value of getting this information out in the work zone and providing it to drive voice platform. North Carolina DOT have done that research, so if you're looking for a, want to see if “x” will work, the analysis for it works for them for this project on this road a bigger analysis. You might be able to get there, but at least someone's paved that road before. Why pave it again?
+          </p>
+          <strong>John Parker:</strong>
+          <p class="program-text">
+            Yeah, I definitely agree Sal.
+          </p>
+          <strong>Ralph Volpe:</strong>
+          <p class="program-text">
+            Yeah, that's one thing that we encourage a number of our state DOTs and local agencies to do is share information back and forth, and one of the things that we learned from North Carolina DOT is they have their own data analysts that looks closely at the use of crowdsourced data and North Carolina has not held back and let this individual help some of the other states along the way, and that's the same with some of the other county agencies. Vaishali shared an example on Lake County, and what they did with putting codes for small agency alerts to kind of help yet indicate that there's something happening and being able to support when you do have a staff shortage and when you need to direct some attention.
+          </p>
+        </AccordionItem>
+      </Accordion>
+    </ProgramSection>
+    <ProgramSection color="gray" size="small">
+      <h3 class="program-title-md mb-4">
+        Host
+      </h3>
+      {hosts.map((item) => (
+        <HostCard
+          name={item.name}
+          title={item.title}
+          description={item.description}
+          image={item.image}
+        />
+      ))}
+      <h3 class="program-title-md mb-4">
+        Presenters
+      </h3>
+      {presenters.map((item) => (
+        <HostCard
+          name={item.name}
+          title={item.title}
+          description={item.description}
+          image={item.image}
+        />
+      ))}
+    </ProgramSection>
+  </main>
+</Layout>

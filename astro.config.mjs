@@ -10,4 +10,14 @@ export default defineConfig({
   // site: "https://www.its.dot.gov",
   output: "static",
   integrations: [partytown(), sitemap()],
+  redirects: {
+    "/pcb": {
+      status: 302,
+      destination: "/itstest_programs/resources/pcb"
+    },
+    "/resources/Professional-Capacity-Building": {
+      status: 302,
+      destination: "/itstest_programs/resources/pcb"
+    }
+  }
 });

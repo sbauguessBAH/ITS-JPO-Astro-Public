@@ -157,8 +157,8 @@
     "description": "The \"Crowdsourcing for Advancing Operations\" webinar series provides insights from practitioners on using crowdsourced data to improve transportation operations.",
     "image": "./images/tsmo-crowdsourcing.jpg",
     "alt": "",
-    "url": "https://ops.fhwa.dot.gov/crowdsourcing/course.cfm",
-    "isExternal": true,
+    "url": "/resources/pcb/trainings/cs4ops",
+    "isExternal": false,
     "category": "tsmo",
     "type": "web-based"
   },

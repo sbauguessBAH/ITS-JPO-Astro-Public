@@ -1,0 +1,270 @@
+---
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Layout from "../../_layout.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import Link from "@/src/components/Link.astro";
+import base_url from "@/src/lib/base_url";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+
+import gregJones from "@/src/assets/images/pcb/webinars/headshots/greg-jones.png";
+import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar.png";
+import natalieBettger from "@/src/assets/images/pcb/webinars/headshots/natalie-bettger.png";
+import HostCard from "./_host-card.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
+import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
+
+const hosts = [
+  {
+    name: "Greg Jones",
+    title: "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Resource Center",
+    description: "Mr. Jones is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a freeway management and intelligent transportation systems (ITS) specialist at the FHWA Resource Center in Atlanta, GA. He provides technical assistance, training, and promotion of new technologies in the field of freeway operations and transportation management. Before that, Jones was FHWA's regional ITS specialist for the Southwestern United States and also worked in the Florida, Georgia, and Maryland Divisions. Jones graduated from the University of Tennessee with a bachelor's degree in civil engineering.",
+    image: gregJones
+  },
+]
+
+const presenters = [
+  {
+    name: "James Colyar",
+    title: "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Office of Operations",
+    description: "Mr. Colyar is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Specialist with the FHWA Office of Operations. He has been with FHWA for over 20 years. He has experience in traffic engineering, traffic analysis and modeling, intelligent transportation systems, and transportation systems management and operations. Mr. Colyar holds a master's in civil engineering from North Carolina State University and a master's in Transportation Policy, Operations & Logistics from George Mason University.",
+    image: jamesColyar
+  },
+  {
+    name: "Natalie Bettger",
+    title: "Senior Program Manager, North Central Texas Council of Governments (NCTCOG)",
+    description: "Ms. Bettger is a Senior Program Manager for the North Central Texas Council of Governments (NCTCOG). NCTCOG serves the Dallas-Fort Worth region by developing transportation plans and programs that address the complex needs of the rapidly growing area. Natalie is currently NCTCOG's Senior Program Manager for Congestion Management and Innovative Project Delivery Program Area. This area includes planning in the areas of TSMO, aviation, congestion management, safety, security, special events, public involvement, and marketing. Her responsibilities also include coordinating with partner agencies to implement congestion management strategies, traffic signal retiming, incident management, safety, and operational projects.",
+    image: natalieBettger
+  }
+]
+---
+<style>
+  .resource-container {
+    background: rgb(var(--color-gray-light));
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .resource-card-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-sm);
+    align-items: center;
+  }
+  .resource-card-button:hover {
+    font-weight: inherit;
+    background: rgb(var(--color-brand-dark))
+  }
+  .resource-links {
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-sm)
+  }
+  a::after {
+    content: "" !important;
+  }
+</style>
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <Breadcrumb items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        { name: "Crowdsourcing for Operations", path: "/resources/pcb/trainings/cs4ops" },
+        { name: "Part 1" }
+      ]}/>
+      <h2 class="program-title-lg">
+        Introduction and Application Highlights
+      </h2>
+      <p>May 16, 2023</p>
+      <div class="resource-container mb-4">
+        <h3 class="program-title-md">Presentation</h3>
+        <p class="program-text">
+          Crowdsourcing for Advancing Operations: Introduction and Application Highlights
+          <br/>
+          (Jones, Colyar, Bettger)
+        </p>
+        <div class="resource-links">
+          <a class="resource-card-button" href="https://usdot.zoomgov.com/rec/play/L-LJM258S-zzuAK7XPdQJ2Jm-xU1VZ2khZeuZZN3r9t7bsT8Y8YnBpSxkiwloSAorqg1LXUOTT_AD-ox.CxTZrofJLj9jDlfM?startTime=1684256417000" target="_blank" rel="noopener noreferrer">
+            <FilmIcon/>
+            Webinar Replay
+          </a>
+          <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-1/s230516_Crowdsourcing_for_Advancing_Operations_Introduction_and_Application_Highlights_presentation.pptx")} target="_blank" rel="noopener noreferrer">
+            <PptIcon/>
+            PowerPoint
+          </a>
+          <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-1/s230516_Crowdsourcing_for_Advancing_Operations_Introduction_and_Application_Highlights_presentation.pdf")} target="_blank" rel="noopener noreferrer">
+            <PdfIcon/>
+            PDF
+          </a>
+        </div>
+      </div>
+      <h3 class="program-title-md">
+        Learning Objectives
+      </h3>
+      <ul class="program-list">
+        <li>
+          Broaden understanding and knowledge about how crowdsourced data can improve transportation operations.
+        </li>
+        <li>
+          Consider whether specific applications of crowdsourcing may meet organization's needs.
+        </li>
+        <li>
+          Share peer-to-peer experiences regarding the real-time and archived use of crowdsourced data for TMSO, safety, and investment decision-making.
+        </li>
+      </ul>
+      <h3 class="program-title-md">
+        Question and Answer Discussion
+      </h3>
+      <p class="program-text">
+        This webinar featured a question and answer session. A transcript of the questions asked and responses provided are below.
+      </p>
+      <Accordion id="part-1">
+        <AccordionItem 
+          index={1}
+          title="How do agencies ensure the reliability of crowdsourced data?" 
+        >
+          <strong>Natalie Bettger:</strong>
+          <p class="program-text">
+            I can just talk a little bit about our experience here with the few examples or the Council governments. 
+            We've only worked with the Waze data that's real time type data that comes in. The other crowdsource data 
+            has been archived. So, the reliability side of that makes it a little easier when it's archive data then 
+            when it's live because that's when you really want to respond quickly to that information that's coming in. 
+            We do have Waze like I mentioned that comes into the 911 dispatch centers. 
+            Then we also use Waze as part of our 511 VFW.
+          </p>
+          <p class="program-text">
+            We have not had an issue with reliability of that data source. It seems to come in very reliable from the 
+            wayside, so I would say, it's very reliable. I'll also throw out there if you do encounter crowdsource data, 
+            that maybe is less reliable, I would think that I would ask the question: But is it still more data that 
+            you get from than you have now? Look at your operation of your system. Other crowdsource data outside of 
+            Waze there might be holes in some of that data, but I still feel it brings in another source and a lot 
+            more data that allows you to look at your system than maybe what you currently have.
+          </p>
+        </AccordionItem>
+        <AccordionItem 
+          index={2}
+          title="How did you teach the public how to utilize the means of crowdsourcing?"
+        >
+          <strong>James Colyar:</strong>
+          <p class="program-text">
+            So, I would say that they're kind of two different ways of looking at crowdsourcing platforms. One is as a tool to push out information from the agency to the traveling public, and the other is an intake mechanism for gaining and insights from the traveling public, so that agencies can use that for their operational capabilities. So as far as I think, maybe this question is getting at how to get the public to use the crowdsourcing platforms that you have and obviously the bigger the sample size, the more people within your agency boundaries know about it. Then the more able you are to get information and insights from them.
+          </p>
+          <p class="program-text">
+            A lot of the crowdsourcing sources that we're talking about are what I would call passive crowdsourcing, and that the person is not really actively having to do anything. With your smartphone, navigation device, or even your vehicle, is collecting information passively without the traveler having to push a button or do anything. So, it's not so much teaching the public how to use that where a lot of these passive crowdsourcing so sources. There are other types of crowdsource data that I would say are not passive, but are active, and that the user or the traveler has to actively do something. This is where the education component can come in where we are asking the public to please help us by using a Twitter handle with a certain hashtag. This can be done through advertised and outreach through your public information office, or something like that. Or there could be a new app we created, and we want people to use it to help us identify where there's weather events or where there's road closures through a 311 system. So again, those kind of mechanisms which are more actively crowdsourced where the traveler has to actually do something and push a button or report something that's really where it becomes kind of an outreach effort within your agency. This gets into distracted driving and making sure that you design the feedback mechanism, that it's not going to cause a safety issue, that they encourage them to do it hands free, or what the passenger or after you stop your trip.
+          </p>
+          <p class="program-text">
+            Most of the crowdsourcing data sources we're talking about are passively collected. So the travelers are actually providing that information without having to actively do something, and so that reduces the burden that you have as an agency to have to teach them how to do something.
+          </p>
+        </AccordionItem>
+        <AccordionItem 
+          index={3}
+          title="Have agencies validated any of the data provided, like travel time and speed?"
+        >
+          <strong>Greg Jones:</strong>
+          <p class="program-text">
+            This reflects on one of the things that we talked about with different agencies. Should we do away with the field equipment that we are using to collect data on our own? This gets into the point of if you have data that you are collecting on your own, and you're getting crowdsourced data in that same area that is providing a similar type of information, you have a perfect opportunity to do some validation. Give yourself some reliance on how well the crowdsource data is. This has always been a topic area when it comes up.
+          </p>
+          <strong>James Colyar:</strong>
+          <p class="program-text">
+            I saw that Mena responded from VDOT. They've done some periodic validation, and I'll put a plugin for the Eastern Transportation coalition as they have done a great job over the years validating various crowdsourcing data sources from probe data. You can go to their website, Eastern Transportation Coalition and see their reports and the methodology that they've used. We have seen a lot of agencies getting into it as a pilot project, and they may hire the local university to do some kind of validation for them. It is a great way to engage the university partners.
+          </p>
+        </AccordionItem>
+        <AccordionItem 
+          index={4}
+          title="Ohio DOT has an application called TOAST (Traffic Operations Assessment Systems Tool) for prioritizing Transportation Systems Management Operations (TSMO) strategies. Do they have crowdsourced data as part of it?"
+        >
+          <strong>Greg Jones:</strong>
+          <p class="program-text">
+            From the audience, Stephanie Marik from OhioDOT stated that, yes, we use our INRIX Probe data for two categories of the TOAST calculations. The two are Bottlenecks and Travel Time measures that use the probe-based data. I would point out that Natalie mentioned that Ohio is actually going to be involved in one of our future webinars.
+          </p>
+        </AccordionItem>
+        <AccordionItem 
+          index={5}
+          title="Did I miss something or what tools do you use for crowdsourcing to better serve a community with new or expanded transit service? Especially, in the South/Southeast?"
+        >
+          <strong>Greg Jones:</strong>
+          <p class="program-text">
+            I guess that would get into information about transit reliability on time arrivals and such.
+          </p>
+          <strong>James Colyar:</strong>
+          <p class="program-text">
+            I would use this an opportunity to get on my soapbox, making sure that with crowdsourcing that you identify a need or a problem upfront that you need help with. There is maybe an issue that there's a community with new or expanded transit service. I would try to drill down further on that and find out what exactly is the need or the problem that you would be trying to solve? Based on that, that would help you identify how crowdsourcing data can help you. Is the need to be able to better identify on time arrivals or passenger demand, or the full trip from walking into the transit service and getting off? I would try to better identify what the problem is first and then you can look into how crowdsourcing can help you.
+          </p>
+        </AccordionItem>
+        <AccordionItem 
+          index={6} 
+          title="We actually evaluated Waze incidents with video and found too many reports where there were no incidents. Perhaps we need to look into this again, but have any other agencies had issues with accuracy of Waze reporting?"
+        >
+          <strong>Greg Jones:</strong>
+          <p class="program-text">
+            One of the things that comes up the most is with a system like Waze, you can get a number of indications of an incident, and they may show up in a number of different geographical areas. It is when people get around to recording the incident then it gives their location of where they're at when it was reported, but it may be after they've gone down the road a bit. So, that is definitely one of the factors that an agency has to deal with in getting this type of information. I know Kentucky and a couple of other states have looked into how to filter the data that is coming in. There is also the ability to have a score that is associated with the information coming in on the reliability factor of the information coming in.
+          </p>
+          <strong>Natalie Bettger:</strong>
+          <p class="program-text">
+            The only thing that I would mention, is that I agree there are usually multiple indications of when a crash would occur, so you have to be careful to merge those into one crash or maybe it's a primary crash and a secondary crash. They call them Wazers I believe, the users of Waze. They have a score for themselves depending on if the events are verified or not. I think within out applications we look at that rating of those users that we filter out of what would be inaccurate.
+          </p>
+        </AccordionItem>
+        <AccordionItem 
+          index={7} 
+          title="Do you find there are generational (or different demographics) that participate in DOT crowdsourcing?"
+        >
+          <strong>Greg Jones:</strong>
+          <p class="program-text">
+            Probably the underlying thought is that you'd see those in the younger generation are more apt to be sourcing the data just because of their capabilities with different technology. I haven't really seen that come out as any particular report from the DOT as where they assume they're crowdsourcing data is coming from. Much of that is going to be known from the source of the data as opposed to the DOT itself.
+          </p>
+          <strong>James Colyar:</strong>
+          <p class="program-text">
+            There are statistics out there about smartphone ownership, since a lot of crowdsourcing comes from location-based services with people with smartphones. So, there is public information out there that smartphone ownership overall is increasing by all demographics. There is still a gap by the generation older versus the younger generation so there is potential for sampling bias there. This depends on what you are using the data for. There's also a gap by income group, higher income groups versus lower income groups with smartphone ownership.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={8} 
+          title="I assume there are no data privacy issues related to use of crowdsourced data?"
+        >
+          <strong>Greg Jones:</strong>
+          <p class="program-text">
+            There is always the underlying expectation from the transportation agencies that the data that they're using in these situations does not have any personal identification data that's related to these specific users. There is a consideration of privacy that is made with almost all the data that is collected, but the way that most of the crowdsourced data comes to the transportation agency is that it is stripped away and they're getting raw data. This would be like speed or travel time or different sources of information that don't have any specific type of a personally identifiable data.
+          </p>
+        </AccordionItem>
+      </Accordion>
+    </ProgramSection>
+    <ProgramSection color="gray" size="small">
+      <h3 class="program-title-md mb-4">
+        Host
+      </h3>
+      {hosts.map((item) => (
+        <HostCard
+          name={item.name}
+          title={item.title}
+          description={item.description}
+          image={item.image}
+        />
+      ))}
+      <h3 class="program-title-md mb-4">
+        Presenters
+      </h3>
+      {presenters.map((item) => (
+        <HostCard
+          name={item.name}
+          title={item.title}
+          description={item.description}
+          image={item.image}
+        />
+      ))}
+    </ProgramSection>
+  </main>
+</Layout>
