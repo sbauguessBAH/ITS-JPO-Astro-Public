@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import vue from '@astrojs/vue'
 
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
@@ -9,5 +10,5 @@ export default defineConfig({
   base: "",
   site: "https://www.its.dot.gov",
   output: "static",
-  integrations: [partytown(), sitemap()],
+  integrations: [partytown(), sitemap(), vue({ jsx: true})],
 });

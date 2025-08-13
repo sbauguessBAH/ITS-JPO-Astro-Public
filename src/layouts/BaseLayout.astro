@@ -9,7 +9,7 @@
 import "@/src/styles/variables.css";
 import Banner from "../components/Banner.astro";
 import Footer from "@/src/components/Footer.astro";
-import Navigation from "@/src/components/layout/Navigation.astro";
+import Navigation from "@/src/components/layout/Navigation.vue";
 import Header from "@/src/components/layout/Header.astro";
 import base_url from "@/src/lib/base_url";
 import { validateNavigation } from "../lib/navigation";
@@ -38,8 +38,7 @@ const isTestEnv = import.meta.env.VITE_ENVIRONMENT === "test";
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
       defer
-    >
-    </script>
+    ></script>
     <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-RDS3HSK4R8"></script>
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
@@ -74,7 +73,7 @@ const isTestEnv = import.meta.env.VITE_ENVIRONMENT === "test";
     <header>
       <Banner />
       <Header />
-      <Navigation />
+      <Navigation client:only />
     </header>
     <slot />
     <Footer />
