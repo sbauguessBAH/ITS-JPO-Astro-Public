@@ -18,7 +18,12 @@
             v-for="link in navigation"
             :class="[`nav-item dropdown ${trimmedPathname.startsWith(link.url) ? 'activeMenu' : ''}`]"
           >
-            <a class="nav-link py-3 px-4 dropdown-toggle" :class="{ mobile: isMobile }" id="navbarDropdown" :href="base_url(link.url)">
+            <a
+              class="nav-link py-3 px-4 dropdown-toggle"
+              :class="{ mobile: isMobile }"
+              id="navbarDropdown"
+              :href="base_url(link.url)"
+            >
               {{ link.name }}
             </a>
             <ul class="dropdown-menu mt-0 shadow" aria-labelledby="navbarDropdown">
@@ -127,7 +132,112 @@ export default {
       navigation,
       pathname: window.location.pathname,
       base_url,
+      dropdownHandlers: new Map(), // Store element : handler mappings
+      dropdownShowTimeout: null,
+      dropdownHideTimeout: null,
+      lastDropdown: null,
+      currentDropdown: null,
     };
+  },
+  methods: {
+    resetDropdownEventListeners() {
+      const navbar = document.querySelector(".navbar");
+      const dropdownLinks = navbar!.querySelectorAll(".dropdown-toggle");
+      dropdownLinks.forEach((dropdownLink) => {
+        this.dropdownHandlers.get(dropdownLink).forEach(({ type, handler }) => {
+          dropdownLink.removeEventListener(type, handler);
+        });
+      });
+    },
+    handleMouseLeave(dropdown, dropdownMenu, dropdownLink) {
+      this.lastDropdown = this.currentDropdown; // Store the last hovered dropdown
+
+      if (this.dropdownShowTimeout) {
+        clearTimeout(this.dropdownShowTimeout); // Clear the timeout when leaving
+      }
+
+      this.dropdownHideTimeout = setTimeout(() => {
+        dropdownMenu!.classList.remove("fade-in");
+        dropdownMenu!.classList.add("fade-out");
+
+        (dropdownLink as HTMLAnchorElement).blur(); // Removes :focus state from link
+
+        dropdown.hide();
+        dropdownMenu!.addEventListener(
+          "animationend",
+          () => {
+            dropdownMenu!.classList.remove("fade-out");
+          },
+          { once: true }
+        );
+      }, 500); // Delay before hiding on mouse leave
+    },
+    handleMouseEnter(dropdown, dropdownMenu, dropdownLink) {
+      dropdownMenu!.classList.remove("fade-out");
+      dropdownMenu!.classList.add("fade-in");
+
+      this.currentDropdown = dropdownLink;
+      if (this.currentDropdown === this.lastDropdown && this.dropdownHideTimeout) {
+        clearTimeout(this.dropdownHideTimeout); // Clear the hide timeout if we're re-hovering the same dropdown
+      }
+      if (this.dropdownShowTimeout) {
+        clearTimeout(this.dropdownShowTimeout); // Clear any existing timeout
+      }
+      this.dropdownShowTimeout = setTimeout(() => {
+        dropdown.show();
+      }, 200); // Delay before showing on hover
+    },
+    handleClick(e, dropdownLink) {
+      e.preventDefault(); // Prevent default link behavior
+      const href = dropdownLink.getAttribute("href");
+      if (!href || href === "#") return; // Ignore if no href or just a hash
+      window.location.href = href; // Navigate to the link
+    },
+    adjustDropdownBehavior() {
+      this.isMobile = window.innerWidth < 992;
+      const navbar = document.querySelector(".navbar");
+      if (!navbar) return;
+      if (!this.isMobile) {
+        const dropdownLinks = navbar.querySelectorAll(".dropdown-toggle");
+
+        dropdownLinks.forEach((dropdownLink) => {
+          // Initialize Bootstrap dropdown instance
+          const dropdown = bootstrap.Dropdown.getOrCreateInstance(dropdownLink);
+          const dropdownMenu = dropdownLink.nextElementSibling;
+
+          const boundHandleMouseEnter = () => this.handleMouseEnter(dropdown, dropdownMenu, dropdownLink);
+
+          dropdownLink.addEventListener("mouseenter", boundHandleMouseEnter);
+
+          const boundHandleClick = (e) => this.handleClick(e, dropdownLink);
+
+          dropdownLink.addEventListener("click", boundHandleClick);
+
+          const boundHandleMouseLeave = () => this.handleMouseLeave(dropdown, dropdownMenu, dropdownLink);
+
+          // Add mouseleave listener to parent so that the dropdown closes when exiting link/sibling elements (dropdown menu)
+          const parentElem = dropdownLink.closest("li");
+          if (parentElem) {
+            parentElem.addEventListener("mouseleave", boundHandleMouseLeave);
+          }
+
+          // Add handlers to map for easy removal later
+          if (!this.dropdownHandlers.has(dropdownLink)) {
+            this.dropdownHandlers.set(dropdownLink, []);
+          }
+
+          this.dropdownHandlers
+            .get(dropdownLink)
+            .push(
+              { type: "mouseenter", handler: boundHandleMouseEnter },
+              { type: "mouseleave", handler: boundHandleMouseLeave }
+            );
+        });
+      } else {
+        // Reset mouseenter/leave event listeners when on mobile. This prevents many event listeners from stacking, as well as hover behavior from continuing on mobile
+        this.resetDropdownEventListeners();
+      }
+    },
   },
   computed: {
     trimmedPathname() {
@@ -138,81 +248,8 @@ export default {
   // Makes navbar dropdowns open on hover
   // Ensure the DOM is fully loaded before running the script because Bootstrap's dropdown requires it
   mounted() {
-    this.isMobile = window.innerWidth < 992;
-    const navbar = document.querySelector(".navbar");
-    if (!navbar) return;
-
-    let dropdownShowTimeout;
-    let dropdownHideTimeout;
-
-    let currentDropdown;
-    let lastDropdown;
-
-    const adjustDropdownBehavior = () => {
-      this.isMobile = window.innerWidth < 992;
-      if (!this.isMobile) {
-        const dropdownLinks = navbar.querySelectorAll(".dropdown-toggle");
-
-        dropdownLinks.forEach((dropdownLink) => {
-          // Initialize Bootstrap dropdown instance
-          const dropdown = bootstrap.Dropdown.getOrCreateInstance(dropdownLink);
-          const dropdownMenu = dropdownLink.nextElementSibling;
-
-          dropdownLink.addEventListener("mouseenter", () => {
-            dropdownMenu!.classList.remove("fade-out");
-            dropdownMenu!.classList.add("fade-in");
-
-            currentDropdown = dropdownLink;
-            if (currentDropdown === lastDropdown && dropdownHideTimeout) {
-              clearTimeout(dropdownHideTimeout); // Clear the hide timeout if we're re-hovering the same dropdown
-            }
-            if (dropdownShowTimeout) {
-              clearTimeout(dropdownShowTimeout); // Clear any existing timeout
-            }
-            dropdownShowTimeout = setTimeout(() => {
-              dropdown.show();
-            }, 200); // Delay before showing on hover
-          });
-
-          dropdownLink.addEventListener("click", (e) => {
-            e.preventDefault(); // Prevent default link behavior
-            const href = dropdownLink.getAttribute("href");
-            if (!href || href === "#") return; // Ignore if no href or just a hash
-            window.location.href = href; // Navigate to the link
-          });
-
-          // Add mouseleave listener to parent so that the dropdown closes when exiting link/sibling elements (dropdown menu)
-          const parentElem = dropdownLink.closest("li");
-          if (parentElem) {
-            parentElem.addEventListener("mouseleave", () => {
-              lastDropdown = currentDropdown; // Store the last hovered dropdown
-
-              if (dropdownShowTimeout) {
-                clearTimeout(dropdownShowTimeout); // Clear the timeout when leaving
-              }
-
-              dropdownHideTimeout = setTimeout(() => {
-                dropdownMenu!.classList.remove("fade-in");
-                dropdownMenu!.classList.add("fade-out");
-
-                (dropdownLink as HTMLAnchorElement).blur(); // Removes :focus state from link
-
-                dropdown.hide();
-                dropdownMenu!.addEventListener(
-                  "animationend",
-                  () => {
-                    dropdownMenu!.classList.remove("fade-out", "keep-visible");
-                  },
-                  { once: true }
-                );
-              }, 500); // Delay before hiding on mouse leave
-            });
-          }
-        });
-      }
-    };
-    adjustDropdownBehavior();
-    window.addEventListener("resize", adjustDropdownBehavior);
+    this.adjustDropdownBehavior();
+    window.addEventListener("resize", this.adjustDropdownBehavior);
   },
 };
 </script>

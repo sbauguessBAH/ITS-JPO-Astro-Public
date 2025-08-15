@@ -73,7 +73,7 @@ const isTestEnv = import.meta.env.VITE_ENVIRONMENT === "test";
     <header>
       <Banner />
       <Header />
-      <Navigation client:only />
+      <Navigation client:only="vue" />
     </header>
     <slot />
     <Footer />
