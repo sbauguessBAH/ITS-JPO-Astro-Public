@@ -147,7 +147,12 @@ export default {
         this.dropdownHandlers.get(dropdownLink).forEach(({ type, handler }) => {
           dropdownLink.removeEventListener(type, handler);
         });
+        const dropdown = bootstrap.Dropdown.getInstance(dropdownLink);
+        if (dropdown) {
+          dropdown.dispose(); // Destroys dropdown instance, removing bootstrap's event listeners
+        }
       });
+      this.dropdownHandlers.clear();
     },
     handleMouseLeave(dropdown, dropdownMenu, dropdownLink) {
       this.lastDropdown = this.currentDropdown; // Store the last hovered dropdown
@@ -230,12 +235,15 @@ export default {
             .get(dropdownLink)
             .push(
               { type: "mouseenter", handler: boundHandleMouseEnter },
-              { type: "mouseleave", handler: boundHandleMouseLeave }
+              { type: "mouseleave", handler: boundHandleMouseLeave },
+              { type: "click", handler: boundHandleClick }
             );
         });
       } else {
         // Reset mouseenter/leave event listeners when on mobile. This prevents many event listeners from stacking, as well as hover behavior from continuing on mobile
-        this.resetDropdownEventListeners();
+        if (this.dropdownHandlers.size > 0) {
+          this.resetDropdownEventListeners();
+        }
       }
     },
   },
