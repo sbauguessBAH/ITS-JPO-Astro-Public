@@ -10,10 +10,9 @@ export const navigation: NavigationItem[] = [
     isEnabled: true,
     pages: [
       { name: 'About ITS JPO', url: '/about', isEnabled: true, },
-      { name: 'Contact Us', url: '/about/contact-us', pages: [
-        { name: 'ITS JPO Staff Listing', url: '/about/contact-us/staff-listing', isEnabled: true, pages:[
-          { name: 'Brian Cronin', url: '/about/contact-us/staff-listing/Brian-Cronin'},
-        ]},
+      { name: 'Contact Us', url: '/about/contact-us', isEnabled: true, pages: [
+        { name: 'ITS JPO Staff Listing', url: '/about/contact-us'},
+        { name: 'Brian Cronin', url: '/about/contact-us/Brian-Cronin' },
         { name: 'Join Our Mailing List', url: '/about/contact-us/mailinglist' },
       ]},
     ]
