@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Foundational Systems Engineering Activities to Support ITS Procurement",
+    "description": "This training guides transportation professionals in applying systems engineering to advance ITS project development with a focus on planning and needs-based scoping. Click to contact the ITS PCB Program.",
+    "image": "./images/sys-eng-activities.jpg",
+    "alt": "",
+    "isExternal": true,
+    "url": "mailto:itspcb@dot.gov",
+    "category": "systems-engineering",
+    "type": "in-person"
+  },
+  {
+    "title": "FHWA-NHI-133133: Planning for TSMO - Putting Concepts into Action",
+    "description": "This web conference training session builds on Course 2 (NHI-133132) and uses interactive activities to engage participants and bring the concepts of planning for TSMO to life.",
+    "url": "https://fhwanhi.geniussis.com/RegistrationByCourse.aspx",
+    "image": "./images/tsmo-concepts-into-action.jpg",
+    "alt": "",
+    "isExternal": true,
+    "category": "tsmo",
+    "type": "web-based",
+    "action": "Register"
+  }
+]

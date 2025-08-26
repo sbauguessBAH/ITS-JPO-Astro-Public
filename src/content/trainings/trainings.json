@@ -87,16 +87,7 @@
     "type": "web-based",
     "action": "Register"
   },
-  {
-    "title": "Foundational Systems Engineering Activities to Support ITS Procurement",
-    "description": "This training guides transportation professionals in applying systems engineering to advance ITS project development with a focus on planning and needs-based scoping. Click to contact the ITS PCB Program.",
-    "image": "./images/sys-eng-activities.jpg",
-    "alt": "",
-    "isExternal": true,
-    "url": "mailto:itspcb@dot.gov",
-    "category": "systems-engineering",
-    "type": "in-person"
-  },
+  
   {
     "title": "Vehicle-to-Everything (V2X) Training",
     "description": "Participants are introduced to the key components that enable a V2X ecosystem, the potential benefits of the technology, and example use cases and the messages and standards supporting them while ensuring safety and privacy.",
@@ -142,17 +133,6 @@
     "action": "Register"
   },
   {
-    "title": "FHWA-NHI-133133: Planning for TSMO - Putting Concepts into Action",
-    "description": "This web conference training session builds on Course 2 (NHI-133132) and uses interactive activities to engage participants and bring the concepts of planning for TSMO to life.",
-    "url": "https://fhwanhi.geniussis.com/RegistrationByCourse.aspx",
-    "image": "./images/tsmo-concepts-into-action.jpg",
-    "alt": "",
-    "isExternal": true,
-    "category": "tsmo",
-    "type": "web-based",
-    "action": "Register"
-  },
-  {
     "title": "Crowdsourcing for Operations Course as a Webinar Series",
     "description": "The \"Crowdsourcing for Advancing Operations\" webinar series provides insights from practitioners on using crowdsourced data to improve transportation operations.",
     "image": "./images/tsmo-crowdsourcing.jpg",
@@ -163,7 +143,7 @@
     "type": "web-based"
   },
   {
-    "title": "FHWA-NHI-137072: Weather Responsive Traffic Management (WRTM)",
+    "title": "FHWA-NHI-133072: Weather Responsive Traffic Management (WRTM)",
     "description": "This training provides information about basic principles and tools to help transportation system managers and operators effectively manage traffic flow and operations during adverse weather conditions.",
     "image": "./images/tsmo-wrtm.jpg",
     "alt": "",
@@ -174,7 +154,7 @@
     "action": "Register"
   },
   {
-    "title": "FHWA-NHI-137073: Principles and Tools for Road Weather Management",
+    "title": "FHWA-NHI-133073: Principles and Tools for Road Weather Management",
     "description": "This training provides transportation professionals in highway maintenance and/or highway operations with training to develop tools and strategies for addressing road weather problems.",
     "image": "./images/tsmo-rwm.jpg",
     "alt": "",
@@ -185,7 +165,7 @@
     "action": "Register"
   },
   {
-    "title": "FHWA-NHI-137074: Road Weather Information Systems (RWIS) Equipment and Operations",
+    "title": "FHWA-NHI-133074: Road Weather Information Systems (RWIS) Equipment and Operations",
     "description": "This training provides an overview of road weather information Systems (RWIS) and explores exercises to help participants develop action plans to addressing their road weather challenges.",
     "image": "./images/tsmo-rwis.jpg",
     "alt": "",
