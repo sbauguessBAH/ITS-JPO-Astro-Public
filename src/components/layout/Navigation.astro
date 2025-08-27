@@ -151,8 +151,9 @@ const trimmedPathname = getTrimmedPathname(pathname);
               this.dataset.touched = 'true';
               // Remove touched state on next click anywhere else
               document.addEventListener('click', function clearTouch(ev) {
-                if (!item.contains(ev.target)) {
-                  delete toggle.dataset.touched;
+                const target = ev.target as Node;
+                if (!item.contains(target)) {
+                  (toggle as HTMLElement).dataset.touched = undefined;
                   document.removeEventListener('click', clearTouch, true);
                 }
               }, true);
