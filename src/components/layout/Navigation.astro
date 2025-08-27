@@ -16,7 +16,7 @@ const trimmedPathname = getTrimmedPathname(pathname);
         {
           navigation.map((link) => (
             <li class:list={["nav-item dropdown", { activeMenu: trimmedPathname.startsWith(link.url) }]}>
-              <a class="nav-link py-3 px-4 dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+              <a  href={link.url} class="nav-link py-3 px-4 dropdown-toggle" id="navbarDropdown" role="button" data-bs-auto-close="outside">
                 {link.name}
               </a>
               <ul class="dropdown-menu mt-0 shadow" aria-labelledby="navbarDropdown">
@@ -32,7 +32,7 @@ const trimmedPathname = getTrimmedPathname(pathname);
                   if (pageLink.pages)
                     return (
                       <li class="dropend">
-                        <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                        <a href="#" class="dropdown-item dropdown-toggle" data-bs-auto-close="outside">
                           {pageLink.name}
                         </a>
                         <ul class="dropdown-menu shadow">
@@ -131,25 +131,47 @@ const trimmedPathname = getTrimmedPathname(pathname);
           hideTimeouts.set(item, timeout);
         }
       });
-      // Mobile: open/close submenu on tap
+
+      // Double-tap-to-navigate logic for touch devices only
       const toggle = item.querySelector(':scope > .dropdown-toggle');
       if (toggle) {
         toggle.addEventListener('click', function (e) {
-          if (isMobile()) {
-            e.preventDefault();
-            if (item.classList.contains('show')) {
-              item.classList.remove('show');
-              const menu = item.querySelector(':scope > .dropdown-menu');
-              if (menu) menu.classList.remove('show');
-              this.setAttribute('aria-expanded', 'false');
-            } else {
+          // Only apply double-tap logic if touch is supported
+          const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+          if (isTouch) {
+            const href = this.getAttribute('href');
+            if (!this.dataset.touched) {
+              // First tap: open submenu only
+              e.preventDefault();
               closeSiblings(item);
               item.classList.add('show');
               const menu = item.querySelector(':scope > .dropdown-menu');
               if (menu) menu.classList.add('show');
               this.setAttribute('aria-expanded', 'true');
+              this.dataset.touched = 'true';
+              // Remove touched state on next click anywhere else
+              document.addEventListener('click', function clearTouch(ev) {
+                if (!item.contains(ev.target)) {
+                  delete toggle.dataset.touched;
+                  document.removeEventListener('click', clearTouch, true);
+                }
+              }, true);
+            } else {
+              // Second tap: navigate if href is valid
+              delete this.dataset.touched;
+              if (href && href !== '#') {
+                // Let default navigation happen
+                return;
+              } else {
+                e.preventDefault();
+                item.classList.remove('show');
+                const menu = item.querySelector(':scope > .dropdown-menu');
+                if (menu) menu.classList.remove('show');
+                this.setAttribute('aria-expanded', 'false');
+              }
             }
           }
+          // On desktop, allow default navigation
         });
       }
     });
