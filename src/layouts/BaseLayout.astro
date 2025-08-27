@@ -73,7 +73,7 @@ const isTestEnv = import.meta.env.VITE_ENVIRONMENT === "test";
     <header>
       <Banner />
       <Header />
-      <Navigation client:only="vue" />
+      <Navigation client:load currentPath={Astro.url.pathname} />
     </header>
     <slot />
     <Footer />

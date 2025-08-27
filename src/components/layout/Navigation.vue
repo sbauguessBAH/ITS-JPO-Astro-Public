@@ -126,11 +126,16 @@ import base_url from "@/src/lib/base_url";
 import { getTrimmedPathname, navigation } from "@/src/lib/navigation";
 
 export default {
+  props: {
+    currentPath: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
       isMobile: false,
       navigation,
-      pathname: window.location.pathname,
       base_url,
       dropdownHandlers: new Map(), // Store element : handler mappings
       dropdownShowTimeout: null,
@@ -249,7 +254,7 @@ export default {
   },
   computed: {
     trimmedPathname() {
-      return getTrimmedPathname(this.pathname);
+      return getTrimmedPathname(this.currentPath);
     },
   },
 
