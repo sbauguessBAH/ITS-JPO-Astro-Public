@@ -1,113 +1,181 @@
 ---
-import base_url from '@/src/lib/base_url';
+import base_url from "@/src/lib/base_url";
 import { getTrimmedPathname, navigation } from "@/src/lib/navigation";
 
 const pathname = Astro.url.pathname;
 const trimmedPathname = getTrimmedPathname(pathname);
 ---
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-marginbottom">
   <div class="container-xl">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbar-content"
-      aria-controls="navbar-content"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbar-content">
       <ul class="navbar-nav mb-lg-0">
-        {navigation.map(link => (
-          <li class:list={["nav-item dropdown", {"activeMenu": trimmedPathname.startsWith(link.url)}]}>
-            <a 
-              class="nav-link py-3 px-4 dropdown-toggle" 
-              id="navbarDropdown" 
-              role="button" 
-              data-bs-toggle="dropdown" 
-              data-bs-auto-close="outside"
-            >
-              {link.name}
-            </a>
-            <ul class="dropdown-menu mt-0 shadow" aria-labelledby="navbarDropdown">
-              {link.pages.map(pageLink => {
-                if (pageLink.isExternal) return (
-                  <li>
-                    <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
-                      {pageLink.name}
-                    </a>
-                  </li>
-                );
-                if (pageLink.pages) return (
-                  <li class="dropend">
-                    <a 
-                      href="#" 
-                      class="dropdown-item dropdown-toggle" 
-                      data-bs-toggle="dropdown" 
-                      data-bs-auto-close="outside"
-                    >
-                      {pageLink.name}
-                    </a>
-                    <ul class="dropdown-menu shadow">
-                      {pageLink.pages.map(subPageLink => {
-                        if (subPageLink.isExternal) return (
-                          <li>
-                            <a 
-                              class="dropdown-item externalLink" 
-                              href={subPageLink.url}
-                            >
-                              {subPageLink.name}
-                            </a>
-                          </li>
-                        )
-                        return (
-                          <li>
-                            <a 
-                              class:list={[
-                                "dropdown-item", 
-                                {"disabled": [
-                                    "ITS Professional Capacity Building", 
-                                    "Architecture, Standards, and Cybersecurity (ASC)"
-                                  ].includes(subPageLink.name)
-                                }]} 
-                              href={base_url(subPageLink.url)}
-                            >
-                              {subPageLink.name}
-                            </a>
-                          </li>
-                        )
-                      })}
-                    </ul>
-                  </li>
-                )
-                return (
-                  <li>
-                    <a class="dropdown-item" href={base_url(pageLink.url)}>
-                      {pageLink.name}
-                    </a>
-                  </li>
-                )
-              })}
-            </ul>
-          </li>
-        ))}
+        {
+          navigation.map((link) => (
+            <li class:list={["nav-item dropdown", { activeMenu: trimmedPathname.startsWith(link.url) }]}>
+              <a class="nav-link py-3 px-4 dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                {link.name}
+              </a>
+              <ul class="dropdown-menu mt-0 shadow" aria-labelledby="navbarDropdown">
+                {link.pages.map((pageLink) => {
+                  if (pageLink.isExternal)
+                    return (
+                      <li>
+                        <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
+                          {pageLink.name}
+                        </a>
+                      </li>
+                    );
+                  if (pageLink.pages)
+                    return (
+                      <li class="dropend">
+                        <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                          {pageLink.name}
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                          {pageLink.pages.map((subPageLink) => {
+                            if (subPageLink.isExternal)
+                              return (
+                                <li>
+                                  <a class="dropdown-item externalLink" href={subPageLink.url}>
+                                    {subPageLink.name}
+                                  </a>
+                                </li>
+                              );
+                            return (
+                              <li>
+                                <a
+                                  class:list={["dropdown-item", { disabled: ["ITS Professional Capacity Building", "Architecture, Standards, and Cybersecurity (ASC)"].includes(subPageLink.name) }]}
+                                  href={base_url(subPageLink.url)}
+                                >
+                                  {subPageLink.name}
+                                </a>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </li>
+                    );
+                  return (
+                    <li>
+                      <a class="dropdown-item" href={base_url(pageLink.url)}>
+                        {pageLink.name}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
 </nav>
+<script>
+  // Enhanced menu logic for desktop hover and mobile tap, including submenus
+  (function () {
+    const MOBILE_WIDTH = 992;
+    let hideTimeouts = new WeakMap();
+
+    function isMobile() {
+      return window.innerWidth < MOBILE_WIDTH;
+    }
+
+    // Close all dropdowns at a given menu level
+    function closeDropdownsAtLevel(parentUl) {
+      const openDropdowns = parentUl.querySelectorAll(":scope > li.dropdown.show, :scope > li.dropend.show");
+      openDropdowns.forEach((item) => {
+        item.classList.remove("show");
+        const menu = item.querySelector(":scope > .dropdown-menu");
+        if (menu) menu.classList.remove("show");
+        const toggle = item.querySelector(":scope > .dropdown-toggle");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    // Open a dropdown and close siblings at the same level
+    function openDropdownMenu(item) {
+      const parentUl = item.parentElement;
+      closeDropdownsAtLevel(parentUl);
+      item.classList.add("show");
+      const menu = item.querySelector(":scope > .dropdown-menu");
+      if (menu) menu.classList.add("show");
+      const toggle = item.querySelector(":scope > .dropdown-toggle");
+      if (toggle) toggle.setAttribute("aria-expanded", "true");
+    }
+
+    // Attach listeners to all dropdowns and submenus
+    document.querySelectorAll("li.dropdown, li.dropend").forEach((item) => {
+      // Desktop hover
+      item.addEventListener("mouseenter", function () {
+        if (!isMobile()) {
+          const timeout = hideTimeouts.get(item);
+          if (timeout) clearTimeout(timeout);
+          openDropdownMenu(item);
+        }
+      });
+      item.addEventListener("mouseleave", function () {
+        if (!isMobile()) {
+          const timeout = setTimeout(() => {
+            item.classList.remove("show");
+            const menu = item.querySelector(":scope > .dropdown-menu");
+            if (menu) menu.classList.remove("show");
+            const toggle = item.querySelector(":scope > .dropdown-toggle");
+            if (toggle) toggle.setAttribute("aria-expanded", "false");
+          }, 350);
+          hideTimeouts.set(item, timeout);
+        }
+      });
+      // Mobile tap
+      const toggle = item.querySelector(":scope > .dropdown-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function (e) {
+          if (isMobile()) {
+            e.preventDefault();
+            if (item.classList.contains("show")) {
+              item.classList.remove("show");
+              const menu = item.querySelector(":scope > .dropdown-menu");
+              if (menu) menu.classList.remove("show");
+              this.setAttribute("aria-expanded", "false");
+            } else {
+              const parentUl = item.parentElement;
+              closeDropdownsAtLevel(parentUl);
+              item.classList.add("show");
+              const menu = item.querySelector(":scope > .dropdown-menu");
+              if (menu) menu.classList.add("show");
+              this.setAttribute("aria-expanded", "true");
+            }
+          }
+        });
+      }
+    });
+
+    // Close all dropdowns on resize
+    window.addEventListener("resize", function () {
+      document.querySelectorAll("li.dropdown.show, li.dropend.show").forEach((item) => {
+        item.classList.remove("show");
+        const menu = item.querySelector(":scope > .dropdown-menu");
+        if (menu) menu.classList.remove("show");
+        const toggle = item.querySelector(":scope > .dropdown-toggle");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  })();
+</script>
 
 <style>
   a,
   ul,
   li,
   nav,
-  button
-  .show {
+  button .show {
     transition: all 0.35s;
   }
-  a:active{
+  a:active {
     background: rgb(198, 198, 198);
     color: black;
   }
@@ -130,10 +198,6 @@ const trimmedPathname = getTrimmedPathname(pathname);
     color: black;
   }
 
-  .dropdown-menu {
-    left: -1px;
-  }
-
   .show.nav-link:focus {
     color: black;
   }
@@ -153,12 +217,9 @@ const trimmedPathname = getTrimmedPathname(pathname);
     border: 0;
     color: #009ad6;
   }
-  .dropdown-item.dropdown-toggle.show{
+  .dropdown-item.dropdown-toggle.show {
     background: rgb(233, 236, 239);
     border-radius: 0;
-  }
-  .dropdown-menu{
-    border: none;
   }
 
   @media (max-width: 992px) {
@@ -169,5 +230,22 @@ const trimmedPathname = getTrimmedPathname(pathname);
   .navbar-nav .nav-item.dropdown.show > .nav-link {
     font-weight: bold;
   }
+  @media (min-width: 992px) {
+    .dropdown-menu {
+      position: absolute;
+    }
 
+    .dropend .dropdown-menu {
+      position: absolute;
+      top: 0;
+      right: auto;
+      left: 100%;
+      margin-top: 0;
+      margin-left: 0.125rem;
+
+      .dropdown-menu {
+        left: -1px;
+      }
+    }
+  }
 </style>
