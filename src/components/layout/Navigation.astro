@@ -76,78 +76,78 @@ const trimmedPathname = getTrimmedPathname(pathname);
   </div>
 </nav>
 <script>
-  // Enhanced menu logic for desktop hover and mobile tap, including submenus
+  // Simplified menu logic for hover/tap, supporting submenus
   (function () {
     const MOBILE_WIDTH = 992;
-    let hideTimeouts = new WeakMap();
+    const hideTimeouts = new WeakMap();
 
+    // Utility: is this a mobile viewport?
     function isMobile() {
       return window.innerWidth < MOBILE_WIDTH;
     }
 
-    // Close all dropdowns at a given menu level
-    function closeDropdownsAtLevel(parentUl) {
-      const openDropdowns = parentUl.querySelectorAll(":scope > li.dropdown.show, :scope > li.dropend.show");
-      openDropdowns.forEach((item) => {
-        item.classList.remove("show");
-        const menu = item.querySelector(":scope > .dropdown-menu");
-        if (menu) menu.classList.remove("show");
-        const toggle = item.querySelector(":scope > .dropdown-toggle");
-        if (toggle) toggle.setAttribute("aria-expanded", "false");
+    // Close all open dropdowns at a given menu level
+    function closeSiblings(item) {
+      const parent = item.parentElement;
+      parent.querySelectorAll(':scope > li.dropdown.show, :scope > li.dropend.show').forEach((sib) => {
+        if (sib !== item) {
+          sib.classList.remove('show');
+          const menu = sib.querySelector(':scope > .dropdown-menu');
+          if (menu) menu.classList.remove('show');
+          const toggle = sib.querySelector(':scope > .dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     }
 
-    // Open a dropdown and close siblings at the same level
-    function openDropdownMenu(item) {
-      const parentUl = item.parentElement;
-      closeDropdownsAtLevel(parentUl);
-      item.classList.add("show");
-      const menu = item.querySelector(":scope > .dropdown-menu");
-      if (menu) menu.classList.add("show");
-      const toggle = item.querySelector(":scope > .dropdown-toggle");
-      if (toggle) toggle.setAttribute("aria-expanded", "true");
+    // Open a dropdown, close siblings
+    function openDropdown(item) {
+      closeSiblings(item);
+      item.classList.add('show');
+      const menu = item.querySelector(':scope > .dropdown-menu');
+      if (menu) menu.classList.add('show');
+      const toggle = item.querySelector(':scope > .dropdown-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'true');
     }
 
     // Attach listeners to all dropdowns and submenus
-    document.querySelectorAll("li.dropdown, li.dropend").forEach((item) => {
-      // Desktop hover
-      item.addEventListener("mouseenter", function () {
+    document.querySelectorAll('li.dropdown, li.dropend').forEach((item) => {
+      // Desktop: show submenu on hover, hide with delay
+      item.addEventListener('mouseenter', () => {
         if (!isMobile()) {
-          const timeout = hideTimeouts.get(item);
-          if (timeout) clearTimeout(timeout);
-          openDropdownMenu(item);
+          clearTimeout(hideTimeouts.get(item));
+          openDropdown(item);
         }
       });
-      item.addEventListener("mouseleave", function () {
+      item.addEventListener('mouseleave', () => {
         if (!isMobile()) {
           const timeout = setTimeout(() => {
-            item.classList.remove("show");
-            const menu = item.querySelector(":scope > .dropdown-menu");
-            if (menu) menu.classList.remove("show");
-            const toggle = item.querySelector(":scope > .dropdown-toggle");
-            if (toggle) toggle.setAttribute("aria-expanded", "false");
+            item.classList.remove('show');
+            const menu = item.querySelector(':scope > .dropdown-menu');
+            if (menu) menu.classList.remove('show');
+            const toggle = item.querySelector(':scope > .dropdown-toggle');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
           }, 350);
           hideTimeouts.set(item, timeout);
         }
       });
-      // Mobile tap
-      const toggle = item.querySelector(":scope > .dropdown-toggle");
+      // Mobile: open/close submenu on tap
+      const toggle = item.querySelector(':scope > .dropdown-toggle');
       if (toggle) {
-        toggle.addEventListener("click", function (e) {
+        toggle.addEventListener('click', function (e) {
           if (isMobile()) {
             e.preventDefault();
-            if (item.classList.contains("show")) {
-              item.classList.remove("show");
-              const menu = item.querySelector(":scope > .dropdown-menu");
-              if (menu) menu.classList.remove("show");
-              this.setAttribute("aria-expanded", "false");
+            if (item.classList.contains('show')) {
+              item.classList.remove('show');
+              const menu = item.querySelector(':scope > .dropdown-menu');
+              if (menu) menu.classList.remove('show');
+              this.setAttribute('aria-expanded', 'false');
             } else {
-              const parentUl = item.parentElement;
-              closeDropdownsAtLevel(parentUl);
-              item.classList.add("show");
-              const menu = item.querySelector(":scope > .dropdown-menu");
-              if (menu) menu.classList.add("show");
-              this.setAttribute("aria-expanded", "true");
+              closeSiblings(item);
+              item.classList.add('show');
+              const menu = item.querySelector(':scope > .dropdown-menu');
+              if (menu) menu.classList.add('show');
+              this.setAttribute('aria-expanded', 'true');
             }
           }
         });
@@ -155,13 +155,13 @@ const trimmedPathname = getTrimmedPathname(pathname);
     });
 
     // Close all dropdowns on resize
-    window.addEventListener("resize", function () {
-      document.querySelectorAll("li.dropdown.show, li.dropend.show").forEach((item) => {
-        item.classList.remove("show");
-        const menu = item.querySelector(":scope > .dropdown-menu");
-        if (menu) menu.classList.remove("show");
-        const toggle = item.querySelector(":scope > .dropdown-toggle");
-        if (toggle) toggle.setAttribute("aria-expanded", "false");
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('li.dropdown.show, li.dropend.show').forEach((item) => {
+        item.classList.remove('show');
+        const menu = item.querySelector(':scope > .dropdown-menu');
+        if (menu) menu.classList.remove('show');
+        const toggle = item.querySelector(':scope > .dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
       });
     });
   })();
