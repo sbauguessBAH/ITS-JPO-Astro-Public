@@ -1187,7 +1187,7 @@ hr.content {
     padding-right: 1em;
 }
 
-.dropdown-toggle:not(.mobile):after{
+.dropdown-toggle:after{
     content: '\f078';
     font-family: FontAwesome;
     font-size:16px;

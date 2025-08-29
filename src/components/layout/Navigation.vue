@@ -20,7 +20,7 @@
           >
             <a
               class="nav-link py-3 px-4 dropdown-toggle"
-              :class="{ mobile: isMobile }"
+              data-open-on-mobile
               id="navbarDropdown"
               :href="base_url(link.url)"
             >
@@ -144,14 +144,32 @@ export default {
       currentDropdown: null,
     };
   },
+
   methods: {
+    addToDropdownHandlersMap(elem, type, handler) {
+      if (!this.dropdownHandlers.has(elem)) {
+        this.dropdownHandlers.set(elem, []);
+      }
+      this.dropdownHandlers.get(elem).push({ elem, type, handler });
+    },
+
+    createBoostrapDropdown(dropdownLink) {
+      const dropdown = bootstrap.Dropdown.getOrCreateInstance(dropdownLink);
+      return dropdown;
+    },
+
     resetDropdownEventListeners() {
       const navbar = document.querySelector(".navbar");
       const dropdownLinks = navbar!.querySelectorAll(".dropdown-toggle");
       dropdownLinks.forEach((dropdownLink) => {
-        this.dropdownHandlers.get(dropdownLink).forEach(({ type, handler }) => {
-          dropdownLink.removeEventListener(type, handler);
-        });
+        if (this.dropdownHandlers.get(dropdownLink) != null) {
+          this.dropdownHandlers.get(dropdownLink).forEach(({ elem, type, handler }) => {
+            elem.removeEventListener(type, handler);
+          });
+          this.dropdownHandlers.get(dropdownLink.closest("li"))?.forEach(({ elem, type, handler }) => {
+            elem.removeEventListener(type, handler);
+          });
+        }
         const dropdown = bootstrap.Dropdown.getInstance(dropdownLink);
         if (dropdown) {
           dropdown.dispose(); // Destroys dropdown instance, removing bootstrap's event listeners
@@ -159,6 +177,7 @@ export default {
       });
       this.dropdownHandlers.clear();
     },
+
     handleMouseLeave(dropdown, dropdownMenu, dropdownLink) {
       this.lastDropdown = this.currentDropdown; // Store the last hovered dropdown
 
@@ -182,6 +201,7 @@ export default {
         );
       }, 500); // Delay before hiding on mouse leave
     },
+
     handleMouseEnter(dropdown, dropdownMenu, dropdownLink) {
       dropdownMenu!.classList.remove("fade-out");
       dropdownMenu!.classList.add("fade-in");
@@ -197,29 +217,79 @@ export default {
         dropdown.show();
       }, 200); // Delay before showing on hover
     },
-    handleClick(e, dropdownLink) {
+
+    handleClick(e, dropdownLink, dropdown) {
       e.preventDefault(); // Prevent default link behavior
       const href = dropdownLink.getAttribute("href");
       if (!href || href === "#") return; // Ignore if no href or just a hash
-      window.location.href = href; // Navigate to the link
-    },
-    adjustDropdownBehavior() {
-      this.isMobile = window.innerWidth < 992;
-      const navbar = document.querySelector(".navbar");
-      if (!navbar) return;
-      if (!this.isMobile) {
-        const dropdownLinks = navbar.querySelectorAll(".dropdown-toggle");
 
+      // Check if on mobile and if the dropdown should open on mobile (top-level dropdowns only)
+      const openOnMobile = dropdownLink.getAttribute("data-open-on-mobile");
+
+      // Check if on mobile for custom behavior, otherwise navigate to link
+      if (this.isMobile && openOnMobile != null) {
+        const navbar = document.querySelector(".navbar");
+        const dropdownLinks = navbar!.querySelectorAll(".dropdown-toggle");
+
+        // If dropdown is not shown, show it and hide others. If it is shown, navigate to the link
+        if (dropdownLink.getAttribute("is-shown") == null) {
+          dropdown.show();
+          dropdownLink.setAttribute("is-shown", "true");
+          dropdownLinks.forEach((otherLink) => {
+            if (otherLink !== dropdownLink) {
+              otherLink.removeAttribute("is-shown");
+              const otherDropdown = bootstrap.Dropdown.getInstance(otherLink);
+              if (otherDropdown) {
+                otherDropdown.hide();
+              }
+            }
+          });
+        } else {
+          dropdownLink.removeAttribute("is-shown");
+          window.location.href = href;
+        }
+      } else {
+        window.location.href = href; // Navigate to the link
+      }
+    },
+
+    handleResize() {
+      const wasMobile = this.isMobile;
+      const nowMobile = window.innerWidth < 992;
+      if (wasMobile !== nowMobile) {
+        this.isMobile = nowMobile;
+        this.adjustDropdownBehavior();
+      }
+    },
+
+    adjustDropdownBehavior() {
+      const navbar = document.querySelector(".navbar");
+      const dropdownLinks = navbar!.querySelectorAll(".dropdown-toggle");
+      dropdownLinks.forEach((dropdownLink) => {
+        const dropdownMenu = dropdownLink.nextElementSibling;
+        if (dropdownMenu) {
+          dropdownMenu.classList.remove("fade-in", "fade-out", "show");
+        }
+        dropdownLink.closest("li")?.classList?.remove("show");
+        const dropdown = bootstrap.Dropdown.getInstance(dropdownLink);
+        dropdownLink.removeAttribute("is-shown"); // Reset mobile state
+        (dropdownLink as HTMLAnchorElement).blur();
+        if (dropdown) dropdown.hide(); // Ensure all dropdowns are closed on adjustment
+      });
+      if (this.dropdownHandlers.size > 0) {
+        this.resetDropdownEventListeners();
+      }
+      if (!this.isMobile) {
         dropdownLinks.forEach((dropdownLink) => {
           // Initialize Bootstrap dropdown instance
-          const dropdown = bootstrap.Dropdown.getOrCreateInstance(dropdownLink);
+          const dropdown = this.createBoostrapDropdown(dropdownLink);
           const dropdownMenu = dropdownLink.nextElementSibling;
 
           const boundHandleMouseEnter = () => this.handleMouseEnter(dropdown, dropdownMenu, dropdownLink);
 
           dropdownLink.addEventListener("mouseenter", boundHandleMouseEnter);
 
-          const boundHandleClick = (e) => this.handleClick(e, dropdownLink);
+          const boundHandleClick = (e) => this.handleClick(e, dropdownLink, dropdown);
 
           dropdownLink.addEventListener("click", boundHandleClick);
 
@@ -232,23 +302,18 @@ export default {
           }
 
           // Add handlers to map for easy removal later
-          if (!this.dropdownHandlers.has(dropdownLink)) {
-            this.dropdownHandlers.set(dropdownLink, []);
-          }
-
-          this.dropdownHandlers
-            .get(dropdownLink)
-            .push(
-              { type: "mouseenter", handler: boundHandleMouseEnter },
-              { type: "mouseleave", handler: boundHandleMouseLeave },
-              { type: "click", handler: boundHandleClick }
-            );
+          this.addToDropdownHandlersMap(dropdownLink, "mouseenter", boundHandleMouseEnter);
+          this.addToDropdownHandlersMap(parentElem || dropdownLink, "mouseleave", boundHandleMouseLeave);
+          this.addToDropdownHandlersMap(dropdownLink, "click", boundHandleClick);
         });
       } else {
-        // Reset mouseenter/leave event listeners when on mobile. This prevents many event listeners from stacking, as well as hover behavior from continuing on mobile
-        if (this.dropdownHandlers.size > 0) {
-          this.resetDropdownEventListeners();
-        }
+        dropdownLinks.forEach((dropdownLink) => {
+          const dropdown = this.createBoostrapDropdown(dropdownLink);
+          const boundHandleClick = (e) => this.handleClick(e, dropdownLink, dropdown);
+          dropdownLink.addEventListener("click", boundHandleClick);
+
+          this.addToDropdownHandlersMap(dropdownLink, "click", boundHandleClick);
+        });
       }
     },
   },
@@ -261,8 +326,18 @@ export default {
   // Makes navbar dropdowns open on hover
   // Ensure the DOM is fully loaded before running the script because Bootstrap's dropdown requires it
   mounted() {
+    this.isMobile = window.innerWidth < 992;
+
+    bootstrap.Dropdown.prototype._addEventListeners = function () {
+      // Override Bootstrap’s internal method so no click listeners are ever bound
+    };
+
     this.adjustDropdownBehavior();
-    window.addEventListener("resize", this.adjustDropdownBehavior);
+    window.addEventListener("resize", this.handleResize);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+    this.resetDropdownEventListeners();
   },
 };
 </script>
@@ -279,6 +354,12 @@ button .show {
 a:active {
   background: rgb(198, 198, 198);
   color: black;
+}
+
+a:focus {
+  background: rgb(198, 198, 198);
+  color: black;
+  outline: none;
 }
 
 .dotlogo {
