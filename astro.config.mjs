@@ -10,4 +10,7 @@ export default defineConfig({
   site: "https://www.its.dot.gov",
   output: "static",
   integrations: [partytown(), sitemap()],
+  redirects: {
+    "its.dot.gov/index.htm": "its.dot.gov"
+  }
 });
