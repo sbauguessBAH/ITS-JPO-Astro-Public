@@ -7,6 +7,7 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
 import { Image } from "astro:assets";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 // import TrainingsLayout from "./_trainings-layout.astro";
 // import CourseCard from "./_course-card.astro";
 
@@ -163,6 +164,11 @@ const getCourseCount = (path?: string) => courses.filter(course =>
     font-weight: 600;
     color: rgb(var(--color-gray));
   }
+  .course-card-footer {
+    padding: var(--size);
+    /* background: rgb(var(--color-gray-light)) */
+    color: rgb(var(--color-gray))
+  }
 </style>
 <Layout>
   <main class="program-main">
@@ -238,6 +244,11 @@ const getCourseCount = (path?: string) => courses.filter(course =>
                     {course.description}
                   </p>
                 </CardBody>
+                {course.action === "Register" && (
+                  <CardFooter class="course-card-footer">
+                    This link will take you to the NHI Catalog. Search for the course name or number to register.
+                  </CardFooter>
+                )}
               </Card>
             ))}
           </div>
