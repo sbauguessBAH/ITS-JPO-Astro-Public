@@ -1,8 +1,8 @@
 ---
-import scrcImage from "@/src/assets/images/pcb/resources/scrc.png";
-import v2xImage from "@/src/assets/images/pcb/resources/v2x.jpg";
 import caveImage from "@/src/assets/images/pcb/resources/cave.jpg";
 import cohortImage from "@/src/assets/images/pcb/resources/cohort.jpg";
+import scrcImage from "@/src/assets/images/pcb/resources/scrc.png";
+import v2xImage from "@/src/assets/images/pcb/resources/v2x.jpg";
 import OverlayCard, { type OverlayResource } from "@/src/components/programs/OverlayCard.astro";
 
 const resources: OverlayResource[] = [
@@ -16,28 +16,28 @@ const resources: OverlayResource[] = [
   //   color: "blue"
   // },
   {
-    name: "Vehicle-to-Everything (V2X) Training",
-    description: "A comprehensive training program provides foundational trainings for practitioners as well as technical trainings on V2X standards.",
-    path: "/resources/pcb/trainings/v2x-trainings",
+    alt: "",
     background: v2xImage,
-    alt: "",
-    color: "green"
+    color: "green",
+    description: "A comprehensive training program provides foundational trainings for practitioners as well as technical trainings on V2X standards.",
+    name: "Vehicle-to-Everything (V2X) Training",
+    path: "/resources/pcb/trainings/v2x-trainings"
   },
   {
-    name: "Connected and Automated Vehicle Education (CAVe)",
-    description: "Hands-on learning experience to aid curriculum, and support instruction for community colleges and trade schools, facilitate benchmarking connected vehicle equipment, and support onboarding of ITS technicians.",
-    path: "/resources/pcb/technical-assistance/cave",
+    alt: "",
     background: caveImage,
-    alt: "",
-    color: "orange"
+    color: "orange",
+    description: "Hands-on learning experience to aid curriculum, and support instruction for community colleges and trade schools, facilitate benchmarking connected vehicle equipment, and support onboarding of ITS technicians.",
+    name: "Connected and Automated Vehicle Education (CAVe)",
+    path: "/resources/pcb/technical-assistance/cave"
   },
   {
-    name: "Accelerating V2X Cohort",
-    description: "A community of practice of state and local agencies -- and other infrastructure owners and operators (IOOs) -- sharing best practices and lessons learned to  accelerate the deployment of V2X technologies.",
-    path: "/resources/pcb/technical-assistance/v2x-cohort",
-    background: cohortImage,
     alt: "",
-    color: "purple"
+    background: cohortImage,
+    color: "purple",
+    description: "A community of practice of state and local agencies -- and other infrastructure owners and operators (IOOs) -- sharing best practices and lessons learned to  accelerate the deployment of V2X technologies.",
+    name: "Accelerating V2X Cohort",
+    path: "/resources/pcb/technical-assistance/v2x-cohort"
   }
 ]
 ---

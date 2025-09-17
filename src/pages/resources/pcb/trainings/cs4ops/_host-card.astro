@@ -1,15 +1,16 @@
 ---
 import type { ImageMetadata } from 'astro';
+
 import { Image } from "astro:assets";
 
 interface Props {
-  name: string;
-  title: string;
   description: string
   image: ImageMetadata
+  name: string;
+  title: string;
 }
 
-const { name, title, description, image } = Astro.props;
+const { description, image, name, title } = Astro.props;
 ---
 <style>
   .host-card {
@@ -28,9 +29,9 @@ const { name, title, description, image } = Astro.props;
 </style>
 <div class="host-card">
   <Image 
-    src={image}
     alt={`Headshot of ${name}`}
     class="host-card-image"
+    src={image}
   />
   <div>
     <h4 class="program-title-xs">

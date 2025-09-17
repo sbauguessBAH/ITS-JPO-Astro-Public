@@ -1,29 +1,29 @@
 ---
+import { Image } from "astro:assets";
+
 import microlearningImage from "@/src/assets/images/pcb/actions/microlearning.jpg";
 import peerExchangesImage from "@/src/assets/images/pcb/actions/peer-exchanges.jpg";
 import resourcesImage from "@/src/assets/images/pcb/actions/resources.jpg";
 import trainingsImage from "@/src/assets/images/pcb/actions/trainings.jpg";
 import v2xToolsImage from "@/src/assets/images/pcb/actions/v2x-tools.png";
 import webinarsImage from "@/src/assets/images/pcb/actions/webinars.jpg";
-
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import { Image } from "astro:assets";
 
 const resources = [
   {
-    title: "Explore ITS Trainings",
     description: "Discover available training sessions to enhance your ITS knowledge.",
-    path: "/resources/pcb/trainings",
     image: trainingsImage,
+    path: "/resources/pcb/trainings",
+    title: "Explore ITS Trainings",
   },
   {
-    title: "Explore Microlearning Videos",
     description: "Access brief videos for quick, focused learning on ITS topics.",
-    path: "/resources/pcb/microlearning",
     image: microlearningImage,
+    path: "/resources/pcb/microlearning",
+    title: "Explore Microlearning Videos",
   },
   // {
   //   title: "Access Academic Resources",
@@ -32,10 +32,10 @@ const resources = [
   //   image: resourcesImage,
   // },
   {
-    title: "Collaborate through Peer Exchanges",
     description: "Engage with your peers to share your challenges, best practices, and experiences advancing ITS technologies.",
-    path: "/resources/pcb/peer-exchanges",
     image: peerExchangesImage,
+    path: "/resources/pcb/peer-exchanges",
+    title: "Collaborate through Peer Exchanges",
   },
   // {
   //   title: "Access V2X Educational Resources",
@@ -84,12 +84,12 @@ const resources = [
 </style>
 <div class="card-grid">
   {resources.map(resource => (
-    <Card href={resource.path} shadow="md" radius="md" class="resource-card">
+    <Card class="resource-card" href={resource.path} radius="md" shadow="md">
       <CardHeader class="p-0">
         <Image 
-          src={resource.image}
           alt={resource.title}
           class="resource-card-image shadow"
+          src={resource.image}
         />
       </CardHeader>
       <CardBody class="resource-card-body">

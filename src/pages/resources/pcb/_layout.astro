@@ -1,9 +1,10 @@
 ---
+import type { ChildNavigationItem } from "@/src/types";
+
+import banner from "@/src/assets/images/pcb/banner.png";
 import ProgramBanner from "@/src/components/programs/ProgramBanner.astro";
 import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
-import banner from "@/src/assets/images/pcb/banner.png";
 import ProgramMenu from "@/src/components/programs/ProgramMenu.astro";
-import type { ChildNavigationItem } from "@/src/types";
 
 const keywords = [
   "ITS Professional Capacity Building Program", 
@@ -24,9 +25,9 @@ const items: ChildNavigationItem[] = [
     url: '/resources/pcb' 
   },
   { 
+    hasGeneratedChildItems: true, 
     name: 'Trainings', 
-    url: '/resources/pcb/trainings', 
-    hasGeneratedChildItems: true,
+    url: '/resources/pcb/trainings',
   },
   { 
     name: 'Microlearning Videos', 
@@ -34,7 +35,6 @@ const items: ChildNavigationItem[] = [
   },
   {
     name: 'Technical Assistance',
-    url: '/resources/pcb/technical-assistance',
     pages: [
       { 
         name: 'Connected and Automated Vehicle Education (CAVe)', 
@@ -44,12 +44,13 @@ const items: ChildNavigationItem[] = [
         name: 'Accelerating V2X Cohort', 
         url: '/resources/pcb/technical-assistance/v2x-cohort'
       }
-    ]
+    ],
+    url: '/resources/pcb/technical-assistance'
   },
   { 
+    hasGeneratedChildItems: true, 
     name: 'Peer Exchanges', 
-    url: '/resources/pcb/peer-exchanges', 
-    hasGeneratedChildItems: true  
+    url: '/resources/pcb/peer-exchanges'  
   },
   // { 
   //   name: 'Academic Resources', 
@@ -68,9 +69,9 @@ const items: ChildNavigationItem[] = [
 ]
 ---
 <ProgramLayout
-  title="ITS Professional Capacity Building"
-  keywords={keywords}
   description={description}
+  keywords={keywords}
+  title="ITS Professional Capacity Building"
 >
   <ProgramBanner 
     hasOverlay={true}

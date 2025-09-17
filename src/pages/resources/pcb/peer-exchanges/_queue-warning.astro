@@ -1,9 +1,11 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "../_layout.astro";
-import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import { Image } from "astro:assets";
+
 import qwsImage from "@/src/assets/images/pcb/peer-exchanges/qws.png";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+
+import Layout from "../_layout.astro";
 ---
 <style>
   .overview-section {
@@ -50,7 +52,7 @@ import qwsImage from "@/src/assets/images/pcb/peer-exchanges/qws.png";
           </p>
         </div>
         <div class="overview-image">
-          <Image src={qwsImage} alt="Queue Warning System" class="img-fluid radius-md shadow" />
+          <Image alt="Queue Warning System" class="img-fluid radius-md shadow" src={qwsImage} />
         </div>
       </div>
     </ProgramSection>

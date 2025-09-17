@@ -1,51 +1,51 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "../../_layout.astro";
+import edCox from "@/src/assets/images/pcb/webinars/headshots/ed-cox.jpg";
+import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar.png";
+import kellyWells from "@/src/assets/images/pcb/webinars/headshots/kelly-wells.jpg";
+import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import Link from "@/src/components/Link.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import Link from "@/src/components/Link.astro";
-import base_url from "@/src/lib/base_url";
-import Accordion from "@/src/components/Accordion.astro";
-import AccordionItem from "@/src/components/AccordionItem.astro";
-
-import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
-import kellyWells from "@/src/assets/images/pcb/webinars/headshots/kelly-wells.jpg";
-import edCox from "@/src/assets/images/pcb/webinars/headshots/ed-cox.jpg";
-import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar.png";
-import HostCard from "./_host-card.astro";
 import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
 import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../../_layout.astro";
+import HostCard from "./_host-card.astro";
 
 const hosts = [
   {
-    name: "Ralph Volpe",
-    title: "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist",
     description: "Ralph Volpe is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Systems Operations Specialist for the FHWA Resource Center, Operations Technical Service Team. Mr. Volpe is responsible for providing technical assistance, training, and deploying strategies and techniques to FHWA's internal and external customers on topics such as TSMO, integrated corridor management, active transportation and demand management, operations performance management, and organizing/planning for operations. Before joining FHWA in 2001, Mr. Volpe was a specialist in planning and public transportation for the Tennessee Department of Transportation. Mr. Volpe holds a BS in Logistics and MS in civil engineering from the University of Tennessee, Knoxville.",
-    image: ralphVolpe
+    image: ralphVolpe,
+    name: "Ralph Volpe",
+    title: "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist"
   },
 ]
 
 const presenters = [
   {
-    name: "Kelly Wells",
-    title: "Emergency Management Instructor, North Carolina Department of Transportation (NCDOT)",
     description: "Kelly Wells has been at NCDOT for over 20 years, mostly working in TSMO. She currently manages DriveNC.gov, NC 511, NCDOT Customer Service, and Probe Speed Data. Ms. Wells began her career at FHWA and has a Civil Engineering degree from George Washington University.",
-    image: kellyWells
+    image: kellyWells,
+    name: "Kelly Wells",
+    title: "Emergency Management Instructor, North Carolina Department of Transportation (NCDOT)"
   },
   {
-    name: "Ed Cox",
-    title: "ITS Engineering Director, Indiana Department of Transportation's (INDOT) Traffic Management",
     description: "Ed Cox is the ITS Engineering Director with the Indiana Department of Transportation's Traffic Management group. He has more than 20 years of experience in traffic operations for INDOT. Mr. Cox is a 1991 graduate of Purdue University with a BS in Civil Engineering. He is also an Indiana Professional Engineer.",
-    image: edCox
+    image: edCox,
+    name: "Ed Cox",
+    title: "ITS Engineering Director, Indiana Department of Transportation's (INDOT) Traffic Management"
   },
   {
-    name: "James Colyar",
-    title: "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Office of Operations",
     description: "James Colyar is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Specialist with the FHWA Office of Operations. He has been with FHWA for over 20 years. Mr. Colyar has experience in traffic engineering, traffic analysis and modeling, intelligent transportation systems, and transportation systems management and operations. Mr. Colyar holds an MS in civil engineering from North Carolina State University and an MS in Transportation Policy, Operations & Logistics from George Mason University.",
-    image: jamesColyar
+    image: jamesColyar,
+    name: "James Colyar",
+    title: "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Office of Operations"
   },
 ]
 ---
@@ -107,8 +107,8 @@ const presenters = [
           <a 
             class="resource-card-button" 
             href="https://usdot.zoomgov.com/rec/play/EGD1PAQqDzp_Z6yrA5p8yy0FyQTFY7coOpQA2LOqXol5QJeSMsId7D1LjXzHumu6L1z6rX4KQzq4U4YE.8580sbPLAquzwXjW?continueMode=true" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
+            target="_blank"
           >
             <FilmIcon/>
             Webinar Replay
@@ -116,8 +116,8 @@ const presenters = [
           <a 
             class="resource-card-button" 
             href={base_url("/assets/pcb/cs4ops/part-5/s230919_Crowdsourcing_Course_Emergency_and_Work_Zone_Management_and_Next_Steps_presentation.pdf")} 
-            target="_blank" 
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
+            target="_blank"
           >
             <PdfIcon/>
             PDF
@@ -219,10 +219,10 @@ const presenters = [
       </h3>
       {hosts.map((item) => (
         <HostCard
-          name={item.name}
-          title={item.title}
           description={item.description}
           image={item.image}
+          name={item.name}
+          title={item.title}
         />
       ))}
       <h3 class="program-title-md mb-4">
@@ -230,10 +230,10 @@ const presenters = [
       </h3>
       {presenters.map((item) => (
         <HostCard
-          name={item.name}
-          title={item.title}
           description={item.description}
           image={item.image}
+          name={item.name}
+          title={item.title}
         />
       ))}
     </ProgramSection>

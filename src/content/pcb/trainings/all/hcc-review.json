@@ -1,0 +1,100 @@
+[
+  {
+    "title": "Foundational Systems Engineering Activities to Support ITS Procurement",
+    "description": "This training guides transportation professionals in applying systems engineering to advance ITS project development with a focus on planning and needs-based scoping. Click to contact the ITS PCB Program.",
+    "image": "./images/sys-eng-activities.jpg",
+    "alt": "",
+    "isExternal": true,
+    "url": "mailto:itspcb@dot.gov",
+    "category": "systems-engineering",
+    "type": "in-person"
+  },
+  {
+    "title": "FHWA-NHI-133133: Planning for TSMO - Putting Concepts into Action",
+    "description": "This web conference training session builds on Course 2 (NHI-133132) and uses interactive activities to engage participants and bring the concepts of planning for TSMO to life.",
+    "url": "https://fhwanhi.geniussis.com/RegistrationByCourse.aspx",
+    "image": "./images/tsmo-concepts-into-action.jpg",
+    "alt": "",
+    "isExternal": true,
+    "category": "tsmo",
+    "type": "web-based",
+    "action": "Register"
+  },
+  {
+    "title": "ARC-IT Training",
+    "description": "This training provides an overview of the Architecture Reference for Cooperative & Intelligent Transportation (ARC-IT) including background, structure, and use of the architecture.",
+    "image": "./images/arc-it.jpg",
+    "alt": "",
+    "url": "https://www.arc-it.net/html/resources/arcitwebtraining.html",
+    "isExternal": true,
+    "category": "its-architecture",
+    "type": "web-based",
+    "action": "View Training"
+  },
+  {
+    "title": "RAD-IT Training",
+    "description": "This training provides an overview of the Regional Architecture Development Tool for Intelligent Transportation (RAD-IT) - an interactive software program that assists transportation planners and system integrators in the development of regional and project architectures.",
+    "image": "./images/rad-it.jpg",
+    "alt": "",
+    "url": "https://www.arc-it.net/html/resources/raditwebtraining.html",
+    "isExternal": true,
+    "category": "its-architecture",
+    "type": "web-based",
+    "action": "View Training"
+  },
+  {
+    "title": "SET-IT Training",
+    "description": "This training provides an overview of the Systems Engineering Tool for Intelligent Transportation (SET-IT) - an interactive software program that assists transportation project developers and system integrators in the development of project architectures.",
+    "image": "./images/set-it.jpg",
+    "alt": "",
+    "url": "https://www.arc-it.net/html/resources/setitwebtraining.html",
+    "isExternal": true,
+    "category": "its-architecture",
+    "type": "web-based",
+    "action": "View Training"
+  },
+  {
+    "title": "ITS Architecture Use & Maintenance Training",
+    "description": "This training prepare ITS professionals to effectively use and maintain their regional ITS architecture. Participants should have a copy of their regional ITS architecture to use to complete the exercises.",
+    "image": "./images/use-and-maintenance.jpg",
+    "alt": "",
+    "url": "https://www.arc-it.net/html/resources/useandmainttraining.html",
+    "isExternal": true,
+    "category": "its-architecture",
+    "type": "web-based",
+    "action": "View Training"
+  },
+  {
+    "title": "On-Site Trainings and Workshops",
+    "description": "USDOT offers on-site, facilitated courses and workshops on several topic areas",
+    "image": "./images/academic-workshops.jpg",
+    "alt": "",
+    "url": "https://www.arc-it.net/html/resources/training.html",
+    "isExternal": true,
+    "category": "its-architecture",
+    "type": "in-person",
+    "action": "View Trainings"
+  },
+  {
+    "title": "Standards Trainings",
+    "description": "The module-based training series is for practitioners in state and local highway agencies and transit agencies who seek the skills needed to procure, test, implement, and operate standards-based ITS systems and devices. Consultants, system designers, integrators, and testers will also find the training informative.",
+    "image": "./images/standards.png",
+    "alt": "",
+    "url": "/resources/pcb/trainings/standards-trainings",
+    "isExternal": false,
+    "category": "standards",
+    "type": "web-based",
+    "action": "View Trainings"
+  },
+  {
+    "title": "Transit Standards Trainings",
+    "description": "The module-based transit training series focuses exclusively on standards used in transit applications. Similar to the standards training series, the transit modules give practitioners the skills to help them effectively procure and utilize standards used in transit systems and devices.",
+    "image": "./images/transit-standards.jpg",
+    "alt": "",
+    "url": "/resources/pcb/trainings/transit-standards-trainings",
+    "isExternal": false,
+    "category": "standards",
+    "type": "web-based",
+    "action": "View Trainings"
+  }
+]

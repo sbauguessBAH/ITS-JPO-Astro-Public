@@ -6,6 +6,7 @@ import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Card from "@/src/components/programs/card/Card.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
+import { getCollection } from "astro:content";
 
 export const areas = [
   {
@@ -48,7 +49,7 @@ export async function getStaticPaths() {
 const { path } = Astro.params;
 const { title } = Astro.props;
 
-const resources = await getEntry("automation", "automation").then(entry => entry.data);
+const resources = await getCollection("automationResources");
 
 interface Deliverable {
   title: string;
@@ -63,25 +64,25 @@ interface Project {
 }
 
 const projects = resources
-  .filter(resource => title === "All" || resource.area === title)
-  .reduce((acc, curr) => {
-    const index = acc.findIndex(prev => prev.title === curr.project);
+  .filter(({ data }) => title === "All" || data.area === title)
+  .reduce((acc, { data }) => {
+    const index = acc.findIndex(prev => prev.title === data.project);
 
     if (index >= 0) {
       acc[index].deliverables.push({
-        title: curr.deliverable,
-        year: curr.year,
-        url: curr.url
+        title: data.deliverable,
+        year: data.year,
+        url: data.url
       })
     } else {
       acc.push({
-        title: curr.project,
-        area: curr.area,
+        title: data.project,
+        area: data.area,
         deliverables: [
           {
-            title: curr.deliverable,
-            year: curr.year,
-            url: curr.url
+            title: data.deliverable,
+            year: data.year,
+            url: data.url
           }
         ]
       })

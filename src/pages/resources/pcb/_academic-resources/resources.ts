@@ -5,16 +5,16 @@ import studentCompetitionsImage from "@/src/assets/images/pcb/academic-resources
 
 export const academicResources = [
   {
-    title: "Academic Course Modules",
     description: "ITS Academic Course Modules aim to advance knowledge of ITS by providing instructor and student content targeted to college and university students. Content includes Instructor Guides, PowerPoint Presentations, Student Participant Materials, and more.",
     image: courseModulesImage,
-    slug: "course-modules"
+    slug: "course-modules",
+    title: "Academic Course Modules"
   },
   {
-    title: "Student Competitions",
     description: "The Transportation Technology Tournament (TTT) is an annual student competition conducted by the USDOT, NOCoE, and ITE allowing students to work with public agencies to apply ITS and TSMO solutions to real-world transportation challenges.",
     image: studentCompetitionsImage,
-    slug: "student-competitions"
+    slug: "student-competitions",
+    title: "Student Competitions"
   },
   // {
   //   title: "Academic Workshops",
@@ -23,15 +23,15 @@ export const academicResources = [
   //   slug: "workshops"
   // },
   {
-    title: "Academic Cohort",
     description: "The ITS Academic Cohort brings together teaching practitioners and the ITS PCB Program to jointly develop academic resources.",
     image: academicWorkshopsImage,
-    slug: "academic-cohort"
+    slug: "academic-cohort",
+    title: "Academic Cohort"
   },
   {
-    title: "Career Paths",
     description: "ITS Career Paths provides a snapshot overview of ITS careers including key details on specific roles, responsibilities, skills/education, and example career paths",
     image: careerPathsImage,
-    slug: "career-paths"
+    slug: "career-paths",
+    title: "Career Paths"
   },
 ]

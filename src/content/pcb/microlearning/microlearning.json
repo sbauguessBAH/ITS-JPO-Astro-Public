@@ -1,0 +1,56 @@
+[
+  {
+    "title": "ITS and Safety",
+    "id": "its-and-safety",
+    "trainings": [
+      { 
+        "title": "ITS and Safe System Approach", 
+        "description": "An overview of how intelligent transportation systems (ITS) align with the Safe System Approach (SSA) - a guiding framework to enhance safety on our surface transportation system.",
+        "url": "https://youtu.be/kJ5A7DpEOOc?si=5-OsrGmRct3Xp7bQ", 
+        "isExternal": true,
+        "image": "./images/safe-system.png",
+        "id": "its-and-safe-system-approach"
+      },
+      { 
+        "title": "ITS and Safer People", 
+        "description": "Leveraging intelligent transportation systems (ITS) to promote responsible driving behavior and create road conditions that prioritize every traveler's safety.",
+        "url": "https://youtu.be/Ho8zG_IEqB4?si=ztUHQNJXJyuxQK3C", 
+        "isExternal": true,
+        "image": "./images/safer-people.png",
+        "id": "its-and-safer-people"
+      },
+      { 
+        "title": "ITS and Safer Vehicles", 
+        "description": "Applying intelligent transportation systems (ITS) technologies to broaden in-vehicle safety features that prevent crashes and reduce their severity for occupants and bystanders.",
+        "url": "https://www.youtube.com/watch?v=4Gi_6KVJzD8", 
+        "isExternal": true,
+        "image": "./images/safer-vehicles.png",
+        "id": "its-and-safer-vehicles"
+      },
+      { 
+        "title": "ITS and Safer Speeds", 
+        "description": "Exploring how ITS technology can be used to encourage drivers to comply with posted speed limits, dynamically set speed limits based on travel conditions, or enforce posted speed limits.",
+        "url": "https://youtu.be/6S_VGgVJcLI?si=lOsDBpmt8QLhvAVC", 
+        "isExternal": true,
+        "image": "./images/safer-speeds.png",
+        "id": "its-and-safer-speeds"
+      },
+      { 
+        "title": "ITS and Safer Roads", 
+        "description": "Using intelligent transportation systems (ITS)-driven roadway designs to compensate for human error, encourage safer behaviors, and protect the most vulnerable users.",
+        "url": "https://www.youtube.com/watch?v=jaFAltGvMe0", 
+        "isExternal": true,
+        "image": "./images/safer-roads.png",
+        "id": "its-and-safer-roads"
+      },
+      { 
+        "title": "ITS and Post-Crash Care", 
+        "description": "Enhancing survivability and responder safety by integrating intelligent transportation systems (ITS) into rapid emergency access and comprehensive traffic incident management.",
+        "url": "https://www.youtube.com/watch?v=lZBQ9nHTras", 
+        "isExternal": true,
+        "image": "./images/post-crash-care.png",
+        "id": "its-and-post-crash-care"
+      }
+    ]
+  }
+]

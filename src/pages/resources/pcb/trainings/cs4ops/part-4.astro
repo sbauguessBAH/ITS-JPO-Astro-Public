@@ -1,52 +1,52 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "../../_layout.astro";
+import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar.png";
+import jeremyDilmore from "@/src/assets/images/pcb/webinars/headshots/jeremy-dilmore.jpg";
+import stephanieMarik from "@/src/assets/images/pcb/webinars/headshots/stephanie-marik.jpg";
+import wangZhang from "@/src/assets/images/pcb/webinars/headshots/wang-zhang.png";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import Link from "@/src/components/Link.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import Link from "@/src/components/Link.astro";
-import base_url from "@/src/lib/base_url";
-import Accordion from "@/src/components/Accordion.astro";
-import AccordionItem from "@/src/components/AccordionItem.astro";
-
-import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar.png";
-import stephanieMarik from "@/src/assets/images/pcb/webinars/headshots/stephanie-marik.jpg";
-import wangZhang from "@/src/assets/images/pcb/webinars/headshots/wang-zhang.png";
-import jeremyDilmore from "@/src/assets/images/pcb/webinars/headshots/jeremy-dilmore.jpg";
-import HostCard from "./_host-card.astro";
 import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
-import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
 import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../../_layout.astro";
+import HostCard from "./_host-card.astro";
 
 const hosts = [
   {
-    name: "James Colyar",
-    title: "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Office of Operations",
     description: "Mr. Colyar (host) is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Specialist with the FHWA Office of Operations. He has been with FHWA for over 20 years. He has experience in traffic engineering, traffic analysis and modeling, intelligent transportation systems, and transportation systems management and operations. Mr. Colyar holds an MS in civil engineering from North Carolina State University and an MS in Transportation Policy, Operations & Logistics from George Mason University.",
-    image: jamesColyar
+    image: jamesColyar,
+    name: "James Colyar",
+    title: "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Office of Operations"
   },
 ]
 
 const presenters = [
   {
-    name: "Stephanie Marik",
-    title: "Road Weather Instructor, Ohio Department of Transporation",
     description: "Ms. Marik has worked in Operations for The Ohio Department of Transportation since 2013. In her current role as the Transportation Systems Performance Engineer, within the Office of Traffic Management, she provides engineering analysis and creates reports and dashboards related to congestion, mobility, and incident management.",
-    image: stephanieMarik
+    image: stephanieMarik,
+    name: "Stephanie Marik",
+    title: "Road Weather Instructor, Ohio Department of Transporation"
   },
   {
-    name: "Dr. Wang Zhang",
-    title: "Transportation Data Program Manager, Maricopa Association of Governments",
     description: "Dr. Zhang (Arterial Co-Instructor) is the transportation data program manager at the Maricopa Association of Governments (MAG). He received his Ph.D. in civil engineering from Virginia Tech in 2006. For the last fifteen years at MAG, his work involves transportation data collection and processing, and applying data analytics and visualizations to system analysis, transportation modeling, and planning studies. He has experience in leveraging a wide span of transportation data from traditional ones to cutting-edge ones.",
-    image: wangZhang
+    image: wangZhang,
+    name: "Dr. Wang Zhang",
+    title: "Transportation Data Program Manager, Maricopa Association of Governments"
   },
   {
-    name: "Jeremy Dilmore",
-    title: "Transportation Systems Management and Operation Engineer, Florida Department of Transportation District 5",
     description: "Mr. Dilmore (Arterial Co-Instructor) is the Transportation Systems Management and Operation Engineer for the Florida Department of Transportation District 5. In this position, he is responsible for leading FDOT’s technology efforts including working in the fields of signal timing optimization, managed lanes, simulation modeling, and connected and autonomous vehicles.",
-    image: jeremyDilmore
+    image: jeremyDilmore,
+    name: "Jeremy Dilmore",
+    title: "Transportation Systems Management and Operation Engineer, Florida Department of Transportation District 5"
   },
 ]
 ---
@@ -108,8 +108,8 @@ const presenters = [
           <a 
             class="resource-card-button" 
             href="https://usdot.zoomgov.com/rec/play/bTqAM-d2viu7vUKcGAuVmTKXmaVr66M6AV-6VQ8ywl72pwS_M8axgnvvGYKg0Cab4DN1XMoaxFCnV2Hg.Dgzmj9pLgRz_2C5J?continueMode=true.aspx" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
+            target="_blank"
           >
             <FilmIcon/>
             Webinar Replay
@@ -117,8 +117,8 @@ const presenters = [
           <a 
             class="resource-card-button" 
             href={base_url("/assets/pcb/cs4ops/part-4/s230815_Crowdsourcing_Course_Road_Weather_and_Arterial_Management_presentation.pptx")} 
-            target="_blank" 
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
+            target="_blank"
           >
             <PptIcon/>
             PowerPoint
@@ -126,8 +126,8 @@ const presenters = [
           <a 
             class="resource-card-button" 
             href={base_url("/assets/pcb/cs4ops/part-4/s230815_Crowdsourcing_Course_Road_Weather_and_Arterial_Management_presentation.pdf")} 
-            target="_blank" 
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
+            target="_blank"
           >
             <PdfIcon/>
             PDF
@@ -232,10 +232,10 @@ const presenters = [
       </h3>
       {hosts.map((item) => (
         <HostCard
-          name={item.name}
-          title={item.title}
           description={item.description}
           image={item.image}
+          name={item.name}
+          title={item.title}
         />
       ))}
       <h3 class="program-title-md mb-4">
@@ -243,10 +243,10 @@ const presenters = [
       </h3>
       {presenters.map((item) => (
         <HostCard
-          name={item.name}
-          title={item.title}
           description={item.description}
           image={item.image}
+          name={item.name}
+          title={item.title}
         />
       ))}
     </ProgramSection>

@@ -1,18 +1,20 @@
 ---
-import Layout from "../../_layout.astro";
-import caveLogo from "@/src/assets/images/pcb/cave/cave-logo.png"
-import caveTransparent from "@/src/assets/images/pcb/cave/cave-transparent.png"
+import { Image } from "astro:assets";
+
+import caveConfiguration from "@/src/assets/images/pcb/cave/cave-configuration.jpg"
 import caveDesignDocuments from "@/src/assets/images/pcb/cave/cave-design-documents.jpg"
 import caveDiy from "@/src/assets/images/pcb/cave/cave-diy.jpg"
-import caveConfiguration from "@/src/assets/images/pcb/cave/cave-configuration.jpg"
-import { Image } from "astro:assets";
-import Videos from "./_videos.astro";
-import base_url from "@/src/lib/base_url";
+// import caveLogo from "@/src/assets/images/pcb/cave/cave-logo.png"
+import caveTransparent from "@/src/assets/images/pcb/cave/cave-transparent.png"
 import rsu from "@/src/assets/images/pcb/cave/rsu.png"
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Card from "@/src/components/programs/card/Card.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../../_layout.astro";
+// import Videos from "./_videos.astro";
 ---
 <style>
   .overview-section {
@@ -121,8 +123,8 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
             <a 
               class="cave-button" 
               href="https://usdot-carma.atlassian.net/wiki/spaces/CMNT/pages/2628485130/CAVe-in-a-box+Training"
-              target="_blank"
               rel="noopener noreferrer"
+              target="_blank"
             >
               Learn More
             </a>
@@ -130,7 +132,7 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
         </div>
         <div class="overview-image">
           <figure class="figure">
-            <Image src={caveTransparent} alt="CAVe-in-a-box" class="img-fluid cave-transparent-image"/>
+            <Image alt="CAVe-in-a-box" class="img-fluid cave-transparent-image" src={caveTransparent}/>
             <figcaption class="figure-caption text-right">
               Source: FHWA
             </figcaption>
@@ -145,7 +147,7 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
       <div class="card-grid">
         <Card>
           <CardHeader class="resource-card-header">
-            <Image src={caveDesignDocuments} alt="CAVe-in-a-box" class="resource-card-image"/>
+            <Image alt="CAVe-in-a-box" class="resource-card-image" src={caveDesignDocuments}/>
           </CardHeader>
           <CardBody>
             <div class="resource-card-body">
@@ -159,8 +161,8 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
               <div>
                 <a 
                   class="cave-button" 
-                  target="_blank" 
-                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_SysDes_April2022.pdf")}
+                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_SysDes_April2022.pdf")} 
+                  target="_blank"
                 >
                   View PDF
                 </a>
@@ -170,7 +172,7 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
         </Card>
         <Card>
           <CardHeader class="resource-card-header">
-            <Image src={caveDiy} alt="Two people standing over CAVe-in-a-box" class="resource-card-image"/>
+            <Image alt="Two people standing over CAVe-in-a-box" class="resource-card-image" src={caveDiy}/>
           </CardHeader>
           <CardBody>
             <div class="resource-card-body">
@@ -183,8 +185,8 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
               <div>
                 <a 
                   class="cave-button" 
-                  target="_blank" 
-                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf")}
+                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf")} 
+                  target="_blank"
                 >
                   View PDF
                 </a>
@@ -194,7 +196,7 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
         </Card>
         <Card>
           <CardHeader class="resource-card-header">
-            <Image src={caveConfiguration} alt="A laptop connected to a CAVe-in-a-box" class="resource-card-image"/>
+            <Image alt="A laptop connected to a CAVe-in-a-box" class="resource-card-image" src={caveConfiguration}/>
           </CardHeader>
           <CardBody>
             <div class="resource-card-body">
@@ -207,8 +209,8 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
               <div>
                 <a 
                   class="cave-button" 
-                  target="_blank" 
-                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf")}
+                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf")} 
+                  target="_blank"
                 >
                   View PDF
                 </a>
@@ -248,15 +250,15 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
             <a 
               class="cave-button" 
               href="mailto:cavsupportservices@dot.gov?subject=CAVe-in-a-box Equipment Request"
-              target="_blank"
               rel="noopener noreferrer"
+              target="_blank"
             >
               Get Equipment
             </a>
           </div>
         </div>
         <div class="overview-image">
-          <Image src={rsu} alt="CAVe-in-a-box" class="img-fluid rsu-image"/>
+          <Image alt="CAVe-in-a-box" class="img-fluid rsu-image" src={rsu}/>
         </div>
       </div>
     </ProgramSection>

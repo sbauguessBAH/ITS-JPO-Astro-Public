@@ -1,52 +1,52 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "../../_layout.astro";
+import johnParker from "@/src/assets/images/pcb/webinars/headshots/john-parker.png";
+import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
+import salCowan from "@/src/assets/images/pcb/webinars/headshots/sal-cowan.jpg";
+import vaishaliShah from "@/src/assets/images/pcb/webinars/headshots/vaishali-shah.png";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import Link from "@/src/components/Link.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import Link from "@/src/components/Link.astro";
-import base_url from "@/src/lib/base_url";
-import Accordion from "@/src/components/Accordion.astro";
-import AccordionItem from "@/src/components/AccordionItem.astro";
-
-import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
-import salCowan from "@/src/assets/images/pcb/webinars/headshots/sal-cowan.jpg";
-import vaishaliShah from "@/src/assets/images/pcb/webinars/headshots/vaishali-shah.png";
-import johnParker from "@/src/assets/images/pcb/webinars/headshots/john-parker.png";
-import HostCard from "./_host-card.astro";
 import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
-import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
 import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../../_layout.astro";
+import HostCard from "./_host-card.astro";
 
 const hosts = [
   {
-    name: "Ralph Volpe",
-    title: "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist",
     description: "Mr. Volpe is responsible for providing technical assistance, training, and deploying strategies and techniques to FHWA's internal and external customers on topics such as TSMO, integrated corridor management, active transportation and demand management, operations performance management, and organizing/planning for operations. Before joining FHWA in 2001, Mr. Volpe was a specialist in planning and public transportation for the Tennessee Department of Transportation. Mr. Volpe holds a Bachelor of Science in Logistics and Master of Science in civil engineering from the University of Tennessee, Knoxville.",
-    image: ralphVolpe
+    image: ralphVolpe,
+    name: "Ralph Volpe",
+    title: "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist"
   },
 ]
 
 const presenters = [
   {
-    name: "Sal Cowan",
-    title: "New Jersey Department of Transportation, Senior Director of Mobility, Traveler Information Instructor",
     description: "In his role, Mr. Cowan oversees the Department's TSM&O programs, including the Office of Emergency Management, Security, and Response where the State's TIM program is managed.",
-    image: salCowan
+    image: salCowan,
+    name: "Sal Cowan",
+    title: "New Jersey Department of Transportation, Senior Director of Mobility, Traveler Information Instructor"
   },
   {
-    name: "Vaishali Shah",
-    title: "AEM Corporation, Sr. Director of Transportation Systems Corporation, TIM Instructor, Support Lead for the EDC-5/6 Crowdsourcing Innovation",
     description: "Ms. Shah has led and contributed to FHWA, USDOT ITS JPO, FAA, and National Cooperative Highway Research Program efforts, helping public agencies improve decision-making through new technologies, tools, and processes. Ms. Shah holds a BS degree from the University of Maryland and an MS degree from the University of Texas.",
-    image: vaishaliShah
+    image: vaishaliShah,
+    name: "Vaishali Shah",
+    title: "AEM Corporation, Sr. Director of Transportation Systems Corporation, TIM Instructor, Support Lead for the EDC-5/6 Crowdsourcing Innovation"
   },
   {
-    name: "John Parker",
-    title: "Pennsylvania Turnpike Commission (PTC), Senior Traffic Operations Project Manager, TIM Subject Matter Expert",
     description: "Mr. Parker is responsible for Information Technology (IT) and Geographic Information Systems projects, as well as operational and safety studies. His projects include Truck Parking Management System, third-party navigation app integration, Emergency Vehicle Warning System (HAAS alert) implementation, and various ITS projects for the Turnpike. Before joining the PTC, John worked at Pennsylvania Department of Transportation for 17 years where he was responsible for the management of the Statewide Bridge Program and IT projects for the Program Center. Mr. Parker currently serves as a member of the Innovation Council for the PTC and is a member of the Eastern Transportation Coalition's third-party navigation and mapping initiative.",
-    image: johnParker
+    image: johnParker,
+    name: "John Parker",
+    title: "Pennsylvania Turnpike Commission (PTC), Senior Traffic Operations Project Manager, TIM Subject Matter Expert"
   },
 ]
 ---
@@ -108,8 +108,8 @@ const presenters = [
           <a 
             class="resource-card-button" 
             href="https://usdot.zoomgov.com/rec/play/L-LJM258S-zzuAK7XPdQJ2Jm-xU1VZ2khZeuZZN3r9t7bsT8Y8YnBpSxkiwloSAorqg1LXUOTT_AD-ox.CxTZrofJLj9jDlfM?startTime=1684256417000" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
+            target="_blank"
           >
             <FilmIcon/>
             Webinar Replay
@@ -117,8 +117,8 @@ const presenters = [
           <a 
             class="resource-card-button" 
             href={base_url("/assets/pcb/cs4ops/part-3/s230718_Crowdsourcing_Course_Traveler_Information_and_Traffic_Incident_Management_presentation.pptx")} 
-            target="_blank" 
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
+            target="_blank"
           >
             <PptIcon/>
             PowerPoint
@@ -126,8 +126,8 @@ const presenters = [
           <a 
             class="resource-card-button" 
             href={base_url("/assets/pcb/cs4ops/part-3/s230718_Crowdsourcing_Course_Traveler_Information_and_Traffic_Incident_Management_presentation.pdf")} 
-            target="_blank" 
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
+            target="_blank"
           >
             <PdfIcon/>
             PDF
@@ -244,10 +244,10 @@ const presenters = [
       </h3>
       {hosts.map((item) => (
         <HostCard
-          name={item.name}
-          title={item.title}
           description={item.description}
           image={item.image}
+          name={item.name}
+          title={item.title}
         />
       ))}
       <h3 class="program-title-md mb-4">
@@ -255,10 +255,10 @@ const presenters = [
       </h3>
       {presenters.map((item) => (
         <HostCard
-          name={item.name}
-          title={item.title}
           description={item.description}
           image={item.image}
+          name={item.name}
+          title={item.title}
         />
       ))}
     </ProgramSection>

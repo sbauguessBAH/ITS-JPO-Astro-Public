@@ -1,45 +1,45 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "../../_layout.astro";
+import alexWassman from "@/src/assets/images/pcb/webinars/headshots/alex-wassman.png";
+import chrisLambert from "@/src/assets/images/pcb/webinars/headshots/chris-lambert.png";
+import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import Link from "@/src/components/Link.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import Link from "@/src/components/Link.astro";
-import base_url from "@/src/lib/base_url";
-import Accordion from "@/src/components/Accordion.astro";
-import AccordionItem from "@/src/components/AccordionItem.astro";
-
-import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
-import alexWassman from "@/src/assets/images/pcb/webinars/headshots/alex-wassman.png";
-import chrisLambert from "@/src/assets/images/pcb/webinars/headshots/chris-lambert.png";
-import HostCard from "./_host-card.astro";
 import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
-import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
 import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../../_layout.astro";
+import HostCard from "./_host-card.astro";
 
 const hosts = [
   {
-    name: "Ralph Volpe",
-    title: "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist",
     description: "Mr. Volpe is responsible for providing technical assistance, training, and deploying strategies and techniques to FHWA's internal and external customers on topics such as TSMO, integrated corridor management, active transportation and demand management, operations performance management, and organizing/planning for operations. Before joining FHWA in 2001, Mr. Volpe was a specialist in planning and public transportation for the Tennessee Department of Transportation. Mr. Volpe holds a Bachelor of Science in Logistics and Master of Science in civil engineering from the University of Tennessee, Knoxville.",
-    image: ralphVolpe
+    image: ralphVolpe,
+    name: "Ralph Volpe",
+    title: "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist"
   },
 ]
 
 const presenters = [
   {
-    name: "Alex Wassman",
-    title: "Missouri Department of Transportation, Data Sources Instructor, Traffic Management and Operations Engineer",
     description: "Mr. Wassman has over 15 years of experience that spans TSMO, Traffic Management Center policy and operations, highway design, and intelligent transportation systems. He is the current chair of the Traffic Management Center Pooled Fund Study. He holds a Professional Engineer license and a Bachelor of Science in Civil Engineering from the University of Missouri.",
-    image: alexWassman
+    image: alexWassman,
+    name: "Alex Wassman",
+    title: "Missouri Department of Transportation, Data Sources Instructor, Traffic Management and Operations Engineer"
   },
   {
-    name: "Chris Lambert",
-    title: "Kentucky Transportation Cabinet (KYTC), Data Management Instructor",
     description: "Mr. Lambert has been with KYTC for over 23 years where he has served in various positions. Chris currently leads data modernization for the KYTC Maintenance Division. He previously supported ITS systems, managing the public-private partnership with Google/Waze and implementing a real-time data system that supports Traveler Information System (GoKY), Automated Crash Detection, Snow and Ice Decision Support, and Work Zone Monitoring.",
-    image: chrisLambert
+    image: chrisLambert,
+    name: "Chris Lambert",
+    title: "Kentucky Transportation Cabinet (KYTC), Data Management Instructor"
   },
 ]
 ---
@@ -98,15 +98,15 @@ const presenters = [
           (Volpe, Wassman, Lambert)
         </p>
         <div class="resource-links">
-          <a class="resource-card-button" href="https://usdot.zoomgov.com/rec/play/au6-0gws2qTezsWeMYplyB8V6crow-JioJl7ZDZbDaCDBCQeq_tDU0O_4I1JlEgBkVH8iweADTkt84c.Fb0E9Wvfpa7neASo?continueMode=true" target="_blank" rel="noopener noreferrer">
+          <a class="resource-card-button" href="https://usdot.zoomgov.com/rec/play/au6-0gws2qTezsWeMYplyB8V6crow-JioJl7ZDZbDaCDBCQeq_tDU0O_4I1JlEgBkVH8iweADTkt84c.Fb0E9Wvfpa7neASo?continueMode=true" rel="noopener noreferrer" target="_blank">
             <FilmIcon/>
             Webinar Replay
           </a>
-          <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-2/s230620_Crowdsourcing_Part2_Data_Sources_and_Management_presentation.pptx")} target="_blank" rel="noopener noreferrer">
+          <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-2/s230620_Crowdsourcing_Part2_Data_Sources_and_Management_presentation.pptx")} rel="noopener noreferrer" target="_blank">
             <PptIcon/>
             PowerPoint
           </a>
-          <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-2/s230620_Crowdsourcing_Part2_Data_Sources_and_Management_presentation.pdf")} target="_blank" rel="noopener noreferrer">
+          <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-2/s230620_Crowdsourcing_Part2_Data_Sources_and_Management_presentation.pdf")} rel="noopener noreferrer" target="_blank">
             <PdfIcon/>
             PDF
           </a>
@@ -189,10 +189,10 @@ const presenters = [
       </h3>
       {hosts.map((item) => (
         <HostCard
-          name={item.name}
-          title={item.title}
           description={item.description}
           image={item.image}
+          name={item.name}
+          title={item.title}
         />
       ))}
       <h3 class="program-title-md mb-4">
@@ -200,10 +200,10 @@ const presenters = [
       </h3>
       {presenters.map((item) => (
         <HostCard
-          name={item.name}
-          title={item.title}
           description={item.description}
           image={item.image}
+          name={item.name}
+          title={item.title}
         />
       ))}
     </ProgramSection>

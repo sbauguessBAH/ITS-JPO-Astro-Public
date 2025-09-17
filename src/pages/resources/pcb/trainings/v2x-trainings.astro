@@ -1,24 +1,28 @@
 ---
-import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
-import Layout from "../_layout.astro";
-import base_url from "@/src/lib/base_url";
-import v2xImage from "@/src/assets/images/pcb/v2x.jpg";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import { Image } from "astro:assets";
-import { getCollection, type CollectionEntry } from "astro:content";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+// import { type CollectionEntry, getCollection } from "astro:content";
+
+import v2xImage from "@/src/assets/images/pcb/v2x.jpg";
 import Link from "@/src/components/Link.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+// import Card from "@/src/components/programs/card/Card.astro";
+// import CardBody from "@/src/components/programs/card/CardBody.astro";
+// import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+// import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+// import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+// import base_url from "@/src/lib/base_url";
 
-const v2XModules = [57, 63, 64, 66, 67]
+import Layout from "../_layout.astro";
 
-const trainings: CollectionEntry<"standardsTrainings">[] = 
-  await getCollection("standardsTrainings").then(entries => 
-    entries.filter(entry => v2XModules.includes(entry.data.module))
-  );
+// const v2XModules = [57, 63, 64, 66, 67]
+
+// const trainings: CollectionEntry<"pcbStandardsTrainings">[] = 
+//   await getCollection("pcbStandardsTrainings").then(entries => 
+//     entries.filter(entry => v2XModules.includes(entry.data.module))
+//   );
+
+
 ---
 <style>
   .overview-section {
@@ -139,9 +143,9 @@ const trainings: CollectionEntry<"standardsTrainings">[] =
         <div class="overview-image">
           <figure class="figure">
             <Image 
-              src={v2xImage} 
               alt="V2X Training Overview" 
-              class="img-fluid radius-md shadow"
+              class="img-fluid radius-md shadow" 
+              src={v2xImage}
             />
             <figaption class="figure-caption">
               Source: USDOT
@@ -163,7 +167,7 @@ const trainings: CollectionEntry<"standardsTrainings">[] =
         across the United States. 
       </p>
       <p class="program-text">
-        Entities interested in this training should contact the ITS PCB Program at <Link isExternal href="mailto:itspcb@dot.gov">itspcb@dot.gov</Link>.
+        Entities interested in this training should contact the ITS PCB Program at <Link href="mailto:itspcb@dot.gov" isExternal>itspcb@dot.gov</Link>.
       </p>
       <!-- <h3 class="program-title-md mb-2 mt-4">
         V2X Standards Trainings
@@ -185,7 +189,7 @@ const trainings: CollectionEntry<"standardsTrainings">[] =
         {trainings
           .toSorted((a, b) => a.data.module - b.data.module)
           .map(async training => {
-            const { Content } = await training.render();
+            const { Content } = await render(training);
             return (
               // <article class="training-card">
               //   <div class="training-card-header">
@@ -196,35 +200,35 @@ const trainings: CollectionEntry<"standardsTrainings">[] =
               //   <div class="training-card-body">
               //     <div 
               //       class="training-card-preview" 
-              //       id={`preview-${training.slug}`}
+              //       id={`preview-${training.id}`}
               //     >
               //       {training.body.substring(0, previewLength) + "..."}
               //     </div>
               //     <div 
               //       class="training-card-full" 
-              //       id={`full-${training.slug}`}
+              //       id={`full-${training.id}`}
               //       hidden
               //     >
               //       <Content/>
               //     </div>
               //     <button 
               //       class="training-card-button"
-              //       aria-controls={`full-${training.slug}`}
-              //       data-preview-id={`preview-${training.slug}`}
-              //       data-full-id={`full-${training.slug}`}
+              //       aria-controls={`full-${training.id}`}
+              //       data-preview-id={`preview-${training.id}`}
+              //       data-full-id={`full-${training.id}`}
               //     >
               //       Show More
               //     </button>
               //   </div>
               // </article>
-              <Card id={training.slug}>
+              <Card id={training.id}>
                 <CardHeader class="p-0">
                   <button 
                     class="training-card-header" 
                     data-toggle="collapse" 
                     type="button" 
-                    data-target={`#collapse-${training.slug}`}
-                    aria-controls={`collapse-${training.slug}`}
+                    data-target={`#collapse-${training.id}`}
+                    aria-controls={`collapse-${training.id}`}
                     aria-expanded="false"
                   >
                     <div class="card-metadata">
@@ -242,7 +246,7 @@ const trainings: CollectionEntry<"standardsTrainings">[] =
                 </CardHeader>
                 <CardBody class="p-0">
                   <div
-                    id={`collapse-${training.slug}`} 
+                    id={`collapse-${training.id}`} 
                     class="collapse training-card-body"  
                   >
                     <Content/>

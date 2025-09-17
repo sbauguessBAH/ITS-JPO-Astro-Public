@@ -1,13 +1,14 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "../../_layout.astro";
+import Link from "@/src/components/Link.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import Link from "@/src/components/Link.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import base_url from "@/src/lib/base_url";
+
+import Layout from "../../_layout.astro";
 ---
 <style>
   .training-list {
@@ -73,11 +74,11 @@ import base_url from "@/src/lib/base_url";
         With the proliferation of location-based technologies, an unprecedented wave of crowdsourced data 
         is available to transportation agencies. Moreover, analytics tools and services make processing 
         and using crowdsourced data a true game-changer for advancing intelligent transportation systems (ITS) 
-        solutions and <Link isExternal href="https://ops.fhwa.dot.gov/tsmo/">transportation systems management and operations (TSMO)</Link>.
+        solutions and <Link href="https://ops.fhwa.dot.gov/tsmo/" isExternal>transportation systems management and operations (TSMO)</Link>.
       </p>
       <p class="program-text">
         Since 2019, the FHWA Every Day Counts (EDC) Innovation, 
-        <Link isExternal href="https://www.fhwa.dot.gov/innovation/everydaycounts/edc_6/crowdsourcing.cfm">Crowdsourcing for Advancing Operations</Link>, 
+        <Link href="https://www.fhwa.dot.gov/innovation/everydaycounts/edc_6/crowdsourcing.cfm" isExternal>Crowdsourcing for Advancing Operations</Link>, 
         has been supporting the adoption of crowdsourced data and tools to advance transportation operations 
         across 35+ States and their local agencies to improve traffic incident, road weather, work zone, 
         traffic signal, traveler information and emergency management, along with a host of other ITS and TSMO practices.
@@ -106,7 +107,7 @@ import base_url from "@/src/lib/base_url";
                   Part 1 of 5
                 </div>
               </div>
-              <Link href="/resources/pcb/trainings/cs4ops/part-1" class="training-link">
+              <Link class="training-link" href="/resources/pcb/trainings/cs4ops/part-1">
                 <h3 class="program-title-sm">
                   Introduction and Application Highlights
                 </h3>
@@ -135,7 +136,7 @@ import base_url from "@/src/lib/base_url";
                   Part 2 of 5
                 </div>
               </div>
-              <Link href="/resources/pcb/trainings/cs4ops/part-2" class="training-link">
+              <Link class="training-link" href="/resources/pcb/trainings/cs4ops/part-2">
                 <h3 class="program-title-sm">
                   Data Sources and Management
                 </h3>
@@ -164,7 +165,7 @@ import base_url from "@/src/lib/base_url";
                   Part 3 of 5
                 </div>
               </div>
-              <Link href="/resources/pcb/trainings/cs4ops/part-3" class="training-link">
+              <Link class="training-link" href="/resources/pcb/trainings/cs4ops/part-3">
                 <h3 class="program-title-sm">
                   Traveler Information and Traffic Incident Management (TIM)
                 </h3>
@@ -192,7 +193,7 @@ import base_url from "@/src/lib/base_url";
                   Part 4 of 5
                 </div>
               </div>
-              <Link href="/resources/pcb/trainings/cs4ops/part-4" class="training-link">
+              <Link class="training-link" href="/resources/pcb/trainings/cs4ops/part-4">
                 <h3 class="program-title-sm">
                   Road Weather and Arterial Management
                 </h3>
@@ -221,7 +222,7 @@ import base_url from "@/src/lib/base_url";
                   Part 5 of 5
                 </div>
               </div>
-              <Link href="/resources/pcb/trainings/cs4ops/part-5" class="training-link">
+              <Link class="training-link" href="/resources/pcb/trainings/cs4ops/part-5">
                 <h3 class="program-title-sm">
                   Emergency and Work Zone Management, and Next Steps
                 </h3>

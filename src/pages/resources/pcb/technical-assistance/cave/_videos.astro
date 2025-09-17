@@ -1,72 +1,73 @@
 ---
-import rsu from "@/src/assets/images/pcb/cave/videos/rsu.png"
-import obu from "@/src/assets/images/pcb/cave/videos/obu.png"
+import { Image } from "astro:assets"
+
 import building from "@/src/assets/images/pcb/cave/videos/building-cave.png"
-import lite from "@/src/assets/images/pcb/cave/videos/cave-lite.png"
+// import lite from "@/src/assets/images/pcb/cave/videos/cave-lite.png"
 import maintenance from "@/src/assets/images/pcb/cave/videos/cave-maintenance.png"
+import cave from "@/src/assets/images/pcb/cave/videos/cave.png"
 import cavers from "@/src/assets/images/pcb/cave/videos/cavers.png"
+import obu from "@/src/assets/images/pcb/cave/videos/obu.png"
+import rsu from "@/src/assets/images/pcb/cave/videos/rsu.png"
 import spat from "@/src/assets/images/pcb/cave/videos/spat.png"
 import tmc from "@/src/assets/images/pcb/cave/videos/tmc.png"
-import cave from "@/src/assets/images/pcb/cave/videos/cave.png"
 import v2x from "@/src/assets/images/pcb/cave/videos/v2x-hub.png"
 import Card from "@/src/components/programs/card/Card.astro"
 import CardBody from "@/src/components/programs/card/CardBody.astro"
-import { Image } from "astro:assets"
 
 const cards = [
   {
-    title: "Roadside Unit (RSU)",
+    description: "How to set up and operate a roadside unit, also known as an RSU.",
     image: rsu,
     link: "https://www.youtube.com/watch?v=a-nF9jiZ1X0",
-    description: "How to set up and operate a roadside unit, also known as an RSU."
+    title: "Roadside Unit (RSU)"
   },
   {
-    title: "Traffic Management Center",
+    description: "How CAVe-in-a-box can enhance Traffic Management Center (TMC) operations.",
     image: tmc,
     link: "https://www.youtube.com/watch?v=ldlinRdd-nI",
-    description: "How CAVe-in-a-box can enhance Traffic Management Center (TMC) operations."
+    title: "Traffic Management Center"
   },
   {
-    title: "Onboard Unit (OBU)",
+    description: "How to set up and operate an Onboard Unit, commonly known as an OBU.",
     image: obu,
     link: "https://www.youtube.com/watch?v=Q3xH-XKT-_8",
-    description: "How to set up and operate an Onboard Unit, commonly known as an OBU."
+    title: "Onboard Unit (OBU)"
   },
   {
-    title: "Maintenance",
+    description: "Overview of troubleshooting and maintenance processes for connected and autonomous vehicle devices.",
     image: maintenance,
     link: "https://www.youtube.com/watch?v=He2RPhztg4Q",
-    description: "Overview of troubleshooting and maintenance processes for connected and autonomous vehicle devices."
+    title: "Maintenance"
   },
   {
-    title: "Vehicle-to-Everything (V2X) Hub",
+    description: "How to download and use V2X Hub on your device.",
     image: v2x,
     link: "https://www.youtube.com/watch?v=fhKiyVSrnWM",
-    description: "How to download and use V2X Hub on your device."
+    title: "Vehicle-to-Everything (V2X) Hub"
   },
   {
-    title: "How to build CAVe-in-a-box",
+    description: "Building CAVe-in-a-box and identifying key components along the way.",
     image: building,
     link: "https://www.youtube.com/watch?v=zWO6NB6nxXw",
-    description: "Building CAVe-in-a-box and identifying key components along the way."
+    title: "How to build CAVe-in-a-box"
   },
   {
-    title: "CAVe-in-a-box",
+    description: "Connected and Automated education (CAVe)-In-a-Box testing and educational tool kit.",
     image: cave,
     link: "https://www.youtube.com/watch?v=EbqgJtJVh-4",
-    description: "Connected and Automated education (CAVe)-In-a-Box testing and educational tool kit."
+    title: "CAVe-in-a-box"
   },
   {
-    title: "CAVe Research Software",
+    description: "Overview of CAVERS, a visualization and analysis tool for intelligent transportation systems' messages.",
     image: cavers,
     link: "https://www.youtube.com/watch?v=fQ3B_KucEH8",
-    description: "Overview of CAVERS, a visualization and analysis tool for intelligent transportation systems' messages."
+    title: "CAVe Research Software"
   },
   {
-    title: "Signal Phasing and Timing (SPaT) and MAP",
+    description: "How to set up a SPaT, or Signal Phase and Timing, and MAP messages.",
     image: spat,
     link: "https://www.youtube.com/watch?v=2Ss90y2qldo",
-    description: "How to set up a SPaT, or Signal Phase and Timing, and MAP messages."
+    title: "Signal Phasing and Timing (SPaT) and MAP"
   },
   // {
   //   title: "CAVe Lite",
@@ -127,9 +128,9 @@ const cards = [
             <div class="video-card-body">
               <div class="video-card-thumbnail">
                 <Image 
-                  src={card.image} 
                   alt={card.title} 
-                  class="video-card-image"
+                  class="video-card-image" 
+                  src={card.image}
                 />
               </div>
               <div class="video-card-content">

@@ -1,8 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+
+import { getCollection, render } from "astro:content";
 import { isTemplateExpression } from "typescript";
-import Layout from "../_layout.astro";
+
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
@@ -12,8 +13,10 @@ import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import base_url from "@/src/lib/base_url";
 
-const trainings: CollectionEntry<"standardsTrainings">[] = 
-  await getCollection("standardsTrainings")
+import Layout from "../_layout.astro";
+
+const trainings: CollectionEntry<"pcbStandardsTrainings">[] = 
+  await getCollection("pcbStandardsTrainings")
 
 ---
 <style>
@@ -144,7 +147,7 @@ const trainings: CollectionEntry<"standardsTrainings">[] =
         {trainings
           .toSorted((a, b) => a.data.module - b.data.module)
           .map(async training => {
-            const { Content } = await training.render();
+            const { Content } = await render(training);
             return (
               // <article class="training-card">
               //   <div class="training-card-header">
@@ -155,36 +158,36 @@ const trainings: CollectionEntry<"standardsTrainings">[] =
               //   <div class="training-card-body">
               //     <div 
               //       class="training-card-preview" 
-              //       id={`preview-${training.slug}`}
+              //       id={`preview-${training.id}`}
               //     >
               //       {training.body.substring(0, previewLength) + "..."}
               //     </div>
               //     <div 
               //       class="training-card-full" 
-              //       id={`full-${training.slug}`}
+              //       id={`full-${training.id}`}
               //       hidden
               //     >
               //       <Content/>
               //     </div>
               //     <button 
               //       class="training-card-button"
-              //       aria-controls={`full-${training.slug}`}
-              //       data-preview-id={`preview-${training.slug}`}
-              //       data-full-id={`full-${training.slug}`}
+              //       aria-controls={`full-${training.id}`}
+              //       data-preview-id={`preview-${training.id}`}
+              //       data-full-id={`full-${training.id}`}
               //     >
               //       Show More
               //     </button>
               //   </div>
               // </article>
-              <Card id={training.slug}>
+              <Card id={training.id}>
                 <CardHeader class="p-0">
                   <button 
+                    aria-controls={`collapse-${training.id}`} 
+                    aria-expanded="false" 
                     class="training-card-header" 
-                    data-toggle="collapse" 
-                    type="button" 
-                    data-target={`#collapse-${training.slug}`}
-                    aria-controls={`collapse-${training.slug}`}
-                    aria-expanded="false"
+                    data-target={`#collapse-${training.id}`}
+                    data-toggle="collapse"
+                    type="button"
                   >
                     <div class="card-metadata">
                       <p class="card-module-number">
@@ -201,33 +204,33 @@ const trainings: CollectionEntry<"standardsTrainings">[] =
                 </CardHeader>
                 <CardBody class="p-0">
                   <div
-                    id={`collapse-${training.slug}`} 
-                    class="collapse training-card-body"  
+                    class="collapse training-card-body" 
+                    id={`collapse-${training.id}`}  
                   >
                     <Content/>
                   </div>
                 </CardBody>
                 <CardFooter class="training-card-footer">
                   {training.data.presentation && (
-                    <a class="training-card-button" href={base_url(training.data.presentation)} target="_blank" rel="noopener noreferrer">
+                    <a class="training-card-button" href={base_url(training.data.presentation)} rel="noopener noreferrer" target="_blank">
                       <PdfIcon/>
                       Presentation
                     </a>
                   )}
                   {training.data.supplement && (
-                    <a class="training-card-button" href={base_url(training.data.supplement)} target="_blank" rel="noopener noreferrer">
+                    <a class="training-card-button" href={base_url(training.data.supplement)} rel="noopener noreferrer" target="_blank">
                       <PdfIcon/>
                       Supplement
                     </a>
                   )}
                   {training.data.transcript && (
-                    <a class="training-card-button" href={base_url(training.data.transcript)} target="_blank" rel="noopener noreferrer">
+                    <a class="training-card-button" href={base_url(training.data.transcript)} rel="noopener noreferrer" target="_blank">
                       <PdfIcon/>
                       Course Transcript
                     </a>
                   )}
                   {training.data.chat && (
-                    <a class="training-card-button" href={base_url(training.data.chat)} target="_blank" rel="noopener noreferrer">
+                    <a class="training-card-button" href={base_url(training.data.chat)} rel="noopener noreferrer" target="_blank">
                       <PdfIcon/>
                       Chat Transcript
                     </a>
