@@ -139,7 +139,7 @@ export default {
       base_url,
       dropdownHandlers: new Map(), // Store element : handler mappings
       dropdownShowTimeout: null,
-      dropdownHideTimeout: null,
+      dropdownHideTimeoutMap: new Map(),
       lastDropdown: null,
       currentDropdown: null,
     };
@@ -158,57 +158,92 @@ export default {
       return dropdown;
     },
 
+    disposeDropdown(dropdownLink) {
+      const dropdown = bootstrap.Dropdown.getInstance(dropdownLink);
+      if (dropdown) {
+        dropdown.dispose(); // Destroys dropdown instance, removing bootstrap's event listeners
+      }
+    },
+
     resetDropdownEventListeners() {
       const navbar = document.querySelector(".navbar");
       const dropdownLinks = navbar!.querySelectorAll(".dropdown-toggle");
+
       dropdownLinks.forEach((dropdownLink) => {
         if (this.dropdownHandlers.get(dropdownLink) != null) {
+          // Remove from all elements associated with this dropdown link (the link, its parent li, and its menu)
           this.dropdownHandlers.get(dropdownLink).forEach(({ elem, type, handler }) => {
             elem.removeEventListener(type, handler);
           });
           this.dropdownHandlers.get(dropdownLink.closest("li"))?.forEach(({ elem, type, handler }) => {
             elem.removeEventListener(type, handler);
           });
-        }
-        const dropdown = bootstrap.Dropdown.getInstance(dropdownLink);
-        if (dropdown) {
-          dropdown.dispose(); // Destroys dropdown instance, removing bootstrap's event listeners
+          const dropdownMenu = dropdownLink.nextElementSibling;
+          this.dropdownHandlers.get(dropdownMenu)?.forEach(({ elem, type, handler }) => {
+            elem.removeEventListener(type, handler);
+          });
         }
       });
       this.dropdownHandlers.clear();
     },
 
-    handleMouseLeave(dropdown, dropdownMenu, dropdownLink) {
-      this.lastDropdown = this.currentDropdown; // Store the last hovered dropdown
+    furthest(element, selector) {
+      // Find the furthest ancestor that matches the selector, opposite of built-in closest()
+      let match = null;
+      let current = element;
+
+      while (current) {
+        if (current.matches && current.matches(selector)) {
+          match = current; // keep updating as long as it matches
+        }
+        current = current.parentElement;
+      }
+
+      return match;
+    },
+
+    handleMouseLeave(dropdown, dropdownMenu, dropdownLink, e) {
+      // Determine if the mouse is moving to another dropdown within the same nav level
+      // If so, set the closest link as the current dropdown and the last dropdown as the one triggering mouseleave event
+      // Otherwise, the dropdown vars will not update because a new mouseenter does not trigger
+      if (dropdownMenu.contains(e.relatedTarget)) {
+        return; // Ignore if moving within the dropdown menu
+      }
 
       if (this.dropdownShowTimeout) {
         clearTimeout(this.dropdownShowTimeout); // Clear the timeout when leaving
+        this.dropdownShowTimeout = null;
       }
 
-      this.dropdownHideTimeout = setTimeout(() => {
-        dropdownMenu!.classList.remove("fade-in");
-        dropdownMenu!.classList.add("fade-out");
+      this.dropdownHideTimeoutMap.set(
+        dropdownMenu.previousElementSibling?.textContent?.trim(),
+        setTimeout(() => {
+          dropdownMenu!.classList.remove("fade-in");
+          dropdownMenu!.classList.add("fade-out");
 
-        (dropdownLink as HTMLAnchorElement).blur(); // Removes :focus state from link
+          (dropdownLink as HTMLAnchorElement).blur(); // Removes :focus state from link
 
-        dropdown.hide();
-        dropdownMenu!.addEventListener(
-          "animationend",
-          () => {
-            dropdownMenu!.classList.remove("fade-out");
-          },
-          { once: true }
-        );
-      }, 500); // Delay before hiding on mouse leave
+          dropdown.hide();
+          dropdownMenu!.addEventListener(
+            "animationend",
+            () => {
+              dropdownMenu!.classList.remove("fade-out");
+            },
+            { once: true }
+          );
+          this.dropdownHideTimeoutMap.delete(dropdownMenu.previousElementSibling?.textContent?.trim());
+        }, 500)
+      ); // Delay before hiding on mouse leave
     },
 
-    handleMouseEnter(dropdown, dropdownMenu, dropdownLink) {
+    handleMouseEnter(dropdown, dropdownMenu) {
       dropdownMenu!.classList.remove("fade-out");
       dropdownMenu!.classList.add("fade-in");
-
-      this.currentDropdown = dropdownLink;
-      if (this.currentDropdown === this.lastDropdown && this.dropdownHideTimeout) {
-        clearTimeout(this.dropdownHideTimeout); // Clear the hide timeout if we're re-hovering the same dropdown
+      // Store the last hovered dropdown and set the current one
+      const existingTimeout = this.dropdownHideTimeoutMap.get(dropdownMenu.previousElementSibling?.textContent?.trim());
+      if (existingTimeout) {
+        clearTimeout(existingTimeout);
+        this.dropdownHideTimeoutMap.delete(dropdownMenu.previousElementSibling?.textContent?.trim());
       }
       if (this.dropdownShowTimeout) {
         clearTimeout(this.dropdownShowTimeout); // Clear any existing timeout
@@ -221,7 +256,6 @@ export default {
     handleClick(e, dropdownLink, dropdown) {
       e.preventDefault(); // Prevent default link behavior
       const href = dropdownLink.getAttribute("href");
-      if (!href || href === "#") return; // Ignore if no href or just a hash
 
       // Check if on mobile and if the dropdown should open on mobile (top-level dropdowns only)
       const openOnMobile = dropdownLink.getAttribute("data-open-on-mobile");
@@ -261,58 +295,78 @@ export default {
         this.adjustDropdownBehavior();
       }
     },
+    bindLinkEventListenersDesktop(dropdownLink: HTMLAnchorElement) {
+      const dropdown = this.createBoostrapDropdown(dropdownLink);
+      const dropdownMenu = dropdownLink.nextElementSibling;
+
+      const boundHandleMouseEnter = () => this.handleMouseEnter(dropdown, dropdownMenu);
+
+      dropdownLink.addEventListener("mouseenter", boundHandleMouseEnter);
+      dropdownMenu!.addEventListener("mouseenter", boundHandleMouseEnter);
+
+      const boundHandleClick = (e) => this.handleClick(e, dropdownLink, dropdown);
+
+      dropdownLink.addEventListener("click", boundHandleClick);
+
+      const boundHandleMouseLeave = (e) => this.handleMouseLeave(dropdown, dropdownMenu, dropdownLink, e);
+
+      // Add mouseleave listener to parent so that the dropdown closes when exiting link/sibling elements (dropdown menu)
+      const parentElem = dropdownLink.closest("li");
+      if (parentElem) {
+        parentElem.addEventListener("mouseleave", boundHandleMouseLeave);
+      }
+
+      // Add handlers to map for easy removal later
+      this.addToDropdownHandlersMap(dropdownLink, "mouseenter", boundHandleMouseEnter);
+      this.addToDropdownHandlersMap(dropdownMenu!, "mouseenter", boundHandleMouseEnter);
+      this.addToDropdownHandlersMap(parentElem || dropdownLink, "mouseleave", boundHandleMouseLeave);
+      this.addToDropdownHandlersMap(dropdownLink, "click", boundHandleClick);
+    },
+
+    resetDropdownState(dropdownLink: HTMLAnchorElement) {
+      const dropdownMenu = dropdownLink.nextElementSibling;
+      if (dropdownMenu) {
+        dropdownMenu.classList.remove("fade-in", "fade-out", "show");
+      }
+      dropdownLink.closest("li")?.classList?.remove("show");
+      const dropdown = bootstrap.Dropdown.getInstance(dropdownLink);
+      dropdownLink.removeAttribute("is-shown"); // Reset mobile state
+      dropdownLink.blur(); // Removes :focus state from link
+      if (dropdown) dropdown.hide(); // Ensure all dropdowns are closed on adjustment
+    },
+
+    bindLinkEventListenersMobile(dropdownLink: HTMLAnchorElement) {
+      const dropdown = this.createBoostrapDropdown(dropdownLink);
+      const boundHandleClick = (e) => this.handleClick(e, dropdownLink, dropdown);
+      dropdownLink.addEventListener("click", boundHandleClick);
+
+      this.addToDropdownHandlersMap(dropdownLink, "click", boundHandleClick);
+    },
 
     adjustDropdownBehavior() {
+      // Get all dropdown links (<a> elements with .dropdown-toggle class)
       const navbar = document.querySelector(".navbar");
-      const dropdownLinks = navbar!.querySelectorAll(".dropdown-toggle");
+      const dropdownLinks = navbar!.querySelectorAll(".dropdown-toggle") as NodeListOf<HTMLAnchorElement>;
+
+      // Reset all dropdowns to initial state - remove classes/:focus and hide
       dropdownLinks.forEach((dropdownLink) => {
-        const dropdownMenu = dropdownLink.nextElementSibling;
-        if (dropdownMenu) {
-          dropdownMenu.classList.remove("fade-in", "fade-out", "show");
-        }
-        dropdownLink.closest("li")?.classList?.remove("show");
-        const dropdown = bootstrap.Dropdown.getInstance(dropdownLink);
-        dropdownLink.removeAttribute("is-shown"); // Reset mobile state
-        (dropdownLink as HTMLAnchorElement).blur();
-        if (dropdown) dropdown.hide(); // Ensure all dropdowns are closed on adjustment
+        this.resetDropdownState(dropdownLink);
       });
+
+      // If there are existing handlers, remove them all before re-adding
       if (this.dropdownHandlers.size > 0) {
         this.resetDropdownEventListeners();
+        dropdownLinks.forEach((dropdownLink) => this.disposeDropdown(dropdownLink));
       }
+
+      // Add appropriate event listeners based on current screen size
       if (!this.isMobile) {
         dropdownLinks.forEach((dropdownLink) => {
-          // Initialize Bootstrap dropdown instance
-          const dropdown = this.createBoostrapDropdown(dropdownLink);
-          const dropdownMenu = dropdownLink.nextElementSibling;
-
-          const boundHandleMouseEnter = () => this.handleMouseEnter(dropdown, dropdownMenu, dropdownLink);
-
-          dropdownLink.addEventListener("mouseenter", boundHandleMouseEnter);
-
-          const boundHandleClick = (e) => this.handleClick(e, dropdownLink, dropdown);
-
-          dropdownLink.addEventListener("click", boundHandleClick);
-
-          const boundHandleMouseLeave = () => this.handleMouseLeave(dropdown, dropdownMenu, dropdownLink);
-
-          // Add mouseleave listener to parent so that the dropdown closes when exiting link/sibling elements (dropdown menu)
-          const parentElem = dropdownLink.closest("li");
-          if (parentElem) {
-            parentElem.addEventListener("mouseleave", boundHandleMouseLeave);
-          }
-
-          // Add handlers to map for easy removal later
-          this.addToDropdownHandlersMap(dropdownLink, "mouseenter", boundHandleMouseEnter);
-          this.addToDropdownHandlersMap(parentElem || dropdownLink, "mouseleave", boundHandleMouseLeave);
-          this.addToDropdownHandlersMap(dropdownLink, "click", boundHandleClick);
+          this.bindLinkEventListenersDesktop(dropdownLink);
         });
       } else {
         dropdownLinks.forEach((dropdownLink) => {
-          const dropdown = this.createBoostrapDropdown(dropdownLink);
-          const boundHandleClick = (e) => this.handleClick(e, dropdownLink, dropdown);
-          dropdownLink.addEventListener("click", boundHandleClick);
-
-          this.addToDropdownHandlersMap(dropdownLink, "click", boundHandleClick);
+          this.bindLinkEventListenersMobile(dropdownLink);
         });
       }
     },
@@ -438,6 +492,10 @@ a:focus {
 }
 .navbar-nav .nav-item.dropdown.show > .nav-link {
   font-weight: bold;
+}
+
+#navbar-content > * {
+  z-index: 1000;
 }
 
 .dropend ul {
