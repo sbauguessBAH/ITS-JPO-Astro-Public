@@ -315,6 +315,20 @@ export default {
       dropdownLink.addEventListener("mouseenter", boundHandleMouseEnter);
       dropdownMenu!.addEventListener("mouseenter", boundHandleMouseEnter);
 
+      const boundHandleFocus = () => this.handleMouseEnter(dropdown, dropdownMenu);
+      dropdownLink.addEventListener("focus", boundHandleFocus);
+
+      // Blur (when tabbing away) → close dropdown
+      const boundHandleBlur = (e) => {
+        // only close if focus leaves both link and menu
+        if (!dropdownMenu!.contains(e.relatedTarget)) {
+          this.handleMouseLeave(dropdown, dropdownMenu, dropdownLink, e);
+        }
+      };
+
+      dropdownLink.addEventListener("blur", boundHandleBlur);
+      dropdownMenu!.addEventListener("blur", boundHandleBlur, true);
+
       const boundHandleClick = (e) => this.handleClick(e, dropdownLink, dropdown);
 
       dropdownLink.addEventListener("click", boundHandleClick);
@@ -330,6 +344,9 @@ export default {
       // Add handlers to map for easy removal later
       this.addToDropdownHandlersMap(dropdownLink, "mouseenter", boundHandleMouseEnter);
       this.addToDropdownHandlersMap(dropdownMenu!, "mouseenter", boundHandleMouseEnter);
+      this.addToDropdownHandlersMap(dropdownLink, "focus", boundHandleFocus);
+      this.addToDropdownHandlersMap(dropdownLink, "blur", boundHandleBlur);
+      this.addToDropdownHandlersMap(dropdownMenu!, "blur", boundHandleBlur);
       this.addToDropdownHandlersMap(parentElem || dropdownLink, "mouseleave", boundHandleMouseLeave);
       this.addToDropdownHandlersMap(dropdownLink, "click", boundHandleClick);
     },
@@ -405,7 +422,6 @@ export default {
     window.removeEventListener("resize", this.handleResize);
     document.removeEventListener("click", this.handleOutsideClick);
     this.resetDropdownEventListeners();
-
   },
 };
 </script>
