@@ -202,10 +202,32 @@ export default {
       return match;
     },
 
+    closeDropdowns(exception = null) {
+      const navbar = document.querySelector(".navbar");
+      const dropdownLinks = navbar!.querySelectorAll(".dropdown-toggle");
+
+      dropdownLinks.forEach((dropdownLink) => {
+        if (!exception || dropdownLink !== exception) {
+          dropdownLink.removeAttribute("is-shown");
+          const dropdown = bootstrap.Dropdown.getInstance(dropdownLink);
+          if (dropdown) {
+            dropdown.hide();
+          }
+        }
+      });
+    },
+
+    handleOutsideClick(e: MouseEvent) {
+      const navbar = document.querySelector(".navbar");
+      if (!navbar) return;
+
+      // If the click happened outside the navbar, close dropdowns
+      if (!navbar.contains(e.target as Node)) {
+        this.closeDropdowns();
+      }
+    },
+
     handleMouseLeave(dropdown, dropdownMenu, dropdownLink, e) {
-      // Determine if the mouse is moving to another dropdown within the same nav level
-      // If so, set the closest link as the current dropdown and the last dropdown as the one triggering mouseleave event
-      // Otherwise, the dropdown vars will not update because a new mouseenter does not trigger
       if (dropdownMenu.contains(e.relatedTarget)) {
         return; // Ignore if moving within the dropdown menu
       }
@@ -262,22 +284,11 @@ export default {
 
       // Check if on mobile for custom behavior, otherwise navigate to link
       if (this.isMobile && openOnMobile != null) {
-        const navbar = document.querySelector(".navbar");
-        const dropdownLinks = navbar!.querySelectorAll(".dropdown-toggle");
-
         // If dropdown is not shown, show it and hide others. If it is shown, navigate to the link
         if (dropdownLink.getAttribute("is-shown") == null) {
           dropdown.show();
           dropdownLink.setAttribute("is-shown", "true");
-          dropdownLinks.forEach((otherLink) => {
-            if (otherLink !== dropdownLink) {
-              otherLink.removeAttribute("is-shown");
-              const otherDropdown = bootstrap.Dropdown.getInstance(otherLink);
-              if (otherDropdown) {
-                otherDropdown.hide();
-              }
-            }
-          });
+          this.closeDropdowns(dropdownLink); // Close other dropdowns
         } else {
           dropdownLink.removeAttribute("is-shown");
           window.location.href = href;
@@ -388,10 +399,13 @@ export default {
 
     this.adjustDropdownBehavior();
     window.addEventListener("resize", this.handleResize);
+    document.addEventListener("click", this.handleOutsideClick);
   },
   beforeUnmount() {
     window.removeEventListener("resize", this.handleResize);
+    document.removeEventListener("click", this.handleOutsideClick);
     this.resetDropdownEventListeners();
+
   },
 };
 </script>
