@@ -1193,7 +1193,7 @@ hr.content {
     font-size:16px;
 }
 
-.dropdown-toggle.show::after {
+.dropdown-toggle.show.mobileLink::after {
    content: '\f077';
     font-family: FontAwesome;
     font-size:16px;

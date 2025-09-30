@@ -395,6 +395,7 @@ export default {
       } else {
         dropdownLinks.forEach((dropdownLink) => {
           this.bindLinkEventListenersMobile(dropdownLink);
+          dropdownLink.classList.add("mobileLink"); // Add mobile class to change arrow direction
         });
       }
     },
