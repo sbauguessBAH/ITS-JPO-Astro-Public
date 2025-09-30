@@ -18,5 +18,6 @@ export default defineConfig({
     "/its4us/index.htm": "/research-areas/ITS4US",
     "/press/news.htm": "https://www.transportation.gov/newsroom",
     "/communications/its_images.htm": "/news-info/image-library",
+    "/pcb": "/resources/Professional-Capacity-Building/",
   },
 });
