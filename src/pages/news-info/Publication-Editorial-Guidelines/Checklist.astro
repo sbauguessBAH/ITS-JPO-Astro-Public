@@ -2,6 +2,7 @@
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import base_url from "../../../lib/base_url";
 
 const keywords = [
   "Automation Program",
@@ -16,7 +17,8 @@ const description =
 ---
 
 <PageLayout title="Publications Checklist" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">Publications Checklist</Fragment>
+    <Fragment slot="banner">Publication Editorial Guidelines</Fragment>
+
   <SidebarLayout path="/news-info/">
     
       <h2 class="sideways blue">Publications Checklist</h2>
@@ -47,7 +49,7 @@ const description =
         <li>Does every picture, graph, chart, or other artwork in the publication have the name of the source of that work and the date? All charts and tables need to have the data source and the date cited.</li>
         <li>Are you submitting this document as a 508-compliant PDF? We only accept 508-compliant PDF documents.
           <ul>
-            <li><a href="https://web.archive.org/web/20240927060920/https:/www.its.dot.gov/communications/pdf/ITSJPO_508ComplianceChecklist.pdf" target="_blank" rel="noopener">ITS JPO 508 Compliance Checklist</a></li>
+            <li><a href={base_url("/assets/documents/508_ComplianceChecklist.pdf")} target="_blank" rel="noopener">ITS JPO 508 Compliance Checklist</a></li>
           </ul>
         </li>
         <li>Did you make sure there are no corporate logos, signatures, or other branding images in the report? Only federal government images can be on a US DOT report.</li>

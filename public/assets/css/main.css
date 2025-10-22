@@ -1220,6 +1220,30 @@ main a[href$=".pdf"]::after {
     color:#009ad6;
 }
 
+main a[href$=".docx"]::after {
+    content: "\f1c2"; /* Unicode for Font Awesome PDF icon */
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    margin-left:6px;
+    color:#009ad6;
+}
+
+main a[href$=".pptx"]::after {
+    content: "\f1c4"; /* Unicode for Font Awesome PDF icon */
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    margin-left:6px;
+    color:#009ad6;
+}
+
 
 
 

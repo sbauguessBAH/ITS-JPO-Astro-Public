@@ -2,6 +2,7 @@
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import base_url from "../../../lib/base_url";
 
 const keywords = [
   "Automation Program",
@@ -16,11 +17,11 @@ const description =
 ---
 
 <PageLayout title="Publication Editorial Guidelines" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">Publication Editorial Guidelines</Fragment>
+    <Fragment slot="banner">Publication Editorial Guidelines</Fragment>
+
 
   <SidebarLayout path="/news-info/">
-    <div class="container mt-3 mb-5">
-      <h1>508 GUIDANCE</h1>
+      <h2 class="sideways blue">508 GUIDANCE</h2>
 
       <p>
         Section 508 requires that when Federal agencies develop, procure, maintain, or use Electronic and Information Technology (EIT), they shall ensure that EIT allows all Federal employees to have access to and use of information and data, unless an undue burden is imposed on the Federal agency. Section 508 also requires that all individuals, who are members of the public seeking information or services from a Federal agency, have access to and use of information and data, unless an undue burden is imposed on the Federal agency.
@@ -38,8 +39,8 @@ const description =
         Deliverables will be evaluated for 508 compliance and must be encoded to conform to HTML 4.01 Transitional or higher or they can be in the form of a 508 Compliant PDF.
       </p>
 
-      <h2>Applicable standards</h2>
-      <p>The following standards have been determined to be applicable to this contract ("X" marks standards pre-selected for EDL deliverables):</p>
+      <h2 class="sideways blue">Applicable standards</h2>
+      <p>The following standards have been determined to be applicable to this contract ("▣" marks standards pre-selected for EDL deliverables):</p>
 
       <ul class="list-unstyled" aria-label="1194 standards checklist">
         <li>▢ 1194.21 Software applications and operating systems</li>
@@ -52,7 +53,7 @@ const description =
         <li>▢ 1194.41 Information documentation and support</li>
       </ul>
 
-      <h2>508 Frequently Asked Questions</h2>
+      <h2 class="sideways blue">508 Frequently Asked Questions</h2>
 
       <h3>Q.1. Does Section 508 apply to documents?</h3>
       <p>
@@ -68,15 +69,14 @@ const description =
         Information regarding all aspects of assistive technologies and accessibility under Section 508 is available at the federal government's official website: <a href="http://www.section508.gov/" target="_blank" rel="noopener">http://www.section508.gov/</a>
       </p>
 
-      <h2>Other resources</h2>
+      <h2 class="sideways blue">Other resources</h2>
       <ul>
-        <li><a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/pdf/ITSJPO_508ComplianceChecklist.pdf" target="_blank" rel="noopener">ITS JPO 508 Compliance Checklist</a></li>
+        <li><a href={base_url("/assets/documents/508_ComplianceChecklist.pdf")} target="_blank" rel="noopener">ITS JPO 508 Compliance Checklist</a></li>
         <li><a href="https://section508.gov/training" target="_blank" rel="noopener">508 Training</a></li>
         <li><a href="https://www.w3.org/TR/WAI-WEBCONTENT/" target="_blank" rel="noopener">Web Content Accessibility Guidelines (WCAG)</a></li>
         <li><a href="https://www.access-board.gov/ict/about/" target="_blank" rel="noopener">U.S. Access Board Guide to 508 Standards</a></li>
         <li><a href="https://www.access-board.gov/files/ict/ict-final-rule.pdf" target="_blank" rel="noopener">Web-based intranet and internet information and applications - 16 rules (PDF)</a></li>
       </ul>
 
-    </div>
   </SidebarLayout>
 </PageLayout>

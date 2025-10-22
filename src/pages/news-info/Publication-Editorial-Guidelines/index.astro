@@ -2,6 +2,8 @@
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import base_url from "../../../lib/base_url";
+
 
 const keywords = [
   "Automation Program",
@@ -28,7 +30,7 @@ const description =
         The ITS-JPO invests in, studies, and supports the deployment of integrated, intelligent vehicles and infrastructure technologies to create an intelligent transportation system focused on safety, mobility and environmental improvements.
       </p>
 
-      <h2>I. Requirements</h2>
+      <h2 class="sideways blue">I. Requirements</h2>
 
       <h3>A. Published Publicly</h3>
       <p>
@@ -53,7 +55,7 @@ const description =
         <li>All links within HTML pages of the document must be working properly before submission to the National Transportation Library.</li>
       </ol>
 
-      <h2>II. General Composition Guidelines</h2>
+      <h2 class="sideways blue">II. General Composition Guidelines</h2>
       <p>
         Material should be written in <a href="https://www.plainlanguage.gov/" target="_blank" rel="noopener">plain English</a> that is clear, concise, and suitable for web format, with an introduction that demonstrates the topic’s practical relevance to the transportation community. Documents should contain a minimum number of notes. When notes are necessary, note numbers should appear in brackets within the text and notes with corresponding numbers should be typewritten at the end of the document; authors should not use their word processing programs to create endnotes or footnotes. Bibliographic citations should appear in notes and include (1) author’s name, (2) title of work, (3) publication information, and (4) specific page(s) referenced.
       </p>
@@ -66,10 +68,10 @@ const description =
 
       <p><strong>NOTE: ALL IMAGES: INCLUDING: PHOTOS, GRAPHICS, CHARTS AND DIAGRAMS, MUST INCLUDE IMAGE CREDITS INCLUDING THE SOURCE AND THE YEAR THE IMAGE WAS CREATED</strong></p>
 
-      <h2>III. Proofreading</h2>
+      <h2 class="sideways blue">III. Proofreading</h2>
       <p>All documents submitted to the NTL must be professionally proofread and edited in advance of submission in order to correct any typographical, grammatical, graphical, factual or other errors in the document.</p>
 
-      <h2>IV. Use of USDOT/OST-R logo and other images</h2>
+      <h2 class="sideways blue">IV. Use of USDOT/OST-R logo and other images</h2>
       <p>
         All logos appearing on the documents should be government-only approved logos. 
       </p>
@@ -101,22 +103,22 @@ const description =
         U.S. DOT has specific rules for the use of the U.S. DOT mark and other official images. One of the key requirements is that only ONE US DOT modal administration can be placed under the USDOT signature on the cover of the publication. If more than one modal administration is listed on the report then they must be listed on the inside cover.
       </p>
 
-      <h2>V. GPO Style</h2>
+      <h2 class="sideways blue">V. GPO Style</h2>
       <p>
         All documents submitted to the National Transportation Library must adhere to U.S. Government Printing Office (GPO) guidelines. Suggested electronic GPO-required formats allow for documents to be prepared in commonly accepted publishing applications (e.g. Adobe InDesign, QuarkXPress, Corel Draw, Adobe FrameMaker, Adobe Illustrator, Macromedia FreeHand, etc.), in CMYK colorspace, as an original source file or a pre-flighted print ready PDF file. To access the GPO Stylebook see: <a href="https://www.govinfo.gov/content/pkg/GPO-STYLEMANUAL-2008/pdf/GPO-STYLEMANUAL-2008.pdf" target="_blank" rel="noopener">GPO Style Manual</a>.
       </p>
 
-      <h2>VI. Meta tags</h2>
+      <h2 class="sideways blue">VI. Meta tags</h2>
       <p>
         All documents must include Meta tags for TITLE, BODY, DESCRIPTION and KEYWORDs so that search engines can easily read them. The NTL selected Dublin Core over MARC, electing to forego the traditional library interoperability standard Z39.50 and complying with the Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH). Recently, NTL has created crosswalks to interchange metadata with other libraries and information sources, as well as making NTL data more accessible.
       </p>
 
-      <h2>VII. Submission for Publication Procedures</h2>
+      <h2 class="sideways blue">VII. Submission for Publication Procedures</h2>
       <p>
         Before printing or posting a document, submit an <a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/doc/pub_database_form.docx" target="_blank" rel="noopener">application</a> to the ITS-JPO Publications Manager to request an NTL electronic library number and a Federal Highway Administration document number. The application for this request can be found <a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/doc/pub_database_form.docx" target="_blank" rel="noopener">here</a>. The requested numbers will be printed on the document’s front and back covers for publication tracking purposes.
       </p>
 
-      <p>Report Template - ITS-JPO has an official <a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/doc/Template_JPO_reportfinal.docx" target="_blank" rel="noopener">template</a> for all reports. Before you submit your report, please take a look at the <a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/pdf/Guidelines_Preparing_ITSJPO_Reports.pdf" target="_blank" rel="noopener">ITS JPO Guidelines for Preparing Reports</a> and <a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/publication_checklist.htm" target="_blank" rel="noopener">ITS JPO Publications Checklist</a>.
+      <p>Report Template - ITS-JPO has an official <a href={base_url("/assets/documents/Template_JPO_reportfinal.docx")} target="_blank" rel="noopener">template</a> for all reports. Before you submit your report, please take a look at the <a href={base_url("/assets/documents/Guidelines_Preparing_ITSJPO_Reports.pdf")} target="_blank" rel="noopener">ITS JPO Guidelines for Preparing Reports</a> and <a href={base_url("/news-info/Publication-Editorial-Guidelines/Checklist")} target="_blank" rel="noopener">ITS JPO Publications Checklist</a>.
       </p>
 
       <ol>
@@ -127,14 +129,14 @@ const description =
 
       <p>Please Note: Any documents submitted that do not meet the above guidelines will not be submitted for review and will be sent back to the author (or destroyed in case of electronically submitted non-compliant material).</p>
 
-      <h2>Links</h2>
+      <h2 class="sideways blue">Links</h2>
       <ul>
-        <li><a href="https://web.archive.org/web/20240926214636/https:/www.access-board.gov/guidelines-and-standards/communications-and-it/about-the-ict-refresh/final-rule" target="_blank" rel="noopener">NEW 508 Compliance Guidance</a></li>
-        <li><a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/pdf/ITSJPO_508ComplianceChecklist.pdf" target="_blank" rel="noopener">508 Compliance Checklist</a></li>
-        <li><a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/pdf/Guidelines_Preparing_ITSJPO_Reports.pdf" target="_blank" rel="noopener">ITS JPO Guidelines for Preparing Reports</a></li>
-        <li><a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/publication_checklist.htm" target="_blank" rel="noopener">ITS JPO Publications Checklist</a></li>
-        <li><a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/doc/Template_JPO_reportfinal.docx" target="_blank" rel="noopener">ITS JPO Publication Template</a></li>
-        <li><a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/doc/ITSJPO_template_ppt_2023.pptx" target="_blank" rel="noopener">ITS JPO PowerPoint Template</a></li>
+        <li><a href="https://www.access-board.gov/ict/" target="_blank" rel="noopener">NEW 508 Compliance Guidance</a></li>
+        <li><a href={base_url("/assets/documents/508_ComplianceChecklist.pdf")} target="_blank" rel="noopener">508 Compliance Checklist</a></li>
+        <li><a href={base_url("/assets/documents/Guidelines_Preparing_ITSJPO_Reports.pdf")} target="_blank" rel="noopener">ITS JPO Guidelines for Preparing Reports</a></li>
+        <li><a href={base_url("/news-info/Publication-Editorial-Guidelines/Checklist")} target="_blank" rel="noopener">ITS JPO Publications Checklist</a></li>
+        <li><a href={base_url("/assets/documents/Template_JPO_reportfinal.docx")} target="_blank" rel="noopener">ITS JPO Publication Template</a></li>
+        <li><a href={base_url("/assets/documents/ITSJPO_template_ppt_2023.pptx")} target="_blank" rel="noopener">ITS JPO PowerPoint Template</a></li>
       </ul>
 
   </SidebarLayout>

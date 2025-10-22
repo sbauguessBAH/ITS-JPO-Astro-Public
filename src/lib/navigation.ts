@@ -53,7 +53,7 @@ export const navigation: NavigationItem[] = [
       { name: 'Latest News from USDOT', url: 'https://www.transportation.gov/newsroom', isExternal: true },
       { name: 'Image Library', url: '/news-info/image-library' },
       { name: 'Publication Editorial Guidelines', url: '/news-info/Publication-Editorial-Guidelines', isEnabled: true, pages:[
-        { name: "Publication Editorial Guidelines", url: "/news-info/Publication-Editorial-Guidelines" },
+        { name: "Overview", url: "/news-info/Publication-Editorial-Guidelines" },
         { name: "508 Guidance", url: "/news-info/Publication-Editorial-Guidelines/Guidance" },
         { name: "Publications Checklist", url: "/news-info/Publication-Editorial-Guidelines/Checklist" },
       ]},
