@@ -1,0 +1,82 @@
+---
+import banner from "@/src/assets/images/banners/Automation_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "Automation Program",
+  "Transportation Research",
+  "Automated Driving Systems",
+  "Advanced Driver Assistance Systems",
+  "ADAS",
+];
+
+const description =
+  "The ITS JPO Automation Program focuses on the safe deployment of automated driving systems and advanced driver assistance systems through collaboration and research.";
+---
+
+<PageLayout title="Publication Editorial Guidelines" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Publication Editorial Guidelines</Fragment>
+
+  <SidebarLayout path="/news-info/">
+    <div class="container mt-3 mb-5">
+      <h1>508 GUIDANCE</h1>
+
+      <p>
+        Section 508 requires that when Federal agencies develop, procure, maintain, or use Electronic and Information Technology (EIT), they shall ensure that EIT allows all Federal employees to have access to and use of information and data, unless an undue burden is imposed on the Federal agency. Section 508 also requires that all individuals, who are members of the public seeking information or services from a Federal agency, have access to and use of information and data, unless an undue burden is imposed on the Federal agency.
+      </p>
+
+      <p>
+        All Electronic and Information Technology (EIT) procured through this contract must meet the applicable <a href="https://www.access-board.gov/ict/about/" target="_blank" rel="noopener">accessibility standards</a> at <strong>36 CFR 1194</strong>, unless an agency exception to this requirement exists. 36 CFR 1194 implements <a href="https://www.access-board.gov/ict/about/" target="_blank" rel="noopener">Section 508</a> of the Rehabilitation Act of 1973, as amended. EIT includes, but is not limited to, telecommunications products (such as telephones), information kiosks and transaction machines, World Wide Web sites, multimedia, office equipment such as copiers and fax machines.
+      </p>
+
+      <p>
+        In accordance with the above, in addition to the work requirements specified in the Statement of Work, contractors/vendors must ensure that all EIT that they provide either: (1) meets the technical provisions of the Section 508 Access Board Standards applicable to a given procurement (see below); or (2) uses designs or technologies as alternatives to those prescribed in the specified technical provisions, provided they result in substantially equivalent or greater access to and use of a product for all users.
+      </p>
+
+      <p>
+        Deliverables will be evaluated for 508 compliance and must be encoded to conform to HTML 4.01 Transitional or higher or they can be in the form of a 508 Compliant PDF.
+      </p>
+
+      <h2>Applicable standards</h2>
+      <p>The following standards have been determined to be applicable to this contract ("X" marks standards pre-selected for EDL deliverables):</p>
+
+      <ul class="list-unstyled" aria-label="1194 standards checklist">
+        <li>▢ 1194.21 Software applications and operating systems</li>
+        <li>▣ <strong>1194.22 Web-based intranet and internet information and applications</strong></li>
+        <li>▢ 1194.23 Telecommunications products</li>
+        <li>▢ 1194.24 Video and multimedia products</li>
+        <li>▢ 1194.25 Self contained, closed products</li>
+        <li>▢ 1194.26 Desktop and portable computers</li>
+        <li>▣ <strong>1194.31 Functional performance criteria</strong></li>
+        <li>▢ 1194.41 Information documentation and support</li>
+      </ul>
+
+      <h2>508 Frequently Asked Questions</h2>
+
+      <h3>Q.1. Does Section 508 apply to documents?</h3>
+      <p>
+        A.1. There currently are no <a href="https://www.access-board.gov/ict/about/" target="_blank" rel="noopener">Electronic and Information Technology Accessibility Standards</a> that address documents. The <a href="http://www.access-board.gov/" target="_blank" rel="noopener">Access Board</a> has provided recent guidance indicating that documents come under Section 508 when they are posted to a web site, invoking Part 1194.22, the <a href="https://www.access-board.gov/files/ict/ict-final-rule.pdf" target="_blank" rel="noopener">web-based intranet and internet information and applications standards</a>.
+      </p>
+
+      <h3>Q.2. If I have a document posted on the web in more than one file format, e.g. HTML, PDF and Excel, do all versions need to comply?</h3>
+      <p>
+        A.2. No. Only one version of the document needs to meet the Standards. The Intelligent Transportation Systems Joint Program Office requires that the one compliant version be in HTML. HTML is the native language of the web and is the most robust in meeting the Standards.
+      </p>
+
+      <p>
+        Information regarding all aspects of assistive technologies and accessibility under Section 508 is available at the federal government's official website: <a href="http://www.section508.gov/" target="_blank" rel="noopener">http://www.section508.gov/</a>
+      </p>
+
+      <h2>Other resources</h2>
+      <ul>
+        <li><a href="https://web.archive.org/web/20240926214636/https:/www.its.dot.gov/communications/pdf/ITSJPO_508ComplianceChecklist.pdf" target="_blank" rel="noopener">ITS JPO 508 Compliance Checklist</a></li>
+        <li><a href="https://section508.gov/training" target="_blank" rel="noopener">508 Training</a></li>
+        <li><a href="https://www.w3.org/TR/WAI-WEBCONTENT/" target="_blank" rel="noopener">Web Content Accessibility Guidelines (WCAG)</a></li>
+        <li><a href="https://www.access-board.gov/ict/about/" target="_blank" rel="noopener">U.S. Access Board Guide to 508 Standards</a></li>
+        <li><a href="https://www.access-board.gov/files/ict/ict-final-rule.pdf" target="_blank" rel="noopener">Web-based intranet and internet information and applications - 16 rules (PDF)</a></li>
+      </ul>
+
+    </div>
+  </SidebarLayout>
+</PageLayout>

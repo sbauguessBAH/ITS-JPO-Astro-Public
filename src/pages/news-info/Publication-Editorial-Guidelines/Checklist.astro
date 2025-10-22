@@ -1,0 +1,58 @@
+---
+import banner from "@/src/assets/images/banners/Automation_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
+const keywords = [
+  "Automation Program",
+  "Transportation Research",
+  "Automated Driving Systems",
+  "Advanced Driver Assistance Systems",
+  "ADAS",
+];
+
+const description =
+  "The ITS JPO Automation Program focuses on the safe deployment of automated driving systems and advanced driver assistance systems through collaboration and research.";
+---
+
+<PageLayout title="Publications Checklist" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Publications Checklist</Fragment>
+  <SidebarLayout path="/news-info/">
+    
+      <h2 class="sideways blue">Publications Checklist</h2>
+
+      <p><strong>Don’t Let Your Report Get Delayed on the Publications Highway</strong></p>
+
+      <p>Follow these 5 steps, and your documents will be on the fast lane to publication.</p>
+
+      <ul>
+        <li>Make sure to attribute all images. A leading reason reports are held up in the legal department is because images or charts have no photo credit.</li>
+        <li>Use the right template. The ITS JPO has an approved <a href="https://web.archive.org/web/20240927060922/https:/www.its.dot.gov/communications/doc/Template_JPO_reportfinal.docx" target="_blank" rel="noopener">template</a>.</li>
+        <li>Make the report 508 compliant. It’s the law. We can’t post your report unless everybody is able to read it.</li>
+        <li>Follow the checklist. The publications checklist should address all potential problems.</li>
+      </ul>
+
+      <p>Please don’t let your contract expire before completing these steps.</p>
+
+      <h2 class="sideways blue">ITS JPO Publications Checklist</h2>
+
+      <p>Guidelines for reports produced or funded by the ITS JPO</p>
+
+      <ul>
+        <li>Have you received your Publication Number? If so, have you placed it on your document where indicated (cover page, page three and back cover)? If you have not received a Publication Number, please contact your ITS JPO POC.</li>
+        <li>Do you plan to list more than one USDOT agency on the report? If so, please list the names of the agencies on the inside cover of the report. USDOT graphic standards only allow the USDOT signature and ONE modal administration to be listed in the lower right corner of the report cover. If two or more agencies are included they must be listed on the inside cover of the report.</li>
+        <li>Have you had your publication professionally proofread for typographical and grammatical errors as well as for accuracy?</li>
+        <li>Have you filled in all the blanks on the Technical Report Document page (page 3)? Please leave empty spaces blank by removing the template language that was there.</li>
+        <li>Is your report title more than 225 characters? If so, please shorten it. The publications database can only accommodate titles with fewer than 226 characters.</li>
+        <li>Does every picture, graph, chart, or other artwork in the publication have the name of the source of that work and the date? All charts and tables need to have the data source and the date cited.</li>
+        <li>Are you submitting this document as a 508-compliant PDF? We only accept 508-compliant PDF documents.
+          <ul>
+            <li><a href="https://web.archive.org/web/20240927060920/https:/www.its.dot.gov/communications/pdf/ITSJPO_508ComplianceChecklist.pdf" target="_blank" rel="noopener">ITS JPO 508 Compliance Checklist</a></li>
+          </ul>
+        </li>
+        <li>Did you make sure there are no corporate logos, signatures, or other branding images in the report? Only federal government images can be on a US DOT report.</li>
+        <li>Is your publication formatted to fit the <a href="https://web.archive.org/web/20240927060922/https:/www.its.dot.gov/communications/doc/Template_JPO_reportfinal.docx" target="_blank" rel="noopener">template</a> posted on the ITS JPO website?</li>
+      </ul>
+    
+  </SidebarLayout>
+</PageLayout>
