@@ -5,15 +5,22 @@ import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 import base_url from "../../../lib/base_url";
 
 const keywords = [
-  "Automation Program",
-  "Transportation Research",
-  "Automated Driving Systems",
-  "Advanced Driver Assistance Systems",
-  "ADAS",
+  "Publication Guidelines",
+  "Editorial Guidelines",
+  "ITS JPO Publications",
+  "Publication Checklist",
+  "508 Compliance",
+  "Report Template",
+  "Technical Documentation",
+  "DOT Publications",
+  "Publication Standards",
+  "Document Formatting",
+  "Report Guidelines",
+  "Publication Requirements"
 ];
 
 const description =
-  "The ITS JPO Automation Program focuses on the safe deployment of automated driving systems and advanced driver assistance systems through collaboration and research.";
+  "Essential checklist for ITS JPO publication submissions, covering key requirements including publication numbering, image attribution, 508 compliance, formatting standards, and agency branding guidelines to ensure smooth and timely document processing";
 ---
 
 <PageLayout title="Publications Checklist" bannerImage={banner} keywords={keywords} description={description}>
@@ -29,7 +36,7 @@ const description =
 
       <ul>
         <li>Make sure to attribute all images. A leading reason reports are held up in the legal department is because images or charts have no photo credit.</li>
-        <li>Use the right template. The ITS JPO has an approved <a href="https://web.archive.org/web/20240927060922/https:/www.its.dot.gov/communications/doc/Template_JPO_reportfinal.docx" target="_blank" rel="noopener">template</a>.</li>
+        <li>Use the right template. The ITS JPO has an approved <a href={base_url("/assets/documents/Template_JPO_reportfinal.docx")} target="_blank" rel="noopener">template</a>.</li>
         <li>Make the report 508 compliant. It’s the law. We can’t post your report unless everybody is able to read it.</li>
         <li>Follow the checklist. The publications checklist should address all potential problems.</li>
       </ul>
@@ -53,7 +60,7 @@ const description =
           </ul>
         </li>
         <li>Did you make sure there are no corporate logos, signatures, or other branding images in the report? Only federal government images can be on a US DOT report.</li>
-        <li>Is your publication formatted to fit the <a href="https://web.archive.org/web/20240927060922/https:/www.its.dot.gov/communications/doc/Template_JPO_reportfinal.docx" target="_blank" rel="noopener">template</a> posted on the ITS JPO website?</li>
+        <li>Is your publication formatted to fit the <a href={base_url("/assets/documents/Template_JPO_reportfinal.docx")} target="_blank" rel="noopener">template</a> posted on the ITS JPO website?</li>
       </ul>
     
   </SidebarLayout>
