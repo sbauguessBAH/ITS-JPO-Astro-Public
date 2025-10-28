@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   // If hosting on a subdomain, set the base here such as /itsjpo, /demo, etc.
-  base: "AI-Demo-site/",
+  base: "AI-Demo-site",
   site: "https://www.its.dot.gov",
   output: "static",
   integrations: [partytown(), sitemap()],
