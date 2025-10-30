@@ -190,7 +190,7 @@ const getCourseCount = (path?: string) => courses.filter((entry) => pathIsCatego
         <div class="trainings-panel">
           <nav class="panel">
             <h3 class="panel-title">Categories</h3>
-            {categories.map(item => (
+            {categories.filter(item => getCourseCount(item.category) > 0).map(item => (
               <a 
                 class:list={["panel-item", {"panel-item-active": item.category === path }]}
                 data-bs-title={item.title}

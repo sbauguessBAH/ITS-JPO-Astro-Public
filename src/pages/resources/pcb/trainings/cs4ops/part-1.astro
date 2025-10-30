@@ -4,12 +4,7 @@ import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar
 import natalieBettger from "@/src/assets/images/pcb/webinars/headshots/natalie-bettger.png";
 import Accordion from "@/src/components/Accordion.astro";
 import AccordionItem from "@/src/components/AccordionItem.astro";
-import Link from "@/src/components/Link.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
 import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
 import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
 import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
@@ -102,10 +97,10 @@ const presenters = [
             <FilmIcon/>
             Webinar Replay
           </a>
-          <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-1/s230516_Crowdsourcing_for_Advancing_Operations_Introduction_and_Application_Highlights_presentation.pptx")} rel="noopener noreferrer" target="_blank">
+          <!-- <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-1/s230516_Crowdsourcing_for_Advancing_Operations_Introduction_and_Application_Highlights_presentation.pptx")} rel="noopener noreferrer" target="_blank">
             <PptIcon/>
             PowerPoint
-          </a>
+          </a> -->
           <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-1/s230516_Crowdsourcing_for_Advancing_Operations_Introduction_and_Application_Highlights_presentation.pdf")} rel="noopener noreferrer" target="_blank">
             <PdfIcon/>
             PDF
