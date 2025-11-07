@@ -1,19 +1,17 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../_layout.astro";
-// import TrainingsLayout from "./_trainings-layout.astro";
-// import CourseCard from "./_course-card.astro";
 
 export const categories: { category?: string, title: string }[] = [
   { category: undefined, title: "All Courses" },
@@ -223,16 +221,17 @@ const getCourseCount = (path?: string) => courses.filter((entry) => pathIsCatego
                 shadow="sm"
               >
                 <CardHeader class="course-card-header">
-                  {course.image &&
-                    <Image
-                      alt={course.alt ?? "No alt provided"}
-                      class="course-card-image"
-                      src={course.image}
-                    />
-                    <p class="course-card-type">
-                      {course.type}
-                    </p>
-                  }
+                  {course.image && (
+                    <>
+                      <LibraryImage
+                        class="course-card-image"
+                        entry={course.image}
+                      />
+                      <p class="course-card-type">
+                        {course.type}
+                      </p>
+                    </>
+                  )}
                 </CardHeader>
                 <CardBody class="course-card-body">
                   <p class="course-card-category">

@@ -1,27 +1,19 @@
 ---
-import { Image } from "astro:assets";
-
-import microlearningImage from "@/src/assets/images/pcb/actions/microlearning.jpg";
-import peerExchangesImage from "@/src/assets/images/pcb/actions/peer-exchanges.jpg";
-import resourcesImage from "@/src/assets/images/pcb/actions/resources.jpg";
-import trainingsImage from "@/src/assets/images/pcb/actions/trainings.jpg";
-import v2xToolsImage from "@/src/assets/images/pcb/actions/v2x-tools.png";
-import webinarsImage from "@/src/assets/images/pcb/actions/webinars.jpg";
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 
-const resources = [
+const actions = [
   {
     description: "Discover available training sessions to enhance your ITS knowledge.",
-    image: trainingsImage,
+    image: "pcb/actions/trainings",
     path: "/resources/pcb/trainings",
     title: "Explore ITS Trainings",
   },
   {
     description: "Access brief videos for quick, focused learning on ITS topics.",
-    image: microlearningImage,
+    image: "pcb/actions/microlearning",
     path: "/resources/pcb/microlearning",
     title: "Explore Microlearning Videos",
   },
@@ -29,11 +21,11 @@ const resources = [
   //   title: "Access Academic Resources",
   //   description: "Connect with tools and materials to support students and faculty in preparing for careers in ITS.",
   //   path: "/resources/pcb/academic-resources",
-  //   image: resourcesImage,
+  //   image: "resources",
   // },
   {
     description: "Engage with your peers to share your challenges, best practices, and experiences advancing ITS technologies.",
-    image: peerExchangesImage,
+    image: "pcb/actions/peer-exchanges",
     path: "/resources/pcb/peer-exchanges",
     title: "Collaborate through Peer Exchanges",
   },
@@ -41,13 +33,13 @@ const resources = [
   //   title: "Access V2X Educational Resources",
   //   description: "Access educational resources for testing and deploying V2X technologies.",
   //   path: "/resources/pcb/cave",
-  //   image: v2xToolsImage
+  //   image: "v2x-tools"
   // },
   // {
   //   title: "View or Register for Webinars",
   //   description: "Learn about upcoming webinars on ITS and emerging transportation technologies, or view past webinars.",
   //   path: "/resources/pcb/webinars",
-  //   image: webinarsImage
+  //   image: "webinars"
   // }
 ]
 ---
@@ -83,21 +75,20 @@ const resources = [
   }
 </style>
 <div class="card-grid">
-  {resources.map(resource => (
-    <Card class="resource-card" href={resource.path} radius="md" shadow="md">
+  {actions.map(action => (
+    <Card class="resource-card" href={action.path} radius="md" shadow="md">
       <CardHeader class="p-0">
-        <Image 
-          alt={resource.title}
+        <LibraryImage 
           class="resource-card-image shadow"
-          src={resource.image}
+          entry={action.image}
         />
       </CardHeader>
       <CardBody class="resource-card-body">
         <h3 class="program-title-sm mb-2 text-foreground">
-          {resource.title}
+          {action.title}
         </h3>
         <p class="program-text">
-          {resource.description}
+          {action.description}
         </p>
       </CardBody>
     </Card>

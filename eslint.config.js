@@ -9,10 +9,10 @@ export default defineConfig([
   eslint.configs.recommended,
   tseslint.configs.recommended,
   eslintPluginAstro.configs.recommended,
-  perfectionist.configs["recommended-natural"],
   {
     rules: {
-      "@typescript-eslint/no-unused-vars": "warn"
-    }
+      "@typescript-eslint/no-unused-vars": "warn",
+      ...perfectionist.configs["recommended-natural"].rules
+    },
   }
 ]);

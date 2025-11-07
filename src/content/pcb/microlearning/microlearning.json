@@ -8,7 +8,7 @@
         "description": "An overview of how intelligent transportation systems (ITS) align with the Safe System Approach (SSA) - a guiding framework to enhance safety on our surface transportation system.",
         "url": "https://youtu.be/mxfk1_-QRYk", 
         "isExternal": true,
-        "image": "./images/safe-system.png",
+        "image": "pcb/microlearning/safe-system-approach",
         "id": "its-and-safe-system-approach"
       },
       { 
@@ -16,7 +16,7 @@
         "description": "Exploring how ITS technology can be used to encourage drivers to comply with posted speed limits, dynamically set speed limits based on travel conditions, or enforce posted speed limits.",
         "url": "https://youtu.be/3wvz-WtPNs0", 
         "isExternal": true,
-        "image": "./images/safer-speeds.png",
+        "image": "pcb/microlearning/safer-speeds",
         "id": "its-and-safer-speeds"
       },
       { 
@@ -24,7 +24,7 @@
         "description": "Using intelligent transportation systems (ITS)-driven roadway designs to compensate for human error, encourage safer behaviors, and protect the most vulnerable users.",
         "url": "https://youtu.be/GwM43DnCSyA", 
         "isExternal": true,
-        "image": "./images/safer-roads.png",
+        "image": "pcb/microlearning/safer-roads",
         "id": "its-and-safer-roads"
       },
       { 
@@ -32,7 +32,7 @@
         "description": "Leveraging intelligent transportation systems (ITS) to promote responsible driving behavior and create road conditions that prioritize every traveler's safety.",
         "url": "https://youtu.be/U4OKMa2Iml8", 
         "isExternal": true,
-        "image": "./images/safer-people.png",
+        "image": "pcb/microlearning/safer-people",
         "id": "its-and-safer-people"
       },
       { 
@@ -40,7 +40,7 @@
         "description": "Enhancing survivability and responder safety by integrating intelligent transportation systems (ITS) into rapid emergency access and comprehensive traffic incident management.",
         "url": "https://youtu.be/O2M1qWEAVtY", 
         "isExternal": true,
-        "image": "./images/post-crash-care.png",
+        "image": "pcb/microlearning/post-crash-care",
         "id": "its-and-post-crash-care"
       },
       { 
@@ -48,7 +48,7 @@
         "description": "Applying intelligent transportation systems (ITS) technologies to broaden in-vehicle safety features that prevent crashes and reduce their severity for occupants and bystanders.",
         "url": "https://youtu.be/gJ4u5tvWDJg", 
         "isExternal": true,
-        "image": "./images/safer-vehicles.png",
+        "image": "pcb/microlearning/safer-vehicles",
         "id": "its-and-safer-vehicles"
       }
     ]
@@ -62,7 +62,7 @@
         "description": "An overview of systems engineering's foundations, spotlighting concept of operations, requirements management, system architecture, and lifecycle verification.",
         "url": "https://youtu.be/hJKH7nG6QjM",
         "isExternal": true,
-        "image": "./images/se-approach.png",
+        "image": "pcb/microlearning/se-approach",
         "id": "systems-engineering-approach"
       },
       {
@@ -70,7 +70,7 @@
         "description": "Examining why applying systems engineering accelerates integration, enhances safety, and ensures scalable, resilient intelligent transportation systems (ITS) solutions.",
         "url": "https://youtu.be/E2M8MSOTBaU",
         "isExternal": true,
-        "image": "./images/importance-of-aps-to-its.png",
+        "image": "pcb/microlearning/importance-of-aps-to-its",
         "id": "importance-of-aps-to-its"
       },
       {
@@ -78,7 +78,7 @@
         "description": "Showcasing essential standards, tools, and learning platforms to build systems engineering expertise for successful intelligent transportation systems (ITS) implementations.",
         "url": "https://youtu.be/Mj04pFK3Jxk",
         "isExternal": true,
-        "image": "./images/se-approach-resources.png",
+        "image": "pcb/microlearning/se-approach-resources",
         "id": "systems-engineering-approach-resources"
       }
     ]

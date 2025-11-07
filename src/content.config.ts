@@ -1,6 +1,6 @@
 /* eslint-disable perfectionist/sort-objects */
 import { file, glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, reference, z } from 'astro:content';
 
 // #region ITS JPO
 /**
@@ -38,6 +38,30 @@ const infographics = defineCollection({
 });
 
 // #endregion
+// #region Images
+/**
+ * Image library for use across various components on the website
+ * Images are stored in src/content/images and metadata is stored in metadata.json
+ * 
+ * All images should include alt text and a citation where applicable, along with an album name for organization
+ */
+const library = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.json", base: "./src/content/library" }),
+  schema: ({ image }) => z.object({
+    /** Descriptive text */
+    alt: z.string().optional(),
+    /** Album name for the image--usually the path for clarity. Ex: pcb/microlearning */
+    album: z.string(),
+    /** Image source--provided as a string in JSON, relative to the file, converted to ImageMetadata object */
+    image: image(),
+    /** Where was the image sourced--iStock, FHWA, etc. */
+    citation: z.string(),
+    /** Origin URL for the source */
+    origin: z.union([z.string().url(), z.literal('')]),
+  })
+})
+
+// #endregion
 // #region PCB
 /**
  * Professional Capacity Building (PCB)
@@ -50,34 +74,35 @@ const infographics = defineCollection({
 
 const pcbMicrolearning = defineCollection({
   loader: file('src/content/pcb/microlearning/microlearning.json'),
-  schema: ({ image }) => z.object({
+  schema: z.object({
     title: z.string(),
     description: z.string().optional(),
     trainings: z.array(
       z.object({
         title: z.string(),
         description: z.string(),
-        image: image().optional(),
+        image: reference("library"),
         url: z.string().url().optional(),
-        isExternal: z.boolean().optional()
-      })
-    )
+        isExternal: z.boolean().optional(),
+        id: z.string(),
+      }),
+    ),
   }),
 });
 
 const pcbTrainings = defineCollection({
   loader: file('src/content/pcb/trainings/all/trainings.json'),
-  schema: ({ image }) => z.object({
+  schema: z.object({
     title: z.string(),
     description: z.string(),
-    image: image().optional(),
-    alt: z.string().optional(),
     url: z.string().optional(),
     isExternal: z.boolean().optional(),
     category: z.string(),
     type: z.string(),
-    action: z.string().optional()
-  })
+    image: reference("library"),
+    action: z.string().optional(),
+    id: z.string(),
+  }),
 });
 
 const pcbStandardsTrainings = defineCollection({
@@ -160,6 +185,7 @@ export const collections = {
   pcbStandardsTrainings,
   pcbTransitStandardsTrainings,
   // ascStandards,
+  library,
   automationResources
 };
 // #endregion

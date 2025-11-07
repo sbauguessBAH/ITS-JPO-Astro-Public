@@ -1,57 +1,43 @@
 ---
-import automationImage from "@/src/assets/images/automation/automation.webp";
-import { Image } from "astro:assets";
-import base_url from "@/src/lib/base_url";
-
-import cdaIcon from "@/src/assets/images/automation/cda-icon.svg";
-import cdaImage from "@/src/assets/images/automation/cda.webp";
-import adsIcon from "@/src/assets/images/automation/ads-icon.svg";
-import humanIcon from "@/src/assets/images/automation/human-icon.svg";
-import humanImage from "@/src/assets/images/automation/human-factors.jpg";
-import amsIcon from "@/src/assets/images/automation/ams-icon.svg";
-import amsImage from "@/src/assets/images/automation/ams.png";
-import Roadmap from "./_roadmap.astro";
 import DownloadIcon from "@/src/components/programs/icons/DownloadIcon.astro";
-import Layout from "./_layout.astro";
 import OverlayCard, { type OverlayResource } from "@/src/components/programs/OverlayCard.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+import Layout from "./_layout.astro";
+import Roadmap from "./_roadmap.astro";
 
 const focusAreas: OverlayResource[] = [
   { 
-    name: "Cooperative Driving Automation (CDA)", 
-    description: "Assess the feasibility of conducting a small-scale CDA pilot (focusing on L0-2 with Interoperable Connectivity) and package the accomplishments for design and architecture.",
-    path: "/research-areas/automation-program/focus-areas/cda",
-    background: cdaImage,
-    alt: "",
-    icon: cdaIcon,
+    background: "cooperative-driving-automation",
     color: "blue",
+    description: "Assess the feasibility of conducting a small-scale CDA pilot (focusing on L0-2 with Interoperable Connectivity) and package the accomplishments for design and architecture.",
+    icon: "icon-cda",
+    name: "Cooperative Driving Automation (CDA)",
+    path: "/research-areas/automation-program/focus-areas/cda",
   },
   { 
-    name: "Analysis, Modeling and Simulation (AMS)", 
+    background: "analysis-modeling-simulation",
+    color: "green",
     description: "Crosscutting research and resource development including design, planning, operations, and impact assessments informed by improved AMS.",
-    path: "/research-areas/automation-program/focus-areas/ams",
-    background: amsImage,
-    alt: "",
-    icon: amsIcon,
-    color: "green"
+    icon: "icon-ams",
+    name: "Analysis, Modeling and Simulation (AMS)",
+    path: "/research-areas/automation-program/focus-areas/ams"
   },
   { 
-    name: "Human Factors", 
-    description: "Identify likely safety-relevant scenarios where human performance and interaction behaviors with vehicle automation technologies have a mismatch and develop corresponding Human Factors best practices.",
-    path: "/research-areas/automation-program/focus-areas/human-factors",
-    background: humanImage,
-    alt: "",
-    icon: humanIcon,
+    background: "human-factors",
     color: "orange",
+    description: "Identify likely safety-relevant scenarios where human performance and interaction behaviors with vehicle automation technologies have a mismatch and develop corresponding Human Factors best practices.",
+    icon: "icon-human-factors",
+    name: "Human Factors",
+    path: "/research-areas/automation-program/focus-areas/human-factors",
   },
   { 
-    name: "Automated Driving System (ADS) Integration", 
+    background: "automated-driving-system",
+    color: "purple",
     description: "Explore recommended practices to address safe and efficient Automated Driving System (ADS) Integration into the transportation system.",
-    path: "/research-areas/automation-program/focus-areas/ads",
-    background: automationImage,
-    alt: "",
-    icon: adsIcon,
-    color: "purple"
+    icon: "icon-ads",
+    name: "Automated Driving System (ADS) Integration",
+    path: "/research-areas/automation-program/focus-areas/ads"
   },
 ]
 
@@ -175,7 +161,7 @@ const focusAreas: OverlayResource[] = [
       <div class="strategy-container mt-4" role="list">
         <h3 class="program-title-md">Research Strategies</h3>
         <div class="strategy">
-          <div class="strategy-icon" aria-hidden="true">
+          <div aria-hidden="true" class="strategy-icon">
             1
           </div>
           <div class="strategy-content" role="listitem">
@@ -192,7 +178,7 @@ const focusAreas: OverlayResource[] = [
           </div>
         </div>
         <div class="strategy">
-          <div class="strategy-icon" aria-hidden="true">
+          <div aria-hidden="true" class="strategy-icon">
             2
           </div>
           <div class="strategy-content" role="listitem">
@@ -208,7 +194,7 @@ const focusAreas: OverlayResource[] = [
           </div>
         </div>
         <div class="strategy">
-          <div class="strategy-icon" aria-hidden="true">
+          <div aria-hidden="true" class="strategy-icon">
             3
           </div>
           <div class="strategy-content" role="listitem">
@@ -223,7 +209,7 @@ const focusAreas: OverlayResource[] = [
           </div>
         </div>
         <div class="strategy">
-          <div class="strategy-icon" aria-hidden="true">
+          <div aria-hidden="true" class="strategy-icon">
             4
           </div>
           <div class="strategy-content" role="listitem">
@@ -270,8 +256,8 @@ const focusAreas: OverlayResource[] = [
           <a 
             class="program-button" 
             href={base_url("/assets/images/automation/roadmap.png")}
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <DownloadIcon/>
             Download Image

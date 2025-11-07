@@ -1,17 +1,15 @@
 ---
-import { type ImageMetadata } from 'astro';
-import { Image } from 'astro:assets';
-
 import base_url from '@/src/lib/base_url';
 
 import { categories } from './[...path].astro';
+import LibraryImage, { type LibraryImageEntry } from '@/src/components/programs/LibraryImage.astro';
 
 interface Props {
   action?: string;
   alt?: string;
   category: string;
   description: string;
-  image?: ImageMetadata | Promise<{ default: ImageMetadata }>;
+  image?: LibraryImageEntry;
   isExternal?: boolean;
   title: string;
   type: string;
@@ -160,10 +158,9 @@ const categoryTitle = originalCategoryTitle === "Transportation Systems Manageme
 </style>
 <div class="course-card">
   {image && 
-    <Image
-      alt={alt ?? "No alt provided"}
+    <LibraryImage
+      entry={image}
       class="course-card-image"
-      src={image}
     />
   }
   {categoryTitle &&
