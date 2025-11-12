@@ -9,7 +9,6 @@
 import "@/src/styles/variables.css";
 import Banner from "../components/Banner.astro";
 import Footer from "@/src/components/Footer.astro";
-import Navigation from "@/src/components/layout/Navigation.astro";
 import Header from "@/src/components/layout/Header.astro";
 import base_url from "@/src/lib/base_url";
 import { validateNavigation } from "../lib/navigation";
@@ -70,7 +69,6 @@ const isTestEnv = import.meta.env.VITE_ENVIRONMENT === "test";
     <header>
       <Banner />
       <Header />
-      <Navigation />
     </header>
     <slot />
     <Footer />

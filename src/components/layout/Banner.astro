@@ -1,7 +1,7 @@
 ---
 import type { ImageMetadata } from 'astro';
 import defaultBannerImage from "@/src/assets/images/banners/Default_Banner.png";
-
+import Navigation from './Navigation.astro';
 interface Props {
   image?: ImageMetadata;
 }
@@ -17,6 +17,7 @@ const { image } = Astro.props;
   <div class="banner-text-container">
     <div class="banner-text container-xl">
       <slot/>
+      <Navigation />
     </div>
   </div>
 </div>

@@ -7,6 +7,10 @@ import instgramIcon from "@/src/assets/images/Instagram.png";
 import twitterIcon from "@/src/assets/images/Twitter.png";
 import inDeedIcon from "@/src/assets/images/inDeed.png";
 import base_url from "@/src/lib/base_url";
+import { getTrimmedPathname, navigation } from "@/src/lib/navigation";
+
+const pathname = Astro.url.pathname;
+const trimmedPathname = getTrimmedPathname(pathname);
 ---
 
 <style>
@@ -18,11 +22,21 @@ import base_url from "@/src/lib/base_url";
     height: 50px;
   }
   .header-bar {
-    min-height: 90px;
     background-image: linear-gradient(to right, #0a1e62, #09638c);
-    padding: 10px ;
     color: white;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .siteheader-wrapper {
+    flex-shrink: 0;
   }
   a {
     transition: all 0.35s;
@@ -31,9 +45,133 @@ import base_url from "@/src/lib/base_url";
     max-height: 2rem;
     object-fit: contain;
   }
-  @media (max-width: 768px) {
+
+  /* Navigation styles (merged from Navigation.astro) */
+  nav.navbar {
+    flex-grow: 1;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    justify-content: flex-end;
+  }
+
+  nav.navbar .container-xl {
+    padding: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  nav a,
+  nav ul,
+  nav li,
+  nav button {
+    transition: all 0.35s;
+  }
+
+  nav a:active {
+    background: rgb(198, 198, 198);
+    color: black;
+  }
+
+  .dropdown-toggle.show {
+    color: black;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .dropdown-toggle .show {
+    color: black;
+  }
+
+  .dropdown-menu {
+    left: -1px;
+  }
+
+  .show.nav-link:focus {
+    color: black;
+  }
+
+  .dropdown-menu li > ul.dropdown-menu {
+    border-radius: 10px;
+  }
+
+  .dropend .dropdown-toggle::after {
+    content: "\f054";
+    border: 0;
+    color: #009ad6;
+  }
+
+  .dropdown-item.dropdown-toggle.show::after {
+    content: "\f078";
+    border: 0;
+    color: #009ad6;
+  }
+  .dropdown-item.dropdown-toggle.show {
+    background: rgb(233, 236, 239);
+    border-radius: 0;
+  }
+  .dropdown-menu {
+    border: none;
+  }
+
+  .navbar-nav .nav-item.dropdown.show > .nav-link {
+    font-weight: bold;
+  }
+
+  /* Show dropdowns on hover for desktop/tablet (keep click behavior on small screens) */
+  @media (min-width: 992px) {
+    /* main dropdown */
+    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0;
+    }
+
+    /* make the toggle appear active on hover */
+    .navbar-nav .nav-item.dropdown:hover > .nav-link {
+      color: black;
+      background-color: white;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* nested (dropend) submenu on hover */
+    .navbar-nav .dropend:hover > .dropdown-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* ensure dropdown-menu default is hidden until hover (desktop) */
+    .navbar-nav .dropdown-menu {
+      display: none;
+    }
+  }
+.navbar-collapse{
+  justify-content: flex-end;
+}
+  @media (max-width: 992px) {
+    .navbar-marginbottom {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 1400px) {
     .header-bar {
-      min-height: 60px;
+      flex-wrap: wrap;
+    }
+    .header-content {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .siteheader-wrapper {
+      flex-basis: 100%;
+    }
+    nav.navbar {
+      flex-grow: 0;
+      width: 100%;
+      justify-content: flex-start;
+      
     }
   }
 </style>
@@ -63,14 +201,69 @@ import base_url from "@/src/lib/base_url";
 </div>
 <div class="header-bar">
   <div class="container-xl">
-    <div class="col-lg-10">
-      <p class="siteheader">
-        <a rel="preload" href={base_url("/")} style="text-decoration: none; color: white">
-          Intelligent Transportation Systems
-          <br />
-          Joint Program Office
-        </a>
-      </p>
+    <div class="header-content ">
+      <div class="siteheader-wrapper">
+        <div class="siteheader d-flex justify-content-between ali">
+          <a rel="preload" href={base_url("/")} style="text-decoration: none; color: white">
+            Intelligent Transportation Systems
+            <br />
+            Joint Program Office
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-content"
+            aria-controls="navbar-content"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-marginbottom">
+         
+        <div class="container-xl">
+         
+          <div class="collapse navbar-collapse" id="navbar-content">
+            <ul class="navbar-nav mb-lg-0">
+              {navigation.map(link => (
+                <li class:list={["nav-item dropdown", {"activeMenu": trimmedPathname.startsWith(link.url)}]}>
+                  <a 
+                    class="nav-link py-3 px-4 dropdown-toggle" 
+                    id="navbarDropdown" 
+                    role="button" 
+                    data-bs-toggle="dropdown" 
+                    data-bs-auto-close="outside"
+                  >
+                    {link.name}
+                  </a>
+                  <ul class="dropdown-menu mt-0 shadow" aria-labelledby="navbarDropdown">
+                    {link.pages.map(pageLink => {
+                      if (pageLink.isExternal) return (
+                        <li>
+                          <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
+                            {pageLink.name}
+                          </a>
+                        </li>
+                      );
+                      
+                      return (
+                        <li>
+                          <a class="dropdown-item" href={base_url(pageLink.url)}>
+                            {pageLink.name}
+                          </a>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
   </div>
 </div>

@@ -4,6 +4,7 @@
 }
 .siteheader{
     font-family: "Source Sans 3", sans-serif;
+    padding: 10px 0;
 }
 
 
@@ -733,8 +734,6 @@ footer {
     .navbar-toggler {
         margin-top:0px;
         padding-top:0px;
-        margin-bottom:12px;
-        width: 100%;
         min-height: 48px;
         background-color: rgb(255,255,255,.25);
     }
