@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 import base_url from '@/src/lib/base_url'
 
 import type { LibraryImageEntry } from './LibraryImage.astro';
@@ -36,6 +34,11 @@ const { ...props } = Astro.props
     font-weight: inherit;
     text-decoration: none;
     box-shadow: var(--box-shadow-lg)
+  }
+
+  .overlay-card:focus {
+    font-weight: inherit;
+    text-decoration: none;
   }
   
   .overlay-card-image {
