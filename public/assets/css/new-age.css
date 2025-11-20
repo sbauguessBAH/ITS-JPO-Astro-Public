@@ -66,7 +66,6 @@ a {
 
 a:hover, a:focus {
   color: #1b427e;
-  font-weight: 900;
 }
 
 hr {
@@ -175,7 +174,6 @@ section h2.sideways{
 
 #mainNav .navbar-nav>li>a {
   font-size: 11pt;
-  text-transform: uppercase;
   color: #BEC9D2;
 }
 

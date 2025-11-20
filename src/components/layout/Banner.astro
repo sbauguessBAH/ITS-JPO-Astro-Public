@@ -1,72 +1,194 @@
 ---
 import type { ImageMetadata } from 'astro';
 import defaultBannerImage from "@/src/assets/images/banners/Default_Banner.png";
-import Navigation from './Navigation.astro';
+import base_url from '@/src/lib/base_url';
+import { getTrimmedPathname, navigation, comparePathname } from "@/src/lib/navigation";
+import type { ChildNavigationItem } from '@/src/types';
+
 interface Props {
   image?: ImageMetadata;
 }
 
 const { image } = Astro.props;
+const bannerImageUrl = image?.src ?? defaultBannerImage.src;
+
+// SubNavigation logic
+// Shows a contextual sub-navigation bar for sections that have a 3rd level of pages.
+// The full current pathname from Astro (may include base path)
+const pathname = Astro.url.pathname;
+// Trim trailing slash and base path so comparisons are consistent across environments
+const trimmedPathname = getTrimmedPathname(pathname);
+
+// Determine the current top-level section and the current second-level page.
+// We only show this subnav when the current second-level page contains third-level pages.
+const currentSection = navigation.find(sec => trimmedPathname.startsWith(sec.url));
+let currentSecond: ChildNavigationItem | undefined = undefined;
+if (currentSection && currentSection.pages) {
+  // Find the second-level page that the current path belongs to (e.g., `/research-areas/ITS4US`)
+  currentSecond = currentSection.pages.find(p => trimmedPathname.startsWith(p.url)) as ChildNavigationItem | undefined;
+}
+// showSubNav true => render the nav; navItems contains the third-level pages to render
+// There is a bit of a problem with the active class being applied to the index of a section, but this has been address by using css to only apply to items with the dropdown-toggle class
+const showSubNav = Boolean(currentSecond && currentSecond.pages && currentSecond.pages.length > 0);
+const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
 ---
-<div class="banner-container">
-  <img 
-    src={image?.src ?? defaultBannerImage.src} 
-    alt="Banner Image" 
-    class="banner-image"
-  />
-  <div class="banner-text-container">
-    <div class="banner-text container-xl">
-      <slot/>
-      <Navigation />
+<div class="banner-container" style={`--banner-bg: url('${bannerImageUrl}')`}>
+  <div class="banner-text-container container-xl flex-column ">
+    <div class="banner-text  d-flex justify-content-between align-items-center">
+      <div class="  "><slot/></div>
+
+       <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbar-content2"
+              aria-controls="navbar-content2"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
     </div>
+    {showSubNav && (
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-marginbottom ">
+          
+           
+            <div class="collapse navbar-collapse" id="navbar-content2">
+              <ul class="navbar-nav">
+                {navItems.map(link => (
+                  <li class:list={["nav-item", {"dropdown": (link.pages && link.pages.length > 0), "activeMenu": trimmedPathname.startsWith(link.url)}]}>
+                    {/* Top-level anchor for this subnav entry. `comparePathname` marks it active when it matches */}
+                    <a 
+                      class:list={[
+                        "nav-link",
+                        {"dropdown-toggle": link.pages && link.pages.length > 0},
+                        {"active": comparePathname(pathname, link.url, false)}
+                      ]}
+                      href={base_url(link.url)}
+                      id={"navbarDropdown-" + link.name.replaceAll(" ", "-")}
+                      role="button"
+                    >
+                      {link.name}
+                    </a>
+                    
+                    {link.pages && link.pages.length > 0 && (
+                      <ul class="dropdown-menu mt-0 shadow" aria-labelledby={"navbarDropdown-" + link.name.replaceAll(" ", "-")}>
+                        {(link.pages ?? []).map(pageLink => {
+                          /*
+                            pageLink may be an external link (open in new tab), a link with further children
+                            (render a dropend submenu), or a plain link. We render `active` classes using
+                            `comparePathname` so the current page is visibly highlighted.
+                          */
+                          if (pageLink.isExternal) return (
+                            <li>
+                              <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
+                                {pageLink.name}
+                              </a>
+                            </li>
+                          );
+                          if (pageLink.pages) return (
+                            <li class="dropend">
+                              
+                              <a 
+                                href={base_url(pageLink.url)}
+                                class:list={["dropdown-item", {"dropdown-toggle": true, "active": comparePathname(pathname, pageLink.url, true)}]}
+                              
+                              >
+                                {pageLink.name}
+                              </a>
+                              <ul class="dropdown-menu shadow">
+                                {(pageLink.pages ?? []).map(subPageLink => {
+                                  if (subPageLink.isExternal) return (
+                                    <li>
+                                      <a 
+                                        class="dropdown-item externalLink" 
+                                        href={subPageLink.url}
+                                      >
+                                        {subPageLink.name}
+                                      </a>
+                                    </li>
+                                  )
+                                  return (
+                                    <li>
+                                      <a 
+                                        class:list={[
+                                          "dropdown-item", 
+                                          {"disabled": [
+                                              "ITS Professional Capacity Building", 
+                                              "Architecture, Standards, and Cybersecurity (ASC)"
+                                            ].includes(subPageLink.name)
+                                          },
+                                          {"active": comparePathname(pathname, subPageLink.url)}
+                                        ]} 
+                                        href={base_url(subPageLink.url)}
+                                      >
+                                        {subPageLink.name}
+                                      </a>
+                                    </li>
+                                  )
+                                })}
+                              </ul>
+                            </li>
+                          )
+                          return (
+                            <li>
+                              <a class:list={["dropdown-item", {"active": comparePathname(pathname, pageLink.url)}]} href={base_url(pageLink.url)}>
+                                {pageLink.name}
+                              </a>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          
+        </nav>
+      )}
   </div>
 </div>
 
 <style>
-  .banner-container {
-    position: relative;
-    max-height: 10rem;
-    min-height: 4rem;
-    width: 100%;
-    overflow: hidden;
-  }
+.banner-container {
+  /* THIS LINE IS CRITICAL: It grabs the image from the HTML variable */
+  background-image: var(--banner-bg);
 
+  /* Existing styles */
+  position: relative;
+  min-height: 7rem;
+  width: 100%;
+  overflow: visible;
+  display: flex;
+  align-items: end;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 10px 10px -10px rgba(0,0,0,0.2),inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 0 10px 10px -10px rgba(0,0,0,0.2),inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 10px 10px -10px rgba(0,0,0,0.2),inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+}
   .banner-image {
-    width: 100%;
-    height: 100%;
-    min-height: 4rem;
-    object-fit: cover;
-    object-position: center center;
+    display: none;
   }
 
   .banner-text-container {
-    position: absolute;
     text-wrap: pretty;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    box-shadow: inset 0 10px 10px -10px rgba(0,0,0,0.2),inset 0 -10px 10px -10px rgba(0,0,0,0.2);
-    -moz-box-shadow: inset 0 10px 10px -10px rgba(0,0,0,0.2),inset 0 -10px 10px -10px rgba(0,0,0,0.2);
-    -webkit-box-shadow: inset 0 10px 10px -10px rgba(0,0,0,0.2),inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+    justify-content: center;
+  height: -webkit-fill-available;
+  height: -mox-available;
+  height: fill-available;
   }
 
-  .banner-text {
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
+
 
   .banner-text {
     font-size: 3rem;
     color: white;
     font-weight:bold;
-    line-height: 0.9;
-    margin-bottom: 0;
-    text-transform:uppercase;
     transition: font-size 0.2s ease;
     text-wrap: pretty;
   }
@@ -99,4 +221,358 @@ const { image } = Astro.props;
     font-size: 1.2rem;
   }
 }
+
+  /* SubNavigation styles */
+  a,
+  ul,
+  li,
+  nav,
+  button
+  .show {
+    transition: all 0.35s;
+  }
+   .navbar-nav .nav-item .nav-link {
+    font-size: 17px;
+  }
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .nav-link{
+    border-radius: 10px 10px 0 0;
+    background-color: rgb(233, 236, 239, 0.25);
+
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: #f8f9fa;
+  }
+
+  .navbar {
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+.navbar-nav {
+    display: flex;
+    gap: 5px;
+}
+ 
+
+  .active, .nav-link:hover {
+    background: white;
+    color: black !important;
+  }
+
+
+  .dotlogo {
+    max-height: 25px;
+    object-fit: contain;
+    object-position: 0%;
+    padding-right: 10px;
+    margin-top: 14px;
+    margin-left: 30px;
+  }
+
+  .dropdown-toggle.show {
+    color: black;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0;
+  }
+
+  .dropdown-toggle .show {
+    color: black;
+  }
+
+  .dropdown-menu {
+    left: -1px;
+  }
+
+  .show.nav-link:focus {
+    color: black;
+  }
+
+  .dropdown-menu li > ul.dropdown-menu {
+    border-radius: 10px;
+  }
+
+  .dropend .dropdown-toggle::after {
+    content: "\f054";
+    border: 0;
+    color: white;
+    transform: rotate(270deg);
+    transform-origin: center;
+  }
+
+    .dropend:hover .dropdown-toggle:hover::after {
+    content: "\f054";
+    border: 0;
+    color: black;
+    transform: rotate(90deg);
+    transform-origin: center;
+  }
+
+   @media (min-width: 992px) {
+    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu, .activeMenu  a.dropdown-toggle {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0;
+    }
+    .navbar-nav .nav-item.dropdown:hover > .nav-link, .activeMenu  a.dropdown-toggle {
+      color: black !important;
+      background-color: white;
+    }
+    .navbar-nav .dropend:hover > .dropdown-menu, .activeMenu  a.dropdown-toggle {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      color: black;
+    }
+    /* hide dropdowns by default on desktop until hover */
+    .navbar-nav .dropdown-menu {
+      display: none;
+    }
+  
+  }
+
+  .dropdown-item.dropdown-toggle.show::after {
+    content: "\f078";
+    border: 0;
+    color: #009ad6;
+  }
+  .dropdown-item.dropdown-toggle.show{
+    background: rgb(233, 236, 239);
+    border-radius: 0;
+  }
+  .dropdown-menu{
+    border: none;
+  }
+
+  @media (max-width: 992px) {
+    .navbar-marginbottom {
+      margin-bottom: 0;
+    }
+  }
+  .navbar-nav .nav-item.dropdown.show > .nav-link {
+    font-weight: bold;
+  }
+
+  /* Show dropdowns on hover for desktop/tablet (keep click behavior on small screens) */
+  @media (min-width: 992px) {
+    /* main dropdown */
+    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0; /* align with Bootstrap spacing */
+    }
+
+    /* make the toggle appear active on hover */
+    .navbar-nav .nav-item.dropdown:hover > .nav-link {
+      color: black;
+      background-color: white;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* nested (dropend) submenu on hover */
+    .navbar-nav .dropend:hover > .dropdown-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+     
+    }
+
+    /* ensure dropdown-menu default is hidden until hover (desktop) */
+    .navbar-nav .dropdown-menu {
+      display: none;
+    }
+  }
+
+
+  /* Make dropdown items light gray on hover/focus for better visibility */
+  .dropdown-menu .dropdown-item:hover,
+  .dropdown-menu .dropdown-item:focus {
+    background-color: lightgray; /* light gray */
+    color: #000; /* ensure readable text */
+  }
+
+
+
+  
+  /* ===== Responsive adjustments ===== */
+  @media (max-width: 1200px) {
+    .header-bar {
+      flex-wrap: wrap;
+    }
+    .header-content {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .siteheader-wrapper {
+      flex-basis: 100%;
+    }
+    nav.navbar {
+      flex-grow: 0;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+  }
+
+  @media (max-width: 992px) {
+    .navbar-marginbottom {
+      margin-bottom: 0;
+    }
+      .nav-link.show {
+      color: black !important;
+      background-color: white !important;
+    }
+    
+  }
+
+
+  .navbar-toggler{
+    display: none;
+  }
+/* If the container does NOT have a .navbar child, hide the toggler */
+.banner-text-container:not(:has(.navbar)) .navbar-toggler {
+  display: none !important;
+}
+  
+
+
+
+  @media (max-width: 992px) {
+    .Topbar .col-lg-2 {
+      width: 50%;
+    }
+    .navbar-toggler {
+      display: block;
+      margin-top: 0px;
+      padding: 0px;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(255, 255, 255, 0.25);
+    }
+
+    /* Show an 'X' when the toggler is expanded (i.e. doesn't have `collapsed`) */
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' d='M6 6 L24 24 M24 6 L6 24'/%3e%3c/svg%3e");
+      align-self: center;
+    }
+
+    /* Show hamburger when the toggler has the `collapsed` class (default) */
+    .navbar-toggler.collapsed .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    
+/* --- DEFAULT / DESKTOP (Keep existing behavior) --- */
+
+/* --- MOBILE OVERRIDES (< 992px) --- */
+@media (max-width: 992px) {
+  
+  /* 1. Remove image from the main parent wrapper */
+  .banner-container {
+    background-image: none !important; 
+    align-items: stretch; /* Let children determine height */
+    min-height: 5rem;
+  }
+
+  /* 2. Move the image to the Text Container only */
+  .banner-text {
+    background-image: var(--banner-bg);
+    background-size: cover;
+    background-position: center;
+    
+    /* Visual adjustments so the image looks like a banner */
+    width: 100vw;               /* Force full screen width */
+    margin-left: calc(-50vw + 50%); /* Center it after forcing width */
+    padding:  12px;         /* Add padding so image is visible around text */
+    margin-bottom: 0;
+      min-height: 5rem;
+
+  }
+
+  /* 3. Give the Nav a solid background so it looks like a separate block */
+  .navbar {
+    background-color: #091f61; /* Dark Grey (Matches standard Bootstrap dark) */
+    /* Or use: background-color: black; */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%); /* Force full width */
+    padding: 0;
+  }
+  .nav-item{
+    margin: 0 1rem;
+  }
+  .navbar-collapse{
+    padding: 1rem 0;
+  }
+
+  .nav-link{
+     border-radius: 10px;
+  }
+
+  .banner-text-container {
+    /* Ensure flex column so Nav sits physically below Text */
+    flex-direction: column;
+    width: 100%;
+    padding: 0; /* Remove padding so full-width works */
+  }
+}
+    
 </style>
+
+{/* Mobile: First tap opens dropdown, second tap navigates. */}
+<script is:inline>
+  (function () {
+    // Only apply this behavior on narrow viewports (mobile/tablet)
+    const BREAKPOINT = 992;
+
+    function onBodyClick(e) {
+      // Only handle left-click / taps
+      const el = e.target.closest && e.target.closest('.navbar .dropdown-toggle');
+      if (!el) return;
+
+      if (window.innerWidth >= BREAKPOINT) return; // desktop behavior unchanged
+
+      // If this toggle was tapped once already, navigate to the link target.
+      if (el.dataset.dropdownTap === '1') {
+        // cleanup marker so subsequent taps behave normally
+        delete el.dataset.dropdownTap;
+        // Try to read the href and navigate explicitly. Some mobile dropdown
+        // handlers (Bootstrap) can prevent the native navigation on dropdown toggles,
+        // so we set location.href directly to guarantee navigation.
+        const href = el.getAttribute && el.getAttribute('href');
+        if (href && href !== '#' && href !== 'javascript:void(0)') {
+          // prevent any default handling and force navigation
+          e.preventDefault();
+          window.location.href = href;
+        }
+        return;
+      }
+
+      // First tap: prevent navigation and open the dropdown
+      e.preventDefault();
+      el.dataset.dropdownTap = '1';
+      try {
+        // Use Bootstrap's Dropdown API if available to open the menu
+        if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+          window.bootstrap.Dropdown.getOrCreateInstance(el).show();
+        } else {
+          // Fallback: add class to parent to show menu (relies on CSS hover rules)
+          const parent = el.parentElement;
+          if (parent) parent.classList.add('show');
+        }
+      } catch (err) {
+        // ignore
+      }
+
+      // Reset the tap marker after 5 seconds so the link doesn't stay "armed" forever
+      setTimeout(() => { try { delete el.dataset.dropdownTap } catch (e) {} }, 5000);
+    }
+
+    document.addEventListener('click', onBodyClick, { passive: false });
+  })();
+</script>

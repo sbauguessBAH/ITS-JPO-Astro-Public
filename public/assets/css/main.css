@@ -2,16 +2,8 @@
 
     font-family: "Source Sans 3", sans-serif;
 }
-.siteheader{
-    font-family: "Source Sans 3", sans-serif;
-    padding: 10px 0;
-}
 
 
-.navbar-nav .nav-item.active .nav-link,
-.navbar-nav .nav-item:hover .nav-link {
-    color: deepskyblue;
-}
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     background-image: none !important;
@@ -31,20 +23,9 @@
     font-size:24px;
 }
 
-.navbar-expand-lg .navbar-nav .nav-link {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-.navbar-expand-xl .navbar-nav .nav-link {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
 
-.navbar-nav
-{
-margin-right: .5rem;
 
-}
+
     
 .Topbar {
     background-color: #091F61;
@@ -55,15 +36,8 @@ margin-right: .5rem;
     margin-top:10px;
 }
 
-.navbar{
-    width:auto;
-}
 
 
-.navbar-nav .nav-item .nav-link {
-    color: black;
-    font-size:17px;
-}
 
 .SidebarNav li {
     list-style-type: none;
@@ -95,9 +69,6 @@ margin-right: .5rem;
         background-color: transparent;
     }
 
-.nav-link {
-    color: #f8f9fa;
-}
 
 .dropdown-menu {
     background-color: white;
@@ -236,32 +207,9 @@ a {
 
 }
 
-.nav-item dropdown show {
-    background-color: white;
-}
-.nav-item-active {
-    background-color: #ddeaf7 ;
-}
-.nav-item-active .nav-link:hover {
-    color:#09638C !important;
-}
-
-.navbar-dark .navbar-nav .show > .nav-link {
-    color: black;
-    background-color: white;
-    border-radius: 10px 10px 0px 0px;
-}
-
-
-.navbar-dark .navbar-nav .nav-link {
-    color: #f8f9fa;
-    border-radius: 10px 10px 0px 0px;
-}
-
 
 .bg-dark {
     background-image: linear-gradient(to right, #0A1E62, #09638C );
-    background-color: #343a40 !important;
 }
 
 .dropdown-toggle::after {
@@ -279,9 +227,7 @@ a {
     text-transform: uppercase;
 }
 
-nav-item dropdown show{
-    background-color:white;
-}
+
 
 .h1, h1 {
     font-size: 3.0rem;
@@ -681,79 +627,8 @@ footer {
     border-radius: 5px;
 }
 
-@media (max-width: 768px) {
-    .siteheader {
-        font-family: 'Source Sans 3', sans-serif;
-        font-weight: 500;
-        color:white;
-        font-size: 1rem;
-        line-height: 1.3rem;
-        margin-bottom:0px;
-        padding-bottom:0px;
-    }
-    .HeaderBar {
-        min-height: 60px;
-    }
-    .AboutBanner {
-        height:60px;
-    }
-    .AboutBannerTitle h1 {
-        font-size: 24px;
-        line-height: .9;
-    }
-    aside {
-        display: none;
-    }
-    aside.leftNavMobile {
-        display:flex;
-    }
-    main.MainContent {
-        min-width:100%;
-    }
- }
-@media (min-width: 769px) {
-    .siteheader {
-        font-family: 'Source Sans 3';
-        font-weight: 700;
-        color:white !important;
-        font-size: 1.7rem;
-        line-height: 2.1rem;
-        margin-bottom:0px;
-    }
-    .activeMenu .nav-link.dropdown-toggle {
-        background-color: rgba(255, 255, 255, 1);
-        color:#005D83 !important;
-        border-radius: 10px 10px 0px 0px;
-    }
-    
- }
- @media (max-width: 991px) {
-    .Topbar .col-lg-2 {
-        width: 50%;
-    }
-    .navbar-toggler {
-        margin-top:0px;
-        padding-top:0px;
-        min-height: 48px;
-        background-color: rgb(255,255,255,.25);
-    }
-    .activeMenu .nav-link.dropdown-toggle {
-        background-color: white;
-        color:#005D83 !important;
-        border-radius: 10px 10px 10px 10px;
-        padding-bottom:12px;
-        padding-top:12px;
-    }
-    .Topbar .col-lg-10 {
-        width: 50%;
-    }
-    .featuredProjectImage {
-        display:none;
-    }
-    .iconSpacing {
-        display: none;
-     }
- }
+
+ 
  @media (min-width: 992px) {
     .featuredProjectImage {
         width:100%;
@@ -786,9 +661,6 @@ footer {
     background-color: #c9e4ee;
 }
 
-.activeMenu .nav-link.dropdown-toggle:hover {
-    color:deepskyblue !important;
-}
 
 .navbar-marginbottom {
     padding-bottom:0px;
@@ -1180,10 +1052,6 @@ hr.content {
     margin-bottom: 6px;
 }
 
-.navbar{
-    padding-left: 1em;
-    padding-right: 1em;
-}
 
 .dropdown-toggle:after{
     content: '\f078';

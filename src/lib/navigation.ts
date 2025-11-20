@@ -19,7 +19,22 @@ export const navigation: NavigationItem[] = [
       ]},
     ]
   },
+ 
   {
+    name: 'News & Info',
+    url: '/news-info',
+    pages: [
+      { name: 'Latest News from USDOT', url: 'https://www.transportation.gov/newsroom', isExternal: true },
+      { name: 'Image Library', url: '/news-info/image-library' },
+      { name: 'Publication Editorial Guidelines', url: '/news-info/Publication-Editorial-Guidelines', isEnabled: true, pages:[
+        { name: "Overview", url: "/news-info/Publication-Editorial-Guidelines" },
+        { name: "508 Guidance", url: "/news-info/Publication-Editorial-Guidelines/Guidance" },
+        { name: "Publications Checklist", url: "/news-info/Publication-Editorial-Guidelines/Checklist" },
+      ]},
+
+    ]
+  },
+   {
     name: 'Research Areas',
     url: '/research-areas',
     pages: [
@@ -35,7 +50,6 @@ export const navigation: NavigationItem[] = [
         { name: "ITS4US Home", url: "/research-areas/ITS4US" },
         { name: "Program Overview", url: "/research-areas/ITS4US/overview" },
         { name: "Deployments", url: "/research-areas/ITS4US/deployments", isEnabled: true, pages: [
-          { name: "Deployments", url: "/research-areas/ITS4US/deployments" },
           { name: "Heart of Iowa Regional Transit Agency", url: "/research-areas/ITS4US/deployments/iowa" },
           { name: "Georgia Department of Transportation", url: "/research-areas/ITS4US/deployments/georgia" },
           { name: "University of Washington", url: "/research-areas/ITS4US/deployments/washington" },
@@ -44,20 +58,6 @@ export const navigation: NavigationItem[] = [
        
       ]},
       { name: "Vehicle-to-Everything (V2X)", url: "/research-areas/V2X-Deployment" },
-    ]
-  },
-  {
-    name: 'News & Info',
-    url: '/news-info',
-    pages: [
-      { name: 'Latest News from USDOT', url: 'https://www.transportation.gov/newsroom', isExternal: true },
-      { name: 'Image Library', url: '/news-info/image-library' },
-      { name: 'Publication Editorial Guidelines', url: '/news-info/Publication-Editorial-Guidelines', isEnabled: true, pages:[
-        { name: "Overview", url: "/news-info/Publication-Editorial-Guidelines" },
-        { name: "508 Guidance", url: "/news-info/Publication-Editorial-Guidelines/Guidance" },
-        { name: "Publications Checklist", url: "/news-info/Publication-Editorial-Guidelines/Checklist" },
-      ]},
-
     ]
   },
   {

@@ -11,30 +11,47 @@ import { getTrimmedPathname, navigation } from "@/src/lib/navigation";
 
 const pathname = Astro.url.pathname;
 const trimmedPathname = getTrimmedPathname(pathname);
+// return true when the current trimmedPathname is the section or any child of it
+const isActiveSection = (sectionUrl) => {
+  const normalize = (u) => (u || "").replace(/\/+$/g, "");
+  const normSection = normalize(sectionUrl);
+  const normCurrent = normalize(trimmedPathname);
+  return normCurrent === normSection || normCurrent.startsWith(normSection + "/");
+};
 ---
 
 <style>
+  /* ===== Global / header layout ===== */
+  .navbar-toggler {
+    display: none;
+  }
   .top-bar {
     background-color: #091f61;
     width: 100%;
   }
-  .top-bar-container{
+  .top-bar-container {
     height: 50px;
   }
+
   .header-bar {
     background-image: linear-gradient(to right, #0a1e62, #09638c);
     color: white;
-    text-transform: uppercase;
     display: flex;
     align-items: center;
     margin-bottom: 6px;
   }
+
   .header-content {
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* align nav to bottom of header-content */
     justify-content: space-between;
     width: 100%;
   }
+  .siteheader {
+    font-family: "Source Sans 3", sans-serif;
+    padding: 10px 0;
+  }
+
   .siteheader-wrapper {
     flex-shrink: 0;
   }
@@ -46,7 +63,7 @@ const trimmedPathname = getTrimmedPathname(pathname);
     object-fit: contain;
   }
 
-  /* Navigation styles (merged from Navigation.astro) */
+  /* ===== Navbar structure ===== */
   nav.navbar {
     flex-grow: 1;
     background-color: transparent !important;
@@ -61,13 +78,93 @@ const trimmedPathname = getTrimmedPathname(pathname);
     max-width: none;
   }
 
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+  .navbar-nav {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  .navbar-nav .nav-item .nav-link {
+    font-size: 17px;
+  }
+
+  /* Generic nav utilities (kept small, using bootstrap-like names) */
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+
+  .navbar {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .navbar {
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 20px;
+    color: black;
+  }
+
+  .navbar a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-weight: bold;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .nav-link {
+    color: #f8f9fa;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    text-decoration: none;
+  }
+  .nav-link.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  /* Optional helper classes used by templates */
+  .nav-item-active {
+    background-color: #ddeaf7;
+  }
+  .nav-item-active .nav-link:hover {
+    color: #09638c !important;
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: #f8f9fa;
+  }
+
+  .navbar-dark.show {
+  }
+
+  /* ===== Dropdown / submenu styling ===== */
   nav a,
   nav ul,
   nav li,
   nav button {
     transition: all 0.35s;
   }
-
   nav a:active {
     background: rgb(198, 198, 198);
     color: black;
@@ -76,21 +173,15 @@ const trimmedPathname = getTrimmedPathname(pathname);
   .dropdown-toggle.show {
     color: black;
     background-color: white;
-    border-radius: 10px 10px 0px 0px;
   }
 
-  .dropdown-toggle .show {
-    color: black;
+  .dropdown-toggle {
+    border-radius: 10px 10px 0 0;
   }
-
   .dropdown-menu {
     left: -1px;
+    border: none;
   }
-
-  .show.nav-link:focus {
-    color: black;
-  }
-
   .dropdown-menu li > ul.dropdown-menu {
     border-radius: 10px;
   }
@@ -100,7 +191,6 @@ const trimmedPathname = getTrimmedPathname(pathname);
     border: 0;
     color: #009ad6;
   }
-
   .dropdown-item.dropdown-toggle.show::after {
     content: "\f078";
     border: 0;
@@ -108,55 +198,44 @@ const trimmedPathname = getTrimmedPathname(pathname);
   }
   .dropdown-item.dropdown-toggle.show {
     background: rgb(233, 236, 239);
-    border-radius: 0;
-  }
-  .dropdown-menu {
-    border: none;
   }
 
-  .navbar-nav .nav-item.dropdown.show > .nav-link {
-    font-weight: bold;
+  /* Make dropdown items light gray on hover/focus for better visibility */
+  .dropdown-menu .dropdown-item:hover,
+  .dropdown-menu .dropdown-item:focus {
+    background-color: lightgray; /* light gray */
+    color: #000; /* ensure readable text */
   }
 
-  /* Show dropdowns on hover for desktop/tablet (keep click behavior on small screens) */
+
+
+  /* ===== Desktop hover behavior for dropdowns ===== */
   @media (min-width: 992px) {
-    /* main dropdown */
-    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu {
+    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu, .activeMenu a {
       display: block;
       visibility: visible;
       opacity: 1;
       margin-top: 0;
     }
-
-    /* make the toggle appear active on hover */
-    .navbar-nav .nav-item.dropdown:hover > .nav-link {
-      color: black;
+    .navbar-nav .nav-item.dropdown:hover > .nav-link, .activeMenu a {
+      color: black !important;
       background-color: white;
-      border-radius: 10px 10px 0 0;
     }
-
-    /* nested (dropend) submenu on hover */
-    .navbar-nav .dropend:hover > .dropdown-menu {
+    .navbar-nav .dropend:hover > .dropdown-menu, .activeMenu a {
       display: block;
       visibility: visible;
       opacity: 1;
+      color: black;
     }
-
-    /* ensure dropdown-menu default is hidden until hover (desktop) */
+    /* hide dropdowns by default on desktop until hover */
     .navbar-nav .dropdown-menu {
       display: none;
     }
-  }
-.navbar-collapse{
-  justify-content: flex-end;
-}
-  @media (max-width: 992px) {
-    .navbar-marginbottom {
-      margin-bottom: 0;
-    }
+  
   }
 
-  @media (max-width: 1400px) {
+  /* ===== Responsive adjustments ===== */
+  @media (max-width: 1200px) {
     .header-bar {
       flex-wrap: wrap;
     }
@@ -171,8 +250,108 @@ const trimmedPathname = getTrimmedPathname(pathname);
       flex-grow: 0;
       width: 100%;
       justify-content: flex-start;
-      
     }
+
+  }
+
+  @media (max-width: 992px) {
+    .navbar-marginbottom {
+      margin-bottom: 0;
+    }
+      .nav-link.show {
+      color: black !important;
+      background-color: white !important;
+    }
+    
+  }
+
+  @media (max-width: 992px) {
+    .Topbar .col-lg-2 {
+      width: 50%;
+    }
+    .navbar-toggler {
+      display: block;
+      margin-top: 0px;
+      padding: 0px;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(255, 255, 255, 0.25);
+    }
+
+    /* Show an 'X' when the toggler is expanded (i.e. doesn't have `collapsed`) */
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' d='M6 6 L24 24 M24 6 L6 24'/%3e%3c/svg%3e");
+      align-self: center;
+    }
+
+    /* Show hamburger when the toggler has the `collapsed` class (default) */
+    .navbar-toggler.collapsed .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+   
+
+    .Topbar .col-lg-10 {
+      width: 50%;
+    }
+    .featuredProjectImage {
+      display: none;
+    }
+    .iconSpacing {
+      display: none;
+    }
+    .nav-item {
+      width: 100%;
+    }
+    .nav-link.show {
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .siteheader {
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 500;
+      color: white;
+      font-size: 1rem;
+      line-height: 1.3rem;
+      align-items: center;
+    }
+    .HeaderBar {
+      min-height: 60px;
+    }
+    .AboutBanner {
+      height: 60px;
+    }
+    .AboutBannerTitle h1 {
+      font-size: 24px;
+      line-height: 0.9;
+    }
+    aside {
+      display: none;
+    }
+    aside.leftNavMobile {
+      display: flex;
+    }
+    main.MainContent {
+      min-width: 100%;
+    }
+    .activeMenu {
+      background: none;
+      color: #f8f9fa !important;
+      border-radius: 10px 10px 0px 0px;
+    }
+    
+  }
+  @media (min-width: 768px) {
+    .siteheader {
+      font-family: "Source Sans 3";
+      font-weight: 700;
+      color: white !important;
+      font-size: 1.7rem;
+      line-height: 2.1rem;
+    }
+    
   }
 </style>
 <div class="top-bar">
@@ -201,65 +380,52 @@ const trimmedPathname = getTrimmedPathname(pathname);
 </div>
 <div class="header-bar">
   <div class="container-xl">
-    <div class="header-content ">
+    <div class="header-content">
       <div class="siteheader-wrapper">
-        <div class="siteheader d-flex justify-content-between ali">
+        <div class="siteheader d-flex justify-content-between">
           <a rel="preload" href={base_url("/")} style="text-decoration: none; color: white">
             Intelligent Transportation Systems
             <br />
             Joint Program Office
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbar-content"
-            aria-controls="navbar-content"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
       </div>
       <nav class="navbar navbar-expand-lg navbar-dark navbar-marginbottom">
-         
         <div class="container-xl">
-         
           <div class="collapse navbar-collapse" id="navbar-content">
-            <ul class="navbar-nav mb-lg-0">
-              {navigation.map(link => (
-                <li class:list={["nav-item dropdown", {"activeMenu": trimmedPathname.startsWith(link.url)}]}>
-                  <a 
-                    class="nav-link py-3 px-4 dropdown-toggle" 
-                    id="navbarDropdown" 
-                    role="button" 
-                    data-bs-toggle="dropdown" 
-                    data-bs-auto-close="outside"
-                  >
-                    {link.name}
-                  </a>
-                  <ul class="dropdown-menu mt-0 shadow" aria-labelledby="navbarDropdown">
-                    {link.pages.map(pageLink => {
-                      if (pageLink.isExternal) return (
-                        <li>
-                          <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
-                            {pageLink.name}
-                          </a>
-                        </li>
-                      );
-                      
-                      return (
-                        <li>
-                          <a class="dropdown-item" href={base_url(pageLink.url)}>
-                            {pageLink.name}
-                          </a>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                </li>
-              ))}
+            <ul class="navbar-nav">
+              {
+                navigation.map((link) => (
+                  <li class:list={["nav-item dropdown", { activeMenu: isActiveSection(link.url) }]}>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                      {link.name}
+                    </a>
+                    <ul class="dropdown-menu mt-0 shadow" aria-labelledby="navbarDropdown">
+                      {link.pages.map((pageLink) => {
+                        if (pageLink.isExternal)
+                          return (
+                            <li>
+                              <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
+                                {pageLink.name}
+                              </a>
+                            </li>
+                          );
+
+                        return (
+                          <li>
+                            <a class="dropdown-item" href={base_url(pageLink.url)}>
+                              {pageLink.name}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>
