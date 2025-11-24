@@ -191,6 +191,9 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
     font-weight:bold;
     transition: font-size 0.2s ease;
     text-wrap: pretty;
+     height: -webkit-fill-available;
+  height: -mox-available;
+  height: fill-available;
   }
 
   /* 1200, 992, 768, 576 */
@@ -453,18 +456,18 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
       padding: 0px;
       width: 50px;
       height: 50px;
-      background-color: rgb(255, 255, 255, 0.25);
+      background-color: rgb(255, 255, 255, 0.60);
     }
 
     /* Show a chevron up when the toggler is expanded */
     .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7 19l8-8 8 8' stroke='rgba(255,255,255,0.9)' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7 19l9-9 9 9' stroke='rgba(0,0,0,1' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
       align-self: center;
     }
 
     /* Show a chevron down when the toggler has the `collapsed` class (default) */
     .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7 11l8 8 8-8' stroke='rgba(255,255,255,0.9)' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7 11l9 9 9-9' stroke='rgba(0,0,0,1)' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
       align-self: center;
     }
 
@@ -488,10 +491,9 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
     background-position: center;
     
     /* Visual adjustments so the image looks like a banner */
-               /* Force full screen width */
     padding:  12px;         /* Add padding so image is visible around text */
     margin-bottom: 0;
-      min-height: 5rem;
+    min-height: 5rem;
 
   }
 

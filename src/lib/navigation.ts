@@ -5,80 +5,92 @@ import type { AnyNavigationItem, BreadcrumbItem, ChildNavigationItem, Navigation
  */
 export const navigation: NavigationItem[] = [
   {
-    name: 'About',
-    url: '/about',
-    isEnabled: true,
+    name: "About",
+    url: "/about",
     pages: [
-      { name: 'About ITS JPO', url: '/about', isEnabled: true, },
-      { name: 'Contact Us', url: '/about/contact-us', pages: [
-        { name: 'ITS JPO Staff Listing', url: '/about/contact-us/staff-listing', isEnabled: true, pages:[
-          { name: 'Brian Cronin', url: '/about/contact-us/staff-listing/Brian-Cronin'},
-          { name: 'Egan Smith', url: '/about/contact-us/staff-listing/Egan-Smith'}
-        ]},
-        { name: 'Join Our Mailing List', url: '/about/contact-us/mailinglist' },
-      ]},
-    ]
+      { name: "About ITS JPO", url: "/about", isEnabled: true },
+      { name: "Contact Us", url: "/about/contact-us"},
+      { name: "Join Our Mailing List", url: "/about/contact-us/mailinglist" },
+    ],
   },
- 
-  {
-    name: 'News & Info',
-    url: '/news-info',
-    pages: [
-      { name: 'Latest News from USDOT', url: 'https://www.transportation.gov/newsroom', isExternal: true },
-      { name: 'Image Library', url: '/news-info/image-library' },
-      { name: 'Publication Editorial Guidelines', url: '/news-info/Publication-Editorial-Guidelines', isEnabled: true, pages:[
-        { name: "Overview", url: "/news-info/Publication-Editorial-Guidelines" },
-        { name: "508 Guidance", url: "/news-info/Publication-Editorial-Guidelines/Guidance" },
-        { name: "Publications Checklist", url: "/news-info/Publication-Editorial-Guidelines/Checklist" },
-      ]},
 
-    ]
-  },
-   {
-    name: 'Research Areas',
-    url: '/research-areas',
+  {
+    name: "News & Info",
+    url: "/news-info",
     pages: [
-      { name: "Artificial Intelligence", url: "/research-areas/Artificial-Intelligence", isEnabled: true, pages: [
-        { name: "Artificial Intelligence in Transportation", url: "/research-areas/Artificial-Intelligence" },
-        { name: "Complete Streets Artificial Intelligence Initiative", url: "/research-areas/Artificial-Intelligence/Complete-Streets-AI" },
-      ]},
+      { name: "Latest News from USDOT", url: "https://www.transportation.gov/newsroom", isExternal: true },
+      { name: "Image Library", url: "/news-info/image-library" },
+      {
+        name: "Publication Editorial Guidelines",
+        url: "/news-info/Publication-Editorial-Guidelines",
+        isEnabled: true,
+        pages: [
+          { name: "Overview", url: "/news-info/Publication-Editorial-Guidelines" },
+          { name: "508 Guidance", url: "/news-info/Publication-Editorial-Guidelines/Guidance" },
+          { name: "Publications Checklist", url: "/news-info/Publication-Editorial-Guidelines/Checklist" },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Research Areas",
+    url: "/research-areas",
+    pages: [
+      {
+        name: "Artificial Intelligence",
+        url: "/research-areas/Artificial-Intelligence",
+        isEnabled: true,
+        pages: [
+          { name: "Artificial Intelligence in Transportation", url: "/research-areas/Artificial-Intelligence" },
+          { name: "Complete Streets Artificial Intelligence Initiative", url: "/research-areas/Artificial-Intelligence/Complete-Streets-AI" },
+        ],
+      },
       { name: "Automation Program", url: "/research-areas/Automation-Program" },
       { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
       { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
-      { name: "ITS4US Program", url: "/research-areas/ITS4US", isEnabled: true, pages: [
-        { name: "ITS4US Home", url: "/research-areas/ITS4US" },
-        { name: "Program Overview", url: "/research-areas/ITS4US/overview" },
-        { name: "Deployments", url: "/research-areas/ITS4US/deployments", isEnabled: true, pages: [
-          { name: "Heart of Iowa Regional Transit Agency", url: "/research-areas/ITS4US/deployments/iowa" },
-          { name: "Georgia Department of Transportation", url: "/research-areas/ITS4US/deployments/georgia" },
-          { name: "University of Washington", url: "/research-areas/ITS4US/deployments/washington" },
-          { name: "Niagara Frontier Transportation Authority", url: "/research-areas/ITS4US/deployments/newYork" },
-        ]},
-       
-      ]},
+      {
+        name: "ITS4US Program",
+        url: "/research-areas/ITS4US",
+        isEnabled: true,
+        pages: [
+          { name: "ITS4US Home", url: "/research-areas/ITS4US" },
+          { name: "Program Overview", url: "/research-areas/ITS4US/overview" },
+          {
+            name: "Deployments",
+            url: "/research-areas/ITS4US/deployments",
+            isEnabled: true,
+            pages: [
+              { name: "Heart of Iowa Regional Transit Agency", url: "/research-areas/ITS4US/deployments/iowa" },
+              { name: "Georgia Department of Transportation", url: "/research-areas/ITS4US/deployments/georgia" },
+              { name: "University of Washington", url: "/research-areas/ITS4US/deployments/washington" },
+              { name: "Niagara Frontier Transportation Authority", url: "/research-areas/ITS4US/deployments/newYork" },
+            ],
+          },
+        ],
+      },
       { name: "Vehicle-to-Everything (V2X)", url: "/research-areas/V2X-Deployment" },
-    ]
+    ],
   },
   {
-    name: 'Resources/Technical Assistance',
-    url: '/resources',
+    name: "Resources/Technical Assistance",
+    url: "/resources",
     pages: [
-      { name: 'Architecture and Standards', url: '/resources/Architecture-and-Standards' },
-      { name: 'Cybersecurity', url: '/resources/Cybersecurity' },
-      { name: 'Deployment Evaluation', url: '/resources/Deployment-Evaluation' },
-      { name: 'National Transportation Library', url: '/resources/national-transportation-library' },
-      { name: 'Professional Capacity Building', url: '/resources/Professional-Capacity-Building' },
-      { name: 'ITS CodeHub', url: 'https://www.its.dot.gov/code', isExternal: true },
-      { name: 'ITS DataHub', url: 'https://www.its.dot.gov/data', isExternal: true },
-    ]
+      { name: "Architecture and Standards", url: "/resources/Architecture-and-Standards" },
+      { name: "Cybersecurity", url: "/resources/Cybersecurity" },
+      { name: "Deployment Evaluation", url: "/resources/Deployment-Evaluation" },
+      { name: "National Transportation Library", url: "/resources/national-transportation-library" },
+      { name: "Professional Capacity Building", url: "/resources/Professional-Capacity-Building" },
+      { name: "ITS CodeHub", url: "https://www.its.dot.gov/code", isExternal: true },
+      { name: "ITS DataHub", url: "https://www.its.dot.gov/data", isExternal: true },
+    ],
   },
-]
+];
 
 /** Check if there are any duplicate URLs in the navigation list */
 function checkIfDuplicateExists(pages: AnyNavigationItem[]) {
   const urls = pages.map((page: ChildNavigationItem) => page.url);
-  return new Set(urls).size !== urls.length
+  return new Set(urls).size !== urls.length;
 }
 
 /** Validate navigation across multiple dimensions:
@@ -87,12 +99,12 @@ function checkIfDuplicateExists(pages: AnyNavigationItem[]) {
  */
 export function validateNavigation(navigationItems: AnyNavigationItem[], parentItem?: AnyNavigationItem) {
   if (checkIfDuplicateExists(navigationItems)) {
-    throw new Error(`Duplicate page routes exist under section: ${parentItem ? `${parentItem.name} (${parentItem.url})` : "Main"}`)
+    throw new Error(`Duplicate page routes exist under section: ${parentItem ? `${parentItem.name} (${parentItem.url})` : "Main"}`);
   }
   for (const item of navigationItems) {
     if (parentItem && !item.isExternal) {
       if (!item.url.startsWith(parentItem.url)) {
-        throw new Error(`Page route for ${item.name} (${item.url}) does not include parent route: ${parentItem.url}`)
+        throw new Error(`Page route for ${item.name} (${item.url}) does not include parent route: ${parentItem.url}`);
       }
     }
     if (item.pages) {
@@ -104,7 +116,7 @@ export function validateNavigation(navigationItems: AnyNavigationItem[], parentI
 /**
  * Removes the trailing slash if it exists and trims the base path from the path name if it exists
  * @param pathname as string (Astro.url.pathname)
- * @returns 
+ * @returns
  */
 export function getTrimmedPathname(pathname: string): string {
   const path = pathname.endsWith("/") ? pathname.slice(0, pathname.length - 1) : pathname;
@@ -119,24 +131,24 @@ export function getTrimmedPathname(pathname: string): string {
  * @param currentPath pathname from Astro.url.pathname
  * @param pageUrl Page URL passed in from navigation
  * @param startsWith True for compare starts with, False/undefined for compare entire path
- * @returns 
+ * @returns
  */
 export function comparePathname(currentPath: string, pageUrl: string, startsWith?: boolean): boolean {
-  return startsWith ? getTrimmedPathname(currentPath).startsWith(pageUrl) : getTrimmedPathname(currentPath) === pageUrl
+  return startsWith ? getTrimmedPathname(currentPath).startsWith(pageUrl) : getTrimmedPathname(currentPath) === pageUrl;
 }
 
 // Generate a breadcrumb item type from a navigation item
 export function generateBreadcrumbItem(navigationItem: AnyNavigationItem) {
   return {
-    name: navigationItem.name, 
-    url: navigationItem.url, 
-    isEnabled: navigationItem.isEnabled || false
-  }
+    name: navigationItem.name,
+    url: navigationItem.url,
+    isEnabled: navigationItem.isEnabled || false,
+  };
 }
 
 /**
  * Will return list of breadcrumb items for a given path
- * TODO: Could be made more efficient but this is generated 
+ * TODO: Could be made more efficient but this is generated
  * during the build step so it doesn't really matter for user experience
  * @param pathname pathname from Astro.url.pathname
  * @returns list of breadcrumb items to get to the current path
@@ -146,12 +158,11 @@ export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
 
   const breadcrumbs: BreadcrumbItem[] = [];
 
-  let navigationItem: AnyNavigationItem | undefined = 
-    navigation.find(section => trimmedPathname.startsWith(section.url));
+  let navigationItem: AnyNavigationItem | undefined = navigation.find((section) => trimmedPathname.startsWith(section.url));
 
   while (navigationItem !== undefined) {
     // If it exists, add it to the current breadcrumb list
-    breadcrumbs.push(generateBreadcrumbItem(navigationItem))
+    breadcrumbs.push(generateBreadcrumbItem(navigationItem));
 
     // If it's an exact match, it's already been added
     // If it's not a match but there are no subpages, then there's nothing left to add
@@ -162,7 +173,7 @@ export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
       // If there's a page with an exact match, continue
       if (trimmedPathname === page.url) {
         navigationItem = page;
-      };
+      }
       if (trimmedPathname.startsWith(page.url)) {
         navigationItem = page;
       }
@@ -174,7 +185,7 @@ export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
 }
 
 /**
- * Attempts to locate the desired navigation section by pathname. 
+ * Attempts to locate the desired navigation section by pathname.
  * @param pathname as string
  * @return the navigation item with any nested pages
  */
@@ -182,8 +193,7 @@ export function findSection(pathname: string): AnyNavigationItem | undefined {
   // Trim path name in case any extra characters are included
   const trimmedPathname = getTrimmedPathname(pathname);
 
-  let navigationItem: AnyNavigationItem | undefined = 
-    navigation.find(section => trimmedPathname.startsWith(section.url));
+  let navigationItem: AnyNavigationItem | undefined = navigation.find((section) => trimmedPathname.startsWith(section.url));
 
   while (navigationItem !== undefined) {
     // If the item is an exact match, return it now
@@ -202,14 +212,14 @@ export function findSection(pathname: string): AnyNavigationItem | undefined {
   }
 
   // Catch undefined navigation item and return it
-  return navigationItem
+  return navigationItem;
 }
 
 export function findNavigationItem(pathname: string): [ChildNavigationItem | undefined, ChildNavigationItem | undefined, ChildNavigationItem | undefined] {
   const trimmedPathname = getTrimmedPathname(pathname);
 
   // Find the parent section--if it doesn't exist, then there's no matching navigation item
-  const section = navigation.find(section => trimmedPathname.startsWith(section.url));
+  const section = navigation.find((section) => trimmedPathname.startsWith(section.url));
   if (!section) return [undefined, undefined, undefined];
 
   for (const page of section.pages) {
@@ -236,7 +246,7 @@ export function findBreadcrumbItem(pathname: string): [NavigationItem | undefine
   const trimmedPathname = getTrimmedPathname(pathname);
 
   // Find the parent section--if it doesn't exist, then there's no matching navigation item
-  const section = navigation.find(section => trimmedPathname.startsWith(section.url));
+  const section = navigation.find((section) => trimmedPathname.startsWith(section.url));
   if (!section) return [undefined, undefined, undefined, undefined];
 
   for (const page of section.pages) {

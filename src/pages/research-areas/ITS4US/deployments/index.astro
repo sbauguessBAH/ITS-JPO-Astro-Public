@@ -116,6 +116,18 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
       min-height: 400px;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .carousel-caption {
+      width: 90%;
+      left: 5%;
+      bottom: 5%;
+      font-size: smaller;
+    }
+   .carousel-item img {
+      object-position: right;
+    }
+  }
 </style>
 
 <PageLayout title="Deployments">
@@ -130,7 +142,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <Image src={Waukee} alt="A smiling woman with arms folded" width={1200} class="img-fluid col-6-sm mb-2" />
+          <Image src={Waukee} alt="A smiling woman with arms folded" width={1400} class="img-fluid col-6-sm mb-2" />
 
           <div class="container">
             <div class="carousel-caption text-start">
@@ -145,7 +157,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
           </div>
         </div>
         <div class="carousel-item">
-          <Image src={Andre} alt="A man in a wheelchair" width={1200} class="img-fluid col-6-sm mb-2" />
+          <Image src={Andre} alt="A man in a wheelchair" width={1400} class="img-fluid col-6-sm mb-2" />
 
           <div class="container">
             <div class="carousel-caption text-start">
@@ -162,7 +174,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
           </div>
         </div>
         <div class="carousel-item">
-          <Image src={Takashi} alt="A man standing with a cane" width={1200} class="img-fluid col-6-sm mb-2" />
+          <Image src={Takashi} alt="A man standing with a cane" width={1400} class="img-fluid col-6-sm mb-2" />
 
           <div class="container">
             <div class="carousel-caption text-start">
@@ -178,7 +190,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
           </div>
         </div>
         <div class="carousel-item">
-          <Image src={letitia} alt="A nurse standing outside a building" width={1200} class="img-fluid col-6-sm mb-2" />
+          <Image src={letitia} alt="A nurse standing outside a building" width={1400} class="img-fluid col-6-sm mb-2" />
 
           <div class="container">
             <div class="carousel-caption text-start">

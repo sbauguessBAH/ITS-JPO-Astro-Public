@@ -19,7 +19,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 
   figure {
     margin: auto;
-    width: 40%;
+    width: 30%;
     float: right;
     margin: 10px;
   }
@@ -43,9 +43,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 </style>
 <PageLayout title="University of Washington">
   <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
-  <SidebarLayout path="/research-areas/ITS4US/deployments/">
-    <h2 class="sideways blue">UW Deployment Overview</h2>
-    <figure>
+  <SidebarLayout path="/research-areas/ITS4US/deployments/"><figure>
       <Image src={Takashi} alt="A man standing with a cane" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
       <figcaption>
         <p>
@@ -55,6 +53,8 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
         <p class="text-end">- Illustrative Example of Potential User</p>
       </figcaption>
     </figure>
+    <h2 class="sideways blue">UW Deployment Overview</h2>
+    
     <p>
       Millions of Americans, such as older adults, or those living in rural or suburban locales, cannot or do not use private vehicles or fixed-route transit. Yet, while many of the new mobility tools
       (such as trip planning, digital mapping, and navigation applications) provide users amazing capabilities to access travel directions, locate transit services, learn about amenities along
