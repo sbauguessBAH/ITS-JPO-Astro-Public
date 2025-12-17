@@ -149,70 +149,71 @@ const path = Astro.url.pathname;
       const trimmedPath = item.url.replaceAll("/", "");
       const showCollapsedItems = item.pages !== undefined && getTrimmedPathname(path).startsWith(item.url);
       // console.log(showCollapsedItems); Removed but can be useful for future troubleshooting 
+      if (item.hideChildrenInNavbar || !item.pages) return (
+        <li class="sidebar-list-item">
+          <a 
+            class:list={[
+              "sidebar-link", 
+              {"active": comparePathname(path, item.url)},
+              {"disabled": item.isDisabled}                
+            ]} 
+            href={
+              item.isDisabled
+                ? "#"
+                : item.isExternal 
+                  ? item.url 
+                  : base_url(item.url)
+            }
+            aria-disabled={item.isDisabled}
+          >
+            {item.name}
+            {item.isExternal && <span class="fa fa-arrow-up-right-from-square sidebar-icon"></span>}
+          </a>
+        </li>
+      )
       return (
         <li class="sidebar-list-item">
-          {item.pages ? (
-            <a 
-              class="sidebar-link" 
-              data-bs-toggle="collapse" 
-              href={`#collapse${trimmedPath}`} 
-              role="button" 
-              aria-controls={`collapse${trimmedPath}`}
-              aria-expanded={showCollapsedItems ? "true" : "false"}
-              aria-label={`Toggle sidebar links for ${item.name}`}
-            >
-              {item.name}
-              <span class="fa fa-angle-down sidebar-icon"></span>
-            </a>
-            <ul 
-              class:list={[
-                "collapse sidebar-child", 
-                {"show": showCollapsedItems}
-              ]} 
-              id={`collapse${trimmedPath}`}
-            >
-              {item.pages.map(childItem => (
-                <li class="sidebar-list-item">
-                  <a 
-                    class:list={[
-                      "sidebar-link",                    
-                      {"active": comparePathname(path, childItem.url)},
-                      {"disabled": childItem.isDisabled}
-                    ]} 
-                    href={
-                      childItem.isDisabled
-                        ? "#"
-                        : childItem.isExternal 
-                          ? childItem.url 
-                          : base_url(childItem.url)
-                    }
-                  >
-                    {childItem.name}
-                    {childItem.isExternal && <span class="fa fa-arrow-up-right-from-square sidebar-icon"></span>}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <a 
-              class:list={[
-                "sidebar-link", 
-                {"active": comparePathname(path, item.url)},
-                {"disabled": item.isDisabled}                
-              ]} 
-              href={
-                item.isDisabled
-                  ? "#"
-                  : item.isExternal 
-                    ? item.url 
-                    : base_url(item.url)
-              }
-              aria-disabled={item.isDisabled}
-            >
-              {item.name}
-              {item.isExternal && <span class="fa fa-arrow-up-right-from-square sidebar-icon"></span>}
-            </a>
-          )}
+          <a 
+            class="sidebar-link" 
+            data-bs-toggle="collapse" 
+            href={`#collapse${trimmedPath}`} 
+            role="button" 
+            aria-controls={`collapse${trimmedPath}`}
+            aria-expanded={showCollapsedItems ? "true" : "false"}
+            aria-label={`Toggle sidebar links for ${item.name}`}
+          >
+            {item.name}
+            <span class="fa fa-angle-down sidebar-icon"></span>
+          </a>
+          <ul 
+            class:list={[
+              "collapse sidebar-child", 
+              {"show": showCollapsedItems}
+            ]} 
+            id={`collapse${trimmedPath}`}
+          >
+            {item.pages.map(childItem => (
+              <li class="sidebar-list-item">
+                <a 
+                  class:list={[
+                    "sidebar-link",                    
+                    {"active": comparePathname(path, childItem.url)},
+                    {"disabled": childItem.isDisabled}
+                  ]} 
+                  href={
+                    childItem.isDisabled
+                      ? "#"
+                      : childItem.isExternal 
+                        ? childItem.url 
+                        : base_url(childItem.url)
+                  }
+                >
+                  {childItem.name}
+                  {childItem.isExternal && <span class="fa fa-arrow-up-right-from-square sidebar-icon"></span>}
+                </a>
+              </li>
+            ))}
+          </ul>
         </li>
       )
     })}

@@ -1,0 +1,81 @@
+---
+import ProgramBanner from "@/src/components/programs/program-banner.astro";
+import ProgramLayout from "@/src/components/programs/program-layout.astro";
+import banner from "@/src/assets/images/banners/Automation_Banner.png";
+import ProgramMenu from "@/src/components/programs/program-menu.astro";
+import type { ChildNavigationItem } from "@/src/types";
+
+const keywords = [
+  "Automation Program",
+  "Transportation Research",
+  "Automated Driving Systems",
+  "Advanced Driver Assistance Systems",
+  "Cooperative Driving Assistance",
+  "ADAS",
+];
+
+const description = `
+  The ITS JPO Automation Program focuses on the safe deployment 
+  of automated driving systems and advanced driver assistance systems 
+  through collaboration and research.
+`
+
+const items: ChildNavigationItem[] = [
+  {
+    name: "Overview",
+    url: "/research-areas/automation-program"
+  },
+  {
+    name: "Focus Areas",
+    url: "/research-areas/automation-program/focus-areas",
+    pages: [
+      {
+        name: "Cooperative Driving Automation (CDA)",
+        url: "/research-areas/automation-program/focus-areas/cda"
+      },
+      {
+        name: "Analysis, Modeling and Simulation (AMS)",
+        url: "/research-areas/automation-program/focus-areas/ams"
+      },
+      {
+        name: "Human Factors",
+        url: "/research-areas/automation-program/focus-areas/human-factors"
+      },
+      {
+        name: "Automated Driving System (ADS) Integration",
+        url: "/research-areas/automation-program/focus-areas/ads"
+      }
+    ]
+  },
+  {
+    name: "Resources",
+    url: "/research-areas/automation-program/resources",
+    hasGeneratedChildItems: true
+  }
+]
+---
+<ProgramLayout
+  title="Automation Program"
+  keywords={keywords}
+  description={description}
+>
+  <ProgramBanner 
+    breadcrumbs={[
+      "Research Areas", 
+      "Automation Program"
+    ]}
+    hasOverlay
+    image={banner}
+  >
+    <Fragment slot="title">
+      AUTOMATION PROGRAM
+    </Fragment>
+    <Fragment slot="description">
+      The ITS JPO Automation Program focuses on the safe deployment 
+      of automated driving systems and advanced driver assistance systems 
+      through collaboration and research.
+    </Fragment>
+  </ProgramBanner>
+  <ProgramMenu items={items} />
+  <slot/>
+</ProgramLayout>

@@ -35,11 +35,23 @@ const trimmedPathname = getTrimmedPathname(pathname);
               {link.pages.map(pageLink => {
                 if (pageLink.isExternal) return (
                   <li>
-                    <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
+                    <a 
+                      class="dropdown-item externalLink" 
+                      href={pageLink.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                       {pageLink.name}
                     </a>
                   </li>
                 );
+                if (pageLink.hideChildrenInNavbar) return (
+                  <li>
+                    <a class="dropdown-item" href={pageLink.url}>
+                      {pageLink.name}
+                    </a>
+                  </li>
+                )
                 if (pageLink.pages) return (
                   <li class="dropend">
                     <a 
