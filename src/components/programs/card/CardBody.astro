@@ -1,0 +1,30 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<"div"> {}
+
+const { 
+  class: className, ...props 
+} = Astro.props;
+---
+<style>
+  .astro-card-body {
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: var(--padding-md);
+    flex: 1 1 auto;
+    flex-direction: column;
+    place-content: inherit;
+    align-items: inherit;
+    height: auto;
+    word-break: break-words;
+    text-align: left;
+    overflow-y: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+</style>
+<div class:list={["astro-card-body", className]} {...props}>
+  <slot/>
+</div>

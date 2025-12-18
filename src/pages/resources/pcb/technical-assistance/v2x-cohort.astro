@@ -1,0 +1,227 @@
+---
+// import { Image } from "astro:assets";
+
+// import cohortImage from "@/src/assets/images/pcb/cohort-map.png";
+import Link from "@/src/components/Link.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+
+import Layout from "../_layout.astro";
+import CohortMap from "./_cohort-map.vue";
+---
+
+<style>
+  .map-card-image {
+    width: 100%;
+    height: auto;
+  }
+  .map-card-body {
+    overflow: visible;
+  }
+
+  .map-card-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+    background: rgb(var(--color-gray-light));
+  }
+</style>
+<!-- <style>
+  .state[data-v-f7523441] {
+    fill: #cae2e7;
+    stroke: #fff;
+  }
+
+  .borders[data-v-f7523441] {
+    stroke: #fff;
+    stroke-width: 1;
+  }
+
+  .dccircle[data-v-f7523441] {
+    display: yes;
+  }
+
+  .map-marker[data-v-f7523441] {
+    fill: #122e50;
+  }
+
+  .separator1[data-v-f7523441] {
+    stroke: #b0b0b0;
+    stroke-width: 2;
+  }
+
+  .stateGroup .fl[data-v-f7523441],
+  .stateGroup .ga[data-v-f7523441],
+  .stateGroup .nc[data-v-f7523441],
+  .stateGroup .va[data-v-f7523441],
+  .stateGroup .dc[data-v-f7523441],
+  .stateGroup .md[data-v-f7523441],
+  .stateGroup .de[data-v-f7523441],
+  .stateGroup .pa[data-v-f7523441],
+  .stateGroup .nj[data-v-f7523441],
+  .stateGroup .ny[data-v-f7523441],
+  .stateGroup .ri[data-v-f7523441],
+  .stateGroup .me[data-v-f7523441],
+  .stateGroup .oh[data-v-f7523441],
+  .stateGroup .mi[data-v-f7523441],
+  .stateGroup .ky[data-v-f7523441],
+  .stateGroup .tn[data-v-f7523441],
+  .stateGroup .mo[data-v-f7523441],
+  .stateGroup .il[data-v-f7523441],
+  .stateGroup .la[data-v-f7523441],
+  .stateGroup .ia[data-v-f7523441],
+  .stateGroup .mn[data-v-f7523441],
+  .stateGroup .ne[data-v-f7523441],
+  .stateGroup .wy[data-v-f7523441],
+  .stateGroup .co[data-v-f7523441],
+  .stateGroup .tx[data-v-f7523441],
+  .stateGroup .ut[data-v-f7523441],
+  .stateGroup .az[data-v-f7523441],
+  .stateGroup .ca[data-v-f7523441],
+  .stateGroup .wa[data-v-f7523441],
+  .stateGroup .ak[data-v-f7523441],
+  .stateGroup .hi[data-v-f7523441],
+  .stateGroup .or[data-v-f7523441],
+  .stateGroup .ks[data-v-f7523441],
+  .stateGroup .ct[data-v-f7523441],
+  .stateGroup .nv[data-v-f7523441] {
+    fill: #56bbc4;
+    cursor: pointer;
+  }
+
+  .stateGroup .fl[data-v-f7523441]:hover,
+  .stateGroup .ga[data-v-f7523441]:hover,
+  .stateGroup .nc[data-v-f7523441]:hover,
+  .stateGroup .va[data-v-f7523441]:hover,
+  .stateGroup .dc[data-v-f7523441]:hover,
+  .stateGroup .md[data-v-f7523441]:hover,
+  .stateGroup .de[data-v-f7523441]:hover,
+  .stateGroup .pa[data-v-f7523441]:hover,
+  .stateGroup .nj[data-v-f7523441]:hover,
+  .stateGroup .ny[data-v-f7523441]:hover,
+  .stateGroup .ri[data-v-f7523441]:hover,
+  .stateGroup .me[data-v-f7523441]:hover,
+  .stateGroup .oh[data-v-f7523441]:hover,
+  .stateGroup .mi[data-v-f7523441]:hover,
+  .stateGroup .ky[data-v-f7523441]:hover,
+  .stateGroup .tn[data-v-f7523441]:hover,
+  .stateGroup .mo[data-v-f7523441]:hover,
+  .stateGroup .il[data-v-f7523441]:hover,
+  .stateGroup .la[data-v-f7523441]:hover,
+  .stateGroup .ia[data-v-f7523441]:hover,
+  .stateGroup .mn[data-v-f7523441]:hover,
+  .stateGroup .ne[data-v-f7523441]:hover,
+  .stateGroup .wy[data-v-f7523441]:hover,
+  .stateGroup .co[data-v-f7523441]:hover,
+  .stateGroup .tx[data-v-f7523441]:hover,
+  .stateGroup .ut[data-v-f7523441]:hover,
+  .stateGroup .az[data-v-f7523441]:hover,
+  .stateGroup .ca[data-v-f7523441]:hover,
+  .stateGroup .wa[data-v-f7523441]:hover,
+  .stateGroup .ak[data-v-f7523441]:hover,
+  .stateGroup .hi[data-v-f7523441]:hover,
+  .stateGroup .or[data-v-f7523441]:hover,
+  .stateGroup .ks[data-v-f7523441]:hover,
+  .stateGroup .ct[data-v-f7523441]:hover,
+  .stateGroup .nv[data-v-f7523441]:hover {
+    fill: #3f8a91;
+    transform-origin: center;
+    z-index: 10000;
+  }
+
+  .stateGroup:hover .map-marker[data-v-f7523441] {
+    stroke-width: 4;
+    stroke: #122e50;
+    transition: all;
+    transition-duration: 0.1s;
+  }
+
+  .active-class[data-v-f7523441] {
+    display: block;
+    position: absolute;
+    opacity: 100;
+  }
+
+  .fade-enter-from[data-v-f7523441],
+  .fade-leave-to[data-v-f7523441] {
+    opacity: 0;
+  }
+
+  h1[data-v-fa17fe83] {
+    margin: 0;
+  }
+
+  a[data-v-fa17fe83] {
+    all: revert;
+  }
+
+  h1[data-v-0bad3acb] {
+    margin: 0;
+  }
+</style> -->
+
+<Layout>
+  <main class="program-main">
+    <ProgramSection size="small">
+      <!-- <Breadcrumb items={[
+        { name: "Overview", path: "/resources/pcb" },
+        { name: "Accelerating V2X Cohort" }
+      ]}/> -->
+      <h2 class="program-title-lg mb-4">Accelerating V2X Cohort</h2>
+      <p class="program-text">
+        The Accelerating V2X Cohort is a collaborative initiative by the
+        Intelligent Transportation Systems (ITS) Joint Program Office (JPO) to
+        support public agencies and other infrastructure owners and operators
+        (IOOs) in accelerating the deployment of interoperable
+        vehicle-to-everything (V2X) technologies. These technologies are
+        critical to creating a modern, world-class transportation system that
+        improves safety, efficiency, and reliability through seamless wireless
+        connectivity among vehicles, mobile devices, and smart infrastructure.
+      </p>
+      <p class="program-text">
+        The cohort is designed to accelerate the deployment of V2X technologies
+        by fostering a community of practice among V2X deployers. Participating
+        public entities have the opportunity to share their experiences,
+        challenges, and best practices in planning and deploying V2X
+        technologies.
+      </p>
+      <p class="program-text">
+        Through monthly virtual meetings, cohort members come together to
+        discuss emerging topics and to collaborate on addressing technical
+        questions to support the successful, interoperable deployment of
+        connected transportation technologies. USDOT provides facilitation,
+        technical support, and access to resources to assist participants in
+        achieving their project objectives.
+      </p>
+      <p class="program-text">
+        If your agency is interested in joining or has any questions, please
+        contact the ITS PCB Program at <Link
+          href="mailto:itspcb@dot.gov"
+          isExternal>itspcb@dot.gov</Link
+        >.
+      </p>
+    </ProgramSection>
+    <ProgramSection class="max-w-lg">
+      <CohortMap client:only="vue"/>
+      <!-- <figure class="figure">
+        <Image
+          class="map-card-image"
+          src={cohortImage}
+          alt="Map of the United States with cohort states shaded in and yellow points with the names of each cohort agency"
+        />
+        <figcaption class="figure-caption">
+          Source: USDOT (last updated June 2025)
+        </figcaption>
+      </figure> -->
+      <!-- <Card class="map-card">
+        <CardBody>
+          
+        </CardBody>
+        <CardFooter class="map-card-footer">
+          Last Updated: January 2025
+        </CardFooter>
+      </Card> -->
+    </ProgramSection>
+  </main>
+</Layout>

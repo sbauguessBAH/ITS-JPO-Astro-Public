@@ -1,9 +1,11 @@
 ---
-import BullseyeIcon from "@/src/components/programs/icons/bullseye-icon.astro";
-import CompassIcon from "@/src/components/programs/icons/compass-icon.astro";
-import CheckIcon from "@/src/components/programs/icons/check-icon.astro";
-import ListIcon from "@/src/components/programs/icons/list-icon.astro";
+import BullseyeIcon from "@/src/components/programs/icons/BullseyeIcon.astro";
+import CompassIcon from "@/src/components/programs/icons/CompassIcon.astro";
+import CheckIcon from "@/src/components/programs/icons/CheckIcon.astro";
+import ListIcon from "@/src/components/programs/icons/ListIcon.astro";
 import Layout from "../_layout.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 ---
 
 <style>
@@ -78,9 +80,13 @@ import Layout from "../_layout.astro";
   }
 </style>
 <Layout title="Automation Program">
-  <main class="container-xl program-container gap-md">
-    <section>
-      <h2 class="program-title">
+  <main class="program-main">
+    <ProgramSection size="small">
+      <Breadcrumb items={[
+        { name: "Focus Areas" },
+        { name: "Automated Driving System (ADS) Integration" }
+      ]}/>
+      <h2 class="program-title-lg">
         Automated Driving System (ADS) Integration
       </h2>
       <p class="max-w-lg program-text">
@@ -124,9 +130,9 @@ import Layout from "../_layout.astro";
           </p>
         </div>
       </div>
-    </section>
-    <section>
-      <h3 class="program-title">
+    </ProgramSection>
+    <ProgramSection>
+      <h3 class="program-title-md">
         Current Project Highlights
       </h3>
       <div class="highlight-container mt-4">
@@ -148,13 +154,13 @@ import Layout from "../_layout.astro";
         </div>
         <div class="highlight-card">
           <h4 class="highlight-card-header">
-            ADS Integration – Recommended Practices 
+            ADS Integration &amp; Recommended Practices 
           </h4>
           <div class="highlight-card-content">
             USDOT aims to establish initial national-level recommended practices for integration of ADS into the transportation system to provide states, localities, automation companies, and other road users with a well-supported, consistent basis for ADS expectations and assurances that operations will be safe and efficient.
           </div>
         </div>
       </div>
-    </section>
+    </ProgramSection>
   </main>
 </Layout>

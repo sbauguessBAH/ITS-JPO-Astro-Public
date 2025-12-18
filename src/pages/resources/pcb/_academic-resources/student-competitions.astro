@@ -1,0 +1,116 @@
+---
+import Link from "@/src/components/Link.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+
+import Layout from "../_layout.astro";
+import ResourceFooter from "./_ResourceFooter.astro";
+---
+<style>
+  .table th, .table td {
+    text-align: left;
+  }
+  .table {
+    margin-top:1rem;
+    margin-bottom:2rem;
+  }
+  .table a:hover {
+    font-weight:normal;
+  }
+</style>
+<Layout>
+  <main class="program-main pb-0">
+    <ProgramSection class="pb-0">
+      <Breadcrumb items={[
+        { name: "Academic Resources", path: "/resources/pcb/academic-resources" },
+        { name: "Student Competitions" }
+      ]}/>
+      <h2 class="program-title-lg">
+        ITS Student Competitions
+      </h2>
+      <p class="program-text">
+        ITS PCB Program and the National Operations Center of Excellence (NOCoE) developed a student competition, 
+        the Transportation Technology Tournament (TTT) to assist ITS students in working directly with public agencies 
+        to solve real-world transportation problems utilizing ITS and TSMO solutions. The competition allows student teams 
+        to leverage their experience, education, and ITS PCB materials to develop a solution or suite of solutions 
+        to directly address the transportation problem.
+      </p>
+      <p class="program-text">
+        A detailed description of the TTT, its deadlines, and a list of the student teams participating 
+        is available <Link href="https://transportationops.org/transportation-technology-tournament" isExternal>here</Link>.
+      </p>
+    </ProgramSection>
+    <ProgramSection>
+      <h2 class="program-title-lg">
+        Previous Winners
+      </h2>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Year</th>
+            <th scope="col">Winner</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024</td>
+            <td>
+              <Link href="https://transportationops.org/transportation-technology-tournament/2024" isExternal>
+                University of Michigan
+              </Link>
+            </td>
+          </tr>
+          <tr>
+            <td>2023</td>
+            <td>
+              <Link href="https://transportationops.org/transportation-technology-tournament/2023" isExternal>
+                Florida International University &amp; Florida Atlantic University
+              </Link>
+            </td>
+          </tr>
+          <tr>
+            <td>2022</td>
+            <td>
+              <Link href="https://transportationops.org/transportation-technology-tournament/2022" isExternal>
+                University of Michigan
+              </Link>
+            </td>
+          </tr>
+          <tr>
+            <td>2021</td>
+            <td>
+              <Link href="https://transportationops.org/transportation-technology-tournament/2021" isExternal>
+                University of Massachusetts - Lowell
+              </Link>
+            </td>
+          </tr>
+          <tr>
+            <td>2020</td>
+            <td>
+              <Link href="https://transportationops.org/transportation-technology-tournament/2020" isExternal>
+                University of Michigan
+              </Link>
+            </td>
+          </tr>
+          <tr>
+            <td>2019</td>
+            <td>
+              <Link href="https://transportationops.org/transportation-technology-tournament/2019" isExternal>
+                University of Michigan
+              </Link>
+            </td>
+          </tr>
+          <tr>
+            <td>2018</td>
+            <td>
+              <Link href="https://transportationops.org/transportation-technology-tournament/2018" isExternal>
+                University of Texas, University of Wyoming, and University of Kansas
+              </Link>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ProgramSection>
+    <ResourceFooter/>
+  </main>
+</Layout>

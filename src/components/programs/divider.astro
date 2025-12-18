@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'hr'> {}
+
+const { ...attrs } = Astro.props; 
+---
+<style>
+hr {
+  margin: 2rem 0;
+  border: none;
+  height: 1px;
+  background-color: black;
+  opacity: 0.125;
+  width: 100%;
+  flex-shrink: 0;
+}
+</style>
+<hr role="separator" {...attrs} />

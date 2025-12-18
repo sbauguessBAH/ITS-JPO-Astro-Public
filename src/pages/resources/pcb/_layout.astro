@@ -1,0 +1,93 @@
+---
+import type { ChildNavigationItem } from "@/src/types";
+
+import banner from "@/src/assets/images/pcb/banner.png";
+import ProgramBanner from "@/src/components/programs/ProgramBanner.astro";
+import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
+import ProgramMenu from "@/src/components/programs/ProgramMenu.astro";
+
+const keywords = [
+  "ITS Professional Capacity Building Program", 
+  "ITS PCB Program"
+];
+
+const description = `
+  The ITS PCB Program supports activities that deliver multimodal 
+  ITS learning opportunities to transportation professionals 
+  by providing ITS trainings and webinars, fostering cohorts, 
+  and providing technical assistance to agencies deploying ITS technologies 
+  as identified in 23 USC Sect 514.
+`
+
+const items: ChildNavigationItem[] = [
+  { 
+    name: 'Overview', 
+    url: '/resources/pcb' 
+  },
+  { 
+    hasGeneratedChildItems: true, 
+    name: 'Trainings', 
+    url: '/resources/pcb/trainings',
+  },
+  { 
+    name: 'Microlearning Videos', 
+    url: '/resources/pcb/microlearning'
+  },
+  {
+    name: 'Technical Assistance',
+    pages: [
+      { 
+        name: 'Connected and Automated Vehicle Education (CAVe)', 
+        url: '/resources/pcb/technical-assistance/cave'
+      },
+      { 
+        name: 'Accelerating V2X Cohort', 
+        url: '/resources/pcb/technical-assistance/v2x-cohort'
+      }
+    ],
+    url: '/resources/pcb/technical-assistance'
+  },
+  { 
+    hasGeneratedChildItems: true, 
+    name: 'Peer Exchanges', 
+    url: '/resources/pcb/peer-exchanges'  
+  },
+  // { 
+  //   name: 'Academic Resources', 
+  //   url: '/resources/pcb/academic-resources', 
+  //   hasGeneratedChildItems: true 
+  // },
+  // { 
+  //   name: 'Accelerating V2X Cohort', 
+  //   url: '/resources/pcb/v2x-cohort'
+  // },
+  // { 
+  //   name: 'Webinars', 
+  //   url: 'https://www.its.dot.gov/pcb/itscourses/default.aspx', 
+  //   isExternal: true
+  //  }
+]
+---
+<ProgramLayout
+  description={description}
+  keywords={keywords}
+  title="ITS Professional Capacity Building"
+>
+  <ProgramBanner 
+    hasOverlay={true}
+    image={banner}
+  >
+    <Fragment slot="section">
+      Resources/Technical Assistance
+    </Fragment>
+    <Fragment slot="title">
+      ITS PROFESSIONAL CAPACITY BUILDING
+    </Fragment>
+    <Fragment slot="description">
+      Providing transportation professionals with comprehensive training and technical assistance 
+      to advance the deployment of Intelligent Transportation Systems (ITS).
+    </Fragment>
+  </ProgramBanner>
+  <ProgramMenu items={items} />
+  <slot/>
+</ProgramLayout>

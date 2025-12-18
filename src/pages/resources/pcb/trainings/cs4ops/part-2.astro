@@ -1,0 +1,206 @@
+---
+import alexWassman from "@/src/assets/images/pcb/webinars/headshots/alex-wassman.png";
+import chrisLambert from "@/src/assets/images/pcb/webinars/headshots/chris-lambert.png";
+import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+// import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../../_layout.astro";
+import HostCard from "./_host-card.astro";
+
+const hosts = [
+  {
+    description: "Mr. Volpe is responsible for providing technical assistance, training, and deploying strategies and techniques to FHWA's internal and external customers on topics such as TSMO, integrated corridor management, active transportation and demand management, operations performance management, and organizing/planning for operations. Before joining FHWA in 2001, Mr. Volpe was a specialist in planning and public transportation for the Tennessee Department of Transportation. Mr. Volpe holds a Bachelor of Science in Logistics and Master of Science in civil engineering from the University of Tennessee, Knoxville.",
+    image: ralphVolpe,
+    name: "Ralph Volpe",
+    title: "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist"
+  },
+]
+
+const presenters = [
+  {
+    description: "Mr. Wassman has over 15 years of experience that spans TSMO, Traffic Management Center policy and operations, highway design, and intelligent transportation systems. He is the current chair of the Traffic Management Center Pooled Fund Study. He holds a Professional Engineer license and a Bachelor of Science in Civil Engineering from the University of Missouri.",
+    image: alexWassman,
+    name: "Alex Wassman",
+    title: "Missouri Department of Transportation, Data Sources Instructor, Traffic Management and Operations Engineer"
+  },
+  {
+    description: "Mr. Lambert has been with KYTC for over 23 years where he has served in various positions. Chris currently leads data modernization for the KYTC Maintenance Division. He previously supported ITS systems, managing the public-private partnership with Google/Waze and implementing a real-time data system that supports Traveler Information System (GoKY), Automated Crash Detection, Snow and Ice Decision Support, and Work Zone Monitoring.",
+    image: chrisLambert,
+    name: "Chris Lambert",
+    title: "Kentucky Transportation Cabinet (KYTC), Data Management Instructor"
+  },
+]
+---
+<style>
+  .resource-container {
+    background: rgb(var(--color-gray-light));
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .resource-card-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-sm);
+    align-items: center;
+  }
+  .resource-card-button:hover {
+    font-weight: inherit;
+    background: rgb(var(--color-brand-dark))
+  }
+  .resource-links {
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-sm)
+  }
+  a::after {
+    content: "" !important;
+  }
+</style>
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <Breadcrumb items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        { name: "Crowdsourcing for Operations", path: "/resources/pcb/trainings/cs4ops" },
+        { name: "Part 2" }
+      ]}/>
+      <h2 class="program-title-lg">
+        Data Sources and Management
+      </h2>
+      <p>June 20, 2023</p>
+      <div class="resource-container mb-4">
+        <h3 class="program-title-md">Presentation</h3>
+        <p class="program-text">     
+          Crowdsourcing Course (Part 2 of 5): Data Sources and Management
+          <br/>
+          (Volpe, Wassman, Lambert)
+        </p>
+        <div class="resource-links">
+          <a class="resource-card-button" href="https://usdot.zoomgov.com/rec/play/au6-0gws2qTezsWeMYplyB8V6crow-JioJl7ZDZbDaCDBCQeq_tDU0O_4I1JlEgBkVH8iweADTkt84c.Fb0E9Wvfpa7neASo?continueMode=true" rel="noopener noreferrer" target="_blank">
+            <FilmIcon/>
+            Webinar Replay
+          </a>
+          <!-- <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-2/s230620_Crowdsourcing_Part2_Data_Sources_and_Management_presentation.pptx")} rel="noopener noreferrer" target="_blank">
+            <PptIcon/>
+            PowerPoint
+          </a> -->
+          <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-2/s230620_Crowdsourcing_Part2_Data_Sources_and_Management_presentation.pdf")} rel="noopener noreferrer" target="_blank">
+            <PdfIcon/>
+            PDF
+          </a>
+        </div>
+      </div>
+      <h3 class="program-title-md">
+        Learning Objectives
+      </h3>
+      <ul class="program-list">
+        <li>
+          Identify the common crowdsourced data sources, data providers, data fields, and how the data might be used.
+        </li>
+        <li>
+          Understand data validation considerations when using crowdsourced data for transportation systems management and operations (TSMO).
+        </li>
+        <li>
+          Understand the importance of data management for crowdsourced and broader agency data.
+        </li>
+        <li>
+          Describe at a high level how modern data management differs from traditional data management.
+        </li>
+      </ul>
+      <h3 class="program-title-md">
+        Question and Answer Discussion
+      </h3>
+      <p class="program-text">
+        This webinar featured a question and answer session. A transcript of the questions asked and responses provided are below.
+      </p>
+      <Accordion id="part-2">
+        <AccordionItem
+          index={1}
+          title="Can you explain the terms Data Lake and ETL?"
+        >
+          <strong>Chris Lambert:</strong>
+          <p class="program-text">
+            The Data Lake is essentially just for all data. In other words, you're pulling down the file itself. We have here technology for example, they host their data in an XML file. That file is downloaded and stored in just, you know, an XML file. When you look at our file structure—and this is on one of my slides there, which you'll have after the presentation—it's literally just a file structure, and we'll have a date/timestamp as a prefix for the file and with .xml. Two minutes later, you have another file. Two minutes later, you have another file. So, it's just continuous pulling of the data itself in its raw format. So, in other words, we're actually looking in the file to pull data out of it. Yet, we're simply storing the raw data itself. Now, again, in Kentucky, we kind of cheat because we have a real-time use case, so we do also process in real time. But it's a very different pipeline and a different methodology. So, in some cases, you end up with just large sets of files, for example, from a vendor, and you'll drop those into your Data Lake again. You want those organized somehow. For us, we end up doing [it] from a source; for example, HERE or Waze or RWIS. For example, it would be like “weather/RWIS” is our folder structure, and from there, its year, month, and day. And inside of the day folder, you'll have a continuous listing of files that we've captured that day from that data source. And so that's just our way of organizing that Data Lake.
+          </p>
+          <p class="program-text">
+            The ETL or the ELT is the extract, transform, and load process or the extract, load, and transform process where you're utilizing the data. If you're looking at the Data Lake itself and pulling from raw data, you're going to have to extract what you need from those raw data sets and then load it somewhere else, and then typically do the transformation after it's loaded into its next storage area, maybe a smaller database or data warehouse, a big query SQL, whatever it may be. So, you're essentially grabbing a smaller dataset and storing that somewhere else to do a transformation and analysis, whereas ETL is extract, transform, and load. And that's very typical. It's a normal legacy process where you extract the data, you transform it, maybe like in memory, in the script itself, and then you drop it, fully transformed, into its next area. So those are the differences between an ETL and ELT—when and where the transformations take place is the big difference.
+          </p>
+          <p class="program-text">
+            (Volpe Host returns to slide 54 to show Data Lake). There you go, there's the Data Lake. So, in this, what we have is a type where we're saying it's weather information—this is from Kentucky Mesonet—and then we're doing the version, like Version 1, Version 2. Sometimes data sources will change their data feed or something. So, we'll do like Version 1—this is all we've ever had from Kentucky Mesonet is one version—and then we're going to do year, month, and day. That's just kind of a folder structure of how we drop those files in there. So that's what the Data Lake means.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={2}
+          title="How is artificial intelligence being leveraged in data synthesis or cleanup? Are there some sources available to engage?"
+        >
+          <strong>Alex Wassman:</strong>
+          <p class="program-text">
+            I don't know that we've used AI, but some of the products that we've used have done things with machine learning, which is related, but not the same thing as AI. So basically, we have established some filters and then over time, as we say, this is valid, and this is not valid and react to the information we're getting. The algorithm learns and gets better over time. So, it's like not doing it on its own. It requires feedback from us, but we've come close to that.
+          </p>
+          <strong>Chris Lambert:</strong>
+          <p class="program-text">
+            Not the data that I collect. We've got a couple of initiatives, and I'm not even really in the loop on those other than our pavement management folks. They have a research project, utilizes machine learning trying to essentially guess their reports and match those up with their new Lidar data. Gaining some consistency between inspector or engineer inspected pavement versus Lidar, inspected pavement. Try and draw correlations there, and make the data consistent, and then we do have a research project with Western Kentucky University concerning weather data and crash reports. We don't typically use AI machine learning in the organization to organize our data. We heavily process our data referencing our linear referencing system for that use. I guess we're saying we're the data is ready for it. Right now, we just don't have the use cases, or we've not been challenged with the used cases to really leverage a lot of machine learning or AI in our organization.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={3}
+          title="Although we kind of sometimes concentrate a little bit more on the data that comes directly, let's say on our highways. How does it relate to other modes specifically, transit?"
+        >
+          <strong>Ralph Volpe:</strong>
+          <p class="program-text">
+            One of the things we talk a lot in is Tismo transportation systems management and operations is, its not all about counting cars and trucks, its about moving of people and goods and how does crowdsource data kind of help support that effort especially in transit. Amy's question looked at is there any initiatives or techniques that are being used on looking at transit criteria crowds on transit vehicles specifically coming off of a pandemic sometimes we try to find that some people that want to have their safe distances. Then there are others that want to use commuter lots and park and ride lots. What is the occupancy level? I don't know. Chris or Alex, is there anything in either Missouri or Kentucky looking at that?
+          </p>
+          <strong>Alex Wassman:</strong>
+          <p class="program-text">
+            I don't have any experience with either of those in Missouri. I know the data is probably there to do so. For us, things like commuter parking lot levels and commercial motor vehicle parking things like that. It is easy enough to monitor it through other means that we haven't needed to explore crowdsourcing. I think transit for sure, especially modern transit, where everybody has some app that they use to pay or carry their pass on. That's going to give you the data to do that, I would need somebody else to chime in if they have actually done it though.
+          </p>
+          <strong>Chris Lambert:</strong>
+          <p class="program-text">
+            Sure, that is as close as we get is the truck parking. Now there may be other initiatives in the Cabinet somewhere that I'm not aware of, but for us, when the truck parking received a Federal grant, and they were part of kind of a multi-state coalition that roll that out, and we ended up just kind of capturing that data talking to the person that was implementing that project. So, we capture that data, and we look at that. Several years ago, our division of planning asked for that data because they wanted to expand truck parking. They were looking to use that data as a method of justifying additional parking spaces. Other than that, I can't think of any other type parking stuff that we keep track of or capacity that I keep track of.
+          </p>
+        </AccordionItem>
+      </Accordion>
+    </ProgramSection>
+    <ProgramSection color="gray" size="small">
+      <h3 class="program-title-md mb-4">
+        Host
+      </h3>
+      {hosts.map((item) => (
+        <HostCard
+          description={item.description}
+          image={item.image}
+          name={item.name}
+          title={item.title}
+        />
+      ))}
+      <h3 class="program-title-md mb-4">
+        Presenters
+      </h3>
+      {presenters.map((item) => (
+        <HostCard
+          description={item.description}
+          image={item.image}
+          name={item.name}
+          title={item.title}
+        />
+      ))}
+    </ProgramSection>
+  </main>
+</Layout>

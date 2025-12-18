@@ -1,0 +1,62 @@
+---
+interface Props {
+  color?: "gray" | "blue" | "white";
+  fullWidth?: boolean;
+  class?: string;
+  size?: "small" | "large";
+}
+
+const { color = "white", size, fullWidth, class: className }: Props = Astro.props;
+---
+<style>
+  .program-section-wrapper {
+    padding: 4rem 1rem;
+  }
+
+  .program-section-wrapper:last-child {
+    padding-bottom: 6rem;
+  }
+
+  .program-section-wrapper:first-child {
+    padding-top: 2rem;
+  }
+
+  .program-section-wrapper-large {
+    padding-bottom: 6rem;
+  }
+
+  .program-section-wrapper-small {
+    padding-bottom: 2rem;
+  }
+
+  .program-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 1200px) {
+    .program-section-wrapper {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  .background-blue-light {
+    background-color: rgba(var(--color-brand), 0.15);
+  }
+</style>
+<section class:list={[
+  {"background-light": color === "gray"},
+  {"background-blue-light": color === "blue"},
+  {"background-white": color === "white"},
+  "program-section-wrapper",
+  {"program-section-wrapper-large": size === "large"},
+  {"program-section-wrapper-small": size === "small"},
+]}>
+  <div class:list={[
+    fullWidth ? "container-fluid" : "container-xl",
+    "program-section",
+    className
+  ]}>
+    <slot />
+  </div>
+</section>

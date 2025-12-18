@@ -1,0 +1,33 @@
+---
+import type { ReferenceDataEntry } from 'astro:content';
+
+import { Image, type LocalImageProps } from 'astro:assets';
+import { getEntry } from 'astro:content';
+
+export type LibraryImageEntry = ReferenceDataEntry<"library"> | ReferenceDataEntry<"library">["id"];
+
+// Exclude src
+type Props = Omit<LocalImageProps, 'alt' | 'src'> & {
+  alt?: string;
+  entry: LibraryImageEntry;
+};
+
+// Allow alt to be overridden from the library entry
+const { alt, class: className, entry, ...rest }: Props = Astro.props;
+
+// Get the image entry data
+const imageEntry = typeof entry === 'string'
+  ? await getEntry({  collection: "library", id: entry })
+  : await getEntry(entry);
+
+// Construct the props with a type assertion since Astro can't infer it properly
+const imageProps = {
+  ...rest,
+  alt: alt ?? imageEntry.data.alt,
+  src: imageEntry.data.image,
+} as LocalImageProps;
+---
+<Image
+  {...imageProps}
+  class={className}
+/>

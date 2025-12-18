@@ -1,0 +1,23 @@
+---
+import BaseLayout from "@/src/layouts/BaseLayout.astro";
+import "@/src/styles/programs.css";
+
+interface Props {
+	title: string;
+  description?: string;
+  keywords?: string[] | string;
+}
+
+const { 
+  title, 
+  description, 
+  keywords 
+} = Astro.props;
+---
+<BaseLayout 
+  title={title} 
+  keywords={keywords} 
+  description={description}
+>
+  <slot/>
+</BaseLayout>

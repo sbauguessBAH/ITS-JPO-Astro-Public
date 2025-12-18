@@ -1,0 +1,86 @@
+[
+  {
+    "title": "ITS and Safety",
+    "id": "its-and-safety",
+    "trainings": [
+      { 
+        "title": "ITS and the Safe System Approach", 
+        "description": "An overview of how intelligent transportation systems (ITS) align with the Safe System Approach (SSA) - a guiding framework to enhance safety on our surface transportation system.",
+        "url": "https://www.youtube.com/watch?v=MdIMUtTvYa4", 
+        "isExternal": true,
+        "image": "pcb/microlearning/safe-system-approach",
+        "id": "its-and-safe-system-approach"
+      },
+      { 
+        "title": "ITS and Safer Speeds", 
+        "description": "Exploring how ITS technology can be used to encourage drivers to comply with posted speed limits, dynamically set speed limits based on travel conditions, or enforce posted speed limits.",
+        "url": "https://www.youtube.com/watch?v=tQ6AKopc_cw", 
+        "isExternal": true,
+        "image": "pcb/microlearning/safer-speeds",
+        "id": "its-and-safer-speeds"
+      },
+      { 
+        "title": "ITS and Safer Roads", 
+        "description": "Using intelligent transportation systems (ITS)-driven roadway designs to compensate for human error, encourage safer behaviors, and protect the most vulnerable users.",
+        "url": "https://www.youtube.com/watch?v=3Lnkh5NYCb8", 
+        "isExternal": true,
+        "image": "pcb/microlearning/safer-roads",
+        "id": "its-and-safer-roads"
+      },
+      { 
+        "title": "ITS and Safer People", 
+        "description": "Leveraging intelligent transportation systems (ITS) to promote responsible driving behavior and create road conditions that prioritize every traveler's safety.",
+        "url": "https://www.youtube.com/watch?v=rmu4NupP0vE", 
+        "isExternal": true,
+        "image": "pcb/microlearning/safer-people",
+        "id": "its-and-safer-people"
+      },
+      { 
+        "title": "ITS and Post-Crash Care", 
+        "description": "Enhancing survivability and responder safety by integrating intelligent transportation systems (ITS) into rapid emergency access and comprehensive traffic incident management.",
+        "url": "https://www.youtube.com/watch?v=ONbOWngWv-s", 
+        "isExternal": true,
+        "image": "pcb/microlearning/post-crash-care",
+        "id": "its-and-post-crash-care"
+      },
+      { 
+        "title": "ITS and Safer Vehicles", 
+        "description": "Applying intelligent transportation systems (ITS) technologies to broaden in-vehicle safety features that prevent crashes and reduce their severity for occupants and bystanders.",
+        "url": "https://www.youtube.com/watch?v=2OrkfPhvfMw", 
+        "isExternal": true,
+        "image": "pcb/microlearning/safer-vehicles",
+        "id": "its-and-safer-vehicles"
+      }
+    ]
+  },
+  {
+    "title": "The Principles of Systems Engineering",
+    "id": "principles-of-systems-engineering",
+    "trainings": [
+      {
+        "title": "Systems Engineering Approach",
+        "description": "An overview of systems engineering's foundations, spotlighting concept of operations, requirements management, system architecture, and lifecycle verification.",
+        "url": "https://www.youtube.com/watch?v=R93IOXrQq9I",
+        "isExternal": true,
+        "image": "pcb/microlearning/se-approach",
+        "id": "systems-engineering-approach"
+      },
+      {
+        "title": "Importance of Applying Systems Engineering to ITS Projects",
+        "description": "Examining why applying systems engineering accelerates integration, enhances safety, and ensures scalable, resilient intelligent transportation systems (ITS) solutions.",
+        "url": "https://www.youtube.com/watch?v=srgK53e56AM",
+        "isExternal": true,
+        "image": "pcb/microlearning/importance-of-aps-to-its",
+        "id": "importance-of-aps-to-its"
+      },
+      {
+        "title": "Systems Engineering Approach Resources",
+        "description": "Showcasing essential standards, tools, and learning platforms to build systems engineering expertise for successful intelligent transportation systems (ITS) implementations.",
+        "url": "https://www.youtube.com/watch?v=z6PJ7PMgYdk",
+        "isExternal": true,
+        "image": "pcb/microlearning/se-approach-resources",
+        "id": "systems-engineering-approach-resources"
+      }
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+---
+import base_url from '@/src/lib/base_url';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<"div"> {
+  shadow?: "none" | "sm" | "md" | "lg";
+  radius?: "none" | "md" | "lg";
+  fullWidth?: boolean;
+  href?: string;
+  hideBorder?: boolean;
+  isExternal?: boolean;
+}
+
+const {
+  shadow = "md",
+  radius = "md",
+  fullWidth,
+  href,
+  isExternal,
+  hideBorder,
+  class: className,
+  ...rest
+} = Astro.props
+
+const Tag = href ? "a" : "div";
+
+const shadowClass = {
+  'shadow-none': shadow === 'none',
+  'shadow-sm': shadow === 'sm',
+  'shadow': shadow === 'md',
+  'shadow-lg': shadow === 'lg',
+};
+
+const radiusClass = {
+  'radius-none': radius === 'none',
+  'radius-md': radius === 'md',
+  'radius-lg': radius === 'lg',
+};
+
+const linkAttrs = href && isExternal 
+  ? { href, target: "_blank", rel: "noopener noreferrer" } 
+  : href 
+    ? { href: base_url(href)} 
+    : undefined;
+
+---
+<style>
+  .astro-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    outline: none;
+    box-sizing: border-box;
+    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
+    border: 1px solid var(--border-light);
+  }
+
+  .astro-card-no-border {
+    border: none;
+  }
+
+  .astro-card-full-width {
+    width: 100%;
+  }
+
+  .astro-card-link {
+    text-decoration: none;
+  }
+
+  .astro-card-link:hover, .astro-card-link:focus {
+    text-decoration: none;
+    font-weight: inherit;
+  }
+  
+</style>
+<Tag
+  class:list={[
+    "astro-card",
+    Object.entries(shadowClass).find(([, isActive]) => isActive)?.[0],
+    Object.entries(radiusClass).find(([, isActive]) => isActive)?.[0],
+    href && "astro-card-link",
+    fullWidth && "astro-card-full-width",
+    hideBorder && "astro-card-no-border", 
+    className
+  ]}
+  {...linkAttrs}
+  {...rest}
+>
+  <slot/>
+</Tag>

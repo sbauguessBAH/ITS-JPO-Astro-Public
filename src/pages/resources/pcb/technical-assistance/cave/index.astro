@@ -1,0 +1,266 @@
+---
+import { Image } from "astro:assets";
+
+import caveConfiguration from "@/src/assets/images/pcb/cave/cave-configuration.jpg"
+import caveDesignDocuments from "@/src/assets/images/pcb/cave/cave-design-documents.jpg"
+import caveDiy from "@/src/assets/images/pcb/cave/cave-diy.jpg"
+// import caveLogo from "@/src/assets/images/pcb/cave/cave-logo.png"
+import caveTransparent from "@/src/assets/images/pcb/cave/cave-transparent.png"
+import rsu from "@/src/assets/images/pcb/cave/rsu.png"
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../../_layout.astro";
+// import Videos from "./_videos.astro";
+---
+<style>
+  .overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+
+  .overview-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .overview-section {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .overview-image {
+      flex-basis: 35%;
+      display: flex;
+      justify-content: center;
+    }
+    .overview-text {
+      flex-basis: 60%;
+    }
+  }
+
+  .cave-transparent-image {
+    max-width: 350px;
+  }
+
+  .cave-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.5rem 1.4rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+    transition: background 0.3s;
+  }
+  .cave-button:hover {
+    font-weight: inherit;
+    background: rgba(var(--color-brand-dark), 0.8);
+  }
+</style>
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    gap: var(--size);
+  }
+  @media (min-width: 992px) {
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .resource-card-image {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+  }
+  .resource-card-header {
+    padding: 0;
+  }
+  .resource-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--size-sm) var(--size-sm) var(--size) var(--size-sm);
+    gap: var(--size);
+    /* background-color: rgb(var(--color-gray-light)); */
+  }
+  .rsu-image {
+    max-width: 250px;
+    transform: rotate(20deg)
+  }
+  .text-right {
+    text-align: right;
+  }
+</style>
+<Layout>
+  <main class="program-main pb-0">
+    <ProgramSection>
+      <div class="overview-section">
+        <div class="overview-text">
+          <h2 class="program-title-lg mb-4">
+            What is CAVe-in-a-box?
+          </h2>
+          <p class="program-text">
+            CAVe-in-a-box, short for connected and automated vehicle education in a box, offers a comprehensive, hands-on learning experience. 
+            It supports instructors in teaching intelligent transportation
+            system concepts, helps benchmark connected vehicle equipment, and streamlines onboarding for intelligent transportation system technicians.
+          </p>
+          <p class="program-text">
+            Each kit includes a complete infrastructure setup and onboard equipment, featuring transportation radios, networking devices,
+            traffic control equipment, and software. With CAVe-in-a-box, practitioners can train, deploy, and test scaled intelligent transportation
+            systems directly and gain practical real-world experience.
+          </p>
+          <div class="pt-4">
+            <a 
+              class="cave-button" 
+              href="https://usdot-carma.atlassian.net/wiki/spaces/CMNT/pages/2628485130/CAVe-in-a-box+Training"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="overview-image">
+          <figure class="figure">
+            <Image alt="CAVe-in-a-box" class="img-fluid cave-transparent-image" src={caveTransparent}/>
+            <figcaption class="figure-caption text-right">
+              Source: FHWA
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </ProgramSection>
+    <ProgramSection color="gray">
+      <h2 class="program-title-lg text-center mb-4">
+        Open-Source Resources
+      </h2>
+      <div class="card-grid">
+        <Card>
+          <CardHeader class="resource-card-header">
+            <Image alt="CAVe-in-a-box" class="resource-card-image" src={caveDesignDocuments}/>
+          </CardHeader>
+          <CardBody>
+            <div class="resource-card-body">
+              <div>
+                <h3 class="program-title-sm mb-2">Design Documents</h3>
+                <p class="program-text">
+                  Learn how to set up, configure, and explore 
+                  all that CAVe-in-a-box has to offer.
+                </p>
+              </div>
+              <div>
+                <a 
+                  class="cave-button" 
+                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_SysDes_April2022.pdf")} 
+                  target="_blank"
+                >
+                  View PDF
+                </a>
+              </div>
+            </div>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader class="resource-card-header">
+            <Image alt="Two people standing over CAVe-in-a-box" class="resource-card-image" src={caveDiy}/>
+          </CardHeader>
+          <CardBody>
+            <div class="resource-card-body">
+              <div>
+                <h3 class="program-title-sm mb-2">Do-It-Yourself Guides</h3>
+                <p class="program-text">
+                  Build your own CAVe-in-a-box from the ground up.
+                </p>
+              </div>
+              <div>
+                <a 
+                  class="cave-button" 
+                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf")} 
+                  target="_blank"
+                >
+                  View PDF
+                </a>
+              </div>
+            </div>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader class="resource-card-header">
+            <Image alt="A laptop connected to a CAVe-in-a-box" class="resource-card-image" src={caveConfiguration}/>
+          </CardHeader>
+          <CardBody>
+            <div class="resource-card-body">
+              <div>
+                <h3 class="program-title-sm mb-2">Configuration Instructions</h3>
+                <p class="program-text">
+                  Explore how you can setup and configure your CAVe-in-a-box toolkit.
+                </p>
+              </div>
+              <div>
+                <a 
+                  class="cave-button" 
+                  href={base_url("/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf")} 
+                  target="_blank"
+                >
+                  View PDF
+                </a>
+              </div>
+            </div>
+          </CardBody>
+        </Card>
+      </div>
+    </ProgramSection>
+    <!-- <ProgramSection>
+      <h2 class="program-title-lg text-center mb-4">
+        CAVe-in-a-box Video Series
+      </h2>
+      <p class="program-text text-center max-w-lg mx-auto mb-4">
+        The video series is designed to make learning easy and practical. These videos show you how to setup and use the CAVe-in-a-box system,
+        covering everything from installing and mounting vehicle radios to understanding how data flows in a transportation management system.
+        By watching the videos, you'll have all the tools you need to successfully use CAVe-in-a-box.
+      </p>
+      <Videos/>
+    </ProgramSection> -->
+    <ProgramSection class="pb-2">
+      <div class="overview-section">
+        <div class="overview-text">
+          <h2 class="program-title-lg">
+            Need equipment? We've got you covered!
+          </h2>
+          <p class="program-text">
+            The Connected and Automated Vehicles (CAV) Support Services Program provides technical assistance 
+            and equipment loans to help accelerate your deployments.
+            Whether you're testing new technologies, seeking bench-testing space, or in the later stages of deployment,
+            we offer cost-free resources to support your progress.
+          </p>
+          <p class="program-text">
+            Get the tools and knowledge you need to bring your connected and automated vehicle projects to life!
+          </p>
+          <div class="pt-4">
+            <a 
+              class="cave-button" 
+              href="mailto:cavsupportservices@dot.gov?subject=CAVe-in-a-box Equipment Request"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Get Equipment
+            </a>
+          </div>
+        </div>
+        <div class="overview-image">
+          <Image alt="CAVe-in-a-box" class="img-fluid rsu-image" src={rsu}/>
+        </div>
+      </div>
+    </ProgramSection>
+  </main>
+</Layout>

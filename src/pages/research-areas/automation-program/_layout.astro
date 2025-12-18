@@ -1,8 +1,8 @@
 ---
-import ProgramBanner from "@/src/components/programs/program-banner.astro";
-import ProgramLayout from "@/src/components/programs/program-layout.astro";
+import ProgramBanner from "@/src/components/programs/ProgramBanner.astro";
+import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
-import ProgramMenu from "@/src/components/programs/program-menu.astro";
+import ProgramMenu from "@/src/components/programs/ProgramMenu.astro";
 import type { ChildNavigationItem } from "@/src/types";
 
 const keywords = [
@@ -60,13 +60,12 @@ const items: ChildNavigationItem[] = [
   description={description}
 >
   <ProgramBanner 
-    breadcrumbs={[
-      "Research Areas", 
-      "Automation Program"
-    ]}
     hasOverlay
     image={banner}
   >
+    <Fragment slot="section">
+      Research Areas
+    </Fragment>
     <Fragment slot="title">
       AUTOMATION PROGRAM
     </Fragment>

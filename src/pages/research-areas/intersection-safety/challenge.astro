@@ -1,0 +1,927 @@
+---
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Layout from "./_layout.astro";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
+import { Image } from "astro:assets";
+import Link from "@/src/components/Link.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import base_url from "@/src/lib/base_url";
+---
+<style>
+  .resource-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--size);
+  }
+
+  .resource-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .resource-card-title {
+    text-transform: none;
+  }
+  .resource-card-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+  .resource-button {
+    border: 1px solid #dee2e6;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: black;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-duration) ease-in-out;
+  }
+  .resource-button::after {
+    content: "";
+  }
+  .resource-button:hover {
+    font-weight: 600;
+    background: #dee2e6;
+  }
+
+  .resource-link-container {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 4px;
+  }
+
+  @media (min-width: 1200px) {
+    .resource-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+<style>
+  tbody tr td {
+    text-align: left;
+  }
+<style>
+  
+  .stage-header {
+    /* width: 100%;
+    padding: var(--size);
+    background: rgb(var(--color-brand-dark)); */
+    /* background-image: linear-gradient(to right,#0a1e62,#09638c); */
+  }
+
+  .stage-header-1a {
+    background-image: linear-gradient(to right,#0a1e62,#09638c);
+    width: 100%;
+    padding: var(--size);
+  }
+  
+  .stage-header-1b {
+    background-image: linear-gradient(to right,#09638c, #0a1e62);
+    width: 100%;
+    padding: var(--size);
+  }
+
+  .stage-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    gap: var(--size);
+  }
+
+  .prize-container {
+    background: rgba(152, 194, 86, 0.3);
+    border: 1px solid rgb(80, 154, 53);
+    border-radius: var(--radius-md);
+    padding: var(--size-sm);
+    text-align: center;
+    width: 100%;
+  }
+
+  .prize-container-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(80, 154, 53);
+  }
+
+  .challenge-element-list {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .challenge-element {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 8px 0;
+    gap: var(--size-sm);
+  }
+
+  .challenge-element-icon {
+    color: rgb(80, 154, 53);
+  }
+
+  @media (min-width: 1200px) {
+    .stage-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+<style>
+  .stage-wrapper {
+    background: rgb(var(--color-gray-light));
+    border-radius: var(--radius-md);
+  }
+
+  .data-collection-wrapper {
+    background: rgb(var(--color-brand-light));
+    /* border-radius: var(--radius-md); */
+    padding: var(--size-lg);
+  }
+
+  .data-collection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-lg); 
+  }
+
+  .data-collection-video-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+
+  .data-collection-video {
+    border-radius: var(--radius-md);
+    max-width: 500px;
+  }
+
+  .data-collection-content {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 992px) {
+    .data-collection {
+      flex-direction: row;
+      align-items: start;
+      justify-content: space-between;
+    }
+    .data-collection-content {
+      flex-basis: 60%;
+    }
+    .data-collection-video-container {
+      flex-basis: 40%;
+      
+    }
+  }
+  
+</style>
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <h2 class="program-title-lg">
+        Challenge Summary
+      </h2>
+      <div class="row">
+        <div class="col-8">
+          <p class="program-text">
+            In response to growing concerns regarding the safety of vulnerable road users at intersections, 
+            the U.S. DOT launched the Intersection Safety Challenge to transform intersection safety 
+            through the development of innovative intersection safety systems (ISS) that can identify, 
+            predict, and mitigate unsafe conditions involving vehicles and vulnerable road users in real time. 
+            The Challenge was organized as a multi-stage prize competition that launched in April 2023 
+            and concluded in January 2025. The Challenge aimed to assess the maturity and incentivize 
+            the development of new, cost-effective, real-time roadway ISS concepts that leverage 
+            sensor fusion and AI.
+          </p>
+        </div>
+        <div class="col-4">
+          <Image
+            src={iscLogo}
+            alt="Intersection Safety Challenge Logo"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </ProgramSection>
+    <ProgramSection color="gray">
+      <h2 class="program-title-lg text-center">
+        Challenge Structure
+      </h2>
+      <p class="program-text mb-4 max-w-lg mx-auto text-center">
+        The competition was split into two stages with Stage 1A focused on concept assessment 
+        and Stage 1B focused on system assessment and virtual testing.
+      </p>
+      <div class="stage-container">
+        <Card>
+          <CardHeader class="p-0">
+            <div class="stage-header stage-header-1a">
+              <h3 class="program-title-md text-white text-center mb-0">
+                Stage 1A
+              </h3>
+              <p class="program-text text-white text-center mb-0">
+                Concept Assessment
+              </p>
+            </div>
+          </CardHeader>
+          <CardBody class="p-4">
+            <p class="program-text">
+              Stage 1A brought together innovative teams combining expertise in emerging technologies
+              with traffic and safety engineering to develop new and potentially transformative
+              intersection safety approaches. Participants submitted concept papers on 
+              their proposed intersection safety system designs.
+            </p>
+            <div class="challenge-element-list">
+              <div class="challenge-element">
+                <div class="challenge-element-icon">
+                  <Check2CircleIcon size={20} />
+                </div>
+                <p class="program-text mb-0">
+                  120 innovative concept papers submitted
+                </p>
+              </div>
+              <div class="challenge-element">
+                <div class="challenge-element-icon">
+                  <Check2CircleIcon size={20} />
+                </div>
+                <p class="program-text mb-0">
+                  15 teams selected for prizes and invited to Stage 1B
+                </p>
+              </div>
+            </div>
+          </CardBody>
+          <CardFooter class="p-4">
+            <div class="prize-container">
+              <div class="prize-container-amount">
+                $1,500,000
+              </div>
+              <p class="program-text mb-0">
+                Total prize pool
+              </p>
+            </div>
+          </CardFooter>
+        </Card>
+        <Card>
+          <CardHeader class="p-0">
+            <div class="stage-header stage-header-1b">
+              <h3 class="program-title-md text-white text-center mb-0">
+                Stage 1B
+              </h3>
+              <p class="program-text text-white text-center mb-0">
+                System Assessment and Virtual Testing
+              </p>
+            </div>
+          </CardHeader>
+          <CardBody class="p-4">
+            <p class="program-text">
+              Stage 1B challenged the winning teams from Stage 1A to develop, train, and 
+              improve algorithms for the detection, localization, classification, path prediction, 
+              and conflict prediction of vulnerable road users and vehicles utilizing 
+              U.S. DOT-provided real-world sensor data collected on a closed course at 
+              the Federal Highway Administration (FHWA) Turner-Fairbank Highway Research Center (TFHRC).
+            </p>
+            <div class="challenge-element-list">
+              <div class="challenge-element">
+                <div class="challenge-element-icon">
+                  <Check2CircleIcon size={20} />
+                </div>
+                <p class="program-text mb-0">
+                  13 teams participated by developing and training algorithms
+                </p>
+              </div>
+              <div class="challenge-element">
+                <div class="challenge-element-icon">
+                  <Check2CircleIcon size={20} />
+                </div>
+                <p class="program-text mb-0">
+                  10 teams selected for prizes
+                </p>
+              </div>
+            </div>
+          </CardBody>
+          <CardFooter class="p-4">
+            <div class="prize-container">
+              <div class="prize-container-amount">
+                $4,000,000
+              </div>
+              <p class="program-text mb-0">
+                Total prize pool
+              </p>
+            </div>
+          </CardFooter>
+        </Card>
+      </div>
+    </ProgramSection>
+    <ProgramSection>
+      <h2 class="program-title-lg mb-4">
+        Stage 1A &mdash; Concept Assessment
+      </h2>
+      <div class="stage-wrapper padding-size-lg">
+        <h3 class="program-title-md my-2">
+          Summary
+        </h3>
+          <p class="program-text">
+          Stage 1A brought together innovative teams combining expertise in emerging technologies
+          with experience in traffic and safety engineering to develop new and potentially transformative
+          intersection safety approaches. Participants submitted concept papers on 
+          their proposed intersection safety system designs that helped identify and mitigate unsafe
+          conditions involving vehicles and vulnerable road users.
+        </p>
+        <h3 class="program-title-md my-2">
+          Results
+        </h3>
+        <p class="program-text">
+          The U.S. DOT evaluated 120 innovative concept papers, selecting 15 teams for prizes.
+          Of these 15 teams, 2 were led by State DOTs, 7 by academic institutions, and 6 by other organizations. 
+          Following final verification of eligibility, these teams received a prize of $100,000 each and were
+          invited to participate in Stage 1B: System Assessment and Virtual Testing.
+        </p>
+        <p class="program-text">
+            Learn more about the winning teams and their approaches below.
+          </p>
+          <div class="accordion" id="accordionTeams1a">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1A" aria-expanded="true" aria-controls="collapse1A">
+                  Stage 1A Winning Teams ($150,000 per award)
+                </button>
+              </h2>
+              <div id="collapse1A" class="accordion-collapse collapse" style="">
+                <!--  data-bs-parent="#accordionTeams" -->
+                <div class="accordion-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Team Lead Entity</th>
+                        <th scope="col">Submission Title</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">CNA</th>
+                        <td>
+                          Safe Warnings for Intersections Forecasting Tool (SWIFT) 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Deloitte Consulting </th>
+                        <td>
+                          Intersection Safety System: Foundation for Smart & Connected Intersection 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">DENSO International America </th>
+                        <td>
+                          Driving Behavior Integrated Intersection Safety System for Vulnerable Road Users 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Derq USA </th>
+                        <td>
+                          Derq's Intersection Safety System 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Florida A&M University and Florida State University </th>
+                        <td>
+                          Predictive Intersection Safety System (PREDISS) 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Global Traffic Technologies/Miovision USA </th>
+                        <td>
+                          White Alert: A Digital Multi-Channel Vision for Scalable Intersection Safety 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Ohio State University </th>
+                        <td>
+                          Transforming Intersection Safety Through Emerging Technologies for All Road Users 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Orion Robotics Labs</th>
+                        <td>
+                          Orion Labs Saiph Intersection Safety System 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Texas Department of Transportation </th>
+                        <td>
+                          Applying LiDAR-based Multimodal Tracking to Improve Vulnerable Road User Safety at Signalized Intersections 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of California, Los Angeles </th>
+                        <td>
+                          InfraShield: Pioneering Safe Intersections for All Road Users through AI-Powered Infrastructure Solutions 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of California, Riverside </th>
+                        <td>
+                          Safety Assurance System for Vulnerable Road Users at Signalized Intersections (SAINT) 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of Hawaii </th>
+                        <td>
+                          Toward Vision Zero: Sensing, Predicting, and Preventing Intersection Collisions 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of Michigan</th>
+                        <td>
+                          SAFETI: Safety Actions for Everyone at Traffic Intersections 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of Washington</th>
+                        <td>
+                          Comprehensive and Cooperative Intersection Safety Systems 
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Utah Department of Transportation </th>
+                        <td>
+                          Improving Intersection Safety with Light Detection and Ranging (LiDAR)
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- <h3 class="program-title-md mt-4">
+          Additional Resources
+        </h3> -->
+      </div>
+    </ProgramSection>
+    <div class="container-xl">
+      <hr class="m-0 p-0"/>
+    </div>
+    <ProgramSection>
+      <h2 class="program-title-lg mb-4">
+        Stage 1B &mdash; System Assessment and Virtual Testing
+      </h2>
+      <div class="stage-wrapper">
+        <div class="padding-size-lg">
+          <h3 class="program-title-md">
+            Summary
+          </h3>
+          <p class="program-text">
+            Stage 1B challenged the winning teams from Stage 1A to develop, train, 
+            and improve algorithms for the detection, localization, classification, 
+            path prediction, and conflict prediction of vulnerable road users and 
+            vehicles utilizing U.S. DOT-provided real-world sensor data collected 
+            on a closed course at the Federal Highway Administration (FHWA) 
+            Turner-Fairbank Highway Research Center (TFHRC).
+          </p>
+        </div>
+        <div class="data-collection-wrapper">
+          <h3 class="program-title-md my-2">
+            Data Collection
+          </h3>
+          <div class="data-collection">
+            <div class="data-collection-content">
+              <p class="program-text">
+                The Intersection Safety Challenge Dataset features a comprehensive collection of conflict/non-conflict scenario data 
+                involving various road users, captured under various weather and lighting
+                conditions by visual and thermal cameras, LiDAR, and radar sensors.
+              </p>
+              <p class="program-text">
+                Teams used the data to develop and train models that predict potential conflicts and provide enough time for warnings 
+                or other real-time countermeasures. This rich and unique dataset
+                lays the foundation for key research efforts aimed at improving intersection safety.
+              </p>
+              <p class="program-text">
+                Interested users can download sample data and request access to the full challenge dataset from the
+                <Link isExternal href="https://data.transportation.gov/Roadways-and-Bridges/Intersection-Safety-Challenge-Stage-1B-Sample/vq7s-mv3v/about_data">
+                  U.S. DOT's public data portal
+                </Link>.
+              </p>
+            </div>
+            <div class="data-collection-video-container">
+              <iframe 
+                src="https://www.youtube.com/embed/csirVHFa2Cc?si=IqFVBNr4ofam0D-o" 
+                title="YouTube video player" 
+                height="250"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen
+                class="data-collection-video"
+              ></iframe>
+              <!-- <p class="data-collection-content">
+                Learn how the U.S. DOT collected multi-sensor data at the Federal Highway Administration (FHWA) 
+                Turner-Fairbank Highway Research Center (TFHRC) to lay the foundation for key research efforts 
+                aimed at improving intersection safety.
+              </p> -->
+            </div>
+          </div>
+        </div>
+        <div class="padding-size-lg">
+          <h3 class="program-title-md mt-4">
+            Results
+          </h3>
+          <p class="program-text">
+            The USDOT awarded 10 teams prize amounts ranging from $166,666 to $750,000, for a total of $4,000,000 in prize awards.
+          </p>
+          <p class="program-text">
+            Stage 1B demonstrated that many teams could perform acceptable detection, localization, and classification under ideal conditions. 
+            However, there is room for improvement for night and low-visibility conditions. Additionally, further testing is required 
+            to assess the speed and accuracy of real-time path and conflict prediction as well as the effectiveness of various conflict mitigation strategies.  
+          </p>
+          <p class="program-text">
+            Learn more about the winning teams and their approaches below.
+          </p>
+          <div class="accordion" id="accordionTeams">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Tier 1 Teams ($750,000 per award)
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" style="">
+                <!--  data-bs-parent="#accordionTeams" -->
+                <div class="accordion-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Team Lead Entity</th>
+                        <th scope="col">Summary</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Derq USA, Inc.</th>
+                        <td>
+                          <ul>
+                            <li>
+                              Utilizes an approach that fuses varied perception sensors and learns from historical data 
+                              to build real-time situational awareness to monitor and analyze road user behavior.
+                            </li>
+                            <li>
+                              Developed real-time cooperative perception technology based on computer vision, machine learning, 
+                              and sensor fusion with applications in traffic control, connected vehicles and safety analytics 
+                              including illegal road-user movement detection, real-time near-miss (conflict) detection 
+                              and real time crash detection for vehicles and vulnerable road users.
+                            </li>
+                            <li>
+                              Approach includes a process for sensor calibration, including the alignment of camera and LiDAR data, 
+                              and synchronization of timestamps for data integration. 
+                              <ul>
+                                <li>
+                                  Perception algorithms are employed to detect and classify road users in a variety of sensor feeds, 
+                                  which are tracked and then fused in a common frame of reference. 
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              Path prediction models are applied to anticipate the future movements of road users, feeding 
+                              into conflict detection algorithms to identify potential collision scenarios. 
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of California, Los Angeles (UCLA) Mobility Lab</th>
+                        <td>
+                          <ul>
+                            <li>
+                              InfraShield system uses sensor fusion and path prediction technologies which leverage multimodal sensor data, 
+                              including LiDAR, red, green, and blue wavelengths (RGB) cameras, and radar, to detect, classify, 
+                              and track vulnerable road users and vehicles under challenging conditions.
+                            </li>
+                            <li>
+                              Utilizes a late fusion approach to combine sensor data for object detection, classification, 
+                              and tracking, addressing calibration issues and sensor limitations. 
+                            </li>
+                            <li>
+                              For path prediction, InfraShield employs machine learning models to forecast future movements 
+                              of road users, utilizing high-definition maps and historical object trajectory data, accounting 
+                              for diverse paths of vehicles and vulnerable road users, ensuring robust predictions despite noise data, 
+                              and can be used to identify conflict points using time-to-collision calculations. 
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of Hawaii</th>
+                        <td>
+                          <ul>
+                            <li>
+                              Relies on sensor fusion across multiple modalities including LiDAR, RGB cameras, thermal cameras 
+                              and signal data providing highly accurate 3D localization, open vocabulary detection 
+                              for even potentially unknown test-time classes and multi-mode probabilistic path prediction, 
+                              which are combined for conflict prediction. 
+                            </li>
+                            <li>
+                              Approach in optimal utilization and fusion of sensors, allows real-time inference on cheaper devices, 
+                              minimizes data curation costs and ensures good generalization across conditions, which are crucial 
+                              to ensure scalability to intersections all over the nation.
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of Michigan</th>
+                        <td>
+                          <ul>
+                            <li>
+                              Team includes Mcity of the University of Michigan, General Motors Global R&amp;D;, Ouster, and Texas A&amp;M; University.
+                            </li>
+                            <li>
+                              SAFETI real-time algorithms are designed to work with DOT-supplied sensor data, focusing on identifying 
+                              and predicting the movement of vehicles and vulnerable road users at intersections. 
+                            </li>
+                            <li>
+                              The approach integrates 2D detection from images and 3D detection from LiDAR data, followed by sensor fusion 
+                              and trajectory prediction, with a conflict detection module that evaluates potential collisions 
+                              between agents in real-time. 
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                  Tier 2 Teams ($166,666 per award)
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" style="">
+                <!--  data-bs-parent="#accordionTeams" -->
+                <div class="accordion-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Team Lead Entity</th>
+                        <th scope="col">Summary</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Florida A&amp;M; University (FAMU) and Florida State University (FSU)</th>
+                        <td>
+                          <ul>
+                            <li>
+                              Predictive Intersection Safety System's (PREDISS's) goal is to leverage machine learning, 
+                              controls, optimization, connected and autonomous vehicles technologies to improve the safety 
+                              of vulnerable road users at signalized intersections. 
+                            </li>
+                            <li>
+                              Approach fuses low-cost sensors' data to detect (differentiate and classify), localize, 
+                              track, and predict the trajectories of vehicles and vulnerable road users.  
+                              <ul>
+                                <li>
+                                  Strikes a balance between compute power and practicality, factoring in the long-term goal 
+                                  of retrofitting such a system in intersections across the United States. Designed system 
+                                  in collaboration with the Tallahassee Advanced Traffic Management System (TATMS) 
+                                  to be deployable on existing infrastructure, including testing on live feeds.  
+                                </li>
+                                <li>
+                                  Key design choices include: 1) Modular architecture; 2) User-friendly calibration; 
+                                  3) Python-based implementation; 4) Efficient algorithms; 5) Adaptive fusion techniques
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Miovision (Global Traffic Technologies)</th>
+                        <td>
+                          <ul>
+                            <li>
+                              Team includes Miovision USA, Carnegie Mellon University, Amazon Web Services, and Telus.
+                            </li>
+                            <li>
+                              Devised a perception, path prediction, and conflict prediction framework centered 
+                              around RGB camera and LiDAR sensors.
+                            </li>
+                            <li>
+                              Emphasizing decision-level sensor fusion, approach amalgamates independent detections 
+                              from multiple strategically positioned cameras with granular 3D spatial details 
+                              from LiDAR data, fostering enhanced detection and localization. 
+                              <ul>
+                                <li>
+                                  Perception module encompasses components such as refined YOLO-based object detection 
+                                  and classification in 2D and LiDAR-based object detection in 3D, multi-camera object 
+                                  tracking based on DeepSORT, and advanced LiDAR-based 3D object localization. 
+                                </li>
+                                <li>
+                                  Subsequent path prediction, bolstered by an expanded dataset and the AutoBots-Joint model, 
+                                  predicts complex scenarios for each road user into the future at intersections, 
+                                  using bird's-eye-view projections enriched by PCA-based ground plane estimations.  
+                                </li>
+                                <li>
+                                  At the end, conflict prediction framework integrates time-based Surrogate Safety Measure 
+                                  of Time to Collision to capture complex interactions to anticipate potential 
+                                  collision scenarios, complemented by probabilistic filtering to reduce false positives. 
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Ohio State University</th>
+                        <td>
+                          <ul>
+                            <li>
+                              Approach leverages a late fusion strategy that integrates data from LiDAR, RGB cameras, 
+                              and infrared sensors. 
+                              <ul>
+                                <li>
+                                  Utilizes a Euler-Region Proposal Network (E-RPN) to process Bird's Eye View (BEV) projections 
+                                  of LiDAR point cloud data. 
+                                </li>
+                                <li>
+                                  Concurrently, a YOLOv10 network is employed for 2D object detection, and a ByteTrack2 tracker 
+                                  is used to track 2D bounding boxes over time. YOLO is applied independently to both RGB 
+                                  and infrared images to maximize detection accuracy. 
+                                </li>
+                                <li>
+                                  By analyzing the velocity states of the tracked objects, it predicts their future trajectories 
+                                  over a specified time horizon, assuming constant velocity and performing linear extrapolation. 
+                                </li>
+                                <li>
+                                  Potential collisions are identified by examining the predicted trajectories on the x, y plane. 
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Orion Robotics Labs</th>
+                        <td>
+                          <ul>
+                            <li>
+                              Orion Robotics Labs is a small woman-owned business in rural Colorado. Orion Robotics Labs 
+                              has expertise in machine learning, edge compute, sensing technologies and robotics.
+                            </li>
+                            <li>
+                              Developed a solution for detection, localization, classification and path/conflict detection 
+                              to increase intersection safety by combining lightweight algorithms, fine-tuned calibrations 
+                              and fast processing.
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <th scope="row">University of California, Riverside</th>
+                        <td>
+                          <ul>
+                            <li>
+                              Approach aims to develop an Intersection Safety System (ISS) using roadside sensor-based data, 
+                              vehicle-to-everything (V2X) communications, and artificial intelligence (AI) 
+                              to continuously monitor traffic, predict traffic states (including trajectories) 
+                              and potential conflicts, as well as to enhance vulnerable road user safety 
+                              at signalized intersections, with Stage 1B focus on roadside perception and collision prediction.
+                            </li>
+                            <li>
+                              The approach developed centers around the following modules: 1) Data Processing; 2) Sensor Fusion; 
+                              3) Multi-Object Tracking; 4) Path Prediction; 5) Collision Prediction.
+                              <ul>
+                                <li>
+                                  Integrates computer vision technologies and other machine learning techniques 
+                                  for road users' detection (also including sub-classification and localization), tracking, 
+                                  path prediction, and conflict prediction at signalized intersections.
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">University of Washington</th>
+                        <td>
+                          <ul>
+                            <li>
+                              Developed a Cooperative Perception System (CPS) to generate a comprehensive understanding 
+                              of intersection dynamics. 
+                            </li>
+                            <li>
+                              System integrates multiple sensors, including eight visual cameras, five thermal cameras, 
+                              and two 3D LiDARs, enabling 3D object detection, classification, and path and conflict prediction. 
+                            </li>
+                            <li>
+                              Architecture of CPS is structured into three primary modules: Object Detection 
+                              and Classification, 2D-3D Camera Calibration, and Tracking and Prediction.  
+                              <ul>
+                                <li>
+                                  Object Detection and Classification Module acts as the foundation of the CPS 
+                                  and processes incoming data from both visual and thermal cameras to detect 
+                                  and classify road users in various lighting conditions. 
+                                </li>
+                                <li>
+                                  2D-3D Camera Calibration Module converts 2D detection results into 3D object representations 
+                                  using a multi-sensor re-identification process that merges data from cameras and 3D LiDAR sensors. 
+                                </li>
+                                <li>
+                                  Tracking and Prediction Module utilizes the DeepSORT algorithm to track the 3D detections, 
+                                  capturing crucial movement data such as trajectories, speeds, and orientations. 
+                                  This information feeds into a Seq2Seq prediction model, which processes the sequences 
+                                  of past object states to forecast future movements. The model predicts potential paths 
+                                  and identifies possible conflicts by calculating the time-to-collision (TTC), 
+                                  thus assessing the likelihood of hazardous interactions.
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ProgramSection>
+    <ProgramSection>
+      <h2 class="program-title-lg mb-4">
+        Additional Resources
+      </h2>
+      <div class="resource-container">
+        <Card shadow="sm">
+          <CardBody>
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Intersection Safety Challenge &mdash; From Conceptualization to Initial Testing</h3>
+              <p class="resource-card-subtitle">Webinar | July 27, 2023</p>
+            </div>
+          </CardBody>
+          <CardFooter>
+            <div class="resource-link-container px-2">
+              <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href={base_url("/assets/intersection-safety/USDOT_IntersectionSafetyWebinar3.pdf")}
+              >
+                <PdfIcon size={12}/>
+                Presentation Material
+              </a>
+              <!-- <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation"
+              >
+                <FilmIcon size={12} />
+                Recording
+              </a> -->
+            </div>
+          </CardFooter>
+        </Card>
+        <Card shadow="sm">
+          <CardHeader>
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Intersection Safety Challenge Prize Competition</h3>
+              <p class="resource-card-subtitle">Webinar | May 22, 2023</p>
+            </div>
+          </CardHeader>
+          <CardFooter>
+            <div class="resource-link-container px-2">
+              <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href={base_url("/assets/intersection-safety/Intersection_Safety_Webinar.pdf")}
+              >
+                <PdfIcon size={12}/>
+                Presentation Material
+              </a>
+              <!-- <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://itsa.adobeconnect.com/p9rpflh67mnj/"
+              >
+                <FilmIcon size={12} />
+                Recording
+              </a> -->
+            </div>
+          </CardFooter>
+        </Card>
+      </div>
+    </ProgramSection>
+  </main>
+</Layout>

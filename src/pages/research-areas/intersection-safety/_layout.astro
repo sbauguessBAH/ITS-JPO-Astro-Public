@@ -1,0 +1,60 @@
+---
+import ProgramBanner from "@/src/components/programs/ProgramBanner.astro";
+import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
+import banner from "@/src/assets/images/intersection-safety/banner.jpg";
+import ProgramMenu from "@/src/components/programs/ProgramMenu.astro";
+import type { ChildNavigationItem } from "@/src/types";
+
+const keywords = [
+  "Intersection Safety",
+  "Transportation Research",
+  "Intersection Safety Systems",
+  "Intersection Safety Challenge",
+  "ISC",
+  "Intersection Safety Technologies",
+  "Traffic Control",
+  "Traffic Safety"
+];
+
+const description = `
+  The U.S. DOT aims to transform intersection safety by incentivizing the
+  innovative application of new and emerging technologies.
+`
+
+const items: ChildNavigationItem[] = [
+  {
+    name: "Overview",
+    url: "/research-areas/intersection-safety"
+  },
+  {
+    name: "Intersection Safety Challenge",
+    url: "/research-areas/intersection-safety/challenge"
+  },
+  {
+    name: "Intersection Safety Systems",
+    url: "/research-areas/intersection-safety/systems"
+  }
+]
+---
+<ProgramLayout
+  title="Intersection Safety"
+  keywords={keywords}
+  description={description}
+>
+  <ProgramBanner 
+    hasOverlay
+    image={banner}
+  >
+    <Fragment slot="section">
+      Research Areas
+    </Fragment>
+    <Fragment slot="title">
+      INTERSECTION SAFETY
+    </Fragment>
+    <Fragment slot="description">
+      Saving pedestrian lives through AI-enabled innovation
+    </Fragment>
+  </ProgramBanner>
+  <ProgramMenu items={items} />
+  <slot/>
+</ProgramLayout>

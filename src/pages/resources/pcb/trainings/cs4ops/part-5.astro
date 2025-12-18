@@ -1,0 +1,236 @@
+---
+import edCox from "@/src/assets/images/pcb/webinars/headshots/ed-cox.jpg";
+import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar.png";
+import kellyWells from "@/src/assets/images/pcb/webinars/headshots/kelly-wells.jpg";
+import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../../_layout.astro";
+import HostCard from "./_host-card.astro";
+
+const hosts = [
+  {
+    description: "Ralph Volpe is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Systems Operations Specialist for the FHWA Resource Center, Operations Technical Service Team. Mr. Volpe is responsible for providing technical assistance, training, and deploying strategies and techniques to FHWA's internal and external customers on topics such as TSMO, integrated corridor management, active transportation and demand management, operations performance management, and organizing/planning for operations. Before joining FHWA in 2001, Mr. Volpe was a specialist in planning and public transportation for the Tennessee Department of Transportation. Mr. Volpe holds a BS in Logistics and MS in civil engineering from the University of Tennessee, Knoxville.",
+    image: ralphVolpe,
+    name: "Ralph Volpe",
+    title: "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist"
+  },
+]
+
+const presenters = [
+  {
+    description: "Kelly Wells has been at NCDOT for over 20 years, mostly working in TSMO. She currently manages DriveNC.gov, NC 511, NCDOT Customer Service, and Probe Speed Data. Ms. Wells began her career at FHWA and has a Civil Engineering degree from George Washington University.",
+    image: kellyWells,
+    name: "Kelly Wells",
+    title: "Emergency Management Instructor, North Carolina Department of Transportation (NCDOT)"
+  },
+  {
+    description: "Ed Cox is the ITS Engineering Director with the Indiana Department of Transportation's Traffic Management group. He has more than 20 years of experience in traffic operations for INDOT. Mr. Cox is a 1991 graduate of Purdue University with a BS in Civil Engineering. He is also an Indiana Professional Engineer.",
+    image: edCox,
+    name: "Ed Cox",
+    title: "ITS Engineering Director, Indiana Department of Transportation's (INDOT) Traffic Management"
+  },
+  {
+    description: "James Colyar is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Specialist with the FHWA Office of Operations. He has been with FHWA for over 20 years. Mr. Colyar has experience in traffic engineering, traffic analysis and modeling, intelligent transportation systems, and transportation systems management and operations. Mr. Colyar holds an MS in civil engineering from North Carolina State University and an MS in Transportation Policy, Operations & Logistics from George Mason University.",
+    image: jamesColyar,
+    name: "James Colyar",
+    title: "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Office of Operations"
+  },
+]
+---
+<style>
+  .resource-container {
+    background: rgb(var(--color-gray-light));
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .resource-card-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-sm);
+    align-items: center;
+  }
+  .resource-card-button:hover {
+    font-weight: inherit;
+    background: rgb(var(--color-brand-dark))
+  }
+  .resource-links {
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-sm)
+  }
+  a::after {
+    content: "" !important;
+  }
+</style>
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <Breadcrumb items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        { name: "Crowdsourcing for Operations", path: "/resources/pcb/trainings/cs4ops" },
+        { name: "Part 5" }
+      ]}/>
+      <h2 class="program-title-lg">
+        Emergency and Work Zone Management, and Next Steps
+      </h2>
+      <p>September 9, 2023</p>
+      <div class="resource-container mb-4">
+        <h3 class="program-title-md">Presentation</h3>
+        <p class="program-text">
+          Crowdsourcing Course (Part 5 of 5): Emergency and Work Zone Management, and Next Steps
+          <br/>
+          (Volpe, Colyar, Wells, Cox)
+        </p>
+        <div class="resource-links">
+          <a 
+            class="resource-card-button" 
+            href="https://usdot.zoomgov.com/rec/play/EGD1PAQqDzp_Z6yrA5p8yy0FyQTFY7coOpQA2LOqXol5QJeSMsId7D1LjXzHumu6L1z6rX4KQzq4U4YE.8580sbPLAquzwXjW?continueMode=true" 
+            rel="noopener noreferrer" 
+            target="_blank"
+          >
+            <FilmIcon/>
+            Webinar Replay
+          </a>
+          <a 
+            class="resource-card-button" 
+            href={base_url("/assets/pcb/cs4ops/part-5/s230919_Crowdsourcing_Course_Emergency_and_Work_Zone_Management_and_Next_Steps_presentation.pdf")} 
+            rel="noopener noreferrer" 
+            target="_blank"
+          >
+            <PdfIcon/>
+            PDF
+          </a>
+        </div>
+      </div>
+      <h3 class="program-title-md">
+        Learning Objectives
+      </h3>
+      <ul class="program-list">
+        <li>
+          Identify components of and challenges faced by State and local work zone and emergency management programs.
+        </li>
+        <li>
+          Understand how crowdsourced data can enhance key aspects of these programs.
+        </li>
+        <li>
+          Share peer experiences regarding the use of crowdsourced data for these programs.
+        </li>
+        <li>
+          Understand key steps to explore crowdsourced data for your region.
+        </li>
+      </ul>
+      <h3 class="program-title-md">
+        Question and Answer Discussion
+      </h3>
+      <p class="program-text">
+        This webinar featured a question and answer session. A transcript of the questions asked and responses provided are below.
+      </p>
+      <Accordion id="part-5">
+        <AccordionItem
+          index={1}
+          title="Have you been able to have kind of a one stop shop/feed for navigation providers to pull info, or do you have to go to them directly and individually?"
+        >
+          <strong>Kelly Wells:</strong>
+          <p class="program-text">
+            We created our website. The web team is really smart and they created this thing called an API (application programming interface) that I didn't know exactly what it was. Ten years ago, the web team created an API for us. The API is a feed that is just a way that one computer programs talk to another computer program. Only in the last 5 years did I realize how wonderful that is and that is how some navigation providers work with us. If I was a navigation provider, I would not want to deal with 50 different state DOT APIs. You would want some kind of standard to work with. So that's where WZDx (Work Zone Data Exchange) comes in for the works on data exchange feeds. This feed is a standard way that people can pull our work zone data as well.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={2}
+          title="In Iowa, we're seeing less latency with Wejo versus the other. You say your experience was the opposite. Can you explain this a little more?"
+        >
+          <strong>Ed Cox:</strong>
+          <p class="program-text">
+            In the beginning, it was quite a bit of difference that Wejo was a bit slower, but what we found later is we did get it in quicker. The problem we had was getting it from Wejo to our cloud provider into the tolls and to us. So there's a little more latency there that we had not been able to address, but I will agree toward the end—the last few months—we had definitely seen an increase in speed from Wejo.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={3}
+          title="What effort is needed in maintaining those relationships and coordinating with navigational companies?"
+        >
+          <strong>Kelly Wells:</strong>
+          <p class="program-text">
+            You can do this on any scale you want. And if I was a state that hadn't ventured into this yet, what I would do is just pick a couple of big ones like Google maps and Waze, and I would try to create connections with those companies. So, just make yourself a spreadsheet and keep those connections. And then, when you find out, like we had been emailing someone at Apple for a long time. This other person at Apple said, “Oh, I'm the new person.” And then somehow, things weren't getting there, etc. We have had to turn this into a self-service process. So, the whole DOT comes to us for help, and there's a lot that goes into it and it's never simple to just reach out. So we've really tried to make itself service and if you develop this process, you should write it down in a way that you can share it with other people within your DOT. You don't want to become the single funnel to these companies, because it is really a lot. You'd be surprised how much we work with these companies. Don't put it all on your own shoulders. Make it self-serve and here is the way you can navigate with these companies.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={4}
+          title="Speaking of that, what you're dealing with the navigational companies, does the North Carolina DOT use data to update your ATMS (advanced traffic management system) or any of your 511 systems?"
+        >
+          <strong>Kelly Wells:</strong>
+          <p class="program-text">
+            We do. We use it as validation. We have a human 511 system, a telephone system. When we get a caller that says “Hey, I'm sitting on I-40 at mile marker 200. There's a crash.” We say, “Do they really know where they are?” That's when we'll go to Waze or to our—like Ed was talking about—our probe speed data provider, and we'll say “Okay, are we seeing something consistent with this.” If we don't have cameras, we'd like to have two sources to verify an incident, so we'll use crowdsourcing as a second source for verification. And we're also experimenting with some push notifications. It has to be hard for an operator to just sit there and stare at the Waze map. We don't have an ATMS. To just look at the Waze map and say, ”Oh, there's something that seems inefficient to me,” so I like the idea of pushes. And there's a lot of services that we subscribe to that have these pushes like Waze, and various sources. So we're actually—right now—evaluating which of the push sources are effective and which actually help us instead of doing a bunch of them. We're actually studying which of the free services of push data is really the most valuable to us.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={5}
+          title="Are the information dashboards developed on work, zones, instance, or other emergencies being shared with other public agencies? And if other agencies, such as Tasman, in other emergency management response or first responders are taken advantage of it?"
+        >
+          <strong>Ed Cox:</strong>
+          <p class="program-text">
+            The answer is yes. It depends on the location. We're not publicly putting them out on the web right now. We are putting them out for our whole team and we typically bring in the responders based on project to project or on their geographic area. So we do give them logins to see that. But on project specific, I'll give you an example. We had a bridge issue that went out, and typically a new county in our northwest region. We actually put these out for all the local responders to see how the performance was, and we would have weekly meetings with them and go over for the first, probably three to four weeks, making sure they understood what they were seeing. As we got to the end of the project, we didn't need those anymore because they could read them as quickly and easily as I could. So I guess to answer the question—Yes. We are trying to do that with all the responding agencies near us. Have we got it all down? Absolutely not. But we are working to get better.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={6}
+          title="How did the work zone planning and fields safety staff back to those weekly reports and use of real time information?"
+        >
+          <strong>Ed Cox:</strong>
+          <p class="program-text">
+            Well, as an operations person, I agree with you. I would think they'd be great, but I'm pretty sure the first few months they went into the circular file or the spam folders. Only because you know it's new. It was a change and it can be overwhelming. What we found—just so we did with the first responders—it really took some one-on-one conversations, and a few incidents of explained to him, “Here's what we're seeing. Here's why we're seeing this.” This is what we're sending to you and getting that information out of them and having the one-on-one conversations. Yeah, probably what sold the best for us for our overall construction staff is, we started being able to pick up anomalies and construction zones from these dashboards that we wouldn't have caught anywhere else. We had tapers that were wrong. An example is we had a lane with wrong—it was drawn perfectly on the plans. We drove it, it felt fine, but we just could not get traffic through, and really start to show up in our crowdsource data that we had a problem here. We ended up going out with a lighter if you could even get close to it since it's so busy and so congested. We found out when it was built the contractor actually built the lane at nine and a half feet instead of eleven. So, as trucks went through a taper where we had a nine-and-a-half-foot little bottleneck in there that we found the appropriate data and that was where we kind of sold it to construction. That, “Hey, look! We can find these things about you having to be in the road and measuring out there. We know there's something wrong. Let's figure out what it is.” So, I won't say it's completely adopted by any means, but we are definitely making progress and getting better in Indiana to using it.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={7}
+          title="How did, how do we share some of those crowdsourcing tools? Are they made accessible to other local agencies within your State? And if so, are they shareable for, let's say external use from other state DOTs, or even local agencies outside of the State of Indiana?"
+        >
+          <strong>Ed Cox:</strong>
+          <p class="program-text">
+            To answer your question, yes, we will work with anyone that wants to. You know the local agencies we typically just we end up doing it and putting it toward a web page if we're already getting the data set. But for another agency, if they're interested in any of the tools we showed there, we'll have to just talk a little bit about what language you code in, and how you're running. It's not as easy as saying, “Here you go,” but we will absolutely work with you, and getting you the information to either help you develop it yourself or apply what we've done to your environment. We honestly, we share with every one of the providers. You know we're very open with them, and they turn them into tools for those groups that don't have the resources behind to. I'm lucky. I have my own IT department here that runs an entirely separate network off the DOT.gov side of the world. I know that's not the case, for most state agencies. That was a very long way to say “Yes. We will work with anybody who wants to know and we'll try to help them get to where they want to be.”
+          </p>
+        </AccordionItem>
+      </Accordion>
+    </ProgramSection>
+    <ProgramSection color="gray" size="small">
+      <h3 class="program-title-md mb-4">
+        Host
+      </h3>
+      {hosts.map((item) => (
+        <HostCard
+          description={item.description}
+          image={item.image}
+          name={item.name}
+          title={item.title}
+        />
+      ))}
+      <h3 class="program-title-md mb-4">
+        Presenters
+      </h3>
+      {presenters.map((item) => (
+        <HostCard
+          description={item.description}
+          image={item.image}
+          name={item.name}
+          title={item.title}
+        />
+      ))}
+    </ProgramSection>
+  </main>
+</Layout>
