@@ -14,6 +14,10 @@ import Roadmap from "./_roadmap.astro";
 import DownloadIcon from "@/src/components/programs/icons/download-icon.astro";
 import Layout from "./_layout.astro";
 
+import banner from "@/src/assets/images/banners/Automation_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+
 const focusAreas = [
   { 
     name: "Cooperative Driving Automation (CDA)", 
@@ -305,7 +309,9 @@ const focusAreas = [
     color: white;
   }
 </style>
-<Layout>
+<PageLayout title="Artificial Intelligence" bannerImage={banner}>
+  <Fragment slot="banner">Automation Program</Fragment>
+  <SidebarLayout path="/research-areas/">
   <main class="container-xl program-container">
     <section>
       <h2 class="program-title">Program Overview</h2>
@@ -484,4 +490,5 @@ const focusAreas = [
       </div>
     </section>
   </main>
-</Layout>
+  </SidebarLayout>
+</PageLayout>

@@ -13,7 +13,7 @@ export default defineConfig({
   redirects: {
     "/index.htm": "/",
     "/about/its_jpo.htm": "/about",
-    "/research_areas/automation/index.htm": "/research-areas/Automation-Program",
+    "/research_areas/automation/index.htm": "/research-areas/automation-program",
     "/contacts/stafflisting.htm": "/about/contact-us/staff-listing",
     "/its4us/index.htm": "/research-areas/ITS4US",
     "/communications/its_images.htm": "/news-info/image-library",
