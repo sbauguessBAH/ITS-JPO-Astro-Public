@@ -1,12 +1,10 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SubNav from "@/src/layouts/SubNav.astro";
 ---
 
 <PageLayout title="Artificial Intelligence" bannerImage={banner}>
   <Fragment slot="banner">Artificial Intelligence</Fragment>
-  <SubNav path="/research-areas/">
       <div>
         <h2 class="sideways blue">Artificial Intelligence (AI) in Transportation</h2>
         <p class="read-more-wrap" style="padding-top:0px">
@@ -20,5 +18,4 @@ import SubNav from "@/src/layouts/SubNav.astro";
           infrastructure owners and operators (IOOs), removes barriers to implementation, and maximizes industry innovation.
         </p>
       </div>
-  </SubNav>
 </PageLayout>

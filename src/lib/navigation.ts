@@ -83,7 +83,7 @@ pages: [
       },
       { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
-      { name: "Intersection Safety Challenge", url: "/research-areas/Intersection-Safety-Challenge" },
+      { name: "Intersection Safety", url: "/research-areas/intersection-safety" },
       {
         name: "ITS4US Program",
         url: "/research-areas/ITS4US",

@@ -1,6 +1,5 @@
 ---
 import LibraryImg from '@/src/components/Img_Library.astro';
-import SubNav from "@/src/layouts/SubNav.astro";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 
 // To update this page add the image to the "imageLibrary" folder then add its src to this array and give it some alt text. The alt text is used for the image title.
@@ -92,7 +91,6 @@ const description =
   <Fragment slot="banner">
     Image Library
   </Fragment>
-  <SubNav path="/news-info/">
   <h2 class="sideways blue">Images courtesy of the U.S. Department of Transportation</h2>
   <p>Click image for downloadable high resolution version. </p>
   <div class="d-flex flex-wrap">
@@ -112,5 +110,4 @@ ITS Safety and Stakeholder Engagement and Communications<br/>
 202-366-2639<br/>
 <a href="mailto:Norah.Ocel@dot.gov">Norah.Ocel@dot.gov</a>
 </p>
-</SubNav>
 </PageLayout>

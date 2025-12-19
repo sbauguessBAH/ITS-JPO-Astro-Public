@@ -3,7 +3,6 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
 import { Image } from "astro:assets";
 import Brian_Cronin from "../../../../assets/images/staff/Brian_Cronin.png";
 import Egan_Smith from "../../../../assets/images/staff/Egan_Smith.jpg";
-import SubNav from "@/src/layouts/SubNav.astro";
 
 const keywords = [
   "ITS JPO",
@@ -22,7 +21,6 @@ const description =
 
 <PageLayout title="Staff Listing" keywords={keywords} description={description}>
   <Fragment slot="banner"> ITS JPO Staff Listing </Fragment>
-  <SubNav path="/about/">
     <Image src={Egan_Smith} width="200" alt="Egan Smith" class="float-end m-2" />
     <h4>Egan Smith, Managing Director</h4>
     <p>
@@ -47,5 +45,4 @@ const description =
       Engineering, a Master of Engineering in Traffic Engineering and Operations Research, and a Master of Science in
       Technology Management.
     </p>
-  </SubNav>
 </PageLayout>

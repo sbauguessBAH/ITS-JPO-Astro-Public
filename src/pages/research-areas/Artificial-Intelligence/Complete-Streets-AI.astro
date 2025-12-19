@@ -1,7 +1,6 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SubNav from "@/src/layouts/SubNav.astro";
 
 const keywords = [
   "Complete Streets Artificial Intelligence",
@@ -12,7 +11,6 @@ const keywords = [
 
 <PageLayout title="Complete Streets Artificial Intelligence" bannerImage={banner}>
   <Fragment slot="banner">Complete Streets Artificial Intelligence (CSAI) Initiative</Fragment>
-  <SubNav path="/research-areas/">
       <div>
         <h2 class="sideways blue">Complete Streets Artificial Intelligence (CSAI) Initiative</h2>
         <p class="read-more-wrap" style="padding-top:0px">
@@ -22,5 +20,4 @@ const keywords = [
           for public and private use.
         </p>
       </div>
-    </SubNav>
 </PageLayout>

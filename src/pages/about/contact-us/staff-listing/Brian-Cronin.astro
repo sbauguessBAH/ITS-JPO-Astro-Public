@@ -2,7 +2,6 @@
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import { Image } from "astro:assets";
 import Brian_Cronin from "../../../../assets/images/staff/Brian_Cronin.png";
-import SubNav from "@/src/layouts/SubNav.astro";
 
 const keywords = ["ITS JPO Staff Listing", "ITS JPO", "Staff Listing", "Contact Us", "About Us", "Intelligent Transportation Systems Joint Program Office"];
 
@@ -12,7 +11,6 @@ const description =
 
 <PageLayout title="Staff Listing" keywords={keywords} description={description}>
   <Fragment slot="banner"> ITS JPO Staff Listing </Fragment>
-  <SubNav path="/about/">
     <Image src={Brian_Cronin} width="200" alt="Egan Smith" class="float-end m-5 rounded-3 " />
     <h3>Brian Cronin, Director</h3>
     <p>
@@ -38,5 +36,4 @@ const description =
     <p>Brian recently celebrated his 25th wedding anniversary to his wife Lisa LaCourse, and has two girls, Lucy and Julia. Brian enjoys camping, kayaking, hiking, swimming, biking, and golf.
 </p>
 
-  </SubNav>
 </PageLayout>
