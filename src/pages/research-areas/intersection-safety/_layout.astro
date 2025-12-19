@@ -1,9 +1,14 @@
 ---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
 import ProgramBanner from "@/src/components/programs/ProgramBanner.astro";
 import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
 import banner from "@/src/assets/images/intersection-safety/banner.jpg";
 import ProgramMenu from "@/src/components/programs/ProgramMenu.astro";
 import type { ChildNavigationItem } from "@/src/types";
+import "@/src/styles/programs.css";
+
+
 
 const keywords = [
   "Intersection Safety",
@@ -36,25 +41,13 @@ const items: ChildNavigationItem[] = [
   }
 ]
 ---
-<ProgramLayout
+<PageLayout
   title="Intersection Safety"
   keywords={keywords}
   description={description}
->
-  <ProgramBanner 
-    hasOverlay
-    image={banner}
-  >
-    <Fragment slot="section">
-      Research Areas
-    </Fragment>
-    <Fragment slot="title">
-      INTERSECTION SAFETY
-    </Fragment>
-    <Fragment slot="description">
-      Saving pedestrian lives through AI-enabled innovation
-    </Fragment>
-  </ProgramBanner>
-  <ProgramMenu items={items} />
+   bannerImage={banner}
+>  <Fragment slot="banner"> Intersection Safety </Fragment>
+
+ 
   <slot/>
-</ProgramLayout>
+</PageLayout>

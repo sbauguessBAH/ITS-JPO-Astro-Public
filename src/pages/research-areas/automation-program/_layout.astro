@@ -4,6 +4,9 @@ import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
 import ProgramMenu from "@/src/components/programs/ProgramMenu.astro";
 import type { ChildNavigationItem } from "@/src/types";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import "@/src/styles/programs.css";
+
 
 const keywords = [
   "Automation Program",
@@ -54,27 +57,14 @@ const items: ChildNavigationItem[] = [
   }
 ]
 ---
-<ProgramLayout
+<PageLayout
   title="Automation Program"
   keywords={keywords}
   description={description}
+     bannerImage={banner}
+
 >
-  <ProgramBanner 
-    hasOverlay
-    image={banner}
-  >
-    <Fragment slot="section">
-      Research Areas
-    </Fragment>
-    <Fragment slot="title">
-      AUTOMATION PROGRAM
-    </Fragment>
-    <Fragment slot="description">
-      The ITS JPO Automation Program focuses on the safe deployment 
-      of automated driving systems and advanced driver assistance systems 
-      through collaboration and research.
-    </Fragment>
-  </ProgramBanner>
-  <ProgramMenu items={items} />
+<Fragment slot="banner"> Automation Program </Fragment>
+  
   <slot/>
-</ProgramLayout>
+</PageLayout>

@@ -9,7 +9,7 @@ export const navigation: NavigationItem[] = [
     url: "/about",
     pages: [
       { name: "About ITS JPO", url: "/about", isEnabled: true },
-      { name: "Contact Us", url: "/about/contact-us"},
+      { name: "Contact Us", url: "/about/contact-us" },
       { name: "Join Our Mailing List", url: "/about/contact-us/mailinglist" },
     ],
   },
@@ -45,45 +45,63 @@ export const navigation: NavigationItem[] = [
           { name: "Complete Streets Artificial Intelligence Initiative", url: "/research-areas/Artificial-Intelligence/Complete-Streets-AI" },
         ],
       },
-      { name: "Automation Program", url: "/research-areas/automation-program", 
-pages: [
       {
-    name: "Overview",
-    url: "/research-areas/automation-program"
-  },
-  {
-    name: "Focus Areas",
-    url: "/research-areas/automation-program/focus-areas",
-    pages: [
-      {
-        name: "Cooperative Driving Automation (CDA)",
-        url: "/research-areas/automation-program/focus-areas/cda"
-      },
-      {
-        name: "Analysis, Modeling and Simulation (AMS)",
-        url: "/research-areas/automation-program/focus-areas/ams"
-      },
-      {
-        name: "Human Factors",
-        url: "/research-areas/automation-program/focus-areas/human-factors"
-      },
-      {
-        name: "Automated Driving System (ADS) Integration",
-        url: "/research-areas/automation-program/focus-areas/ads"
-      }
-    ]
-  },
-  {
-    name: "Resources",
-    url: "/research-areas/automation-program/resources",
-    hasGeneratedChildItems: true
-  }
-    ]
-
+        name: "Automation Program",
+        url: "/research-areas/automation-program",
+        pages: [
+          {
+            name: "Overview",
+            url: "/research-areas/automation-program",
+          },
+          {
+            name: "Focus Areas",
+            url: "/research-areas/automation-program/focus-areas",
+            pages: [
+              {
+                name: "Cooperative Driving Automation (CDA)",
+                url: "/research-areas/automation-program/focus-areas/cda",
+              },
+              {
+                name: "Analysis, Modeling and Simulation (AMS)",
+                url: "/research-areas/automation-program/focus-areas/ams",
+              },
+              {
+                name: "Human Factors",
+                url: "/research-areas/automation-program/focus-areas/human-factors",
+              },
+              {
+                name: "Automated Driving System (ADS) Integration",
+                url: "/research-areas/automation-program/focus-areas/ads",
+              },
+            ],
+          },
+          {
+            name: "Resources",
+            url: "/research-areas/automation-program/resources",
+            hasGeneratedChildItems: true,
+          },
+        ],
       },
       { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
-      { name: "Intersection Safety", url: "/research-areas/intersection-safety" },
+      {
+        name: "Intersection Safety",
+        url: "/research-areas/intersection-safety",
+        pages: [
+          {
+            name: "Overview",
+            url: "/research-areas/intersection-safety",
+          },
+          {
+            name: "Intersection Safety Challenge",
+            url: "/research-areas/intersection-safety/challenge",
+          },
+          {
+            name: "Intersection Safety Systems",
+            url: "/research-areas/intersection-safety/systems",
+          },
+        ],
+      },
       {
         name: "ITS4US Program",
         url: "/research-areas/ITS4US",
