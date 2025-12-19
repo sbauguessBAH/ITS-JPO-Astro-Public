@@ -5,6 +5,8 @@ import banner from "@/src/assets/images/pcb/banner.png";
 import ProgramBanner from "@/src/components/programs/ProgramBanner.astro";
 import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
 import ProgramMenu from "@/src/components/programs/ProgramMenu.astro";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import "@/src/styles/programs.css";
 
 const keywords = [
   "ITS Professional Capacity Building Program", 
@@ -68,26 +70,14 @@ const items: ChildNavigationItem[] = [
   //  }
 ]
 ---
-<ProgramLayout
+<PageLayout
   description={description}
   keywords={keywords}
   title="ITS Professional Capacity Building"
+       bannerImage={banner}
 >
-  <ProgramBanner 
-    hasOverlay={true}
-    image={banner}
-  >
-    <Fragment slot="section">
-      Resources/Technical Assistance
-    </Fragment>
-    <Fragment slot="title">
-      ITS PROFESSIONAL CAPACITY BUILDING
-    </Fragment>
-    <Fragment slot="description">
-      Providing transportation professionals with comprehensive training and technical assistance 
-      to advance the deployment of Intelligent Transportation Systems (ITS).
-    </Fragment>
-  </ProgramBanner>
-  <ProgramMenu items={items} />
+  <Fragment slot="banner"> ITS Professional Capacity Building </Fragment>
+
+  
   <slot/>
-</ProgramLayout>
+</PageLayout>

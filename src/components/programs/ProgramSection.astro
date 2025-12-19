@@ -10,7 +10,11 @@ const { color = "white", size, fullWidth, class: className }: Props = Astro.prop
 ---
 <style>
   .program-section-wrapper {
-    padding: 4rem 1rem;
+    padding: 4rem 0rem;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: auto;
+    max-width: none;
   }
 
   .program-section-wrapper:last-child {
@@ -32,14 +36,10 @@ const { color = "white", size, fullWidth, class: className }: Props = Astro.prop
   .program-section {
     display: flex;
     flex-direction: column;
+    padding: 0;
   }
 
-  @media (min-width: 1200px) {
-    .program-section-wrapper {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
+
   .background-blue-light {
     background-color: rgba(var(--color-brand), 0.15);
   }

@@ -133,7 +133,57 @@ export const navigation: NavigationItem[] = [
       { name: "Cybersecurity", url: "/resources/Cybersecurity" },
       { name: "Deployment Evaluation", url: "/resources/Deployment-Evaluation" },
       { name: "National Transportation Library", url: "/resources/national-transportation-library" },
-      { name: "Professional Capacity Building", url: "/resources/pcb" },
+      { name: "Professional Capacity Building", url: "/resources/pcb",
+        pages: [
+  { 
+    name: 'Overview', 
+    url: '/resources/pcb' 
+  },
+  { 
+    hasGeneratedChildItems: true, 
+    name: 'Trainings', 
+    url: '/resources/pcb/trainings',
+  },
+  { 
+    name: 'Microlearning Videos', 
+    url: '/resources/pcb/microlearning'
+  },
+  {
+    name: 'Technical Assistance',
+    pages: [
+      { 
+        name: 'Connected and Automated Vehicle Education (CAVe)', 
+        url: '/resources/pcb/technical-assistance/cave'
+      },
+      { 
+        name: 'Accelerating V2X Cohort', 
+        url: '/resources/pcb/technical-assistance/v2x-cohort'
+      }
+    ],
+    url: '/resources/pcb/technical-assistance'
+  },
+  { 
+    hasGeneratedChildItems: true, 
+    name: 'Peer Exchanges', 
+    url: '/resources/pcb/peer-exchanges'  
+  },
+  // { 
+  //   name: 'Academic Resources', 
+  //   url: '/resources/pcb/academic-resources', 
+  //   hasGeneratedChildItems: true 
+  // },
+  // { 
+  //   name: 'Accelerating V2X Cohort', 
+  //   url: '/resources/pcb/v2x-cohort'
+  // },
+  // { 
+  //   name: 'Webinars', 
+  //   url: 'https://www.its.dot.gov/pcb/itscourses/default.aspx', 
+  //   isExternal: true
+  //  }
+]
+
+      },
       { name: "ITS CodeHub", url: "https://www.its.dot.gov/code", isExternal: true },
       { name: "ITS DataHub", url: "https://www.its.dot.gov/data", isExternal: true },
     ],
