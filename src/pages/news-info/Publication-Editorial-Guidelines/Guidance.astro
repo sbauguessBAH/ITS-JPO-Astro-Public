@@ -1,7 +1,7 @@
 ---
 import banner from "@/src/assets/images/banners/Default_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import SubNav from "@/src/layouts/SubNav.astro";
 import base_url from "../../../lib/base_url";
 
 const keywords = [
@@ -30,7 +30,7 @@ const description =
     <Fragment slot="banner">Publication Editorial Guidelines</Fragment>
 
 
-  <SidebarLayout path="/news-info/">
+  <SubNav path="/news-info/">
       <h2 class="sideways blue">508 GUIDANCE</h2>
 
       <p>
@@ -88,5 +88,5 @@ const description =
         <li><a href="https://www.access-board.gov/files/ict/ict-final-rule.pdf" target="_blank" rel="noopener">Web-based intranet and internet information and applications - 16 rules (PDF)</a></li>
       </ul>
 
-  </SidebarLayout>
+  </SubNav>
 </PageLayout>

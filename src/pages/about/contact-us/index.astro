@@ -3,7 +3,7 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
 import { Image } from "astro:assets";
 import Brian_Cronin from "../../../assets/images/staff/Brian_Cronin.png";
 import Egan_Smith from "../../../assets/images/staff/Egan_Smith.jpg";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import SubNav from "@/src/layouts/SubNav.astro";
 import base_url from "@/src/lib/base_url";
 
 const keywords = [
@@ -28,7 +28,7 @@ p {
 </style>
 <PageLayout title="Staff Listing" keywords={keywords} description={description}>
   <Fragment slot="banner"> ITS JPO Staff Listing </Fragment>
-  <SidebarLayout path="/about/">
+  <SubNav path="/about/">
     <div class="row">
       <div class="col-md-8 order-2 order-md-1">
         <div class="row">
@@ -116,5 +116,5 @@ p {
         </p>
       </div>
     </div>
-  </SidebarLayout>
+  </SubNav>
 </PageLayout>

@@ -1,7 +1,7 @@
 ---
 import banner from "@/src/assets/images/banners/Default_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import SubNav from "@/src/layouts/SubNav.astro";
 import base_url from "../../../lib/base_url";
 
 
@@ -29,7 +29,7 @@ const description =
 
 <PageLayout title="Publication Editorial Guidelines" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner">Publication Editorial Guidelines</Fragment>
-  <SidebarLayout path="/news-info/">
+  <SubNav path="/news-info/">
       <h2 class="sideways blue">Publication Editorial Guidelines</h2>
 
       <p>
@@ -149,5 +149,5 @@ const description =
         <li><a href={base_url("/assets/documents/ITSJPO_template_ppt_2023.pptx")} target="_blank" rel="noopener">ITS JPO PowerPoint Template</a></li>
       </ul>
 
-  </SidebarLayout>
+  </SubNav>
 </PageLayout>

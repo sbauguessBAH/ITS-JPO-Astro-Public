@@ -1,7 +1,7 @@
 ---
 import banner from "@/src/assets/images/banners/Default_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import SubNav from "@/src/layouts/SubNav.astro";
 
 const keywords = [
   "Interoperable Connectivity",
@@ -21,7 +21,7 @@ const description = "Interoperable Connectivity/Spectrum research area focuses o
 
 <PageLayout title="Interoperable Connectivity/Spectrum" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner">Interoperable Connectivity/Spectrum</Fragment>
-  <SidebarLayout path="/research-areas/">
+  <SubNav path="/research-areas/">
       <div>
         <h2 class="sideways blue">Interoperable Connectivity/Spectrum</h2>
         <p class="read-more-wrap" style="padding-top:0px">
@@ -34,5 +34,5 @@ const description = "Interoperable Connectivity/Spectrum research area focuses o
           the system while also maintaining privacy. Misbehavior detection and reporting allow the system to identify bad actors and revoke message privileges, when necessary.
         </p>
       </div>
-  </SidebarLayout>
+  </SubNav>
 </PageLayout>

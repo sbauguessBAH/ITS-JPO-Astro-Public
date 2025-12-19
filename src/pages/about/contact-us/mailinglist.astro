@@ -2,7 +2,7 @@
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import newsletterImage from "@/src/assets/images/ITSJPO_NewsletterWebsiteImage_030123.png";
 import { Image } from "astro:assets";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import SubNav from "@/src/layouts/SubNav.astro";
 
 const keywords = [
   "ITS JPO",
@@ -27,7 +27,7 @@ const description =
   <Fragment slot="banner">
     ITS JPO Mailing List
   </Fragment>
-  <SidebarLayout path="/about/">
+  <SubNav path="/about/">
   <h2>Join our ITS JPO Mailing List</h2>
   <p>
     Thank you for your interest in receiving ITS Program updates. Please join our
@@ -65,5 +65,5 @@ const description =
     >
       Facebook</a>.
   </p>
-</SidebarLayout>
+</SubNav>
 </PageLayout>

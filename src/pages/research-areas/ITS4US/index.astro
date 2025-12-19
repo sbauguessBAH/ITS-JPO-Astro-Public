@@ -7,7 +7,7 @@ import Hero from "@/src/assets/images/its4us/ITS4US-Hero.jpg";
 
 
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import SubNav from "@/src/layouts/SubNav.astro";
 import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 ---
 
@@ -128,7 +128,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 
 <PageLayout title="ITS4US Home">
   <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
-  <SidebarLayout path="/research-areas/">
+  <SubNav path="/research-areas/">
     <div class="row" >
       <div class="container-fluid">
         <div class="row">
@@ -610,5 +610,5 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
         </div>
       </div>
     </div>
-  </SidebarLayout>
+  </SubNav>
 </PageLayout>

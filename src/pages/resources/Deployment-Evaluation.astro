@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import SubNav from "@/src/layouts/SubNav.astro";
 import screenshot from "@/src/assets/images/DEP/Screenshot_itskrs.jpeg";
 
 const keywords = [
@@ -41,7 +41,7 @@ const description =
 
 <PageLayout title="Deployment Evaluation Program" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner"> Deployment Evaluation </Fragment>
-  <SidebarLayout path="/resources/">
+  <SubNav path="/resources/">
     <h2 class="sideways blue">Deployment Evaluation Program (DEP)</h2>
     <!-- <figure class="float-sm-end text-center col-12 col-md-6 ms-0 ms-md-4 mb-2">
     <Image src={screenshot} alt="Screen shot of web site for ITS Deployment Evaluation" width="500" class="figure-image img-fluid"/>
@@ -70,5 +70,5 @@ const description =
     </p>
 
     
-  </SidebarLayout>
+  </SubNav>
 </PageLayout>

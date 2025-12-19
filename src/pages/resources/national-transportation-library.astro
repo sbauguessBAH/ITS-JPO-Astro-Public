@@ -1,7 +1,7 @@
 ---
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import SubNav from "@/src/layouts/SubNav.astro";
 
 const keywords = [
   "National Transportation Library",
@@ -17,7 +17,7 @@ const description = "The National Transportation Library (NTL) and the Repositor
   <Fragment slot="banner">
     National Transportation Library
   </Fragment>
-  <SidebarLayout path="/resources/">
+  <SubNav path="/resources/">
 
   <p>
     The <a href="https://ntl.bts.gov/" target="_blank" rel="noopener noreferrer">National Transportation Library (NTL)</a> and the <a
@@ -66,5 +66,5 @@ const description = "The National Transportation Library (NTL) and the Repositor
       </div>
     </div>
   </section>
-  </SidebarLayout>
+  </SubNav>
 </PageLayout>

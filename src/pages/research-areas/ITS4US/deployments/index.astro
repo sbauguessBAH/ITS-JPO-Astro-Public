@@ -6,7 +6,7 @@ import Andre from "@/src/assets/images/its4us/AndreSlide2.png";
 import Waukee from "@/src/assets/images/its4us/WaukeeSlide1.png";
 import Takashi from "@/src/assets/images/its4us/TakashiSlide3.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
+import SubNav from "@/src/layouts/SubNav.astro";
 import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 ---
 
@@ -132,7 +132,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 
 <PageLayout title="Deployments">
   <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
-  <SidebarLayout path="/research-areas/ITS4US/deployments/">
+  <SubNav path="/research-areas/ITS4US/deployments/">
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
@@ -691,5 +691,5 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
         </div>
       </div>
     </div>
-  </SidebarLayout>
+  </SubNav>
 </PageLayout>
