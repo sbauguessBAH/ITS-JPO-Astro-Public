@@ -1,6 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
+import screenshot from "@/src/assets/images/NTL-RosaP/RosaPThumb.jpeg";
+
 
 const keywords = [
   "National Transportation Library",
@@ -10,13 +13,37 @@ const keywords = [
   "Transportation Library",
 ];
 
+
 const description = "The National Transportation Library (NTL) and the Repository & Open Science Access Portal (ROSA P) contains documents on Intelligent Transportation Systems topics published or sponsored by the U.S. DOT. Most of the documents are in PDF format.";
 ---
+<style>
+  .card-img-top {
+    max-height: 200px;
+    min-height: 150px;
+    object-fit: cover;
+  }
+  .external-button {
+    text-wrap: balance;
+  }
+  .external-button:after {
+    content: "\f08e";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 6px;
+    color: inherit;
+  }
+</style>
 <PageLayout title="National Transportation Library" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner">
     National Transportation Library
   </Fragment>
-
+<main>
+  <div class="row">
+      <div class="col-12 col-md-7">
   <p>
     The <a href="https://ntl.bts.gov/" target="_blank" rel="noopener noreferrer">National Transportation Library (NTL)</a> and the <a
       href="https://rosap.ntl.bts.gov/"
@@ -27,41 +54,31 @@ const description = "The National Transportation Library (NTL) and the Repositor
     </a> contains documents on Intelligent Transportation Systems topics published or sponsored by the U.S. DOT. Most of the documents are in PDF format.
   </p>
 
-  <h3>National Transportation Library</h3>
+  <h2>National Transportation Library</h2>
   <ul>
     <li><a href="https://rosap.ntl.bts.gov/" target="_blank" rel="noopener noreferrer" class="externalLink">Simple Search of ITSJPO Digital Library Collection</a></li>
     <li><a href="https://rosap.ntl.bts.gov/advancesearch" target="_blank" rel="noopener noreferrer" class="externalLink">Advanced Search</a></li>
     <li><a href="https://rosap.ntl.bts.gov/help" target="_blank" rel="noopener noreferrer" class="externalLink">Search Tips</a></li>
   </ul>
-  <section slot="footer" class="download bg-primary text-center" id="research" style="padding-top: 2em">
-    <div class="container-fluid">
-      <div class="container">
-        <div class="col-lg-12">
-          <h2>Contacts</h2>
-          <p style="padding-bottom: 20px">
-            Please explore this site for a more detailed description of the program and progress. We will continue to upload relevant program information for public consumption as it becomes
-            available. For inquiries regarding the program, please contact the USDOT Point of Contact below.
-          </p>
-          <p style="padding-top: 20px; border-top-style: solid; border-color: honeydew; border-width: 2px">
-            <b>Marcia Pincus</b>
-          </p>
-          <p>ITS Joint Program Office</p>
-          <p>Program Manager, ITS Deployment Evaluation</p>
-          <p>(202) 366-9230</p>
-          <p>
-            <a class="email-footer" href="mailto:Marcia.Pincus@dot.gov">Marcia.Pincus@dot.gov</a>
-          </p>
+</div>
 
-          <p style="padding-top: 20px; border-top-style: none; border-color: honeydew; border-width: 2px">
-            <b>Mike Pina</b>
-          </p>
-          <p>ITS Joint Program Office</p>
-          <p>(202) 366-3700</p>
-          <p>
-            <a class="email-footer" href="mailto:Mike.Pina@dot.gov">Mike.Pina@dot.gov</a>
-          </p>
+<div class="mb-4 box-shadow float-sm-end text-center col-12 col-md-5 mb-2">
+        <div class="card rounded-4">
+          <a href="https://www.itskrs.its.dot.gov?utm_campaign=its-jpo&utm_source=de-landing-page&utm_medium=image-button" target="_blank">
+            <Image src={screenshot} alt="Screen shot of web site for the Repository and Open Science Access Portal (ROSA P)" width="500" class="img-fluid mt-2" />
+          </a>
+          <div class="card-body">
+            <p class="card-text text-start">Visit the ROSA P for published products including scientific findings, journal articles, guidelines, recommendations, or other information authored or co-authored by USDOT or funded partners.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="https://www.itskrs.its.dot.gov?utm_campaign=its-jpo&utm_source=de-landing-page&utm_medium=image-button" class="btn btn-sm btn-outline-secondary m-0 external-button w-100">
+                Visit ROSA P
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+
+
+</div>
+  </main>
 </PageLayout>

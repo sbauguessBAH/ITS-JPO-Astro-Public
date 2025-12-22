@@ -1,5 +1,4 @@
 ---
-import Default from "../layouts/Default.astro";
 import base_url from "../lib/base_url";
 import { Image } from "astro:assets";
 import { getImage } from "astro:assets";
@@ -45,19 +44,38 @@ const description =
     background-size: cover;
     padding: 50px 0 100px 0;
   }
+  .herobox {
+    border-radius: 15px;
+    background-color: rgba(7, 46, 85, 0.85)
+  }
+
+  .HotTopicTitleBanner{
+    border-radius: 15px 15px 0 0  ;
+  }
+
+  .HotTopicBlock {
+    transition: all 0.3s ease-in-out;
+  }
+  .HotTopicBlock:hover {
+    transform: scale(1.05);
+  }
 
   .HotTopicBlock img {
     width: 100%;
     height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
   h2 {
     text-wrap: pretty;
   }
+
+
 </style>
 <BaseLayout title="ITS JPO" description={description} keywords={keywords}>
     <div class="hero-container" style={`background-image: url(${optimizedBG.src});`}>
       <div class="container-xl">
-        <div class="d-flex align-items-center p-4 col-md-7" style="background-color: rgba(7, 46, 85, 0.85)">
+        <div class="d-flex align-items-center p-4 col-md-7 herobox">
           <div class="text-white">
             <h2 class="mb-4 fs-2">Intelligent Transportation Systems Joint Program Office</h2>
             <p class="mb-4 fs-4 text-white">
@@ -96,7 +114,7 @@ const description =
         </div> 
 
         <div class="col-lg-3">
-          <a href={base_url("/research-areas/Automation-Program")}>
+          <a href={base_url("/research-areas/automation-program")}>
             <div class="HotTopicBlock">
               <div class="HotTopicTitleBanner">Automation Program</div>
               <Image src={spotlight1} alt="Automation Program" />
