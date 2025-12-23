@@ -82,6 +82,7 @@ h3 {
 
 a {
     color: #005D83;
+    text-wrap: pretty;
 }
 
 .MainContent {
@@ -1059,14 +1060,13 @@ hr.content {
 
 /* This adds some icons for different link types*/
 main a[href^="http://"]:after, main a[href^="https://"]:after {
-    content: '\f08e';
+    content: '\00a0\f08e';
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: none;
     display: inline-block;
     font-size:14px;
-    margin-left:6px;
     color:#009ad6;
 }
 

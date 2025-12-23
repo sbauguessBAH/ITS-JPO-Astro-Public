@@ -35,20 +35,23 @@ const breadcrumbs = currentBreadcrumb ? [...items, { name: currentBreadcrumb, ur
 </style>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb w-full">
-    {
-      breadcrumbs.map((item, index) => (
-        // The last item here will be the active one on any given page
+    {breadcrumbs.map((item, index) => {
+      const isLast = index === breadcrumbs.length - 1;
+      const isFirst = index === 0;
+      // Only link if not first, not last, and enabled
+      const shouldLink = !isFirst && !isLast;
+      return (
         <li
-          class:list={["breadcrumb-item", { active: index === breadcrumbs.length - 1 }]}
-          aria-current={index === breadcrumbs.length - 1 ? "page" : "false"}
+          class:list={["breadcrumb-item", { active: isLast }]}
+          aria-current={isLast ? "page" : undefined}
         >
-          {index === breadcrumbs.length - 1 || !item.isEnabled ? (
-            <span>{item.name}</span>
+          {shouldLink ? (
+            <a href={base_url(item.url)}>{item.name}</a>
           ) : (
-            <a href={base_url(item.url)} >{item.name}</a>
+            <span>{item.name}</span>
           )}
         </li>
-      ))
-    }
+      );
+    })}
   </ol>
 </nav>
