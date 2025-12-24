@@ -663,30 +663,26 @@ section.download {
 }
 
 footer {
-  padding: 25px 0;
-  text-align: left;
   color: white;
   background: linear-gradient(30deg, rgba(43, 163, 201, 1) 0%, rgba(24, 116, 147, 1) 18%, rgba(29, 52, 83, 1) 65%, rgba(9, 21, 37, 1) 99%);
 }
 
 footer p {
-  font-size: 12px;
+  font-size: 1rem;
   margin: 0;
   text-transform: none;
-  text-align: center;
 }
 
 footer ul {
   margin-bottom: 0;
 }
 
-footer ul li a {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.3);
+.footerlinks {
+  font-size: .8rem;
 }
 
-footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li a.active {
-  text-decoration: none;
+.footerlinks a:hover, .footerlinks a:focus, .footerlinks a:active, .footerlinks a.active {
+  text-decoration: underline;
 }
 
 .bg-primary {

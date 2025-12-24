@@ -427,7 +427,6 @@ footer {
     color: white;
     padding: 50px;
     background-image: linear-gradient(to right, #081334, #091F61 );
-    text-align: center;
     font-size: 14px;
 }
 
@@ -1067,7 +1066,6 @@ main a[href^="http://"]:after, main a[href^="https://"]:after {
     text-decoration: none;
     display: inline-block;
     font-size:14px;
-    color:#009ad6;
 }
 
 
@@ -1081,7 +1079,6 @@ main a[href$=".pdf"]::after {
     display: inline-block;
     font-size:14px;
     margin-left:6px;
-    color:#009ad6;
 }
 
 main a[href$=".docx"]::after {
@@ -1093,7 +1090,6 @@ main a[href$=".docx"]::after {
     display: inline-block;
     font-size:14px;
     margin-left:6px;
-    color:#009ad6;
 }
 
 main a[href$=".pptx"]::after {
@@ -1105,7 +1101,6 @@ main a[href$=".pptx"]::after {
     display: inline-block;
     font-size:14px;
     margin-left:6px;
-    color:#009ad6;
 }
 
 
