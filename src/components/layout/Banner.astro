@@ -479,6 +479,7 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
   
   /* 1. Remove image from the main parent wrapper */
   .banner-container {
+    background-color: #091f61; /* Background color for slow loading images */
     background-image: none !important; 
     align-items: stretch; /* Let children determine height */
     min-height: 5rem;
