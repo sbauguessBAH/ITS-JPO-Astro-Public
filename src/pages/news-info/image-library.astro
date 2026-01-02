@@ -105,8 +105,6 @@ const description =
       let modalImg: HTMLImageElement | null = null;
       // Reference to the alt text element in the modal (for accessibility)
       let modalAlt: HTMLElement | null = null;
-      // Reference to the close button in the modal
-      let closeBtn: HTMLElement | null = null;
 
       // Function to open the modal and display the full-size image
       function openModal(card: HTMLElement) {
@@ -114,7 +112,7 @@ const description =
         modal = document.getElementById('astro-img-modal');
         modalImg = document.getElementById('astro-img-modal-img') as HTMLImageElement | null;
         modalAlt = document.getElementById('astro-img-modal-alt');
-        closeBtn = document.getElementById('astro-img-modal-close');
+        const closeBtn = document.getElementById('astro-img-modal-close');
         const downloadBtn = document.getElementById('astro-img-modal-download');
         // Find the anchor with data-fullsize inside the card (contains the full-size image URL)
         const anchor = card.querySelector('a[data-fullsize]');
@@ -130,6 +128,11 @@ const description =
           if (modalAlt) modalAlt.textContent = alt;
           if (downloadBtn) (downloadBtn as HTMLAnchorElement).href = fullsize; // Set download link
           document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+        // Attach close event every time modal is opened (ensures it's always attached)
+        if (closeBtn) {
+          closeBtn.removeEventListener('click', closeModal); // Prevent duplicate
+          closeBtn.addEventListener('click', closeModal);
         }
       }
 
@@ -158,9 +161,6 @@ const description =
       document.addEventListener('click', function(e) {
         if (e.target && (e.target as HTMLElement).id === 'astro-img-modal') closeModal();
       });
-
-      // Close modal when clicking the close button (if present at load)
-      if (closeBtn) (closeBtn as HTMLElement).addEventListener('click', closeModal);
     });
   </script>
 
