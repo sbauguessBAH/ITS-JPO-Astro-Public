@@ -185,6 +185,7 @@ export const navigation: NavigationItem[] = [
 ]
 
       },
+      { name: "Smart Community Resource Center", url: "https://www.its.dot.gov/scrc", isExternal: true },
       { name: "ITS CodeHub", url: "https://www.its.dot.gov/code", isExternal: true },
       { name: "ITS DataHub", url: "https://www.its.dot.gov/data", isExternal: true },
     ],

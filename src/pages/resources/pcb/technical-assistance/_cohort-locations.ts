@@ -154,6 +154,11 @@ export const states: Record<string, State> = {
         x: 332,
         y: 269,
       },
+      {
+        agency: "Loveland",
+        x: 331,
+        y: 248,
+      },
     ],
     state: "Colorado",
     drawable: {
@@ -200,6 +205,11 @@ export const states: Record<string, State> = {
         agency: "Metro Plan Orlando",
         x: 741,
         y: 495,
+      },
+       {
+        agency: "Orlando",
+        x: 764,
+        y: 493,
       },
       {
         agency: "Pinellas County",
@@ -297,6 +307,13 @@ export const states: Record<string, State> = {
     },
   },
   IN: {
+    members: [
+      {
+        agency: "Indiana DOT",
+        x: 645,
+        y: 249,
+      },
+    ],
     state: "Indiana",
     drawable: {
       type: "path",
