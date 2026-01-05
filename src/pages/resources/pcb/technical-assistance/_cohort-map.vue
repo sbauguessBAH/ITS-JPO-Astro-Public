@@ -2,9 +2,9 @@
 import { computed, onBeforeUnmount, onMounted, ref, type Ref } from "vue";
 import { mapSettings, states, type State } from "./_cohort-locations";
 
-/** Final tooltip X position (frozen after delay) */
+/** Final tooltip X position (relative to container, frozen after delay) */
 const mouseX: Ref<number> = ref(0);
-/** Final tooltip Y position (frozen after delay) */
+/** Final tooltip Y position (relative to container, frozen after delay) */
 const mouseY: Ref<number> = ref(0);
 /** Temporary X position during delay period */
 const tempX: Ref<number> = ref(0);
@@ -31,8 +31,15 @@ let hideTimeout: ReturnType<typeof setTimeout> | null = null;
  * @param event MouseEvent
  */
 const updateTempMouse = (event: MouseEvent) => {
-  tempX.value = event.clientX;
-  tempY.value = event.clientY;
+  const container = document.querySelector('.map-container') as HTMLElement | null;
+  if (container) {
+    const rect = container.getBoundingClientRect();
+    tempX.value = event.clientX - rect.left;
+    tempY.value = event.clientY - rect.top;
+  } else {
+    tempX.value = event.clientX;
+    tempY.value = event.clientY;
+  }
 };
 
 /** Clear all timeouts */
@@ -64,9 +71,17 @@ const handleSelect = (event: MouseEvent, key: string, state: State, delay: numbe
   hoveringShape.value = true;
   currentStateId.value = key;
 
-  // Start tracking live mouse coords during delay
-  tempX.value = event.clientX;
-  tempY.value = event.clientY;
+
+  // Start tracking live mouse coords during delay (relative to container)
+  const container = document.querySelector('.map-container') as HTMLElement | null;
+  if (container) {
+    const rect = container.getBoundingClientRect();
+    tempX.value = event.clientX - rect.left;
+    tempY.value = event.clientY - rect.top;
+  } else {
+    tempX.value = event.clientX;
+    tempY.value = event.clientY;
+  }
   window.addEventListener('mousemove', updateTempMouse);
 
   // Delay before showing tooltip
@@ -302,7 +317,7 @@ onBeforeUnmount(() => {
 
 .map-tooltip {
   text-align: left;
-  position: fixed;
+  position: absolute;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid #64748b;
   padding: 12px;
