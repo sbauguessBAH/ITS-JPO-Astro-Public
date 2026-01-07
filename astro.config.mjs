@@ -17,7 +17,10 @@ export default defineConfig({
     "/research_areas/automation/index.htm": "/research-areas/automation-program",
     "/contacts/stafflisting.htm": "/about/contact-us/staff-listing",
     "/its4us/index.htm": "/research-areas/ITS4US",
+    "/its4us/": "/research-areas/ITS4US",
     "/communications/its_images.htm": "/news-info/image-library",
-    "/pcb": "/resources/Professional-Capacity-Building/",
+    "/pcb": "/resources/pcb",
+    "/resources/Professional-Capacity-Building/": "/resources/pcb",
+
   },
 });
