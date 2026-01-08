@@ -1,0 +1,163 @@
+---
+import BullseyeIcon from "@/src/components/programs/icons/BullseyeIcon.astro";
+import CompassIcon from "@/src/components/programs/icons/CompassIcon.astro";
+import CheckIcon from "@/src/components/programs/icons/CheckIcon.astro";
+import ListIcon from "@/src/components/programs/icons/ListIcon.astro";
+import Layout from "../_layout.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+---
+
+<style>
+  /* General Styles */
+  .subtitle {
+    color: rgb(var(--color-brand-dark));
+    font-size: 22px;
+    text-transform: none;
+  }
+</style>
+<style>
+  /* Focus Area Cards */
+  .area-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  @media (min-width: 992px) {
+    .area-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .area-card {
+    border: 1px solid var(--border-light);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 8px;
+  }
+  .area-card-header {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    color: rgb(var(--color-brand-dark));
+  }
+  .area-card-title {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    color: inherit;
+  }
+</style>
+<style>
+  .highlight-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* padding: 1rem; */
+  }
+  /* Highlight Cards */
+  .highlight-card {
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border-left: 4px solid rgb(var(--color-brand-dark));
+  }
+  .highlight-card-header {
+    background: rgb(var(--color-gray-light));
+    padding: 1rem 1rem;
+    margin: 0;
+    color: rgb(var(--color-brand-dark));
+    font-size: 18px;
+    font-weight: medium;
+  }
+  .highlight-card-content {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.1rem;
+  }
+</style>
+<Layout title="Automation Program">
+  <main class="program-main">
+    <ProgramSection size="small">
+    
+      <h2 class="program-title-lg">
+        Human Factors
+      </h2>
+      <p class="max-w-lg program-text">
+        Human Factors research examines how people interact with automated vehicles and transportation systems, identifying potential mismatches and developing best practices for safe and effective operations.
+      </p>
+      <div class="area-container mt-4">
+        <div class="area-card">
+          <div class="area-card-header">
+            <BullseyeIcon size={24}/>
+            <h3 class="area-card-title">Goal</h3>
+          </div>
+          <p class="program-text">
+            Identify likely safety-relevant scenarios where human performance and interaction behaviors with vehicle automation technologies have a mismatch and develop corresponding Human Factors best practices.
+          </p>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            <CompassIcon size={24}/>
+            <h3 class="area-card-title">Approach</h3>
+          </div>
+          <p class="program-text">
+            Build understanding of safety-related human factors issues at all AV levels including interactions in varying environments (multimodal, freight, urban mix, etc.)
+          </p>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            <CheckIcon size={24}/>
+            <h3 class="area-card-title">Anticipated Outcomes</h3>
+          </div>
+          <p class="program-text">
+            Enhanced safety in and around AV deployments and reduced problem interactions.
+          </p>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            <ListIcon size={24}/>
+            <h3 class="area-card-title">Near-Term Actions</h3>
+          </div>
+          <p class="program-text">
+            Research understanding, trust, and use of all automation levels, assess attentional engagement at lower automation levels, examine current and emerging human interfaces to automation systems, and research design and operations of automation with all external road users.
+          </p>
+        </div>
+      </div>
+    </ProgramSection>
+    <ProgramSection>
+      <h3 class="program-title-md">
+        Current Project Highlights
+      </h3>
+      <div class="highlight-container mt-4">
+        <div class="highlight-card">
+          <h4 class="highlight-card-header">
+            Research Key AV Safety Issues Related to TSMO 
+          </h4>
+          <div class="highlight-card-content">
+            Identifies key human factors safety issues associated with operating ADS (Automated Driving Systems) in Transportation Systems Management and Operations (TSMO) use cases, e.g., basic traveling (reoccurring congestion), work zones, weather, and Traffic Information Management (TIM).
+          </div>
+        </div>
+        <div class="highlight-card">
+          <h4 class="highlight-card-header">
+            Investigate Key AV Human Factors Safety Issues Related to Infrastructure 
+          </h4>
+          <div class="highlight-card-content">
+            Identify key human factors safety issues regarding the safe operation of vehicles with engaged motor vehicle driving automation features as a function of roadway infrastructure
+
+          </div>
+        </div>
+        <div class="highlight-card">
+          <h4 class="highlight-card-header">
+            Field Data Collection with Consumer Available Driver Support Systems known as SAE Level 2 Advanced Driver Assistance Systems (ADAS)
+          </h4>
+          <div class="highlight-card-content">
+            This study will include a large-scale on-road field study of L2 partial driving automation system vehicles - with representative samples of different makes/models.
+          </div>
+        </div>
+      </div>
+    </ProgramSection>
+  </main>
+</Layout>

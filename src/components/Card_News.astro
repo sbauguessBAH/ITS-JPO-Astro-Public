@@ -1,6 +1,7 @@
 ---
 
 import { type CollectionEntry } from "astro:content";
+
 import base_url from "../lib/base_url";
 
 type Props = {
@@ -8,9 +9,9 @@ type Props = {
 };
 
 const { post } = Astro.props;
-const { title, date, image } = post.data;
+const { date, image, title } = post.data;
 
-const markdownString = post.body.slice(0, 600);
+const markdownString = post.body?.slice(0, 600);
 
 // Define a function to remove Markdown syntax
 function removeMarkdownSyntax(str) {
@@ -58,5 +59,5 @@ const preview = removeMarkdownSyntax(markdownString);
     <time datetime={date.toISOString()}>{date.toLocaleDateString(undefined, { dateStyle: "medium", timeZone: "UTC" })}</time><br />
     <h2>{title}</h2> 
   <p>{preview}</p>
-  <a href={base_url(`/news-info/news/${post.slug}`)} class="btn">Read Post</a>
+  <a class="btn" href={base_url(`/news-info/news/${post.id}`)}>Read Post</a>
 </div>

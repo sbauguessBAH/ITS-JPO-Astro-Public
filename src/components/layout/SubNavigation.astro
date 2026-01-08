@@ -1,0 +1,415 @@
+---
+// SubNavigation.astro
+// Shows a contextual sub-navigation bar for sections that have a 3rd level of pages.
+// Behavior summary:
+// - Finds the current top-level section using the trimmed pathname.
+// - Locates the second-level page within that section that matches the current path.
+// - If that second-level page has `pages` (third-level), render the sub-navigation
+//   showing those third-level pages. Otherwise render nothing.
+// This keeps the banner/navigation clean: only sections with deeper content show this bar.
+import base_url from '@/src/lib/base_url';
+import { getTrimmedPathname, navigation, comparePathname } from "@/src/lib/navigation";
+import type { ChildNavigationItem } from '@/src/types';
+
+// The full current pathname from Astro (may include base path)
+const pathname = Astro.url.pathname;
+// Trim trailing slash and base path so comparisons are consistent across environments
+const trimmedPathname = getTrimmedPathname(pathname);
+
+// Determine the current top-level section and the current second-level page.
+// We only show this subnav when the current second-level page contains third-level pages.
+const currentSection = navigation.find(sec => trimmedPathname.startsWith(sec.url));
+let currentSecond: ChildNavigationItem | undefined = undefined;
+if (currentSection && currentSection.pages) {
+  // Find the second-level page that the current path belongs to (e.g., `/research-areas/ITS4US`)
+  currentSecond = currentSection.pages.find(p => trimmedPathname.startsWith(p.url)) as ChildNavigationItem | undefined;
+}
+// showSubNav true => render the nav; navItems contains the third-level pages to render
+const showSubNav = Boolean(currentSecond && currentSecond.pages && currentSecond.pages.length > 0);
+const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
+---
+<!-- Sub-navigation: renders only on pages where the current second-level page has third-level children. -->
+{showSubNav && (
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-marginbottom">
+    <div class="container-xl">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar-content2"
+        aria-controls="navbar-content2"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-content2">
+        <ul class="navbar-nav">
+          {navItems.map(link => (
+            <li class:list={["nav-item", {"dropend": (link.pages && link.pages.length > 0), "activeMenu": trimmedPathname.startsWith(link.url)}]}>
+              <!-- Top-level anchor for this subnav entry. `comparePathname` marks it active when it matches -->
+              <a 
+                class:list={[
+                  "nav-link",
+                  {"dropdown-toggle": link.pages && link.pages.length > 0},
+                  {"active": comparePathname(pathname, link.url, false)}
+                ]}
+                href={base_url(link.url)}
+                id={"navbarDropdown-" + link.name.replaceAll(" ", "-")}
+                role="button"
+              >
+                {link.name}
+              </a>
+              
+              {link.pages && link.pages.length > 0 && (
+                <ul class="dropdown-menu mt-0 shadow" aria-labelledby={"navbarDropdown-" + link.name.replaceAll(" ", "-")}>
+                  {(link.pages ?? []).map(pageLink => {
+                    /*
+                      pageLink may be an external link (open in new tab), a link with further children
+                      (render a dropend submenu), or a plain link. We render `active` classes using
+                      `comparePathname` so the current page is visibly highlighted.
+                    */
+                    if (pageLink.isExternal) return (
+                      <li>
+                        <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
+                          {pageLink.name}
+                        </a>
+                      </li>
+                    );
+                    if (pageLink.pages) return (
+                      <li class="dropend">
+                        
+                        <a 
+                          href={base_url(pageLink.url)}
+                          class:list={["dropdown-item", {"dropdown-toggle": true, "active": comparePathname(pathname, pageLink.url, true)}]}
+                        
+                        >
+                          {pageLink.name}
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                          {(pageLink.pages ?? []).map(subPageLink => {
+                            if (subPageLink.isExternal) return (
+                              <li>
+                                <a 
+                                  class="dropdown-item externalLink" 
+                                  href={subPageLink.url}
+                                >
+                                  {subPageLink.name}
+                                </a>
+                              </li>
+                            )
+                            return (
+                              <li>
+                                <a 
+                                  class:list={[
+                                    "dropdown-item", 
+                                    {"disabled": [
+                                        "ITS Professional Capacity Building", 
+                                        "Architecture, Standards, and Cybersecurity (ASC)"
+                                      ].includes(subPageLink.name)
+                                    },
+                                    {"active": comparePathname(pathname, subPageLink.url)}
+                                  ]} 
+                                  href={base_url(subPageLink.url)}
+                                >
+                                  {subPageLink.name}
+                                </a>
+                              </li>
+                            )
+                          })}
+                        </ul>
+                      </li>
+                    )
+                    return (
+                      <li>
+                        <a class:list={["dropdown-item", {"active": comparePathname(pathname, pageLink.url)}]} href={base_url(pageLink.url)}>
+                          {pageLink.name}
+                        </a>
+                      </li>
+                    )
+                  })}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </nav>
+)}
+
+<style>
+
+
+
+  a,
+  ul,
+  li,
+  nav,
+  button
+  .show {
+    transition: all 0.35s;
+  }
+   .navbar-nav .nav-item .nav-link {
+    font-size: 17px;
+  }
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .nav-link{
+    border-radius: 10px 10px 0 0;
+    background-color: rgb(233, 236, 239, 0.25);
+    background-blend-mode: multiply;
+  }
+
+  .navbar {
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+
+  
+  .active, .nav-link:hover {
+    background: white;
+    color: black !important;
+  }
+
+
+  .dotlogo {
+    max-height: 25px;
+    object-fit: contain;
+    object-position: 0%;
+    padding-right: 10px;
+    margin-top: 14px;
+    margin-left: 30px;
+  }
+
+  .dropdown-toggle.show {
+    color: black;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .dropdown-toggle .show {
+    color: black;
+  }
+
+  .dropdown-menu {
+    left: -1px;
+  }
+
+  .show.nav-link:focus {
+    color: black;
+  }
+
+  .dropdown-menu li > ul.dropdown-menu {
+    border-radius: 10px;
+  }
+
+  .dropend .dropdown-toggle::after {
+    content: "\f054";
+    border: 0;
+    color: #009ad6;
+  }
+
+  .dropdown-item.dropdown-toggle.show::after {
+    content: "\f078";
+    border: 0;
+    color: #009ad6;
+  }
+  .dropdown-item.dropdown-toggle.show{
+    background: rgb(233, 236, 239);
+    border-radius: 0;
+  }
+  .dropdown-menu{
+    border: none;
+  }
+
+  @media (max-width: 992px) {
+    .navbar-marginbottom {
+      margin-bottom: 0;
+    }
+  }
+  .navbar-nav .nav-item.dropdown.show > .nav-link {
+    font-weight: bold;
+  }
+
+  /* Show dropdowns on hover for desktop/tablet (keep click behavior on small screens) */
+  @media (min-width: 992px) {
+    /* main dropdown */
+    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0; /* align with Bootstrap spacing */
+    }
+
+    /* make the toggle appear active on hover */
+    .navbar-nav .nav-item.dropdown:hover > .nav-link {
+      color: black;
+      background-color: white;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* nested (dropend) submenu on hover */
+    .navbar-nav .dropend:hover > .dropdown-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+     
+    }
+
+    /* ensure dropdown-menu default is hidden until hover (desktop) */
+    .navbar-nav .dropdown-menu {
+      display: none;
+    }
+  }
+
+
+  /* Make dropdown items light gray on hover/focus for better visibility */
+  .dropdown-menu .dropdown-item:hover,
+  .dropdown-menu .dropdown-item:focus {
+    background-color: lightgray; /* light gray */
+    color: #000; /* ensure readable text */
+  }
+
+
+
+  /* ===== Desktop hover behavior for dropdowns ===== */
+  @media (min-width: 992px) {
+    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0;
+    }
+    .navbar-nav .nav-item.dropdown:hover > .nav-link {
+      color: black;
+      background-color: white;
+    }
+    .navbar-nav .dropend:hover > .dropdown-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      color: black;
+    }
+    /* hide dropdowns by default on desktop until hover */
+    .navbar-nav .dropdown-menu {
+      display: none;
+    }
+  
+  }
+
+  /* ===== Responsive adjustments ===== */
+  @media (max-width: 1200px) {
+    .header-bar {
+      flex-wrap: wrap;
+    }
+    .header-content {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .siteheader-wrapper {
+      flex-basis: 100%;
+    }
+    nav.navbar {
+      flex-grow: 0;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+  }
+
+  @media (max-width: 992px) {
+    .navbar-marginbottom {
+      margin-bottom: 0;
+    }
+      .nav-link.show {
+      color: black !important;
+      background-color: white !important;
+    }
+    
+  }
+
+  @media (max-width: 992px) {
+    .Topbar .col-lg-2 {
+      width: 50%;
+    }
+    .navbar-toggler {
+      display: block;
+      margin-top: 0px;
+      padding: 0px;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(255, 255, 255, 0.25);
+    }
+
+    /* Show an 'X' when the toggler is expanded (i.e. doesn't have `collapsed`) */
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' d='M6 6 L24 24 M24 6 L6 24'/%3e%3c/svg%3e");
+      align-self: center;
+    }
+
+    /* Show hamburger when the toggler has the `collapsed` class (default) */
+    .navbar-toggler.collapsed .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+
+</style>
+
+<!-- Mobile: First tap opens dropdown, second tap navigates. -->
+<script is:inline>
+  (function () {
+    // Only apply this behavior on narrow viewports (mobile/tablet)
+    const BREAKPOINT = 992;
+
+    function onBodyClick(e) {
+      // Only handle left-click / taps
+      const el = e.target.closest && e.target.closest('.navbar .dropdown-toggle');
+      if (!el) return;
+
+      if (window.innerWidth >= BREAKPOINT) return; // desktop behavior unchanged
+
+      // If this toggle was tapped once already, navigate to the link target.
+      if (el.dataset.dropdownTap === '1') {
+        // cleanup marker so subsequent taps behave normally
+        delete el.dataset.dropdownTap;
+        // Try to read the href and navigate explicitly. Some mobile dropdown
+        // handlers (Bootstrap) can prevent the native navigation on dropdown toggles,
+        // so we set location.href directly to guarantee navigation.
+        const href = el.getAttribute && el.getAttribute('href');
+        if (href && href !== '#' && href !== 'javascript:void(0)') {
+          // prevent any default handling and force navigation
+          e.preventDefault();
+          window.location.href = href;
+        }
+        return;
+      }
+
+      // First tap: prevent navigation and open the dropdown
+      e.preventDefault();
+      el.dataset.dropdownTap = '1';
+      try {
+        // Use Bootstrap's Dropdown API if available to open the menu
+        if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+          window.bootstrap.Dropdown.getOrCreateInstance(el).show();
+        } else {
+          // Fallback: add class to parent to show menu (relies on CSS hover rules)
+          const parent = el.parentElement;
+          if (parent) parent.classList.add('show');
+        }
+      } catch (err) {
+        // ignore
+      }
+
+      // Reset the tap marker after 5 seconds so the link doesn't stay "armed" forever
+      setTimeout(() => { try { delete el.dataset.dropdownTap } catch (e) {} }, 5000);
+    }
+
+    document.addEventListener('click', onBodyClick, { passive: false });
+  })();
+</script>

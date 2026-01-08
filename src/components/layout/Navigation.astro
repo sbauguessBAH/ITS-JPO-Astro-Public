@@ -35,11 +35,23 @@ const trimmedPathname = getTrimmedPathname(pathname);
               {link.pages.map(pageLink => {
                 if (pageLink.isExternal) return (
                   <li>
-                    <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
+                    <a 
+                      class="dropdown-item externalLink" 
+                      href={pageLink.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                       {pageLink.name}
                     </a>
                   </li>
                 );
+                if (pageLink.hideChildrenInNavbar) return (
+                  <li>
+                    <a class="dropdown-item" href={pageLink.url}>
+                      {pageLink.name}
+                    </a>
+                  </li>
+                )
                 if (pageLink.pages) return (
                   <li class="dropend">
                     <a 
@@ -155,7 +167,6 @@ const trimmedPathname = getTrimmedPathname(pathname);
   }
   .dropdown-item.dropdown-toggle.show{
     background: rgb(233, 236, 239);
-    border-radius: 0;
   }
   .dropdown-menu{
     border: none;
@@ -169,5 +180,41 @@ const trimmedPathname = getTrimmedPathname(pathname);
   .navbar-nav .nav-item.dropdown.show > .nav-link {
     font-weight: bold;
   }
+
+  /* Show dropdowns on hover for desktop/tablet (keep click behavior on small screens) */
+  @media (min-width: 992px) {
+
+    /* main dropdown */
+    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0; /* align with Bootstrap spacing */
+    }
+
+    /* make the toggle appear active on hover */
+    .navbar-nav .nav-item.dropdown:hover > .nav-link {
+      color: black;
+      background-color: white;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* nested (dropend) submenu on hover */
+    .navbar-nav .dropend:hover > .dropdown-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* ensure dropdown-menu default is hidden until hover (desktop) */
+    .navbar-nav .dropdown-menu {
+      display: none;
+    }
+
+    
+  }
+
+
+
 
 </style>

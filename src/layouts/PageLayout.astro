@@ -2,7 +2,6 @@
 // Page Layout used for pages with sidebars and other complex navigation
 import type { ImageMetadata } from 'astro';
 import Banner from '@/src/components/layout/Banner.astro';
-import Sidebar from '@/src/components/layout/Sidebar.astro';
 import base_url from '@/src/lib/base_url';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '@/src/components/layout/Breadcrumbs.astro';
@@ -37,9 +36,11 @@ const activeSection: NavigationItem | undefined = navigation.find(section => isA
   </Banner>
   <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl ">
     <Breadcrumbs currentBreadcrumb={currentBreadcrumb}/>
-    <div class="mt-4">
+    
+      
       <slot/>
-    </div>
+     
+    
   </div>
   <slot name="footer" title="footer"/>
 </BaseLayout>

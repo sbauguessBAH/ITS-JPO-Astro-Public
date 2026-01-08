@@ -1,7 +1,6 @@
 ---
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 
 const keywords = [
   "V2X",
@@ -20,8 +19,7 @@ const description =
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
-  <SidebarLayout path="/research-areas/">
-      <div>
+      <main>
         <h2 class="sideways blue">V2X Accelerator Program</h2>
         <p class="read-more-wrap" style="padding-top:0px">
           The V2X Accelerator Program is a new program area dedicated to accelerating the adoption and deployment of interoperable connectivity nationwide. U.S. DOT will pursue
@@ -29,6 +27,5 @@ const description =
           featuring applications enabled by interoperable connectivity that substantially and quantitatively improve system safety; enhance traveler
           mobility; improve the efficiency of goods movement; and demonstrate a significant return on (public and private) investment.
         </p>
-      </div>
-    </SidebarLayout>
+      </main>
 </PageLayout>

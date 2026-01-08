@@ -1,0 +1,162 @@
+---
+import BullseyeIcon from "@/src/components/programs/icons/BullseyeIcon.astro";
+import CompassIcon from "@/src/components/programs/icons/CompassIcon.astro";
+import CheckIcon from "@/src/components/programs/icons/CheckIcon.astro";
+import ListIcon from "@/src/components/programs/icons/ListIcon.astro";
+import Layout from "../_layout.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+---
+
+<style>
+  /* General Styles */
+  .subtitle {
+    color: rgb(var(--color-brand-dark));
+    font-size: 22px;
+    text-transform: none;
+  }
+</style>
+<style>
+  /* Focus Area Cards */
+  .area-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  @media (min-width: 992px) {
+    .area-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .area-card {
+    border: 1px solid var(--border-light);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 8px;
+  }
+  .area-card-header {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    color: rgb(var(--color-brand-dark));
+  }
+  .area-card-title {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    color: inherit;
+  }
+</style>
+<style>
+  .highlight-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* padding: 1rem; */
+  }
+  /* Highlight Cards */
+  .highlight-card {
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border-left: 4px solid rgb(var(--color-brand-dark));
+  }
+  .highlight-card-header {
+    background: rgb(var(--color-gray-light));
+    padding: 1rem 1rem;
+    margin: 0;
+    color: rgb(var(--color-brand-dark));
+    font-size: 18px;
+    font-weight: medium;
+  }
+  .highlight-card-content {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.1rem;
+  }
+</style>
+<Layout title="Automation Program">
+  <main class="program-main">
+    <ProgramSection size="small">
+      
+      <h2 class="program-title-lg">
+        Automated Driving System (ADS) Integration
+      </h2>
+      <p class="max-w-lg program-text">
+        ADS Integration research focuses on addressing challenges and developing approaches for the safe and efficient integration of Automated Driving Systems into the transportation ecosystem.
+      </p>
+      <div class="area-container mt-4">
+        <div class="area-card">
+          <div class="area-card-header">
+            <BullseyeIcon size={24}/>
+            <h3 class="area-card-title">Goal</h3>
+          </div>
+          <p class="program-text">
+            Explore recommended practices to address safe and efficient Automated Driving System (ADS) Integration into the transportation system.
+          </p>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            <CompassIcon size={24}/>
+            <h3 class="area-card-title">Approach</h3>
+          </div>
+          <p class="program-text">
+            Address gaps in transportation system oversight and understanding of ADS performance inhibiting safe and efficient ADS integration.
+          </p>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            <CheckIcon size={24}/>
+            <h3 class="area-card-title">Anticipated Outcomes</h3>
+          </div>
+          <p class="program-text">
+            Enhance safety and efficiency around AV operations and system user acceptance with national-level consistency.
+          </p>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            <ListIcon size={24}/>
+            <h3 class="area-card-title">Near-Term Actions</h3>
+          </div>
+          <p class="program-text">
+            Develop a deeper understanding of ADS technology capabilities, applications/use cases, and relevant gaps in oversight that affect safe AV operations.
+          </p>
+        </div>
+      </div>
+    </ProgramSection>
+    <ProgramSection>
+      <h3 class="program-title-md">
+        Current Project Highlights
+      </h3>
+      <div class="highlight-container mt-4">
+        <div class="highlight-card">
+          <h4 class="highlight-card-header">
+            ADS & Traffic Regulations Voluntary Specifications Development Playbook 
+          </h4>
+          <div class="highlight-card-content">
+            This project uses the prototype traffic regulation data framework completed in a previous project to advance the conversation about the development of a voluntary data specification for traffic regulations.
+          </div>
+        </div>
+        <div class="highlight-card">
+          <h4 class="highlight-card-header">
+            Develop Innovative Techniques/Methods-Support Changeable Roadway Testing Environment 
+          </h4>
+          <div class="highlight-card-content">
+            This project will evaluate the feasibility of mimicking roadway features that will facilitate depiction of realistic roadway scenarios to all road users that can be easily custom configured or changed to a different scenario without permanently changing basic test facilities roadway configurations.
+          </div>
+        </div>
+        <div class="highlight-card">
+          <h4 class="highlight-card-header">
+            ADS Integration &amp; Recommended Practices 
+          </h4>
+          <div class="highlight-card-content">
+            USDOT aims to establish initial national-level recommended practices for integration of ADS into the transportation system to provide states, localities, automation companies, and other road users with a well-supported, consistent basis for ADS expectations and assurances that operations will be safe and efficient.
+          </div>
+        </div>
+      </div>
+    </ProgramSection>
+  </main>
+</Layout>

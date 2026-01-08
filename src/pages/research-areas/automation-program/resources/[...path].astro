@@ -1,0 +1,323 @@
+---
+import Layout from "../_layout.astro";
+import base_url from "@/src/lib/base_url";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import { getCollection } from "astro:content";
+
+export const areas = [
+  {
+    title: "All",
+    path: undefined
+  },
+  {
+    title: "Analysis, Modeling, and Simulation (AMS)",
+    path: "ams"
+  },
+  {
+    title: "Automated Driving System (ADS) Integration",
+    path: "ads"
+  },
+  {
+    title: "Cooperative Driving Automation (CDA)",
+    path: "cda"
+  },
+  {
+    title: "Human Factors",
+    path: "human-factors"
+  },
+  {
+    title: "Other",
+    path: "other"
+  }
+]
+
+export async function getStaticPaths() {
+  return areas.map(area => ({
+    params: {
+      path: area.path
+    },
+    props: {
+      title: area.title
+    }
+  }))
+}
+
+const { path } = Astro.params;
+const { title } = Astro.props;
+
+const resources = await getCollection("automationResources");
+
+interface Deliverable {
+  title: string;
+  url: string;
+  year: number;
+}
+
+interface Project {
+  area: string;
+  title: string;
+  deliverables: Deliverable[]
+}
+
+const projects = resources
+  .filter(({ data }) => title === "All" || data.area === title)
+  .reduce((acc, { data }) => {
+    const index = acc.findIndex(prev => prev.title === data.project);
+
+    if (index >= 0) {
+      acc[index].deliverables.push({
+        title: data.deliverable,
+        year: data.year,
+        url: data.url
+      })
+    } else {
+      acc.push({
+        title: data.project,
+        area: data.area,
+        deliverables: [
+          {
+            title: data.deliverable,
+            year: data.year,
+            url: data.url
+          }
+        ]
+      })
+    }
+
+    return acc;
+  }, [] as Project[])
+---
+<style>
+  .resource-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+
+  .resource-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--size-sm);
+    padding: var(--size);
+    /* padding-bottom: 0; */
+  }
+
+  .resource-card-body {
+    padding: 0;
+    background: rgb(var(--color-gray-light));
+  }
+
+  /* .resource-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .resource-menu-item {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    font-weight: 600;
+  }
+  .resource-menu-item:hover {
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .resource-menu-item-active {
+    background: rgb(var(--color-brand));
+    color: white;
+  } */
+
+  .resource-area-badge {
+    background: rgb(var(--color-gray-light));
+    border: 1px solid var(--border-light);
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    height: 24px;
+    width: fit-content;
+    padding: 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  .resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+
+  .deliverable-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* gap: 0.5rem; */
+  }
+
+  .deliverable-list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--size-sm) var(--size);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .deliverable-title {
+    flex-basis: calc(9/10 * 100%);
+  }
+
+  .deliverable-title:hover {
+    font-weight: 400;
+  }
+
+  .deliverable-year {
+    font-weight: 600;
+  }
+
+  @media (min-width: 992px) {
+    .resource-container {
+      flex-direction: row;
+    }
+    .resource-menu {
+      flex-basis: 25%;
+    }
+    .resource-menu-item {
+
+    }
+    .resource-list {
+      flex-basis: 75%;
+    }
+  }
+</style>
+<style>
+  .panel {
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-light);
+    /* box-shadow: var(--box-shadow); */
+  }
+  .panel-title {
+    background: rgb(var(--color-brand-dark));
+    color: white;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    padding: 1rem;
+    text-transform: none;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+  .panel-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-light);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    /* color: black; */
+  }
+  .panel-item:hover {
+    font-weight: 600;
+    background: rgb(var(--color-brand-light));
+  }
+  .panel-item-active {
+    background: rgb(var(--color-brand-light));
+  }
+  .panel-item-active .panel-count {
+    background: rgb(var(--color-brand-dark));
+    color: white;
+  }
+  .panel-item-active:hover {
+    background: rgb(var(--color-brand-light));
+  }
+</style>
+<Layout 
+  title="Automation Program"
+>
+  <main class="program-main">
+    <ProgramSection>
+      <h2 class="program-title-lg">
+        Resources
+      </h2>
+      <div class="resource-container mt-4">
+        <!-- <nav class="resource-menu">
+          {areas.map(area => (
+            <a
+              class:list={[
+                "resource-menu-item",
+                { "resource-menu-item-active": area.title === title }
+              ]}
+              href={base_url(`/research-areas/automation-program/resources/${area.path ?? ""}`)}
+              aria-label={`Show resources for ${area.title}`}
+            >
+              {area.title}
+            </a>
+          ))}
+        </nav> -->
+        <div class="resource-menu">
+          <nav class="panel">
+            <h3 class="panel-title">Areas</h3>
+            {areas.map(item => (
+              <a 
+                class:list={["panel-item", {"panel-item-active": item.path === path }]}
+                href={base_url(`/research-areas/automation-program/resources/${item.path ?? ""}`)}
+                data-bs-toggle="tooltip" 
+                data-bs-title={item.title} 
+              >
+                <div class="panel-item-text">
+                  {item.title}
+                </div>
+              </a>
+            ))}
+          </nav>
+        </div>
+        <div class="resource-list">
+          {projects.map(project => {
+            const sortedDeliverables = project.deliverables.toSorted((a, b) => b.year - a.year)
+            return (
+              <Card shadow="sm">
+                <CardHeader class="resource-card-header">
+                  <div class="resource-area-badge">
+                    {project.area}
+                  </div>
+                  <h3 class="program-title-md">
+                    {project.title}
+                  </h3>
+                </CardHeader>
+                <CardBody class="resource-card-body">
+                  <ul class="deliverable-list">
+                    {sortedDeliverables.map(deliverable => (
+                      <li class="deliverable-list-item">
+                        <a 
+                          class="deliverable-title" 
+                          href={deliverable.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          {deliverable.title}
+                        </a>
+                        <div class="deliverable-year">
+                          {deliverable.year}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </CardBody>
+              </Card>
+            )
+          })}
+        </div>
+      </div>
+    </ProgramSection>
+  </main>
+</Layout>

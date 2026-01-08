@@ -1,0 +1,30 @@
+---
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+
+import Layout from "../_layout.astro";
+import ResourceFooter from "./_ResourceFooter.astro";
+---
+
+<Layout>
+  <main class="container-xl program-main program-padding">
+    <section class="program-section">
+      <Breadcrumb items={[
+        { name: "Academic Resources", path: "/resources/pcb/academic-resources" },
+        { name: "Academic Workshops" }
+      ]}/>
+      <h2 class="program-title-lg">
+        Academic Workshops
+      </h2>
+      <p class="program-text">
+        The ITS PCB team hosted workshops with faculty from universities, community colleges, and technical institutions, 
+        as well as public, private, and professional organization representatives. The purpose of these workshops was 
+        to identify strategies for incorporating ITS education into school curricula and to gather vital feedback 
+        for the ITS JPO to develop new tools to advance ITS learning.
+      </p>
+      <p class="program-text">
+        Materials are available upon request. Please contact the PCB Program.
+      </p>
+    </section>
+  </main>
+  <ResourceFooter/>
+</Layout>

@@ -1,19 +1,35 @@
 import type { ImageMetadata } from "astro";
 
+export type AnyNavigationItem = ChildNavigationItem | NavigationItem;
+
+export type BreadcrumbItem = {
+  isEnabled?: boolean;
+  name: string;
+  url: string;
+}
+
 /**
  * Child navigation items show up in the main navigation menu dropdown and the sidebar
  * They don't have to have child pages defined
  * If they do have child pages, tabs will be generated for that page
  */
 export type ChildNavigationItem = {
-  name: string;
-  url: string;
-  isExternal?: boolean;
-  isEnabled?: boolean;
-  isDisabled?: boolean;
-  pages?: ChildNavigationItem[];
   hasGeneratedChildItems?: boolean;
+  hideChildrenInNavbar?: boolean;
+  isDisabled?: boolean;
+  isEnabled?: boolean;
+  isExternal?: boolean;
+  name: string;
+  pages?: ChildNavigationItem[];
+  url: string;
 }
+
+export type DataAccessResource = Resource & { color?: "green" | "purple" | "red" | "yellow" };
+
+export type Link = {
+  href: string;
+  title: string;
+};
 
 /**
  * Navigation items that show up in the main navigation menu need to have children defined
@@ -21,36 +37,21 @@ export type ChildNavigationItem = {
  */
 export type NavigationItem = ChildNavigationItem & { pages: ChildNavigationItem[] }
 
-export type AnyNavigationItem = NavigationItem | ChildNavigationItem;
-
-export type BreadcrumbItem = {
-  name: string;
-  url: string;
-  isEnabled?: boolean;
-}
-
-export type Link = {
-  title: string;
-  href: string;
-};
-
 /**
  * Used to display resources on a number of pages. Can be extended to include a variety of content
  */
 export type Resource = {
-  title: string;
+  alt?: string;
   description?: string;
   href: string;
-  image: string | ImageMetadata;
-  alt?: string;
+  image: ImageMetadata | string;
   isExternalLink?: boolean;
+  title: string;
 };
 
 export type ResourceGroup = {
-  title: string;
   resources: Resource[];
+  title: string;
 };
-
-export type DataAccessResource = Resource & { color?: "yellow" | "red" | "purple" | "green" };
 
 export type VideoThumbnail = Resource & { date: string; };

@@ -4,7 +4,6 @@ import base_url from "@/src/lib/base_url";
 import Andre from "@/src/assets/images/its4us/andre.png";
 import Map from "@/src/assets/images/its4us/ST-CTN-map.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 ---
 
@@ -18,7 +17,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 
   figure {
     margin: auto;
-    width: 40%;
+    width: 30%;
     float: right;
     margin: 10px;
   }
@@ -47,9 +46,6 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
     src={logo.src} 
     style="max-height: 60px; clear: none" 
   /> | ITS4US</Fragment>
-  <SidebarLayout path="/research-areas/ITS4US/deployments/">
-    
-  <h2 class="sideways blue">GDOT Deployment Overview</h2>
   <figure>
     <Image src={Andre} alt="A man in a wheelchair" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
     <figcaption>
@@ -59,7 +55,9 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
       </p>
       <p class="text-end">- Illustrative Example of Potential User</p>
     </figcaption>
-  </figure>
+  </figure>  
+  <h2 class="sideways blue">GDOT Deployment Overview</h2>
+  
   <p>
     Safe Trips in a Connected Transportation Network (ST-CTN) enhances the travel experience for all travelers. It leverages innovative solutions and existing systems such as vehicle-to-everything (V2X) deployments, an advanced trip routing engine, and a regional trip planner - all developed within an open-sourced application called the Georgia - Mobility Access Map (G-MAP). The application allows travelers to create a personalized trip plan to navigate physical infrastructure, resolve unexpected obstacles, and ensure visibility throughout their travel.
   </p>
@@ -71,15 +69,15 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
   
   <h2 class="sideways blue">Approach – Project Challenges and Solutions</h2>
 
-  <figure>
+  
+  <p>
+    The ST-CTN project is upgrading and integrating existing technologies and services to assist travelers with completing their trip safely, successfully, and reliably. The vision of the project is to provide travelers with directions, conditions, and status on the links between trip legs that are personalized based on their preferences and capabilities, while connecting them to V2X infrastructure to provide safer trips and greater transportation network awareness. The ST-CTN project includes the following key elements that address identified stakeholder challenges:
+  </p><figure>
     <Image src={Map} alt="Image of a map of ST-CTN Study Area in Gwinnettt County" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
     <figcaption>
       <p>ST-CTN Study Area in Gwinnettt County</p>
     </figcaption>
   </figure>
-  <p>
-    The ST-CTN project is upgrading and integrating existing technologies and services to assist travelers with completing their trip safely, successfully, and reliably. The vision of the project is to provide travelers with directions, conditions, and status on the links between trip legs that are personalized based on their preferences and capabilities, while connecting them to V2X infrastructure to provide safer trips and greater transportation network awareness. The ST-CTN project includes the following key elements that address identified stakeholder challenges:
-  </p>
   <ul>
     <li>
       <strong>Route Planning.</strong>
@@ -148,5 +146,4 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
   <ul>
     <li>Visit the <a href="https://georgia-map.com/">GDOT Project Website</a>.</li>
   </ul>
-</SidebarLayout>
 </PageLayout>

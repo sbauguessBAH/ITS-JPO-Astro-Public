@@ -1,0 +1,86 @@
+---
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+
+import Actions from "./_actions.astro";
+import Layout from "./_layout.astro";
+import Resources from "./_resources.astro";
+---
+<!-- Overview Section -->
+<style>
+  .overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+  /* .overview-video {
+    border-radius: var(--radius-md);
+  } */
+  .video {
+    border-radius: var(--radius-lg);
+  }
+
+  @media (min-width: 992px) {
+    .overview-section {
+      flex-direction: row;
+      align-items: start;
+    }
+    .overview-video {
+      flex-basis: 45%;
+    }
+    .overview-text {
+      flex-basis: 55%;
+    }
+  }
+</style>
+
+<Layout>
+  <main class="program-main">
+    <ProgramSection size="small">
+      <div class="overview-section">
+        <div class="overview-text">
+          <h2 class="program-title-lg mb-4">Program Overview</h2>
+          <p class="program-text">
+            The ITS Professional Capacity Building (PCB) Program supports activities 
+            that deliver multimodal ITS learning opportunities to transportation professionals 
+            by providing ITS trainings and webinars, fostering cohorts, 
+            and providing technical assistance to agencies deploying ITS technologies, as authorized by 
+            <a 
+              href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section514&num=0&edition=prelim" 
+              rel="noopener noreferrer" 
+              target="_blank"
+            >
+              23 USC 514
+            </a>. 
+          </p>
+          <p class="program-text">
+            The ITS PCB Program works with Federal, State, and local transportation stakeholders 
+            to ensure they have adequate knowledge of ITS 
+            for consideration in the transportation planning process and that the United States 
+            has a workforce capable of developing, operating, and maintaining ITS.
+          </p>
+        </div>
+        <div class="ratio ratio-16x9 overview-video">
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="video"
+            src="https://www.youtube.com/embed/hUhdaE4Zpw4?si=VwVIeMvEmmeKiR6Q"
+            title="YouTube video player"
+          ></iframe>
+        </div>
+      </div>
+    </ProgramSection>
+    <ProgramSection>
+      <h2 class="program-title-lg text-center mb-4">
+        Spotlight on Training and Technical Assistance Resources
+      </h2>
+      <Resources/>
+    </ProgramSection>
+    <ProgramSection class="pb-5" color="gray">
+      <h2 class="program-title-lg text-center mb-4">
+        What do you want to do?
+      </h2>
+      <Actions/>
+    </ProgramSection>
+  </main>
+</Layout>

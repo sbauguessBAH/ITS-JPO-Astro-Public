@@ -1,0 +1,69 @@
+---
+import ProgramBanner from "@/src/components/programs/ProgramBanner.astro";
+import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
+import banner from "@/src/assets/images/banners/Automation_Banner.png";
+import ProgramMenu from "@/src/components/programs/ProgramMenu.astro";
+import type { ChildNavigationItem } from "@/src/types";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import "@/src/styles/programs.css";
+
+
+const keywords = [
+  "Automation Program",
+  "Transportation Research",
+  "Automated Driving Systems",
+  "Advanced Driver Assistance Systems",
+  "Cooperative Driving Assistance",
+  "ADAS",
+];
+
+const description = `
+  The ITS JPO Automation Program focuses on the safe deployment 
+  of automated driving systems and advanced driver assistance systems 
+  through collaboration and research.
+`
+
+const items: ChildNavigationItem[] = [
+  {
+    name: "Overview",
+    url: "/research-areas/automation-program"
+  },
+  {
+    name: "Focus Areas",
+    url: "/research-areas/automation-program/focus-areas",
+    pages: [
+      {
+        name: "Cooperative Driving Automation (CDA)",
+        url: "/research-areas/automation-program/focus-areas/cda"
+      },
+      {
+        name: "Analysis, Modeling and Simulation (AMS)",
+        url: "/research-areas/automation-program/focus-areas/ams"
+      },
+      {
+        name: "Human Factors",
+        url: "/research-areas/automation-program/focus-areas/human-factors"
+      },
+      {
+        name: "Automated Driving System (ADS) Integration",
+        url: "/research-areas/automation-program/focus-areas/ads"
+      }
+    ]
+  },
+  {
+    name: "Resources",
+    url: "/research-areas/automation-program/resources",
+    hasGeneratedChildItems: true
+  }
+]
+---
+<PageLayout
+  title="Automation Program"
+  keywords={keywords}
+  description={description}
+     bannerImage={banner}
+
+>
+<Fragment slot="banner"> Automation Program </Fragment>
+  <slot/>
+</PageLayout>

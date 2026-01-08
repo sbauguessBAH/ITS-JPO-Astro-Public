@@ -1,7 +1,6 @@
 ---
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 
 const keywords = [
   "ITS Architecture",
@@ -20,7 +19,7 @@ const description =
 
 <PageLayout title="Cybersecurity" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner"> Cybersecurity </Fragment>
-  <SidebarLayout path="/resources/">
+  <main>
     <h2 class="sideways blue">Cybersecurity</h2>
     <p>
       Cybersecurity is the practice of protecting computer systems, networks, and data from digital attacks, unauthorized access, and data breaches. ITS manufacturers, integrators, and operators must
@@ -33,5 +32,5 @@ const description =
       >USC Sect. 514</a> works across the U.S. DOT modes to develop and coordinate research focused on cyber vulnerabilities from an integrated, multimodal transportation perspective. This role includes defining shared
       priorities, analyzing program options, and identifying and addressing cross-modal cyber issues, in addition to sharing implementation practices and information.
     </p>
-  </SidebarLayout>
+    </main>
 </PageLayout>

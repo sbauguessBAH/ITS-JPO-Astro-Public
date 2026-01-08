@@ -1,7 +1,6 @@
 ---
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 
 const keywords = [
   "ARC-IT",
@@ -21,7 +20,7 @@ const description =
 
 <PageLayout title="ITS Architecture and Standards" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner"> Architecture and Standards </Fragment>
-  <SidebarLayout path="/resources/">
+  <main>
     <h2 class="sideways blue">ITS Architecture and Standards</h2>
     <p>
       This Program provides a reference system architecture along with voluntary technical standards, tools, and
@@ -53,5 +52,5 @@ const description =
       learn about ITS architecture, standards, and how architecture, standards and cybersecurity are relevant to
       deployment.
     </p>
-  </SidebarLayout>
+    </main>
 </PageLayout>

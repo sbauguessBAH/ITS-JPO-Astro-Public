@@ -1,0 +1,96 @@
+---
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
+
+const actions = [
+  {
+    description: "Discover available training sessions to enhance your ITS knowledge.",
+    image: "pcb/actions/trainings",
+    path: "/resources/pcb/trainings",
+    title: "Explore ITS Trainings",
+  },
+  {
+    description: "Access brief videos for quick, focused learning on ITS topics.",
+    image: "pcb/actions/microlearning",
+    path: "/resources/pcb/microlearning",
+    title: "Explore Microlearning Videos",
+  },
+  // {
+  //   title: "Access Academic Resources",
+  //   description: "Connect with tools and materials to support students and faculty in preparing for careers in ITS.",
+  //   path: "/resources/pcb/academic-resources",
+  //   image: "resources",
+  // },
+  {
+    description: "Engage with your peers to share your challenges, best practices, and experiences advancing ITS technologies.",
+    image: "pcb/actions/peer-exchanges",
+    path: "/resources/pcb/peer-exchanges",
+    title: "Collaborate through Peer Exchanges",
+  },
+  // {
+  //   title: "Access V2X Educational Resources",
+  //   description: "Access educational resources for testing and deploying V2X technologies.",
+  //   path: "/resources/pcb/cave",
+  //   image: "v2x-tools"
+  // },
+  // {
+  //   title: "View or Register for Webinars",
+  //   description: "Learn about upcoming webinars on ITS and emerging transportation technologies, or view past webinars.",
+  //   path: "/resources/pcb/webinars",
+  //   image: "webinars"
+  // }
+]
+---
+<style>
+  .resource-card:hover {
+    background: rgba(var(--color-brand-light), 0.5);
+  }
+
+  .resource-card-image {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+  }
+
+  .resource-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem 1rem 1rem;
+    height: 100%;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    gap: var(--size)
+  }
+
+  @media (min-width: 992px) {
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+<div class="card-grid">
+  {actions.map(action => (
+    <Card class="resource-card" href={action.path} radius="md" shadow="md">
+      <CardHeader class="p-0">
+        <LibraryImage 
+          class="resource-card-image shadow"
+          entry={action.image}
+        />
+      </CardHeader>
+      <CardBody class="resource-card-body">
+        <h3 class="program-title-sm mb-2 text-foreground">
+          {action.title}
+        </h3>
+        <p class="program-text">
+          {action.description}
+        </p>
+      </CardBody>
+    </Card>
+  ))}
+</div>

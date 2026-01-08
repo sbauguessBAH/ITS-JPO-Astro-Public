@@ -1,0 +1,10 @@
+---
+import { getCollection } from "astro:content"
+
+const collection = await getCollection("library");
+const ids = collection.map(item => item.id);
+---
+Hello
+<pre>
+  {JSON.stringify(ids, null, 2)}
+</pre>

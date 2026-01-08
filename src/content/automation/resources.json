@@ -1,0 +1,302 @@
+[
+ 
+  {
+    "area": "Analysis, Modeling, and Simulation (AMS)",
+    "year": 2018,
+    "project": "AV Impact Assessment and System Dynamics",
+    "deliverable": "Key performance indicators for assessing the impacts of automation in road transportation: Results of the Trilateral key performance indicator survey",
+    "url": "https://www.vtt.fi/inf/julkaisut/muut/2018/VTT-R-01054-18.pdf",
+    "id": "3"
+  },
+
+
+
+  {
+    "area": "Analysis, Modeling, and Simulation (AMS)",
+    "year": 2023,
+    "project": "Improving Analysis, Modeling and Simulation for Connected and Automated Vehicles (Industrial)",
+    "deliverable": "Advanced Driver Assistance System (ADAS)-Equipped Single-Vehicle Data for Central Ohio",
+    "url": "https://data.transportation.gov/Automobiles/Advanced-Driver-Assistance-System-ADAS-Equipped-Si/iie8-uenj/about_data",
+    "id": "7"
+  },
+  {
+    "area": "Analysis, Modeling, and Simulation (AMS)",
+    "year": 2023,
+    "project": "Improving Analysis, Modeling and Simulation for Connected and Automated Vehicles (Industrial)",
+    "deliverable": "Advanced Driver Assistance System (ADAS)-Equipped Two-Vehicle Data for Central Ohio",
+    "url": "https://data.transportation.gov/Automobiles/Advanced-Driver-Assistance-System-ADAS-Equipped-Tw/vhz2-exyi/about_data",
+    "id": "8"
+  },
+  {
+    "area": "Analysis, Modeling, and Simulation (AMS)",
+    "year": 2024,
+    "project": "Analysis, Modeling, and Simulation (AMS) for Intelligent Transportation Systems (ITS)",
+    "deliverable": "State of Practice— AMS for ITS State of Practice",
+    "url": "https://rosap.ntl.bts.gov/view/dot/74637",
+    "id": "9"
+  },
+  {
+    "area": "Analysis, Modeling, and Simulation (AMS)",
+    "year": 2024,
+    "project": "Analysis, Modeling, and Simulation (AMS) for Intelligent Transportation Systems (ITS)",
+    "deliverable": "State of Research— AMS for ITS State of Research",
+    "url": "https://rosap.ntl.bts.gov/view/dot/74633",
+    "id": "10"
+  },
+  {
+    "area": "Analysis, Modeling, and Simulation (AMS)",
+    "year": 2025,
+    "project": "Federal Highway Administration (FHWA) Connected and Automated Vehicles (CAV) Analysis, Modeling, and Simulation (AMS)",
+    "deliverable": "Modeling Wireless Communications in Traffic Simulation Models",
+    "url": "https://rosap.ntl.bts.gov/view/dot/80649",
+    "id": "11"
+  },
+  {
+    "area": "Analysis, Modeling, and Simulation (AMS)",
+    "year": 2025,
+    "project": "Federal Highway Administration (FHWA) Connected and Automated Vehicles (CAV) Analysis, Modeling, and Simulation (AMS)",
+    "deliverable": "Connected, Automated, and Electric: Modeling Traffic and Traveler Choice Considering the Three Mega-Trends",
+    "url": "https://rosap.ntl.bts.gov/view/dot/78521",
+    "id": "12"
+  },
+  {
+    "area": "Analysis, Modeling, and Simulation (AMS)",
+    "year": 2025,
+    "project": "Federal Highway Administration (FHWA) Connected and Automated Vehicles (CAV) Analysis, Modeling, and Simulation (AMS)",
+    "deliverable": "Future Effective Capacity: Assessing Traffic Flow Impacts for Variable Levels of Automation and Market Acceptance",
+    "url": "https://rosap.ntl.bts.gov/view/dot/78522",
+    "id": "13"
+  },
+  {
+    "area": "Automated Driving System (ADS) Integration",
+    "year": 2018,
+    "project": "Automation Policy Analysis and Support",
+    "deliverable": "Review of the Federal Motor Carrier Safety Regulations for Automated Commercial Vehicles: Preliminary Assessment of Interpretation and Enforcement Challenges, Questions, and Gaps",
+    "url": "https://rosap.ntl.bts.gov/view/dot/35426",
+    "id": "14"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2015,
+    "project": "Cooperative Adaptive Cruise Control (CACC)",
+    "deliverable": "Vehicle-to-infrastructure Program Cooperative Adaptive Cruise Control: Final Report",
+    "url": "https://rosap.ntl.bts.gov/view/dot/3580",
+    "id": "15"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2019,
+    "project": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1 Project",
+    "deliverable": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1 Project: Final Report",
+    "url": "https://rosap.ntl.bts.gov/view/dot/50741",
+    "id": "16"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2019,
+    "project": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1 Project",
+    "deliverable": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1 Project: Cooperative Adaptive Cruise Control (CACC) Vehicle Build and Testing Report",
+    "url": "https://rosap.ntl.bts.gov/view/dot/50733",
+    "id": "17"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2019,
+    "project": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1 Project",
+    "deliverable": "Traffic Optimization for Signalized Corridors (TOSCo): Phase 1 Project Functional Safety Concept and Hazard Analysis",
+    "url": "https://rosap.ntl.bts.gov/view/dot/50736",
+    "id": "18"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2019,
+    "project": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1 Project",
+    "deliverable": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1: Project Infrastructure System Requirements and Architecture Specification",
+    "url": "https://rosap.ntl.bts.gov/view/dot/50739",
+    "id": "19"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2019,
+    "project": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1 Project",
+    "deliverable": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1 Project: Vehicle System Requirements and Architecture Specification",
+    "url": "https://rosap.ntl.bts.gov/view/dot/50738",
+    "id": "20"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2019,
+    "project": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1 Project",
+    "deliverable": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 1 Project: Vehicle-level Simulation Report",
+    "url": "https://rosap.ntl.bts.gov/view/dot/50734",
+    "id": "21"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2020,
+    "project": "Cooperative Driving Automation",
+    "deliverable": "Detailed Concept of Operations: Transportation Systems Management and Operations/Cooperative Driving Automation Use Cases and Scenarios",
+    "url": "https://rosap.ntl.bts.gov/view/dot/54778",
+    "id": "22"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2020,
+    "project": "Feasibility Study and Assessment of Communications Approaches for Real-Time Traffic Signal Applications Study",
+    "deliverable": "Feasibility Study and Assessment of Communications Approaches for Real-Time Traffic Signal Applications: Factsheet",
+    "url": "https://rosap.ntl.bts.gov/view/dot/53935",
+    "id": "23"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2020,
+    "project": "Feasibility Study and Assessment of Communications Approaches for Real-Time Traffic Signal Applications Study",
+    "deliverable": "Feasibility Study and Assessment of Communications Approaches for Real-Time Traffic Signal Applications: Tech Brief",
+    "url": "https://rosap.ntl.bts.gov/view/dot/53934",
+    "id": "24"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2020,
+    "project": "Feasibility Study and Assessment of Communications Approaches for Real-Time Traffic Signal Applications Study",
+    "deliverable": "Feasibility Study and Assessment of Communications Approaches for Real-Time Traffic Signal Applications Study: Supporting Datasets",
+    "url": "https://rosap.ntl.bts.gov/view/dot/54774",
+    "id": "25"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2020,
+    "project": "Feasibility Study and Assessment of Communications Approaches for Real-Time Traffic Signal Applications Study",
+    "deliverable": "Feasibility Study and Assessment of Communications Approaches for Real-Time Traffic Signal Applications Study Data",
+    "url": "https://datahub.transportation.gov/Research-and-Statistics/Feasibility-Study-and-Assessment-of-Communications/dsgr-arn8",
+    "id": "26"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2021,
+    "project": "Development of Vehicle-to-Infrastructure Applications (V2I) Program",
+    "deliverable": "Development of Vehicle-to-Infrastructure Applications Program Seventh Annual Report",
+    "url": "https://rosap.ntl.bts.gov/view/dot/60380",
+    "id": "27"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2022,
+    "project": "Cooperative Driving Automation: Research into Automated Port Operations and Automated Commercial Motor Vehicle Operations",
+    "deliverable": "Proof-of-Concept Demonstration for Automated Port Drayage (Video)",
+    "url": "https://www.youtube.com/watch?v=qEpeB2Ym_hs",
+    "id": "28"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2022,
+    "project": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 2 Project",
+    "deliverable": "Modeling and Benefits Estimation - SH 105",
+    "url": "https://rosap.ntl.bts.gov/view/dot/66287",
+    "id": "29"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2022,
+    "project": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 2 Project",
+    "deliverable": "Modeling and Benefits Estimation - FM 1960",
+    "url": "https://rosap.ntl.bts.gov/view/dot/65980",
+    "id": "30"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2022,
+    "project": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 2 Project",
+    "deliverable": "Functional Safety Concept and Hazard Analysis",
+    "url": "https://rosap.ntl.bts.gov/view/dot/64925",
+    "id": "31"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2022,
+    "project": "Traffic Optimization for Signalized Corridors (TOSCo) Phase 2 Project",
+    "deliverable": "Final Report",
+    "url": "https://rosap.ntl.bts.gov/view/dot/65659",
+    "id": "32"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2019,
+    "project": "Truck Platooning: Early Deployment Assessment - Independent Evaluation",
+    "deliverable": "Truck Platooning Early Deployment Assessment - Independent Evaluation: Requirements for Performance Measures Report",
+    "url": "https://rosap.ntl.bts.gov/view/dot/43724",
+    "id": "33"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2020,
+    "project": "Truck Platooning: Early Deployment Assessment - Independent Evaluation",
+    "deliverable": "Truck Platooning Early Deployment Assessment - Independent Evaluation: Performance Measures for Evaluating Truck Platooning Field Deployments Report",
+    "url": "https://rosap.ntl.bts.gov/view/dot/50551",
+    "id": "34"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2021,
+    "project": "Truck Platooning Impacts on Bridges, Phase I Structural Safety",
+    "deliverable": "Truck Platooning Impacts on Bridges, Phase I Structural Safety: Final Report",
+    "url": "https://www.fhwa.dot.gov/bridge/loadrating/pubs/hif21043.pdf",
+    "id": "35"
+  },
+  {
+    "area": "Cooperative Driving Automation (CDA)",
+    "year": 2022,
+    "project": "Truck Platooning: Early Deployment Assessment - Independent Evaluation",
+    "deliverable": "Truck Platooning Early Deployment Assessment: Independent Evaluation- Expanded Analysis Plan",
+    "url": "https://rosap.ntl.bts.gov/view/dot/64246",
+    "id": "36"
+  },
+  {
+    "area": "Human Factors",
+    "year": 2019,
+    "project": "Driver Acceptance of Vehicle Automation - Function-Specific Automation (Level 1) Applications",
+    "deliverable": "Driver Acceptance of Connected, Automation-Assisted Cruise Control- Experiment 1 Report",
+    "url": "https://rosap.ntl.bts.gov/view/dot/37529",
+    "id": "37"
+  },
+  {
+    "area": "Human Factors",
+    "year": 2020,
+    "project": "Driver Acceptance of Vehicle Automation - Function-Specific Automation (Level 1) Applications",
+    "deliverable": "Tech Brief: To Alert or Assist: Comparing Effects of Different Lateral Support Systems on Lane-Keeping: Tech Brief",
+    "url": "https://www.fhwa.dot.gov/publications/research/safety/20068/20068.pdf",
+    "id": "38"
+  },
+  {
+    "area": "Human Factors",
+    "year": 2020,
+    "project": "Investigating Key Automated Vehicle Human Factors Safety Issues related to Infrastructure",
+    "deliverable": "Investigating Key Automated Vehicle Human Factors Safety Issues Related to Infrastructure: Summary of Stakeholder Workshop",
+    "url": "https://rosap.ntl.bts.gov/view/dot/50934",
+    "id": "39"
+  },
+  {
+    "area": "Human Factors",
+    "year": 2021,
+    "project": "Driver Acceptance of Vehicle Automation - Function-Specific Automation (Level 1) Applications",
+    "deliverable": "The Effects of Vehicle Automation on Driver Engagement: The Case of Adaptive Cruise Control and Mind Wandering: Tech Brief",
+    "url": "https://www.fhwa.dot.gov/publications/research/safety/21017/index.cfm",
+    "id": "40"
+  },
+  {
+    "area": "Other",
+    "year": 2021,
+    "project": "Tech-celerate",
+    "deliverable": "Advanced Driver-Assistance Systems Video Website",
+    "url": "https://www.fmcsa.dot.gov/tech-celerate-now/adas-technology-videos",
+    "id": "41"
+  },
+  {
+    "area": "Other",
+    "year": 2021,
+    "project": "Tech-celerate",
+    "deliverable": "Advanced Driver-Assistance Systems Guides and Brochures",
+    "url": "https://www.fmcsa.dot.gov/tech-celerate-now/truck-operators-guide-advanced-driver-assistance-systems",
+    "id": "42"
+  }
+]

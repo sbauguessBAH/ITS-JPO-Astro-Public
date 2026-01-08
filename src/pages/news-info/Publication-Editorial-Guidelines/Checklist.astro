@@ -1,7 +1,6 @@
 ---
 import banner from "@/src/assets/images/banners/Default_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 import base_url from "../../../lib/base_url";
 
 const keywords = [
@@ -26,7 +25,6 @@ const description =
 <PageLayout title="Publications Checklist" bannerImage={banner} keywords={keywords} description={description}>
     <Fragment slot="banner">Publication Editorial Guidelines</Fragment>
 
-  <SidebarLayout path="/news-info/">
     
       <h2 class="sideways blue">Publications Checklist</h2>
 
@@ -63,5 +61,4 @@ const description =
         <li>Is your publication formatted to fit the <a href={base_url("/assets/documents/Template_JPO_reportfinal.docx")} target="_blank" rel="noopener">template</a> posted on the ITS JPO website?</li>
       </ul>
     
-  </SidebarLayout>
 </PageLayout>

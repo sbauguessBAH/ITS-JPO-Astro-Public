@@ -1,0 +1,249 @@
+---
+import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar.png";
+import jeremyDilmore from "@/src/assets/images/pcb/webinars/headshots/jeremy-dilmore.jpg";
+import stephanieMarik from "@/src/assets/images/pcb/webinars/headshots/stephanie-marik.jpg";
+import wangZhang from "@/src/assets/images/pcb/webinars/headshots/wang-zhang.png";
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+// import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../../_layout.astro";
+import HostCard from "./_host-card.astro";
+
+const hosts = [
+  {
+    description: "Mr. Colyar (host) is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Specialist with the FHWA Office of Operations. He has been with FHWA for over 20 years. He has experience in traffic engineering, traffic analysis and modeling, intelligent transportation systems, and transportation systems management and operations. Mr. Colyar holds an MS in civil engineering from North Carolina State University and an MS in Transportation Policy, Operations & Logistics from George Mason University.",
+    image: jamesColyar,
+    name: "James Colyar",
+    title: "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Office of Operations"
+  },
+]
+
+const presenters = [
+  {
+    description: "Ms. Marik has worked in Operations for The Ohio Department of Transportation since 2013. In her current role as the Transportation Systems Performance Engineer, within the Office of Traffic Management, she provides engineering analysis and creates reports and dashboards related to congestion, mobility, and incident management.",
+    image: stephanieMarik,
+    name: "Stephanie Marik",
+    title: "Road Weather Instructor, Ohio Department of Transporation"
+  },
+  {
+    description: "Dr. Zhang (Arterial Co-Instructor) is the transportation data program manager at the Maricopa Association of Governments (MAG). He received his Ph.D. in civil engineering from Virginia Tech in 2006. For the last fifteen years at MAG, his work involves transportation data collection and processing, and applying data analytics and visualizations to system analysis, transportation modeling, and planning studies. He has experience in leveraging a wide span of transportation data from traditional ones to cutting-edge ones.",
+    image: wangZhang,
+    name: "Dr. Wang Zhang",
+    title: "Transportation Data Program Manager, Maricopa Association of Governments"
+  },
+  {
+    description: "Mr. Dilmore (Arterial Co-Instructor) is the Transportation Systems Management and Operation Engineer for the Florida Department of Transportation District 5. In this position, he is responsible for leading FDOT’s technology efforts including working in the fields of signal timing optimization, managed lanes, simulation modeling, and connected and autonomous vehicles.",
+    image: jeremyDilmore,
+    name: "Jeremy Dilmore",
+    title: "Transportation Systems Management and Operation Engineer, Florida Department of Transportation District 5"
+  },
+]
+---
+<style>
+  .resource-container {
+    background: rgb(var(--color-gray-light));
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .resource-card-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-sm);
+    align-items: center;
+  }
+  .resource-card-button:hover {
+    font-weight: inherit;
+    background: rgb(var(--color-brand-dark))
+  }
+  .resource-links {
+    display: flex;
+    flex-direction: row;
+    gap: var(--size-sm)
+  }
+  a::after {
+    content: "" !important;
+  }
+</style>
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <Breadcrumb items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        { name: "Crowdsourcing for Operations", path: "/resources/pcb/trainings/cs4ops" },
+        { name: "Part 4" }
+      ]}/>
+      <h2 class="program-title-lg">
+        Road Weather and Arterial Management
+      </h2>
+      <p>July 18, 2023</p>
+      <div class="resource-container mb-4">
+        <h3 class="program-title-md">Presentation</h3>
+        <p class="program-text">
+          Crowdsourcing Course (Part 4 of 5): Road Weather and Arterial Management
+          <br/>
+          (Colyar, Marik, Zhang, Dilmore)
+        </p>
+        <div class="resource-links">
+          <a 
+            class="resource-card-button" 
+            href="https://usdot.zoomgov.com/rec/play/bTqAM-d2viu7vUKcGAuVmTKXmaVr66M6AV-6VQ8ywl72pwS_M8axgnvvGYKg0Cab4DN1XMoaxFCnV2Hg.Dgzmj9pLgRz_2C5J?continueMode=true.aspx" 
+            rel="noopener noreferrer" 
+            target="_blank"
+          >
+            <FilmIcon/>
+            Webinar Replay
+          </a>
+          <!-- <a 
+            class="resource-card-button" 
+            href={base_url("/assets/pcb/cs4ops/part-4/s230815_Crowdsourcing_Course_Road_Weather_and_Arterial_Management_presentation.pptx")} 
+            rel="noopener noreferrer" 
+            target="_blank"
+          >
+            <PptIcon/>
+            PowerPoint
+          </a> -->
+          <a 
+            class="resource-card-button" 
+            href={base_url("/assets/pcb/cs4ops/part-4/s230815_Crowdsourcing_Course_Road_Weather_and_Arterial_Management_presentation.pdf")} 
+            rel="noopener noreferrer" 
+            target="_blank"
+          >
+            <PdfIcon/>
+            PDF
+          </a>
+        </div>
+      </div>
+      <h3 class="program-title-md">
+        Learning Objectives
+      </h3>
+      <ul class="program-list">
+        <li>
+          Identify components of and challenges faced by State and local arterial and road weather management programs.
+        </li>
+        <li>
+          Understand how crowdsourced data can enhance key aspects of arterial and road weather management programs.
+        </li>
+        <li>
+          Share peer experiences regarding the use of crowdsourced data for arterial and road weather management programs.
+        </li>
+      </ul>
+      <h3 class="program-title-md">
+        Question and Answer Discussion
+      </h3>
+      <p class="program-text">
+        This webinar featured a question and answer session. A transcript of the questions asked and responses provided are below.
+      </p>
+      <Accordion id="part-4">
+        <AccordionItem
+          index={1}
+          title="Talking about your last slide. You had a note about improving data and processing efficiency. Can you briefly share more details about your agency's challenges with this and or any plans or ideas for how you hope to overcome such."
+        >
+          <strong>Dr. Wang Zhang:</strong>
+          <p class="program-text">
+            Thank you for your question. As I mentioned, our agency handles entire data in-house. So we have a data store on site, and we utilize our staff expertise to process and answer data and provide information to our planners for whatever they need.
+          </p>
+          <p class="program-text">
+            One of the goals we try to achieve—it's been working. Progress is trying to improve the efficiency to provide the useful information to our stake holders. Big data is huge, and it takes us effort to crank out the data and to get the valuable information out. We're constantly looking for tools and the platforms to help us to do the work more efficiently. I think understanding our goal as data analysts is to provide tools and useful information to the stakeholders. How can we do a better job in terms of getting the required information faster? Or getting the information into a specific visualization or infographics for people to digest even though they do not have the background of specific data sets has always been on going and technically I want to break down two major developments. We have been doing it with improving the data processing efficiency. First of all, we have a goal to align this data to a particular model network. So we wanted to join the data to the network and with that we can attach many different measurements to the network links and allow us to move on to the next step. Analysis has been challenging in the past, as you may understand. Data selection for a particular geography coverage is a really time-consuming process to us. Another thing we are trying to solve is lots and lots of data. It's constantly increasing our storage needs and we cannot afford to expand our data storage for that. So, we're looking for any help to kind of compress the datasets so we can archive them. That way we can access data for a particular timeframe or particular coverage that we need.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={2}
+          title="The role of automation and the level of resources it takes—what level of resources were needed to automate the reporting process? And was that an internal or external effort with in-house staff or vendor support or consultant support?"
+        >
+          <strong>Jeremy Dilmore:</strong>
+          <p class="program-text">
+            I think a lot of it depends on whether or not you're blazing a new trail, or if you're going ahead and looking at some of the work that's already been done. I mentioned when we went ahead, and we're able to take some of the work that Lake County had already done very easily with our program. I was able to go ahead and take that open-source code, and they were able to go ahead and drop it into our development environment within a day. We had that data streaming to us and have the 2-minute data that's coming in from Waze when we've gone ahead and looked at the development ourselves of being able to stand up new systems for adjusting that information and writing the code. It's varied from things that have taken weeks. There have been some that have taken months, and there have been some that have taken years, depends upon the level of complexity. The good news is that there are others that are in this workspace, and that we can reach out to them and try to leverage that benefit of them having already done work. From our standpoint, we actually have about one and a half positions that are developers that are full time that are part of the TMC [Transportation Management Center] staff that are constantly looking at automating processes. And crowdsource data is one of those that they've gone ahead and put in place. Our smallest lift I mentioned was a one-day. Our largest lift was going through and validating data created into systems has been somewhere around 30-45 days of the developer and half worth of time. So it's been about the order of magnitude they have using very well described APIs and they're doing a lot of the data cleaning on their side, which I contrast with us doing the work with our sensor-based system. This is a considerably heavier lift considering we're having to do a lot of the cleaning ourselves and having to look at maintaining the units and understanding when they go out of service. So it actually seems a little bit simpler than what our task is for automating our sensor systems.
+          </p>
+          <strong>Stephanie Marik:</strong>
+          <p class="program-text">
+            I can join in from the Ohio side. We had kind of a combination of whether it was consultant-based or internal. We initially had to stand up our own Tismo data warehouse we found in order to be able to ingest all of the INRIX data that we get because we download every segment for the state on 5 min intervals for every day. So that is a huge amount of data that we have, so we initially brought in a consultant on board to help stand up our data warehouse for us, and then with the automation of the APIs and Python scripts and everything, we actually had somebody internally on our team who was able to build all of those. This individual has since moved to CA and so we are learning that as an agency, we don't necessarily have that expertise within Python and so we're kind of looking now to how to keep it going. Some of our team dabbles but it's an interesting dynamic now that we're kind of going through with that. We did do a lot of it internally, but we're looking for more automations that we may need to bring in some other consultant's help for that, unless if whether that's through the IT side or within our team itself.
+          </p>
+          <strong>Dr. Wang Zhang:</strong>
+          <p class="program-text">
+            I think it is both ways. We all need to be continuing to be educated with this new technology and new data sets and new tools to leverage such data. From outside, similar to what Ohio DOT does, we opened up a pool for accepting the qualified consultant and vendors on board, so they are ready to help whenever we need it. We can reach out to them if it is something we cannot handle.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={3}
+          title="What biases might be in your crowdsource data sources? How do you know if there is bias? Have you done any investigations to compare to sensor survey-based data?"
+        >
+          <strong>Dr. Wang Zhang:</strong>
+          <p class="program-text">
+            From our side, that's part of our evaluation given before we put our hands onto the data analysis. We don't necessarily jump on our particular data system right away. We want to pilot it because from our own experience, and when you value the new database, we're always looking to the issues, such as virus issues, so we try to bring in some other similar data system to compare ways. The data may be put for certain applications, but not for all the applications. For example, in arterial management, we understand connecting vehicle data says, is a step up because it provides way more samples than we used to have. So, we're measuring mobilities instead of the travel pattern changes, or the OD changes. Analysis, for example, would already have higher sample rates than the connectivity data has. So understanding the post and counts of the data put that into application to avoid those biases. Don't trust everything that vendor has told you and gain your own experience. Understand the pros and cons utilizing whatever resource and other similar data sets you have is also important.
+          </p>
+          <strong>Jeremy Dilmore:</strong>
+          <p class="program-text">
+            I agree with what Dr. Zhang is saying. We've seen some biases were in low-income areas, with this low turnover of vehicles, you might get an undersampling of those particular areas. We also have to remember that there was bias in the way we looked at things like floating car analysis in the past. We did a limited number of runs just like he was mentioning and we would do them during times of day that we thought were important. We did it on days that were normal days. What we didn't do is capture some of the irregularities that normally happen on our roadways. The example with the folks up in Lake County, where they develop tiny plans around icy conditions—trying to do that with a floating car analysis would be extremely difficult, trying to look at detour timing—those types of things are difficult without having a representative dataset so what we've tried to do is look at fusing data, so that we know that we're getting broad base samples from sensors and we can't afford it from everywhere. So being able to use the two together, we've seen where that can help us correct for some of the biases that may be able to see with my crowdsource data and if that allows us to then be able to utilize the benefits of being able to sample all these different conditions that have on our roadside, the public expects us to react to in order for us to build better to serve them. You have to be cognizant of what's in the data set.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={4}
+          title="It looks like with Ohio you're using the INRIX speed data. Are there plans to use other data, crowdsource or not? If so, what integration challenges do you foresee with that?"
+        >
+          <strong>Stephanie Marik:</strong>
+          <p class="program-text">
+            Right now, we use the INRIX speed data for the majority of metrics, both like I mentioned TOAST, and with our snow and ice performance evaluator. Some of the data that we are interested in getting—some of those other examples that I provided from other organizations on the road weather management would be interesting to look at because something we are looking to is some supplemental data to our road weather sensors. We have an issue sometimes with specifically solar-based sites in the wintertime. Obviously, there's not a ton of sun, so they happen to go down right in the middle of storms when we need them. We are curious to look into more ways to find out that weather data—whether it's through Waze—information or potentially I know one of the things we've looked at is we have our GPS AVL camera feeds. We've talked about potentially using that from the trucks that are out plowing and having some sort of AI machine learning to look at those camera images to determine whether it is snowing or not. Those are some of the things we are looking at for our road weather management data.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={5}
+          title="This question deals with data quality. Getting away from non-sensor data may degrade the overall data quality within the agency. How does FDOT overcome this perception that nonsensor data could degrade the overall data quality?"
+        >
+          <strong>Jeremy Dilmore:</strong>
+          <p class="program-text">
+            I think it relates back to some experience that we had was when we started purchasing third party data. People started really taking a close look at it and trying to say, “Okay. What are the inaccuracies that we're seeing within that data set?”—really having a hyper focus on this. We see those things over there going on and what we haven't seen was there was the same focus on the data that we were producing from our sensors. We went ahead and had been doing it—working with our university and instead of looking just at crowdsource data and looking at the biases, things that are looking like imperfections in the data set—we also look at our sensor data the same way. When we see that nothing is perfect and how can we utilize them together? It gives us a basis of comparison when you realize that what you're working from may be 90 percent accurate, adding something else in that's 90 percent accurate a different way. You can actually do more with it. We've looked at ways in which to combine that information by using research from our universities, so it helps to establish confidence by pointing out that we were relying upon it—have been for a 10 plus 15 years. That data in and of itself has errors included in it. We've been able to do our job fairly effectively. It's from the perception of not comparing it to 100 percent. Comparing it to what the alternative is, in order for us to be able to serve the need that's out there. Our focus is to not compare things to be perfect but to compare them against what the alternative is out there and what the need is for the use case. That allows us to overcome the new guy to the table getting graded a little bit harder than the folks that have been there historically.
+          </p>
+        </AccordionItem>
+        <AccordionItem
+          index={6}
+          title="This question deals with data privacy. What have you heard in regard to data privacy and how do you typically deal with that issue or concern?"
+        >
+          <strong>Dr. Wang Zhang:</strong>
+          <p class="program-text">
+            We're working with data providers these days and they try to stay away from the data privacy issue as much as they can nowadays. They are reluctant to sell the raw data with agencies. Rather, they would like to provide analytics from the data or aggregated data sets that you would keep this data privacy away from it. So that's that first point I try to make in terms of connectivity data we've been using. There's also a computer on anonymous that does not have any personal information or particular information of that vehicle attached to the data sets. All we know is where they travel and how fast we are going.
+          </p>
+        </AccordionItem>
+      </Accordion>
+    </ProgramSection>
+    <ProgramSection color="gray" size="small">
+      <h3 class="program-title-md mb-4">
+        Host
+      </h3>
+      {hosts.map((item) => (
+        <HostCard
+          description={item.description}
+          image={item.image}
+          name={item.name}
+          title={item.title}
+        />
+      ))}
+      <h3 class="program-title-md mb-4">
+        Presenters
+      </h3>
+      {presenters.map((item) => (
+        <HostCard
+          description={item.description}
+          image={item.image}
+          name={item.name}
+          title={item.title}
+        />
+      ))}
+    </ProgramSection>
+  </main>
+</Layout>

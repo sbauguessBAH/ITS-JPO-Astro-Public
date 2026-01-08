@@ -1,6 +1,5 @@
 ﻿---
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 
 const keywords = [
   "ITS",
@@ -19,7 +18,7 @@ const description =
 
 <PageLayout title="About - ITS Joint Program Office" keywords={keywords} description={description}>
   <Fragment slot="banner">ITS Joint Program Office</Fragment>
-  <SidebarLayout path="/about/">
+  <main>
     <div class="row">
       <div class="col">
         <h2>About Us</h2>
@@ -35,5 +34,5 @@ const description =
         </p>
       </div>
     </div>
-  </SidebarLayout>
+  </main>
 </PageLayout>

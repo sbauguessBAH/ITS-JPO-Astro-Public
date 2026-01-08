@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import vue from "@astrojs/vue";
 
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
@@ -9,14 +10,17 @@ export default defineConfig({
   base: "",
   site: "https://www.its.dot.gov",
   output: "static",
-  integrations: [partytown(), sitemap()],
+  integrations: [partytown(), sitemap(), vue()],
   redirects: {
     "/index.htm": "/",
     "/about/its_jpo.htm": "/about",
-    "/research_areas/automation/index.htm": "/research-areas/Automation-Program",
+    "/research_areas/automation/index.htm": "/research-areas/automation-program",
     "/contacts/stafflisting.htm": "/about/contact-us/staff-listing",
     "/its4us/index.htm": "/research-areas/ITS4US",
+    "/its4us/": "/research-areas/ITS4US",
     "/communications/its_images.htm": "/news-info/image-library",
-    "/pcb": "/resources/Professional-Capacity-Building/",
+    "/pcb": "/resources/pcb",
+    "/resources/Professional-Capacity-Building/": "/resources/pcb",
+
   },
 });

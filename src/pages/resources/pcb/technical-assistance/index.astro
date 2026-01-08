@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Layout from "../_layout.astro";
+import base_url from "@/src/lib/base_url";
+import caveDesignDocuments from "@/src/assets/images/pcb/cave/cave-design-documents.jpg";
+import AcceleratingV2XCohort from "@/src/assets/images/pcb/Accelerating-V2X-Cohort-thumb.png"
+---
+<style>
+  .ta-index-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .ta-index-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .ta-index-card {
+    background: var(--color-white, #fff);
+    border-radius: var(--radius-lg, 1rem);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    overflow: hidden;
+    width: 320px;
+    text-align: center;
+    transition: box-shadow 0.2s;
+  }
+  .ta-index-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  }
+  .ta-index-thumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: #f3f3f3;
+    display: block;
+  }
+  .ta-index-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .ta-index-link {
+    display: block;
+    color: var(--color-primary, #005ea2);
+    text-decoration: none;
+    padding: 1rem;
+  }
+</style>
+
+<Layout>
+  <main class="program-main">
+    <ProgramSection class="pb-5" color="gray">
+      <h2 class="program-title-lg text-center mb-4">
+        Technical Assistance Resources
+      </h2>
+      <div class="ta-index-section">
+         <div class="">
+            <p>Explore technical assistance resources for Connected and Automated Vehicle Education (CAVe) Design Documents and the Accelerating Vehicle-to-Everything (V2X) Cohort. Click a card to learn more about each program.</p>
+          </div>
+        <div class="ta-index-cards">
+          
+          <a href={base_url("/resources/pcb/technical-assistance/cave/")} class="ta-index-link">
+            <div class="ta-index-card">
+
+                <Image alt="CAVe-in-a-box" class="ta-index-thumb" src={caveDesignDocuments}/>
+              <div class="ta-index-title">Connected and Automated Vehicle Education (CAVe)</div>
+            </div>
+          </a>
+         
+          
+          <a href={base_url("/resources/pcb/technical-assistance/v2x-cohort/")} class="ta-index-link">
+
+            <div class="ta-index-card">
+                <Image alt="CAVe-in-a-box" class="ta-index-thumb" src={AcceleratingV2XCohort}/>
+              <div class="ta-index-title">Accelerating Vehicle-to-Everything (V2X) Cohort</div>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </ProgramSection>
+  </main>
+</Layout>

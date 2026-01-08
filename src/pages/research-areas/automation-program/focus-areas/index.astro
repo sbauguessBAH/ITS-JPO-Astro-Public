@@ -1,0 +1,151 @@
+---
+import DownloadIcon from "@/src/components/programs/icons/DownloadIcon.astro";
+import OverlayCard, { type OverlayResource } from "@/src/components/programs/OverlayCard.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+import Layout from "../_layout.astro";
+import Roadmap from "../_roadmap.astro";
+
+const focusAreas: OverlayResource[] = [
+  { 
+    backgroundImage: "automation/focus-areas/cooperative-driving-automation",
+    color: "blue",
+    description: "Assess the feasibility of conducting a small-scale CDA pilot (focusing on L0-2 with Interoperable Connectivity) and package the accomplishments for design and architecture.",
+    iconImage: "automation/focus-areas/icon-cda",
+    name: "Cooperative Driving Automation (CDA)",
+    path: "/research-areas/automation-program/focus-areas/cda",
+  },
+  { 
+    backgroundImage: "automation/focus-areas/analysis-modeling-simulation",
+    color: "green",
+    description: "Crosscutting research and resource development including design, planning, operations, and impact assessments informed by improved AMS.",
+    iconImage: "automation/focus-areas/icon-ams",
+    name: "Analysis, Modeling and Simulation (AMS)",
+    path: "/research-areas/automation-program/focus-areas/ams"
+  },
+  { 
+    backgroundImage: "automation/focus-areas/human-factors",
+    color: "orange",
+    description: "Identify likely safety-relevant scenarios where human performance and interaction behaviors with vehicle automation technologies have a mismatch and develop corresponding Human Factors best practices.",
+    iconImage: "automation/focus-areas/icon-human-factors",
+    name: "Human Factors",
+    path: "/research-areas/automation-program/focus-areas/human-factors",
+  },
+  { 
+    backgroundImage: "automation/focus-areas/automated-driving-system",
+    color: "purple",
+    description: "Explore recommended practices to address safe and efficient Automated Driving System (ADS) Integration into the transportation system.",
+    iconImage: "automation/focus-areas/icon-ads",
+    name: "Automated Driving System (ADS) Integration",
+    path: "/research-areas/automation-program/focus-areas/ads"
+  },
+]
+
+---
+<style>
+  .roadmap-image {
+    width: 100%;
+    min-width: 992px;
+    /* height: auto; */
+  }
+  .roadmap-image-container {
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    overflow-x: auto;
+  }
+
+  .roadmap-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: var(--radius-md);
+    max-width: fit-content;
+  }
+
+  .roadmap-footer {
+    background: rgb(var(--color-gray-light));
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+</style>
+<style>
+  .strategy-container {
+    background: rgb(var(--color-gray-light));
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .strategy {
+    display: flex;
+    gap: 1rem;
+  }
+  .strategy-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .strategy-title {
+    color: rgb(var(--color-brand-dark));
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+  .strategy-icon {
+    background: rgb(var(--color-brand-dark));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+    font-weight: 600;
+  }
+  .strategy-description {
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+  }
+</style>
+<style>
+  .focus-area-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+
+  @media (min-width: 992px) {
+    .focus-area-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+<Layout>
+  <main class="program-main">
+    
+    <ProgramSection color="gray">
+      <h2 class="program-title-lg text-center">Focus Areas</h2>
+      <p class="program-text text-center max-w-lg mx-auto">
+        In collaboration with the Operating Administrations, ITS JPO prioritized 
+        near-term research focus areas to directly address strategies stated above, 
+        and achieve desired outcomes across four current focus areas:
+      </p>
+      <div class="focus-area-container mt-4" role="directory">
+        {focusAreas.map(focusArea => (
+          <OverlayCard {...focusArea}/>
+        ))}
+      </div>
+    </ProgramSection>
+    
+  </main>
+</Layout>

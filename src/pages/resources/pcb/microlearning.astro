@@ -1,0 +1,101 @@
+---
+import { getCollection } from "astro:content";
+
+import Card from "@/src/components/programs/card/Card.astro"
+import CardBody from "@/src/components/programs/card/CardBody.astro"
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+
+import Layout from "./_layout.astro";
+
+const categories = await getCollection("pcbMicrolearning");
+---
+<style>
+  .micro-card:hover {
+    background: rgba(var(--color-brand-light), 0.5);
+  }
+  .micro-card-header {
+    padding: 0;
+  }
+  .micro-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .micro-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--size);
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 1200px) {
+    .micro-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .micro-card-body {
+    flex-direction: column;
+    padding: var(--size);
+  }
+
+  .micro-card-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+a[href^="http://"] .micro-card-title:after,
+a[href^="https://"] .micro-card-title:after {
+  content: '\00a0\f08e';
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+</style>
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <h2 class="program-title-lg mb-4">
+        Microlearning Videos
+      </h2>
+      <!-- <p class="program-text mb-4">
+        Access brief videos for quick, focused learning on ITS topics.
+      </p> -->
+      <div>
+        {categories.map(({ data: { title, trainings } }) => (
+          <h3 class="program-title-md mb-4">
+            {title}
+          </h3>
+          <div class="micro-grid">
+            {trainings.map(training => (
+              <Card class="micro-card" href={training.url} isExternal>
+                {training.image && 
+                  <CardHeader class="micro-card-header">
+                    <LibraryImage
+                      class="micro-card-image" 
+                      entry={training.image}
+                    />
+                  </CardHeader>
+                }
+                <CardBody class="micro-card-body">
+                  <h4 class="micro-card-title">
+                    {training.title}
+                  </h4>
+                  <p>
+                    {training.description}
+                  </p>
+                </CardBody>
+              </Card>
+            ))}
+          </div>
+        ))}
+      </div>
+    </ProgramSection>
+  </main>
+</Layout>

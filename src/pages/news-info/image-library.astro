@@ -1,6 +1,5 @@
 ---
 import LibraryImg from '@/src/components/Img_Library.astro';
-import SidebarLayout from "@/src/layouts/SidebarLayout.astro";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 
 // To update this page add the image to the "imageLibrary" folder then add its src to this array and give it some alt text. The alt text is used for the image title.
@@ -92,18 +91,160 @@ const description =
   <Fragment slot="banner">
     Image Library
   </Fragment>
-  <SidebarLayout path="/news-info/">
+  <main>
   <h2 class="sideways blue">Images courtesy of the U.S. Department of Transportation</h2>
   <p>Click image for downloadable high resolution version. </p>
+
+
+  <script>
+    // Wait for the DOM to be fully loaded before attaching event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      // Modal container element
+      let modal: HTMLElement | null = null;
+      // Reference to the image element in the modal (displays the full-size image)
+      let modalImg: HTMLImageElement | null = null;
+      // Reference to the alt text element in the modal (for accessibility)
+      let modalAlt: HTMLElement | null = null;
+
+      // Function to open the modal and display the full-size image
+      function openModal(card: HTMLElement) {
+        // Get modal elements by their IDs
+        modal = document.getElementById('astro-img-modal');
+        modalImg = document.getElementById('astro-img-modal-img') as HTMLImageElement | null;
+        modalAlt = document.getElementById('astro-img-modal-alt');
+        const closeBtn = document.getElementById('astro-img-modal-close');
+        const downloadBtn = document.getElementById('astro-img-modal-download');
+        // Find the anchor with data-fullsize inside the card (contains the full-size image URL)
+        const anchor = card.querySelector('a[data-fullsize]');
+        const fullsize = anchor ? anchor.getAttribute('data-fullsize') : '';
+        // Get the alt text from the image element
+        const imgElem = card.querySelector('img');
+        const alt = imgElem && imgElem.alt ? imgElem.alt : '';
+        // If all required elements exist, show the modal and set image/download attributes
+        if (modal && modalImg && fullsize) {
+          modal.style.display = 'flex'; // Show modal
+          modalImg.src = fullsize;      // Set full-size image
+          modalImg.alt = alt;           // Set alt text for accessibility
+          if (modalAlt) modalAlt.textContent = alt;
+          if (downloadBtn) (downloadBtn as HTMLAnchorElement).href = fullsize; // Set download link
+          document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+        // Attach close event every time modal is opened (ensures it's always attached)
+        if (closeBtn) {
+          closeBtn.removeEventListener('click', closeModal); // Prevent duplicate
+          closeBtn.addEventListener('click', closeModal);
+        }
+      }
+
+      // Function to close the modal and restore scroll
+      function closeModal() {
+        modal = document.getElementById('astro-img-modal');
+        if (modal) {
+          modal.style.display = 'none'; // Hide modal
+          document.body.style.overflow = '';
+        }
+      }
+
+      // Attach click and keyboard event listeners to each image card
+      document.querySelectorAll('.image-card').forEach(card => {
+        // Open modal on click
+        card.addEventListener('click', function() {
+          openModal(card as HTMLElement);
+        });
+        // Open modal on Enter key (keyboard accessibility)
+        card.addEventListener('keydown', function(e: KeyboardEvent) {
+          if (e.key === 'Enter') openModal(card as HTMLElement);
+        });
+      });
+
+      // Close modal when clicking the modal background
+      document.addEventListener('click', function(e) {
+        if (e.target && (e.target as HTMLElement).id === 'astro-img-modal') closeModal();
+      });
+    });
+  </script>
+
+  <style>
+    .image-card {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      transition: box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .image-card:hover .image-overlay {
+      opacity: 1;
+    }
+    .image-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 94, 162, 0.85);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.2s;
+      padding: 1rem;
+      text-align: center;
+    }
+    .modal-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.2s;
+    }
+    .modal-img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+      background: #fff;
+      padding: 1rem;
+    }
+    .modal-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1100;
+      background: none;
+      border: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+
   <div class="d-flex flex-wrap">
-    {ImagesArray.map((ImagesArray) => (
+    {ImagesArray.map((img) => (
       <div class="p-2 widthcontroller">
-        <LibraryImg imagePath={ImagesArray.src} altText={ImagesArray.alt} />
-        <p>{ImagesArray.alt}</p> 
+        <div class="image-card" tabindex="0" aria-label={img.alt}>
+          <LibraryImg imagePath={img.src} altText={img.alt} />
+          <div class="image-overlay">{img.alt}</div>
+        </div>
       </div>
     ))}
   </div>
 
+  <div id="astro-img-modal" class="modal-bg" style="display:none;">
+    <button id="astro-img-modal-close" class="modal-close" aria-label="Close">&times;</button>
+    <img id="astro-img-modal-img" src="" alt="" class="modal-img" />
+    <a id="astro-img-modal-download" href="" download style="position:absolute;bottom:2rem;right:2rem;z-index:1100;background:#005ea2;color:#fff;padding:0.75rem 1.5rem;border-radius:0.5rem;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.13);">Download</a>
+    <div id="astro-img-modal-alt" style="display:none;"></div>
+  </div>
+</main>
+<div class="container my-5 p-4">
 <h3>For additional images please contact</h3>
 <p>
 <strong>Ocel, Norah P.E. PMP</strong><br/>
@@ -112,5 +253,5 @@ ITS Safety and Stakeholder Engagement and Communications<br/>
 202-366-2639<br/>
 <a href="mailto:Norah.Ocel@dot.gov">Norah.Ocel@dot.gov</a>
 </p>
-</SidebarLayout>
+</div>
 </PageLayout>

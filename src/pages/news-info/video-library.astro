@@ -1,0 +1,180 @@
+---
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import Leaders from "@/src/assets/images/video-library/leaders.jpg";
+import ITSProgramOverview from "@/src/assets/images/video-library/ITSProgramOverview.jpg";
+import TransformingSurfaceTransportation from "@/src/assets/images/video-library/TransformingSurfaceTransportation.jpg";
+
+const keywords = ["Digital Infrastructure", "Transportation Systems", "Data", "Information", "Technology Assets", "Public and Private", "Collective", "Research Areas"];
+
+const description = "Digital infrastructure includes public and private technology assets that use data to improve transportation systems and services.";
+---
+
+<style>
+  .card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  }
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f1f1f1;
+  }
+  .featured-video-bg {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: #f7f7f7;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+  }
+</style>
+<link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/dt-2.1.4/datatables.min.css" rel="stylesheet" />
+<PageLayout title="Video Library" keywords={keywords} description={description}>
+  <Fragment slot="banner">Video Library</Fragment>
+  <main>
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="sideways">Video Library</h2>
+      <a href="https://www.youtube.com/@itsjpo" target="_blank" rel="noopener noreferrer" class="btn m-0 float-right">Visit the ITS JPO YouTube Channel</a>
+    </div>
+    <div class="container my-4">
+      <div class="row align-items-center">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="ratio ratio-16x9">
+            <iframe
+              width="1358"
+              height="764"
+              src="https://www.youtube.com/embed/w6qvnPjEn8c"
+              title="Learn from the Leaders: What Does the ITS JPO Do?"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              class="rounded-4"
+            >
+            </iframe>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <h3>ITS JPO YouTube Welcome Message</h3>
+          <p class="read-more-wrap" style="padding-top:0px">A brief introduction to the ITS JPO and an overview of the type of content you will find on the ITS JPO YouTube channel.</p>
+        </div>
+      </div>
+    </div>
+    <div class="featured-video-bg">
+      <div class="container">
+        <h2 class="mt-5">Featured Videos</h2>
+
+        <div class="container mt-4">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    src="https://www.youtube.com/embed/o13kOLNyqxg"
+                    title="Learn from the Leaders: How do Architecture & Standards relate to V2X?"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">How do Architecture & Standards relate to V2X?</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    src="https://www.youtube.com/embed/rZJ5eiftupw"
+                    title="Learn from the Leaders: How is USDOT keeping V2X secure?"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">How is USDOT Keeping Vehicle-to-Everything secure?</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    src="https://www.youtube.com/embed/K70jrkAIAF4"
+                    title="How WYDOT is Keeping Drivers Safe in Severe Weather"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">How WYDOT Is Keeping Drivers Safe in Severe Weather</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="sideways">Featured Playlists</h2>
+      <a href="https://www.youtube.com/@itsjpo/playlists" target="_blank" rel="noopener noreferrer" class="btn m-0 float-right">View All Playlists on YouTube</a>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <a href="https://youtube.com/playlist?list=PLjP1oRdEKVdSWAHF5Pje6dfR3DYfsTuXE&si=5UwfyYzbW_oqHCOu">
+            <div class="card h-100">
+              <div class="ratio ratio-16x9">
+                <Image src={Leaders} alt="Learn from the Leaders YouTube Playlist" />
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-0">Learn from the Leaders</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="https://www.youtube.com/playlist?list=PLjP1oRdEKVdSS2l6QxoavxaxXfVBMYUHA">
+            <div class="card h-100">
+              <div class="ratio ratio-16x9">
+                <Image src={TransformingSurfaceTransportation} alt="Defining ITS and How It's Transforming Surface Transportation" />
+              </div>
+              <div class="card-body d-flex flex-column ">
+                <h5 class="card-title mb-0">Defining ITS and How It’s Transforming Surface Transportation</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <a href="https://www.youtube.com/playlist?list=PLjP1oRdEKVdSS2l6QxoavxaxXfVBMYUHA">
+            <div class="card h-100">
+              <div class="ratio ratio-16x9">
+                <Image src={ITSProgramOverview} alt="ITS JPO Programs Overview" />
+              </div>
+              <div class="card-body d-flex flex-column ">
+                <h5 class="card-title mb-0">ITS JPO Programs Overview</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</PageLayout>

@@ -1,0 +1,55 @@
+---
+import OverlayCard, { type OverlayResource } from "@/src/components/programs/OverlayCard.astro";
+
+const resources: OverlayResource[] = [
+  {
+    backgroundImage: "pcb/resources/scrc",
+    color: "blue",
+    description: "An online resource connecting states, tribal governments, and local communities with resources to help develop intelligent transportation systems for smart community transportation programs.",
+    isExternalLink: true,
+    name: "Smart Community Resource Center",
+    path: "https://www.its.dot.gov/scrc/index.html"
+  },
+  {
+    backgroundImage: "pcb/resources/v2x-intersection",
+    color: "green",
+    description: "A comprehensive training program provides foundational trainings for practitioners as well as technical trainings on V2X standards.",
+    name: "Vehicle-to-Everything (V2X) Training",
+    path: "/resources/pcb/trainings/v2x-trainings"
+  },
+  {
+    backgroundImage: "pcb/resources/cave",
+    color: "orange",
+    description: "Hands-on learning experience to aid curriculum, and support instruction for community colleges and trade schools, facilitate benchmarking connected vehicle equipment, and support onboarding of ITS technicians.",
+    name: "Connected and Automated Vehicle Education (CAVe)",
+    path: "/resources/pcb/technical-assistance/cave"
+  },
+  {
+    backgroundImage: "pcb/resources/cohort",
+    color: "purple",
+    description: "A community of practice of state and local agencies -- and other infrastructure owners and operators (IOOs) -- sharing best practices and lessons learned to  accelerate the deployment of V2X technologies.",
+    name: "Accelerating V2X Cohort",
+    path: "/resources/pcb/technical-assistance/v2x-cohort"
+  }
+]
+---
+<style>
+  .resource-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(100px, 300px);
+    gap: var(--size);
+  }
+
+  @media (min-width: 992px) {
+    .resource-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+</style>
+<div class="resource-container" role="directory">
+  {resources.map(resource => (
+    <OverlayCard {...resource} />
+  ))}
+</div>

@@ -1,0 +1,159 @@
+---
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Layout from "./_layout.astro";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
+import { Image } from "astro:assets";
+import BoxArrowUpRightIcon from "@/src/components/programs/icons/BoxArrowUpRightIcon.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+---
+<style>
+  .resource-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--size);
+  }
+
+  .resource-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .resource-card-title {
+    text-transform: none;
+  }
+  .resource-card-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+  .resource-button {
+    border: 1px solid #dee2e6;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: black;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-duration) ease-in-out;
+  }
+  .resource-button::after {
+    content: "";
+  }
+  .resource-button:hover {
+    font-weight: 600;
+    background: #dee2e6;
+  }
+
+  .resource-link-container {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 4px;
+  }
+
+  @media (min-width: 1200px) {
+    .resource-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+<Layout>
+  <main class="program-main">
+    <ProgramSection>
+      <h2 class="program-title-lg">
+        Intersection Safety Systems (ISS) Development
+      </h2>
+      <div class="row">
+        <div class="col-8">
+          <p class="program-text">
+            Building on the success of the Intersection Safety Challenge, the Intersection Safety Systems 
+            (ISS) development initiative aims to support development of innovative ISS that can operate effectively 
+            under real-world conditions. The goal is to accelerate the development of full end-to-end 
+            prototype ISS and its components, including sensor fusion, AI-based decision-making, and conflict mitigation. 
+          </p>
+        </div>
+        <div class="col-4">
+          <Image
+            src={issLogo}
+            alt="Intersection Safety Systems Logo"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+      <h2 class="program-title-lg mt-4">
+        Key Research Questions
+      </h2>
+      <ul class="program-list">
+        <li>
+          <em>Conflicts.</em> Can an ISS reliably predict conflicts among vehicles and vulnerable road users?
+        </li>
+        <ul>
+          <li>How far in advance can conflicts be predicted?</li>
+          <li>Under what conditions can reliable conflict predictions be made?</li>
+        </ul>
+        <li>
+          <em>Unsafe Conditions.</em> Can an ISS reliably identify conflicts and characterize unsafe conditions?
+        </li>
+        <ul>
+          <li>What types of unsafe conditions can be reliably identified or anticipated?</li>
+          <li>How quickly can unsafe conditions be reliably identified or anticipated?</li>
+        </ul>
+        <li>
+          <em>Mitigating Strategies.</em> Can an ISS take meaningful mitigating actions, either in the form
+          of warnings or changes to intersection control, to mitigate conflicts and/or unsafe conditions?
+        </li>
+        <ul>
+          <li>
+            Can changes to intersection control be implemented in real-time to mitigate
+            unsafe conditions (e.g., eliminating permissive vehicle turning movements
+            traversing busy crosswalks)? What changes to control are most effective?
+          </li>
+          <li>
+            Can warnings be issued in real-time to mitigate conflicts? What types of warnings
+            are most effective (e.g., visual, auditory, haptic)?
+          </li>
+          <li>
+            Can modifications to intersection control be utilized to mitigate individual
+            conflicts (e.g., delay the illumination of a WALK signal until all approaching
+            vehicles have safely cleared the crosswalk)?
+          </li>
+          <li>
+            What are potential safety and congestion-reduction impacts resulting from these
+            mitigating strategies?
+          </li>
+        </ul>
+      </ul>
+      <h2 class="program-title-lg my-4">
+        Additional Resources
+      </h2>
+      <div class="resource-container">
+        <Card shadow="sm">
+          <CardBody>
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Intersection Safety System (ISS) Prototyping</h3>
+              <p class="resource-card-subtitle">Issued on April 25, 2025 | Closed on May 9, 2025</p>
+            </div>
+          </CardBody>
+          <CardFooter>
+            <div class="resource-link-container px-2">
+              <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://sam.gov/opp/8573bb118a5e4343a9512fed8b393d63/view"
+              >
+                <BoxArrowUpRightIcon size={12} />
+                Sources Sought Notice
+              </a>
+            </div>
+          </CardFooter>
+        </Card>
+      </div>
+    </ProgramSection>
+  </main>
+</Layout>

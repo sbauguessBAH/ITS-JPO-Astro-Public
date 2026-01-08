@@ -1,0 +1,300 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { getCollection, render } from "astro:content";
+// import { isTemplateExpression } from "typescript";
+
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../_layout.astro";
+
+const trainings: CollectionEntry<"pcbTransitStandardsTrainings">[] = 
+  await getCollection("pcbTransitStandardsTrainings");
+
+---
+<style>
+  
+  .training-card {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  /* .training-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } */
+  .training-card-subheading {
+    font-weight: bold;
+  }
+  .training-card-heading {
+    color: #2e5b7a;
+  }
+  .training-card-length {
+    background: #efefef;
+    border-radius: 16px;
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+  }
+  .training-card-preview {
+    mask-image: linear-gradient(rgb(0, 0, 0) calc(100% - 40px), rgba(0, 0, 0, 0));
+  }
+  /* .training-card-button {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #2e5b7a;
+    text-decoration: underline;
+    padding: 5px 15px 5px 0px;
+    text-transform: uppercase;
+  }
+  .training-card-button:hover {
+    border: none;
+    color: #2b7cde;
+    background-color: white;
+    cursor: pointer;
+  } */
+</style>
+<style>
+  .training-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+  .card-metadata {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .card-module-number {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(var(--color-gray));
+  }
+  .card-module-length {
+    background: #efefef;
+    border-radius: 16px;
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+  }
+  .training-card-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.2rem;
+    background: none;
+    border: none;
+    padding: var(--size);
+    padding-bottom: var(--size-sm);
+    text-align: left;
+  }
+  .training-card-footer {
+    background: rgb(var(--color-gray-light));
+    display: flex;
+    gap: var(--size-sm)
+  }
+  .training-card-body {
+    padding: var(--size);
+    padding-top: var(--size-sm);
+  }
+  .training-card-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+  }
+  .training-card-button:hover {
+    font-weight: inherit;
+    background: rgb(var(--color-brand-dark))
+  }
+</style>
+<Layout>
+  <div class="program-main">
+    <ProgramSection>
+      <Breadcrumb items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        { name: "Transit Standards Trainings" }
+      ]}/>
+      <h2 class="program-title-lg mb-4">Transit Standards Trainings</h2>
+      <p class="program-text">
+        The USDOT's ITS Professional Capacity Building Program (PCB) provides 
+        this training series on standards used in ITS transit deployments 
+        to the transit community. These modules were developed with partners in the Institute 
+        of Transportation Engineers (ITE) and with support from the American Public 
+        Transit Association (APTA). They give transportation professionals the skills 
+        to help them effectively utilize transit-applicable ITS standards to procure, 
+        install, test, and operate ITS technologies.
+      </p>
+      <p class="program-text mb-4">
+        Also available is a <a href={base_url("/resources/pcb/trainings/standards-trainings")}>standards training series</a> that 
+        discusses standards used mostly in ITS highway applications and includes crosscutting 
+        information about test cases, test plans, and requirements specification.
+      </p>
+      <p class="program-text mb-4">
+        Documents linked below were last updated in 2021. They remain available in their original published format
+        to ensure public access. Click the title to view additional information about each training module.
+      </p>
+      <div class="training-list">
+        {trainings
+          .toSorted((a, b) => a.data.module - b.data.module)
+          .map(async training => {
+            const { Content } = await render(training);
+            return (
+              // <article class="training-card">
+              //   <div class="training-card-header">
+              //     <p class="training-card-subheading">MODULE {training.data.module} | {training.data.code}</p>
+              //     <div class="training-card-length">{training.data.length}</div>
+              //   </div>
+              //   <h2 class="training-card-heading">{training.data.title}</h2>
+              //   <div class="training-card-body">
+              //     <div 
+              //       class="training-card-preview" 
+              //       id={`preview-${training.id}`}
+              //     >
+              //       {training.body.substring(0, previewLength) + "..."}
+              //     </div>
+              //     <div 
+              //       class="training-card-full" 
+              //       id={`full-${training.id}`}
+              //       hidden
+              //     >
+              //       <Content/>
+              //     </div>
+              //     <button 
+              //       class="training-card-button"
+              //       aria-controls={`full-${training.id}`}
+              //       data-preview-id={`preview-${training.id}`}
+              //       data-full-id={`full-${training.id}`}
+              //     >
+              //       Show More
+              //     </button>
+              //   </div>
+              // </article>
+              <Card id={training.id}>
+                <CardHeader class="p-0">
+                  <button 
+                    aria-controls={`collapse-${training.id}`} 
+                    aria-expanded="false" 
+                    class="training-card-header" 
+                    data-target={`#collapse-${training.id}`}
+                    data-toggle="collapse"
+                    type="button"
+                  >
+                    <div class="card-metadata">
+                      <p class="card-module-number">
+                        MODULE {training.data.module}
+                      </p>
+                      <div class="card-module-length">
+                        {training.data.length}
+                      </div>
+                    </div>
+                    <h3 class="program-title-md">
+                      {training.data.title}
+                    </h3>
+                  </button>
+                </CardHeader>
+                <CardBody class="p-0">
+                  <div
+                    class="collapse training-card-body" 
+                    id={`collapse-${training.id}`}  
+                  >
+                    <Content/>
+                  </div>
+                </CardBody>
+                <CardFooter class="training-card-footer">
+                  {training.data.presentation && (
+                    <a class="training-card-button" href={base_url(training.data.presentation)} rel="noopener noreferrer" target="_blank">
+                      <PdfIcon/>
+                      Presentation
+                    </a>
+                  )}
+                  {training.data.supplement && (
+                    <a class="training-card-button" href={base_url(training.data.supplement)} rel="noopener noreferrer" target="_blank">
+                      <PdfIcon/>
+                      Supplement
+                    </a>
+                  )}
+                  {training.data.transcript && (
+                    <a class="training-card-button" href={base_url(training.data.transcript)} rel="noopener noreferrer" target="_blank">
+                      <PdfIcon/>
+                      Course Transcript
+                    </a>
+                  )}
+                  {training.data.chat && (
+                    <a class="training-card-button" href={base_url(training.data.chat)} rel="noopener noreferrer" target="_blank">
+                      <PdfIcon/>
+                      Chat Transcript
+                    </a>
+                  )}
+                </CardFooter>
+              </Card>
+            )
+        })}
+      </div>
+    </ProgramSection>
+  </div>
+</Layout>
+
+<script>
+  class ContentExpander extends HTMLElement {
+    constructor() {
+      super();
+      this.init();
+    }
+
+    init() {
+      const toggleButtons = document.querySelectorAll<HTMLButtonElement>(".training-card-button");
+      
+      toggleButtons.forEach(button => {
+        button.addEventListener("click", () => this.toggleContent(button))
+      })
+    }
+
+    toggleContent(button: HTMLButtonElement) {
+      const previewId = button.dataset.previewId
+      const fullId = button.dataset.fullId
+
+      if (!previewId || !fullId) return;
+
+      const previewElement = document.getElementById(previewId);
+      const fullElement = document.getElementById(fullId);
+
+      if (!previewElement || !fullElement) return;
+
+      const isExpanded = button.getAttribute('aria-expanded') === "true";
+
+      if (isExpanded) {
+        previewElement.removeAttribute("hidden");
+        fullElement.setAttribute("hidden", "");
+        button.setAttribute("aria-expanded", "false");
+        button.textContent = "Show More"
+      } else {
+        previewElement.setAttribute("hidden", "");
+        fullElement.removeAttribute("hidden");
+        button.setAttribute("aria-expanded", "true");
+        button.textContent = "Show Less";
+      }
+    }
+  }
+
+  customElements.define("content-expander", ContentExpander);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new ContentExpander();
+  })
+</script>
