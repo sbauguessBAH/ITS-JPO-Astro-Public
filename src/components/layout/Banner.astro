@@ -34,8 +34,8 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
 ---
 <div class="banner-container" style={`--banner-bg: url('${bannerImageUrl}')`}>
   <div class="banner-text-container container-xl flex-column ">
-    <div class="banner-text  d-flex justify-content-between align-items-center">
-      <div class="  "><slot/></div>
+    <div class="banner-text d-flex justify-content-between align-items-center">
+      <div class=""><slot/></div>
 
        <button
               class="navbar-toggler"
@@ -178,9 +178,8 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
     text-wrap: pretty;
     display: flex;
     justify-content: center;
-  height: -webkit-fill-available;
-  height: -mox-available;
-  height: fill-available;
+    
+    margin: auto;
   }
 
 
@@ -191,9 +190,6 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
     font-weight:bold;
     transition: font-size 0.2s ease;
     text-wrap: pretty;
-     height: -webkit-fill-available;
-  height: -mox-available;
-  height: fill-available;
   }
 
   /* 1200, 992, 768, 576 */

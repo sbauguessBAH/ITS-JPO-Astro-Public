@@ -83,7 +83,6 @@ export const navigation: NavigationItem[] = [
           },
         ],
       },
-      { name: "Digital Infrastructure", url: "/research-areas/Digital-Infrastructure" },
       { name: "Interoperable Connectivity/Spectrum", url: "/research-areas/Interoperable-Connectivity-Spectrum" },
       {
         name: "Intersection Safety",
