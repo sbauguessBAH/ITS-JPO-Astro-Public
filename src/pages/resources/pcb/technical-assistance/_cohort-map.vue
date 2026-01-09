@@ -204,8 +204,8 @@ onBeforeUnmount(() => {
     <svg
       class="map-svg"
       xmlns="http://www.w3.org/2000/svg"
-      :width="mapSettings.totalWidth"
-      :height="mapSettings.totalHeight"
+      :viewBox="`0 0 ${mapSettings.totalWidth} ${mapSettings.totalHeight}`"
+      preserveAspectRatio="xMidYMid meet"
     >
       <!-- Use a group if the state has cohort members -->
       <!-- Draw either the path or the circle representing the State/DC -->
@@ -313,6 +313,9 @@ onBeforeUnmount(() => {
   display: block;
   margin: 0 auto;
   position: relative;
+  width: 90%;
+  height: auto;
+  max-width: 100%;
 }
 
 .map-tooltip {
