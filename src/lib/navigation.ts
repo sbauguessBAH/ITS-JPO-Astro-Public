@@ -123,7 +123,70 @@ export const navigation: NavigationItem[] = [
           { name: "Videos", url: "/research-areas/ITS4US/videos" },
         ],
       },
-      { name: "Vehicle-to-Everything (V2X)", url: "/research-areas/V2X-Deployment" },
+      {
+        name: "Vehicle-to-Everything (V2X)",
+        url: "/research-areas/V2X-Deployment",
+        pages: [
+          { name: "Home", url: "/research-areas/V2X-Deployment" },
+          {
+            name: "Overview",
+            url: "/research-areas/V2X-Deployment/overview",
+            isEnabled: true,
+            pages: [
+              { name: "How V2X Works", url: "/research-areas/V2X-Deployment/overview/how-v2x-works" },
+              { name: "Why V2X is Needed", url: "/research-areas/V2X-Deployment/overview/why-v2x" },
+              {
+                name: "V2X Applications and Use Cases",
+                url: "/research-areas/V2X-Deployment/overview/v2x-applications",
+                isEnabled: true,
+                pages: [
+                  {
+                    name: "Safety",
+                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/safety",
+                  },
+                  {
+                    name: "Commercial Vehicle",
+                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/commercial-vehicle",
+                  },
+                  {
+                    name: "Mobility & Environment",
+                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/mobility-environment",
+                  },
+                  {
+                    name: "Traffic Advisories & Warnings",
+                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/traffic-warnings",
+                  },
+                  {
+                    name: "Data Collection",
+                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/data-collection",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "Research",
+            url: "/research-areas/V2X-Deployment/research",
+            isEnabled: true,
+            pages: [
+              { name: "LTE-V2X Analysis", url: "/research-areas/V2X-Deployment/research/lte-v2x" },
+              { name: "DSRC V2X Analysis Archive", url: "/research-areas/V2X-Deployment/research/dsrc" },
+              { name: "Interoperability Testing", url: "/research-areas/V2X-Deployment/research/interoperability" },
+              ],
+          },
+          {
+            name: "Deployment",
+            url: "/research-areas/V2X-Deployment/deployment",
+            isEnabled: true,
+            pages: [
+              { name: "V2X Accelerator (2024 – present)", url: "/research-areas/V2X-Deployment/deployment/accelerator" },
+              { name: "Safety Pilot", url: "/research-areas/V2X-Deployment/deployment/safety-pilots" },
+              ],
+          },
+          
+        ],
+      },
+      
     ],
   },
   {

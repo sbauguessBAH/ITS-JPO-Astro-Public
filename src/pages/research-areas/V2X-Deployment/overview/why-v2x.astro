@@ -1,0 +1,58 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X",
+  "Vehicle-to-Everything",
+  "V2X Deployment",
+  "interoperable connectivity",
+  "safety",
+  "goods movement",
+  "public investment",
+  "private investment",
+];
+
+const description =
+  "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">Why V2X is Needed</h2>
+        <p class="read-more-wrap pt-0">V2X technologies address a set of critical and interrelated challenges in the surface transportation industry in the areas of safety and mobility.</p>
+
+        <h3 class="mt-4">Safety</h3>
+        <p>According to the National Highway Traffic Safety Administration (NHTSA), there were 5.9 million crashes that resulted in 42,514 fatalities in 2022. V2X technologies have the potential to significantly reduce the number of lives lost each year. For example, V2X-enabled safety apps can warn drivers of imminent crash situations, including vulnerable roads users such as pedestrians or cyclists attempting to cross the street in the path of the vehicle, vehicles in the driver's blind spot, or when a vehicle ahead brakes suddenly. Additionally, by communicating with roadside infrastructure, drivers can be alerted when they enter a school zone or if workers are on the roadside, so they know to slow down.</p>
+
+        <h3 class="mt-4">Mobility</h3>
+        <p>Delays caused by traffic congestion alone costs the U.S economy over $160 billion per year. V2X mobility applications enable system users and system operators to make smart choices that reduce travel delay. For example, V2X-enabled mobility apps can warn drivers of congestion ahead, trigger a green light for approaching transit vehicles, or help a visually impaired pedestrian navigate a crosswalk.</p>
+
+        <div class="mt-5 references">
+          <p><a href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813560">https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813560</a></p>
+          <p><a href="https://www.transportation.gov/sites/dot.gov/files/2022-04/US_DOT_FY2022-26_Strategic_Plan.pdf">https://www.transportation.gov/sites/dot.gov/files/2022-04/US_DOT_FY2022-26_Strategic_Plan.pdf</a></p>
+        </div>
+      </main>
+</PageLayout>
+
+<style>
+  .vision-mission-title {
+    color: #005ea2;
+    gap: 0.5rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .program-sections {
+    border-top: 3px solid #005ea2;
+  }
+
+  .section-title {
+    color: #005ea2;
+    border-bottom: 3px solid #005ea2;
+  }
+</style>

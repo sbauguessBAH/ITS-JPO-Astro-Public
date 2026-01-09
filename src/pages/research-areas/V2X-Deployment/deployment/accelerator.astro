@@ -1,0 +1,290 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import flow from "@/src/assets/images/v2x/flow.png";
+import maricopaLogo from "@/src/assets/images/v2x/maricopa-county-logo.png";
+import texasAMLogo from "@/src/assets/images/v2x/texas-am-logo.png";
+import utahDOTLogo from "@/src/assets/images/v2x/utah-dot-logo.png";
+
+const keywords = [
+  "V2X",
+  "Vehicle-to-Everything",
+  "V2X Deployment",
+  "interoperable connectivity",
+  "safety",
+  "goods movement",
+  "public investment",
+  "private investment",
+];
+
+const description =
+  "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">V2X Accelerator</h2>
+        
+        <p class="mt-4">
+          In Fall 2024, the USDOT awarded cooperative agreements collectively worth $60 million to sites in Arizona, Texas, and Utah to deploy, operate, and showcase integrated, advanced interoperable V2X deployments over two phases.
+        </p>
+
+        <section class="mt-5">
+          <h3 class="mb-4">Deployment Phases</h3>
+          <div class="phases-timeline mb-4">
+            <div class="phase-box">
+              <h4>Phase 1: Finalize Design, Build and Test</h4>
+              <p class="timeline-duration">Up to 18 months</p>
+              <ul>
+                <li>Design, build, and test system to meet the required specifications.</li>
+                <li>Demonstrate intersite interoperability among wirelessly connected devices within each site.</li>
+              </ul>
+            </div>
+            <div class="phase-box">
+              <h4>Phase 2: Operate and Evaluate</h4>
+              <p class="timeline-duration">Minimum of 12 months</p>
+              <ul>
+                <li>Demonstrate joint intersite interoperability among wirelessly connected devices across the sites.</li>
+                <li>Evaluate system operational performance and deployment impacts and benefits.</li>
+                <li>Document reference implementation.</li>
+              </ul>
+            </div>
+            <div class="phase-box">
+              <h4>Post-Deployment: Operate and Maintain</h4>
+              <p class="timeline-duration">Minimum of five years</p>
+              <ul>
+                <li>Sustain operations for a minimum period of five years after the program is completed with no supplementary federal funds.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+   <section>
+          <div class="deployment-site mb-5">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-3">
+                <img src={maricopaLogo.src} alt="Maricopa County DOT" class="img-fluid" style="max-height: 120px;" />
+              </div>
+              <div class="col-md-9">
+                <h4>Maricopa County DOT</h4>
+                <p>
+                  The Maricopa County DOT is leading a largescale deployment to connect 750 physical roadside units and virtual roadside units that utilize a mobile edge computing (MEC) network to an estimated 400 vehicle onboard units targeting transit, emergency and freight fleets. The project will deploy Emergency Vehicle Preemption, Vulnerable Road User detection, Transit Signal Priority, and Freight Signal Priority applications in the Cities of Phoenix, Tolleson, Avondale and unincorporated Maricopa County, as well as along ADOT's US 60.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="deployment-site mb-5">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-3">
+                <img src={texasAMLogo.src} alt="Texas A&M Transportation Institute" class="img-fluid" style="max-height: 120px;" />
+              </div>
+              <div class="col-md-9">
+                <h4>Texas A&M Transportation Institute</h4>
+                <p>
+                  Texas A&M Transportation Institute will leverage nearly 1000 existing V2X-enabled signalized intersections in Houston, Missouri City and Fort Bend County and will install dozens more in Houston and City of Station, including areas near the Texas A&M University (TAMU) campus and major corridors connecting these two metropolitan areas. The project will equip local vehicles with V2X technology to support vulnerable road users (VRU) situated at signalized intersections, emergency responders navigating through varying traffic scenarios, transit operators seeking efficient routes, workers operating within construction zones, and everyday motorists.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="deployment-site mb-5">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-3">
+                <img src={utahDOTLogo.src} alt="Utah DOT" class="img-fluid" style="max-height: 120px;" />
+              </div>
+              <div class="col-md-9">
+                <h4>Utah DOT</h4>
+                <p>
+                  The Utah DOT is leading a deployment that encompasses three states – Utah, Colorado and Wyoming – each representing a broad variety of population densities, demographics, jurisdictions, topography, and transportation facilities. Approximately 750 roadside units will be installed at signalized intersections and along corridors with 215 vehicles will be equipped with onboard units to address critical needs including intersection priority and preemption, weather impact, curve speed warning, traveler information and vulnerable road user and other safety alert technologies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mt-5">
+          <h3 class="mb-4">Materials for Phase 1: Finalize, Design, Build, and Test</h3>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col" style="width: 35%">Task Area / Document</th>
+                  <th scope="col" style="width: 22%">Maricopa County DOT</th>
+                  <th scope="col" style="width: 22%">Texas A&M Transportation Institute</th>
+                  <th scope="col" style="width: 22%">Utah DOT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="4" class="bg-info fw-bold">System Planning and Design</td>
+                </tr>
+                <tr>
+                  <td>Systems Engineering Management Plan (SEMP)</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><a href="https://its.dot.gov/research_areas/emerging_tech/v2x_accelerator/FHWA-JPO-24-150" target="_blank" rel="noopener noreferrer">FHWA-JPO-24-150</a></td>
+                </tr>
+                <tr>
+                  <td>Concept of Operations (ConOps)</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>Systems Requirements Document (SyRS)</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>System Architecture Document (SAD)</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>System Design Document (SDD)</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>Data Plan</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>Comprehensive Installation Plan</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>Comprehensive Maintenance and Operations Plan</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>Performance Measurement and Evaluation Plan</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td colspan="4" class="bg-info fw-bold">System Build</td>
+                </tr>
+                <tr>
+                  <td>Installation Plan</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td colspan="4" class="bg-info fw-bold">System Test and Operational Readiness Demonstration</td>
+                </tr>
+                <tr>
+                  <td>Operational Readiness Concept Briefing</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>Operational Readiness Plan (ORP)</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>System Test Results Summary</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>Operational Readiness Demonstration Report</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td colspan="4" class="bg-info fw-bold">Stakeholder Outreach and Communications</td>
+                </tr>
+                <tr>
+                  <td>Outreach Plan</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>Webinar 1 (Topic TBD)</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+                <tr>
+                  <td>Webinar 2 (Topic TBD)</td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                  <td><em>Under development</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+       
+      </main>
+</PageLayout>
+
+<style>
+  .phases-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .phase-box {
+    background: #f0f4f8;
+    border-left: 4px solid #005ea2;
+    padding: 1.5rem;
+    border-radius: 4px;
+  }
+
+  .phase-box h4 {
+    color: #005ea2;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-duration {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .phase-box ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .phase-box li {
+    margin-bottom: 0.5rem;
+  }
+
+  .deployment-site {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 2rem;
+  }
+
+  .deployment-site h4 {
+    color: #005ea2;
+    font-weight: 600;
+    margin-top: 0;
+  }
+
+  .deployment-site p {
+    margin: 0;
+    line-height: 1.6;
+  }
+</style>

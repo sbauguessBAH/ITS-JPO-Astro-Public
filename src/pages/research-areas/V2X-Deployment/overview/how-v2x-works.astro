@@ -1,0 +1,53 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X",
+  "Vehicle-to-Everything",
+  "V2X Deployment",
+  "interoperable connectivity",
+  "safety",
+  "goods movement",
+  "public investment",
+  "private investment",
+];
+
+const description =
+  "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">How V2X Works</h2>
+        <p class="read-more-wrap pt-0">V2X provides connectivity through both direct and network communication.</p>
+
+        <p>Under <strong>direct V2X</strong>, vehicles exchange frequent, structured messages about relative speed, position and other relevant data directly from one system element to another (device-to-device). This form of communication ensures 360-degree awareness, even in situations with poor obstructed visibility, such as around corners or in dense fog.</p>
+
+        <p>Alternatively, under <strong>network V2X</strong>, messages are transmitted through an intermediate network, such as traditional mobile networks, to get delivered to the end recipient.</p>
+
+        <p>Direct V2X communication is suited for safety applications requiring low latency (e.g., crash avoidance scenarios), while network V2X communication, including digital alerts received on a mobile device, is more suited to carry information over longer distances (e.g., alerts about traffic and road conditions).</p>
+      </main>
+</PageLayout>
+
+<style>
+  .vision-mission-title {
+    color: #005ea2;
+    gap: 0.5rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .program-sections {
+    border-top: 3px solid #005ea2;
+  }
+
+  .section-title {
+    color: #005ea2;
+    border-bottom: 3px solid #005ea2;
+  }
+</style>

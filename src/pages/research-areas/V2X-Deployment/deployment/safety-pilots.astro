@@ -1,0 +1,51 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X",
+  "Vehicle-to-Everything",
+  "V2X Deployment",
+  "interoperable connectivity",
+  "safety",
+  "goods movement",
+  "public investment",
+  "private investment",
+];
+
+const description =
+  "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">Safety Pilot (2010 – 2014)</h2>
+        
+        <p class="mt-4">
+          The Safety Pilot Model Deployment (SPMD) program was a comprehensive data collection effort under real-world conditions, with multimodal traffic and vehicles equipped with vehicle-to-vehicle (V2V) and vehicle-to-infrastructure (V2I) communication devices. These vehicles used DSRC to communicate Basic Safety Messages (BSMs) containing vehicle operation information, such as speed, location, and direction, at a frequency of 10 messages per second.
+        </p>
+
+        <p>
+          The SPMD was held in Ann Arbor, Michigan, starting in August 2012. The deployment covered over 73 lane-miles and included approximately 3,000 onboard vehicle equipment and 30 roadside equipment (RSE). A majority of the RSEs were placed at signalized intersections, while others were strategically installed to support other applications such as curve speed warnings. The vehicles were equipped with one of the following four types of devices to enable V2V and V2I communications:
+        </p>
+
+        <div class="mt-4 mb-4">
+          <ol>
+            <li>Integrated safety devices (67 vehicles)</li>
+            <li>Aftermarket safety devices (300 vehicles)</li>
+            <li>Retrofit safety devices (19 vehicles)</li>
+            <li>Vehicle awareness devices (2,450 vehicles)</li>
+          </ol>
+        </div>
+
+        <section class="mt-5">
+          <h3>Program Resources</h3>
+          <ul>
+            <li><a href="https://www.nhtsa.gov/sites/nhtsa.gov/files/documents/technical_fact_sheet-model_deployment.pdf" target="_blank" rel="noopener noreferrer">Safety Pilot Model Deployment Q&A</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/4361" target="_blank" rel="noopener noreferrer">Safety Pilot Model Deployment Lessons Learned and Recommendations Report</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/65760" target="_blank" rel="noopener noreferrer">Safety Pilot Model Deployment Data Factsheet</a></li>
+          </ul>
+        </section>
+      </main>
+</PageLayout>

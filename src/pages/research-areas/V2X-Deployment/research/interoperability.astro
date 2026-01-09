@@ -1,0 +1,36 @@
+---
+
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X",
+  "Vehicle-to-Everything",
+  "V2X Deployment",
+  "interoperable connectivity",
+  "safety",
+  "goods movement",
+  "public investment",
+  "private investment",
+];
+
+const description =
+  "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">Interoperability Testing</h2>
+        
+        <p class="mt-4">
+          With the accelerating deployment of Vehicle-to-Everything (V2X) technologies there is the potential for different interpretations of key V2X standards to introduce interoperability issues between operational deployments. USDOT believes that testing of these deployments to proactively find these types of issues is valuable. Therefore, it is critical that Interoperability Tests be conducted with operational deployments now to either validate that V2X standards are being interpreted correctly or identify issues and address them in standards before there are millions of devices deployed. This testing should help both Infrastructure Owner Operators (IOOs) and device manufacturers better understand what is needed to deploy devices that work and work with other IOOs and devices.
+        </p>
+
+        <ul class="mt-4">
+          <li><a href="https://its.dot.gov/itsjpo_old-design_archive/research_areas/emerging_tech/pdf/Final_V2X_Interoperability_TestPlanAS_TESTED.pdf" target="_blank" rel="noopener noreferrer">Final As Run V2X Interoperability Test Plan Wyoming</a></li>
+          <li><a href="https://its.dot.gov/itsjpo_old-design_archive/research_areas/emerging_tech/pdf/V2X_Interoperability_TestPlan1.pdf" target="_blank" rel="noopener noreferrer">V2X Interoperability Test Plan 1</a></li>
+          <li><a href="https://its.dot.gov/itsjpo_old-design_archive/research_areas/emerging_tech/pdf/Interoperability_Test_Questionnaire_Wyoming_Testing.pdf" target="_blank" rel="noopener noreferrer">V2X Interoperability Test Questionnaire</a></li>
+        </ul>
+      </main>
+</PageLayout>

@@ -1,0 +1,96 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X",
+  "Vehicle-to-Everything",
+  "V2X Deployment",
+  "interoperable connectivity",
+  "safety",
+  "goods movement",
+  "public investment",
+  "private investment",
+];
+
+const description =
+  "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">Traffic Advisories & Warnings Use Cases</h2>
+
+        <div class="mt-3">
+          <table class="table table-bordered table-striped align-middle">
+            <thead class="table-light">
+              <tr>
+                <th scope="col" style="width: 25%">Use Case</th>
+                <th scope="col" style="width: 55%">Description</th>
+                <th scope="col" style="width: 20%">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-info"><strong>Incident and Road Closure Advisories and Warnings</strong></td>
+                <td>This use case presents traffic advisories to the driver of downstream incidents and road closures.</td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Road Weather Advisories and Warnings</strong></td>
+                <td>This use case presents traffic advisories to the driver of downstream, local hazardous weather conditions.  </td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Work Zone Advisories and Warnings</strong></td>
+                <td>This use case presents traffic advisories to the driver of downstream work zones – and other work zone information.  </td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Work Zone Worker Advisories and Warnings</strong></td>
+                <td>This use case includes warnings presented to workers within a work zone of where there is an imminent threat that a vehicle may enter the work zone.</td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Road/Lane-Use Restriction Advisories and Warnings</strong></td>
+                <td>This use case presents traffic advisories to the driver including information about road or lane restrictions including but not limited to HOV-use, shoulder lane use, and other road or lane restrictions.</td>
+                <td>V2I Use Case</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="mt-4">
+          <h3>Supporting Documentation</h3>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3372" target="_blank" rel="noopener noreferrer">Concept of Operations for Road Weather Connected Vehicle Applications</a></li>
+          </ul>
+        </section>
+      </main>
+</PageLayout>
+
+<style>
+  .application-category {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background: #f8f9fa;
+  }
+
+  .application-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .application-list li {
+    padding: 0.5rem 0;
+    font-weight: 600;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .application-list li:last-child {
+    border-bottom: none;
+  }
+</style>
