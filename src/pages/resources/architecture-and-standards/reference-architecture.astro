@@ -1,0 +1,184 @@
+---
+import { Image } from "astro:assets";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import banner from "@/src/assets/images/banners/NTL_Banner.png";
+
+import archRelationships from "@/src/assets/images/asc/arch-relationships.webp";
+import archFlow from "@/src/assets/images/asc/arch-flow.webp";
+import archLayers from "@/src/assets/images/asc/arch-layers.webp"
+
+
+
+const keywords = [
+  "ARC-IT",
+  "National ITS Reference Architecture",
+  "ITS architecture",
+  "interoperability",
+  "information flows",
+  "ITS standards mapping",
+  "regional ITS architecture",
+  "Enterprise Functional Physical Communications views",
+  "RAD-IT",
+  "SET-IT",
+  "VIEW-IT",
+  "SHARE-IT",
+  "ASQ-IT",
+  "service packages",
+  "communications protocols",
+];
+
+const description =
+  "Overview of the National ITS Reference Architecture (ARC-IT), its four views, standards-to-information-flow mapping, and tools like RAD-IT, SET-IT, VIEW-IT, SHARE-IT, and ASQ-IT that support interoperable regional and project ITS architectures.";
+---
+
+<PageLayout title="ITS Architecture and Standards" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner"> Architecture and Standards </Fragment>
+  <main>
+    <h2 class="blue">National ITS Reference Architecture</h2>
+    <div>
+      <p>
+        The National ITS Reference Architecture, also known as the “Architecture Reference for Cooperative and 
+        Intelligent Transportation” or simply “ARC-IT” provides a common framework for planning, defining, and 
+        integrating intelligent transportation systems. ARC-IT is a reference architecture providing a common basis 
+        for planners and engineers with differing concerns to conceive, design and implement systems using a common 
+        language as a basis for delivering ITS, but does not mandate any particular implementation. ARC-IT includes 
+        artifacts that answer concerns relevant to a large variety of stakeholders, and provides tools intended for 
+        transportation planners, regional architects and systems engineers to conceive of and develop regional 
+        architectures, and scope and develop projects. ARC-IT includes a set of interconnected components that are 
+        organized into four views that focus on four different architecture perspectives: Enterprise, 
+        Functional, Physical, and Communications. <a target="_blank" rel="noopener noreferrer" href="https://www.arc-it.net/html/whatsnew/whatsnew.html">Learn more</a> about 
+        the current version of the National ITS Reference Architecture.
+      </p>
+      <div class="d-flex justify-content-center">
+        <figure class="figure">
+          <a href="https://www.arc-it.net/html/methodology/archstructure.html" target="_blank" rel="noopener noreferrer">
+            <Image
+              src={archLayers} 
+              alt="Diagram showing 4 views (4 rectangles with icons for each view) that makeup the Architecture Reference for Cooperative and Intelligent Transportation. Enterprise View depicts Relationships between Organizations. Functional View depicts Logical interactions between Functions. Physical view depicts Connections between Physical Objects. Communications view depicts layered protocols facilitating data exchange between Physical Objects." 
+              class="figure-img img-fluid"
+            />
+          </a>
+          <!-- <figcaption class="figure-caption">
+            Architecture Reference for Cooperative and Intelligent 
+            <br/>
+            Transportation (ARC-IT) (click to learn more)
+          </figcaption> -->
+        </figure>
+      </div>
+    </div>
+    <div>
+      <div>
+        <h3>Connecting ITS Standards to the National ITS Reference Architecture</h3>
+        <p>
+          One of the main goals for the creation of the National ITS Reference Architecture (ARC-IT) was to define the 
+          key interfaces for standardization. Information flows (and their constituent detailed data flows) serve as 
+          the basis for much of the standards work on the ITS Standards Program. ITS Standards have been developed for 
+          many of the information flows in ARC-IT, and this mapping of standards to information flows is available in 
+          the Physical View on the <a target="_blank" rel="noopener noreferrer" href="https://www.arc-it.net/html/architecture/architecture.html">ARC-IT</a> website. 
+          By selecting an information flow triple, potential ITS and other 
+          communications standards to consider during deployment are listed on the Communications Diagrams.
+        </p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <figure class="figure">
+          <a href="https://www.arc-it.net/html/architecture/architecture.html" target="_blank" rel="noopener noreferrer">
+            <Image 
+              src={archFlow} 
+              alt="Figure depicts the 4 views of the architecture (Enterprise, Functional, Physical and Communications) on the left with each view broken out in the center of the figure to show the constituent parts of each view. Enterprise includes Stakeholders, Roles, Needs, and Relationships. Functional View includes Processes, Requirements, and Data Flows. Physical view includes physical objects, information flows, and functional objects. Communications view includes standards, solutions, and profiles. Arrows from the 4 views point to Service Packages. A final box says Security with pointers to Communications view and Service packages. A footnote also indicates that Functional View and Enterprise view were not included in v8 release." 
+              class="figure-img img-fluid"
+            />
+          </a>
+          <figcaption class="figure-caption">The four views of the architecture and their constituent parts (click to learn more)</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div>
+      <h3>Connecting ITS Standards to the Regional and Project ITS Architecture</h3>
+      <p>
+        ITS planners, deployers and other stakeholders tailor the National ITS Reference Architecture (ARC-IT) to create 
+        Regional ITS Architectures that meet their specific needs. Regional ITS Architectures therefore consist of functions 
+        within ITS elements and information flows that interconnect each of the ITS elements in the region 
+        (and with ITS elements outside the region). Since information flows are mapped to ITS standards in ARC-IT, and 
+        since a Regional ITS Architecture is based on ARC-IT, the standards mapping to information flows is also readily available. 
+        The same holds true when developing ITS Architectures for a project.
+      </p>
+      <div class="d-flex justify-content-center">
+        <figure class="figure">
+          <Image 
+            src={archRelationships} 
+            alt="ITS Architectural Relationships graphic. Graphic is described in paragraph immediately before graphic." 
+            class="img-fluid mx-auto d-block"
+          />
+          <figcaption class="figure-caption">
+            ITS Architecture Relationships
+          </figcaption>
+        </figure>
+      </div>
+      <div>
+        <p>
+          ARC-IT provides many tools and resources to ensure the successful implementation of regional and project ITS architectures:
+        </p>
+        <ul>
+          <li>
+            The <strong>Regional Architecture Development for Intelligent Transportation (RAD-IT)</strong> is a software application that supports development of regional and project ITS architectures using ARC-IT as a starting point. RAD-IT assists transportation planners and system integrators, both in the public and private sectors. RAD-IT can produce a user tailored list of standards-based communications solutions to assist with the region’s planning efforts
+          </li>
+          <li>
+            The <strong>Systems Engineering Tool for Intelligent Transportation (SET-IT)</strong> provides a single software tool that integrates drawing and database tools with ARC-IT so that users can develop project architectures for pilots, test beds and early deployments. It includes tools to create customized outputs of the standards-based communications solutions as well as communications diagrams for each interface.
+          </li>
+          <li>
+            <strong>VIEW-IT</strong> is a downloadable software package that allows the ARC-IT website to be viewed on a local device while offline. 
+          </li>
+          <li>
+            <strong>SHARE-IT</strong> is a repository of architecture-related products that enables users to access different implementations of ARC-IT that may be useful to them. This repository may include projects from a multitude of DOT initiatives.
+          </li>
+          <li>
+            <strong>ASQ-IT</strong> is a web-application that allows ARC-IT users to query about ARC-IT system documentation.
+          </li>
+        </ul>
+        <p>
+          See more information on all resources <a href="https://www.arc-it.net/html/resources/resources.html" target="_blank" rel="noopener noreferrer">here</a>.
+        </p>
+      </div>
+    </div>
+    <div>
+      <h2 class="blue">Architecture &amp; Standards Relevant Policy</h2>
+      <p>
+        Standards-based ITS is most powerful and produces the greatest benefit when deployed under a comprehensive regional 
+        (or corridor) transportation planning effort. Such an approach ensures that the ITS requirements (and other transportation needs) 
+        of all transportation stakeholders in the region are identified, resulting in an integrated and multimodal transportation network. 
+        Standards allow agencies to integrate ITS functions and services. Standards work hand-in-hand with the 
+        National ITS Reference Architecture, enabling a systematic and comprehensive approach to ITS integration and deployment. 
+        ITS standards are specifications that define how transportation system components interconnect and interact within 
+        the overall framework of the National ITS Reference Architecture.
+      </p>
+      <p>
+        They specify how different technologies, products, and components interconnect and interoperate 
+        among the different systems so that information can be shared automatically.
+      </p>
+      <p>
+        To facilitate interoperability and encourage the use of ITS standards in deployments, 
+        the U.S. Department of Transportation published two important and related documents:
+      </p>
+      <ul>
+        <li>
+          The Federal Highway Administration's (FHWA) Intelligent Transportation System Architecture and Standards &mdash; 
+          Title 23, Part 940 (23CFR940), available <a href="https://www.ecfr.gov/current/title-23/chapter-I/subchapter-K/part-940" target="_blank" rel="noopener noreferrer">here</a>.
+        </li>
+        <li>
+          The Federal Transit Administration's (FTA) National ITS Architecture Consistency 
+          for Transit Projects available at <a href="https://www.transit.dot.gov/research-innovation/ftaitspolicy" target="_blank" rel="noopener noreferrer">here</a>.
+        </li>
+      </ul>
+      <p>
+        These documents support the development and deployment of regional ITS architectures. A regional ITS architecture 
+        establishes a framework that helps guide the integration of ITS components. Applicable ITS standards can be derived 
+        from a regional architecture based on the information flows specified in the regional architecture. Standards can enhance 
+        the communications of ITS systems identified in the architecture and help to reduce stove-piping.
+      </p>
+      <p>
+        Support for project development is also available through the Systems Engineering 
+        for ITS website <a href="https://ops.fhwa.dot.gov/seits/" target="_blank" rel="noopener noreferrer">here</a>.
+      </p>
+    </div>
+    </main>
+</PageLayout>

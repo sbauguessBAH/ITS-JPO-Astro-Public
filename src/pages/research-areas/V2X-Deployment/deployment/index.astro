@@ -3,99 +3,59 @@ import banner from "@/src/assets/images/banners/V2X_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 
 const keywords = [
-  "V2X",
-  "Vehicle-to-Everything",
-  "V2X Deployment",
-  "interoperable connectivity",
-  "safety",
-  "goods movement",
-  "public investment",
-  "private investment",
+  "V2X deployment",
+  "V2X Accelerator",
+  "USDOT $60M cooperative agreements",
+  "Arizona Texas Utah V2X",
+  "interoperable V2X deployments",
+  "Safety Pilot Model Deployment",
+  "SPMD 2010-2014",
+  "V2V data collection",
+  "V2I data collection",
+  "real-world testing",
+  "multimodal traffic",
+  "connected vehicle field trial",
 ];
 
 const description =
-  "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
+  "Overview of V2X deployment initiatives: the USDOT $60M V2X Accelerator in Arizona, Texas, and Utah showcasing interoperable deployments, and the Safety Pilot Model Deployment (2010–2014) real-world multimodal V2V/V2I data collection program.";
 ---
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
       <main>
-        <h2 class="sideways blue">How V2X Works</h2>
-        <p class="read-more-wrap pt-0">
-          Roadway safety is the top priority for the United States Department of Transportation (U.S. DOT). The U.S. DOT is committed to actively pursuing a comprehensive approach to significantly reduce deaths and serious injuries on our Nation's highways, roads, and streets. The ITS Joint Program Office strongly believes that wireless connectivity among vehicles, roadside infrastructure, and mobile devices through vehicle–to-everything (V2X) communications is a fundamental element in achieving Vision Zero. Crucial to the future of V2X is the notion of interoperability – wherein a diverse range of in-vehicle, roadside, and mobile devices can communicate to operate reliably and effectively across all of the nation's surface transportation system.
-        </p>
-
         <div class="row my-4 g-4">
           <div class="col-md-6">
-            <div class="vision-mission-card bg-light p-4 rounded">
-              <h3 class="vision-mission-title d-flex align-items-center">
-                <svg class="icon me-2" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                VISION
-              </h3>
-              <p>Enable a safe and efficient transportation system through the national, widespread deployment of secure, interoperable V2X technologies.</p>
-            </div>
+            <a href="/research-areas/V2X-Deployment/deployment/accelerator" class="text-decoration-none">
+              <div class="p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>V2X Accelerator</h3>
+                <p class="mb-0">In Fall 2024, the USDOT awarded cooperative agreements collectively worth $60 million to sites in Arizona, Texas, and Utah to deploy, operate, and showcase integrated, advanced interoperable V2X deployments.</p>
+              </div>
+            </a>
           </div>
 
           <div class="col-md-6">
-            <div class="vision-mission-card bg-light p-4 rounded">
-              <h3 class="vision-mission-title d-flex align-items-center">
-                <svg class="icon me-2" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                </svg>
-                MISSION
-              </h3>
-              <p>Accelerate deployment of secure, interoperable V2X connectivity using the dedicated 5.895–5.925 GHz spectrum and other available spectrum through collaboration and coordination across the federal government, the public sector, and private industry.</p>
-            </div>
-          </div>
-        </div>
-
-        <p>The V2X Accelerator Program provides access to various USDOT-sponsored activities and resources to support agencies on their journey to deploy V2X technology.</p>
-
-        <div class="row my-4 g-4 program-sections">
-          <div class="col-md-4">
-            <div class="pt-4">
-              <h3 class="section-title pb-2">Technical</h3>
-              <ul class="ps-4 mt-3">
-                <li><a href="https://webappopen.connectedvcs.com/">Open Source V2X Tools</a></li>
-                <li>Spectrum & Governance</li>
-                <li>Standards & Architecture</li>
-                <li>V2X Certification</li>
-                <li>Trust & Credential Management</li>
-                <li>Evaluation Frameworks</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="pt-4">
-              <h3 class="section-title pb-2">Stakeholder Engagement</h3>
-              <ul class="ps-4 mt-3">
-                <li>V2X Summits and workshops</li>
-                <li><a href="https://pooledfund.org/Details/Solicitation/1615">V2X Pooled Fund Study</a></li>
-                <li>Accelerating V2X Deployment Cohort</li>
-                <li><a href="https://transportationops.org/CATCoalition">Cooperative Automated Transportation (CAT) Coalition</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="pt-4">
-              <h3 class="section-title pb-2">Professional Capacity Building</h3>
-              <ul class="ps-4 mt-3">
-                <li>V2X Trainings</li>
-                <li><a href="mailto:CAVSupportServices@dot.gov?subject=">Connected and Automated Vehicle (CAV) Help Desk</a></li>
-                <li><a href="mailto:CAVSupportServices@dot.gov?subject=">CAV Equipment Loan Program</a></li>
-                <li>Smart Community Resource Center</li>
-              </ul>
-            </div>
+            <a href="/research-areas/V2X-Deployment/deployment/safety-pilots" class="text-decoration-none">
+              <div class="p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>Safety Pilot (2010 – 2014)</h3>
+                <p class="mb-0">The Safety Pilot Model Deployment (SPMD) program was a comprehensive data collection effort under real-world conditions, with multimodal traffic and vehicles equipped with vehicle-to-vehicle (V2V) and vehicle-to-infrastructure (V2I) communication devices.</p>
+              </div>
+            </a>
           </div>
         </div>
       </main>
 </PageLayout>
 
+
 <style>
+  .data-card {
+    background-color: #f0f8ff;
+    border: 1px solid #d1e7f7;
+  }
+  .data-card:hover{
+    transition: transform 0.2s, box-shadow 0.2s;
+    transform: scale(1.05);
+  }
   .vision-mission-title {
     color: #005ea2;
     gap: 0.5rem;
@@ -107,7 +67,6 @@ const description =
   }
 
   .program-sections {
-    border-top: 3px solid #005ea2;
   }
 
   .section-title {

@@ -42,8 +42,9 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 </style>
 <PageLayout title="Heart of Iowa Regional Transit Agency">
   <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
-    <figure>
-      <Image src={Waukee} alt="A smiling woman with arms folded" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
+  <main>
+    <figure class="ms-4">
+      <Image src={Waukee} alt="A smiling woman with arms folded" width={800} class="float-sm-end img-fluid col-6-sm mb-2 rounded-4" />
       <figcaption>
         <p>
           “I need to see my doctor frequently since I have diabetes, and without transportation of my own, I can use HIRTA’s Health Connector app to schedule low cost rides at only $2.50 per fare.”
@@ -176,4 +177,5 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
     <ul>
       <li>Visit the <a href="https://transithealthconnector.org/">HIRTA Project Website</a></li>
     </ul>
+  </main>
 </PageLayout>

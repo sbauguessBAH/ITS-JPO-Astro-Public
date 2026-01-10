@@ -1081,6 +1081,17 @@ main a[href$=".pdf"]::after {
     margin-left:6px;
 }
 
+main a[href^="mailto:"]::after {
+    content: "\f0e0"; /* Unicode for Font Awesome envelope icon */
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    margin-left:6px;
+}
+
 main a[href$=".docx"]::after {
     content: "\f1c2"; /* Unicode for Font Awesome PDF icon */
     font-family: FontAwesome;

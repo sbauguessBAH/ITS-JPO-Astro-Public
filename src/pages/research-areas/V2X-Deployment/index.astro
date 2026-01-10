@@ -1,101 +1,109 @@
 ---
+import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 
-const keywords = [
-  "V2X",
-  "Vehicle-to-Everything",
-  "V2X Deployment",
-  "interoperable connectivity",
-  "safety",
-  "goods movement",
-  "public investment",
-  "private investment",
-];
-
-const description =
-  "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
+const keywords = ["V2X", "Vehicle-to-Everything", "V2X Deployment", "interoperable connectivity", "safety", "goods movement", "public investment", "private investment"];
+const description = "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
 ---
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
-      <main>
-        <h2 class="sideways blue">Mission and Vision</h2>
-        <p class="read-more-wrap pt-0">
-          Roadway safety is the top priority for the United States Department of Transportation (U.S. DOT). The U.S. DOT is committed to actively pursuing a comprehensive approach to significantly reduce deaths and serious injuries on our Nation's highways, roads, and streets. The ITS Joint Program Office strongly believes that wireless connectivity among vehicles, roadside infrastructure, and mobile devices through vehicle–to-everything (V2X) communications is a fundamental element in achieving Vision Zero. Crucial to the future of V2X is the notion of interoperability – wherein a diverse range of in-vehicle, roadside, and mobile devices can communicate to operate reliably and effectively across all of the nation's surface transportation system.
-        </p>
+  <main>
+    <h2 class="sideways blue">Mission and Vision</h2>
+    <p class="read-more-wrap pt-0">
+      Roadway safety is the top priority for the United States Department of Transportation (U.S. DOT). The U.S. DOT is committed to actively pursuing a comprehensive approach to significantly reduce
+      deaths and serious injuries on our Nation's highways, roads, and streets. The ITS Joint Program Office strongly believes that wireless connectivity among vehicles, roadside infrastructure, and
+      mobile devices through vehicle–to-everything (V2X) communications is a fundamental element in achieving Vision Zero. Crucial to the future of V2X is the notion of interoperability – wherein a
+      diverse range of in-vehicle, roadside, and mobile devices can communicate to operate reliably and effectively across all of the nation's surface transportation system.
+    </p>
 
-        <div class="row my-4 g-4">
-          <div class="col-md-6">
-            <div class="vision-mission-card bg-light p-4 rounded">
-              <h3 class="vision-mission-title d-flex align-items-center">
-                <svg class="icon me-2" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                VISION
-              </h3>
-              <p>Enable a safe and efficient transportation system through the national, widespread deployment of secure, interoperable V2X technologies.</p>
-            </div>
-          </div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="vision-mission-card p-4 rounded-4">
+          <h3 class="vision-mission-title d-flex align-items-center">
+            <svg class="icon me-2" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path
+                d="m674.63 92.25c-104.25-21.75-210.37 3.375-291.37 69-81.75 66-128.26 163.87-128.26 268.87 0 88.5 33.375 172.87 94.5 237 29.625 31.125 52.125 66 66.75 102.38 2.625-1.125 5.25-1.5 8.25-1.5h147.37v-282.74l-81.75-59.625c-12.375-9.375-15-27-6-39.375 9.375-12.375 27-15 39.375-6l76.5 56.25 76.5-56.25c12.375-9 30-6.375 39.375 6 9 12.375 6.375 30-6 39.375l-81.75 59.625v282.74h147.37c2.625 0 4.875 0.375 7.125 1.125 13.875-35.625 35.625-69 63.75-97.5 82.5-84 116.25-204.37 89.625-321.74-28.5-127.13-133.87-230.63-261.37-257.63z"
+              >
+              </path>
+              <path d="m605.63 824.26h-173.26c3 15.375 4.5 31.125 4.5 46.5v22.5h326.26v-22.875c0-15.375 1.5-31.125 4.5-46.125z"></path>
+              <path d="m493.13 949.5h-56.25v3c0 46.125 19.5 90.375 54 121.13 30 27 69.375 42 109.5 42 5.625 0 11.625-0.375 17.25-0.75 80.25-9 143.26-81 145.13-165.37z"></path>
+            </svg>
 
-          <div class="col-md-6">
-            <div class="vision-mission-card bg-light p-4 rounded">
-              <h3 class="vision-mission-title d-flex align-items-center">
-                <svg class="icon me-2" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                </svg>
-                MISSION
-              </h3>
-              <p>Accelerate deployment of secure, interoperable V2X connectivity using the dedicated 5.895–5.925 GHz spectrum and other available spectrum through collaboration and coordination across the federal government, the public sector, and private industry.</p>
-            </div>
-          </div>
+            VISION
+          </h3>
+          <p>Enable a safe and efficient transportation system through the national, widespread deployment of secure, interoperable V2X technologies.</p>
         </div>
+      </div>
 
-        <p>The V2X Accelerator Program provides access to various USDOT-sponsored activities and resources to support agencies on their journey to deploy V2X technology.</p>
-
-        <div class="row my-4 g-4 program-sections">
-          <div class="col-md-4">
-            <div class="pt-4">
-              <h3 class="section-title pb-2">Technical</h3>
-              <ul class="ps-4 mt-3">
-                <li><a href="https://webappopen.connectedvcs.com/">Open Source V2X Tools</a></li>
-                <li>Spectrum & Governance</li>
-                <li>Standards & Architecture</li>
-                <li>V2X Certification</li>
-                <li>Trust & Credential Management</li>
-                <li>Evaluation Frameworks</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="pt-4">
-              <h3 class="section-title pb-2">Stakeholder Engagement</h3>
-              <ul class="ps-4 mt-3">
-                <li>V2X Summits and workshops</li>
-                <li><a href="https://pooledfund.org/Details/Solicitation/1615">V2X Pooled Fund Study</a></li>
-                <li>Accelerating V2X Deployment Cohort</li>
-                <li><a href="https://transportationops.org/CATCoalition">Cooperative Automated Transportation (CAT) Coalition</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="pt-4">
-              <h3 class="section-title pb-2">Professional Capacity Building</h3>
-              <ul class="ps-4 mt-3">
-                <li>V2X Trainings</li>
-                <li><a href="mailto:CAVSupportServices@dot.gov?subject=">Connected and Automated Vehicle (CAV) Help Desk</a></li>
-                <li><a href="mailto:CAVSupportServices@dot.gov?subject=">CAV Equipment Loan Program</a></li>
-                <li>Smart Community Resource Center</li>
-              </ul>
-            </div>
-          </div>
+      <div class="col-md-6">
+        <div class="vision-mission-card p-4 rounded-4">
+          <h3 class="vision-mission-title d-flex align-items-center">
+            <svg class="icon me-2" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path>
+            </svg>
+            MISSION
+          </h3>
+          <p>
+            Accelerate deployment of secure, interoperable V2X connectivity using the dedicated 5.895–5.925 GHz spectrum and other available spectrum through collaboration and coordination across the
+            federal government, the public sector, and private industry.
+          </p>
         </div>
-      </main>
+      </div>
+    </div>
+
+    <p class="my-3">The V2X Accelerator Program provides access to various USDOT-sponsored activities and resources to support agencies on their journey to deploy V2X technology.</p>
+
+    <div class="row my-4 g-4 program-sections">
+      <div class="col-md-4">
+        <div class="pt-4">
+          <h3 class="section-title pb-2">Technical</h3>
+          <ul class="ps-4 mt-3">
+            <li><a href="https://webappopen.connectedvcs.com/">Open Source V2X Tools</a></li>
+            <li>Spectrum & Governance</li>
+            <li>Standards & Architecture</li>
+            <li>V2X Certification</li>
+            <li>Trust & Credential Management</li>
+            <li>Evaluation Frameworks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="pt-4">
+          <h3 class="section-title pb-2">Stakeholder Engagement</h3>
+          <ul class="ps-4 mt-3">
+            <li>V2X Summits and workshops</li>
+            <li><a href="https://pooledfund.org/Details/Solicitation/1615">V2X Pooled Fund Study</a></li>
+            <li>Accelerating V2X Deployment Cohort</li>
+            <li><a href="https://transportationops.org/CATCoalition">Cooperative Automated Transportation (CAT) Coalition</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="pt-4">
+          <h3 class="section-title pb-2">Professional Capacity Building</h3>
+          <ul class="ps-4 mt-3">
+            <li>V2X Trainings</li>
+            <li><a href="mailto:CAVSupportServices@dot.gov?subject=">Connected and Automated Vehicle (CAV) Help Desk</a></li>
+            <li><a href="mailto:CAVSupportServices@dot.gov?subject=">CAV Equipment Loan Program</a></li>
+            <li>Smart Community Resource Center</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
 </PageLayout>
 
 <style>
+  .vision-mission-card {
+    background-color: #f0f8ff;
+    border: 1px solid #d1e7f7;
+    height: 100%;
+  }
   .vision-mission-title {
     color: #005ea2;
     gap: 0.5rem;
@@ -107,7 +115,6 @@ const description =
   }
 
   .program-sections {
-    border-top: 3px solid #005ea2;
   }
 
   .section-title {

@@ -1,20 +1,25 @@
 ---
+import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 
 const keywords = [
   "V2X",
   "Vehicle-to-Everything",
-  "V2X Deployment",
-  "interoperable connectivity",
-  "safety",
-  "goods movement",
-  "public investment",
-  "private investment",
+  "How V2X works",
+  "direct V2X",
+  "network V2X",
+  "device-to-device communications",
+  "low latency safety",
+  "crash avoidance",
+  "360-degree awareness",
+  "obstructed visibility",
+  "digital alerts",
+  "traffic and road condition alerts",
 ];
-
 const description =
-  "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
+  "Explains how V2X works, contrasting direct device-to-device low-latency safety messages for crash avoidance and 360-degree awareness with network V2X digital alerts delivered over mobile networks for broader traffic and road condition updates.";
 ---
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
