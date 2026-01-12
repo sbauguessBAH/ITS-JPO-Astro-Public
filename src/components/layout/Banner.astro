@@ -68,6 +68,9 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
                       href={base_url(link.url)}
                       id={"navbarDropdown-" + link.name.replaceAll(" ", "-")}
                       role="button"
+                      aria-expanded={link.pages && link.pages.length > 0 ? "false" : undefined}
+                      aria-haspopup={link.pages && link.pages.length > 0 ? "true" : undefined}
+                      tabindex={link.pages && link.pages.length > 0 ? "0" : undefined}
                     >
                       {link.name}
                     </a>
@@ -93,7 +96,9 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
                               <a 
                                 href={base_url(pageLink.url)}
                                 class:list={["dropdown-item", {"dropdown-toggle": true, "active": comparePathname(pathname, pageLink.url, true)}]}
-                              
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                tabindex="0"
                               >
                                 {pageLink.name}
                               </a>
@@ -251,17 +256,16 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
     padding: 0;
     background: none;
   }
-.navbar-nav {
-    display: flex;
-    gap: 5px;
-}
- 
+
+  .navbar-nav {
+      display: flex;
+      gap: 5px;
+  }
 
   .active, .nav-link:hover {
     background: white;
     color: black !important;
   }
-
 
   .dotlogo {
     max-height: 25px;
@@ -296,21 +300,38 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
   }
 
   .dropend .dropdown-toggle::after {
-    content: "\f054";
-    border: 0;
-    color: white;
+    content: "\f078";
+    border: 0; 
+    color: black;
     transform: rotate(270deg);
     transform-origin: center;
   }
 
-    .dropend:hover .dropdown-toggle:hover::after {
-    content: "\f054";
-    border: 0;
-    color: black;
-    transform: rotate(90deg);
-    transform-origin: center;
-  }
 
+    .dropend:hover .dropdown-toggle:hover::after {
+      content: "\f078";
+      border: 0;
+      color: black;
+      
+    transform: rotate(270deg);
+    }
+
+    /* Position the last dropend menu to the right instead of below */
+    .navbar-nav .dropend .dropdown-menu {
+     top: 0;
+    right: auto;
+    left: 100%;
+    margin-top: 0;
+    }
+
+    @media (min-width: 992px) {
+      .navbar-nav .dropend:hover > .dropdown-menu {
+       top: 0;
+    right: auto;
+    left: 100%;
+    margin-top: 0;
+      }
+    }
    @media (min-width: 992px) {
     .navbar-nav .nav-item.dropdown:hover > .dropdown-menu, .activeMenu  a.dropdown-toggle {
       display: block;
@@ -328,6 +349,17 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
       opacity: 1;
       color: black;
     }
+    /* Show dropdowns when aria-expanded is true (keyboard navigation) */
+    .navbar-nav .dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+      display: block !important;
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0;
+    }
+    .navbar-nav .dropdown-toggle[aria-expanded="true"] {
+      color: black !important;
+      background-color: white;
+    }
     /* hide dropdowns by default on desktop until hover */
     .navbar-nav .dropdown-menu {
       display: none;
@@ -338,7 +370,8 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
   .dropdown-item.dropdown-toggle.show::after {
     content: "\f078";
     border: 0;
-    color: #009ad6;
+    color: black;
+    transform: rotate(0);
   }
   .dropdown-item.dropdown-toggle.show{
     background: rgb(233, 236, 239);
@@ -528,13 +561,70 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
     // Only apply this behavior on narrow viewports (mobile/tablet)
     const BREAKPOINT = 992;
 
+    function closeOpenDropdowns(currentToggle) {
+      const toggles = document.querySelectorAll('.navbar .dropdown-toggle.show');
+      toggles.forEach(tgl => {
+        if (tgl === currentToggle) return;
+        // Keep ancestor/descendant branches open so submenus still work
+        const tglLi = tgl.parentElement;
+        const curLi = currentToggle.parentElement;
+        const sameBranch =
+          tgl.contains(currentToggle) ||
+          currentToggle.contains(tgl) ||
+          (tglLi && tglLi.contains(currentToggle)) ||
+          (curLi && curLi.contains(tgl));
+        if (sameBranch) return;
+        try {
+          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+            const inst = window.bootstrap.Dropdown.getInstance(tgl);
+            if (inst) inst.hide();
+          }
+        } catch (err) {
+          // ignore
+        }
+        const parent = tgl.parentElement;
+        if (parent) parent.classList.remove('show');
+        const menu = parent && parent.querySelector(':scope > .dropdown-menu');
+        if (menu) menu.classList.remove('show');
+        tgl.setAttribute('aria-expanded', 'false');
+        delete tgl.dataset.dropdownTap;
+      });
+
+      const menus = document.querySelectorAll('.navbar .dropdown-menu.show');
+      menus.forEach(menu => {
+        const toggle = menu.previousElementSibling;
+        if (toggle === currentToggle) return;
+        const toggleLi = toggle && toggle.parentElement;
+        const curLi = currentToggle.parentElement;
+        const sameBranch =
+          menu.contains(currentToggle) ||
+          (toggle && currentToggle.contains(toggle)) ||
+          (toggleLi && toggleLi.contains(currentToggle)) ||
+          (curLi && curLi.contains(toggle));
+        if (sameBranch) return;
+        menu.classList.remove('show');
+        if (menu.parentElement) menu.parentElement.classList.remove('show');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+
     function onBodyClick(e) {
       // Only handle left-click / taps
       const el = e.target.closest && e.target.closest('.navbar .dropdown-toggle');
       if (!el) return;
 
-      if (window.innerWidth >= BREAKPOINT) return; // desktop behavior unchanged
+      const isDesktop = window.innerWidth >= BREAKPOINT;
 
+      // Desktop: navigate to the link (submenu shown on hover)
+      if (isDesktop) {
+        const href = el.getAttribute && el.getAttribute('href');
+        if (href && href !== '#' && href !== 'javascript:void(0)') {
+          window.location.href = href;
+        }
+        return;
+      }
+
+      // Mobile: First tap opens dropdown, second tap navigates
       // If this toggle was tapped once already, navigate to the link target.
       if (el.dataset.dropdownTap === '1') {
         // cleanup marker so subsequent taps behave normally
@@ -554,6 +644,8 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
       // First tap: prevent navigation and open the dropdown
       e.preventDefault();
       el.dataset.dropdownTap = '1';
+      closeOpenDropdowns(el);
+      el.setAttribute('aria-expanded', 'true');
       try {
         // Use Bootstrap's Dropdown API if available to open the menu
         if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
@@ -572,5 +664,192 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
     }
 
     document.addEventListener('click', onBodyClick, { passive: false });
+
+    // Keyboard accessibility: handle Enter/Space to toggle dropdowns, Escape to close
+    function onKeyDown(e) {
+      const el = e.target.closest && e.target.closest('.navbar .dropdown-toggle');
+      if (!el) return;
+
+      const isDesktop = window.innerWidth >= BREAKPOINT;
+
+      // Enter or Space to toggle dropdown
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const parent = el.parentElement;
+        const isOpen = parent && parent.classList.contains('show');
+
+        if (isDesktop) {
+          // Desktop: open and focus first item
+          if (!isOpen) {
+            closeOpenDropdowns(el);
+            el.setAttribute('aria-expanded', 'true');
+            try {
+              if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+                window.bootstrap.Dropdown.getOrCreateInstance(el).show();
+              } else if (parent) {
+                parent.classList.add('show');
+              }
+            } catch (err) {
+              // ignore
+            }
+            setTimeout(() => {
+              const menu = parent && parent.querySelector(':scope > .dropdown-menu');
+              if (menu) {
+                const firstItem = menu.querySelector('.dropdown-item');
+                if (firstItem) firstItem.focus();
+              }
+            }, 50);
+          }
+          return;
+        }
+
+        // Mobile: toggle the dropdown
+        if (isOpen) {
+          try {
+            if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+              const inst = window.bootstrap.Dropdown.getInstance(el);
+              if (inst) inst.hide();
+            }
+          } catch (err) {
+            // ignore
+          }
+          parent.classList.remove('show');
+          const menu = parent && parent.querySelector(':scope > .dropdown-menu');
+          if (menu) menu.classList.remove('show');
+          el.setAttribute('aria-expanded', 'false');
+        } else {
+          closeOpenDropdowns(el);
+          el.dataset.dropdownTap = '1';
+          el.setAttribute('aria-expanded', 'true');
+          try {
+            if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+              window.bootstrap.Dropdown.getOrCreateInstance(el).show();
+            } else {
+              parent.classList.add('show');
+            }
+          } catch (err) {
+            // ignore
+          }
+        }
+        return;
+      }
+
+      // Escape to close dropdown
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        const parent = el.parentElement;
+        try {
+          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+            const inst = window.bootstrap.Dropdown.getInstance(el);
+            if (inst) inst.hide();
+          }
+        } catch (err) {
+          // ignore
+        }
+        parent.classList.remove('show');
+        const menu = parent && parent.querySelector(':scope > .dropdown-menu');
+        if (menu) menu.classList.remove('show');
+        el.setAttribute('aria-expanded', 'false');
+        el.focus();
+      }
+
+      // Arrow keys for navigation within open menus
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        const menu = e.target.closest('.dropdown-menu');
+        if (menu) {
+          e.preventDefault();
+          const items = Array.from(menu.querySelectorAll('.dropdown-item'));
+          if (items.length > 0) {
+            const currentIndex = items.indexOf(document.activeElement);
+            let nextIndex = currentIndex;
+            if (e.key === 'ArrowDown') nextIndex = (currentIndex + 1) % items.length;
+            else nextIndex = (currentIndex - 1 + items.length) % items.length;
+            items[nextIndex].focus();
+          }
+          return;
+        }
+
+        // If on toggle with menu, focus first/last item
+        const parent = el.parentElement;
+        const toggleMenu = parent && parent.querySelector(':scope > .dropdown-menu');
+        if (toggleMenu) {
+          e.preventDefault();
+          const items = Array.from(toggleMenu.querySelectorAll('.dropdown-item'));
+          if (items.length > 0) {
+            const targetItem = e.key === 'ArrowDown' ? items[0] : items[items.length - 1];
+            targetItem.focus();
+          }
+        }
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown, { passive: false });
+
+    // Keep dropdown open when any of its items have focus (for tab navigation)
+    function keepDropdownOpen(element) {
+      let menu = element.closest('.dropdown-menu');
+      if (!menu) return;
+      
+      const toggle = menu.previousElementSibling;
+      if (toggle && toggle.classList.contains('dropdown-toggle')) {
+        toggle.setAttribute('aria-expanded', 'true');
+        try {
+          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+            window.bootstrap.Dropdown.getOrCreateInstance(toggle).show();
+          }
+        } catch (err) {
+          // ignore
+        }
+      }
+    }
+
+    function onFocusIn(e) {
+      const item = e.target;
+
+      // If focusing a top-level toggle on desktop, open it for keyboard users
+      if (window.innerWidth >= BREAKPOINT && item.classList.contains('dropdown-toggle')) {
+        closeOpenDropdowns(item);
+        item.setAttribute('aria-expanded', 'true');
+        try {
+          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+            window.bootstrap.Dropdown.getOrCreateInstance(item).show();
+          }
+        } catch (err) {
+          // ignore
+        }
+      }
+
+      // Keep dropdown open if focusing any item in a dropdown
+      if (item.classList.contains('dropdown-item') || item.classList.contains('dropdown-toggle')) {
+        keepDropdownOpen(item);
+      }
+    }
+
+    function onFocusOut(e) {
+      const menu = e.target.closest('.dropdown-menu');
+      if (!menu) return;
+      
+      // Only close if focus is not going to another item in the same menu or its toggle
+      const nextFocus = e.relatedTarget;
+      const toggle = menu.previousElementSibling;
+      
+      if (!nextFocus || (!menu.contains(nextFocus) && nextFocus !== toggle)) {
+        const dropdownToggle = menu.previousElementSibling;
+        if (dropdownToggle && dropdownToggle.classList.contains('dropdown-toggle')) {
+          try {
+            if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+              const inst = window.bootstrap.Dropdown.getInstance(dropdownToggle);
+              if (inst) inst.hide();
+            }
+          } catch (err) {
+            // ignore
+          }
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+
+    document.addEventListener('focusin', onFocusIn, { passive: true });
+    document.addEventListener('focusout', onFocusOut, { passive: true });
   })();
 </script>

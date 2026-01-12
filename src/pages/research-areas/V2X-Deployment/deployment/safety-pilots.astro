@@ -1,0 +1,114 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import safetyPilotLogo from "@/src/assets/images/v2x/SafetyPilot-logo.png";
+
+const keywords = [
+  "Safety Pilot Model Deployment",
+  "SPMD 2010-2014",
+  "Ann Arbor DSRC",
+  "Basic Safety Messages",
+  "BSM 10 Hz",
+  "V2V V2I data collection",
+  "3,000 onboard units",
+  "30 roadside equipment",
+  "73 lane-miles",
+  "integrated safety devices",
+  "aftermarket safety devices",
+  "retrofit safety devices",
+  "vehicle awareness devices",
+  "multimodal traffic",
+  "real-world testing",
+];
+
+const description =
+  "Safety Pilot Model Deployment (2010–2014) real-world V2V/V2I DSRC test in Ann Arbor covering 73 lane-miles with ~3,000 onboard units and 30 roadside units broadcasting 10 Hz Basic Safety Messages; included integrated, aftermarket, retrofit, and vehicle awareness devices in multimodal traffic.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">Safety Pilot (2010 – 2014)</h2>
+        
+        <Image src={safetyPilotLogo} alt="Safety Pilot logo" style="float: right; margin: 1rem; width: 300px; height: auto;" />
+        
+        <p class="mt-4">
+          The Safety Pilot Model Deployment (SPMD) program was a comprehensive data collection effort under real-world conditions, with multimodal traffic and vehicles equipped with vehicle-to-vehicle (V2V) and vehicle-to-infrastructure (V2I) communication devices. These vehicles used DSRC to communicate Basic Safety Messages (BSMs) containing vehicle operation information, such as speed, location, and direction, at a frequency of 10 messages per second.
+        </p>
+
+        <p>
+          The SPMD was held in Ann Arbor, Michigan, starting in August 2012. The deployment covered over 73 lane-miles and included approximately 3,000 onboard vehicle equipment and 30 roadside equipment (RSE). A majority of the RSEs were placed at signalized intersections, while others were strategically installed to support other applications such as curve speed warnings. The vehicles were equipped with one of the following four types of devices to enable V2V and V2I communications:
+        </p>
+
+        <div class="devices-grid mt-5 mb-5">
+          <div class="device-card">
+            <div class="device-number">67</div>
+            <div class="device-vehicles">vehicles</div>
+            <div class="device-label">Integrated Safety Devices</div>
+          </div>
+          <div class="device-card">
+            <div class="device-number">300</div>
+            <div class="device-vehicles">vehicles</div>
+            <div class="device-label">Aftermarket Safety Devices</div>
+          </div>
+          <div class="device-card">
+            <div class="device-number">19</div>
+            <div class="device-vehicles">vehicles</div>
+            <div class="device-label">Retrofit Safety Devices</div>
+          </div>
+          <div class="device-card">
+            <div class="device-number">2,450</div>
+            <div class="device-vehicles">vehicles</div>
+            <div class="device-label">Vehicle Awareness Devices</div>
+          </div>
+        </div>
+
+        <section class="mt-5">
+          <h3>Program Resources</h3>
+          <ul>
+            <li><a href="https://www.nhtsa.gov/sites/nhtsa.gov/files/documents/technical_fact_sheet-model_deployment.pdf" target="_blank" rel="noopener noreferrer">Safety Pilot Model Deployment Q&A</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/4361" target="_blank" rel="noopener noreferrer">Safety Pilot Model Deployment Lessons Learned and Recommendations Report</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/65760" target="_blank" rel="noopener noreferrer">Safety Pilot Model Deployment Data Factsheet</a></li>
+          </ul>
+        </section>
+      </main>
+</PageLayout>
+
+<style>
+  .devices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .device-card {
+    background: linear-gradient(0deg, #002844ff 0%, #004e89ff 100%);
+    color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 94, 162, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+
+  .device-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: .9;
+  }
+
+  .device-label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .device-vehicles {
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+</style>

@@ -1,0 +1,76 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X deployment",
+  "V2X Accelerator",
+  "USDOT $60M cooperative agreements",
+  "Arizona Texas Utah V2X",
+  "interoperable V2X deployments",
+  "Safety Pilot Model Deployment",
+  "SPMD 2010-2014",
+  "V2V data collection",
+  "V2I data collection",
+  "real-world testing",
+  "multimodal traffic",
+  "connected vehicle field trial",
+];
+
+const description =
+  "Overview of V2X deployment initiatives: the USDOT $60M V2X Accelerator in Arizona, Texas, and Utah showcasing interoperable deployments, and the Safety Pilot Model Deployment (2010–2014) real-world multimodal V2V/V2I data collection program.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <div class="row my-4 g-4">
+          <div class="col-md-6">
+            <a href="/research-areas/V2X-Deployment/deployment/accelerator" class="text-decoration-none">
+              <div class="p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>V2X Accelerator</h3>
+                <p class="mb-0">In Fall 2024, the USDOT awarded cooperative agreements collectively worth $60 million to sites in Arizona, Texas, and Utah to deploy, operate, and showcase integrated, advanced interoperable V2X deployments.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <a href="/research-areas/V2X-Deployment/deployment/safety-pilots" class="text-decoration-none">
+              <div class="p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>Safety Pilot (2010 – 2014)</h3>
+                <p class="mb-0">The Safety Pilot Model Deployment (SPMD) program was a comprehensive data collection effort under real-world conditions, with multimodal traffic and vehicles equipped with vehicle-to-vehicle (V2V) and vehicle-to-infrastructure (V2I) communication devices.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+</PageLayout>
+
+
+<style>
+  .data-card {
+    background-color: #f0f8ff;
+    border: 1px solid #d1e7f7;
+  }
+  .data-card:hover{
+    transition: transform 0.2s, box-shadow 0.2s;
+    transform: scale(1.05);
+  }
+  .vision-mission-title {
+    color: #005ea2;
+    gap: 0.5rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .program-sections {
+  }
+
+  .section-title {
+    color: #005ea2;
+    border-bottom: 3px solid #005ea2;
+  }
+</style>

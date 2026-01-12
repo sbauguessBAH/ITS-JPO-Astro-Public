@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+import safetyIcon from "@/src/assets/images/v2x/Safety-icon.png";
+import mobilityIcon from "@/src/assets/images/v2x/Mobility-icon.png";
+
+const keywords = [
+  "V2X safety",
+  "V2X mobility",
+  "vulnerable road users",
+  "pedestrian and cyclist alerts",
+  "blind spot warnings",
+  "sudden braking alerts",
+  "school zone alerts",
+  "work zone alerts",
+  "congestion alerts",
+  "transit signal priority",
+  "accessible pedestrian navigation",
+  "traffic congestion cost",
+  "NHTSA crash statistics",
+];
+const description =
+  "Explains why V2X is needed, citing NHTSA 2022 crash statistics and $160B congestion costs, and showing how V2X apps deliver safety alerts for vulnerable road users, blind spots, sudden braking, school and work zones, plus mobility benefits like congestion warnings, transit signal priority, and accessible pedestrian guidance.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">Why V2X is Needed</h2>
+        <p class="read-more-wrap pt-0">V2X technologies address a set of critical and interrelated challenges in the surface transportation industry in the areas of safety and mobility.</p>
+
+        <div class="d-flex gap-4 align-items-start">
+          <Image src={safetyIcon} alt="Safety icon" style="width: 70px; height: auto; flex-shrink: 0;" />
+          <div>
+            <h3 class="mt-0">Safety</h3>
+            <p>According to the National Highway Traffic Safety Administration (NHTSA), there were 5.9 million crashes that resulted in 42,514 fatalities in 2022. V2X technologies have the potential to significantly reduce the number of lives lost each year. For example, V2X-enabled safety apps can warn drivers of imminent crash situations, including vulnerable roads users such as pedestrians or cyclists attempting to cross the street in the path of the vehicle, vehicles in the driver's blind spot, or when a vehicle ahead brakes suddenly. Additionally, by communicating with roadside infrastructure, drivers can be alerted when they enter a school zone or if workers are on the roadside, so they know to slow down.</p>
+          </div>
+        </div>
+
+        <div class="d-flex gap-4 align-items-start mt-4">
+          <Image src={mobilityIcon} alt="Mobility icon" style="width: 70px; height: auto; flex-shrink: 0;" />
+          <div>
+            <h3 class="mt-0">Mobility</h3>
+            <p>Delays caused by traffic congestion alone costs the U.S economy over $160 billion per year. V2X mobility applications enable system users and system operators to make smart choices that reduce travel delay. For example, V2X-enabled mobility apps can warn drivers of congestion ahead, trigger a green light for approaching transit vehicles, or help a visually impaired pedestrian navigate a crosswalk.</p>
+          </div>
+        </div>
+
+        <div class="mt-5 references">
+          <p><a target="_blank" href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813560">https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813560</a></p>
+          <p><a target="_blank" href="https://www.transportation.gov/sites/dot.gov/files/2022-04/US_DOT_FY2022-26_Strategic_Plan.pdf">https://www.transportation.gov/sites/dot.gov/files/2022-04/US_DOT_FY2022-26_Strategic_Plan.pdf</a></p>
+        </div>
+      </main>
+</PageLayout>
+
+<style>
+  .vision-mission-title {
+    color: #005ea2;
+    gap: 0.5rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .program-sections {
+    border-top: 3px solid #005ea2;
+  }
+
+  .section-title {
+    color: #005ea2;
+    border-bottom: 3px solid #005ea2;
+  }
+</style>

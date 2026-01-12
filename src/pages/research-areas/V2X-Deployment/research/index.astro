@@ -1,0 +1,83 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X research",
+  "LTE-V2X testing",
+  "DSRC analysis",
+  "interoperability testing",
+  "out of band emissions",
+  "unlicensed device interference",
+  "V2X standards",
+  "radio performance edge cases",
+  "Vehicle-to-Everything safety",
+  "5.9 GHz",
+];
+
+const description =
+  "Overview of V2X research topics including LTE-V2X radio performance testing under edge-use cases, DSRC analysis of Safety Band interference and OOBE, and interoperability testing to address differing standards interpretations.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <div class="row my-4 g-4">
+          <div class="col-md-4">
+            <a href="/research-areas/V2X-Deployment/research/lte-v2x" class="text-decoration-none">
+              <div class="p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>LTE-V2X Analysis</h3>
+                <p class="mb-0">The goal of the U.S. DOT's LTE-V2X Test Program is to examine the radio performance of LTE-V2X technology under challenging, "edge-use case" conditions—the type of conditions that result in some of the most common and fatal crashes.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a href="/research-areas/V2X-Deployment/research/dsrc" class="text-decoration-none">
+              <div class="p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>DSRC V2X Analysis Archive</h3>
+                <p class="mb-0">The USDOT tested Dedicated Short-range Communications (DSRC) technology extensively over several years, including the impact of sharing the band with unlicensed devices, impact of out of band emissions (OOBE) and interference from unlicensed devices operating in adjacent channels.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a href="/research-areas/V2X-Deployment/research/interoperability" class="text-decoration-none">
+              <div class="p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>Interoperability Testing</h3>
+                <p class="mb-0">With the accelerating deployment of Vehicle-to-Everything (V2X) technologies there is the potential for different interpretations of key V2X standards to introduce interoperability issues between operational deployments.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+</PageLayout>
+
+
+<style>
+  .data-card {
+    background-color: #f0f8ff;
+    border: 1px solid #d1e7f7;
+  }
+  .data-card:hover{
+    transition: transform 0.2s, box-shadow 0.2s;
+    transform: scale(1.05);
+  }
+  .vision-mission-title {
+    color: #005ea2;
+    gap: 0.5rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .program-sections {
+  }
+
+  .section-title {
+    color: #005ea2;
+    border-bottom: 3px solid #005ea2;
+  }
+</style>

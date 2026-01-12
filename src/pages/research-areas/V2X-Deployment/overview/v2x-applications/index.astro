@@ -1,0 +1,120 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X applications",
+  "V2X use cases",
+  "USDOT V2X",
+  "safety applications",
+  "mobility and environment",
+  "traffic advisories",
+  "data collection",
+  "emergency electronic brake lights",
+  "forward collision warning",
+  "signal priority",
+  "platooning",
+  "work zone warnings",
+  "probe data",
+];
+const description =
+  "Overview of 30+ USDOT-supported V2X applications across safety, commercial vehicle, mobility and environment, traffic advisories, and data collection, including collision warnings, signal priority, platooning, work zone alerts, and probe data use cases.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+  <main>
+    <h2 class="sideways blue">V2X Applications and Use Cases</h2>
+    <p class="read-more-wrap pt-0">
+      To date, USDOT has sponsored 30+ V2X applications, many through prototyping, field demonstration and deployment. 
+    </p>
+
+    <p class="fw-bold">Please click on the yellow tab of each category for more detailed application descriptions and the supporting documentation.</p>
+
+    <div class="row  g-4">
+      <div class="col-md-6">
+        <div class="application-category">
+          <a class="btn btn-primary w-100 my-1" href="./v2x-applications/safety" role="button">SAFETY</a>
+          <ul class="application-list">
+            <li>Emergency Electronic Brake Lights Warning</li>
+            <li>Forward Collision Warning</li>
+            <li>Blind Spot Warning/Lane Change Warning</li>
+            <li>Intersection Movement Assist</li>
+            <li>Left Turn Assist Warning</li>
+            <li>Red Light Violation Warning</li>
+            <li>Emergency Vehicle Preemption</li>
+            <li>Emergency Vehicle Alert</li>
+            <li>Distress Notification (Mayday Alert)</li>
+            <li>Curve Speed Warning</li>
+            <li>Reduced Speed Warning</li>
+            <li>Pedestrian in Signalized Crosswalk Warning</li>
+            <li>Wrong Way Entry Warning</li>
+            <li>Railroad Crossing Warning</li>
+            <li>Oversize Vehicle Warning</li>
+          </ul>
+
+          <a class="btn btn-primary w-100 mt-4 mb-1" href="./v2x-applications/commercial-vehicle" role="button">COMMERCIAL VEHICLE</a>
+          <ul class="application-list">
+            <li>Commercial Vehicle Wireless Inspection</li>
+            <li>Truck Parking and Other Information</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="application-category">
+          <a class="btn btn-primary w-100 my-1" href="./v2x-applications/mobility-environment" role="button">MOBILITY & ENVIRONMENT</a>
+          <ul class="application-list">
+            <li>Traffic Signal Optimal Speed Advisory (or Control)</li>
+            <li>Intelligent Traffic Signal Systems (I-SIG)</li>
+            <li>Signal Priority</li>
+            <li>Mobile Accessible Pedestrian Signal System</li>
+            <li>Speed Harmonization</li>
+            <li>Queue Warning</li>
+            <li>Cooperative Adaptive Cruise Control / Vehicle Platooning</li>
+          </ul>
+
+          <a class="btn btn-primary w-100 mt-4 mb-1" href="./v2x-applications/traffic-warnings" role="button">TRAFFIC ADVISORIES & WARNINGS</a>
+          <ul class="application-list">
+            <li>Incident and Road Closure Advisories and Warnings</li>
+            <li>Road Weather Advisories and Warnings</li>
+            <li>Work Zone Advisories and Warnings</li>
+            <li>Work Zone Worker Advisories and Warnings</li>
+          </ul>
+
+          <a class="btn btn-primary w-100 mt-4 mb-1" href="./v2x-applications/data-collection" role="button">DATA COLLECTION</a>
+          <ul class="application-list">
+            <li>Road Weather Data Collection</li>
+            <li>Probe-enabled Traffic Monitoring</li>
+            <li>Probe-based Pavement Maintenance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .application-category {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background: #f8f9fa;
+  }
+
+  .application-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .application-list li {
+    padding: 0.5rem 0;
+    font-weight: 600;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .application-list li:last-child {
+    border-bottom: none;
+  }
+</style>

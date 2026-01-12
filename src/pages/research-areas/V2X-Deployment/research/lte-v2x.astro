@@ -1,0 +1,158 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import approachIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_Approach.png";
+import spreadsheetsIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_Spreadsheets.png";
+import characterizationIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_Characterization.png";
+import largeScaleIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_LargeScale.png";
+import methodologiesIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_Methodologies.png";
+import observationsIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_Observations.png";
+import ongoingTestIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_OngoingTest.png";
+import dataSetsIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_DataSets.png";
+
+const keywords = [
+  "LTE-V2X testing",
+  "edge-use case radio performance",
+  "5.9 GHz Safety Band",
+  "high-speed mobility",
+  "non-line-of-sight communications",
+  "GPS loss testing",
+  "interoperability testing",
+  "modeling and simulation",
+  "large-scale field data",
+  "U-NII-5 interference",
+  "broadcast non-networked mode",
+];
+
+const description =
+  "LTE-V2X Test Program examining radio performance under edge-use scenarios in the 5.9 GHz Safety Band, including high-speed, NLOS, GPS-loss, and interoperability conditions, with test plans, modeling, and large-scale field data.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">LTE-V2X Analysis</h2>
+        
+        <p class="mt-4">
+          The goal of the U.S. DOT's LTE-V2X Test Program is to examine the radio performance of LTE-V2X technology under challenging, "edge-use case" conditions—the type of conditions that result in some of the most common and fatal crashes. These challenging conditions are not exclusive to transportation. However, because the V2X communications and BSM transmissions are designed to provide 360-degree awareness around a vehicle of the threats and hazards forming on the roadway from nearby vehicles, pedestrians, motorcycles, bicyclists or others, examination of the radio environment—its reliability and availability—is equally as important.
+        </p>
+
+        <p>
+          The test team designed scenarios to mimic the type of complex roadway conditions under which the radio or communications technology must perform reliably and consistently in a broadcast, non-networked mode. The radio performance must sustain communications under a variety of conditions, such as when:
+        </p>
+
+        <ul>
+          <li>Vehicles move at high speeds (which has an effect on communications)</li>
+          <li>Vehicles move at varying speeds while maintaining the capability to "hear" one another within the nearby area</li>
+          <li>The density of vehicles increases in a manner similar to traffic in major metropolitan areas or to suburban arterials during rush hour. The radio communications are blocked by buildings, larger vehicles (i.e., trucks or buses), or other obstacles (known as non-line-of-sight (NLOS) communications)</li>
+          <li>The radios lose access to global positioning systems (GPS), which is an important component for both the LTE-V2X performance as well as the vehicle-to-vehicle (V2V) safety applications performance</li>
+          <li>A new manufacturer enters the market—the radio technology needs to be interoperable so that all makes and models can communicate, particularly during hazardous conditions.</li>
+        </ul>
+
+
+        <div class="row mt-5 g-4">
+          <div class="col-lg-1">
+            <Image src={approachIcon} alt="Test Plan & Approach" style="width: 70px; height: auto;c" />
+          </div>
+          <div class="col">
+            <h3>Test Plan & Approach</h3>
+            <ul>
+              <li>In-Vehicle U-NII-5 Interference on Vehicle-to-Everything (V2X) Communications Test Plan: Interim Test Plan - <em>Coming Soon</em></li>
+              <li><a href="https://www.transportation.gov/sites/dot.gov/files/2022-04/LTE%20V2X%20Test%20Plan%20Overview%20v2_2.pdf" target="_blank" rel="noopener noreferrer">Testing Long-Term Evolution Vehicle-to-Everything (LTE-V2X) Radio Performance Capabilities within the 5.9 GHz Safety Band</a></li>
+              <li><a href="https://www.transportation.gov/sites/dot.gov/files/2022-04/DOT%20LTE%20V2X%20Summary%20Overview%2007cDEC2021%20vFINAL.pdf" target="_blank" rel="noopener noreferrer">Test Plan and Test Procedures Summary: Testing Long-Term Evolution Vehicle-to-Everything (LTE-V2X) Radio Performance Capabilities within the 5.9 GHz Safety Band</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-1">
+            <Image src={spreadsheetsIcon} alt="Field Test Parameters" style="width: 70px; height: auto;c" />
+          </div>
+          <div class="col">
+            <h3>Field Test Parameters</h3>
+            <p>
+              A field test scenario spreadsheet was used to structure and organize the various field test runs performed at the large-scale field test site.
+            </p>
+            
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-1">
+            <Image src={characterizationIcon} alt="Laboratory Device Testing" style="width: 70px; height: auto;c" />
+          </div>
+          <div class="col">
+            <h3>Laboratory Device Testing</h3>
+            <p>
+              Device performance testing verifies that all parameters are set as directed by the software and that the performance of the devices and antennas meets specifications. Results from characterization testing can also provide insights into operational and/or performance trade-offs.
+            </p>
+            <p>
+              The laboratory testing performed on the LTE-V2X devices included: device characterization, GPS drift assessment, continuity of communications with loss of GPS, and device interoperability testing.
+            </p>
+            
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-1">
+            <Image src={largeScaleIcon} alt="Large-Scale Controlled Field Data" style="width: 70px; height: auto;c" />
+          </div>
+          <div class="col">
+            <h3>Large-Scale Controlled Field Data</h3>
+            <p>
+              This U.S. DOT large-scale controlled field testing moves beyond the reliance on simulation to collect and present real-world measurements taken under challenging transportation conditions. The large-scale field test set-up will mimic the following use cases:
+            </p>
+            <ol>
+              <li>Crash-imminent scenarios where there are widely differing vehicle speeds with the vehicles involved in the potential conflict situation—with and without line-of-sight; with and without the presence of unlicensed Wi-Fi.</li>
+              <li>Crash-imminent scenarios where the density of vehicles causes congested conditions in the wireless communications—with and without line-of-sight; with and without the presence of unlicensed Wi-Fi.</li>
+            </ol>
+            
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-1">
+            <Image src={methodologiesIcon} alt="Modeling & Simulation Data" style="width: 70px; height: auto;c" />
+          </div>
+          <div class="col">
+            <h3>Modeling &amp; Simulation Data</h3>
+            <p>
+              Initial modeling and simulation work helped the test team determine if any adjustments were necessary to the planned field test congestion scenario set-ups. The results from these efforts helped to provide the best understanding of communications performance in the field test environment before going out into the field. In addition, the modeling and simulation identified the necessity of allowing the congestion cloud to settle into its ongoing SPS performance before starting field test runs.
+            </p>
+            
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-1">
+            <Image src={observationsIcon} alt="LTE-V2X Test Observations" style="width: 70px; height: auto;c" />
+          </div>
+          <div class="col">
+            <h3>LTE-V2X Test Observations <em>(Coming in the Future)</em></h3>
+            <p>
+              The majority of the LTE-V2X testing has been completed and a summary of observations on device performance, interference, and performance within the 30 MHz is provided below:
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-1">
+            <Image src={ongoingTestIcon} alt="Ongoing Testing Activities" style="width: 70px; height: auto;c" />
+          </div>
+          <div class="col">
+            <h3>Ongoing Testing Activities <em>(Coming in the Future)</em></h3>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-1">
+            <Image src={dataSetsIcon} alt="Data Sets" style="width: 70px; height: auto;c" />
+          </div>
+          <div class="col">
+            <h3>Data Sets <em>(Coming in the Future)</em></h3>
+            
+          </div>
+        </div>
+      </main>
+</PageLayout>

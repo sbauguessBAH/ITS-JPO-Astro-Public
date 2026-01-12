@@ -1,0 +1,201 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X safety use cases",
+  "V2V safety",
+  "V2I safety",
+  "emergency electronic brake lights",
+  "forward collision warning",
+  "blind spot warning",
+  "lane change warning",
+  "intersection movement assist",
+  "left turn assist",
+  "red light violation warning",
+  "emergency vehicle preemption",
+  "pedestrian in crosswalk warning",
+  "wrong way entry warning",
+  "oversize vehicle warning",
+  "curve speed warning",
+  "reduced speed warning",
+];
+
+const description =
+  "Safety-focused V2X (V2V and V2I) use cases delivering alerts for hard braking, forward collision, blind spot and lane changes, intersection and left-turn conflicts, red light violations, emergency vehicle preemption, distress notifications, curve and reduced speed, pedestrians in crosswalks, wrong-way entry, railroad crossings, and oversize vehicle height/weight restrictions.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">Safety Use Cases</h2>
+        <div class="mt-3">
+          <table class="table table-bordered table-striped align-middle">
+            <thead class="table-light">
+              <tr>
+                <th scope="col" style="width: 25%">Use Case</th>
+                <th scope="col" style="width: 55%">Description</th>
+                <th scope="col" style="width: 20%">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-info"><strong>Emergency Electronic Brake Lights Warning</strong></td>
+                <td>This use case presents alerts to the driver of hard braking in the traffic stream ahead. By providing these alerts in advance, the driver has additional time to look for and assess situations developing ahead.  </td>
+                <td>V2V Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Forward Collision Warning</strong></td>
+                <td>This use case presents alerts to the driver to help avoid or mitigate the severity of crashes into the rear end of other vehicles on the road. Forward collision warning responds to a direct and imminent threat ahead of the host vehicle.  </td>
+                <td>V2V Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Blind Spot Warning / Lane Change Warning</strong></td>
+                <td>This use case presents alerts to the driver indicating the presence of same-direction traffic in an adjacent lane (Blind Spot Warning), or alerts given to the driver during vehicle lane changes (Lane Change Warning) to help the driver avoid crashes associated with potentially unsafe lane changes.  </td>
+                <td>V2V Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Intersection Movement Assist</strong></td>
+                <td>This use case presents alerts to the driver when it is not safe to enter an intersection—for example, when something is blocking the driver’s view of opposing or crossing traffic. This use case can be implemented as either a V2I (near-term use case) or V2V application.  </td>
+                <td>V2V or V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Left Turn Assist Warning</strong></td>
+                <td>This use case presents alerts to the driver as they attempt an unprotected left turn across traffic, to help them avoid crashes with opposite direction traffic. This use case can be implemented as either a V2I (near-term use case) or V2V application.  </td>
+                <td>V2V or V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Red Light Violation Warning</strong></td>
+                <td>This use case includes the broadcast of signal phase and timing (SPaT) and MAP messages that are received by in-vehicle devices that allow alerts to be presented to the driver of impeding red light violations.  </td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Emergency Vehicle Preemption</strong></td>
+                <td>This use case preempts the traffic signal timing at a signalized intersection to allow the movement of emergency vehicles through the intersection.</td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Emergency Vehicle Alert</strong></td>
+                <td>This use case presents alerts to the driver when an emergency vehicle (i.e., police, ambulance, fire truck, or another emergency vehicle) are approaching their vehicle.</td>
+                <td>V2V or V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Distress Notification (Mayday Alert)</strong></td>
+                <td>This use case allows vehicles to communicate a distress status back to a Center when the vehicle’s sensors detect an event that might require assistance from others (e.g., air bag deployed, vehicle disabled) or the vehicle’s driver manually initiates a distress status.</td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Curve Speed Warning</strong></td>
+                <td>This use case presents alerts to the driver when a vehicle is approaching a curve at a speed that may be too high for safe travel through that curve.  </td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Reduced Speed Warning</strong></td>
+                <td>This use case presents alerts to the driver to reduce the speed of their vehicle prior to approaching a segment of road with a reduced speed limit – including but not limited to a school zone, work zone, reduced speed limit, or variable speed limit.</td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Pedestrian in Signalized Crosswalk Warning</strong></td>
+                <td>This use case presents alerts to the driver when pedestrians, within the crosswalk of a signalized intersection, are in the intended path of the vehicle. The pedestrian’s presence in the crosswalk is determined using lidar or other detection technology.  </td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Wrong Way Entry Warning</strong></td>
+                <td>This use case presents alerts to the driver if their vehicle is traveling in the wrong direction. This use case may also provide alerts to other drivers that there is a wrong way driver on the road.</td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Railroad Crossing Warning</strong></td>
+                <td>This use case presents alerts to the driver as the vehicle approaches an active railroad crossing.  </td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Oversize Vehicle Warning</strong>
+                  <ul class="mb-0"><li>Overheight Warning</li><li>Overweight Warning</li></ul>
+                </td>
+                <td>This use case presents alerts to the driver when an oversize vehicle (overheight or overweight vehicle) approaches a segment of road with height or weight restrictions.</td>
+                <td>V2I Use Case</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="mt-4">
+          <h3>Supporting Documentation</h3>
+          <p><em>RLVW, CSW, and SSGA</em></p>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/26496" target="_blank" rel="noopener noreferrer">Accelerated Vehicle-to-Infrastructure (V2I) Safety Applications Concept of Operations Document</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/26495" target="_blank" rel="noopener noreferrer">Accelerated Vehicle-to-Infrastructure (V2I) Safety Applications System Requirements Document</a></li>
+          </ul>
+          <p><em>SWIW and RSWZ</em></p>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/26500" target="_blank" rel="noopener noreferrer">Vehicle-to-Infrastructure (V2I) Safety Applications Concept of Operations Document</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/26499" target="_blank" rel="noopener noreferrer">Vehicle-to-Infrastructure (V2I) Safety Applications System Requirements Document</a></li>
+          </ul>
+          <p><em>Pedestrian in Signalized Crosswalk Warning (Transit)</em></p>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3453" target="_blank" rel="noopener noreferrer">Transit Safety Retrofit Package Development TRP Concept of Operations</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3454" target="_blank" rel="noopener noreferrer">Transit Safety Retrofit Package (TRP) Applications Requirements</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3455" target="_blank" rel="noopener noreferrer">Transit Safety Retrofit Package (TRP) Architecture and Design Specifications</a></li>
+          </ul>
+          <p><em>Integrated Truck Project</em></p>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3437" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Integrated Truck Project, Vehicle Build and Build Test Plan Final Technical Report, January 31, 2014, FHWA-JPO-13-103</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3436" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Integrated Truck Project, Vehicle Build Test Report, January 31, 2014, FHWA-JPO-13-104</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/27106" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Integrated Truck Project, Data Acquisition System (DAS) Documentation, January 31, 2014, FHWA-JPO-13-105</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/27105" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Integrated Truck Project, Applications Requirements Final Technical Report, January 31, 2014, FHWA-JPO-13-106</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/27103" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Integrated Truck Project, Summary Report on Demonstration and Program Outreach at the 18th World Congress on Intelligent Transportation Systems, January 31, 2014, FHWA-JPO-13-109</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/27104" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Integrated Truck Project, Driver Clinics, Performance Tests, and Lessons Learned, January 31, 2014, FHWA-JPO-13-110</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3420" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Integrated Truck Project, Model Deployment Operational Analysis Report, January 31, 2014, FHWA-JPO-13-111</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3431" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Integrated Truck Project, Final Report, January 31, 2014, FHWA-JPO-13-112</a></li>
+          </ul>
+          <p><em>Retrofit Safety Device Kit Project</em></p>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3509" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Retrofit Safety Device Kit Project, Safety Applications and Development Plan, March 28, 2014, FHWA-JPO-14-106</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3491" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Retrofit Safety Device Kit Project, Safety Applications Performance and Functional Test Plan and Procedure, March 28, 2014, FHWA-JPO-14-107</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3492" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Retrofit Safety Device Kit Project, Applications Performance and Functional Test Report, March 28, 2014, FHWA-JPO-14-108</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3493" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Retrofit Safety Device Kit Project, Data Acquisition System (DAS) Documentation, March 28, 2014, FHWA-JPO-14-109</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3494" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Retrofit Safety Device Kit Project, Model Deployment Operational Analysis Report, March 28, 2014, FHWA-JPO-14-110</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3495" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Retrofit Safety Device Kit Project, Final Report, March 28, 2014, FHWA-JPO-14-111</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3521" target="_blank" rel="noopener noreferrer">Connected Commercial Vehicles - Retrofit Safety Device Kit Project, Final Report, July 10, 2014, FHWA-JPO-14-141</a></li>
+          </ul>
+          <p><em>EEBL, FCW, IMA, LTA, BSW/LCW, and DNPW</em></p>
+          <ul>
+            <li><a href="http://www.nhtsa.gov/DOT/NHTSA/NVS/Crash%20Avoidance/Technical%20Publications/2011/811373.pdf" target="_blank" rel="noopener noreferrer">USDOT Connected Vehicle Research Program Vehicle-to-Vehicle Safety Application Research Plan</a></li>
+            <li><a href="http://www.nhtsa.gov/staticfiles/rulemaking/pdf/V2V/Readiness-of-V2V-Technology-for-Application-812014.pdf" target="_blank" rel="noopener noreferrer">Vehicle-to-Vehicle Communications: Readiness of V2V Technology for Application</a></li>
+            <li><a href="http://www.nhtsa.gov/DOT/NHTSA/NVS/Crash%20Avoidance/Technical%20Publications/2011/811492A.pdf" target="_blank" rel="noopener noreferrer">Vehicle Safety Communications - Applications (VSC-A) Final Report</a></li>
+          </ul>
+          <p><em>Vehicle Turning Right in Front of Bus</em></p>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3453" target="_blank" rel="noopener noreferrer">Transit Safety Retrofit Package Development TRP Concept of Operations</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3454" target="_blank" rel="noopener noreferrer">Transit Safety Retrofit Package (TRP) Applications Requirements</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3455" target="_blank" rel="noopener noreferrer">Transit Safety Retrofit Package (TRP) Architecture and Design Specifications</a></li>
+          </ul>
+        </section>
+      </main>
+</PageLayout>
+
+<style>
+  .application-category {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background: #f8f9fa;
+  }
+
+  .application-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .application-list li {
+    padding: 0.5rem 0;
+    font-weight: 600;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .application-list li:last-child {
+    border-bottom: none;
+  }
+</style>

@@ -1,0 +1,182 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X mobility",
+  "V2X environment",
+  "signal priority",
+  "traffic signal optimal speed advisory",
+  "intelligent traffic signal system",
+  "I-SIG",
+  "pedestrian signal smartphone",
+  "speed harmonization",
+  "queue warning",
+  "cooperative adaptive cruise control",
+  "vehicle platooning",
+  "eco-driving",
+  "eco-signal operations",
+  "eco-lanes",
+  "low emissions zones",
+  "INFLO",
+  "AERIS",
+  "FRATIS",
+  "IDTO",
+  "R.E.S.C.U.M.E.",
+];
+
+const description =
+  "Mobility and environmental V2X use cases including signal priority and optimal speed advisory, intelligent traffic signal systems, accessible pedestrian signals via smartphone, speed harmonization and queue warning, cooperative adaptive cruise control and platooning, plus eco-driving, eco-signal operations, eco-lanes, and low emissions zone concepts referenced in USDOT programs like INFLO, AERIS, FRATIS, IDTO, and R.E.S.C.U.M.E.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">Mobility and Environmental Use Cases</h2>
+
+        <div class="mt-3">
+          <table class="table table-bordered table-striped align-middle">
+            <thead class="table-light">
+              <tr>
+                <th scope="col" style="width: 25%">Use Case</th>
+                <th scope="col" style="width: 55%">Description</th>
+                <th scope="col" style="width: 20%">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-info"><strong>Traffic Signal Optimal Speed Advisory (or Control)</strong></td>
+                <td>This use case broadcasts the current state of signal phasing (red, yellow, or green) and time remaining in that phase at signalized intersections. These data are used by vehicles to support eco-friendly speed trajectories as vehicles approach a signalized intersection. This use case may also be combined with Cooperative Adaptive Cruise Control (CACC).  </td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Intelligent Traffic Signal System (I-SIG)</strong></td>
+                <td>This use case includes an overarching system optimization application accommodating signal priority, preemption, and pedestrian movements.</td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Signal Priority</strong>
+                  <ul class="mb-0">
+                    <li>Transit</li>
+                    <li>Freight</li>
+                    <li>Snowplow</li>
+                    <li>Platooning Priority</li>
+                  </ul>
+                </td>
+                <td>This use case provides extra green time at signalized intersections to vehicles, such as transit vehicles, snowplows, or freight vehicles, helping the vehicles avoid a stop at a red light. This additional time can help a bus arrive at stops on time, reduce snowplow delays, or reduce truck idling for freight vehicles along an arterial corridor near a freight facility</td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Mobile Accessible Pedestrian Signal System (PED-SIG)</strong></td>
+                <td>This use case allows for an automated call from the smartphone of a visually impaired pedestrian to the traffic signal, as well as audio cues to safely navigate the crosswalk.</td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Speed Harmonization</strong></td>
+                <td>This use case recommends target speeds to drivers in response to congestion, incidents, and road conditions to maximize throughput and reduce crashes.  </td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Queue Warning</strong></td>
+                <td>This use case provides the driver timely warnings of existing and impending queues.  </td>
+                <td>V2I Use Case</td>
+              </tr>
+              <tr>
+                <td class="table-info"><strong>Cooperative Adaptive Cruise Control (CACC) / Vehicle Platooning</strong></td>
+                <td>This use case dynamically adjusts and coordinates cruise control speeds among platooning vehicles to improve traffic flow stability and increase throughput.</td>
+                <td>V2V Use Case</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="mt-4">
+          <h3>Supporting Documentation</h3>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3363" target="_blank" rel="noopener noreferrer">Vision and Operational Concept for Enabling Advanced Traveler Information Services Operational Concept</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/24650" target="_blank" rel="noopener noreferrer">Vision and Operational Concept for Enabling Advanced Traveler Information Services - Market Readiness Assessment</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3441" target="_blank" rel="noopener noreferrer">EnableATIS Strategy Assessment</a></li>
+            <li><a href="http://www.nhtsa.gov/DOT/NHTSA/NVS/Crash%20Avoidance/Technical%20Publications/2011/811373.pdf" target="_blank" rel="noopener noreferrer">USDOT Connected Vehicle Research Program Vehicle-to-Vehicle Safety Application Research Plan</a></li>
+          </ul>
+         
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3318" target="_blank" rel="noopener noreferrer">Concept Development and Needs Identification for Intelligent Network Flow Optimization (INFLO) Concept of Operations</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3380" target="_blank" rel="noopener noreferrer">Concept Development and Needs Identification for Intelligent Network Flow Optimization (INFLO) Assessment of Relevant Prior and Ongoing Research</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3387" target="_blank" rel="noopener noreferrer">Concept Development and Needs Identification for INFLO: Functional and Performance Requirements, and High-Level Data and Communication Needs</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3383" target="_blank" rel="noopener noreferrer">Concept Development and Needs Identification for Intelligent Network Flow Optimization (INFLO) Test Readiness Assessment</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3520" target="_blank" rel="noopener noreferrer">Report on Detailed Requirements for the INFLO Prototype</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3526" target="_blank" rel="noopener noreferrer">Report on Architecture Description for the INFLO Prototype</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3534" target="_blank" rel="noopener noreferrer">Report on Dynamic Speed Harmonization and Queue Warning Algorithm Design</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3527" target="_blank" rel="noopener noreferrer">System Design Document for the INFLO Prototype</a></li>
+          </ul>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/26493" target="_blank" rel="noopener noreferrer">Response, Emergency Staging, Communications, Uniform Management, and Evacuation (R.E.S.C.U.M.E.) Concept of Operations</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/26492" target="_blank" rel="noopener noreferrer">Response, Emergency Staging, Communications, Uniform Management, and Evacuation (R.E.S.C.U.M.E.) Report on Functional and Performance Requirements, and High-Level Data and Communication Needs</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3523" target="_blank" rel="noopener noreferrer">Prototype Development and Demonstration for Response, Emergency Staging, Communications, Uniform Management, and Evacuation (R.E.S.C.U.M.E.), R.E.S.C.U.M.E. Prototype System Architecture</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3525" target="_blank" rel="noopener noreferrer">Prototype Development and Demonstration for Response, Emergency Staging, Communications, Uniform Management, and Evacuation (R.E.S.C.U.M.E.), Final Functional and Performance Requirements</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3524" target="_blank" rel="noopener noreferrer">Prototype Development and Demonstration for Response, Emergency Staging, Communications, Uniform Management, and Evacuation (R.E.S.C.U.M.E.), R.E.S.C.U.M.E. Prototype System Design Document</a></li>
+          </ul>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3451" target="_blank" rel="noopener noreferrer">Integrated Dynamic Transit Operations (IDTO) Concept of Operations</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3371" target="_blank" rel="noopener noreferrer">Report on Functional and Performance Requirements and High-Level Data and Communication Needs for Integrated Dynamic Transit Operations (IDTO)</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3452" target="_blank" rel="noopener noreferrer">Test Readiness Assessment Summary for Integrated Dynamic Transit Operations (IDTO)</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3519" target="_blank" rel="noopener noreferrer">Report on Functional Requirements and Software Architecture for the IDTO Prototype Phase I Demonstration Site (Columbus)</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3499" target="_blank" rel="noopener noreferrer">System Design and Architecture for the IDTO Prototype Phase I Demonstration Site (Columbus)</a></li>
+          </ul>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3461" target="_blank" rel="noopener noreferrer">Freight Advanced Traveler Information System (FRATIS) Concept of Operations (FHWA-JPO-12-065)</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3462" target="_blank" rel="noopener noreferrer">Freight Advanced Traveler Information System Functional Requirements (FHWA-JPO-12-066)</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3463" target="_blank" rel="noopener noreferrer">FRATIS Concept of Operations Assessment of Relevant Prior and Ongoing Research and Industry Practices (FHWA-JPO-12-067)</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3450" target="_blank" rel="noopener noreferrer">FRATIS Concept of Operations - Assess Test Readiness of FRATIS (Task 4)</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3500" target="_blank" rel="noopener noreferrer">Freight Advanced Traveler Information System (FRATIS) Architecture and Implementation Report - Dallas-Fort Worth</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3501" target="_blank" rel="noopener noreferrer">Freight Advanced Traveler Information System (FRATIS) Demonstration Plan - Dallas-Fort Worth</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3502" target="_blank" rel="noopener noreferrer">Freight Advanced Traveler Information System (FRATIS) Architecture and Implementation Report - Los Angeles</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3503" target="_blank" rel="noopener noreferrer">Freight Advanced Traveler Information System (FRATIS) Demonstration Plan - Los Angeles</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3504" target="_blank" rel="noopener noreferrer">Freight Advanced Traveler Information System (FRATIS) Architecture and Implementation Report - South Florida</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3508" target="_blank" rel="noopener noreferrer">Freight Advanced Traveler Information System (FRATIS) Demonstration Plan - South Florida</a></li>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3522" target="_blank" rel="noopener noreferrer">Freight Advanced Traveler Information System (FRATIS) Demonstration Team Final Report</a></li>
+          </ul>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3439" target="_blank" rel="noopener noreferrer">Applications for the Environment: Real-Time Information Synthesis (AERIS) - Eco-Lanes: Operational Concept</a></li>
+          </ul>
+          <p><em>Eco-Approach and Departure at Signalized Intersections, Eco-Traffic Signal Timing, Eco-Traffic Signal Priority, Connected Eco-Driving, and Wireless Inductive/Resonance Charging</em></p>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3419" target="_blank" rel="noopener noreferrer">Applications for the Environment: Real-Time Information Synthesis (AERIS) Eco-Signal Operations: Operational Concept</a></li>
+          </ul>
+          <p><em>Eco-Lanes Management, Eco-Speed Harmonization, Eco-Cooperative Adaptive Cruise Control, Eco-Ramp Metering</em></p>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/3439" target="_blank" rel="noopener noreferrer">Applications for the Environment: Real-Time Information Synthesis (AERIS) - Eco-Lanes: Operational Concept</a></li>
+          </ul>
+          <p><em>Low Emissions Zone Management</em></p>
+          <ul>
+            <li><a href="https://rosap.ntl.bts.gov/view/dot/28000" target="_blank" rel="noopener noreferrer">Applications for the Environment: Real-Time Information Synthesis (AERIS) Low Emissions Zones: Operational Concept</a></li>
+          </ul>
+          
+        </section>
+      </main>
+</PageLayout>
+
+<style>
+  .application-category {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background: #f8f9fa;
+  }
+
+  .application-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .application-list li {
+    padding: 0.5rem 0;
+    font-weight: 600;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .application-list li:last-child {
+    border-bottom: none;
+  }
+</style>

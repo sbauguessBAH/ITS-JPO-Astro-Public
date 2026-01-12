@@ -1,0 +1,41 @@
+---
+
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "DSRC V2X",
+  "Dedicated Short-range Communications",
+  "Safety Band testing",
+  "out of band emissions",
+  "OOBE",
+  "unlicensed device interference",
+  "5.9 GHz",
+  "V2X safety",
+  "USDOT DSRC reports",
+  "interference testing",
+  "technical reports",
+];
+
+const description =
+  "Archive of USDOT Dedicated Short-range Communications (DSRC) V2X testing, covering Safety Band evaluations, out of band emissions, and interference from unlicensed devices, with links to public technical reports.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <h2 class="sideways blue">DSRC V2X Analysis Archive</h2>
+        
+        <p class="mt-4">
+          The USDOT tested Dedicated Short-range Communications (DSRC) technology extensively over several years, including the impact of sharing the band with unlicensed devices, impact of out of band emissions (OOBE) and interference from unlicensed devices operating in adjacent channels.
+        </p>
+
+        <p>
+          As a result of these activities, several technical reports were produced and made available to the public. You can find these reports on the Safety Band website.
+        </p>
+
+        <ul class="mt-4">
+          <li><a href="https://www.transportation.gov/research-and-technology/safety-band-testing-plans-and-technical-info" target="_blank" rel="noopener noreferrer">Safety Band</a></li>
+        </ul>
+      </main>
+</PageLayout>

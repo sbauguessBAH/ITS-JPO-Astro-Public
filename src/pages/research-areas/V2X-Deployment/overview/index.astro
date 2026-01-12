@@ -1,0 +1,83 @@
+---
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = [
+  "V2X",
+  "Vehicle-to-Everything",
+  "V2X overview",
+  "how V2X works",
+  "why V2X is needed",
+  "V2X applications",
+  "use cases",
+  "safety",
+  "mobility",
+  "USDOT sponsored applications",
+];
+
+const description =
+  "Overview of V2X Deployment with links to how V2X works, why it is needed, and key applications and use cases, highlighting USDOT-supported solutions that improve safety and mobility.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+      <main>
+        <div class="row my-4 g-4 ">
+          <div class="col-md-4 ">
+            <a href="/research-areas/V2X-Deployment/overview/how-v2x-works" class="text-decoration-none">
+              <div class=" p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>How V2X Works</h3>
+                <p class="mb-0">V2X provides connectivity through both direct and network communication.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a href="/research-areas/V2X-Deployment/overview/why-v2x" class="text-decoration-none">
+              <div class="p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>Why V2X is Needed</h3>
+                <p class="mb-0">V2X technologies address a set of critical and interrelated challenges in the surface transportation industry in the areas of safety and mobility.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a href="/research-areas/V2X-Deployment/overview/v2x-applications" class="text-decoration-none">
+              <div class=" p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>V2X Applications and Use Cases</h3>
+                <p class="mb-0">To date, USDOT has sponsored 30+ V2X applications, many through prototyping, field demonstration and deployment.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+</PageLayout>
+
+
+<style>
+  .data-card {
+    background-color: #f0f8ff;
+    border: 1px solid #d1e7f7;
+  }
+  .data-card:hover{
+    transition: transform 0.2s, box-shadow 0.2s;
+    transform: scale(1.05);
+  }
+  .vision-mission-title {
+    color: #005ea2;
+    gap: 0.5rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .program-sections {
+  }
+
+  .section-title {
+    color: #005ea2;
+    border-bottom: 3px solid #005ea2;
+  }
+</style>
