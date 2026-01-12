@@ -21,6 +21,8 @@ export default defineConfig({
     "/communications/its_images.htm": "/news-info/image-library",
     "/pcb": "/resources/pcb",
     "/resources/Professional-Capacity-Building/": "/resources/pcb",
-
+    "/research-areas/Intersection-Safety-Challenge": "/research-areas/intersection-safety/systems",
+    "/resources/asc": "/resources/architecture-and-standards",
+    "/asc": "/resources/architecture-and-standards",
   },
 });
