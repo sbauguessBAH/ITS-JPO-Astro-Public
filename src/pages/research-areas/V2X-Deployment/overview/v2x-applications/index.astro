@@ -1,6 +1,7 @@
 ---
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
 
 const keywords = [
   "V2X applications",
@@ -29,13 +30,17 @@ const description =
       To date, USDOT has sponsored 30+ V2X applications, many through prototyping, field demonstration and deployment. 
     </p>
 
-    <p class="fw-bold">Please click on the yellow tab of each category for more detailed application descriptions and the supporting documentation.</p>
+    <p class="fw-bold">Click on any category below to explore detailed application descriptions and supporting documentation.</p>
 
-    <div class="row  g-4">
-      <div class="col-md-6">
-        <div class="application-category">
-          <a class="btn btn-primary w-100 my-1" href="./v2x-applications/safety" role="button">SAFETY</a>
-          <ul class="application-list">
+    <div class="accordion-container">
+      <!-- Safety Accordion -->
+      <details class="accordion-item" name="v2x-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Safety</span>
+          <span class="accordion-count">15 Applications</span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="app-items">
             <li>Emergency Electronic Brake Lights Warning</li>
             <li>Forward Collision Warning</li>
             <li>Blind Spot Warning/Lane Change Warning</li>
@@ -52,19 +57,33 @@ const description =
             <li>Railroad Crossing Warning</li>
             <li>Oversize Vehicle Warning</li>
           </ul>
+          <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/safety")} class="accordion-link">View Full Details →</a>
+        </div>
+      </details>
 
-          <a class="btn btn-primary w-100 mt-4 mb-1" href="./v2x-applications/commercial-vehicle" role="button">COMMERCIAL VEHICLE</a>
-          <ul class="application-list">
+      <!-- Commercial Vehicle Accordion -->
+      <details class="accordion-item" name="v2x-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Commercial Vehicle</span>
+          <span class="accordion-count">2 Applications</span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="app-items">
             <li>Commercial Vehicle Wireless Inspection</li>
             <li>Truck Parking and Other Information</li>
           </ul>
+          <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/commercial-vehicle")} class="accordion-link">View Full Details →</a>
         </div>
-      </div>
+      </details>
 
-      <div class="col-md-6">
-        <div class="application-category">
-          <a class="btn btn-primary w-100 my-1" href="./v2x-applications/mobility-environment" role="button">MOBILITY & ENVIRONMENT</a>
-          <ul class="application-list">
+      <!-- Mobility & Environment Accordion -->
+      <details class="accordion-item" name="v2x-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Mobility & Environment</span>
+          <span class="accordion-count">7 Applications</span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="app-items">
             <li>Traffic Signal Optimal Speed Advisory (or Control)</li>
             <li>Intelligent Traffic Signal Systems (I-SIG)</li>
             <li>Signal Priority</li>
@@ -73,48 +92,212 @@ const description =
             <li>Queue Warning</li>
             <li>Cooperative Adaptive Cruise Control / Vehicle Platooning</li>
           </ul>
+          <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/mobility-environment")} class="accordion-link">View Full Details →</a>
+        </div>
+      </details>
 
-          <a class="btn btn-primary w-100 mt-4 mb-1" href="./v2x-applications/traffic-warnings" role="button">TRAFFIC ADVISORIES & WARNINGS</a>
-          <ul class="application-list">
+      <!-- Traffic Advisories & Warnings Accordion -->
+      <details class="accordion-item" name="v2x-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Traffic Advisories & Warnings</span>
+          <span class="accordion-count">4 Applications</span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="app-items">
             <li>Incident and Road Closure Advisories and Warnings</li>
             <li>Road Weather Advisories and Warnings</li>
             <li>Work Zone Advisories and Warnings</li>
             <li>Work Zone Worker Advisories and Warnings</li>
           </ul>
+          <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/traffic-warnings")} class="accordion-link">View Full Details →</a>
+        </div>
+      </details>
 
-          <a class="btn btn-primary w-100 mt-4 mb-1" href="./v2x-applications/data-collection" role="button">DATA COLLECTION</a>
-          <ul class="application-list">
+      <!-- Data Collection Accordion -->
+      <details class="accordion-item" name="v2x-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Data Collection</span>
+          <span class="accordion-count">3 Applications</span>
+        </summary>
+        <div class="accordion-content">
+          <ul class="app-items">
             <li>Road Weather Data Collection</li>
             <li>Probe-enabled Traffic Monitoring</li>
             <li>Probe-based Pavement Maintenance</li>
           </ul>
+          <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/data-collection")} class="accordion-link">View Full Details →</a>
         </div>
-      </div>
+      </details>
     </div>
   </main>
 </PageLayout>
 
 <style>
-  .application-category {
-    padding: 1rem;
+  .accordion-container {
+    margin-top: 2rem;
+    max-width: 100%;
+  }
+
+  .accordion-item {
+    margin-bottom: 1rem;
     border: 1px solid #dee2e6;
-    border-radius: 8px;
-    background: #f8f9fa;
+    border-radius: 1rem;
+    background: #fff;
+    overflow: hidden;
+    max-height: 100px;
+    transition: all 1s ease;
   }
 
-  .application-list {
-    list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 0;
+  .accordion-item[open] {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
-  .application-list li {
-    padding: 0.5rem 0;
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: #f0f8ff;
+    cursor: pointer;
+    user-select: none;
     font-weight: 600;
-    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+    border: none;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    padding-right: 3rem;
   }
 
-  .application-list li:last-child {
+  .accordion-header::after {
+    content: "+";
+    position: absolute;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #091f60;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-item[open] .accordion-header::after {
+    transform: rotate(45deg);
+    color: white;
+  }
+
+
+  .accordion-header:hover {
+    background: #ffffff;
+  }
+
+  .accordion-item[open] .accordion-header {
+    background: #091f60;
+    color: white;
+  }
+
+  .accordion-title {
+    font-size: 1.25rem;
+    color: inherit;
+    margin: 0;
+  }
+
+  .accordion-count {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: #09638c;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  .accordion-item[open]  {
+    max-height: 100rem;
+    
+  }
+
+  .accordion-content {
+    border-top: 1px solid #dee2e6;
+    overflow: hidden;
+    padding: 1.5rem;   
+    grid-template-rows: 0fr;
+    transition: all .5s ease;
+  }
+
+  
+
+  
+ 
+  .app-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    column-count: 3;
+    column-gap: 2rem;
+  }
+
+  @media (max-width: 1024px) {
+    .app-items {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .app-items {
+      column-count: 1;
+    }
+  }
+
+  .app-items li {
+    padding: 0.65rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .app-items li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #091f60;
+    font-weight: bold;
+  }
+
+  .app-items li:last-child {
     border-bottom: none;
+  }
+
+  .accordion-link {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    background: #091f60;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .accordion-link:hover {
+    background: #091d59;
+    text-decoration: none;
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 576px) {
+    .accordion-header {
+      padding: 1rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .accordion-count {
+      margin-left: 0;
+      margin-top: 0.5rem;
+    }
   }
 </style>
