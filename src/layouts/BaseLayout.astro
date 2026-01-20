@@ -6,7 +6,7 @@
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "../assets/css/new-age.css";
 // import "../assets/css/main.css";
-import Banner from "../components/Banner.astro";
+import USBanner from "../components/USBanner.astro";
 import Footer from "@/src/components/Footer.astro";
 import Header from "@/src/components/layout/Header.astro";
 import base_url from "@/src/lib/base_url";
@@ -66,7 +66,7 @@ const isTestEnv = import.meta.env.VITE_ENVIRONMENT === "test";
   </head>
   <body>
     <header>
-      <Banner />
+      <USBanner />
       <Header />
     </header>
     <slot />
