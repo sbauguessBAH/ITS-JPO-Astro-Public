@@ -121,24 +121,7 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
                                       </a>
                                     </li>
                                   )
-                                  return (
-                                    <li>
-                                      <a 
-                                        class:list={[
-                                          "dropdown-item", 
-                                          {"disabled": [
-                                              "ITS Professional Capacity Building", 
-                                              "Architecture, Standards, and Cybersecurity (ASC)"
-                                            ].includes(subPageLink.name)
-                                          },
-                                          {"active": comparePathname(pathname, subPageLink.url)}
-                                        ]} 
-                                        href={base_url(subPageLink.url)}
-                                      >
-                                        {subPageLink.name}
-                                      </a>
-                                    </li>
-                                  )
+                                  
                                 })}
                               </ul>
                             </li>
