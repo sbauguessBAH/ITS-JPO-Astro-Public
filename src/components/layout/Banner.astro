@@ -14,9 +14,10 @@ const { image } = Astro.props;
 // Optimize the banner image
 const optimizedImage = await getImage({
   src: image ?? defaultBannerImage,
-  width: 1200,
+  width: 2000,
   quality: 90,
   format: 'webp',
+  filter: 'sharpen',
 });
 const bannerImageUrl = optimizedImage.src;
 
@@ -60,8 +61,6 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
     </div>
     {showSubNav && (
         <nav class="navbar navbar-expand-lg navbar-dark navbar-marginbottom ">
-          
-           
             <div class="collapse navbar-collapse" id="navbar-content2">
               <ul class="navbar-nav">
                 {navItems.map(link => (
@@ -193,7 +192,7 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
     display: flex;
     justify-content: center;
     
-    margin: auto;
+    margin: 0 auto;
   }
 
 
@@ -566,220 +565,327 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
 
 {/* Mobile: First tap opens dropdown, second tap navigates. */}
 <script is:inline>
+  /**
+   * Navigation Dropdown Behavior Controller
+   * ========================================
+   * 
+   * This script manages interactive dropdown navigation behavior for both desktop and mobile viewports.
+   * 
+   * Key Features:
+   * - Desktop (≥992px): Click navigates to link, hover shows submenu
+   * - Mobile (<992px): First tap opens dropdown, second tap navigates to link
+   * - Full keyboard accessibility (Enter, Space, Escape, Arrow keys)
+   * - Manages focus states for screen readers
+   * - Prevents multiple dropdowns from being open simultaneously (except nested submenus)
+   */
   (function () {
-    // Only apply this behavior on narrow viewports (mobile/tablet)
+    // ============================================================================
+    // CONSTANTS
+    // ============================================================================
+    
+    /** Breakpoint separating mobile and desktop behavior (Bootstrap lg breakpoint) */
     const BREAKPOINT = 992;
+    
+    /** Timeout duration (ms) for resetting mobile tap state to prevent accidental navigation */
+    const TAP_RESET_TIMEOUT = 5000;
+    
+    /** Delay (ms) before focusing first dropdown item after keyboard open */
+    const FOCUS_DELAY = 50;
 
-    function closeOpenDropdowns(currentToggle) {
-      const toggles = document.querySelectorAll('.navbar .dropdown-toggle.show');
-      toggles.forEach(tgl => {
-        if (tgl === currentToggle) return;
-        // Keep ancestor/descendant branches open so submenus still work
-        const tglLi = tgl.parentElement;
-        const curLi = currentToggle.parentElement;
-        const sameBranch =
-          tgl.contains(currentToggle) ||
-          currentToggle.contains(tgl) ||
-          (tglLi && tglLi.contains(currentToggle)) ||
-          (curLi && curLi.contains(tgl));
-        if (sameBranch) return;
-        try {
-          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-            const inst = window.bootstrap.Dropdown.getInstance(tgl);
-            if (inst) inst.hide();
+    // ============================================================================
+    // UTILITY FUNCTIONS
+    // ============================================================================
+
+    /**
+     * Checks if the current viewport is desktop size
+     * @returns {boolean} True if viewport width >= BREAKPOINT
+     */
+    function isDesktopViewport() {
+      return window.innerWidth >= BREAKPOINT;
+    }
+
+    /**
+     * Determines if two dropdown toggles are in the same branch (parent/child relationship)
+     * Used to keep parent dropdowns open when child submenus are active
+     * @param {HTMLElement} toggle1 - First dropdown toggle
+     * @param {HTMLElement} toggle2 - Second dropdown toggle
+     * @returns {boolean} True if toggles are ancestors/descendants of each other
+     */
+    function isInSameBranch(toggle1, toggle2) {
+      if (!toggle1 || !toggle2) return false;
+      
+      const li1 = toggle1.parentElement;
+      const li2 = toggle2.parentElement;
+      
+      return (
+        toggle1.contains(toggle2) ||
+        toggle2.contains(toggle1) ||
+        (li1 && li1.contains(toggle2)) ||
+        (li2 && li2.contains(toggle1))
+      );
+    }
+
+    /**
+     * Safely hides a dropdown using Bootstrap's API if available, with fallback
+     * @param {HTMLElement} toggle - The dropdown toggle element
+     */
+    function hideDropdown(toggle) {
+      // Try Bootstrap's API first
+      try {
+        if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+          const inst = window.bootstrap.Dropdown.getInstance(toggle);
+          if (inst) {
+            inst.hide();
+            return;
           }
-        } catch (err) {
-          // ignore
         }
-        const parent = tgl.parentElement;
-        if (parent) parent.classList.remove('show');
-        const menu = parent && parent.querySelector(':scope > .dropdown-menu');
-        if (menu) menu.classList.remove('show');
-        tgl.setAttribute('aria-expanded', 'false');
-        delete tgl.dataset.dropdownTap;
+      } catch (err) {
+        // Fallback to manual class manipulation
+      }
+      
+      // Manual fallback
+      const parent = toggle.parentElement;
+      if (parent) parent.classList.remove('show');
+      
+      const menu = parent && parent.querySelector(':scope > .dropdown-menu');
+      if (menu) menu.classList.remove('show');
+      
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    /**
+     * Safely shows a dropdown using Bootstrap's API if available, with fallback
+     * @param {HTMLElement} toggle - The dropdown toggle element
+     */
+    function showDropdown(toggle) {
+      // Try Bootstrap's API first
+      try {
+        if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
+          window.bootstrap.Dropdown.getOrCreateInstance(toggle).show();
+          return;
+        }
+      } catch (err) {
+        // Fallback to manual class manipulation
+      }
+      
+      // Manual fallback
+      const parent = toggle.parentElement;
+      if (parent) parent.classList.add('show');
+    }
+
+    // ============================================================================
+    // DROPDOWN STATE MANAGEMENT
+    // ============================================================================
+
+    /**
+     * Closes all open dropdowns except the current one and its branch
+     * This prevents multiple unrelated dropdowns from being open simultaneously,
+     * but preserves parent dropdowns when a child submenu is open
+     * @param {HTMLElement} currentToggle - The dropdown toggle to keep open
+     */
+    function closeOpenDropdowns(currentToggle) {
+      // Close all dropdown toggles that have the 'show' class
+      const toggles = document.querySelectorAll('.navbar .dropdown-toggle.show');
+      toggles.forEach(toggle => {
+        // Skip the current toggle
+        if (toggle === currentToggle) return;
+        
+        // Skip toggles in the same branch (parent/child relationship)
+        if (isInSameBranch(toggle, currentToggle)) return;
+        
+        // Hide this unrelated dropdown
+        hideDropdown(toggle);
+        
+        // Clear mobile tap state
+        delete toggle.dataset.dropdownTap;
       });
 
+      // Also close any dropdown menus that are showing
       const menus = document.querySelectorAll('.navbar .dropdown-menu.show');
       menus.forEach(menu => {
         const toggle = menu.previousElementSibling;
+        
+        // Skip the current toggle's menu
         if (toggle === currentToggle) return;
-        const toggleLi = toggle && toggle.parentElement;
-        const curLi = currentToggle.parentElement;
-        const sameBranch =
-          menu.contains(currentToggle) ||
-          (toggle && currentToggle.contains(toggle)) ||
-          (toggleLi && toggleLi.contains(currentToggle)) ||
-          (curLi && curLi.contains(toggle));
-        if (sameBranch) return;
+        
+        // Skip menus in the same branch
+        if (menu.contains(currentToggle) || 
+            (toggle && isInSameBranch(toggle, currentToggle))) {
+          return;
+        }
+        
+        // Hide this unrelated menu
         menu.classList.remove('show');
-        if (menu.parentElement) menu.parentElement.classList.remove('show');
-        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        if (menu.parentElement) {
+          menu.parentElement.classList.remove('show');
+        }
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     }
 
-    function onBodyClick(e) {
-      // Only handle left-click / taps
-      const el = e.target.closest && e.target.closest('.navbar .dropdown-toggle');
-      if (!el) return;
-
-      const isDesktop = window.innerWidth >= BREAKPOINT;
-
-      // Desktop: navigate to the link (submenu shown on hover)
-      if (isDesktop) {
-        const href = el.getAttribute && el.getAttribute('href');
-        if (href && href !== '#' && href !== 'javascript:void(0)') {
-          window.location.href = href;
-        }
-        return;
+    /**
+     * Navigates to the href of an element if it's a valid URL
+     * @param {HTMLElement} element - The element containing the href
+     * @returns {boolean} True if navigation occurred
+     */
+    function navigateToLink(element) {
+      const href = element.getAttribute && element.getAttribute('href');
+      if (href && href !== '#' && href !== 'javascript:void(0)') {
+        window.location.href = href;
+        return true;
       }
-
-      // Mobile: First tap opens dropdown, second tap navigates
-      // If this toggle was tapped once already, navigate to the link target.
-      if (el.dataset.dropdownTap === '1') {
-        // cleanup marker so subsequent taps behave normally
-        delete el.dataset.dropdownTap;
-        // Try to read the href and navigate explicitly. Some mobile dropdown
-        // handlers (Bootstrap) can prevent the native navigation on dropdown toggles,
-        // so we set location.href directly to guarantee navigation.
-        const href = el.getAttribute && el.getAttribute('href');
-        if (href && href !== '#' && href !== 'javascript:void(0)') {
-          // prevent any default handling and force navigation
-          e.preventDefault();
-          window.location.href = href;
-        }
-        return;
-      }
-
-      // First tap: prevent navigation and open the dropdown
-      e.preventDefault();
-      el.dataset.dropdownTap = '1';
-      closeOpenDropdowns(el);
-      el.setAttribute('aria-expanded', 'true');
-      try {
-        // Use Bootstrap's Dropdown API if available to open the menu
-        if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-          window.bootstrap.Dropdown.getOrCreateInstance(el).show();
-        } else {
-          // Fallback: add class to parent to show menu (relies on CSS hover rules)
-          const parent = el.parentElement;
-          if (parent) parent.classList.add('show');
-        }
-      } catch (err) {
-        // ignore
-      }
-
-      // Reset the tap marker after 5 seconds so the link doesn't stay "armed" forever
-      setTimeout(() => { try { delete el.dataset.dropdownTap } catch (e) {} }, 5000);
+      return false;
     }
 
-    document.addEventListener('click', onBodyClick, { passive: false });
+    // ============================================================================
+    // CLICK/TAP HANDLERS
+    // ============================================================================
 
-    // Keyboard accessibility: handle Enter/Space to toggle dropdowns, Escape to close
-    function onKeyDown(e) {
-      const el = e.target.closest && e.target.closest('.navbar .dropdown-toggle');
-      if (!el) return;
+    /**
+     * Handles click/tap events on dropdown toggles
+     * Desktop: Navigates directly to the link (hover shows dropdown)
+     * Mobile: First tap opens dropdown, second tap navigates
+     * @param {Event} e - The click event
+     */
+    function handleDropdownClick(e) {
+      // Find the closest dropdown toggle
+      const toggle = e.target.closest && e.target.closest('.navbar .dropdown-toggle');
+      if (!toggle) return;
 
-      const isDesktop = window.innerWidth >= BREAKPOINT;
+      // DESKTOP BEHAVIOR: Direct navigation (dropdowns shown on hover)
+      if (isDesktopViewport()) {
+        navigateToLink(toggle);
+        return;
+      }
 
-      // Enter or Space to toggle dropdown
+      // MOBILE BEHAVIOR: Two-tap pattern
+      // Check if this toggle was already tapped once
+      if (toggle.dataset.dropdownTap === '1') {
+        // Second tap: Navigate to the link
+        delete toggle.dataset.dropdownTap;
+        
+        // Prevent default and force navigation
+        // (Bootstrap may interfere with normal link behavior on dropdown toggles)
+        if (navigateToLink(toggle)) {
+          e.preventDefault();
+        }
+        return;
+      }
+
+      // First tap: Open the dropdown
+      e.preventDefault();
+      
+      // Mark this toggle as tapped once
+      toggle.dataset.dropdownTap = '1';
+      
+      // Close other dropdowns and open this one
+      closeOpenDropdowns(toggle);
+      toggle.setAttribute('aria-expanded', 'true');
+      showDropdown(toggle);
+
+      // Reset tap state after timeout to prevent accidental navigation
+      setTimeout(() => {
+        try {
+          delete toggle.dataset.dropdownTap;
+        } catch (err) {
+          // Ignore errors if element no longer exists
+        }
+      }, TAP_RESET_TIMEOUT);
+    }
+
+    // ============================================================================
+    // KEYBOARD HANDLERS
+    // ============================================================================
+
+    /**
+     * Handles keyboard interactions for dropdown navigation
+     * Supports: Enter/Space (toggle), Escape (close), Arrow keys (navigate items)
+     * @param {KeyboardEvent} e - The keyboard event
+     */
+    function handleKeyboardInteraction(e) {
+      const toggle = e.target.closest && e.target.closest('.navbar .dropdown-toggle');
+      if (!toggle) return;
+
+      const parent = toggle.parentElement;
+
+      // ENTER or SPACE: Toggle dropdown
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        const parent = el.parentElement;
+        
         const isOpen = parent && parent.classList.contains('show');
 
-        if (isDesktop) {
-          // Desktop: open and focus first item
+        if (isDesktopViewport()) {
+          // Desktop: Open and focus first item (only if not already open)
           if (!isOpen) {
-            closeOpenDropdowns(el);
-            el.setAttribute('aria-expanded', 'true');
-            try {
-              if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-                window.bootstrap.Dropdown.getOrCreateInstance(el).show();
-              } else if (parent) {
-                parent.classList.add('show');
-              }
-            } catch (err) {
-              // ignore
-            }
+            closeOpenDropdowns(toggle);
+            toggle.setAttribute('aria-expanded', 'true');
+            showDropdown(toggle);
+            
+            // Focus the first dropdown item after a short delay
             setTimeout(() => {
               const menu = parent && parent.querySelector(':scope > .dropdown-menu');
               if (menu) {
                 const firstItem = menu.querySelector('.dropdown-item');
                 if (firstItem) firstItem.focus();
               }
-            }, 50);
+            }, FOCUS_DELAY);
           }
           return;
         }
 
-        // Mobile: toggle the dropdown
+        // Mobile: Toggle open/closed
         if (isOpen) {
-          try {
-            if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-              const inst = window.bootstrap.Dropdown.getInstance(el);
-              if (inst) inst.hide();
-            }
-          } catch (err) {
-            // ignore
-          }
-          parent.classList.remove('show');
+          hideDropdown(toggle);
           const menu = parent && parent.querySelector(':scope > .dropdown-menu');
           if (menu) menu.classList.remove('show');
-          el.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-expanded', 'false');
         } else {
-          closeOpenDropdowns(el);
-          el.dataset.dropdownTap = '1';
-          el.setAttribute('aria-expanded', 'true');
-          try {
-            if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-              window.bootstrap.Dropdown.getOrCreateInstance(el).show();
-            } else {
-              parent.classList.add('show');
-            }
-          } catch (err) {
-            // ignore
-          }
+          closeOpenDropdowns(toggle);
+          toggle.dataset.dropdownTap = '1';
+          toggle.setAttribute('aria-expanded', 'true');
+          showDropdown(toggle);
         }
         return;
       }
 
-      // Escape to close dropdown
+      // ESCAPE: Close dropdown and return focus to toggle
       if (e.key === 'Escape') {
         e.preventDefault();
-        const parent = el.parentElement;
-        try {
-          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-            const inst = window.bootstrap.Dropdown.getInstance(el);
-            if (inst) inst.hide();
-          }
-        } catch (err) {
-          // ignore
-        }
-        parent.classList.remove('show');
+        hideDropdown(toggle);
         const menu = parent && parent.querySelector(':scope > .dropdown-menu');
         if (menu) menu.classList.remove('show');
-        el.setAttribute('aria-expanded', 'false');
-        el.focus();
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+        return;
       }
 
-      // Arrow keys for navigation within open menus
+      // ARROW KEYS: Navigate within menu items
       if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        // Case 1: Already inside a dropdown menu
         const menu = e.target.closest('.dropdown-menu');
         if (menu) {
           e.preventDefault();
           const items = Array.from(menu.querySelectorAll('.dropdown-item'));
           if (items.length > 0) {
             const currentIndex = items.indexOf(document.activeElement);
-            let nextIndex = currentIndex;
-            if (e.key === 'ArrowDown') nextIndex = (currentIndex + 1) % items.length;
-            else nextIndex = (currentIndex - 1 + items.length) % items.length;
+            let nextIndex;
+            
+            if (e.key === 'ArrowDown') {
+              // Wrap around to first item
+              nextIndex = (currentIndex + 1) % items.length;
+            } else {
+              // Wrap around to last item
+              nextIndex = (currentIndex - 1 + items.length) % items.length;
+            }
+            
             items[nextIndex].focus();
           }
           return;
         }
 
-        // If on toggle with menu, focus first/last item
-        const parent = el.parentElement;
+        // Case 2: On the toggle itself, focus first/last item in menu
         const toggleMenu = parent && parent.querySelector(':scope > .dropdown-menu');
         if (toggleMenu) {
           e.preventDefault();
@@ -792,73 +898,83 @@ const navItems = showSubNav && currentSecond ? (currentSecond.pages ?? []) : [];
       }
     }
 
-    document.addEventListener('keydown', onKeyDown, { passive: false });
+    // ============================================================================
+    // FOCUS HANDLERS (for keyboard and tab navigation)
+    // ============================================================================
 
-    // Keep dropdown open when any of its items have focus (for tab navigation)
-    function keepDropdownOpen(element) {
-      let menu = element.closest('.dropdown-menu');
+    /**
+     * Ensures dropdown stays open when any of its items receive focus
+     * This is critical for proper keyboard/tab navigation
+     * @param {HTMLElement} element - The element that received focus
+     */
+    function maintainDropdownOnFocus(element) {
+      const menu = element.closest('.dropdown-menu');
       if (!menu) return;
       
       const toggle = menu.previousElementSibling;
       if (toggle && toggle.classList.contains('dropdown-toggle')) {
         toggle.setAttribute('aria-expanded', 'true');
-        try {
-          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-            window.bootstrap.Dropdown.getOrCreateInstance(toggle).show();
-          }
-        } catch (err) {
-          // ignore
-        }
+        showDropdown(toggle);
       }
     }
 
-    function onFocusIn(e) {
+    /**
+     * Handles focus entering dropdown elements
+     * On desktop, automatically opens dropdown when toggle receives focus
+     * @param {FocusEvent} e - The focus event
+     */
+    function handleFocusIn(e) {
       const item = e.target;
 
-      // If focusing a top-level toggle on desktop, open it for keyboard users
-      if (window.innerWidth >= BREAKPOINT && item.classList.contains('dropdown-toggle')) {
+      // Desktop: Auto-open dropdown when toggle receives focus (for keyboard users)
+      if (isDesktopViewport() && item.classList.contains('dropdown-toggle')) {
         closeOpenDropdowns(item);
         item.setAttribute('aria-expanded', 'true');
-        try {
-          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-            window.bootstrap.Dropdown.getOrCreateInstance(item).show();
-          }
-        } catch (err) {
-          // ignore
-        }
+        showDropdown(item);
       }
 
-      // Keep dropdown open if focusing any item in a dropdown
-      if (item.classList.contains('dropdown-item') || item.classList.contains('dropdown-toggle')) {
-        keepDropdownOpen(item);
+      // Keep dropdown open if focusing any item within it
+      if (item.classList.contains('dropdown-item') || 
+          item.classList.contains('dropdown-toggle')) {
+        maintainDropdownOnFocus(item);
       }
     }
 
-    function onFocusOut(e) {
+    /**
+     * Handles focus leaving dropdown elements
+     * Closes dropdown only if focus is leaving the entire dropdown (not moving to another item)
+     * @param {FocusEvent} e - The focus event
+     */
+    function handleFocusOut(e) {
       const menu = e.target.closest('.dropdown-menu');
       if (!menu) return;
       
-      // Only close if focus is not going to another item in the same menu or its toggle
       const nextFocus = e.relatedTarget;
       const toggle = menu.previousElementSibling;
       
+      // Only close if focus is completely leaving the dropdown
+      // (not moving to another item in the menu or to the toggle itself)
       if (!nextFocus || (!menu.contains(nextFocus) && nextFocus !== toggle)) {
         const dropdownToggle = menu.previousElementSibling;
         if (dropdownToggle && dropdownToggle.classList.contains('dropdown-toggle')) {
-          try {
-            if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-              const inst = window.bootstrap.Dropdown.getInstance(dropdownToggle);
-              if (inst) inst.hide();
-            }
-          } catch (err) {
-            // ignore
-          }
+          hideDropdown(dropdownToggle);
           dropdownToggle.setAttribute('aria-expanded', 'false');
         }
       }
     }
 
-    document.addEventListener('focusin', onFocusIn, { passive: true });
-    document.addEventListener('focusout', onFocusOut, { passive: true });
+    // ============================================================================
+    // EVENT LISTENER REGISTRATION
+    // ============================================================================
+
+    // Click/tap events (passive: false to allow preventDefault)
+    document.addEventListener('click', handleDropdownClick, { passive: false });
+    
+    // Keyboard events (passive: false to allow preventDefault)
+    document.addEventListener('keydown', handleKeyboardInteraction, { passive: false });
+    
+    // Focus events (passive: true for better performance)
+    document.addEventListener('focusin', handleFocusIn, { passive: true });
+    document.addEventListener('focusout', handleFocusOut, { passive: true });
   })();
 </script>

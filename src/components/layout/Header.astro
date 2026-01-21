@@ -68,7 +68,7 @@ const isActiveSection = (sectionUrl) => {
     flex-grow: 1;
     background-color: transparent !important;
     padding: 0 !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
     justify-content: flex-end;
   }
 
@@ -242,6 +242,7 @@ const isActiveSection = (sectionUrl) => {
     .navbar-nav .dropdown-menu {
       display: none;
     }
+ 
   
   }
 
@@ -262,6 +263,7 @@ const isActiveSection = (sectionUrl) => {
       width: 100%;
       justify-content: flex-start;
     }
+    
 
   }
 
@@ -287,6 +289,9 @@ const isActiveSection = (sectionUrl) => {
       width: 50px;
       height: 50px;
       background-color: rgb(255, 255, 255, 0.25);
+    }
+   .nav-item:last-of-type {
+      margin-bottom: 10px;
     }
 
     /* Show an 'X' when the toggler is expanded (i.e. doesn't have `collapsed`) */
