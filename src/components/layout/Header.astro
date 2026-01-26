@@ -304,8 +304,6 @@ const isActiveSection = (sectionUrl) => {
     .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
       align-self: center;
-
-   
     }
 
    
@@ -374,193 +372,6 @@ const isActiveSection = (sectionUrl) => {
   }
 </style>
 
-<script is:inline>
-  (function () {
-    const BREAKPOINT = 992;
-
-    function closeOpenDropdowns(currentToggle) {
-      const toggles = document.querySelectorAll('.header-bar .dropdown-toggle[aria-expanded="true"]');
-      toggles.forEach(tgl => {
-        if (tgl === currentToggle) return;
-        try {
-          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-            const inst = window.bootstrap.Dropdown.getInstance(tgl);
-            if (inst) inst.hide();
-          }
-        } catch (err) {
-          // ignore
-        }
-        tgl.setAttribute('aria-expanded', 'false');
-      });
-    }
-
-    // Keep dropdown open when any of its items have focus
-    function keepDropdownOpen(element) {
-      let menu = element.closest('.dropdown-menu');
-      if (!menu) return;
-      
-      const toggle = menu.previousElementSibling;
-      if (toggle && toggle.classList.contains('dropdown-toggle')) {
-        toggle.setAttribute('aria-expanded', 'true');
-        try {
-          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-            window.bootstrap.Dropdown.getOrCreateInstance(toggle).show();
-          }
-        } catch (err) {
-          // ignore
-        }
-      }
-    }
-
-    // Keyboard accessibility: handle Enter/Space to toggle dropdowns, Escape to close
-    function onKeyDown(e) {
-      const el = e.target.closest && e.target.closest('.header-bar .dropdown-toggle');
-      if (!el) return;
-
-      const isDesktop = window.innerWidth >= BREAKPOINT;
-
-      // Enter or Space to toggle dropdown
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const isOpen = el.getAttribute('aria-expanded') === 'true';
-
-        if (isDesktop) {
-          // On desktop, trigger the dropdown on Enter
-          if (!isOpen) {
-            closeOpenDropdowns(el);
-            el.setAttribute('aria-expanded', 'true');
-            try {
-              if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-                window.bootstrap.Dropdown.getOrCreateInstance(el).show();
-              }
-            } catch (err) {
-              // ignore
-            }
-            // Focus the first menu item so Tab enters the menu
-            setTimeout(() => {
-              const parent = el.parentElement;
-              const menu = parent && parent.querySelector(':scope > .dropdown-menu');
-              if (menu) {
-                const firstItem = menu.querySelector('.dropdown-item');
-                if (firstItem) firstItem.focus();
-              }
-            }, 50);
-          }
-          return;
-        }
-
-        // Mobile: toggle the dropdown
-        if (isOpen) {
-          try {
-            if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-              const inst = window.bootstrap.Dropdown.getInstance(el);
-              if (inst) inst.hide();
-            }
-          } catch (err) {
-            // ignore
-          }
-          el.setAttribute('aria-expanded', 'false');
-        } else {
-          closeOpenDropdowns(el);
-          el.setAttribute('aria-expanded', 'true');
-          try {
-            if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-              window.bootstrap.Dropdown.getOrCreateInstance(el).show();
-            }
-          } catch (err) {
-            // ignore
-          }
-        }
-        return;
-      }
-
-      // Escape to close dropdown
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        try {
-          if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-            const inst = window.bootstrap.Dropdown.getInstance(el);
-            if (inst) inst.hide();
-          }
-        } catch (err) {
-          // ignore
-        }
-        el.setAttribute('aria-expanded', 'false');
-        el.focus();
-      }
-
-      // Arrow keys for navigation (desktop only for now)
-      if (isDesktop && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
-        e.preventDefault();
-        const parent = el.parentElement;
-        const menu = parent && parent.querySelector(':scope > .dropdown-menu');
-        if (menu) {
-          const items = Array.from(menu.querySelectorAll('.dropdown-item'));
-          if (items.length > 0) {
-            const firstItem = e.key === 'ArrowDown' ? items[0] : items[items.length - 1];
-            firstItem.focus();
-          }
-        }
-      }
-    }
-
-    // Track dropdown state for aria-expanded
-    function onDropdownShow(e) {
-      const toggle = e.relatedTarget;
-      if (toggle) {
-        toggle.setAttribute('aria-expanded', 'true');
-        closeOpenDropdowns(toggle);
-      }
-    }
-
-    function onDropdownHide(e) {
-      const toggle = e.relatedTarget;
-      if (toggle) {
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    }
-
-    // Handle focus on dropdown items to keep dropdown open
-    function onFocusIn(e) {
-      const item = e.target;
-      // Keep dropdown open if focusing any item in a dropdown
-      if (item.classList.contains('dropdown-item') || item.classList.contains('dropdown-toggle')) {
-        keepDropdownOpen(item);
-      }
-    }
-
-    // Close dropdown when focus leaves the menu
-    function onFocusOut(e) {
-      const menu = e.target.closest('.dropdown-menu');
-      if (!menu) return;
-      
-      // Only close if focus is not going to another item in the same menu or its toggle
-      const nextFocus = e.relatedTarget;
-      const toggle = menu.previousElementSibling;
-      
-      if (!nextFocus || (!menu.contains(nextFocus) && nextFocus !== toggle)) {
-        const dropdownToggle = menu.previousElementSibling;
-        if (dropdownToggle && dropdownToggle.classList.contains('dropdown-toggle')) {
-          try {
-            if (window.bootstrap && typeof window.bootstrap.Dropdown !== 'undefined') {
-              const inst = window.bootstrap.Dropdown.getInstance(dropdownToggle);
-              if (inst) inst.hide();
-            }
-          } catch (err) {
-            // ignore
-          }
-          dropdownToggle.setAttribute('aria-expanded', 'false');
-        }
-      }
-    }
-
-    document.addEventListener('keydown', onKeyDown, { passive: false });
-    document.addEventListener('show.bs.dropdown', onDropdownShow);
-    document.addEventListener('hide.bs.dropdown', onDropdownHide);
-    document.addEventListener('focusin', onFocusIn, { passive: true });
-    document.addEventListener('focusout', onFocusOut, { passive: true });
-  })();
-</script>
 <div class="top-bar">
   <div class="container-xl d-flex justify-content-between align-items-center top-bar-container">
     <a href="https://www.transportation.gov/">
@@ -640,3 +451,6 @@ const isActiveSection = (sectionUrl) => {
     </div>
   </div>
 </div>
+
+
+
