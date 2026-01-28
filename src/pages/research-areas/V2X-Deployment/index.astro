@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+import base_url from "@/src/lib/base_url";
 
 const keywords = ["V2X", "Vehicle-to-Everything", "V2X Deployment", "interoperable connectivity", "safety", "goods movement", "public investment", "private investment"];
 const description = "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
@@ -77,7 +78,7 @@ const description = "The V2X Deployment program accelerates the adoption and dep
           <ul class="ps-4 mt-3">
             <li>V2X Summits and workshops</li>
             <li><a href="https://pooledfund.org/Details/Solicitation/1615">V2X Pooled Fund Study</a></li>
-            <li>Accelerating V2X Deployment Cohort</li>
+            <li><a href={base_url("/resources/pcb/technical-assistance/v2x-cohort")}>Accelerating V2X Deployment Cohort</a></li>
             <li><a href="https://transportationops.org/CATCoalition">Cooperative Automated Transportation (CAT) Coalition</a></li>
           </ul>
         </div>
@@ -87,7 +88,7 @@ const description = "The V2X Deployment program accelerates the adoption and dep
         <div class="pt-4">
           <h3 class="section-title pb-2">Professional Capacity Building</h3>
           <ul class="ps-4 mt-3">
-            <li>V2X Trainings</li>
+            <li><a href={base_url("/resources/pcb/trainings/v2x-trainings/")}>V2X Trainings</a></li>
             <li><a href="mailto:CAVSupportServices@dot.gov?subject=">Connected and Automated Vehicle (CAV) Help Desk</a></li>
             <li><a href="mailto:CAVSupportServices@dot.gov?subject=">CAV Equipment Loan Program</a></li>
             <li><a href="https://its.dot.gov/scrc" target="_blank" rel="noopener noreferrer">Smart Community Resource Center</a></li>

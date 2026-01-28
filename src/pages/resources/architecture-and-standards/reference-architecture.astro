@@ -3,9 +3,9 @@ import { Image } from "astro:assets";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
 
-import archRelationships from "@/src/assets/images/asc/arch-relationships.webp";
-import archFlow from "@/src/assets/images/asc/arch-flow.webp";
-import archLayers from "@/src/assets/images/asc/arch-layers.webp"
+import archRelationships from "@/src/assets/images/asc/ASC-Relationships.png";
+import archFlow from "@/src/assets/images/asc/ASC-flow.png";
+import archLayers from "@/src/assets/images/asc/ASC-layers.png"
 
 
 
@@ -35,52 +35,31 @@ const description =
   <Fragment slot="banner"> Architecture and Standards </Fragment>
   <main>
     <h2 class="blue">National ITS Reference Architecture</h2>
-    <div>
-      <p>
-        The National ITS Reference Architecture, also known as the “Architecture Reference for Cooperative and 
-        Intelligent Transportation” or simply “ARC-IT” provides a common framework for planning, defining, and 
-        integrating intelligent transportation systems. ARC-IT is a reference architecture providing a common basis 
-        for planners and engineers with differing concerns to conceive, design and implement systems using a common 
-        language as a basis for delivering ITS, but does not mandate any particular implementation. ARC-IT includes 
-        artifacts that answer concerns relevant to a large variety of stakeholders, and provides tools intended for 
-        transportation planners, regional architects and systems engineers to conceive of and develop regional 
-        architectures, and scope and develop projects. ARC-IT includes a set of interconnected components that are 
-        organized into four views that focus on four different architecture perspectives: Enterprise, 
-        Functional, Physical, and Communications. <a target="_blank" rel="noopener noreferrer" href="https://www.arc-it.net/html/whatsnew/whatsnew.html">Learn more</a> about 
-        the current version of the National ITS Reference Architecture.
-      </p>
-      <div class="d-flex justify-content-center">
-        <figure class="figure">
-          <a href="https://www.arc-it.net/html/methodology/archstructure.html" target="_blank" rel="noopener noreferrer">
-            <Image
-              src={archLayers} 
-              alt="Diagram showing 4 views (4 rectangles with icons for each view) that makeup the Architecture Reference for Cooperative and Intelligent Transportation. Enterprise View depicts Relationships between Organizations. Functional View depicts Logical interactions between Functions. Physical view depicts Connections between Physical Objects. Communications view depicts layered protocols facilitating data exchange between Physical Objects." 
-              class="figure-img img-fluid"
-            />
-          </a>
-          <!-- <figcaption class="figure-caption">
-            Architecture Reference for Cooperative and Intelligent 
-            <br/>
-            Transportation (ARC-IT) (click to learn more)
-          </figcaption> -->
-        </figure>
-      </div>
-    </div>
-    <div>
-      <div>
-        <h3>Connecting ITS Standards to the National ITS Reference Architecture</h3>
+    <div class="row g-4">
+      <div class="col-12 col-lg-9">
         <p>
-          One of the main goals for the creation of the National ITS Reference Architecture (ARC-IT) was to define the 
-          key interfaces for standardization. Information flows (and their constituent detailed data flows) serve as 
-          the basis for much of the standards work on the ITS Standards Program. ITS Standards have been developed for 
-          many of the information flows in ARC-IT, and this mapping of standards to information flows is available in 
-          the Physical View on the <a target="_blank" rel="noopener noreferrer" href="https://www.arc-it.net/html/architecture/architecture.html">ARC-IT</a> website. 
-          By selecting an information flow triple, potential ITS and other 
-          communications standards to consider during deployment are listed on the Communications Diagrams.
+          The National ITS Reference Architecture, also known as the “Architecture Reference for Cooperative and 
+          Intelligent Transportation” or simply “ARC-IT” provides a common framework for planning, defining, and 
+          integrating intelligent transportation systems. ARC-IT is a reference architecture providing a common basis 
+          for planners and engineers with differing concerns to conceive, design and implement systems using a common 
+          language as a basis for delivering ITS, but does not mandate any particular implementation. ARC-IT includes 
+          artifacts that answer concerns relevant to a large variety of stakeholders, and provides tools intended for 
+          transportation planners, regional architects and systems engineers to conceive of and develop regional 
+          architectures, and scope and develop projects. ARC-IT includes a set of interconnected components that are 
+          organized into four views that focus on four different architecture perspectives: Enterprise, 
+          Functional, Physical, and Communications. <a target="_blank" rel="noopener noreferrer" href="https://www.arc-it.net/html/whatsnew/whatsnew.html">Learn more</a> about 
+          the current version of the National ITS Reference Architecture.
         </p>
-      </div>
-      <div class="d-flex justify-content-center">
-        <figure class="figure">
+        <h3>Connecting ITS Standards to the Regional and Project ITS Architecture</h3>
+      <p>
+        ITS planners, deployers and other stakeholders tailor the National ITS Reference Architecture (ARC-IT) to create 
+        Regional ITS Architectures that meet their specific needs. Regional ITS Architectures therefore consist of functions 
+        within ITS elements and information flows that interconnect each of the ITS elements in the region 
+        (and with ITS elements outside the region). Since information flows are mapped to ITS standards in ARC-IT, and 
+        since a Regional ITS Architecture is based on ARC-IT, the standards mapping to information flows is also readily available. 
+        The same holds true when developing ITS Architectures for a project.
+      </p>
+      <figure class="figure">
           <a href="https://www.arc-it.net/html/architecture/architecture.html" target="_blank" rel="noopener noreferrer">
             <Image 
               src={archFlow} 
@@ -91,30 +70,57 @@ const description =
           <figcaption class="figure-caption">The four views of the architecture and their constituent parts (click to learn more)</figcaption>
         </figure>
       </div>
+      <div class="col-12 col-lg-3">
+        <figure class="figure mb-0 text-lg-end">
+          <a href="#archModal" class="d-inline-block w-100">
+            <Image
+              src={archLayers}
+              alt="Diagram showing 4 views (4 rectangles with icons for each view) that makeup the Architecture Reference for Cooperative and Intelligent Transportation. Enterprise View depicts Relationships between Organizations. Functional View depicts Logical interactions between Functions. Physical view depicts Connections between Physical Objects. Communications view depicts layered protocols facilitating data exchange between Physical Objects."
+              class="figure-img img-fluid arch-image"
+            />
+          </a>
+          <figcaption class="figure-caption text-center">Click to view larger</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    {/* Pure CSS modals for enlarged images */}
+    <div id="archModal" class="img-modal">
+      <a href="#!" class="img-modal__overlay" aria-label="Close"></a>
+      <div class="img-modal__dialog" role="dialog" aria-modal="true" aria-label="Architecture layers image">
+        <a href="#!" class="img-modal__close" aria-label="Close">&times;</a>
+        <Image
+          src={archLayers}
+          alt="Diagram showing 4 views (4 rectangles with icons for each view) that makeup the Architecture Reference for Cooperative and Intelligent Transportation. Enterprise View depicts Relationships between Organizations. Functional View depicts Logical interactions between Functions. Physical view depicts Connections between Physical Objects. Communications view depicts layered protocols facilitating data exchange between Physical Objects."
+          class="img-fluid w-100"
+        />
+      </div>
+    </div>
+
+    <div id="relModal" class="img-modal">
+      <a href="#!" class="img-modal__overlay" aria-label="Close"></a>
+      <div class="img-modal__dialog" role="dialog" aria-modal="true" aria-label="ITS Architecture Relationships image">
+        <a href="#!" class="img-modal__close" aria-label="Close">&times;</a>
+        <Image
+          src={archRelationships}
+          alt="ITS Architectural Relationships graphic. Graphic is described in paragraph immediately before graphic."
+          class="img-fluid w-100"
+        />
+      </div>
     </div>
     <div>
       <h3>Connecting ITS Standards to the Regional and Project ITS Architecture</h3>
-      <p>
-        ITS planners, deployers and other stakeholders tailor the National ITS Reference Architecture (ARC-IT) to create 
-        Regional ITS Architectures that meet their specific needs. Regional ITS Architectures therefore consist of functions 
-        within ITS elements and information flows that interconnect each of the ITS elements in the region 
-        (and with ITS elements outside the region). Since information flows are mapped to ITS standards in ARC-IT, and 
-        since a Regional ITS Architecture is based on ARC-IT, the standards mapping to information flows is also readily available. 
-        The same holds true when developing ITS Architectures for a project.
-      </p>
-      <div class="d-flex justify-content-center">
-        <figure class="figure">
-          <Image 
-            src={archRelationships} 
-            alt="ITS Architectural Relationships graphic. Graphic is described in paragraph immediately before graphic." 
-            class="img-fluid mx-auto d-block"
-          />
-          <figcaption class="figure-caption">
-            ITS Architecture Relationships
-          </figcaption>
-        </figure>
-      </div>
-      <div>
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-7">
+          <p>
+            ITS planners, deployers and other stakeholders tailor the National ITS Reference Architecture (ARC-IT) to create 
+            Regional ITS Architectures that meet their specific needs. Regional ITS Architectures therefore consist of functions 
+            within ITS elements and information flows that interconnect each of the ITS elements in the region 
+            (and with ITS elements outside the region). Since information flows are mapped to ITS standards in ARC-IT, and 
+            since a Regional ITS Architecture is based on ARC-IT, the standards mapping to information flows is also readily available. 
+            The same holds true when developing ITS Architectures for a project.
+          </p>
+          
         <p>
           ARC-IT provides many tools and resources to ensure the successful implementation of regional and project ITS architectures:
         </p>
@@ -138,7 +144,22 @@ const description =
         <p>
           See more information on all resources <a href="https://www.arc-it.net/html/resources/resources.html" target="_blank" rel="noopener noreferrer">here</a>.
         </p>
+      
+        </div>
+        <div class="col-12 col-lg-5">
+          <figure class="figure mb-0 text-center text-lg-end">
+            <a href="#relModal" class="d-inline-block w-100">
+              <Image 
+                src={archRelationships} 
+                alt="ITS Architectural Relationships graphic. Graphic is described in paragraph immediately before graphic." 
+                class="img-fluid "
+              />
+            </a>
+            <figcaption class="figure-caption text-center">Click to view larger</figcaption>
+          </figure>
+        </div>
       </div>
+      
     </div>
     <div>
       <h2 class="blue">Architecture &amp; Standards Relevant Policy</h2>
@@ -182,3 +203,66 @@ const description =
     </div>
     </main>
 </PageLayout>
+
+<style>
+  .arch-image {
+    max-width: 220px;
+  }
+
+  /* Pure CSS modal */
+  .img-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+  }
+
+  .img-modal:target {
+    display: flex;
+  }
+
+  .img-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  .img-modal__dialog {
+    position: relative;
+    max-width: min(1200px, 90vw);
+    max-height: 90vh;
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-modal__dialog img {
+    max-height: 90vh;
+    display: block;
+  }
+
+  .img-modal__close {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.6rem;
+    color: #000;
+    font-size: 2rem;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .img-modal__close:focus-visible,
+  a[href="#archModal"]:focus-visible {
+    outline: 2px solid #0d6efd;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+</style>
