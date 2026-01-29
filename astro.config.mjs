@@ -24,5 +24,6 @@ export default defineConfig({
     "/research-areas/Intersection-Safety-Challenge": "/research-areas/intersection-safety/systems",
     "/resources/asc": "/resources/architecture-and-standards",
     "/asc": "/resources/architecture-and-standards",
+    "/research_areas/cybersecurity/research.htm": "/resources/architecture-and-standards/",
   },
 });
