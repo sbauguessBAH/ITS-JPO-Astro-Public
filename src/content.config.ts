@@ -29,13 +29,13 @@ const blog = defineCollection({
   }),
 });
 
-const infographics = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    catagory: z.string(),
-  }),
-});
+// const infographics = defineCollection({
+//   type: 'content',
+//   schema: z.object({
+//     title: z.string(),
+//     catagory: z.string(),
+//   }),
+// });
 
 // #endregion
 // #region Images
@@ -140,18 +140,18 @@ const pcbTransitStandardsTrainings = defineCollection({
  * - Standards List
  */
 
-// const ascStandards = defineCollection({
-//   loader: file('src/content/asc/v2x.json'),
-//   schema: z.object({
-//     title: z.string(),
-//     code: z.string(),
-//     organization: z.string(),
-//     description: z.string().optional(),
-//     url: z.string().optional(),
-//     isExternal: z.boolean().optional(),
-//     category: z.string().optional()
-//   })
-// });
+    const ascStandards = defineCollection({
+      loader: file('src/content/asc/v2x.json'),
+      schema: z.object({
+        title: z.string(),
+        code: z.string(),
+        organization: z.string(),
+        description: z.string().optional(),
+        url: z.string().optional(),
+        isExternal: z.boolean().optional(),
+        category: z.string().optional()
+      })
+    });
 
 // #endregion
 // #region Automation
@@ -179,12 +179,11 @@ const automationResources = defineCollection({
 export const collections = {
   posts,
   blog,
-  infographics,
   pcbMicrolearning,
   pcbTrainings,
   pcbStandardsTrainings,
   pcbTransitStandardsTrainings,
-  // ascStandards,
+  ascStandards,
   library,
   automationResources
 };

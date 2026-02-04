@@ -180,6 +180,7 @@ export const navigation: NavigationItem[] = [
             isEnabled: true,
             pages: [
               { name: "V2X Accelerator (2024 – present)", url: "/research-areas/V2X-Deployment/deployment/accelerator" },
+              { name: "Connected Vehicle Pilot Program", url: "https://its.dot.gov/scrc/#/technology-areas/v2x/cv-pilot-program", isExternal: true },
               { name: "Safety Pilot", url: "/research-areas/V2X-Deployment/deployment/safety-pilots" },
             ],
           },
