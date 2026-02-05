@@ -1,21 +1,361 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import trAnalyticsLogo from "@/src/assets/images/ai/logos/TrAnalyticsLLC.png";
+import creareLogo from "@/src/assets/images/ai/logos/Creare-Logo.jpg";
+import jcTechsLogo from "@/src/assets/images/ai/logos/JC-Techs-logo.jpg";
+import veloLogo from "@/src/assets/images/ai/logos/Velo-logo.svg";
+import aiWaysionLogo from "@/src/assets/images/ai/logos/AIWaysion-logo.jpg";
+import numobilityLogo from "@/src/assets/images/ai/logos/numobilityai_logo.jpg";
+import opalLogo from "@/src/assets/images/ai/logos/opal-logo.png";
+import skyliteLogo from "@/src/assets/images/ai/logos/SkyliteLabs-logo.webp";
+import kitwareLogo from "@/src/assets/images/ai/logos/Kitware-logo.png";
+import kittelsonLogo from "@/src/assets/images/ai/logos/Kittelson-Associates-logo.webp";
+import stateOfPlaceLogo from "@/src/assets/images/ai/logos/stateofplace-logo.png";
 ---
 
 <PageLayout title="Artificial Intelligence" bannerImage={banner}>
   <Fragment slot="banner">Artificial Intelligence</Fragment>
       <main>
         <h2 class="sideways blue">Artificial Intelligence (AI) in Transportation</h2>
-        <p class="read-more-wrap" style="padding-top:0px">
+        <p class="read-more-wrap">
           AI has many practical applications in the transportation domain and offers the promise to transform the transportation industry by improving safety, mobility, productivity, security, and
           efficiency. The ITS JPO seeks to understand the landscape of how AI in transportation is currently being leveraged, and how potential investment in the future can help the industry achieve
           the promise while addressing the technical and institutional challenges.
         </p>
-        <p class="read-more-wrap" style="padding-top:0px">
+        <p class="read-more-wrap mb-5">
           There is a need to understand the risks and challenges, coordinate with stakeholders via U.S. DOT pooled fund efforts, advance collaborative research, develop voluntary-use tools and
           resources, and continued support of a U.S. DOT wide understanding of the application of AI for ITS and AI. We see a multi-pronged approach that ensures coordination and collaboration with
           infrastructure owners and operators (IOOs), removes barriers to implementation, and maximizes industry innovation.
         </p>
+       <section class="background-light section-wrapper">
+        <div class="container-xl">
+        <h2 class="mt-4 mb-0 text-center">Spotlight on Phase 1 Awardees</h2>
+        
+        <div class="carousel-wrapper mt-2">
+          <input type="radio" name="carousel" id="slide1" checked />
+          <input type="radio" name="carousel" id="slide2" />
+          <input type="radio" name="carousel" id="slide3" />
+          
+          <div class="carousel-main">
+            <div class="carousel-controls">
+              <label for="slide3" class="carousel-arrow carousel-arrow-prev" data-slide="1">‹</label>
+              <label for="slide1" class="carousel-arrow carousel-arrow-prev" data-slide="2">‹</label>
+              <label for="slide2" class="carousel-arrow carousel-arrow-prev" data-slide="3">‹</label>
+            </div>
+            
+            <div class="carousel-container">
+            <div class="carousel-track">
+            <!-- Slide 1: Cards 1-4 -->
+            <div class="carousel-slide">
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={trAnalyticsLogo} alt="TrAnalytics LLC logo" class="project-logo" />
+                </div>
+                <h4>Complete Pavement Markings for Safe and Complete Streets</h4>
+                <p class="company-name">TrAnalytics LLC</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/complete-pavement-markings" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={creareLogo} alt="Creare LLC logo" class="project-logo" />
+                </div>
+                <h4>Artificial Intelligence Processing and Analysis Framework for Infrastructure Planning, Design, and Maintenance</h4>
+                <p class="company-name">Creare LLC</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/ai-processing-analysis-framework" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={jcTechsLogo} alt="JC-Techs Corp. logo" class="project-logo" />
+                </div>
+                <h4>Scalable and Sustainable AI Solutions for Complete Streets Data Creation and Maintenance with Off-the-shelf Dash Cams</h4>
+                <p class="company-name">JC-Techs Corp.</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/scalable-sustainable-ai-solutions" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={veloLogo} alt="VELO.AI, INC. logo" class="project-logo" />
+                </div>
+                <h4>Informing infrastructure interventions via novel near-miss data collection</h4>
+                <p class="company-name">VELO.AI, INC.</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/infrastructure-interventions-near-miss" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+            </div>
+
+            <!-- Slide 2: Cards 5-8 -->
+            <div class="carousel-slide">
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={aiWaysionLogo} alt="AIWaysion logo" class="project-logo" />
+                </div>
+                <h4>Artificial Intelligence (AI) Approach to Generate and Analyze Transportation Planning & Design (TPD) Data at Scale</h4>
+                <p class="company-name">AIWaysion</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/ai-transportation-planning-design" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={numobilityLogo} alt="Numobility logo" class="project-logo" />
+                </div>
+                <h4>Safely Advancing Multimodal Mobility Intelligence (SAMMI)</h4>
+                <p class="company-name">Numobility</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/sammi-multimodal-mobility" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={opalLogo} alt="Opal AI Inc. logo" class="project-logo" />
+                </div>
+                <h4>Urbanomy: AI-Driven, Multi-Modal Decision Support for Smarter, Scalable Transportation Design, Planning, and Asset Management</h4>
+                <p class="company-name">Opal AI Inc.</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/urbanomy-ai-decision-support" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={skyliteLogo} alt="SkyliteLabs logo" class="project-logo" />
+                </div>
+                <h4>Skylite Geo LLM Transportation Planning and Decision Support Platform</h4>
+                <p class="company-name">SkyliteLabs</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/skylite-geollm-platform" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+            </div>
+
+            <!-- Slide 3: Cards 9-11 -->
+            <div class="carousel-slide">
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={kitwareLogo} alt="Kitware Inc. logo" class="project-logo" />
+                </div>
+                <h4>Complete Urban to Rural Balanced Streets by Artificial Intelligent Design (CURBS-AID)</h4>
+                <p class="company-name">Kitware Inc.</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/curbs-aid-intelligent-design" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={kittelsonLogo} alt="Kittelson & Associates logo" class="project-logo" />
+                </div>
+                <h4>Safe Routes for All (SR4A)</h4>
+                <p class="company-name">Kittelson & Associates</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/safe-routes-for-all" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+
+              <div class="project-card">
+                <div class="project-logo-placeholder">
+                  <Image src={stateOfPlaceLogo} alt="State of Place logo" class="project-logo" />
+                </div>
+                <h4>AI for Comprehensive, Efficient, & Safe Streets (ACES)</h4>
+                <p class="company-name">State of Place</p>
+                <a href="/research-areas/Artificial-Intelligence/projects/aces-comprehensive-streets" class="btn btn-sm btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <div class="carousel-controls">
+            <label for="slide2" class="carousel-arrow carousel-arrow-next" data-slide="1">›</label>
+            <label for="slide3" class="carousel-arrow carousel-arrow-next" data-slide="2">›</label>
+            <label for="slide1" class="carousel-arrow carousel-arrow-next" data-slide="3">›</label>
+          </div>
+          </div>
+          
+          <div class="carousel-dots">
+            <label for="slide1" class="carousel-dot"></label>
+            <label for="slide2" class="carousel-dot"></label>
+            <label for="slide3" class="carousel-dot"></label>
+          </div>
+        </div>
+        </div> 
+</section>
       </main>
+</PageLayout>
+
+<style>
+  .carousel-wrapper {
+    position: relative;
+  }
+
+  .carousel-wrapper input[type="radio"] {
+    display: none;
+  }
+
+  .carousel-main {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  #slide1:checked ~ .carousel-main .carousel-container .carousel-track {
+    transform: translateX(0);
+  }
+
+  #slide2:checked ~ .carousel-main .carousel-container .carousel-track {
+    transform: translateX(-100%);
+  }
+
+  #slide3:checked ~ .carousel-main .carousel-container .carousel-track {
+    transform: translateX(-200%);
+  }
+
+  .carousel-controls {
+    display: contents;
+  }
+
+  .carousel-arrow {
+    pointer-events: all;
+    display: none;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 40, 68, 0.8);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 50px;
+    text-align: center;
+    transition: background 0.3s;
+    user-select: none;
+    flex-shrink: 0;
+  }
+
+  .carousel-arrow:hover {
+    background: rgba(0, 40, 68, 1);
+  }
+
+  #slide1:checked ~ .carousel-main .carousel-controls .carousel-arrow[data-slide="1"],
+  #slide2:checked ~ .carousel-main .carousel-controls .carousel-arrow[data-slide="2"],
+  #slide3:checked ~ .carousel-main .carousel-controls .carousel-arrow[data-slide="3"] {
+    display: block;
+  }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  #slide1:checked ~ .carousel-dots .carousel-dot:nth-child(1),
+  #slide2:checked ~ .carousel-dots .carousel-dot:nth-child(2),
+  #slide3:checked ~ .carousel-dots .carousel-dot:nth-child(3) {
+    background: #002844;
+  }
+
+  @media (max-width: 1200px) {
+    .carousel-slide {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-slide {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carousel-slide {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .project-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .project-logo-placeholder {
+    width: 100%;
+    height: 120px;
+    background: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  .project-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .project-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    flex-grow: 1;
+    color: #002844;
+  }
+
+  .company-name {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .project-card .btn {
+    align-self: flex-start;
+  }
+
+.section-wrapper {
+    padding: .1rem 0rem 4rem 0rem;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: auto;
+    max-width: none;
+}
+.background-light {
+    background: #f7f7f7;
+}
+
+</style>
 </PageLayout>

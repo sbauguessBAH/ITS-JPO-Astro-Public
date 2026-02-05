@@ -1,0 +1,146 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import stateOfPlaceLogo from "@/src/assets/images/ai/logos/stateofplace-logo.png";
+
+const keywords = [
+  "ACES",
+  "Comprehensive Efficient Safe Streets",
+  "Street-level Data",
+  "Travel Behavior",
+  "State of Place",
+  "Built Environment",
+  "Predictive Analytics",
+  "Artificial Intelligence"
+];
+
+const description =
+  "AI for Comprehensive, Efficient, & Safe Streets (ACES) - AI project by State of Place";
+---
+
+<PageLayout title="AI for Comprehensive, Efficient, & Safe Streets" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Artificial Intelligence</Fragment>
+  <main>
+    <div class="page-header">
+        <div>
+      <h2>AI for Comprehensive, Efficient, & Safe Streets (ACES)</h2>
+      <p class="subtitle">Delivering a Data-Driven Transportation Decision Support & Predictive Analytics Software</p>
+      </div>
+      <Image src={stateOfPlaceLogo} alt="State of Place logo" class="page-logo" />
+    </div>
+    <p class="company-attribution">By: State of Place</p>
+    
+    <div class="row mt-5">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Project Objective & Overview</h3>
+          <p>
+            Phase I demonstrated a scalable, low-cost approach to collecting street-level data and linking built environment conditions to travel behavior, without third-party data.
+          </p>
+          <ul>
+            <li>Designed, built, deployed, and operated a scalable, low-cost street-level data collection system to capture imagery at scale and enable nationwide scalability</li>
+            <li>Fully re-architected our visual machine learning pipeline to extract infrastructure, context, and travel behavior features, transitioning to a zero-shot ensemble methodology</li>
+            <li>Developed predictive models linking built environment features to travel behavior using data from a single deployment, enabling cost-effective, citywide travel behavior estimation</li>
+          </ul>
+          <p class="mt-3" style="font-size: 0.9rem; font-style: italic;">
+            <strong>Infrastructure</strong> = physical street assets; <strong>Context</strong> = land use and urban form/design; <strong>Travel behavior</strong> = pedestrian, bicycle, and vehicle activity.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Key Results & Findings</h3>
+          <ul>
+            <li>Designed and deployed a data collection system using cell phones, collecting 2M+ images across 8,000+ unique blocks in the Philadelphia/SEPTA service area, demonstrating the feasibility of independent, scalable street-level imagery collection and eliminating reliance on third-party data sources</li>
+            <li>Expanded built environment features from 127 to 150 fully re-architected feature extraction pipeline using a new 298-model zero-shot ensemble architecture, enabling block-level extraction of infrastructure, context, and travel behavior features</li>
+            <li>Achieved strong and consistent model performance (≈90% unbalanced, 88% balanced accuracy, average) and developed predictive models linking built environment features to travel behavior, achieving r² ≈ 0.5+ for pedestrian and vehicle activity</li>
+            <li>Demonstrated that one-time built environment data collection, combined with limited observed travel behavior data, can support citywide travel behavior estimation, providing a cost-effective alternative to sensor- and mobile phone–based approaches for large-area analysis</li>
+            <li>Lessons learned: Phase I highlighted the need to further improve hardware robustness, incorporate additional data modalities, and refine software workflows to support repeated deployments and operational use at scale</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Company Info</h3>
+          <p>
+            State of Place is an AI, hardware, & software company serving public and private-sector citymakers, including planning & transportation agencies, real estate developers, & investors. Our street-level data, predictive analytics, & decision-support software helps optimize - and communicate - mobility, health, economic, & environmental value, to secure approvals, funding, and buy-in.
+          </p>
+          <p class="mt-3">
+            <strong>Project POC:</strong> Mariela Alfonzo, Ph.D.<br/>
+            <strong>Website:</strong> <a href="https://www.stateofplace.co" target="_blank" rel="noopener noreferrer">www.stateofplace.co</a>
+          </p>
+        </section>
+      </div>
+      
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Next Steps</h3>
+          <ul>
+            <li>Co-develop ACES with pilot cities using design thinking to align hardware, analytics, and software with agency workflows</li>
+            <li>Mature Raspberry Pi-based, modular, open-source hardware, building on prototype deployed and tested in Sacramento, CA (post Phase I), enabling city and/or State of Place-led deployments</li>
+            <li>Deploy across five geographies (Charlotte; Syracuse MSA; San Diego; Kansas City region; Colorado Springs) with repeated, multi-season data collection</li>
+            <li>Enhance feature extraction/forecasting, including multimodal sensing; optimize processing pipeline</li>
+            <li>Integrate outputs into a decision-support platform for scenario testing, prioritization, and reporting (e.g., identifying where infrastructure changes most improve safety, access, or mode share)</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .company-attribution {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+
+  section h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  section p {
+    margin-bottom: 0.75rem;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .page-header h2 {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .page-logo {
+    width: 140px;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      flex-wrap: wrap;
+    }
+
+    .page-logo {
+      margin-top: 0.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,170 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import kitwareLogo from "@/src/assets/images/ai/logos/Kitware-logo.png";
+import curbsAidKeyResultsImage from "@/src/assets/images/ai/curbs-aid-intelligent-design-1.png";
+
+const keywords = [
+  "CURBS-AID",
+  "Complete Streets",
+  "Intelligent Design",
+  "Walkway Detection",
+  "Pedestrian Infrastructure",
+  "Kitware Inc.",
+  "AI Design",
+  "Artificial Intelligence"
+];
+
+const description =
+  "Complete Urban to Rural Balanced Streets by Artificial Intelligent Design (CURBS-AID) - AI project by Kitware Inc.";
+---
+
+<PageLayout title="CURBS-AID: AI Intelligent Street Design" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Artificial Intelligence</Fragment>
+  <main>
+    <div class="page-header">
+      <h2>Complete Urban to Rural Balanced Streets by Artificial Intelligent Design (CURBS-AID)</h2>
+      <Image src={kitwareLogo} alt="Kitware Inc. logo" class="page-logo" />
+    </div>
+    <p class="company-attribution">By: Kitware Inc.</p>
+    
+    <div class="row mt-5">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Project Objective & Overview</h3>
+          <ul>
+            <li>Planning safer, more accessible streets requires significant time and expert effort.</li>
+            <li>Analyzing pedestrian and traffic infrastructure across large areas is difficult with today's manual tools.</li>
+            <li>Creating detailed, up-to-date maps of walkways and sidewalks at scale remains a challenge.</li>
+            <li>Many existing transportation datasets are missing important pedestrian details, such as curbs and sidewalk conditions.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Key Results & Findings</h3>
+          <div class="row">
+            <div class="col-lg-6">
+              <p><strong>Proposed Approach</strong></p>
+              <ul>
+                <li>Create an accurate digital traffic network that captures walkways, sidewalks, and their interactions using AI on overhead and ground-level imagery.</li>
+                <li>Automate extraction of walkway networks from overhead imagery, enhanced with ground-level images for fine details like curbs and sidewalk conditions.</li>
+              </ul>
+              
+              <p class="mt-3"><strong>Phase I Key Findings and Challenges</strong></p>
+              <ul>
+                <li>
+                  <strong>Walkway detectability:</strong> AI models detected sidewalks with 40% accuracy overall compared to OpenStreetMap data, reaching 75% in well-annotated areas. Some semantic segmentation models did not transfer well without domain-specific training.
+                </li>
+                <li>
+                  <strong>Imagery resolution matters:</strong> Reliable detection requires overhead imagery of at least 12 in/px; performance drops sharply at lower resolutions.
+                </li>
+                <li>
+                  <strong>Ground imagery and LiDAR add value:</strong> Incorporating ground-level photos and LiDAR improves the quality of training and evaluation masks, providing better data than current crowd-sourced maps.
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <Image src={curbsAidKeyResultsImage} alt="CURBS-AID key results" class="img-fluid rounded mt-3 mt-lg-0" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Company Info</h3>
+          <p>
+            Since Kitware's founding in 1998, we have been committed to upholding the principles of our open source philosophy. We work with our customers to solve their most complex scientific challenges by providing custom software solutions based on our open source software.
+          </p>
+          <p>
+            This project was a collaboration between Kitware Inc., M-J Engineering, and NYU
+          </p>
+          <p class="mt-3">
+            <strong>Project POC:</strong> Dr. Connor Greenwell<br/>
+            <strong>Email:</strong> <a href="mailto:connor.greenwell@kitware.com">connor.greenwell@kitware.com</a><br/>
+            <strong>Website:</strong> <a href="https://www.kitware.com" target="_blank" rel="noopener noreferrer">https://www.kitware.com</a>
+          </p>
+        </section>
+      </div>
+      
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Next Steps</h3>
+          <ul>
+            <li>
+              <strong>Scale experimentation:</strong> Expand testing of walkway detection and AI models to six major metropolitan regions in the eastern United States.
+            </li>
+            <li>
+              <strong>Develop LLM-based planning assistant:</strong> Build an interactive tool that allows planners to query the pedestrian network, explore infrastructure data, and generate improvement suggestions.
+            </li>
+            <li>
+              <strong>Engage with state and local DOTs:</strong> Collaborate with transportation agencies to understand how they would use AI-generated data and tools in real-world planning workflows.
+            </li>
+            <li>
+              <strong>Integrate multi-source data:</strong> Combine overhead imagery, ground-level photos, and LiDAR data to improve model accuracy and detail for large-scale deployment.
+            </li>
+            <li>
+              <strong>Enhance user interaction:</strong> Use web-based visualization tools to allow planners to see proposed changes, assess network conditions, and make data-driven decisions efficiently.
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .company-attribution {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  section h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  section p {
+    margin-bottom: 0.75rem;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .page-header h2 {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .page-logo {
+    width: 140px;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      flex-wrap: wrap;
+    }
+
+    .page-logo {
+      margin-top: 0.5rem;
+    }
+  }
+</style>

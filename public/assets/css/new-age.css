@@ -133,10 +133,6 @@ h4 {
   }
 }
 
-section {
-  padding: 100px 0;
-}
-
 
 section h2.sideways{
   font-size: 2rem;
@@ -737,7 +733,6 @@ footer ul {
   color: black;
   font-weight: 800;
   border-color: transparent;
-  margin: 15px 0px 60px 0px;
   cursor: outline;
 }
 
