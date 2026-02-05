@@ -140,18 +140,18 @@ const pcbTransitStandardsTrainings = defineCollection({
  * - Standards List
  */
 
-    const ascStandards = defineCollection({
-      loader: file('src/content/asc/v2x.json'),
-      schema: z.object({
-        title: z.string(),
-        code: z.string(),
-        organization: z.string(),
-        description: z.string().optional(),
-        url: z.string().optional(),
-        isExternal: z.boolean().optional(),
-        category: z.string().optional()
-      })
-    });
+      // const ascStandards = defineCollection({
+      //   loader: file('src/content/asc/v2x.json'),
+      //   schema: z.object({
+      //     title: z.string(),
+      //     code: z.string(),
+      //     organization: z.string(),
+      //     description: z.string().optional(),
+      //     url: z.string().optional(),
+      //     isExternal: z.boolean().optional(),
+      //     category: z.string().optional()
+      //   })
+      // });
 
 // #endregion
 // #region Automation
@@ -183,7 +183,7 @@ export const collections = {
   pcbTrainings,
   pcbStandardsTrainings,
   pcbTransitStandardsTrainings,
-  ascStandards,
+  // ascStandards,
   library,
   automationResources
 };
