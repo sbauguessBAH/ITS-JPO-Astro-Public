@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+
+import Layout from "../_layout.astro";
+---
+<style>
+  .overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+
+  @media (min-width: 992px) {
+    .overview-section {
+      flex-direction: row;
+    }
+    .overview-image {
+      flex-basis: 40%;
+    }
+    .overview-text {
+      flex-basis: 60%;
+    }
+  }
+</style>
+<Layout>
+  <div class="program-main">
+    <ProgramSection size="small">
+      <h2 class="program-title-lg mb-4">
+        Introduction to Intelligent Transportation Systems
+      </h2>
+      <div class="overview-section">
+        <div class="overview-text">
+          <h3 class="program-title-md">Description</h3>
+          <p class="program-text">
+            This module introduces participants to the exciting world of Intelligent Transportation Systems (ITS)
+            and the technologies that enhance transportation safety and mobility, and efficiency. It covers how ITS
+            solutions are developed, deployed, and operated and explores potential future directions of ITS for a
+            variety of modes and locations of transportation networks. The module also explores the types of
+            professionals designing, implementing, and supporting ITS.
+          </p>
+          <h3 class="program-title-md">Goal</h3>
+          <p class="program-text">
+            The goal of the module is to introduce participants to ITS, what it entails, and how it gets implemented
+            so that they develop a familiarity with ITS and can explain why it is the future of transportation.
+          </p>
+          <h3 class="program-title-md">Learning Outcomes</h3>
+          <p class="program-text">
+            By the end of the module, participants should be able to:
+          </p>
+          <ul class="program-list">
+            <li>
+              Explain the purpose and importance of ITS using example ITS deployments
+            </li>
+            <li>
+              Explain how ITS can help overcome transportation challenges, now and in the future
+            </li>
+            <li>
+              Assess the safety and operational impacts of ITS both broadly and in specific deployment scenarios
+            </li>
+            <li>
+              Identify and describe example ITS-related careers at a high level
+            </li>
+          </ul>
+        </div>
+        <div style="background: #ccc; height: 300px;" class="ratio ratio-16x9 rounded overview-image"/>
+      </div>
+    </ProgramSection>
+  </div>
+</Layout>
