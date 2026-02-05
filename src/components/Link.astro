@@ -14,23 +14,40 @@ interface Props extends HTMLAttributes<'a'> {
    */
   isSameWindow?: boolean;
   href: string;
+  variant?: 'default' | 'button';
 }
 
-const { isExternal, isSameWindow, type, href, ...rest } = Astro.props;
+const { isExternal, isSameWindow, type, href, variant, class: className, ...rest } = Astro.props;
 
 // If the link starts with mailto: or tel:, we don't need these additional props
 const telOrMail = href.startsWith("mailto:") || href.startsWith("tel:");
 const rel = {...(!telOrMail && isExternal && { rel: "noopener noreferrer" })};
 const target = {...(!telOrMail && isExternal && !isSameWindow && { target: "_blank" })}
+const classes = variant === 'button' ? `link-button ${className}` : className;
 ---
-<a
-  href={isExternal
-    ? href 
-    : base_url(href)
+<style>
+  .link-button {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--color-brand));
+    padding: 0.5rem 1.4rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+    transition: background 0.3s;
   }
+  .link-button:hover {
+    font-weight: inherit;
+    background: rgba(var(--color-brand-dark), 0.8);
+  }
+</style>
+<a
+  href={isExternal ? href : base_url(href)}
   {...rel}
   {...target}
   {...rest}
+  class={classes}
 >
   <slot/>
 </a>

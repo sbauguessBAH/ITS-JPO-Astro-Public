@@ -224,6 +224,20 @@ export const navigation: NavigationItem[] = [
             url: "/resources/pcb/microlearning",
           },
           {
+            name: "Early Career Development",
+            url: "/resources/pcb/early-career",
+            pages: [
+              {
+                name: "Introduction to Intelligent Transportation Systems (ITS)",
+                url: "/resources/pcb/early-career/introduction-to-its",
+              },
+              {
+                name: "Applying Systems Engineering to ITS Projects",
+                url: "/resources/pcb/early-career/applying-systems-engineering-to-its-projects",
+              }
+            ]
+          },
+          {
             name: "Technical Assistance",
             pages: [
               {

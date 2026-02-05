@@ -1,0 +1,205 @@
+---
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Layout from "../_layout.astro";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import { Image } from "astro:assets";
+import Link from "@/src/components/Link.astro";
+
+const modules = [
+  {
+    description: "This module introduces participants to the exciting world of Intelligent Transportation Systems (ITS) and the technologies that enhance transportation safety and mobility, and efficiency. It covers how ITS solutions are developed, deployed, and operated and explores potential future directions of ITS for a variety of modes and locations of transportation networks.",
+    slug: "introduction-to-its",
+    title: "Introduction to Intelligent Transportation Systems (ITS)"
+  },
+  {
+    title: "Applying Systems Engineering to ITS Projects",
+    slug: "applying-systems-engineering-to-its-projects",
+    description: "This module introduces the systems engineering (SE) process as applied to intelligent transportation systems (ITS) projects. Participants learn how SE leads to quality systems that meet stakeholder needs through a structured, systems-thinking approach. The module covers key SE processes, including the “ Vee Model, ” which outlines system development from user needs and requirements through design, implementation, testing, and validation. Emphasis is placed on developing a Concept of Operations (ConOps)."
+  }
+]
+---
+<style>
+  .resource-card:hover {
+    background: rgba(var(--color-brand-light), 0.5);
+    box-shadow: var(--box-shadow-lg);
+  }
+
+  .resource-card-image {
+    width: 100%;
+    object-fit: cover;
+    height: 220px;
+  }
+
+  .resource-card-body {
+    overflow: visible;
+    padding: 0;
+  }
+
+  .resource-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    height: 100%;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--size)
+  }
+
+  @media (min-width: 992px) {
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+
+<!-- Overview Section -->
+<style>
+  .overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+  /* .overview-video {
+    border-radius: var(--radius-md);
+  } */
+  .video {
+    border-radius: var(--radius-lg);
+  }
+
+  @media (min-width: 992px) {
+    .overview-section {
+      flex-direction: row;
+      align-items: start;
+    }
+    .overview-video {
+      flex-basis: 45%;
+    }
+    .overview-text {
+      flex-basis: 55%;
+    }
+  }
+</style>
+
+<Layout>
+  <main class="program-main">
+    <ProgramSection size="small">
+      <h2 class="program-title-lg mb-4">
+        Early Career Development Resources
+      </h2>
+      <p class="program-text">
+        Intelligent Transportation Systems (ITS) provide promising solutions for 
+        improving safety, mobility, and efficiency in the transportation network. 
+        Engaging current and prospective early career professionals in transportation-related 
+        fields provides tools to think critically and develop novel approaches 
+        for the most pressing transportation issues and needs.
+      </p>
+    </ProgramSection>
+    <ProgramSection size="small" class="pb-5" color="gray">
+      <h2 class="program-title-md mb-4">
+        ITS Short Course Instructor Kit Modules
+      </h2>
+      <p class="program-text">
+        The ITS Short Course Instructor Kit Modules are freestanding classes (or training components) 
+        that provide structured content to enhance participants' knowledge of ITS in 90 minutes or less. 
+        Each module focuses on a specific ITS theme, concept , or technology. 
+        Instructor and participant materials focus on ensuring an engaging experience 
+        supporting the module outcomes. ITS Short Course Instructor Kit materials provided 
+        for each module include an
+      </p>
+      <ul>
+        <li>
+          <strong>Instructor Guide</strong> containing the purpose of the module, learning outcomes,
+          intended target audience, intended class size, and detailed instruction notes.
+        </li>
+        <li>
+          <strong>PowerPoint Presentation</strong> to be used by the instructor during module delivery.
+        </li>
+        <li>
+          <strong>Participant Materials</strong> containing items such as handouts,
+          reference materials, and activity instructions.
+        </li>
+      </ul>
+      <div class="card-grid mt-4">
+        {modules.map(resource => (
+          <Card class="resource-card" href={`/resources/pcb/early-career/${resource.slug}`} radius="lg" shadow="none">
+            <CardBody class="resource-card-body">
+              {/* <Image 
+                alt={resource.title}
+                class="resource-card-image radius-none shadow"
+                src={resource.image}
+              /> */}
+              <div style="background: #ccc;" class="ratio ratio-21x9 rounded overview-video"/>
+            </CardBody>
+            <CardFooter class="resource-card-footer">
+              <h3 class="program-title-sm text-foreground mb-2">
+                {resource.title}
+              </h3>
+              <p class="program-text">
+                {resource.description}
+              </p>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
+    </ProgramSection>
+    <ProgramSection size="small">
+      <div class="overview-section">
+        <div class="overview-text">
+          <h2 class="program-title-md mb-4">ITS Careers</h2>
+          <p class="program-text">
+            The ITS Careers White Paper provides an overview of ITS, identifies a variety of different careers in
+            the ITS sector, including key details on specific roles along with potential responsibilities and
+            desired skills. The aim of this document is to showcase the vast array and variety of opportunities
+            within ITS for individuals exploring jobs and considering a future career in ITS.
+          </p>
+          <div class="mt-4">
+            <Link variant="button" href="" isExternal>
+              View PDF
+            </Link>
+          </div>
+        </div>
+        <div style="background: #ccc;" class="ratio ratio-21x9 rounded overview-video"/>
+      </div>
+      
+    </ProgramSection>
+    <ProgramSection>
+      <h3 class="program-title-sm text-center mb-4">
+        Explore Opportunities
+      </h3>
+      <p>
+        Explore highlights of example ITS jobs through the interactive trading cards shown below. ITS jobs are grouped by ITS career areas. Select the pack you want to open to see each
+        potential example job opportunity within the career area. You can select any card to flip it over and view the back, which contains further information about the potential role (i.e.,
+        skills and responsibilities).
+      </p>
+      <div style="background: #ccc;" class="ratio ratio-21x9 rounded overview-video"/>
+    </ProgramSection>
+    <ProgramSection size="small" color="gray">
+      <div class="overview-section">
+        <div class="overview-text">
+          <h2 class="program-title-md mb-4">ITS Student Competitions</h2>
+          <p class="program-text">
+            The Transportation Technology Tournament (TTT) is an annual event hosted jointly by the National
+            Operations Center of Excellence (NOCoE) and the Institute of Transportation Engineers (ITE) that
+            connects student teams with public agencies to solve real-world transportation problems utilizing
+            ITS and Transportation Systems & Operations (TSMO) solutions. Former projects feature exciting
+            solutions that include video detection, machine vision, Artificial Intelligence (AI), machine learning,
+            digital twins, and more. TTT Finalist teams are invited to the ITE Annual Meeting to present their
+            submission to judges&mdash;all expenses paid!
+          </p>
+          <div class="mt-4">
+            <Link variant="button" href="https://transportationops.org/transportation-technology-tournament" isExternal>
+              Learn More
+            </Link>
+          </div>
+        </div>
+        <div style="background: #ccc;" class="ratio ratio-21x9 rounded overview-video"/>
+      </div>
+      
+    </ProgramSection>
+  </main>
+</Layout>

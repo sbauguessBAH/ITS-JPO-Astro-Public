@@ -184,5 +184,65 @@
     "type": "web-based",
     "action": "Register",
     "id": "FHWA-NHI-137055"
+  },
+  {
+    "title": "ARC-IT Training",
+    "description": "This training provides an overview of the Architecture Reference for Cooperative & Intelligent Transportation (ARC-IT) including background, structure, and use of the architecture.",
+    "image": "pcb/trainings/arc-it",
+    "alt": "",
+    "url": "https://www.arc-it.net/html/resources/arcitwebtraining.html",
+    "isExternal": true,
+    "category": "its-architecture",
+    "type": "web-based",
+    "action": "View Training",
+    "id": "arc-it"
+  },
+  {
+    "title": "RAD-IT Training",
+    "description": "This training provides an overview of the Regional Architecture Development Tool for Intelligent Transportation (RAD-IT) - an interactive software program that assists transportation planners and system integrators in the development of regional and project architectures.",
+    "image": "pcb/trainings/rad-it",
+    "alt": "",
+    "url": "https://www.arc-it.net/html/resources/raditwebtraining.html",
+    "isExternal": true,
+    "category": "its-architecture",
+    "type": "web-based",
+    "action": "View Training",
+    "id": "rad-it"
+  },
+  {
+    "title": "SET-IT Training",
+    "description": "This training provides an overview of the Systems Engineering Tool for Intelligent Transportation (SET-IT) - an interactive software program that assists transportation project developers and system integrators in the development of project architectures.",
+    "image": "pcb/trainings/set-it",
+    "alt": "",
+    "url": "https://www.arc-it.net/html/resources/setitwebtraining.html",
+    "isExternal": true,
+    "category": "its-architecture",
+    "type": "web-based",
+    "action": "View Training",
+    "id": "set-it"
+  },
+  {
+    "title": "ITS Architecture Use & Maintenance Training",
+    "description": "This training prepare ITS professionals to effectively use and maintain their regional ITS architecture. Participants should have a copy of their regional ITS architecture to use to complete the exercises.",
+    "image": "pcb/trainings/use-and-maintenance",
+    "alt": "",
+    "url": "https://www.arc-it.net/html/resources/useandmainttraining.html",
+    "isExternal": true,
+    "category": "its-architecture",
+    "type": "web-based",
+    "action": "View Training",
+    "id": "arc-it-use-maintenance"
+  },
+  {
+    "title": "On-Site Trainings and Workshops",
+    "description": "USDOT offers on-site, facilitated courses and workshops on several topic areas",
+    "image": "pcb/trainings/academic-workshops",
+    "alt": "",
+    "url": "https://www.arc-it.net/html/resources/training.html",
+    "isExternal": true,
+    "category": "its-architecture",
+    "type": "in-person",
+    "action": "View Trainings",
+    "id": "arc-it-on-site"
   }
 ]

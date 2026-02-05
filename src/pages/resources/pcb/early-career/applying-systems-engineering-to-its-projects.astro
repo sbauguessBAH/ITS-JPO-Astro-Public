@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+
+import Layout from "../_layout.astro";
+import Link from "@/src/components/Link.astro";
+---
+<style>
+  .overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+  }
+
+  @media (min-width: 992px) {
+    .overview-section {
+      flex-direction: row;
+    }
+    .overview-image {
+      flex-basis: 40%;
+    }
+    .overview-text {
+      flex-basis: 60%;
+    }
+  }
+</style>
+<Layout>
+  <div class="program-main">
+    <ProgramSection size="small">
+      <h2 class="program-title-lg mb-4">
+        Applying Systems Engineering (SE) to Intelligent Transportation Systems (ITS) Projects
+      </h2>
+      <div class="overview-section">
+        <div class="overview-text">
+          <h3 class="program-title-md">Description</h3>
+          <p class="program-text">
+            This module introduces the systems engineering (SE) process as applied to intelligent transportation
+            systems (ITS) projects. Participants learn how SE leads to quality systems that meet stakeholder needs
+            through a structured, systems-thinking approach. The module covers key SE processes, including the
+            “Vee Model,” which outlines system development from user needs and requirements through design,
+            implementation, testing, and validation. Emphasis is placed on developing a Concept of Operations
+            (ConOps)&mdash;a foundational document that defines project scope, stakeholders, user needs, operational
+            scenarios, and performance considerations for ITS deployment.
+          </p>
+          <p class="program-text">
+            The Introduction to Intelligent Transportation Systems (ITS) module should be delivered prior to this
+            module, depending on the participants' familiarity with ITS.
+          </p>
+          <h3 class="program-title-md">Goal</h3>
+          <p class="program-text">
+            The goal of the module is to emphasize the benefits of understanding and using a systems engineering
+            approach, promote systems thinking, provide an over view of the critical documents developed when
+            designing ITS solutions for transportation problems, and ultimately show how using a systems engineering 
+            approach leads to comprehensive, quality ITS deployments. More detailed
+            resources are available, including those offered through the
+            <Link isExternal href="https://fhwanhi.geniussis.com/RegistrationByCourse.aspx">Federal Highway Administration (FHWA) National Highway Institute (NHI)</Link>.
+          </p>
+          <h3 class="program-title-md">Learning Outcomes</h3>
+          <p class="program-text">
+            By the end of the module, participants should be able to:
+          </p>
+          <ul class="program-list">
+            <li>
+              Explain the purpose of the systems engineering process
+            </li>
+            <li>
+              Describe how the systems engineering process leads to comprehensive intelligent transportation systems (ITS) that address transportation problems
+            </li>
+            <li>
+              Describe the Vee model approach, its role, and its importance in systems engineering
+            </li>
+            <li>
+              List the key components of a Concept of Operations (ConOps) and the questions it aims to answer
+            </li>
+          </ul>
+        </div>
+        <div style="background: #ccc; height: 300px;" class="ratio ratio-16x9 rounded overview-image"/>
+      </div>
+    </ProgramSection>
+  </div>
+</Layout>
