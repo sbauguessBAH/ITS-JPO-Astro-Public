@@ -1,10 +1,5 @@
 ---
-import type { ChildNavigationItem } from "@/src/types";
-
 import banner from "@/src/assets/images/pcb/banner.png";
-import ProgramBanner from "@/src/components/programs/ProgramBanner.astro";
-import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
-import ProgramMenu from "@/src/components/programs/ProgramMenu.astro";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import "@/src/styles/programs.css";
 
@@ -21,58 +16,22 @@ const description = `
   as identified in 23 USC Sect 514.
 `
 
-const items: ChildNavigationItem[] = [
-  { 
-    name: 'Overview', 
-    url: '/resources/pcb' 
-  },
-  { 
-    hasGeneratedChildItems: true, 
-    name: 'Trainings', 
-    url: '/resources/pcb/trainings',
-  },
-  { 
-    name: 'Microlearning Videos', 
-    url: '/resources/pcb/microlearning'
-  },
-  {
-    name: "Early Career Development",
-    url: "/resources/pcb/early-career",
-  },
-  {
-    name: 'Technical Assistance',
-    pages: [
-      { 
-        name: 'Connected and Automated Vehicle Education (CAVe)', 
-        url: '/resources/pcb/technical-assistance/cave'
-      },
-      { 
-        name: 'Accelerating V2X Cohort', 
-        url: '/resources/pcb/technical-assistance/v2x-cohort'
-      }
-    ],
-    url: '/resources/pcb/technical-assistance'
-  },
-  { 
-    hasGeneratedChildItems: true, 
-    name: 'Peer Exchanges', 
-    url: '/resources/pcb/peer-exchanges'  
-  },
-  // { 
-  //   name: 'Academic Resources', 
-  //   url: '/resources/pcb/academic-resources', 
-  //   hasGeneratedChildItems: true 
-  // },
-  // { 
-  //   name: 'Accelerating V2X Cohort', 
-  //   url: '/resources/pcb/v2x-cohort'
-  // },
-  // { 
-  //   name: 'Webinars', 
-  //   url: 'https://www.its.dot.gov/pcb/itscourses/default.aspx', 
-  //   isExternal: true
-  //  }
-]
+// const items: ChildNavigationItem[] = [
+// { 
+//   name: 'Academic Resources', 
+//   url: '/resources/pcb/academic-resources', 
+//   hasGeneratedChildItems: true 
+// },
+// { 
+//   name: 'Accelerating V2X Cohort', 
+//   url: '/resources/pcb/v2x-cohort'
+// },
+// { 
+//   name: 'Webinars', 
+//   url: 'https://www.its.dot.gov/pcb/itscourses/default.aspx', 
+//   isExternal: true
+//  }
+// ]
 ---
 <PageLayout
   description={description}
