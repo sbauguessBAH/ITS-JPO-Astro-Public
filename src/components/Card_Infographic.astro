@@ -3,13 +3,13 @@ import { type CollectionEntry } from "astro:content";
 import base_url from "../lib/base_url";
 
 type Props = {
-  infographic: CollectionEntry<"infographics">;
+  // infographic: CollectionEntry<"infographics">;
 };
 
-const { infographic } = Astro.props;
-const { title, catagory } = infographic.data;
+// const { infographic } = Astro.props;
+// const { title, catagory } = infographic.data;
 
-const preview = infographic.body.slice(0, 400); // Adjust the number of characters as needed
+// const preview = infographic.body.slice(0, 400); // Adjust the number of characters as needed
 ---
 
 <style>
@@ -33,7 +33,7 @@ const preview = infographic.body.slice(0, 400); // Adjust the number of characte
   }
 </style>
 <li>
-  <a href={base_url(`/news-info/infographics/${infographic.id}`)}>
+  <!-- <a href={base_url(`/news-info/infographics/${infographic.id}`)}>
     {title}
-  </a>
+  </a> -->
 </li>
