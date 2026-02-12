@@ -77,10 +77,10 @@ const description =
       <div class="deployment-site mb-5">
         <div class="row g-4 align-items-center">
           <div class="col-md-3">
-            <img src={maricopaLogo.src} alt="Maricopa County DOT" class="img-fluid" style="max-height: 120px;" />
+            <a href="https://www.maricopa.gov/6094/Connected-Vehicle-Acceleration-Zone"><img src={maricopaLogo.src} alt="Maricopa County DOT" class="img-fluid" style="max-height: 120px;" /></a>
           </div>
           <div class="col-md-9">
-            <h4>Maricopa County DOT</h4>
+            <h4><a href="https://www.maricopa.gov/6094/Connected-Vehicle-Acceleration-Zone" >Maricopa County DOT</a></h4>
             <p>
               The Maricopa County DOT is leading a largescale deployment to connect 750 physical roadside units and virtual roadside units that utilize a mobile edge computing (MEC) network to an
               estimated 400 vehicle onboard units targeting transit, emergency and freight fleets. The project will deploy Emergency Vehicle Preemption, Vulnerable Road User detection, Transit Signal
@@ -93,10 +93,10 @@ const description =
       <div class="deployment-site mb-5">
         <div class="row g-4 align-items-center">
           <div class="col-md-3">
-            <img src={texasAMLogo.src} alt="Texas A&M Transportation Institute" class="img-fluid" style="max-height: 120px;" />
+            <a href="https://v2xtexastrust.com/"><img src={texasAMLogo.src} alt="Texas A&M Transportation Institute" class="img-fluid" style="max-height: 120px;" /></a>
           </div>
           <div class="col-md-9">
-            <h4>Texas A&M Transportation Institute</h4>
+            <h4><a href="https://v2xtexastrust.com/">Texas A&M Transportation Institute</a></h4>
             <p>
               Texas A&M Transportation Institute will leverage nearly 1000 existing V2X-enabled signalized intersections in Houston, Missouri City and Fort Bend County and will install dozens more in
               Houston and City of Station, including areas near the Texas A&M University (TAMU) campus and major corridors connecting these two metropolitan areas. The project will equip local
@@ -110,10 +110,10 @@ const description =
       <div class="deployment-site mb-5">
         <div class="row g-4 align-items-center">
           <div class="col-md-3">
-            <img src={utahDOTLogo.src} alt="Utah DOT" class="img-fluid" style="max-height: 120px;" />
+            <a href="https://transportationtechnology.utah.gov/connecting-the-west-program/"><img src={utahDOTLogo.src} alt="Utah DOT" class="img-fluid" style="max-height: 120px;" /></a>
           </div>
           <div class="col-md-9">
-            <h4>Utah DOT</h4>
+            <h4><a href="https://transportationtechnology.utah.gov/connecting-the-west-program/">Utah DOT</a></h4>
             <p>
               The Utah DOT is leading a deployment that encompasses three states – Utah, Colorado and Wyoming – each representing a broad variety of population densities, demographics, jurisdictions,
               topography, and transportation facilities. Approximately 750 roadside units will be installed at signalized intersections and along corridors with 215 vehicles will be equipped with
@@ -259,6 +259,12 @@ const description =
 </PageLayout>
 
 <style>
+
+a img:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.05); 
+}
+
   .phases-timeline {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
