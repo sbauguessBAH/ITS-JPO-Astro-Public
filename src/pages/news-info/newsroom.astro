@@ -1,0 +1,154 @@
+---
+import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import Leaders from "@/src/assets/images/video-library/leaders.jpg";
+import ITSProgramOverview from "@/src/assets/images/video-library/ITSProgramOverview.jpg";
+import TransformingSurfaceTransportation from "@/src/assets/images/video-library/TransformingSurfaceTransportation.jpg";
+
+const keywords = ["Digital Infrastructure", "Transportation Systems", "Data", "Information", "Technology Assets", "Public and Private", "Collective", "Research Areas"];
+
+const description = "Digital infrastructure includes public and private technology assets that use data to improve transportation systems and services.";
+---
+
+<style>
+  .mailing-callout {
+    background: #fbf4dc;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+  }
+  .mailing-actions {
+    gap: 1rem;
+  }
+  .btn-pill {
+    border-radius: 999px;
+    background: #f2c94c;
+    color: #000;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-pill:hover {
+    background: #e2b93f;
+    color: #000;
+  }
+  .section-divider {
+    border-top: 1px solid #e5e5e5;
+    margin: 2rem 0;
+  }
+  .kit-card {
+    background: #f5f5f5;
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    height: 100%;
+  }
+  .kit-card h5 {
+    font-size: 1rem;
+    min-height: 3rem;
+  }
+  .kit-card .btn-pill {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+  .external-icon {
+    width: 16px;
+    height: 16px;
+  }
+</style>
+<PageLayout title="ITS JPO Newsroom" keywords={keywords} description={description}>
+  <Fragment slot="banner">ITS JPO Newsroom</Fragment>
+  <main>
+    <p>
+      Welcome to the ITS JPO Newsroom. Explore topic-specific media kits to find
+      information and resources to craft accurate, compelling stories in all
+      formats. Alternatively, use outreach toolkits to help boost stakeholder
+      media relations initiatives.
+    </p>
+    <p>
+      Check back often as new kits and fresh materials are added frequently.
+    </p>
+
+    <section class="mailing-callout my-4">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h4 class="mb-0">Join Our Mailing Lists!</h4>
+        </div>
+        <div class="col-md-6 d-flex justify-content-md-end align-items-center mailing-actions mt-3 mt-md-0">
+          <a
+            href="#"
+            class="btn-pill"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ITS JPO Program Updates
+            <svg class="external-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M10 2h4v4h-1.5V4.56L8.53 8.53l-1.06-1.06L11.44 3.5H10V2zM3 3h5v1.5H4.5v7h7V8H13v5H3V3z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="btn-pill"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            USDOT Updates
+            <svg class="external-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M10 2h4v4h-1.5V4.56L8.53 8.53l-1.06-1.06L11.44 3.5H10V2zM3 3h5v1.5H4.5v7h7V8H13v5H3V3z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="my-4">
+      <div class="row">
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h4>Media Kits</h4>
+          <p class="text-muted">Resources for Reporters</p>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="kit-card">
+                <h5>How WYDOT Is Keeping Drivers Safe in Severe Weather</h5>
+                <a href="#" class="btn-pill">Explore Kit</a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="kit-card">
+                <h5>Vehicle-to-Everything (V2X) Deployment</h5>
+                <a href="#" class="btn-pill">Explore Kit</a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="kit-card">
+                <h5>2025 ITS World Congress</h5>
+                <a href="#" class="btn-pill">Explore Kit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="my-4">
+      <h4>Outreach Toolkits (Resources for Public Information Officers)</h4>
+      <p class="text-muted"><em>Coming Soon</em></p>
+    </section>
+  </main>
+</PageLayout>
