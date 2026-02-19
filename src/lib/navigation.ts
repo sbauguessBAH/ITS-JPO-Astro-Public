@@ -39,11 +39,11 @@ export const navigation: NavigationItem[] = [
     pages: [
       {
         name: "Artificial Intelligence",
-        url: "/research-areas/Artificial-Intelligence",
+        url: "/research-areas/artificial-intelligence",
         isEnabled: true,
         pages: [
-          { name: "Artificial Intelligence in Transportation", url: "/research-areas/Artificial-Intelligence" },
-          { name: "AI in Transportation Planning and Design", url: "/research-areas/Artificial-Intelligence/Transportation-Planning-Design" },
+          { name: "Artificial Intelligence in Transportation", url: "/research-areas/artificial-intelligence" },
+          { name: "AI in Transportation Planning and Design", url: "/research-areas/artificial-intelligence/transportation-planning-design" },
         ],
       },
       {
