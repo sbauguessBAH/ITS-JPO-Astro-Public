@@ -2,7 +2,7 @@
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import { Image } from "astro:assets";
-
+import { getImage } from "astro:assets";
 
 import Titlebg from "@/src/assets/images/ai/TitlePillBG.png";
 import Map from "@/src/assets/images/ai/Map_011224.png";
@@ -10,7 +10,6 @@ import Map2 from "@/src/assets/images/ai/Map2.png";
 import Card3bg from "@/src/assets/images/ai/TileImages-04.png";
 import Card2bg from "@/src/assets/images/ai/TileImages-05.png";
 import MapStack from "@/src/assets/images/ai/Ai-TPD.png";
-
 
 import trAnalyticsLogo from "@/src/assets/images/ai/logos/TrAnalyticsLLC.png";
 import creareLogo from "@/src/assets/images/ai/logos/Creare-Logo.jpg";
@@ -23,8 +22,14 @@ import skyliteLogo from "@/src/assets/images/ai/logos/SkyliteLabs-logo.webp";
 import kitwareLogo from "@/src/assets/images/ai/logos/Kitware-logo.png";
 import kittelsonLogo from "@/src/assets/images/ai/logos/Kittelson-Associates-logo.webp";
 import stateOfPlaceLogo from "@/src/assets/images/ai/logos/stateofplace-logo.png";
-import base_url from "@/src/lib/base_url";
 
+import logo from "@/src/assets/images/ai/AI-TPD-Logo.png";
+
+import mapbg from "@/src/assets/images/ai/AI-banner.png";
+
+const optimizedBG = await getImage({ src: mapbg });
+
+import base_url from "@/src/lib/base_url";
 
 const keywords = [
   "AI for Transportation Planning and Design",
@@ -44,10 +49,17 @@ const keywords = [
 
 <PageLayout title="AI for Transportation Planning and Design" bannerImage={banner}>
   <Fragment slot="banner">Artificial Intelligence</Fragment>
-      <main>
-        <h2 class="sideways blue">AI for Transportation Planning and Design</h2>
-        <p class="TitlePill">
-      The AI for Transportation Planning and Design (AI TPD) initiative aims to bridge data silos in transportation agencies with advanced AI tools, enhancing safety, efficiency, and resilience through streamlined processes that reduce time and costs for actionable insights.
+  <main>
+    <section class="background-map section-wrapper" style={`background-image: url(${optimizedBG.src});`}>
+      <div class="container-xl">
+       
+        <Image src={logo} alt="" height={150} />
+
+      </div>
+    </section>
+    <p class="TitlePill">
+      The AI for Transportation Planning and Design (AI TPD) initiative aims to bridge data silos in transportation agencies with advanced AI tools, enhancing safety, efficiency, and resilience
+      through streamlined processes that reduce time and costs for actionable insights.
     </p>
 
     <div class="row">
@@ -68,13 +80,155 @@ const keywords = [
           AI for Transportation Planning and Design (Al TPD) is an SBIR initiative funded by ITS JPO to develop powerful new Al-based decision-support software tools that generates data at HD
           resolution and assists in the siting, design, and deployment of infrastructure.
         </p>
-        <p class="EngangementPillRow fst-italic" >
+        <p class="EngangementPillRow fst-italic">
           Example: Identify street segments with high rates of near-misses, or a traffic event that produces more than an ordinary amount of danger to the drivers and passengers involved and propose
           infrastructure and operational changes to avoid future modal conflicts.
         </p>
       </div>
     </div>
+    <section class="background-light section-wrapper">
+      <div class="container-xl">
+        <h2 class="mt-4 mb-0 text-center">Spotlight on Phase 1 Awardees</h2>
 
+        <div class="carousel-wrapper mt-2">
+          <input type="radio" name="carousel" id="slide1" checked />
+          <input type="radio" name="carousel" id="slide2" />
+          <input type="radio" name="carousel" id="slide3" />
+
+          <div class="carousel-main">
+            <div class="carousel-controls">
+              <label for="slide3" class="carousel-arrow carousel-arrow-prev" data-slide="1">‹</label>
+              <label for="slide1" class="carousel-arrow carousel-arrow-prev" data-slide="2">‹</label>
+              <label for="slide2" class="carousel-arrow carousel-arrow-prev" data-slide="3">‹</label>
+            </div>
+
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <!-- Slide 1: Cards 1-4 -->
+                <div class="carousel-slide">
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={trAnalyticsLogo} alt="TrAnalytics LLC logo" class="project-logo" />
+                    </div>
+                    <h4>Complete Pavement Markings for Safe and Complete Streets</h4>
+                    <p class="company-name">TrAnalytics LLC</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/complete-pavement-markings")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={creareLogo} alt="Creare LLC logo" class="project-logo" />
+                    </div>
+                    <h4>Artificial Intelligence Processing and Analysis Framework for Infrastructure Planning, Design, and Maintenance</h4>
+                    <p class="company-name">Creare LLC</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/ai-processing-analysis-framework")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={jcTechsLogo} alt="JC-Techs Corp. logo" class="project-logo" />
+                    </div>
+                    <h4>Scalable and Sustainable AI Solutions for Complete Streets Data Creation and Maintenance with Off-the-shelf Dash Cams</h4>
+                    <p class="company-name">JC-Techs Corp.</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/scalable-sustainable-ai-solutions")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={veloLogo} alt="VELO.AI, INC. logo" class="project-logo" />
+                    </div>
+                    <h4>Informing infrastructure interventions via novel near-miss data collection</h4>
+                    <p class="company-name">VELO.AI, INC.</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/infrastructure-interventions-near-miss")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+                </div>
+
+                <!-- Slide 2: Cards 5-8 -->
+                <div class="carousel-slide">
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={aiWaysionLogo} alt="AIWaysion logo" class="project-logo" />
+                    </div>
+                    <h4>Artificial Intelligence (AI) Approach to Generate and Analyze Transportation Planning & Design (TPD) Data at Scale</h4>
+                    <p class="company-name">AIWaysion</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/ai-transportation-planning-design")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={numobilityLogo} alt="Numobility logo" class="project-logo" />
+                    </div>
+                    <h4>Safely Advancing Multimodal Mobility Intelligence (SAMMI)</h4>
+                    <p class="company-name">Numobility</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/sammi-multimodal-mobility")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={opalLogo} alt="Opal AI Inc. logo" class="project-logo" />
+                    </div>
+                    <h4>Urbanomy: AI-Driven, Multi-Modal Decision Support for Smarter, Scalable Transportation Design, Planning, and Asset Management</h4>
+                    <p class="company-name">Opal AI Inc.</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/urbanomy-ai-decision-support")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={skyliteLogo} alt="SkyliteLabs logo" class="project-logo" />
+                    </div>
+                    <h4>Skylite Geo LLM Transportation Planning and Decision Support Platform</h4>
+                    <p class="company-name">SkyliteLabs</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/skylite-geollm-platform")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+                </div>
+
+                <!-- Slide 3: Cards 9-11 -->
+                <div class="carousel-slide">
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={kitwareLogo} alt="Kitware Inc. logo" class="project-logo" />
+                    </div>
+                    <h4>Complete Urban to Rural Balanced Streets by Artificial Intelligent Design (CURBS-AID)</h4>
+                    <p class="company-name">Kitware Inc.</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/curbs-aid-intelligent-design")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={kittelsonLogo} alt="Kittelson & Associates logo" class="project-logo" />
+                    </div>
+                    <h4>Safe Routes for All (SR4A)</h4>
+                    <p class="company-name">Kittelson & Associates</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/safe-routes-for-all")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+
+                  <div class="project-card">
+                    <div class="project-logo-placeholder">
+                      <Image src={stateOfPlaceLogo} alt="State of Place logo" class="project-logo" />
+                    </div>
+                    <h4>AI for Comprehensive, Efficient, & Safe Streets (ACES)</h4>
+                    <p class="company-name">State of Place</p>
+                    <a href={base_url("/research-areas/Artificial-Intelligence/projects/aces-comprehensive-streets")} class="btn btn-sm btn-primary">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-controls">
+              <label for="slide2" class="carousel-arrow carousel-arrow-next" data-slide="1">›</label>
+              <label for="slide3" class="carousel-arrow carousel-arrow-next" data-slide="2">›</label>
+              <label for="slide1" class="carousel-arrow carousel-arrow-next" data-slide="3">›</label>
+            </div>
+          </div>
+
+          <div class="carousel-dots">
+            <label for="slide1" class="carousel-dot"></label>
+            <label for="slide2" class="carousel-dot"></label>
+            <label for="slide3" class="carousel-dot"></label>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="row">
       <div class="col-lg-12">
         <div class="PurpleBar">
@@ -180,7 +334,7 @@ const keywords = [
     </div>
 
     <div class="row">
-      <div class="col-lg-7 mt-3">
+      <div class="col-lg-8 mt-3">
         <p class="EngangementPillRow">
           Transportation agencies often face persistent data challenges: information is fragmented across jurisdictions, inconsistent in quality, and incomplete across modes. Reliable, real-time data
           on emerging systems, such as connected and automated vehicles (CAV), micromobility, and active transportation, is especially limited. These data gaps make it difficult to anticipate system
@@ -197,7 +351,7 @@ const keywords = [
           continuously updated datasets, agencies can more effectively plan, evaluate, and maintain safer and more resilient transportation systems.
         </p>
       </div>
-      <div class="col-lg-5 mt-3">
+      <div class="col-lg-4 mt-3">
         <img class="float-start w-100 pr-1" src={MapStack.src} alt="Map image" />
       </div>
       <div class="col-lg-12 mt-3"></div>
@@ -254,152 +408,7 @@ const keywords = [
         </div>
       </div>
     </div>
-
-    <section class="background-light section-wrapper">
-        <div class="container-xl">
-        <h2 class="mt-4 mb-0 text-center">Spotlight on Phase 1 Awardees</h2>
-        
-        <div class="carousel-wrapper mt-2">
-          <input type="radio" name="carousel" id="slide1" checked />
-          <input type="radio" name="carousel" id="slide2" />
-          <input type="radio" name="carousel" id="slide3" />
-          
-          <div class="carousel-main">
-            <div class="carousel-controls">
-              <label for="slide3" class="carousel-arrow carousel-arrow-prev" data-slide="1">‹</label>
-              <label for="slide1" class="carousel-arrow carousel-arrow-prev" data-slide="2">‹</label>
-              <label for="slide2" class="carousel-arrow carousel-arrow-prev" data-slide="3">‹</label>
-            </div>
-            
-            <div class="carousel-container">
-            <div class="carousel-track">
-            <!-- Slide 1: Cards 1-4 -->
-            <div class="carousel-slide">
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={trAnalyticsLogo} alt="TrAnalytics LLC logo" class="project-logo" />
-                </div>
-                <h4>Complete Pavement Markings for Safe and Complete Streets</h4>
-                <p class="company-name">TrAnalytics LLC</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/complete-pavement-markings")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={creareLogo} alt="Creare LLC logo" class="project-logo" />
-                </div>
-                <h4>Artificial Intelligence Processing and Analysis Framework for Infrastructure Planning, Design, and Maintenance</h4>
-                <p class="company-name">Creare LLC</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/ai-processing-analysis-framework")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={jcTechsLogo} alt="JC-Techs Corp. logo" class="project-logo" />
-                </div>
-                <h4>Scalable and Sustainable AI Solutions for Complete Streets Data Creation and Maintenance with Off-the-shelf Dash Cams</h4>
-                <p class="company-name">JC-Techs Corp.</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/scalable-sustainable-ai-solutions")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={veloLogo} alt="VELO.AI, INC. logo" class="project-logo" />
-                </div>
-                <h4>Informing infrastructure interventions via novel near-miss data collection</h4>
-                <p class="company-name">VELO.AI, INC.</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/infrastructure-interventions-near-miss")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-            </div>
-
-            <!-- Slide 2: Cards 5-8 -->
-            <div class="carousel-slide">
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={aiWaysionLogo} alt="AIWaysion logo" class="project-logo" />
-                </div>
-                <h4>Artificial Intelligence (AI) Approach to Generate and Analyze Transportation Planning & Design (TPD) Data at Scale</h4>
-                <p class="company-name">AIWaysion</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/ai-transportation-planning-design")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={numobilityLogo} alt="Numobility logo" class="project-logo" />
-                </div>
-                <h4>Safely Advancing Multimodal Mobility Intelligence (SAMMI)</h4>
-                <p class="company-name">Numobility</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/sammi-multimodal-mobility")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={opalLogo} alt="Opal AI Inc. logo" class="project-logo" />
-                </div>
-                <h4>Urbanomy: AI-Driven, Multi-Modal Decision Support for Smarter, Scalable Transportation Design, Planning, and Asset Management</h4>
-                <p class="company-name">Opal AI Inc.</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/urbanomy-ai-decision-support")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={skyliteLogo} alt="SkyliteLabs logo" class="project-logo" />
-                </div>
-                <h4>Skylite Geo LLM Transportation Planning and Decision Support Platform</h4>
-                <p class="company-name">SkyliteLabs</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/skylite-geollm-platform")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-            </div>
-
-            <!-- Slide 3: Cards 9-11 -->
-            <div class="carousel-slide">
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={kitwareLogo} alt="Kitware Inc. logo" class="project-logo" />
-                </div>
-                <h4>Complete Urban to Rural Balanced Streets by Artificial Intelligent Design (CURBS-AID)</h4>
-                <p class="company-name">Kitware Inc.</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/curbs-aid-intelligent-design")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={kittelsonLogo} alt="Kittelson & Associates logo" class="project-logo" />
-                </div>
-                <h4>Safe Routes for All (SR4A)</h4>
-                <p class="company-name">Kittelson & Associates</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/safe-routes-for-all")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-
-              <div class="project-card">
-                <div class="project-logo-placeholder">
-                  <Image src={stateOfPlaceLogo} alt="State of Place logo" class="project-logo" />
-                </div>
-                <h4>AI for Comprehensive, Efficient, & Safe Streets (ACES)</h4>
-                <p class="company-name">State of Place</p>
-                <a href={base_url("/research-areas/Artificial-Intelligence/projects/aces-comprehensive-streets")} class="btn btn-sm btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          </div>
-          
-          <div class="carousel-controls">
-            <label for="slide2" class="carousel-arrow carousel-arrow-next" data-slide="1">›</label>
-            <label for="slide3" class="carousel-arrow carousel-arrow-next" data-slide="2">›</label>
-            <label for="slide1" class="carousel-arrow carousel-arrow-next" data-slide="3">›</label>
-          </div>
-          </div>
-          
-          <div class="carousel-dots">
-            <label for="slide1" class="carousel-dot"></label>
-            <label for="slide2" class="carousel-dot"></label>
-            <label for="slide3" class="carousel-dot"></label>
-          </div>
-        </div>
-        </div> 
-</section>
-
-      </main>
+  </main>
 </PageLayout>
 
 <style define:vars={{ bgImage: `url(${Titlebg.src})` }}>
@@ -1309,7 +1318,9 @@ const keywords = [
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.3s, transform 0.3s;
+    transition:
+      box-shadow 0.3s,
+      transform 0.3s;
   }
 
   .project-card:hover {
@@ -1355,14 +1366,22 @@ const keywords = [
     align-self: flex-start;
   }
 
-.section-wrapper {
-    padding: .1rem 0rem 4rem 0rem;
+  .section-wrapper {
+   
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     width: auto;
     max-width: none;
-}
-.background-light {
+  }
+  .background-light {
     background: #f7f7f7;
-}
+     padding: 0.1rem 0rem 4rem 0rem;
+  }
+  .background-map {
+  background-size: cover;
+  background-position: center;
+  height: auto; /* Set the height to fill the viewport */
+  margin-bottom: 50px;
+ }
 </style>
+
