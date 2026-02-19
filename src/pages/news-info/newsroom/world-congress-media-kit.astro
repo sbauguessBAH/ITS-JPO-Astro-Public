@@ -1,0 +1,54 @@
+---
+
+import { Image } from "astro:assets";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+
+const keywords = ["ITS World Congress", "Media Kit", "2025", "Intelligent Transportation", "News Resources"];
+
+const description = "2025 ITS World Congress media kit with resources, images, and information for reporters and media professionals.";
+
+---
+
+<PageLayout title="2025 ITS World Congress Media Kit" keywords={keywords} description={description}>
+ <Fragment slot="banner">
+ Newsroom
+ </Fragment>
+
+  <main class="container mt-5">
+    <h2 class="mb-3">Media Contacts</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-5 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body d-flex align-items-center">
+            <img src="https://via.placeholder.com/100" alt="Brian Cronin" class="rounded-circle me-4" style="width:100px;height:100px;object-fit:cover;" />
+            <div>
+              <h5 class="card-title mb-1">Brian Cronin</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Director</h6>
+              <div class="mb-1">U.S Department of Transportation</div>
+              <div class="mb-1">Intelligent Transportation Systems Joint Program Office</div>
+              <a href="mailto:Brian.Cronin@dot.gov" class="card-link">Brian.Cronin@dot.gov</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body d-flex align-items-center">
+            <img src="https://via.placeholder.com/100" alt="Norah Ocel" class="rounded-circle me-4" style="width:100px;height:100px;object-fit:cover;" />
+            <div>
+              <h5 class="card-title mb-1">Norah Ocel</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Program Manager</h6>
+              <div class="mb-1">U.S Department Of Transportation</div>
+              <div class="mb-1">Intelligent Transportation Systems Joint Program Office</div>
+              <a href="mailto:Norah.Ocel@dot.gov" class="card-link">Norah.Ocel@dot.gov</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  {/* ...existing code for other sections... */}
+</PageLayout>
+
