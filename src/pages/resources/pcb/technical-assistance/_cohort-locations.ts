@@ -111,7 +111,7 @@ export const states: Record<string, State> = {
         y: 255,
       },
       {
-        agency: "Caltrans",
+        agency: "California DOT (Caltrans)",
         x: 53,
         y: 230,
       },
@@ -155,7 +155,7 @@ export const states: Record<string, State> = {
         y: 269,
       },
       {
-        agency: "Loveland",
+        agency: "City of Loveland",
         x: 331,
         y: 248,
       },
@@ -206,8 +206,8 @@ export const states: Record<string, State> = {
         x: 741,
         y: 495,
       },
-       {
-        agency: "Orlando",
+      {
+        agency: "City of Orlando",
         x: 764,
         y: 493,
       },
@@ -246,7 +246,7 @@ export const states: Record<string, State> = {
         y: 389,
       },
       {
-        agency: "Gwinnet County",
+        agency: "Gwinnett County",
         x: 697,
         y: 385,
       },
@@ -263,6 +263,11 @@ export const states: Record<string, State> = {
         agency: "Hawaii DOT",
         x: 318,
         y: 568,
+      },
+      {
+        agency: "University of Hawaii",
+        x: 280,
+        y: 530,
       },
     ],
     state: "Hawaii",
@@ -490,6 +495,11 @@ export const states: Record<string, State> = {
         x: 790,
         y: 325,
       },
+      {
+        agency: "North Carolina Turnpike Authority",
+        x: 780,
+        y: 325,
+      },
     ],
     state: "North Carolina",
     drawable: {
@@ -714,14 +724,9 @@ export const states: Record<string, State> = {
   WA: {
     members: [
       {
-        agency: "Washington DOT",
-        x: 98,
-        y: 25,
-      },
-      {
         agency: "University of Washington",
-        x: 96,
-        y: 34,
+        x: 98,
+        y: 32,
       },
       {
         agency: "City of Bellevue",
