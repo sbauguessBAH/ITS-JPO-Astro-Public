@@ -197,7 +197,7 @@ export const navigation: NavigationItem[] = [
         url: "/resources/architecture-and-standards",
         isEnabled: true,
         pages: [
-          { name: "Overview", url: "/resources/architecture-and-standards/" },
+          { name: "Overview", url: "/resources/architecture-and-standards" },
           { name: "National ITS Reference Architecture", url: "/resources/architecture-and-standards/reference-architecture" },
           { name: "Standards", url: "/resources/architecture-and-standards/standards" },
 
