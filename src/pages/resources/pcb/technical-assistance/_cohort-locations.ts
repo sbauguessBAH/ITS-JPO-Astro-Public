@@ -707,6 +707,11 @@ export const states: Record<string, State> = {
         x: 790,
         y: 272,
       },
+      {
+        agency: "City of Alexandria, VA",
+        x: 795,
+        y: 258,
+      },
     ],
     state: "Virginia",
     drawable: {
