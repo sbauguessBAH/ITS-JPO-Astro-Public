@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Phases from "@/src/components/Phases.astro";
 import base_url from "@/src/lib/base_url";
 import Photo1 from "@/src/assets/images/its4us/accessible-signal.jpeg";
 import ProgramPhase from "@/src/assets/images/its4us/ITS4US-Program-Phases3.png";
@@ -163,39 +164,7 @@ import "@/src/styles/programs.css";
     </ul>
     <ProgramSection color="gray">
       <h2 class="sideways">The Program Phases</h2>
-      <div class="program-phases-container">
-        <ul>
-          <li id="program-initiation" class="program-phase-item active">
-            <h3>Program Initiation</h3>
-          </li> 
-          <li id="program-initiation" class="program-phase-item">
-            <h3>Program Initiation</h3>
-          </li> 
-          <li id="phase-1-awards" class="program-phase-award">
-            <h4>Phase 1 Awards</h4>
-          </li>
-          <li id="program-initiation" class="program-phase-item">
-            <h3>Program Initiation</h3>
-          </li> 
-            <li id="program-initiation" class="program-phase-item">
-            <h3>Program Initiation</h3>
-          </li> 
-          <li id="program-initiation" class="program-phase-item">
-            <h3>Program Initiation</h3>
-          </li> 
-            <li id="program-initiation" class="program-phase-item">
-            <h3>Program Initiation</h3>
-          </li> 
-          <li id="program-initiation" class="program-phase-item">
-            <h3>Program Initiation</h3>
-          </li> 
-        </ul>
-      </div>
-      <div class="program-phase-details">
-        <h3>Program Initiation</h3>
-        <p class="status-pill">Status: Completed</p>
-        <p>The Program Initiation phase establishes the foundation for the ITS4US deployment. This includes identifying stakeholders, defining project scope, securing funding, and forming partnerships necessary to support the deployment program.</p>
-      </div>
+     <Phases/>
     </ProgramSection>
     <ProgramSection color="white">
    <div class="map-container mt-3">
