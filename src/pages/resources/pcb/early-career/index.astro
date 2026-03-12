@@ -6,6 +6,7 @@ import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 // import { Image } from "astro:assets";
 import Link from "@/src/components/Link.astro";
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 
 const modules = [
   {
@@ -77,11 +78,20 @@ const modules = [
       align-items: start;
     }
     .overview-video {
-      flex-basis: 45%;
+      flex-basis: 40%;
     }
     .overview-text {
-      flex-basis: 55%;
+      flex-basis: 60%;
     }
+  }
+</style>
+
+<!-- Additional Resources section -->
+<style>
+  .resources {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
 </style>
 
@@ -147,10 +157,12 @@ const modules = [
         ))}
       </div>
     </ProgramSection>
-    <ProgramSection size="small">
-      <div class="overview-section">
+    <ProgramSection>
+      <h2 class="program-title-md pb-4">Additional Resources</h2>
+      <div class="resources">
+        <div class="overview-section">
         <div class="overview-text">
-          <h2 class="program-title-md mb-4">ITS Careers</h2>
+          <h3 class="program-title-sm mb-4">ITS Careers</h3>
           <p class="program-text">
             The ITS Careers White Paper provides an overview of ITS, identifies a variety of different careers in
             the ITS sector, including key details on specific roles along with potential responsibilities and
@@ -158,30 +170,36 @@ const modules = [
             within ITS for individuals exploring jobs and considering a future career in ITS.
           </p>
           <div class="mt-4">
-            <Link variant="button" href="" isExternal>
+            <Link variant="button" href="https://rosap.ntl.bts.gov/view/dot/89169" isExternal>
               View PDF
             </Link>
           </div>
         </div>
-        <div style="background: #ccc;" class="ratio ratio-21x9 rounded overview-video"/>
       </div>
-      
-    </ProgramSection>
-    <ProgramSection>
-      <h3 class="program-title-sm text-center mb-4">
-        Explore Opportunities
-      </h3>
-      <p>
-        Explore highlights of example ITS jobs through the interactive trading cards shown below. ITS jobs are grouped by ITS career areas. Select the pack you want to open to see each
-        potential example job opportunity within the career area. You can select any card to flip it over and view the back, which contains further information about the potential role (i.e.,
-        skills and responsibilities).
-      </p>
-      <div style="background: #ccc;" class="ratio ratio-21x9 rounded overview-video"/>
-    </ProgramSection>
-    <ProgramSection size="small" color="gray">
+      <!-- COMING SOON: Resources still in development -->
+      <!-- 
+        <h3 class="program-title-sm text-center mb-4">
+          Explore Opportunities
+        </h3>
+        <p>
+          Explore highlights of example ITS jobs through the interactive trading cards shown below. ITS jobs are grouped by ITS career areas. Select the pack you want to open to see each
+          potential example job opportunity within the career area. You can select any card to flip it over and view the back, which contains further information about the potential role (i.e.,
+          skills and responsibilities).
+        </p>
+        <div style="background: #ccc;" class="ratio ratio-21x9 rounded overview-video"/> 
+      -->
       <div class="overview-section">
+        <div class="ratio ratio-16x9 overview-video shadow-md">
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="video"
+            src="https://www.youtube.com/embed/8V41fZQgPh0?si=AbeS5F3zu7_AaXek"
+            title="YouTube video player"
+          ></iframe>
+        </div>
         <div class="overview-text">
-          <h2 class="program-title-md mb-4">ITS Student Competitions</h2>
+          <h3 class="program-title-sm mb-4">ITS Student Competitions</h3>
           <p class="program-text">
             The Transportation Technology Tournament (TTT) is an annual event hosted jointly by the National
             Operations Center of Excellence (NOCoE) and the Institute of Transportation Engineers (ITE) that
@@ -197,17 +215,8 @@ const modules = [
             </Link>
           </div>
         </div>
-        <div class="ratio ratio-16x9 overview-video">
-          <iframe
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            class="video"
-            src="https://www.youtube.com/embed/8V41fZQgPh0?si=AbeS5F3zu7_AaXek"
-            title="YouTube video player"
-          ></iframe>
-        </div>
       </div>
-      
+      </div>
     </ProgramSection>
   </main>
 </Layout>
