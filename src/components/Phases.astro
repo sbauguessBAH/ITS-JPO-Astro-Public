@@ -1,29 +1,31 @@
  <div>
         <ul class="program-phases-container">
           <li id="program-initiation" class="program-phase-item active">
-            <span class="phase-item-circle-progress"></span>
+            <span class="phase-item-circle progress"></span>
             <h3>Program Initiation</h3>
           </li> 
           <li id="program-initiation" class="program-phase-item">
-            <span class="phase-item-circle-progress"></span>
+            <span class="phase-item-circle progress"></span>
             <h3>Program Initiation</h3>
           </li> 
           <li id="phase-1-awards" class="program-phase-award">
+            <span class="phase-item-circle award"></span>
             <h4>Phase 1 Awards</h4>
           </li>
           <li id="program-initiation" class="program-phase-item">
-            <span class="phase-item-circle-progress"></span>
+            <span class="phase-item-circle progress"></span>
             <h3>Program Initiation</h3>
           </li> 
            <li id="phase-2-awards" class="program-phase-award">
+            <span class="phase-item-circle award"></span>
             <h4>Phase 2/3 Awards</h4>
           </li>
           <li id="program-initiation" class="program-phase-item">
-            <span class="phase-item-circle-progress"></span>
+            <span class="phase-item-circle progress"></span>
             <h3>Program Initiation</h3>
           </li> 
           <li id="program-initiation" class="program-phase-item">
-            <span class="phase-item-circle-progress"></span>
+            <span class="phase-item-circle progress"></span>
             <h3>Program Initiation</h3>
           </li> 
             <li id="program-initiation" class="program-phase-item">
@@ -51,32 +53,72 @@
     .program-phase-item {
         list-style: none;
         cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .phase-item-circle-progress {
-        border-radius: 100%; 
+    .program-phase-award {
+       list-style: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .program-phase-item > h3, h4{
+      margin-top: 1.5rem;
+      padding-right: 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      text-transform: none;
+      text-wrap: nowrap;
+      font-weight: 300;
+      
+    }
+
+    .phase-item-circle {
+       border-radius: 100%; 
+       background-color: #ffffff;
+       border: 5px solid #d1d5dc;
+       width: 40px;
+       height: 40px;
+       position: relative;
+       display: inline-block;
+       margin-right: 0.5rem;
+   }
+    .phase-item-circle.progress {
         background-color: #055681;
-        border: 5px solid #d1d5dc;
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-        margin-right: 0.5rem;
     }
 
-    .phase-item-circle-progress:hover {
+    .phase-item-circle.progress::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;          /* dot size */
+        height: 10px;
+        background: #ffffff;
+        border-radius: 100%;
+        transform: translate(-50%, -50%);
+      }
+     .phase-item-circle.award {
+        background-color:  #dc3545;
+        border: none;
+        width: 32px;
+        height: 32px;
+    }
+    .phase-item-circle.progress:hover {
 
     }
     
 
     .program-phase-award {
-        list-style: none;
-        cursor: pointer;
-        background-color: #dc3545;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 100%;
-        width: 40px;
-        height: 40px;
+      list-style: none; 
+      background-image: url("/assets/images/its4us/award-icon.png");
     }
 
 </style>
