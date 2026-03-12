@@ -65,9 +65,6 @@ const modules = [
     flex-direction: column;
     gap: var(--size);
   }
-  /* .overview-video {
-    border-radius: var(--radius-md);
-  } */
   .video {
     border-radius: var(--radius-lg);
   }
@@ -82,6 +79,9 @@ const modules = [
     }
     .overview-text {
       flex-basis: 60%;
+    }
+    .career-areas-image {
+      max-width: 600px;
     }
   }
 </style>
@@ -158,23 +158,31 @@ const modules = [
       </div>
     </ProgramSection>
     <ProgramSection>
-      <h2 class="program-title-md pb-4">Additional Resources</h2>
-      <div class="resources">
-        <div class="overview-section">
+      
+      
+      <div class="overview-section">
         <div class="overview-text">
-          <h3 class="program-title-sm mb-4">ITS Careers</h3>
-          <p class="program-text">
-            The ITS Careers White Paper provides an overview of ITS, identifies a variety of different careers in
-            the ITS sector, including key details on specific roles along with potential responsibilities and
-            desired skills. The aim of this document is to showcase the vast array and variety of opportunities
-            within ITS for individuals exploring jobs and considering a future career in ITS.
-          </p>
-          <div class="mt-4">
-            <Link variant="button" href="https://rosap.ntl.bts.gov/view/dot/89169" isExternal>
-              View PDF
-            </Link>
-          </div>
+        <h2 class="program-title-md mb-4">
+        ITS Careers
+      </h2>
+        <p class="program-text">
+          The ITS Careers White Paper provides an overview of ITS, identifies a variety of different careers in
+          the ITS sector, including key details on specific roles along with potential responsibilities and
+          desired skills. The aim of this document is to showcase the vast array and variety of opportunities
+          within ITS for individuals exploring jobs and considering a future career in ITS.
+        </p>
+        <div class="mt-4">
+          <Link variant="button" href="https://rosap.ntl.bts.gov/view/dot/89169" isExternal>
+            View PDF
+          </Link>
         </div>
+      </div>
+        <div class="career-areas-image ratio ratio-1x1 mx-auto">
+        <LibraryImage
+          entry="pcb/resources/career-areas"
+        />
+      </div>
+
       </div>
       <!-- COMING SOON: Resources still in development -->
       <!-- 
@@ -188,6 +196,8 @@ const modules = [
         </p>
         <div style="background: #ccc;" class="ratio ratio-21x9 rounded overview-video"/> 
       -->
+    </ProgramSection>
+    <ProgramSection color="gray">
       <div class="overview-section">
         <div class="ratio ratio-16x9 overview-video shadow-md">
           <iframe
@@ -199,7 +209,7 @@ const modules = [
           ></iframe>
         </div>
         <div class="overview-text">
-          <h3 class="program-title-sm mb-4">ITS Student Competitions</h3>
+          <h2 class="program-title-md mb-4">ITS Student Competitions</h2>
           <p class="program-text">
             The Transportation Technology Tournament (TTT) is an annual event hosted jointly by the National
             Operations Center of Excellence (NOCoE) and the Institute of Transportation Engineers (ITE) that
@@ -217,6 +227,6 @@ const modules = [
         </div>
       </div>
       </div>
-    </ProgramSection>
+      </ProgramSection>
   </main>
 </Layout>
