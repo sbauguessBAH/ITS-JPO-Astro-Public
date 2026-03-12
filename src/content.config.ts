@@ -58,6 +58,8 @@ const library = defineCollection({
     citation: z.string(),
     /** Origin URL for the source */
     origin: z.union([z.string().url(), z.literal('')]),
+    /** Internal notes about the image */
+    notes: z.string().optional(),
   })
 })
 

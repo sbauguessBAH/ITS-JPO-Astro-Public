@@ -1,0 +1,8 @@
+{
+  "album": "pcb/resources",
+  "image": "./images/career-areas.png",
+  "alt": "Diagram showing ITS Career Areas in the center with circles branching off in for Operations, Data Science, Marketing &amp; Communications, Software &amp; Cybersecurity, Engineering, Research, and Policy &amp; Planning (in clockwise order).",
+  "origin": "https://rosap.ntl.bts.gov/view/dot/89169",
+  "citation": "USDOT, 2025",
+  "notes": "This image was from the Career Opportunities in Intelligent Transportation Systems (ITS) paper. However, the image we're currently using is a little different than what they use in the paper. Not sure if we want to update ours or not."
+}
