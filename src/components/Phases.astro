@@ -1,30 +1,37 @@
- <div class="program-phases-container">
-        <ul>
+ <div>
+        <ul class="program-phases-container">
           <li id="program-initiation" class="program-phase-item active">
+            <span class="phase-item-circle-progress"></span>
             <h3>Program Initiation</h3>
           </li> 
           <li id="program-initiation" class="program-phase-item">
+            <span class="phase-item-circle-progress"></span>
             <h3>Program Initiation</h3>
           </li> 
           <li id="phase-1-awards" class="program-phase-award">
             <h4>Phase 1 Awards</h4>
           </li>
           <li id="program-initiation" class="program-phase-item">
+            <span class="phase-item-circle-progress"></span>
             <h3>Program Initiation</h3>
           </li> 
            <li id="phase-2-awards" class="program-phase-award">
             <h4>Phase 2/3 Awards</h4>
           </li>
           <li id="program-initiation" class="program-phase-item">
+            <span class="phase-item-circle-progress"></span>
             <h3>Program Initiation</h3>
           </li> 
           <li id="program-initiation" class="program-phase-item">
+            <span class="phase-item-circle-progress"></span>
             <h3>Program Initiation</h3>
           </li> 
             <li id="program-initiation" class="program-phase-item">
+            <span class="phase-item-circle"></span>
             <h3>Program Initiation</h3>
           </li> 
           <li id="program-initiation" class="program-phase-item">
+            <span class="phase-item-circle"></span>
             <h3>Program Initiation</h3>
           </li> 
         </ul>
@@ -34,3 +41,42 @@
         <p class="status-pill">Status: Completed</p>
         <p>The Program Initiation phase establishes the foundation for the ITS4US deployment. This includes identifying stakeholders, defining project scope, securing funding, and forming partnerships necessary to support the deployment program.</p>
       </div>
+<style>
+    .program-phases-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    .program-phase-item {
+        list-style: none;
+        cursor: pointer;
+    }
+
+    .phase-item-circle-progress {
+        border-radius: 100%; 
+        background-color: #055681;
+        border: 5px solid #d1d5dc;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        margin-right: 0.5rem;
+    }
+
+    .phase-item-circle-progress:hover {
+
+    }
+    
+
+    .program-phase-award {
+        list-style: none;
+        cursor: pointer;
+        background-color: #dc3545;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+    }
+
+</style>
