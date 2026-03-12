@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import base_url from "@/src/lib/base_url";
 import Photo1 from "@/src/assets/images/its4us/accessible-signal.jpeg";
 import ProgramPhase from "@/src/assets/images/its4us/ITS4US-Program-Phases3.png";
@@ -7,6 +8,8 @@ import TravelerMap from "@/src/assets/images/its4us/TravelerMap.jpeg";
 
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+
+import "@/src/styles/programs.css";
 ---
 
 <style>
@@ -56,6 +59,10 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 
   h2 {
     text-wrap: pretty;
+  }
+
+  .bg-gray-100 {
+    background-color: #f3f4f6 !important;
   }
 
   @media screen and (max-width: 1400px) {
@@ -177,21 +184,19 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
       <li>Measure impact of integrated deployments.</li>
       <li>Identify replicable solutions and disseminate lessons learned.</li>
     </ul>
-    <h2 class="sideways blue">The Program Phases</h2>
-
-    <p>
-      The program, to be executed in three deployment phases, has procured and awarded multiple large-scale, replicable, real-world deployments of integrated innovative technologies to address the challenges of
-      planning and executing multimodal trips:
-      <ul>
-        <li>Pre-Deployment Activities</li>
-        <li>Phase 1: Deployment Concept</li>
-        <li>Phase 2: Design and Test</li>
-        <li>Phase 3: Operate and Evaluate (Current Phase)</li>
-        <li>Post-Deployment Operations &amp; Maintenance</li>
-      </ul>
-    </p>
-    <div class="map-container mt-3">
-      <h2 class="sideways blue">ITS4US Program Sites Map</h2>
+    <ProgramSection color="gray">
+      <h2 class="sideways">The Program Phases</h2>
+      <div class="program-phases-container">
+      </div>
+      <div class="program-phase-details">
+        <h3>Program Initiation</h3>
+        <p class="status-pill">Status: Completed</p>
+        <p>The Program Initiation phase establishes the foundation for the ITS4US deployment. This includes identifying stakeholders, defining project scope, securing funding, and forming partnerships necessary to support the deployment program.</p>
+      </div>
+    </ProgramSection>
+    <ProgramSection color="white">
+   <div class="map-container mt-3">
+      <h2 class="sideways mb-4">ITS4US Program Sites Map</h2>
       <div class="map-container">
             <div class="row">
               <div class="col-lg-3 deployment WA"><a href={base_url("/research-areas/ITS4US/deployments/washington")}><div><h3>University of Washington</h3><p>OR, WA, MD</p></div></a></div>
@@ -646,5 +651,6 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
             </div>
           </div>
         </div>
+      </ProgramSection>
     </main>
 </PageLayout>
