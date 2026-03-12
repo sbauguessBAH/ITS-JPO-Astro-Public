@@ -60,39 +60,51 @@ const modules = [
 
 <!-- Overview Section -->
 <style>
-  .overview-section {
+  .competitions-section {
     display: flex;
     flex-direction: column;
     gap: var(--size);
   }
+
   .video {
     border-radius: var(--radius-lg);
   }
 
   @media (min-width: 992px) {
-    .overview-section {
+    .competitions-section {
       flex-direction: row;
-      align-items: start;
+      align-items: center;
     }
-    .overview-video {
+    .competitions-video {
       flex-basis: 40%;
     }
-    .overview-text {
+    .competitions-text {
       flex-basis: 60%;
     }
-    .career-areas-image {
-      max-width: 600px;
-    }
+    
   }
 </style>
 
-<!-- Additional Resources section -->
 <style>
-  .resources {
+  .career-areas-section {
     display: flex;
-    flex-direction: column;
-    gap: 4rem;
+    flex-direction: column-reverse;
+    gap: var(--size);
   }
+
+  @media (min-width: 992px) {
+    .career-areas-section {
+      flex-direction: row;
+      align-items: center;
+    }
+    .career-areas-image {
+      flex-basis: 30%;
+    }
+    .career-areas-text {
+      flex-basis: 60%;
+    }
+  }
+
 </style>
 
 <Layout>
@@ -143,7 +155,7 @@ const modules = [
                 class="resource-card-image radius-none shadow"
                 src={resource.image}
               /> */}
-              <div style="background: #ccc;" class="ratio ratio-21x9 rounded overview-video"/>
+              <div style="background: #ccc;" class="ratio ratio-21x9 rounded competitions-video"/>
             </CardBody>
             <CardFooter class="resource-card-footer">
               <h3 class="program-title-sm text-foreground mb-2">
@@ -158,31 +170,28 @@ const modules = [
       </div>
     </ProgramSection>
     <ProgramSection>
-      
-      
-      <div class="overview-section">
-        <div class="overview-text">
-        <h2 class="program-title-md mb-4">
-        ITS Careers
-      </h2>
-        <p class="program-text">
-          The ITS Careers White Paper provides an overview of ITS, identifies a variety of different careers in
-          the ITS sector, including key details on specific roles along with potential responsibilities and
-          desired skills. The aim of this document is to showcase the vast array and variety of opportunities
-          within ITS for individuals exploring jobs and considering a future career in ITS.
-        </p>
-        <div class="mt-4">
-          <Link variant="button" href="https://rosap.ntl.bts.gov/view/dot/89169" isExternal>
-            View PDF
-          </Link>
+      <div class="career-areas-section">
+        <div class="career-areas-text">
+          <h2 class="program-title-md mb-4">
+            ITS Careers
+          </h2>
+          <p class="program-text">
+            The ITS Careers White Paper provides an overview of ITS, identifies a variety of different careers in
+            the ITS sector, including key details on specific roles along with potential responsibilities and
+            desired skills. The aim of this document is to showcase the vast array and variety of opportunities
+            within ITS for individuals exploring jobs and considering a future career in ITS.
+          </p>
+          <div class="mt-4">
+            <Link variant="button" href="https://rosap.ntl.bts.gov/view/dot/89169" isExternal>
+              View PDF
+            </Link>
+          </div>
         </div>
-      </div>
         <div class="career-areas-image ratio ratio-1x1 mx-auto">
-        <LibraryImage
-          entry="pcb/resources/career-areas"
-        />
-      </div>
-
+          <LibraryImage
+            entry="pcb/resources/career-areas"
+          />
+        </div>
       </div>
       <!-- COMING SOON: Resources still in development -->
       <!-- 
@@ -194,12 +203,12 @@ const modules = [
           potential example job opportunity within the career area. You can select any card to flip it over and view the back, which contains further information about the potential role (i.e.,
           skills and responsibilities).
         </p>
-        <div style="background: #ccc;" class="ratio ratio-21x9 rounded overview-video"/> 
+        <div style="background: #ccc;" class="ratio ratio-21x9 rounded competitions-video"/> 
       -->
     </ProgramSection>
     <ProgramSection color="gray">
-      <div class="overview-section">
-        <div class="ratio ratio-16x9 overview-video shadow-md">
+      <div class="competitions-section" style="padding-top: 2rem; padding-bottom: 2rem; gap: 4rem;">
+        <div class="ratio ratio-16x9 competitions-video shadow-md">
           <iframe
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -208,7 +217,7 @@ const modules = [
             title="YouTube video player"
           ></iframe>
         </div>
-        <div class="overview-text">
+        <div class="competitions-text">
           <h2 class="program-title-md mb-4">ITS Student Competitions</h2>
           <p class="program-text">
             The Transportation Technology Tournament (TTT) is an annual event hosted jointly by the National
@@ -226,7 +235,6 @@ const modules = [
           </div>
         </div>
       </div>
-      </div>
-      </ProgramSection>
+    </ProgramSection>
   </main>
 </Layout>
