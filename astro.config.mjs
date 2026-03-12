@@ -3,11 +3,15 @@ import vue from "@astrojs/vue";
 
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
+import { loadEnv } from "vite";
+
+/** Load the BASE_URL from a `.env` file */
+const { BASE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), "");
 
 // https://astro.build/config
 export default defineConfig({
   // If hosting on a subdomain, set the base here such as /itsjpo, /demo, etc.
-  base: "itstest_programs",
+  base: BASE_URL,
   site: "https://www.its.dot.gov",
   output: "static",
   integrations: [partytown(), sitemap(), vue()],
