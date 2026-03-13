@@ -47,37 +47,50 @@
     .program-phases-container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         margin-top: 2rem;
     }
     .program-phase-item {
-        list-style: none;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding-top: 2.5rem;
     }
 
     .program-phase-award {
-       list-style: none;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        text-align: center;
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding-top: 2.5rem;
+      background-image: url("/assets/images/its4us/award-icon.png");
     }
 
-    .program-phase-item > h3, h4{
-      margin-top: 1.5rem;
+    .program-phase-item > h3,
+    .program-phase-award > h4 {
+      margin: 0.75rem 0 0;
       padding-right: 0;
       font-size: 1rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
+      line-height: 1.2;
       text-transform: none;
       text-wrap: nowrap;
       font-weight: 300;
-      
+    }
+
+    .program-phase-award > h4 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      width: 100%;
     }
 
     .phase-item-circle {
@@ -88,7 +101,7 @@
        height: 40px;
        position: relative;
        display: inline-block;
-       margin-right: 0.5rem;
+       margin-right: 0;
    }
     .phase-item-circle.progress {
         background-color: #055681;
@@ -108,17 +121,10 @@
      .phase-item-circle.award {
         background-color:  #dc3545;
         border: none;
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
     }
     .phase-item-circle.progress:hover {
 
     }
-    
-
-    .program-phase-award {
-      list-style: none; 
-      background-image: url("/assets/images/its4us/award-icon.png");
-    }
-
 </style>
