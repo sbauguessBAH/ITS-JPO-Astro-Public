@@ -72,10 +72,6 @@
       padding-top: 2.5rem;
       background-image: url("/assets/images/its4us/award-icon.png");
     }
-      .program-phase-item > h3:hover, .program-phase-item:hover {
-        font-weight: 700;
-
-      }
     .program-phase-item > h3,
     .program-phase-award > h4 {
       margin: 0.75rem 0 0;
@@ -85,6 +81,10 @@
       text-transform: none;
       text-wrap: nowrap;
       font-weight: 400;
+      transition: all 300ms ease-in-out;
+    }
+    .program-phase-item > h3:hover, .program-phase-item:hover {
+      font-weight: 700;
     }
 
     .program-phase-award > h4 {
@@ -95,9 +95,10 @@
       width: 100%;
       color: #055681;
       font-weight: 500;
+      transition: all 300ms ease-in-out;
     }
 
-      .program-phase-award > h4:hover, active {
+      .program-phase-award > h4:hover  {
       cursor: pointer;
       color: #dc3545;
       font-weight: 700;
@@ -114,6 +115,8 @@
        position: relative;
        display: inline-block;
        margin-right: 0;
+      transition: all 300ms ease-in-out;
+
    }
     .phase-item-circle.progress {
         background-color: #055681;
@@ -133,10 +136,14 @@
      .phase-item-circle.award {
         background-color:  #dc3545;
         border: none;
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
     }
-    .phase-item-circle.progress:hover {
 
+     .phase-item-circle.award:hover {
+        transform: scale(1.1);
+    }
+    .phase-item-circle.progress:hover, .phase-item-circle:hover {
+      transform: scale(1.2);
     }
 </style>
