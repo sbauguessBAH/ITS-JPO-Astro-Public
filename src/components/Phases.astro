@@ -1,5 +1,5 @@
- <div>
-        <ul class="program-phases-container">
+ <div class="program-phases-track" data-phases>
+   <ul class="program-phases-container">
           <li id="program-initiation" class="program-phase-item active">
             <span class="phase-item-circle progress"></span>
             <h3>Program Initiation</h3>
@@ -37,6 +37,9 @@
             <h3>Program Initiation</h3>
           </li> 
         </ul>
+        <span class="progress-bar">
+          <span class="progress-bar-fill"></span>
+        </span>
       </div>
       <div class="program-phase-details">
         <h3>Program Initiation</h3>
@@ -44,11 +47,38 @@
         <p>The Program Initiation phase establishes the foundation for the ITS4US deployment. This includes identifying stakeholders, defining project scope, securing funding, and forming partnerships necessary to support the deployment program.</p>
       </div>
 <style>
+    .program-phases-track {
+      position: relative;
+    }
+
+    .progress-bar {
+      position: absolute;
+      height: 4px;
+      background-color: #d1d5dc;
+      border-radius: 9999px;
+      pointer-events: none;
+      z-index: 0;
+      transform: translateY(-50%);
+      left: -20px;
+      right: -20px;
+      top: calc(2.5rem + 20px);
+    }
+
+    .progress-bar-fill {
+      display: block;
+      height: 100%;
+      width: 0px;
+      background-color: rgb(0, 188, 212, 1);
+      border-radius: inherit;
+    }
+
     .program-phases-container {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         margin-top: 2rem;
+        position: relative;
+        z-index: 1;
     }
     .program-phase-item {
       list-style: none;
@@ -90,6 +120,7 @@
     .program-phase-award > h4 {
       position: absolute;
       top: 0;
+      left: 50%;
       transform: translateX(-50%);
       margin: 0;
       width: 100%;
@@ -116,6 +147,7 @@
        display: inline-block;
        margin-right: 0;
       transition: all 300ms ease-in-out;
+      z-index: 2;
 
    }
     .phase-item-circle.progress {
@@ -147,3 +179,63 @@
       transform: scale(1.2);
     }
 </style>
+
+<script is:inline>
+  (function () {
+    const TRACK_EXTRA_PX = 50;
+
+    function layoutTrack(root) {
+      const track = root.querySelector(".progress-bar");
+      const fill = root.querySelector(".progress-bar-fill");
+      const circles = root.querySelectorAll(".phase-item-circle");
+      const progressCircles = root.querySelectorAll(".phase-item-circle.progress");
+
+      if (!track || !fill || circles.length === 0 || progressCircles.length === 0) return;
+
+      const firstCircle = circles[0];
+      const lastCircle = circles[circles.length - 1];
+      const lastProgress = progressCircles[progressCircles.length - 1];
+
+      const rootRect = root.getBoundingClientRect();
+      const firstRect = firstCircle.getBoundingClientRect();
+      const lastRect = lastCircle.getBoundingClientRect();
+      const lastProgressRect = lastProgress.getBoundingClientRect();
+
+      const firstCenterX = firstRect.left - rootRect.left + firstRect.width / 2;
+      const lastCenterX = lastRect.left - rootRect.left + lastRect.width / 2;
+      const lastProgressCenterX =
+        lastProgressRect.left - rootRect.left + lastProgressRect.width / 2;
+
+      const extendLeft = firstRect.width / 2 + TRACK_EXTRA_PX;
+      const extendRight = lastRect.width / 2 + TRACK_EXTRA_PX;
+
+      const trackLeft = Math.round(firstCenterX - extendLeft);
+      const trackRight = Math.round(lastCenterX + extendRight);
+      const trackWidth = Math.max(0, trackRight - trackLeft);
+
+      const centerY = Math.round(firstRect.top - rootRect.top + firstRect.height / 2);
+
+      track.style.left = `${trackLeft}px`;
+      track.style.width = `${trackWidth}px`;
+      track.style.right = "auto";
+      track.style.top = `${centerY}px`;
+
+      const fillWidth = Math.min(trackWidth, Math.max(0, Math.round(lastProgressCenterX - trackLeft)));
+      fill.style.width = `${fillWidth}px`;
+    }
+
+    function init() {
+      document.querySelectorAll("[data-phases]").forEach((root) => {
+        const relayout = () => layoutTrack(root);
+        relayout();
+        window.addEventListener("resize", relayout, { passive: true });
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  })();
+</script>
