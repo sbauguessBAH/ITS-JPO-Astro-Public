@@ -1,6 +1,9 @@
 ---
 
+import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
 import PageLayout from "@/src/layouts/PageLayout.astro";
 
 const keywords = [
@@ -22,7 +25,12 @@ const description =
 ---
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+   <Fragment slot="banner">
+    Vehicle-to-Everything (V2X)
+  </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500}  />
+  </Fragment>
       <main>
         <h2 class="sideways blue">DSRC V2X Analysis Archive</h2>
         

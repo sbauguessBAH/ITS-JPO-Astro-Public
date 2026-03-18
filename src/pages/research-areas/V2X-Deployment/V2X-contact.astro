@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+import base_url from "@/src/lib/base_url";
+
+const keywords = ["V2X", "Vehicle-to-Everything", "V2X Deployment", "interoperable connectivity", "safety", "goods movement", "public investment", "private investment"];
+const description = "The V2X Deployment program accelerates the adoption and deployment of interoperable connectivity nationwide, enhancing safety and mobility.";
+---
+
+<PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner"> Vehicle-to-Everything (V2X) </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500} />
+  </Fragment>
+  <main>
+    <h2 class="sideways blue">Contact Us</h2>
+    <p class="read-more-wrap pt-0">Please use the contact details below to reach the appropriate program or team.</p>
+    <div class=" d-flex gap-4 flex-column flex-md-row">
+      <div class=" contact-card col p-4  rounded-4">
+        <h3>Program Inquiries</h3>
+        <p>
+          Justin Anderson (ITS JPO)<br /></p><p>
+          Next Generation Wireless Communications and SCMS
+          
+          Program Manager<br />
+          <a href="mailto:justin.anderson@dot.gov">justin.anderson@dot.gov</a>
+        </p>
+      </div>
+      <div class="contact-card col p-4  rounded-4">
+        <h3>Technical Assistance</h3>
+        <p>
+          CAV Support Services</p><p>
+          <a href="mailto:CAVSupportServices@dot.gov">CAVSupportServices@dot.gov</a>
+        </p>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .contact-card {
+   background-color: #f0f8ff;
+    border: 1px solid #d1e7f7;
+  }
+</style>

@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 import base_url from "@/src/lib/base_url";
@@ -10,9 +12,14 @@ const description = "The V2X Deployment program accelerates the adoption and dep
 ---
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+  <Fragment slot="banner">
+    Vehicle-to-Everything (V2X)
+  </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500}  />
+  </Fragment>
   <main>
-    <h2 class="sideways blue">Mission and Vision</h2>
+    <h2 class="sideways blue">Vision and Mission</h2>
     <p class="read-more-wrap pt-0">
       Roadway safety is the top priority for the United States Department of Transportation (U.S. DOT). The U.S. DOT is committed to actively pursuing a comprehensive approach to significantly reduce
       deaths and serious injuries on our Nation's highways, roads, and streets. The ITS Joint Program Office strongly believes that wireless connectivity among vehicles, roadside infrastructure, and
@@ -42,9 +49,7 @@ const description = "The V2X Deployment program accelerates the adoption and dep
       <div class="col-md-6">
         <div class="vision-mission-card p-4 rounded-4">
           <h3 class="vision-mission-title d-flex align-items-center">
-            <svg class="icon me-2" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#005ea2" class="icon me-2"><path d="M480-390Zm-132-53 55 37 77-39 77 39 53-35-40-79H386l-38 77ZM209-160h541L646-369l-83 55-83-41-83 41-85-56-103 210ZM80-80l234-475q10-20 29.5-32.5T386-600h54v-280h280l-40 80 40 80H520v120h50q23 0 42 12t30 32L880-80H80Z"/></svg>
             MISSION
           </h3>
           <p>
@@ -108,11 +113,12 @@ const description = "The V2X Deployment program accelerates the adoption and dep
   .vision-mission-title {
     color: #005ea2;
     gap: 0.5rem;
+    font-size: 1.5rem;
   }
 
   .icon {
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
   }
 
   .program-sections {
@@ -121,5 +127,9 @@ const description = "The V2X Deployment program accelerates the adoption and dep
   .section-title {
     color: #005ea2;
     border-bottom: 3px solid #005ea2;
+  }
+
+  li {
+    font-size: 1.1rem;
   }
 </style>

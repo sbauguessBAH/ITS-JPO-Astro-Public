@@ -1,8 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+import awarenessImg from "@/src/assets/images/v2x/Connected Vehicle technology offers a 360-degree awareness.png";
 
 const keywords = [
   "V2X",
@@ -23,36 +26,123 @@ const description =
 ---
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
-      <main>
-        <h2 class="sideways blue">How V2X Works</h2>
+  <Fragment slot="banner"> Vehicle-to-Everything (V2X) </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500} />
+  </Fragment>
+  <main>
+    <h2 class="sideways blue">How V2X Works</h2>
+    <div class="row">
+      <div class="col">
         <p class="read-more-wrap pt-0">V2X provides connectivity through both direct and network communication.</p>
 
-        <p>Under <strong>direct V2X</strong>, vehicles exchange frequent, structured messages about relative speed, position and other relevant data directly from one system element to another (device-to-device). This form of communication ensures 360-degree awareness, even in situations with poor obstructed visibility, such as around corners or in dense fog.</p>
+        <p>
+          Under <strong>direct V2X</strong>, vehicles exchange frequent, structured messages about relative speed, position and other relevant data directly from one system element to another
+          (device-to-device). This form of communication ensures 360-degree awareness, even in situations with poor obstructed visibility, such as around corners or in dense fog.
+        </p>
 
         <p>Alternatively, under <strong>network V2X</strong>, messages are transmitted through an intermediate network, such as traditional mobile networks, to get delivered to the end recipient.</p>
 
-        <p>Direct V2X communication is suited for safety applications requiring low latency (e.g., crash avoidance scenarios), while network V2X communication, including digital alerts received on a mobile device, is more suited to carry information over longer distances (e.g., alerts about traffic and road conditions).</p>
-      </main>
+        <p>
+          Direct V2X communication is suited for safety applications requiring low latency (e.g., crash avoidance scenarios), while network V2X communication, including digital alerts received on a
+          mobile device, is more suited to carry information over longer distances (e.g., alerts about traffic and road conditions).
+        </p>
+      </div>
+      <div class="col-12 col-md-5">
+        <label for="awareness-modal-toggle">
+          <Image src={awarenessImg} alt="Connected Vehicle technology offers a 360-degree awareness" class="thumbnail" width={700} />
+        </label>
+      </div>
+    </div>
+
+    <input type="checkbox" id="awareness-modal-toggle" class="modal-toggle" />
+    <div class="modal-bg">
+      <label for="awareness-modal-toggle" class="modal-close" aria-label="Close">&times;</label>
+      <Image src={awarenessImg} alt="Connected Vehicle technology offers a 360-degree awareness" class="modal-img" />
+    </div>
+  </main>
 </PageLayout>
 
 <style>
-  .vision-mission-title {
-    color: #005ea2;
-    gap: 0.5rem;
+  label[for="awareness-modal-toggle"] {
+    display: block;
+    cursor: pointer;
   }
 
-  .icon {
-    width: 24px;
-    height: 24px;
+  .thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
   }
 
-  .program-sections {
-    border-top: 3px solid #005ea2;
+  .thumbnail:hover {
+    box-shadow: 0 4px 12px rgba(0, 94, 162, 0.3);
   }
 
-  .section-title {
-    color: #005ea2;
-    border-bottom: 3px solid #005ea2;
+  /* Modal Styles */
+  .modal-toggle {
+    display: none;
+  }
+
+  .modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s;
+  }
+
+  .modal-toggle:checked ~ .modal-bg {
+    display: flex;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1100;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .modal-close:hover {
+    color: #ccc;
+  }
+
+  .modal-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
+    background: #fff;
+    padding: 1rem;
+    object-fit: contain;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 </style>

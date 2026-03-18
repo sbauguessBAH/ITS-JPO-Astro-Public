@@ -1,0 +1,218 @@
+---
+import { Image } from "astro:assets";
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import maricopaLogo from "@/src/assets/images/v2x/maricopa-county-logo.png";
+import cvazMap from "@/src/assets/images/v2x/maricopa-county/CVAZ Deployment Area.png";
+
+const keywords = [
+  "Maricopa County Department of Transportation",
+  "Connected Vehicle Acceleration Zone",
+  "CVAZ",
+  "V2X deployment",
+  "roadside units",
+  "Emergency Vehicle Preemption",
+  "Transit Signal Priority",
+  "Freight Signal Priority",
+  "pedestrian safety",
+];
+
+const description =
+  "Maricopa County Connected Vehicle Acceleration Zone (CVAZ): A $60M USDOT cooperative agreement to deploy secure, interoperable V2X to 750 intersections and 400 vehicles across Phoenix, Tolleson, Avondale and surrounding areas.";
+---
+
+<PageLayout title="Maricopa County Connected Vehicle Acceleration Zone" bannerImage={banner} keywords={keywords} description={description}>
+   <Fragment slot="banner">
+    Vehicle-to-Everything (V2X)
+  </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500}  />
+  </Fragment>
+  <main>
+    <h2 class="sideways blue">Maricopa County Department of Transportation<br>Connected Vehicle Acceleration Zone (CVAZ)</h2>
+</h2>
+
+    <div class="row g-4 align-items-center my-5">
+      <div class="col-md-3">
+        <img src={maricopaLogo.src} alt="Maricopa County DOT" class="img-fluid" style="max-height: 150px;" />
+      </div>
+      <div class="col-md-9">
+        <p class="lead">
+          In Fall 2024, the United States Department of Transportation (USDOT) awarded cooperative agreements collectively worth $60 million to Maricopa County DOT (MCDOT), Texas A&M Transportation Institute (TTI), and Utah DOT (UDOT) to deploy, operate, and showcase secure, interoperable vehicle-to-everything (V2X) deployments.
+        </p>
+      </div>
+    </div>
+
+    <!-- Problem Section -->
+    <section class="my-1">
+      <h2>Problem</h2>
+      <p>
+        Maricopa County is one of the fastest growing counties in the United States. With a current population size of 4.6 million, Maricopa County is the most populous county within Arizona and makes up more than half of Arizona's population. Arizona has one of the highest pedestrian fatality rates in the nation. The more the County grows, the more travel demand for the roadways and safety issues increase.
+      </p>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="my-1">
+      <h2>Approach</h2>
+      <div class="row g-4 align-items-start">
+        <div class="col-md-9">
+          <p>
+            MCDOT is leading the Connected Vehicle Acceleration Zone (CVAZ) project, a federally-funded initiative to accelerate the deployment of technologies that enable vehicles to communicate with each other, other road users (i.e., pedestrians, cyclists, etc.) and roadside infrastructure to support situational awareness of all roadway users.
+          </p>
+          
+          <p>
+            The deployment area for CVAZ includes the cities of Phoenix, Tolleson, and Avondale, portions of unincorporated Maricopa County, and intersections along Grand Avenue/US 60. Within this area, V2X technology will be deployed to 750 intersections in total. Additionally, the project will connect approximately 400 vehicles, including emergency vehicles, freight fleets, and transit to physical and virtual roadside units (RSU) using direct and network V2X, respectively.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <Image src={cvazMap} alt="CVAZ Deployment Area Map" class="img-fluid" />
+        </div>
+      </div>
+
+      <div class="callout-use-cases">
+        <h3>V2X Use Cases in CVAZ Deployment Area</h3>
+        <ul class="use-cases-list">
+          <li>Transit Signal Priority (TSP)</li>
+          <li>Emergency Vehicle Preemption (EVP)</li>
+          <li>Freight Signal Priority (FSP)</li>
+          <li>Pedestrian and Other Road User Safety</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="my-1">
+      <h2>Partners</h2>
+      <p>
+        MCDOT recognizes that a large-scale deployment of interoperable V2X technologies is a complex technological and financial undertaking that is best accomplished with a public private partnership. MCDOT is leading a team of private and public agency partners in this large-scale deployment of V2X technologies.
+      </p>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="my-5">
+      <h2>Value Proposition</h2>
+      <p>
+        The project's goal is to deploy an interoperable system that benefits travelers by improving mobility and safety in Maricopa County. The project team will establish key performance indicators to demonstrate interoperability, measure benefits, share insights with the broader transportation community, and act as key indicators of the vision of interoperable connectivity.
+      </p>
+
+      <div class="callout-partners">
+        <h3>Project Partners</h3>
+        <ul class="partners-list">
+          <li>Cities of Phoenix, Avondale, Tolleson</li>
+          <li>Arizona DOT</li>
+          <li>Valley Metro</li>
+          <li>Maricopa Association of Governments</li>
+          <li>Arizona Commerce Authority</li>
+          <li>University of Arizona</li>
+          <li>University of Michigan Transportation Research Institute</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="my-5">
+      <h2>Benefits of V2X in Maricopa County</h2>
+
+      <h3>Increase Safety of All Roadway Users</h3>
+      <ul>
+        <li>Reducing potential collisions through real-time alerts to both connected and other roadway users.</li>
+        <li>Providing crucial warnings allowing for immediate preventive actions.</li>
+      </ul>
+
+      <h3>Increase Mobility and Traffic Efficiency</h3>
+      <ul>
+        <li>Increasing mobility for Maricopa County.</li>
+        <li>Increasing on-time performance of transit and freight vehicles.</li>
+        <li>Reducing traffic congestion and associated emissions and idle time of large diesel vehicles.</li>
+      </ul>
+
+      <h3>Create Return on Investment</h3>
+      <ul>
+        <li>Creating a wide-spread, economically sustainable V2X ecosystem.</li>
+      </ul>
+
+      <h3>Explore Workforce Development Needs</h3>
+      <ul>
+        <li>Engaging with industry partners, government entities, educational institutions, and community representatives on workforce needs.</li>
+      </ul>
+    </section>
+  </main>
+</PageLayout>
+<style> 
+
+ 
+ .lead {
+    text-wrap: pretty;
+ }
+    section {
+        padding: 1rem 0;
+    }
+
+    .callout-use-cases {
+        background: linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%);
+        border-left: 5px solid #005ea2;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        float: right;
+        width: 40%;
+        margin-left: 2rem;
+    }
+
+    .callout-use-cases h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .callout-use-cases ul {
+        margin: 0;
+        padding-left: 1.5rem;
+    }
+
+    .callout-use-cases li {
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .callout-use-cases {
+            float: none;
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    .callout-partners {
+        background: linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%);
+        border-left: 5px solid #005ea2;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        float: right;
+        width: 40%;
+        margin-left: 2rem;
+    }
+
+    .callout-partners h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .callout-partners ul {
+        margin: 0;
+        padding-left: 1.5rem;
+    }
+
+    .callout-partners li {
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .callout-partners {
+            float: none;
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+</style>

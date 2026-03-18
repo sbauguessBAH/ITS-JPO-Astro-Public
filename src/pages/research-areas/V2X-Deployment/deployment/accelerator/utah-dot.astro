@@ -1,0 +1,198 @@
+---
+import { Image } from "astro:assets";
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import ctwLogo from "@/src/assets/images/v2x/utah-dot/connecting-the-west-logo.png";
+import partnersImage from "@/src/assets/images/v2x/utah-dot/partners.png";
+import ctwMap from "@/src/assets/images/v2x/utah-dot/CTW Deployment Area.png";
+
+const keywords = [
+  "Utah DOT",
+  "Connecting the West",
+  "CTW Project",
+  "V2X deployment",
+  "tri-state",
+  "zero fatalities",
+  "roadside units",
+  "Intersection priority",
+  "Weather alerts",
+  "Work zone safety",
+];
+
+const description =
+  "Utah Connecting the West (CTW): A $60M USDOT cooperative agreement deploying V2X technology across Utah, Colorado, and Wyoming to reduce crashes, improve mobility for freight and transit, and work toward zero roadway fatalities.";
+---
+
+<PageLayout title="Utah Connecting the West: V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
+   <Fragment slot="banner">
+    Vehicle-to-Everything (V2X)
+  </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500}  />
+  </Fragment>
+  <main>
+    <h2 class="sideways blue">Utah Department of Transportation<br>
+Connecting the West (CTW)</h2>
+
+    <div class="row g-4 align-items-center my-5">
+      <div class="col-md-3">
+        <img src={ctwLogo.src} alt="Connecting the West" class="img-fluid" style="max-height: 150px;" />
+      </div>
+      <div class="col-md-9">
+        <p class="lead">
+          In Fall 2024, the United States Department of Transportation (USDOT) awarded cooperative agreements collectively worth $60 million to Maricopa County DOT (MCDOT), Texas A&M Transportation Institute (TTI), and Utah DOT (UDOT) to deploy, operate, and showcase secure, interoperable vehicle-to-everything (V2X) deployments.
+        </p>
+      </div>
+    </div>
+
+    <!-- Problem Section -->
+    <section class="my-1">
+      <h2>Problem</h2>
+      <p>
+        An unacceptable number of crashes and fatalities occur at intersections, in work zones, along rural corridors, and during bad weather. Increasingly, these crashes impact pedestrians, cyclists, and other road users. Such incidents, work zones and weather also result in frequent delays on interstate and rural corridors that impact the traveling public. Additionally, downtown transit vehicles regularly experience delays that impact route performance, rider mobility, and transit agency operations costs. With several major corridors that have significant commercial freight traffic, commercial truck drivers often lack information about road closures and weather conditions, which causes uncertainty in their travel planning and impacts their delivery deadlines.
+      </p>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="my-1">
+      <h2>Approach</h2>
+      <div class="row g-4 align-items-start">
+        <div class="col-md-9">
+          <p>
+            UDOT is leading the Connecting the West (CTW) project that aims to transform how people and vehicles move across Utah, Colorado, and Wyoming through the deployment of V2X technologies in the 5.9GHz "safety spectrum" that enable real-time communication between vehicles and surrounding infrastructure. These tools act as a digital seat belt, alerting drivers about potential hazards - weather, work zones, disabled vehicles - and increasing awareness at critical moments, ultimately supporting the overarching goal of zero roadway fatalities. This deployment will leverage significant deployments that already exist in all three states, including equipped freight, transit and maintenance vehicles. Additionally, the program will deploy 750 roadside units (RSU) at intersections and along key corridors in Utah and Colorado, as well as 215 additional onboard units (OBU) in fleet vehicles, snowplows, transit buses, and emergency vehicles -enhancing their ability to get priority at intersections and get to their destination faster.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <Image src={ctwMap} alt="CTW Deployment Area Map" class="img-fluid" />
+        </div>
+      </div>
+
+      <div class="callout-use-cases">
+        <h3>V2X Applications & Benefits</h3>
+        <ul class="use-cases-list">
+          <li>Real-time hazard alerts for weather, work zones, and disabled vehicles</li>
+          <li>Enhanced intersection visibility and priority for fleet vehicles</li>
+          <li>Improved safety for pedestrians, cyclists, and road users</li>
+          <li>Priority routing for transit, emergency, and maintenance vehicles</li>
+          <li>Commercial freight information and travel planning support</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="my-1">
+      <h2>Partners</h2>
+      <p>
+        In addition to the UDOT team, Connecting the West brings together the Colorado and Wyoming Departments of Transportation, the Utah Transit Authority, Salt Lake City, the City and County of Denver, General Motors, and key federal and private-sector partners. This collaboration ensures the systems built are interoperable across state lines, scalable for future needs, and are reflective of a safer and smarter transportation ecosystem as a whole.
+      </p>
+      <div style="margin-top: 2rem;">
+        <Image src={partnersImage} alt="Partners" width={500} class="img-fluid" />
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="my-5">
+      <h2>Value Proposition</h2>
+      <p>
+        The impact of Connecting the West reaches far beyond individual corridors or intersections. By proactively addressing roadway risks and empowering transportation agencies with real-time data, the program strengthens the safety net for all travelers. Long-term implementation of this technology offers a wide range of benefits and supports key goals, including:
+      </p>
+
+      <ul>
+        <li>Enhanced safety through real-time hazard alerts and intersection visibility</li>
+        <li>Improved mobility for freight, public transit, emergency responders, and everyday drivers</li>
+        <li>Encouragement of agency collaboration and transportation infrastructure advancement</li>
+        <li>Moving the region closer to the ultimate goal of zero roadway fatalities</li>
+        <li>Establishment of a scalable model for nationwide V2X deployment</li>
+      </ul>
+    </section>
+  </main>
+</PageLayout>
+
+<style>
+  
+ 
+ .lead {
+    text-wrap: pretty;
+ }
+
+  section {
+    padding: 1rem 0;
+  }
+
+  .callout-use-cases {
+    background: linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%);
+    border-left: 5px solid #005ea2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    float: right;
+    width: 40%;
+    margin-left: 2rem;
+  }
+
+  .callout-use-cases h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .callout-use-cases ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .callout-use-cases li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .callout-use-cases {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  .callout-partners {
+    background: linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%);
+    border-left: 5px solid #005ea2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    float: right;
+    width: 40%;
+    margin-left: 2rem;
+  }
+
+  .callout-partners h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .callout-partners ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .callout-partners li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .callout-partners {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  ul {
+    margin-bottom: 1rem;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+</style>

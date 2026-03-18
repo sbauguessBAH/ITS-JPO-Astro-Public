@@ -1,0 +1,239 @@
+---
+import { Image } from "astro:assets";
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import trustLogo from "@/src/assets/images/v2x/texas-am/Texas-V2X-logo.png";
+import trustMap from "@/src/assets/images/v2x/texas-am/Texas TRUST Deployment Area.png";
+import texasInfographic from "@/src/assets/images/v2x/texas-am/texas infograhic.png";
+
+const keywords = [
+  "Texas A&M Transportation Institute",
+  "TRUST Project",
+  "V2X deployment",
+  "Houston",
+  "College Station",
+  "Signal Phase and Timing",
+  "SPaT",
+  "Emergency Vehicle Response",
+  "Houston Flooding",
+  "Construction Safety",
+];
+
+const description =
+  "Texas TRUST: A $60M USDOT cooperative agreement deploying V2X technology across Houston and Bryan/College Station to improve safety, mobility, and coordination along critical corridors connecting two major regions.";
+---
+
+<PageLayout title="Texas A&M TRUST: Transforming Roads Unleashing Smart Technologies" bannerImage={banner} keywords={keywords} description={description}>
+   <Fragment slot="banner">
+    Vehicle-to-Everything (V2X)
+  </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500}  />
+  </Fragment>
+  <main>
+    <h2 class="sideways blue">Texas A&M Transportation Institute<br>
+Transforming Roads: Unleashing Smart Technologies (TRUST)</h2>
+
+    <div class="row g-4 align-items-center my-5">
+      <div class="col-md-2">
+        <img src={trustLogo.src} alt="Texas A&M Transportation Institute" class="img-fluid" style="max-height: 150px;" />
+      </div>
+      <div class="col-md-10">
+        <p class="lead">
+          In Fall 2024, the United States Department of Transportation (USDOT) awarded cooperative agreements collectively worth $60 million to Maricopa County DOT (MCDOT), Texas A&M Transportation Institute (TTI), and Utah DOT (UDOT) to deploy, operate, and showcase secure, interoperable vehicle-to-everything (V2X) deployments.
+        </p>
+      </div>
+    </div>
+
+    <!-- Problem Section -->
+    <section class="my-1">
+      <h2>Problem</h2>
+      <p>
+        There is significant traffic along the corridors connecting Houston and Bryan/College Station (B/CS) (e.g., US-290, TX-6, TX-249, TX-105 and I-45). Both regions attract over 100,000 eventgoers on busy weekends, and B/CS is home to Texas's largest university, Texas A&M University (TAMU).
+      </p>
+      <p>
+        Serving more than five million people, these corridors accommodate hundreds of thousands of daily trips along 300 miles of the National Highway System (NHS), creating growing demands for improved safety, coordination, and communication.
+      </p>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="my-1">
+      <h2>Approach</h2>
+      <div class="row g-4 align-items-start">
+        <div class="col-md-6">
+          <p>
+            TTI is leading the TRUST project that is deploying V2X technology in the mega-region of Texas encompassing the city of Houston, Bryan/College Station, and connecting routes. The deployment area will leverage existing roadside unit (RSU) deployments that broadcast signal phase and timing (SPaT) messages at over 1,000 intersections in Houston.
+          </p>
+          <p>
+            An additional 35 intersections near the university in College Station will be equipped with V2X technology, while 50 intersections in Houston will be upgraded to broadcast SPaT messages. On NHS routes, low-cost, lightweight computing devices will be installed providing capabilities to gather real-time information without the overwhelming infrastructure. The project will use a hybrid communication approach that combines direct V2X and network V2X to provide complementary and redundant data exchange for enhanced safety and mobility.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <Image src={trustMap} alt="Texas TRUST Deployment Area Map" class="img-fluid" />
+        </div>
+        <div class="col-md-3">
+          <Image src={texasInfographic} alt="Texas TRUST Infographic" class="img-fluid" />
+        </div>
+      </div>
+
+      <div class="callout-use-cases">
+        <h3>Implementation Areas & Use Cases</h3>
+        <div class="use-cases-areas">
+          <div class="area-item">
+            <h4>Bryan/College Station</h4>
+            <ul>
+              <li>SPaT-Enabled Intersections for Road User Identification and Protection</li>
+              <li>Traffic Signal Preemption and Priority Transit Fleet Integration</li>
+              <li>Every Day a Gameday</li>
+              <li>Enhanced Highway Construction Worker Safety</li>
+            </ul>
+          </div>
+          <div class="area-item">
+            <h4>Rural Corridors (US 290/SH 6/SH 249)</h4>
+            <ul>
+              <li>Incident Management / Hurricane Evacuation</li>
+              <li>Adverse Weather Events & Flooding</li>
+              <li>Planned Construction and Special Events</li>
+              <li>Curve Speed Warning</li>
+            </ul>
+          </div>
+          <div class="area-item">
+            <h4>City of Houston</h4>
+            <ul>
+              <li>Roadway Flood Warning</li>
+              <li>Houston SPaT-Enabled Intersections</li>
+              <li>Right Turns on Red Warning</li>
+              <li>Red Light Violation Warning</li>
+              <li>Wrong Way Driving Detection</li>
+              <li>Emergency Vehicle Response Time and Safety</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="my-1">
+      <h2>Partners</h2>
+      <p>
+        TTI has partnered with proven entities with significant deployment expertise across all aspects of transportation, communications, infrastructure, and vehicle arenas. Partners include Texas A&M University, Texas Department of Transportation, Bryan/College Station Metropolitan Planning Organization (MPO), City of Houston, Missouri City, Fort Bend County, City of College Station, TAMU Internet2 Technology Evaluation Center, Qualcomm, Applied Information, AT&T, Mixon-Hill, AstraZero, Bush Combat Center, General Motors, Audi, Google, Paradigm Traffic Systems, and Integrity Security Systems.
+      </p>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="my-5">
+      <h2>Value Proposition</h2>
+      <p>
+        Texas TRUST aims to deliver measurable safety and mobility improvements across dynamic regions and high-demand corridors. As a result, the TRUST project seeks to accomplish economic development, demonstrate regional benefits, and create transferable and scalable V2X solutions.
+      </p>
+
+      
+    </section>
+  </main>
+</PageLayout>
+
+<style>
+  
+ .lead {
+    text-wrap: pretty;
+ }
+ 
+
+  section {
+    padding: 1rem 0;
+  }
+
+  .callout-use-cases {
+    background: linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%);
+    border-left: 5px solid #005ea2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    float: right;
+    width: 40%;
+    margin-left: 2rem;
+  }
+
+  .callout-use-cases h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .use-cases-areas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .area-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .area-item h4 {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .callout-use-cases ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .callout-use-cases li {
+    margin-bottom: 0.1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .callout-use-cases {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  .callout-partners {
+    background: linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%);
+    border-left: 5px solid #005ea2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    float: right;
+    width: 40%;
+    margin-left: 2rem;
+  }
+
+  .callout-partners h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .callout-partners ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .callout-partners li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .callout-partners {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  ul {
+    margin-bottom: 1rem;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+</style>

@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import flow from "@/src/assets/images/v2x/flow.png";
 import maricopaLogo from "@/src/assets/images/v2x/maricopa-county-logo.png";
@@ -32,7 +35,12 @@ const description =
 ---
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+   <Fragment slot="banner">
+    Vehicle-to-Everything (V2X)
+  </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500}  />
+  </Fragment>
   <main>
     <h2 class="sideways blue">V2X Accelerator</h2>
 
@@ -77,10 +85,10 @@ const description =
       <div class="deployment-site mb-5">
         <div class="row g-4 align-items-center">
           <div class="col-md-3">
-            <a href="https://www.maricopa.gov/6094/Connected-Vehicle-Acceleration-Zone"><img src={maricopaLogo.src} alt="Maricopa County DOT" class="img-fluid" style="max-height: 120px;" /></a>
+            <a href="/research-areas/V2X-Deployment/deployment/accelerator/maricopa-county"><img src={maricopaLogo.src} alt="Maricopa County DOT" class="img-fluid" style="max-height: 120px;" /></a>
           </div>
           <div class="col-md-9">
-            <h4><a href="https://www.maricopa.gov/6094/Connected-Vehicle-Acceleration-Zone" >Maricopa County DOT</a></h4>
+            <h4><a href="/research-areas/V2X-Deployment/deployment/accelerator/maricopa-county" >Maricopa County DOT</a></h4>
             <p>
               The Maricopa County DOT is leading a largescale deployment to connect 750 physical roadside units and virtual roadside units that utilize a mobile edge computing (MEC) network to an
               estimated 400 vehicle onboard units targeting transit, emergency and freight fleets. The project will deploy Emergency Vehicle Preemption, Vulnerable Road User detection, Transit Signal
@@ -93,10 +101,10 @@ const description =
       <div class="deployment-site mb-5">
         <div class="row g-4 align-items-center">
           <div class="col-md-3">
-            <a href="https://v2xtexastrust.com/"><img src={texasAMLogo.src} alt="Texas A&M Transportation Institute" class="img-fluid" style="max-height: 120px;" /></a>
+            <a href="/research-areas/V2X-Deployment/deployment/accelerator/texas-am"><img src={texasAMLogo.src} alt="Texas A&M Transportation Institute" class="img-fluid" style="max-height: 120px;" /></a>
           </div>
           <div class="col-md-9">
-            <h4><a href="https://v2xtexastrust.com/">Texas A&M Transportation Institute</a></h4>
+            <h4><a href="/research-areas/V2X-Deployment/deployment/accelerator/texas-am">Texas A&M Transportation Institute</a></h4>
             <p>
               Texas A&M Transportation Institute will leverage nearly 1000 existing V2X-enabled signalized intersections in Houston, Missouri City and Fort Bend County and will install dozens more in
               Houston and City of Station, including areas near the Texas A&M University (TAMU) campus and major corridors connecting these two metropolitan areas. The project will equip local
@@ -110,10 +118,10 @@ const description =
       <div class="deployment-site mb-5">
         <div class="row g-4 align-items-center">
           <div class="col-md-3">
-            <a href="https://transportationtechnology.utah.gov/connecting-the-west-program/"><img src={utahDOTLogo.src} alt="Utah DOT" class="img-fluid" style="max-height: 120px;" /></a>
+            <a href="/research-areas/V2X-Deployment/deployment/accelerator/utah-dot"><img src={utahDOTLogo.src} alt="Utah DOT" class="img-fluid" style="max-height: 120px;" /></a>
           </div>
           <div class="col-md-9">
-            <h4><a href="https://transportationtechnology.utah.gov/connecting-the-west-program/">Utah DOT</a></h4>
+            <h4><a href="/research-areas/V2X-Deployment/deployment/accelerator/utah-dot">Utah DOT</a></h4>
             <p>
               The Utah DOT is leading a deployment that encompasses three states – Utah, Colorado and Wyoming – each representing a broad variety of population densities, demographics, jurisdictions,
               topography, and transportation facilities. Approximately 750 roadside units will be installed at signalized intersections and along corridors with 215 vehicles will be equipped with

@@ -179,11 +179,21 @@ export const navigation: NavigationItem[] = [
             url: "/research-areas/V2X-Deployment/deployment",
             isEnabled: true,
             pages: [
-              { name: "V2X Accelerator (2024 – present)", url: "/research-areas/V2X-Deployment/deployment/accelerator" },
+              {
+                name: "V2X Accelerator (2024 – present)",
+                url: "/research-areas/V2X-Deployment/deployment/accelerator",
+                pages: [
+                  { name: "Overview", url: "/research-areas/V2X-Deployment/deployment/accelerator" },
+                  { name: "Maricopa County", url: "/research-areas/V2X-Deployment/deployment/accelerator/maricopa-county" },
+                  { name: "Texas A&M", url: "/research-areas/V2X-Deployment/deployment/accelerator/texas-am" },
+                  { name: "Utah DOT", url: "/research-areas/V2X-Deployment/deployment/accelerator/utah-dot" },
+                ],
+              },
               { name: "Connected Vehicle Pilot Program", url: "https://its.dot.gov/scrc/#/technology-areas/v2x/cv-pilot-program", isExternal: true },
               { name: "Safety Pilot", url: "/research-areas/V2X-Deployment/deployment/safety-pilots" },
             ],
           },
+          { name: "Contact", url: "/research-areas/V2X-Deployment/V2X-contact", isEnabled: true },
         ],
       },
     ],
