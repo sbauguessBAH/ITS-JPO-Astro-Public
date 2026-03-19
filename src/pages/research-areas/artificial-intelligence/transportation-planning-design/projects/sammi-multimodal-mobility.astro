@@ -1,0 +1,160 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import numobilityLogo from "@/src/assets/images/ai/logos/numobilityai_logo.jpg";
+import sammiMobilityImage from "@/src/assets/images/ai/sammi-multimodal-mobility.png";
+
+const keywords = [
+  "SAMMI",
+  "Multimodal Mobility",
+  "Data Fusion",
+  "Numobility",
+  "Transportation Planning",
+  "AI Intelligence",
+  "Artificial Intelligence"
+];
+
+const description =
+  "Safely Advancing Multimodal Mobility Intelligence (SAMMI) - AI project by Numobility";
+---
+
+<PageLayout title="Safely Advancing Multimodal Mobility Intelligence" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Artificial Intelligence</Fragment>
+  <main>
+    <div class="page-header">
+      <h2>Safely Advancing Multimodal Mobility Intelligence (SAMMI)</h2>
+      <Image src={numobilityLogo} alt="Numobility logo" class="page-logo" />
+    </div>
+    <p class="company-attribution">By: Numobility</p>
+    
+    <div class="row mt-5">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Project Objective & Overview</h3>
+               <p>
+            <strong>Problem:</strong> Transportation agencies both need data and have too much at the same time. Information is siloed across departments, stored in incompatible formats, and lacks the contextual intelligence needed to translate raw data → actionable intelligence.
+          </p>
+          <p>
+            <strong>Safely Advancing Multimodal Mobility Intelligence (SAMMI)</strong> meets agencies where they are and uses data fusion to provide actionable insights through a <strong>'single pane of glass'</strong> that integrates infrastructure, travel behavior and context data – enhanced by AI-powered insights.
+          </p>
+          <p>
+            For AI TPD Phase I, we developed a proof-of-concept (POC) for SAMMI using a combination of open data from the City of Seattle and commercial data from Numobility teaming partners (AECOM, Transoft, University of Washington).
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <section class="mb-5 row">
+          <h3 class="blue">Key Results & Findings</h3>
+               <div class="col-md-6">
+          <p>
+            <strong>Demo of SAMMI POC (<a href="https://vimeo.com/1085099753">Video</a>) to 10 agencies</strong>
+          </p>
+          <Image src={sammiMobilityImage} alt="SAMMI multimodal mobility demo" class="img-fluid my-3 rounded" />
+        
+        </div>
+          <div class="col-md-6">
+          <p class="mt-3">
+            <strong>Feedback synthesis using design thinking (I like, I wish, What if):</strong>
+          </p>
+          <ul>
+            <li>
+              <strong>I like:</strong> SAMMI's user-friendly interface that helps understand existing conditions with dynamic charts for safety analysis and AI agent that retrieves insights from dense guidelines
+            </li>
+            <li>
+              <strong>I wish:</strong> SAMMI could help me understand how it arrived at an answer with traceable steps and breaking down underlying transportation methodologies in a simple way
+            </li>
+            <li>
+              <strong>What if:</strong> SAMMI included integrations with core planning tools (e.g. TDMs)?
+            </li>
+          </ul></div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Company Info</h3>
+          <p>
+            <strong>Numobility</strong> – Building Trustworthy AI for Transportation
+          </p>
+          <p>
+            <strong>Project POC:</strong> Ximom Zhu<br/>
+            <strong>Email:</strong> <a href="mailto:ximon@numobility.ai">ximon@numobility.ai</a><br/>
+          </p>
+        </section>
+      </div>
+      
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Next Steps</h3>
+          <p>
+            Numobility continues to develop AI tools for planning agencies with a focus on two frontiers:
+          </p>
+          <ul>
+            <li>
+              <strong>Developing trustworthy AI</strong> through a first-of-its-kind industry benchmark (backed by <a href="https://www.transportation.gov/arpa-i/ideas-challenge/stage-1-winners">ARPA-I</a>) that measures AI on knowledge of transportation and performance on real-world work.
+            </li>
+            <li>
+              <strong>Developing next-gen travel demand models (TDM)</strong> that forecasts travel behavior while supporting spatial analysis of trip demand with event data, infrastructure, and land-use context.
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .company-attribution {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+
+  section h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  section p {
+    margin-bottom: 0.75rem;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .page-header h2 {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .page-logo {
+    width: 140px;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      flex-wrap: wrap;
+    }
+
+    .page-logo {
+      margin-top: 0.5rem;
+    }
+  }
+</style>

@@ -124,17 +124,11 @@ h4 {
   p {
     font-size: 1.1rem;
     line-height: 1.5;
-    margin-right: 30px;
   }
   ol.body {
     font-size: 1.1rem;
     line-height: 1.5;
-    margin-right: 30px;
   }
-}
-
-section {
-  padding: 100px 0;
 }
 
 
@@ -737,7 +731,6 @@ footer ul {
   color: black;
   font-weight: 800;
   border-color: transparent;
-  margin: 15px 0px 60px 0px;
   cursor: outline;
 }
 
