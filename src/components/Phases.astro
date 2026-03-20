@@ -172,7 +172,17 @@
         border: 3px solid rgb(0, 188, 212, 1);
       }
 
-      .program-phase-item.active > .phase-item-circle.progress::after {
+      .program-phase-item.active > .phase-item-circle.progress::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        animation: borderFocus 300ms ease-out;
+        width: 30px;
+        height: 30px;
+        border: 2px solid rgb(0, 188, 212, 1);
+        border-radius: 100%;
+        transform: translate(-50%, -50%);
         
       }
      .phase-item-circle.award {
@@ -187,6 +197,17 @@
     }
     .phase-item-circle.progress:hover, .phase-item-circle:hover {
       transform: scale(1.2);
+    }
+
+    @keyframes borderFocus {
+      0% {
+        width: 40px;
+        height: 40px;
+      }
+      100% {
+        width:30px;
+        height:30px;
+      }
     }
 </style>
 
