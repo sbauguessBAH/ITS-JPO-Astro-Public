@@ -56,13 +56,13 @@
       transform: translateY(-50%);
       left: -20px;
       right: -20px;
-      top: calc(2.5rem + 20px);
+      top: calc(4.5rem + 18px);
     }
 
     .progress-bar-fill {
       display: block;
       height: 100%;
-      width: 0px;
+      width: 70%;
       background-color: rgb(0, 188, 212, 1);
       border-radius: inherit;
     }
@@ -213,62 +213,3 @@
     }
 </style>
 
-<script is:inline>
-  (function () {
-    const TRACK_EXTRA_PX = 50;
-
-    function layoutTrack(root) {
-      const track = root.querySelector(".progress-bar");
-      const fill = root.querySelector(".progress-bar-fill");
-      const circles = root.querySelectorAll(".phase-item-circle");
-      const progressCircles = root.querySelectorAll(".phase-item-circle.progress");
-
-      if (!track || !fill || circles.length === 0 || progressCircles.length === 0) return;
-
-      const firstCircle = circles[0];
-      const lastCircle = circles[circles.length - 1];
-      const lastProgress = progressCircles[progressCircles.length - 1];
-
-      const rootRect = root.getBoundingClientRect();
-      const firstRect = firstCircle.getBoundingClientRect();
-      const lastRect = lastCircle.getBoundingClientRect();
-      const lastProgressRect = lastProgress.getBoundingClientRect();
-
-      const firstCenterX = firstRect.left - rootRect.left + firstRect.width / 2;
-      const lastCenterX = lastRect.left - rootRect.left + lastRect.width / 2;
-      const lastProgressCenterX =
-        lastProgressRect.left - rootRect.left + lastProgressRect.width / 2;
-
-      const extendLeft = firstRect.width / 2 + TRACK_EXTRA_PX;
-      const extendRight = lastRect.width / 2 + TRACK_EXTRA_PX;
-
-      const trackLeft = Math.round(firstCenterX - extendLeft);
-      const trackRight = Math.round(lastCenterX + extendRight);
-      const trackWidth = Math.max(0, trackRight - trackLeft);
-
-      const centerY = Math.round(firstRect.top - rootRect.top + firstRect.height / 2);
-
-      track.style.left = `${trackLeft}px`;
-      track.style.width = `${trackWidth}px`;
-      track.style.right = "auto";
-      track.style.top = `${centerY}px`;
-
-      const fillWidth = Math.min(trackWidth, Math.max(0, Math.round(lastProgressCenterX - trackLeft)));
-      fill.style.width = `${fillWidth}px`;
-    }
-
-    function init() {
-      document.querySelectorAll("[data-phases]").forEach((root) => {
-        const relayout = () => layoutTrack(root);
-        relayout();
-        window.addEventListener("resize", relayout, { passive: true });
-      });
-    }
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", init);
-    } else {
-      init();
-    }
-  })();
-</script>
