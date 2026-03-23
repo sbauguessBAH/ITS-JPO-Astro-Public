@@ -14,6 +14,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 ---
 
 <style>
+
   hr {
     margin: 10px 0;
   }
@@ -23,7 +24,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
   .center {
     width: 40%;
   }
-
+  
   .carousel-indicators {
     position: absolute;
   }
@@ -34,7 +35,7 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
     margin: 0;
     width: 10%;
   }
-
+  
   .carousel-control-next {
     z-index: 1000;
     right: 0;
@@ -58,7 +59,31 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
   .btn {
     margin: 0;
   }
+  .front-frame {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    z-index: 3;
+  }
 
+  .front-frame::before {
+       content: "";
+    position: absolute;
+    inset: 0;
+    background: #2166b2;
+    z-index: -1;
+    clip-path: polygon(100% 100%, 0% 100%, 0% 24.73%, 6.67% 24.25%, 13.33% 22.84%, 20% 20.64%, 26.67% 17.82%, 33.33% 14.62%, 40% 11.33%, 46.67% 8.21%, 53.33% 5.54%, 60% 3.55%, 66.67% 2.4%, 73.33% 2.19%, 80% 2.94%, 86.67% 4.59%, 93.33% 7%, 100% 9.95%);
+  }
+  
+  .front-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #0084c3;
+    z-index: -2;
+    clip-path: polygon(100% 100%, 0% 100%, 0% 9.15%, 6.67% 5.24%, 13.33% 2.14%, 20% .51%, 26.67% .68%, 33.33% 2.61%, 40% 5.91%, 46.67% 9.89%, 53.33% 13.72%, 60% 16.59%, 66.67% 17.91%, 73.33% 17.41%, 80% 15.18%, 86.67% 11.7%, 93.33% 7.69%, 100% 3.98%);
+  }
   h2 {
     text-wrap: pretty;
   }
@@ -112,20 +137,28 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
       <div class="col-lg-12">
         <h2 class="sideways blue">ITS4US Deployment Sites</h2>
         <div>
-          <div class="front-frame georgia">
+          <a href="">
             <Image src={andre} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" />
-          </div>
-          <div class="front-frame health">
+            <div class="front-frame georgia pt-6 pl-6 pr-3 pb-3 flex items-center justify-between -mt-16 relative">
+              <h3>Georgia Mobility & Access Planner</h3>
+            </div>
+          </a>
+          <a href="">
             <Image src={waukee} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" />
-          </div>
-          <div class="front-frame buffalo">
-            <Image src={letitia} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" /></div>
-          </div>
-          <div class="front-frame transportation">
-            <Image src={Takashi} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" />
-          </div>
+            <div class="front-frame health">
+            </div>
+          </a>
+           <a href="">
+            <Image src={waukee} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" />
+            <div class="front-frame buffalo">
+            </div>
+          </a>
+            <a href="">
+            <Image src={waukee} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" />
+            <div class="front-frame transportation">
+            </div>
+          </a>
         </div>
-     
       </div>
     </div>
     </main>
