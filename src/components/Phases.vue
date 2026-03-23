@@ -103,12 +103,14 @@
           <span class="progress-bar-fill"></span>
         </span>
       </div>
-      <div class="program-phase-details">
-        <div class="d-flex justify-content-between">
-          <h3>{{ activePhase.title }}</h3>
-          <p class="status-pill align-self-end">Status: {{ activePhase.status }}</p>
+      <div class="d-flex justify-content-center mt-4">
+        <div class="program-phase-details">
+          <div class="d-flex justify-content-between">
+            <h3>{{ activePhase.title }}</h3>
+            <p class="status-pill flex-1 px-3 py-1">Status: {{ activePhase.status }}</p>
+          </div>
+          <p>{{ activePhase.description }}</p>
         </div>
-        <p>{{ activePhase.description }}</p>
       </div>
 </template>
 <style>
@@ -116,6 +118,14 @@
       color: #055681;
       text-transform:capitalize;
     }
+
+    .status-pill {
+      color: #313833;
+      background-color: #dcfce7;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
     .program-phases-track {
       position: relative;
     }
@@ -276,6 +286,7 @@
       padding: 2rem;
       background-color: white;
       min-height: 150px;
+      max-width: 56rem;
     }
 
     @keyframes borderFocus {
