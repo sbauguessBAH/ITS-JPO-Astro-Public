@@ -50,6 +50,7 @@
     console.log("Clicked phase:", event.currentTarget.id);
     const phaseId = event.currentTarget.id;
     const phaseInfo = cardInfo[phaseId];
+    phaseID.value = phaseId;
     activePhase.value = { ...phaseInfo };
     // const detailsSection = document.querySelector(".program-phase-details");
     // detailsSection.querySelector("h3").textContent = phaseInfo.title;
@@ -99,18 +100,20 @@
             <h3>Operations & Maintenance</h3>
           </li> 
         </ul>
-        <span class="progress-bar">
+        <span class="progress-bar" aria-roledescription="image" aria-label="Progress bar showing a blue highlight line up to which phase is currently in progress, and a grey line behind the phases that have not started. The phases that are complete are, ">
           <span class="progress-bar-fill"></span>
         </span>
       </div>
       <div class="d-flex justify-content-center mt-4">
-        <div class="program-phase-details">
-          <div class="d-flex justify-content-between">
-            <h3>{{ activePhase.title }}</h3>
-            <p class="status-pill flex-1 px-3 py-1">Status: {{ activePhase.status }}</p>
+        <Transition name="phase-fade" mode="out-in">
+          <div class="program-phase-details" :key="phaseID">
+            <div class="d-flex justify-content-between">
+              <h3>{{ activePhase.title }}</h3>
+              <p class="status-pill flex-1 px-3 py-1">Status: {{ activePhase.status }}</p>
+            </div>
+            <p>{{ activePhase.description }}</p>
           </div>
-          <p>{{ activePhase.description }}</p>
-        </div>
+        </Transition>
       </div>
 </template>
 <style>
@@ -158,6 +161,7 @@
         position: relative;
         z-index: 1;
     }
+    
     .program-phase-item {
       list-style: none;
       cursor: pointer;
@@ -187,7 +191,6 @@
       font-size: 1rem;
       line-height: 1.2;
       text-transform: none;
-      text-wrap: nowrap;
       font-weight: 400;
       transition: all 300ms ease-in-out;
     }
@@ -287,6 +290,16 @@
       background-color: white;
       min-height: 150px;
       max-width: 56rem;
+    }
+
+    .phase-fade-enter-active,
+    .phase-fade-leave-active {
+      transition: opacity 200ms ease-in-out;
+    }
+
+    .phase-fade-enter-from,
+    .phase-fade-leave-to {
+      opacity: 0;
     }
 
     @keyframes borderFocus {
