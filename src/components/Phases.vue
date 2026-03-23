@@ -144,7 +144,7 @@
       transform: translateY(-50%);
       left: -20px;
       right: -20px;
-      top: calc(4.5rem + 18px);
+      top: calc(2.5rem + 18px);
     }
 
     .progress-bar-fill {
