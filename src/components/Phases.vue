@@ -104,12 +104,18 @@
         </span>
       </div>
       <div class="program-phase-details">
-        <h3>{{ activePhase.title }}</h3>
-        <p class="status-pill">Status: {{ activePhase.status }}</p>
+        <div class="d-flex justify-content-between">
+          <h3>{{ activePhase.title }}</h3>
+          <p class="status-pill align-self-end">Status: {{ activePhase.status }}</p>
+        </div>
         <p>{{ activePhase.description }}</p>
       </div>
 </template>
 <style>
+    h3, h4 {
+      color: #055681;
+      text-transform:capitalize;
+    }
     .program-phases-track {
       position: relative;
     }
@@ -203,8 +209,6 @@
       font-weight: 700;
     }
 
-
-
     .phase-item-circle {
        border-radius: 100%; 
        background-color: #ffffff;
@@ -266,6 +270,12 @@
     }
     .phase-item-circle.progress:hover, .phase-item-circle:hover {
       transform: scale(1.2);
+    }
+
+    .program-phase-details {
+      padding: 2rem;
+      background-color: white;
+      min-height: 150px;
     }
 
     @keyframes borderFocus {
