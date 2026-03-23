@@ -65,55 +65,57 @@
   };
   </script>
   <template>
- <div class="program-phases-track" data-phases>
-   <ul class="program-phases-container">
-          <li id="program-initiation" @click="handlePhaseClick" class="program-phase-item active">
-            <span class="phase-item-circle progress"></span>
-            <h3>Program Initiation</h3>
-          </li> 
-          <li id="pre-deployment-activities" @click="handlePhaseClick" class="program-phase-item">
-            <span class="phase-item-circle progress"></span>
-            <h3>Pre-Deployment Activities</h3>
-          </li> 
-          <li id="phase-1-awards" @click="handlePhaseClick" class="program-phase-award">
-            <span class="phase-item-circle award"></span>
-            <h4>Phase 1 Awards</h4>
-          </li>
-          <li id="develop-deployment-concept" @click="handlePhaseClick" class="program-phase-item">
-            <span class="phase-item-circle progress"></span>
-            <h3>Develop Deployment Concept</h3>
-          </li> 
-           <li id="phase-2-awards" @click="handlePhaseClick" class="program-phase-award">
-            <span class="phase-item-circle award"></span>
-            <h4>Phase 2/3 Awards</h4>
-          </li>
-          <li id="design-test" @click="handlePhaseClick" class="program-phase-item">
-            <span class="phase-item-circle progress"></span>
-            <h3>Design & Test</h3>
-          </li> 
-            <li id="operate-evaluate" @click="handlePhaseClick" class="program-phase-item">
-            <span class="phase-item-circle progress"></span>
-            <h3>Operate & Evaluate</h3>
-          </li> 
-          <li id="operations-maintenance" @click="handlePhaseClick" class="program-phase-item">
-            <span class="phase-item-circle progress"></span>
-            <h3>Operations & Maintenance</h3>
-          </li> 
-        </ul>
-        <span class="progress-bar" aria-roledescription="image" aria-label="Progress bar showing a blue highlight line up to which phase is currently in progress, and a grey line behind the phases that have not started. The phases that are complete are, ">
-          <span class="progress-bar-fill"></span>
-        </span>
-      </div>
-      <div class="d-flex justify-content-center mt-4">
-        <Transition name="phase-fade" mode="out-in">
-          <div class="program-phase-details" :key="phaseID">
-            <div class="d-flex justify-content-between">
-              <h3>{{ activePhase.title }}</h3>
-              <p class="status-pill flex-1 px-3 py-1">Status: {{ activePhase.status }}</p>
+  <div class="phases-container">
+    <div class="program-phases-track" data-phases>
+    <ul class="program-phases-container">
+            <li id="program-initiation" @click="handlePhaseClick" class="program-phase-item active">
+              <span class="phase-item-circle progress"></span>
+              <h3>Program Initiation</h3>
+            </li> 
+            <li id="pre-deployment-activities" @click="handlePhaseClick" class="program-phase-item">
+              <span class="phase-item-circle progress"></span>
+              <h3>Pre-Deployment Activities</h3>
+            </li> 
+            <li id="phase-1-awards" @click="handlePhaseClick" class="program-phase-award">
+              <span class="phase-item-circle award"></span>
+              <h4>Phase 1 Awards</h4>
+            </li>
+            <li id="develop-deployment-concept" @click="handlePhaseClick" class="program-phase-item">
+              <span class="phase-item-circle progress"></span>
+              <h3>Develop Deployment Concept</h3>
+            </li> 
+            <li id="phase-2-awards" @click="handlePhaseClick" class="program-phase-award">
+              <span class="phase-item-circle award"></span>
+              <h4>Phase 2/3 Awards</h4>
+            </li>
+            <li id="design-test" @click="handlePhaseClick" class="program-phase-item">
+              <span class="phase-item-circle progress"></span>
+              <h3>Design & Test</h3>
+            </li> 
+              <li id="operate-evaluate" @click="handlePhaseClick" class="program-phase-item">
+              <span class="phase-item-circle progress"></span>
+              <h3>Operate & Evaluate</h3>
+            </li> 
+            <li id="operations-maintenance" @click="handlePhaseClick" class="program-phase-item">
+              <span class="phase-item-circle progress"></span>
+              <h3>Operations & Maintenance</h3>
+            </li> 
+          </ul>
+          <span class="progress-bar" aria-roledescription="image" aria-label="Progress bar showing a blue highlight line up to which phase is currently in progress, and a grey line behind the phases that have not started. The phases that are complete are, ">
+            <span class="progress-bar-fill"></span>
+          </span>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          <Transition name="phase-fade" mode="out-in">
+            <div class="program-phase-details" :key="phaseID">
+              <div class="d-flex justify-content-between">
+                <h3>{{ activePhase.title }}</h3>
+                <p class="status-pill flex-1 px-3 py-1">Status: {{ activePhase.status }}</p>
+              </div>
+              <p>{{ activePhase.description }}</p>
             </div>
-            <p>{{ activePhase.description }}</p>
-          </div>
-        </Transition>
+          </Transition>
+        </div>
       </div>
 </template>
 <style>
@@ -228,6 +230,9 @@
        border: 5px solid #d1d5dc;
        width: 40px;
        height: 40px;
+       box-sizing: border-box;
+       flex-shrink: 0;
+       aspect-ratio: 1 / 1;
        position: relative;
        display: inline-block;
        margin-right: 0;
@@ -273,6 +278,8 @@
         border: none;
         width: 32px;
         height: 32px;
+        flex-shrink: 0;
+        aspect-ratio: 1 / 1;
     }
 
      .phase-item-circle.award:hover {
@@ -300,6 +307,60 @@
     .phase-fade-enter-from,
     .phase-fade-leave-to {
       opacity: 0;
+    }
+
+    @media(max-width: 968px) {
+      .phases-container {
+        display: flex; 
+        align-items: flex-start;
+        gap: 2rem;
+      }
+
+      .program-phases-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 0;
+      }
+      
+      .program-phase-item, 
+      .program-phase-award {
+        margin-bottom: 1.25rem;
+        padding-top: 0;
+        width: 100%;
+        flex: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 0.75rem;
+      }
+
+      .program-phase-item > h3,
+      .program-phase-award > h4 {
+        margin: 0;
+      }
+
+      /* In the small layout, keep the award label in-flow beside the circle */
+      .program-phase-award > h4 {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: auto;
+      }
+
+      .progress-bar {
+        top: calc(2.5rem + 18px);
+        width: 4px;
+        height: 100%;
+        left: calc(50% - 2px);
+        right: auto;
+      }
+
+      .progress-bar-fill {
+        width: 100%;
+        height: 70%;
+      }
     }
 
     @keyframes borderFocus {
