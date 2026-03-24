@@ -49,14 +49,28 @@ const selectedImage = (imageByKey as Record<string, (typeof andre)>)[normalizedK
 
   .card-wave {
     position: relative;
-    display: block;
+    display: inline-block;
     overflow: hidden;
+  }
+
+  .card-wave-media {
+    position: relative;
+    z-index: 1;
   }
 
   .card-wave-img {
     display: block;
-    width: 500px;
+    max-width: 100%;
     height: auto;
+    position: relative;
+    z-index: 1;
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 200ms ease-in-out;
+  }
+
+  .card-wave:hover .card-wave-img {
+    transform: scale(1.05);
   }
 
   .front-frame {
@@ -65,7 +79,7 @@ const selectedImage = (imageByKey as Record<string, (typeof andre)>)[normalizedK
     right: 0;
     bottom: 0;
     height: 80px;
-    width: 500px;
+    width: 100%;
     pointer-events: none;
     z-index: 2;
   }
@@ -119,14 +133,16 @@ const selectedImage = (imageByKey as Record<string, (typeof andre)>)[normalizedK
 </style>
 
 <div>
-     <a href={href} class="card-wave">
-    {
-      selectedImage ? (
-        <Image src={selectedImage} alt={alt} width={560} height={256} class="img-fluid rounded-4 card-wave-img" />
-      ) : (
-        <img src={img} alt={alt} width={560} height={256} class="img-fluid rounded-4 card-wave-img" />
-      )
-    }
+     <a href={href} class="card-wave rounded-4">
+      <div class="card-wave-media">
+        {
+          selectedImage ? (
+            <Image src={selectedImage} alt={alt} width={560} height={256} class="img-fluid card-wave-img" />
+          ) : (
+            <img src={img} alt={alt} width={560} height={256} class="img-fluid card-wave-img" />
+          )
+        }
+      </div>
         <div class={`front-frame ${color}`}>
         </div>
     </a>
