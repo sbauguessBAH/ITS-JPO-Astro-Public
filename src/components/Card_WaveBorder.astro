@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import andre from "@/src/assets/images/its4us/andre.png";
+import letitia from "@/src/assets/images/its4us/letitia.png";
+import Takashi from "@/src/assets/images/its4us/Takashi.png";
+import waukee from "@/src/assets/images/its4us/waukee.png";
+
+interface Props {
+	title: string;
+	alt: string;
+    img: string;
+    color: string;
+	href: string;
+}
+
+const { href, title, alt, img, color } = Astro.props;
+---
+
+<style>
+  time {
+    font-size: small;
+  }
+  .btn {
+    background-color: #09638c;
+  }
+  .btn:hover {
+    background-color: #009ad6;
+  }
+  h2 {
+    text-wrap: balance
+  }
+
+    .front-frame {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    z-index: 3;
+  }
+
+  .front-frame::before {
+       content: "";
+    position: absolute;
+    inset: 0;
+    background: #2166b2;
+    z-index: -1;
+    clip-path: polygon(100% 100%, 0% 100%, 0% 24.73%, 6.67% 24.25%, 13.33% 22.84%, 20% 20.64%, 26.67% 17.82%, 33.33% 14.62%, 40% 11.33%, 46.67% 8.21%, 53.33% 5.54%, 60% 3.55%, 66.67% 2.4%, 73.33% 2.19%, 80% 2.94%, 86.67% 4.59%, 93.33% 7%, 100% 9.95%);
+  }
+  
+  .front-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #0084c3;
+    z-index: -2;
+    clip-path: polygon(100% 100%, 0% 100%, 0% 9.15%, 6.67% 5.24%, 13.33% 2.14%, 20% .51%, 26.67% .68%, 33.33% 2.61%, 40% 5.91%, 46.67% 9.89%, 53.33% 13.72%, 60% 16.59%, 66.67% 17.91%, 73.33% 17.41%, 80% 15.18%, 86.67% 11.7%, 93.33% 7.69%, 100% 3.98%);
+  }
+  
+</style>
+
+<div>
+     <a href="">
+        <Image src={waukee} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" />
+        <div class="front-frame transportation">
+        </div>
+    </a>
+</div>
