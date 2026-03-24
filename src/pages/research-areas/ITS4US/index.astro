@@ -59,6 +59,14 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
     text-wrap: pretty;
   }
 
+  .deployment-sites h2 {
+    text-transform: capitalize;
+  }
+
+  .deployment-sites {
+    background-color: rgb(var(--color-gray));
+  }
+
   @media screen and (max-width: 1400px) {
     .carousel .carousel-item {
       height: 400px;
@@ -77,100 +85,60 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
 <PageLayout title="ITS4US Home">
   <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
   <main>
-    <div class="row" >
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="introH2">Providing safe, efficient, and affordable mobility options for everyone:<br />ITS4US – it's transportation for all of us.</h2>
+        </div>
+        <div class="col-lg-12">
+          <div class="center float-sm-end mr-3 img-fluid col-6-sm m-2 ratio ratio-16x9">
+            <iframe
+              class="rounded-4"
+              src="https://www.youtube.com/embed/RLxx90VCmKk"
+              title="ITS4US Deployment Program Overview"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p>
+            ITS4US leverages new and innovative technologies by integrating them within existing transportation systems, improving the lives of all travelers in our communities. Technology today is
+            constantly changing and evolving. The ITS4US program is excited about deploying innovative solutions to transportation issues, including:
+          </p>
+          <ul>
+            <li>Trip planning mobile and desktop web applications</li>
+            <li>Safe intersection crossing applications</li>
+            <li>Automated and connected vehicle technologies</li>
+            <li>Wayfinding and indoor navigation applications</li>
+            <li>Artificial Intelligence (AI) and Machine Learning (ML) technologies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <section class="deployment-sites py-5">
       <div class="container-fluid">
         <div class="row">
-          <h2 class="introH2">Providing safe, efficient, and affordable mobility options for everyone:<br>ITS4US – it's transportation for all of us.</h2>
-          <div class="col-lg-12">
-             <div class="center float-sm-end mr-3 img-fluid col-6-sm m-2  ratio ratio-16x9">
-                <iframe class="rounded-4" src="https://www.youtube.com/embed/RLxx90VCmKk" 
-                  title="ITS4US Deployment Program Overview" frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  referrerpolicy="strict-origin-when-cross-origin" 
-                  allowfullscreen></iframe>
-            </div>
-            <p>
-              ITS4US leverages new and innovative technologies by integrating them within existing transportation systems, improving the lives of all travelers in our communities. Technology today is
-              constantly changing and evolving. The ITS4US program is excited about deploying innovative solutions to transportation issues, including:
-            </p>
-            <ul>
-              <li>Trip planning mobile and desktop web applications</li>
-              <li>Safe intersection crossing applications</li>
-              <li>Automated and connected vehicle technologies</li>
-              <li>Wayfinding and indoor navigation applications</li>
-              <li>Artificial Intelligence (AI) and Machine Learning (ML) technologies</li>
-            </ul>
+          <div class="col-12">
+            <h2 class="sideways text-center mb-5">ITS4US Deployment Sites</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-6 d-flex justify-content-center mb-4">
+            <Card_WaveBorder title="Georgia Mobility & Access Planner" alt="" img="andre" href="" color="orange" logo="" logo_alt="" />
+          </div>
+          <div class="col-12 col-lg-6 d-flex justify-content-center mb-4">
+            <Card_WaveBorder title="Health Connector" alt="" img="andre" href="" color="green" logo="" logo_alt="" />
+          </div>
+          <div class="col-12 col-lg-6 d-flex justify-content-center mb-4">
+            <Card_WaveBorder title="Buffalo All Access" alt="" img="andre" href="" color="blue" logo="" logo_alt="" />
+          </div>
+          <div class="col-12 col-lg-6 d-flex justify-content-center mb-4">
+            <Card_WaveBorder title="Transportation Data Exchange Initiative" alt="" img="andre" href="" color="purple" logo="" logo_alt="" />
           </div>
         </div>
       </div>
-    </div>
-    <div class="row" >
-      <div class="col-lg-12">
-        <h2 class="sideways blue">ITS4US Deployment Sites</h2>
-        <div class="row g-4">
-          <div class="col-10 col-md-5">
-            <Card_WaveBorder 
-              title="Georgia Mobility & Access Planner" 
-              alt="" 
-              img="andre" 
-              href="" 
-              color="orange" 
-              logo="" 
-              logo_alt="" />
-          </div>
-          <div class="col-10 col-md-5">
-            <Card_WaveBorder 
-              title="Health Connector" 
-              alt="" 
-              img="andre" 
-              href="" 
-              color="green" 
-              logo="" 
-              logo_alt="" />
-          </div>
-          <div class="col-10 col-md-5">
-            <Card_WaveBorder 
-              title="Buffalo All Access" 
-              alt="" 
-              img="andre" 
-              href="" 
-              color="blue" 
-              logo="" 
-              logo_alt="" />
-          </div>
-          <div class="col-10 col-md-5">
-            <Card_WaveBorder
-              title="Transportation Data Exchange Initiative"
-              alt="" 
-              img="andre" 
-              href="" 
-              color="purple" 
-              logo="" 
-              logo_alt="" />
-          </div>
-          <!-- <a href="">
-            <Image src={andre} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" />
-            <div class="front-frame georgia pt-6 pl-6 pr-3 pb-3 flex items-center justify-between -mt-16 relative">
-              <h3>Georgia Mobility & Access Planner</h3>
-            </div>
-          </a>
-          <a href="">
-            <Image src={waukee} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" />
-            <div class="front-frame health">
-            </div>
-          </a>
-           <a href="">
-            <Image src={waukee} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" />
-            <div class="front-frame buffalo">
-            </div>
-          </a>
-          <a href="">
-            <Image src={waukee} alt="Pushbutton crosswalk signal for blind pedestrians" width={560} height={256} class="img-fluid rounded-4 mb-2" />
-            <div class="front-frame transportation">
-            </div>
-          </a> -->
-        </div>
-      </div>
-    </div>
-    </main>
+    </section>
+  </main>
 </PageLayout>
