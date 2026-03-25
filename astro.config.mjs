@@ -25,5 +25,6 @@ export default defineConfig({
     "/resources/asc": "/resources/architecture-and-standards",
     "/asc": "/resources/architecture-and-standards",
     "/research_areas/cybersecurity/research.htm": "/resources/architecture-and-standards/",
+    "/isc/?utm_source=tradeshow%2526utm_medium=banner%2526utm_id=events": "/research-areas/intersection-safety/systems"
   },
 });
