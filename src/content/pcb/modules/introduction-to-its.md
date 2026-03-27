@@ -1,13 +1,14 @@
 ---
-title: Introduction to Intelligent Transportation Systems (ITS)
-description: This module introduces participants to the exciting world of Intelligent Transportation Systems (ITS) and the technologies that enhance transportation safety and mobility, and efficiency. It covers how ITS solutions are developed, deployed, and operated and explores potential future directions of ITS for a variety of modes and locations of transportation networks.
-image: pcb/trainings/introduction-to-its
-category: Early Career Development
-type: web-based
+title: 'Introduction to Intelligent Transportation Systems (ITS)'
+description: 'This module introduces participants to the exciting world of Intelligent Transportation Systems (ITS) and the technologies that enhance transportation safety and mobility, and efficiency. It covers how ITS solutions are developed, deployed, and operated and explores potential future directions of ITS for a variety of modes and locations of transportation networks.'
+image: 'pcb/trainings/introduction-to-its'
+category: 'Early Career Development'
+type: 'web-based'
+order: 1
 source:
-  name: National Highway Institute (NHI)
-  id: NHI 137000
-  url: https://fhwanhi.geniussis.com/RegistrationByCourse.aspx
+  name: 'National Highway Institute (NHI)'
+  id: 'NHI 137000'
+  url: 'https://fhwanhi.geniussis.com/RegistrationByCourse.aspx'
 ---
 
 ### Description
