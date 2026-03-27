@@ -288,7 +288,7 @@ export const navigation: NavigationItem[] = [
               },
               {
                 name: "Applying Systems Engineering to ITS Projects",
-                url: "/resources/pcb/early-career/applying-systems-engineering-to-its-projects",
+                url: "/resources/pcb/early-career/applying-se-to-its-projects",
               }
             ]
           },
