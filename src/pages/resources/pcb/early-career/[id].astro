@@ -1,0 +1,177 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { getCollection } from "astro:content";
+
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
+import { getEntry } from "astro:content";
+import { render } from "astro:content";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Layout from "../_layout.astro";
+import Link from "@/src/components/Link.astro";
+
+
+export async function getStaticPaths() {
+  const modules = await getCollection("pcbModules");
+  return modules.map((module) => ({
+    params: { id: module.id },
+    props: { module },
+  }))
+}
+
+const { module } = Astro.props;
+const { Content,  } = await render(module);
+---
+<style lang="scss">
+  $screen-lg: 992px;
+
+  .module-layout {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--size);
+
+    @media (min-width: $screen-lg) {
+      flex-direction: row;
+    }
+  }
+
+  .module-meta {
+    @media (min-width: $screen-lg) {
+      flex-basis: 30%;
+    }
+
+    .meta-header {
+      padding: 0;
+      margin: 0;
+
+      .meta-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    .meta-disclaimer {
+      color: rgb(var(--color-gray));
+      font-size: 1rem;
+    }
+
+    .meta-divider {
+      margin: var(--size-sm) 0;
+      border: none;
+      border-top: 1px solid rgb(var(--color-gray));
+    }
+
+    .meta-source-id {
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: rgb(var(--color-gray));
+    }
+
+    .meta-body {
+      padding: var(--size);
+    }
+
+    .meta-attributes {
+      margin-bottom: 0;
+      display: grid;
+      grid-template-columns: 2fr 5fr;
+      row-gap: 0.2rem;
+
+      .meta-title {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      dt {
+        color: rgb(var(--color-gray));
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+      }
+
+      dd {
+        text-transform: capitalize;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+    }
+
+    
+  }
+
+  .module-content {
+    @media (min-width: $screen-lg) {
+      flex-basis: 70%;
+    }
+  }
+</style>
+<Layout>
+  <ProgramSection>
+    <div class="module-layout">
+      <div class="module-content">
+        <h2 class="program-title-lg mb-4">{module.data.title}</h2>
+        <Content />
+      </div>
+      <div class="module-meta">
+        <Card radius="md" shadow="sm">
+          <CardHeader class="meta-header">
+            <LibraryImage entry={module.data.image} class="meta-image" />
+          </CardHeader>
+          <CardBody class="meta-body">
+            <dl class="meta-attributes">
+              <!-- <div class="meta-attribute"> -->
+                <dt>Name</dt>
+                <dd>{module.data.title}</dd>
+              <!-- </div> -->
+              <!-- <div class="meta-attribute"> -->
+                <dt>Number</dt>
+                <dd>{module.data.source.id}</dd>
+              <!-- </div> -->
+              <!-- <div class="meta-attribute"> -->
+                <dt>Type</dt>
+                <dd>{module.data.type}</dd>
+              <!-- </div> -->
+              <!-- <div class="meta-attribute"> -->
+                <dt>Source</dt>
+                <dd>{module.data.source.name}</dd>
+              <!-- </div> -->
+            </dl>
+            <hr class="meta-divider" />
+            <p class="meta-disclaimer">
+              This link will take you to the NHI Catalog. Search for the course name or number to register.
+            </p>
+            <Link 
+              isExternal 
+              variant="button" 
+              href={module.data.source.url} 
+              class="text-center"
+            >
+              Register
+            </Link>
+          </CardBody>
+        </Card>
+      </div>
+    </div>
+  </ProgramSection>
+</Layout>
+<script>
+  const content = document.querySelector(".module-content");
+  if (content) {
+    const h3s = content.querySelectorAll("h3");
+    h3s.forEach((h3) => h3.classList.add("program-title-md", "mb-3"));
+    const h4s = content.querySelectorAll("h4");
+    h4s.forEach((h4) => h4.classList.add("program-title-sm", "mb-2"));
+    const ps = content.querySelectorAll("p");
+    ps.forEach((p) => p.classList.add("program-text", "mb-3"));
+    const uls = content.querySelectorAll("ul");
+    uls.forEach((ul) => ul.classList.add("program-list", "mb-3"));
+  }
+</script>

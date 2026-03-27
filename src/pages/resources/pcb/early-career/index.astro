@@ -7,19 +7,10 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 // import { Image } from "astro:assets";
 import Link from "@/src/components/Link.astro";
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
+import { getCollection } from "astro:content";
 
-const modules = [
-  {
-    description: "This module introduces participants to the exciting world of Intelligent Transportation Systems (ITS) and the technologies that enhance transportation safety and mobility, and efficiency. It covers how ITS solutions are developed, deployed, and operated and explores potential future directions of ITS for a variety of modes and locations of transportation networks.",
-    slug: "introduction-to-its",
-    title: "Introduction to Intelligent Transportation Systems (ITS)"
-  },
-  {
-    title: "Applying Systems Engineering to ITS Projects",
-    slug: "applying-systems-engineering-to-its-projects",
-    description: "This module introduces the systems engineering (SE) process as applied to intelligent transportation systems (ITS) projects. Participants learn how SE leads to quality systems that meet stakeholder needs through a structured, systems-thinking approach. The module covers key SE processes, including the “ Vee Model, ” which outlines system development from user needs and requirements through design, implementation, testing, and validation. Emphasis is placed on developing a Concept of Operations (ConOps)."
-  }
-]
+const modules = await getCollection("pcbModules").then(modules => modules.sort((a, b) => (a.data.order || 0) - (b.data.order || 0)));
+
 ---
 <style>
   .resource-card:hover {
@@ -28,9 +19,9 @@ const modules = [
   }
 
   .resource-card-image {
-    width: 100%;
+    width: auto;
+    height: 250px;
     object-fit: cover;
-    height: 220px;
   }
 
   .resource-card-body {
@@ -147,22 +138,22 @@ const modules = [
         </li>
       </ul>
       <div class="card-grid mt-4">
-        {modules.map(resource => (
-          <Card class="resource-card" href={`/resources/pcb/early-career/${resource.slug}`} radius="lg" shadow="none">
+        {modules.map(module => (
+          <Card class="resource-card" href={`/resources/pcb/early-career/${module.id}`} radius="lg" shadow="none">
             <CardBody class="resource-card-body">
               {/* <Image 
                 alt={resource.title}
                 class="resource-card-image radius-none shadow"
                 src={resource.image}
               /> */}
-              <div style="background: #ccc;" class="ratio ratio-21x9 rounded competitions-video"/>
+              <LibraryImage entry={module.data.image} class="resource-card-image" />
             </CardBody>
             <CardFooter class="resource-card-footer">
               <h3 class="program-title-sm text-foreground mb-2">
-                {resource.title}
+                {module.data.title}
               </h3>
               <p class="program-text">
-                {resource.description}
+                {module.data.description}
               </p>
             </CardFooter>
           </Card>

@@ -117,6 +117,7 @@ const pcbModules = defineCollection({
       name: z.string(),
       id: z.string(),
     }),
+    order: z.number().optional(),
     category: z.string(),
     type: z.enum(["web-based", "in-person"]),
     image: reference("library"),
