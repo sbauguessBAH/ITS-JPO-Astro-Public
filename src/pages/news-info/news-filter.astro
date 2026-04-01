@@ -2,7 +2,10 @@
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 
-const contentTypes = Array.from(toolkits.flatMap(toolkit => toolkit["content-types"])).filter((value, index, self) => self.indexOf(value) === index);
+const contentTypes = Array.from(toolkits.flatMap(toolkit => toolkit["content_types"])).filter((value, index, self) => self.indexOf(value) === index);
+const allContentTypes = Array.from(
+  new Set(toolkits.flatMap((t) => t.content_types ?? []))
+).sort((a, b) => a.localeCompare(b));
 ---
 
 <style>
@@ -28,7 +31,9 @@ const contentTypes = Array.from(toolkits.flatMap(toolkit => toolkit["content-typ
     <form>
         <label for="content-type">Content Type:</label>
         <select id="content-type" name="content-type" multiple>
+            {console.log(contentTypes, "hi")}
             {contentTypes.map(type => (
+                console.log(type),
                 <option value={type}>{type}</option>
             ))}
         </select>
