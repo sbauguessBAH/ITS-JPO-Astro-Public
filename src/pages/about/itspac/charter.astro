@@ -32,23 +32,23 @@ import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
                     </li>
                     <li>
                       <strong>DESCRIPTION OF DUTIES:</strong>
-                      <ul>
+                      <ol>
                         <li>The ITSPAC shall be responsive to specific assignments and may conduct studies, inquiries, and workshops as the Secretary may authorize or direct.</li>
                         <li>
                           At a minimum, ITSPAC will be expected to:
-                          <ul>
+                          <ol>
                             <li>Provide input into the development of ITS aspects of the transportation research and development 5-year strategic plan under 49 U.S.C. § 6503.</li>
                             <li>
                               Review, at least annually, areas of ITS research being considered for funding by the Department, to determine:
-                              <ul>
+                              <ol>
                                 <li>whether these activities are likely to advance either the ITS state-of-the-practice or state-of-the-art;</li>
                                 <li>whether ITS technologies are likely to be deployed by users, and if not, to determine the barriers to deployment; and,</li>
                                 <li>the appropriate roles for Government and the private sector in investing in the research and technologies being considered.</li>
-                              </ul>
+                              </ol>
                             </li>
-                          </ul>
+                          </ol>
                         </li>
-                      </ul>
+                      </ol>
                     </li>
                     <li>
                       <strong>AGENCY OR FEDERAL OFFICER RECEIVING THE ADVISORY COMMITTEE'S ADVICE/RECOMMENDATIONS:</strong> ITSPAC shall report to the Secretary of Transportation through ITS JPO.
@@ -73,11 +73,11 @@ import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
                     </li>
                     <li>
                       <strong>MEMBERSHIP AND DESIGNATION:</strong>
-                      <ul>
+                      <ol>
                         <li>ITSPAC shall comprise not more than 25 individuals appointed by the Secretary of Transportation upon recommendation by the Assistant Secretary for Research and Technology or designee. ITSPAC members will serve for up to 3 years, or until replacements have been appointed.</li>
                         <li>
                           In order to reflect the diverse nature of the ITS program, ITSPAC membership shall comprise individuals representing the categories of organizations listed in subparagraph (c) below. ITS JPO will publish a membership solicitation notice on the Federal Register in accordance with the process established by the Federal Advisory Committee Act (FACA) Working Group. In addition, ITS JPO may consult with applicable organizations to determine the appropriate individuals to be recommended. Also, due to the rapid evolution of ITS-related technologies and the emphasis that must be placed on deployment, ITSPAC membership shall reflect experience in and familiarity with future innovations in technology, business development, and strategic planning issues. The ITSPAC membership shall comprise members from among the following categories and be balanced between metropolitan and rural interests:
-                          <ul>
+                          <ol>
                             <li>a representative from a State highway department;</li>
                             <li>a representative from a local highway department who is not from a metropolitan planning organization;</li>
                             <li>a representative from a State, local, or regional transit agency;</li>
@@ -101,12 +101,12 @@ import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
                             <li>members with expertise in planning, safety, telecommunications, and operations;</li>
                             <li>an expert in cybersecurity; and</li>
                             <li>an automobile manufacturer.</li>
-                          </ul>
+                          </ol>
                         </li>
                         <li>Members appointed solely for their expertise will be appointed as Special Government Employees, and members appointed to represent specific stakeholder groups will be appointed as Representative Members.</li>
                         <li>To the extent practicable, ITSPAC membership will include senior policy-level representatives of their respective organizations. Membership will be fairly balanced in terms of the points of view represented and the functions to be performed.</li>
                         <li>The Chairperson and Vice-Chairperson will be appointed by the Assistant Secretary for Research and Technology.</li>
-                      </ul>
+                      </ol>
                     </li>
                     <li>
                       <strong>SUBCOMMITTEES:</strong> The Assistant Secretary for Research and Technology has the authority to create subcommittees subject to approval of the Secretary in accordance with the process established in the Department's Committee Management Order. Subcommittees report all of their recommendations and advice to the parent committee and do not provide advice or work products directly to the sponsoring mode or the Secretary.
@@ -133,8 +133,35 @@ import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 </PageLayout>
 <style> 
 ol, li, ul {
-font-size: 1.1rem;
-    line-height: 1.5;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
+/* First level: decimal (1., 2., 3., ...) */
+ol {
+  list-style-type: decimal;
+}
+
+/* Second level: lowercase letters (a., b., c., ...) */
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+/* Third level: numbers in parentheses ((1), (2), (3), ...) */
+ol ol ol {
+  list-style-type: decimal;
+}
+
+ol ol ol li::marker {
+  content: "(" counter(list-item) ") ";
+}
+
+/* Fourth level: letters in parentheses ((a), (b), (c), ...) */
+ol ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+ol ol ol ol li::marker {
+  content: "(" counter(list-item, lower-alpha) ") ";
+}
 </style>
