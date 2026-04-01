@@ -1,0 +1,41 @@
+[{
+    "id": 1,
+    "title": "V2X Example Toolkit",
+    "description":"This is an example toolkit description. It should be a short summary of the toolkit and its contents.",
+    "last_updated": "Updated February 2026",
+    "content_types":["infographic","video"],
+    "topics":["V2X"],
+    "url":"/content/news-resources/toolkits/v2x-example-toolkit"
+
+},
+{
+    "id": 2,
+    "title": "Another Toolkit",
+    "description":"This is another toolkit description. It should be a short summary of the toolkit and its contents.",
+    "last_updated": "Updated March 2026",
+    "content_types":["document","webinar"],
+    "topics":["Connected Vehicles"],
+    "url":"/content/news-resources/toolkits/another-toolkit"
+
+},
+{
+    "id": 3,
+    "title": "Third Toolkit",
+    "description":"This is the third toolkit description. It should be a short summary of the toolkit and its contents.",
+    "last_updated": "Updated April 2026",
+    "content_types":["guide","case study"],
+    "topics":["Autonomous Vehicles"],
+    "url":"/content/news-resources/toolkits/third-toolkit"
+
+},
+{
+    "id": 4,
+    "title": "Fourth Toolkit",
+    "description":"This is the fourth toolkit description. It should be a short summary of the toolkit and its contents.",
+    "last_updated": "Updated May 2026",
+    "content_types":["infographic","video"],
+    "topics":["V2X"],
+    "url":"/content/news-resources/toolkits/fourth-toolkit"
+
+}
+]
