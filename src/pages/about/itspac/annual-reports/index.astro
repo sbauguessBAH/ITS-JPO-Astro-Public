@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+---
+
+<PageLayout title="ITS JPO - ITSPAC" bannerImage={banner}>
+  <Fragment slot="banner">ITS Program Advisory Committee (ITSPAC)</Fragment>
+
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <main class="col-12">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Annual Reports</h2>
+          </div>
+        </div>
+        <p>
+       <strong>Coming soon</strong> - The ITSPAC will produce an annual report once the committee meets.
+      </p>
+       </main>
+    </div>
+  </div>
+</PageLayout>
+
+<style >
+  button {
+    font-weight: 800;
+    font-size: large;
+    text-transform: uppercase;
+  }
+</style>
