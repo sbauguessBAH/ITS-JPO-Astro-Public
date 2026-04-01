@@ -1,73 +1,9 @@
 ---
-import LibraryImg from '@/src/components/Img_Library.astro';
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 
-// To update this page add the image to the "imageLibrary" folder then add its src to this array and give it some alt text. The alt text is used for the image title.
-
-const ImagesArray = [
-{src: '../assets/images/imageLibrary/img_1.jpg', alt: 'Trucks'},
-{src: '../assets/images/imageLibrary/img_2.jpg', alt: 'Freight and Transit Connected Vehicles'},
-{src: '../assets/images/imageLibrary/img_3.jpg', alt: 'Connected Traffic Signal'},
-{src: '../assets/images/imageLibrary/img_4.jpg', alt: 'Street Car'},
-{src: '../assets/images/imageLibrary/img_5.jpg', alt: 'Rush Hour Connected Vehicle Exit'},
-{src: '../assets/images/imageLibrary/img_6.jpg', alt: 'Port'},
-{src: '../assets/images/imageLibrary/img_7.jpg', alt: 'Vehicle Platooning'},
-{src: '../assets/images/imageLibrary/img_8.jpg', alt: 'Passenger Car'},
-{src: '../assets/images/imageLibrary/img_9.jpg', alt: 'Merging'},
-{src: '../assets/images/imageLibrary/img_10.jpg', alt: 'Truck Convoy'},
-{src: '../assets/images/imageLibrary/img_11.jpg', alt: 'Sample Connected Vehicle Applications'},
-{src: '../assets/images/imageLibrary/img_12.jpg', alt: 'Connected Vehicles Traveling on Highway'},
-{src: '../assets/images/imageLibrary/img_13.jpg', alt: 'Connected Vehicle Intersection Stop'},
-{src: '../assets/images/imageLibrary/img_14.jpg', alt: 'Train Intersection'},
-{src: '../assets/images/imageLibrary/img_15.png', alt: 'Semi Rural'},
-{src: '../assets/images/imageLibrary/img_16.png', alt: 'Loading Truck Port'},
-{src: '../assets/images/imageLibrary/img_17.png', alt: 'Intersection Wheelchair'},
-{src: '../assets/images/imageLibrary/img_18.png', alt: 'Intersection Bike'},
-{src: '../assets/images/imageLibrary/img_19.png', alt: 'Inside Smart Bus'},
-{src: '../assets/images/imageLibrary/img_20.png', alt: 'Automated Vehicle Highway'},
-{src: '../assets/images/imageLibrary/img_22.jpg', alt: 'Connected Vehicles Intersection'},
-{src: '../assets/images/imageLibrary/img_24.jpg', alt: 'Connected Vehicles Intersection'},
-{src: '../assets/images/imageLibrary/img_25.jpg', alt: 'CV Do Not Pass Dashboard Warning'},
-{src: '../assets/images/imageLibrary/img_35.jpg', alt: 'CV Intersection Stop'},
-{src: '../assets/images/imageLibrary/img_42.jpg', alt: 'CV Construction Zone Warning'},
-{src: '../assets/images/imageLibrary/img_43.jpg', alt: 'CV Technology Assessment'},
-{src: '../assets/images/imageLibrary/img_44.jpg', alt: 'Connected Vehicles Communicating at Intersection'},
-{src: '../assets/images/imageLibrary/img_46.jpg', alt: 'Dynamic Road Side Platooning'},
-{src: '../assets/images/imageLibrary/img_47.jpg', alt: 'Automated University Ride Sharing'},
-{src: '../assets/images/imageLibrary/img_48.jpg', alt: 'How an Automated Vehicle Works'},
-{src: '../assets/images/imageLibrary/img_51.jpg', alt: 'Connected Freight Carrier Highway'},
-{src: '../assets/images/imageLibrary/img_52.jpg', alt: 'Connected Freight Carrier and Car'},
-{src: '../assets/images/imageLibrary/img_53.jpg', alt: 'Truck Safety'},
-{src: '../assets/images/imageLibrary/img_55.jpg', alt: 'Connected Vehicles Intersection'},
-{src: '../assets/images/imageLibrary/img_57.jpg', alt: 'CV Approaching Warning'},
-{src: '../assets/images/imageLibrary/img_58.jpg', alt: 'CV Technology Assessment'},
-{src: '../assets/images/imageLibrary/V2X_KidSkateboard.png', alt: 'Skateboard interacting with a vehicle'},
-{src: '../assets/images/imageLibrary/V2X_MotherKid.png', alt: 'Stroller interacting with a vehicle	'},
-{src: '../assets/images/imageLibrary/V2X_WheelchairBus.png', alt: 'Wheelchair interacting with a bus	'},
-{src: '../assets/images/imageLibrary/V2X_WomanBike.png', alt: 'Bicycle interacting with a vehicle'},
-];
-
-const keywords = [
-  'Connected Vehicles',
-  'Automated Vehicles',
-  'Vehicle to Vehicle Communication',
-  'Vehicle to Infrastructure Communication',
-  'Vehicle to Everything Communication',
-  'Connected Vehicle Technology',
-  'Automated Vehicle Technology',
-  'Connected Vehicle Applications',
-  'Automated Vehicle Applications',
-  'Connected Vehicle Safety',
-  'Automated Vehicle Safety',
-  'Connected Vehicle Research',
-  'Automated Vehicle Research'
-];
-
-const description =
-  'Explore our image library showcasing connected and automated vehicle technologies, applications, and research. Download high-resolution images for your projects.';
+const contentTypes = Array.from(toolkits.flatMap(toolkit => toolkit["content-types"])).filter((value, index, self) => self.indexOf(value) === index);
 ---
-
-
 
 <style>
 
@@ -87,7 +23,17 @@ const description =
 }
 
 </style>
-<PageLayout title="Image Library" keywords={keywords} description={description}>
+
+<div>
+    <form>
+        <label for="content-type">Content Type:</label>
+        <select id="content-type" name="content-type" multiple>
+            {contentTypes.map(type => (
+                <option value={type}>{type}</option>
+            ))}
+        </select>
+    </form>
+</div>
   <Fragment slot="banner">
     Image Library
   </Fragment>
@@ -97,71 +43,7 @@ const description =
 
 
   <script>
-    // Wait for the DOM to be fully loaded before attaching event listeners
-    document.addEventListener('DOMContentLoaded', function() {
-      // Modal container element
-      let modal: HTMLElement | null = null;
-      // Reference to the image element in the modal (displays the full-size image)
-      let modalImg: HTMLImageElement | null = null;
-      // Reference to the alt text element in the modal (for accessibility)
-      let modalAlt: HTMLElement | null = null;
-
-      // Function to open the modal and display the full-size image
-      function openModal(card: HTMLElement) {
-        // Get modal elements by their IDs
-        modal = document.getElementById('astro-img-modal');
-        modalImg = document.getElementById('astro-img-modal-img') as HTMLImageElement | null;
-        modalAlt = document.getElementById('astro-img-modal-alt');
-        const closeBtn = document.getElementById('astro-img-modal-close');
-        const downloadBtn = document.getElementById('astro-img-modal-download');
-        // Find the anchor with data-fullsize inside the card (contains the full-size image URL)
-        const anchor = card.querySelector('a[data-fullsize]');
-        const fullsize = anchor ? anchor.getAttribute('data-fullsize') : '';
-        // Get the alt text from the image element
-        const imgElem = card.querySelector('img');
-        const alt = imgElem && imgElem.alt ? imgElem.alt : '';
-        // If all required elements exist, show the modal and set image/download attributes
-        if (modal && modalImg && fullsize) {
-          modal.style.display = 'flex'; // Show modal
-          modalImg.src = fullsize;      // Set full-size image
-          modalImg.alt = alt;           // Set alt text for accessibility
-          if (modalAlt) modalAlt.textContent = alt;
-          if (downloadBtn) (downloadBtn as HTMLAnchorElement).href = fullsize; // Set download link
-          document.body.style.overflow = 'hidden'; // Prevent background scroll
-        }
-        // Attach close event every time modal is opened (ensures it's always attached)
-        if (closeBtn) {
-          closeBtn.removeEventListener('click', closeModal); // Prevent duplicate
-          closeBtn.addEventListener('click', closeModal);
-        }
-      }
-
-      // Function to close the modal and restore scroll
-      function closeModal() {
-        modal = document.getElementById('astro-img-modal');
-        if (modal) {
-          modal.style.display = 'none'; // Hide modal
-          document.body.style.overflow = '';
-        }
-      }
-
-      // Attach click and keyboard event listeners to each image card
-      document.querySelectorAll('.image-card').forEach(card => {
-        // Open modal on click
-        card.addEventListener('click', function() {
-          openModal(card as HTMLElement);
-        });
-        // Open modal on Enter key (keyboard accessibility)
-        card.addEventListener('keydown', function(e: KeyboardEvent) {
-          if (e.key === 'Enter') openModal(card as HTMLElement);
-        });
-      });
-
-      // Close modal when clicking the modal background
-      document.addEventListener('click', function(e) {
-        if (e.target && (e.target as HTMLElement).id === 'astro-img-modal') closeModal();
-      });
-    });
+    
   </script>
 
   <style>
@@ -226,17 +108,6 @@ const description =
     }
   </style>
 
-  <div class="d-flex flex-wrap">
-    {ImagesArray.map((img) => (
-      <div class="p-2 widthcontroller">
-        <div class="image-card" tabindex="0" aria-label={img.alt}>
-          <LibraryImg imagePath={img.src} altText={img.alt} />
-          <div class="image-overlay">{img.alt}</div>
-        </div>
-      </div>
-    ))}
-  </div>
-
   <div id="astro-img-modal" class="modal-bg" style="display:none;">
     <button id="astro-img-modal-close" class="modal-close" aria-label="Close">&times;</button>
     <img id="astro-img-modal-img" src="" alt="" class="modal-img" />
@@ -254,4 +125,4 @@ ITS Safety and Stakeholder Engagement and Communications<br/>
 <a href="mailto:Norah.Ocel@dot.gov">Norah.Ocel@dot.gov</a>
 </p>
 </div>
-</PageLayout>
+</PageLayout> -->
