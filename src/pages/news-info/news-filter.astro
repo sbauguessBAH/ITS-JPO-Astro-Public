@@ -28,7 +28,8 @@ const topics = Array.from(toolkits.flatMap(toolkit => toolkit["topics"]))
 
 </style>
 
-<div>
+<PageLayout title="Filter" keywords="filter,news" description="filter">
+  <main>
     <form>
         <label for="content-type">Content Type:</label>
         <select id="content-type" name="content-type" multiple>
@@ -45,13 +46,8 @@ const topics = Array.from(toolkits.flatMap(toolkit => toolkit["topics"]))
             </div>
         ))}
     </form>
-</div>
-  <Fragment slot="banner">
-    Image Library
-  </Fragment>
-  <main>
-  <h2 class="sideways blue">Images courtesy of the U.S. Department of Transportation</h2>
-  <p>Click image for downloadable high resolution version. </p>
+  </main>
+</PageLayout>
 
 
   <script>
