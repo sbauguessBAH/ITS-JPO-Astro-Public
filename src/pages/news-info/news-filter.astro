@@ -2,8 +2,11 @@
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 
-const contentTypes = Array.from(toolkits.flatMap(toolkit => toolkit["content_types"])).filter((value, index, self) => self.indexOf(value) === index);
-const topics = Array.from(toolkits.flatMap(toolkit => toolkit["topics"])).filter((value, index, self) => self.indexOf(value) === index);
+const contentTypes = Array.from(toolkits.flatMap(toolkit => toolkit["content_types"]))
+.filter((value, index, self) => self.indexOf(value) === index);
+
+const topics = Array.from(toolkits.flatMap(toolkit => toolkit["topics"]))
+.filter((value, index, self) => self.indexOf(value) === index);
 ---
 
 <style>
@@ -29,12 +32,18 @@ const topics = Array.from(toolkits.flatMap(toolkit => toolkit["topics"])).filter
     <form>
         <label for="content-type">Content Type:</label>
         <select id="content-type" name="content-type" multiple>
-            {console.log(topics, "hi")}
             {contentTypes.map(type => (
                 console.log(type),
                 <option value={type}>{type}</option>
             ))}
         </select>
+        <label for="topic">Topic:</label>
+        {topics.map(topic => (
+            <div>
+                <input type="checkbox" id={`topic-${topic}`} name="topic" value={topic} />
+                <label for={`topic-${topic}`}>{topic}</label>
+            </div>
+        ))}
     </form>
 </div>
   <Fragment slot="banner">
