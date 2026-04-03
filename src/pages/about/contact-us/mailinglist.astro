@@ -1,70 +1,145 @@
 ---
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import newsletterImage from "@/src/assets/images/ITSJPO_NewsletterWebsiteImage_030123.png";
+import newsletterImage from "@/src/assets/images/Sign-up-for-ITS-JPO-Now.png";
+import mailBackground from "@/src/assets/images/Mail-Background.png";
 import { Image } from "astro:assets";
 
-const keywords = [
-  "ITS JPO",
-  "mailing list",
-  "newsletter",
-  "updates",
-  "news",
-  "events",
-];
+const keywords = ["ITS JPO", "mailing list", "newsletter", "updates", "news", "events"];
 
-const description =
-  "Join the ITS JPO mailing list to receive updates on ITS JPO news and events. Stay informed about the latest developments in Intelligent Transportation Systems.";
-
+const description = "Join the ITS JPO mailing list to receive updates on ITS JPO news and events. Stay informed about the latest developments in Intelligent Transportation Systems.";
 ---
+
+<PageLayout title="Mailing List" keywords={keywords} description={description}>
+  <Fragment slot="banner"> ITS JPO Mailing List </Fragment>
+  <main>
+    <h2>Join our ITS JPO Mailing List</h2>
+    <p>
+      Thank you for your interest in receiving ITS Program updates. Please join our
+      <a href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" target="_blank" rel="noopener noreferrer">ITS Joint Program Office Mailing list</a>.
+    </p>
+  
+
+    <div class="mail-list col-xxl-9 col-12">
+      <div class="mail-header row ">
+        <h1 class="col-sm-8 col-12">Receive the Bi-Monthly ITS JPO Now and Get Updates on News and Events</h1>
+        <div class="col-sm-4 col-12 d-flex justify-content-md-end justify-content-center align-items-center">
+          <a class="mail-button" href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" target="_blank" rel="noopener noreferrer">Sign Up</a>
+        </div>
+    </div>
+      <div class="row mail-content" style={`background-image: url(${mailBackground.src}); background-size: cover; background-position: center;`}>
+        <h3>ITS JPO Now</h3>
+        <p>Bimonthly Digest</p>
+        <hr />
+        <ul>
+          <li>Program Announcements</li>
+          <li>Latest Releases</li>
+          <li>Upcoming Events</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="mt-4">
+      You can also choose to receive updates from the ITS Program via
+      <a href="https://twitter.com/ITS_USDOT" target="_blank" rel="noopener noreferrer">X</a> and
+      <a href="https://www.facebook.com/USDOTResearch" target="_blank" rel="noopener noreferrer">Facebook</a>.
+    </p>
+  </main>
+</PageLayout>
+
 <style>
+  .mail-list {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    overflow: hidden;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+ 
+  .mail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    background-image: linear-gradient(to right, #003f7e, #032159);
+    padding: 1.5rem 2.6rem;
+  }
+
+ .mail-header h1 {
+    font-size: 2rem;
+    margin: 0;
+    text-transform: none;
+  }
+
+
+  .mail-button {
+    background-color: #fff;
+    font-size: 1.5rem;
+    color: #055681;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+
+  .mail-button:hover {
+    background-color: #ecc707;
+  }
+
+  .mail-button::after {
+    content: " ►";
+    font-size: 1.5rem;
+    padding-left: .5rem;
+  }
+
+  .mail-content {
+    padding: 1.5rem 3rem;
+    aspect-ratio: 9 / 4;
+    display: block;
+  }
+
+  @media (max-width: 767px) {
+
+    .mail-header h1 {
+      font-size: 1.5rem;
+      margin-bottom: .5rem;
+    }
+    .mail-header {
+      padding: 1rem 1.5rem;
+    }
+    .mail-content {
+    padding: 1rem 2.5rem;
+  }
+  }
+
+
+  .mail-content h3 {
+    margin: 0;
+    color: #ecc707;
+    font-size: 2rem;
+    text-transform: none;
+  }
+
+  .mail-content p {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+  .mail-content hr {
+    border-top: 5px solid #ecc707;
+    opacity: 1;
+    margin: 0;
+    max-width: 30%;
+    margin: .7rem;
+  }
+  .mail-content ul {
+    padding-left: 2.5rem;
+    font-size: 1.3rem;
+  }
+  .mail-content li::marker {
+    color: #ecc707;
+  }
+
   .newsletterImage {
-    max-width: 80%;
     border-radius: 15px;
   }
 </style>
-
-<PageLayout title="Mailing List" keywords={keywords} description={description}>
-  <Fragment slot="banner">
-    ITS JPO Mailing List
-  </Fragment>
-  <main>
-
-  <h2>Join our ITS JPO Mailing List</h2>
-  <p>
-    Thank you for your interest in receiving ITS Program updates. Please join our
-    <a 
-      href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      ITS Joint Program Office Mailing list
-    </a>.
-  </p>
-  <a 
-    href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    <Image 
-      src={newsletterImage} 
-      alt="Get updates on ITS JPO News and Events by clicking this image to sign up for the mailing list." 
-      class="img-fluid newsletterImage"
-    />
-  </a>
-  <p class="mt-4">
-    You can also choose to receive updates from the ITS Program via
-    <a 
-      href="https://twitter.com/ITS_USDOT" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      X</a> and
-    <a 
-      href="https://www.facebook.com/USDOTResearch" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      Facebook</a>.
-  </p>
-  </main>
-</PageLayout>
