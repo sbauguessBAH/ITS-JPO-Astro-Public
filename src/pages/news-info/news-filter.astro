@@ -1,6 +1,6 @@
 ---
-import PageLayout from "@/src/layouts/PageLayout.astro";
 import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
+import BaseLayout from "@/src/layouts/BaseLayout.astro";
 
 type Toolkit = {
   content_types?: string[];
@@ -26,7 +26,7 @@ const slugifyForId = (value: string): string =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 ---
-
+<BaseLayout title="filter" description="Filter news content by type and topic." keywords={"filter"}>
   <main class="container my-5">
     <h1 class="h2 mb-4">News Filter</h1>
 
@@ -60,3 +60,4 @@ const slugifyForId = (value: string): string =>
 
     </div>
   </main>
+  </BaseLayout>
