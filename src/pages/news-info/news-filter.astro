@@ -2,135 +2,61 @@
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 
-const contentTypes = Array.from(toolkits.flatMap(toolkit => toolkit["content_types"]))
-.filter((value, index, self) => self.indexOf(value) === index);
+type Toolkit = {
+  content_types?: string[];
+  topics?: string[];
+  title?: string;
+  url?: string;
+  description?: string;
+};
 
-const topics = Array.from(toolkits.flatMap(toolkit => toolkit["topics"]))
-.filter((value, index, self) => self.indexOf(value) === index);
+const toolkitList: Toolkit[] = Array.isArray(toolkits) ? (toolkits as Toolkit[]) : [];
+
+const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
+  return [...new Set(values.filter((v): v is string => typeof v === "string" && v.trim().length > 0))];
+};
+
+const contentTypes = uniqueStrings(toolkitList.flatMap((toolkit) => toolkit.content_types ?? []));
+const topics = uniqueStrings(toolkitList.flatMap((toolkit) => toolkit.topics ?? []));
+
+const slugifyForId = (value: string): string =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 ---
 
-<style>
+  <main class="container my-5">
+    <h1 class="h2 mb-4">News Filter</h1>
 
-.grid-container {
-    display: grid;
-    vertical-align: top;
-}
-
-.widthcontroller {
-  display: inline-block;
-}
-
-.widthcontroller p {
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0;
-}
-
-</style>
-
-<PageLayout title="Filter" keywords="filter,news" description="filter">
-  <main>
-    <form>
-        <label for="content-type">Content Type:</label>
-        <select id="content-type" name="content-type" multiple>
-            {contentTypes.map(type => (
-                console.log(type),
-                <option value={type}>{type}</option>
-            ))}
+    <form class="row g-4" aria-label="News filter">
+      <div class="col-12 col-lg-6">
+        <label class="form-label" for="content-type">Content Type</label>
+        <select id="content-type" name="content-type" class="form-select" multiple size={Math.min(10, Math.max(4, contentTypes.length))}>
+          {contentTypes.map((type) => (
+            <option value={type}>{type}</option>
+          ))}
         </select>
-        <label for="topic">Topic:</label>
-        {topics.map(topic => (
-            <div>
-                <input type="checkbox" id={`topic-${topic}`} name="topic" value={topic} />
-                <label for={`topic-${topic}`}>{topic}</label>
-            </div>
-        ))}
+        <div class="form-text">Hold Ctrl (Windows) or Cmd (Mac) to select multiple.</div>
+      </div>
+
+      <fieldset class="col-12 col-lg-6">
+        <legend class="col-form-label pt-0">Topics</legend>
+        <div class="topic-list">
+          {topics.map((topic) => {
+            const topicId = `topic-${slugifyForId(topic)}`;
+            return (
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id={topicId} name="topic" value={topic} />
+                <label class="form-check-label" for={topicId}>{topic}</label>
+              </div>
+            );
+          })}
+        </div>
+      </fieldset>
     </form>
+    <div>
+
+    </div>
   </main>
-</PageLayout>
-
-
-  <script>
-    
-  </script>
-
-  <style>
-    .image-card {
-      position: relative;
-      cursor: pointer;
-      overflow: hidden;
-      border-radius: 0.5rem;
-      transition: box-shadow 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    }
-    .image-card:hover .image-overlay {
-      opacity: 1;
-    }
-    .image-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 94, 162, 0.85);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      font-weight: 600;
-      opacity: 0;
-      transition: opacity 0.2s;
-      padding: 1rem;
-      text-align: center;
-    }
-    .modal-bg {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: fadeIn 0.2s;
-    }
-    .modal-img {
-      max-width: 90vw;
-      max-height: 80vh;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.25);
-      background: #fff;
-      padding: 1rem;
-    }
-    .modal-close {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      font-size: 2rem;
-      color: #fff;
-      cursor: pointer;
-      z-index: 1100;
-      background: none;
-      border: none;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
-
-  <div id="astro-img-modal" class="modal-bg" style="display:none;">
-    <button id="astro-img-modal-close" class="modal-close" aria-label="Close">&times;</button>
-    <img id="astro-img-modal-img" src="" alt="" class="modal-img" />
-    <a id="astro-img-modal-download" href="" download style="position:absolute;bottom:2rem;right:2rem;z-index:1100;background:#005ea2;color:#fff;padding:0.75rem 1.5rem;border-radius:0.5rem;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.13);">Download</a>
-    <div id="astro-img-modal-alt" style="display:none;"></div>
-  </div>
-</main>
-<div class="container my-5 p-4">
-<h3>For additional images please contact</h3>
-<p>
-<strong>Ocel, Norah P.E. PMP</strong><br/>
-Program Manager<br/>
-ITS Safety and Stakeholder Engagement and Communications<br/>
-202-366-2639<br/>
-<a href="mailto:Norah.Ocel@dot.gov">Norah.Ocel@dot.gov</a>
-</p>
-</div>
-</PageLayout> -->

@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
-    "build:noWarn": "astro build --minimumSeverity error",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 astro check && cross-env NODE_OPTIONS=--max-old-space-size=8192 astro build",
+    "build:noWarn": "cross-env NODE_OPTIONS=--max-old-space-size=8192 astro build --minimumSeverity error",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "cross-env": "^7.0.3",
     "eslint": "^10.0.1",
     "eslint-plugin-astro": "^1.4.0",
     "eslint-plugin-perfectionist": "^5.6.0",
