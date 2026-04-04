@@ -82,11 +82,25 @@ const slugifyForId = (value: string): string =>
     const topicCheckboxes = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="topic"]'));
     topicCheckboxes.forEach((checkbox) => {
       checkbox.addEventListener("change", (event) => {
+        console.log("hi","Topic changed:", (event.target).value, "checked:", (event.target).checked);
         const checkedTopics = topicCheckboxes.filter((cb) => cb.checked).map((cb) => cb.value);
         const selectedContentTypes = Array.from(document.getElementById("content-type")?.selectedOptions ?? []).map((option) => option.value);
+        console.log("hi","Selected Content Types:", selectedContentTypes);
         getFilteredCards(selectedContentTypes, checkedTopics);
       });
     });
+    
+    const getFilteredCards = (selectedContentTypes, selectedTopics) => {
+      console.log("hi","Filtering cards with Content Types:", selectedContentTypes, "Topics:", selectedTopics);
+      const filteredToolkits = toolkitList.filter((toolkit) => {
+        const hasContentType = selectedContentTypes.length === 0 || (toolkit.content_types ?? []).some((ct) => selectedContentTypes.includes(ct));
+        const hasTopic = selectedTopics.length === 0 || (toolkit.topics ?? []).some((topic) => selectedTopics.includes(topic));
+        return hasContentType && hasTopic;
+        
+      });
+      applyToDOM(filteredToolkits);
+    }
+
     const applyToDOM = (filteredToolkits) => {
       const cards = document.querySelectorAll("main > div > .card");
 
@@ -98,15 +112,5 @@ const slugifyForId = (value: string): string =>
         }
       });
 
-    }
-
-    const getFilteredCards = (selectedContentTypes, selectedTopics) => {
-      const filteredToolkits = toolkitList.filter((toolkit) => {
-        const hasContentType = selectedContentTypes.length === 0 || (toolkit.content_types ?? []).some((ct) => selectedContentTypes.includes(ct));
-        const hasTopic = selectedTopics.length === 0 || (toolkit.topics ?? []).some((topic) => selectedTopics.includes(topic));
-        return hasContentType && hasTopic;
-
-      });
-      applyToDOM(filteredToolkits);
     }
   </script>
