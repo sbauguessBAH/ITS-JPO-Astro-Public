@@ -10,6 +10,15 @@ export const navigation: NavigationItem[] = [
     pages: [
       { name: "About ITS JPO", url: "/about", isEnabled: true },
       { name: "Contact Us", url: "/about/contact-us" },
+      {
+        name: "ITS Program Advisory Committee (ITSPAC)",
+        url: "/about/itspac",
+        isEnabled: true,
+        pages: [
+          { name: "ITSPAC Home", url: "/about/itspac" },
+          { name: "Charter", url: "/about/itspac/charter" },
+        ],
+      },
       { name: "Join Our Mailing List", url: "/about/contact-us/mailinglist" },
     ],
   },
