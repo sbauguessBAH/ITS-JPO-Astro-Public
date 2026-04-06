@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to Intelligent Transportation Systems (ITS)'
-description: 'This module introduces participants to the exciting world of Intelligent Transportation Systems (ITS) and the technologies that enhance transportation safety and mobility, and efficiency. It covers how ITS solutions are developed, deployed, and operated and explores potential future directions of ITS for a variety of modes and locations of transportation networks.'
+description: 'This module introduces participants to the exciting world of intelligent transportation systems (ITS) and the technologies that enhance transportation safety and mobility, and efficiency. It covers how ITS solutions are developed, deployed, and operated and explores potential future directions of ITS for a variety of modes and locations of transportation networks.'
 image: 'pcb/trainings/introduction-to-its'
 category: 'Early Career Development'
 type: 'web-based'
@@ -13,7 +13,7 @@ source:
 
 ### Description
 
-This module introduces participants to the exciting world of Intelligent Transportation Systems (ITS) and the technologies that enhance transportation safety and mobility, and efficiency. It covers how ITS solutions are developed, deployed, and operated and explores potential future directions of ITS for a variety of modes and locations of transportation networks. The module also explores the types of professionals designing, implementing, and supporting ITS.
+This module introduces participants to the exciting world of intelligent transportation systems (ITS) and the technologies that enhance transportation safety and mobility, and efficiency. It covers how ITS solutions are developed, deployed, and operated and explores potential future directions of ITS for a variety of modes and locations of transportation networks. The module also explores the types of professionals designing, implementing, and supporting ITS.
 
 ### Goal
 

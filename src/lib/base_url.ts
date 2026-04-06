@@ -3,8 +3,13 @@
  * @param abs_path 
  * @returns the absolute path with the base/subdirectory added
  */
-export default function base_url(abs_path: string): string {
-  // If base is set to "", then it will automatically append a trailing /
-  if (import.meta.env.BASE_URL !== "/") return import.meta.env.BASE_URL + abs_path;
-  return abs_path;
+export default function base_url(absolutePath: string): string {
+  // Base URL will automatically append a trailing /
+  // So we only check if it's not the default base URL here. 
+  if (import.meta.env.BASE_URL !== "/") {
+    const fullPath = import.meta.env.BASE_URL + absolutePath;
+    console.log("FULL PATH: " + fullPath);
+    return fullPath;
+  };
+  return absolutePath;
 }
