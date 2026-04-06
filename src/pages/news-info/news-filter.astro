@@ -75,42 +75,42 @@ const slugifyForId = (value: string): string =>
   </BaseLayout>
 
   <script define:vars={{toolkitList}}>
-    document.getElementById("content-type")?.addEventListener("change", (event) => {
-      const selectedOptions = Array.from((event.target).selectedOptions).map((option) => option.value);
-      getFilteredCards(selectedOptions, Array.from(document.querySelectorAll<HTMLInputElement>('input[name="topic"]:checked')).map((cb) => cb.value));
-    });
-    const topicCheckboxes = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="topic"]'));
-    topicCheckboxes.forEach((checkbox) => {
-      checkbox.addEventListener("change", (event) => {
-        console.log("hi","Topic changed:", (event.target).value, "checked:", (event.target).checked);
-        const checkedTopics = topicCheckboxes.filter((cb) => cb.checked).map((cb) => cb.value);
-        const selectedContentTypes = Array.from(document.getElementById("content-type")?.selectedOptions ?? []).map((option) => option.value);
-        console.log("hi","Selected Content Types:", selectedContentTypes);
-        getFilteredCards(selectedContentTypes, checkedTopics);
-      });
-    });
-    
-    const getFilteredCards = (selectedContentTypes, selectedTopics) => {
-      console.log("hi","Filtering cards with Content Types:", selectedContentTypes, "Topics:", selectedTopics);
-      const filteredToolkits = toolkitList.filter((toolkit) => {
-        const hasContentType = selectedContentTypes.length === 0 || (toolkit.content_types ?? []).some((ct) => selectedContentTypes.includes(ct));
-        const hasTopic = selectedTopics.length === 0 || (toolkit.topics ?? []).some((topic) => selectedTopics.includes(topic));
+    const getSelectedContentTypes = () => {
+      const select = document.getElementById("content-type");
+      if (!(select instanceof HTMLSelectElement)) return [];
+      return Array.from(select.selectedOptions).map((option) => option.value);
+    };
+
+    const getCheckedTopics = () =>
+      Array.from(document.querySelectorAll('input[name="topic"]:checked'))
+        .filter((el) => el instanceof HTMLInputElement)
+        .map((cb) => cb.value);
+
+    const getFilteredMatches = (selectedContentTypes, selectedTopics) => {
+      return toolkitList.map((toolkit) => {
+        const hasContentType =
+          selectedContentTypes.length === 0 || (toolkit.content_types ?? []).some((ct) => selectedContentTypes.includes(ct));
+        const hasTopic =
+          selectedTopics.length === 0 || (toolkit.topics ?? []).some((topic) => selectedTopics.includes(topic));
         return hasContentType && hasTopic;
-        
       });
-      applyToDOM(filteredToolkits);
-    }
+    };
 
-    const applyToDOM = (filteredToolkits) => {
+    const applyToDOM = (matches) => {
       const cards = document.querySelectorAll("main > div > .card");
-
       cards.forEach((card, index) => {
-        if (filteredToolkits[index]) {
-          card.style.display = "";
-        } else {
-          card.style.display = "none";
-        }
+        card.style.display = matches[index] ? "" : "none";
       });
+    };
 
-    }
+    const runFilter = () => {
+      const selectedContentTypes = getSelectedContentTypes();
+      const checkedTopics = getCheckedTopics();
+      applyToDOM(getFilteredMatches(selectedContentTypes, checkedTopics));
+    };
+
+    document.getElementById("content-type")?.addEventListener("change", runFilter);
+    Array.from(document.querySelectorAll('input[name="topic"]')).forEach((el) => {
+      el.addEventListener("change", runFilter);
+    });
   </script>
