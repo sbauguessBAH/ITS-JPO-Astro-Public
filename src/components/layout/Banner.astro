@@ -28,7 +28,12 @@ const trimmedPathname = getTrimmedPathname(pathname);
 
 const findSecondLevelPage = (): ChildNavigationItem | undefined => {
   const section = navigation.find((sec) => trimmedPathname.startsWith(sec.url));
-  return section?.pages?.find((page) => trimmedPathname.startsWith(page.url));
+  if (!section?.pages) return undefined;
+  
+  // Find the page with the LONGEST matching URL (most specific)
+  const matchingPages = section.pages.filter((page) => trimmedPathname.startsWith(page.url));
+  return matchingPages.sort((a, b) => b.url.length - a.url.length)[0];
+
 };
 
 const currentSecond = findSecondLevelPage();

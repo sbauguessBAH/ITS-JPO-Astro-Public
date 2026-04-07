@@ -10,6 +10,15 @@ export const navigation: NavigationItem[] = [
     pages: [
       { name: "About ITS JPO", url: "/about", isEnabled: true },
       { name: "Contact Us", url: "/about/contact-us" },
+      {
+        name: "ITS Program Advisory Committee (ITSPAC)",
+        url: "/about/itspac",
+        isEnabled: true,
+        pages: [
+          { name: "ITSPAC Home", url: "/about/itspac" },
+          { name: "Charter", url: "/about/itspac/charter" },
+        ],
+      },
       { name: "Join Our Mailing List", url: "/about/contact-us/mailinglist" },
     ],
   },
@@ -25,11 +34,7 @@ export const navigation: NavigationItem[] = [
         name: "Publication Editorial Guidelines",
         url: "/news-info/Publication-Editorial-Guidelines",
         isEnabled: true,
-        pages: [
-          { name: "Overview", url: "/news-info/Publication-Editorial-Guidelines" },
-          { name: "508 Guidance", url: "/news-info/Publication-Editorial-Guidelines/Guidance" },
-          { name: "Publications Checklist", url: "/news-info/Publication-Editorial-Guidelines/Checklist" },
-        ],
+       
       },
     ],
   },
