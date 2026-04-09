@@ -17,7 +17,10 @@ type RawToolkit = {
     topics?: unknown;
     toolkit_type?: unknown;
 }
-
+const asStringArray = (value: unknown): string[] => 
+    Array.isArray(value)
+        ? value.filter((item): item is string => typeof item === 'string' && item.trim().length > 0)
+        : [];
 const normalizeToolkit = (toolkit: any, type: string): Toolkit => {
     return {
         id: toolkit.id,
