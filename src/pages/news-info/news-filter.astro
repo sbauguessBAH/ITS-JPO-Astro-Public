@@ -9,7 +9,10 @@ type Toolkit = {
   url?: string;
   description?: string;
 };
-
+const toolKitRegistry = {
+  "media": {},
+  "outreach": {},
+}
 const toolkitList: Toolkit[] = Array.isArray(toolkits) ? (toolkits as Toolkit[]) : [];
 
 const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
