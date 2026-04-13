@@ -1,0 +1,8 @@
+[
+   { "id": "example-highlight",
+    "title": "Example Highlight",
+    "description": "This is an example highlight used for demonstration purposes.",
+    "image": "./heroimgs/image.png",
+    "link": "https://example.com"},
+
+]
