@@ -4,5 +4,15 @@
     "description": "This is an example highlight used for demonstration purposes.",
     "image": "./heroimgs/image.png",
     "link": "https://example.com"},
+    { "id": "example-highlight2",
+    "title": "Second Example",
+    "description": "This is an example highlight used for demonstration purposes.",
+    "image": "./heroimgs/image.png",
+    "link": "https://example.com"},
+    { "id": "example-highlight",
+    "title": "Third Highlight Example",
+    "description": "This is an example highlight used for demonstration purposes.",
+    "image": "./heroimgs/image.png",
+    "link": "https://example.com"}
 
 ]
