@@ -154,12 +154,8 @@ export const navigation: NavigationItem[] = [
                     url: "/research-areas/V2X-Deployment/overview/v2x-applications/commercial-vehicle",
                   },
                   {
-                    name: "Mobility & Environment",
-                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/mobility-environment",
-                  },
-                  {
-                    name: "Traffic Advisories & Warnings",
-                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/traffic-warnings",
+                    name: "Mobility",
+                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/mobility",
                   },
                   {
                     name: "Data Collection",
@@ -189,6 +185,7 @@ export const navigation: NavigationItem[] = [
                 url: "/research-areas/V2X-Deployment/deployment/accelerator",
                 pages: [
                   { name: "Overview", url: "/research-areas/V2X-Deployment/deployment/accelerator" },
+                  { name: "Phase 1 Documentation", url: "/research-areas/V2X-Deployment/deployment/accelerator/phase-1-documentation" },
                   { name: "Maricopa County", url: "/research-areas/V2X-Deployment/deployment/accelerator/maricopa-county" },
                   { name: "Texas A&M", url: "/research-areas/V2X-Deployment/deployment/accelerator/texas-am" },
                   { name: "Utah DOT", url: "/research-areas/V2X-Deployment/deployment/accelerator/utah-dot" },

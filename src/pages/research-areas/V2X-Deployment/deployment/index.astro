@@ -33,16 +33,25 @@ const description =
   </Fragment>
       <main>
         <div class="row my-4 g-4">
-          <div class="col-md-6">
+          <div class="col-md-4">
             <a href="/research-areas/V2X-Deployment/deployment/accelerator" class="text-decoration-none">
               <div class="p-4 rounded-4 h-100 shadow-sm data-card">
-                <h3>V2X Accelerator</h3>
+                <h3>V2X Accelerator (2024 - present)</h3>
                 <p class="mb-0">In Fall 2024, the USDOT awarded cooperative agreements collectively worth $60 million to sites in Arizona, Texas, and Utah to deploy, operate, and showcase integrated, advanced interoperable V2X deployments.</p>
               </div>
             </a>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-4">
+            <a href="https://www.its.dot.gov/scrc/#/technology-areas/v2x/cv-pilot-program" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+              <div class="p-4 rounded-4 h-100 shadow-sm data-card">
+                <h3>Connected Vehicle Pilot Program (2015 – 2024)</h3>
+                <p class="mb-0">The program sought to spur innovation among early adopters of connected vehicle application concepts using the best available and emerging ITS and communications technologies. The pilot deployments were expected to integrate connected vehicle research concepts into practical and effective elements, enhancing existing operational capabilities.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4">
             <a href="/research-areas/V2X-Deployment/deployment/safety-pilots" class="text-decoration-none">
               <div class="p-4 rounded-4 h-100 shadow-sm data-card">
                 <h3>Safety Pilot (2010 – 2014)</h3>
@@ -56,6 +65,9 @@ const description =
 
 
 <style>
+  h3{
+    text-wrap: balance;
+  }
   .data-card {
     background-color: #f0f8ff;
     border: 1px solid #d1e7f7;
@@ -80,5 +92,10 @@ const description =
   .section-title {
     color: #005ea2;
     border-bottom: 3px solid #005ea2;
+  }
+
+  main a[href^="http://"]:after, main a[href^="https://"]:after {
+    content: '';
+    display: none;
   }
 </style>
