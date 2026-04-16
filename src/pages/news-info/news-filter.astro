@@ -10,9 +10,9 @@ type Toolkit = {
   description?: string;
 };
 const toolKitRegistry = {
-  "media": {},
-  "outreach": {},
-}
+  media: {},
+  outreach: {},
+};
 const toolkitList: Toolkit[] = Array.isArray(toolkits) ? (toolkits as Toolkit[]) : [];
 
 const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
@@ -29,91 +29,193 @@ const slugifyForId = (value: string): string =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 ---
+
 <BaseLayout title="filter" description="Filter news content by type and topic." keywords={"filter"}>
   <main class="container my-5">
     <h1 class="h2 mb-4">News Filter</h1>
 
     <form class="row g-4" aria-label="News filter">
       <div class="col-12 col-lg-6">
-        <label class="form-label" for="content-type">Content Type</label>
-        <select id="content-type" name="content-type" class="form-select" multiple size={Math.min(10, Math.max(4, contentTypes.length))}>
-          {contentTypes.map((type) => (
-            <option value={type}>{type}</option>
-          ))}
-        </select>
-        <div class="form-text">Hold Ctrl (Windows) or Cmd (Mac) to select multiple.</div>
+        <label class="form-label" for="content-type-toggle">Content Type</label>
+        <div class="dropdown multi-select-dropdown">
+          <button id="content-type-toggle" type="button" class="dropdown-toggle w-100 text-start" aria-haspopup="listbox" aria-expanded="false">
+            <span class="dropdown-label">Select content types</span>
+          </button>
+          <div class="dropdown-menu w-100 p-2" aria-labelledby="content-type-toggle" role="listbox" id="content-type-list" style="max-height: 240px; overflow:auto;">
+            {
+              contentTypes.map((type) => {
+                const id = `content-type-${slugifyForId(type)}`;
+                return (
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id={id} name="content-type" value={type} />
+                    <label class="form-check-label" for={id}>
+                      {type}
+                    </label>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </div>
+        <div class="form-text">Click to open, then check items to select multiple.</div>
       </div>
 
       <fieldset class="col-12 col-lg-6">
         <legend class="col-form-label pt-0">Topics</legend>
         <div class="topic-list">
-          {topics.map((topic) => {
-            const topicId = `topic-${slugifyForId(topic)}`;
-            return (
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id={topicId} name="topic" value={topic} />
-                <label class="form-check-label" for={topicId}>{topic}</label>
-              </div>
-            );
-          })}
+          {
+            topics.map((topic) => {
+              const topicId = `topic-${slugifyForId(topic)}`;
+              return (
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id={topicId} name="topic" value={topic} />
+                  <label class="form-check-label" for={topicId}>
+                    {topic}
+                  </label>
+                </div>
+              );
+            })
+          }
         </div>
       </fieldset>
     </form>
     <div>
-      {toolkitList.map((toolkit) => (
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">{toolkit.title}</h5>
-            <p class="card-text">{toolkit.description}</p>
-            {toolkit.url && (
-              <a href={toolkit.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                View Toolkit
-              </a>
-            )}
+      {
+        toolkitList.map((toolkit) => (
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">{toolkit.title}</h5>
+              <p class="card-text">{toolkit.description}</p>
+              {toolkit.url && (
+                <a href={toolkit.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                  View Toolkit
+                </a>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </main>
-  </BaseLayout>
+</BaseLayout>
 
-  <script define:vars={{toolkitList}}>
-    const getSelectedContentTypes = () => {
-      const select = document.getElementById("content-type");
-      if (!(select instanceof HTMLSelectElement)) return [];
-      return Array.from(select.selectedOptions).map((option) => option.value);
-    };
+<script define:vars={{ toolkitList }}>
+  const dropdownToggle = document.getElementById("content-type-toggle");
+  const dropdownMenu = document.getElementById("content-type-list");
 
-    const getCheckedTopics = () =>
-      Array.from(document.querySelectorAll('input[name="topic"]:checked'))
-        .filter((el) => el instanceof HTMLInputElement)
-        .map((cb) => cb.value);
+  const updateDropdownLabel = () => {
+    const selected = Array.from(document.querySelectorAll('input[name="content-type"]:checked')).map((el) => el.value);
+    const labelEl = document.querySelector("#content-type-toggle .dropdown-label");
+    if (!labelEl) return;
+    labelEl.textContent = selected.length === 0 ? "Select content types" : selected.join(", ");
+  };
 
-    const getFilteredMatches = (selectedContentTypes, selectedTopics) => {
-      return toolkitList.map((toolkit) => {
-        const hasContentType =
-          selectedContentTypes.length === 0 || (toolkit.content_types ?? []).some((ct) => selectedContentTypes.includes(ct));
-        const hasTopic =
-          selectedTopics.length === 0 || (toolkit.topics ?? []).some((topic) => selectedTopics.includes(topic));
-        return hasContentType && hasTopic;
-      });
-    };
+  const getSelectedContentTypes = () =>
+    Array.from(document.querySelectorAll('input[name="content-type"]:checked'))
+      .filter((el) => el instanceof HTMLInputElement)
+      .map((cb) => cb.value);
 
-    const applyToDOM = (matches) => {
-      const cards = document.querySelectorAll("main > div > .card");
-      cards.forEach((card, index) => {
-        card.style.display = matches[index] ? "" : "none";
-      });
-    };
+  const getCheckedTopics = () =>
+    Array.from(document.querySelectorAll('input[name="topic"]:checked'))
+      .filter((el) => el instanceof HTMLInputElement)
+      .map((cb) => cb.value);
 
-    const runFilter = () => {
-      const selectedContentTypes = getSelectedContentTypes();
-      const checkedTopics = getCheckedTopics();
-      applyToDOM(getFilteredMatches(selectedContentTypes, checkedTopics));
-    };
-
-    document.getElementById("content-type")?.addEventListener("change", runFilter);
-    Array.from(document.querySelectorAll('input[name="topic"]')).forEach((el) => {
-      el.addEventListener("change", runFilter);
+  const getFilteredMatches = (selectedContentTypes, selectedTopics) => {
+    return toolkitList.map((toolkit) => {
+      const hasContentType = selectedContentTypes.length === 0 || (toolkit.content_types ?? []).some((ct) => selectedContentTypes.includes(ct));
+      const hasTopic = selectedTopics.length === 0 || (toolkit.topics ?? []).some((topic) => selectedTopics.includes(topic));
+      return hasContentType && hasTopic;
     });
-  </script>
+  };
+
+  const applyToDOM = (matches) => {
+    const cards = document.querySelectorAll("main > div > .card");
+    cards.forEach((card, index) => {
+      card.style.display = matches[index] ? "" : "none";
+    });
+  };
+
+  const runFilter = () => {
+    const selectedContentTypes = getSelectedContentTypes();
+    const checkedTopics = getCheckedTopics();
+    applyToDOM(getFilteredMatches(selectedContentTypes, checkedTopics));
+    updateDropdownLabel();
+  };
+
+  const toggleDropdown = (show) => {
+    const expanded = typeof show === "boolean" ? show : !(dropdownToggle?.getAttribute("aria-expanded") === "true");
+    dropdownToggle?.setAttribute("aria-expanded", expanded ? "true" : "false");
+    if (dropdownMenu) {
+      if (expanded) dropdownMenu.classList.add("show");
+      else dropdownMenu.classList.remove("show");
+    }
+  };
+
+  dropdownToggle?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleDropdown();
+  });
+
+  // close when clicking outside
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!dropdownMenu?.contains(target) && !dropdownToggle?.contains(target)) {
+      toggleDropdown(false);
+    }
+  });
+
+  // keyboard: close on Escape
+  dropdownToggle?.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      toggleDropdown(false);
+      dropdownToggle.focus();
+    }
+  });
+
+  // listen to content-type checkbox changes
+  Array.from(document.querySelectorAll('input[name="content-type"]')).forEach((el) => {
+    el.addEventListener("change", () => runFilter());
+  });
+
+  document.querySelectorAll('input[name="topic"]').forEach((el) => {
+    el.addEventListener("change", runFilter);
+  });
+
+  // initialize
+  updateDropdownLabel();
+  runFilter();
+</script>
+
+<style>
+  .dropdown-toggle {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    align-items: center;
+  }
+  .dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+
+  .multi-select-dropdown .dropdown-menu {
+    display: none;
+  }
+  .multi-select-dropdown .dropdown-menu.show {
+    display: block;
+  }
+  .multi-select-dropdown .dropdown-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+  }
+.dropdown-toggle:after{
+    content: '\f078';
+    font-family: FontAwesome;
+    font-size:16px;
+}
+
+
+</style>
