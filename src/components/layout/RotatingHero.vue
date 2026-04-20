@@ -68,6 +68,29 @@ const scheduleNextRotation = () => {
   }, durationMs);
 };
 
+const goNext = () => {
+  rotateHighlight();
+  scheduleNextRotation();
+};
+
+const goPrev = () => {
+  if (!highlights.length) return;
+  activeIndex.value = (activeIndex.value - 1 + highlights.length) % highlights.length;
+  scheduleNextRotation();
+};
+
+const onHeroKeydown = (event: KeyboardEvent) => {
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    goNext();
+    return;
+  }
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    goPrev();
+  }
+};
+
 onMounted(() => {
   scheduleNextRotation();
 });
@@ -77,7 +100,14 @@ onUnmounted(() => {
 });
 </script>
 <template>
-  <div class="hero-container" :style="heroStyle">
+  <div
+    class="hero-container"
+    :style="heroStyle"
+    tabindex="0"
+    role="region"
+    aria-label="Homepage highlights"
+    @keydown="onHeroKeydown"
+  >
     <div class="container-xl">
       <div class="d-flex align-items-center p-4 col-md-7 herobox">
         <div class="text-white">
@@ -97,6 +127,25 @@ onUnmounted(() => {
           >
             LEARN MORE ABOUT THE ITS JPO
           </a>
+
+          <div class="d-flex gap-2 mt-3" aria-label="Highlight navigation">
+            <button
+              type="button"
+              class="btn btn-outline-light btn-sm"
+              aria-label="Previous highlight"
+              @click="goPrev"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-light btn-sm"
+              aria-label="Next highlight"
+              @click="goNext"
+            >
+              ›
+            </button>
+          </div>
         </div>
       </div>
     </div>
