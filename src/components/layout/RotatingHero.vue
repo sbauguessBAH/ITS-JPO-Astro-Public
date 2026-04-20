@@ -4,11 +4,18 @@ import base_url from "@/src/lib/base_url";
 import HeroBG2 from "@/src/assets/images/Hero-Image-02.jpg";
 import highlightsData from "@/src/content/hero/highlights.json";
 
+type ImageLike = string | { src: string };
+
+const toImageUrl = (value: ImageLike): string => {
+  return typeof value === "string" ? value : value.src;
+};
+
 type Highlight = {
   id: string;
   title: string;
   description: string;
   image?: string;
+  featured?: boolean;
   link?: string;
   durationMs?: number;
 };
@@ -23,28 +30,33 @@ const activeHighlight = computed<Highlight | null>(() => {
 const imageModules = import.meta.glob(
   "/src/assets/images/**/*.{png,jpg,jpeg,webp,svg}",
   { eager: true, import: "default" },
-) as Record<string, string>;
+) as Record<string, ImageLike>;
 
-const imageByBasename = new Map<string, string>(
-  Object.entries(imageModules).map(([path, url]) => {
-    const basename = path.split("/").pop() ?? path;
-    return [basename, url];
-  }),
-);
+const imageByName = new Map<string, string>();
+for (const [path, url] of Object.entries(imageModules)) {
+  const basename = path.split("/").pop() ?? path;
+  imageByName.set(basename, toImageUrl(url));
+
+  const dot = basename.lastIndexOf(".");
+  const hasExt = dot > 0;
+  if (hasExt) imageByName.set(basename.slice(0, dot), toImageUrl(url));
+}
 
 const resolveImageUrl = (image?: string): string | null => {
   if (!image) return null;
 
-  // Allow JSON to specify exact Vite glob key, e.g. "/src/assets/images/Spotlight1.png"
-  if (image in imageModules) return imageModules[image] ?? null;
+  // Accept JSON values like "Hero-Image-02.jpg", "Hero-Image-02",
+  // "./assets/Hero-Image-02.png", or any path ending in the filename.
+  const normalized = image.replace(/^\.\//, "").replace(/^assets\//, "");
+  const basename = normalized.split("/").pop() ?? normalized;
+  const dot = basename.lastIndexOf(".");
+  const stem = dot > 0 ? basename.slice(0, dot) : basename;
 
-  // Allow just a filename, e.g. "Spotlight1.png"
-  const asBasename = image.split("/").pop() ?? image;
-  return imageByBasename.get(asBasename) ?? null;
+  return imageByName.get(basename) ?? imageByName.get(stem) ?? null;
 };
 
 const activeBackgroundUrl = computed(() => {
-  return resolveImageUrl(activeHighlight.value?.image) ?? HeroBG2;
+  return resolveImageUrl(activeHighlight.value?.image) ?? toImageUrl(HeroBG2 as ImageLike);
 });
 
 const heroStyle = computed(() => ({
