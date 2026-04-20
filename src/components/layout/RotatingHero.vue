@@ -79,6 +79,13 @@ const goPrev = () => {
   scheduleNextRotation();
 };
 
+const goTo = (index: number) => {
+  if (!highlights.length) return;
+  if (index < 0 || index >= highlights.length) return;
+  activeIndex.value = index;
+  scheduleNextRotation();
+};
+
 const onHeroKeydown = (event: KeyboardEvent) => {
   if (event.key === "ArrowRight") {
     event.preventDefault();
@@ -137,6 +144,25 @@ onUnmounted(() => {
             >
               ‹
             </button>
+
+            <div
+              v-if="highlights.length > 1"
+              class="d-flex align-items-center gap-2"
+              role="navigation"
+              aria-label="Select highlight"
+            >
+              <button
+                v-for="(_, index) in highlights"
+                :key="index"
+                type="button"
+                class="hero-dot rounded-circle border-0"
+                :class="index === activeIndex ? 'bg-light' : 'bg-secondary'"
+                :aria-label="`Go to highlight ${index + 1} of ${highlights.length}`"
+                :aria-current="index === activeIndex ? 'true' : undefined"
+                @click="goTo(index)"
+              />
+            </div>
+
             <button
               type="button"
               class="btn btn-outline-light btn-sm"
@@ -160,5 +186,17 @@ onUnmounted(() => {
   .herobox {
     border-radius: 15px;
     background-color: rgba(7, 46, 85, 0.85)
+  }
+
+  .hero-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    display: inline-block;
+  }
+
+  .hero-dot:focus-visible {
+    outline: 2px solid var(--bs-light);
+    outline-offset: 3px;
   }
 </style>
