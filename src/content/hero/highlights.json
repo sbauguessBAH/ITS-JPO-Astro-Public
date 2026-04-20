@@ -2,17 +2,20 @@
    { "id": "example-highlight",
     "title": "Example Highlight",
     "description": "This is an example highlight used for demonstration purposes.",
-    "image": "./heroimgs/image.png",
+    "image": "./assets/Hero-Image-02.png",
+    "featured": true,
     "link": "https://example.com"},
     { "id": "example-highlight2",
     "title": "Second Example",
     "description": "This is an example highlight used for demonstration purposes.",
-    "image": "./heroimgs/image.png",
+    "image": "./assets/Hero-Image-03.png",
+    "featured": true,
     "link": "https://example.com"},
     { "id": "example-highlight",
     "title": "Third Highlight Example",
     "description": "This is an example highlight used for demonstration purposes.",
-    "image": "./heroimgs/image.png",
+    "image": "./assets/Hero-Image-04.png",
+    "featured": true,
     "link": "https://example.com"}
 
 ]
