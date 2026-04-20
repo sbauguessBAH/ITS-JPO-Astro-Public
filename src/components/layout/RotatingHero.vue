@@ -59,18 +59,24 @@ const activeBackgroundUrl = computed(() => {
   return resolveImageUrl(activeHighlight.value?.image) ?? toImageUrl(HeroBG2 as ImageLike);
 });
 
-const heroStyle = computed(() => {
-  const url = encodeURI(activeBackgroundUrl.value);
+type SlideDirection = "next" | "prev";
+const slideDirection = ref<SlideDirection>("next");
+
+const backgroundStyle = (url: string) => {
   return {
-    backgroundImage: `url("${url}")`,
+    backgroundImage: `url("${encodeURI(url)}")`,
   };
-});
+};
+
+const setIndex = (index: number, direction: SlideDirection) => {
+  if (!highlights.length) return;
+  slideDirection.value = direction;
+  activeIndex.value = index;
+};
 
 const rotateHighlight = () => {
-    console.log("Rotating highlight", activeIndex.value);
   if (!highlights.length) return;
-  activeIndex.value = (activeIndex.value + 1) % highlights.length;
-  console.log("New active highlight", activeIndex.value);
+  setIndex((activeIndex.value + 1) % highlights.length, "next");
 };
 
 let timeoutId: number | undefined;
@@ -92,14 +98,15 @@ const goNext = () => {
 
 const goPrev = () => {
   if (!highlights.length) return;
-  activeIndex.value = (activeIndex.value - 1 + highlights.length) % highlights.length;
+  setIndex((activeIndex.value - 1 + highlights.length) % highlights.length, "prev");
   scheduleNextRotation();
 };
 
 const goTo = (index: number) => {
   if (!highlights.length) return;
   if (index < 0 || index >= highlights.length) return;
-  activeIndex.value = index;
+  const direction: SlideDirection = index >= activeIndex.value ? "next" : "prev";
+  setIndex(index, direction);
   scheduleNextRotation();
 };
 
@@ -126,12 +133,24 @@ onUnmounted(() => {
 <template>
   <div
     class="hero-container"
-    :style="heroStyle"
     tabindex="0"
     role="region"
     aria-label="Homepage highlights"
     @keydown="onHeroKeydown"
   >
+    <TransitionGroup
+      :name="slideDirection === 'prev' ? 'hero-slide-prev' : 'hero-slide-next'"
+      tag="div"
+      class="hero-bg"
+      aria-hidden="true"
+    >
+      <div
+        :key="`${activeIndex}-${activeBackgroundUrl}`"
+        class="hero-bg-layer"
+        :style="backgroundStyle(activeBackgroundUrl)"
+      />
+    </TransitionGroup>
+
     <div class="container-xl">
       <div class="d-flex align-items-center p-4 col-md-7 herobox">
         <div class="text-white">
@@ -195,11 +214,33 @@ onUnmounted(() => {
   </div>
 </template>
 <style lang="css" scoped>
-    .hero-container {
+  .hero-container {
+    position: relative;
     background-position: center;
     background-size: cover;
     padding: 50px 0 100px 0;
   }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .hero-bg-layer {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    will-change: transform;
+  }
+
+  .container-xl {
+    position: relative;
+    z-index: 1;
+  }
+
   .herobox {
     border-radius: 15px;
     background-color: rgba(7, 46, 85, 0.85)
@@ -215,5 +256,54 @@ onUnmounted(() => {
   .hero-dot:focus-visible {
     outline: 2px solid var(--bs-light);
     outline-offset: 3px;
+  }
+
+  .hero-slide-next-enter-active,
+  .hero-slide-next-leave-active,
+  .hero-slide-prev-enter-active,
+  .hero-slide-prev-leave-active {
+    transition: transform 600ms ease;
+  }
+
+  /* Next: new slides in from left, old slides out to right */
+  .hero-slide-next-enter-from {
+    transform: translateX(-100%);
+    z-index: 1;
+  }
+
+  .hero-slide-next-enter-to {
+    transform: translateX(0);
+    z-index: 1;
+  }
+
+  .hero-slide-next-leave-from {
+    transform: translateX(0);
+    z-index: 0;
+  }
+
+  .hero-slide-next-leave-to {
+    transform: translateX(100%);
+    z-index: 0;
+  }
+
+  /* Prev: new slides in from right, old slides out to left */
+  .hero-slide-prev-enter-from {
+    transform: translateX(100%);
+    z-index: 1;
+  }
+
+  .hero-slide-prev-enter-to {
+    transform: translateX(0);
+    z-index: 1;
+  }
+
+  .hero-slide-prev-leave-from {
+    transform: translateX(0);
+    z-index: 0;
+  }
+
+  .hero-slide-prev-leave-to {
+    transform: translateX(-100%);
+    z-index: 0;
   }
 </style>
