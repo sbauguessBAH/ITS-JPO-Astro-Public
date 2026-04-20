@@ -59,9 +59,12 @@ const activeBackgroundUrl = computed(() => {
   return resolveImageUrl(activeHighlight.value?.image) ?? toImageUrl(HeroBG2 as ImageLike);
 });
 
-const heroStyle = computed(() => ({
-  backgroundImage: `url(${activeBackgroundUrl.value})`,
-}));
+const heroStyle = computed(() => {
+  const url = encodeURI(activeBackgroundUrl.value);
+  return {
+    backgroundImage: `url("${url}")`,
+  };
+});
 
 const rotateHighlight = () => {
   if (!highlights.length) return;
