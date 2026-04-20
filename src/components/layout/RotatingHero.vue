@@ -67,8 +67,10 @@ const heroStyle = computed(() => {
 });
 
 const rotateHighlight = () => {
+    console.log("Rotating highlight", activeIndex.value);
   if (!highlights.length) return;
   activeIndex.value = (activeIndex.value + 1) % highlights.length;
+  console.log("New active highlight", activeIndex.value);
 };
 
 let timeoutId: number | undefined;
