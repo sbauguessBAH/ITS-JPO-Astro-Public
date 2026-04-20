@@ -4,16 +4,13 @@ import base_url from "@/src/lib/base_url";
 import HeroBG2 from "@/src/assets/images/Hero-Image-02.jpg";
 import highlightsData from "@/src/content/hero/highlights.json";
 
-const heroStyle = {
-  backgroundImage: `url(${HeroBG2})`,
-};
-
 type Highlight = {
   id: string;
   title: string;
   description: string;
   image?: string;
   link?: string;
+  durationMs?: number;
 };
 
 const highlights = (highlightsData ?? []) as Highlight[];
@@ -23,19 +20,60 @@ const activeHighlight = computed<Highlight | null>(() => {
   return highlights[activeIndex.value] ?? null;
 });
 
+const imageModules = import.meta.glob(
+  "/src/assets/images/**/*.{png,jpg,jpeg,webp,svg}",
+  { eager: true, import: "default" },
+) as Record<string, string>;
+
+const imageByBasename = new Map<string, string>(
+  Object.entries(imageModules).map(([path, url]) => {
+    const basename = path.split("/").pop() ?? path;
+    return [basename, url];
+  }),
+);
+
+const resolveImageUrl = (image?: string): string | null => {
+  if (!image) return null;
+
+  // Allow JSON to specify exact Vite glob key, e.g. "/src/assets/images/Spotlight1.png"
+  if (image in imageModules) return imageModules[image] ?? null;
+
+  // Allow just a filename, e.g. "Spotlight1.png"
+  const asBasename = image.split("/").pop() ?? image;
+  return imageByBasename.get(asBasename) ?? null;
+};
+
+const activeBackgroundUrl = computed(() => {
+  return resolveImageUrl(activeHighlight.value?.image) ?? HeroBG2;
+});
+
+const heroStyle = computed(() => ({
+  backgroundImage: `url(${activeBackgroundUrl.value})`,
+}));
+
 const rotateHighlight = () => {
   if (!highlights.length) return;
   activeIndex.value = (activeIndex.value + 1) % highlights.length;
 };
 
-let intervalId: number | undefined;
+let timeoutId: number | undefined;
+
+const scheduleNextRotation = () => {
+  if (timeoutId) window.clearTimeout(timeoutId);
+
+  const durationMs = activeHighlight.value?.durationMs ?? 5000;
+  timeoutId = window.setTimeout(() => {
+    rotateHighlight();
+    scheduleNextRotation();
+  }, durationMs);
+};
 
 onMounted(() => {
-  intervalId = window.setInterval(rotateHighlight, 5000);
+  scheduleNextRotation();
 });
 
 onUnmounted(() => {
-  if (intervalId) window.clearInterval(intervalId);
+  if (timeoutId) window.clearTimeout(timeoutId);
 });
 </script>
 <template>
