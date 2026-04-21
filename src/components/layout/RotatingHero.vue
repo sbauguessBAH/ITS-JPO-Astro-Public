@@ -137,13 +137,13 @@ onUnmounted(() => {
     role="region"
     aria-label="Homepage highlights"
     @keydown="onHeroKeydown"
-  >
+   >
     <TransitionGroup
       :name="slideDirection === 'prev' ? 'hero-slide-prev' : 'hero-slide-next'"
       tag="div"
       class="hero-bg"
       aria-hidden="true"
-    >
+     >
       <div
         :key="`${activeIndex}-${activeBackgroundUrl}`"
         class="hero-bg-layer"
@@ -151,7 +151,7 @@ onUnmounted(() => {
       />
     </TransitionGroup>
 
-    <div class="container-xl">
+    <div class="sb-container container-xl d-flex flex-column justify-content-between pt-5 pb-3">
       <div class="d-flex align-items-center p-4 col-md-7 herobox">
         <div class="text-white">
           <h2 class="mb-4 fs-2 text-white">
@@ -170,45 +170,46 @@ onUnmounted(() => {
           >
             LEARN MORE ABOUT THE ITS JPO
           </a>
-
-          <div class="d-flex gap-2 mt-3" aria-label="Highlight navigation">
+        </div>
+      </div>
+      <div class="d-flex gap-2 mt-3 w-100 justify-content-center align-items-center" role="navigation" aria-label="Highlight navigation">
+        <button
+         type="button"
+         class="btn btn-outline-light rounded-circle p-2"
+         aria-label="Previous highlight"
+         @click="goPrev"
+        >
+         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+           <path d="M15 18L9 12l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+         </svg>
+        </button>
+        <div
+         v-if="highlights.length > 1"
+         class="d-flex align-items-center gap-2"
+         role="navigation"
+         aria-label="Select highlight"
+         >
+          <button
+          v-for="(_, index) in highlights"
+          :key="index"
+          type="button"
+          class="hero-dot rounded-circle border-0"
+          :class="index === activeIndex ? 'bg-light' : 'bg-secondary'"
+          :aria-label="`Go to highlight ${index + 1} of ${highlights.length}`"
+          :aria-current="index === activeIndex ? 'true' : undefined"
+          @click="goTo(index)"
+          />
+        </div>
             <button
               type="button"
-              class="btn btn-outline-light btn-sm"
-              aria-label="Previous highlight"
-              @click="goPrev"
-            >
-              ‹
-            </button>
-
-            <div
-              v-if="highlights.length > 1"
-              class="d-flex align-items-center gap-2"
-              role="navigation"
-              aria-label="Select highlight"
-            >
-              <button
-                v-for="(_, index) in highlights"
-                :key="index"
-                type="button"
-                class="hero-dot rounded-circle border-0"
-                :class="index === activeIndex ? 'bg-light' : 'bg-secondary'"
-                :aria-label="`Go to highlight ${index + 1} of ${highlights.length}`"
-                :aria-current="index === activeIndex ? 'true' : undefined"
-                @click="goTo(index)"
-              />
-            </div>
-
-            <button
-              type="button"
-              class="btn btn-outline-light btn-sm"
+              class="btn btn-outline-light rounded-circle p-2"
               aria-label="Next highlight"
               @click="goNext"
             >
-              ›
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -218,7 +219,9 @@ onUnmounted(() => {
     position: relative;
     background-position: center;
     background-size: cover;
-    padding: 50px 0 100px 0;
+    min-height: 500px;
+    height: auto;
+    text-wrap: balance;
   }
 
   .hero-bg {
@@ -239,6 +242,7 @@ onUnmounted(() => {
   .container-xl {
     position: relative;
     z-index: 1;
+    min-height: inherit;
   }
 
   .herobox {
