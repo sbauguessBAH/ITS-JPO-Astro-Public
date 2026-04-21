@@ -15,7 +15,7 @@ import spotlight10 from "@/src/assets/images/Spotlight10.png";
 import spotlight12 from "@/src/assets/images/Spotlight12.png";
 
 import BaseLayout from "@/src/layouts/BaseLayout.astro";
-import RotatingHero from "@/src/components/layout/RotatingHero.vue";
+import RotatingHero from "@/src/components/layout/RotatingHero.astro";
 
 const keywords = [
   "ITS JPO",
@@ -61,7 +61,7 @@ const description =
 
 </style>
 <BaseLayout title="ITS JPO" description={description} keywords={keywords}>
-    <RotatingHero client:visible />
+    <RotatingHero />
 
     <div class="container HomepageContainter">
       <div class="row">
