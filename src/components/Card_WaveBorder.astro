@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import andre from "@/src/assets/images/its4us/andre.png";
-import letitia from "@/src/assets/images/its4us/letitia.png";
-import takashi from "@/src/assets/images/its4us/Takashi.png";
-import waukee from "@/src/assets/images/its4us/waukee.png";
+import baa from "@/src/assets/images/its4us/BAA.png";
+import gmap from "@/src/assets/images/its4us/GMAP.png";
+import hc from "@/src/assets/images/its4us/HC.png";
+import tdei from "@/src/assets/images/its4us/TDEI.png";
 
 interface Props {
 	title: string;
@@ -18,10 +18,10 @@ interface Props {
 const { href, title, alt, img, color, logo, logo_alt } = Astro.props;
 
 const imageByKey = {
-  andre,
-  letitia,
-  takashi,
-  waukee,
+  baa,
+  gmap,
+  hc,
+  tdei,
 } as const;
 
 const normalizeImageKey = (value: string) =>
@@ -32,7 +32,7 @@ const normalizeImageKey = (value: string) =>
     .toLowerCase();
 
 const normalizedKey = img ? normalizeImageKey(img) : "";
-const selectedImage = (imageByKey as Record<string, (typeof andre)>)[normalizedKey];
+const selectedImage = (imageByKey as Record<string, (typeof baa)>)[normalizedKey];
 ---
 
 <style>
