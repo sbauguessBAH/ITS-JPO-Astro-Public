@@ -24,7 +24,7 @@ import hero3 from "@/src/assets/images/Hero-Background-4.png";
       <div class="container-xl">
         <div class="content-box">
           <h2 class="newsLetterHeader">ITS JPO NOW</h2>
-          <p>March 2026 | Inaugural Edition</p>
+          <p class="fw-bold">March 2026 | Inaugural Edition</p>
           <p>Your essential guide to the latest advancements, new digital resources, and critical safety updates driving the future of Intelligent Transportation Systems (ITS).</p>
           <a href={base_url('/about/')} class="btn btn-outline-light btn-lg text-dark m-0 fs-4">Read Latest Issue</a>
         </div>
@@ -33,10 +33,8 @@ import hero3 from "@/src/assets/images/Hero-Background-4.png";
 
     <section class="slide" style={`background-image: url(${hero3.src})`}>
       <div class="container-xl">
-        <div class="content-box">
-          <h2>Third Highlight Example</h2>
-          <p>This is an example highlight used for demonstration purposes.</p>
-          <a href={base_url('/about/')} class="btn btn-outline-light btn-lg text-dark m-0 fs-4">LEARN MORE</a>
+        <div class="content-box p-3">
+          <iframe class="rounded-3 w-100" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/XfNiDWilfss" title="What Is V2X?: A Short Dive into the Evolution and Future of Vehicle Connectivity" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     
@@ -78,7 +76,7 @@ import hero3 from "@/src/assets/images/Hero-Background-4.png";
   }
 
   function startAutoRotate() {
-    autoRotateInterval = setInterval(rotateToNextSlide, 5000);
+    autoRotateInterval = setInterval(rotateToNextSlide, 10000);
   }
 
   function stopAutoRotate() {
