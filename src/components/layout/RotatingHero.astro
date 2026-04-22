@@ -1,8 +1,8 @@
 ---
 import base_url from '@/src/lib/base_url';
 import hero1 from "@/src/assets/images/Hero-Image-02.jpg";
-import hero2 from "@/src/assets/images/Hero-Image-03.jpg";
-import hero3 from "@/src/assets/images/HeroBG.jpeg";
+import hero2 from "@/src/assets/images/Hero-ITS-JPO-NOW.png";
+import hero3 from "@/src/assets/images/Hero-Background-4.png";
 ---
 
 <div class="hero-carousel">
@@ -23,9 +23,10 @@ import hero3 from "@/src/assets/images/HeroBG.jpeg";
     <section class="slide" style={`background-image: url(${hero2.src})`}>
       <div class="container-xl">
         <div class="content-box">
-          <h2>Second Example</h2>
-          <p>This is an example highlight used for demonstration purposes.</p>
-          <a href={base_url('/about/')} class="btn btn-outline-light btn-lg text-dark m-0 fs-4">LEARN MORE</a>
+          <h2 class="newsLetterHeader">ITS JPO NOW</h2>
+          <p>March 2026 | Inaugural Edition</p>
+          <p>Your essential guide to the latest advancements, new digital resources, and critical safety updates driving the future of Intelligent Transportation Systems (ITS).</p>
+          <a href={base_url('/about/')} class="btn btn-outline-light btn-lg text-dark m-0 fs-4">Read Latest Issue</a>
         </div>
       </div>
     </section>
@@ -44,16 +45,34 @@ import hero3 from "@/src/assets/images/HeroBG.jpeg";
 
 <script>
   const carousel = document.querySelector('.hero-carousel .slides') as HTMLElement;
+  const contentBoxes = document.querySelectorAll('.content-box');
   const slideWidth = carousel?.offsetWidth || 0;
   const totalSlides = 3;
   let currentSlide = 0;
   let autoRotateInterval: ReturnType<typeof setInterval>;
 
+  function updateActiveSlide() {
+    if (!carousel) return;
+    const newSlide = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+    
+    if (newSlide !== currentSlide) {
+      // Remove active class from all
+      contentBoxes.forEach(box => box.classList.remove('active'));
+      
+      // Add active class to current slide's content
+      if (contentBoxes[newSlide]) {
+        contentBoxes[newSlide].classList.add('active');
+      }
+      
+      currentSlide = newSlide;
+    }
+  }
+
   function rotateToNextSlide() {
     if (!carousel) return;
     currentSlide = (currentSlide + 1) % totalSlides;
     carousel.scrollTo({
-      left: currentSlide * slideWidth,
+      left: currentSlide * carousel.offsetWidth,
       behavior: 'smooth'
     });
   }
@@ -68,6 +87,11 @@ import hero3 from "@/src/assets/images/HeroBG.jpeg";
     }
   }
 
+  // Initialize first slide as active
+  if (contentBoxes[0]) {
+    contentBoxes[0].classList.add('active');
+  }
+
   // Start auto-rotation
   startAutoRotate();
 
@@ -75,11 +99,8 @@ import hero3 from "@/src/assets/images/HeroBG.jpeg";
   carousel?.addEventListener('mouseenter', stopAutoRotate);
   carousel?.addEventListener('mouseleave', startAutoRotate);
 
-  // Update current slide when user manually scrolls
-  carousel?.addEventListener('scroll', () => {
-    if (!carousel) return;
-    currentSlide = Math.round(carousel.scrollLeft / slideWidth);
-  });
+  // Update active slide on scroll
+  carousel?.addEventListener('scroll', updateActiveSlide);
 </script>
 
 <style>
@@ -161,6 +182,7 @@ import hero3 from "@/src/assets/images/HeroBG.jpeg";
   }
 
 
+
   /* Scroll buttons */
   .slides::scroll-button(left),
   .slides::scroll-button(right) {
@@ -211,17 +233,33 @@ import hero3 from "@/src/assets/images/HeroBG.jpeg";
     max-width: 720px;
     color: white;
     margin: 1rem 0 5rem 0;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
+
+  .content-box.active {
+    opacity: 1;
+    transform: translateX(0);
+  } 
 
   .content-box h2 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .content-box h2.newsLetterHeader {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #efbd27;
   }
 
   .content-box p {
     font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.6;
+    text-wrap: pretty;
   }
 
   /* Responsive */
