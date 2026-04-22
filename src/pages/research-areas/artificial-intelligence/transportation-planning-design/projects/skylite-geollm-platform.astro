@@ -1,0 +1,179 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import skyliteLogo from "@/src/assets/images/ai/logos/SkyliteLabs-logo.webp";
+import skyliteKeyResultsImage from "@/src/assets/images/ai/skylite-geollm-platform-1.png";
+
+const keywords = [
+  "Skylite GeoLLM",
+  "Transportation Planning",
+  "Data Fusion",
+  "GeoLLM",
+  "Natural Language Queries",
+  "SkyliteLabs",
+  "Geospatial Analysis",
+  "Artificial Intelligence"
+];
+
+const description =
+  "Skylite GeoLLM Transportation Planning and Decision Support Platform - AI project by SkyliteLabs";
+---
+
+<PageLayout title="Skylite GeoLLM Transportation Platform" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Artificial Intelligence</Fragment>
+  <main>
+    <div class="page-header">
+      <h2>Skylite GeoLLM Transportation Planning and Decision Support Platform</h2>
+      <Image src={skyliteLogo} alt="SkyliteLabs logo" class="page-logo" />
+    </div>
+    <p class="company-attribution">By: SkyliteLabs</p>
+    
+    <div class="row mt-5">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Project Objective & Overview</h3>
+          <p>
+            Phase 1 of this initiative addressed the critical challenge of <strong>data accuracy and completeness</strong>, key barriers to <strong>informed infrastructure decision-making and safety improvements</strong>. Our approach combined <strong>multi-source data fusion, temporal geospatial processing pipelines</strong>, and a <strong>GeoLLM prototype</strong> that enables intuitive, prompt-based interaction with complex transportation datasets. The system supports interaction with <strong>Census block-level datasets (ACS, SVI)</strong>, with the ability to aggregate metrics across various spatial grids.
+          </p>
+          <p class="mt-3">
+            <strong>Partner Agencies/Engagements</strong>
+          </p>
+          <ul>
+            <li>Montgomery County Department of Transportation (MCDOT)</li>
+            <li>Montgomery County Planning Department (MCPlanning)</li>
+            <li>Georgia Department of Transportation (GDOT)</li>
+            <li>Nashville Department of Transportation (NDOT)</li>
+            <li>Delaware Department of Transportation (DelDOT)</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Key Results & Findings</h3>
+          <div class="row">
+            <div class="col-lg-7">
+              <p><strong>Technical Approach</strong></p>
+              <ul>
+                <li>Developed novel large-scale data retrieval pipeline supporting spatial-temporal data fusion</li>
+                <li>Created a GeoLLM interface supporting natural language queries with structured function calling</li>
+              </ul>
+              
+              <p class="mt-3"><strong>Key Challenges & Lessons Learned</strong></p>
+              <ul>
+                <li>No single data source provides complete coverage; data fusion across multiple sources is essential</li>
+                <li>Temporal metadata is frequently missing or poorly captured in existing datasets</li>
+                <li>Current GIS tools are not optimally suited for transportation-specific temporal analysis needs</li>
+              </ul>
+              
+              <p class="mt-3"><strong>Sample Prompts</strong></p>
+              <ul>
+                <li><strong>Traffic incidents involving cyclists during the past 3 years</strong> — GeoLLM automatically selects all relevant incident types based on user query and displays data on the map</li>
+                <li><strong>Road segments with speed limit [ 30mph and PLOC ] 3</strong> — Returns pedestrian friendly roads with higher speed limits</li>
+                <li><strong>Pedestrian Crosswalks, normalized by pop. at grid level 9</strong> — Grid metrics, stylized by value</li>
+              </ul>
+            </div>
+            <div class="col-lg-5">
+              <figure class="mt-3 mt-lg-0">
+                <Image src={skyliteKeyResultsImage} alt="Skylite GeoLLM platform" class="img-fluid rounded key-results-image" />
+                <figcaption>Metric at H3 Level 9 Grid</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Company Info</h3>
+          <p>
+            Skylite Labs specializes in the fusion, visualization, and analysis of spatial and spatiotemporal data for government and commercial partners. We bring deep imagery analytics expertise and developed the <strong>Skylite GeoLLM Toolkit</strong> to enable natural-language interaction with geospatial data. Our team has over 20 years of applied geospatial R&D experience, including work with DHS S&T, DARPA, IARPA, and NGA Research.
+          </p>
+          <p class="mt-3">
+            <strong>Project POC:</strong> Eugene Polishchuk<br/>
+            <strong>Email:</strong> <a href="mailto:eugene@skylitelabs.com">eugene@skylitelabs.com</a><br/>
+            <strong>Website:</strong> <a href="https://skylitelabs.com" target="_blank" rel="noopener noreferrer">skylitelabs.com</a>
+          </p>
+        </section>
+      </div>
+      
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Next Steps</h3>
+          <ul>
+            <li>Expand capability to track infrastructure changes in near real-time</li>
+            <li>Develop advanced analytics including transportation-specific metrics</li>
+            <li>Grid-based metrics such as road-to-sidewalk ratios, population density normalized by pedestrian infrastructure, and traffic incident correlations with road speeds</li>
+          </ul>
+          
+          <p class="mt-3"><strong>Commercialization Plans</strong></p>
+          <ul>
+            <li>Transportation agency engagements</li>
+            <li>Partnerships with technology companies that are deploying sensors with available live data feeds</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style scoped>
+  .company-attribution {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  figcaption {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  section h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  section p {
+    margin-bottom: 0.75rem;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .page-header h2 {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .page-logo {
+    width: 140px;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      flex-wrap: wrap;
+    }
+
+    .page-logo {
+      margin-top: 0.5rem;
+    }
+  }
+</style>

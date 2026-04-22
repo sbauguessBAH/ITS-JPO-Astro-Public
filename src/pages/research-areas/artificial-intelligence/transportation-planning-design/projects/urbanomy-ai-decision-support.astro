@@ -1,0 +1,185 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import opalLogo from "@/src/assets/images/ai/logos/opal-logo.png";
+
+const keywords = [
+  "Urbanomy",
+  "Multi-Modal Decision Support",
+  "Transportation Design",
+  "LiDAR Mapping",
+  "Opal AI Inc.",
+  "Digital Twin",
+  "Asset Assessment",
+  "Artificial Intelligence"
+];
+
+const description =
+  "Urbanomy: AI-Driven, Multi-Modal Decision Support for Smarter, Scalable Transportation Design, Planning, and Asset Management - AI project by Opal AI Inc.";
+---
+
+<PageLayout title="Urbanomy: AI-Driven Transportation Design and Planning" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Artificial Intelligence</Fragment>
+  <main>
+    <div class="page-header">
+      <h2>Urbanomy: AI-Driven, Multi-Modal Decision Support for Smarter, Scalable Transportation Design, Planning, and Asset Management</h2>
+      <Image src={opalLogo} alt="Opal AI Inc. logo" class="page-logo" />
+    </div>
+    <p class="company-attribution">By: Opal AI Inc.</p>
+    
+    <div class="row mt-5">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Project Objective & Overview</h3>
+          <div class="row">
+            <div class="col-lg-6">
+              <p>
+                <strong>Description:</strong> Urbanomy is OpalAI's AI-powered multimodal mapping platform that converts LiDAR, panoramic imagery, 4K video, GPS/IMU, crash data, and aerial imagery into a unified digital twin of urban streets.
+              </p>
+              <p>
+                <strong>Objective:</strong> Automate road-asset assessment, ADA compliance checks, safety analysis, and multimodal planning.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <p class="mt-3 mt-lg-0">
+                <strong>Pilot Area:</strong><br/>
+                Los Angeles (Koreatown, Hancock Park, Larchmont, East Hollywood) — <strong>7.09 sq. mi, 156.8 road miles</strong>.
+              </p>
+              <p class="mt-3">
+                <strong>Partner Agencies:</strong><br/>
+                City of Los Angeles, UCLA, LARIAIC.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Key Results & Findings</h3>
+          <div class="row">
+            <div class="col-lg-6">
+              <p><strong>Technical Approach:</strong></p>
+              <ul>
+                <li><strong>Multimodal Mapping:</strong> LiDAR, 360° imagery, and 4K video captured >150 miles of roadway.</li>
+                <li><strong>Automated Asset Extraction:</strong> VLM + LiDAR identified sidewalks, ramps, bike lanes, signage, pavement, and transit features.</li>
+                <li><strong>Aerial–Ground Fusion:</strong> Combined ground scans with Aerial/ Satellite imagery for better intersection and network coverage.</li>
+                <li><strong>Condition Assessment:</strong> AI models to score condition of road assets based on safety and quality guidelines from experts.</li>
+                <li><strong>LTS Modeling:</strong> Developed enhanced Level of Traffic Stress for sidewalks, bike lanes, and crosswalks.</li>
+                <li><strong>Cloud Processing:</strong> Scalable pipelines processed millions of images and LiDAR points.</li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <p class="mt-3 mt-lg-0"><strong>Challenges & Opportunities:</strong></p>
+              <ul>
+                <li><strong>Occlusions & Gaps:</strong> Trees, cars, and narrow streets reduced visibility → use sidewalk robots + aerial coverage.</li>
+                <li><strong>Large Data Volume:</strong> ~40 GB/mile → opportunity for auto-scaling, containerized pipelines.</li>
+                <li><strong>Labeling Burden:</strong> High manual labeling → adopt active learning + semi-automated annotation.</li>
+                <li><strong>Geometric Precision Needs:</strong> VLM limitations → expand LiDAR-based ADA geometry measurement.</li>
+                <li><strong>Compute Constraints:</strong> Cloud Processing Limitations → optimize workflows + hybrid compute strategies.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Company Info</h3>
+          <p>
+            <strong>OpalAI Inc.</strong><br/>
+            AI and geospatial analytics company specializing in multimodal mapping, transportation intelligence, and automated asset assessment.
+          </p>
+          <p>
+            <strong>Project POC:</strong><br/>
+            Dr. Ryan Alimov — <a href="mailto:ryan@opal-ai.com">ryan@opal-ai.com</a>
+          </p>
+          <p>
+            <strong>Website:</strong><br/>
+            <a href="https://www.opal-ai.com" target="_blank" rel="noopener noreferrer">https://www.opal-ai.com</a>
+          </p>
+        </section>
+      </div>
+      
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Next Steps</h3>
+          
+          <p>
+            <strong>Scale to Multiple Cities</strong> using a coordinated collection fleet and auto-scaling cloud workflows.
+          </p>
+          
+          <p class="mt-3">
+            <strong>Phase II Goals:</strong>
+          </p>
+          <ul>
+            <li>Expand LiDAR-based ADA assessments</li>
+            <li>Improve VLM models for visibility, reflectivity, and vegetation detection</li>
+            <li>Enhance aerial–ground fusion and labeling automation</li>
+          </ul>
+          
+          <p class="mt-3">
+            <strong>Commercialization:</strong><br/>
+            SaaS/API platform for DOTs, Public Works, MPOs, and engineering firms supporting safety audits, ADA compliance, and capital planning.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .company-attribution {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+ 
+
+  section h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  section p {
+    margin-bottom: 0.75rem;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .page-header h2 {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .page-logo {
+    width: 140px;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      flex-wrap: wrap;
+    }
+
+    .page-logo {
+      margin-top: 0.5rem;
+    }
+  }
+</style>
