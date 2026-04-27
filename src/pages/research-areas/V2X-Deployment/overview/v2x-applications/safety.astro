@@ -210,8 +210,11 @@ const description =
   .table-info-subbullet {
     text-align: left;
   }
-    .table-info {
-    text-align: left !important;
+
+  /* Left-align the Description column (2nd cell in each row) */
+ table.table tbody tr > td:nth-child(2), 
+  table.table tbody tr > td:nth-child(1)  {
+    text-align: left;
   }
 
 </style>
