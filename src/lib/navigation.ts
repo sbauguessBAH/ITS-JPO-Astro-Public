@@ -185,7 +185,7 @@ export const navigation: NavigationItem[] = [
                 url: "/research-areas/V2X-Deployment/deployment/accelerator",
                 pages: [
                   { name: "Overview", url: "/research-areas/V2X-Deployment/deployment/accelerator" },
-                  { name: "Phase 1 Documentation", url: "/research-areas/V2X-Deployment/deployment/accelerator/phase-1-documentation" },
+                  { name: "Phase 1 Documentation", url: "/research-areas/V2X-Deployment/deployment/accelerator/documentation" },
                   { name: "Maricopa County", url: "/research-areas/V2X-Deployment/deployment/accelerator/maricopa-county" },
                   { name: "Texas A&M", url: "/research-areas/V2X-Deployment/deployment/accelerator/texas-am" },
                   { name: "Utah DOT", url: "/research-areas/V2X-Deployment/deployment/accelerator/utah-dot" },
