@@ -34,26 +34,24 @@ const description =
   <main>
     <h2 class="sideways blue">How V2X Works</h2>
     
-    <div class="row">
-      <div class="col">
+    <div class="row gx-5">
+      <div class="col-6 col-md-7">
         <p class="read-more-wrap pt-0">
-      V2X technology allows vehicles to "talk" to each other, to roadside infrastructure and to pedestrians or other road users by accommodating trusted and timely data exchanges across a variety of communication options.
-    </p>
-    <p>
-      V2X messages do not identify the driver or vehicle, and technical controls exists to prevent vehicle tracking and tampering with the system.
-    </p>
+          V2X technology allows vehicles to "talk" to each other, to roadside infrastructure and to pedestrians or other road users by accommodating trusted and timely data exchanges across a variety of communication options.
+        </p>
+        <p>
+          V2X messages do not identify the driver or vehicle, and technical controls exists to prevent vehicle tracking and tampering with the system.
+        </p>
+        <h3 class="text-blue mt-5">Direct and Network Communication</h3>
         <p class="read-more-wrap pt-0">V2X provides connectivity through both direct and network communication.</p>
-
+        
         <p>
           Under <strong>direct V2X</strong>, vehicles exchange frequent, structured messages about relative speed, position and other relevant data directly from one system element to another
           (device-to-device). This form of communication ensures 360-degree awareness, even in situations with poor obstructed visibility, such as around corners or in dense fog.
         </p>
-
+        
         <p>Alternatively, under <strong>network V2X</strong>, messages are transmitted through an intermediate network, such as traditional mobile networks, to get delivered to the end recipient.</p>
-
-        <label for="network-v2x-modal-toggle" class="mb-3">
-          <Image src={networkV2XImg} alt="Direct vs Network V2X" class="thumbnail" width={700} />
-        </label>
+        
         <p>
           Direct V2X communication is suited for safety applications requiring low latency (e.g., crash avoidance scenarios), while network V2X communication, including digital alerts received on a
           mobile device, is more suited to carry information over longer distances (e.g., alerts about traffic and road conditions).
@@ -61,17 +59,20 @@ const description =
       </div>
       <div class="col-12 col-md-5">
         <label for="awareness-modal-toggle">
-          <Image src={awarenessImg} alt="Connected Vehicle technology offers a 360-degree awareness" class="thumbnail" width={700} />
+          <Image src={awarenessImg} alt="Connected Vehicle technology offers a 360-degree awareness" class="thumbnail" width={400} />
+        </label>
+        <label for="network-v2x-modal-toggle" class="mt-3">
+          <Image src={networkV2XImg} alt="Direct vs Network V2X" class="thumbnail" width={700} />
         </label>
       </div>
     </div>
-
+    
     <input type="checkbox" id="awareness-modal-toggle" class="modal-toggle" />
     <div class="modal-bg">
       <label for="awareness-modal-toggle" class="modal-close" aria-label="Close">&times;</label>
       <Image src={awarenessImg} alt="Connected Vehicle technology offers a 360-degree awareness" class="modal-img" />
     </div>
-
+    
     <input type="checkbox" id="network-v2x-modal-toggle" class="modal-toggle" />
     <div class="modal-bg">
       <label for="network-v2x-modal-toggle" class="modal-close" aria-label="Close">&times;</label>
