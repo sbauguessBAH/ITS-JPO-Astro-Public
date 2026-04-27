@@ -1050,11 +1050,6 @@ hr.content {
 }
 
 
-.dropdown-toggle:after{
-    content: '\f078';
-    font-family: FontAwesome;
-    font-size:16px;
-}
 
 
 /* This adds some icons for different link types*/
