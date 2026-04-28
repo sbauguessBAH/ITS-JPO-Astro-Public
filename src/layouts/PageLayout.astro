@@ -33,6 +33,7 @@ const activeSection: NavigationItem | undefined = navigation.find(section => isA
 <BaseLayout title={title} keywords={keywords} description={description}>
   <Banner image={bannerImage}>
     <slot name="banner" title="banner"/>
+    <slot name="image" slot="image" />
   </Banner>
   <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl ">
     <Breadcrumbs currentBreadcrumb={currentBreadcrumb}/>
