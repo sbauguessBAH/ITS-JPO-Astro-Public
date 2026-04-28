@@ -12,6 +12,7 @@ import methodologiesIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_Webs
 import observationsIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_Observations.png";
 import ongoingTestIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_OngoingTest.png";
 import dataSetsIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_DataSets.png";
+import base_url from "@/src/lib/base_url";
 
 const keywords = [
   "LTE-V2X testing",
@@ -83,7 +84,7 @@ const description =
             </p>
             <ul>
                       <li>
-                      <a href="../tests/File1_USDOT_LTE_V2X_TESTING_TestParameters.xlsx">USDOT LTE V2X Test Parameters</a> </li>
+                      <a href={base_url("/assets/documents/v2x/File1_USDOT_LTE_V2X_TESTING_TestParameters.xlsx")}>USDOT LTE V2X Test Parameters</a> </li>
                       
                     </ul>
           </div>
@@ -103,7 +104,7 @@ const description =
             </p>
             <ul>
                       <li>
-                      <a href="../tests/File2_State_FedUsers_InputTool_CurrentList.xlsx_Shortcut.pdf" target="_blank" rel="noopener noreferrer">USDOT Laboratory Device Characterization</a></li>
+                      <a href={base_url("/assets/documents/v2x/File2_State_FedUsers_InputTool_CurrentList.xlsx_Shortcut.pdf")} target="_blank" rel="noopener noreferrer">USDOT Laboratory Device Characterization</a></li>
                       
                       
                     </ul>
@@ -127,12 +128,12 @@ const description =
             <p>The data collected from these tests is provided below:</p>
             <ul>
                         <li>
-                        <a href="../tests/Scenario1_Moving_Vehicle_Data.zip">Scenario 1 Moving Vehicle Data</a> </li>
+                        <a href={base_url("/assets/documents/v2x/Scenario1_Moving_Vehicle_Data.zip")}>Scenario 1 Moving Vehicle Data</a> </li>
                         <li>
-                        <a href="../tests/Scenario2_Moving_Vehicle_Data.zip">Scenario 2 Moving Vehicle Data</a> </li>
+                        <a href={base_url("/assets/documents/v2x/Scenario2_Moving_Vehicle_Data.zip")}>Scenario 2 Moving Vehicle Data</a> </li>
                         <li>
-                        <a href="../tests/Scenario3_Moving_Vehicle_Data.zip">Scenario 3 Moving Vehicle Data</a></li>
-                        <li><a href="../tests/Scenario4_Moving_Vehicle_Data.zip">Scenario 4 Moving Vehicle Data</a></li>
+                        <a href={base_url("/assets/documents/v2x/Scenario3_Moving_Vehicle_Data.zip")}>Scenario 3 Moving Vehicle Data</a></li>
+                        <li><a href={base_url("/assets/documents/v2x/Scenario4_Moving_Vehicle_Data.zip")}>Scenario 4 Moving Vehicle Data</a></li>
                       </ul>
           </div>
         </div>
@@ -151,7 +152,7 @@ const description =
                 </p>
                 <ul>
                     <li>
-                      <a href="../tests/File8_USDOT_LTE_V2X_TESTING_SimulationModel.pdf" target="_blank" rel="noopener noreferrer">U.S. DOT LTE-V2X Simulation Modeling</a>
+                      <a href={base_url("/assets/documents/v2x/File8_USDOT_LTE_V2X_TESTING_SimulationModel.pdf")} target="_blank" rel="noopener noreferrer">U.S. DOT LTE-V2X Simulation Modeling</a>
                     </li>
                     
                 </ul>
@@ -187,7 +188,7 @@ const description =
             <h3>Data Sets</h3>
             <ul>
                   
-                  <li><a href="../tests/LTE_V2X_TestingTestDataPrimer.pdf" target="_blank" rel="noopener noreferrer">Data Primer </a></li>
+                  <li><a href={base_url("/assets/documents/v2x/LTE_V2X_TestingTestDataPrimer.pdf")} target="_blank" rel="noopener noreferrer">Data Primer </a></li>
                   <li><a href="https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fs3.console.aws.amazon.com%2Fs3%2Fbuckets%2Fspectrum.public.data.repository%3Fregion%3Dus-east-1%26state%3DhashArgs%2523%26tab%3Dobjects%26isauthcode%3Dtrue&amp;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fs3&amp;forceMobileApp=0&amp;code_challenge=gM_egmhhhZFaAJoEG7VTTwmX94aF3Unu7UqjFDJq_QY&amp;code_challenge_method=SHA-256" target="_blank" rel="noopener noreferrer">Raw Data</a></li>
                   
                 </ul>
