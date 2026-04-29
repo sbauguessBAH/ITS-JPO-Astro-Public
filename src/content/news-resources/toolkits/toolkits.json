@@ -1,4 +1,4 @@
-{"toolkits":[{
+{"outreach_toolkits":[{
     "id": 1,
     "title": "Vehicle-to-Everything (V2X) Deployment Toolkit",
     "toolkit_type": "V2X",
@@ -63,7 +63,37 @@
     "url":"/content/news-resources/toolkits/its-freight-commercial-vehicles-toolkit"
 
 }
-]
+],
+"media_toolkits": [{
+    "id": 30,
+    "title": "ITS America Annual Meeting 2026",
+    "toolkit_type": "Conference Kit",
+    "date": "May 2026",
+    "location": "Tampa, FL",
+    "content_types":["news release","fact sheet","photos", "video b-roll", "infographic"],
+    "topics":["Conference Kit"],
+    "url":"/content/news-resources/toolkits/conference-media-kit"
+
+},
+{
+    "id": 31,
+    "title": "V2X Deployment Program Launch",
+    "toolkit_type": "Announcement Kit",
+    "date": "January 2026",
+    "content_types":["news release","fact sheet","sound bites", "photos"],
+    "topics":["Announcement"],
+    "url":"/content/news-resources/toolkits/v2x-deployment-program-launch"
+},
+{
+    "id": 32,
+    "title": "ITS JPO 30th Anniversary",
+    "toolkit_type": "Milestone Kit",
+    "date": "October 2025",
+    "content_types":["news release","fact sheet","infographic", "video b-roll", "sound bites"],
+    "topics":["Intersection Safety"],
+    "url":"/content/news-resources/toolkits/intersection-safety-challenge-outreach-toolkit"
+
+}],
 "webinars": [{
     "id": 20, 
     "date": "February 18, 2026", 

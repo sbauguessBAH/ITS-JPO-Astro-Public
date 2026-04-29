@@ -8,12 +8,17 @@ type Toolkit = {
   title?: string;
   url?: string;
   description?: string;
+  last_updated?: string;
+  toolkit_type?: string;
 };
-const toolKitRegistry = {
-  media: {},
-  outreach: {},
+
+const toolkitData = toolkits as {
+  outreach_toolkits?: Toolkit[];
 };
-const toolkitList: Toolkit[] = Array.isArray(toolkits) ? (toolkits as Toolkit[]) : [];
+
+const toolkitList: Toolkit[] = [
+  ...(Array.isArray(toolkitData?.outreach_toolkits) ? toolkitData.outreach_toolkits : []),
+];
 
 const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
   return [...new Set(values.filter((v): v is string => typeof v === "string" && v.trim().length > 0))];
@@ -85,7 +90,16 @@ const slugifyForId = (value: string): string =>
           <div class="card mb-3">
             <div class="card-body">
               <h5 class="card-title">{toolkit.title}</h5>
-              <p class="card-text">{toolkit.description}</p>
+              {(toolkit.description || toolkit.last_updated) && (
+                <p class="card-text">
+                  {toolkit.description ?? ""}
+                  {!toolkit.description && (toolkit.last_updated) && (
+                    <>
+                       {[toolkit.last_updated].filter(Boolean).join(" — ")}
+                    </>
+                  )}
+                </p>
+              )}
               {toolkit.url && (
                 <a href={toolkit.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                   View Toolkit
