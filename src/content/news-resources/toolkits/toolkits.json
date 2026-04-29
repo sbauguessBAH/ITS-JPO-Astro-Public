@@ -11,35 +11,56 @@
 },
 {
     "id": 2,
-    "title": "Another Toolkit",
-    "toolkit_type": "media",
-    "description":"This is another toolkit description. It should be a short summary of the toolkit and its contents.",
-    "last_updated": "Updated March 2026",
-    "content_types":["document","webinar"],
-    "topics":["Connected Vehicles"],
-    "url":"/content/news-resources/toolkits/another-toolkit"
-
+    "title": "Artificial Intelligence in Transportation Toolkit",
+    "toolkit_type": "AI",
+    "description":"Shareable materials explaining how AI is being used to improve safety and efficiency across the transportation system.",
+    "last_updated": "Updated January 2026",
+    "content_types":["fact sheet","infographic", "talking points", "social posts"],
+    "topics":["AI"],
+    "url":"/content/news-resources/toolkits/ai-in-transportation-toolkit"
 },
 {
     "id": 3,
-    "title": "Third Toolkit",
-    "toolkit_type": "media",
-    "description":"This is the third toolkit description. It should be a short summary of the toolkit and its contents.",
-    "last_updated": "Updated April 2026",
-    "content_types":["guide","case study"],
-    "topics":["Autonomous Vehicles"],
-    "url":"/content/news-resources/toolkits/third-toolkit"
+    "title": "Intersection Safety Challenge Outreach Toolkit",
+    "toolkit_type": "Intersection Safety",
+    "description":"Materials for local agencies and community partners to raise awareness about ITS-enabled intersection safety technologies.",
+    "last_updated": "Updated December 2025",
+    "content_types":["fact sheet","infographic", "talking points", "slides", "photos"],
+    "topics":["Intersection Safety"],
+    "url":"/content/news-resources/toolkits/intersection-safety-challenge-outreach-toolkit"
 
 },
 {
     "id": 4,
-    "title": "Fourth Toolkit",
-    "toolkit_type": "media",
-    "description":"This is the fourth toolkit description. It should be a short summary of the toolkit and its contents.",
-    "last_updated": "Updated May 2026",
-    "content_types":["infographic","video"],
-    "topics":["V2X"],
-    "url":"/content/news-resources/toolkits/fourth-toolkit"
+    "title": "Automation Program Stakeholder Toolkit",
+    "toolkit_type": "Automation",
+    "description":"Resources for stakeholders engaged in automated vehicle research, policy, and deployment conversations.",
+    "last_updated": "Updated November 2025",
+    "content_types":["fact sheet", "slides", "talking points", "social posts"],
+    "topics":["Automation"],
+    "url":"/content/news-resources/toolkits/automation-program-stakeholder-toolkit"
+
+},
+{
+    "id": 5,
+    "title": "ITS4US Complete Trip Program Toolkit",
+    "toolkit_type": "ITS4US",
+    "description":"Community-facing materials to share the story of ITS4US deployments improving mobility for underserved populations.",
+    "last_updated": "Updated October 2025",
+    "content_types":["fact sheet", "infographic", "social posts", "photos"],
+    "topics":["ITS4US"],
+    "url":"/content/news-resources/toolkits/its4us-complete-trip-program-toolkit"
+
+},
+{
+    "id": 6,
+    "title": "ITS for Freight & Commercial Vehicles Toolkit",
+    "toolkit_type": "Freight",
+    "description":"Resources for freight industry stakeholders, port operators, and fleet managers on ITS technologies for commercial transportation.",
+    "last_updated": "Updated September 2025",
+    "content_types":["fact sheet", "infographic", "talking points"],
+    "topics":["Freight"],
+    "url":"/content/news-resources/toolkits/its-freight-commercial-vehicles-toolkit"
 
 }
 ]
