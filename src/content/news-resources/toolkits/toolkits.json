@@ -1,12 +1,12 @@
 [{
     "id": 1,
-    "title": "V2X Example Toolkit",
-    "toolkit_type": "media",
-    "description":"This is an example toolkit description. It should be a short summary of the toolkit and its contents.",
+    "title": "Vehicle-to-Everything (V2X) Deployment Toolkit",
+    "toolkit_type": "V2X",
+    "description":"Resources to help communities and agencies communicate the benefits of V2X technology to local stakeholders and the public.",
     "last_updated": "Updated February 2026",
-    "content_types":["infographic","video"],
+    "content_types":["fact sheet","talking points", "social posts", "infographic","slides"],
     "topics":["V2X"],
-    "url":"/content/news-resources/toolkits/v2x-example-toolkit"
+    "url":"/content/news-resources/toolkits/v2x-deployment-toolkit"
 
 },
 {
