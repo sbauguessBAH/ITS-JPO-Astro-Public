@@ -39,7 +39,7 @@ const slugifyForId = (value: string): string =>
   <main class="container my-5">
     <h1 class="h2 mb-4">News Filter</h1>
 
-    <form class="row g-4" aria-label="News filter">
+    <form class="row g-4 reduced-gutters" aria-label="News filter">
       <div class="col-12 col-lg-6">
         <label class="form-label" for="content-type-toggle">Content Type</label>
         <div class="dropdown multi-select-dropdown">
@@ -54,7 +54,7 @@ const slugifyForId = (value: string): string =>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id={id} name="content-type" value={type} />
                     <label class="form-check-label" for={id}>
-                      {type}
+                      {type.charAt(0).toUpperCase() + type.slice(1)}
                     </label>
                   </div>
                 );
@@ -72,10 +72,10 @@ const slugifyForId = (value: string): string =>
             topics.map((topic) => {
               const topicId = `topic-${slugifyForId(topic)}`;
               return (
-                <div class="form-check">
+                <div class="form-check rounded-pill">
                   <input class="form-check-input" type="checkbox" id={topicId} name="topic" value={topic} />
                   <label class="form-check-label" for={topicId}>
-                    {topic}
+                    {topic.charAt(0).toUpperCase() + topic.slice(1)}
                   </label>
                 </div>
               );
@@ -84,27 +84,29 @@ const slugifyForId = (value: string): string =>
         </div>
       </fieldset>
     </form>
-    <div>
+    <div id="toolkit-cards" class="row gx-4 gy-4">
       {
         toolkitList.map((toolkit) => (
-          <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title">{toolkit.title}</h5>
-              {(toolkit.description || toolkit.last_updated) && (
-                <p class="card-text">
-                  {toolkit.description ?? ""}
-                  {!toolkit.description && (toolkit.last_updated) && (
-                    <>
-                       {[toolkit.last_updated].filter(Boolean).join(" — ")}
-                    </>
-                  )}
-                </p>
-              )}
-              {toolkit.url && (
-                <a href={toolkit.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                  View Toolkit
-                </a>
-              )}
+          <div class="col-12 col-md-4 toolkit-card-col">
+            <div class="card h-100 toolkit-card">
+              <div class="card-body">
+                <h5 class="card-title">{toolkit.title}</h5>
+                {(toolkit.description || toolkit.last_updated) && (
+                  <p class="card-text">
+                    {toolkit.description ?? ""}
+                    {!toolkit.description && toolkit.last_updated && (
+                      <>
+                        {[toolkit.last_updated].filter(Boolean).join(" — ")}
+                      </>
+                    )}
+                  </p>
+                )}
+                {toolkit.url && (
+                  <a href={toolkit.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    View Toolkit
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))
@@ -143,9 +145,9 @@ const slugifyForId = (value: string): string =>
   };
 
   const applyToDOM = (matches) => {
-    const cards = document.querySelectorAll("main > div > .card");
-    cards.forEach((card, index) => {
-      card.style.display = matches[index] ? "" : "none";
+    const cols = document.querySelectorAll("#toolkit-cards .toolkit-card-col");
+    cols.forEach((col, index) => {
+      col.style.display = matches[index] ? "" : "none";
     });
   };
 
@@ -201,6 +203,10 @@ const slugifyForId = (value: string): string =>
 </script>
 
 <style>
+  .reduced-gutters {
+    --bs-gutter-x: 14px;
+  }
+  
   .dropdown-toggle {
     display: flex;
     background-color: #fff;
