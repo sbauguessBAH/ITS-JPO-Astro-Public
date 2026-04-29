@@ -101,7 +101,7 @@
     "description":"V2X Deployment Lessons Learned: Early Adopter Communities", 
     "host": "ITS JPO", 
     "duration": 90, 
-    "attendees": 342,
+    "attendees": 342
     },
     {
     "id": 21, 
@@ -110,7 +110,7 @@
     "description":"Practical Applications of AI for Traffic Operations", 
     "host": "ITS JPO", 
     "duration": 60, 
-    "attendees":518,
+    "attendees":518
     },
     {
     "id":22, 
@@ -119,7 +119,7 @@
     "description":"ITS4US Year Three Outcomes: Expanding Accessible Mobility", 
     "host": "ITS JPO", 
     "duration": 75, 
-    "attendees": 289,
+    "attendees": 289
     },
     {
     "id":23, 
@@ -128,7 +128,7 @@
     "description":"Intersection Safety Challenge: Phase 2 Results & Next Steps", 
     "host": "ITS JPO", 
     "duration": 60, 
-    "attendees": 401,
+    "attendees": 401
     }
 ]
 }
