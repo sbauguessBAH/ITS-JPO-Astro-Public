@@ -15,20 +15,20 @@ export const navigation: NavigationItem[] = [
   },
 
   {
-    name: "News & Info",
-    url: "/news-info",
+    name: "News & Outreach Tools",
+    url: "/news-outreach-tools",
     pages: [
       { name: "Latest News from USDOT", url: "https://www.transportation.gov/newsroom", isExternal: true },
-      { name: "Image Library", url: "/news-info/image-library" },
-      { name: "Video Library", url: "/news-info/video-library" },
+      { name: "Image Library", url: "/news-outreach-tools/image-library" },
+      { name: "Video Library", url: "/news-outreach-tools/video-library" },
       {
         name: "Publication Editorial Guidelines",
-        url: "/news-info/Publication-Editorial-Guidelines",
+        url: "/news-outreach-tools/Publication-Editorial-Guidelines",
         isEnabled: true,
         pages: [
-          { name: "Overview", url: "/news-info/Publication-Editorial-Guidelines" },
-          { name: "508 Guidance", url: "/news-info/Publication-Editorial-Guidelines/Guidance" },
-          { name: "Publications Checklist", url: "/news-info/Publication-Editorial-Guidelines/Checklist" },
+          { name: "Overview", url: "/news-outreach-tools/Publication-Editorial-Guidelines" },
+          { name: "508 Guidance", url: "/news-outreach-tools/Publication-Editorial-Guidelines/Guidance" },
+          { name: "Publications Checklist", url: "/news-outreach-tools/Publication-Editorial-Guidelines/Checklist" },
         ],
       },
     ],

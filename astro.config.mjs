@@ -18,7 +18,7 @@ export default defineConfig({
     "/contacts/stafflisting.htm": "/about/contact-us/staff-listing",
     "/its4us/index.htm": "/research-areas/ITS4US",
     "/its4us/": "/research-areas/ITS4US",
-    "/communications/its_images.htm": "/news-info/image-library",
+    "/communications/its_images.htm": "/news-outreach-tools/image-library",
     "/pcb": "/resources/pcb",
     "/resources/Professional-Capacity-Building/": "/resources/pcb",
     "/research-areas/Intersection-Safety-Challenge": "/research-areas/intersection-safety/systems",
