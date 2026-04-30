@@ -51,9 +51,9 @@ const slugifyForId = (value: string): string =>
               contentTypes.map((type) => {
                 const id = `content-type-${slugifyForId(type)}`;
                 return (
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id={id} name="content-type" value={type} />
-                    <label class="form-check-label" for={id}>
+                  <div class="content-type-option">
+                    <input class="visually-hidden content-type-input" type="checkbox" id={id} name="content-type" value={type} />
+                    <label class="content-type-label" for={id}>
                       {type.charAt(0).toUpperCase() + type.slice(1)}
                     </label>
                   </div>
@@ -67,14 +67,14 @@ const slugifyForId = (value: string): string =>
 
       <fieldset class="col-12 col-lg-6">
         <legend class="col-form-label pt-0">Topics</legend>
-        <div class="topic-list">
+        <div class="topic-pills">
           {
             topics.map((topic) => {
               const topicId = `topic-${slugifyForId(topic)}`;
               return (
-                <div class="form-check rounded-pill">
-                  <input class="form-check-input" type="checkbox" id={topicId} name="topic" value={topic} />
-                  <label class="form-check-label" for={topicId}>
+                <div class="topic-pill-option">
+                  <input class="visually-hidden topic-input" type="checkbox" id={topicId} name="topic" value={topic} />
+                  <label class="topic-pill" for={topicId}>
                     {topic.charAt(0).toUpperCase() + topic.slice(1)}
                   </label>
                 </div>
@@ -120,7 +120,12 @@ const slugifyForId = (value: string): string =>
   const dropdownMenu = document.getElementById("content-type-list");
 
   const updateDropdownLabel = () => {
-    const selected = Array.from(document.querySelectorAll('input[name="content-type"]:checked')).map((el) => el.value);
+    const selected = Array.from(document.querySelectorAll('input[name="content-type"]:checked'))
+      .filter((el) => el instanceof HTMLInputElement)
+      .map((cb) => {
+        const label = document.querySelector(`label[for="${cb.id}"]`);
+        return label?.textContent?.trim() || cb.value;
+      });
     const labelEl = document.querySelector("#content-type-toggle .dropdown-label");
     if (!labelEl) return;
     labelEl.textContent = selected.length === 0 ? "Select content types" : selected.join(", ");
@@ -205,6 +210,59 @@ const slugifyForId = (value: string): string =>
 <style>
   .reduced-gutters {
     --bs-gutter-x: 14px;
+  }
+
+  .topic-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .topic-pill {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    line-height: 1.2;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+  }
+
+  .topic-pill-option > input:checked + .topic-pill {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: var(--bs-white);
+  }
+
+  .topic-pill-option > input:focus-visible + .topic-pill {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+  }
+
+  .content-type-option {
+    display: flex;
+  }
+
+  .content-type-label {
+    width: 100%;
+    padding: 0.375rem 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .content-type-option > input:checked + .content-type-label {
+    color: var(--bs-primary);
+    font-weight: 600;
+    background-color: var(--bs-primary-bg-subtle);
+  }
+
+  .content-type-option > input:focus-visible + .content-type-label {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
   }
   
   .dropdown-toggle {
