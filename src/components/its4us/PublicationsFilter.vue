@@ -83,13 +83,7 @@ const getAcronymTooltipId = (value) => `deployment-acronym-tooltip-${slugifyForI
           <div class="panel-count">{{ acronym.count }}</div>
         </button>
 
-        <span
-          :id="getAcronymTooltipId(acronym.value)"
-          role="tooltip"
-          class="panel-tooltip"
-        >
-          {{ acronym.fullLabel || acronym.label }}
-        </span>
+       
       </div>
     </div>
 
@@ -184,22 +178,7 @@ const getAcronymTooltipId = (value) => `deployment-acronym-tooltip-${slugifyForI
   position: relative;
 }
 
-.panel-tooltip {
-  position: absolute;
-  left: 1rem;
-  bottom: calc(100% + 0.35rem);
-  max-width: calc(100% - 2rem);
-  background: rgb(5, 86, 129);
-  color: white;
-  border-radius: 0.5rem;
-  padding: 0.35rem 0.5rem;
-  font-size: 0.9rem;
-  line-height: 1.2;
-  z-index: 10;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
+
 
 .panel-item:hover + .panel-tooltip,
 .panel-item:focus-visible + .panel-tooltip {

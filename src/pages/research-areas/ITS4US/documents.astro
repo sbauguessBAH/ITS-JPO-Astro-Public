@@ -20,7 +20,7 @@ const acronymStats = sortedPublications.reduce((acc, pub) => {
 // Combine linked acronyms for display
 const combinedAcronyms = new Map<string, { value: string, label: string, count: number }>();
 
-Object.entries(acronymCounts).forEach(([acronym, count]) => {
+Object.entries(acronymStats).forEach(([acronym, count]) => {
   if (acronym === 'ARC' || acronym === 'GDOT') {
     const existing = combinedAcronyms.get('ARC/GDOT');
     if (existing) {
