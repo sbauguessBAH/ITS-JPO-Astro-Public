@@ -1,0 +1,170 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '@/src/layouts/PageLayout.astro';
+import PublicationsFilter from '@/src/components/its4us/PublicationsFilter.vue';
+import PublicationCard from '@/src/components/its4us/PublicationCard.astro';
+
+// Load all publications and sort by date descending
+const publications = await getCollection('its4usPublications');
+const sortedPublications = publications.sort((a, b) => 
+  new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+
+// Extract unique deployment acronyms with counts
+const acronymCounts = sortedPublications.reduce((acc, pub) => {
+  const acronym = pub.data.deploymentAcronym;
+  acc[acronym] = (acc[acronym] || 0) + 1;
+  return acc;
+}, {} as Record<string, number>);
+
+const deploymentAcronyms = Object.entries(acronymCounts)
+  .map(([value, count]) => ({ value, label: value, count }))
+  .sort((a, b) => a.value.localeCompare(b.value));
+
+// Extract unique phases with counts
+const phaseCounts = sortedPublications.reduce((acc, pub) => {
+  const phase = pub.data.phase;
+  acc[phase] = (acc[phase] || 0) + 1;
+  return acc;
+}, {} as Record<number, number>);
+
+const phases = Object.entries(phaseCounts)
+  .map(([value, count]) => ({ value: parseInt(value), count }))
+  .sort((a, b) => a.value - b.value);
+---
+
+<style>
+  .documents-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 992px) {
+    .documents-container {
+      flex-direction: row;
+    }
+
+    .documents-sidebar {
+      flex-basis: 25%;
+      min-width: 250px;
+    }
+
+    .documents-content {
+      flex-basis: 75%;
+    }
+  }
+
+  .documents-intro {
+    margin-bottom: 2rem;
+  }
+
+  .publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .publications-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .publications-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .results-count {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgb(var(--color-brand-dark));
+  }
+</style>
+
+<PageLayout title="ITS4US Publications">
+  <Fragment slot="banner">ITS4US</Fragment>
+  
+  <main>
+    <h2 class="py-3">ITS4US Documentation</h2>
+    
+    <div class="documents-intro">
+      <p>
+        The ITS4US Program as part of its core tenets of replicability works to disseminate lessons learned and documentation from replicable solutions developed by deployment sites to catalyze additional deployment. As documentation for each Phase of the deployment process is finalized they are added to the ITS JPO Digital Library on National Transportation Library's <span class=" fst-italic"> Repository and Open Science Access Portal (ROSA P)</span>. 
+
+      </p>
+      <p>
+        ROSA P serves as an archival repository of USDOT-published products including scientific findings, journal articles, guidelines, recommendations, or other information authored or co-authored by USDOT or funded partners. As a repository, ROSA P retains documents in their original published format to ensure public access to scientific information. These historical documents may not reflect the current Administration’s views or priorities.
+
+      </p>
+    </div>
+
+    <div class="documents-container">
+      <!-- Sidebar Filter -->
+      <aside class="documents-sidebar">
+        <PublicationsFilter 
+          client:load
+          deploymentAcronyms={deploymentAcronyms}
+          phases={phases}
+        />
+      </aside>
+
+      <!-- Publications Grid -->
+      <div class="documents-content">
+        <div class="results-count" id="results-count">
+          Showing {sortedPublications.length} publications
+        </div>
+        
+        <div class="publications-grid" id="publications-grid">
+          {sortedPublications.map((pub) => (
+            <PublicationCard publication={pub.data} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<script>
+  // Filter publications using CSS visibility toggle
+  window.addEventListener('publications-filter-change', (event) => {
+    const { type, value } = (event as CustomEvent).detail;
+    const cards = document.querySelectorAll('.publication-card');
+    const resultsCount = document.getElementById('results-count');
+    
+    if (!cards || !resultsCount) return;
+    
+    let visibleCount = 0;
+    
+    // Show/hide cards based on filter
+    cards.forEach(card => {
+      const htmlCard = card as HTMLElement;
+      let shouldShow = true;
+      
+      if (type && value !== null) {
+        if (type === 'acronym') {
+          shouldShow = htmlCard.dataset.deploymentAcronym === value;
+        } else if (type === 'phase') {
+          shouldShow = htmlCard.dataset.phase === String(value);
+        }
+      }
+      
+      if (shouldShow) {
+        htmlCard.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        htmlCard.classList.add('hidden');
+      }
+    });
+    
+    // Update count
+    resultsCount.textContent = visibleCount === 0 
+      ? 'No publications found'
+      : `Showing ${visibleCount} publication${visibleCount !== 1 ? 's' : ''}`;
+  });
+</script>
