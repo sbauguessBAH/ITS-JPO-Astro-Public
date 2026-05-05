@@ -72,7 +72,30 @@ import tdeiLogo from "@/src/assets/images/its4us/TDEI-page-logo.png";
   .video-card-content {
     padding: 1.5rem;
     flex: 1;
-    display: block;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-header {
+    min-height: 120px;
+    display: flex;
+    gap: 0;
+    align-items: center;
+    background-color: white;
+    margin: 0 0 1rem 0;
+    padding: 0 0 1rem 0;
+    justify-content: space-between;
+  }
+
+  .card-header h3 {
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .card-divider {
+    margin: 1rem 0;
+    border: 0;
+    border-top: 2px solid #e5e7eb;
   }
 
   .card-logo {
@@ -85,11 +108,10 @@ import tdeiLogo from "@/src/assets/images/its4us/TDEI-page-logo.png";
 
   .video-card h3 {
     font-size: 1.25rem;
-    line-height: 1.4;
-    margin-bottom: 1rem;
+    line-height: 1.1;
+    margin-bottom: 0;
     color: rgb(var(--color-primary));
     text-transform: none;
-    min-height: 3em;
   }
 
   .video-links {
@@ -264,8 +286,12 @@ import tdeiLogo from "@/src/assets/images/its4us/TDEI-page-logo.png";
           <!-- Health Connector Card -->
           <div class="video-card">
             <div class="video-card-content">
-              <Image src={healthConnectorLogo} alt="Health Connector Logo" class="card-logo" width={180} />
-              <h3>Health Connector Videos</h3>
+              <div class="card-header">
+                <h3>Health Connector Videos</h3>
+                <Image src={healthConnectorLogo} alt="Health Connector Logo" class="card-logo" width={180} />
+
+              </div>
+
               <ul class="video-links">
                 <li><a href="https://youtu.be/xRbNLpA6IQs" target="_blank" rel="noopener noreferrer">Overview of Health Connector</a></li>
                 <li><a href="https://youtu.be/VBedCBGP9Bo" target="_blank" rel="noopener noreferrer">Health Connector Information for Travelers</a></li>
@@ -279,8 +305,11 @@ import tdeiLogo from "@/src/assets/images/its4us/TDEI-page-logo.png";
           <!-- Georgia Mobility Card -->
           <div class="video-card">
             <div class="video-card-content">
-              <Image src={georgiaLogo} alt="Georgia Mobility and Access Planner Logo" class="card-logo" width={180} />
-              <h3>Georgia Mobility and Access Planner Videos</h3>
+              <div class="card-header">
+                <h3>Georgia Mobility and Access Planner Videos</h3>
+               <Image src={georgiaLogo} alt="Georgia Mobility and Access Planner Logo" class="card-logo" width={180} />
+              </div>
+
               <ul class="video-links">
                 <li><a href="https://vimeo.com/863329944" target="_blank" rel="noopener noreferrer">Overview of G-MAP</a></li>
                 <li><a href="https://vimeo.com/997811747" target="_blank" rel="noopener noreferrer">User Testimonial for G-MAP</a></li>
@@ -292,10 +321,14 @@ import tdeiLogo from "@/src/assets/images/its4us/TDEI-page-logo.png";
           <!-- Buffalo All Access Card -->
           <div class="video-card">
             <div class="video-card-content">
-              <Image src={buffaloLogo} alt="Buffalo All Access Logo" class="card-logo" width={180} />
-              <h3>Buffalo All Access Videos</h3>
+              <div class="card-header">
+                <h3>Buffalo All Access Videos</h3>
+                <Image src={buffaloLogo} alt="Buffalo All Access Logo" class="card-logo" width={180} />
+
+              </div>
+
               <ul class="video-links">
-                <li><span class="coming-soon">Coming Soon! Overview of Buffalo All Access</span></li>
+                <li><a href="https://www.youtube.com/watch?v=bqaCbW7iXFg" target="_blank" rel="noopener noreferrer">Overview of Buffalo All Access</a></li>
               </ul>
             </div>
             <div class="card-wave blue-wave"></div>
@@ -304,8 +337,12 @@ import tdeiLogo from "@/src/assets/images/its4us/TDEI-page-logo.png";
           <!-- TDEI Card -->
           <div class="video-card">
             <div class="video-card-content">
-              <Image src={tdeiLogo} alt="Transportation Data Exchange Initiative Logo" class="card-logo" width={180} />
-              <h3>Transportation Data Exchange Initiative Videos</h3>
+              <div class="card-header">
+                <h3>Transportation Data Exchange Initiative Videos</h3>
+               <Image src={tdeiLogo} alt="Transportation Data Exchange Initiative Logo" class="card-logo" width={180} />
+
+              </div>
+
               <ul class="video-links">
                 <li><a href="https://youtu.be/fA2GDSSEtzA" target="_blank" rel="noopener noreferrer">Overview of TDEI</a></li>
                 <li><a href="https://youtu.be/506XrN7WhsU" target="_blank" rel="noopener noreferrer">Full Overview of TDEI</a></li>

@@ -17,8 +17,30 @@ const acronymCounts = sortedPublications.reduce((acc, pub) => {
   return acc;
 }, {} as Record<string, number>);
 
-const deploymentAcronyms = Object.entries(acronymCounts)
-  .map(([value, count]) => ({ value, label: value, count }))
+// Combine linked acronyms for display
+const combinedAcronyms = new Map<string, { value: string, label: string, count: number }>();
+
+Object.entries(acronymCounts).forEach(([acronym, count]) => {
+  if (acronym === 'ARC' || acronym === 'GDOT') {
+    const existing = combinedAcronyms.get('ARC/GDOT');
+    if (existing) {
+      existing.count += count;
+    } else {
+      combinedAcronyms.set('ARC/GDOT', { value: 'ARC/GDOT', label: 'ARC/GDOT', count });
+    }
+  } else if (acronym === 'ICF' || acronym === 'NFTA') {
+    const existing = combinedAcronyms.get('ICF/NFTA');
+    if (existing) {
+      existing.count += count;
+    } else {
+      combinedAcronyms.set('ICF/NFTA', { value: 'ICF/NFTA', label: 'ICF/NFTA', count });
+    }
+  } else {
+    combinedAcronyms.set(acronym, { value: acronym, label: acronym, count });
+  }
+});
+
+const deploymentAcronyms = Array.from(combinedAcronyms.values())
   .sort((a, b) => a.value.localeCompare(b.value));
 
 // Extract unique phases with counts
@@ -131,6 +153,12 @@ const phases = Object.entries(phaseCounts)
 </PageLayout>
 
 <script>
+  // Define linked acronym groups
+  const linkedAcronyms: Record<string, string[]> = {
+    'ARC/GDOT': ['ARC', 'GDOT'],
+    'ICF/NFTA': ['ICF', 'NFTA']
+  };
+
   // Filter publications using CSS visibility toggle
   window.addEventListener('publications-filter-change', (event) => {
     const { type, value } = (event as CustomEvent).detail;
@@ -148,7 +176,13 @@ const phases = Object.entries(phaseCounts)
       
       if (type && value !== null) {
         if (type === 'acronym') {
-          shouldShow = htmlCard.dataset.deploymentAcronym === value;
+          const cardAcronym = htmlCard.dataset.deploymentAcronym;
+          // Check if filter value is a combined acronym
+          if (linkedAcronyms[value]) {
+            shouldShow = linkedAcronyms[value].includes(cardAcronym || '');
+          } else {
+            shouldShow = cardAcronym === value;
+          }
         } else if (type === 'phase') {
           shouldShow = htmlCard.dataset.phase === String(value);
         }

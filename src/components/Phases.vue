@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 const cardInfo = {
   "pre-deployment-activities": {
     title: "Pre-Deployment Activities",
@@ -38,25 +38,57 @@ const cardInfo = {
   }
 
 }
+
+// Define phase order
+const phaseOrder = [
+  "pre-deployment-activities",
+  "phase-1-awards",
+  "develop-deployment-concept",
+  "phase-2-awards",
+  "design-test",
+  "operate-evaluate",
+  "operations-maintenance"
+];
+
 const phaseID = ref("pre-deployment-activities")
 const activePhase = ref(cardInfo[phaseID.value])
 
-const handlePhaseClick = (event) => {
-  console.log("Clicked phase:", event.currentTarget.id);
-  const phaseId = event.currentTarget.id;
-  const phaseInfo = cardInfo[phaseId];
-  phaseID.value = phaseId;
-  activePhase.value = { ...phaseInfo };
-  // const detailsSection = document.querySelector(".program-phase-details");
-  // detailsSection.querySelector("h3").textContent = phaseInfo.title;
-  // detailsSection.querySelector(".status-pill").textContent = `Status: ${phaseInfo.status}`;
-  // detailsSection.querySelector("p:nth-of-type(2)").innerHTML = phaseInfo.description;
+const currentPhaseIndex = computed(() => phaseOrder.indexOf(phaseID.value));
+const isFirstPhase = computed(() => currentPhaseIndex.value === 0);
+const isLastPhase = computed(() => currentPhaseIndex.value === phaseOrder.length - 1);
 
+const navigateToPhase = (phaseId) => {
+  phaseID.value = phaseId;
+  activePhase.value = { ...cardInfo[phaseId] };
+  
   // Update active class
   document.querySelectorAll(".program-phase-item, .program-phase-award").forEach(item => {
     item.classList.remove("active");
   });
-  event.currentTarget.classList.add("active");
+  const element = document.getElementById(phaseId);
+  if (element) {
+    element.classList.add("active");
+  }
+};
+
+const goToPreviousPhase = () => {
+  if (!isFirstPhase.value) {
+    const previousPhaseId = phaseOrder[currentPhaseIndex.value - 1];
+    navigateToPhase(previousPhaseId);
+  }
+};
+
+const goToNextPhase = () => {
+  if (!isLastPhase.value) {
+    const nextPhaseId = phaseOrder[currentPhaseIndex.value + 1];
+    navigateToPhase(nextPhaseId);
+  }
+};
+
+const handlePhaseClick = (event) => {
+  console.log("Clicked phase:", event.currentTarget.id);
+  const phaseId = event.currentTarget.id;
+  navigateToPhase(phaseId);
 };
 </script>
 <template>
@@ -98,7 +130,17 @@ const handlePhaseClick = (event) => {
         <span class="progress-bar-fill"></span>
       </span>
     </div>
-    <div class="d-flex justify-content-center mt-4">
+    <div id="phaseDiscrpitonBox" class="d-flex justify-content-center align-items-center mt-4 phase-navigation-container">
+      <button 
+        @click="goToPreviousPhase" 
+        :disabled="isFirstPhase"
+        class="phase-nav-button phase-nav-prev"
+        aria-label="Previous phase"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        </svg>
+      </button>
       <Transition name="phase-fade" mode="out-in">
         <div class="program-phase-details" :key="phaseID">
           <div class="d-flex justify-content-between">
@@ -107,9 +149,19 @@ const handlePhaseClick = (event) => {
               :class="['status-pill', 'flex-1', 'px-3', 'py-1', { 'status-in-progress': activePhase.status === 'In Progress' || activePhase.status === 'Not Started' }]">
               Status: {{ activePhase.status }}</p>
           </div>
-          <p>{{ activePhase.description }}</p>
+          <p v-html="activePhase.description"></p>
         </div>
       </Transition>
+      <button 
+        @click="goToNextPhase" 
+        :disabled="isLastPhase"
+        class="phase-nav-button phase-nav-next"
+        aria-label="Next phase"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+        </svg>
+      </button>
     </div>
   </div>
 </template>
@@ -268,6 +320,7 @@ h4 {
 
 .program-phase-item.active>.phase-item-circle {
   border: 3px solid rgb(0, 188, 212, 1);
+  font-weight: 700;
 }
 
 .program-phase-item.active>.phase-item-circle::before {
@@ -333,6 +386,44 @@ h4 {
   background-color: white;
   min-height: 150px;
   max-width: 56rem;
+  flex: 1;
+}
+
+.phase-navigation-container {
+  gap: 1rem;
+  position: relative;
+}
+
+.phase-nav-button {
+  background-color: #055681;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: white;
+  flex-shrink: 0;
+}
+
+.phase-nav-button:hover:not(:disabled) {
+  background-color: #003d5c;
+  transform: scale(1.1);
+}
+
+.phase-nav-button:disabled {
+  background-color: #d1d5dc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.phase-nav-button svg {
+  width: 24px;
+  height: 24px;
 }
 
 .phase-fade-enter-active,
@@ -429,6 +520,27 @@ h4 {
     display: none ;
   }
 
+  .phase-navigation-container {
+    flex-direction: column;
+  }
+
+  .phase-nav-button {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .phase-nav-prev {
+    order: -1;
+  }
+
+  .phase-nav-next {
+    order: 1;
+  }
+
+  .program-phase-details {
+    order: 0;
+  }
 
 }
 

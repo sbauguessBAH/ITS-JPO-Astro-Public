@@ -65,9 +65,9 @@ const selectedLogo = (imageByKey as Record<string, (typeof baa)>)[normalizedLogo
     position: relative;
     display: inline-block;
     overflow: hidden;
-    max-height: 256px;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
     transition: box-shadow 200ms ease-in-out;
+    aspect-ratio: 16 / 9;
   }
 
   .card-wave:hover {
@@ -83,11 +83,11 @@ const selectedLogo = (imageByKey as Record<string, (typeof baa)>)[normalizedLogo
 
   .card-wave-img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     position: relative;
     z-index: 1;
     transform: scale(1);
-    transform-origin: center;
+    transform-origin: bottom;
     transition: transform 200ms ease-in-out;
   }
 
