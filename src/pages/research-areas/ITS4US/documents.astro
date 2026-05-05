@@ -11,7 +11,7 @@ const sortedPublications = publications.sort((a, b) =>
 );
 
 // Extract unique deployment acronyms with counts
-const acronymCounts = sortedPublications.reduce((acc, pub) => {
+const acronymStats = sortedPublications.reduce((acc, pub) => {
   const acronym = pub.data.deploymentAcronym;
   acc[acronym] = (acc[acronym] || 0) + 1;
   return acc;
