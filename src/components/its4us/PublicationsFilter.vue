@@ -41,6 +41,15 @@ const handleFilterClick = (type, value) => {
 const isActive = (type, value) => {
   return activeFilterType.value === type && activeFilterValue.value === value;
 };
+
+const slugifyForId = (value) =>
+  String(value)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+const getAcronymTooltipId = (value) => `deployment-acronym-tooltip-${slugifyForId(value)}`;
 </script>
 
 <template>
@@ -64,15 +73,24 @@ const isActive = (type, value) => {
     <!-- Deployment Acronym Section -->
     <div class="panel-section">
       <h4 class="panel-section-title">Deployment Acronym</h4>
-      <button
-        v-for="acronym in deploymentAcronyms"
-        :key="acronym.value"
-        @click="handleFilterClick('acronym', acronym.value)"
-        :class="['panel-item', { 'panel-item-active': isActive('acronym', acronym.value) }]"
-      >
-        <div class="panel-item-text">{{ acronym.label }}</div>
-        <div class="panel-count">{{ acronym.count }}</div>
-      </button>
+      <div v-for="acronym in deploymentAcronyms" :key="acronym.value" class="panel-item-wrapper">
+        <button
+          @click="handleFilterClick('acronym', acronym.value)"
+          :aria-describedby="getAcronymTooltipId(acronym.value)"
+          :class="['panel-item', { 'panel-item-active': isActive('acronym', acronym.value) }]"
+        >
+          <div class="panel-item-text">{{ acronym.label }}</div>
+          <div class="panel-count">{{ acronym.count }}</div>
+        </button>
+
+        <span
+          :id="getAcronymTooltipId(acronym.value)"
+          role="tooltip"
+          class="panel-tooltip"
+        >
+          {{ acronym.fullLabel || acronym.label }}
+        </span>
+      </div>
     </div>
 
    
@@ -160,5 +178,32 @@ const isActive = (type, value) => {
 
 .panel-item-active:hover {
   background: rgb(206, 229, 239);
+}
+
+.panel-item-wrapper {
+  position: relative;
+}
+
+.panel-tooltip {
+  position: absolute;
+  left: 1rem;
+  bottom: calc(100% + 0.35rem);
+  max-width: calc(100% - 2rem);
+  background: rgb(5, 86, 129);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.panel-item:hover + .panel-tooltip,
+.panel-item:focus-visible + .panel-tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 </style>

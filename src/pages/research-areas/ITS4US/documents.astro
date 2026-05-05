@@ -11,14 +11,21 @@ const sortedPublications = publications.sort((a, b) =>
 );
 
 // Extract unique deployment acronyms with counts
-const acronymCounts = sortedPublications.reduce((acc, pub) => {
+const acronymStats = sortedPublications.reduce((acc, pub) => {
   const acronym = pub.data.deploymentAcronym;
-  acc[acronym] = (acc[acronym] || 0) + 1;
-  return acc;
-}, {} as Record<string, number>);
+  if (!acc[acronym]) {
+    acc[acronym] = {
+      count: 0,
+      fullLabel: pub.data.awardeeDeploy
+    };
+  }
 
-const deploymentAcronyms = Object.entries(acronymCounts)
-  .map(([value, count]) => ({ value, label: value, count }))
+  acc[acronym].count += 1;
+  return acc;
+}, {} as Record<string, { count: number; fullLabel: string }>);
+
+const deploymentAcronyms = Object.entries(acronymStats)
+  .map(([value, { count, fullLabel }]) => ({ value, label: value, count, fullLabel }))
   .sort((a, b) => a.value.localeCompare(b.value));
 
 // Extract unique phases with counts
