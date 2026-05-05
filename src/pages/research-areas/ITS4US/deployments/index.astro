@@ -17,8 +17,8 @@ import Card_WaveBorder from "@/src/components/Card_WaveBorder.astro";
 </style>
 
 <PageLayout title="Deployments">
-  <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
-     <section class="deployment-sites py-5">
+  <Fragment slot="banner"> ITS4US</Fragment>
+    <section class="deployment-sites py-5">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
@@ -27,16 +27,16 @@ import Card_WaveBorder from "@/src/components/Card_WaveBorder.astro";
         </div>
         <div class="row justify-content-center">
           <div class="col-12 col-lg-5 d-flex justify-content-center mb-4">
-            <Card_WaveBorder title="Georgia Mobility & Access Planner" alt="" img="gmap" href="deployments/georgia" color="orange" logo="" logo_alt="" />
+            <Card_WaveBorder title="Georgia Mobility & Access Planner" alt="" img="gmap" href={base_url("/research-areas/ITS4US/deployments/georgia")} color="orangewave" logo="gmapIcon" logo_alt="" />
           </div>
           <div class="col-12 col-lg-5 d-flex justify-content-center mb-4">
-            <Card_WaveBorder title="Health Connector" alt="" img="hc" href="deployments/iowa" color="green" logo="" logo_alt="" />
+            <Card_WaveBorder title="Health Connector" alt="" img="hc" href={base_url("/research-areas/ITS4US/deployments/iowa")} color="greenwave" logo="hcIcon" logo_alt="" />
           </div>
           <div class="col-12 col-lg-5 d-flex justify-content-center mb-4">
-            <Card_WaveBorder title="Buffalo All Access" alt="" img="baa" href="deployments/newYork" color="blue" logo="" logo_alt="" />
+            <Card_WaveBorder title="Buffalo All Access" alt="" img="baa" href={base_url("/research-areas/ITS4US/deployments/newYork")} color="bluewave" logo="baaIcon" logo_alt="" />
           </div>
           <div class="col-12 col-lg-5 d-flex justify-content-center mb-4">
-            <Card_WaveBorder title="Transportation Data Exchange Initiative" alt="" img="tdei" href="deployments/washington" color="purple" logo="" logo_alt="" />
+            <Card_WaveBorder title="Transportation Data Exchange Initiative" alt="" img="tdei" href={base_url("/research-areas/ITS4US/deployments/washington")} color="purplewave" logo="tdeiIcon" logo_alt="" />
           </div>
         </div>
       </div>

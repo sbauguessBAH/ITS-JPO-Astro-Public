@@ -6,176 +6,267 @@ import Map from "@/src/assets/images/its4us/HIRTA-map.png";
 
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+import healthConnectorLogo from "@/src/assets/images/its4us/Health-Connector-page-logo.png";
+import linkImage1 from "@/src/assets/images/its4us/HC/HC-link.png";
+import linkImage2 from "@/src/assets/images/its4us/HC/HIRTA-link.png";
+import linkImage3 from "@/src/assets/images/its4us/DataHub-link.png";
+import linkImage4 from "@/src/assets/images/its4us/CodeHub-link.png";
+import hcInfographic from "@/src/assets/images/its4us/HC-infographic.png";
+import "@/src/styles/deployments.css";
 ---
 
-<style>
-  hr {
-    margin: 10px 0;
-  }
-  .blue {
-    display: grid;
-  }
-
-  figure {
-    margin: auto;
-    width: 30%;
-    float: right;
-    margin: 10px;
-  }
-  figcaption {
-    color: #333;
-    font-style: italic;
-    font-size: small;
-    padding: 10px;
-  }
-
-  figcaption p {
-    padding: 0;
-    margin: 0;
-    font-size: small;
-  }
-  iframe {
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-</style>
 <PageLayout title="Heart of Iowa Regional Transit Agency">
-  <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
+  <Fragment slot="banner"> ITS4US</Fragment>
   <main>
-    <figure class="ms-4">
-      <Image src={Waukee} alt="A smiling woman with arms folded" width={800} class="float-sm-end img-fluid col-6-sm mb-2 rounded-4" />
-      <figcaption>
-        <p>
-          “I need to see my doctor frequently since I have diabetes, and without transportation of my own, I can use HIRTA’s Health Connector app to schedule low cost rides at only $2.50 per fare.”
-        </p>
-        <p class="text-end">- Illustrative Example of Potential User</p>
-      </figcaption>
-    </figure>
-    <h2 class="sideways blue">HIRTA Deployment Overview</h2>
-
-    <p>
-      Health Connector is an innovative solution that addresses various bottlenecks associated with transportation access to healthcare for HIRTA communities. Some of these challenges are key reasons
-      behind missed appointments or the unacceptable level of preventive or as-needed healthcare in the HIRTA service area. For this deployment, the HIRTA team is implementing a scalable and
-      replicable solution that enables affordable access to transportation to healthcare for all travelers by resolving transportation access barriers with the use of advanced technologies.
-    </p>
-    <p>
-      This solution allows Dallas County residents without access to transportation who may be seeking a medical appointment to identify and book available transportation through a smart device (e.g.,
-      smartphone, tablet, etc.) application, and healthcare staff have access to the same trip planning and booking features, allowing them to schedule a patient’s transportation at the same time that
-      a medical appointment is booked. Further, this solution includes information and wayfinding services to guide them at every step of their trip.
-    </p>
-    <br /><br />
-
-    <h2 class="sideways blue">Approach – Project Challenges and Solutions</h2>
-
- 
-    <p>
-      Health Connector is an innovative solution that utilizes advanced transportation technologies to improve healthcare access for Dallas County residents. This solution addresses the following key
-      issues:
-    </p>   <figure>
-      <Image src={Map} alt="HIRTA ITS4US Health Connector Site Deployment Map " width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
-      <figcaption>
-        <p>HIRTA ITS4US Health Connector Site Deployment Map</p>
-      </figcaption>
-    </figure>
-    <ul>
-      <li>
-        <strong>Lack of Awareness About Available Transportation Options.</strong>
-        <p>
-          Travelers have limited information on options beyond personal (or arranged via family or friends) transportation for medical trips. Health Connector provides a platform that allows customers
-          to explore the availability of HIRTA and its partner vehicles through a “trip planning and discovery” feature.
-        </p>
-      </li>
-      <li>
-        <strong>Lack of Integrated Booking and Trip Management Experience.</strong>
-        <p>
-          Health Connector addresses a longstanding need to integrate transportation and healthcare services. Health Connector allows travelers, healthcare staff, and other authorized users to easily
-          discover and book transportation services through the Health Connector app, online platform, or via phone, at the same time that they are scheduling a medical appointment, ensuring that
-          access to transportation is not a barrier to accessing healthcare. Health Connector allows HIRTA staff to monitor changes to healthcare appointment times to ensure that Health Connector
-          transportation services are updated as needed.
-        </p>
-      </li>
-      <li>
-        <strong>Limited Capabilities with Current Transportation Modes.</strong>
-        <p>
-          Apart from HIRTA vehicles, there are limited modes that can meet the needs of all travelers. HIRTA partners with local third-party providers (e.g., taxi companies) for added capacity to
-          address the travel needs of Dallas County residents, as required.
-        </p>
-      </li>
-      <li>
-        <strong>Limited Wayfinding Capabilities.</strong>
-        <p>
-          Another missing link in medical transportation has been wayfinding both for locating the vehicle on arrival and wayfinding/navigating to the correct destination inside a facility upon
-          arrival. Health Connector provides a fully functioning wayfinding experience for travelers.
-        </p>
-      </li>
-    </ul>
-    <h2 class="sideways blue">Measuring Deployment Impact</h2>
-    <p>Some of the key performance goals and targets for the Health Connector include:</p>
-    <ul>
-      <li>
-        <strong>Reducing medical appointments deferred due to lack of transportation.</strong>
-        <p>
-          The convenient access to transportation services provided by HIRTA, through Health Connector, helps Dallas County residents attend their medical appointments. One target for this performance
-          goal is a 30 percent reduction in the number of missed medical appointments related to transportation access during the 18-month evaluation period.
-        </p>
-        <p>
-          Thus far, HIRTA's Phase 3 deployment and operation has shown responsiveness in 80 percent of Dallas County residents indicating that transportation did not present a barrier to healthcare
-          access after just six months of the Health Connector's launch, and an increase to 90 percent of the same opinion at 12 months.​
-        </p>
-        <p>
-          Six months after the launch, HIRTA's Phase 3 deployment and operation has shown responsiveness in 80 percent of Dallas County residents indicating that transportation did not present a
-          barrier to healthcare access, and an increase to 90 percent of the same opinion at 12 months.
-        </p>
-      </li>
-      <li>
-        <strong>Reducing trips unfulfilled due to system unreliability.</strong>
-        <p>
-          Health Connector is reducing the number of unfulfilled healthcare trip requests by improving system reliability through improved transportation management capabilities. Targets include at
-          least a 30 percent reduction in the number of trips where HIRTA was unable to fulfill the traveler’s request after Health Connector is in use, and at least a 20 percent reduction in the
-          number of missed trip events by travelers after Health Connector deployment.
-        </p>
-      </li>
-      <li>
-        <strong>Improving travel-time prediction accuracy.</strong>
-        <p>
-          Health Connector is assisting in calculating onboard (in-vehicle) travel time for a trip accurately and reliably at the time of scheduling. Travel time accuracy in this context refers to the
-          number of minutes and seconds spent onboard, boarding, and alighting. The target for this goal is travel-time accuracy within 10 minutes of scheduled times 90 percent of the time, not
-          counting delays due to external factors.
-        </p>
-      </li>
-      <li>
-        <strong>Improving coordination among HIRTA, healthcare providers.</strong>
-        <p>
-          Health Connector is automating tasks to minimize the time spent in coordinating a trip by HIRTA and partners. Healthcare partners now have access to the same trip booking and dispatching
-          software as HIRTA dispatchers and are able to register customers and book or modify trips, as authorized. It is expected that Health Connector will help achieve a target of five minutes or
-          less in coordination time for customers calling in to book their transportation appointment for healthcare needs.
-        </p>
-      </li>
-    </ul>
-    <h2 class="sideways blue">Project Partners</h2>
-    <div class="row">
-      <div class="col-6">
-        <ul>
-          <li>HIRTA</li>
-          <li>Arcadis (formerly IBI Group)</li>
-          <li>Community Transportation Association of America (CTAA)</li>
-          <li>Dallas County Health Department</li>
-          <li>Iowa State University (ISU)</li>
-        </ul>
+    <section class="gray-edge-to-edge">
+      <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl">
+        <h2 class="">Health Connector</h2>
+        <div class="wave-banner-container shadow">
+          <div class="p-3">
+            <h3 class="text-center green-text">Get to care reliably and affordably.</h3>
+            <div class="d-flex flex-md-row flex-column align-items-center gap-3">
+              <p class="pb-5 px-3">
+                The <span>Heart of Iowa Regional Transit Agency (HIRTA)'s</span> Health Connector is an innovative solution that utilizes advanced transportation technologies to improve healthcare access
+                for <span>Dallas County, Iowa</span> residents.
+              </p>
+              <Image src={healthConnectorLogo} alt="Health Connector Logo" class="page-logo img-fluid px-3" height={230} />
+            </div>
+          </div>
+          <div class="wave-banner green-wave"></div>
+        </div>
       </div>
-      <div class="col-6">
-        <ul>
-          <li>Capture Management Solutions</li>
-          <li>NaviLens</li>
-          <li>Via</li>
-          <li>flexlynqs</li>
-        </ul>
+    </section>
+
+    <section class="container-xl">
+        <h2 class="m-0 pb-0">How it Works</h2>  
+    <figure class="figure text-center my-4 infographic">
+      <a href="#hcModal" class="d-inline-block">
+        <Image
+          src={hcInfographic}
+          alt="Health Connector Infographic"
+          class="figure-img img-fluid w-100"
+          width={2000}
+        />
+      </a>
+      <figcaption class="figure-caption text-center">Click to view larger</figcaption>
+    </figure>
+  
+</section>
+    <h2 class="">Features and Benefits</h2>
+    <ul class="icon-list">
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V9h14v10zm0-12H5V5h14v2z"/>
+          </svg>
+        </div>
+        <span><b>Integrated scheduling</b> — Central platform for trip booking, scheduling and dispatch, and real-time vehicle and rider status.</span>
+      </li>
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+          </svg>
+        </div>
+        <span><b>MOD-EHR Middleware</b> — Securely share information like appointment timing, status changes, and when an appointment has ended or is running late between healthcare and transit staff.</span>
+      </li>
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+          </svg>
+        </div>
+        <span><b>Multi-channel booking</b> — Call center, mobile/web applications, and on-site kiosk.</span>
+      </li>
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/>
+          </svg>
+        </div>
+        <span><b>Wayfinding Tools</b> — Navilens codes at healthcare facilities providing audio or text information about specific vehicle details and office locations within a healthcare facility.</span>
+      </li>
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
+          </svg>
+        </div>
+        <span><b>On-Board Infotainment System</b> — Located on health connector vehicles to provide timely trip related information.</span>
+      </li>
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+          </svg>
+        </div>
+        <span><b>Low fares</b> — Affordable pricing to reduce no-shows.</span>
+      </li>
+    </ul>
+    
+    <section class="gray-edge-to-edge mt-4">
+      <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl">
+        <h2 class="">Get Involved</h2>
+
+        <div class="row g-3">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card rounded-3 h-100 p-2">
+        <Image src={linkImage1} alt="HIRTA Health Connector website link" class="img-fluid rounded mb-2" width={300} />
+        <a href="https://transithealthconnector.org/" target="_blank" rel="noopener noreferrer">HIRTA Health Connector Website</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card rounded-3 h-100 p-2">
+        <Image src={linkImage2} alt="RideHIRTA mobile application download link" class="img-fluid rounded mb-2" width={300} />
+        <a href="https://ridehirta.app.ridewithvia.com/" target="_blank" rel="noopener noreferrer">RideHIRTA App</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card rounded-3 h-100 p-2">
+        <Image src={linkImage3} alt="ITS DataHub link" class="img-fluid rounded mb-2" width={300} />
+        <a href="https://www.its.dot.gov/data/" target="_blank" rel="noopener noreferrer">Data Hub</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card rounded-3 h-100 p-2">
+        <Image src={linkImage4} alt="ITS CodeHub link" class="img-fluid rounded mb-2" width={300} />
+        <a href="https://www.its.dot.gov/code/" target="_blank" rel="noopener noreferrer">Code Hub</a>
+        </div>
       </div>
     </div>
-    <h2 class="sideways blue">HIRTA Links and Resources</h2>
-    <ul>
-      <li>Visit the <a href="https://transithealthconnector.org/">HIRTA Project Website</a></li>
-    </ul>
+      </div>
+    </section>
+
+
+  {/* Modal for enlarged image */}
+  <div id="hcModal" class="img-modal">
+    <a href="#!" class="img-modal__overlay" aria-label="Close"></a>
+    <div class="img-modal__dialog" role="dialog" aria-modal="true" aria-label="Health Connector Infographic">
+      <a href="#!" class="img-modal__close" aria-label="Close">&times;</a>
+      <Image
+        src={hcInfographic}
+        alt="Health Connector Infographic"
+        class="img-fluid w-100"
+      />
+    </div>
+  </div>
+
+
   </main>
 </PageLayout>
+
+
+<style>
+
+  figure{
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+
+  .infographic{
+    padding: 2rem 2rem 2rem 0;
+  }
+
+  .icon-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .icon-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+
+  .icon-button {
+    background-color: transparent;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .icon-button svg {
+    width: 18px;
+    height: 18px;
+    fill: #28b24b;
+  }
+
+  .phone-overlay {
+    position: absolute;
+    width: auto;
+    width: 13%;
+    min-width: 60px;
+    max-width: 200px;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    transform: rotate(10deg);
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3)); 
+  }
+
+
+  /* Pure CSS modal */
+  .img-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+  }
+
+  .img-modal:target {
+    display: flex;
+  }
+
+  .img-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  .img-modal__dialog {
+    position: relative;
+    max-width: min(1200px, 90vw);
+    max-height: 90vh;
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-modal__dialog img {
+    max-height: 90vh;
+    display: block;
+  }
+
+  .img-modal__close {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.6rem;
+    color: #000;
+    font-size: 2rem;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .img-modal__close:focus-visible,
+  a[href="#hcModal"]:focus-visible {
+    outline: 2px solid #0d6efd;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+</style>

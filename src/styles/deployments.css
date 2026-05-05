@@ -1,0 +1,248 @@
+/* ITS4US Deployment Pages Shared Styles */
+
+hr {
+  margin: 10px 0;
+}
+
+.blue {
+  display: grid;
+}
+
+figure {
+  margin: auto;
+  width: 30%;
+  float: right;
+  margin: 10px;
+}
+
+figcaption {
+  color: #333;
+  font-style: italic;
+  font-size: small;
+  padding: 10px;
+}
+
+figcaption p {
+  padding: 0;
+  margin: 0;
+  font-size: small;
+}
+
+iframe {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.wave-banner-container {
+  position: relative;
+  background-color: rgb(var(--color-gray));
+  border-radius: .75rem;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  margin: 2rem 3%;
+  background-color: white;
+  z-index: -1;
+}
+
+.wave-banner {
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  pointer-events: none;
+  z-index: -1;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 1rem 0.75rem;
+  border-radius: 15px;
+}
+
+.wave-banner-container p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.wave-banner-container h3 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  margin-bottom: 2rem;
+  text-transform: none;
+  color: rgb(var(--color-primary));
+  text-wrap: balance;
+}
+
+@media (max-width: 1400px) {
+  .wave-banner-container p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .wave-banner-container h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+
+  }
+}
+
+@media (max-width: 993px) {
+  .wave-banner-container p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  .wave-banner-container h3 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+
+
+.wave-banner-container p span {
+  font-weight: 700;
+  color: rgb(var(--color-primary));
+}
+
+
+
+/* Base wave banner styles */
+.wave-banner::before,
+.wave-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.wave-banner::before {
+  z-index: 1;
+  clip-path: polygon(100% 100%, 0% 100%, 0% 24.73%, 6.67% 24.25%, 13.33% 22.84%, 20% 20.64%, 26.67% 17.82%, 33.33% 14.62%, 40% 11.33%, 46.67% 8.21%, 53.33% 5.54%, 60% 3.55%, 66.67% 2.4%, 73.33% 2.19%, 80% 2.94%, 86.67% 4.59%, 93.33% 7%, 100% 9.95%);
+}
+
+.wave-banner::after {
+  z-index: 0;
+  clip-path: polygon(100% 100%, 0% 100%, 0% 9.15%, 6.67% 5.24%, 13.33% 2.14%, 20% .51%, 26.67% .68%, 33.33% 2.61%, 40% 5.91%, 46.67% 9.89%, 53.33% 13.72%, 60% 16.59%, 66.67% 17.91%, 73.33% 17.41%, 80% 15.18%, 86.67% 11.7%, 93.33% 7.69%, 100% 3.98%);
+}
+
+/* Orange wave (Georgia) */
+.wave-banner.orange-wave::before {
+  background: #f7a321;
+}
+
+.wave-banner.orange-wave::after {
+  background: #e57829;
+}
+
+.orange-text {
+  color: #e57829 !important;
+}
+
+/* Green wave (Iowa) */
+.wave-banner.green-wave::before {
+  background: #28b24b;
+}
+
+.wave-banner.green-wave::after {
+  background: #b9be33;
+}
+
+.green-text {
+  color: #28b24b !important;
+}
+
+/* Blue wave (New York) */
+.wave-banner.blue-wave::before {
+  background: #2166b2;
+}
+
+.wave-banner.blue-wave::after {
+  background: #0084c3;
+}
+
+.blue-text {
+  color: #2166b2 !important;
+}
+
+/* Purple wave (Washington) */
+.wave-banner.purple-wave::before {
+  background: #614384;
+}
+
+.wave-banner.purple-wave::after {
+  background: #8a82a0;
+}
+
+.purple-text {
+  color: #614384 !important;
+} 
+
+.link-card {
+  height: 12rem;
+}
+
+.page-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.gray-edge-to-edge {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: #f7f7f7;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+/* Card images consistent height */
+.card img {
+  height: 175px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 0.75rem 0.75rem 0 0;
+  transition: transform 0.3s ease;
+}
+
+/* Enhanced card styling */
+.card {
+  text-align: center;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background: white;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card a {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+}
+
+.card a:hover {
+  color: rgb(var(--color-primary));
+  text-decoration: underline;
+}
