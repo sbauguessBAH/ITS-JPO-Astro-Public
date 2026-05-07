@@ -814,7 +814,7 @@ table.dataTable thead .sorting_desc_disabled:before {
 path.inactive, circle.inactive {
 
   cursor: default;
-  fill: #f5f5f5;
+  fill: #dbdbdb;
 
 }
 
@@ -830,35 +830,8 @@ path.clickable:hover, circle.clickable:hover{
   cursor:pointer;
   filter:brightness(110%);
 }
-path#CA, circle#CA{
-  fill: #f5f5f5;
-}
 
 
-path#IA, circle#IA{
-  fill: #f69884;
-}
-
-
-path#GA, circle#GA{
-  fill: #8ed3da;
-}
-
-
-path#NY, circle#NY{
-  fill: #fbe673;
-}
-
-
-path#MD, circle#MD{
-  fill: #3680af;
-}
-
-
-/*path#WA, circle#WA, path#OR, circle#OR{
-  fill: #3680af;
-}
-*/
 
 #path67 {
   fill: none !important;

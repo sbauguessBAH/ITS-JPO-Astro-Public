@@ -6,160 +6,250 @@ import Map from "@/src/assets/images/its4us/buffalo-map.png";
 
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+import buffaloLogo from "@/src/assets/images/its4us/buffalo-page-logo.png";
+import resourceImg1 from "@/src/assets/images/its4us/BAA/BAA-link.png";
+import resourceImg2 from "@/src/assets/images/its4us/BAA/Complete-Trip-link.png";
+import resourceImg3 from "@/src/assets/images/its4us/DataHub-link.png";
+import resourceImg4 from "@/src/assets/images/its4us/CodeHub-link.png";
+import baaInfographic from "@/src/assets/images/its4us/BAA-infographic.png";
+import "@/src/styles/deployments.css";
 ---
 
-<style>
-  hr {
-    margin: 10px 0;
-  }
-  .blue {
-    display: grid;
-  }
-
-  figure {
-    margin: auto;
-    width: 30%;
-    float: right;
-    margin: 10px;
-  }
-  figcaption {
-    color: #333;
-    font-style: italic;
-    font-size: small;
-    padding: 10px;
-  }
-
-  figcaption p {
-    padding: 0;
-    margin: 0;
-    font-size: small;
-  }
-  iframe {
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-</style>
 <PageLayout title="Niagara Frontier Transportation Authority">
-  <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
+  <Fragment slot="banner"> ITS4US</Fragment>
   <main>
-     <figure class="ms-4">
-  <Image src={letitia} alt="A nurse standing outside a building" width={800} class="float-sm-end img-fluid col-6-sm mb-2 rounded-4" />
-      <figcaption>
-        <p>
-          “I am a nurse at the Buffalo Niagara Medical Campus and use the Buffalo All Access community shuttle service along with the Complete Trip Platform app to get from my home in Masten Park to
-          the BNMC campus.”
-        </p>
-        <p class="text-end">- Illustrative Example of Potential User</p>
-      </figcaption>
-    </figure>
-    <h2 class="sideways blue">NFTA Deployment Overview</h2>
-    
-    <p>
-      The Buffalo All Access project aims to solve mobility challenges for all travelers by deploying an integrated set of travel support services and systems within neighborhoods surrounding the
-      Buffalo Niagara Medical Campus (BNMC). The Medical Campus is located on 120 acres adjacent to downtown Buffalo and includes nearly 9 million square feet of clinical, laboratory, and office
-      space. More than 16,000 people work or study at the BNMC and more than 1.5 million people visit each year for healthcare and other services. The Buffalo All Access project, led by Niagara
-      Frontier Transportation Authority, addresses the challenges facing travelers in the area by:
-      <ul>
-        <li>Providing transit access to healthcare and jobs to all residents and allowing them to share in the economic development in downtown Buffalo.</li>
-        <li>Leveraging technology and developing a scalable model for integrating transportation technology, transit, and connected automation to solve a transportation need.</li>
-      </ul>
-    </p>
-
-    <br /><br />
-
-    <h2 class="sideways blue">Approach – Project Challenges and Solutions</h2>
-
-   
-    <p>
-      Within and around the BNMC, access- and pedestrian-related transportation and mobility challenges hinder residents’ and visitors’ ability to access safe and reliable
-      transportation from BNMC and local or regional transportation agencies. Common challenges include unsafe street crossings, lack of connections between modes, high volumes of visitors to the
-      BNMC campus, and lack of information for navigating the BNMC campus. These issues have a direct impact on people’s ability to reach BNMC’s facilities and get to their appointments
-      on time, or even make the trip/appointment at all. This solution is envisioned to address the following key issues:
-    </p> <figure>
-      <Image src={Map} alt="Image of a map of Deployment Area in Buffalo, New York" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
-      <figcaption>
-        <p>Deployment Area in Buffalo, New York</p>
-      </figcaption>
-    </figure>
-    <ul>
-      <li>
-        <strong>Traffic safety issues at street crossings and lack of usable infrastructure in street rights of way.</strong>
-        <p>
-          A door-to-door travel planning app, the Buffalo All Access App, includes a comprehensive array of online and offline ways for travelers to receive real-time information on services,
-          infrastructure usability, and access to understand the current conditions of their trip and how best to react to necessary but spontaneous deviations from their original route.
-        </p>
-      </li>
-      <li>
-        <strong>Lack of efficient and reliable circulation paths between facilities on the campus and in surrounding neighborhoods.</strong>
-        <p>
-          The deployment aims to increase safety and improve the capability for travelers to cross specific intersections and use specific prioritized pathways that are slip resistant; offer smooth
-          paths of travel for accessing BNMC campus entities; and make travel safe, efficient, and compatible with user-defined preferences and capabilities.
-        </p>
-      </li>
-    </ul>
-    <h2 class="sideways blue">Measuring Deployment Impact</h2>
-    <p>Some of the key performance goals and targets for All Access include:</p>
-    <ul>
-      <li>
-        <strong>Improved ability of the All Access users to make satisfactory complete trips in the study area.</strong>
-        <p>
-          To achieve this metric, system user ratings will be used to assess: (1) how achievable door-to-door travel is for trips to, from, and within the BNMC; (2) how safe door-to-door travel paths
-          are for trips to, from, and within the BNMC, including prevalence of level, slip-resistant paths; (3) the adequacy and usefulness of information for making trips to, from, and within the
-          BNMC; and (4) the ability to make trips using integrated transit services to, from, and within the BNMC.
-        </p>
-      </li>
-      <li>
-        <strong>Improved ability to find destinations efficiently using the All Access wayfinding functionality.</strong>
-        <p>
-          To meet this goal, the project will track the fraction of Complete Trip Platform users that elect to receive outdoor and indoor wayfinding notifications as well as the system user
-          self-reported frequency of using these notifications. The project will monitor the utility of the outdoor and indoor wayfinding functionality in assisting users in reaching their destination
-          on time. The team will also employ user ratings of various dimensions of using the All Access indoor and outdoor wayfinding functionality.
-        </p>
-      </li>
-      <li>
-        <strong>Improved ability to cross specific intersections safely using All Access smart signal functionality.</strong>
-        <p>
-          To achieve this goal, the team will measure the percentage of All Access trips crossing at the relevant intersections that use the smart signal remote activation function. The self-reported
-          fraction of people who cross at the relevant intersections who use the All Access smart signal activation functionality will also be tracked. Further, the project will also measure the
-          perceived ease of use and assess the ratings of other aspects regarding the responsiveness of the smart signals, as the perceived safety of crossing the intersections with smart signals.
-        </p>
-      </li>
-      <li>
-        <strong>Provision of an efficient, reliable, and safe new on-demand community shuttle system.</strong>
-        <p>
-          To achieve this target, the team will track the percentage of on-demand community shuttle (CS) trips that arrive at stops within the targeted time allowance of a scheduled arrival time.
-          System user ratings of how reliable the transit system is in reaching their BNMC trip destination on time will also be used, as well as the self-reported frequency of use of all transit
-          services, including the CS, paratransit access line (PAL) services, and NFTA bus and rail lines. Additionally, the project will track the user ratings of CS service in terms of key service
-          aspects – safety, convenience, and affordability - and the cost-efficiency of shuttle services in terms of operating cost per passenger trip. The percentage of CS bookings for which the
-          earliest available pickup time is within 45 minutes of the request time will be monitored to ensure this target is met.
-        </p>
-      </li>
-    </ul>
-    <h2 class="sideways blue">Project Partners</h2>
-    <div class="row">
-      <div class="col-6">
-        <ul>
-          <li>City of Buffalo</li>
-          <li>Buffalo Niagara Medical Campus</li>
-          <li>VIA - Visually Impaired Advancement</li>
-          <li>Kaleida Health</li>
-          <li>University at Buffalo</li>
-          <li>Greater Buffalo Niagara Regional Transportation Council</li>
-        </ul>
-      </div>
-      <div class="col-6">
-        <ul>
-          <li>Fruit of the City</li>
-          <li>Heart of the City Neighborhoods Inc.</li>
-          <li>Niagara International Transportation Technology Coalition&nbsp;(NITTEC)</li>
-          <li>Buffalo Hearing and Speech Center (BHSC)</li>
-        </ul>
+<section class="gray-edge-to-edge">
+      <div class=" page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl ">
+  <h2 class="">Buffalo All Access</h2>
+  <div class="wave-banner-container shadow">
+    <div class="p-3">
+      <h3 class="text-center blue-text">Your Ride Has Arrived!</h3>
+      <div class="d-flex flex-md-row flex-column align-items-center gap-3">
+        <p class="pb-5 px-3">The <span>Niagara Frontier Transportation Authority (NFTA)'s</span> Buffalo All Access project demonstrates how innovative technology can improve public transportation access and efficiency in a medical campus setting, making it easier for patients, staff, and visitors to navigate the area safely and efficiently in <span>Buffalo, New York.</span></p>
+        <Image src={buffaloLogo} alt="Buffalo All Access Logo" class="page-logo img-fluid px-3" height={230} />
       </div>
     </div>
-    <h2 class="sideways blue">NFTA Links and Resources</h2>
-    <ul>
-      <li>Visit the <a href="https://bnmc.org/allaccess/">NFTA Project Website</a></li>
-    </ul>
-    </main> 
+    <div class="wave-banner blue-wave">
+    </div>
+  </div>
+      </div>
+    </section>
+
+    <section class="container-xl">
+      <h2 class="m-0 pb-0">How it Works</h2>
+      
+      <figure class="figure text-center infographic">
+        <a href="#baaModal" class="d-inline-block">
+          <Image
+            src={baaInfographic}
+            alt="Buffalo All Access Infographic"
+            class="figure-img img-fluid w-100"
+            width={2000}
+          />
+        </a>
+        <figcaption class="figure-caption text-center">Click to view larger</figcaption>
+      </figure>
+      
+    </section>
+
+  <h2 class="">Features and Benefits</h2>
+  <ul class="icon-list">
+    <li>
+      <div class="icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+        </svg>
+      </div>
+      <span><b>Buffalo All Access Mobile App</b> — Real-time step-by-step navigation and the ability to hail a free on-demand shuttle within the shuttle service area.</span>
+    </li>
+    <li>
+      <div class="icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+        </svg>
+      </div>
+      <span><b>On-Demand Shuttle System</b> — Community Shuttle which provides door-to-door service in the shuttle service area, and the first-of-its-kind All Access Loop: a self-driving shuttle that circulates the area.</span>
+    </li>
+    <li>
+      <div class="icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M20 10h-3V8.86c1.72-.45 3-2 3-3.86h-3V4c0-.55-.45-1-1-1H8c-.55 0-1 .45-1 1v1H4c0 1.86 1.28 3.41 3 3.86V10H4c0 1.86 1.28 3.41 3 3.86V15H4c0 1.86 1.28 3.41 3 3.86V20c0 .55.45 1 1 1h8c.55 0 1-.45 1-1v-1.14c1.72-.45 3-2 3-3.86h-3v-1.14c1.72-.45 3-2 3-3.86z"/>
+        </svg>
+      </div>
+      <span><b>Remote Pedestrian Signal Actuation (PEDX)</b> — Used throughout Buffalo and the state to manage intersections and signals.</span>
+    </li>
+    <li>
+      <div class="icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/>
+        </svg>
+      </div>
+      <span><b>Wayfinding Technologies</b> — App provides turn-by-turn wayfinding assistance based on your unique needs and abilities, both outdoors and indoors at Visually Impaired Advancement's headquarters and at the Buffalo General Medical Center.</span>
+    </li>
+    <li>
+      <div class="icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
+        </svg>
+      </div>
+      <span><b>All Access Kiosks</b> — Two kiosks with the Buffalo All Access App located at the Summer-Best Metro Rail Station and inside Buffalo General Medical Center.</span>
+    </li>
+  </ul>
+  
+  <section class="gray-edge-to-edge mt-4">
+    <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl">
+      <h2 class="">Get Involved</h2>
+
+      <div class="row g-3">
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card rounded-3 h-100 p-2">
+      <Image src={resourceImg1} alt="Buffalo All Access website link" class="img-fluid rounded mb-2" width={300} />
+      <a href="https://bnmc.org/transportation/buffalo-all-access/" target="_blank" rel="noopener noreferrer">Buffalo All Access Website</a>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card rounded-3 h-100 p-2">
+      <Image src={resourceImg2} alt="Complete Trip mobile and web applications" class="img-fluid rounded mb-2" width={300} />
+      <a href="https://apps.apple.com/us/app/buffalo-all-access/id1668202535" target="_blank" rel="noopener noreferrer">Complete Trip – Apple</a>
+      <a href="https://play.google.com/store/apps/details?id=app.etch.ctp&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Complete Trip – Google Play</a>
+      <a href="https://completetrip.etch.app/map" target="_blank" rel="noopener noreferrer">Complete Trip Web App</a>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card rounded-3 h-100 p-2">
+      <Image src={resourceImg3} alt="ITS DataHub link" class="img-fluid rounded mb-2" width={300} />
+      <a href="https://www.its.dot.gov/data/" target="_blank" rel="noopener noreferrer">Data Hub</a>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card rounded-3 h-100 p-2">
+      <Image src={resourceImg4} alt="ITS CodeHub link" class="img-fluid rounded mb-2" width={300} />
+      <a href="https://www.its.dot.gov/code/" target="_blank" rel="noopener noreferrer">Code Hub</a>
+      </div>
+    </div>
+  </div>
+    </div>
+  </section>
+
+  {/* Modal for enlarged image */}
+  <div id="baaModal" class="img-modal">
+    <a href="#!" class="img-modal__overlay" aria-label="Close"></a>
+    <div class="img-modal__dialog" role="dialog" aria-modal="true" aria-label="Buffalo All Access Infographic">
+      <a href="#!" class="img-modal__close" aria-label="Close">&times;</a>
+      <Image
+        src={baaInfographic}
+        alt="Buffalo All Access Infographic"
+        class="img-fluid w-100"
+      />
+    </div>
+  </div>
+
+  </main> 
 </PageLayout>
+
+<style>
+ figcaption{
+  padding: 0;
+  margin: 0;
+ }
+  figure{
+    width: 100%;
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .infographic{
+    padding: 0 1rem;
+  }
+
+  .icon-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .icon-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+
+  .icon-button {
+    background-color: transparent;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .icon-button svg {
+    width: 18px;
+    height: 18px;
+    fill: #2166b2;
+  }
+
+
+  /* Pure CSS modal */
+  .img-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+  }
+
+  .img-modal:target {
+    display: flex;
+  }
+
+  .img-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  .img-modal__dialog {
+    position: relative;
+    max-width: min(1200px, 90vw);
+    max-height: 90vh;
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-modal__dialog img {
+    max-height: 90vh;
+    display: block;
+  }
+
+  .img-modal__close {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.6rem;
+    color: #000;
+    font-size: 2rem;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .img-modal__close:focus-visible,
+  a[href="#baaModal"]:focus-visible {
+    outline: 2px solid #0d6efd;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+</style>
