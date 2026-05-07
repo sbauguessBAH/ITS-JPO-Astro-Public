@@ -37,8 +37,9 @@ const slugifyForId = (value: string): string =>
 
 <BaseLayout title="filter" description="Filter news content by type and topic." keywords={"filter"}>
   <main class="container my-5">
-    <h1 class="h2 mb-4">News Filter</h1>
-
+    <h1 class="h2 mb-4 sideways blue">Outreach Resources</h1>
+    <p></p>
+    <h2>Outreach Toolkits</h2>
     <form class="row g-4 reduced-gutters filter mb-4 p-3" aria-label="News filter">
       <div class="col-12 col-lg-6">
         <label class="form-label" for="content-type-toggle">Content Type</label>
@@ -89,6 +90,7 @@ const slugifyForId = (value: string): string =>
         toolkitList.map((toolkit) => (
           <div class="col-12 col-md-4 toolkit-card-col">
             <div class="card h-100 toolkit-card">
+              <h3 class="colored-label">{toolkit.topics?.join(", ")}</h3>
               <div class="card-body">
                 <h5 class="card-title">{toolkit.title}</h5>
                 {(toolkit.description || toolkit.last_updated) && (
@@ -101,6 +103,9 @@ const slugifyForId = (value: string): string =>
                     )}
                   </p>
                 )}
+                {toolkit.content_types?.map((ct) => (
+                  <p class="badge bg-secondary me-1">{ct}</p>
+                ))}
                 {toolkit.url && (
                   <a href={toolkit.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     View Toolkit
@@ -227,14 +232,14 @@ const slugifyForId = (value: string): string =>
   .topic-pill {
     display: inline-flex;
     align-items: center;
-    border: 1px solid var(--bs-border-color);
+    border: 1px solid grey;
     border-radius: 999px;
     padding: 0.35rem 0.75rem;
     line-height: 1.2;
     cursor: pointer;
     user-select: none;
-    background-color: var(--bs-body-bg);
-    color: var(--bs-body-color);
+    background-color: white;
+    color: black;
   }
 
   .topic-pill-option > input:checked + .topic-pill {
