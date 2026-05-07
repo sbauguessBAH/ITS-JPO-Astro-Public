@@ -39,7 +39,7 @@ const slugifyForId = (value: string): string =>
   <main class="container my-5">
     <h1 class="h2 mb-4">News Filter</h1>
 
-    <form class="row g-4 reduced-gutters" aria-label="News filter">
+    <form class="row g-4 reduced-gutters filter mb-4 p-3" aria-label="News filter">
       <div class="col-12 col-lg-6">
         <label class="form-label" for="content-type-toggle">Content Type</label>
         <div class="dropdown multi-select-dropdown">
@@ -210,6 +210,12 @@ const slugifyForId = (value: string): string =>
 <style>
   .reduced-gutters {
     --bs-gutter-x: 14px;
+  }
+
+  .filter {
+    background-color: var(--bs-light);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 12px;
   }
 
   .topic-pills {
