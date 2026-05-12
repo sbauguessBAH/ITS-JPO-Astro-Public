@@ -10,6 +10,8 @@ import Link from "@/src/components/Link.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.astro";
 import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
+import LinkIcon from "@/src/components/programs/icons/LinkIcon.astro";
 import base_url from "@/src/lib/base_url";
 ---
 
@@ -72,7 +74,7 @@ import base_url from "@/src/lib/base_url";
   tbody tr td {
     text-align: left;
   }
-  <style > .stage-header {
+  .stage-header {
     /* width: 100%;
     padding: var(--size);
     background: rgb(var(--color-brand-dark)); */
@@ -728,7 +730,93 @@ import base_url from "@/src/lib/base_url";
     </ProgramSection>
     <ProgramSection>
       <h2 class="program-title-lg mb-4">Additional Resources</h2>
+      
       <div class="resource-container">
+        <Card shadow="sm">
+          <CardHeader>
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Intersection Safety Systems (ISS) – Insights from the U.S. DOT Intersection Safety Challenge Stage 1B</h3>
+              <p class="resource-card-subtitle">Webinar | March 26, 2026</p>
+            </div>
+          </CardHeader>
+          <CardFooter>
+            <div class="resource-link-container px-2">
+              <a class="resource-button" rel="noopener noreferrer" target="_blank" href={base_url("/assets/intersection-safety/ISS_Webinar_20260324_final_508.pdf")}>
+                <PdfIcon size={12} />
+                Presentation Material
+              </a>
+               <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://itsaorg.sharepoint.com/:v:/s/ITSAmerica/IQD8U-n_xaGJT6Hb_HDaPuxhARKaDNZirMggXHKSL5SctJc?e=GOkeq1"
+              >
+                <FilmIcon size={12} />
+                Webinar Recording
+
+              </a> 
+            </div>
+          </CardFooter>
+        </Card>
+
+
+        <Card shadow="sm">
+          <CardHeader>
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Intersection Safety Challenge – Stage 1B Lessons Learned Report</h3>
+              <p class="resource-card-subtitle">Report | February 2026</p>
+            </div>
+          </CardHeader>
+          <CardFooter>
+            <div class="resource-link-container px-2">
+              <a class="resource-button" rel="noopener noreferrer" target="_blank" href="https://rosap.ntl.bts.gov/view/dot/89361">
+                <LinkIcon size={12} />
+                Link to Report
+
+              </a>
+              <!-- <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://itsa.adobeconnect.com/p9rpflh67mnj/"
+              >
+                <FilmIcon size={12} />
+                Recording
+              </a> -->
+            </div>
+          </CardFooter>
+        </Card>
+
+
+
+        <Card shadow="sm">
+          <CardHeader>
+            <div class="resource-card-header p-2">
+              <h3 class="resource-card-title">Intersection Safety Challenge – Stage 1B Evaluation Report</h3>
+              <p class="resource-card-subtitle">Report | June 2025</p>
+            </div>
+          </CardHeader>
+          <CardFooter>
+            <div class="resource-link-container px-2">
+              <a class="resource-button" rel="noopener noreferrer" target="_blank" href="https://rosap.ntl.bts.gov/view/dot/89360">
+                <LinkIcon size={12} />
+                Link to Report
+
+              </a>
+              <!-- <a 
+                class="resource-button" 
+                rel="noopener noreferrer" 
+                target="_blank"
+                href="https://itsa.adobeconnect.com/p9rpflh67mnj/"
+              >
+                <FilmIcon size={12} />
+                Recording
+              </a> -->
+            </div>
+          </CardFooter>
+        </Card>
+
+
         <Card shadow="sm">
           <CardBody>
             <div class="resource-card-header p-2">

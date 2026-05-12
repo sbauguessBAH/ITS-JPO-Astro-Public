@@ -1,0 +1,109 @@
+---
+import base_url from "@/src/lib/base_url";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import HeroImage from "@/src/assets/images/its4us/upcoming/ITS4US_Deployment_Accelerator_BG.png";
+---
+
+<style>
+  section{
+    padding: 0;
+  }
+  .announcement-section {
+    background: linear-gradient(to bottom, #081334, #091f61);
+    overflow: hidden;
+  }
+
+  .hero-image {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .announcement-details {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .announcement-details li::before {
+    content: "→";
+    color: #ffd700;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.3rem;
+  }
+
+  .announcement-details li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .announcement-details li:last-child {
+    border-bottom: none;
+  }
+
+  .text-gold {
+    color: #ffd700;
+  }
+
+  .link-custom {
+    color: #2c7ba0;
+  }
+
+  .link-custom:hover {
+    color: #1e5a7d;
+  }
+
+  @media (max-width: 768px) {
+    .hero-image {
+      height: 150px;
+    }
+  }
+</style>
+
+<PageLayout title="ITS4US Upcoming Activities">
+  <Fragment slot="banner">Upcoming Activities</Fragment>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <section class="announcement-section text-white rounded-4 shadow my-5">
+            <img src={HeroImage.src} alt="ITS4US Deployment Accelerator Program" class="hero-image w-100 d-block" />
+            <div class="p-5">
+              <div class="d-flex justify-content-between align-items-start mb-4 gap-4 flex-column flex-md-row">
+                <div class="text-start">
+                  <h1 class="fs-1 fw-bold mb-2">ITS4US DEPLOYMENT ACCELERATOR PROGRAM</h1>
+                  <p class="fs-4 fst-italic mb-0">Bringing American Innovation to Your Community</p>
+                </div>
+                <div class="text-md-end">
+                  <p class="fs-3 text-gold mb-0">Coming Soon</p>
+                </div>
+              </div>
+
+              <div class="announcement-details rounded-4 p-4 mx-auto my-4" style="max-width: 900px;">
+                <ul class="list-unstyled mb-0">
+                  <li class="py-3 fs-5 lh-base">
+                    Integrating demand-response transportation scheduling with medical appointment systems to create a seamless, patient-centered experience.
+                  </li>
+                  <li class="py-3 fs-5 lh-base">
+                    Improving access to care through smarter, more coordinated mobility solutions built on the proven open-source platform developed under the ITS4US Program.
+                  </li>
+                </ul>
+              </div>
+
+              <p class="text-center fs-3 fw-bold mt-5 text-gold text-uppercase" style="letter-spacing: 2px;">
+                STAY TUNED FOR UPCOMING SOLICITATION
+              </p>
+
+              <div class="bg-white rounded-4 shadow p-4 mt-5 mx-auto" style="max-width: 900px;">
+                <h3 class="text-center fs-4 mb-3" style="color: #1e5a7d;">Want to Learn More?</h3>
+                <p class="text-center fs-5 lh-base mb-0" style="color: #333;">
+                  Check the <a href={base_url("/research-areas/ITS4US")} class="link-custom fw-bold">ITS4US Website</a> or sign-up for the 
+                  <a href={base_url("/about/contact-us/mailinglist")} class="link-custom  fw-bold">ITS JPO newsletter</a>.
+                </p>
+              </div>
+            </div>
+            
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</PageLayout>
