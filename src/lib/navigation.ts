@@ -127,6 +127,8 @@ export const navigation: NavigationItem[] = [
           },
           { name: "Videos", url: "/research-areas/ITS4US/videos" },
           { name: "Documentation", url: "/research-areas/ITS4US/documents" },
+          { name: "Upcoming Activities", url: "/research-areas/ITS4US/upcoming" },
+
         ],
       },
       {
