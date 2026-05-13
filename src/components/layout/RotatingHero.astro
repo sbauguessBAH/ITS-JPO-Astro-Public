@@ -3,11 +3,12 @@ import base_url from '@/src/lib/base_url';
 import hero1 from "@/src/assets/images/Hero-Image-02.jpg";
 import hero2 from "@/src/assets/images/Hero-ITS-JPO-NOW.png";
 import hero3 from "@/src/assets/images/Hero-Background-4.png";
+import hero4 from "@/src/assets/images/Hero-IntersectionSafety.png";
 ---
 
 <div class="hero-carousel">
   <div class="slides">
-    <section class="slide" style={`background-image: url(${hero1.src})`}>
+    <!-- <section class="slide" style={`background-image: url(${hero1.src})`}>
       <div class="container-xl">
         <div class="content-box">
           <h2>Intelligent Transportation Systems Joint Program Office</h2>
@@ -18,26 +19,60 @@ import hero3 from "@/src/assets/images/Hero-Background-4.png";
           <a href={base_url('/about/')} class="btn btn-outline-light btn-lg text-dark m-0 fs-4">LEARN MORE ABOUT THE ITS JPO</a>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section class="slide" style={`background-image: url(${hero2.src})`}>
-      <div class="container-xl">
-        <div class="content-box">
-          <h2 class="newsLetterHeader">ITS JPO NOW</h2>
-          <p class="fw-bold">March 2026 | Inaugural Edition</p>
-          <p>Your essential guide to the latest advancements, new digital resources, and critical safety updates driving the future of Intelligent Transportation Systems (ITS).</p>
-          <a href={base_url('/about/')} class="btn btn-outline-light btn-lg text-dark m-0 fs-4">Read Latest Issue</a>
-        </div>
-      </div>
-    </section>
-
+   <!-- 
     <section class="slide" style={`background-image: url(${hero3.src})`}>
       <div class="container-xl">
         <div class="content-box p-3">
           <iframe class="rounded-3 w-100" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/XfNiDWilfss" title="What Is V2X?: A Short Dive into the Evolution and Future of Vehicle Connectivity" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
-    
+    </section> -->
+
+    <section class="slide" style={`background-image: url(${hero2.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2 class="newsLetterHeader">ITS JPO NOW</h2>
+          <p class="fw-bold">May 2026</p>
+          <p>Georgia launches an accessible multimodal trip planner, USDOT unveils an interactive V2X deployment map, and Detroit hosts cutting-edge connected vehicle demonstrations—don't miss the May edition!
+
+</p>
+          <a href={base_url('/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026/')} class="btn btn-outline-light btn-lg text-dark m-0 fs-4">Read Latest Issue</a>
+        </div>
+      </div>
+    </section>
+
+
+     <section class="slide" style={`background-image: url(${hero4.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2>Check Out New Resources Related to Intersection Safety</h2>
+          <p class="fs-6">
+            Want to learn more about ITS for intersection safety and results from the USDOT ISC? Check out new resources now posted to the website, including two new reports related to the technical evaluation results and insights from the Challenge Stage 1B, a new video summarizing the results, and presentation materials from the webinar held on March 26.
+          </p>
+          <a href={base_url('/research-areas/intersection-safety/challenge/')} class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1">Explore the ISC Website</a>
+          <a href="https://rosap.ntl.bts.gov/view/dot/89360" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1" target="_blank">Challenge Stage 1B Lessons Learned Report</a>
+          <a href="https://rosap.ntl.bts.gov/view/dot/89361" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1" target="_blank">Challenge Stage 1B Lessons Learned Report</a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" style={`background-image: url(${hero3.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2 class="newsLetterHeader">ISS Prototyping Broad Agency Announcement is Live!</h2>
+          <p class="fs-4">
+            Funding Opportunity | Up to $17M across 3 teams
+          </p>
+          <a href="https://www.sam.gov" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1">Learn More ▸</a>
+          
+        </div>
+      </div>
+    </section>
+
+
   </div>
 </div>
 
