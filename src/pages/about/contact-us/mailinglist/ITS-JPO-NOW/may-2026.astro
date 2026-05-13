@@ -1,0 +1,412 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import NewsletterSection from "@/src/components/newsletter/NewsletterSection.astro";
+import NewsletterArticle from "@/src/components/newsletter/NewsletterArticle.astro";
+import NewsletterCTA from "@/src/components/newsletter/NewsletterCTA.astro";
+
+const keywords = ["ITS JPO", "newsletter", "May 2026", "intelligent transportation systems", "V2X", "ITS4US"];
+const description = "ITS JPO NOW - May 2026 edition. Read about the Georgia multimodal trip planning app launch, work zone safety, V2X deployment map, and upcoming events.";
+---
+
+<PageLayout title="ITS JPO NOW - May 2026" keywords={keywords} description={description}>
+  <Fragment slot="banner">ITS JPO NOW - May 2026</Fragment>
+  
+  <main class="container-xl newsletter-container shadow rounded-4 p-4 mt-5">
+    <!-- Banner Image -->
+    <div class="row">
+      <div class="col-12">
+        <img 
+          src="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13451089/6858046/govdelivery-banners-may_crop.jpg" 
+          alt="ITS JPO - Now - May 2026"
+          class="newsletter-banner"
+        />
+      </div>
+    </div>
+
+    <!-- Main Article: Georgia Event -->
+    <NewsletterArticle 
+      title="Georgia Event Showcases New Multimodal Trip Planning Tool"
+      imageUrl="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/05/13664130/6886052/source-gwinnett-county-usdot-ribbon-cutting_crop.jpg"
+      imageAlt="GDOT ribbon cutting"
+      imageSource="Gwinnett County"
+    >
+      <p style="font-size: 0.85rem; margin-bottom: 1rem;">
+        USDOT Reps: Sarah Lamothe, Norah Ocel, Elina Zlotchenko, Sabrina David, Aaron Williams
+      </p>
+      
+      <p>
+        Community leaders, local transportation officials, and representatives of the U.S. 
+        Department of Transportation (USDOT) gathered in Gwinnett County, GA., on 
+        Thursday, May 7, to announce the launch of a mobile app that helps people plan trips 
+        using multiple types of transportation, like walking and transit, with step-by-step 
+        directions both inside buildings and on county sidewalks.
+      </p>
+
+      <p>
+        The event featured a ribbon-cutting ceremony, live technology demonstrations, and 
+        comments from project principals, as well as a community engagement event to 
+        familiarize county residents with the application. The open-source application, known as 
+        Georgia Mobility Access Map (G-MAP), improves safety and mobility around the county 
+        by helping residents plan their trips from door-to-door, including catching a ride on the 
+        bus. A detailed map of Gwinnett County's thousands of miles of sidewalks collected by 
+        the project enables the outdoor directions, allowing Gwinnett residents to avoid barriers 
+        along their route such as sidewalk gaps, steps, and steep hills.
+      </p>
+
+      <p>
+        "Today's launch of G-MAP in Gwinnett County demonstrates how federal innovation 
+        programs like ITS4US can deliver real-world solutions that improve mobility and 
+        independence for everyone," said Sabrina David, Federal Highway Administration 
+        (FHWA) Georgia Division Administrator. She added, "A person who uses a wheelchair, 
+        walker, or cane can now plan their entire trip knowing that their bus driver knows they 
+        will need a ramp and provides them with an accessible route. This is information that 
+        wasn't reliably available before."
+      </p>
+
+      <p>
+        The Georgia Department of Transportation, the Atlanta Regional Commission, Gwinnett 
+        County, and the Statewide Independent Living Council of Georgia were awarded $11.4 
+        million to develop and deploy the application as part of the Intelligent Transportation 
+        Systems Joint Program Office's (ITS JPO) <a href="https://www.its.dot.gov/research-areas/ITS4US/">ITS4US Deployment Program</a>.
+      </p>
+
+      <NewsletterCTA 
+        href="https://www.its.dot.gov/research-areas/ITS4US/deployments/georgia/"
+        text="Visit the ITS4US GDOT Deployment Webpage"
+      />
+    </NewsletterArticle>
+
+    <!-- ANNOUNCEMENTS Section -->
+    <NewsletterSection title="ANNOUNCEMENTS" titleUnderline={true}>
+      
+      <!-- Work Zone Safety -->
+      <NewsletterArticle 
+        title="Honoring Work Zone Safety Week"
+        imageUrl="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/05/13629530/6875268/fatal-work-zone-crashes-by-type-of-work-zone-its-jp_crop.png"
+        imageAlt="Fatal work zone crashes by type graph"
+        imageSource="USDOT"
+      >
+        <p>
+          The 2026 National Work Zone Awareness Week April 20–24, kicked off last month with 
+          the theme of "Safe Actions, Save Lives." The key message is that everyone plays a role 
+          in preventing work zone incidents. In keeping with this theme, the ITS JPO's 
+          Deployment Evaluation Program recently released the ITS for Work Safety Data Story. 
+          Check out this data story to explore how ITS technologies can help reduce crashes, 
+          fatalities, and risks for road workers and travelers. To explore additional ITS Benefits, 
+          Costs, and Lessons Learned, visit the <a href="https://www.itskrs.its.dot.gov/">Deployment Evaluation Program</a>.
+        </p>
+
+        <NewsletterCTA 
+          href="https://www.itskrs.its.dot.gov/decision-support/workzone-datastory"
+          text="Read the Data Story Here"
+        />
+      </NewsletterArticle>
+
+      <!-- DataHub Data Stories -->
+      <NewsletterArticle 
+        title="New Data Stories Now Available on ITS DataHub"
+        imageUrl="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13577362/6858050/dhch-datastory_crop.png"
+        imageAlt="DHCH datastory"
+        imageSource="USDOT"
+      >
+        <p>
+          The ITS JPO DataHub recently published an open data story on the USDOT Intersection 
+          Safety Challenge (ISC) Stage 1B: System Assessment and Virtual Testing dataset. The ISC 
+          Stage 1B data story presents background information on Stage 1B of the ISC as well as the 
+          unlabeled training data and labeled validation data (with ground truth labels) that make up 
+          the dataset. The JPO DataHub also recently published an open data story on the data 
+          collected as part of FHWA's Third Generation Simulation (TGSIM) project. The TGSIM 
+          data story provides background information on the TGSIM project as well as details and 
+          previews of the six datasets collected, including detailed vehicle trajectory data derived 
+          from high-resolution videos and supporting data files. Read the stories today and access 
+          the data.
+        </p>
+
+        <NewsletterCTA 
+          href="https://data.transportation.gov/stories/s/smqb-i5sx"
+          text="Read the ISC Stage 1B Data Story"
+        />
+        
+        <NewsletterCTA 
+          href="https://data.transportation.gov/stories/s/uwv8-dpvx"
+          text="Read the TGSIM Open Data Story"
+        />
+      </NewsletterArticle>
+
+      <!-- ISC Resources -->
+      <NewsletterArticle 
+        title="Check Out New Resources Related to Intersection Safety"
+        imageUrl="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13577993/isc-reports-and-resources-may-ed-its-jpo-now_original.png"
+        imageAlt="ISC reports and resources"
+        imageSource="USDOT"
+      >
+        <p>
+          Want to learn more about ITS for intersection safety and results from the USDOT ISC? 
+          Check out new resources now posted to the website, including two new reports related to 
+          the technical evaluation results and insights from the Challenge Stage 1B, a new video 
+          summarizing the results, and presentation materials from the webinar held on March 26.
+        </p>
+
+        <NewsletterCTA 
+          href="https://www.its.dot.gov/research-areas/intersection-safety/challenge/"
+          text="Explore the ISC Website"
+        />
+        
+        <NewsletterCTA 
+          href="https://rosap.ntl.bts.gov/view/dot/89360"
+          text="View the Challenge Stage 1B Evaluation Report"
+        />
+        
+        <NewsletterCTA 
+          href="https://rosap.ntl.bts.gov/view/dot/89361"
+          text="View the Challenge Stage 1B Lessons Learned Report"
+        />
+      </NewsletterArticle>
+
+      <!-- V2X Mobile App -->
+      <NewsletterArticle 
+        title="Open-Source V2X Mobile App Showcased at 5GAA Network Tolling Demonstration"
+        imageUrl="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13578089/5gaa-tolling-socialmedia-post-v2_original.jpg"
+        imageAlt="5GAA photo"
+        imageSource="FHWA"
+      >
+        <p>
+          The FHWA's Saxton Transportation Operations Laboratory showcased the newly released 
+          open-source code for its Vehicle-to-Everything (V2X) Mobile App during a connected 
+          vehicle tolling and safety demonstration at the <a href="https://5gaa.org/events/5gaa-conference-advancing-connected-mobility-in-california-c-v2x-and-connected-vehicle-infrastructure/">February 2026 5G Automotive Association (5GAA) Face-to-Face (F2F) meeting in Sacramento</a>. In 
+          collaboration with private sector companies, the team demonstrated how the application 
+          enables secure Network-V2X communications, managing "virtual toll zones" and delivering 
+          safety-critical alerts directly to vehicle dashboards.
+        </p>
+
+        <p>
+          By releasing the V2X Mobile App as open-source software, agencies, researchers, and 
+          industry partners can explore a working V2X implementation, and test, adapt, and integrate 
+          it into their own environments.
+        </p>
+
+        <NewsletterCTA 
+          href="https://github.com/usdot-fhwa-stol/v2x-mobile-app"
+          text="Access the V2X Mobile App Code"
+        />
+      </NewsletterArticle>
+
+      <!-- V2X Deployment Map -->
+      <NewsletterArticle 
+        title="Initial Prototype of National V2X Deployment Map Now Available"
+        imageUrl="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13578259/6858051/v2xmobileapp-may-ed-its-jpo-now-jpg_crop.png"
+        imageAlt="V2X mobile map"
+        imageSource="USDOT"
+      >
+        <p>
+          The ITS JPO has launched an interactive map showcasing V2X deployments across the 
+          country. The map compiles and visualizes data from USDOT funded V2X projects, 
+          Accelerating V2X Cohort members, and the Federal Communications Commission Universal 
+          Licensing System, into one interactive platform. Users can explore project details at 
+          national, state, and local levels—tracking active and planned Roadside Units, area‑wide 
+          licenses, and deployment analytics. This is the initial release of the map prototype, and the 
+          JPO is continuing to collect and validate data with deployers, so expect the map to evolve 
+          as more verified information becomes available.
+        </p>
+
+        <NewsletterCTA 
+          href="https://www.its.dot.gov/scrc/index.html#/technology-areas/v2x/map"
+          text="Explore V2X Deployments"
+        />
+      </NewsletterArticle>
+
+    </NewsletterSection>
+
+    <!-- UPCOMING EVENTS Section -->
+    <NewsletterSection title="UPCOMING EVENTS" titleUnderline={true}>
+      
+      <!-- Plugfest -->
+      <NewsletterArticle 
+        title="FHWA Advances V2X Misbehavior Detection at OmniAir Maryland Plugfest"
+        imageUrl="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/05/13629518/6875269/omniair-maryland-plugfest-v2_crop.png"
+        imageAlt="OmniAir Maryland Plugfest"
+        imageSource="Plugfest"
+      >
+        <p>
+          At the upcoming OmniAir Maryland Plugfest (June 1–5), FHWA is advancing Misbehavior 
+          Detection and Reporting (MBD/MBR) capabilities. Through implementing the new Security 
+          Misbehavior Detection &amp; Reporting Conformance Test Specification, FHWA and partners 
+          are validating real-world interoperability across multiple vendors and systems using SAE 
+          J3287-based test scenarios for Basic Safety Message applications.
+        </p>
+
+        <p>
+          This demonstration brings together key industry collaborators to demonstrate how 
+          standards-based MBD/MBR strengthens security and enables seamless interoperability 
+          across V2X deployments.
+        </p>
+
+        <NewsletterCTA 
+          href="https://www.eventbrite.com/e/omniair-maryland-plugfest-cav-workshop-tickets-1980120870828"
+          text="Join Us at Plugfest!"
+        />
+      </NewsletterArticle>
+
+      <!-- ITS America -->
+      <NewsletterArticle 
+        title="Where to Find ITS JPO at ITS America Conference & Expo 2026"
+        imageUrl="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/05/13619939/6873016/itsa2024_crop.png"
+        imageAlt="ITS America Conference"
+        imageSource="USDOT"
+      >
+        <p>
+          Attendees at the ITS America Conference &amp; Expo (ITSA) in Detroit, Mich., June 9–12, 
+          2026, will have many opportunities to learn about ITS JPO activities. Featured speakers 
+          will include:
+        </p>
+
+        <ul>
+          <li>Justin Anderson and Elina Zlotchenko, "Paving the Path to the Complete Trip: Next-Generation Mobility, Accessibility, and the Road Ahead," Tuesday, June 9 at 2:30 p.m.</li>
+          <li>Hyungjun Park, "Beyond Line of Sight – Harmonizing Connectivity and Automation in Autonomous Freight," Thursday, June 11 at 10:30 a.m.</li>
+          <li>Lisa Randall, "Bridging the Gap: USDOT Resources for Trustworthy AI Implementations," Thursday, June 11 at 1 p.m.</li>
+          <li>Justin Anderson, "A Digital Seatbelt: Interoperable V2X Traveler Information Messages," Friday, June 12 at 1 p.m.</li>
+        </ul>
+
+        <p>Other V2X related session:</p>
+
+        <ul>
+          <li>Govind Vadakpat, "From Concept to Curbside: Insights from the V2X Accelerator Deployments on the Road to Interoperability," Tuesday, June 9 at 1 p.m.</li>
+        </ul>
+
+        <p>
+          While you are at the conference, be sure to stop by the ITS JPO booth (4031) in the 
+          exhibit hall. ITS JPO program managers will be on hand to discuss current initiatives, 
+          especially those related to AI and V2X technology. Keep an eye on our social media for 
+          announcements regarding the hours when certain staff will be available!
+        </p>
+
+        <NewsletterCTA 
+          href="https://www.itsamericaevents.com/expo/en-us/exhibitor-list/exhibitor-details.us%2520department%2520of%2520transportation%2520usdot.org-24c8ad9b-6cae-4e15-b39b-775ba369e9ae.html#/"
+          text="Dive Deeper into ITSA 2026"
+        />
+      </NewsletterArticle>
+
+      <!-- ITSA Demos -->
+      <NewsletterArticle 
+        title="Bringing Connected Vehicle Interoperability to Life at ITSA 2026"
+        imageUrl="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13579166/demos-photo-1_original.jpg"
+        imageAlt="Demo photo"
+        imageSource="MDOT"
+      >
+        <p>
+          Also at ITSA 2026, FHWA's Saxton Transportation Operations Laboratory (STOL) is 
+          supporting MDOT technical demonstrations along the I-94 corridor, showcasing a fully 
+          integrated V2X ecosystem in real-world conditions. STOL is also enabling seamless 
+          interoperability between Direct and Network V2X communications by leading the system 
+          architecture and technical framework. At the core of this effort is the FHWA Operational 
+          Data Environment, which facilitates secure data exchange, integration, and message 
+          translation across multiple vendors and systems.
+        </p>
+
+        <p>
+          This demonstration highlights how a cohesive, standards-based architecture can scale 
+          across agencies, helping state and local partners deploy interoperable V2X solutions that 
+          improve safety, mobility, and system performance.
+        </p>
+
+        <NewsletterCTA 
+          href="https://www.itsamericaevents.com/content/dam/sitebuilder/rna/its-america-events/its-america-conference-expo/2026/docs/ITS-America-2026-MDOT-Demo-Call-for-Participation-Concept-Details.pdf.coredownload.659036082.pdf"
+          text="Explore ITSA 2026 Demonstrations"
+        />
+      </NewsletterArticle>
+
+      <!-- ITE -->
+      <NewsletterArticle 
+        title="ITE Annual Meeting and Exhibition"
+        imageUrl="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/05/13619960/6873017/ite2026_crop.png"
+        imageAlt="ITE Annual Meeting"
+        imageSource="ITE"
+      >
+        <p>
+          Mark your calendar for the ITE Annual Meeting and Exhibition, July 19–22, 2026, in 
+          Detroit, Michigan. ITS JPO representatives will be available at booth 223 in the exhibit 
+          hall. Stay tuned for future updates!
+        </p>
+
+        <NewsletterCTA 
+          href="https://www.iteannualmeeting.org/"
+          text="Learn More about ITE 2026"
+        />
+      </NewsletterArticle>
+
+    </NewsletterSection>
+
+    <!-- STAY CONNECTED Section -->
+    <NewsletterSection title="STAY CONNECTED" titleUnderline={true} divider={true}>
+      <div class="row text-center stay-connected">
+        <div class="col-md-6 mb-3">
+          <h2 class="stay-connected-link">
+            <a href="https://www.its.dot.gov/about/contact-us/">Contact Us</a>
+          </h2>
+        </div>
+        <div class="col-md-6 mb-3">
+          <h2 class="stay-connected-link">
+            <a href="https://www.its.dot.gov/news-info/video-library/">Video Library</a>
+          </h2>
+        </div>
+      </div>
+    </NewsletterSection>
+
+    <!-- Footer Banner -->
+    <div class="row">
+      <div class="col-12">
+        <img 
+          src="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/02/13220765/6730572/govdelivery-newletter-template-25anniversary-footer_crop.jpg" 
+          alt="ITS JPO footer"
+          class="newsletter-footer"
+        />
+      </div>
+    </div>
+
+  </main>
+</PageLayout>
+
+<style>
+  .newsletter-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .newsletter-banner,
+  .newsletter-footer {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .newsletter-footer {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  .stay-connected {
+    margin: 2rem 0;
+  }
+
+  .stay-connected-link {
+    font-size: 1.5rem;
+  }
+
+  .stay-connected-link a {
+    color: #1d5782;
+    text-decoration: none;
+  }
+
+  .stay-connected-link a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .newsletter-container {
+      padding: 1rem 0.5rem;
+    }
+  }
+</style>
+
