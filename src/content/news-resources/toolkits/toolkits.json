@@ -1,9 +1,9 @@
 {"outreach_toolkits":[{
     "id": 1,
     "title": "Vehicle-to-Everything (V2X) Deployment Toolkit",
-    "toolkit_type": "V2X",
+    "subtitle": "V2X",
     "description":"Resources to help communities and agencies communicate the benefits of V2X technology to local stakeholders and the public.",
-    "last_updated": "Updated February 2026",
+    "date": "Updated February 2026",
     "content_types":["fact sheet","talking points", "social posts", "infographic","slides"],
     "topics":["V2X"],
     "url":"/content/news-resources/toolkits/v2x-deployment-toolkit"
@@ -12,9 +12,9 @@
 {
     "id": 2,
     "title": "Artificial Intelligence in Transportation Toolkit",
-    "toolkit_type": "AI",
+    "subtitle": "AI",
     "description":"Shareable materials explaining how AI is being used to improve safety and efficiency across the transportation system.",
-    "last_updated": "Updated January 2026",
+    "date": "Updated January 2026",
     "content_types":["fact sheet","infographic", "talking points", "social posts"],
     "topics":["AI"],
     "url":"/content/news-resources/toolkits/ai-in-transportation-toolkit"
@@ -22,9 +22,9 @@
 {
     "id": 3,
     "title": "Intersection Safety Challenge Outreach Toolkit",
-    "toolkit_type": "Intersection Safety",
+    "subtitle": "Intersection Safety",
     "description":"Materials for local agencies and community partners to raise awareness about ITS-enabled intersection safety technologies.",
-    "last_updated": "Updated December 2025",
+    "date": "Updated December 2025",
     "content_types":["fact sheet","infographic", "talking points", "slides", "photos"],
     "topics":["Intersection Safety"],
     "url":"/content/news-resources/toolkits/intersection-safety-challenge-outreach-toolkit"
@@ -33,9 +33,9 @@
 {
     "id": 4,
     "title": "Automation Program Stakeholder Toolkit",
-    "toolkit_type": "Automation",
+    "subtitle": "Automation",
     "description":"Resources for stakeholders engaged in automated vehicle research, policy, and deployment conversations.",
-    "last_updated": "Updated November 2025",
+    "date": "Updated November 2025",
     "content_types":["fact sheet", "slides", "talking points", "social posts"],
     "topics":["Automation"],
     "url":"/content/news-resources/toolkits/automation-program-stakeholder-toolkit"
@@ -44,9 +44,9 @@
 {
     "id": 5,
     "title": "ITS4US Complete Trip Program Toolkit",
-    "toolkit_type": "ITS4US",
+    "subtitle": "ITS4US",
     "description":"Community-facing materials to share the story of ITS4US deployments improving mobility for underserved populations.",
-    "last_updated": "Updated October 2025",
+    "date": "Updated October 2025",
     "content_types":["fact sheet", "infographic", "social posts", "photos"],
     "topics":["ITS4US"],
     "url":"/content/news-resources/toolkits/its4us-complete-trip-program-toolkit"
@@ -55,9 +55,9 @@
 {
     "id": 6,
     "title": "ITS for Freight & Commercial Vehicles Toolkit",
-    "toolkit_type": "Freight",
+    "subtitle": "Freight",
     "description":"Resources for freight industry stakeholders, port operators, and fleet managers on ITS technologies for commercial transportation.",
-    "last_updated": "Updated September 2025",
+    "date": "Updated September 2025",
     "content_types":["fact sheet", "infographic", "talking points"],
     "topics":["Freight"],
     "url":"/content/news-resources/toolkits/its-freight-commercial-vehicles-toolkit"
@@ -67,7 +67,7 @@
 "media_toolkits": [{
     "id": 30,
     "title": "ITS America Annual Meeting 2026",
-    "toolkit_type": "Conference Kit",
+    "subtitle": "Conference Kit",
     "date": "May 2026",
     "location": "Tampa, FL",
     "content_types":["news release","fact sheet","photos", "video b-roll", "infographic"],
@@ -78,7 +78,7 @@
 {
     "id": 31,
     "title": "V2X Deployment Program Launch",
-    "toolkit_type": "Announcement Kit",
+    "subtitle": "Announcement Kit",
     "date": "January 2026",
     "content_types":["news release","fact sheet","sound bites", "photos"],
     "topics":["Announcement"],
@@ -87,7 +87,7 @@
 {
     "id": 32,
     "title": "ITS JPO 30th Anniversary",
-    "toolkit_type": "Milestone Kit",
+    "subtitle": "Milestone Kit",
     "date": "October 2025",
     "content_types":["news release","fact sheet","infographic", "video b-roll", "sound bites"],
     "topics":["Intersection Safety"],

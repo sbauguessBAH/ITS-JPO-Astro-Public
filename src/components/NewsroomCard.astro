@@ -1,27 +1,38 @@
 ---
-type Toolkit = {
-  content_types?: string[];
-  topics?: string[];
-  title?: string;
-  url?: string;
-  description?: string;
-  last_updated?: string;
-  toolkit_type?: string;
-};
+import type { NewsroomCardItem, Newsletter, Toolkit } from "@/src/types";
+
+type NewsroomCardInput = NewsroomCardItem | Toolkit | Newsletter;
 
 interface Props {
-  toolkit: Toolkit;
+  item: NewsroomCardInput;
   showPills?: boolean;
   showColoredLabel?: boolean;
   ctaText?: string;
 }
 
 const {
-  toolkit,
+  item,
   showPills = true,
   showColoredLabel = true,
   ctaText = "View Toolkit",
 } = Astro.props;
+
+const normalizeItem = (value: NewsroomCardInput): NewsroomCardItem => {
+  const newsletterValue = value as Newsletter;
+
+  return {
+    title: value.title,
+    url: value.url,
+    description: value.description,
+    content_types: value.content_types,
+    topics: value.topics,
+    issue: newsletterValue.issue,
+    date: value.date,
+    subtitle: value.subtitle,
+  };
+};
+
+const normalizedItem = normalizeItem(item);
 
 const slugifyForId = (value: string): string =>
   value
@@ -30,34 +41,36 @@ const slugifyForId = (value: string): string =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-const topicSlug = toolkit.topics?.[0] ? slugifyForId(toolkit.topics[0]) : "";
-const descriptionText = toolkit.description ?? "";
-const fallbackText = !toolkit.description && toolkit.last_updated ? toolkit.last_updated : "";
+const labelText = normalizedItem.topics?.join(", ") ?? normalizedItem.subtitle ?? "";
+const labelKey = normalizedItem.topics?.[0] ?? normalizedItem.subtitle ?? "";
+const topicSlug = labelKey ? slugifyForId(labelKey) : "";
+const descriptionText = normalizedItem.description ?? "";
+const fallbackText = !normalizedItem.description && normalizedItem.date ? normalizedItem.date : "";
 ---
 
 <div class="card h-100 toolkit-card">
   {
     showColoredLabel && (
       <h3 class="colored-label" data-topic={topicSlug}>
-        {toolkit.topics?.join(", ")}
+        {labelText}
       </h3>
     )
   }
 
   <div class="card-body">
-    <h5 class="card-title">{toolkit.title}</h5>
+    <h5 class="card-title">{normalizedItem.title}</h5>
 
     {(descriptionText || fallbackText) && <p class="card-text">{descriptionText || fallbackText}</p>}
 
     {
       showPills &&
-        toolkit.content_types?.map((ct) => (
+        normalizedItem.content_types?.map((ct) => (
           <p class="badge bg-secondary me-1">{ct}</p>
         ))
     }
 
-    {toolkit.url && (
-      <a href={toolkit.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+    {normalizedItem.url && (
+      <a href={normalizedItem.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
         {ctaText}
       </a>
     )}

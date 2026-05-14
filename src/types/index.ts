@@ -55,3 +55,38 @@ export type ResourceGroup = {
 };
 
 export type VideoThumbnail = Resource & { date: string; };
+
+// Toolkit payload shape from content sources.
+export type Toolkit = {
+  content_types?: string[];
+  topics?: string[];
+  title?: string;
+  url?: string;
+  description?: string;
+  date?: string;
+  subtitle?: string;
+};
+
+// Newsletter payload shape for newsroom card usage.
+export type Newsletter = {
+  title?: string;
+  url?: string;
+  description?: string;
+  issue?: string;
+  date?: string;
+  subtitle?: string;
+  content_types?: string[];
+  topics?: string[];
+};
+
+// Normalized card model accepted by NewsroomCard.
+export type NewsroomCardItem = {
+  title?: string;
+  url?: string;
+  description?: string;
+  date?: string;
+  subtitle?: string;
+  issue?: string;
+  content_types?: string[];
+  topics?: string[];
+};

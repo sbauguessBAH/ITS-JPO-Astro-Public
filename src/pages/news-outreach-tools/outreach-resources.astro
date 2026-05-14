@@ -1,25 +1,22 @@
 ---
 import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 import BaseLayout from "@/src/layouts/BaseLayout.astro";
-import ToolkitCard from "@/src/components/ToolkitCard.astro";
-
-type Toolkit = {
-  content_types?: string[];
-  topics?: string[];
-  title?: string;
-  url?: string;
-  description?: string;
-  last_updated?: string;
-  toolkit_type?: string;
-};
+import NewsroomCard from "@/src/components/NewsroomCard.astro";
+import type { NewsroomCardItem, Toolkit } from "@/src/types";
 
 const toolkitData = toolkits as {
   outreach_toolkits?: Toolkit[];
 };
 
-const toolkitList: Toolkit[] = [
-  ...(Array.isArray(toolkitData?.outreach_toolkits) ? toolkitData.outreach_toolkits : []),
-];
+const toolkitList: NewsroomCardItem[] = (Array.isArray(toolkitData?.outreach_toolkits) ? toolkitData.outreach_toolkits : []).map((toolkit) => ({
+  title: toolkit.title,
+  url: toolkit.url,
+  description: toolkit.description,
+  date: toolkit.date,
+  subtitle: toolkit.subtitle,
+  content_types: toolkit.content_types,
+  topics: toolkit.topics,
+}));
 
 const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
   return [...new Set(values.filter((v): v is string => typeof v === "string" && v.trim().length > 0))];
@@ -90,7 +87,7 @@ const slugifyForId = (value: string): string =>
       {
         toolkitList.map((toolkit) => (
           <div class="col-12 col-md-4 toolkit-card-col">
-            <ToolkitCard toolkit={toolkit} />
+            <NewsroomCard item={toolkit} />
           </div>
         ))
       }
