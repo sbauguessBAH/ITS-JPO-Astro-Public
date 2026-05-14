@@ -1,6 +1,7 @@
 ---
 import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 import BaseLayout from "@/src/layouts/BaseLayout.astro";
+import ToolkitCard from "@/src/components/ToolkitCard.astro";
 
 type Toolkit = {
   content_types?: string[];
@@ -89,32 +90,7 @@ const slugifyForId = (value: string): string =>
       {
         toolkitList.map((toolkit) => (
           <div class="col-12 col-md-4 toolkit-card-col">
-            <div class="card h-100 toolkit-card">
-              <h3 class="colored-label" data-topic={toolkit.topics?.[0] ? slugifyForId(toolkit.topics[0]) : ""}>
-                {toolkit.topics?.join(", ")}
-              </h3>
-              <div class="card-body">
-                <h5 class="card-title">{toolkit.title}</h5>
-                {(toolkit.description || toolkit.last_updated) && (
-                  <p class="card-text">
-                    {toolkit.description ?? ""}
-                    {!toolkit.description && toolkit.last_updated && (
-                      <>
-                        {[toolkit.last_updated].filter(Boolean).join(" — ")}
-                      </>
-                    )}
-                  </p>
-                )}
-                {toolkit.content_types?.map((ct) => (
-                  <p class="badge bg-secondary me-1">{ct}</p>
-                ))}
-                {toolkit.url && (
-                  <a href={toolkit.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    View Toolkit
-                  </a>
-                )}
-              </div>
-            </div>
+            <ToolkitCard toolkit={toolkit} />
           </div>
         ))
       }
@@ -223,57 +199,6 @@ const slugifyForId = (value: string): string =>
     background-color: var(--bs-light);
     border: 1px solid var(--bs-border-color);
     border-radius: 12px;
-  }
-
-  .toolkit-card {
-    padding: 1rem;
-  }
-
-  .toolkit-card > .card-body {
-    padding: 0;
-  }
-
-  .colored-label {
-    display: inline-block;
-    width: fit-content;
-    margin: 0 0 0.75rem 0;
-    padding: 0.35rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    line-height: 1.2;
-    background-color: rgba(var(--bs-secondary-rgb), 0.18);
-    color: rgb(var(--bs-secondary-rgb));
-  }
-
-  .colored-label[data-topic="v2x"] {
-    background-color: rgba(var(--bs-primary-rgb), 0.18);
-    color: rgb(var(--bs-primary-rgb));
-  }
-
-  .colored-label[data-topic="ai"] {
-    background-color: rgba(var(--bs-info-rgb), 0.18);
-    color: rgb(var(--bs-info-rgb));
-  }
-
-  .colored-label[data-topic="intersection-safety"] {
-    background-color: rgba(var(--bs-danger-rgb), 0.18);
-    color: rgb(var(--bs-danger-rgb));
-  }
-
-  .colored-label[data-topic="automation"] {
-    background-color: rgba(var(--bs-success-rgb), 0.18);
-    color: rgb(var(--bs-success-rgb));
-  }
-
-  .colored-label[data-topic="its4us"] {
-    background-color: rgba(var(--bs-warning-rgb), 0.18);
-    color: rgb(var(--bs-warning-rgb));
-  }
-
-  .colored-label[data-topic="freight"] {
-    background-color: rgba(var(--bs-dark-rgb), 0.12);
-    color: rgb(var(--bs-dark-rgb));
   }
 
   .topic-pills {
