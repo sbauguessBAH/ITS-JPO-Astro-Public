@@ -153,6 +153,12 @@ section h2.sideways{
   border-bottom: #055581 3px solid;
 }
 
+.heading-border-left.blue {
+  border-left: 7px solid;
+  border-color: #055581;
+  border-bottom: none;
+}
+
 .faq-subject {
   font-size: 25px;
   font-weight: 500;

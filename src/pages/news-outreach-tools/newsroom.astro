@@ -4,6 +4,7 @@ import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import NewsroomCard from "@/src/components/NewsroomCard.astro";
 import type { NewsroomCardItem } from "@/src/types";
 import newsletters from "@/src/content/news-resources/newsletters/newsletters.json";
+import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 
 type NewsletterEntry = {
   title?: string;
@@ -15,6 +16,17 @@ type NewsletterEntry = {
   volume?: string;
   issue?: string;
   img?: string;
+};
+
+type MediaToolkitEntry = {
+  title?: string;
+  url?: string;
+  description?: string;
+  date?: string;
+  subtitle?: string;
+  content_types?: string[];
+  topics?: string[];
+  location?: string;
 };
 
 const keywords = [
@@ -55,6 +67,22 @@ const featuredNewsletter: NewsroomCardItem | undefined = newsletterList[0]
 const archiveNewsletters: NewsroomCardItem[] = newsletterList
   .slice(1, 5)
   .map((entry) => toCardItem(entry));
+
+const toolkitData = toolkits as { media_toolkits?: MediaToolkitEntry[] };
+
+const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolkits)
+  ? toolkitData.media_toolkits
+  : [])
+  .slice(0, 4)
+  .map((item) => ({
+    title: item.title,
+    url: item.url,
+    description: item.description,
+    date: item.date,
+    subtitle: item.subtitle,
+    content_types: item.content_types,
+    topics: item.topics,
+  }));
 ---
 
 <PageLayout title="Newsroom" bannerImage={banner} keywords={keywords} description={description}>
@@ -78,8 +106,17 @@ const archiveNewsletters: NewsroomCardItem[] = newsletterList
             }
         </div>
     </div>
-    <h2 class="">Media Kits</h2>
-    <h2 class="">ITS JPO Newsletter Archive</h2>
+    <h2 class="pl-3 heading-border-left blue">Media Kits</h2>
+    <div class="row gx-4 gy-4 mt-1">
+      {
+        mediaToolkits.map((mediaKit) => (
+          <div class="col-12 col-sm-6 col-xl-3">
+            <NewsroomCard item={mediaKit} showPills={true} showColoredLabel={false} ctaText="Read Kit" />
+          </div>
+        ))
+      }
+    </div>
+    <h2 class="pl-3 heading-border-left blue">ITS JPO Newsletter Archive</h2>
     <div class="row gx-4 gy-4 mt-1">
       {
         archiveNewsletters.map((newsletter) => (
