@@ -1,5 +1,6 @@
 ---
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from '@/src/lib/base_url';
 
 const keywords = ["ITS JPO", "newsletter", "ITS JPO NOW", "updates", "news", "events"];
 const description = "ITS JPO NOW - A bimonthly digest featuring program announcements, latest releases, and upcoming events from the ITS Joint Program Office.";
@@ -15,15 +16,15 @@ const description = "ITS JPO NOW - A bimonthly digest featuring program announce
         <section class="newsletter-intro">
          
           <div class="signup-cta">
-            <p><strong>Don't have a subscription yet?</strong></p>
+            <h2>Don't have a subscription yet?</h2>
             <a 
               href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="btn  btn-lg"
+              class="btn btn-lg fs-5 fw-bold"
             >
               Subscribe to ITS JPO NOW
-            </a>0
+            </a>
           </div>
         </section>
 
@@ -49,7 +50,7 @@ const description = "ITS JPO NOW - A bimonthly digest featuring program announce
                     OmniAir Plugfest and ITS America Conference.
                   </p>
                   <div class="mt-auto">
-                    <a href="/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026" class="btn btn-outline-primary">
+                    <a href={base_url('/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026')} class="btn btn-outline-primary">
                       Read May 2026 Issue
                     </a>
                   </div>
@@ -120,12 +121,16 @@ const description = "ITS JPO NOW - A bimonthly digest featuring program announce
   }
 
   .signup-cta {
-    background: linear-gradient(to right, #003f7e, #032159);
+    background: linear-gradient(to top, #095583, #032159);
     color: white;
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
     margin-top: 2rem;
+  }
+  
+  .signup-cta h2 {
+    color: #ecc707;
   }
 
   .signup-cta .btn {

@@ -4,6 +4,8 @@ import hero1 from "@/src/assets/images/Hero-Image-02.jpg";
 import hero2 from "@/src/assets/images/Hero-ITS-JPO-NOW.png";
 import hero3 from "@/src/assets/images/Hero-Background-4.png";
 import hero4 from "@/src/assets/images/Hero-IntersectionSafety.png";
+
+import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
 ---
 
 <div class="hero-carousel">
@@ -72,6 +74,18 @@ import hero4 from "@/src/assets/images/Hero-IntersectionSafety.png";
       </div>
     </section>
 
+    <section class="slide" style={`background-image: url(${hero5.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2>Initial Prototype of National V2X Deployment Map Now Available</h2>
+          <p class="fs-6">
+            The ITS JPO has launched an interactive map showcasing V2X deployments across the country. The map compiles and visualizes data from USDOT funded V2X projects, Accelerating V2X Cohort members, and the Federal Communications Commission Universal Licensing System, into one interactive platform. Users can explore project details at national, state, and local levels—tracking active and planned Roadside Units, area wide licenses, and deployment analytics. This is the initial release of the map prototype, and the JPO is continuing to collect and validate data with deployers, so expect the map to evolve as more verified information becomes available.
+          </p>
+          <a href="https://www.its.dot.gov/scrc/index.html#/technology-areas/v2x/map" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1" target="_blank">Explore V2X Deployments</a>
+        </div>
+      </div>
+    </section>
+
 
   </div>
 </div>
@@ -80,7 +94,7 @@ import hero4 from "@/src/assets/images/Hero-IntersectionSafety.png";
   const carousel = document.querySelector('.hero-carousel .slides') as HTMLElement;
   const contentBoxes = document.querySelectorAll('.content-box');
   const slideWidth = carousel?.offsetWidth || 0;
-  const totalSlides = 3;
+  const totalSlides = 4;
   let currentSlide = 0;
   let autoRotateInterval: ReturnType<typeof setInterval>;
 
@@ -256,6 +270,14 @@ import hero4 from "@/src/assets/images/Hero-IntersectionSafety.png";
   .slides::scroll-button(left):focus,
   .slides::scroll-button(right):focus {
       box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  }
+
+  .slides::scroll-button(left):disabled,
+  .slides::scroll-button(right):disabled {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    cursor: not-allowed;
+    border-color: transparent;
   }
 
   /* Content box */
