@@ -1,0 +1,29 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import banner from "@/src/assets/images/banners/NTL_Banner.png";
+const keywords = [
+  "ITS JPO",
+  "newsroom",
+  "deployments",
+  "conferences",
+  "exhibits",
+  "newsworthy stories",
+  "ITS JPO Now",
+  "publications",
+];
+const description =
+  "The ITS JPO Newsroom section contains a variety of information and resources about various deployments, conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous editions of the ITS JPO Now publication. Check back often as this page is regularly updated with new information.";
+---
+
+<PageLayout title="Newsroom" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Newsroom</Fragment>
+  <main>
+    <h2 class="sideways blue">ITS JPO Newsroom</h2>
+    <p>
+     The ITS JPO Newsroom section contains a variety of information and resources about various deployments, 
+     conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous 
+     editions of the <i>ITS JPO Now</i> publication. Check back often as this page is regularly updated with 
+     new information.
+    </p>
+    </main>
+</PageLayout>
