@@ -5,6 +5,7 @@ type NewsroomCardInput = NewsroomCardItem | Toolkit | Newsletter;
 
 interface Props {
   item: NewsroomCardInput;
+  class?: string;
   showPills?: boolean;
   showColoredLabel?: boolean;
   ctaText?: string;
@@ -12,6 +13,7 @@ interface Props {
 
 const {
   item,
+  class: className = "",
   showPills = true,
   showColoredLabel = true,
   ctaText = "View Toolkit",
@@ -48,7 +50,7 @@ const descriptionText = normalizedItem.description ?? "";
 const fallbackText = !normalizedItem.description && normalizedItem.date ? normalizedItem.date : "";
 ---
 
-<div class="card h-100 toolkit-card">
+<div class:list={["card h-100 toolkit-card", className]}>
   {
     showColoredLabel && (
       <h3 class="colored-label" data-topic={topicSlug}>

@@ -1,6 +1,8 @@
 ---
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
+import NewsroomCard from "@/src/components/NewsroomCard.astro";
+import type { NewsroomCardItem } from "@/src/types";
 
 const keywords = [
   "ITS JPO",
@@ -20,11 +22,25 @@ const description =
   <Fragment slot="banner">Newsroom</Fragment>
   <main>
     <h2 class="sideways blue">ITS JPO Newsroom</h2>
-    <p>
-     The ITS JPO Newsroom section contains a variety of information and resources about various deployments, 
-     conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous 
-     editions of the <i>ITS JPO Now</i> publication. Check back often as this page is regularly updated with 
-     new information.
-    </p>
+    <div class="container mt-4">
+        <div class="row">
+            <p class="col-7">
+            The ITS JPO Newsroom section contains a variety of information and resources about various deployments, 
+            conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous 
+            editions of the <i>ITS JPO Now</i> publication. Check back often as this page is regularly updated with 
+            new information.
+            </p>
+            <NewsroomCard class="col-4" item={
+            {
+                title: "Example Newsroom Card",
+                url: "https://www.example.com",
+                description: "This is an example of a newsroom card. It contains a title, description, and a link to more information.",
+                content_types: ["article"],
+                topics: ["example", "newsroom"],
+                date: "2024-06-01",
+            } as NewsroomCardItem
+            } />
+        </div>
+    </div>
     </main>
 </PageLayout>
