@@ -106,7 +106,10 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
             }
         </div>
     </div>
-    <h2 class="pl-3 heading-border-left blue">Media Kits</h2>
+    <div class="flex">
+        <h2 class="pl-3 heading-border-left blue">Media Kits</h2>
+        <a href="./outreach-resources">View All Media Kits</a>
+    </div>
     <div class="row gx-4 gy-4 mt-1">
       {
         mediaToolkits.map((mediaKit) => (
@@ -116,7 +119,10 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
         ))
       }
     </div>
-    <h2 class="pl-3 heading-border-left blue">ITS JPO Newsletter Archive</h2>
+    <div class="flex">
+        <h2 class="pl-3 heading-border-left blue">ITS JPO Newsletter Archive</h2>
+        <a href="./newsletter-archive">Browse Full Archive</a>
+    </div>
     <div class="row gx-4 gy-4 mt-1">
       {
         archiveNewsletters.map((newsletter) => (
