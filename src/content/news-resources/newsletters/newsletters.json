@@ -1,0 +1,48 @@
+{
+	"newsletters": [
+		{
+			"title": "ITS JPO Now",
+			"url": "",
+			"description": "",
+			"date": "January 2026",
+			"subtitle": "ITS JPO",
+			"season": "Winter 2026",
+			"volume": "Vol 14",
+			"issue": "Issue 1",
+			"img": ""
+		},
+		{
+			"title": "ITS JPO Now",
+			"url": "",
+			"description": "",
+			"date": "October 2025",
+			"subtitle": "ITS JPO",
+			"season": "Fall 2025",
+			"volume": "Vol 13",
+			"issue": "Issue 4",
+			"img": ""
+		},
+		{
+			"title": "ITS JPO Now",
+			"url": "",
+			"description": "",
+			"date": "July 2025",
+			"subtitle": "ITS JPO",
+			"season": "Summer 2025",
+			"volume": "Vol 13",
+			"issue": "Issue 3",
+			"img": ""
+		},
+		{
+			"title": "ITS JPO Now",
+			"url": "",
+			"description": "",
+			"date": "April 2025",
+			"subtitle": "ITS JPO",
+			"season": "Spring 2025",
+			"volume": "Vol 13",
+			"issue": "Issue 2",
+			"img": ""
+		}
+	]
+}
