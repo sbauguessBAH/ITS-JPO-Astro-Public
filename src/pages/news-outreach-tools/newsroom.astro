@@ -3,6 +3,19 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import NewsroomCard from "@/src/components/NewsroomCard.astro";
 import type { NewsroomCardItem } from "@/src/types";
+import newsletters from "@/src/content/news-resources/newsletters/newsletters.json";
+
+type NewsletterEntry = {
+  title?: string;
+  url?: string;
+  description?: string;
+  date?: string;
+  subtitle?: string;
+  season?: string;
+  volume?: string;
+  issue?: string;
+  img?: string;
+};
 
 const keywords = [
   "ITS JPO",
@@ -16,6 +29,32 @@ const keywords = [
 ];
 const description =
   "The ITS JPO Newsroom section contains a variety of information and resources about various deployments, conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous editions of the ITS JPO Now publication. Check back often as this page is regularly updated with new information.";
+
+const newsletterData = newsletters as { newsletters?: NewsletterEntry[] };
+
+const newsletterList: NewsletterEntry[] = Array.isArray(newsletterData.newsletters)
+  ? newsletterData.newsletters
+  : [];
+
+const toCardItem = (item: NewsletterEntry): NewsroomCardItem => {
+  const issueSummary = [item.season, item.volume, item.issue].filter(Boolean).join(" | ");
+
+  return {
+    title: item.title,
+    url: item.url,
+    description: item.description?.trim().length ? item.description : issueSummary,
+    date: item.date,
+    subtitle: item.subtitle,
+  };
+};
+
+const featuredNewsletter: NewsroomCardItem | undefined = newsletterList[0]
+  ? toCardItem(newsletterList[0])
+  : undefined;
+
+const archiveNewsletters: NewsroomCardItem[] = newsletterList
+  .slice(1, 5)
+  .map((entry) => toCardItem(entry));
 ---
 
 <PageLayout title="Newsroom" bannerImage={banner} keywords={keywords} description={description}>
@@ -24,25 +63,31 @@ const description =
     <h2 class="sideways blue">ITS JPO Newsroom</h2>
     <div class="container mt-4">
         <div class="row">
-            <p class="col-7">
+            <p class="col-12 col-lg-7">
             The ITS JPO Newsroom section contains a variety of information and resources about various deployments, 
             conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous 
             editions of the <i>ITS JPO Now</i> publication. Check back often as this page is regularly updated with 
             new information.
             </p>
-            <NewsroomCard class="col-4" item={
             {
-                title: "Example Newsroom Card",
-                url: "https://www.example.com",
-                description: "This is an example of a newsroom card. It contains a title, description, and a link to more information.",
-                content_types: ["article"],
-                topics: ["example", "newsroom"],
-                date: "2024-06-01",
-            } as NewsroomCardItem
-            } />
+              featuredNewsletter && (
+                <div class="col-12 col-lg-4 offset-lg-1 mt-3 mt-lg-0">
+                  <NewsroomCard item={featuredNewsletter} showPills={false} showColoredLabel={false} ctaText="Read Issue" />
+                </div>
+              )
+            }
         </div>
     </div>
     <h2 class="">Media Kits</h2>
     <h2 class="">ITS JPO Newsletter Archive</h2>
+    <div class="row gx-4 gy-4 mt-1">
+      {
+        archiveNewsletters.map((newsletter) => (
+          <div class="col-12 col-sm-6 col-xl-3">
+            <NewsroomCard item={newsletter} showPills={false} showColoredLabel={false} ctaText="Read Issue" />
+          </div>
+        ))
+      }
+    </div>
     </main>
 </PageLayout>

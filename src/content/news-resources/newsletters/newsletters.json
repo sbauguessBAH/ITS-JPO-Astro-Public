@@ -1,5 +1,16 @@
 {
 	"newsletters": [
+        {
+			"title": "ITS JPO Now",
+			"url": "",
+			"description": "",
+			"date": "March 2026",
+			"subtitle": "Latest Issue",
+			"season": "Spring 2026",
+			"volume": "Vol 14",
+			"issue": "Issue 2",
+			"img": ""
+		},
 		{
 			"title": "ITS JPO Now",
 			"url": "",
