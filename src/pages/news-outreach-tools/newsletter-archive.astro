@@ -1,0 +1,351 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import banner from "@/src/assets/images/banners/NTL_Banner.png";
+import NewsroomCard from "@/src/components/NewsroomCard.astro";
+import type { NewsroomCardItem } from "@/src/types";
+import newsletters from "@/src/content/news-resources/newsletters/newsletters.json";
+
+type NewsletterEntry = {
+	title?: string;
+	url?: string;
+	description?: string;
+	date?: string;
+	subtitle?: string;
+	season?: string;
+	volume?: string;
+	issue?: string;
+	img?: string;
+	topics?: string[];
+};
+
+type FilterableNewsletter = {
+	card: NewsroomCardItem;
+	year: string;
+	volume: string;
+	topics: string[];
+};
+
+const keywords = [
+	"ITS JPO",
+	"newsletter archive",
+	"ITS JPO Now",
+	"newsletter",
+	"news-outreach-tools",
+];
+
+const description =
+	"Browse the ITS JPO newsletter archive and filter issues by year, volume, and topics.";
+
+const data = newsletters as { newsletters?: NewsletterEntry[] };
+
+const rawNewsletters: NewsletterEntry[] = Array.isArray(data.newsletters)
+	? data.newsletters
+	: [];
+
+const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
+	return [...new Set(values.filter((v): v is string => typeof v === "string" && v.trim().length > 0))];
+};
+
+const extractYear = (date?: string): string => {
+	if (!date) return "";
+	const match = date.match(/\b(\d{4})\b/);
+	return match ? match[1] : "";
+};
+
+const newsletterRows: FilterableNewsletter[] = rawNewsletters.map((item) => {
+	const issueSummary = [item.season, item.volume, item.issue].filter(Boolean).join(" | ");
+
+	return {
+		card: {
+			title: item.title,
+			url: item.url,
+			description: item.description?.trim().length ? item.description : issueSummary,
+			date: item.date,
+			subtitle: item.subtitle,
+			topics: item.topics,
+		},
+		year: extractYear(item.date),
+		volume: item.volume ?? "",
+		topics: item.topics ?? [],
+	};
+});
+
+const years = uniqueStrings(newsletterRows.map((row) => row.year)).sort((a, b) => b.localeCompare(a));
+const volumes = uniqueStrings(newsletterRows.map((row) => row.volume)).sort((a, b) => b.localeCompare(a));
+const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
+---
+
+<PageLayout title="Newsletter Archive" bannerImage={banner} keywords={keywords} description={description}>
+	<Fragment slot="banner">ITS JPO Newsletter Archive</Fragment>
+	<main>
+		<h2 class="sideways blue">ITS JPO Newsletter Archive</h2>
+		<p>
+			Browse past editions of <i>ITS JPO Now</i>. Use the filters below to narrow by year,
+			volume, and topics.
+		</p>
+
+		<form class="row g-4 reduced-gutters filter mb-4 p-3" aria-label="Newsletter archive filters">
+			<div class="col-12 col-lg-4">
+				<label class="form-label" for="year-toggle">Year</label>
+				<div class="dropdown multi-select-dropdown">
+					<button id="year-toggle" type="button" class="dropdown-toggle w-100 text-start" aria-haspopup="listbox" aria-expanded="false">
+						<span class="dropdown-label">Select years</span>
+					</button>
+					<div class="dropdown-menu w-100 p-2" aria-labelledby="year-toggle" role="listbox" id="year-list" style="max-height: 240px; overflow:auto;">
+						{
+							years.map((year) => {
+								const id = `year-${year}`;
+								return (
+									<div class="year-option">
+										<input class="visually-hidden year-input" type="checkbox" id={id} name="year" value={year} />
+										<label class="year-label" for={id}>
+											{year}
+										</label>
+									</div>
+								);
+							})
+						}
+					</div>
+				</div>
+				<div class="form-text">Click to open, then check items to select multiple years.</div>
+			</div>
+
+			<fieldset class="col-12 col-lg-4">
+				<legend class="col-form-label pt-0">Volume</legend>
+				<div class="volume-pills">
+					{
+						volumes.map((volume) => {
+							const id = `volume-${volume.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+							return (
+								<div class="volume-pill-option">
+									<input class="visually-hidden volume-input" type="checkbox" id={id} name="volume" value={volume} />
+									<label class="volume-pill" for={id}>
+										{volume}
+									</label>
+								</div>
+							);
+						})
+					}
+				</div>
+			</fieldset>
+
+			<fieldset class="col-12 col-lg-4">
+				<legend class="col-form-label pt-0">Topics</legend>
+				{
+					topics.length > 0 ? (
+						<div class="topic-pills">
+							{
+								topics.map((topic) => {
+									const topicId = `topic-${topic.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+									return (
+										<div class="topic-pill-option">
+											<input class="visually-hidden topic-input" type="checkbox" id={topicId} name="topic" value={topic} />
+											<label class="topic-pill" for={topicId}>
+												{topic}
+											</label>
+										</div>
+									);
+								})
+							}
+						</div>
+					) : (
+						<div class="form-text">No topic tags are available for these issues yet.</div>
+					)
+				}
+			</fieldset>
+		</form>
+
+		<div id="newsletter-cards" class="row gx-4 gy-4">
+			{
+				newsletterRows.map((row) => (
+					<div class="col-12 col-sm-6 col-xl-3 newsletter-card-col">
+						<NewsroomCard item={row.card} showPills={false} showColoredLabel={false} ctaText="Read Issue" />
+					</div>
+				))
+			}
+		</div>
+	</main>
+</PageLayout>
+
+<script define:vars={{ newsletterRows }}>
+	const yearToggle = document.getElementById("year-toggle");
+	const yearMenu = document.getElementById("year-list");
+
+	const updateYearLabel = () => {
+		const selected = Array.from(document.querySelectorAll('input[name="year"]:checked'))
+			.filter((el) => el instanceof HTMLInputElement)
+			.map((cb) => cb.value);
+		const labelEl = document.querySelector("#year-toggle .dropdown-label");
+		if (!labelEl) return;
+		labelEl.textContent = selected.length === 0 ? "Select years" : selected.join(", ");
+	};
+
+	const getSelectedValues = (name) =>
+		Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+			.filter((el) => el instanceof HTMLInputElement)
+			.map((cb) => cb.value);
+
+	const getFilteredMatches = (selectedYears, selectedVolumes, selectedTopics) => {
+		return newsletterRows.map((row) => {
+			const hasYear = selectedYears.length === 0 || selectedYears.includes(row.year);
+			const hasVolume = selectedVolumes.length === 0 || selectedVolumes.includes(row.volume);
+			const hasTopic = selectedTopics.length === 0 || (row.topics ?? []).some((topic) => selectedTopics.includes(topic));
+			return hasYear && hasVolume && hasTopic;
+		});
+	};
+
+	const applyToDOM = (matches) => {
+		const cols = document.querySelectorAll("#newsletter-cards .newsletter-card-col");
+		cols.forEach((col, index) => {
+			col.style.display = matches[index] ? "" : "none";
+		});
+	};
+
+	const runFilter = () => {
+		const selectedYears = getSelectedValues("year");
+		const selectedVolumes = getSelectedValues("volume");
+		const selectedTopics = getSelectedValues("topic");
+		applyToDOM(getFilteredMatches(selectedYears, selectedVolumes, selectedTopics));
+		updateYearLabel();
+	};
+
+	const toggleYearDropdown = (show) => {
+		const expanded = typeof show === "boolean" ? show : !(yearToggle?.getAttribute("aria-expanded") === "true");
+		yearToggle?.setAttribute("aria-expanded", expanded ? "true" : "false");
+		if (yearMenu) {
+			if (expanded) yearMenu.classList.add("show");
+			else yearMenu.classList.remove("show");
+		}
+	};
+
+	yearToggle?.addEventListener("click", (e) => {
+		e.stopPropagation();
+		toggleYearDropdown();
+	});
+
+	document.addEventListener("click", (e) => {
+		const target = e.target;
+		if (!yearMenu?.contains(target) && !yearToggle?.contains(target)) {
+			toggleYearDropdown(false);
+		}
+	});
+
+	yearToggle?.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") {
+			toggleYearDropdown(false);
+			yearToggle.focus();
+		}
+	});
+
+	["year", "volume", "topic"].forEach((name) => {
+		document.querySelectorAll(`input[name="${name}"]`).forEach((el) => {
+			el.addEventListener("change", runFilter);
+		});
+	});
+
+	updateYearLabel();
+	runFilter();
+</script>
+
+<style>
+	.reduced-gutters {
+		--bs-gutter-x: 14px;
+	}
+
+	.filter {
+		background-color: var(--bs-light);
+		border: 1px solid var(--bs-border-color);
+		border-radius: 12px;
+	}
+
+	.volume-pills,
+	.topic-pills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.volume-pill,
+	.topic-pill {
+		display: inline-flex;
+		align-items: center;
+		border: 1px solid grey;
+		border-radius: 999px;
+		padding: 0.35rem 0.75rem;
+		line-height: 1.2;
+		cursor: pointer;
+		user-select: none;
+		background-color: white;
+		color: black;
+	}
+
+	.volume-pill-option > input:checked + .volume-pill,
+	.topic-pill-option > input:checked + .topic-pill {
+		background-color: var(--bs-primary);
+		border-color: var(--bs-primary);
+		color: var(--bs-white);
+	}
+
+	.volume-pill-option > input:focus-visible + .volume-pill,
+	.topic-pill-option > input:focus-visible + .topic-pill {
+		outline: 0;
+		box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+	}
+
+	.year-option {
+		display: flex;
+	}
+
+	.year-label {
+		width: 100%;
+		padding: 0.375rem 0.5rem;
+		border-radius: 0.25rem;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.year-option > input:checked + .year-label {
+		color: var(--bs-primary);
+		font-weight: 600;
+		background-color: var(--bs-primary-bg-subtle);
+	}
+
+	.year-option > input:focus-visible + .year-label {
+		outline: 0;
+		box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+	}
+
+	.dropdown-toggle {
+		display: flex;
+		background-color: #fff;
+		border: 1px solid #ced4da;
+		border-radius: 0.25rem;
+		align-items: center;
+	}
+
+	.dropdown-toggle:focus {
+		box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+	}
+
+	.multi-select-dropdown .dropdown-menu {
+		display: none;
+	}
+
+	.multi-select-dropdown .dropdown-menu.show {
+		display: block;
+	}
+
+	.multi-select-dropdown .dropdown-label {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: inline-block;
+		max-width: 100%;
+	}
+
+	.dropdown-toggle:after {
+		content: '\f078';
+		font-family: FontAwesome;
+		font-size: 16px;
+	}
+</style>
