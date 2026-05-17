@@ -1,0 +1,55 @@
+---
+interface Props {
+  title?: string;
+  titleUnderline?: boolean;
+  divider?: boolean;
+}
+
+const { title, titleUnderline = false, divider = true } = Astro.props;
+---
+
+{divider && (
+  <div class="newsletter-divider">
+    <hr />
+  </div>
+)}
+
+{title && (
+  <h1 class:list={["newsletter-section-title", { underline: titleUnderline }]}>
+    {title}
+  </h1>
+)}
+
+<div class="newsletter-section-content">
+  <slot />
+</div>
+
+<style>
+  .newsletter-divider {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  .newsletter-divider hr {
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+    margin: 0;
+  }
+
+  .newsletter-section-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #1e3769;
+    margin: 1.5rem 0;
+    text-transform: uppercase;
+  }
+
+  .newsletter-section-title.underline {
+    text-decoration: underline;
+  }
+
+  .newsletter-section-content {
+    margin-bottom: 1.5rem;
+  }
+</style>

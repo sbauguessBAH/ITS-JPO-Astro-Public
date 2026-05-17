@@ -1,0 +1,54 @@
+---
+interface Props {
+  href: string;
+  text: string;
+  align?: "left" | "right" | "center";
+}
+
+const { href, text, align = "right" } = Astro.props;
+---
+
+<div class:list={["newsletter-cta-wrapper", `align-${align}`]}>
+  <a href={href} target="_blank" rel="noopener noreferrer" class="newsletter-cta">
+    <strong>{text}</strong>
+  </a>
+</div>
+
+<style>
+  .newsletter-cta-wrapper {
+    padding: 0 0 0.5rem 0;
+    margin: 0.75rem 0;
+  }
+
+  .newsletter-cta-wrapper.align-left {
+    text-align: left;
+  }
+
+  .newsletter-cta-wrapper.align-right {
+    text-align: right;
+  }
+
+  .newsletter-cta-wrapper.align-center {
+    text-align: center;
+  }
+
+  .newsletter-cta {
+    display: inline-block;
+    background-color: #0c77cf;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+  }
+
+  .newsletter-cta:hover {
+    background-color: #095a9c;
+    color: white !important;
+  }
+
+  .newsletter-cta strong {
+    font-weight: 600;
+  }
+</style>
