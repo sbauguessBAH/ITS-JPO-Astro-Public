@@ -47,7 +47,37 @@ export const navigation: NavigationItem[] = [
         url: "/research-areas/artificial-intelligence",
         isEnabled: true,
         pages: [
-          { name: "Artificial Intelligence in Transportation", url: "/research-areas/artificial-intelligence" },
+          { name: "Home", url: "/research-areas/artificial-intelligence" },
+          {
+            name: "Overview",
+            url: "/research-areas/artificial-intelligence/overview",
+            isEnabled: true,
+            pages: [
+              { name: "How Does AI Work", url: "/research-areas/artificial-intelligence/overview/how-ai-works" },
+              { name: "Why AI Can Advance Transportation", url: "/research-areas/artificial-intelligence/overview/why-ai-advances-transportation" },
+              { name: "What Are AI Transportation Use Cases", url: "/research-areas/artificial-intelligence/overview/ai-use-cases" },
+              { name: "What Is The JPO AI Implementation Approach", url: "/research-areas/artificial-intelligence/overview/jpo-implementation-approach" },
+            ],
+          },
+          {
+            name: "Focus Areas",
+            url: "/research-areas/artificial-intelligence/focus-areas",
+            isEnabled: true,
+            pages: [
+              { name: "Get AI-Ready", url: "/research-areas/artificial-intelligence/focus-areas/get-ai-ready" },
+              { name: "Put AI into Practice", url: "/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice" },
+              {
+                name: "Learn & Connect",
+                url: "/research-areas/artificial-intelligence/focus-areas/learn-connect",
+                isEnabled: true,
+                pages: [
+                  { name: "AI Governance", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-governance" },
+                  { name: "AI Definitions & Concepts", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-definitions-concepts" },
+                  { name: "AI Methods & Sub-Methods", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-methods-sub-methods" },
+                ],
+              },
+            ],
+          },
           { name: "AI for Transportation Planning and Design", url: "/research-areas/artificial-intelligence/transportation-planning-design" },
         ],
       },
