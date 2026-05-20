@@ -1,12 +1,94 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import { Image } from "astro:assets";
+import placeholderImage from "@/src/assets/images/ai/TitlePillBG.png";
 ---
 
 <PageLayout title="Focus Areas" bannerImage={banner}>
   <Fragment slot="banner">Focus Areas</Fragment>
-      <main>
-       <p>Placeholder</p>
-      
-      </main>
+  <main>
+    <!-- FOCUS AREAS SECTION -->
+    <section class="py-5 gray-edge-to-edge">
+      <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Focus Areas</h2>
+        <div class="row g-4">
+          <!-- Card 1: Get AI-Ready -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/get-ai-ready")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0">
+                <Image src={placeholderImage} alt="Get AI-Ready" class="card-image mb-3" />
+                <div class="p-4">
+                  <h3 class="fw-bold">Get AI-Ready</h3>
+                  <p class="card-text mt-3">Datasets, frameworks, and best practices to support your AI development.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 2: Put AI into Practice -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0">
+                <Image src={placeholderImage} alt="Put AI into Practice" class="card-image mb-3" />
+                <div class="p-4">
+                  <h3 class="fw-bold">Put AI into Practice</h3>
+                  <p class="card-text mt-3">Funding opportunities, initiatives, and project insights to support real-world AI implementation.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 3: Learn & Connect with Peers -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0">
+                <Image src={placeholderImage} alt="Learn & Connect with Peers" class="card-image mb-3" />
+                <div class="p-4">
+                  <h3 class="fw-bold">Learn & Connect with Peers</h3>
+                  <p class="card-text mt-3">Case studies, peer exchanges, and learning resources to support shared AI knowledge.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </PageLayout>
+
+<style>
+  /* Focus Areas Card Styling */
+  .card {
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.175) !important;
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+  }
+
+  .gray-edge-to-edge {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: #f7f7f7;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+</style>

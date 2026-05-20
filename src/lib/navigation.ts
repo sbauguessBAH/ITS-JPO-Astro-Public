@@ -54,7 +54,7 @@ export const navigation: NavigationItem[] = [
             isEnabled: true,
             pages: [
               { name: "How Does AI Work", url: "/research-areas/artificial-intelligence/overview/how-ai-works" },
-              { name: "Why AI Can Advance Transportation", url: "/research-areas/artificial-intelligence/overview/why-ai-advances-transportation" },
+              { name: "Where Can AI Advance Transportation", url: "/research-areas/artificial-intelligence/overview/where-ai-advances-transportation" },
               { name: "What Are AI Transportation Use Cases", url: "/research-areas/artificial-intelligence/overview/ai-use-cases" },
               { name: "What Is The JPO AI Implementation Approach", url: "/research-areas/artificial-intelligence/overview/jpo-implementation-approach" },
             ],

@@ -1,12 +1,108 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
 ---
 
 <PageLayout title="What Is The JPO AI Implementation Approach" bannerImage={banner}>
   <Fragment slot="banner">What Is The JPO AI Implementation Approach</Fragment>
-      <main>
-       <p>Placeholder</p>
-      
-      </main>
+  <main>
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href={base_url("/research-areas/artificial-intelligence/overview")}>Overview</a></li>
+        <li class="breadcrumb-item active" aria-current="page">What Is The JPO AI Implementation Approach</li>
+      </ol>
+    </nav>
+
+    <div class="content-wrapper">
+      <p class="lead">
+        The ITS Joint Program Office (ITS JPO) leads a collaborative, multimodal effort to integrate Artificial Intelligence into the nation's transportation fabric. Our approach is built on the foundation of partnership by working across USDOT modes, engaging the private sector and academia, and supporting public sector agencies. The program is guided by the following objectives:
+      </p>
+
+      <div class="objectives-list">
+        <div class="objective-item">
+          <h3 class="objective-title">Multimodal Research & Understanding</h3>
+          <p>We leverage collaborative research to explore AI's capabilities and limitations. By partnering with academic experts and industry leaders, we identify how AI can specifically solve complex challenges across all surface modes.</p>
+        </div>
+
+        <div class="objective-item">
+          <h3 class="objective-title">Collaborative Testing & Validation</h3>
+          <p>Through real-world pilots conducted in partnership with state, regional, local, and Tribal agencies, we rigorously evaluate AI solutions. These evaluations provide the objective information necessary to validate safety and effectiveness, encouraging broader implementation across the transportation sector.</p>
+        </div>
+
+        <div class="objective-item">
+          <h3 class="objective-title">Deployment & Demonstration</h3>
+          <p>We work with our public and private sector partners to showcase successful AI applications. These deployments are vital for building stakeholder awareness and understanding of the benefits that AI solutions can bring to transportation and how risks can be managed.</p>
+        </div>
+
+        <div class="objective-item">
+          <h3 class="objective-title">Repeatable Resources & Frameworks</h3>
+          <p>To reduce barriers to entry, the ITS JPO delivers curated playbooks, technical tools, and implementation resources. Developed through cross-modal collaboration within USDOT and with peer agency feedback, these resources provide consistent practices and protocols that agencies of all sizes and AI maturities can follow.</p>
+        </div>
+
+        <div class="objective-item">
+          <h3 class="objective-title">Knowledge Sharing & Tech Transfer</h3>
+          <p>We are committed to empowering our partners by providing knowledge sharing opportunities and informational materials to advance the adoption of AI solutions in safe, responsible and trustworthy ways.</p>
+        </div>
+      </div>
+    </div>
+  </main>
 </PageLayout>
+
+<style>
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .objectives-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .objective-item {
+    background: rgb(var(--color-gray-light));
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #0066cc;
+  }
+
+  .objective-title {
+    color: #003d7a;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .objective-item p {
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb-item a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .breadcrumb-item a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb-item.active {
+    color: #666;
+  }
+</style>

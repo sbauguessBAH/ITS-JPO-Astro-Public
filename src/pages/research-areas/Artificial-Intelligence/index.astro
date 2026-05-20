@@ -2,13 +2,163 @@
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import { Image } from "astro:assets";
+import base_url from "@/src/lib/base_url";
+import placeholderImage from "@/src/assets/images/ai/TitlePillBG.png";
 ---
 
 <PageLayout title="Artificial Intelligence" bannerImage={banner}>
+  <!-- Banner Slot (Used by PageLayout component) -->
   <Fragment slot="banner">Artificial Intelligence</Fragment>
-      <main>
-       <p>Placeholder</p>
-      
-      </main>
+
+  <main>
+    <h2 class="sideways blue">Intelligence in Motion:
+Transforming Transportation
+with AI</h2>
+    <p class="read-more-wrap pt-0">
+      The ITS JPO Artificial Intelligence Program is driving innovation in surface transportation through responsible AI development and adoption. The ITS JPO works collaboratively
+      with State, local, and regional partners as well as Tribal Nations to develop, test, and deploy AI solutions that make our transportation systems safer, more efficient, productive,
+      and resilient.
+    </p>
+    <p class="read-more-wrap pt-0">
+      From real-world pilots to practical guidance and tools, we're helping transportation agencies harness AI's transformative potential across varied transportation modes and use
+      cases.
+    </p>
+
+    <!-- VISION & MISSION SECTION -->
+    <div class="row g-4 mb-5">
+      <!-- VISION Card -->
+      <div class="col-md-6">
+        <div class="vision-mission-card p-4 rounded-4">
+          <h3 class="vision-mission-title d-flex align-items-center">
+            <svg class="icon me-2" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path
+                d="m674.63 92.25c-104.25-21.75-210.37 3.375-291.37 69-81.75 66-128.26 163.87-128.26 268.87 0 88.5 33.375 172.87 94.5 237 29.625 31.125 52.125 66 66.75 102.38 2.625-1.125 5.25-1.5 8.25-1.5h147.37v-282.74l-81.75-59.625c-12.375-9.375-15-27-6-39.375 9.375-12.375 27-15 39.375-6l76.5 56.25 76.5-56.25c12.375-9 30-6.375 39.375 6 9 12.375 6.375 30-6 39.375l-81.75 59.625v282.74h147.37c2.625 0 4.875 0.375 7.125 1.125 13.875-35.625 35.625-69 63.75-97.5 82.5-84 116.25-204.37 89.625-321.74-28.5-127.13-133.87-230.63-261.37-257.63z"
+              >
+              </path>
+              <path d="m605.63 824.26h-173.26c3 15.375 4.5 31.125 4.5 46.5v22.5h326.26v-22.875c0-15.375 1.5-31.125 4.5-46.125z"></path>
+              <path d="m493.13 949.5h-56.25v3c0 46.125 19.5 90.375 54 121.13 30 27 69.375 42 109.5 42 5.625 0 11.625-0.375 17.25-0.75 80.25-9 143.26-81 145.13-165.37z"></path>
+            </svg>
+
+            VISION
+          </h3>
+          <p>A safer, more efficient, productive, and resilient national transportation system enabled by the responsible and transformative use of AI.</p>
+        </div>
+      </div>
+
+      <!-- MISSION Card -->
+      <div class="col-md-6">
+        <div class="vision-mission-card p-4 rounded-4">
+          <h3 class="vision-mission-title d-flex align-items-center">
+            <svg class="icon me-2" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path
+                d="m674.63 92.25c-104.25-21.75-210.37 3.375-291.37 69-81.75 66-128.26 163.87-128.26 268.87 0 88.5 33.375 172.87 94.5 237 29.625 31.125 52.125 66 66.75 102.38 2.625-1.125 5.25-1.5 8.25-1.5h147.37v-282.74l-81.75-59.625c-12.375-9.375-15-27-6-39.375 9.375-12.375 27-15 39.375-6l76.5 56.25 76.5-56.25c12.375-9 30-6.375 39.375 6 9 12.375 6.375 30-6 39.375l-81.75 59.625v282.74h147.37c2.625 0 4.875 0.375 7.125 1.125 13.875-35.625 35.625-69 63.75-97.5 82.5-84 116.25-204.37 89.625-321.74-28.5-127.13-133.87-230.63-261.37-257.63z"
+              >
+              </path>
+              <path d="m605.63 824.26h-173.26c3 15.375 4.5 31.125 4.5 46.5v22.5h326.26v-22.875c0-15.375 1.5-31.125 4.5-46.125z"></path>
+              <path d="m493.13 949.5h-56.25v3c0 46.125 19.5 90.375 54 121.13 30 27 69.375 42 109.5 42 5.625 0 11.625-0.375 17.25-0.75 80.25-9 143.26-81 145.13-165.37z"></path>
+            </svg>
+            MISSION
+          </h3>
+          <p>To collaboratively lead development, deployment, and adoption of safe, secure, and trustworthy AI solutions in surface transportation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOCUS AREAS SECTION -->
+    <section class="py-5 gray-edge-to-edge">
+      <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Focus Areas</h2>
+        <div class="row g-4">
+          <!-- Card 1: Get AI-Ready -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/get-ai-ready")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0">
+                <Image src={placeholderImage} alt="Get AI-Ready" class="card-image mb-3" />
+                <div class="p-4">
+                  <h3 class="fw-bold">Get AI-Ready</h3>
+                  <p class="card-text mt-3">Datasets, frameworks, and best practices to support your AI development.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 2: Put AI into Practice -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0">
+                <Image src={placeholderImage} alt="Put AI into Practice" class="card-image mb-3" />
+                <div class="p-4">
+                  <h3 class="fw-bold">Put AI into Practice</h3>
+                  <p class="card-text mt-3">Funding opportunities, initiatives, and project insights to support real-world AI implementation.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 3: Learn & Connect with Peers -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0">
+                <Image src={placeholderImage} alt="Learn & Connect with Peers" class="card-image mb-3" />
+                <div class="p-4">
+                  <h3 class="fw-bold">Learn & Connect with Peers</h3>
+                  <p class="card-text mt-3">Case studies, peer exchanges, and learning resources to support shared AI knowledge.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </PageLayout>
 
+<style>
+  /* Vision/Mission Card Styling */
+  .vision-mission-card {
+    background-color: #f0f8ff;
+    border: 1px solid #d1e7f7;
+    height: 100%;
+  }
+
+  .vision-mission-title {
+    color: #005ea2;
+    gap: 0.5rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Focus Areas Card Styling */
+  .card {
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.175) !important;
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .gray-edge-to-edge {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: #f7f7f7;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+</style>

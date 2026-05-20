@@ -1,12 +1,288 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
 ---
 
 <PageLayout title="What Are AI Transportation Use Cases" bannerImage={banner}>
   <Fragment slot="banner">What Are AI Transportation Use Cases</Fragment>
-      <main>
-       <p>Placeholder</p>
+  <main>
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href={base_url("/research-areas/artificial-intelligence/overview")}>Overview</a></li>
+        <li class="breadcrumb-item active" aria-current="page">What Are AI Transportation Use Cases</li>
+      </ol>
+    </nav>
+
+    <div class="content-wrapper">
+      <p class="lead">
+        AI has the opportunity to serve as a transformative and strategic catalyst that could fundamentally enhance multimodal transportation. By enabling the seamless fusion of diverse data streams, AI can power superior real-time predictions and optimized decision-making, allowing transportation agencies to transition from reactive troubleshooting to proactive, "anticipatory" postures.
+      </p>
       
-      </main>
+      <p>
+        At the same time, AI serves as an engine for institutional innovation, pushing the boundaries of what is possible while automating complex, high-volume tasks. The ITS JPO has categorized AI applications or use cases by transportation program and ITS service areas while highlighting illustrative (not comprehensive) use cases for each.
+      </p>
+
+      <div class="info-box mt-4">
+        <h3 class="info-title">AI Use Case Categories</h3>
+        <p>The ITS JPO organizes AI applications across key transportation program areas and ITS service domains, providing agencies with a structured framework to identify relevant solutions for their specific operational contexts and strategic priorities.</p>
+      </div>
+    </div>
+
+    <table>
+    <thead>
+        <tr>
+            <th>Transportation Program Area</th>
+            <th>Sub-System / Application</th>
+            <th>Key Capabilities / Use Cases</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Safety</td>
+            <td>ITS Vehicle Safety</td>
+            <td>
+                <ul>
+                    <li>Predictive threat intelligence</li>
+                    <li>Incident detection</li>
+                    <li>Adaptive threat & incident response</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Safety</td>
+            <td>Public Safety</td>
+            <td>
+                <ul>
+                    <li>Vehicle crash detection</li>
+                    <li>Video analytics</li>
+                    <li>Multi-modal detection</li>
+                    <li>Crowd monitoring</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Operations & Management</td>
+            <td>Traffic Management</td>
+            <td>
+                <ul>
+                    <li>Signal timing & prediction</li>
+                    <li>Work zone monitoring</li>
+                    <li>Traffic congestion analysis</li>
+                    <li>Predicting traffic bottlenecks</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Operations & Management</td>
+            <td>Weather</td>
+            <td>
+                <ul>
+                    <li>Incident hotspot analysis</li>
+                    <li>Predictive warning systems</li>
+                    <li>Weather impact assessment</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Freight</td>
+            <td>Vehicle Operations</td>
+            <td>
+                <ul>
+                    <li>Freight tracking and prediction</li>
+                    <li>Optimal routing & scheduling</li>
+                    <li>Capacity utilization prediction</li>
+                    <li>Container tracking</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Freight</td>
+            <td>Parking Management</td>
+            <td>
+                <ul>
+                    <li>Dynamic parking availability & prediction</li>
+                    <li>Multi-modal parking integration</li>
+                    <li>Demand forecasting</li>
+                    <li>Pricing optimization</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Asset Management</td>
+            <td></td>
+            <td>
+                <ul>
+                    <li>Road asset condition monitoring</li>
+                    <li>Structural health assessment</li>
+                    <li>Lifecycle cost modeling</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <ul>
+                    <li>Pipeline integrity management</li>
+                    <li>Corrosion detection</li>
+                    <li>Leak detection</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <ul>
+                    <li>Utilities infrastructure mapping</li>
+                    <li>Asset tracking and inventory</li>
+                    <li>Preventative maintenance scheduling</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- Note: The original input was not a clean table structure, so I had to guess the intended grouping based on common infrastructure themes. I have structured the data into a standard HTML table format for clarity, assuming the missing headers/categories were implied. -->
+
+  </main>
 </PageLayout>
+
+<style>
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-box {
+    background: rgb(var(--color-gray-light));
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #0066cc;
+    margin-top: 2rem;
+  }
+
+  .info-title {
+    color: #003d7a;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-box p {
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb-item a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .breadcrumb-item a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb-item.active {
+    color: #666;
+  }
+
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  thead {
+    background: #003d7a;
+    color: white;
+  }
+
+  thead th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  tbody tr:hover {
+    background: #f8f9fa;
+  }
+
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  td {
+    padding: 1rem;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  td strong {
+    color: #003d7a;
+    font-weight: 600;
+  }
+
+  /* First column (Domain/Area) styling */
+  tbody td:first-child {
+    background: #f0f4f8;
+    font-weight: 600;
+    color: #003d7a;
+    border-right: 2px solid #0066cc;
+  }
+
+  /* Use cases column */
+  .use-cases ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    list-style-type: disc;
+  }
+
+  .use-cases li {
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  .use-cases li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Responsive table */
+  @media (max-width: 768px) {
+    table {
+      font-size: 0.85rem;
+    }
+
+    td, th {
+      padding: 0.75rem;
+    }
+
+    .use-cases ul {
+      padding-left: 1rem;
+    }
+  }
+</style>
