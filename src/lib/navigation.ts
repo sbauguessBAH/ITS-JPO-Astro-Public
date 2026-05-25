@@ -78,7 +78,6 @@ export const navigation: NavigationItem[] = [
               },
             ],
           },
-          { name: "AI for Transportation Planning and Design", url: "/research-areas/artificial-intelligence/transportation-planning-design" },
         ],
       },
       {

@@ -5,284 +5,351 @@ import base_url from "@/src/lib/base_url";
 ---
 
 <PageLayout title="What Are AI Transportation Use Cases" bannerImage={banner}>
-  <Fragment slot="banner">What Are AI Transportation Use Cases</Fragment>
+  <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
   <main>
-    <nav aria-label="breadcrumb" class="mb-4">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href={base_url("/research-areas/artificial-intelligence/overview")}>Overview</a></li>
-        <li class="breadcrumb-item active" aria-current="page">What Are AI Transportation Use Cases</li>
-      </ol>
-    </nav>
+    <h2>What are AI Transportation Use Cases</h2>
+    <p>
+      AI has the opportunity to serve as a transformative and strategic catalyst that could fundamentally enhance multimodal transportation. By enabling the seamless fusion of diverse data streams, AI
+      can power superior real-time predictions and optimized decision-making, allowing transportation agencies to transition from reactive troubleshooting to proactive, "anticipatory" postures. At the
+      same time, AI serves as an engine for institutional innovation, pushing the boundaries of what is possible while automating complex, high-volume tasks. The ITS JPO has categorized AI
+      applications or use cases by transportation program and ITS service areas while highlighting illustrative (not comprehensive) use cases for each.
+    </p>
 
-    <div class="content-wrapper">
-      <p class="lead">
-        AI has the opportunity to serve as a transformative and strategic catalyst that could fundamentally enhance multimodal transportation. By enabling the seamless fusion of diverse data streams, AI can power superior real-time predictions and optimized decision-making, allowing transportation agencies to transition from reactive troubleshooting to proactive, "anticipatory" postures.
-      </p>
-      
-      <p>
-        At the same time, AI serves as an engine for institutional innovation, pushing the boundaries of what is possible while automating complex, high-volume tasks. The ITS JPO has categorized AI applications or use cases by transportation program and ITS service areas while highlighting illustrative (not comprehensive) use cases for each.
-      </p>
+    <p class="fw-bold">Click on any category below to explore AI use cases by transportation program area.</p>
 
-      <div class="info-box mt-4">
-        <h3 class="info-title">AI Use Case Categories</h3>
-        <p>The ITS JPO organizes AI applications across key transportation program areas and ITS service domains, providing agencies with a structured framework to identify relevant solutions for their specific operational contexts and strategic priorities.</p>
-      </div>
+    <div class="accordion-container">
+      <!-- Safety Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Safety</span>
+          <span class="accordion-count">8 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Areas:</strong> Vehicle Safety, Public Safety</p>
+          <ul class="app-items">
+            <li>Hotspot mapping</li>
+            <li>Crash prediction</li>
+            <li>Driver behavior monitoring</li>
+            <li>Emergency & disaster management and response</li>
+            <li>Multimodal conflict analysis</li>
+            <li>In-Cab distraction detection</li>
+            <li>Work zone intrusion alarms</li>
+            <li>Track & facility intrusion detection (transit & rail)</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Operations & Management Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Operations & Management</span>
+          <span class="accordion-count">8 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Areas:</strong> Traffic Management, Parking Management, Weather</p>
+          <ul class="app-items">
+            <li>Signal timing & prediction</li>
+            <li>Incident management and prediction</li>
+            <li>Work-zone analytics</li>
+            <li>Wrong way driver detection</li>
+            <li>Congestion monitoring & analytics</li>
+            <li>Road weather conditions identification and dispatch</li>
+            <li>Blocked crossing analytics (rail)</li>
+            <li>Recreational travel visitor flow management</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Freight Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Freight</span>
+          <span class="accordion-count">9 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Areas:</strong> Commercial Vehicle Operations, Parking Management</p>
+          <ul class="app-items">
+            <li>Truck parking availability detection & prediction</li>
+            <li>Freight signal prioritization</li>
+            <li>Dynamic truck routing</li>
+            <li>Freight predictive analytics</li>
+            <li>Multimodal incident detection and management</li>
+            <li>Port & border gate optimization</li>
+            <li>AI-enhanced Weigh in Motion (WIM) & roadside inspection</li>
+            <li>Credential & driver verification</li>
+            <li>Dynamic curbside management</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Asset Management Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Asset Management</span>
+          <span class="accordion-count">6 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> Maintenance & Construction</p>
+          <ul class="app-items">
+            <li>Asset location and inventories</li>
+            <li>Condition detection and prediction</li>
+            <li>Maintenance scheduling</li>
+            <li>Predictive Bus/Rail maintenance</li>
+            <li>Right of Way (ROW) encroachment detection</li>
+            <li>Root cause & forensic analysis of infrastructure conditions</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Construction & Project Management Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Construction & Project Management</span>
+          <span class="accordion-count">4 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> Maintenance & Construction</p>
+          <ul class="app-items">
+            <li>Utility mapping</li>
+            <li>Predictive risk & schedule analytics</li>
+            <li>Intelligent contract & document analysis</li>
+            <li>Value engineering optimization</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Transportation Planning Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Transportation Planning</span>
+          <span class="accordion-count">6 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> All</p>
+          <ul class="app-items">
+            <li>Travel time and reliability analysis</li>
+            <li>Scenario analysis</li>
+            <li>Demand modeling and freight forecasting</li>
+            <li>Multimodal trip planning</li>
+            <li>Sentiment analysis</li>
+            <li>Real-time traveler information systems</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Transit Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Transit</span>
+          <span class="accordion-count">6 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> Public Transportation</p>
+          <ul class="app-items">
+            <li>Transit fleet dispatch</li>
+            <li>Delay prediction</li>
+            <li>Incident detection & prediction</li>
+            <li>Predictive demand responsive routing (micro-transit)</li>
+            <li>Transit fleet health & predictive maintenance</li>
+            <li>Intelligent headways prediction</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Data (Enterprise) Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Data (Enterprise)</span>
+          <span class="accordion-count">6 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> Data Management</p>
+          <ul class="app-items">
+            <li>Synthetic data generation</li>
+            <li>Semantic data discovery</li>
+            <li>Cross-domain data integration & fusion</li>
+            <li>Automated data cleansing</li>
+            <li>Metadata generation</li>
+            <li>Automated data governance & privacy masking</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Cybersecurity (Enterprise) Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Cybersecurity (Enterprise)</span>
+          <span class="accordion-count">3 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> Cybersecurity</p>
+          <ul class="app-items">
+            <li>Predictive threat intelligence</li>
+            <li>Adaptive threat & incident response</li>
+            <li>Vulnerability remediation</li>
+          </ul>
+        </div>
+      </details>
     </div>
 
-    <table>
-    <thead>
-        <tr>
-            <th>Transportation Program Area</th>
-            <th>Sub-System / Application</th>
-            <th>Key Capabilities / Use Cases</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Safety</td>
-            <td>ITS Vehicle Safety</td>
-            <td>
-                <ul>
-                    <li>Predictive threat intelligence</li>
-                    <li>Incident detection</li>
-                    <li>Adaptive threat & incident response</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>Safety</td>
-            <td>Public Safety</td>
-            <td>
-                <ul>
-                    <li>Vehicle crash detection</li>
-                    <li>Video analytics</li>
-                    <li>Multi-modal detection</li>
-                    <li>Crowd monitoring</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>Operations & Management</td>
-            <td>Traffic Management</td>
-            <td>
-                <ul>
-                    <li>Signal timing & prediction</li>
-                    <li>Work zone monitoring</li>
-                    <li>Traffic congestion analysis</li>
-                    <li>Predicting traffic bottlenecks</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>Operations & Management</td>
-            <td>Weather</td>
-            <td>
-                <ul>
-                    <li>Incident hotspot analysis</li>
-                    <li>Predictive warning systems</li>
-                    <li>Weather impact assessment</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>Freight</td>
-            <td>Vehicle Operations</td>
-            <td>
-                <ul>
-                    <li>Freight tracking and prediction</li>
-                    <li>Optimal routing & scheduling</li>
-                    <li>Capacity utilization prediction</li>
-                    <li>Container tracking</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>Freight</td>
-            <td>Parking Management</td>
-            <td>
-                <ul>
-                    <li>Dynamic parking availability & prediction</li>
-                    <li>Multi-modal parking integration</li>
-                    <li>Demand forecasting</li>
-                    <li>Pricing optimization</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>Asset Management</td>
-            <td></td>
-            <td>
-                <ul>
-                    <li>Road asset condition monitoring</li>
-                    <li>Structural health assessment</li>
-                    <li>Lifecycle cost modeling</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>
-                <ul>
-                    <li>Pipeline integrity management</li>
-                    <li>Corrosion detection</li>
-                    <li>Leak detection</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>
-                <ul>
-                    <li>Utilities infrastructure mapping</li>
-                    <li>Asset tracking and inventory</li>
-                    <li>Preventative maintenance scheduling</li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<!-- Note: The original input was not a clean table structure, so I had to guess the intended grouping based on common infrastructure themes. I have structured the data into a standard HTML table format for clarity, assuming the missing headers/categories were implied. -->
-
+    
   </main>
 </PageLayout>
 
 <style>
-  .content-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .lead {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-
-  .info-box {
-    background: rgb(var(--color-gray-light));
-    padding: 2rem;
-    border-radius: 8px;
-    border-left: 4px solid #0066cc;
+  .accordion-container {
     margin-top: 2rem;
+    max-width: 100%;
   }
 
-  .info-title {
-    color: #003d7a;
-    font-weight: 600;
-    font-size: 1.3rem;
+  .accordion-item {
     margin-bottom: 1rem;
-  }
-
-  .info-box p {
-    margin-bottom: 0;
-    line-height: 1.6;
-  }
-
-  .breadcrumb {
-    background: transparent;
-    padding: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .breadcrumb-item a {
-    color: #0066cc;
-    text-decoration: none;
-  }
-
-  .breadcrumb-item a:hover {
-    text-decoration: underline;
-  }
-
-  .breadcrumb-item.active {
-    color: #666;
-  }
-
-  /* Table Styling */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 2rem 0;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    border-radius: 1rem;
+    background: #fff;
     overflow: hidden;
+    max-height: 100px;
+    transition: all 1s ease;
   }
 
-  thead {
-    background: #003d7a;
+  .accordion-item[open] {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: #f0f8ff;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    padding-right: 3rem;
+  }
+
+  .accordion-header::after {
+    content: "+";
+    position: absolute;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #091f60;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-item[open] .accordion-header::after {
+    transform: rotate(45deg);
     color: white;
   }
 
-  thead th {
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  .accordion-header:hover {
+    background: #ffffff;
   }
 
-  tbody tr {
+  .accordion-item[open] .accordion-header {
+    background: #091f60;
+    color: white;
+  }
+
+  .accordion-title {
+    font-size: 1.25rem;
+    color: inherit;
+    margin: 0;
+  }
+
+  .accordion-count {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: #09638c;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  .accordion-item[open] {
+    max-height: 100rem;
+  }
+
+  .accordion-content {
+    border-top: 1px solid #dee2e6;
+    overflow: hidden;
+    padding: 1.5rem;
+    grid-template-rows: 0fr;
+    transition: all 0.5s ease;
+  }
+
+  .service-area {
+    color: #091f60;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid #e0e0e0;
   }
 
-  tbody tr:hover {
-    background: #f8f9fa;
+  .service-area strong {
+    font-weight: 600;
   }
 
-  tbody tr:last-child {
+  .app-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    column-count: 3;
+    column-gap: 2rem;
+  }
+
+  @media (max-width: 1024px) {
+    .app-items {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .app-items {
+      column-count: 1;
+    }
+  }
+
+  .app-items li {
+    padding: 0.65rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .app-items li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #091f60;
+    font-weight: bold;
+  }
+
+  .app-items li:last-child {
     border-bottom: none;
   }
 
-  td {
-    padding: 1rem;
-    vertical-align: top;
-    line-height: 1.6;
-  }
-
-  td strong {
-    color: #003d7a;
-    font-weight: 600;
-  }
-
-  /* First column (Domain/Area) styling */
-  tbody td:first-child {
-    background: #f0f4f8;
-    font-weight: 600;
-    color: #003d7a;
-    border-right: 2px solid #0066cc;
-  }
-
-  /* Use cases column */
-  .use-cases ul {
-    margin: 0;
-    padding-left: 1.25rem;
-    list-style-type: disc;
-  }
-
-  .use-cases li {
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-
-  .use-cases li:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Responsive table */
-  @media (max-width: 768px) {
-    table {
-      font-size: 0.85rem;
+  @media (max-width: 576px) {
+    .accordion-header {
+      padding: 1rem;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
-    td, th {
-      padding: 0.75rem;
-    }
-
-    .use-cases ul {
-      padding-left: 1rem;
+    .accordion-count {
+      margin-left: 0;
+      margin-top: 0.5rem;
     }
   }
 </style>
