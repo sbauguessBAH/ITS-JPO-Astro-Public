@@ -1,0 +1,656 @@
+/* ============================================
+   AI SECTION - CONSOLIDATED STYLESHEET
+   Artificial Intelligence Program Pages
+   ============================================ */
+
+/* --------------------------------------------
+   1. CSS CUSTOM PROPERTIES (VARIABLES)
+   -------------------------------------------- */
+:root {
+  /* Primary Colors */
+  --ai-blue-primary: #005ea2;
+  --ai-blue-secondary: #055681;
+  --ai-blue-dark: #091f60;
+  --ai-blue-darkest: #01121b;
+  --ai-blue-teal: #09638c;
+  
+  /* Card Backgrounds & Borders */
+  --ai-card-light-blue-bg: #f0f8ff;
+  --ai-card-light-blue-border: #d1e7f7;
+  --ai-card-gray-bg: #f8f9fa;
+  --ai-card-gray-border: #e7e7e7;
+  
+  /* Text Colors */
+  --ai-text-gray: #71767a;
+  --ai-text-dark: #232323;
+  --ai-text-medium: #3c3c3c;
+  --ai-text-light: #6c757d;
+  
+  /* Borders */
+  --ai-border-light: #dee2e6;
+  --ai-border-lighter: #e7edf3;
+  --ai-border-lightest: #f0f0f0;
+  
+  /* Section Backgrounds */
+  --ai-section-bg-gray: #f7f7f7;
+}
+
+/* Global resets and base styles */
+section {
+  padding: 0;
+}
+p {
+    text-wrap: pretty;
+}
+
+/* --------------------------------------------
+   2. BASE CARD COMPONENTS
+   -------------------------------------------- */
+
+/* Standard card */
+.card {
+  background-color: white  ;
+  border: 1px solid var(--ai-card-gray-border);
+  border-radius: 1rem;
+  margin: 0;
+  overflow: hidden;
+}
+
+a .card, .card a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.card h2, .card h3, .card h4, .card h5 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.card-blue {
+  background-color: var(--ai-card-light-blue-bg);
+  border: 1px solid var(--ai-card-light-blue-border);
+}
+
+/* Gray variant card */
+.card-gray {
+  background-color: var(--ai-card-gray-bg);
+  border: 1px solid var(--ai-card-gray-border);
+}
+
+.card-gray p {
+  color: var(--ai-text-medium);
+}
+
+.card-gray h5 {
+  color: var(--ai-text-medium);
+}
+
+.card-gray h5:after {
+  display: none;
+  content: "";
+}
+
+/* Card with hover lift effect */
+.card-hoverable {
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card-hoverable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.175) !important;
+}
+
+/* Card with hover scale effect */
+.card-scalable:hover {
+  transition: transform 0.2s, box-shadow 0.2s;
+  transform: scale(1.05);
+}
+
+/* Vision/Mission style card */
+.vision-mission-card {
+  background-color: var(--ai-card-light-blue-bg);
+  border: 1px solid var(--ai-card-light-blue-border);
+  height: 100%;
+}
+
+.vision-mission-title {
+  color: var(--ai-blue-primary);
+  gap: 0.5rem;
+}
+
+
+
+/* Data card variant */
+.data-card {
+}
+
+.data-card h3 {
+  color: var(--ai-blue-primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* --------------------------------------------
+   3. WHITE CARD VARIANTS
+   -------------------------------------------- */
+
+/* Insight card */
+.insight-card {
+  border: 1px solid var(--ai-border-light);
+  transition: box-shadow 0.3s ease;
+  background-color: white;
+}
+
+.insight-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.insight-card .card-title {
+  color: var(--ai-blue-secondary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.insight-card .card-title:after {
+  display: none;
+}
+
+/* Resource card with image */
+.resource-card {
+  border: 1px solid var(--ai-border-light);
+  transition: box-shadow 0.3s ease;
+  background-color: white;
+  overflow: hidden;
+}
+
+.resource-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.resource-card .card-img-top-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: var(--ai-card-gray-bg);
+}
+
+.resource-card .placeholder-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+  color: var(--ai-text-light);
+  font-weight: 600;
+}
+
+.resource-card .resource-subtitle {
+  color: var(--ai-text-light);
+  font-size: 0.75rem;
+}
+
+.resource-card .card-title {
+  color: var(--ai-blue-secondary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.resource-card .card-title:after {
+  display: none;
+}
+
+.resource-card .card-text {
+  color: var(--ai-text-dark);
+  line-height: 1.6;
+}
+
+.resource-card hr {
+  margin: 1rem 0;
+  border-color: var(--ai-border-light);
+}
+
+.resource-card .resource-meta p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--ai-text-light);
+}
+
+.resource-card .resource-meta strong {
+  color: var(--ai-text-dark);
+}
+
+/* Info card with icon */
+.info-card {
+  border: 1px solid var(--ai-border-light);
+  transition: box-shadow 0.3s ease;
+  background-color: white;
+}
+
+.info-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-card .card-body {
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.info-card .icon-wrapper {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--ai-blue-secondary) 0%, #044568 100%);
+  border-radius: 1rem;
+  color: white;
+}
+
+.info-card .card-title {
+  color: var(--ai-blue-secondary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.info-card .card-title:after {
+  display: none;
+}
+
+.info-card .card-text {
+  color: var(--ai-text-medium);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Card image utilities */
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+    height: 200px;
+}
+
+.card-image--no-radius {
+  border-radius: 0;
+}
+
+/* --------------------------------------------
+   4. LAYOUT COMPONENTS
+   -------------------------------------------- */
+
+/* AI Header Column (gradient sidebar) */
+.ai-header-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--ai-blue-secondary) 0%, var(--ai-blue-darkest) 100%);
+  padding: 1rem;
+  color: white;
+}
+
+.ai-header-col h3 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-transform: none;
+}
+
+/* AI Card Row Container */
+.ai-card-row {
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--ai-border-lighter);
+  overflow: hidden;
+}
+
+.ai-card-row p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Full-width gray section */
+.gray-edge-to-edge {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--ai-section-bg-gray);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* Objectives list layout */
+.objectives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* --------------------------------------------
+   5. ACCORDION COMPONENTS
+   -------------------------------------------- */
+
+.accordion-container {
+  margin-top: 2rem;
+  max-width: 100%;
+}
+
+.accordion-item:first-of-type, .accordion-item:last-of-type {
+border-radius: 1rem;
+}  
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid var(--ai-border-light);
+  border-radius: 1rem;
+  background: #fff;
+  overflow: hidden;
+  max-height: 100px;
+  transition: all 1s ease;
+}
+
+.accordion-item[open] {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 100rem;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--ai-card-light-blue-bg);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  border: none;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  padding-right: 3rem;
+}
+
+.accordion-header::after {
+  content: "+";
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--ai-blue-dark);
+  transition: transform 0.3s ease;
+}
+
+.accordion-item[open] .accordion-header::after {
+  transform: rotate(45deg);
+  color: white;
+}
+
+.accordion-header:hover {
+  background: #ffffff;
+}
+
+.accordion-item[open] .accordion-header {
+  background: var(--ai-blue-dark);
+  color: white;
+}
+
+.accordion-title {
+  font-size: 1.25rem;
+  color: inherit;
+  margin: 0;
+  flex: 1;
+}
+
+.accordion-content {
+  border-top: 1px solid var(--ai-border-light);
+  overflow: hidden;
+  padding: 1.5rem;
+  transition: all 0.5s ease;
+}
+
+.accordion-content p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Accordion badge variants */
+.accordion-count {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: var(--ai-blue-teal);
+  color: white;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.accordion-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ai-blue-teal);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* App items list (multi-column for use cases) */
+.app-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  column-count: 3;
+  column-gap: 2rem;
+}
+
+.app-items li {
+  padding: 0.65rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--ai-text-dark);
+  border-bottom: 1px solid var(--ai-border-lightest);
+}
+
+.app-items li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--ai-blue-dark);
+  font-weight: bold;
+}
+
+/* Responsive breakpoints for app items */
+@media (max-width: 1024px) {
+  .app-items {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-items {
+    column-count: 1;
+  }
+}
+
+.service-area {
+  color: var(--ai-blue-dark);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.service-area strong {
+  font-weight: 600;
+}
+
+/* --------------------------------------------
+   6. INTERACTIVE LINK STYLES
+   -------------------------------------------- */
+
+/* Reset link with arrow animation */
+.reset-link {
+  text-decoration: none;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  cursor: pointer;
+}
+
+.reset-link::after {
+  content: "" !important;
+  display: none !important;
+}
+
+.reset-link:hover {
+  font-weight: normal;
+}
+
+.reset-link .data-card {
+  position: relative;
+  padding-right: 3rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reset-link .data-card::after {
+  content: "\f061";
+  font-family: FontAwesome;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  opacity: 1;
+  transition: transform 0.2s ease;
+  color: var(--ai-blue-darkest);
+  font-weight: bold;
+}
+
+.reset-link:hover .data-card {
+  transform: translateX(5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.reset-link:hover .data-card::after {
+  transform: translateY(-50%) translateX(5px);
+}
+
+/* Card H5 with external link icon */
+.card h5:after {
+  content: "\00a0\f08e";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+/* --------------------------------------------
+   8. TYPOGRAPHY & UTILITIES
+   -------------------------------------------- */
+
+/* Sub (subtitle) element */
+sub {
+  padding: 0;
+  margin: 0 0 1rem 0;
+  color: var(--ai-blue-secondary);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Icon sizing */
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Horizontal rule */
+hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+/* Note callout box */
+.note-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--ai-card-light-blue-bg);
+  border-left: 4px solid var(--ai-blue-secondary);
+  border-radius: .5rem;
+}
+
+.note-callout h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--ai-blue-secondary);
+}
+
+.note-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--ai-blue-secondary);
+}
+
+.note-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--ai-blue-secondary);
+}
+
+.note-text {
+  margin: 0;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ai-text-dark);
+  line-height: 1.6;
+}
+
+/* Content wrapper utilities */
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+

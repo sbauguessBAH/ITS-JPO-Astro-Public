@@ -2,6 +2,7 @@
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import base_url from "@/src/lib/base_url";
+import "@/src/styles/ai-section.css";
 ---
 
 <PageLayout title="What Is The JPO AI Implementation Approach" bannerImage={banner}>
@@ -15,65 +16,30 @@ import base_url from "@/src/lib/base_url";
       </p>
 
       <div class="objectives-list">
-        <div class="card data-card shadow-sm card-body card-gray">
+        <div class="card  shadow-sm card-body card-gray">
           <h5 class="card-title">Multimodal Research & Understanding</h5>
           <p class="card-text">We leverage collaborative research to explore AI's capabilities and limitations. By partnering with academic experts and industry leaders, we identify how AI can specifically solve complex challenges across all surface modes.</p>
         </div>
 
-        <div class="card data-card shadow-sm card-body card-gray">
+        <div class="card shadow-sm card-body card-gray">
           <h5 class="card-title">Collaborative Testing & Validation</h5>
           <p class="card-text">Through real-world pilots conducted in partnership with state, regional, local, and Tribal agencies, we rigorously evaluate AI solutions. These evaluations provide the objective information necessary to validate safety and effectiveness, encouraging broader implementation across the transportation sector.</p>
         </div>
 
-        <div class="card data-card shadow-sm card-body card-gray">
+        <div class="card  shadow-sm card-body card-gray">
           <h5 class="card-title">Deployment & Demonstration</h5>
           <p class="card-text">We work with our public and private sector partners to showcase successful AI applications. These deployments are vital for building stakeholder awareness and understanding of the benefits that AI solutions can bring to transportation and how risks can be managed.</p>
         </div>
 
-        <div class="card data-card shadow-sm card-body card-gray">
+        <div class="card  shadow-sm card-body card-gray">
           <h5 class="card-title">Repeatable Resources & Frameworks</h5>
           <p class="card-text">To reduce barriers to entry, the ITS JPO delivers curated playbooks, technical tools, and implementation resources. Developed through cross-modal collaboration within USDOT and with peer agency feedback, these resources provide consistent practices and protocols that agencies of all sizes and AI maturities can follow.</p>
         </div>
 
-        <div class="card data-card shadow-sm card-body card-gray">
+        <div class="card  shadow-sm card-body card-gray">
           <h5 class="card-title">Knowledge Sharing & Tech Transfer</h5>
           <p class="card-text">We are committed to empowering our partners by providing knowledge sharing opportunities and informational materials to advance the adoption of AI solutions in safe, responsible and trustworthy ways.</p>
         </div>
       </div>
   </main>
 </PageLayout>
-
-<style>
-  .objectives-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .card {
-    background-color: #f0f8ff;
-    border: 1px solid #d1e7f7;
-    border-radius: 0.4rem;
-    margin: 0;
-  }
-
-  .card-gray {
-    background-color: #f8f9fa;
-    border: 1px solid #e7e7e7;
-  }
-
-  .card-gray p {
-    color: black;
-    margin: 0;
-  }
-
-  .card-gray h5 {
-    color: #055681;
-  }
-
-  .card-gray h5:after {
-    display: none;
-    content: "";
-  }
-</style>

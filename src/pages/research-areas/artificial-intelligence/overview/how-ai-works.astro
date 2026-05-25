@@ -2,92 +2,92 @@
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import base_url from "@/src/lib/base_url";
+import "@/src/styles/ai-section.css";
 ---
 
 <PageLayout title="How Does AI Work" bannerImage={banner}>
   <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
   <main>
-   <h2>How Does AI Work</h2>
+    <h2>How Does AI Work</h2>
 
-    
-      <p >
-        At its core, Artificial Intelligence (AI) is a suite of technologies that allows computer systems to perform tasks that once required human intervention, such as recognizing objects, solving complex problems, and making predictions. For public sector agencies, AI acts as a force multiplier, turning overwhelming amounts of raw data into clear, actionable insights. Unlike traditional analytical methods that rely on static "if-then" and historical data to anticipate future conditions, such as predicting a pavement failure before a pothole forms or identifying "near-miss" traffic patterns to prevent crashes before they occur.
-      </p>
-      
-      <p>
-        AI is more than just a single piece of software; it is a system that translates massive datasets into intelligent actions through a continuous cycle of <strong>sensing, thinking, and acting</strong>.
-      </p>
+    <p>
+      At its core, Artificial Intelligence (AI) is a suite of technologies that allows computer systems to perform tasks that once required human intervention, such as recognizing objects, solving
+      complex problems, and making predictions. For public sector agencies, AI acts as a force multiplier, turning overwhelming amounts of raw data into clear, actionable insights. Unlike traditional
+      analytical methods that rely on static "if-then" and historical data to anticipate future conditions, such as predicting a pavement failure before a pothole forms or identifying "near-miss"
+      traffic patterns to prevent crashes before they occur.
+    </p>
 
-      <div class="row g-4 mt-4">
-        <div class="col-md-4">
-          <div class="cycle-card p-4 rounded-4 h-100">
-            <div class="d-flex align-items-center mb-2">
-              <svg class="icon me-2" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                <path d="m674.63 92.25c-104.25-21.75-210.37 3.375-291.37 69-81.75 66-128.26 163.87-128.26 268.87 0 88.5 33.375 172.87 94.5 237 29.625 31.125 52.125 66 66.75 102.38 2.625-1.125 5.25-1.5 8.25-1.5h147.37v-282.74l-81.75-59.625c-12.375-9.375-15-27-6-39.375 9.375-12.375 27-15 39.375-6l76.5 56.25 76.5-56.25c12.375-9 30-6.375 39.375 6 9 12.375 6.375 30-6 39.375l-81.75 59.625v282.74h147.37c2.625 0 4.875 0.375 7.125 1.125 13.875-35.625 35.625-69 63.75-97.5 82.5-84 116.25-204.37 89.625-321.74-28.5-127.13-133.87-230.63-261.37-257.63z"></path>
-                <path d="m605.63 824.26h-173.26c3 15.375 4.5 31.125 4.5 46.5v22.5h326.26v-22.875c0-15.375 1.5-31.125 4.5-46.125z"></path>
-                <path d="m493.13 949.5h-56.25v3c0 46.125 19.5 90.375 54 121.13 30 27 69.375 42 109.5 42 5.625 0 11.625-0.375 17.25-0.75 80.25-9 143.26-81 145.13-165.37z"></path>
-              </svg>
-              <h3 class="cycle-title mb-0">Sensing</h3>
-            </div>
-            <p class="cycle-subtitle">Data Input</p>
-            <p>AI systems gather information from the physical or digital world (e.g., using sensors).</p>
+    <p>
+      AI is more than just a single piece of software; it is a system that translates massive datasets into intelligent actions through a continuous cycle of <strong>
+        sensing, thinking, and acting
+      </strong>.
+    </p>
+
+    <div class="row g-4 mt-4">
+      <div class="col-md-4">
+        <div class="card card-gray p-4 rounded-4 h-100">
+          <div class="d-flex align-items-center mb-2">
+            <svg class="icon me-2" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m95.398 31.199c-12.098-12.098-28.199-18.801-45.398-18.801s-33.301 6.6992-45.398 18.801c-2.8008 2.8008-2.8008 7.1992 0 10 1.3984 1.3984 3.1992 2.1016 5 2.1016 1.8008 0 3.6016-0.69922 5-2.1016 9.3984-9.5 22-14.699 35.398-14.699s26 5.1992 35.398 14.699c2.8008 2.8008 7.1992 2.8008 10 0 2.8008-2.8008 2.8008-7.3008 0-10z"
+              >
+              </path>
+              <path
+                d="m23.398 50.102c-2.8008 2.8008-2.8008 7.1992 0 10 1.3984 1.3984 3.1992 2.1016 5 2.1016 1.8008 0 3.6016-0.69922 5-2.1016 9.1992-9.1992 24.102-9.1992 33.199-0.10156 2.6992 2.8008 7.1992 2.8008 10 0 2.8008-2.8008 2.8008-7.1992 0-10-14.699-14.602-38.496-14.602-53.199 0.10156z"
+              >
+              </path>
+              <path d="m61.102 76.602c0 6.0742-4.9258 11-11 11-6.0781 0-11-4.9258-11-11 0-6.0781 4.9219-11 11-11 6.0742 0 11 4.9219 11 11z"></path>
+            </svg>
+
+            <h3 class="cycle-title mb-0">Sensing</h3>
           </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="cycle-card p-4 rounded-4 h-100">
-            <div class="d-flex align-items-center mb-2">
-              <svg class="icon me-2" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                <path d="m674.63 92.25c-104.25-21.75-210.37 3.375-291.37 69-81.75 66-128.26 163.87-128.26 268.87 0 88.5 33.375 172.87 94.5 237 29.625 31.125 52.125 66 66.75 102.38 2.625-1.125 5.25-1.5 8.25-1.5h147.37v-282.74l-81.75-59.625c-12.375-9.375-15-27-6-39.375 9.375-12.375 27-15 39.375-6l76.5 56.25 76.5-56.25c12.375-9 30-6.375 39.375 6 9 12.375 6.375 30-6 39.375l-81.75 59.625v282.74h147.37c2.625 0 4.875 0.375 7.125 1.125 13.875-35.625 35.625-69 63.75-97.5 82.5-84 116.25-204.37 89.625-321.74-28.5-127.13-133.87-230.63-261.37-257.63z"></path>
-                <path d="m605.63 824.26h-173.26c3 15.375 4.5 31.125 4.5 46.5v22.5h326.26v-22.875c0-15.375 1.5-31.125 4.5-46.125z"></path>
-                <path d="m493.13 949.5h-56.25v3c0 46.125 19.5 90.375 54 121.13 30 27 69.375 42 109.5 42 5.625 0 11.625-0.375 17.25-0.75 80.25-9 143.26-81 145.13-165.37z"></path>
-              </svg>
-              <h3 class="cycle-title mb-0">Thinking</h3>
-            </div>
-            <p class="cycle-subtitle">Processing</p>
-            <p>AI systems analyze data to identify patterns, make predictions, or classify objects (e.g., distinguishing a cyclist from a tree).</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="cycle-card p-4 rounded-4 h-100">
-            <div class="d-flex align-items-center mb-2">
-              <svg class="icon me-2" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                <path d="m674.63 92.25c-104.25-21.75-210.37 3.375-291.37 69-81.75 66-128.26 163.87-128.26 268.87 0 88.5 33.375 172.87 94.5 237 29.625 31.125 52.125 66 66.75 102.38 2.625-1.125 5.25-1.5 8.25-1.5h147.37v-282.74l-81.75-59.625c-12.375-9.375-15-27-6-39.375 9.375-12.375 27-15 39.375-6l76.5 56.25 76.5-56.25c12.375-9 30-6.375 39.375 6 9 12.375 6.375 30-6 39.375l-81.75 59.625v282.74h147.37c2.625 0 4.875 0.375 7.125 1.125 13.875-35.625 35.625-69 63.75-97.5 82.5-84 116.25-204.37 89.625-321.74-28.5-127.13-133.87-230.63-261.37-257.63z"></path>
-                <path d="m605.63 824.26h-173.26c3 15.375 4.5 31.125 4.5 46.5v22.5h326.26v-22.875c0-15.375 1.5-31.125 4.5-46.125z"></path>
-                <path d="m493.13 949.5h-56.25v3c0 46.125 19.5 90.375 54 121.13 30 27 69.375 42 109.5 42 5.625 0 11.625-0.375 17.25-0.75 80.25-9 143.26-81 145.13-165.37z"></path>
-              </svg>
-              <h3 class="cycle-title mb-0">Acting</h3>
-            </div>
-            <p class="cycle-subtitle">Output</p>
-            <p>The AI provides a recommendation, such as an optimized signal timing plan, or takes a direct action, like applying emergency brakes in an automated vehicle.</p>
-          </div>
+          <p class="cycle-subtitle">Data Input</p>
+          <p class="p-0 m-0">AI systems gather information from the physical or digital world (e.g., using sensors).</p>
         </div>
       </div>
+
+      <div class="col-md-4">
+        <div class="card card-gray p-4 rounded-4 h-100">
+          <div class="d-flex align-items-center mb-2">
+            <svg class="icon me-2" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m91.586 53.68c-0.58594 1.6328-1.5469 3.1484-2.8047 4.4375 1.3906 4.1953 1.1016 8.9297-0.82812 12.883-2.0625 4.2422-5.8906 7.4609-10.367 8.7734-1.4688 5.3047-6.5547 9.2891-12.039 9.2891h-0.14062c-5.875-0.070312-11.43-4.8672-12.367-10.688-0.015624-0.085938-0.023437-0.16406-0.023437-0.25v-56.25c0-4.3203 2.5547-7.9766 6.8359-9.7891 5.25-2.2188 11.555-1.1875 15.344 2.4922 3.125 3.0312 4.7031 7.625 4.2266 12.031 1.0859 0.40625 2.1016 0.97656 2.9766 1.6797 3.1016 2.4922 4.7031 6.7422 4.1406 10.703 4.7266 2.75 7.0312 9.1562 5.0469 14.688zm-51.445-41.586c-5.2422-2.2188-11.555-1.1875-15.344 2.4922-3.125 3.0391-4.7031 7.6328-4.2266 12.031-1.0859 0.40625-2.0938 0.97656-2.9688 1.6797-3.1094 2.4922-4.7109 6.75-4.1406 10.711-4.7344 2.7422-7.0312 9.1484-5.0547 14.68 0.58594 1.6328 1.5469 3.1484 2.8047 4.4453-1.3906 4.1953-1.1016 8.9297 0.82031 12.883 2.0625 4.2422 5.8984 7.4609 10.367 8.7734 1.4688 5.3047 6.5547 9.2891 12.039 9.2891h0.14062c5.875-0.070313 11.422-4.8672 12.367-10.688 0.015626-0.085937 0.023438-0.16406 0.023438-0.25v-56.25c0.007812-4.3281-2.5469-7.9922-6.8281-9.7969z"
+              >
+              </path>
+            </svg>
+
+            <h3 class="cycle-title mb-0">Thinking</h3>
+          </div>
+          <p class="cycle-subtitle">Processing</p>
+          <p class="p-0 m-0">AI systems analyze data to identify patterns, make predictions, or classify objects (e.g., distinguishing a cyclist from a tree).</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-gray p-4 rounded-4 h-100">
+          <div class="d-flex align-items-center mb-2">
+            <svg class="icon me-2" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m50 5c-24.898 0-45 20.102-45 45s20.102 45 45 45 45-20.102 45-45-20.102-45-45-45zm0 70c-3.8008 0-6.8984-3.1016-6.8984-6.8984 0-3.8008 3.1016-6.8984 6.8984-6.8984 3.8008 0 6.8984 3.1016 6.8984 6.8984 0 3.7969-3.0977 6.8984-6.8984 6.8984zm6.8984-37.898c-0.30078 1.1016-0.80078 2.8984-1.5 5.1992-1.1016 3.3008-1.8008 5.8984-2.3008 7.8984-0.39844 1.8984-0.69922 3.8008-0.80078 5.8008 0 0.69922-0.19922 1.3984-0.5 2-0.39844 0.39844-1 0.69922-1.5 0.60156-0.5 0-1-0.10156-1.3984-0.5-0.30078-0.5-0.5-1.1016-0.5-1.6992-0.10156-1.6016-0.30078-2.6992-0.30078-3.3008 0-0.60156-0.30078-1.6016-0.69922-3-0.60156-2.1992-1.3008-4.6016-2.1992-7.1016-1.1016-3-1.6992-5-2-6.1992s-0.39844-2.3984-0.39844-3.6016c0-2 0.69922-4 1.8984-5.6016 1.3008-1.6992 3.3008-2.6016 5.5-2.6016 2 0 3.8984 0.89844 5.1016 2.5 1.3984 1.8008 2.1016 4 2 6.3008 0 1.1016-0.19922 2.2031-0.40234 3.3047z"
+              >
+              </path>
+            </svg>
+
+            <h3 class="cycle-title mb-0">Acting</h3>
+          </div>
+          <p class="cycle-subtitle">Output</p>
+          <p class="p-0 m-0">The AI provides a recommendation, such as an optimized signal timing plan, or takes a direct action, like applying emergency brakes in an automated vehicle.</p>
+        </div>
+      </div>
+    </div>
   </main>
 </PageLayout>
 
 <style>
-  .content-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .lead {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Cycle Card Styling to match Vision/Mission cards */
-  .cycle-card {
-    background-color: #f0f8ff;
-    border: 1px solid #d1e7f7;
-    height: 100%;
-  }
+  /* Cycle card (similar to vision) */
 
   .cycle-title {
-    color: #005ea2;
+    color: var(--ai-blue-dark);
     font-weight: 600;
     font-size: 1.2rem;
     margin-bottom: 0.75rem;
@@ -95,40 +95,11 @@ import base_url from "@/src/lib/base_url";
   }
 
   .cycle-subtitle {
-    color: #71767a;
+    color: var(--ai-blue-primary);
     font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-  }
-
-  .icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .cycle-card p {
-    margin-bottom: 0;
-    line-height: 1.6;
-  }
-
-  .breadcrumb {
-    background: transparent;
-    padding: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .breadcrumb-item a {
-    color: #0066cc;
-    text-decoration: none;
-  }
-
-  .breadcrumb-item a:hover {
-    text-decoration: underline;
-  }
-
-  .breadcrumb-item.active {
-    color: #666;
   }
 </style>

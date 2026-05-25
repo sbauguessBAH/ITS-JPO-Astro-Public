@@ -2,6 +2,7 @@
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import base_url from "@/src/lib/base_url";
+import "@/src/styles/ai-section.css";
 ---
 
 <PageLayout title="Where Can AI Advance Transportation" bannerImage={banner}>
@@ -15,11 +16,11 @@ import base_url from "@/src/lib/base_url";
 
     <!-- Main Section -->
     <div class="row ai-card-row">
-      <div class="col-lg-2 ai-header-col">
+      <div class="ai-header-col">
         <h3>Real-Time Data and Adaptive Operations</h3>
       </div>
 
-      <div class="col-lg-10 p-4 d-flex gap-4 flex-column">
+      <div class="p-4 d-flex gap-4 flex-column">
         <!-- Real-Time Data Section -->
         <div>
           <p>
@@ -31,7 +32,7 @@ import base_url from "@/src/lib/base_url";
         </div>
 
         <!-- Predictive Intelligence Subsection -->
-        <div class="card data-card shadow-sm card-body card-gray">
+        <div class="card shadow-sm card-body card-gray">
           <h5 class="card-title">Predictive Intelligence and Strategic Decision-Making</h5>
           <p class="card-text">
             Beyond the "here and now," AI offers unparalleled predictive opportunities that can strengthen long-term planning, asset management, and project delivery. By identifying complex patterns
@@ -40,14 +41,14 @@ import base_url from "@/src/lib/base_url";
         </div>
 
         <!-- Application Cards -->
-        <div class="card data-card shadow-sm card-body card-gray">
+        <div class="card shadow-sm card-body card-gray">
           <h5 class="card-title">Data-Driven Planning</h5>
           <p class="card-text">
             AI simulates thousands of "what-if" scenarios to help planners understand how new infrastructure or a freight corridor will impact regional performance and economic vitality.
           </p>
         </div>
 
-        <div class="card data-card shadow-sm card-body card-gray">
+        <div class="card shadow-sm card-body card-gray">
           <h5 class="card-title">Predictive Asset Management</h5>
           <p class="card-text">
             Rather than relying on static lifecycles, AI enables a more strategic approach to infrastructure health. By predicting exactly when a bridge or pavement section will require intervention,
@@ -55,75 +56,17 @@ import base_url from "@/src/lib/base_url";
           </p>
         </div>
 
-        <div class="card data-card shadow-sm card-body card-gray">
+        <div class="card shadow-sm card-body card-gray">
           <h5 class="card-title">Mission Optimization</h5>
           <p class="card-text">AI streamlines internal agency operations, from automating administrative workflows to optimizing project delivery timelines.</p>
         </div>
 
         <!-- Conclusion -->
-        <p>
+        
+      </div>
+    </div><p class="mt-4">
           Ultimately, AI empowers agencies to shift from a reactive posture to a proactive management model, ensuring that every dollar invested results in a safer, more resilient, and more efficient
           transportation system.
         </p>
-      </div>
-    </div>
   </main>
-
-  <style>
-    .ai-header-col {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: center;
-      text-align: center;
-      justify-content: start;
-      background: linear-gradient(180deg, #055681 0%, #01121b 100%);
-      padding: 1rem;
-      color: white;
-    }
-
-    .ai-header-col h3 {
-      margin: 0;
-      padding: 0;
-      color: white;
-      text-transform: none;
-    }
-
-    .ai-card-row {
-      margin-top: 2rem;
-      border-radius: 0.5rem;
-      border: 1px solid #e7edf3;
-      overflow: hidden;
-    }
-
-    .ai-card-row p {
-      margin: 0;
-      padding: 0;
-    }
-
-    .card {
-      background-color: #f0f8ff;
-      border: 1px solid #d1e7f7;
-      border-radius: 0.4rem;
-      margin: 0;
-    }
-
-    .card-gray {
-      background-color: #f8f9fa;
-      border: 1px solid #e7e7e7;
-    }
-
-    .card-gray p {
-      color: black;
-    }
-
-    .card-gray h5 {
-      color: #055681;
-    }
-
-    .card-gray h5:after {
-      display: none;
-      content: "";
-    }
-  </style>
 </PageLayout>

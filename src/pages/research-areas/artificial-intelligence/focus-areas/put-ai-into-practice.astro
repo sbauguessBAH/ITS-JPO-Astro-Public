@@ -1,6 +1,7 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import "@/src/styles/ai-section.css";
 ---
 
 <PageLayout title="Put AI into Practice" bannerImage={banner}>
@@ -26,14 +27,14 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
           through the USDOT Small Business Innovation Research Program and to meet other Departmental priorities.
         </p>
         <a href="https://www.volpe.dot.gov/work-with-us/small-business-innovation-research" class="text-decoration-none reset-link" target="_blank">
-          <div class="card data-card shadow-sm card-body">
+          <div class="card data-card shadow-sm card-body card-blue">
             <sub>SBIR</sub>
             <h5 class="card-title">AI Freight Solicitation</h5>
             <p class="card-text">The USDOT Small Business Innovation Research (SBIR) FY26 Phase I solicitation invites small businesses to propose innovative AI solutions for freight transportation, improving safety, efficiency, and resilience. Opens Summer 2026.</p>
           </div>
         </a>
         <a href="https://www.volpe.dot.gov/sites/volpe.dot.gov/files/2025-10/24.2%20Phase%20I%20SBIR%20Awardees_508_102725.pdf" class="text-decoration-none reset-link" target="_blank">
-          <div class="card data-card shadow-sm card-body">
+          <div class="card data-card shadow-sm card-body card-blue">
             <sub>SBIR</sub>
             <h5 class="card-title">AI Transportation Planning & Design (TPD) Project Briefs</h5>
             <p class="card-text">The AI for Transportation Planning and Design (AI TPD) initiative is advancing a range of AI methods to collect, integrate and apply a range of data, particularly for active transportation. These tools will allow transportation practitioners to query complex datasets in natural language, asking questions such as ˝Where are the highest-risk pedestrian corridors?˛ and receive clear, visual responses. By combining AI analytics, geospatial visualization, and dynamic simulation, agencies can test scenarios, compare design options, and monitor performance across safety, mobility, and efficiency metrics. In Phase I, USDOT awarded $200,000 each to 12 small businesses each to demonstrate novel multimodal data generation and AI processing methods in a pilot geography. Five companies are now undertaking further research and scaling their approaches to additional geographies under Phase II of this project.</p>
@@ -95,128 +96,4 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
       </div>
     </div>
   </main>
-  <style>
-    .ai-header-col {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: center;
-      text-align: center;
-      vertical-align: middle;
-      justify-content: center;
-      background: linear-gradient(180deg, #055681 0%, #01121b 100%);
-      padding: 1rem;
-      color: white;
-    }
-    .ai-header-col h3 {
-      margin: 0;
-      padding: 0;
-      color: white;
-      text-transform: none;
-    }
-    .ai-card-row p {
-      margin: 0;
-      padding: 0;
-    }
-
-    sub {
-      padding: 0;
-      margin: 0 0 1rem 0;
-      color: #055681;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .ai-card-row {
-      margin-top: 2rem;
-      border-radius: 0.5rem;
-      border: 1px solid #e7edf3;
-      overflow: hidden;
-    }
-    .card {
-      background-color: #f0f8ff;
-      border: 1px solid #d1e7f7;
-      border-radius: 0.4rem;
-      margin: 0;
-    }
-
-     .card-gray {
-      background-color: #f8f9fa;
-      border: 1px solid #e7e7e7;
-      p {
-        color: #555;
-      };
-      h5 {
-        color: #555;
-      }
-      sub {
-        color: #555;
-      }
-      h5:after {
-        display: none;
-        content: "";
-      }
-    }
-   
-
-
-    /* This adds some icons for different link types*/
-    .card h5:after {
-      content: "\00a0\f08e";
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .reset-link {
-      text-decoration: none;
-      font: inherit;
-      color: inherit;
-      outline: none;
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      display: inline;
-      cursor: pointer;
-    }
-    .reset-link::after {
-      content:"";
-      display: none;
-    }
-    .reset-link:hover {
-      font-weight: normal;
-    }
-
-    .reset-link .data-card {
-      position: relative;
-      padding-right: 3rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .reset-link .data-card::after {
-      content: "\f061";
-      font-family: FontAwesome;
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.5rem;
-      opacity: 1;
-      transition: transform 0.2s ease;
-      color: #01121b;
-      font-weight: bold;
-    }
-
-    .reset-link:hover .data-card {
-      transform: translateX(5px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
-
-    .reset-link:hover .data-card::after {
-      transform: translateY(-50%) translateX(5px);
-    }
-  </style>
 </PageLayout>

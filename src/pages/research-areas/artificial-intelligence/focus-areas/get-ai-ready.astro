@@ -1,6 +1,7 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import "@/src/styles/ai-section.css";
 ---
 
 <PageLayout title="Get AI-Ready" bannerImage={banner}>
@@ -25,10 +26,10 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
 
       <div class="col-lg-10 p-4 d-flex gap-4 flex-column">
         <p>
-          Data serves as the fundamental building block of AI and the ultimate value that an AI system provides.  Foundational success depends on robust data governance and management to ensure
+          Data serves as the fundamental building block of AI and the ultimate value that an AI system provides. Foundational success depends on robust data governance and management to ensure
           information is accurate, aligned, and secure. Data storage and access protocols are key to ensuring high-quality data is accessible at times and locations it is needed and available to staff
-          based on identified roles.   AI systems can offer more sophisticated insights if available data can be effectively and efficiently integrated across data types, collection methods and
-          programs. The ITS JPO is currently researching the state of data integration for AI & TSMO applications.  This effort will identify critical interoperability requirements to improve data
+          based on identified roles. AI systems can offer more sophisticated insights if available data can be effectively and efficiently integrated across data types, collection methods and
+          programs. The ITS JPO is currently researching the state of data integration for AI & TSMO applications. This effort will identify critical interoperability requirements to improve data
           readiness and test innovative, data-centric AI approaches for prioritized TSMO use cases.
         </p>
         
@@ -72,7 +73,7 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
           program areas and agency type.
         </p>
         <a href="https://www.transportation.gov/hasscoe/highlights/AI-assurance-whitepaper-apr2024" class="text-decoration-none reset-link" target="_blank">
-          <div class="card data-card shadow-sm card-body">
+          <div class="card data-card shadow-sm card-body card-blue">
             <sub>WHITE PAPER</sub>
             <h5 class="card-title">USDOT Highly Automated Systems Safety (HASS) AI Assurance White Paper</h5>
             <p class="card-text">
@@ -83,7 +84,7 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
           </div>
         </a>
         <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf" class="text-decoration-none reset-link" target="_blank">
-          <div class="card data-card shadow-sm card-body">
+          <div class="card data-card shadow-sm card-body card-blue">
             <sub>FRAMEWORK</sub>
             <h5 class="card-title">NIST AI Risk Management Framework</h5>
             <p class="card-text">
@@ -152,7 +153,7 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
           and webinars.
         </p>
         <a href="https://rosap.ntl.bts.gov/view/dot/78879" class="text-decoration-none reset-link" target="_blank">
-          <div class="card data-card shadow-sm card-body">
+          <div class="card data-card shadow-sm card-body card-blue">
             <sub>REPORT</sub>
             <h5 class="card-title">AI for ITS Capability Maturity Model (CMM) and Readiness Checklists</h5>
             <p class="card-text">
@@ -197,128 +198,4 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
       </div>
     </div>
   </main>
-  <style>
-    .ai-header-col {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: center;
-      text-align: center;
-      vertical-align: middle;
-      justify-content: center;
-      background: linear-gradient(180deg, #055681 0%, #01121b 100%);
-      padding: 1rem;
-      color: white;
-    }
-    .ai-header-col h3 {
-      margin: 0;
-      padding: 0;
-      color: white;
-      text-transform: none;
-    }
-    .ai-card-row p {
-      margin: 0;
-      padding: 0;
-    }
-
-    sub {
-      padding: 0;
-      margin: 0 0 1rem 0;
-      color: #055681;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    
-    .ai-card-row {
-      margin-top: 2rem;
-      border-radius: 0.5rem;
-      border: 1px solid #e7edf3;
-      overflow: hidden;
-    }
-    .card {
-      background-color: #f0f8ff;
-      border: 1px solid #d1e7f7;
-      border-radius: 0.4rem;
-      margin: 0;
-    }
-
-    .card-gray {
-      background-color: #f8f9fa;
-      border: 1px solid #e7e7e7;
-      p {
-        color: #555;
-      };
-      h5 {
-        color: #555;
-      }
-      sub {
-        color: #555;
-      }
-      h5:after {
-        display: none;
-        content: "";
-      }
-    }
-   
-
-
-    /* This adds some icons for different link types*/
-    .card h5:after {
-      content: "\00a0\f08e";
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .reset-link {
-      text-decoration: none;
-      font: inherit;
-      color: inherit;
-      outline: none;
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      display: inline;
-      cursor: pointer;
-    }
-    .reset-link::after {
-      content:"";
-      display: none;
-    }
-    .reset-link:hover {
-      font-weight: normal;
-    }
-
-    .reset-link .data-card {
-      position: relative;
-      padding-right: 3rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .reset-link .data-card::after {
-      content: "\f061";
-      font-family: FontAwesome;
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.5rem;
-      opacity: 1;
-      transition: transform 0.2s ease;
-      color: #01121b;
-      font-weight: bold;
-    }
-
-    .reset-link:hover .data-card {
-      transform: translateX(5px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
-
-    .reset-link:hover .data-card::after {
-      transform: translateY(-50%) translateX(5px);
-    }
-  </style></PageLayout
->
+</PageLayout>
