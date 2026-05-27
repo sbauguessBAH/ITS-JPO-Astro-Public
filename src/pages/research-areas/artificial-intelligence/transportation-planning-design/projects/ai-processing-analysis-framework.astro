@@ -1,0 +1,172 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import creareObjectiveImage from "@/src/assets/images/ai/AI-TPD-SBIR-Project-Creare.png";
+import creareFindingsImage from "@/src/assets/images/ai/AI-TPD-SBIR-Project-Creare-2.png";
+import creareLogo from "@/src/assets/images/ai/logos/Creare-Logo.jpg";
+
+const keywords = [
+  "StreetPulse",
+  "AI Processing",
+  "Digital Twin",
+  "Infrastructure Data",
+  "Street-level Imagery",
+  "Creare",
+  "Artificial Intelligence"
+];
+
+const description =
+  "StreetPulse: Artificial Intelligence Processing and Analysis Framework for Infrastructure Planning, Design, and Maintenance - AI project by Creare";
+---
+
+<PageLayout title="AI Processing and Analysis Framework for Infrastructure" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Artificial Intelligence</Fragment>
+  <main>
+    <div class="page-header">
+      <h2>Artificial Intelligence Processing and Analysis Framework for Infrastructure Planning, Design, and Maintenance</h2>
+      <Image src={creareLogo} alt="Creare LLC logo" class="page-logo" />
+    </div>
+    <p class="company-attribution">By: Creare</p>
+    
+    <div class="row mt-5">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Project Objective & Overview</h3>
+          <div class="row align-items-start">
+            <div class="col-lg-7">
+              <p>
+                StreetPulse is an in-development functional digital twin software system that generates rich infrastructure data from street-level imagery for city infrastructure planning. Leveraging artificial intelligence (AI), it understands images and recognizes elements (such as sidewalks, road signs, and lane markings), their geospatial location, and detailed 3D geometry.
+              </p>
+            </div>
+            <div class="col-lg-5">
+              <Image
+                src={creareObjectiveImage}
+                alt="StreetPulse project objective overview"
+                class="project-inline-image"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <section class="mb-5">
+          <h3 class="blue">Key Results & Findings</h3>
+          <div class="row align-items-start">
+            <div class="col-lg-7">
+              <p>To demonstrate the feasibility of StreetPulse we:</p>
+              <ul>
+                <li><strong>Collected city wide datasets:</strong>
+                  <ul>
+                    <li>GIS layers (curb ramps and elevation data) and Street level images of Denver, CO</li>
+                    <li>Level of traffic stress (LTS) for the city of Philadelphia, PA</li>
+                  </ul>
+                </li>
+                <li>Processed street level images to generate high resolution 3D infrastructure data (in .obj format), with semantic information</li>
+                <li>Exported data using GeoJSON open standards file format for easy incorporation and analysis.</li>
+                <li>Analyzed active transport network analysis using LTS data</li>
+                <li>Extracted contextual LTS information using a vision aware large language model (LLM), a task that typically requires considerable effort and time from human reviewers.</li>
+              </ul>
+            </div>
+            <div class="col-lg-5">
+              <Image
+                src={creareFindingsImage}
+                alt="StreetPulse key results and findings"
+                class="project-inline-image"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Company Info</h3>
+          <p>
+            Creare develops innovative technology and new products for Federal and industrial clients. We are a small business located in Hanover, NH.
+          </p>
+          <p>
+            We developed StreetPulse in part under DOT SBIR Phase I Contract No. 6913G625P800003.
+          </p>
+          <p>
+            <strong>Project POC:</strong> Matt Ueckermann<br/>
+            <strong>Email:</strong> <a href="mailto:mpu@creare.com">mpu@creare.com</a><br/>
+            <strong>Website:</strong> <a href="https://www.creare.com/" target="_blank" rel="noopener noreferrer">https://www.creare.com/</a>
+          </p>
+        </section>
+      </div>
+      
+      <div class="col-lg-6">
+        <section class="mb-5">
+          <h3 class="blue">Next Steps</h3>
+          <p>The next phase of development focuses on maturing our technical approach. We plan to:</p>
+          <ul>
+            <li>Collect street level images for our selected transportation department partners (TDPs), which include: Denver, CO; Bellevue, WA; Austin, TX; town of Hanover, NH; and town of Hartford, VT</li>
+            <li>Develop a data management system for continuous infrastructure data updates</li>
+            <li>Complete development of automated digital twin creation software</li>
+            <li>Develop post-processing pipelines to generate specific decision-support data (e.g., GIS layers)</li>
+            <li>Evaluate the performance (accuracy and completeness) of StreetPulse-generated data</li>
+            <li>Work with TDPs to identify use cases and high value products to define the most promising paths towards commercialization, capability development, and maintenance</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .company-attribution {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+
+  .project-inline-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  section h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .page-header h2 {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .page-logo {
+    width: 140px;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      flex-wrap: wrap;
+    }
+
+    .page-logo {
+      margin-top: 0.5rem;
+    }
+  }
+</style>
