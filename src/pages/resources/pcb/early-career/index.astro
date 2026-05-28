@@ -8,6 +8,9 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 import Link from "@/src/components/Link.astro";
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import { getCollection } from "astro:content";
+import DocxIcon from "@/src/components/programs/icons/DocxIcon.astro";
+import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
 
 const modules = await getCollection("pcbModules").then(modules => modules.sort((a, b) => (a.data.order || 0) - (b.data.order || 0)));
 
@@ -98,6 +101,22 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
 
 </style>
 
+<style>
+  .document-type-badge {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    height: 24px;
+    padding: 0 0.5rem;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+</style>
+
 <Layout>
   <main class="program-main">
     <ProgramSection size="small">
@@ -128,15 +147,30 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
       </p>
       <ul class="program-list">
         <li>
-          <strong>Instructor Guide</strong> (DOCX and PDF formats) containing the purpose of the module, learning outcomes,
+          <strong>Instructor Guide</strong> containing the purpose of the module, learning outcomes,
           intended target audience, intended class size, and detailed instruction notes.
+          <span class="document-type-badge">
+            <DocxIcon/> .docx
+          </span>
+          <span class="document-type-badge">
+            <PdfIcon/> .pdf
+          </span>
         </li>
         <li>
-          <strong>PowerPoint Presentation</strong> (PPTX format) to be used by the instructor during module delivery.
+          <strong>PowerPoint Presentation</strong> to be used by the instructor during module delivery.
+          <span class="document-type-badge">
+            <PptIcon/> .pptx
+          </span>
         </li>
         <li>
-          <strong>Participant Materials</strong> (DOCX and PDF formats) containing items such as handouts,
+          <strong>Participant Materials</strong> containing items such as handouts,
           reference materials, and activity instructions.
+          <span class="document-type-badge">
+            <DocxIcon/> .docx
+          </span>
+          <span class="document-type-badge">
+            <PdfIcon/> .pdf
+          </span>
         </li>
       </ul>
       <p class="program-text">
