@@ -148,29 +148,14 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
       <ul class="program-list">
         <li>
           <strong>Instructor Guide</strong> containing the purpose of the module, learning outcomes,
-          intended target audience, intended class size, and detailed instruction notes.
-          <span class="document-type-badge">
-            <DocxIcon/> .docx
-          </span>
-          <span class="document-type-badge">
-            <PdfIcon/> .pdf
-          </span>
+          intended target audience, intended class size, and detailed instruction notes. 
         </li>
         <li>
-          <strong>PowerPoint Presentation</strong> to be used by the instructor during module delivery.
-          <span class="document-type-badge">
-            <PptIcon/> .pptx
-          </span>
+          <strong>Presentation Slides</strong> to be used by the instructor during module delivery.
         </li>
         <li>
           <strong>Participant Materials</strong> containing items such as handouts,
           reference materials, and activity instructions.
-          <span class="document-type-badge">
-            <DocxIcon/> .docx
-          </span>
-          <span class="document-type-badge">
-            <PdfIcon/> .pdf
-          </span>
         </li>
       </ul>
       <p class="program-text">
@@ -199,6 +184,41 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
         ))}
       </div>
     </ProgramSection>
+    <!-- <ProgramSection>
+      <div class="">
+        <div class="ratio ratio-1x1 mx-auto" style="max-width: 512px;">
+          <LibraryImage
+            entry="pcb/resources/career-areas"
+          />
+        </div>
+        <div class="">
+          <h2 class="program-title-md mb-4">
+            ITS Careers
+          </h2>
+          <p class="program-text">
+            Intelligent Transportation Systems (ITS) offer a powerful, cost-effective approach 
+            to improving roadway safety and efficiency, especially when traditional infrastructure expansion 
+            is either impractical or fails to meet longer-term needs. Their ability to address complex challenges 
+            are driving substantial growth in the ITS field as transportation systems evolve and new demands emerge. 
+            Supporting this growth requires a skilled ITS workforce responsible for planning, designing, implementing, 
+            and operating these new systems to deliver everyday benefits to American travelers.
+            At the same time, workforce needs are continually evolving as emerging technologies like automation, artificial intelligence, 
+            and shared mobility transform the transportation landscape.
+          </p>
+          <p class="program-text">
+             The Career Opportunities in ITS White Paper 
+            provides a high-level overview of ITS career opportunities organized by topic areas of interest (e.g., engineering, planning, policy), 
+            highlighting both established and emerging roles across employment sectors.
+          </p>
+          <div class="mt-4">
+            <Link variant="button" href="https://rosap.ntl.bts.gov/view/dot/89169" isExternal>
+              View PDF
+            </Link>
+          </div>
+        </div>
+        
+      </div>
+    </ProgramSection> -->
     <ProgramSection>
       <div class="career-areas-section">
         <div class="career-areas-text">
@@ -216,7 +236,7 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
             and shared mobility transform the transportation landscape.
           </p>
           <p class="program-text">
-             The Career Opportunities in ITS White Paper 
+            The Career Opportunities in ITS White Paper 
             provides a high-level overview of ITS career opportunities organized by topic areas of interest (e.g., engineering, planning, policy), 
             highlighting both established and emerging roles across employment sectors.
           </p>
