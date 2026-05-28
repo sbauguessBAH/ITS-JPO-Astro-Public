@@ -56,7 +56,7 @@ p {
   overflow: hidden;
 }
 
-a .card, .card a {
+a .card p, .card a p {
   text-decoration: none;
   color: black;
 }
@@ -91,6 +91,39 @@ a .card, .card a {
 .card-gray h5:after {
   display: none;
   content: "";
+}
+
+/* Grayed out card (inactive/disabled state) */
+.card-grayed-out {
+  background-color: #e0e0e0;
+  border: 1px solid #c8c8c8;
+}
+
+.card-grayed-out h1,
+.card-grayed-out h2,
+.card-grayed-out h3,
+.card-grayed-out h4,
+.card-grayed-out h5,
+.card-grayed-out h6 {
+  color: #4e4e4e !important;
+}
+
+.card-grayed-out p,
+.card-grayed-out span,
+.card-grayed-out div {
+  color: #676767 !important;
+}
+
+.card-grayed-out a {
+  color: #757575 !important;
+  pointer-events: none;
+}
+
+.card-grayed-out .btn {
+  background-color: #a8a8a8 !important;
+  border-color: #989898 !important;
+  color: #6a6a6a !important;
+  cursor: not-allowed;
 }
 
 /* Card with hover lift effect */
@@ -241,16 +274,20 @@ a .card, .card a {
   align-items: flex-start;
 }
 
-.info-card .icon-wrapper {
+.icon-wrapper {
   flex-shrink: 0;
   width: 70px;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--ai-blue-secondary) 0%, #044568 100%);
-  border-radius: 1rem;
+  background: linear-gradient(180deg, #055681 0%, #01121b 100%);
+  border-radius: 0.5rem;
   color: white;
+}
+
+.card-grayed-out .icon-wrapper {
+  background: #c0c0c0;
 }
 
 .info-card .card-title {

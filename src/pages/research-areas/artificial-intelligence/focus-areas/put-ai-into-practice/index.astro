@@ -1,7 +1,9 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
 import "@/src/styles/ai-section.css";
+
 ---
 
 <PageLayout title="Put AI into Practice" bannerImage={banner}>
@@ -33,7 +35,7 @@ import "@/src/styles/ai-section.css";
             <p class="card-text">The USDOT Small Business Innovation Research (SBIR) FY26 Phase I solicitation invites small businesses to propose innovative AI solutions for freight transportation, improving safety, efficiency, and resilience. Opens Summer 2026.</p>
           </div>
         </a>
-        <a href="https://www.volpe.dot.gov/sites/volpe.dot.gov/files/2025-10/24.2%20Phase%20I%20SBIR%20Awardees_508_102725.pdf" class="text-decoration-none reset-link" target="_blank">
+        <a href={base_url("/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice/transportation-planning-design")} class="text-decoration-none reset-link">
           <div class="card data-card shadow-sm card-body card-blue">
             <sub>SBIR</sub>
             <h5 class="card-title">AI Transportation Planning & Design (TPD) Project Briefs</h5>

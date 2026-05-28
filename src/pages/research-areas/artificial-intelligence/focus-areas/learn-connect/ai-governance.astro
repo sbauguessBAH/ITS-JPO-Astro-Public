@@ -1,18 +1,22 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import aiGovernanceBg from "@/src/assets/images/ai/ai-governance-background.png";
 import "@/src/styles/ai-section.css";
 ---
 
 <PageLayout title="AI Governance" bannerImage={banner}>
   <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
   <main>
+    <div class="ai-governance d-flex align-items-start gap-4 mb-4" style={`background-image: url(${aiGovernanceBg.src});`}>
+      <h2 class="text-white">AI Governance in Transportation</h2>
+    </div>
     <div class="row">
       <div class="col-lg-9">
-        <h2>AI Governance</h2>
+        <h2>Why Governance Matters</h2>
         <p>
           AI is changing how transportation agencies operate — from predicting traffic patterns to automating maintenance alerts. But deploying AI responsibly requires more than just the technology
-          itself. It requires governance: the people, policies, and processes that ensure AI works as intended, stays accountable, and earns public trust.
+          itself. It requires governance: the people, policies, and processes that ensure AI works as intended, stays accountable, and earns public trust.
         </p>
         <p>
           Without governance, agencies risk deploying AI systems that overlook certain communities, fail unexpectedly, put travelers in harm's way, or expose sensitive data. With effective AI
@@ -20,6 +24,7 @@ import "@/src/styles/ai-section.css";
         </p>
 
         <div class="note-callout">
+          <h3 class="h-auto">NOTE</h3>
           <p class="note-text">AI governance isn't about slowing innovation — it's about making sure innovation sticks.</p>
         </div>
 
@@ -118,8 +123,14 @@ import "@/src/styles/ai-section.css";
               <span class="accordion-title">AI Steering Committee</span>
             </summary>
             <div class="accordion-content">
-              <p>A cross-agency leadership group that reviews and approves AI projects. Committees may evaluate proposals using a readiness scorecard — a checklist that assesses data quality, safety considerations, ethical implications, and expected value before a project moves forward.</p>
-              <p class="note-text mt-3"><strong>Note:</strong> Agencies with fewer staff can 1) designate a single "AI Point Person" to evaluate readiness and safety and 2) integrate AI discussions into existing meetings instead of establishing new committees.</p>
+              <p>
+                A cross-agency leadership group that reviews and approves AI projects. Committees may evaluate proposals using a readiness scorecard — a checklist that assesses data quality, safety
+                considerations, ethical implications, and expected value before a project moves forward.
+              </p>
+              <p class="note-text mt-3">
+                <strong>Note:</strong> Agencies with fewer staff can 1) designate a single "AI Point Person" to evaluate readiness and safety and 2) integrate AI discussions into existing meetings instead
+                of establishing new committees.
+              </p>
             </div>
           </details>
 
@@ -130,7 +141,10 @@ import "@/src/styles/ai-section.css";
               <span class="accordion-title">AI Champions</span>
             </summary>
             <div class="accordion-content">
-              <p>Identifying "AI Champions" in each program area creates a network of informed advocates. These individuals surface opportunities for AI to solve real transportation challenges and serve as a bridge between technical roles and program staff.</p>
+              <p>
+                Identifying "AI Champions" in each program area creates a network of informed advocates. These individuals surface opportunities for AI to solve real transportation challenges and
+                serve as a bridge between technical roles and program staff.
+              </p>
             </div>
           </details>
 
@@ -141,12 +155,113 @@ import "@/src/styles/ai-section.css";
               <span class="accordion-title">AI Knowledge-Sharing Groups</span>
             </summary>
             <div class="accordion-content">
-              <p>Informal communities of practice where practitioners share what's working, troubleshoot challenges, and build AI literacy. These groups offer opportunities to connect with others who are piloting AI solutions, both within and outside their agencies, to accelerate learning.</p>
-              <p class="note-text mt-3"><strong>Note:</strong> Agencies without their own AI Knowledge-Sharing Group can participate in external communities of practice or partner in discussion with their state DOT.</p>
+              <p>
+                Informal communities of practice where practitioners share what's working, troubleshoot challenges, and build AI literacy. These groups offer opportunities to connect with others who
+                are piloting AI solutions, both within and outside their agencies, to accelerate learning.
+              </p>
+              <p class="note-text mt-3">
+                <strong>Note:</strong> Agencies without their own AI Knowledge-Sharing Group can participate in external communities of practice or partner in discussion with their state DOT.
+              </p>
             </div>
           </details>
         </div>
 
+        <h2>What Agencies Are Building: Key Focus Areas</h2>
+        <p>Transportation agencies developing AI governance strategies may create a core set of documents and tools. Here's what they can look like in practice:</p>
+
+        <table class="governance-table">
+          <thead>
+            <tr>
+              <th>FOCUS AREA</th>
+              <th>WHAT IT IS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Acceptable Use Policy</td>
+              <td>Sets clear rules for how employees can (and cannot) use AI tools — for example, prohibiting the entry of sensitive data into public AI chatbots.</td>
+            </tr>
+            <tr>
+              <td>AI Strategy & Roadmap</td>
+              <td>Outlines how AI will support the agency's strategic goals, such as reducing congestion or improving infrastructure maintenance.</td>
+            </tr>
+            <tr>
+              <td>Data & AI Dictionary</td>
+              <td>Establishes shared definitions so agency staff and vendors are speaking the same language.</td>
+            </tr>
+            <tr>
+              <td>AI Risk Management Framework</td>
+              <td>Provides a structured process for agencies to identify, assess, and prioritize potential harms from AI, with clear protocols to mitigate risks throughout the system's lifecycle.</td>
+            </tr>
+            <tr>
+              <td>AI Incident Playbook</td>
+              <td>Provides step-by-step guidance for responding when an AI system fails or behaves unexpectedly.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="note-callout">
+          <h3>GETTING STARTED TIP</h3>
+          <div>
+            <p class="note-text">
+              You don't need to focus in all five areas on day one. Depending on agency type, agencies may start with an Acceptable Use Policy — it's the fastest way to establish guardrails while
+              longer-term planning continues.
+            </p>
+            <p class="note-text pt-1">
+              Small agencies can borrow Acceptable Use Policies from larger agencies, without implementing the same level of detail. When adapting from examples, agencies of all sizes need to review
+              templates, including AI specific clauses like data ownership, system monitoring, and definitions.
+            </p>
+          </div>
+        </div>
+
+        <h2>Real-World Examples</h2>
+        <p>Transportation agencies developing AI governance strategies may create a core set of documents and tools. Here's what they can look like in practice:</p>
+        <div class="card data-card card-body mb-4 flex-row align-items-start">
+          <h3 class="col-2">Texas DOT (TxDOT)</h3>
+          <div>
+            <p class="example-text pl-3 pb-0 mb-0">
+              TxDOT has developed a comprehensive <a
+                href="https://www.txdot.gov/content/dam/docs/division/str/txdot-ai-strategic-plan-update-jan-2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class=""
+              >
+                AI Strategic Plan
+              </a> (released in Dec. 2024, updated in Jan. 2026) that includes TxDOTˇs Governance Framework and AI Acceptable Use Policy grounded in seven core principles security, transparency, accuracy,
+              accountability, trustworthy, privacy, and safety.
+            </p>
+          </div>
+        </div>
+        <div class="card data-card card-body mb-4 flex-row align-items-start">
+          <h3 class="col-2">California DOT (Caltrans)</h3>
+          <div>
+            <p class="example-text pl-3 pb-0 mb-0">
+              Based on <a
+                href="https://dot.ca.gov/-/media/dot-media/programs/research-innovation-system-information/documents/research-notes/task4904-rns-11-25-a11y.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class=""
+              >
+                Research Notes
+              </a>, Caltrans is evolving its AI governance structure by establishing new leadership roles and processes to support responsible AI adoption. Caltrans is also developing new supporting
+              materials, such as an AI Readiness Assessment, Use Case Prioritization Rubric, and Responsible Use
+            </p>
+          </div>
+        </div>
+
+        <h2>Learn More</h2>
+        <p>This page is part of an ongoing series on AI in Intelligent Transportation Systems. Additional resources, case studies, and tools will be added as the program develops.</p>
+      
+   <div class="card data-card shadow-sm card-body card-gray mt-4">
+          <h5 class="card-title">References</h5>
+          <ol class="references-list">
+            <li>Nickerson, M., Smith, L., & Work, D. (2025, February 27). Follow-Up ATCMTD AI for ITS Interview with the Tennessee DOT [Virtual].</li>
+            <li>Donaldson, G., & Rosica, M. (2022, June 13). ATCMTD AI for ITS Interview with the Delaware DOT [Virtual].</li>
+            <li>Karanikolas, C., Gaisser, T., & Wadsworth, J. (2025, February 25). FY22 SMART Stage 1 AI for ITS Interviews with the RTC of Southern Nevada [Virtual].</li>
+          </ol>
+        </div> 
+      
+      
       </div>
 
       <!-- This is the right column -->
@@ -159,24 +274,128 @@ import "@/src/styles/ai-section.css";
           <p class="card-text">
             The Delaware DOT emphasized developing relationships with stakeholders — internal meetings every week with key user groups to discuss how things are working and what needs to change.
           </p>
-          <p><a href="placholder" target="_blank" rel="noopener noreferrer" class="reset-link">Delaware DOT [2]</a></p>
-          <hr />
+          <p><a href="placholder" target="_blank" rel="noopener noreferrer" >Delaware DOT [2]</a></p>
+          <hr class="mt-2 mb-4" />
           <p class="card-text">
             The RTC of Southern Nevada improved their legal templates to include data ownership, safeguards, testing requirements, vendor support requirements, and a data dictionary so agency and
             vendor staff use the same language.
           </p>
           <p>
-            <a href="placholder" target="_blank" rel="noopener noreferrer" class="reset-link">RTC of Southern Nevada [3]</a>
+            <a href="placholder" target="_blank" rel="noopener noreferrer" >RTC of Southern Nevada [3]</a>
           </p>
         </div>
         <div class="card data-card shadow-sm card-body card-gray mt-4">
           <h5 class="card-title">Resources</h5>
 
           <p>
-            <a href="placholder" target="_blank" rel="noopener noreferrer" class="reset-link">ITS America AI Implementation Slide Deck</a>
+            <a href="placholder" target="_blank" rel="noopener noreferrer" >ITS America AI Implementation Slide Deck</a>
           </p>
         </div>
+       
+     
       </div>
     </div>
   </main>
 </PageLayout>
+<style>
+  .example-text {
+    border-width: 0 0 0 3px;
+    padding-left: 1rem;
+    border-color: #055681;
+    border-style: solid;
+  }
+  .ai-governance {
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+  }
+
+  .ai-governance h2 {
+    padding: 0;
+    margin: 0;
+    color: white;
+    width: 60%;
+    text-wrap: balance;
+  }
+
+  /* Governance table styling */
+  .governance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .governance-table thead {
+    background: #1b2a4a;
+    color: white;
+  }
+
+  .governance-table th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .governance-table tbody tr {
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  .governance-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .governance-table tbody tr:hover {
+    background-color: #f8f9fa;
+  }
+
+  .governance-table td {
+    padding: 1.25rem 1.5rem;
+    vertical-align: top;
+  }
+
+  .governance-table td:first-child {
+    font-weight: 600;
+    color: #055681;
+    width: 30%;
+  }
+
+  .governance-table td:last-child {
+    color: #3c3c3c;
+    line-height: 1.6;
+  }
+
+  /* References list styling */
+  .references-list {
+    list-style-position: outside;
+    padding-left: 1.5rem;
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .references-list li {
+    margin-bottom: 0.75rem;
+    color: var(--ai-text-medium);
+  }
+
+  .references-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Sidebar card title styling */
+  .col-lg-3 .card-gray .card-title {
+    background: #1b2a4a;
+    color: white;
+    margin: -1rem -1rem 1rem -1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+</style>

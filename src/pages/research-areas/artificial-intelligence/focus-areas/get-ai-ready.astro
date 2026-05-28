@@ -1,6 +1,7 @@
 ---
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import aiDataPresentation from "@/src/assets/documents/ai/Data & AI w notes - JPO AI Program - FHWA CLAS 26-05-21.pdf";
 import "@/src/styles/ai-section.css";
 ---
 
@@ -33,7 +34,8 @@ import "@/src/styles/ai-section.css";
           readiness and test innovative, data-centric AI approaches for prioritized TSMO use cases.
         </p>
         
-          <div class="card data-card shadow-sm card-body card-gray">
+        <a href={aiDataPresentation} class="text-decoration-none reset-link" target="_blank">
+          <div class="card data-card shadow-sm card-body card-blue">
             <sub>PRESENTATION</sub>
             <h5 class="card-title">AI & Data Strategic Considerations Presentation</h5>
             <p class="card-text">
@@ -42,6 +44,7 @@ import "@/src/styles/ai-section.css";
               and ownership, as well as share lessons learned from agencies already deploying AI.
             </p>
           </div>
+        </a>
       </div>
     </div>
 
