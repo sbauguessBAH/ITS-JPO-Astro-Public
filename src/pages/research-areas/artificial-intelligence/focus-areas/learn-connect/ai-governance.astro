@@ -2,6 +2,7 @@
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import aiGovernanceBg from "@/src/assets/images/ai/ai-governance-background.png";
+import base_url from "@/src/lib/base_url";
 import "@/src/styles/ai-section.css";
 ---
 
@@ -267,21 +268,21 @@ import "@/src/styles/ai-section.css";
           <p class="card-text">
             The Delaware DOT emphasized developing relationships with stakeholders — internal meetings every week with key user groups to discuss how things are working and what needs to change.
           </p>
-          <p><a href="placholder" target="_blank" rel="noopener noreferrer">Delaware DOT [2]</a></p>
+          <p><em>DOT of Delaware DOT [2]</p>
           <hr class="mt-2 mb-4" />
           <p class="card-text">
             The RTC of Southern Nevada improved their legal templates to include data ownership, safeguards, testing requirements, vendor support requirements, and a data dictionary so agency and
             vendor staff use the same language.
           </p>
           <p>
-            <a href="placholder" target="_blank" rel="noopener noreferrer">RTC of Southern Nevada [3]</a>
+            <em>RTC of Southern Nevada [3]</em>
           </p>
         </div>
         <div class="card data-card shadow-sm card-body card-gray mt-4">
           <h5 class="card-title">Resources</h5>
 
           <p>
-            <a href="placholder" target="_blank" rel="noopener noreferrer">ITS America AI Implementation Slide Deck</a>
+            <a href={base_url("/assets/documents/2025_ITSA_AI-Implementation_GuideFinal.pdf")} target="_blank" rel="noopener noreferrer">ITS America AI Implementation Slide Deck</a>
           </p>
         </div>
       </div>
