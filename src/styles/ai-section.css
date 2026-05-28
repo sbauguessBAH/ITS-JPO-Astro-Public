@@ -515,11 +515,11 @@ border-radius: 1rem;
 }
 
 .app-items li:before {
-  content: "→";
+  content: "•";
   position: absolute;
   left: 0;
   color: var(--ai-blue-dark);
-  font-weight: bold;
+  font-weight: normal;
 }
 
 /* Responsive breakpoints for app items */
@@ -647,7 +647,7 @@ hr {
   gap: 1rem;
   margin: 2rem 0;
   padding: 1.5rem;
-  background-color: var(--ai-card-light-blue-bg);
+  background-color: var(--ai-card-gray-bg);
   border-left: 4px solid var(--ai-blue-secondary);
   border-radius: .5rem;
 }
