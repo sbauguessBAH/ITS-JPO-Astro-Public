@@ -66,7 +66,7 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
       flex-direction: row;
       align-items: center;
     }
-    .competitions-video {
+    .competitions-image {
       flex-basis: 40%;
     }
     .competitions-text {
@@ -118,10 +118,12 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
       </h2>
       <p class="program-text">
         The ITS Short Course Instructor Kit Modules are freestanding classes (or training components) 
-        that provide structured content to enhance participants' knowledge of ITS in 90 minutes or less. 
+        that provide structured content to enhance participants' knowledge of ITS in <strong>90 minutes or less</strong>. 
         Each module focuses on a specific ITS theme, concept , or technology. 
         Instructor and participant materials focus on ensuring an engaging experience 
-        supporting the module outcomes. ITS Short Course Instructor Kit materials provided 
+        supporting the module outcomes. These kits are designed to be flexible. Use them as freestanding classes, 
+        incorporate them into internal "Lunch & Learn" sessions, or use them as foundational components 
+        for larger professional development programs. ITS Short Course Instructor Kit materials provided 
         for each module include an
       </p>
       <ul class="program-list">
@@ -137,6 +139,9 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
           reference materials, and activity instructions.
         </li>
       </ul>
+      <p class="program-text">
+        Ready to lead your next session? Browse the available modules and their materials below.
+      </p>
       <div class="card-grid mt-4">
         {modules.map(module => (
           <Card class="resource-card" href={`/resources/pcb/early-career/${module.id}`} radius="lg" shadow="none">
@@ -193,19 +198,15 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
         potential example job opportunity within the career area. You can select any card to flip it over and view the back, which contains further information about the potential role (i.e.,
         skills and responsibilities).
       </p>
-      <div style="background: #ccc;" class="ratio ratio-21x9 rounded competitions-video"/>  -->
+      <div style="background: #ccc;" class="ratio ratio-21x9 rounded competitions-image"/>  -->
      
     </ProgramSection>
     <ProgramSection color="gray">
       <div class="competitions-section" style="padding-top: 2rem; padding-bottom: 2rem; gap: 4rem;">
-        <div class="ratio ratio-16x9 competitions-video shadow-md">
-          <iframe
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            class="video"
-            src="https://www.youtube.com/embed/8V41fZQgPh0?si=AbeS5F3zu7_AaXek"
-            title="YouTube video player"
-          ></iframe>
+        <div class="ratio ratio-16x9 competitions-image shadow-md">
+          <LibraryImage
+            entry="pcb/other/ttt-2025"
+          />
         </div>
         <div class="competitions-text">
           <h2 class="program-title-md mb-4">ITS Student Competitions</h2>
