@@ -27,3 +27,7 @@ By the end of the module, participants should be able to:
 * Explain how ITS can help overcome transportation challenges, now and in the future.
 * Assess the safety and operational impacts of ITS both broadly and in specific deployment scenarios.
 * Identify and describe example ITS-related careers at a high level.
+
+### Suggested Prerequisite(s)
+
+None

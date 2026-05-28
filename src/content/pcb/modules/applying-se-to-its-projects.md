@@ -30,3 +30,7 @@ By the end of the module, participants should be able to:
 * Describe how the systems engineering process leads to comprehensive intelligent transportation systems (ITS) that address transportation problems.
 * Describe the Vee model approach, its role, and its importance in systems engineering.
 * List the key components of a Concept of Operations (ConOps) and the questions it aims to answer.
+
+### Suggested Prerequisite(s)
+
+[Introduction to Intelligent Transportation Systems (ITS)](./introduction-to-its)
