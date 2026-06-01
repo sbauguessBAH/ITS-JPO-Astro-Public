@@ -59,20 +59,22 @@ const fallbackText = !normalizedItem.description && normalizedItem.date ? normal
     )
   }
 
-  <div class="card-body">
+  <div class="card-body d-flex flex-column justify-content-between">
     <h5 class="card-title">{normalizedItem.title}</h5>
 
     {(descriptionText || fallbackText) && <p class="card-text">{descriptionText || fallbackText}</p>}
 
+    <div class="d-flex flex-wrap">
     {
       showPills &&
         normalizedItem.content_types?.map((ct) => (
           <p class="badge me-1">{ct}</p>
         ))
-    }
+      }
+      </div>
 
     {normalizedItem.url && (
-      <a href={normalizedItem.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+      <a href={normalizedItem.url} class="btn" target="_blank" rel="noopener noreferrer">
         {ctaText}
       </a>
     )}
