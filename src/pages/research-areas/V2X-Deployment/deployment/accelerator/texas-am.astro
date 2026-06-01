@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
 import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
-
+import base_url from "@/src/lib/base_url";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import trustLogo from "@/src/assets/images/v2x/texas-am/Texas-V2X-logo.png";
 import trustMap from "@/src/assets/images/v2x/texas-am/Texas TRUST Deployment Area.png";
@@ -145,7 +145,7 @@ const description =
       <h2>Links and Resources</h2>
       <p>Visit the <a href="https://v2xtexastrust.com/" target="_blank" rel="noopener noreferrer">TRUST Project Website</a></p>
 
-      <p>View the <a class="mt-2" href="./accelerator/documentation" rel="noopener noreferrer">Project Documentation</a></p>
+      <p>View the <a class="mt-2" href={base_url("/research-areas/V2X-Deployment/deployment/accelerator/documentation")} rel="noopener noreferrer">Project Documentation</a></p>
     </section>
     
   </main>
