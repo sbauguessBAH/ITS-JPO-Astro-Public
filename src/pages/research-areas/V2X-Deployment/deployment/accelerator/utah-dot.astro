@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
 import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
-
+import base_url from "@/src/lib/base_url";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import ctwLogo from "@/src/assets/images/v2x/utah-dot/connecting-the-west-logo.png";
 import partnersImage from "@/src/assets/images/v2x/utah-dot/partners.png";
@@ -93,9 +93,9 @@ const description =
       </div>
     </section>
 
-    <!-- Links and Resources Section -->
+    
     <section class="my-3">
-      <h2>Links and Resources</h2>
+      <h2>Value Proposition</h2>
       <p>
         The impact of Connecting the West reaches far beyond individual corridors or intersections. By proactively addressing roadway risks and empowering transportation agencies with real-time data,
         the program strengthens the safety net for all travelers. Long-term implementation of this technology offers a wide range of benefits and supports key goals, including:
@@ -109,10 +109,12 @@ const description =
         <li>Establishment of a scalable model for nationwide V2X deployment</li>
       </ul>
     </section>
+    
+    <!-- Links and Resources Section -->
     <section class="my-3">
       <h2>Links and Resources</h2>
       <p>Visit the <a href="https://transportationtechnology.utah.gov/connecting-the-west-program/" target="_blank" rel="noopener noreferrer">CTW Project Website</a>.</p>
-      <p>View the <a class="mt-2" href="./accelerator/documentation" rel="noopener noreferrer">Project Documentation</a></p>
+      <p>View the <a class="mt-2" href={base_url("/research-areas/V2X-Deployment/deployment/accelerator/documentation")} rel="noopener noreferrer">Project Documentation</a></p>
   </main>
 </PageLayout>
 

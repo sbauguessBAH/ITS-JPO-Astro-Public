@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
 import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
-
+import base_url from "@/src/lib/base_url";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import maricopaLogo from "@/src/assets/images/v2x/maricopa-county-logo.png";
 import cvazMap from "@/src/assets/images/v2x/maricopa-county/CVAZ Deployment Area.png";
@@ -143,13 +143,13 @@ const description =
     <ul>
       <li>Engaging with industry partners, government entities, educational institutions, and community representatives on workforce needs.</li>
     </ul>
-  <div class="my-3">
+  <div class="mt-5 mb-3">
     <h2>Links and Resources</h2>
     <p>
       Visit the
       <a href="https://www.maricopa.gov/6094/Connected-Vehicle-Acceleration-Zone" target="_blank" rel="noopener noreferrer">CVAZ Project Website</a>
     </p>
-    <p>View the <a class="mt-2" href="./accelerator/documentation" rel="noopener noreferrer">Project Documentation</a></p>
+    <p>View the <a class="mt-2" href={base_url("/research-areas/V2X-Deployment/deployment/accelerator/documentation")} rel="noopener noreferrer">Project Documentation</a></p>
   </div>
   </section>
 </PageLayout>
