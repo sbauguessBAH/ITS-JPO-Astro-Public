@@ -100,7 +100,11 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
             {
               featuredNewsletter && (
                 <div class="col-12 col-lg-4 offset-lg-1 mt-3 mt-lg-0">
-                  <NewsroomCard item={featuredNewsletter} showPills={false} showColoredLabel={false} ctaText="Read Issue" />
+                  <NewsroomCard 
+                    item={featuredNewsletter} 
+                    showPills={false} 
+                    showColoredLabel={false} 
+                    ctaText="Read Current Issue" />
                 </div>
               )
             }

@@ -2,7 +2,7 @@
 	"newsletters": [
         {
 			"title": "ITS JPO Now",
-			"url": "",
+			"url": "/example",
 			"description": "",
 			"date": "March 2026",
 			"subtitle": "Latest Issue",
@@ -13,7 +13,7 @@
 		},
 		{
 			"title": "ITS JPO Now",
-			"url": "",
+			"url": "/second-example-link",
 			"description": "",
 			"date": "January 2026",
 			"subtitle": "ITS JPO",
