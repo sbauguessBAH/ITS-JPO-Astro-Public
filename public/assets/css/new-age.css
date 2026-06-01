@@ -154,6 +154,7 @@ section h2.sideways{
 }
 
 .heading-border-left.blue {
+  padding-left: 0.5rem;
   border-left: 7px solid;
   border-color: #055581;
   border-bottom: none;

@@ -67,7 +67,7 @@ const fallbackText = !normalizedItem.description && normalizedItem.date ? normal
     {
       showPills &&
         normalizedItem.content_types?.map((ct) => (
-          <p class="badge bg-secondary me-1">{ct}</p>
+          <p class="badge me-1">{ct}</p>
         ))
     }
 
@@ -80,6 +80,12 @@ const fallbackText = !normalizedItem.description && normalizedItem.date ? normal
 </div>
 
 <style>
+
+  .badge {
+    background-color: #E8F1F9;
+    color: #1F5493;
+    text-transform: capitalize;
+  }
   .toolkit-card {
     padding: 1rem;
   }
