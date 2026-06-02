@@ -37,7 +37,7 @@ const slugifyForId = (value: string): string =>
   <main class="container my-5">
     <h1 class="h2 mb-4 sideways blue">Outreach Resources</h1>
     <p></p>
-    <h2>Outreach Toolkits</h2>
+    <h2 class="heading-border-left blue">Outreach Toolkits</h2>
     <form class="row g-4 reduced-gutters filter mb-4 p-3" aria-label="News filter">
       <div class="col-12 col-lg-6">
         <label class="form-label" for="content-type-toggle">Content Type</label>
@@ -91,6 +91,13 @@ const slugifyForId = (value: string): string =>
           </div>
         ))
       }
+    </div>
+    <div>
+        <h2 class="heading-border-left blue mt-4">Webinar Archives</h2>
+        <p></p>
+        <div>
+          <WebinarCard />
+        </div>
     </div>
   </main>
 </BaseLayout>
