@@ -127,11 +127,11 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
         <h2 class="pl-3 heading-border-left blue">ITS JPO Newsletter Archive</h2>
         <a href="./newsletter-archive">Browse Full Archive</a>
     </div>
-    <div class="row gx-4 gy-4 mt-1">
+    <div class="row gx-4 gy-4 mt-1 newsletter-gradient">
       {
         archiveNewsletters.map((newsletter) => (
           <div class="col-12 col-sm-6 col-xl-3">
-            <NewsroomCard item={newsletter} showPills={false} showColoredLabel={false} ctaText="Read Issue" />
+            <NewsroomCard item={newsletter} class="newsletter-card" showPills={false} showColoredLabel={false} ctaText="Read Issue" />
           </div>
         ))
       }

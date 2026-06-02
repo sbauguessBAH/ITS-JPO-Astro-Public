@@ -155,11 +155,11 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 			</fieldset>
 		</form>
 
-		<div id="newsletter-cards" class="row gx-4 gy-4">
+		<div id="newsletter-cards" class="row gx-4 gy-4 newsletter-gradient">
 			{
 				newsletterRows.map((row) => (
 					<div class="col-12 col-sm-6 col-xl-3 newsletter-card-col">
-						<NewsroomCard item={row.card} showPills={false} showColoredLabel={false} ctaText="Read Issue" />
+						<NewsroomCard item={row.card} class="newsletter-card" showPills={false} showColoredLabel={false} ctaText="Read Issue" />
 					</div>
 				))
 			}

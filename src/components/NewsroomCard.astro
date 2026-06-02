@@ -82,9 +82,26 @@ const fallbackText = !normalizedItem.description && normalizedItem.date ? normal
 </div>
 
 <style>
+  .newsletter-card >.card-body > .card-title {
+    height: 200px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #1C2C4E, #1E4D86);
+  }
 
-  .newsletter-gradient {
-    background: radial-gradient(ellipse at upper left, #1C2C4E, #1E4D86);
+  :global(.card-title > :nth-child(4n + 2)) {
+    background: radial-gradient(ellipse at upper left, #1B3D30, #2A6E52);
+  }
+
+  :global(.card-title > :nth-child(4n + 3)) {
+    background: radial-gradient(ellipse at upper left, #3E2C1B, #825428);
+  }
+
+  :global(.card-title > :nth-child(4n + 4)) {
+    background: radial-gradient(ellipse at upper left, #301C40, #5E347C);
   }
 
   .badge {
