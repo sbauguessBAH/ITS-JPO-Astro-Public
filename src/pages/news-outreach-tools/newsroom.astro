@@ -91,23 +91,13 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
     <h2 class="sideways blue">ITS JPO Newsroom</h2>
     <div class="container mt-4">
         <div class="row">
-            <p class="col-12 col-lg-7">
+            <p class="col-12">
             The ITS JPO Newsroom section contains a variety of information and resources about various deployments, 
             conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous 
             editions of the <i>ITS JPO Now</i> publication. Check back often as this page is regularly updated with 
             new information.
             </p>
-            {
-              featuredNewsletter && (
-                <div class="col-12 col-lg-4 offset-lg-1 mt-3 mt-lg-0">
-                  <NewsroomCard 
-                    item={featuredNewsletter} 
-                    showPills={false} 
-                    showColoredLabel={false} 
-                    ctaText="Read Current Issue" />
-                </div>
-              )
-            }
+      
         </div>
     </div>
     <div class="d-flex justify-content-between mt-5">
@@ -127,32 +117,54 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
         <h2 class="pl-3 heading-border-left blue">ITS JPO Newsletter Archive</h2>
         <a href="./newsletter-archive">Browse Full Archive</a>
     </div>
-    <div class="row gx-4 gy-4 mt-1 newsletter-gradient">
+    <div class="row gx-4 gy-4 mt-1 align-items-stretch newsletter-layout">
       {
-        archiveNewsletters.map((newsletter) => (
-          <div class="col-12 col-sm-6 col-xl-3">
-            <NewsroomCard item={newsletter} class="newsletter-card" showPills={false} showColoredLabel={false} ctaText="Read Issue" />
-          </div>
-        ))
+        featuredNewsletter && (
+            <NewsroomCard
+              item={featuredNewsletter}
+              class="col-12 col-xl-4 featured-newsletter-col newsletter-card featured-newsletter-card"
+              showPills={false}
+              showColoredLabel={false}
+              ctaText="Read Current Issue"
+            />
+        )
       }
+      <div class="col-12 col-xl-8">
+        <div class="row gx-4 gy-4">
+          {
+            archiveNewsletters.map((newsletter) => (
+              <div class="col-12 col-sm-6 archive-newsletter-col">
+                <NewsroomCard
+                  item={newsletter}
+                  showPills={false}
+                  showColoredLabel={false}
+                  ctaText="Read Issue"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
     </main>
 </PageLayout>
 
 <style>
-  .newsletter-gradient > :nth-child(4n + 1) .newsletter-card > .card-body > .card-title {
-    background: radial-gradient(ellipse at upper left, #1B3D30, #2A6E52);
+  .featured-newsletter-col {
+    display: flex;
   }
 
-  .newsletter-gradient > :nth-child(4n + 2) .newsletter-card > .card-body > .card-title {
-    background: radial-gradient(ellipse at upper left, #3E2C1B, #825428);
+  .featured-newsletter-card {
+    width: 100%;
   }
 
-  .newsletter-gradient > :nth-child(4n + 3) .newsletter-card > .card-body > .card-title {
-    background: radial-gradient(ellipse at upper left, #301C40, #5E347C);
+  .featured-newsletter-card > .card-body {
+    min-height: 100%;
   }
 
-  .newsletter-gradient > :nth-child(4n) .newsletter-card > .card-body > .card-title {
-    background: linear-gradient(90deg, #1C2C4E, #1E4D86);
+  @media (min-width: 1200px) {
+    .featured-newsletter-card {
+      min-height: 100%;
+    }
   }
 </style>
