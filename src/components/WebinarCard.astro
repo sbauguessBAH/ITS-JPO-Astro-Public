@@ -1,0 +1,49 @@
+---
+
+interface Props {
+ date: string;
+ subtitle: string;
+title: string;
+description: string;
+duration: string;
+recordingLink: string;
+slidesLink: string;
+  class?: string;
+  showPills?: boolean;
+  showColoredLabel?: boolean;
+  ctaText?: string;
+}
+
+const {
+  date,
+  subtitle,
+  title,
+  description,
+  duration,
+  recordingLink,
+  slidesLink,
+  class: className = "",
+} = Astro.props;
+
+
+---
+
+<div class:list={["card h-50 webinar-card", className]}>
+    <h2 class="card-date">{date}</h2>
+    <div>
+        <p class="card-program">{subtitle}</p>
+        <h2 class="card-title">{title}</h2>
+        <p class="card-description">{description} + {duration}</p>
+    </div>
+    <div>
+        <a href={recordingLink} class="card-link" target="_blank" rel="noopener noreferrer">Watch Recording</a>
+        <a href={slidesLink} class="card-link" target="_blank" rel="noopener noreferrer">View Slides</a>
+    </div>
+</div>
+
+<style>
+
+.webinar-card {
+
+}
+</style>
