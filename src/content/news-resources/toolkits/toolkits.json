@@ -6,7 +6,7 @@
     "date": "Updated February 2026",
     "content_types":["fact sheet","talking points", "social posts", "infographic","slides"],
     "topics":["V2X"],
-    "url":"/content/news-resources/toolkits/v2x-deployment-toolkit"
+    "url":"/news-outreach-tools/news-resources/toolkits/v2x-deployment-toolkit"
 
 },
 {
@@ -17,7 +17,7 @@
     "date": "Updated January 2026",
     "content_types":["fact sheet","infographic", "talking points", "social posts"],
     "topics":["AI"],
-    "url":"/content/news-resources/toolkits/ai-in-transportation-toolkit"
+    "url":"/news-outreach-tools/news-resources/toolkits/ai-in-transportation-toolkit"
 },
 {
     "id": 3,
@@ -27,7 +27,7 @@
     "date": "Updated December 2025",
     "content_types":["fact sheet","infographic", "talking points", "slides", "photos"],
     "topics":["Intersection Safety"],
-    "url":"/content/news-resources/toolkits/intersection-safety-challenge-outreach-toolkit"
+    "url":"/news-outreach-tools/news-resources/toolkits/intersection-safety-challenge-outreach-toolkit"
 
 },
 {
@@ -38,7 +38,7 @@
     "date": "Updated November 2025",
     "content_types":["fact sheet", "slides", "talking points", "social posts"],
     "topics":["Automation"],
-    "url":"/content/news-resources/toolkits/automation-program-stakeholder-toolkit"
+    "url":"/news-outreach-tools/news-resources/toolkits/automation-program-stakeholder-toolkit"
 
 },
 {
@@ -49,7 +49,7 @@
     "date": "Updated October 2025",
     "content_types":["fact sheet", "infographic", "social posts", "photos"],
     "topics":["ITS4US"],
-    "url":"/content/news-resources/toolkits/its4us-complete-trip-program-toolkit"
+    "url":"/news-outreach-tools/news-resources/toolkits/its4us-complete-trip-program-toolkit"
 
 },
 {
@@ -60,7 +60,7 @@
     "date": "Updated September 2025",
     "content_types":["fact sheet", "infographic", "talking points"],
     "topics":["Freight"],
-    "url":"/content/news-resources/toolkits/its-freight-commercial-vehicles-toolkit"
+    "url":"/news-outreach-tools/news-resources/toolkits/its-freight-commercial-vehicles-toolkit"
 
 }
 ],
@@ -72,7 +72,7 @@
     "location": "Tampa, FL",
     "content_types":["news release","fact sheet","photos", "video b-roll", "infographic"],
     "topics":["Conference Kit"],
-    "url":"/content/news-resources/toolkits/conference-media-kit"
+    "url":"/news-outreach-tools/news-resources/toolkits/conference-media-kit"
 
 },
 {
@@ -82,7 +82,7 @@
     "date": "January 2026",
     "content_types":["news release","fact sheet","sound bites", "photos"],
     "topics":["Announcement"],
-    "url":"/content/news-resources/toolkits/v2x-deployment-program-launch"
+    "url":"/news-outreach-tools/news-resources/toolkits/v2x-deployment-program-launch"
 },
 {
     "id": 32,
@@ -91,7 +91,7 @@
     "date": "October 2025",
     "content_types":["news release","fact sheet","infographic", "video b-roll", "sound bites"],
     "topics":["Intersection Safety"],
-    "url":"/content/news-resources/toolkits/intersection-safety-challenge-outreach-toolkit"
+    "url":"/news-outreach-tools/news-resources/toolkits/intersection-safety-challenge-outreach-toolkit"
 
 }],
 "webinars": [{

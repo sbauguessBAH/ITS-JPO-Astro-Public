@@ -22,7 +22,7 @@ export const navigation: NavigationItem[] = [
       { name: "Image Library", url: "/news-outreach-tools/image-library" },
       { name: "Video Library", url: "/news-outreach-tools/video-library" },
       { name: "Newsroom", url: "/news-outreach-tools/newsroom"},
-      { name: "News & Outreach Resources", url: "/news-outreach-tools/resources" },
+      { name: "News & Outreach Resources", url: "/news-outreach-tools/outreach-resources" },
       {
         name: "Publication Editorial Guidelines",
         url: "/news-outreach-tools/Publication-Editorial-Guidelines",
