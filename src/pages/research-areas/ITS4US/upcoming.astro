@@ -2,6 +2,7 @@
 import base_url from "@/src/lib/base_url";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import HeroImage from "@/src/assets/images/its4us/upcoming/ITS4US_Deployment_Accelerator_BG.png";
+import Image from "astro/components/Image.astro";
 ---
 
 <style>
@@ -11,6 +12,10 @@ import HeroImage from "@/src/assets/images/its4us/upcoming/ITS4US_Deployment_Acc
   .announcement-section {
     background: linear-gradient(to bottom, #081334, #091f61);
     overflow: hidden;
+    text-wrap: pretty;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
   }
 
   .hero-image {
@@ -65,7 +70,8 @@ import HeroImage from "@/src/assets/images/its4us/upcoming/ITS4US_Deployment_Acc
       <div class="row">
         <div class="col-12">
           <section class="announcement-section text-white rounded-4 shadow my-5">
-            <img src={HeroImage.src} alt="ITS4US Deployment Accelerator Program" class="hero-image w-100 d-block" />
+           
+            <Image src={HeroImage} alt="Ameraican Flag decrotive image." width={800} class="hero-image w-100 d-block"/>
             <div class="p-5">
               <div class="d-flex justify-content-between align-items-start mb-4 gap-4 flex-column flex-md-row">
                 <div class="text-start">
