@@ -82,6 +82,10 @@ const fallbackText = !normalizedItem.description && normalizedItem.date ? normal
 </div>
 
 <style>
+
+  .toolkit-card.newsletter-card {
+    padding: 0;
+  }
   .newsletter-card >.card-body > .card-title {
     height: 200px;
     color: white;
@@ -92,17 +96,6 @@ const fallbackText = !normalizedItem.description && normalizedItem.date ? normal
     background: linear-gradient(90deg, #1C2C4E, #1E4D86);
   }
 
-  :global(.card-title > :nth-child(4n + 2)) {
-    background: radial-gradient(ellipse at upper left, #1B3D30, #2A6E52);
-  }
-
-  :global(.card-title > :nth-child(4n + 3)) {
-    background: radial-gradient(ellipse at upper left, #3E2C1B, #825428);
-  }
-
-  :global(.card-title > :nth-child(4n + 4)) {
-    background: radial-gradient(ellipse at upper left, #301C40, #5E347C);
-  }
 
   .badge {
     background-color: #E8F1F9;

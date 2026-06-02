@@ -138,3 +138,21 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
     </div>
     </main>
 </PageLayout>
+
+<style>
+  .newsletter-gradient > :nth-child(4n + 1) .newsletter-card > .card-body > .card-title {
+    background: radial-gradient(ellipse at upper left, #1B3D30, #2A6E52);
+  }
+
+  .newsletter-gradient > :nth-child(4n + 2) .newsletter-card > .card-body > .card-title {
+    background: radial-gradient(ellipse at upper left, #3E2C1B, #825428);
+  }
+
+  .newsletter-gradient > :nth-child(4n + 3) .newsletter-card > .card-body > .card-title {
+    background: radial-gradient(ellipse at upper left, #301C40, #5E347C);
+  }
+
+  .newsletter-gradient > :nth-child(4n) .newsletter-card > .card-body > .card-title {
+    background: linear-gradient(90deg, #1C2C4E, #1E4D86);
+  }
+</style>
