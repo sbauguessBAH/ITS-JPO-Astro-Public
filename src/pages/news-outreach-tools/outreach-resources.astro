@@ -6,8 +6,22 @@ import NewsroomCard from "@/src/components/NewsroomCard.astro";
 import WebinarCard from "@/src/components/WebinarCard.astro";
 import type { NewsroomCardItem, Toolkit } from "@/src/types";
 
+type WebinarEntry = {
+  title?: string;
+  recordingLink?: string;
+  slidesLink?: string;
+  description?: string;
+  date?: string;
+  subtitle?: string;
+  duration?: string;
+};
+
 const toolkitData = toolkits as {
   outreach_toolkits?: Toolkit[];
+};
+
+const webinarData = webinars as {
+  webinars?: WebinarEntry[];
 };
 
 const toolkitList: NewsroomCardItem[] = (Array.isArray(toolkitData?.outreach_toolkits) ? toolkitData.outreach_toolkits : []).map((toolkit) => ({
@@ -26,6 +40,16 @@ const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
 
 const contentTypes = uniqueStrings(toolkitList.flatMap((toolkit) => toolkit.content_types ?? []));
 const topics = uniqueStrings(toolkitList.flatMap((toolkit) => toolkit.topics ?? []));
+
+const webinarList: Required<WebinarEntry>[] = (Array.isArray(webinarData?.webinars) ? webinarData.webinars : []).map((webinar) => ({
+  title: webinar.title ?? "",
+  recordingLink: webinar.recordingLink ?? "",
+  slidesLink: webinar.slidesLink ?? "",
+  description: webinar.description ?? "",
+  date: webinar.date ?? "",
+  subtitle: webinar.subtitle ?? "",
+  duration: webinar.duration ?? "",
+}));
 
 const slugifyForId = (value: string): string =>
   value
@@ -97,8 +121,22 @@ const slugifyForId = (value: string): string =>
     <div>
         <h2 class="heading-border-left blue mt-4">Webinar Archives</h2>
         <p></p>
-        <div>
-          <WebinarCard />
+        <div class="row gx-4 gy-4">
+          {
+            webinarList.map((webinar) => (
+              <div class="col-12 col-md-6 col-xl-4">
+                <WebinarCard
+                  date={webinar.date}
+                  subtitle={webinar.subtitle}
+                  title={webinar.title}
+                  description={webinar.description}
+                  duration={webinar.duration}
+                  recordingLink={webinar.recordingLink}
+                  slidesLink={webinar.slidesLink}
+                />
+              </div>
+            ))
+          }
         </div>
     </div>
   </main>
