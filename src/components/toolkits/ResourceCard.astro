@@ -5,6 +5,7 @@ title: string;
 type: string;
 date: string;
 link: string;
+class?: string;
 }
 
 const {
@@ -12,13 +13,14 @@ const {
   type,
   date,
   link,
+  class: className = "",
 } = Astro.props;
 
 
 
 ---
 
-<div class:list={"card h-50 resource-card"}>
+<div class:list={`card h-50 resource-card ${className}`}>
     <div>
         <h2 class="card-title">{title}</h2>
         <p class="card-type">{type}</p>
@@ -31,5 +33,9 @@ const {
 
 .resource-card {
 
+}
+
+.resource-card .image {
+    
 }
 </style>
