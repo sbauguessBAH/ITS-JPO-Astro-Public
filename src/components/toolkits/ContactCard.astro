@@ -7,6 +7,7 @@ contact: string;
 profile_image: string;
 department: string;
 office: string;
+class?: string;
 }
 
 const {
@@ -16,27 +17,42 @@ const {
   profile_image,
   department,
   office,
+    class: className = "",
 } = Astro.props;
 
 
 ---
 
-<div class:list={"card h-50 contact-card"}>
-    <img src={profile_image} alt={`${name}'s profile picture`} class="card-img-top contact-card-img" />
+<div class:list={`h-50 w-50 contact-card ${className}`}>
+    <img class="mr-3" src={profile_image} alt={`${name}'s profile picture`} />
     <div>
-        <h2 class="card-date">{name}</h2>
-        <p class="card-program">{title}</p>
-        <h2 class="card-title">{department}</h2>
-        <p class="card-description">{office}</p>
-    </div>
-    <div>
-        <a href={`mailto:${contact}`} class="card-link" target="_blank" rel="noopener noreferrer">Email: {contact}</a>
+        <h2>{name}</h2>
+        <p>{title}</p>
+        <p><i>{department}</i></p>
+        <p><i>{office}</i></p>
+        <div>
+            <a href={`mailto:${contact}`} class="card-link" target="_blank" rel="noopener noreferrer">{contact}</a>
+        </div>
     </div>
 </div>
 
 <style>
 
 .contact-card {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color:black;
+    display: flex;
+}   
 
+h2 {
+    font-size: 1.1rem;
+    color:black;
+}
+
+p {
+    margin: 0;
 }
 </style>
