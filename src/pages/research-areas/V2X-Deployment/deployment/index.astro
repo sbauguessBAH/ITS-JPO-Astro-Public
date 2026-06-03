@@ -4,6 +4,7 @@ import banner from "@/src/assets/images/banners/V2X_Banner.png";
 import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
 
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
 
 const keywords = [
   "V2X deployment",
@@ -34,7 +35,7 @@ const description =
       <main>
         <div class="row my-4 g-4">
           <div class="col-md-4">
-            <a href="/research-areas/V2X-Deployment/deployment/accelerator" class="text-decoration-none">
+            <a href={base_url("/research-areas/V2X-Deployment/deployment/accelerator")} class="text-decoration-none">
               <div class="p-4 rounded-4 h-100 shadow-sm data-card">
                 <h3>V2X Accelerator (2024 - present)</h3>
                 <p class="mb-0">In Fall 2024, the USDOT awarded cooperative agreements collectively worth $60 million to sites in Arizona, Texas, and Utah to deploy, operate, and showcase integrated, advanced interoperable V2X deployments.</p>
@@ -52,7 +53,7 @@ const description =
           </div>
 
           <div class="col-md-4">
-            <a href="/research-areas/V2X-Deployment/deployment/safety-pilots" class="text-decoration-none">
+            <a href={base_url("/research-areas/V2X-Deployment/deployment/safety-pilots")} class="text-decoration-none">
               <div class="p-4 rounded-4 h-100 shadow-sm data-card">
                 <h3>Safety Pilot (2010 – 2014)</h3>
                 <p class="mb-0">The Safety Pilot Model Deployment (SPMD) program was a comprehensive data collection effort under real-world conditions, with multimodal traffic and vehicles equipped with vehicle-to-vehicle (V2V) and vehicle-to-infrastructure (V2I) communication devices.</p>

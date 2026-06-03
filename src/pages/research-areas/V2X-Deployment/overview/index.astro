@@ -4,6 +4,7 @@ import banner from "@/src/assets/images/banners/V2X_Banner.png";
 import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
 
 import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
 
 const keywords = [
   "V2X",
@@ -32,7 +33,7 @@ const description =
       <main>
         <div class="row my-4 g-4 ">
           <div class="col-md-4 ">
-            <a href="/research-areas/V2X-Deployment/overview/how-v2x-works" class="text-decoration-none">
+            <a href={base_url("/research-areas/V2X-Deployment/overview/how-v2x-works")} class="text-decoration-none">
               <div class=" p-4 rounded-4 h-100 shadow-sm data-card">
                 <h3>How V2X Works</h3>
                 <p class="mb-0">V2X provides connectivity through both direct and network communication.</p>
@@ -41,7 +42,7 @@ const description =
           </div>
 
           <div class="col-md-4">
-            <a href="/research-areas/V2X-Deployment/overview/why-v2x" class="text-decoration-none">
+            <a href={base_url("/research-areas/V2X-Deployment/overview/why-v2x")} class="text-decoration-none">
               <div class="p-4 rounded-4 h-100 shadow-sm data-card">
                 <h3>Why V2X is Needed</h3>
                 <p class="mb-0">V2X technologies address a set of critical and interrelated challenges in the surface transportation industry in the areas of safety and mobility.</p>
@@ -50,7 +51,7 @@ const description =
           </div>
 
           <div class="col-md-4">
-            <a href="/research-areas/V2X-Deployment/overview/v2x-applications" class="text-decoration-none">
+            <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications")} class="text-decoration-none">
               <div class=" p-4 rounded-4 h-100 shadow-sm data-card">
                 <h3>V2X Applications and Use Cases</h3>
                 <p class="mb-0">To date, USDOT has sponsored 30+ V2X applications, many through prototyping, field demonstration and deployment.</p>
