@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "@/src/layouts/BaseLayout.astro";
+import ContactCard from "@/src/components/toolkits/ContactCard.astro";
+import ResourceCard from "@/src/components/toolkits/ResourceCard.astro";
+
 ---
 
 <BaseLayout
@@ -13,13 +16,33 @@ import BaseLayout from "@/src/layouts/BaseLayout.astro";
 
     <section>
       <h3>Contacts</h3>
-      <div></div>
+      <div>
+        <ContactCard
+          name="Jane Doe"
+          profile_image="/images/jane-doe.jpg"
+          title="Public Affairs Specialist"
+          office="ITS JPO"
+          department="Public Affairs"
+          contact="test@dot.gov"
+        />
+      </div>
     </section>
 
     <section>
       <h3>ITS JPO Resources Distributed at TRB 2026</h3>
       <div>
-        
+        <ResourceCard
+          title="Fact Sheet: Connected Vehicle Technology"
+          type="Fact Sheet"
+          date="January 2026"
+          link="https://www.its.dot.gov/factsheets/pdf/connected_vehicle.pdf"
+        />
+        <ResourceCard
+          title="Infographic: Benefits of V2X Technology"
+          type="Infographic"
+          date="January 2026"
+          link="https://www.its.dot.gov/infographics/pdf/v2x_benefits.pdf"
+        />
       </div>
     </section>
 
