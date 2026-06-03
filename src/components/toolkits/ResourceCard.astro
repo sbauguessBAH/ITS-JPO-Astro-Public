@@ -1,0 +1,35 @@
+---
+
+interface Props {
+title: string;
+type: string;
+date: string;
+link: string;
+}
+
+const {
+  title,
+  type,
+  date,
+  link,
+} = Astro.props;
+
+
+
+---
+
+<div class:list={"card h-50 resource-card"}>
+    <div>
+        <h2 class="card-title">{title}</h2>
+        <p class="card-type">{type}</p>
+        <h2 class="card-date">{date}</h2>
+        <p class="card-link"><a href={link} target="_blank" rel="noopener noreferrer">View Resource</a></p>
+    </div>
+</div>
+
+<style>
+
+.resource-card {
+
+}
+</style>
