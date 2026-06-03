@@ -1,0 +1,42 @@
+---
+
+interface Props {
+name: string;
+title: string;
+contact: string;
+profile_image: string;
+department: string;
+office: string;
+}
+
+const {
+  name,
+  title,
+  contact,
+  profile_image,
+  department,
+  office,
+} = Astro.props;
+
+
+---
+
+<div class:list={"card h-50 webinar-card"}>
+    <img src={profile_image} alt={`${name}'s profile picture`} class="card-img-top contact-card-img" />
+    <div>
+        <h2 class="card-date">{name}</h2>
+        <p class="card-program">{title}</p>
+        <h2 class="card-title">{department}</h2>
+        <p class="card-description">{office}</p>
+    </div>
+    <div>
+        <a href={`mailto:${contact}`} class="card-link" target="_blank" rel="noopener noreferrer">Email: {contact}</a>
+    </div>
+</div>
+
+<style>
+
+.webinar-card {
+
+}
+</style>
