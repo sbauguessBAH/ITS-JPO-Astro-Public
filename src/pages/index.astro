@@ -59,6 +59,25 @@ const description =
     color: white;
   }
 
+.TitleHeader{
+  width: 100%;
+}
+
+  .TitleHeader h2 {
+    text-warp: pretty;
+    white-space: normal;
+    display: flex;
+    align-items: center;
+  }
+  .TitleHeader h2::after {
+    content: "";
+    display: flex;
+    flex: 1;    
+    height: 6px;
+    background-color: var(--bs-yellow);
+    margin-left: 15px;
+  }
+
 </style>
 <BaseLayout title="ITS JPO" description={description} keywords={keywords}>
     <RotatingHero />
@@ -68,10 +87,8 @@ const description =
         <div class="col-12">
           <div class="TitleWrapper">
             <div class="TitleHeader">
-              <h2 class="text-nowrap ">Spotlight on ITS Research Areas</h2>
+              <h2 class="">Spotlight on ITS Research Areas</h2>
             </div>
-
-            <div class="TitleBar"></div>
           </div>
         </div>
       </div>
