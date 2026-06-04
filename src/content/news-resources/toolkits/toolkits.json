@@ -138,8 +138,8 @@
             "department": "U.S. Department Of Transportation",
             "office": "Intelligent Transportations Systems Joint Program Office",
             "contact": "Brian.Cronin@dot.gov"}],
-            {
-                "resource-links": [
+            
+    "resource-links": [
                     {"link-text": "ITS JPO Overview Postcard", "href": ""},
                     {"link-text": "", "href": ""},
                     {"link-text": "", "href": ""},
@@ -158,8 +158,48 @@
                     {"link-text": "", "href": ""},
                     {"link-text": "", "href": ""}
 
-                ]
-            }
+                ],
+            "videos": [
+                {"title": "",
+                "href": "",
+                "img_src": ""},
+                {"title": "",
+                    "href": "",
+                    "img_src": ""}],
+            "b-roll": [
+                {"title": "",
+                "href": "",
+                "img_src": ""},
+                {"title": "",
+                    "href": "",
+                    "img_src": ""}],
+            "soundbite": [
+                {"title": "",
+                "href": "",
+                "img_src": ""},
+                {"title": "",
+                    "href": "",
+                    "img_src": ""}],
+            "photos": [
+                {"title": "",
+                "href": "",
+                "img_src": ""},
+                {"title": "",
+                    "href": "",
+                    "img_src": ""},
+                {"title": "",
+                    "href": "",
+                    "img_src": ""},
+                {"title": "",
+                    "href": "",
+                    "img_src": ""},
+                {"title": "",
+                    "href": "",
+                    "img_src": ""},
+                {"title": "",
+                    "href": "",
+                    "img_src": ""}]
+            
 
 }],
 "webinars": [{
