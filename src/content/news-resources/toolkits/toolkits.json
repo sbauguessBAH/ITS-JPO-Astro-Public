@@ -116,6 +116,51 @@
             "office": "Intelligent Transportations Systems Joint Program Office",
             "contact": "Brian.Cronin@dot.gov"}]
 
+},
+{
+    "id": 34,
+    "title": "ITS JPO at the 2025 ITS World Congress",
+    "subtitle": "Media Kit",
+    "date": "2025",
+    "content_types":["video","fact sheet","sound bites", "video b-roll", "photos"],
+    "topics":["ITS JPO"],
+    "url":"/news-outreach-tools/news-resources/toolkits/itc-wc-2025-kit",
+    "contacts": [
+        {
+            "name": "Norah Ocel",
+            "title": "Program Manager", 
+            "department": "U.S. Department Of Transportation",
+            "office": "Intelligent Transportations Systems Joint Program Office",
+            "contact": "Norah.Ocel@dot.gov"},
+        {
+            "name": "Brian Cronin",
+            "title": "Director", 
+            "department": "U.S. Department Of Transportation",
+            "office": "Intelligent Transportations Systems Joint Program Office",
+            "contact": "Brian.Cronin@dot.gov"}],
+            {
+                "resource-links": [
+                    {"link-text": "ITS JPO Overview Postcard", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""},
+                    {"link-text": "", "href": ""}
+
+                ]
+            }
+
 }],
 "webinars": [{
     "id": 20, 
