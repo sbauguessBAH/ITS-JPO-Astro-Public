@@ -27,15 +27,43 @@ const {
 
 const details = [description, duration].filter(Boolean).join(" | ");
 
+const monthNames = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+const normalizedDate = date.trim().replace(/,/g, "");
+const splitDate = normalizedDate.split(/\s+/);
+
+const monthPart = splitDate[0] ?? "";
+const dayPart = splitDate.length >= 3 ? splitDate[1] : "";
+const yearPart = splitDate[splitDate.length - 1] ?? "";
+
+const monthIndex = monthNames.findIndex((month) => month.toLowerCase() === monthPart.slice(0, 3).toLowerCase());
+const displayMonth = monthIndex >= 0 ? monthNames[monthIndex].toUpperCase() : monthPart.slice(0, 3).toUpperCase();
+const displayDay = dayPart.replace(/\D/g, "");
+const displayYear = /^\d{4}$/.test(yearPart) ? yearPart : "";
+
 
 ---
 
-<div class:list={["card h-100 webinar-card", className]}>
-  <div class="webinar-meta">
-    <p class="card-date">{date}</p>
-    <p class="card-program">{subtitle}</p>
-  </div>
-
+<div class:list={["h-100 webinar-card", className]}>
+  <p class="card-date" aria-label={date}>
+    {displayMonth && <span class="date-month">{displayMonth}</span>}
+    {displayDay && <span class="date-day">{displayDay}</span>}
+    {displayYear && <span class="date-year">{displayYear}</span>}
+    {!displayMonth && !displayDay && !displayYear && <span>{date}</span>}
+  </p>
   <div class="webinar-content">
     <h3 class="card-title">{title}</h3>
     {details && <p class="card-description">{details}</p>}
@@ -54,21 +82,48 @@ const details = [description, duration].filter(Boolean).join(" | ");
   border-radius: 8px;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 
-.webinar-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
+
 
 .card-date {
   margin: 0;
-  font-size: 0.9rem;
   font-weight: 600;
   color: #365f91;
+  background-color: #e1e9f7;
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.1;
+  width: 5.25rem;
+  height: 5.25rem;
+  flex-shrink: 0;
+}
+
+.card-date > span {
+  display: block;
+}
+
+.date-month {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.date-day {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.date-year {
+  font-size: 0.8rem;
 }
 
 .card-program {
@@ -79,6 +134,7 @@ const details = [description, duration].filter(Boolean).join(" | ");
 
 .webinar-content {
   flex: 1;
+  min-width: 0;
 }
 
 .card-title {
@@ -96,10 +152,22 @@ const details = [description, duration].filter(Boolean).join(" | ");
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: flex-end;
 }
 
 .webinar-btn {
   font-weight: 600;
   padding: 0.45rem 0.85rem;
+}
+
+@media (max-width: 767.98px) {
+  .webinar-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .webinar-actions {
+    justify-content: flex-start;
+  }
 }
 </style>
