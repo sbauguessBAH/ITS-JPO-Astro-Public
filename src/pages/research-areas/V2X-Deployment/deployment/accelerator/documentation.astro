@@ -154,22 +154,8 @@ const description = "Documentation for Phase 1: Finalize, Design, Build, and Tes
       const contentRows = document.querySelectorAll(`.content-row[data-section="${sectionName}"]`);
       
       if (isCollapsed) {
-        // Collapse other sections first (accordion behavior)
-        document.querySelectorAll('.section-header').forEach((otherHeader: Element) => {
-          if (otherHeader !== header) {
-            const otherSection = otherHeader.getAttribute('data-section');
-            const otherToggleBtn = otherHeader.querySelector('.toggle-btn') as HTMLElement | null;
-            
-            if (!otherSection || !otherToggleBtn) return;
-            
-            const otherRows = document.querySelectorAll(`.content-row[data-section="${otherSection}"]`);
-            otherHeader.setAttribute('data-collapsed', 'true');
-            otherToggleBtn.textContent = '▶';
-            otherRows.forEach((row: Element) => row.setAttribute('data-hidden', 'true'));
-          }
-        });
-        // Expand current section
-        header.removeAttribute('data-collapsed');
+        // Expand current section without changing any other open sections.
+        header.setAttribute('data-collapsed', 'false');
         toggleBtn.textContent = '▼';
         contentRows.forEach((row: Element) => row.setAttribute('data-hidden', 'false'));
       } else {
