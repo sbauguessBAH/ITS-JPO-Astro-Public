@@ -40,12 +40,12 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
           <p class="fs-4">Visit the ITS JPO <strong>booth (#4031)</strong> in the exhibit hall to engage with our program managers and discuss our current AI and V2X technology initiatives!</p>
           <a
             href="https://www.itsamericaevents.com/expo/en-us/exhibitor-list/exhibitor-details.us%20department%20of%20transportation%20usdot.org-24c8ad9b-6cae-4e15-b39b-775ba369e9ae.html#/"
-            class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1"
+            class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link"
             target="_blank"
           >
             Dive Deeper into ITSA 2026
           </a>
-          <a href={base_url("/about/itsa-schedule/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1">View Our Activities Schedule</a>
+          <a href={base_url("/about/itsa-schedule/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button">View Our Activities Schedule</a>
         </div>
       </div>
     </section>
@@ -55,7 +55,7 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
         <div class="content-box">
           <h2 class="newsLetterHeader">ISS Prototyping Broad Agency Announcement is Live!</h2>
           <p class="fs-4">Funding Opportunity | Up to $17M across 3 teams</p>
-          <a href="https://www.sam.gov" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1">Learn More ▸</a>
+          <a href="https://www.sam.gov" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button">Learn More</a>
         </div>
       </div>
     </section>
@@ -69,7 +69,7 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
             Georgia launches an accessible multimodal trip planner, USDOT unveils an interactive V2X deployment map, and Detroit hosts cutting-edge connected vehicle demonstrations—don't miss the May
             edition!
           </p>
-          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-4">Read Latest Issue</a>
+          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-4 icon-arrow-button">Read Latest Issue</a>
         </div>
       </div>
     </section>
@@ -82,9 +82,7 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
             Want to learn more about ITS for intersection safety and results from the USDOT ISC? Check out new resources now posted to the website, including two new reports related to the technical
             evaluation results and insights from the Challenge Stage 1B, a new video summarizing the results, and presentation materials from the webinar held on March 26.
           </p>
-          <a href={base_url("/research-areas/intersection-safety/challenge/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1">Explore the ISC Website</a>
-          <a href="https://rosap.ntl.bts.gov/view/dot/89360" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1" target="_blank">Challenge Stage 1B Evaluation Report</a>
-          <a href="https://rosap.ntl.bts.gov/view/dot/89361" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1" target="_blank">Challenge Stage 1B Lessons Learned Report</a>
+          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026/#check-out-new-resources-related-to-intersection-safety")} class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button">Read the Intersection Safety article</a>
         </div>
       </div>
     </section>
@@ -97,7 +95,7 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
             The ITS JPO has launched an interactive map showcasing V2X deployments nationwide. The map compiles data from USDOT funded projects, Accelerating V2X Cohort members, and the FCC Universal
             Licensing System. Users can explore deployment details at national, state, and local levels. This is an initial prototype that will continue to evolve as more data becomes available.
           </p>
-          <a href="https://www.its.dot.gov/scrc/index.html#/technology-areas/v2x/map" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1" target="_blank">Explore V2X Deployments</a>
+          <a href="https://www.its.dot.gov/scrc/index.html#/technology-areas/v2x/map" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank">Explore V2X Deployments</a>
         </div>
       </div>
     </section>
@@ -359,4 +357,24 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
       font-size: 1rem;
     }
   }
+
+  .icon-arrow-button::after {  
+    content: "\f061";
+    font-family: FontAwesome;
+    margin-left: 0.5rem;
+    display: inline-block;
+    }
+
+    .icon-external-link::after {
+      content: "\f35d";
+      font-family: FontAwesome;
+    margin-left: 0.5rem;
+    
+    display: inline-block;
+    }
+
+    .icon-external-link:hover::after, .icon-arrow-button:hover::after {
+      transform: translateX(5px);
+      transition: transform 0.3s ease-in-out;
+    }
 </style>
