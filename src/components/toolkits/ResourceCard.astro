@@ -27,7 +27,7 @@ const {
             <p class="card-type">{type} |</p>
             <p class="card-date">{date}</p>
         </div>
-        <p class="card-link"><a href={link} target="_blank" rel="noopener noreferrer">View Resource</a></p>
+        <p class="card-link"><a href={link} target="_blank" rel="noopener noreferrer">{type}</a></p>
     </div>
 </div>
 
@@ -42,6 +42,13 @@ const {
     color: black;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.card-link {
+    background-color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border-color: 1px solid #DFDFDF;
 }
 
 .resource-card .image {
