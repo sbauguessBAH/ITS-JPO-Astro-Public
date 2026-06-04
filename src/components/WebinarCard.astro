@@ -1,8 +1,8 @@
 ---
 
 interface Props {
- date: string;
- subtitle: string;
+  date: string;
+  subtitle: string;
 title: string;
 description: string;
 duration: string;
@@ -25,25 +25,81 @@ const {
   class: className = "",
 } = Astro.props;
 
+const details = [description, duration].filter(Boolean).join(" | ");
+
 
 ---
 
-<div class:list={["card h-50 webinar-card", className]}>
-    <h2 class="card-date">{date}</h2>
-    <div>
-        <p class="card-program">{subtitle}</p>
-        <h2 class="card-title">{title}</h2>
-        <p class="card-description">{description} + {duration}</p>
-    </div>
-    <div>
-        <a href={recordingLink} class="card-link" target="_blank" rel="noopener noreferrer">Watch Recording</a>
-        <a href={slidesLink} class="card-link" target="_blank" rel="noopener noreferrer">View Slides</a>
-    </div>
+<div class:list={["card h-100 webinar-card", className]}>
+  <div class="webinar-meta">
+    <p class="card-date">{date}</p>
+    <p class="card-program">{subtitle}</p>
+  </div>
+
+  <div class="webinar-content">
+    <h3 class="card-title">{title}</h3>
+    {details && <p class="card-description">{details}</p>}
+  </div>
+
+  <div class="webinar-actions">
+    <a href={recordingLink} class="btn btn-warning webinar-btn" target="_blank" rel="noopener noreferrer">Watch Recording</a>
+    <a href={slidesLink} class="btn btn-warning webinar-btn" target="_blank" rel="noopener noreferrer">View Slides</a>
+  </div>
 </div>
 
 <style>
 
 .webinar-card {
+  border: 1px solid #dfdfdf;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
 
+.webinar-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.card-date {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #365f91;
+}
+
+.card-program {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #5f6670;
+}
+
+.webinar-content {
+  flex: 1;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.card-description {
+  margin: 0.65rem 0 0;
+  color: #454b53;
+}
+
+.webinar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.webinar-btn {
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
 }
 </style>
