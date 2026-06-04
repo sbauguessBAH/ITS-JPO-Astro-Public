@@ -101,7 +101,20 @@
     "date": "2026",
     "content_types":["presentation","fact sheet"],
     "topics":["Intersection Safety"],
-    "url":"/news-outreach-tools/news-resources/toolkits/trb-2026-kit"
+    "url":"/news-outreach-tools/news-resources/toolkits/trb-2026-kit",
+    "contacts": [
+        {
+            "name": "Norah Ocel",
+            "title": "Program Manager", 
+            "department": "U.S. Department Of Transportation",
+            "office": "Intelligent Transportations Systems Joint Program Office",
+            "contact": "Norah.Ocel@dot.gov"},
+        {
+            "name": "Brian Cronin",
+            "title": "Director", 
+            "department": "U.S. Department Of Transportation",
+            "office": "Intelligent Transportations Systems Joint Program Office",
+            "contact": "Brian.Cronin@dot.gov"}]
 
 }],
 "webinars": [{
