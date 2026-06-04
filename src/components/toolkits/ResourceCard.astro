@@ -20,11 +20,13 @@ const {
 
 ---
 
-<div class:list={`card h-50 resource-card ${className}`}>
+<div class:list={`h-50 resource-card ${className}`}>
     <div>
         <h2 class="card-title">{title}</h2>
-        <p class="card-type">{type}</p>
-        <h2 class="card-date">{date}</h2>
+        <div class="d-flex">
+            <p class="card-type">{type} |</p>
+            <p class="card-date">{date}</p>
+        </div>
         <p class="card-link"><a href={link} target="_blank" rel="noopener noreferrer">View Resource</a></p>
     </div>
 </div>
@@ -32,10 +34,17 @@ const {
 <style>
 
 .resource-card {
+    border: 1px solid #DFDFDF;
+    border-radius: 8px;
+}
 
+.card-title {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .resource-card .image {
-    
+
 }
 </style>
