@@ -1,10 +1,6 @@
 ---
 import base_url from "../lib/base_url";
 import { Image } from "astro:assets";
-import { getImage } from "astro:assets";
-import HeroBG from "../assets/images/Hero3.jpeg";
-import HeroBG2 from "../assets/images/Hero-Image-02.jpg";
-import HeroBG3 from "../assets/images/Hero-Image-03.jpg";
 import spotlight1 from "../assets/images/Spotlight1.png";
 import spotlight2 from "@/src/assets/images/Spotlight2.png";
 // import spotlight3 from "../assets/images/Spotlight3.png";
@@ -19,8 +15,7 @@ import spotlight10 from "@/src/assets/images/Spotlight10.png";
 import spotlight12 from "@/src/assets/images/Spotlight12.png";
 
 import BaseLayout from "@/src/layouts/BaseLayout.astro";
-
-const optimizedBG = await getImage({ src: HeroBG2 });
+import RotatingHero from "@/src/components/layout/RotatingHero.astro";
 
 const keywords = [
   "ITS JPO",
@@ -39,15 +34,7 @@ const description =
 ---
 
 <style>
-  .hero-container {
-    background-position: center;
-    background-size: cover;
-    padding: 50px 0 100px 0;
-  }
-  .herobox {
-    border-radius: 15px;
-    background-color: rgba(7, 46, 85, 0.85)
-  }
+  
 
   .HotTopicTitleBanner{
     border-radius: 15px 15px 0 0  ;
@@ -72,32 +59,36 @@ const description =
     color: white;
   }
 
+.TitleHeader{
+  width: 100%;
+}
+
+  .TitleHeader h2 {
+    text-warp: pretty;
+    white-space: normal;
+    display: flex;
+    align-items: center;
+  }
+  .TitleHeader h2::after {
+    content: "";
+    display: flex;
+    flex: 1;    
+    height: 6px;
+    background-color: var(--bs-yellow);
+    margin-left: 15px;
+  }
+
 </style>
 <BaseLayout title="ITS JPO" description={description} keywords={keywords}>
-    <div class="hero-container" style={`background-image: url(${optimizedBG.src});`}>
-      <div class="container-xl">
-        <div class="d-flex align-items-center p-4 col-md-7 herobox">
-          <div class="text-white">
-            <h2 class="mb-4 fs-2 text-white">Intelligent Transportation Systems Joint Program Office</h2>
-            <p class="mb-4 fs-4 text-white">
-               The Intelligent Transportation Systems Joint Program Office (ITS JPO) seeks to transform the way society moves. Explore our website for information on research and deployments that
-              advance the use of ITS to move people and goods more safely and efficiently.
-            </p>
-            <a class="btn btn-outline-light btn-lg text-dark m-0 fs-4" href={base_url("/about/")} role="button">LEARN MORE ABOUT THE ITS JPO</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <RotatingHero />
 
     <div class="container HomepageContainter">
       <div class="row">
         <div class="col-12">
           <div class="TitleWrapper">
             <div class="TitleHeader">
-              <h2 class="text-nowrap ">Spotlight on ITS Research Areas</h2>
+              <h2 class="">Spotlight on ITS Research Areas</h2>
             </div>
-
-            <div class="TitleBar"></div>
           </div>
         </div>
       </div>

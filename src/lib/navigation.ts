@@ -19,7 +19,18 @@ export const navigation: NavigationItem[] = [
           { name: "Charter", url: "/about/itspac/charter" },
         ],
       },
-      { name: "Join Our Mailing List", url: "/about/contact-us/mailinglist" },
+      { 
+        name: "Join Our Mailing List", 
+        url: "/about/contact-us/mailinglist",
+        isEnabled: true,
+        pages: [
+          { name: "ITS JPO NOW", url: "/about/contact-us/mailinglist/ITS-JPO-NOW", pages: [
+            
+            { name: "May 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026" },
+
+          ] },
+        ],
+      },
     ],
   },
 
