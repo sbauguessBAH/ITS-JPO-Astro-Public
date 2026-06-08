@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import base_url from "@/src/lib/base_url";
 
@@ -8,8 +11,7 @@ const keywords = [
   "V2X use cases",
   "USDOT V2X",
   "safety applications",
-  "mobility and environment",
-  "traffic advisories",
+  "mobility",
   "data collection",
   "emergency electronic brake lights",
   "forward collision warning",
@@ -19,11 +21,16 @@ const keywords = [
   "probe data",
 ];
 const description =
-  "Overview of 30+ USDOT-supported V2X applications across safety, commercial vehicle, mobility and environment, traffic advisories, and data collection, including collision warnings, signal priority, platooning, work zone alerts, and probe data use cases.";
+  "Overview of 30+ USDOT-supported V2X applications across safety, commercial vehicle, and mobility, including collision warnings, signal priority, platooning, work zone alerts, and probe data use cases.";
 ---
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+   <Fragment slot="banner">
+    Vehicle-to-Everything (V2X)
+  </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500}  />
+  </Fragment>
   <main>
     <h2 class="sideways blue">V2X Applications and Use Cases</h2>
     <p class="read-more-wrap pt-0">
@@ -33,17 +40,21 @@ const description =
     <p class="fw-bold">Click on any category below to explore detailed application descriptions and supporting documentation.</p>
 
     <div class="accordion-container">
-      <!-- Safety Accordion -->
-      <details class="accordion-item" name="v2x-accordion">
-        <summary class="accordion-header">
+      <!-- Safety -->
+      <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/safety")} class="accordion-header-link">
+      <div class="accordion-item">
+        <div class="accordion-header">
           <span class="accordion-title">Safety</span>
-          <span class="accordion-count">15 Applications</span>
-        </summary>
+          <div class="accordion-header-right">
+            <span class="accordion-count">16 Applications</span>
+            <span class="accordion-link">View Full Details →</span>
+          </div>
+        </div>
         <div class="accordion-content">
           <ul class="app-items">
             <li>Emergency Electronic Brake Lights Warning</li>
             <li>Forward Collision Warning</li>
-            <li>Blind Spot Warning/Lane Change Warning</li>
+            <li>Blind Spot Warning / Lane Change Warning</li>
             <li>Intersection Movement Assist</li>
             <li>Left Turn Assist Warning</li>
             <li>Red Light Violation Warning</li>
@@ -56,81 +67,83 @@ const description =
             <li>Wrong Way Entry Warning</li>
             <li>Railroad Crossing Warning</li>
             <li>Oversize Vehicle Warning</li>
+            <li>Work Zone Worker Advisories and Warnings</li>
           </ul>
-          <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/safety")} class="accordion-link">View Full Details →</a>
         </div>
-      </details>
+      </div>
+      </a>
 
-      <!-- Commercial Vehicle Accordion -->
-      <details class="accordion-item" name="v2x-accordion">
-        <summary class="accordion-header">
+      <!-- Mobility -->
+      <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/mobility")} class="accordion-header-link">
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span class="accordion-title">Mobility</span>
+          <div class="accordion-header-right">
+            <span class="accordion-count">11 Applications</span>
+            <span class="accordion-link">View Full Details →</span>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <ul class="app-items">
+            <li>Cooperative Adaptive Cruise Control (CACC) / Vehicle Platooning</li>
+            <li>Intelligent Traffic Signal System (I-SIG)</li>
+            <li>Mobile Accessible Pedestrian Signal System (PED-SIG)</li>
+            <li>Queue Warning</li>
+            <li>Signal Priority</li>
+            <li>Speed Harmonization</li>
+            <li>Traffic Signal Optimal Speed Advisory (or Control)</li>
+            <li>Incident and Road Closure Advisories and Warnings</li>
+            <li>Road Weather Advisories and Warnings	</li>
+            <li>Work Zone Advisories and Warnings</li>
+            <li>Road/Lane-Use Restriction Advisories and Warnings</li>
+          </ul>
+        </div>
+      </div>
+      </a>
+
+      <!-- Commercial Vehicle -->
+      <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/commercial-vehicle")} class="accordion-header-link">
+      <div class="accordion-item">
+        <div class="accordion-header">
           <span class="accordion-title">Commercial Vehicle</span>
-          <span class="accordion-count">2 Applications</span>
-        </summary>
+          <div class="accordion-header-right">
+            <span class="accordion-count">2 Applications</span>
+            <span class="accordion-link">View Full Details →</span>
+          </div>
+        </div>
         <div class="accordion-content">
           <ul class="app-items">
             <li>Commercial Vehicle Wireless Inspection</li>
             <li>Truck Parking and Other Information</li>
           </ul>
-          <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/commercial-vehicle")} class="accordion-link">View Full Details →</a>
         </div>
-      </details>
+      </div>
+      </a>
 
-      <!-- Mobility & Environment Accordion -->
-      <details class="accordion-item" name="v2x-accordion">
-        <summary class="accordion-header">
-          <span class="accordion-title">Mobility & Environment</span>
-          <span class="accordion-count">7 Applications</span>
-        </summary>
-        <div class="accordion-content">
-          <ul class="app-items">
-            <li>Traffic Signal Optimal Speed Advisory (or Control)</li>
-            <li>Intelligent Traffic Signal Systems (I-SIG)</li>
-            <li>Signal Priority</li>
-            <li>Mobile Accessible Pedestrian Signal System</li>
-            <li>Speed Harmonization</li>
-            <li>Queue Warning</li>
-            <li>Cooperative Adaptive Cruise Control / Vehicle Platooning</li>
-          </ul>
-          <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/mobility-environment")} class="accordion-link">View Full Details →</a>
-        </div>
-      </details>
-
-      <!-- Traffic Advisories & Warnings Accordion -->
-      <details class="accordion-item" name="v2x-accordion">
-        <summary class="accordion-header">
-          <span class="accordion-title">Traffic Advisories & Warnings</span>
-          <span class="accordion-count">4 Applications</span>
-        </summary>
-        <div class="accordion-content">
-          <ul class="app-items">
-            <li>Incident and Road Closure Advisories and Warnings</li>
-            <li>Road Weather Advisories and Warnings</li>
-            <li>Work Zone Advisories and Warnings</li>
-            <li>Work Zone Worker Advisories and Warnings</li>
-          </ul>
-          <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/traffic-warnings")} class="accordion-link">View Full Details →</a>
-        </div>
-      </details>
-
-      <!-- Data Collection Accordion -->
-      <details class="accordion-item" name="v2x-accordion">
-        <summary class="accordion-header">
+      <!-- Data Collection -->
+      <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/data-collection")} class="accordion-header-link">
+      <div class="accordion-item">
+        <div class="accordion-header">
           <span class="accordion-title">Data Collection</span>
-          <span class="accordion-count">3 Applications</span>
-        </summary>
+          <div class="accordion-header-right">
+            <span class="accordion-count">3 Applications</span>
+            <span class="accordion-link">View Full Details →</span>
+          </div>
+        </div>
         <div class="accordion-content">
           <ul class="app-items">
             <li>Road Weather Data Collection</li>
             <li>Probe-enabled Traffic Monitoring</li>
             <li>Probe-based Pavement Maintenance</li>
           </ul>
-          <a href={base_url("/research-areas/V2X-Deployment/overview/v2x-applications/data-collection")} class="accordion-link">View Full Details →</a>
         </div>
-      </details>
+      </div>
+      </a>
     </div>
   </main>
 </PageLayout>
+
+
 
 <style>
   .accordion-container {
@@ -143,12 +156,7 @@ const description =
     border: 1px solid #dee2e6;
     border-radius: 1rem;
     background: #fff;
-    overflow: hidden;
-    max-height: 100px;
-    transition: all 1s ease;
-  }
-
-  .accordion-item[open] {
+    overflow: visible;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
@@ -157,46 +165,26 @@ const description =
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 1.5rem;
-    background: #f0f8ff;
-    cursor: pointer;
-    user-select: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    border: none;
-    width: 100%;
-    text-align: left;
-    position: relative;
-    padding-right: 3rem;
-  }
-
-  .accordion-header::after {
-    content: "+";
-    position: absolute;
-    right: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #091f60;
-    transition: transform 0.3s ease;
-  }
-
-  .accordion-item[open] .accordion-header::after {
-    transform: rotate(45deg);
-    color: white;
-  }
-
-
-  .accordion-header:hover {
-    background: #ffffff;
-  }
-
-  .accordion-item[open] .accordion-header {
     background: #091f60;
     color: white;
+    font-weight: 600;
+    padding-right: 1.5rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .accordion-header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .accordion-header:hover {
+    background: #091f60;
   }
 
   .accordion-title {
     font-size: 1.25rem;
-    color: inherit;
+    color: white;
     margin: 0;
   }
 
@@ -212,17 +200,10 @@ const description =
     margin-left: 1rem;
   }
 
-  .accordion-item[open]  {
-    max-height: 100rem;
-    
-  }
-
   .accordion-content {
     border-top: 1px solid #dee2e6;
-    overflow: hidden;
-    padding: 1.5rem;   
-    grid-template-rows: 0fr;
-    transition: all .5s ease;
+    overflow: visible;
+    padding: 1.5rem;
   }
 
   
@@ -232,7 +213,7 @@ const description =
   .app-items {
     list-style-type: none;
     padding: 0;
-    margin: 0 0 1.5rem 0;
+    margin: 0;
     column-count: 3;
     column-gap: 2rem;
   }
@@ -270,11 +251,24 @@ const description =
     border-bottom: none;
   }
 
+  .accordion-header-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .accordion-header-link:hover .accordion-header {
+    background: #0a2575;
+  }
+
   .accordion-link {
     display: inline-block;
     padding: 0.75rem 1rem;
-    background: #091f60;
-    color: white;
+    background: white;
+    color: #091f60;
     text-decoration: none;
     border-radius: 6px;
     font-weight: 600;
@@ -283,8 +277,14 @@ const description =
   }
 
   .accordion-link:hover {
-    background: #091d59;
+    background: #f0f0f0;
     text-decoration: none;
+    transform: translateX(4px);
+    color: #091f60;
+  }
+
+  .accordion-header:hover .accordion-link {
+    background: #f0f0f0;
     transform: translateX(4px);
   }
 
