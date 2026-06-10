@@ -1,7 +1,9 @@
 ---
-import banner from "@/src/assets/images/banners/V2X_Banner.png";
-import PageLayout from "@/src/layouts/PageLayout.astro";
 import { Image } from "astro:assets";
+import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
+import PageLayout from "@/src/layouts/PageLayout.astro";
 import approachIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_Approach.png";
 import spreadsheetsIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_Spreadsheets.png";
 import characterizationIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_Characterization.png";
@@ -10,6 +12,7 @@ import methodologiesIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_Webs
 import observationsIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_Observations.png";
 import ongoingTestIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_OngoingTest.png";
 import dataSetsIcon from "@/src/assets/images/v2x/testing-icons/ITSV2X_WebsiteIons_DataSets.png";
+import base_url from "@/src/lib/base_url";
 
 const keywords = [
   "LTE-V2X testing",
@@ -30,7 +33,12 @@ const description =
 ---
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+   <Fragment slot="banner">
+    Vehicle-to-Everything (V2X)
+  </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500}  />
+  </Fragment>
       <main>
         <h2 class="sideways blue">LTE-V2X Analysis</h2>
         
@@ -74,7 +82,11 @@ const description =
             <p>
               A field test scenario spreadsheet was used to structure and organize the various field test runs performed at the large-scale field test site.
             </p>
-            
+            <ul>
+                      <li>
+                      <a href={base_url("/assets/documents/v2x/File1_USDOT_LTE_V2X_TESTING_TestParameters.xlsx")}>USDOT LTE V2X Test Parameters</a> </li>
+                      
+                    </ul>
           </div>
         </div>
 
@@ -90,6 +102,12 @@ const description =
             <p>
               The laboratory testing performed on the LTE-V2X devices included: device characterization, GPS drift assessment, continuity of communications with loss of GPS, and device interoperability testing.
             </p>
+            <ul>
+                      <li>
+                      <a href={base_url("/assets/documents/v2x/File2_State_FedUsers_InputTool_CurrentList.xlsx_Shortcut.pdf")} target="_blank" rel="noopener noreferrer">USDOT Laboratory Device Characterization</a></li>
+                      
+                      
+                    </ul>
             
           </div>
         </div>
@@ -107,7 +125,16 @@ const description =
               <li>Crash-imminent scenarios where there are widely differing vehicle speeds with the vehicles involved in the potential conflict situation—with and without line-of-sight; with and without the presence of unlicensed Wi-Fi.</li>
               <li>Crash-imminent scenarios where the density of vehicles causes congested conditions in the wireless communications—with and without line-of-sight; with and without the presence of unlicensed Wi-Fi.</li>
             </ol>
-            
+            <p>The data collected from these tests is provided below:</p>
+            <ul>
+                        <li>
+                        <a href={base_url("/assets/documents/v2x/Scenario1_Moving_Vehicle_Data.zip")}>Scenario 1 Moving Vehicle Data</a> </li>
+                        <li>
+                        <a href={base_url("/assets/documents/v2x/Scenario2_Moving_Vehicle_Data.zip")}>Scenario 2 Moving Vehicle Data</a> </li>
+                        <li>
+                        <a href={base_url("/assets/documents/v2x/Scenario3_Moving_Vehicle_Data.zip")}>Scenario 3 Moving Vehicle Data</a></li>
+                        <li><a href={base_url("/assets/documents/v2x/Scenario4_Moving_Vehicle_Data.zip")}>Scenario 4 Moving Vehicle Data</a></li>
+                      </ul>
           </div>
         </div>
 
@@ -120,7 +147,15 @@ const description =
             <p>
               Initial modeling and simulation work helped the test team determine if any adjustments were necessary to the planned field test congestion scenario set-ups. The results from these efforts helped to provide the best understanding of communications performance in the field test environment before going out into the field. In addition, the modeling and simulation identified the necessity of allowing the congestion cloud to settle into its ongoing SPS performance before starting field test runs.
             </p>
-            
+            <p>
+                  A summary of these activities is provided below:
+                </p>
+                <ul>
+                    <li>
+                      <a href={base_url("/assets/documents/v2x/File8_USDOT_LTE_V2X_TESTING_SimulationModel.pdf")} target="_blank" rel="noopener noreferrer">U.S. DOT LTE-V2X Simulation Modeling</a>
+                    </li>
+                    
+                </ul>
           </div>
         </div>
 
@@ -131,7 +166,7 @@ const description =
           <div class="col">
             <h3>LTE-V2X Test Observations <em>(Coming in the Future)</em></h3>
             <p>
-              The majority of the LTE-V2X testing has been completed and a summary of observations on device performance, interference, and performance within the 30 MHz is provided below:
+              The majority of the LTE-V2X testing has been completed and a summary of observations on device performance, interference, and performance within the 30 MHz.
             </p>
           </div>
         </div>
@@ -150,8 +185,13 @@ const description =
             <Image src={dataSetsIcon} alt="Data Sets" style="width: 70px; height: auto;c" />
           </div>
           <div class="col">
-            <h3>Data Sets <em>(Coming in the Future)</em></h3>
-            
+            <h3>Data Sets</h3>
+            <ul>
+                  
+                  <li><a href={base_url("/assets/documents/v2x/LTE_V2X_TestingTestDataPrimer.pdf")} target="_blank" rel="noopener noreferrer">Data Primer </a></li>
+                  <li><a href="https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fs3.console.aws.amazon.com%2Fs3%2Fbuckets%2Fspectrum.public.data.repository%3Fregion%3Dus-east-1%26state%3DhashArgs%2523%26tab%3Dobjects%26isauthcode%3Dtrue&amp;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fs3&amp;forceMobileApp=0&amp;code_challenge=gM_egmhhhZFaAJoEG7VTTwmX94aF3Unu7UqjFDJq_QY&amp;code_challenge_method=SHA-256" target="_blank" rel="noopener noreferrer">Raw Data</a></li>
+                  
+                </ul>
           </div>
         </div>
       </main>

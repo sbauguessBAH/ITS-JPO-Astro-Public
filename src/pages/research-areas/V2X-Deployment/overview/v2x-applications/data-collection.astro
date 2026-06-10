@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import banner from "@/src/assets/images/banners/V2X_Banner.png";
+import v2xLogo from "@/src/assets/images/v2x/V2X-Accelerator-Logo2-WHITE.png";
+
 import PageLayout from "@/src/layouts/PageLayout.astro";
 
 const keywords = [
@@ -21,9 +24,14 @@ const description =
 ---
 
 <PageLayout title="V2X Deployment" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">Vehicle-to-Everything (V2X)</Fragment>
+   <Fragment slot="banner">
+    Vehicle-to-Everything (V2X)
+  </Fragment>
+  <Fragment slot="image">
+    <Image src={v2xLogo} alt="V2X Accelerator Logo" width={500}  />
+  </Fragment>
       <main>
-        <h2 class="sideways blue">Data Collection</h2>
+        <h2 class="sideways blue">Data Collection Use Cases</h2>
 
         <div class="mt-3">
           <table class="table table-bordered table-striped align-middle">
@@ -36,8 +44,8 @@ const description =
             </thead>
             <tbody>
               <tr>
-                <td class="table-info"><strong>Road Weather Data Collection</strong></td>
-                <td>This use case allows vehicles to collect road weather data and send it back to the Center using vehicle-to-infrastructure communications.</td>
+                <td class="table-info"><strong>Probe-based Pavement Maintenance</strong></td>
+                <td>This use case allows vehicles to collect pavement condition data (e.g., potholes or other pavement conditions) and send it back to the Center using vehicle-to-infrastructure communications.</td>
                 <td>V2I Use Case</td>
               </tr>
               <tr>
@@ -46,8 +54,8 @@ const description =
                 <td>V2I Use Case</td>
               </tr>
               <tr>
-                <td class="table-info"><strong>Probe-based Pavement Maintenance</strong></td>
-                <td>This use case allows vehicles to collect pavement condition data (e.g., potholes or other pavement conditions) and send it back to the Center using vehicle-to-infrastructure communications.</td>
+                <td class="table-info"><strong>Road Weather Data Collection</strong></td>
+                <td>This use case allows vehicles to collect road weather data and send it back to the Center using vehicle-to-infrastructure communications.</td>
                 <td>V2I Use Case</td>
               </tr>
             </tbody>
@@ -86,4 +94,10 @@ const description =
   .application-list li:last-child {
     border-bottom: none;
   }
+
+  table.table tbody tr > td:nth-child(2), 
+  table.table tbody tr > td:nth-child(1)  {
+    text-align: left;
+  }
+
 </style>
