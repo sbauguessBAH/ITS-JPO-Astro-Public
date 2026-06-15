@@ -1,14 +1,66 @@
 <script setup>
-import { ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
-defineProps({
+const props = defineProps({
   categories: {
+    type: Array,
+    required: true,
+  },
+  playbooks: {
     type: Array,
     required: true,
   },
 });
 
 const selectedCategory = ref("all");
+const selectedLocations = ref([]);
+const selectedFacilities = ref([]);
+const selectedSafeties = ref([]);
+
+const normalizeValue = (value) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-");
+
+const matchesGroup = (selectedValues, itemValues) => {
+  if (!selectedValues || selectedValues.length === 0) {
+    return true;
+  }
+
+  const normalizedItemValues = itemValues.map(normalizeValue);
+  return selectedValues.some((value) => normalizedItemValues.includes(value));
+};
+
+const matchingBySecondary = computed(() =>
+  props.playbooks.filter((item) => {
+    const locationMatch = matchesGroup(selectedLocations.value, item.location);
+    const facilityMatch = matchesGroup(selectedFacilities.value, item.facility);
+    const safetyMatch = matchesGroup(selectedSafeties.value, item.safety);
+
+    return locationMatch && facilityMatch && safetyMatch;
+  }),
+);
+
+const categoryCountMap = computed(() => {
+  const counts = {};
+
+  matchingBySecondary.value.forEach((item) => {
+    const key = normalizeValue(item.category);
+    counts[key] = (counts[key] || 0) + 1;
+  });
+
+  return counts;
+});
+
+const categoriesWithCounts = computed(() =>
+  props.categories.map((category) => ({
+    ...category,
+    count: categoryCountMap.value[category.value] ?? 0,
+  })),
+);
+
+const allCount = computed(() => matchingBySecondary.value.length);
 
 const createDetail = (source = "update") => ({
   category: selectedCategory.value,
@@ -30,12 +82,31 @@ const setCategory = (categoryValue) => {
 
 const clearAll = () => {
   selectedCategory.value = "all";
+  selectedLocations.value = [];
+  selectedFacilities.value = [];
+  selectedSafeties.value = [];
+
   window.dispatchEvent(
     new CustomEvent("safety-playbook-filter-change", {
       detail: createDetail("clear"),
     }),
   );
 };
+
+const onSecondaryFilterChange = (event) => {
+  const detail = event?.detail ?? {};
+  selectedLocations.value = detail.locations ?? [];
+  selectedFacilities.value = detail.facilities ?? [];
+  selectedSafeties.value = detail.safeties ?? [];
+};
+
+onMounted(() => {
+  window.addEventListener("safety-playbook-secondary-filter-change", onSecondaryFilterChange);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("safety-playbook-secondary-filter-change", onSecondaryFilterChange);
+});
 </script>
 
 <template>
@@ -52,9 +123,10 @@ const clearAll = () => {
         @click="setCategory('all')"
       >
         <span class="panel-item-text">All Categories</span>
+        <span class="panel-count">{{ allCount }}</span>
       </button>
       <button
-        v-for="category in categories"
+        v-for="category in categoriesWithCounts"
         :key="category.value"
         type="button"
         class="panel-item"
