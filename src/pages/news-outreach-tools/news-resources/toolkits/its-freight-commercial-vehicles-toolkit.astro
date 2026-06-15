@@ -1,29 +1,19 @@
 ---
 import BaseLayout from "@/src/layouts/BaseLayout.astro";
+import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
+import { getToolkitPageBySlug } from "@/src/lib/toolkits";
+
+const page = getToolkitPageBySlug("its-freight-commercial-vehicles-toolkit");
+
+if (!page) {
+  throw new Error("Toolkit data not found for its-freight-commercial-vehicles-toolkit.");
+}
 ---
 
 <BaseLayout
-  title="ITS for Freight & Commercial Vehicles Toolkit"
-  description="Resources for freight industry stakeholders, port operators, and fleet managers on ITS technologies for commercial transportation."
-  keywords={"Freight"}
+  title={page.title}
+  description={page.description}
+  keywords={page.keywords}
 >
-  <main class="container my-5">
-    <h1 class="h2 mb-4 sideways blue">NEWSROOM</h1>
-    <h2 class="sideways blue">ITS for Freight & Commercial Vehicles Toolkit</h2>
-
-    <section>
-      <h3>Fact Sheets</h3>
-      <div></div>
-    </section>
-
-    <section>
-      <h3>Infographics</h3>
-      <div></div>
-    </section>
-
-    <section>
-      <h3>Talking Points</h3>
-      <div></div>
-    </section>
-  </main>
+  <ToolkitPage page={page} />
 </BaseLayout>

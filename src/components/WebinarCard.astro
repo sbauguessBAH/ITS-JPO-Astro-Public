@@ -53,6 +53,8 @@ const monthIndex = monthNames.findIndex((month) => month.toLowerCase() === month
 const displayMonth = monthIndex >= 0 ? monthNames[monthIndex].toUpperCase() : monthPart.slice(0, 3).toUpperCase();
 const displayDay = dayPart.replace(/\D/g, "");
 const displayYear = /^\d{4}$/.test(yearPart) ? yearPart : "";
+const hasRecordingLink = Boolean(recordingLink.trim());
+const hasSlidesLink = Boolean(slidesLink.trim());
 
 
 ---
@@ -69,10 +71,14 @@ const displayYear = /^\d{4}$/.test(yearPart) ? yearPart : "";
     {details && <p class="card-description">{details}</p>}
   </div>
 
-  <div class="webinar-actions">
-    <a href={recordingLink} class="btn btn-warning webinar-btn" target="_blank" rel="noopener noreferrer">Watch Recording</a>
-    <a href={slidesLink} class="btn btn-warning webinar-btn" target="_blank" rel="noopener noreferrer">View Slides</a>
-  </div>
+  {
+    (hasRecordingLink || hasSlidesLink) && (
+      <div class="webinar-actions">
+        {hasRecordingLink && <a href={recordingLink} class="btn btn-warning webinar-btn" target="_blank" rel="noopener noreferrer">Watch Recording</a>}
+        {hasSlidesLink && <a href={slidesLink} class="btn btn-warning webinar-btn" target="_blank" rel="noopener noreferrer">View Slides</a>}
+      </div>
+    )
+  }
 </div>
 
 <style>

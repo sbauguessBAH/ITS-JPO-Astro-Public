@@ -1,0 +1,249 @@
+---
+import WebinarCard from "@/src/components/WebinarCard.astro";
+import type { ToolkitMediaItem, ToolkitPageData, ToolkitSection } from "@/src/lib/toolkits";
+import "@/src/styles/toolkits.css";
+import ContactCard from "./ContactCard.astro";
+
+interface Props {
+  eyebrow?: string;
+  page: ToolkitPageData;
+}
+
+const {
+  eyebrow = "NEWSROOM",
+  page,
+} = Astro.props;
+
+const getThumbnailGridClass = (section: ToolkitSection): string => {
+  if (section.kind !== "thumbnails") {
+    return "";
+  }
+
+  switch (section.variant) {
+    case "graphic":
+      return "kit-graphic-grid";
+    case "video":
+      return "kit-video-grid";
+    default:
+      return "kit-document-grid";
+  }
+};
+
+const getThumbnailPlaceholderLabel = (section: ToolkitSection): string => {
+  if (section.kind !== "thumbnails") {
+    return "Preview";
+  }
+
+  switch (section.variant) {
+    case "graphic":
+      return "Graphic Preview";
+    case "video":
+      return "Video Thumbnail";
+    default:
+      return "Document Preview";
+  }
+};
+
+const getThumbnailAction = (section: ToolkitSection, item: ToolkitMediaItem) => {
+  if (section.kind !== "thumbnails") {
+    return undefined;
+  }
+
+  switch (section.variant) {
+    case "graphic":
+      return {
+        href: item.downloadHref ?? item.href,
+        label: item.actionLabel ?? "Click to Download",
+        tone: "link",
+      };
+    case "video":
+      return {
+        href: item.href ?? item.downloadHref,
+        label: item.actionLabel ?? "Watch Video",
+        tone: "link",
+      };
+    default:
+      return {
+        href: item.downloadHref ?? item.href,
+        label: item.actionLabel ?? "Download Document",
+        tone: "button",
+      };
+  }
+};
+
+const getPrimaryThumbnailHref = (item: ToolkitMediaItem): string | undefined => {
+  return item.href ?? item.downloadHref;
+};
+
+const getImageSrc = (value?: string | import("astro").ImageMetadata): string | undefined => {
+  if (!value) {
+    return undefined;
+  }
+
+  return typeof value === "string" ? value : value.src;
+};
+---
+
+<main class="container my-5 toolkit-page">
+  <div class="toolkit-header">
+    <h1 class="h2 mb-4 sideways blue">{eyebrow}</h1>
+    <h2 class="sideways blue kit-page-title">{page.title}</h2>
+    {page.intro && <p class="kit-copy kit-page-intro">{page.intro}</p>}
+  </div>
+
+  {
+    page.sections.map((section) => (
+      <section class:list={["kit-section", section.className]}>
+        <h3>{section.title}</h3>
+        {section.description && <p class="kit-copy">{section.description}</p>}
+
+        {
+          section.kind === "contacts" &&
+            (section.items.length > 0 ? (
+              <div class="kit-grid kit-contact-grid">
+                {
+                  section.items.map((contact) => (
+                    <ContactCard
+                      name={contact.name}
+                      profile_image={contact.profileImage}
+                      title={contact.title ?? ""}
+                      office={contact.office ?? ""}
+                      department={contact.department ?? ""}
+                      contact={contact.contact ?? ""}
+                    />
+                  ))
+                }
+              </div>
+            ) : (
+              <div class="kit-empty-state">{section.emptyLabel}</div>
+            ))
+        }
+
+        {
+          section.kind === "links" &&
+            (section.items.length > 0 ? (
+              <ul class="kit-link-list">
+                {
+                  section.items.map((item) => (
+                    <li class="kit-link-item">
+                      {item.href ? <a href={item.href} class="kit-document-link">{item.title}</a> : <span class="kit-link-text">{item.title}</span>}
+                    </li>
+                  ))
+                }
+              </ul>
+            ) : (
+              <div class="kit-empty-state">{section.emptyLabel}</div>
+            ))
+        }
+
+        {
+          section.kind === "thumbnails" &&
+            (section.items.length > 0 ? (
+              <div class:list={["kit-grid", "kit-thumb-grid", getThumbnailGridClass(section)]}>
+                {
+                  section.items.map((item) => {
+                    const primaryHref = getPrimaryThumbnailHref(item);
+                    const action = getThumbnailAction(section, item);
+                    const imageSrc = getImageSrc(item.image);
+
+                    return (
+                      <article class:list={["kit-thumb-card", `kit-thumb-card--${section.variant}`]}>
+                        {
+                          primaryHref ? (
+                            <a href={primaryHref} class="kit-thumb-media-link">
+                              <div class="kit-thumb-media">
+                                {imageSrc ? <img src={imageSrc} alt={item.title} loading="lazy" /> : <div class="kit-thumb-placeholder">{getThumbnailPlaceholderLabel(section)}</div>}
+                              </div>
+                            </a>
+                          ) : (
+                            <div class="kit-thumb-media">
+                              {imageSrc ? <img src={imageSrc} alt={item.title} loading="lazy" /> : <div class="kit-thumb-placeholder">{getThumbnailPlaceholderLabel(section)}</div>}
+                            </div>
+                          )
+                        }
+
+                        <div class="kit-thumb-body">
+                          {
+                            primaryHref ? (
+                              <a href={primaryHref} class="kit-thumb-title-link">
+                                <h4 class="kit-thumb-title">{item.title}</h4>
+                              </a>
+                            ) : (
+                              <h4 class="kit-thumb-title">{item.title}</h4>
+                            )
+                          }
+
+                          {
+                            action?.href && (
+                              <a class:list={["kit-thumb-secondary", action.tone === "button" ? "is-button" : "is-link"]} href={action.href}>
+                                {action.label}
+                              </a>
+                            )
+                          }
+                        </div>
+                      </article>
+                    );
+                  })
+                }
+              </div>
+            ) : (
+              <div class="kit-empty-state">{section.emptyLabel}</div>
+            ))
+        }
+
+        {
+          section.kind === "webinars" &&
+            (section.items.length > 0 ? (
+              <div class="kit-grid kit-webinar-grid">
+                {
+                  section.items.map((item) => (
+                    <WebinarCard
+                      date={item.date}
+                      subtitle={item.subtitle ?? "ITS JPO"}
+                      title={item.title}
+                      description={item.description ?? ""}
+                      duration={item.duration ?? ""}
+                      recordingLink={item.recordingLink ?? ""}
+                      slidesLink={item.slidesLink ?? ""}
+                    />
+                  ))
+                }
+              </div>
+            ) : (
+              <div class="kit-empty-state">{section.emptyLabel}</div>
+            ))
+        }
+      </section>
+    ))
+  }
+
+  {
+    page.cta && (
+      <section class="kit-belt-cta">
+        <div class="kit-belt-copy">
+          <h3>{page.cta.title}</h3>
+          {page.cta.description && <p class="kit-copy">{page.cta.description}</p>}
+          {
+            page.cta.href ? (
+              <a href={page.cta.href} class="kit-belt-button">
+                {page.cta.buttonText ?? "Visit Project Site"}
+              </a>
+            ) : (
+              <span class="kit-belt-button is-disabled">{page.cta.buttonText ?? "Project Link Coming Soon"}</span>
+            )
+          }
+        </div>
+
+        <div class="kit-belt-preview">
+          {
+            getImageSrc(page.cta.previewImage) ? (
+              <img src={getImageSrc(page.cta.previewImage)} alt={page.cta.previewAlt ?? `${page.cta.title} preview`} loading="lazy" />
+            ) : (
+              <div class="kit-belt-preview-placeholder">Project Site Preview</div>
+            )
+          }
+        </div>
+      </section>
+    )
+  }
+</main>

@@ -1,39 +1,19 @@
 ---
 import BaseLayout from "@/src/layouts/BaseLayout.astro";
+import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
+import { getToolkitPageBySlug } from "@/src/lib/toolkits";
+
+const page = getToolkitPageBySlug("v2x-deployment-toolkit");
+
+if (!page) {
+  throw new Error("Toolkit data not found for v2x-deployment-toolkit.");
+}
 ---
 
 <BaseLayout
-  title="Vehicle-to-Everything (V2X) Deployment Toolkit"
-  description="Resources to help communities and agencies communicate the benefits of V2X technology to local stakeholders and the public."
-  keywords={"V2X"}
+  title={page.title}
+  description={page.description}
+  keywords={page.keywords}
 >
-  <main class="container my-5">
-    <h1 class="h2 mb-4 sideways blue">NEWSROOM</h1>
-    <h2 class="sideways blue">Vehicle-to-Everything (V2X) Deployment Toolkit</h2>
-
-    <section>
-      <h3>Fact Sheets</h3>
-      <div></div>
-    </section>
-
-    <section>
-      <h3>Talking Points</h3>
-      <div></div>
-    </section>
-
-    <section>
-      <h3>Social Posts</h3>
-      <div></div>
-    </section>
-
-    <section>
-      <h3>Infographics</h3>
-      <div></div>
-    </section>
-
-    <section>
-      <h3>Slides</h3>
-      <div></div>
-    </section>
-  </main>
+  <ToolkitPage page={page} />
 </BaseLayout>

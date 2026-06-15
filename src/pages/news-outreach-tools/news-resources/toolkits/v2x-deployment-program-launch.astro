@@ -3,10 +3,10 @@ import BaseLayout from "@/src/layouts/BaseLayout.astro";
 import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
 import { getToolkitPageBySlug } from "@/src/lib/toolkits";
 
-const page = getToolkitPageBySlug("ai-in-transportation-toolkit");
+const page = getToolkitPageBySlug("v2x-deployment-program-launch");
 
 if (!page) {
-  throw new Error("Toolkit data not found for ai-in-transportation-toolkit.");
+  throw new Error("Toolkit data not found for v2x-deployment-program-launch.");
 }
 ---
 

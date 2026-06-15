@@ -1,10 +1,11 @@
 ---
+import type { ImageMetadata } from "astro";
 
 interface Props {
 name: string;
 title: string;
 contact: string;
-profile_image: string;
+profile_image?: string | ImageMetadata;
 department: string;
 office: string;
 class?: string;
@@ -20,11 +21,25 @@ const {
     class: className = "",
 } = Astro.props;
 
+const profileImageSrc = typeof profile_image === "string" ? profile_image : profile_image?.src;
+const initials = name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("");
+
 
 ---
 
 <div class:list={`contact-card ${className}`}>
-    <img class="mr-3" src={profile_image} alt={`${name}'s profile picture`} />
+        {
+            profileImageSrc ? (
+                <img class="mr-3" src={profileImageSrc} alt={`${name}'s profile picture`} />
+            ) : (
+                <div class="contact-card-avatar" aria-hidden="true">{initials || "MC"}</div>
+            )
+        }
     <div>
         <h2>{name}</h2>
         <p>{title}</p>

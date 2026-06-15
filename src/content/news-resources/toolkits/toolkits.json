@@ -88,39 +88,55 @@
     "id": 32,
     "title": "ITS JPO 30th Anniversary",
     "subtitle": "Milestone Kit",
+    "description":"Milestone resources and shareable media for the ITS JPO 30th Anniversary.",
     "date": "October 2025",
     "content_types":["news release","fact sheet","infographic", "video b-roll", "sound bites"],
-    "topics":["Intersection Safety"],
-    "url":"/news-outreach-tools/news-resources/toolkits/intersection-safety-challenge-outreach-toolkit"
+    "topics":["ITS JPO"],
+    "url":"/news-outreach-tools/news-resources/toolkits/its-jpo-30th-anniversary-kit"
 
 },
 {
     "id": 33,
     "title": "Transportation Research Board (TRB) Annual Meeting 2026",
     "subtitle": "Media Kit",
+    "description":"Conference-ready resources and media contacts for ITS JPO participation at the Transportation Research Board Annual Meeting 2026.",
     "date": "2026",
     "content_types":["presentation","fact sheet"],
     "topics":["Intersection Safety"],
     "url":"/news-outreach-tools/news-resources/toolkits/trb-2026-kit",
+    "resource_section_title": "ITS JPO Resources Distributed at TRB 2026",
+    "document_links": [
+        {
+            "title": "Fact Sheet: Connected Vehicle Technology",
+            "href": "https://www.its.dot.gov/factsheets/pdf/connected_vehicle.pdf"
+        },
+        {
+            "title": "Infographic: Benefits of V2X Technology",
+            "href": "https://www.its.dot.gov/infographics/pdf/v2x_benefits.pdf"
+        }
+    ],
     "contacts": [
         {
             "name": "Norah Ocel",
             "title": "Program Manager", 
             "department": "U.S. Department Of Transportation",
             "office": "Intelligent Transportations Systems Joint Program Office",
-            "contact": "Norah.Ocel@dot.gov"},
+            "contact": "Norah.Ocel@dot.gov",
+            "profile_image_key": "norah_o"},
         {
             "name": "Brian Cronin",
             "title": "Director", 
             "department": "U.S. Department Of Transportation",
             "office": "Intelligent Transportations Systems Joint Program Office",
-            "contact": "Brian.Cronin@dot.gov"}]
+            "contact": "Brian.Cronin@dot.gov",
+            "profile_image_key": "brian_c"}]
 
 },
 {
     "id": 34,
     "title": "ITS JPO at the 2025 ITS World Congress",
     "subtitle": "Media Kit",
+    "description":"Speaker clips, downloadable graphics, and media contact information for ITS JPO at the 2025 ITS World Congress.",
     "date": "2025",
     "content_types":["video","fact sheet","sound bites", "video b-roll", "photos"],
     "topics":["ITS JPO"],
@@ -131,13 +147,15 @@
             "title": "Program Manager", 
             "department": "U.S. Department Of Transportation",
             "office": "Intelligent Transportations Systems Joint Program Office",
-            "contact": "Norah.Ocel@dot.gov"},
+            "contact": "Norah.Ocel@dot.gov",
+            "profile_image_key": "norah_o"},
         {
             "name": "Brian Cronin",
             "title": "Director", 
             "department": "U.S. Department Of Transportation",
             "office": "Intelligent Transportations Systems Joint Program Office",
-            "contact": "Brian.Cronin@dot.gov"}],
+            "contact": "Brian.Cronin@dot.gov",
+            "profile_image_key": "brian_c"}],
             
     "resource-links": [
                     {"link-text": "ITS JPO Overview Postcard", "href": ""},
@@ -201,6 +219,27 @@
                     "img_src": ""}]
             
 
+},
+{
+    "id": 35,
+    "title": "Utah Department of Transportation (UDOT) Connecting the West Program Media Kit",
+    "subtitle": "Media Kit",
+    "description":"The UDOT Connecting the West Program is part of the Vehicle-to-Everything (V2X) Accelerator Program funded by the Intelligent Transportation Systems Joint Program Office (ITS JPO).",
+    "date": "2026",
+    "content_types":["print materials", "video", "photos", "webinar materials"],
+    "topics":["V2X Accelerator", "UDOT"],
+    "url":"/news-outreach-tools/news-resources/toolkits/udot-connecting-the-west-program-mediakit",
+    "print_materials": [],
+    "videos": [],
+    "image_library": [],
+    "webinar_materials": [],
+    "media_coverage": [],
+    "belt_cta": {
+        "title": "Connecting the West Program",
+        "description": "Explore the program page for deployment context, project updates, and supporting materials.",
+        "button_text": "Visit Project Site",
+        "href": ""
+    }
 }],
 "webinars": [{
     "id": 20, 

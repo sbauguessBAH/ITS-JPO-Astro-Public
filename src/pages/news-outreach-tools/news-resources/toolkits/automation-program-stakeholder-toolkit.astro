@@ -1,34 +1,19 @@
 ---
 import BaseLayout from "@/src/layouts/BaseLayout.astro";
+import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
+import { getToolkitPageBySlug } from "@/src/lib/toolkits";
+
+const page = getToolkitPageBySlug("automation-program-stakeholder-toolkit");
+
+if (!page) {
+  throw new Error("Toolkit data not found for automation-program-stakeholder-toolkit.");
+}
 ---
 
 <BaseLayout
-  title="Automation Program Stakeholder Toolkit"
-  description="Resources for stakeholders engaged in automated vehicle research, policy, and deployment conversations."
-  keywords={"Automation"}
+  title={page.title}
+  description={page.description}
+  keywords={page.keywords}
 >
-  <main class="container my-5">
-    <h1 class="h2 mb-4 sideways blue">NEWSROOM</h1>
-    <h2 class="sideways blue">Automation Program Stakeholder Toolkit</h2>
-
-    <section>
-      <h3>Fact Sheets</h3>
-      <div></div>
-    </section>
-
-    <section>
-      <h3>Slides</h3>
-      <div></div>
-    </section>
-
-    <section>
-      <h3>Talking Points</h3>
-      <div></div>
-    </section>
-
-    <section>
-      <h3>Social Posts</h3>
-      <div></div>
-    </section>
-  </main>
+  <ToolkitPage page={page} />
 </BaseLayout>

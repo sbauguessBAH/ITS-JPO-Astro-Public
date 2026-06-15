@@ -1,0 +1,19 @@
+---
+import BaseLayout from "@/src/layouts/BaseLayout.astro";
+import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
+import { getToolkitPageBySlug } from "@/src/lib/toolkits";
+
+const page = getToolkitPageBySlug("its-wc-2025-kit");
+
+if (!page) {
+	throw new Error("Toolkit data not found for its-wc-2025-kit.");
+}
+---
+
+<BaseLayout
+	title={page.title}
+	description={page.description}
+	keywords={page.keywords}
+>
+	<ToolkitPage page={page} />
+</BaseLayout>

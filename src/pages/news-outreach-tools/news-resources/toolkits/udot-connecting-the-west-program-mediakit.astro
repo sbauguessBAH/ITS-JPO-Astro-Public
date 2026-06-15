@@ -1,55 +1,19 @@
 ---
 import BaseLayout from "@/src/layouts/BaseLayout.astro";
-import "@/src/styles/toolkits.css";
+import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
+import { getToolkitPageBySlug } from "@/src/lib/toolkits";
+
+const page = getToolkitPageBySlug("udot-connecting-the-west-program-mediakit");
+
+if (!page) {
+  throw new Error("Toolkit data not found for udot-connecting-the-west-program-mediakit.");
+}
 ---
 
 <BaseLayout
-  title="Utah Department of Transportation (UDOT) Connecting the West Program Media Kit"
-  description="The UDOT Connecting the West Program is part of the Vehicle-to-Everything (V2X) Accelerator Program funded by the Intelligent Transportation Systems Joint Program Office (ITS JPO). For more information on the V2X Accelerator Program visit the V2X Accelerator information page."
-  keywords={"V2X Accelerator, UDOT, Connecting the West Program"}
+  title={page.title}
+  description={page.description}
+  keywords={page.keywords}
 >
-  <main class="container my-5 toolkit-page">
-    <div class="toolkit-header">
-      <h1 class="h2 mb-4 sideways blue">NEWSROOM</h1>
-      <h2 class="sideways blue kit-page-title">Utah Department of Transportation (UDOT) Connecting the West Program Media Kit</h2>
-    </div>
-
-    <section class="kit-section print-materials">
-      <h3>Print Materials</h3>
-      <p class="kit-copy">Use this block for fact sheets, flyers, postcards, and other leave-behind materials.</p>
-      <div class="kit-grid" data-empty-label="Add downloadable PDFs, fact sheets, or print-ready files here."></div>
-    </section>
-
-    <section class="kit-section videos">
-      <h3>Videos</h3>
-      <p class="kit-copy">Reserve this area for hosted videos, b-roll clips, or embed-ready press assets.</p>
-      <div class="kit-grid" data-empty-label="Add video links, embed cards, or b-roll downloads here."></div>
-    </section>
-
-    <section class="kit-section image-library">
-      <h3>Image Library</h3>
-      <p class="kit-copy">Photo galleries, captioned stills, and approved media selections can all live here.</p>
-      <div class="kit-grid" data-empty-label="Add image thumbnails, galleries, or photo download links here."></div>
-    </section>
-
-    <section class="kit-section webinar-materials">
-      <h3>Webinar Materials</h3>
-      <p class="kit-copy">Use for slides, follow-up summaries, or other webinar support materials.</p>
-      <div class="kit-grid" data-empty-label="Add webinar decks, recordings, or event materials here."></div>
-    </section>
-
-    <section class="kit-section media-coverage">
-      <h3>Media Coverage</h3>
-      <p class="kit-copy">Collect press stories, notable mentions, and external coverage in a single place.</p>
-      <div class="kit-grid" data-empty-label="Add coverage links, article cards, or press mentions here."></div>
-    </section>
-
-    <section class="kit-belt-cta">
-      <div>
-        <h3>Connecting the West Program</h3>
-        <p class="kit-copy">Use this callout for the main program page, a lead contact, or the primary download that should anchor the kit.</p>
-      </div>
-      <div class="kit-cta-actions" data-empty-label="Add a primary program link or download button here."></div>
-    </section>
-  </main>
+  <ToolkitPage page={page} />
 </BaseLayout>
