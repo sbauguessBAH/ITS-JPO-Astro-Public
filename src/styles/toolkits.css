@@ -1,0 +1,321 @@
+.toolkit-page {
+  --kit-brand: #005d83;
+  --kit-brand-dark: #072e55;
+  --kit-text: #17384c;
+  --kit-muted: #5d7280;
+  --kit-border: #d7e4eb;
+  --kit-surface: #f7fbfd;
+  --kit-shadow: 0 18px 40px rgba(7, 46, 85, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.toolkit-header {
+  max-width: 56rem;
+}
+
+.toolkit-header > :last-child {
+  margin-bottom: 0;
+}
+
+.kit-page-title {
+  margin-bottom: 0;
+  max-width: 44rem;
+}
+
+.kit-copy {
+  margin: 0;
+  color: var(--kit-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.kit-section {
+  --kit-accent: var(--kit-brand);
+  --kit-tint: var(--kit-surface);
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  border: 1px solid var(--kit-border);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  box-shadow: var(--kit-shadow);
+}
+
+.kit-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.35rem;
+  background: linear-gradient(90deg, var(--kit-accent) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.kit-section > h3,
+.kit-belt-cta h3 {
+  margin: 0 0 0.75rem;
+  color: var(--kit-text);
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.kit-section > :last-child,
+.kit-belt-cta > :last-child {
+  margin-bottom: 0;
+}
+
+.kit-grid,
+.kit-link-list,
+.kit-cta-actions {
+  display: grid;
+  gap: 1rem;
+}
+
+.kit-card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: stretch;
+}
+
+.kit-grid:empty,
+.kit-cta-actions:empty {
+  min-height: 5.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px dashed rgba(0, 93, 131, 0.25);
+  border-radius: 0.85rem;
+  background: var(--kit-tint);
+  place-items: center start;
+}
+
+.kit-grid:empty::before,
+.kit-cta-actions:empty::before {
+  content: attr(data-empty-label);
+  color: var(--kit-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.kit-link-list {
+  grid-template-columns: repeat(auto-fit, minmax(220px, max-content));
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.kit-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--kit-border);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--kit-text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.kit-link-button:hover,
+.kit-link-button:focus-visible {
+  color: var(--kit-accent);
+  border-color: rgba(0, 93, 131, 0.35);
+  box-shadow: 0 12px 24px rgba(7, 46, 85, 0.08);
+  transform: translateY(-1px);
+}
+
+.kit-belt-cta {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(120deg, #072e55 0%, #005d83 55%, #0b7fa9 100%);
+  box-shadow: 0 20px 44px rgba(7, 46, 85, 0.18);
+  color: #ffffff;
+}
+
+.kit-belt-cta h3 {
+  color: #ffffff;
+}
+
+.kit-belt-cta .kit-copy {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.kit-belt-cta .kit-link-button {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+}
+
+.kit-belt-cta .kit-link-button:hover,
+.kit-belt-cta .kit-link-button:focus-visible {
+  background: #ffffff;
+  color: var(--kit-brand-dark);
+  border-color: #ffffff;
+}
+
+.toolkit-page .contact-card,
+.toolkit-page .resource-card {
+  width: 100%;
+  height: 100%;
+}
+
+.toolkit-page .contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #dce7ed;
+  border-radius: 0.9rem;
+  background: #f6fafc;
+  box-shadow: 0 12px 26px rgba(7, 46, 85, 0.06);
+}
+
+.toolkit-page .contact-card img {
+  width: 96px;
+  height: 96px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.toolkit-page .contact-card h2 {
+  margin: 0 0 0.5rem;
+  color: var(--kit-text);
+  font-size: 1.15rem;
+}
+
+.toolkit-page .contact-card p {
+  margin: 0;
+  color: var(--kit-muted);
+}
+
+.toolkit-page .contact-card .card-link {
+  display: inline-flex;
+  margin-top: 0.85rem;
+  color: var(--kit-brand);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.toolkit-page .resource-card {
+  padding: 1.25rem;
+  border: 1px solid #dce7ed;
+  border-radius: 0.9rem;
+  background: #ffffff;
+  box-shadow: 0 12px 26px rgba(7, 46, 85, 0.06);
+}
+
+.toolkit-page .resource-card .card-title {
+  margin: 0 0 0.85rem;
+  color: var(--kit-text);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.toolkit-page .resource-card .d-flex {
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.toolkit-page .resource-card .card-type,
+.toolkit-page .resource-card .card-date {
+  margin: 0;
+  color: var(--kit-muted);
+}
+
+.toolkit-page .resource-card .card-link {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.toolkit-page .resource-card .card-link a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 0.95rem;
+  border: 1px solid var(--kit-border);
+  border-radius: 999px;
+  color: var(--kit-text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.toolkit-page .resource-card .card-link a:hover,
+.toolkit-page .resource-card .card-link a:focus-visible {
+  border-color: rgba(0, 93, 131, 0.35);
+  box-shadow: 0 12px 24px rgba(7, 46, 85, 0.08);
+  transform: translateY(-1px);
+}
+
+.print-materials,
+.resources {
+  --kit-accent: #005d83;
+  --kit-tint: #f2f9fc;
+}
+
+.videos,
+.video-b-roll {
+  --kit-accent: #c06d2f;
+  --kit-tint: #fff7f0;
+}
+
+.image-library,
+.photos {
+  --kit-accent: #5e7334;
+  --kit-tint: #f7fbef;
+}
+
+.webinar-materials,
+.slides,
+.presentations {
+  --kit-accent: #7f3d60;
+  --kit-tint: #fbf4f8;
+}
+
+.media-coverage,
+.social-posts,
+.sound-bites {
+  --kit-accent: #31516d;
+  --kit-tint: #f3f7fb;
+}
+
+.contacts {
+  --kit-accent: #0b6f95;
+  --kit-tint: #f3fbfe;
+}
+
+.infographics {
+  --kit-accent: #8e601e;
+  --kit-tint: #fff8ef;
+}
+
+@media (min-width: 768px) {
+  .toolkit-page {
+    gap: 1.75rem;
+  }
+
+  .kit-section,
+  .kit-belt-cta {
+    padding: 1.75rem;
+  }
+
+  .kit-belt-cta {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .kit-cta-actions {
+    justify-items: end;
+    align-content: center;
+  }
+}

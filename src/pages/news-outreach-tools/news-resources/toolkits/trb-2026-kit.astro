@@ -2,6 +2,7 @@
 import BaseLayout from "@/src/layouts/BaseLayout.astro";
 import ContactCard from "@/src/components/toolkits/ContactCard.astro";
 import ResourceCard from "@/src/components/toolkits/ResourceCard.astro";
+import "@/src/styles/toolkits.css";
 
 ---
 
@@ -10,13 +11,15 @@ import ResourceCard from "@/src/components/toolkits/ResourceCard.astro";
   description="Resources to help communities and agencies communicate the benefits of V2X technology to local stakeholders and the public."
   keywords={"TRB"}
 >
-  <main class="container my-5">
-    <h1 class="h2 mb-4 sideways blue">NEWSROOM</h1>
-    <h2 class="sideways blue">Transportation Research Board (TRB) Annual Meeting 2026</h2>
+  <main class="container my-5 toolkit-page">
+    <div class="toolkit-header">
+      <h1 class="h2 mb-4 sideways blue">NEWSROOM</h1>
+      <h2 class="sideways blue kit-page-title">Transportation Research Board (TRB) Annual Meeting 2026</h2>
+    </div>
 
-    <section>
+    <section class="kit-section contacts">
       <h3>Contacts</h3>
-      <div class="container row g-4">
+      <div class="kit-grid kit-card-grid">
         <ContactCard
           name="Jane Doe"
           profile_image="/images/jane-doe.jpg"
@@ -24,9 +27,8 @@ import ResourceCard from "@/src/components/toolkits/ResourceCard.astro";
           office="ITS JPO"
           department="Public Affairs"
           contact="test@dot.gov"
-          class="col-md-5"
         />
-          <ContactCard
+        <ContactCard
           name="Jane Doe"
           profile_image="/images/jane-doe.jpg"
           title="Public Affairs Specialist"
@@ -37,9 +39,9 @@ import ResourceCard from "@/src/components/toolkits/ResourceCard.astro";
       </div>
     </section>
 
-    <section>
+    <section class="kit-section resources">
       <h3>ITS JPO Resources Distributed at TRB 2026</h3>
-      <div>
+      <div class="kit-grid kit-card-grid">
         <ResourceCard
           title="Fact Sheet: Connected Vehicle Technology"
           type="Fact Sheet"
@@ -55,19 +57,19 @@ import ResourceCard from "@/src/components/toolkits/ResourceCard.astro";
       </div>
     </section>
 
-    <section>
+    <section class="kit-section social-posts">
       <h3>Social Posts</h3>
-      <div></div>
+      <div class="kit-grid" data-empty-label="Add approved posts, captions, or short event copy here."></div>
     </section>
 
-    <section>
+    <section class="kit-section infographics">
       <h3>Infographics</h3>
-      <div></div>
+      <div class="kit-grid" data-empty-label="Add static graphics, handouts, or downloadable one-page visuals here."></div>
     </section>
 
-    <section>
+    <section class="kit-section slides">
       <h3>Slides</h3>
-      <div></div>
+      <div class="kit-grid" data-empty-label="Add presentation decks, speaker slides, or briefing materials here."></div>
     </section>
   </main>
 </BaseLayout>

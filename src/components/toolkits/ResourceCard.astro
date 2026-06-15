@@ -20,7 +20,7 @@ const {
 
 ---
 
-<div class:list={`h-50 resource-card ${className}`}>
+<div class:list={`resource-card ${className}`}>
     <div>
         <h2 class="card-title">{title}</h2>
         <div class="d-flex">
@@ -30,36 +30,3 @@ const {
         <p class="card-link"><a href={link} target="_blank" rel="noopener noreferrer">{type}</a></p>
     </div>
 </div>
-
-<style>
-
-.resource-card {
-    border: 1px solid #DFDFDF;
-    border-radius: 8px;
-    padding: 2rem;
-
-}
-
-.card-title {
-    color: black;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.card-link {
-    background-color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    border-color: 1px solid #DFDFDF;
-    width: fit-content;
-
-    a {
-        color: black;
-        text-decoration: none;
-    }
-}
-
-.resource-card .image {
-
-}
-</style>
