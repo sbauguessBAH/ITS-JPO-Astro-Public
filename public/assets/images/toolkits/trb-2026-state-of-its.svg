@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">State of ITS reminder graphic</title>
+  <desc id="desc">A stylized session reminder graphic for State of ITS and V2X messaging.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#102a43" />
+      <stop offset="100%" stop-color="#243b53" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" rx="48" fill="url(#bg)" />
+  <rect x="90" y="90" width="1020" height="720" rx="40" fill="#ffffff" opacity="0.06" stroke="#9fb3c8" stroke-width="3" />
+  <text x="126" y="170" fill="#f2cc8f" font-family="Arial, sans-serif" font-size="24" letter-spacing="4">SESSION REMINDER</text>
+  <text x="126" y="268" fill="#ffffff" font-family="Georgia, serif" font-size="72" font-weight="700">State of ITS</text>
+  <text x="126" y="328" fill="#d9e2ec" font-family="Arial, sans-serif" font-size="30">Tie conference outreach to V2X activity, research milestones, and public resources.</text>
+  <line x1="126" y1="384" x2="1074" y2="384" stroke="#486581" stroke-width="3" />
+  <rect x="126" y="438" width="420" height="258" rx="30" fill="#f2cc8f" />
+  <text x="164" y="500" fill="#102a43" font-family="Arial, sans-serif" font-size="22" letter-spacing="3">MESSAGE ANGLE</text>
+  <text x="164" y="560" fill="#102a43" font-family="Georgia, serif" font-size="44" font-weight="700">V2X and research updates</text>
+  <text x="164" y="620" fill="#243b53" font-family="Arial, sans-serif" font-size="26">Use with event reminders, recap posts, and speaker promotion.</text>
+  <rect x="612" y="438" width="462" height="258" rx="30" fill="#ffffff" />
+  <text x="652" y="500" fill="#102a43" font-family="Arial, sans-serif" font-size="22" letter-spacing="3">BEST FOR</text>
+  <text x="652" y="560" fill="#102a43" font-family="Georgia, serif" font-size="38" font-weight="700">Session callouts</text>
+  <text x="652" y="612" fill="#243b53" font-family="Georgia, serif" font-size="38" font-weight="700">Stakeholder updates</text>
+  <text x="652" y="664" fill="#243b53" font-family="Georgia, serif" font-size="38" font-weight="700">TRB recap coverage</text>
+  <text x="126" y="772" fill="#d9e2ec" font-family="Arial, sans-serif" font-size="24">Pair with the V2X summary and presentation links in the toolkit for fuller context.</text>
+</svg>

@@ -100,9 +100,10 @@
     "title": "Transportation Research Board (TRB) Annual Meeting 2026",
     "subtitle": "Media Kit",
     "description":"Conference-ready resources and media contacts for ITS JPO participation at the Transportation Research Board Annual Meeting 2026.",
+    "intro": "Use this kit to access booth-ready materials, approved outreach copy, presentation resources, and quick links for TRB coverage.",
     "date": "2026",
-    "content_types":["presentation","fact sheet"],
-    "topics":["Intersection Safety"],
+    "content_types":["presentation","fact sheet","social posts","infographic"],
+    "topics":["TRB","ITS JPO","V2X"],
     "url":"/news-outreach-tools/news-resources/toolkits/trb-2026-kit",
     "resource_section_title": "ITS JPO Resources Distributed at TRB 2026",
     "document_links": [
@@ -115,6 +116,65 @@
             "href": "https://www.its.dot.gov/infographics/pdf/v2x_benefits.pdf"
         }
     ],
+    "social_posts": [
+        {
+            "title": "Copy: Invite attendees to visit the ITS JPO booth during exhibit hall hours",
+            "href": "https://its.dot.gov/trb2025/"
+        },
+        {
+            "title": "Copy: Share the ITS JPO TRB schedule and booth activities page",
+            "href": "https://www.its.dot.gov/trb2024/index.htm"
+        },
+        {
+            "title": "Copy: Promote State of ITS and V2X engagement opportunities at TRB",
+            "href": "https://www.its.dot.gov/research_areas/emerging_tech/htm/ITS_V2X_CommunicationSummit.htm"
+        }
+    ],
+    "shareable_graphics": [
+        {
+            "title": "TRB Booth Invitation Graphic",
+            "href": "https://its.dot.gov/trb2025/",
+            "image_src": "/assets/images/toolkits/trb-2026-booth-invitation.svg",
+            "download_href": "/assets/images/toolkits/trb-2026-booth-invitation.svg",
+            "cta_text": "Download Graphic"
+        },
+        {
+            "title": "TRB Schedule Overview Graphic",
+            "href": "https://www.its.dot.gov/trb2024/index.htm",
+            "image_src": "/assets/images/toolkits/trb-2026-schedule-overview.svg",
+            "download_href": "/assets/images/toolkits/trb-2026-schedule-overview.svg",
+            "cta_text": "Download Graphic"
+        },
+        {
+            "title": "State of ITS Reminder Graphic",
+            "href": "https://www.its.dot.gov/research_areas/emerging_tech/htm/ITS_V2X_CommunicationSummit.htm",
+            "image_src": "/assets/images/toolkits/trb-2026-state-of-its.svg",
+            "download_href": "/assets/images/toolkits/trb-2026-state-of-its.svg",
+            "cta_text": "Download Graphic"
+        }
+    ],
+    "presentations": [
+        {
+            "title": "V2X Communications Activities Presentation",
+            "href": "https://www.its.dot.gov/research_areas/emerging_tech/pdf/V2X_Communications_Activities.pdf"
+        },
+        {
+            "title": "ITS/V2X Communications Summit Summary",
+            "href": "https://www.its.dot.gov/research_areas/emerging_tech/htm/ITS_V2X_CommunicationSummit.htm"
+        },
+        {
+            "title": "ITS JPO TRB Program Page",
+            "href": "https://its.dot.gov/trb2025/"
+        }
+    ],
+    "belt_cta": {
+        "title": "ITS JPO at TRB",
+        "description": "View booth details, exhibit hall activities, and on-site program updates on the ITS JPO TRB page.",
+        "button_text": "Visit TRB Program Page",
+        "href": "https://its.dot.gov/trb2025/",
+        "preview_image": "/assets/images/toolkits/trb-2026-site-preview.svg",
+        "preview_alt": "Illustrated preview of the ITS JPO Transportation Research Board program page"
+    },
     "contacts": [
         {
             "name": "Norah Ocel",
