@@ -198,6 +198,25 @@ const its4usPublications = defineCollection({
   })
 });
 
+const safetyPlaybook = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/safety-playbook' }),
+  schema: z.object({
+    title: z.string(),
+    category: z.string(),
+    shortDescription: z.string(),
+    additionalToolsSensors: z.array(z.string()).default([]),
+    location: z.array(z.string()).default([]),
+    facility: z.array(z.string()).default([]),
+    safety: z.array(z.string()).default([]),
+    keywords: z.array(z.string()).default([]),
+    resources: z.array(z.object({
+      label: z.string(),
+      url: z.string().url(),
+    })).default([]),
+    order: z.number().int().optional(),
+  })
+});
+
 // #endregion
 // #region Export
 
@@ -212,6 +231,7 @@ export const collections = {
   // ascStandards,
   library,
   automationResources,
-  its4usPublications
+  its4usPublications,
+  safetyPlaybook
 };
 // #endregion

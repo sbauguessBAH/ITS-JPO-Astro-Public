@@ -1,0 +1,221 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection, render } from "astro:content";
+import banner from "@/src/assets/images/banners/Default_Banner.png";
+import PageLayout from "../../../layouts/PageLayout.astro";
+
+interface Props {
+  item: CollectionEntry<"safetyPlaybook">;
+}
+
+export async function getStaticPaths() {
+  const items = await getCollection("safetyPlaybook");
+
+  return items.map((item: CollectionEntry<"safetyPlaybook">) => ({
+    params: {
+      path: item.id.replace(/\.(md|mdx)$/i, ""),
+    },
+    props: {
+      item,
+    },
+  }));
+}
+
+const { item } = Astro.props as Props;
+const { Content } = await render(item);
+const data = item.data;
+
+const keywords = [
+  data.title,
+  data.category,
+  ...data.safety,
+  ...data.location,
+  ...data.facility,
+  ...data.keywords,
+];
+---
+
+<style>
+  .playbook-detail {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 992px) {
+    .playbook-detail {
+      grid-template-columns: 2fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .playbook-main {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    background: #fff;
+  }
+
+  .playbook-title {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+
+  .playbook-category {
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(var(--color-brand-dark));
+    letter-spacing: 0.02em;
+  }
+
+  .playbook-short {
+    margin: 1rem 0 1.5rem;
+    color: rgb(var(--color-gray));
+    font-size: 1.1rem;
+  }
+
+  .playbook-content :global(p:first-child) {
+    margin-top: 0;
+  }
+
+  .playbook-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .meta-card {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .meta-title {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background: rgb(var(--color-brand-light));
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .meta-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .meta-list-item {
+    background: rgb(var(--color-gray-light));
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .resource-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .resource-link {
+    display: inline-block;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+</style>
+
+<PageLayout
+  title={data.title}
+  bannerImage={banner}
+  currentBreadcrumb={data.title}
+  description={data.shortDescription}
+  keywords={keywords}
+>
+  <Fragment slot="banner">Safety Playbook</Fragment>
+
+  <main>
+    <section class="playbook-detail">
+      <article class="playbook-main">
+        <p class="playbook-category">{data.category}</p>
+        <h1 class="playbook-title">{data.title}</h1>
+        <p class="playbook-short">{data.shortDescription}</p>
+
+        <div class="playbook-content">
+          <Content />
+        </div>
+      </article>
+
+      <aside class="playbook-aside">
+        {data.additionalToolsSensors.length > 0 && (
+          <section class="meta-card">
+            <h2 class="meta-title">Additional Tools and Sensors</h2>
+            <ul class="meta-list">
+              {data.additionalToolsSensors.map((item: string) => (
+                <li class="meta-list-item">{item}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {data.location.length > 0 && (
+          <section class="meta-card">
+            <h2 class="meta-title">Location</h2>
+            <ul class="meta-list">
+              {data.location.map((item: string) => (
+                <li class="meta-list-item">{item}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {data.facility.length > 0 && (
+          <section class="meta-card">
+            <h2 class="meta-title">Facility</h2>
+            <ul class="meta-list">
+              {data.facility.map((item: string) => (
+                <li class="meta-list-item">{item}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {data.safety.length > 0 && (
+          <section class="meta-card">
+            <h2 class="meta-title">Safety</h2>
+            <ul class="meta-list">
+              {data.safety.map((item: string) => (
+                <li class="meta-list-item">{item}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {data.resources.length > 0 && (
+          <section class="meta-card">
+            <h2 class="meta-title">Additional Resources</h2>
+            <ul class="resource-list">
+              {data.resources.map((resource: { label: string; url: string }) => (
+                <li>
+                  <a class="resource-link" href={resource.url} target="_blank" rel="noopener noreferrer">
+                    {resource.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </aside>
+    </section>
+  </main>
+</PageLayout>

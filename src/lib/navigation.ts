@@ -205,6 +205,10 @@ export const navigation: NavigationItem[] = [
           },
         ],
       },
+      {
+        name: "Safety Playbook",
+        url: "/research-areas/safety-playbook",
+      },
     ],
   },
   {

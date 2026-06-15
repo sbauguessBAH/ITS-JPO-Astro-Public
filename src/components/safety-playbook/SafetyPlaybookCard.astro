@@ -1,0 +1,120 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  item: CollectionEntry<'safetyPlaybook'>;
+}
+
+const { item } = Astro.props;
+const data = item.data;
+
+const entryPath = item.id.replace(/\.(md|mdx)$/i, "");
+const slugPath = `/research-areas/safety-playbook/${entryPath}/`;
+
+const normalize = (value: string) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-');
+
+const toDataValue = (values: string[]) => values.map(normalize).join('|');
+---
+
+<a
+  class="playbook-card"
+  href={slugPath}
+  data-category={normalize(data.category)}
+  data-location={toDataValue(data.location)}
+  data-facility={toDataValue(data.facility)}
+  data-safety={toDataValue(data.safety)}
+>
+  <div class="playbook-card-body">
+    <p class="playbook-category">{data.category}</p>
+    <h3 class="playbook-title">{data.title}</h3>
+    <p class="playbook-summary">{data.shortDescription}</p>
+
+    {data.safety.length > 0 && (
+      <div class="playbook-tags" aria-label="Safety focus areas">
+        {data.safety.slice(0, 3).map((tag) => (
+          <span class="playbook-tag">{tag}</span>
+        ))}
+      </div>
+    )}
+
+    <p class="playbook-link">View full details</p>
+  </div>
+</a>
+
+<style>
+  .playbook-card {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+  }
+
+  .playbook-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  }
+
+  .playbook-card.hidden {
+    display: none;
+  }
+
+  .playbook-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    width: 100%;
+  }
+
+  .playbook-category {
+    margin: 0;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(5, 86, 129);
+  }
+
+  .playbook-title {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+
+  .playbook-summary {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+
+  .playbook-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .playbook-tag {
+    background: rgb(239, 246, 251);
+    color: rgb(5, 86, 129);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .playbook-link {
+    margin: auto 0 0;
+    font-weight: 700;
+    color: rgb(5, 86, 129);
+    text-decoration: underline;
+  }
+</style>

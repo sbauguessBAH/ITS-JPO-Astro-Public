@@ -1,0 +1,448 @@
+---
+import banner from "@/src/assets/images/banners/Default_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
+import SafetyPlaybookFilters from "@/src/components/safety-playbook/SafetyPlaybookFilters.vue";
+import SafetyPlaybookCard from "@/src/components/safety-playbook/SafetyPlaybookCard.astro";
+
+const keywords = [
+  "Safety Playbook",
+  "ITS",
+  "Transportation Safety",
+  "Deployment",
+  "Best Practices",
+];
+
+const description = "Safety Playbook compiles practical guidance, tools, and implementation strategies to support safer transportation systems.";
+
+const normalize = (value: string) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-");
+
+interface FilterOption {
+  value: string;
+  label: string;
+  count: number;
+}
+
+const playbookItems = (await getCollection("safetyPlaybook")).sort((a, b) => {
+  const orderA = a.data.order ?? Number.MAX_SAFE_INTEGER;
+  const orderB = b.data.order ?? Number.MAX_SAFE_INTEGER;
+
+  if (orderA !== orderB) {
+    return orderA - orderB;
+  }
+
+  return a.data.title.localeCompare(b.data.title);
+});
+
+const buildSingleValueOptions = (values: string[]): FilterOption[] => {
+  const counts = values.reduce((acc, rawValue) => {
+    const value = rawValue.trim();
+
+    if (!value) {
+      return acc;
+    }
+
+    acc[value] = (acc[value] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+
+  return Object.entries(counts)
+    .map(([label, count]) => ({
+      value: normalize(label),
+      label,
+      count,
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label));
+};
+
+const buildMultiValueOptions = (valueGroups: string[][]): FilterOption[] => {
+  const counts = valueGroups.reduce((acc, rawValues) => {
+    const uniqueValues = [...new Set(rawValues.map((value) => value.trim()).filter(Boolean))];
+
+    uniqueValues.forEach((value) => {
+      acc[value] = (acc[value] || 0) + 1;
+    });
+
+    return acc;
+  }, {} as Record<string, number>);
+
+  return Object.entries(counts)
+    .map(([label, count]) => ({
+      value: normalize(label),
+      label,
+      count,
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label));
+};
+
+const categories = buildSingleValueOptions(playbookItems.map((item) => item.data.category));
+const locations = buildMultiValueOptions(playbookItems.map((item) => item.data.location));
+const facilities = buildMultiValueOptions(playbookItems.map((item) => item.data.facility));
+const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.safety));
+---
+
+<style>
+  .playbook-intro {
+    margin-bottom: 2rem;
+  }
+
+  .playbook-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 992px) {
+    .playbook-container {
+      flex-direction: row;
+    }
+
+    .playbook-sidebar {
+      flex-basis: 25%;
+      min-width: 250px;
+    }
+
+    .playbook-content {
+      flex-basis: 75%;
+    }
+  }
+
+  .results-count {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgb(var(--color-brand-dark));
+  }
+
+  .playbook-top-filters {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 992px) {
+    .playbook-top-filters {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .playbook-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .playbook-filter-label {
+    font-weight: 700;
+    color: rgb(var(--color-brand-dark));
+  }
+
+  .playbook-filter-select {
+    min-height: 9.5rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    padding: 0.35rem;
+    background: #fff;
+  }
+
+  .playbook-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .playbook-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .playbook-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .playbook-empty {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: rgb(var(--color-gray-light));
+    padding: 1rem;
+    font-weight: 600;
+  }
+
+  .playbook-pagination {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .playbook-pagination-button {
+    border: 1px solid var(--border-light);
+    background: #fff;
+    border-radius: var(--radius-sm);
+    padding: 0.45rem 0.8rem;
+    font-weight: 600;
+    color: rgb(var(--color-brand-dark));
+  }
+
+  .playbook-pagination-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .playbook-pagination-status {
+    font-weight: 600;
+    color: rgb(var(--color-gray));
+  }
+</style>
+
+<PageLayout title="Safety Playbook" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Safety Playbook</Fragment>
+  <main>
+    <h2 class="py-3">Safety Playbook Tools</h2>
+
+    <div class="playbook-intro">
+      <p>
+        The Safety Playbook provides practical tools and implementation guidance for safer transportation
+        systems. Use the primary category filter and secondary multi-select filters to narrow the list by
+        context and safety focus.
+      </p>
+    </div>
+
+    {playbookItems.length > 0 ? (
+      <div class="playbook-container">
+        <aside class="playbook-sidebar">
+          <SafetyPlaybookFilters
+            client:load
+            categories={categories}
+          />
+        </aside>
+
+        <section class="playbook-content" aria-live="polite">
+          <div class="playbook-top-filters" aria-label="Secondary Safety Playbook filters">
+            <div class="playbook-filter-group">
+              <label class="playbook-filter-label" for="playbook-filter-location">Location</label>
+              <select class="playbook-filter-select" id="playbook-filter-location" multiple>
+                {locations.map((location) => (
+                  <option value={location.value}>{location.label} ({location.count})</option>
+                ))}
+              </select>
+            </div>
+
+            <div class="playbook-filter-group">
+              <label class="playbook-filter-label" for="playbook-filter-facility">Facility</label>
+              <select class="playbook-filter-select" id="playbook-filter-facility" multiple>
+                {facilities.map((facility) => (
+                  <option value={facility.value}>{facility.label} ({facility.count})</option>
+                ))}
+              </select>
+            </div>
+
+            <div class="playbook-filter-group">
+              <label class="playbook-filter-label" for="playbook-filter-safety">Safety</label>
+              <select class="playbook-filter-select" id="playbook-filter-safety" multiple>
+                {safeties.map((safety) => (
+                  <option value={safety.value}>{safety.label} ({safety.count})</option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div class="results-count" id="playbook-results-count">
+            Showing {playbookItems.length} tool{playbookItems.length !== 1 ? "s" : ""}
+          </div>
+
+          <div class="playbook-grid" id="playbook-grid">
+            {playbookItems.map((item) => (
+              <SafetyPlaybookCard item={item} />
+            ))}
+          </div>
+
+          <div class="playbook-pagination" id="playbook-pagination" aria-label="Safety Playbook pagination">
+            <button class="playbook-pagination-button" id="playbook-page-prev" type="button">Previous</button>
+            <span class="playbook-pagination-status" id="playbook-page-status">Page 1 of 1</span>
+            <button class="playbook-pagination-button" id="playbook-page-next" type="button">Next</button>
+          </div>
+        </section>
+      </div>
+    ) : (
+      <p class="playbook-empty">No Safety Playbook entries are available yet.</p>
+    )}
+  </main>
+</PageLayout>
+
+<script>
+  interface SafetyPlaybookFilterDetail {
+    category?: string;
+    source?: string;
+    locations?: string[];
+    facilities?: string[];
+    safeties?: string[];
+  }
+
+  const PAGE_SIZE = 9;
+  let currentPage = 1;
+  let activeFilters: SafetyPlaybookFilterDetail = {
+    category: "all",
+    locations: [],
+    facilities: [],
+    safeties: [],
+  };
+
+  const splitDataValues = (raw = ""): string[] =>
+    raw
+      .split("|")
+      .map((value) => value.trim())
+      .filter(Boolean);
+
+  const matchesGroup = (selectedValues: string[] | undefined, cardValues: string[]): boolean => {
+    if (!selectedValues || selectedValues.length === 0) {
+      return true;
+    }
+
+    return selectedValues.some((value: string) => cardValues.includes(value));
+  };
+
+  const getFilteredCards = (
+    cards: NodeListOf<HTMLElement>,
+    filters: SafetyPlaybookFilterDetail,
+  ): HTMLElement[] => {
+    const { category, locations, facilities, safeties } = filters;
+
+    return Array.from(cards).filter((element) => {
+      const matchesCategory = !category || category === "all" || element.dataset.category === category;
+      const matchesLocations = matchesGroup(locations, splitDataValues(element.dataset.location));
+      const matchesFacilities = matchesGroup(facilities, splitDataValues(element.dataset.facility));
+      const matchesSafeties = matchesGroup(safeties, splitDataValues(element.dataset.safety));
+
+      return matchesCategory && matchesLocations && matchesFacilities && matchesSafeties;
+    });
+  };
+
+  const getMultiSelectValues = (selectId: string): string[] => {
+    const select = document.getElementById(selectId) as HTMLSelectElement | null;
+
+    if (!select) {
+      return [];
+    }
+
+    return Array.from(select.selectedOptions).map((option) => option.value);
+  };
+
+  const clearMultiSelect = (selectId: string): void => {
+    const select = document.getElementById(selectId) as HTMLSelectElement | null;
+
+    if (!select) {
+      return;
+    }
+
+    Array.from(select.options).forEach((option) => {
+      option.selected = false;
+    });
+  };
+
+  const syncSecondaryFilters = (): void => {
+    activeFilters.locations = getMultiSelectValues("playbook-filter-location");
+    activeFilters.facilities = getMultiSelectValues("playbook-filter-facility");
+    activeFilters.safeties = getMultiSelectValues("playbook-filter-safety");
+  };
+
+  const updateResultsCount = (element: HTMLElement, visibleCount: number): void => {
+    element.textContent =
+      visibleCount === 0
+        ? "No tools match the selected filters"
+        : `Showing ${visibleCount} tool${visibleCount !== 1 ? "s" : ""}`;
+  };
+
+  const updatePaginationView = (): void => {
+    const cards = document.querySelectorAll<HTMLElement>(".playbook-card");
+    const resultsCount = document.getElementById("playbook-results-count");
+    const pagination = document.getElementById("playbook-pagination");
+    const prevButton = document.getElementById("playbook-page-prev") as HTMLButtonElement | null;
+    const nextButton = document.getElementById("playbook-page-next") as HTMLButtonElement | null;
+    const status = document.getElementById("playbook-page-status");
+
+    if (!resultsCount || !pagination || !prevButton || !nextButton || !status) {
+      return;
+    }
+
+    const filteredCards = getFilteredCards(cards, activeFilters);
+    const visibleCount = filteredCards.length;
+    const totalPages = Math.max(1, Math.ceil(visibleCount / PAGE_SIZE));
+
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
+
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+    const cardsForPage = new Set(filteredCards.slice(start, end));
+
+    cards.forEach((card) => {
+      const shouldShow = cardsForPage.has(card);
+      card.classList.toggle("hidden", !shouldShow);
+    });
+
+    updateResultsCount(resultsCount, visibleCount);
+
+    if (visibleCount > PAGE_SIZE) {
+      pagination.hidden = false;
+      prevButton.disabled = currentPage <= 1;
+      nextButton.disabled = currentPage >= totalPages;
+      status.textContent = `Page ${currentPage} of ${totalPages}`;
+    } else {
+      pagination.hidden = true;
+    }
+  };
+
+  const changePage = (direction: -1 | 1): void => {
+    currentPage += direction;
+    if (currentPage < 1) {
+      currentPage = 1;
+    }
+    updatePaginationView();
+  };
+
+  const prevButton = document.getElementById("playbook-page-prev");
+  const nextButton = document.getElementById("playbook-page-next");
+  const locationSelect = document.getElementById("playbook-filter-location");
+  const facilitySelect = document.getElementById("playbook-filter-facility");
+  const safetySelect = document.getElementById("playbook-filter-safety");
+
+  prevButton?.addEventListener("click", () => changePage(-1));
+  nextButton?.addEventListener("click", () => changePage(1));
+
+  [locationSelect, facilitySelect, safetySelect].forEach((select) => {
+    select?.addEventListener("change", () => {
+      syncSecondaryFilters();
+      currentPage = 1;
+      updatePaginationView();
+    });
+  });
+
+  window.addEventListener("safety-playbook-filter-change", (event: Event) => {
+    const detail = (event as CustomEvent<SafetyPlaybookFilterDetail>).detail ?? {};
+    activeFilters.category = detail.category ?? "all";
+
+    if (detail.source === "clear") {
+      clearMultiSelect("playbook-filter-location");
+      clearMultiSelect("playbook-filter-facility");
+      clearMultiSelect("playbook-filter-safety");
+    }
+
+    syncSecondaryFilters();
+    currentPage = 1;
+    updatePaginationView();
+  });
+
+  updatePaginationView();
+</script>
