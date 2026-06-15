@@ -60,6 +60,7 @@ const fallbackText = !normalizedItem.description && normalizedItem.date ? normal
   }
 
   <div class="card-body d-flex flex-column justify-content-between">
+    {normalizedItem.subtitle && <p class="card-subtitle mb-2">{normalizedItem.subtitle}</p>}
     <h5 class="card-title">{normalizedItem.title}</h5>
 
     {(descriptionText || fallbackText) && <p class="card-text">{descriptionText || fallbackText}</p>}
@@ -94,6 +95,11 @@ const fallbackText = !normalizedItem.description && normalizedItem.date ? normal
     align-items: center;
     justify-content: center;
     background: linear-gradient(90deg, #1C2C4E, #1E4D86);
+  }
+
+  .card-subtitle {
+    color: #055681;
+    font-weight: 600;
   }
 
 
