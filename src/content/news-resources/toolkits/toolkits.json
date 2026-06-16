@@ -300,44 +300,8 @@
         "button_text": "Visit Project Site",
         "href": ""
     }
-}],
-"webinars": [{
-    "id": 20, 
-    "date": "February 18, 2026", 
-    "program":"V2X Program", 
-    "description":"V2X Deployment Lessons Learned: Early Adopter Communities", 
-    "host": "ITS JPO", 
-    "duration": 90, 
-    "attendees": 342
-    },
-    {
-    "id": 21, 
-    "date":"January 28, 2026", 
-    "program": "AI Program", 
-    "description":"Practical Applications of AI for Traffic Operations", 
-    "host": "ITS JPO", 
-    "duration": 60, 
-    "attendees":518
-    },
-    {
-    "id":22, 
-    "date": "December 10, 2025", 
-    "program":"ITS4US Program", 
-    "description":"ITS4US Year Three Outcomes: Expanding Accessible Mobility", 
-    "host": "ITS JPO", 
-    "duration": 75, 
-    "attendees": 289
-    },
-    {
-    "id":23, 
-    "date": "November 19, 2025", 
-    "program": "Intersection Safety", 
-    "description":"Intersection Safety Challenge: Phase 2 Results & Next Steps", 
-    "host": "ITS JPO", 
-    "duration": 60, 
-    "attendees": 401
-    },
-    {
+},
+ {
     "id": 36,
     "title": "Maricopa County DOT (MCDOT) Connected Vehicle Acceleration Zone (CVAZ)",
     "subtitle": "Media Kit",
@@ -410,6 +374,42 @@
     }
 }],
 "webinars": [{
+    "id": 20, 
+    "date": "February 18, 2026", 
+    "program":"V2X Program", 
+    "description":"V2X Deployment Lessons Learned: Early Adopter Communities", 
+    "host": "ITS JPO", 
+    "duration": 90, 
+    "attendees": 342
+    },
+    {
+    "id": 21, 
+    "date":"January 28, 2026", 
+    "program": "AI Program", 
+    "description":"Practical Applications of AI for Traffic Operations", 
+    "host": "ITS JPO", 
+    "duration": 60, 
+    "attendees":518
+    },
+    {
+    "id":22, 
+    "date": "December 10, 2025", 
+    "program":"ITS4US Program", 
+    "description":"ITS4US Year Three Outcomes: Expanding Accessible Mobility", 
+    "host": "ITS JPO", 
+    "duration": 75, 
+    "attendees": 289
+    },
+    {
+    "id":23, 
+    "date": "November 19, 2025", 
+    "program": "Intersection Safety", 
+    "description":"Intersection Safety Challenge: Phase 2 Results & Next Steps", 
+    "host": "ITS JPO", 
+    "duration": 60, 
+    "attendees": 401
+    },
+    {
     "id": 32, 
     "date": "October 7, 2025", 
     "program":"V2X Accelerator Program", 
