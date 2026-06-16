@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import base_url from '@/src/lib/base_url';
 
 interface Props {
   item: CollectionEntry<'safetyPlaybook'>;
@@ -9,7 +10,7 @@ const { item } = Astro.props;
 const data = item.data;
 
 const entryPath = item.id.replace(/\.(md|mdx)$/i, "");
-const slugPath = `/research-areas/safety-playbook/${entryPath}/`;
+const slugPath = base_url(`/research-areas/safety-playbook/${entryPath}/`);
 
 const normalize = (value: string) =>
   value
