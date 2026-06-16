@@ -5,7 +5,7 @@
   --kit-muted: #5e6f7d;
   --kit-border: #d7dee4;
   --kit-surface: #f4f6f8;
-  --kit-surface-dark: #e7ebee;
+  --kit-surface-dark: #F5F5F5;
   --kit-highlight: #f2c84b;
   --kit-shadow: 0 18px 38px rgba(7, 46, 85, 0.08);
   display: flex;
@@ -316,11 +316,21 @@
   display: grid;
   gap: 1.5rem;
   align-items: center;
+  position: relative;
+  isolation: isolate;
   padding: 1.75rem;
-  margin-inline: -0.75rem;
-  border-radius: 1.25rem;
+  background: transparent;
+  width: 100%;
+}
+
+.kit-belt-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: var(--kit-surface-dark);
-  overflow: hidden;
+  box-shadow: 0 0 0 100vmax var(--kit-surface-dark);
+  clip-path: inset(0 -100vmax);
+  z-index: -1;
 }
 
 .kit-belt-copy {
@@ -441,7 +451,6 @@
 
   .kit-belt-cta {
     grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
-    margin-inline: -1.5rem;
     padding: 2rem;
   }
 }
@@ -462,7 +471,4 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .kit-belt-cta {
-    margin-inline: -2.5rem;
-  }
 }
