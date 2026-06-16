@@ -43,10 +43,7 @@
   --kit-accent: var(--kit-brand);
   position: relative;
   padding: 1.5rem;
-  border: 1px solid var(--kit-border);
-  border-radius: 1rem;
   background: #ffffff;
-  box-shadow: var(--kit-shadow);
 }
 
 .kit-section::before {
