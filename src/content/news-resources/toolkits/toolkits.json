@@ -134,22 +134,22 @@
         {
             "title": "TRB Booth Invitation Graphic",
             "href": "https://its.dot.gov/trb2025/",
-            "image_src": "/assets/images/toolkits/trb-2026-booth-invitation.svg",
-            "download_href": "/assets/images/toolkits/trb-2026-booth-invitation.svg",
+            "image_src": "/assets/images/toolkits/post-preview-stock.png",
+            "download_href": "/assets/images/toolkits/post-preview-stock.png",
             "cta_text": "Download Graphic"
         },
         {
             "title": "TRB Schedule Overview Graphic",
             "href": "https://www.its.dot.gov/trb2024/index.htm",
-            "image_src": "/assets/images/toolkits/trb-2026-schedule-overview.svg",
-            "download_href": "/assets/images/toolkits/trb-2026-schedule-overview.svg",
+            "image_src": "/assets/images/toolkits/news-thumbnail-stock.png",
+            "download_href": "/assets/images/toolkits/news-thumbnail-stock.png",
             "cta_text": "Download Graphic"
         },
         {
             "title": "State of ITS Reminder Graphic",
             "href": "https://www.its.dot.gov/research_areas/emerging_tech/htm/ITS_V2X_CommunicationSummit.htm",
-            "image_src": "/assets/images/toolkits/trb-2026-state-of-its.svg",
-            "download_href": "/assets/images/toolkits/trb-2026-state-of-its.svg",
+            "image_src": "/assets/images/toolkits/post-preview-stock.png",
+            "download_href": "/assets/images/toolkits/post-preview-stock.png",
             "cta_text": "Download Graphic"
         }
     ],
@@ -172,7 +172,7 @@
         "description": "View booth details, exhibit hall activities, and on-site program updates on the ITS JPO TRB page.",
         "button_text": "Visit TRB Program Page",
         "href": "https://its.dot.gov/trb2025/",
-        "preview_image": "/assets/images/toolkits/trb-2026-site-preview.svg",
+        "preview_image": "/assets/images/toolkits/news-thumbnail-stock.png",
         "preview_alt": "Illustrated preview of the ITS JPO Transportation Research Board program page"
     },
     "contacts": [
@@ -336,6 +336,35 @@
     "host": "ITS JPO", 
     "duration": 60, 
     "attendees": 401
+    },
+    {
+    "id": 36,
+    "title": "Maricopa County DOT (MCDOT) Connected Vehicle Acceleration Zone (CVAZ)",
+    "subtitle": "Media Kit",
+    "description":"The MCDOT Connected Vehicle Acceleration Zone is part of the Vehicle-to-Everything (V2X) Accelerator Program funded by the Intelligent Transportation Systems Joint Program Office (ITS JPO).",
+    "date": "2026",
+    "content_types":["print materials", "video", "photos", "webinar materials", "media coverage"],
+    "topics":["V2X Accelerator", "MCDOT"],
+    "url":"/news-outreach-tools/news-resources/toolkits/mcdot-connected-vehicle-acceleration-zone-mediakit",
+    "print_materials": [],
+    "videos": [],
+    "image_library": [],
+    "webinar_materials": [],
+    "media_coverage": [],
+    "belt_cta": {
+        "title": "Connected Vehicle Acceleration Zone",
+        "description": "For more information on the Maricopa DOT Connected Vehicle Acceleration Zone, visit the project website here.",
+        "button_text": "Visit Project Site",
+        "href": ""
+    }
+}],
+"webinars": [{
+    "id": 32, 
+    "date": "October 7, 2025", 
+    "program":"V2X Accelerator Program", 
+    "description":"MCDOT Deployment Concept Webinar", 
+    "host": "ITS JPO", 
+    "season": "Fall 2025"
     }
 ]
 }
