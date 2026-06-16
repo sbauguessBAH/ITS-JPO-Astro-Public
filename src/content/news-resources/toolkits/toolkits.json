@@ -85,6 +85,93 @@
     "url":"/news-outreach-tools/news-resources/toolkits/v2x-deployment-program-launch"
 },
 {
+    "id": 36,
+    "title": "Maricopa County DOT (MCDOT) Connected Vehicle Acceleration Zone (CVAZ)",
+    "subtitle": "Media Kit",
+    "description":"The MCDOT Connected Vehicle Acceleration Zone is part of the Vehicle-to-Everything (V2X) Accelerator Program funded by the Intelligent Transportation Systems Joint Program Office (ITS JPO).",
+    "date": "2026",
+    "content_types":["print materials", "video", "photos", "webinar materials", "media coverage"],
+    "topics":["V2X Accelerator", "MCDOT"],
+    "url":"/news-outreach-tools/news-resources/toolkits/mcdot-connected-vehicle-acceleration-zone-mediakit",
+    "print_materials": [{
+        "title": "MCDOT V2X Accelerator Site Factsheet",
+        "href": "",
+        "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
+        "material_type": "Factsheet",
+        "date": "2026"
+    }],
+    "videos": [{
+        "title": "MCDOT CVAZ Project Video",
+        "produced_by": "MCDOT Produced",
+        "duration": "long",
+        "platform": "YouTube",
+        "href": "",
+        "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
+        "material_type": "Video",
+        "date": "2026",
+        "availability": "Available"
+    },
+{
+        "title": "CVAZ History Video",
+        "produced_by": "MCDOT Produced",
+        "duration": "short",
+        "platform": "N/A",
+        "href": "",
+        "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
+        "material_type": "Video",
+        "date": "2026",
+        "availability": "N/A"
+    }],
+    "image_library": [],
+    "webinar_materials": [{
+    "id": 32, 
+    "date": "October 7, 2025", 
+    "program":"V2X Accelerator Program", 
+    "description":"MCDOT Deployment Concept Webinar", 
+    "host": "ITS JPO", 
+    "season": "Fall 2025"
+    }],
+    "media_coverage": [{
+        "title": "Experience How Connected Vehicle Technology Is Shaping Smarter Travel",
+        "href": "",
+        "platform": "Facebook",
+        "media_type": "video"
+    },
+{
+        "title": "CVAZ Showcase Event Post",
+        "href": "",
+        "platform": "Facebook",
+        "media_type": "post"
+    },
+{
+        "title": "Inside Look at New Traffic Technology to Make Roads Safer, More Efficient",
+        "href": "",
+        "platform": "ABC15 News",
+        "media_type": "article"
+    }],
+    "belt_cta": {
+        "title": "Connected Vehicle Acceleration Zone",
+        "description": "For more information on the Maricopa DOT Connected Vehicle Acceleration Zone, visit the project website here.",
+        "button_text": "Visit Project Site",
+        "href": ""
+    },
+      "contacts": [
+        {
+            "name": "Norah Ocel",
+            "title": "Program Manager", 
+            "department": "U.S. Department Of Transportation",
+            "office": "Intelligent Transportations Systems Joint Program Office",
+            "contact": "Norah.Ocel@dot.gov",
+            "profile_image_key": "norah_o"},
+        {
+            "name": "Brian Cronin",
+            "title": "Director", 
+            "department": "U.S. Department Of Transportation",
+            "office": "Intelligent Transportations Systems Joint Program Office",
+            "contact": "Brian.Cronin@dot.gov",
+            "profile_image_key": "brian_c"}]
+},
+{
     "id": 32,
     "title": "ITS JPO 30th Anniversary",
     "subtitle": "Milestone Kit",
@@ -297,78 +384,6 @@
     "belt_cta": {
         "title": "Connecting the West Program",
         "description": "Explore the program page for deployment context, project updates, and supporting materials.",
-        "button_text": "Visit Project Site",
-        "href": ""
-    }
-},
- {
-    "id": 36,
-    "title": "Maricopa County DOT (MCDOT) Connected Vehicle Acceleration Zone (CVAZ)",
-    "subtitle": "Media Kit",
-    "description":"The MCDOT Connected Vehicle Acceleration Zone is part of the Vehicle-to-Everything (V2X) Accelerator Program funded by the Intelligent Transportation Systems Joint Program Office (ITS JPO).",
-    "date": "2026",
-    "content_types":["print materials", "video", "photos", "webinar materials", "media coverage"],
-    "topics":["V2X Accelerator", "MCDOT"],
-    "url":"/news-outreach-tools/news-resources/toolkits/mcdot-connected-vehicle-acceleration-zone-mediakit",
-    "print_materials": [{
-        "title": "MCDOT V2X Accelerator Site Factsheet",
-        "href": "",
-        "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
-        "material_type": "Factsheet",
-        "date": "2026"
-    }],
-    "videos": [{
-        "title": "MCDOT CVAZ Project Video",
-        "produced_by": "MCDOT Produced",
-        "duration": "long",
-        "platform": "YouTube",
-        "href": "",
-        "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
-        "material_type": "Video",
-        "date": "2026",
-        "availability": "Available"
-    },
-{
-        "title": "CVAZ History Video",
-        "produced_by": "MCDOT Produced",
-        "duration": "short",
-        "platform": "N/A",
-        "href": "",
-        "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
-        "material_type": "Video",
-        "date": "2026",
-        "availability": "N/A"
-    }],
-    "image_library": [],
-    "webinar_materials": [{
-    "id": 32, 
-    "date": "October 7, 2025", 
-    "program":"V2X Accelerator Program", 
-    "description":"MCDOT Deployment Concept Webinar", 
-    "host": "ITS JPO", 
-    "season": "Fall 2025"
-    }],
-    "media_coverage": [{
-        "title": "Experience How Connected Vehicle Technology Is Shaping Smarter Travel",
-        "href": "",
-        "platform": "Facebook",
-        "media_type": "video"
-    },
-{
-        "title": "CVAZ Showcase Event Post",
-        "href": "",
-        "platform": "Facebook",
-        "media_type": "post"
-    },
-{
-        "title": "Inside Look at New Traffic Technology to Make Roads Safer, More Efficient",
-        "href": "",
-        "platform": "ABC15 News",
-        "media_type": "article"
-    }],
-    "belt_cta": {
-        "title": "Connected Vehicle Acceleration Zone",
-        "description": "For more information on the Maricopa DOT Connected Vehicle Acceleration Zone, visit the project website here.",
         "button_text": "Visit Project Site",
         "href": ""
     }
