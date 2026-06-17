@@ -23,7 +23,6 @@ safety:
   - Road Weather Safety
   - Heavy Vehicles
 keywords:
-  - Name
   - Changeable Message Signs
   - CMS
   - Dynamic Message Signs
