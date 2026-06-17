@@ -3,10 +3,23 @@ import base_url from "@/src/lib/base_url";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import HeroImage from "@/src/assets/images/its4us/upcoming/ITS4US_Deployment_Accelerator_BG.png";
 import Image from "astro/components/Image.astro";
+import dotLogo from "@/src/assets/images/its4us/upcoming/DOT-logo-2.png";
+import acceleratorLogo from "@/src/assets/images/its4us/upcoming/ITS4US_Deployment_Accelerator_logo.png";
+import linkImage1 from "@/src/assets/images/its4us/HC/HC-link.png";
+import linkImage2 from "@/src/assets/images/its4us/HC/HIRTA-link.png";
+import linkImage3 from "@/src/assets/images/its4us/DataHub-link.png";
+import linkImage4 from "@/src/assets/images/its4us/CodeHub-link.png";
+import "@/src/styles/deployments.css";
 ---
 
 <style>
-  section{
+  hr {
+    border: 0;
+    height: 1px;
+    background: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 1rem 0;
+  }
+  section {
     padding: 0;
   }
   .announcement-section {
@@ -14,13 +27,40 @@ import Image from "astro/components/Image.astro";
     overflow: hidden;
     text-wrap: pretty;
   }
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     text-wrap: balance;
+    color: white;
   }
 
-  .hero-image {
-    height: 200px;
-    object-fit: cover;
+  .hero-banner {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem .5rem 1.5rem;
+  }
+
+  .hero-banner-logos {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .hero-logo-left {
+    width: min(300px, 38vw);
+    height: auto;
+    filter: drop-shadow(0px 0px 50px #091d59);
+  }
+
+  .hero-logo-right {
+    width: min(360px, 54vw);
+    height: auto;
+    filter: drop-shadow(0px 0px 10px white);
   }
 
   .announcement-details {
@@ -32,16 +72,23 @@ import Image from "astro/components/Image.astro";
     content: "→";
     color: #ffd700;
     font-weight: bold;
-    margin-right: 10px;
     font-size: 1.3rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .announcement-details p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin: 1.5rem 0 0 0;
   }
 
   .announcement-details li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .announcement-details li:last-child {
-    border-bottom: none;
+    font-size: 1rem;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 1.5rem;
   }
 
   .text-gold {
@@ -57,9 +104,50 @@ import Image from "astro/components/Image.astro";
   }
 
   @media (max-width: 768px) {
-    .hero-image {
-      height: 150px;
+    .hero-banner {
+      min-height: 160px;
+      padding: 1rem;
     }
+
+    .hero-logo-left {
+      width: min(200px, 34vw);
+    }
+
+    .hero-logo-right {
+      width: min(180px, 50vw);
+    }
+    .team-include-box {
+      width: 33%;
+    }
+  }
+
+  .team-include-box {
+    background: #091d59;
+    border: 4px solid #ffd700;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: white;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-wrap: balance;
+    width: 100%;
+  }
+  .link-color-fix:hover{
+    color: #2c7ba0;
+  }
+  .full-width-bg {
+    width: calc(100% + 6rem);
+    margin-left: -3rem;
+    margin-right: -3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
   }
 </style>
 
@@ -70,8 +158,12 @@ import Image from "astro/components/Image.astro";
       <div class="row">
         <div class="col-12">
           <section class="announcement-section text-white rounded-4 shadow my-5">
-           
-            <Image src={HeroImage} alt="Ameraican Flag decrotive image." width={800} class="hero-image w-100 d-block"/>
+            <div class="hero-banner" style={`background-image: linear-gradient(to right, rgba(8, 19, 52, 0.78), rgba(9, 31, 97, 0)), url(${HeroImage.src});`}>
+              <div class="hero-banner-logos">
+                <Image src={dotLogo} alt="U.S. Department of Transportation logo" class="hero-logo-left" width={360} />
+                <Image src={acceleratorLogo} alt="ITS4US Deployment Accelerator logo" class="hero-logo-right" width={360} />
+              </div>
+            </div>
             <div class="p-5">
               <div class="d-flex justify-content-between align-items-start mb-4 gap-4 flex-column flex-md-row">
                 <div class="text-start">
@@ -84,29 +176,91 @@ import Image from "astro/components/Image.astro";
               </div>
 
               <div class="announcement-details rounded-4 p-4 mx-auto my-4" style="max-width: 900px;">
+                <p class="mt-0">
+                  <strong>ITS4US Deployment Accelerator Program</strong> is a new ITS JPO initiative, in coordination with FTA, to pilot systematically replicating successful technology deployments across
+                  multiple locations nationwide.
+                </p>
+                <hr />
+                <p>This project aims to significantly accelerate targeted follow-on deployments following the successful path charted by the ITS4US program sites.</p>
+                <p><strong>This proposed effort will serve as a Proof-of-Concept that:</strong></p>
                 <ul class="list-unstyled mb-0">
-                  <li class="py-3 fs-5 lh-base">
-                    Integrating demand-response transportation scheduling with medical appointment systems to create a seamless, patient-centered experience.
-                  </li>
-                  <li class="py-3 fs-5 lh-base">
-                    Improving access to care through smarter, more coordinated mobility solutions built on the proven open-source platform developed under the ITS4US Program.
+                  <li class="fs-5 lh-base">Leverages proven ITS technologies</li>
+                  <li class="fs-5 lh-base">Provides knowledge and technical expertise of current deployers with future deployers.</li>
+                  <li class="fs-5 lh-base">Provides seed funding to replicate project with facilitated peer exchange.</li>
+                </ul>
+                <p><strong>Within this new program, USDOT plans to:</strong></p>
+                <ul class="list-unstyled mb-0">
+                  <li class="fs-5 lh-base">Release a solicitation in 2026</li>
+                  <li class="fs-5 lh-base">Award up to 4 new sites with seed funding to rapidly replicate the HIRTA -- Health Connector project.</li>
+                  <li class="fs-5 lh-base">
+                    The approach includes establishing a cohort of deployers, awardees deploying in their communities within 12 months, and provide technical assistance from experts to assist.
                   </li>
                 </ul>
               </div>
 
-              <p class="text-center fs-3 fw-bold mt-5 text-gold text-uppercase" style="letter-spacing: 2px;">
-                STAY TUNED FOR UPCOMING SOLICITATION
-              </p>
+              <div class="announcement-details rounded-4 p-4 mx-auto my-4" style="max-width: 900px;">
+                <p class="mt-0"><strong>Replicators will:</strong></p>
+
+                <ul class="list-unstyled mb-0">
+                  <li class="fs-5 lh-base">Propose a multi-disciplinary team that must include:</li>
+                </ul>
+                <div class="d-flex flex-column flex-md-row gap-3 mb-3">
+                  <div class="team-include-box">Mobility Services Operator/Provider</div>
+                  <div class="team-include-box">Software Integrator</div>
+                  <div class="team-include-box">Healthcare Partner (Public/Private)</div>
+                </div>
+                <ul class="list-unstyled mb-0">
+                  <li class="fs-5 lh-base">Demonstrate their successful deployment within 12 months.</li>
+                  <li class="fs-5 lh-base">
+                    Publish changes and extensions of the Health Connector Middleware components (MOD-EHR, MOD-Medicaid, and HC-Kiosk) as open-source code on the ITS <strong>CodeHub</strong>.
+                  </li>
+                  <li class="fs-5 lh-base">Document effectiveness of support and artifacts provided by USDOT.</li>
+                </ul>
+              </div>
+
+              <div class="full-width-bg">
+                <div class=" px-xs-4 px-sm-4 px-md-4 px-lg-4 ">
+                  <h2 class="text-center mb-3">Health Connector Resources to Explore</h2>
+
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card rounded-3 h-100 p-2">
+                        <Image src={linkImage1} alt="HIRTA Health Connector website link" class="img-fluid rounded mb-2" width={300} />
+                        <a href="https://transithealthconnector.org/" target="_blank" rel="noopener noreferrer" class="link-color-fix"> Health Connector Website</a>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card rounded-3 h-100 p-2">
+                        <Image src={linkImage2} alt="RideHIRTA mobile application download link" class="img-fluid rounded mb-2" width={300} />
+                        <a href="https://ridehirta.app.ridewithvia.com/" target="_blank" rel="noopener noreferrer" class="link-color-fix">Health Connector Documentation</a>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card rounded-3 h-100 p-2">
+                        <Image src={linkImage3} alt="ITS DataHub link" class="img-fluid rounded mb-2" width={300} />
+                        <a href="https://www.its.dot.gov/data/" target="_blank" rel="noopener noreferrer" class="link-color-fix">Data Hub</a>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card rounded-3 h-100 p-2">
+                        <Image src={linkImage4} alt="ITS CodeHub link" class="img-fluid rounded mb-2" width={300} />
+                        <a href="https://www.its.dot.gov/code/" target="_blank" rel="noopener noreferrer" class="link-color-fix">Code Hub</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-center fs-3 fw-bold mt-5 text-gold text-uppercase" style="letter-spacing: 2px;">STAY TUNED FOR PLANNED 2026 SOLICITATION</p>
 
               <div class="bg-white rounded-4 shadow p-4 mt-5 mx-auto" style="max-width: 900px;">
                 <h3 class="text-center fs-4 mb-3" style="color: #1e5a7d;">Want to Learn More?</h3>
                 <p class="text-center fs-5 lh-base mb-0" style="color: #333;">
-                  Check the <a href={base_url("/research-areas/ITS4US")} class="link-custom fw-bold">ITS4US Website</a> or sign-up for the 
+                  Check the <a href={base_url("/research-areas/ITS4US")} class="link-custom fw-bold">ITS4US Website</a> or sign-up for the
                   <a href={base_url("/about/contact-us/mailinglist")} class="link-custom fw-bold">ITS JPO newsletter</a>.
                 </p>
               </div>
             </div>
-            
           </section>
         </div>
       </div>
