@@ -1700,5 +1700,299 @@
       "Outreach"
     ],
     "publicationLink": "https://rosap.ntl.bts.gov/view/dot/66778"
+  },
+  {
+    "id": "fhwa-jpo-22-975",
+    "resourceTitle": "Phase 3 Data Management Plan",
+    "publicationCode": "FHWA-JPO-22-975",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 3-D: Performance Measurement and Independent Evaluation Support",
+    "phase": 3,
+    "publishDate": "2026-04-30",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Healthcare",
+      "NEMT",
+      "MOD",
+      "PMP",
+      "ITS"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90297"
+  },
+  {
+    "id": "fhwa-jpo-26-007",
+    "resourceTitle": "Phase 3 Comprehensive Transition Plan",
+    "publicationCode": "FHWA-JPO-26-007",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 3-E: Post-Deployment Transition Planning",
+    "phase": 3,
+    "publishDate": "2026-04-30",
+    "type": "Publication",
+    "keywords": [
+      "Operations",
+      "ITS4US",
+      "Transition",
+      "ITS",
+      "intelligent transportation systems",
+      "transit"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90296"
+  },
+  {
+    "id": "fhwa-jpo-24-132",
+    "resourceTitle": "Phase 2 Comprehensive Acquisition Plan",
+    "publicationCode": "FHWA-JPO-24-132",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-D: Comprehensive Acquisition Plan",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "acquisition"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90797"
+  },
+  {
+    "id": "fhwa-jpo-23-993",
+    "resourceTitle": "Phase 2 Comprehensive Installation Plan",
+    "publicationCode": "FHWA-JPO-23-993",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-D: Comprehensive Acquisition Plan",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "installation",
+      "equipment"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90804"
+  },
+  {
+    "id": "fhwa-jpo-23-109",
+    "resourceTitle": "Phase 2 Comprehensive Maintenance and Operations Plan",
+    "publicationCode": "FHWA-JPO-23-109",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-I: Maintenance and Operations Planning",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "CMOP",
+      "maintenance",
+      "operations",
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "shutdown",
+      "recovery",
+      "inventory"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90794"
+  },
+  {
+    "id": "fhwa-jpo-23-105",
+    "resourceTitle": "Phase 2 Operational Readiness Plan",
+    "publicationCode": "FHWA-JPO-23-105",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-G: System Test Planning",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "operational readiness",
+      "access"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90296"
+  },
+  {
+    "id": "fhwa-jpo-21-902",
+    "resourceTitle": "Phase 2 Participant Training and Stakeholder Education Plan",
+    "publicationCode": "FHWA-JPO-21-902",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-F: Participant and Staff Training",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "participant training",
+      "stakeholder education"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90799"
+  },
+  {
+    "id": "fhwa-jpo-21-897",
+    "resourceTitle": "Phase 2 Revised Human Use Approval Summary",
+    "publicationCode": "FHWA-JPO-21-897",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-K: Performance Measurement and Independent Evaluation Support",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete Trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "Human Use Approval",
+      "HIRTA"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90798"
+  },
+  {
+    "id": "fhwa-jpo-23-997",
+    "resourceTitle": "Phase 2 System Test Plan",
+    "publicationCode": "FHWA-JPO-23-997",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-G: System Test Planning",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "system testing",
+      "access"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90795"
+  },
+  {
+    "id": "fhwa-jpo-23-101",
+    "resourceTitle": "Phase 2 Systems Design Document",
+    "publicationCode": "FHWA-JPO-23-101",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-B: Systems Architecture and Design",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "installation",
+      "system design"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90806"
+  },
+  {
+    "id": "fhwa-jpo-21-877",
+    "resourceTitle": "Phase 2 Performance Measurement and Evaluation Support Plan",
+    "publicationCode": "FHWA-JPO-21-877",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-K: Performance Measurement and Independent Evaluation Support",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "Performance Measurement",
+      "Independent Evaluation",
+      "Data Management"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90801"
+  },
+  {
+    "id": "fhwa-jpo-21-859-phase-2",
+    "resourceTitle": "Phase 2 Concept of Operations",
+    "publicationCode": "FHWA-JPO-21-859",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-B: Systems Architecture and Design",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete Trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "NEMT",
+      "ConOps",
+      "Systems Engineering",
+      "User Needs",
+      "User Scenarios"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90796"
+  },
+  {
+    "id": "fhwa-jpo-22-946-phase-2",
+    "resourceTitle": "Phase 2 Integrated Complete Trip Deployment Plan",
+    "publicationCode": "FHWA-JPO-22-946",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-B: Systems Architecture and Design",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete Trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "participant training",
+      "stakeholder education"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90805"
+  },
+  {
+    "id": "fhwa-jpo-21-882-phase-2",
+    "resourceTitle": "Phase 2 Systems Requirements",
+    "publicationCode": "FHWA-JPO-21-882",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 2-B: Systems Architecture and Design",
+    "phase": 2,
+    "publishDate": "2026-05-15",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete Trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "user scenarios",
+      "needs",
+      "system requirements",
+      "traceability"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90803"
   }
 ]
