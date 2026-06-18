@@ -16,7 +16,6 @@
 .toolkit-header {
   display: grid;
   gap: 0.75rem;
-  max-width: 56rem;
 }
 
 .toolkit-header > :last-child {
@@ -26,6 +25,7 @@
 .kit-page-title {
   margin: 0;
   max-width: 75rem;
+  font-size: 32px;
 }
 
 .kit-copy {
