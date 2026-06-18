@@ -173,6 +173,11 @@ export const states: Record<string, State> = {
         x: 858,
         y: 178,
       },
+      {
+        agency: "City of New Britain",
+        x: 855,
+        y: 180,
+      },
     ],
     state: "Connecticut",
     drawable: {
@@ -405,6 +410,11 @@ export const states: Record<string, State> = {
         agency: "Baltimore County",
         x: 809,
         y: 251,
+      },
+      {
+        agency: "Morgan State University",
+        x: 808,
+        y: 247,
       },
       {
         agency: "Anne Arundel County ",
