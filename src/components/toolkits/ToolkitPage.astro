@@ -1,5 +1,7 @@
 ---
 import WebinarCard from "@/src/components/WebinarCard.astro";
+import bannerImage from "@/src/assets/images/banners/NTL_Banner.png";
+import Banner from "@/src/components/layout/Banner.astro";
 import type { ToolkitMediaItem, ToolkitPageData, ToolkitSection } from "@/src/lib/toolkits";
 import "@/src/styles/toolkits.css";
 import ContactCard from "./ContactCard.astro";
@@ -84,10 +86,10 @@ const getImageSrc = (value?: string | import("astro").ImageMetadata): string | u
 };
 ---
 
+<Banner image={bannerImage}>Newsroom</Banner>
 <main class="container my-5 toolkit-page">
   <div class="toolkit-header">
-    <h1 class="h2 mb-4 sideways blue">{eyebrow}</h1>
-    <h2 class="sideways blue kit-page-title">{page.title}</h2>
+    <h1 class="sideways blue kit-page-title">{page.title}</h1>
     {page.intro && <p class="kit-copy kit-page-intro">{page.intro}</p>}
   </div>
 
