@@ -18,13 +18,19 @@ type WebinarEntry = {
 
 const toolkitData = toolkits as {
   outreach_toolkits?: Toolkit[];
+  media_toolkits?: Toolkit[];
 };
 
 const webinarData = webinars as {
   webinars?: WebinarEntry[];
 };
 
-const toolkitList: NewsroomCardItem[] = (Array.isArray(toolkitData?.outreach_toolkits) ? toolkitData.outreach_toolkits : []).map((toolkit) => ({
+const allToolkits: Toolkit[] = [
+  ...(Array.isArray(toolkitData?.outreach_toolkits) ? toolkitData.outreach_toolkits : []),
+  ...(Array.isArray(toolkitData?.media_toolkits) ? toolkitData.media_toolkits : []),
+];
+
+const toolkitList: NewsroomCardItem[] = allToolkits.map((toolkit) => ({
   title: toolkit.title,
   url: toolkit.url,
   description: toolkit.description,
@@ -33,6 +39,8 @@ const toolkitList: NewsroomCardItem[] = (Array.isArray(toolkitData?.outreach_too
   content_types: toolkit.content_types,
   topics: toolkit.topics,
 }));
+
+const toolkitPageSize = 9;
 
 const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
   return [...new Set(values.filter((v): v is string => typeof v === "string" && v.trim().length > 0))];
@@ -63,7 +71,7 @@ const slugifyForId = (value: string): string =>
   <main class="container my-5">
     <h1 class="h2 mb-4 sideways blue">Outreach Resources</h1>
     <p></p>
-    <h2 class="heading-border-left blue">Outreach Toolkits</h2>
+    <h2 class="heading-border-left blue">All Toolkits</h2>
     <form class="row g-4 reduced-gutters filter mb-4 p-3" aria-label="News filter">
       <div class="col-12 col-lg-6">
         <label class="form-label" for="content-type-toggle">Content Type</label>
@@ -118,6 +126,16 @@ const slugifyForId = (value: string): string =>
         ))
       }
     </div>
+    <p id="toolkit-empty-state" class="toolkit-empty-state" hidden>No toolkits match the selected filters.</p>
+    <nav id="toolkit-pagination" class="toolkit-pagination" aria-label="Toolkit pagination" hidden>
+      <button id="toolkit-pagination-prev" type="button" class="toolkit-pagination-button">
+        Previous
+      </button>
+      <div id="toolkit-pagination-pages" class="toolkit-pagination-pages"></div>
+      <button id="toolkit-pagination-next" type="button" class="toolkit-pagination-button">
+        Next
+      </button>
+    </nav>
     <div>
         <h2 class="heading-border-left blue mt-4">Webinar Archives</h2>
         <p></p>
@@ -142,9 +160,17 @@ const slugifyForId = (value: string): string =>
   </main>
 </BaseLayout>
 
-<script define:vars={{ toolkitList }}>
+<script define:vars={{ toolkitList, toolkitPageSize }}>
   const dropdownToggle = document.getElementById("content-type-toggle");
   const dropdownMenu = document.getElementById("content-type-list");
+  const toolkitCols = Array.from(document.querySelectorAll("#toolkit-cards .toolkit-card-col"))
+    .filter((el) => el instanceof HTMLElement);
+  const paginationNav = document.getElementById("toolkit-pagination");
+  const paginationPrev = document.getElementById("toolkit-pagination-prev");
+  const paginationNext = document.getElementById("toolkit-pagination-next");
+  const paginationPages = document.getElementById("toolkit-pagination-pages");
+  const emptyState = document.getElementById("toolkit-empty-state");
+  let currentPage = 1;
 
   const updateDropdownLabel = () => {
     const selected = Array.from(document.querySelectorAll('input[name="content-type"]:checked'))
@@ -168,25 +194,83 @@ const slugifyForId = (value: string): string =>
       .filter((el) => el instanceof HTMLInputElement)
       .map((cb) => cb.value);
 
-  const getFilteredMatches = (selectedContentTypes, selectedTopics) => {
-    return toolkitList.map((toolkit) => {
+  const getFilteredIndexes = (selectedContentTypes, selectedTopics) => {
+    return toolkitList.reduce((indexes, toolkit, index) => {
       const hasContentType = selectedContentTypes.length === 0 || (toolkit.content_types ?? []).some((ct) => selectedContentTypes.includes(ct));
       const hasTopic = selectedTopics.length === 0 || (toolkit.topics ?? []).some((topic) => selectedTopics.includes(topic));
-      return hasContentType && hasTopic;
-    });
+      if (hasContentType && hasTopic) {
+        indexes.push(index);
+      }
+      return indexes;
+    }, []);
   };
 
-  const applyToDOM = (matches) => {
-    const cols = document.querySelectorAll("#toolkit-cards .toolkit-card-col");
-    cols.forEach((col, index) => {
-      col.style.display = matches[index] ? "" : "none";
-    });
+  const renderPagination = (matchCount) => {
+    const pageCount = Math.ceil(matchCount / toolkitPageSize);
+
+    if (paginationNav instanceof HTMLElement) {
+      paginationNav.hidden = pageCount <= 1;
+    }
+
+    if (!(paginationPages instanceof HTMLElement)) {
+      return;
+    }
+
+    paginationPages.replaceChildren();
+
+    for (let pageNumber = 1; pageNumber <= pageCount; pageNumber += 1) {
+      const pageButton = document.createElement("button");
+      pageButton.type = "button";
+      pageButton.className = `toolkit-pagination-button${pageNumber === currentPage ? " is-active" : ""}`;
+      pageButton.textContent = `${pageNumber}`;
+      pageButton.setAttribute("aria-label", `Go to page ${pageNumber}`);
+      pageButton.setAttribute("aria-current", pageNumber === currentPage ? "page" : "false");
+      pageButton.addEventListener("click", () => {
+        currentPage = pageNumber;
+        runFilter({ resetPage: false });
+      });
+      paginationPages.append(pageButton);
+    }
+
+    if (paginationPrev instanceof HTMLButtonElement) {
+      paginationPrev.disabled = currentPage <= 1;
+    }
+
+    if (paginationNext instanceof HTMLButtonElement) {
+      paginationNext.disabled = currentPage >= pageCount;
+    }
   };
 
-  const runFilter = () => {
+  const applyToDOM = (matchingIndexes) => {
+    const pageCount = Math.ceil(matchingIndexes.length / toolkitPageSize);
+
+    if (pageCount > 0 && currentPage > pageCount) {
+      currentPage = pageCount;
+    }
+
+    const startIndex = (currentPage - 1) * toolkitPageSize;
+    const visibleIndexes = new Set(matchingIndexes.slice(startIndex, startIndex + toolkitPageSize));
+
+    toolkitCols.forEach((col, index) => {
+      col.style.display = visibleIndexes.has(index) ? "" : "none";
+    });
+
+    if (emptyState instanceof HTMLElement) {
+      emptyState.hidden = matchingIndexes.length > 0;
+    }
+
+    renderPagination(matchingIndexes.length);
+  };
+
+  const runFilter = ({ resetPage = true } = {}) => {
     const selectedContentTypes = getSelectedContentTypes();
     const checkedTopics = getCheckedTopics();
-    applyToDOM(getFilteredMatches(selectedContentTypes, checkedTopics));
+
+    if (resetPage) {
+      currentPage = 1;
+    }
+
+    applyToDOM(getFilteredIndexes(selectedContentTypes, checkedTopics));
     updateDropdownLabel();
   };
 
@@ -227,6 +311,18 @@ const slugifyForId = (value: string): string =>
 
   document.querySelectorAll('input[name="topic"]').forEach((el) => {
     el.addEventListener("change", runFilter);
+  });
+
+  paginationPrev?.addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage -= 1;
+      runFilter({ resetPage: false });
+    }
+  });
+
+  paginationNext?.addEventListener("click", () => {
+    currentPage += 1;
+    runFilter({ resetPage: false });
   });
 
   // initialize
@@ -327,6 +423,55 @@ const slugifyForId = (value: string): string =>
     font-family: FontAwesome;
     font-size:16px;
 }
+
+  .toolkit-empty-state {
+    margin-top: 1.5rem;
+    color: #6c757d;
+  }
+
+  .toolkit-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .toolkit-pagination-pages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .toolkit-pagination-button {
+    min-width: 2.75rem;
+    padding: 0.5rem 0.875rem;
+    border: 1px solid #ced4da;
+    border-radius: 999px;
+    background-color: #fff;
+    color: #055681;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .toolkit-pagination-button:hover:not(:disabled),
+  .toolkit-pagination-button:focus-visible {
+    border-color: #055681;
+    background-color: #e8f1f9;
+    outline: 0;
+  }
+
+  .toolkit-pagination-button.is-active {
+    border-color: #055681;
+    background-color: #055681;
+    color: #fff;
+  }
+
+  .toolkit-pagination-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
 
 </style>
