@@ -29,13 +29,13 @@ interface FilterOption {
 }
 
 const playbookItems = (await getCollection("safetyPlaybook")).sort((a, b) => {
-  const orderA = a.data.order ?? Number.MAX_SAFE_INTEGER;
-  const orderB = b.data.order ?? Number.MAX_SAFE_INTEGER;
-
-  if (orderA !== orderB) {
-    return orderA - orderB;
+  // First sort by category
+  const categoryCompare = a.data.category.localeCompare(b.data.category);
+  if (categoryCompare !== 0) {
+    return categoryCompare;
   }
 
+  // Then sort by title within each category
   return a.data.title.localeCompare(b.data.title);
 });
 
@@ -143,7 +143,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
 
   @media (min-width: 768px) {
     .playbook-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -182,6 +182,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     font-weight: 600;
     color: rgb(var(--color-gray));
   }
+
 </style>
 
 <PageLayout title="Safety Playbook" bannerImage={banner} keywords={keywords} description={description}>
@@ -258,7 +259,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     safeties?: string[];
   }
 
-  const PAGE_SIZE = 8;
+  const PAGE_SIZE = 9;
   let currentPage = 1;
   let activeFilters: SafetyPlaybookFilterDetail = {
     category: "all",

@@ -25,14 +25,7 @@ const { item } = Astro.props as Props;
 const { Content } = await render(item);
 const data = item.data;
 
-const keywords = [
-  data.title,
-  data.category,
-  ...data.safety,
-  ...data.location,
-  ...data.facility,
-  ...data.keywords,
-];
+const keywords = [data.title, data.category, ...data.safety, ...data.location, ...data.facility, ...data.keywords];
 ---
 
 <style>
@@ -52,7 +45,7 @@ const keywords = [
   .playbook-main {
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 1.5rem;
+    padding: 0rem;
     background: #fff;
   }
 
@@ -66,14 +59,15 @@ const keywords = [
     margin: 0 0 0.75rem;
     text-transform: uppercase;
     font-weight: 700;
-    color: rgb(var(--color-brand-dark));
+    color: #055681;
     letter-spacing: 0.02em;
   }
 
   .playbook-short {
-    margin: 1rem 0 1.5rem;
+    margin: 1rem 0;
     color: rgb(var(--color-gray));
-    font-size: 1.1rem;
+    font-size: 1.7rem;
+    font-weight: 200;
   }
 
   .playbook-content :global(p:first-child) {
@@ -95,7 +89,7 @@ const keywords = [
 
   .meta-title {
     margin: 0;
-    padding: 0.85rem 1rem;
+    padding: 0.2rem 1rem 0 1rem;
     font-size: 1rem;
     font-weight: 700;
     background: rgb(var(--color-brand-light));
@@ -112,7 +106,7 @@ const keywords = [
   }
 
   .meta-list-item {
-    background: rgb(var(--color-gray-light));
+    background: #f0f0f0;
     border-radius: 999px;
     padding: 0.25rem 0.7rem;
     font-size: 0.9rem;
@@ -135,13 +129,7 @@ const keywords = [
   }
 </style>
 
-<PageLayout
-  title={data.title}
-  bannerImage={banner}
-  currentBreadcrumb={data.title}
-  description={data.shortDescription}
-  keywords={keywords}
->
+<PageLayout title={data.title} bannerImage={banner} currentBreadcrumb={data.title} description={data.shortDescription} keywords={keywords}>
   <Fragment slot="banner">Safety Playbook</Fragment>
 
   <main>
@@ -153,68 +141,80 @@ const keywords = [
 
         <div class="playbook-content">
           <Content />
+          {
+          data.resources.length > 0 && (
+            <section class="meta-card p-0 mt-2">
+              <h3 class="mt-4">Additional Resources</h3>
+              <ul >
+                {data.resources.map((resource: { label: string; url: string }) => (
+                  <li>
+                    <a  href={resource.url} target="_blank" rel="noopener noreferrer">
+                      {resource.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
         </div>
+        
       </article>
 
       <aside class="playbook-aside">
-        {data.additionalToolsSensors.length > 0 && (
-          <section class="meta-card">
-            <h2 class="meta-title">Additional Tools and Sensors</h2>
-            <ul class="meta-list">
-              {data.additionalToolsSensors.map((item: string) => (
-                <li class="meta-list-item">{item}</li>
-              ))}
-            </ul>
-          </section>
-        )}
+        {
+          data.safety.length > 0 && (
+            <section class="meta-card">
+              <h2 class="meta-title">Safety Area(s)</h2>
+              <ul class="meta-list">
+                {data.safety.map((item: string) => (
+                  <li class="meta-list-item">{item}</li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
 
-        {data.location.length > 0 && (
-          <section class="meta-card">
-            <h2 class="meta-title">Location</h2>
-            <ul class="meta-list">
-              {data.location.map((item: string) => (
-                <li class="meta-list-item">{item}</li>
-              ))}
-            </ul>
-          </section>
-        )}
+     
 
-        {data.facility.length > 0 && (
-          <section class="meta-card">
-            <h2 class="meta-title">Facility</h2>
-            <ul class="meta-list">
-              {data.facility.map((item: string) => (
-                <li class="meta-list-item">{item}</li>
-              ))}
-            </ul>
-          </section>
-        )}
+        {
+          data.location.length > 0 && (
+            <section class="meta-card">
+              <h2 class="meta-title">Location</h2>
+              <ul class="meta-list">
+                {data.location.map((item: string) => (
+                  <li class="meta-list-item">{item}</li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
 
-        {data.safety.length > 0 && (
-          <section class="meta-card">
-            <h2 class="meta-title">Safety</h2>
-            <ul class="meta-list">
-              {data.safety.map((item: string) => (
-                <li class="meta-list-item">{item}</li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {data.resources.length > 0 && (
-          <section class="meta-card">
-            <h2 class="meta-title">Additional Resources</h2>
-            <ul class="resource-list">
-              {data.resources.map((resource: { label: string; url: string }) => (
-                <li>
-                  <a class="resource-link" href={resource.url} target="_blank" rel="noopener noreferrer">
-                    {resource.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+        {
+          data.facility.length > 0 && (
+            <section class="meta-card">
+              <h2 class="meta-title">Facility</h2>
+              <ul class="meta-list">
+                {data.facility.map((item: string) => (
+                  <li class="meta-list-item">{item}</li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+   {
+          data.additionalToolsSensors.length > 0 && (
+            <section class="meta-card">
+              <h2 class="meta-title">Additional Tools and Sensors</h2>
+              <ul class="meta-list">
+                {data.additionalToolsSensors.map((item: string) => (
+                  <li class="meta-list-item">{item}</li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+       
       </aside>
     </section>
   </main>

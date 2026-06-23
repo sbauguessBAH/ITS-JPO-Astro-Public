@@ -246,6 +246,7 @@ onBeforeUnmount(() => {
   max-height: 18rem;
   overflow-y: auto;
   min-width: 200px;
+  padding: 0;
 }
 
 .dropdown-actions {

@@ -26,7 +26,7 @@ facility:
 safety:
   - Road Weather Safety
 keywords:
-  - Road Weather Information Systems
+  - Road Weather Information Systems 
   - RWIS
   - Environmental Sensor Stations
   - ESS
@@ -42,6 +42,7 @@ keywords:
 resources:
   - label: FHWA Weather FAQ
     url: https://ops.fhwa.dot.gov/Weather/faq.htm
+    
 order: 1
 ---
 Road Weather Information Systems (RWIS) play a vital role in transportation operations by providing accurate, real-time, and predictive information about weather and road conditions. These systems support transportation managers, road operators, and maintenance crews by enabling data-driven decisions that enhance safety, reduce operational costs, and maintain efficient traffic flow, particularly during winter weather events.
