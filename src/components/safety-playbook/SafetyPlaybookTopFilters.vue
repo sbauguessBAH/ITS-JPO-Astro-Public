@@ -155,7 +155,7 @@ onBeforeUnmount(() => {
     <CheckboxMultiSelectDropdown
       id="playbook-filter-safety"
       v-model="selectedSafeties"
-      label="Safety"
+      label="Safety Areas"
       :options="props.safeties"
       :disabled-options="disabledSafeties"
     />

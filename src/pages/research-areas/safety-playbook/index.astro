@@ -121,6 +121,51 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     color: rgb(var(--color-brand-dark));
   }
 
+  .playbook-search {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 0;
+    background: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .playbook-search-label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: rgb(var(--color-brand-dark));
+  }
+
+  .playbook-search-controls {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .playbook-search-input {
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 0.375rem;
+    padding: 0.55rem 0.75rem;
+    font-size: 1rem;
+  }
+
+  .playbook-search-clear {
+    border: 1px solid rgb(5, 86, 129);
+    color: rgb(5, 86, 129);
+    background: #fff;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .playbook-search-help {
+    margin: 0.55rem 0 0;
+    color: rgb(var(--color-gray));
+    font-size: 0.95rem;
+  }
+
   .playbook-top-filters {
     display: grid;
     gap: 1rem;
@@ -183,6 +228,13 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     color: rgb(var(--color-gray));
   }
 
+  @media (max-width: 767px) {
+    .playbook-search-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
 </style>
 
 <PageLayout title="Safety Playbook" bannerImage={banner} keywords={keywords} description={description}>
@@ -214,6 +266,21 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
         </aside>
 
         <section class="playbook-content" aria-live="polite">
+          <div class="playbook-search">
+            <label class="playbook-search-label" for="playbook-search-input">Search Tools</label>
+            <div class="playbook-search-controls">
+              <input
+                id="playbook-search-input"
+                class="playbook-search-input"
+                type="search"
+                placeholder="Search by title, safety, additional tools/sensors, or keywords"
+                autocomplete="off"
+              />
+              <button class="playbook-search-clear" id="playbook-search-clear" type="button">Clear Search</button>
+            </div>
+           
+          </div>
+
           <SafetyPlaybookTopFilters
             client:load
             locations={locations}
@@ -251,6 +318,8 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
 </PageLayout>
 
 <script>
+  import Fuse from "fuse.js";
+
   interface SafetyPlaybookFilterDetail {
     category?: string;
     source?: string;
@@ -259,8 +328,19 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     safeties?: string[];
   }
 
+  interface SafetyPlaybookSearchDoc {
+    slug: string;
+    title: string;
+    safety: string[];
+    additionalToolsSensors: string[];
+    keywords: string[];
+  }
+
   const PAGE_SIZE = 9;
   let currentPage = 1;
+  let activeSearchQuery = "";
+  let fuse: Fuse<SafetyPlaybookSearchDoc> | null = null;
+  let searchMatchedSlugs = new Set<string>();
   let activeFilters: SafetyPlaybookFilterDetail = {
     category: "all",
     locations: [],
@@ -274,6 +354,51 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
       .map((value) => value.trim())
       .filter(Boolean);
 
+  const buildSearchIndex = (cards: NodeListOf<HTMLElement>): void => {
+    const docs = Array.from(cards)
+      .map((card): SafetyPlaybookSearchDoc | null => {
+        const slug = card.dataset.slug ?? "";
+
+        if (!slug) {
+          return null;
+        }
+
+        return {
+          slug,
+          title: card.dataset.searchTitle ?? "",
+          safety: splitDataValues(card.dataset.searchSafety),
+          additionalToolsSensors: splitDataValues(card.dataset.searchTools),
+          keywords: splitDataValues(card.dataset.searchKeywords),
+        };
+      })
+      .filter((doc): doc is SafetyPlaybookSearchDoc => doc !== null);
+
+    fuse = new Fuse(docs, {
+      includeScore: true,
+      ignoreLocation: true,
+      threshold: 0.4,
+      minMatchCharLength: 2,
+      keys: [
+        { name: "title", weight: 0.45 },
+        { name: "keywords", weight: 0.25 },
+        { name: "safety", weight: 0.15 },
+        { name: "additionalToolsSensors", weight: 0.15 },
+      ],
+    });
+  };
+
+  const updateSearchMatches = (): void => {
+    const query = activeSearchQuery.trim();
+
+    if (!query || !fuse) {
+      searchMatchedSlugs = new Set<string>();
+      return;
+    }
+
+    const matches = fuse.search(query);
+    searchMatchedSlugs = new Set(matches.map((match) => match.item.slug));
+  };
+
   const matchesGroup = (selectedValues: string[] | undefined, cardValues: string[]): boolean => {
     if (!selectedValues || selectedValues.length === 0) {
       return true;
@@ -286,6 +411,12 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     cards: NodeListOf<HTMLElement>,
     filters: SafetyPlaybookFilterDetail,
   ): HTMLElement[] => {
+    const hasSearchQuery = activeSearchQuery.trim().length > 0;
+
+    if (hasSearchQuery) {
+      return Array.from(cards).filter((element) => searchMatchedSlugs.has(element.dataset.slug ?? ""));
+    }
+
     const { category, locations, facilities, safeties } = filters;
 
     return Array.from(cards).filter((element) => {
@@ -299,9 +430,13 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
   };
 
   const updateResultsCount = (element: HTMLElement, visibleCount: number): void => {
+    const hasSearchQuery = activeSearchQuery.trim().length > 0;
+
     element.textContent =
       visibleCount === 0
-        ? "No tools match the selected filters"
+        ? hasSearchQuery
+          ? "No tools match your search"
+          : "No tools match the selected filters"
         : `Showing ${visibleCount} tool${visibleCount !== 1 ? "s" : ""}`;
   };
 
@@ -315,6 +450,11 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
 
     if (!resultsCount || !pagination || !prevButton || !nextButton || !status) {
       return;
+    }
+
+    if (!fuse) {
+      buildSearchIndex(cards);
+      updateSearchMatches();
     }
 
     const filteredCards = getFilteredCards(cards, activeFilters);
@@ -356,9 +496,33 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
 
   const prevButton = document.getElementById("playbook-page-prev");
   const nextButton = document.getElementById("playbook-page-next");
+  const searchInput = document.getElementById("playbook-search-input") as HTMLInputElement | null;
+  const clearSearchButton = document.getElementById("playbook-search-clear") as HTMLButtonElement | null;
 
   prevButton?.addEventListener("click", () => changePage(-1));
   nextButton?.addEventListener("click", () => changePage(1));
+
+  searchInput?.addEventListener("input", (event: Event) => {
+    const target = event.target as HTMLInputElement;
+    activeSearchQuery = target.value;
+
+    updateSearchMatches();
+    currentPage = 1;
+    updatePaginationView();
+  });
+
+  clearSearchButton?.addEventListener("click", () => {
+    activeSearchQuery = "";
+
+    if (searchInput) {
+      searchInput.value = "";
+      searchInput.focus();
+    }
+
+    updateSearchMatches();
+    currentPage = 1;
+    updatePaginationView();
+  });
 
   window.addEventListener("safety-playbook-filter-change", (event: Event) => {
     const detail = (event as CustomEvent<SafetyPlaybookFilterDetail>).detail ?? {};
