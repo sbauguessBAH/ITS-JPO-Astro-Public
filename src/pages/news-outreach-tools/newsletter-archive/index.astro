@@ -2,21 +2,9 @@
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import NewsroomCard from "@/src/components/NewsroomCard.astro";
+import base_url from "@/src/lib/base_url";
 import type { NewsroomCardItem } from "@/src/types";
-import newsletters from "@/src/content/news-resources/newsletters/newsletters.json";
-
-type NewsletterEntry = {
-	title?: string;
-	url?: string;
-	description?: string;
-	date?: string;
-	subtitle?: string;
-	season?: string;
-	volume?: string;
-	issue?: string;
-	img?: string;
-	topics?: string[];
-};
+import { getCollection } from "astro:content";
 
 type FilterableNewsletter = {
 	card: NewsroomCardItem;
@@ -36,37 +24,33 @@ const keywords = [
 const description =
 	"Browse the ITS JPO newsletter archive and filter issues by year, volume, and topics.";
 
-const data = newsletters as { newsletters?: NewsletterEntry[] };
-
-const rawNewsletters: NewsletterEntry[] = Array.isArray(data.newsletters)
-	? data.newsletters
-	: [];
+const rawNewsletters = (await getCollection("newsletters")).sort((a, b) =>
+	b.data.publishDate.getTime() - a.data.publishDate.getTime(),
+);
 
 const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
 	return [...new Set(values.filter((v): v is string => typeof v === "string" && v.trim().length > 0))];
 };
 
-const extractYear = (date?: string): string => {
-	if (!date) return "";
-	const match = date.match(/\b(\d{4})\b/);
-	return match ? match[1] : "";
-};
+const extractYear = (date: Date): string => String(date.getUTCFullYear());
 
 const newsletterRows: FilterableNewsletter[] = rawNewsletters.map((item) => {
-	const issueSummary = [item.season, item.volume, item.issue].filter(Boolean).join(" | ");
+	const issueSummary = [item.data.season, item.data.volume, item.data.issue].filter(Boolean).join(" | ");
+	const slug = item.id.replace(/\.(md|mdx)$/i, "");
 
 	return {
 		card: {
-			title: item.title,
-			url: item.url,
-			description: item.description?.trim().length ? item.description : issueSummary,
-			date: item.date,
-			subtitle: item.subtitle,
-			topics: item.topics,
+			title: item.data.title,
+			url: base_url(`/news-outreach-tools/newsroom/newsletter-archive/${slug}/`),
+			description: item.data.description?.trim().length ? item.data.description : issueSummary,
+			date: item.data.dateLabel,
+			subtitle: item.data.subtitle,
+			topics: item.data.topics,
+			imageUrl: item.data.imageUrl,
 		},
-		year: extractYear(item.date),
-		volume: item.volume ?? "",
-		topics: item.topics ?? [],
+		year: extractYear(item.data.publishDate),
+		volume: item.data.volume ?? "",
+		topics: item.data.topics ?? [],
 	};
 });
 
@@ -76,7 +60,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 ---
 
 <PageLayout title="Newsletter Archive" bannerImage={banner} keywords={keywords} description={description}>
-	<Fragment slot="banner">ITS JPO Newsletter Archive</Fragment>
+	<Fragment slot="banner">Newsroom</Fragment>
 	<main>
 		<h2 class="sideways blue">ITS JPO Newsletter Archive</h2>
 		<p>

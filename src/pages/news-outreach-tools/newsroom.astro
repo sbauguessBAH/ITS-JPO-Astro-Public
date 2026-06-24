@@ -2,21 +2,10 @@
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import NewsroomCard from "@/src/components/NewsroomCard.astro";
+import base_url from "@/src/lib/base_url";
 import type { NewsroomCardItem } from "@/src/types";
-import newsletters from "@/src/content/news-resources/newsletters/newsletters.json";
 import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
-
-type NewsletterEntry = {
-  title?: string;
-  url?: string;
-  description?: string;
-  date?: string;
-  subtitle?: string;
-  season?: string;
-  volume?: string;
-  issue?: string;
-  img?: string;
-};
+import { getCollection } from "astro:content";
 
 type MediaToolkitEntry = {
   title?: string;
@@ -29,80 +18,75 @@ type MediaToolkitEntry = {
   location?: string;
 };
 
-const keywords = [
-  "ITS JPO",
-  "newsroom",
-  "deployments",
-  "conferences",
-  "exhibits",
-  "newsworthy stories",
-  "ITS JPO Now",
-  "publications",
-];
+const keywords = ["ITS JPO", "newsroom", "deployments", "conferences", "exhibits", "newsworthy stories", "ITS JPO Now", "publications"];
 const description =
   "The ITS JPO Newsroom section contains a variety of information and resources about various deployments, conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous editions of the ITS JPO Now publication. Check back often as this page is regularly updated with new information.";
 
-const newsletterData = newsletters as { newsletters?: NewsletterEntry[] };
+const newsletterEntries = (await getCollection("newsletters")).sort((a, b) =>
+  b.data.publishDate.getTime() - a.data.publishDate.getTime(),
+);
 
-const newsletterList: NewsletterEntry[] = Array.isArray(newsletterData.newsletters)
-  ? newsletterData.newsletters
-  : [];
-
-const toCardItem = (item: NewsletterEntry): NewsroomCardItem => {
-  const issueSummary = [item.season, item.volume, item.issue].filter(Boolean).join(" | ");
+const toCardItem = (entry: (typeof newsletterEntries)[number]): NewsroomCardItem => {
+  const issueSummary = [entry.data.season, entry.data.volume, entry.data.issue].filter(Boolean).join(" | ");
+  const slug = entry.id.replace(/\.(md|mdx)$/i, "");
 
   return {
-    title: item.title,
-    url: item.url,
-    description: item.description?.trim().length ? item.description : issueSummary,
-    date: item.date,
-    subtitle: item.subtitle,
+    title: entry.data.title,
+    url: base_url(`/news-outreach-tools/newsroom/newsletter-archive/${slug}/`),
+    description: entry.data.description?.trim().length ? entry.data.description : issueSummary,
+    date: entry.data.dateLabel,
+    subtitle: entry.data.subtitle,
+    imageUrl: entry.data.imageUrl,
+    topics: entry.data.topics,
   };
 };
 
-const featuredNewsletter: NewsroomCardItem | undefined = newsletterList[0]
-  ? toCardItem(newsletterList[0])
-  : undefined;
+const featuredNewsletter: NewsroomCardItem | undefined = newsletterEntries[0] ? toCardItem(newsletterEntries[0]) : undefined;
 
-const archiveNewsletters: NewsroomCardItem[] = newsletterList
-  .slice(1, 5)
-  .map((entry) => toCardItem(entry));
+const archiveNewsletters: NewsroomCardItem[] = newsletterEntries.slice(1, 5).map((entry) => toCardItem(entry));
 
 const toolkitData = toolkits as { media_toolkits?: MediaToolkitEntry[] };
 
-const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolkits)
-  ? toolkitData.media_toolkits
-  : [])
-  .slice(0, 4)
-  .map((item) => ({
-    title: item.title,
-    url: item.url,
-    description: item.description,
-    date: item.date,
-    subtitle: item.subtitle,
-    content_types: item.content_types,
-    topics: item.topics,
-  }));
+const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolkits) ? toolkitData.media_toolkits : []).slice(0, 4).map((item) => ({
+  title: item.title,
+  url: item.url,
+  description: item.description,
+  date: item.date,
+  subtitle: item.subtitle,
+  content_types: item.content_types,
+  topics: item.topics,
+}));
 ---
 
 <PageLayout title="Newsroom" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner">Newsroom</Fragment>
   <main>
-    <h2 class="sideways blue">ITS JPO Newsroom</h2>
-    <div class="container mt-4">
-        <div class="row">
-            <p class="col-12">
-            The ITS JPO Newsroom section contains a variety of information and resources about various deployments, 
-            conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous 
-            editions of the <i>ITS JPO Now</i> publication. Check back often as this page is regularly updated with 
-            new information.
-            </p>
-      
-        </div>
+    
+    <div class="row gx-4 gy-4 ">
+      <div class="col-12 col-xl-8">
+        <h2 class="">ITS JPO Newsroom</h2>
+    <p>
+      The ITS JPO Newsroom section contains a variety of information and resources about various deployments, conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives
+      previous editions of the <i>ITS JPO Now</i> publication. Check back often as this page is regularly updated with new information.
+    </p>
     </div>
+    {
+      featuredNewsletter && (
+        <NewsroomCard
+          item={featuredNewsletter}
+          class="col-12 col-xl-4 featured-newsletter-col newsletter-card featured-newsletter-card"
+          showPills={false}
+          showColoredLabel={false}
+          showImage={false}
+          ctaText="Read Current Issue"
+        />
+      )
+    }
+    </div>
+
     <div class="d-flex justify-content-between mt-5">
-        <h2 class="pl-3 heading-border-left blue">Media Kits</h2>
-        <a href="./outreach-resources">View All Media Kits</a>
+      <h2 class="pl-3 heading-border-left blue">Media Kits</h2>
+      <a href={base_url("/news-outreach-tools/newsroom/outreach-resources/")}>View All Media Kits</a>
     </div>
     <div class="row gx-4 gy-4 mt-1">
       {
@@ -114,19 +98,20 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
       }
     </div>
     <div class="d-flex justify-content-between mt-5">
-        <h2 class="pl-3 heading-border-left blue">ITS JPO Newsletter Archive</h2>
-        <a href="./newsletter-archive">Browse Full Archive</a>
+      <h2 class="pl-3 heading-border-left blue">ITS JPO Newsletter Archive</h2>
+      <a href={base_url("/news-outreach-tools/newsroom/newsletter-archive/")}>Browse Full Archive</a>
     </div>
     <div class="row gx-4 gy-4 mt-1 align-items-stretch newsletter-layout">
       {
         featuredNewsletter && (
-            <NewsroomCard
-              item={featuredNewsletter}
-              class="col-12 col-xl-4 featured-newsletter-col newsletter-card featured-newsletter-card"
-              showPills={false}
-              showColoredLabel={false}
-              ctaText="Read Current Issue"
-            />
+          <NewsroomCard
+            item={featuredNewsletter}
+            class="col-12 col-xl-4 featured-newsletter-col newsletter-card featured-newsletter-card"
+            showPills={false}
+            showColoredLabel={false}
+            showImage={true}
+            ctaText="Read Current Issue"
+          />
         )
       }
       <div class="col-12 col-xl-8">
@@ -134,22 +119,25 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
           {
             archiveNewsletters.map((newsletter) => (
               <div class="col-12 col-sm-6 archive-newsletter-col">
-                <NewsroomCard
-                  item={newsletter}
-                  showPills={false}
-                  showColoredLabel={false}
-                  ctaText="Read Issue"
-                />
+                <NewsroomCard item={newsletter} showPills={false} showColoredLabel={false} ctaText="Read Issue" />
               </div>
             ))
           }
         </div>
       </div>
     </div>
-    </main>
+  </main>
 </PageLayout>
 
 <style>
+  .heading-border-left.blue {
+    padding: 0 0 0 0.6rem;
+    line-height: 1.5rem;
+    font-size: 1.75rem;
+    border-left: 5px solid;
+    border-color: #055581;
+    border-bottom: none;
+  }
   .featured-newsletter-col {
     display: flex;
   }

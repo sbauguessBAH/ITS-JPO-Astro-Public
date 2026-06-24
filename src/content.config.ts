@@ -198,6 +198,24 @@ const its4usPublications = defineCollection({
   })
 });
 
+const newsletters = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/newsletters' }),
+  schema: z.object({
+    title: z.string(),
+    publishDate: z.coerce.date(),
+    dateLabel: z.string(),
+    subtitle: z.string().optional(),
+    season: z.string().optional(),
+    volume: z.string().optional(),
+    issue: z.string().optional(),
+    description: z.string().optional(),
+    imageUrl: z.string().url().optional(),
+    topics: z.array(z.string()).default([]),
+    keywords: z.array(z.string()).default([]),
+    bannerTitle: z.string().optional(),
+  }),
+});
+
 // #endregion
 // #region Export
 
@@ -212,6 +230,7 @@ export const collections = {
   // ascStandards,
   library,
   automationResources,
-  its4usPublications
+  its4usPublications,
+  newsletters,
 };
 // #endregion

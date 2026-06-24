@@ -19,17 +19,11 @@ export const navigation: NavigationItem[] = [
           { name: "Charter", url: "/about/itspac/charter" },
         ],
       },
-      { 
-        name: "Join Our Mailing List", 
+      {
+        name: "Join Our Mailing List",
         url: "/about/contact-us/mailinglist",
         isEnabled: true,
-        pages: [
-          { name: "ITS JPO NOW", url: "/about/contact-us/mailinglist/ITS-JPO-NOW", pages: [
-            
-            { name: "May 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026" },
-
-          ] },
-        ],
+        pages: [{ name: "ITS JPO NOW", url: "/about/contact-us/mailinglist/ITS-JPO-NOW" }],
       },
     ],
   },
@@ -41,13 +35,18 @@ export const navigation: NavigationItem[] = [
       { name: "Latest News from USDOT", url: "https://www.transportation.gov/newsroom", isExternal: true },
       { name: "Image Library", url: "/news-outreach-tools/image-library" },
       { name: "Video Library", url: "/news-outreach-tools/video-library" },
-      { name: "Newsroom", url: "/news-outreach-tools/newsroom"},
-      { name: "News & Outreach Resources", url: "/news-outreach-tools/outreach-resources" },
+      {
+        name: "Newsroom",
+        url: "/news-outreach-tools/newsroom",
+        pages: [
+          { name: "Newsletter Archive", url: "/news-outreach-tools/newsroom/newsletter-archive" },
+          { name: "News & Outreach Resources", url: "/news-outreach-tools/newsroom/outreach-resources" },
+        ],
+      },
       {
         name: "Publication Editorial Guidelines",
         url: "/news-outreach-tools/Publication-Editorial-Guidelines",
         isEnabled: true,
-       
       },
     ],
   },
@@ -170,7 +169,6 @@ export const navigation: NavigationItem[] = [
           { name: "Videos", url: "/research-areas/ITS4US/videos" },
           { name: "Documentation", url: "/research-areas/ITS4US/documents" },
           { name: "Upcoming Activities", url: "/research-areas/ITS4US/upcoming" },
-
         ],
       },
       {
@@ -257,7 +255,6 @@ export const navigation: NavigationItem[] = [
           { name: "Overview", url: "/resources/architecture-and-standards" },
           { name: "National ITS Reference Architecture", url: "/resources/architecture-and-standards/reference-architecture" },
           { name: "Standards", url: "/resources/architecture-and-standards/standards" },
-
         ],
       },
       { name: "Cybersecurity", url: "/resources/Cybersecurity" },
@@ -404,9 +401,7 @@ export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
     if (trimmedPathname === navigationItem.url || !navigationItem.pages) break;
 
     // Move to the deepest matching child. If there is no child match, stop.
-    const nextItem = navigationItem.pages
-      .filter((page) => trimmedPathname.startsWith(page.url))
-      .sort((a, b) => b.url.length - a.url.length)[0];
+    const nextItem = navigationItem.pages.filter((page) => trimmedPathname.startsWith(page.url)).sort((a, b) => b.url.length - a.url.length)[0];
 
     if (!nextItem || nextItem.url === navigationItem.url) break;
     navigationItem = nextItem;
@@ -435,9 +430,7 @@ export function findSection(pathname: string): AnyNavigationItem | undefined {
     if (!navigationItem.pages) return undefined;
 
     // Move to the deepest matching child. If there is no child match, stop.
-    const nextItem = navigationItem.pages
-      .filter((page) => trimmedPathname.startsWith(page.url))
-      .sort((a, b) => b.url.length - a.url.length)[0];
+    const nextItem = navigationItem.pages.filter((page) => trimmedPathname.startsWith(page.url)).sort((a, b) => b.url.length - a.url.length)[0];
 
     if (!nextItem || nextItem.url === navigationItem.url) return undefined;
     navigationItem = nextItem;

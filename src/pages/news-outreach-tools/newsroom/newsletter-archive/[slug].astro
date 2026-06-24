@@ -1,0 +1,99 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+interface Props {
+  issue: CollectionEntry<"newsletters">;
+}
+
+export async function getStaticPaths() {
+  const issues = await getCollection("newsletters");
+
+  return issues.map((issue: CollectionEntry<"newsletters">) => ({
+    params: {
+      slug: issue.id.replace(/\.(md|mdx)$/i, ""),
+    },
+    props: {
+      issue,
+    },
+  }));
+}
+
+const { issue } = Astro.props as Props;
+const { Content } = await render(issue);
+
+const pageTitle = `${issue.data.title} - ${issue.data.dateLabel}`;
+const bannerTitle = issue.data.bannerTitle ?? pageTitle;
+const pageDescription = issue.data.description ?? "ITS JPO NOW newsletter issue";
+const pageKeywords = issue.data.keywords.length > 0 ? issue.data.keywords : ["ITS JPO", "newsletter", issue.data.dateLabel];
+---
+
+<PageLayout title={pageTitle} keywords={pageKeywords} description={pageDescription}>
+  <Fragment slot="banner">{bannerTitle}</Fragment>
+
+  <main class="container-xl newsletter-container shadow rounded-4 p-4 mt-5">
+    {
+      issue.data.imageUrl && (
+        <div class="row">
+          <div class="col-12">
+            <img src={issue.data.imageUrl} alt={`${issue.data.title} - ${issue.data.dateLabel}`} class="newsletter-banner" />
+          </div>
+        </div>
+      )
+    }
+
+    <div class="newsletter-content">
+      <Content />
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .newsletter-container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .newsletter-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .newsletter-content :global(h1),
+  .newsletter-content :global(h2),
+  .newsletter-content :global(h3),
+  .newsletter-content :global(h4),
+  .newsletter-content :global(h5),
+  .newsletter-content :global(h6) {
+    text-wrap: balance;
+    color: #1e3769;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter-content :global(p),
+  .newsletter-content :global(li) {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .newsletter-content :global(a) {
+    color: #167796;
+    text-decoration: underline;
+  }
+
+  .newsletter-content :global(blockquote) {
+    border-left: 4px solid #0c77cf;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background: #f3f8fc;
+  }
+
+  @media (max-width: 768px) {
+    .newsletter-container {
+      padding: 1rem;
+    }
+  }
+</style>

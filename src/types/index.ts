@@ -75,6 +75,7 @@ export type Newsletter = {
   issue?: string;
   date?: string;
   subtitle?: string;
+  imageUrl?: string;
   content_types?: string[];
   topics?: string[];
 };
@@ -87,6 +88,7 @@ export type NewsroomCardItem = {
   date?: string;
   subtitle?: string;
   issue?: string;
+  imageUrl?: string;
   content_types?: string[];
   topics?: string[];
 };

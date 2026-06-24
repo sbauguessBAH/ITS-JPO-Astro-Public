@@ -1,9 +1,14 @@
 ---
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import base_url from '@/src/lib/base_url';
+import { getCollection } from "astro:content";
 
 const keywords = ["ITS JPO", "newsletter", "ITS JPO NOW", "updates", "news", "events"];
 const description = "ITS JPO NOW - A bimonthly digest featuring program announcements, latest releases, and upcoming events from the ITS Joint Program Office.";
+
+const newsletterEntries = (await getCollection("newsletters")).sort((a, b) =>
+  b.data.publishDate.getTime() - a.data.publishDate.getTime(),
+);
 ---
 
 <PageLayout title="ITS JPO NOW Newsletter Archive" keywords={keywords} description={description}>
@@ -34,50 +39,56 @@ const description = "ITS JPO NOW - A bimonthly digest featuring program announce
           <p class="text-muted mb-4">Browse past issues of ITS JPO NOW</p>
           
           <div class="row">
-            <!-- May 2026 Issue -->
-            <div class="col-md-6 mb-4">
-              <div class="card newsletter-card h-100">
-                <img 
-                  src="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13451089/6858046/govdelivery-banners-may_crop.jpg" 
-                  class="card-img-top" 
-                  alt="May 2026 Newsletter"
-                />
-                <div class="card-body d-flex flex-column">
-                  <h3 class="card-title h5">May 2026</h3>
-                  <p class="card-text">
-                    Read about the Georgia G-MAP launch, work zone safety initiatives, 
-                    new data stories on ITS DataHub, and upcoming events including the 
-                    OmniAir Plugfest and ITS America Conference.
-                  </p>
-                  <div class="mt-auto">
-                    <a href={base_url('/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026')} class="btn btn-outline-primary">
-                      Read May 2026 Issue
-                    </a>
+            {
+              newsletterEntries.length > 0 ? (
+                newsletterEntries.map((entry) => {
+                  const slug = entry.id.replace(/\.(md|mdx)$/i, "");
+                  const issueTitle = `${entry.data.dateLabel}${entry.data.volume ? ` • ${entry.data.volume}` : ""}${entry.data.issue ? ` ${entry.data.issue}` : ""}`;
+                  return (
+                    <div class="col-md-6 mb-4">
+                      <div class="card newsletter-card h-100">
+                        {entry.data.imageUrl && (
+                          <img
+                            src={entry.data.imageUrl}
+                            class="card-img-top"
+                            alt={`${entry.data.dateLabel} Newsletter`}
+                          />
+                        )}
+                        <div class="card-body d-flex flex-column">
+                          <h3 class="card-title h5">{issueTitle}</h3>
+                          <p class="card-text">{entry.data.description ?? "Read the latest ITS JPO NOW issue."}</p>
+                          <div class="mt-auto">
+                            <a href={base_url(`/news-outreach-tools/newsroom/newsletter-archive/${slug}/`)} class="btn btn-outline-primary">
+                              Read {entry.data.dateLabel} Issue
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
+                <div class="col-md-6 mb-4">
+                  <div class="card newsletter-card h-100 bg-light">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                      <h3 class="card-title h5 text-muted">Future Issues</h3>
+                      <p class="card-text text-muted">
+                        More newsletter issues coming soon! Subscribe to receive the latest
+                        updates directly to your inbox.
+                      </p>
+                      <a
+                        href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary"
+                      >
+                        Subscribe Now
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- Placeholder for future issues -->
-            <div class="col-md-6 mb-4">
-              <div class="card newsletter-card h-100 bg-light">
-                <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
-                  <h3 class="card-title h5 text-muted">Future Issues</h3>
-                  <p class="card-text text-muted">
-                    More newsletter issues coming soon! Subscribe to receive the latest 
-                    updates directly to your inbox.
-                  </p>
-                  <a 
-                    href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="btn btn-primary"
-                  >
-                    Subscribe Now
-                  </a>
-                </div>
-              </div>
-            </div>
+              )
+            }
           </div>
         </section>
 
