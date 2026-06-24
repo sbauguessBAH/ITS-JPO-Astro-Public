@@ -786,52 +786,12 @@ table.dataTable thead .sorting_desc_disabled:before {
 .partnerImage {
     width:100%;
 }
-/* MAp for ITS4US  */
 
-.map-container{
-    text-align: center;
-  }
 
-@media (max-width: 500px) {
-  .map-container{
-    text-align: left;
-  }
-
-  .map-container a{
-    display:block;
-  }
+/*path#WA, circle#WA, path#OR, circle#OR{
+  fill: #3680af;
 }
-
-
-#us-map{
-  display: block;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-path.inactive, circle.inactive {
-
-  cursor: default;
-  fill: #dbdbdb;
-
-}
-
-path.active, circle.active{
-  transition: .3s ease-out
-}
-
-path:hover, circle:hover {
-  cursor: default;
-}
-
-path.clickable:hover, circle.clickable:hover{
-  cursor:pointer;
-  filter:brightness(110%);
-}
-
-
+*/
 
 #path67 {
   fill: none !important;
@@ -1055,14 +1015,14 @@ main a[href$=".pdf"]::after {
 }
 
 main a[href^="mailto:"]::after {
-    content: "\f0e0"; /* Unicode for Font Awesome envelope icon */
+    content: "\f0e0";
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
-    text-decoration: none;
+    text-decoration-line: none;
     display: inline-block;
-    font-size:14px;
-    margin-left:6px;
+    font-size: 14px;
+    margin-left: 6px;
 }
 
 main a[href$=".docx"]::after {

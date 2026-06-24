@@ -2,35 +2,154 @@
 import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import { Image } from "astro:assets";
-import trAnalyticsLogo from "@/src/assets/images/ai/logos/TrAnalyticsLLC.png";
-import creareLogo from "@/src/assets/images/ai/logos/Creare-Logo.jpg";
-import jcTechsLogo from "@/src/assets/images/ai/logos/JC-Techs-logo.jpg";
-import veloLogo from "@/src/assets/images/ai/logos/Velo-logo.svg";
-import aiWaysionLogo from "@/src/assets/images/ai/logos/AIWaysion-logo.jpg";
-import numobilityLogo from "@/src/assets/images/ai/logos/numobilityai_logo.jpg";
-import opalLogo from "@/src/assets/images/ai/logos/opal-logo.png";
-import skyliteLogo from "@/src/assets/images/ai/logos/SkyliteLabs-logo.webp";
-import kitwareLogo from "@/src/assets/images/ai/logos/Kitware-logo.png";
-import kittelsonLogo from "@/src/assets/images/ai/logos/Kittelson-Associates-logo.webp";
-import stateOfPlaceLogo from "@/src/assets/images/ai/logos/stateofplace-logo.png";
 import base_url from "@/src/lib/base_url";
+import intelligenceInMotionBg from "@/src/assets/images/ai/intelligenc-in-motion-background.png";
+import getAIReadyImage from "@/src/assets/images/ai/GetAIReady.png";
+import putAIIntoPracticeImage from "@/src/assets/images/ai/PutAIIntoPractice.png";
+import learnConnectImage from "@/src/assets/images/ai/Learn-Connect.jpeg";
+import "@/src/styles/ai-section.css";
 ---
 
 <PageLayout title="Artificial Intelligence" bannerImage={banner}>
-  <Fragment slot="banner">Artificial Intelligence</Fragment>
-      <main>
-        <h2 class="sideways blue">Artificial Intelligence (AI) in Transportation</h2>
-        <p class="read-more-wrap">
-          AI has many practical applications in the transportation domain and offers the promise to transform the transportation industry by improving safety, mobility, productivity, security, and
-          efficiency. The ITS JPO seeks to understand the landscape of how AI in transportation is currently being leveraged, and how potential investment in the future can help the industry achieve
-          the promise while addressing the technical and institutional challenges.
-        </p>
-        <p class="read-more-wrap mb-5">
-          There is a need to understand the risks and challenges, coordinate with stakeholders via U.S. DOT pooled fund efforts, advance collaborative research, develop voluntary-use tools and
-          resources, and continued support of a U.S. DOT wide understanding of the application of AI for ITS and AI. We see a multi-pronged approach that ensures coordination and collaboration with
-          infrastructure owners and operators (IOOs), removes barriers to implementation, and maximizes industry innovation.
-        </p>
-      
-      </main>
-</PageLayout>
+  <!-- Banner Slot (Used by PageLayout component) -->
+  <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
 
+  <main>
+    <div class="intelligence-in-motion d-flex align-items-start gap-4 mb-4" style={`background-image: url(${intelligenceInMotionBg.src});`}>
+      <h2 class="text-white">Transforming Transportation with AI</h2>
+    </div>
+    <p class="read-more-wrap pt-0">
+      The Intelligent Transportation Systems Joint Program Office (ITS JPO) Artificial Intelligence Program is driving innovation in surface transportation through responsible AI development and adoption. The ITS JPO works collaboratively with State, local,
+      and regional partners as well as Tribal Nations to develop, test, and deploy AI solutions that make our transportation systems safer, more efficient, productive, and resilient. By engaging
+      private industry, original equipment manufacturers (OEMs), national associations, and leading academic institutions, we bridge the gap between cutting-edge research
+      and real-world deployment.
+    </p>
+    <p class="read-more-wrap pt-0">
+      From real-world pilots to practical guidance and tools, we're helping transportation agencies harness AI's transformative potential across varied transportation modes and use cases.
+    </p>
+
+    <!-- VISION & MISSION SECTION -->
+    <div class="row g-4 mb-5">
+      <!-- VISION Card -->
+      <div class="col-md-6">
+        <div class="vision-mission-card p-4 rounded-4">
+          <h3 class="vision-mission-title d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="32" viewBox="0 0 23 32" fill="none">
+              <path
+                d="M11.5 32C10.6567 32 9.93472 31.6867 9.33417 31.06C8.73361 30.4333 8.43333 29.68 8.43333 28.8H14.5667C14.5667 29.68 14.2664 30.4333 13.6658 31.06C13.0653 31.6867 12.3433 32 11.5 32ZM5.36667 27.2V24H17.6333V27.2H5.36667ZM5.75 22.4C3.98667 21.3067 2.5875 19.84 1.5525 18C0.5175 16.16 0 14.16 0 12C0 8.66667 1.11806 5.83333 3.35417 3.5C5.59028 1.16667 8.30556 0 11.5 0C14.6944 0 17.4097 1.16667 19.6458 3.5C21.8819 5.83333 23 8.66667 23 12C23 14.16 22.4825 16.16 21.4475 18C20.4125 19.84 19.0133 21.3067 17.25 22.4H5.75ZM6.67 19.2H16.33C17.48 18.3467 18.3681 17.2933 18.9942 16.04C19.6203 14.7867 19.9333 13.44 19.9333 12C19.9333 9.54667 19.1156 7.46667 17.48 5.76C15.8444 4.05333 13.8511 3.2 11.5 3.2C9.14889 3.2 7.15556 4.05333 5.52 5.76C3.88444 7.46667 3.06667 9.54667 3.06667 12C3.06667 13.44 3.37972 14.7867 4.00583 16.04C4.63194 17.2933 5.52 18.3467 6.67 19.2Z"
+                fill="#055686"
+              >
+              </path>
+            </svg>
+
+            VISION
+          </h3>
+          <p class="m-0 p-0">A safer, more efficient, productive, and resilient national transportation system enabled by the responsible and transformative use of AI.</p>
+        </div>
+      </div>
+
+      <!-- MISSION Card -->
+      <div class="col-md-6">
+        <div class="vision-mission-card p-4 rounded-4">
+          <h3 class="vision-mission-title d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path
+                d="M10.72 17.48L12.92 18.96L16 17.4L19.08 18.96L21.2 17.56L19.6 14.4H12.24L10.72 17.48ZM5.16 28.8H26.8L22.64 20.44L19.32 22.64L16 21L12.68 22.64L9.28 20.4L5.16 28.8ZM0 32L9.36 13C9.62667 12.4667 10.02 12.0333 10.54 11.7C11.06 11.3667 11.6267 11.2 12.24 11.2H14.4V0H25.6L24 3.2L25.6 6.4H17.6V11.2H19.6C20.2133 11.2 20.7733 11.36 21.28 11.68C21.7867 12 22.1867 12.4267 22.48 12.96L32 32H0Z"
+                fill="#055686"
+              >
+              </path>
+            </svg>
+            MISSION
+          </h3>
+          <p class="m-0 p-0">To collaboratively lead development, deployment, and adoption of safe, secure, and trustworthy AI solutions in surface transportation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <h2>Objectives and Approach</h2>
+
+    <ul class="mb-5">
+      <li>
+        <strong>Understand AI's capabilities and limitations</strong> for solving multimodal transportation challenges.
+      </li>
+      <li>
+        <strong>Test and validate AI solution effectiveness</strong> through real-world pilots and evaluations to encourage broader implementation and adoption.
+      </li>
+      <li>
+        <strong>Demonstrate successful implementations</strong> to build stakeholder enthusiasm and public awareness of AI's potential benefits.
+      </li>
+      <li>
+        <strong>Deliver repeatable guidance, tools, and resources</strong> that reduce barriers to implementation.
+      </li>
+      <li>
+        <strong>Build capacity in state, local, and regional agencies, and support Tribal Nations</strong>, by providing the skills and governance structures needed to responsibly adopt AI.
+      </li>
+      <li>
+        <strong>Maintain high standards of safety, security, and trustworthiness</strong>, while conforming to federal AI policy and strategic priorities.
+      </li>
+    </ul> -->
+
+    <!-- FOCUS AREAS SECTION -->
+    <section class="py-5 gray-edge-to-edge">
+      <div class="px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl">
+        <h2 class="text-center mb-5 fw-bold">Focus Areas</h2>
+        <div class="row g-4">
+          <!-- Card 1: Get AI-Ready -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/get-ai-ready")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0 card-hoverable">
+                <Image src={getAIReadyImage} alt="Get AI-Ready" class="card-image" width={800} />
+                <div class="p-4">
+                  <h3 class="fw-bold">Get AI-Ready</h3>
+                  <p class="card-text mt-3">Datasets, frameworks, and best practices to support your AI development.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 2: Put AI into Practice -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0 card-hoverable">
+                <Image src={putAIIntoPracticeImage} alt="Put AI into Practice" class="card-image" width={800} />
+                <div class="p-4">
+                  <h3 class="fw-bold">Put AI into Practice</h3>
+                  <p class="card-text mt-3">Funding opportunities, initiatives, and project insights to support real-world AI implementation.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 3: Learn & Connect  -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0 card-hoverable">
+                <Image src={learnConnectImage} alt="Learn & Connect" class="card-image" width={800} />
+                <div class="p-4">
+                  <h3 class="fw-bold">Learn & Connect</h3>
+                  <p class="card-text mt-3">Case studies, peer exchanges, and learning resources to support shared AI knowledge.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</PageLayout>
+<style>
+  .intelligence-in-motion {
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+  }
+
+  .intelligence-in-motion h2 {
+    padding: 0;
+    margin: 0;
+    color: white;
+    width: 60%;
+    text-wrap: balance;
+  }
+</style>

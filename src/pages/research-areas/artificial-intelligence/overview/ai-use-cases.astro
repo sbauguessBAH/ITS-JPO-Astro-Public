@@ -1,0 +1,198 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import "@/src/styles/ai-section.css";
+---
+
+<PageLayout title="What Are AI Transportation Use Cases" bannerImage={banner}>
+  <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
+  <main>
+    <h2>What are AI Transportation Use Cases</h2>
+    <p>
+      AI has the opportunity to serve as a transformative and strategic catalyst that could fundamentally enhance multimodal transportation. By enabling the seamless fusion of diverse data streams, AI
+      can power superior real-time predictions and optimized decision-making, allowing transportation agencies to transition from reactive troubleshooting to proactive, "anticipatory" postures. At the
+      same time, AI serves as an engine for institutional innovation, pushing the boundaries of what is possible while automating complex, high-volume tasks. The Intelligent Transportation Systems Joint Program Office (ITS JPO) has categorized AI
+      applications or use cases by transportation program and ITS service areas while highlighting illustrative (not comprehensive) use cases for each.
+    </p>
+
+    <p class="fw-bold">Click on any category below to explore AI use cases by transportation program area.</p>
+
+    <div class="accordion-container">
+      <!-- Safety Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Safety</span>
+          <span class="accordion-count">8 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Areas:</strong> Vehicle Safety, Public Safety</p>
+          <ul class="app-items">
+            <li>Hotspot mapping</li>
+            <li>Crash prediction</li>
+            <li>Driver behavior monitoring</li>
+            <li>Emergency & disaster management and response</li>
+            <li>Multimodal conflict analysis</li>
+            <li>In-Cab distraction detection</li>
+            <li>Work zone intrusion alarms</li>
+            <li>Track & facility intrusion detection (transit & rail)</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Operations & Management Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Operations & Management</span>
+          <span class="accordion-count">8 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Areas:</strong> Traffic Management, Parking Management, Weather</p>
+          <ul class="app-items">
+            <li>Signal timing & prediction</li>
+            <li>Incident management and prediction</li>
+            <li>Work-zone analytics</li>
+            <li>Wrong way driver detection</li>
+            <li>Congestion monitoring & analytics</li>
+            <li>Road weather conditions identification and dispatch</li>
+            <li>Blocked crossing analytics (rail)</li>
+            <li>Recreational travel visitor flow management</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Freight Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Freight</span>
+          <span class="accordion-count">9 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Areas:</strong> Commercial Vehicle Operations, Parking Management</p>
+          <ul class="app-items">
+            <li>Truck parking availability detection & prediction</li>
+            <li>Freight signal prioritization</li>
+            <li>Dynamic truck routing</li>
+            <li>Freight predictive analytics</li>
+            <li>Multimodal incident detection and management</li>
+            <li>Port & border gate optimization</li>
+            <li>AI-enhanced Weigh in Motion (WIM) & roadside inspection</li>
+            <li>Credential & driver verification</li>
+            <li>Dynamic curbside management</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Asset Management Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Asset Management</span>
+          <span class="accordion-count">6 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> Maintenance & Construction</p>
+          <ul class="app-items">
+            <li>Asset location and inventories</li>
+            <li>Condition detection and prediction</li>
+            <li>Maintenance scheduling</li>
+            <li>Predictive Bus/Rail maintenance</li>
+            <li>Right of Way (ROW) encroachment detection</li>
+            <li>Root cause & forensic analysis of infrastructure conditions</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Construction & Project Management Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Construction & Project Management</span>
+          <span class="accordion-count">4 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> Maintenance & Construction</p>
+          <ul class="app-items">
+            <li>Utility mapping</li>
+            <li>Predictive risk & schedule analytics</li>
+            <li>Intelligent contract & document analysis</li>
+            <li>Value engineering optimization</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Transportation Planning Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Transportation Planning</span>
+          <span class="accordion-count">6 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> All</p>
+          <ul class="app-items">
+            <li>Travel time and reliability analysis</li>
+            <li>Scenario analysis</li>
+            <li>Demand modeling and freight forecasting</li>
+            <li>Multimodal trip planning</li>
+            <li>Sentiment analysis</li>
+            <li>Real-time traveler information systems</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Transit Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Transit</span>
+          <span class="accordion-count">6 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> Public Transportation</p>
+          <ul class="app-items">
+            <li>Transit fleet dispatch</li>
+            <li>Delay prediction</li>
+            <li>Incident detection & prediction</li>
+            <li>Predictive demand responsive routing (micro-transit)</li>
+            <li>Transit fleet health & predictive maintenance</li>
+            <li>Intelligent headways prediction</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Data (Enterprise) Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Data (Enterprise)</span>
+          <span class="accordion-count">6 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> Data Management</p>
+          <ul class="app-items">
+            <li>Synthetic data generation</li>
+            <li>Semantic data discovery</li>
+            <li>Cross-domain data integration & fusion</li>
+            <li>Automated data cleansing</li>
+            <li>Metadata generation</li>
+            <li>Automated data governance & privacy masking</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Cybersecurity (Enterprise) Accordion -->
+      <details class="accordion-item" name="ai-accordion">
+        <summary class="accordion-header">
+          <span class="accordion-title">Cybersecurity (Enterprise)</span>
+          <span class="accordion-count">3 Use Cases</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="service-area"><strong>ITS Service Area:</strong> Cybersecurity</p>
+          <ul class="app-items">
+            <li>Predictive threat intelligence</li>
+            <li>Adaptive threat & incident response</li>
+            <li>Vulnerability remediation</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    
+  </main>
+</PageLayout>
