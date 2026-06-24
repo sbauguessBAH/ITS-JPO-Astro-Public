@@ -1,0 +1,72 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import "@/src/styles/ai-section.css";
+---
+
+<PageLayout title="Where Can AI Advance Transportation" bannerImage={banner}>
+  <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
+  <main>
+    <h2>Where Can AI Advance Transportation</h2>
+    <p>
+      Artificial Intelligence serves as a transformative "intelligence layer" for the surface transportation system, moving the needle from traditional, retrospective analysis to a future of real-time
+      awareness and predictive foresight. By integrating AI, agencies can harness the true value of their data to drive higher-quality decisions.
+    </p>
+
+    <!-- Main Section -->
+    <div class="row ai-card-row">
+      <div class="ai-header-col">
+        <h3>Real-Time Data and Adaptive Operations</h3>
+      </div>
+
+      <div class="p-4 d-flex gap-4 flex-column">
+        <!-- Real-Time Data Section -->
+        <div>
+          <p>
+            A key value of AI lies in its ability to digest and interpret massive streams of real-time data that are otherwise impossible for humans to monitor at scale. In operations and safety, this
+            means moving from observing what happened to predicting what is about to occur. AI enables systems to sense emerging risks (such as erratic vehicle behavior or a sudden shift in weather)
+            and trigger immediate, automated responses. Whether it is adjusting signal timing to clear a sudden bottleneck or alerting a transit operator to a potential conflict, AI can help ensure
+            that multimodal systems are constantly adapting to the live environment to maximize safety and efficiency.
+          </p>
+        </div>
+
+        <!-- Predictive Intelligence Subsection -->
+        <div class="card shadow-sm card-body card-gray">
+          <h5 class="card-title">Predictive Intelligence and Strategic Decision-Making</h5>
+          <p class="card-text">
+            Beyond the "here and now," AI offers unparalleled predictive opportunities that can strengthen long-term planning, asset management, and project delivery. By identifying complex patterns
+            within historical and cross-cutting datasets, AI allows agencies to forecast infrastructure needs with greater potential accuracy.
+          </p>
+        </div>
+
+        <!-- Application Cards -->
+        <div class="card shadow-sm card-body card-gray">
+          <h5 class="card-title">Data-Driven Planning</h5>
+          <p class="card-text">
+            AI simulates thousands of "what-if" scenarios to help planners understand how new infrastructure or a freight corridor will impact regional performance and economic vitality.
+          </p>
+        </div>
+
+        <div class="card shadow-sm card-body card-gray">
+          <h5 class="card-title">Predictive Asset Management</h5>
+          <p class="card-text">
+            Rather than relying on static lifecycles, AI enables a more strategic approach to infrastructure health. By predicting exactly when a bridge or pavement section will require intervention,
+            agencies can optimize long-term investments and extend the life of critical assets.
+          </p>
+        </div>
+
+        <div class="card shadow-sm card-body card-gray">
+          <h5 class="card-title">Mission Optimization</h5>
+          <p class="card-text">AI streamlines internal agency operations, from automating administrative workflows to optimizing project delivery timelines.</p>
+        </div>
+
+        <!-- Conclusion -->
+        
+      </div>
+    </div><p class="mt-4">
+          Ultimately, AI empowers agencies to shift from a reactive posture to a proactive management model, ensuring that every dollar invested results in a safer, more resilient, and more efficient
+          transportation system.
+        </p>
+  </main>
+</PageLayout>

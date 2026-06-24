@@ -10,7 +10,27 @@ export const navigation: NavigationItem[] = [
     pages: [
       { name: "About ITS JPO", url: "/about", isEnabled: true },
       { name: "Contact Us", url: "/about/contact-us" },
-      { name: "Join Our Mailing List", url: "/about/contact-us/mailinglist" },
+      {
+        name: "ITS Program Advisory Committee (ITSPAC)",
+        url: "/about/itspac",
+        isEnabled: true,
+        pages: [
+          { name: "ITSPAC Home", url: "/about/itspac" },
+          { name: "Charter", url: "/about/itspac/charter" },
+        ],
+      },
+      { 
+        name: "Join Our Mailing List", 
+        url: "/about/contact-us/mailinglist",
+        isEnabled: true,
+        pages: [
+          { name: "ITS JPO NOW", url: "/about/contact-us/mailinglist/ITS-JPO-NOW", pages: [
+            
+            { name: "May 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026" },
+
+          ] },
+        ],
+      },
     ],
   },
 
@@ -27,11 +47,7 @@ export const navigation: NavigationItem[] = [
         name: "Publication Editorial Guidelines",
         url: "/news-outreach-tools/Publication-Editorial-Guidelines",
         isEnabled: true,
-        pages: [
-          { name: "Overview", url: "/news-outreach-tools/Publication-Editorial-Guidelines" },
-          { name: "508 Guidance", url: "/news-outreach-tools/Publication-Editorial-Guidelines/Guidance" },
-          { name: "Publications Checklist", url: "/news-outreach-tools/Publication-Editorial-Guidelines/Checklist" },
-        ],
+       
       },
     ],
   },
@@ -44,8 +60,37 @@ export const navigation: NavigationItem[] = [
         url: "/research-areas/artificial-intelligence",
         isEnabled: true,
         pages: [
-          { name: "Artificial Intelligence in Transportation", url: "/research-areas/artificial-intelligence" },
-          { name: "AI for Transportation Planning and Design", url: "/research-areas/artificial-intelligence/transportation-planning-design" },
+          { name: "Home", url: "/research-areas/artificial-intelligence" },
+          {
+            name: "Overview",
+            url: "/research-areas/artificial-intelligence/overview",
+            isEnabled: true,
+            pages: [
+              { name: "How Does AI Work", url: "/research-areas/artificial-intelligence/overview/how-ai-works" },
+              { name: "Where Can AI Advance Transportation", url: "/research-areas/artificial-intelligence/overview/where-ai-advances-transportation" },
+              { name: "What Are AI Transportation Use Cases", url: "/research-areas/artificial-intelligence/overview/ai-use-cases" },
+              { name: "What Is The JPO AI Implementation Approach", url: "/research-areas/artificial-intelligence/overview/jpo-implementation-approach" },
+            ],
+          },
+          {
+            name: "Focus Areas",
+            url: "/research-areas/artificial-intelligence/focus-areas",
+            isEnabled: true,
+            pages: [
+              { name: "Get AI-Ready", url: "/research-areas/artificial-intelligence/focus-areas/get-ai-ready" },
+              { name: "Put AI into Practice", url: "/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice" },
+              {
+                name: "Learn & Connect",
+                url: "/research-areas/artificial-intelligence/focus-areas/learn-connect",
+                isEnabled: true,
+                pages: [
+                  { name: "AI Governance", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-governance" },
+                  { name: "AI Definitions & Concepts", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-definitions-concepts" },
+                  { name: "AI Methods & Sub-Methods", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-methods-sub-methods" },
+                ],
+              },
+            ],
+          },
         ],
       },
       {
@@ -123,6 +168,9 @@ export const navigation: NavigationItem[] = [
             ],
           },
           { name: "Videos", url: "/research-areas/ITS4US/videos" },
+          { name: "Documentation", url: "/research-areas/ITS4US/documents" },
+          { name: "Upcoming Activities", url: "/research-areas/ITS4US/upcoming" },
+
         ],
       },
       {
@@ -151,12 +199,8 @@ export const navigation: NavigationItem[] = [
                     url: "/research-areas/V2X-Deployment/overview/v2x-applications/commercial-vehicle",
                   },
                   {
-                    name: "Mobility & Environment",
-                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/mobility-environment",
-                  },
-                  {
-                    name: "Traffic Advisories & Warnings",
-                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/traffic-warnings",
+                    name: "Mobility",
+                    url: "/research-areas/V2X-Deployment/overview/v2x-applications/mobility",
                   },
                   {
                     name: "Data Collection",
@@ -181,11 +225,22 @@ export const navigation: NavigationItem[] = [
             url: "/research-areas/V2X-Deployment/deployment",
             isEnabled: true,
             pages: [
-              { name: "V2X Accelerator (2024 – present)", url: "/research-areas/V2X-Deployment/deployment/accelerator" },
+              {
+                name: "V2X Accelerator (2024 – present)",
+                url: "/research-areas/V2X-Deployment/deployment/accelerator",
+                pages: [
+                  { name: "Overview", url: "/research-areas/V2X-Deployment/deployment/accelerator" },
+                  { name: "Documentation", url: "/research-areas/V2X-Deployment/deployment/accelerator/documentation" },
+                  { name: "Maricopa County", url: "/research-areas/V2X-Deployment/deployment/accelerator/maricopa-county" },
+                  { name: "Texas A&M", url: "/research-areas/V2X-Deployment/deployment/accelerator/texas-am" },
+                  { name: "Utah DOT", url: "/research-areas/V2X-Deployment/deployment/accelerator/utah-dot" },
+                ],
+              },
               { name: "Connected Vehicle Pilot Program", url: "https://its.dot.gov/scrc/#/technology-areas/v2x/cv-pilot-program", isExternal: true },
               { name: "Safety Pilot", url: "/research-areas/V2X-Deployment/deployment/safety-pilots" },
             ],
           },
+          { name: "Contact", url: "/research-areas/V2X-Deployment/V2X-contact", isEnabled: true },
         ],
       },
     ],

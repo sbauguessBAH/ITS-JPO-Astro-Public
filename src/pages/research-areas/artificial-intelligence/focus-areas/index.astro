@@ -1,0 +1,62 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import { Image } from "astro:assets";
+import getAIReadyImage from "@/src/assets/images/ai/GetAIReady.png";
+import putAIIntoPracticeImage from "@/src/assets/images/ai/PutAIIntoPractice.png";
+import learnConnectImage from "@/src/assets/images/ai/Learn-Connect.jpeg";
+import "@/src/styles/ai-section.css";
+---
+
+<PageLayout title="Focus Areas" bannerImage={banner}>
+  <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
+  <main>
+    <!-- FOCUS AREAS SECTION -->
+    <section class="py-5 gray-edge-to-edge">
+      <div class="px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl">
+        <h2 class="text-center mb-5 fw-bold">Focus Areas</h2>
+        <div class="row g-4">
+          <!-- Card 1: Get AI-Ready -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/get-ai-ready")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0 card-hoverable">
+                <Image src={getAIReadyImage} alt="Get AI-Ready" class="card-image" width={800}/>
+                <div class="p-4">
+                  <h3 class="fw-bold">Get AI-Ready</h3>
+                  <p class="card-text mt-3">Datasets, frameworks, and best practices to support your AI development.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 2: Put AI into Practice -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0 card-hoverable">
+                <Image src={putAIIntoPracticeImage} alt="Put AI into Practice" class="card-image" width={800}/>
+                <div class="p-4">
+                  <h3 class="fw-bold">Put AI into Practice</h3>
+                  <p class="card-text mt-3">Funding opportunities, initiatives, and project insights to support real-world AI implementation.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 3: Learn & Connect -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0 card-hoverable">
+                <Image src={learnConnectImage} alt="Learn & Connect" class="card-image" width={800}/>
+                <div class="p-4">
+                  <h3 class="fw-bold">Learn & Connect</h3>
+                  <p class="card-text mt-3">Case studies, peer exchanges, and learning resources to support shared AI knowledge.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</PageLayout>

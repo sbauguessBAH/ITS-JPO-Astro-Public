@@ -1,0 +1,351 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import "@/src/styles/ai-section.css";
+---
+
+<PageLayout title="AI Methods & Sub-Methods" bannerImage={banner}>
+  <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
+  
+  <main class="container">
+    <h2>AI Methods & Sub-Methods</h2>
+    
+    <section class="methods-section">
+      <h3>AI Methods</h3>
+      <div class="table-wrapper">
+        <table class="methods-table">
+          <thead>
+            <tr>
+              <th>AI Method</th>
+              <th>AI Method Definition</th>
+              <th>AI Method Sub-Categories</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="category-cell">Integrated Sensing</td>
+              <td>Merges data from different hardware (e.g., Radar + Camera + LiDAR) to create an integrated data source base for other AI methods.</td>
+              <td>
+                <ul>
+                  <li>Raw Data Fusion (Low-level merging)</li>
+                  <li>Feature-Level Fusion (Object-level merging)</li>
+                  <li>Temporal Fusion (Time-based tracking)</li>
+                  <li>Cross-Datal Validation (Sensor cross-checking)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="category-cell">Perception &amp; Recognition</td>
+              <td>
+                <p>Ability of AI to translate raw sensor data (video, LiDAR, photos) into meaningful information.</p>
+                <p>Identifies what and where things are</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Image Labeling (Image Classification)</li>
+                  <li>Locator Detection (Object Detection &amp; Localization)</li>
+                  <li>Pixel-Level Mapping (Semantic Segmentation)</li>
+                  <li>Attribute Identification (Feature Extraction)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="category-cell">Predictive Analytics</td>
+              <td>
+                <p>Uses historical and real-time data to forecast future states.</p>
+                <p>Estimates when or where something will happen</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Time Series Analysis (Trend forecasting)</li>
+                  <li>Regression Modeling (Relationship estimation)</li>
+                  <li>Category Prediction (Classification)</li>
+                  <li>Similarity Grouping (Clustering)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="category-cell">Optimization &amp; Control</td>
+              <td>
+                <p>Focuses on finding the "best" solution among millions of possibilities</p>
+                <p>Determines the most efficient way to run a system.</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Targeted Logic (Heuristics/Metaheuristics)</li>
+                  <li>Reinforcement Learning</li>
+                  <li>Scenario Analysis (Stochastic Optimization)</li>
+                  <li>Collective Logic (Swarm Intelligence)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="category-cell">Language &amp; Knowledge Intelligence</td>
+              <td>
+                <p>Deals with unstructured human data (reports, emails, manuals).</p>
+                <p>Understands, summarizes, or generates human-readable content.</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Data Translation (Sequence-to-Sequence Modeling)</li>
+                  <li>Information Extraction (Named Entity Recognition)</li>
+                  <li>Concept-Based Search (Vector Embeddings)</li>
+                  <li>Sentence Structure Analysis (Semantic Parsing)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="category-cell">Automated Decision Support</td>
+              <td>
+                <p>Logic layer that takes the outputs from the other AI methods and suggests (or takes) an action.</p>
+                <p>Decides what to do based on the data</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Autonomous Agents (Agentic AI)</li>
+                  <li>Rule-Based/Expert Systems</li>
+                  <li>Benefit-Cost Modeling (Utility/Decision Analytics)</li>
+                  <li>Risk Based Logic</li>
+                  <li>Uncertainty Modeling (Probabilistic Reasoning)</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="submethods-section">
+      <h3>AI Sub-Methods</h3>
+      <div class="table-wrapper">
+        <table class="submethods-table">
+          <thead>
+            <tr>
+              <th>AI Method Category</th>
+              <th>AI Sub-Method Type</th>
+              <th>AI Sub-Method Definition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="4" class="category-cell">Integrated Sensing</td>
+              <td>Raw Data Fusion (Low-level merging)</td>
+              <td>Combining unprocessed sensor signals (e.g., pixels and LiDAR points) into a single unified dataset before any individual analysis occurs.</td>
+            </tr>
+            <tr>
+              <td>Feature-Level Fusion (Object-level merging)</td>
+              <td>Identifying distinct characteristics or objects in separate sensors and then mathematically merging them to form a single, high-confidence "truth."</td>
+            </tr>
+            <tr>
+              <td>Temporal Fusion (Time-based tracking)</td>
+              <td>Integrating data points collected over a sequence of time to establish continuity, monitor movement patterns, and predict future positions.</td>
+            </tr>
+            <tr>
+              <td>Cross-Data Validation (Sensor cross-checking)</td>
+              <td>Using independent data sources or different sensor modalities (e.g., Radar vs. Camera) to verify findings and eliminate "false positives" or sensor errors.</td>
+            </tr>
+            
+            <tr>
+              <td rowspan="4" class="category-cell">Perception &amp; Recognition</td>
+              <td>Image Labeling (Image Classification)</td>
+              <td>Process of assigning a single definitive category or "tag" to an entire image or data frame based on its overall content.</td>
+            </tr>
+            <tr>
+              <td>Locator Detection (Object Detection &amp; Localization)</td>
+              <td>Identifying specific coordinates of multiple individual entities within a frame and drawing boundaries (bounding boxes) around each.</td>
+            </tr>
+            <tr>
+              <td>Pixel-Level Mapping (Semantic Segmentation)</td>
+              <td>Categorizing every individual pixel in an image to define exact boundaries and shapes of various surfaces or objects.</td>
+            </tr>
+            <tr>
+              <td>Attribute Identification (Feature Extraction)</td>
+              <td>Isolating and identifying specific detailed characteristics or patterns within an object, such as text, color, or structural anomalies.</td>
+            </tr>
+            
+            <tr>
+              <td rowspan="4" class="category-cell">Predictive Analytics</td>
+              <td>Time Series Analysis (Trend forecasting)</td>
+              <td>Analyzing data points collected at consistent time intervals to identify seasonal patterns, cycles, and long-term trends for future projection.</td>
+            </tr>
+            <tr>
+              <td>Regression Modeling (Relationship estimation)</td>
+              <td>Mathematically estimating the strength and nature of the relationship between a dependent variable and one or more independent factors.</td>
+            </tr>
+            <tr>
+              <td>Category Prediction (Classification)</td>
+              <td>Predicting which discrete bucket or group a new data point belongs based on historical training data (e.g., High-Risk vs. Low-Risk).</td>
+            </tr>
+            <tr>
+              <td>Similarity Grouping (Clustering)</td>
+              <td>Using algorithms to discover natural groupings or patterns in data without pre-defined labels or categories.</td>
+            </tr>
+            
+            <tr>
+              <td rowspan="4" class="category-cell">Optimization &amp; Control</td>
+              <td>Targeted Logic (Heuristics/Metaheuristics)</td>
+              <td>Utilizing advanced "rules of thumb" to efficiently navigate massive search spaces and find high-quality solutions without checking every single possibility.</td>
+            </tr>
+            <tr>
+              <td>Reinforcement Learning</td>
+              <td>Training an AI agent to achieve a goal through a trial-and-error process where "correct" decisions are reinforced with mathematical rewards.</td>
+            </tr>
+            <tr>
+              <td>Scenario Analysis (Stochastic Optimization)</td>
+              <td>Finding the most robust solution by accounting for random variables and uncertainty across multiple "what-if" potential future states.</td>
+            </tr>
+            <tr>
+              <td>Collective Logic (Swarm Intelligence)</td>
+              <td>Decentralized problem-solving where a group of simple independent agents interact to find an optimal global solution.</td>
+            </tr>
+            
+            <tr>
+              <td rowspan="4" class="category-cell">Language &amp; Knowledge</td>
+              <td>Data Translation (Sequence-to-Sequence)</td>
+              <td>Converting one sequence of structured or unstructured data into another (e.g., Speech-to-Text or Language-to-Language).</td>
+            </tr>
+            <tr>
+              <td>Information Extraction (Named Entity Recognition)</td>
+              <td>Automatically identifying and pulling out specific, structured data points (names, dates, IDs) from unstructured text documents.</td>
+            </tr>
+            <tr>
+              <td>Concept-Based Search (Vector Embeddings)</td>
+              <td>Converting text into mathematical coordinates (vectors) so the system can find information based on conceptual meaning rather than exact word matches.</td>
+            </tr>
+            <tr>
+              <td>Sentence Structure Analysis (Semantic Parsing)</td>
+              <td>Breaking down the grammatical and logical structure of a sentence to determine the precise relationship between participants and actions.</td>
+            </tr>
+            
+            <tr>
+              <td rowspan="5" class="category-cell">Automated Decision Support</td>
+              <td>Autonomous Agents (Agentic AI)</td>
+              <td>AI systems capable of independent reasoning, using tools, and performing multi-step tasks to achieve a high-level objective without constant human prompting.</td>
+            </tr>
+            <tr>
+              <td>Rule-Based/Expert Systems</td>
+              <td>A logic framework that applies a pre-defined library of human-coded "If-Then" rules and agency policies to data to reach a conclusion.</td>
+            </tr>
+            <tr>
+              <td>Benefit-Cost Modeling (Utility/Decision Analytics)</td>
+              <td>Mathematically weighing the expected outcomes of various choices against their costs to determine the most "valuable" path forward.</td>
+            </tr>
+            <tr>
+              <td>Risk-Based Logic</td>
+              <td>Decision-making frameworks that prioritize actions based on the probability and potential severity of negative impacts.</td>
+            </tr>
+            <tr>
+              <td>Uncertainty Modeling (Probabilistic Reasoning)</td>
+              <td>Using probability math to reach decisions when data is incomplete, "noisy," or conflicting, providing a confidence score for each option.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</PageLayout>
+
+<style>
+  
+  .methods-section,
+  .submethods-section {
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .methods-table,
+  .submethods-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .methods-table thead tr,
+  .submethods-table thead tr {
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  .methods-table th,
+  .submethods-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #b9b9b9;
+    color: #232323;
+  }
+
+  .methods-table td,
+  .submethods-table td {
+    padding: 12px;
+    border: 1px solid #b9b9b9;
+    vertical-align: top;
+    color: #232323;
+  }
+
+  .methods-table tbody tr {
+    background: white;
+  }
+
+  .methods-table tbody tr:hover,
+  .submethods-table tbody tr:hover {
+    background: rgba(0, 94, 162, 0.02);
+  }
+
+  .category-cell {
+    font-weight: 600;
+    background: rgba(0, 94, 162, 0.05);
+  }
+
+  .methods-table ul,
+  .submethods-table ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+
+  .methods-table li {
+    margin: 0.25rem 0;
+  }
+
+  .methods-table p {
+    margin: 0 0 0.5rem 0;
+  }
+
+  .methods-table p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    .methods-table th,
+    .methods-table td,
+    .submethods-table th,
+    .submethods-table td {
+      padding: 8px;
+      font-size: 0.875rem;
+    }
+  }
+</style>
+       

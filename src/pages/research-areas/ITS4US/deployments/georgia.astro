@@ -5,148 +5,258 @@ import Andre from "@/src/assets/images/its4us/andre.png";
 import Map from "@/src/assets/images/its4us/ST-CTN-map.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
+import georgiaLogo from "@/src/assets/images/its4us/Georgia-page-logo.png";
+import cardImage1 from "@/src/assets/images/its4us/GMAP/GMAP-link.png";
+import cardImage2 from "@/src/assets/images/its4us/GMAP/GMAP-app-link.png";
+import cardImage3 from "@/src/assets/images/its4us/DataHub-link.png";
+import cardImage4 from "@/src/assets/images/its4us/CodeHub-link.png";
+import gmapInfographic from "@/src/assets/images/its4us/GMAP-infographic.png";
+import "@/src/styles/deployments.css";
 ---
 
-<style>
-  hr {
-    margin: 10px 0;
-  }
-  .blue {
-    display: grid;
-  }
-
-  figure {
-    margin: auto;
-    width: 30%;
-    float: right;
-    margin: 10px;
-  }
-  figcaption {
-    color: #333;
-    font-style: italic;
-    font-size: small;
-    padding: 10px;
-  }
-
-  figcaption p {
-    padding: 0;
-    margin: 0;
-    font-size: small;
-  }
-  iframe {
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-</style>
 <PageLayout title="Georgia Department of Transportation">
-
-  <Fragment slot="banner"> <img 
-    alt="ITS4US Logo" 
-    src={logo.src} 
-    style="max-height: 60px; clear: none" 
-  /> | ITS4US</Fragment>
+  <Fragment slot="banner"> <img alt="ITS4US Logo" src={logo.src} style="max-height: 60px; clear: none" /> | ITS4US</Fragment>
   <main>
-  <figure class="ms-4">
-    
-    <Image src={Andre} alt="A man in a wheelchair" width={800} class="float-sm-end img-fluid col-6-sm mb-2 rounded-4" />
-    <figcaption>
-      <p>
-        “I am a disabled veteran who needs to make occasional trips to the Northside Hospital at Gwinnett. The G-MAP app allows me to create a personalized plan to navigate around unexpected
-        obstacles.”
-      </p>
-      <p class="text-end">- Illustrative Example of Potential User</p>
-    </figcaption>
-  </figure>  
-  <h2 class="sideways blue">GDOT Deployment Overview</h2>
-  
-  <p>
-    Safe Trips in a Connected Transportation Network (ST-CTN) enhances the travel experience for all travelers. It leverages innovative solutions and existing systems such as vehicle-to-everything (V2X) deployments, an advanced trip routing engine, and a regional trip planner - all developed within an open-sourced application called the Georgia - Mobility Access Map (G-MAP). The application allows travelers to create a personalized trip plan to navigate physical infrastructure, resolve unexpected obstacles, and ensure visibility throughout their travel.
-  </p>
-  <p>
-    The deployment pilot project is led by the Georgia Department of Transportation (GDOT) with support from the Atlanta Regional Commission in Gwinnett County, Georgia, which is a suburban county northeast of Atlanta. The ST-CTN system provides Gwinnett County travelers with detailed information and step-by-step navigation tailored for users’ specific needs along with a range of other features geared to improve trip safety and efficiency. This concept is comprised of an integrated set of advanced transportation technology solutions including V2X, transit signal priority, machine learning (ML), artificial intelligence (AI) and predictive analytics.
-  </p>
-  <br /><br />
+    <section class="gray-edge-to-edge">
+      <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl">
+        <h2>Georgia Mobility and Access Planner</h2>
+        <div class="wave-banner-container shadow">
+          <div class="p-3">
+            <h3 class="text-center orange-text">Your journey, your path – mobility through greater access</h3>
+            <div class="d-flex flex-md-row flex-column align-items-center gap-3">
+              <p class="pb-5 px-3">
+                The <span>Georgia Department of Transportation (GDOT)'s</span> Georgia Mobility and Access Planner (G-MAP) is an integrated mobile trip planning application with indoor and outdoor pedestrian
+                navigation features in <span>Gwinnett County, Georgia</span>.
+              </p>
+              <Image src={georgiaLogo} alt="Georgia Department of Transportation Logo" class="page-logo img-fluid px-3" height={230} />
+            </div>
+          </div>
+          <div class="wave-banner orange-wave"></div>
+        </div>
+      </div>
+    </section>
+    <section class="container-xl">
+      <h2 class="m-0 pb-0">How it Works</h2>
 
-  
-  <h2 class="sideways blue">Approach – Project Challenges and Solutions</h2>
+      <figure class="figure text-center infographic">
+        <a href="#hcModal" class="d-inline-block">
+          <Image src={gmapInfographic} alt="Georgia Mobility and Access Planner Infographic" class="figure-img img-fluid w-100" width={2000} />
+        </a>
+        <figcaption class="figure-caption text-center">Click to view larger</figcaption>
+      </figure>
+    </section>
+    <h2>Features and Benefits</h2>
+    <ul class="icon-list">
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path>
+          </svg>
+        </div>
+        <span><b>Customized Trip Preferences</b> — Pre-trip planning based on needs and preferences.</span>
+      </li>
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"
+            >
+            </path>
+          </svg>
+        </div>
+        <span><b>Transit Signal Priority</b> — Notification of accommodations and needs for boarding.</span>
+      </li>
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"></path>
+          </svg>
+        </div>
+        <span><b>Turn-by-turn Directions</b> — Provides support services if needed.</span>
+      </li>
+      <li>
+        <div class="icon-button">
+          <svg width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m64.062 35.938v-29.688c0-0.86328-0.69922-1.5625-1.5625-1.5625h-25c-0.86327 0-1.5625 0.69922-1.5625 1.5625v29.688h-29.688c-0.86328 0-1.5625 0.69922-1.5626 1.5625v25c0 0.86328 0.69922 1.5625 1.5625 1.5625h29.688v29.688c0 0.86327 0.69922 1.5625 1.5625 1.5625h25c0.86328 0 1.5625-0.69922 1.5625-1.5625v-29.688h29.688c0.86328 0 1.5625-0.69922 1.5625-1.5625v-25c0-0.86328-0.69922-1.5625-1.5625-1.5625zm-12.5 48.438v-6.25c0-0.86328-0.69922-1.5625-1.5625-1.5625s-1.5625 0.69922-1.5625 1.5625v6.25c0 0.86328 0.69922 1.5625 1.5625 1.5625s1.5625-0.69922 1.5625-1.5625zm0-15.625v-6.25c0-0.86328-0.69922-1.5625-1.5625-1.5625s-1.5625 0.69922-1.5625 1.5625v6.25c0 0.86328 0.69922 1.5625 1.5625 1.5625s1.5625-0.69922 1.5625-1.5625zm-29.688-20.312h-6.25c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625h6.25c0.86328 0 1.5625-0.69922 1.5625-1.5625s-0.69922-1.5625-1.5625-1.5625zm15.625 0h-6.25c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625h6.25c0.86328 0 1.5625-0.69922 1.5625-1.5625s-0.69922-1.5625-1.5625-1.5625zm31.25 0h-6.25c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625h6.25c0.86328 0 1.5625-0.69922 1.5625-1.5625s-0.69922-1.5625-1.5625-1.5625zm15.625 0h-6.25c-0.86328 0-1.5625 0.69922-1.5625 1.5625s0.69922 1.5625 1.5625 1.5625h6.25c0.86328 0 1.5625-0.69922 1.5625-1.5625s-0.69922-1.5625-1.5625-1.5625zm-32.812-10.938v-6.25c0-0.86328-0.69922-1.5625-1.5625-1.5625s-1.5625 0.69922-1.5625 1.5625v6.25c0 0.86328 0.69922 1.5625 1.5625 1.5625s1.5625-0.69922 1.5625-1.5625zm0-15.625v-6.25c0-0.86328-0.69922-1.5625-1.5625-1.5625s-1.5625 0.69922-1.5625 1.5625v6.25c0 0.86328 0.69922 1.5625 1.5625 1.5625s1.5625-0.69922 1.5625-1.5625z"
+              fill-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </div>
+        <span><b>Intersection Crossing</b> — Interaction with signal controller and provides additional crossing time if needed.</span>
+      </li>
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-12.5c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 5.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"
+            >
+            </path>
+          </svg>
+        </div>
+        <span><b>CV Broadcast Message</b> — Provides communication to enabled connected vehicles to make them aware of the traveler's presence.</span>
+      </li>
+      <li>
+        <div class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+          </svg>
+        </div>
+        <span>
+          <b>Outdoor/Indoor Navigation</b> — Provides the traveler with hands-free indoor (at two county facilities) and outdoor navigation via G-MAP and/or wearables and accessible channels (haptic, voice,
+          text).
+        </span>
+      </li>
+    </ul>
 
-  
-  <p>
-    The ST-CTN project is upgrading and integrating existing technologies and services to assist travelers with completing their trip safely, successfully, and reliably. The vision of the project is to provide travelers with directions, conditions, and status on the links between trip legs that are personalized based on their preferences and capabilities, while connecting them to V2X infrastructure to provide safer trips and greater transportation network awareness. The ST-CTN project includes the following key elements that address identified stakeholder challenges:
-  </p><figure>
-    <Image src={Map} alt="Image of a map of ST-CTN Study Area in Gwinnett County" width={800} class="float-sm-end img-fluid col-6-sm mb-2" />
-    <figcaption>
-      <p>ST-CTN Study Area in Gwinnett County</p>
-    </figcaption>
-  </figure>
-  <ul>
-    <li>
-      <strong>Route Planning.</strong>
-      <p>
-        Comprehensive data collected on sidewalk conditions and the ability to customize trip preferences based on specific needs (e.g., sidewalk width, sidewalk slope, available elevators) gives users reliable trips and greater confidence.
-      </p>
-    </li>
-    <li>
-      <strong>Navigation.</strong>
-      <p>
-        Users benefit from personalized navigation settings for hands-free and usable options including haptic, voice, and text. Turn-by-turn directions include building entrances and indoor navigation.
-      </p>
-    </li>
-    <li>
-      <strong>Safety.</strong>
-      <p>
-        Information flows between systems, which enables remote service requests to transit vehicles, information about intersection crossings and pedestrian crossing time extensions if needed, and alerts to connected vehicles and users increasing traveler awareness.
-      </p>
-    </li>
-  </ul>
-  <h2 class="sideways blue">Measuring Deployment Impacts</h2>
-  <p>Some of the key performance goals and targets for ST-CTN include:</p>
-  <ul>
-    <li>
-      <strong>Enhancing the traveler’s multimodal complete trip experience.</strong>
-      <p>
-        Enhancements include ST-CTN system functions and features, enroute traveler support, and the ability for travelers to seamlessly transfer between modes while considering changes in routes due to unplanned events.
-      </p>
-    </li>
-    <li>
-      <strong>Enhancing safety.</strong>
-      <p>
-        The project aims to reduce transportation-related incidents, injuries, and near misses along pedestrian routes and at intersections; increase driver awareness of pedestrians; and improve pedestrian awareness of connected and emergency vehicles at intersections.
-      </p>
-    </li>
-    <li>
-      <strong>Improving mobility and access.</strong>
-      <p>
-        Improvements include optimized transit schedules and travel times as part of transit signal priority (TSP) operations, traveler knowledge of usable routes, automated actuation of walk phase requests, transit stop requests through travelers' mobile device or automated based on a traveler's planned route within the application, and identification of existing barriers for infrastructure enhancements.
-      </p>
-    </li>
-  </ul>
-  <h2 class="sideways blue">Project Partners</h2>
-  <div class="row">
-    <div class="col-6">
-      <ul>
-        <li>Georgia Department of Transportation</li>
-        <li>Atlanta Regional Commission</li>
-        <li>Gwinnett County</li>
-        <li>Statewide Independent Living Council of Georgia</li>
-        <li>Georgia Institute of Technology</li>
-        <li>ICF</li>
-      </ul>
+    <section class="gray-edge-to-edge mt-4">
+      <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl">
+        <h2>Get Involved</h2>
+
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card rounded-3 h-100 p-2">
+              <Image src={cardImage1} alt="G-MAP website link" class="img-fluid rounded mb-2" width={300} />
+              <a href="https://georgia-map.com/" target="_blank" rel="noopener noreferrer">G-MAP Website</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card rounded-3 h-100 p-2">
+              <Image src={cardImage2} alt="G-MAP mobile application download links" class="img-fluid rounded mb-2" width={300} />
+              <a href="https://apps.apple.com/us/app/g-map/id6446321525" target="_blank" rel="noopener noreferrer">G-MAP Apple</a>
+              <a href="https://play.google.com/store/apps/details?id=com.ibigroup.mobile.otp.its4us.android&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">G-MAP Google Play</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card rounded-3 h-100 p-2">
+              <Image src={cardImage3} alt="ITS DataHub link" class="img-fluid rounded mb-2" width={300} />
+              <a href="https://www.its.dot.gov/data/" target="_blank" rel="noopener noreferrer">Data Hub</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card rounded-3 h-100 p-2">
+              <Image src={cardImage4} alt="ITS CodeHub link" class="img-fluid rounded mb-2" width={300} />
+              <a href="https://www.its.dot.gov/code/" target="_blank" rel="noopener noreferrer">Code Hub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Modal for enlarged image */}
+    <div id="hcModal" class="img-modal">
+      <a href="#!" class="img-modal__overlay" aria-label="Close"></a>
+      <div class="img-modal__dialog" role="dialog" aria-modal="true" aria-label="Georgia Mobility and Access Planner Infographic">
+        <a href="#!" class="img-modal__close" aria-label="Close">&times;</a>
+        <Image src={gmapInfographic} alt="Georgia Mobility and Access Planner Infographic" class="img-fluid w-100" />
+      </div>
     </div>
-    <div class="col-6">
-      <ul>
-        <li>Avail Technologies</li>
-        <li>Kimley-Horn Associates</li>
-        <li>GO Systems and Solutions</li>
-        <li>Arcadis (formerly IBI Group)</li>
-        <li>HNTB</li>
-      </ul>
-    </div>
-  </div>
-  <h2 class="sideways blue">GDOT Links and Resources</h2>
-  <ul>
-    <li>Visit the <a href="https://georgia-map.com/">GDOT Project Website</a>.</li>
-  </ul>
   </main>
 </PageLayout>
+
+<style>
+  figcaption {
+    padding: 0;
+    margin: 0;
+  }
+  figure {
+    width: 100%;
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .infographic {
+    padding: 0 1rem;
+  }
+
+  .icon-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .icon-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+
+  .icon-button {
+    background-color: transparent;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .icon-button svg {
+    width: 18px;
+    height: 18px;
+    fill: #e57829;
+  }
+
+  /* Pure CSS modal */
+  .img-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+  }
+
+  .img-modal:target {
+    display: flex;
+  }
+
+  .img-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  .img-modal__dialog {
+    position: relative;
+    max-width: min(1200px, 90vw);
+    max-height: 90vh;
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-modal__dialog img {
+    max-height: 90vh;
+    display: block;
+  }
+
+  .img-modal__close {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.6rem;
+    color: #000;
+    font-size: 2rem;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .img-modal__close:focus-visible,
+  a[href="#hcModal"]:focus-visible {
+    outline: 2px solid #0d6efd;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+</style>

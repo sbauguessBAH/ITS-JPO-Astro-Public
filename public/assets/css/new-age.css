@@ -159,6 +159,9 @@ section h2.sideways{
   border-color: #055581;
   border-bottom: none;
 }
+.text-blue {
+  color: #055581;
+}
 
 .faq-subject {
   font-size: 25px;
@@ -742,7 +745,6 @@ footer ul {
 }
 
 .btn:hover {
-  padding: 8px 25px 6px 25px !important;
   background-color: #66a3cc;
   color: white;
   border-color: transparent;

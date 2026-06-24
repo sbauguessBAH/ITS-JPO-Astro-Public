@@ -56,6 +56,45 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
     gap: 4px;
   }
 
+  .callout-box {
+    background-color: #072e55;
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: left;
+  }
+
+  .callout-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .callout-body {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  .callout-button {
+    display: inline-block;
+    background-color: #efbd27;
+    color: #000;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+
+  .callout-button:hover {
+    background-color: #66a3cc;
+    color: white;
+    transform: translateY(-2px);
+  }
+
   @media (min-width: 1200px) {
     .resource-container {
       grid-template-columns: repeat(3, 1fr);
@@ -76,6 +115,12 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
             under real-world conditions. The goal is to accelerate the development of full end-to-end 
             prototype ISS and its components, including sensor fusion, AI-based decision-making, and conflict mitigation. 
           </p>
+            <div class="callout-box my-4">
+        <h3 class="callout-title">ISS Prototyping Broad Agency Announcement is Live!</h3>
+        <p class="callout-body">Funding Opportunity | Up to $17M across 3 teams</p>
+        <a href="https://sam.gov/workspace/contract/opp/343dd0f244df4c3a9c9baa9b60b8ac54/view" class="callout-button" target="_blank" rel="noopener noreferrer">Learn More </a>
+      </div> 
+
         </div>
         <div class="col-11 col-lg-4">
           <Image
@@ -85,6 +130,8 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
           />
         </div>
       </div>
+
+   
       <h2 class="program-title-lg mt-4">
         Key Research Questions
       </h2>

@@ -1,0 +1,343 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import fhwaClasThumb from "@/src/assets/images/ai/FHWA-CLAS-Thumb.png";
+import { Image } from "astro:assets";
+import "@/src/styles/ai-section.css";
+---
+
+<PageLayout title="Learn & Connect" bannerImage={banner}>
+  <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
+  <main>
+    <h2>Learn & Connect</h2>
+
+    <p>
+      Explore common challenges to AI implementation in transportation and potential strategies to address them as well as case studies from real-world agency deployments. Learn how you can connect
+      with peers to share AI best practices.
+    </p>
+    <hr />
+    <div class="row">
+      <div class="col-lg-2">
+        <div class="jump-to-menu">
+          <h3>JUMP TO SECTION</h3>
+          <ul class="jump-to-list">
+            <li><a href="#ai-readiness" class="jump-to-link" data-section="ai-readiness">AI Readiness and Assessment Tools</a></li>
+            <li><a href="#ai-foundations" class="jump-to-link" data-section="ai-foundations">AI Implementation Foundations</a></li>
+            <li><a href="#ai-knowledge-sharing" class="jump-to-link" data-section="ai-knowledge-sharing">AI Knowledge Sharing Opportunities</a></li>
+            <li><a href="#ai-materials" class="jump-to-link" data-section="ai-materials">AI Informational Materials</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-10">
+        <h2 id="ai-readiness">AI Readiness and Assessment Tools</h2>
+        <p>
+          In an era of rapid technological shifts, transportation agencies face the daunting task of moving from curiosity to being "road-ready". A Capability Maturity Model (CMM) can serve as a
+          guiding "compass" for this journey, providing a structured approach to assess an agency's readiness for AI implementation at different scales. For transportation agencies of different types
+          and sizes, an AI CMM offers a customizable, structured approach to self-assessment that bridges the gap between different program areas or roles.
+        </p><p>
+          Agency leadership and staff can leverage the results of a CMM assessment to collaboratively identify key focus areas for advancement, establish high-priority AI goals, and establish specific
+          priorities that align available strategies and resources to move purposefully between levels of AI maturity.
+        </p><p>
+          The Intelligent Transportation Systems Joint Program Office (ITS JPO) is updating its 2022 AI CMM framework and will provide new AI readiness resources. These will include an enhanced AI CMM framework and online tool (with new institutional and
+          technical assessment dimensions) along with curated reports, fact sheets, quick start guides, and supporting workshops and webinars.
+        </p>
+        <a href="https://rosap.ntl.bts.gov/view/dot/78879" class="text-decoration-none reset-link" target="_blank">
+          <div class="card data-card shadow-sm card-body card-blue">
+            <sub>REPORT</sub>
+            <h5 class="card-title">AI for ITS Capability Maturity Model (CMM) and Readiness Checklists</h5>
+            <p class="card-text">
+              The AI for ITS CMM and Readiness Checklists can help agencies assess their AI readiness. A new report framework, quick start guide and online tool will be available in Fall 2026.
+            </p>
+          </div>
+        </a>
+
+        <h2 id="ai-foundations" class="mt-4">AI Implementation Foundations</h2>
+        <p>Short, focused reads on the key topics transportation agencies need to understand when adopting AI.</p>
+
+        <div class="row mt-4">
+          <div class="col-lg-6 mb-4">
+            <div class="card insight-card h-100 d-flex flex-column">
+              <div class="card-header-gradient" style="background: linear-gradient(180deg, #055681 0%, #01121b 100%); padding: 1.5rem; border-radius: 1rem 1rem 0 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" viewBox="0 0 36 26" fill="none">
+                  <path
+                    d="M0 26V21.45C0 20.5292 0.236979 19.6828 0.710938 18.9109C1.1849 18.1391 1.81458 17.55 2.6 17.1438C4.27917 16.3042 5.98542 15.6745 7.71875 15.2547C9.45208 14.8349 11.2125 14.625 13 14.625C14.7875 14.625 16.5479 14.8349 18.2812 15.2547C20.0146 15.6745 21.7208 16.3042 23.4 17.1438C24.1854 17.55 24.8151 18.1391 25.2891 18.9109C25.763 19.6828 26 20.5292 26 21.45V26H0ZM29.25 26V21.125C29.25 19.9333 28.9182 18.7891 28.2547 17.6922C27.5911 16.5953 26.65 15.6542 25.4313 14.8688C26.8125 15.0313 28.1125 15.3089 29.3313 15.7016C30.55 16.0943 31.6875 16.575 32.7437 17.1438C33.7188 17.6854 34.4635 18.288 34.9781 18.9516C35.4927 19.6151 35.75 20.3396 35.75 21.125V26H29.25ZM8.40938 11.0906C7.13646 9.81771 6.5 8.2875 6.5 6.5C6.5 4.7125 7.13646 3.18229 8.40938 1.90938C9.68229 0.636459 11.2125 0 13 0C14.7875 0 16.3177 0.636459 17.5906 1.90938C18.8635 3.18229 19.5 4.7125 19.5 6.5C19.5 8.2875 18.8635 9.81771 17.5906 11.0906C16.3177 12.3635 14.7875 13 13 13C11.2125 13 9.68229 12.3635 8.40938 11.0906ZM27.3406 11.0906C26.0677 12.3635 24.5375 13 22.75 13C22.4521 13 22.0729 12.9661 21.6125 12.8984C21.1521 12.8307 20.7729 12.7563 20.475 12.675C21.2063 11.8083 21.7682 10.8469 22.1609 9.79063C22.5536 8.73438 22.75 7.6375 22.75 6.5C22.75 5.3625 22.5536 4.26563 22.1609 3.20938C21.7682 2.15313 21.2063 1.19167 20.475 0.325C20.8542 0.189583 21.2333 0.101563 21.6125 0.0609375C21.9917 0.0203125 22.3708 0 22.75 0C24.5375 0 26.0677 0.636459 27.3406 1.90938C28.6135 3.18229 29.25 4.7125 29.25 6.5C29.25 8.2875 28.6135 9.81771 27.3406 11.0906ZM3.25 22.75H22.75V21.45C22.75 21.1521 22.6755 20.8813 22.5266 20.6375C22.3776 20.3938 22.1812 20.2042 21.9375 20.0688C20.475 19.3375 18.999 18.7891 17.5094 18.4234C16.0198 18.0578 14.5167 17.875 13 17.875C11.4833 17.875 9.98021 18.0578 8.49062 18.4234C7.00104 18.7891 5.525 19.3375 4.0625 20.0688C3.81875 20.2042 3.6224 20.3938 3.47344 20.6375C3.32448 20.8813 3.25 21.1521 3.25 21.45V22.75ZM15.2953 8.79531C15.9318 8.15886 16.25 7.39375 16.25 6.5C16.25 5.60625 15.9318 4.84115 15.2953 4.20469C14.6589 3.56823 13.8938 3.25 13 3.25C12.1062 3.25 11.3411 3.56823 10.7047 4.20469C10.0682 4.84115 9.75 5.60625 9.75 6.5C9.75 7.39375 10.0682 8.15886 10.7047 8.79531C11.3411 9.43177 12.1062 9.75 13 9.75C13.8938 9.75 14.6589 9.43177 15.2953 8.79531Z"
+                    fill="white"
+                  >
+                  </path>
+                </svg>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">AI Governance in Transportation</h5>
+                <p class="card-text flex-grow-1">The people, policies, and processes that ensure AI works as intended, stays accountable, and earns public trust.</p>
+                <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-governance")} class="btn btn-primary mt-auto">READ INSIGHT →</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="card insight-card h-100 d-flex flex-column card-grayed-out">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">More Topics in Development</h5>
+                <p class="card-text flex-grow-1">
+                  Additional AI insight topics will be added as the series grows. Topics include: AI Assurance & Risk Management, AI & Data Management, AI & Cybersecurity Security, AI Infrastructure,
+                  AI Lifecycle Management, AI Transparency & Trust, and AI & Workforce Readiness
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 id="ai-knowledge-sharing" class="mt-4">AI Knowledge Sharing Opportunities</h2>
+        <p>
+          Knowledge sharing transforms individual agency experiences into a collective national asset, ensuring that no one agency has to navigate the complexities of AI in isolation. By openly
+          discussing what works and what doesn't, agencies can accelerate their own AI deployments while avoiding pitfalls or pain points encountered by others. The ITS JPO is implementing a range of
+          knowledge sharing strategies, including:
+        </p>
+
+        <ul>
+          <li><em>Webinars and Workshops:</em> Accessible platforms for rapid information dissemination and deeper dives into specific technical topics.</li>
+          <li><em>Peer Exchanges and Cohorts:</em> Collaborative dialogue amongst agencies with similar challenges sharing AI implementation strategies in a structured, small-group setting.</li>
+          <li><em>Conferences:</em> In-person networking opportunities for cross-program AI connections and the showcasing of success stories and effective practices.</li>
+          <li>
+            <em>Case Study Libraries and Playbooks:</em> Centralized digital hubs that house standardized templates, procurement language, and lessons learned to provide a self-service path to maturity.
+          </li>
+        </ul>
+
+        <div class="row mt-4">
+          <div class="col-lg-4 mb-4">
+            <div class="card resource-card h-100 d-flex flex-column">
+              <div class="card-img-top-wrapper">
+                <Image src={fhwaClasThumb} alt="FHWA CLAS Innovation Exchange" class="card-image card-image--no-radius" />
+              </div>
+              <div class="card-body d-flex flex-column">
+                <sub class="resource-subtitle">WEBINAR SLIDES</sub>
+                <h5 class="card-title">Federal Highway Administration (FHWA) Center for Local Aid Support (CLAS) ITS JPO AI Program Introduction</h5>
+                <p class="card-text flex-grow-1">
+                  Introductory slides on the ITS JPO AI Program presented at the FHWA CLAS Innovation Exchange. Covers program overview, focus areas, and resources for local agencies.
+                </p>
+                <hr class="my-3" />
+                <div class="resource-meta">
+                  <p class="resource-date mb-2"><strong>Date:</strong> May 21, 2026</p>
+                  <p class="resource-tags mb-3"><strong>Tags:</strong> FHWA CLAS Innovation Exchange</p>
+                </div>
+                <a href={base_url("/assets/documents/Data & AI w notes - JPO AI Program - FHWA CLAS 26-05-21.pdf")} class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer">VIEW SLIDES</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card resource-card h-100 d-flex flex-column card-grayed-out">
+              <div class="card-img-top-wrapper">
+                <div class="placeholder-image"></div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">AI Procurement National Webinar</h5>
+                <p class="card-text flex-grow-1"><em>Coming soon</em></p>
+                <hr class="my-3" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card resource-card h-100 d-flex flex-column card-grayed-out">
+              <div class="card-img-top-wrapper">
+                <div class="placeholder-image"></div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">AI Procurement Peer Exchange</h5>
+                <p class="card-text flex-grow-1"><em>Coming soon</em></p>
+                <hr class="my-3" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="ai-materials">AI Informational Materials</h2>
+        <p>
+          High-quality informational materials serve as the essential bridge between AI concepts and actual AI implementation.  This includes development of a range of AI information materials
+          tailored to specific audiences. This targeted approach democratizes knowledge across different program areas and maturity levels, turning AI into a transparent and manageable tool.  The ITS
+          JPO is developing a range of strategies to meet different types of AI information needs, including:
+        </p>
+        <ul>
+          <li><em>White Papers and Technical Reports:</em> Provide deep-dive analysis on emerging trends and topics.</li>
+          <li><em>Curated AI Glossaries and Guides:</em> Establish a "common language" by providing clear, non-technical definitions for AI concepts and various model types.</li>
+          <li><em>Playbooks and FAQs:</em> Offer the "how-to" for different aspects of AI and quick answers to common implementation hurdles.</li>
+          <li><em>Interactive Deployment Maps:</em> Visualize national progress, helping agencies identify peers with similar geographic or implementation challenges.</li>
+          <li><em>Fact Sheets and Briefs:</em> Concise, high-impact summaries on a range of AI topics and practices.</li>
+        </ul>
+
+        <div class="row mt-4">
+          <div class="col-lg-6 mb-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-definitions-concepts")} class="text-decoration-none reset-link">
+              <div class="card info-card h-100">
+                <div class="card-body d-flex">
+                  <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="31" viewBox="0 0 24 31" fill="none">
+                      <path
+                        d="M9.3849 29.9276C8.78108 29.3238 8.47917 28.5979 8.47917 27.75H14.6458C14.6458 28.5979 14.3439 29.3238 13.7401 29.9276C13.1363 30.5314 12.4104 30.8333 11.5625 30.8333C10.7146 30.8333 9.98872 30.5314 9.3849 29.9276ZM5.39583 26.2083V23.125H17.7292V26.2083H5.39583ZM5.78125 21.5833C4.00833 20.5299 2.60156 19.1167 1.56094 17.3438C0.520313 15.5708 0 13.6438 0 11.5625C0 8.35069 1.12413 5.62066 3.3724 3.3724C5.62066 1.12413 8.35069 0 11.5625 0C14.7743 0 17.5043 1.12413 19.7526 3.3724C22.0009 5.62066 23.125 8.35069 23.125 11.5625C23.125 13.6438 22.6047 15.5708 21.5641 17.3438C20.5234 19.1167 19.1167 20.5299 17.3438 21.5833H5.78125ZM6.70625 18.5H16.4188C17.575 17.6778 18.4679 16.6628 19.0974 15.4552C19.7269 14.2476 20.0417 12.95 20.0417 11.5625C20.0417 9.19861 19.2194 7.19445 17.575 5.55C15.9306 3.90556 13.9264 3.08333 11.5625 3.08333C9.19861 3.08333 7.19444 3.90556 5.55 5.55C3.90556 7.19445 3.08333 9.19861 3.08333 11.5625C3.08333 12.95 3.39809 14.2476 4.0276 15.4552C4.65712 16.6628 5.55 17.6778 6.70625 18.5Z"
+                        fill="white"
+                      >
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h5 class="card-title">AI Definitions & Concepts</h5>
+                    <p class="card-text">Learn key AI terms, concepts, and principles.</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-methods-sub-methods")} class="text-decoration-none reset-link">
+              <div class="card info-card h-100">
+                <div class="card-body d-flex">
+                  <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                      <mask id="mask0_41_664" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+                        <rect width="34" height="34" fill="#D9D9D9"></rect>
+                      </mask>
+                      <g mask="url(#mask0_41_664)">
+                        <path
+                          d="M30.6 32.5833L26.2438 28.2625C25.8188 28.5222 25.3642 28.717 24.8802 28.8469C24.3962 28.9767 23.8944 29.0417 23.375 29.0417C21.8167 29.0417 20.4826 28.4868 19.3729 27.3771C18.2632 26.2674 17.7083 24.9333 17.7083 23.375C17.7083 21.8167 18.2632 20.4826 19.3729 19.3729C20.4826 18.2632 21.8167 17.7083 23.375 17.7083C24.9333 17.7083 26.2674 18.2632 27.3771 19.3729C28.4868 20.4826 29.0417 21.8167 29.0417 23.375C29.0417 23.9181 28.9708 24.4316 28.8292 24.9156C28.6875 25.3997 28.4868 25.8542 28.2271 26.2792L32.5833 30.6L30.6 32.5833ZM7.79167 29.0417C6.23333 29.0417 4.89931 28.4868 3.78958 27.3771C2.67986 26.2674 2.125 24.9333 2.125 23.375C2.125 21.8167 2.67986 20.4826 3.78958 19.3729C4.89931 18.2632 6.23333 17.7083 7.79167 17.7083C9.35 17.7083 10.684 18.2632 11.7938 19.3729C12.9035 20.4826 13.4583 21.8167 13.4583 23.375C13.4583 24.9333 12.9035 26.2674 11.7938 27.3771C10.684 28.4868 9.35 29.0417 7.79167 29.0417ZM7.79167 26.2083C8.57083 26.2083 9.23785 25.9309 9.79271 25.376C10.3476 24.8212 10.625 24.1542 10.625 23.375C10.625 22.5958 10.3476 21.9288 9.79271 21.374C9.23785 20.8191 8.57083 20.5417 7.79167 20.5417C7.0125 20.5417 6.34549 20.8191 5.79063 21.374C5.23576 21.9288 4.95833 22.5958 4.95833 23.375C4.95833 24.1542 5.23576 24.8212 5.79063 25.376C6.34549 25.9309 7.0125 26.2083 7.79167 26.2083ZM23.375 26.2083C24.1542 26.2083 24.8212 25.9309 25.376 25.376C25.9309 24.8212 26.2083 24.1542 26.2083 23.375C26.2083 22.5958 25.9309 21.9288 25.376 21.374C24.8212 20.8191 24.1542 20.5417 23.375 20.5417C22.5958 20.5417 21.9288 20.8191 21.374 21.374C20.8191 21.9288 20.5417 22.5958 20.5417 23.375C20.5417 24.1542 20.8191 24.8212 21.374 25.376C21.9288 25.9309 22.5958 26.2083 23.375 26.2083ZM7.79167 13.4583C6.23333 13.4583 4.89931 12.9035 3.78958 11.7938C2.67986 10.684 2.125 9.35 2.125 7.79167C2.125 6.23333 2.67986 4.89931 3.78958 3.78958C4.89931 2.67986 6.23333 2.125 7.79167 2.125C9.35 2.125 10.684 2.67986 11.7938 3.78958C12.9035 4.89931 13.4583 6.23333 13.4583 7.79167C13.4583 9.35 12.9035 10.684 11.7938 11.7938C10.684 12.9035 9.35 13.4583 7.79167 13.4583ZM23.375 13.4583C21.8167 13.4583 20.4826 12.9035 19.3729 11.7938C18.2632 10.684 17.7083 9.35 17.7083 7.79167C17.7083 6.23333 18.2632 4.89931 19.3729 3.78958C20.4826 2.67986 21.8167 2.125 23.375 2.125C24.9333 2.125 26.2674 2.67986 27.3771 3.78958C28.4868 4.89931 29.0417 6.23333 29.0417 7.79167C29.0417 9.35 28.4868 10.684 27.3771 11.7938C26.2674 12.9035 24.9333 13.4583 23.375 13.4583ZM7.79167 10.625C8.57083 10.625 9.23785 10.3476 9.79271 9.79271C10.3476 9.23785 10.625 8.57083 10.625 7.79167C10.625 7.0125 10.3476 6.34549 9.79271 5.79063C9.23785 5.23576 8.57083 4.95833 7.79167 4.95833C7.0125 4.95833 6.34549 5.23576 5.79063 5.79063C5.23576 6.34549 4.95833 7.0125 4.95833 7.79167C4.95833 8.57083 5.23576 9.23785 5.79063 9.79271C6.34549 10.3476 7.0125 10.625 7.79167 10.625ZM23.375 10.625C24.1542 10.625 24.8212 10.3476 25.376 9.79271C25.9309 9.23785 26.2083 8.57083 26.2083 7.79167C26.2083 7.0125 25.9309 6.34549 25.376 5.79063C24.8212 5.23576 24.1542 4.95833 23.375 4.95833C22.5958 4.95833 21.9288 5.23576 21.374 5.79063C20.8191 6.34549 20.5417 7.0125 20.5417 7.79167C20.5417 8.57083 20.8191 9.23785 21.374 9.79271C21.9288 10.3476 22.5958 10.625 23.375 10.625Z"
+                          fill="white"
+                        >
+                        </path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h5 class="card-title">AI Methods & Sub-Methods</h5>
+                    <p class="card-text">Explore common AI methods and techniques.</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <div class="card info-card h-100 card-grayed-out">
+              <div class="card-body d-flex">
+                <div class="icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43" fill="none">
+                    <mask id="mask0_41_652" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="43" height="43">
+                      <rect width="43" height="43" fill="#D9D9D9"></rect>
+                    </mask>
+                    <g mask="url(#mask0_41_652)">
+                      <path
+                        d="M12.5417 30.4583H25.0833V26.875H12.5417V30.4583ZM12.5417 23.2917H30.4583V19.7083H12.5417V23.2917ZM12.5417 16.125H30.4583V12.5417H12.5417V16.125ZM8.95833 37.625C7.97292 37.625 7.12934 37.2741 6.4276 36.5724C5.72587 35.8707 5.375 35.0271 5.375 34.0417V8.95833C5.375 7.97292 5.72587 7.12934 6.4276 6.4276C7.12934 5.72587 7.97292 5.375 8.95833 5.375H34.0417C35.0271 5.375 35.8707 5.72587 36.5724 6.4276C37.2741 7.12934 37.625 7.97292 37.625 8.95833V34.0417C37.625 35.0271 37.2741 35.8707 36.5724 36.5724C35.8707 37.2741 35.0271 37.625 34.0417 37.625H8.95833ZM8.95833 34.0417H34.0417V8.95833H8.95833V34.0417Z"
+                        fill="white"
+                      >
+                      </path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="flex-grow-1">
+                  <h5 class="card-title">AI Case Studies</h5>
+                  <p class="card-text"><em>Coming soon</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <div class="card info-card h-100 card-grayed-out">
+              <div class="card-body d-flex">
+                <div class="icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                    <path
+                      d="M25.1992 37.7988L12.5996 33.389L2.83491 37.1688C2.13493 37.4488 1.48745 37.3701 0.892472 36.9326C0.297491 36.4951 0 35.9089 0 35.1739V5.77482C0 5.31983 0.131246 4.91735 0.393738 4.56736C0.65623 4.21737 1.01497 3.95488 1.46995 3.77988L12.5996 0L25.1992 4.40986L34.9639 0.62998C35.6639 0.349989 36.3114 0.428737 36.9064 0.866223C37.5013 1.30371 37.7988 1.88994 37.7988 2.62492V32.024C37.7988 32.479 37.6676 32.8815 37.4051 33.2315C37.1426 33.5815 36.7839 33.844 36.3289 34.0189L25.1992 37.7988ZM23.0993 32.654V8.08475L14.6995 5.14484V29.7141L23.0993 32.654ZM27.2992 32.654L33.599 30.5541V5.66982L27.2992 8.08475V32.654ZM4.19987 32.129L10.4997 29.7141V5.14484L4.19987 7.24478V32.129Z"
+                      fill="white"
+                    >
+                    </path>
+                  </svg>
+                </div>
+                <div class="flex-grow-1">
+                  <h5 class="card-title">Interactive AI Deployment Map</h5>
+                  <p class="card-text"><em>Coming soon</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+<style>
+  em {
+    font-style: italic;
+  }
+
+  /* Jump to menu styling */
+  .jump-to-menu {
+    position: sticky;
+    top: 100px;
+    padding: 1rem 0;
+  }
+
+  .jump-to-menu h3 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--ai-text-dark);
+    margin-bottom: 1rem;
+  }
+
+  .jump-to-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .jump-to-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .jump-to-link {
+    display: block;
+    padding: 0.5rem 0 0.5rem 1rem;
+    color: var(--ai-text-medium);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    position: relative;
+    left: -1rem;
+    padding-left: calc(1rem - 3px);
+  }
+
+  .jump-to-link:hover {
+    text-decoration: underline;
+    color: var(--ai-blue-primary);
+  }
+
+  /* Active state using :target pseudo-class */
+  #ai-readiness:target ~ * .jump-to-link[data-section="ai-readiness"],
+  #ai-foundations:target ~ * .jump-to-link[data-section="ai-foundations"],
+  #ai-knowledge-sharing:target ~ * .jump-to-link[data-section="ai-knowledge-sharing"],
+  #ai-materials:target ~ * .jump-to-link[data-section="ai-materials"] {
+    border-left-color: var(--ai-blue-primary);
+    color: var(--ai-blue-primary);
+    font-weight: 600;
+  }
+
+  /* Alternative approach using has() selector */
+  .row:has(#ai-readiness:target) .jump-to-link[data-section="ai-readiness"],
+  .row:has(#ai-foundations:target) .jump-to-link[data-section="ai-foundations"],
+  .row:has(#ai-knowledge-sharing:target) .jump-to-link[data-section="ai-knowledge-sharing"],
+  .row:has(#ai-materials:target) .jump-to-link[data-section="ai-materials"] {
+    border-left-color: var(--ai-blue-primary);
+    color: var(--ai-blue-primary);
+    font-weight: 600;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add scroll margin to sections for better positioning */
+  h2[id] {
+    scroll-margin-top: 120px;
+  }
+</style>

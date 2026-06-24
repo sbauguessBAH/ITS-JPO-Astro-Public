@@ -173,6 +173,32 @@ const automationResources = defineCollection({
 });
 
 // #endregion
+// #region ITS4US
+/**
+ * ITS4US Program
+ * 
+ * - Publications
+ */
+
+const its4usPublications = defineCollection({
+  loader: file('src/content/its4us/publications.json'),
+  schema: z.object({
+    id: z.string(),
+    resourceTitle: z.string(),
+    publicationCode: z.string(),
+    awardeeDeploy: z.string(),
+    deploymentAcronym: z.string(),
+    taskName: z.string(),
+    phase: z.number().int(),
+    publishDate: z.coerce.date(),
+    type: z.string(),
+    keywords: z.array(z.string()),
+    publicationLink: z.string().url(),
+    externalLink: z.string().url().optional()
+  })
+});
+
+// #endregion
 // #region Export
 
 /** Export of all content collections */
@@ -185,6 +211,7 @@ export const collections = {
   pcbTransitStandardsTrainings,
   // ascStandards,
   library,
-  automationResources
+  automationResources,
+  its4usPublications
 };
 // #endregion
