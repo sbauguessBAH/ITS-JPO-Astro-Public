@@ -244,6 +244,12 @@ export const navigation: NavigationItem[] = [
       {
         name: "Safety Playbook",
         url: "/research-areas/safety-playbook",
+        pages: [
+          {
+            name: "Safety Areas and Descriptions Glossary",
+            url: "/research-areas/safety-playbook/glossary",
+          },
+        ],
       },
     ],
   },
@@ -405,16 +411,13 @@ export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
     // If it's not a match but there are no subpages, then there's nothing left to add
     if (trimmedPathname === navigationItem.url || !navigationItem.pages) break;
 
-    // If it's not an exact match, look through child items to see if there's an exact match
-    for (const page of navigationItem.pages) {
-      // If there's a page with an exact match, continue
-      if (trimmedPathname === page.url) {
-        navigationItem = page;
-      }
-      if (trimmedPathname.startsWith(page.url)) {
-        navigationItem = page;
-      }
-    }
+    // Move to the deepest matching child. If there is no child match, stop.
+    const nextItem = navigationItem.pages
+      .filter((page) => trimmedPathname.startsWith(page.url))
+      .sort((a, b) => b.url.length - a.url.length)[0];
+
+    if (!nextItem || nextItem.url === navigationItem.url) break;
+    navigationItem = nextItem;
   }
 
   // Catch undefined navigation item and return it
@@ -439,13 +442,13 @@ export function findSection(pathname: string): AnyNavigationItem | undefined {
     // If there are no child pages, there's nothing left to match. Return undefined;
     if (!navigationItem.pages) return undefined;
 
-    // If it's not an exact match, look through child items to see if there's an exact match
-    for (const page of navigationItem.pages) {
-      if (trimmedPathname === page.url) return page;
-      if (trimmedPathname.startsWith(page.url)) {
-        navigationItem = page;
-      }
-    }
+    // Move to the deepest matching child. If there is no child match, stop.
+    const nextItem = navigationItem.pages
+      .filter((page) => trimmedPathname.startsWith(page.url))
+      .sort((a, b) => b.url.length - a.url.length)[0];
+
+    if (!nextItem || nextItem.url === navigationItem.url) return undefined;
+    navigationItem = nextItem;
   }
 
   // Catch undefined navigation item and return it

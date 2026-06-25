@@ -1,0 +1,314 @@
+---
+import banner from "@/src/assets/images/banners/Default_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+---
+
+<PageLayout title="Safety Areas and Descriptions Glossary" bannerImage={banner}>
+  <Fragment slot="banner">Safety Playbook</Fragment>
+  <main>
+    <h2>Safety Areas and Descriptions Glossary</h2>
+    <p>
+      Explore safety area definitions and deployment context used across the Safety Playbook.
+      Use the tabs below to jump between glossary sections.
+    </p>
+
+    <nav class="glossary-tabs" aria-label="Safety glossary sections">
+      <a href="#safety-areas" class="tab-link">Safety Areas</a>
+      <a href="#area-type" class="tab-link">Area Type</a>
+      <a href="#facility-type" class="tab-link">Facility Type</a>
+      <a href="#deployment-considerations" class="tab-link">Deployment Considerations</a>
+    </nav>
+
+    <div class="glossary-content">
+      <section id="safety-areas" class="tab-section">
+        <h3 class="section-heading">Safety Areas</h3>
+        <div class="table-wrap">
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th>Safety Area</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Intersections</strong></td>
+                <td>Intersection safety addresses how motorists, pedestrians, and bicyclists navigate shared roadway space where multiple movements intersect. These locations are inherently complex and account for a high proportion of traffic crashes due to conflicting travel paths and increased decision making. Related safety considerations include traffic control design and compliance, speed management, and visibility/sight distance.</td>
+              </tr>
+              <tr>
+                <td><strong>Roadway Departure</strong></td>
+                <td>Roadway departure and/or lane departure involves a vehicle crossing an edge line or center line or otherwise leaving the traveled way. When this occurs, vehicles collide with another vehicle or a roadside object. Related safety considerations include speeding, driver-related factors (fatigue, distraction, intoxication), horizontal curves, pavement friction, visibility, and roadside design.</td>
+              </tr>
+              <tr>
+                <td><strong>Pedestrians</strong></td>
+                <td>Pedestrian safety addresses locations where people walking or running interact with motor vehicles, both at crossings and along roadways. Pedestrian crashes are particularly concerning because pedestrians are more vulnerable to injury in the event of a crash than vehicle occupants are. Related safety considerations include pedestrian facility presence and design, driver yielding behavior, vehicle speeds, and visibility.</td>
+              </tr>
+              <tr>
+                <td><strong>Bicyclists</strong></td>
+                <td>Bicyclist safety focuses on people traveling by bicycle who are vulnerable to crashes and interactions with motor vehicles. Bicyclist crashes are particularly concerning because bicyclists are more vulnerable to injury in the event of a crash than vehicle occupants are. Related safety considerations include bicycle facility presence and design, roadway conditions, vehicle speeds, and visibility.</td>
+              </tr>
+              <tr>
+                <td><strong>Distracted and Drowsy Driving</strong></td>
+                <td>Distracted and/or drowsy driving impairs driver attention, situational awareness, and reaction time, increasing crash risk. These behaviors are commonly associated with safety issues such as roadway departure, traffic control device noncompliance, and rear-end crashes.</td>
+              </tr>
+              <tr>
+                <td><strong>Congestion</strong></td>
+                <td>Congestion contributes to unstable traffic flow conditions that increase crash risk due to reduced spacing, frequent speed changes, and driver frustration. Common safety issues associated with congested corridors include rear-end crashes, lane-change and merging conflicts, and a risk of secondary crashes following an initial incident.</td>
+              </tr>
+              <tr>
+                <td><strong>Speeding</strong></td>
+                <td>Speeding occurs when drivers exceed posted speed limits or operate at speeds inappropriate for roadway, traffic, or weather conditions, increasing both the likelihood and severity of crashes. Common safety concerns associated with speeding include loss of vehicle control, roadway departure crashes, reduced effectiveness of driver responses in adverse weather, and increased risk and severity of crashes (especially those involving pedestrians and bicyclists).</td>
+              </tr>
+              <tr>
+                <td><strong>Heavy Vehicles</strong></td>
+                <td>Heavy vehicle safety addresses the unique operational and safety challenges associated with trucks, buses, and other large commercial or recreational vehicles. Due to their size, weight, larger blind spots, and longer stopping distances, crashes involving heavy vehicles often result in more severe outcomes. Common safety concerns include rollover risk, turning and off-tracking conflicts, and operational challenges when operating in mixed traffic with smaller vehicles, pedestrians, and bicyclists.</td>
+              </tr>
+              <tr>
+                <td><strong>Nighttime Visibility</strong></td>
+                <td>Nighttime visibility addresses safety challenges associated with reduced lighting conditions that limit a driver's ability to detect and recognize roadway users, vehicles, and roadway features. Reduced visibility at night can increase crash risk due to inadequate lighting, glare, and delayed hazard recognition. Additional visibility concerns include weather conditions and insufficient or poorly maintained roadway and sign lighting.</td>
+              </tr>
+              <tr>
+                <td><strong>Emergency Response</strong></td>
+                <td>Emergency response focuses on the timely detection and notification of crashes, rapid access to incident locations, and effective post-crash care, as delays in response can increase the severity of injuries and the likelihood of fatalities. This emphasis area addresses challenges related to accurate location identification, blocked or limited roadway access, traffic congestion, and communication and coordination among emergency responders. Safety concerns also include the risk of secondary crashes in and around incident scenes and the protection of emergency response personnel operating within active traffic environments.</td>
+              </tr>
+              <tr>
+                <td><strong>Work Zones</strong></td>
+                <td>Work zone safety focuses on reducing crash risks in areas where roadway work leads to changes in traffic patterns, such as lane closures or shifts, shoulder reductions, and the presence of workers. Related safety considerations include congestion and speed changes, disrupted driver expectation, temporary traffic control design, conflicts with pedestrians and bicyclists, and protection of construction and maintenance personnel.</td>
+              </tr>
+              <tr>
+                <td><strong>Road Weather</strong></td>
+                <td>Road weather safety addresses the increased crash risk associated with adverse weather conditions such as rain, snow, ice, fog, and high winds. These conditions can reduce pavement friction and/or visibility, making vehicle control more difficult and increasing the likelihood and severity of crashes. Related safety considerations include pavement friction, reduced sight distance, maintenance and management operations, and delayed driver reactions.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="area-type" class="tab-section">
+        <h3 class="section-heading">Area Type</h3>
+        <div class="table-wrap">
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th>Area Type</th>
+                <th>Description</th>
+                <th>High Level Overview</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Rural</strong></td>
+                <td>Rural areas are regions outside urbanized areas with low population density and less concentrated infrastructure. These areas often present unique transportation challenges, including greater travel distances, limited public transit options, and increased safety concerns on high-speed roadways.</td>
+                <td>Low Population, Natural Landscape, Farmland, Small Communities</td>
+              </tr>
+              <tr>
+                <td><strong>Suburban</strong></td>
+                <td>Suburban areas are transitional zones between urbanized centers and rural regions, featuring moderate population density, mixed land use, and expanding infrastructure. These areas often face transportation challenges such as congestion, traffic signal optimization needs, and increasing multimodal demands.</td>
+                <td>Residential, Single-Family Homes, Schools, Parks</td>
+              </tr>
+              <tr>
+                <td><strong>Urban</strong></td>
+                <td>Urban areas are densely populated regions with a high concentration of infrastructure, mixed land use, and complex transportation networks. These areas often face challenges such as congestion, multimodal traffic conflicts, and the need for efficient public transit systems.</td>
+                <td>Dense Population, Buildings, Businesses</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="facility-type" class="tab-section">
+        <h3 class="section-heading">Facility Type</h3>
+        <div class="table-wrap">
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th>Facility Type</th>
+                <th>Description</th>
+                <th>Area Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Intersection</strong></td>
+                <td>A location where two or more roadways join or cross at grade.</td>
+                <td>Rural, Suburban, Urban</td>
+              </tr>
+              <tr>
+                <td><strong>Interchange</strong></td>
+                <td>A system of ramps connecting two or more grade-separated roadways.</td>
+                <td>Rural, Suburban, Urban</td>
+              </tr>
+              <tr>
+                <td><strong>Freeway Segment</strong></td>
+                <td>A divided highway with full access control and high-level mobility for long-distance travel.</td>
+                <td>Rural, Suburban, Urban</td>
+              </tr>
+              <tr>
+                <td><strong>Arterial/Collector Segment</strong></td>
+                <td>A roadway with partial or no access control and balance of mobility and access to properties.</td>
+                <td>Rural, Suburban, Urban</td>
+              </tr>
+              <tr>
+                <td><strong>Local Segment</strong></td>
+                <td>A roadway with no access control and high level of access to properties.</td>
+                <td>Rural, Suburban, Urban</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="deployment-considerations" class="tab-section">
+        <h3 class="section-heading">Deployment Considerations</h3>
+        <div class="table-wrap">
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th>Deployment Consideration</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cost</strong></td>
+                <td>ITS strategies often require significant upfront investment for installing infrastructure, followed by ongoing operational and maintenance expenses. These costs can be a major barrier, particularly for smaller or rural agencies with limited budgets.</td>
+              </tr>
+              <tr>
+                <td><strong>Maintenance</strong></td>
+                <td>ITS systems require regular upkeep, including calibration, software updates, and equipment repairs. Maintenance challenges can increase in regions with extreme weather conditions or limited access to technical expertise, as well as hardware lifespan limitations.</td>
+              </tr>
+              <tr>
+                <td><strong>Compatibility</strong></td>
+                <td>Ensuring that newly implemented ITS systems work seamlessly with existing infrastructure and technologies across multiple agencies is critical to deployment success. Stakeholder integration plays a key role in avoiding compatibility issues among public agencies and private technology providers.</td>
+              </tr>
+              <tr>
+                <td><strong>Training</strong></td>
+                <td>ITS strategies usually demand specialized knowledge and skills to operate, maintain, and troubleshoot. This can put a strain on agencies that lack adequately trained personnel or resources for workforce development.</td>
+              </tr>
+              <tr>
+                <td><strong>Variability</strong></td>
+                <td>Urban, suburban, and rural environments all present unique challenges for ITS deployment, such as different traffic patterns, infrastructure availability, and surrounding conditions.</td>
+              </tr>
+              <tr>
+                <td><strong>Cybersecurity</strong></td>
+                <td>Connected ITS systems are vulnerable to data breaches, cyberattacks, and misuse, necessitating robust security measures to protect sensitive transportation and user data.</td>
+              </tr>
+              <tr>
+                <td><strong>Location Siting</strong></td>
+                <td>Location siting is tied to specific settings or environments, requiring detailed observations and contextual analysis to address unique safety challenges and implement effective, tailored solutions.</td>
+              </tr>
+              <tr>
+                <td><strong>Public Support/Buy in</strong></td>
+                <td>Public support and buy-in ensure acceptance, support, and agreement from the public or a specific community. When there is public buy-in, people affected by a decision are convinced of its value and are willing to support it, or at least not actively oppose it, reducing friction, delays, and legal challenges.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+     section{
+    padding: 0;
+  }
+  .glossary-tabs {
+    position: sticky;
+    top: 0.5rem;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.25rem 0 1.5rem;
+    padding: 0.75rem;
+    background: #fff;
+    border: 1px solid #dde6ee;
+    border-radius: 0.75rem;
+  }
+
+  .tab-link {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    color: #055681;
+    border: 1px solid #b9c9d6;
+    border-radius: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.2s ease;
+    background: #f5f9fc;
+  }
+
+  .tab-link:hover {
+    background: #e8f3fb;
+    border-color: #055681;
+  }
+
+  .glossary-content {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .tab-section {
+    scroll-margin-top: 5.5rem;
+  }
+
+  .section-heading {
+    font-size: 1.65rem;
+    margin-bottom: 0.9rem;
+    color: #1e3769;
+    border-bottom: 3px solid #055681;
+    padding-bottom: 0.4rem;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid #dce6ef;
+    border-radius: 0.75rem;
+    background: #fff;
+  }
+
+  .glossary-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 780px;
+  }
+
+  .glossary-table th,
+  .glossary-table td {
+    vertical-align: top;
+    text-align: left;
+    padding: 0.85rem 0.95rem;
+    border-bottom: 1px solid #edf2f7;
+    line-height: 1.55;
+  }
+
+  .glossary-table th {
+    background: #f2f7fb;
+    color: #1d5782;
+    font-size: 0.95rem;
+    font-weight: 700;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .glossary-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    .glossary-tabs {
+      position: static;
+    }
+
+    .tab-link {
+      width: 100%;
+      text-align: center;
+    }
+
+    .section-heading {
+      font-size: 1.35rem;
+    }
+  }
+</style>

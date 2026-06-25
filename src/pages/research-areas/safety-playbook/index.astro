@@ -2,6 +2,7 @@
 import banner from "@/src/assets/images/banners/Default_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import { getCollection } from "astro:content";
+import base_url from "@/src/lib/base_url";
 import SafetyPlaybookFilters from "@/src/components/safety-playbook/SafetyPlaybookFilters.vue";
 import SafetyPlaybookTopFilters from "@/src/components/safety-playbook/SafetyPlaybookTopFilters.vue";
 import SafetyPlaybookCard from "@/src/components/safety-playbook/SafetyPlaybookCard.astro";
@@ -86,9 +87,30 @@ const facilities = buildMultiValueOptions(playbookItems.map((item) => item.data.
 const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.safety));
 ---
 
-<style>
+<style scoped>
+
+   section{
+    padding: 0;
+  }
   .playbook-intro {
     margin-bottom: 2rem;
+  }
+
+  .playbook-intro-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .playbook-intro-text {
+    margin: 0;
+    flex: 1;
+  }
+
+  .playbook-intro-cta {
+    margin-left: auto;
+    white-space: nowrap;
   }
 
   .playbook-container {
@@ -114,13 +136,6 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     }
   }
 
-  .results-count {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: rgb(var(--color-brand-dark));
-  }
-
   .playbook-search {
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
@@ -133,7 +148,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     display: block;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: rgb(var(--color-brand-dark));
+    color: rgb(5, 86, 129);
   }
 
   .playbook-search-controls {
@@ -200,12 +215,46 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     font-weight: 600;
   }
 
+  @media (max-width: 767px) {
+    .playbook-intro-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .playbook-intro-cta {
+      margin-left: 0;
+      align-self: flex-start;
+    }
+
+    .playbook-search-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+</style>
+
+<style is:global>
+  .results-count {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(var(--color-brand-dark));
+  }
+
+  .playbook-pagination-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+
   .playbook-pagination {
-    margin-top: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
   }
 
@@ -218,23 +267,52 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     color: rgb(var(--color-brand-dark));
   }
 
+  .playbook-pagination-button:hover:not(:disabled) {
+    border-color: rgb(5, 86, 129);
+    color: rgb(5, 86, 129);
+  }
+
   .playbook-pagination-button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
-  .playbook-pagination-status {
-    font-weight: 600;
-    color: rgb(var(--color-gray));
+  .playbook-pagination-pages {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .playbook-pagination-number {
+    min-width: 2.2rem;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    color: rgb(var(--color-brand-dark));
+    padding: 0.4rem 0.55rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .playbook-pagination-number:hover {
+    border-color: rgb(5, 86, 129);
+    color: rgb(5, 86, 129);
+  }
+
+  .playbook-pagination-number.is-active {
+    background: rgb(5, 86, 129);
+    border-color: rgb(5, 86, 129);
+    color: #fff;
   }
 
   @media (max-width: 767px) {
-    .playbook-search-controls {
+    .playbook-pagination-toolbar {
       flex-direction: column;
-      align-items: stretch;
+      align-items: flex-start;
     }
   }
-
 </style>
 
 <PageLayout title="Safety Playbook" bannerImage={banner} keywords={keywords} description={description}>
@@ -243,11 +321,14 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     <h2 class="py-3">Safety Playbook Tools</h2>
 
     <div class="playbook-intro">
-      <p>
-        The Safety Playbook provides practical tools and implementation guidance for safer transportation
-        systems. Use the primary category filter and secondary multi-select filters to narrow the list by
-        context and safety focus.
-      </p>
+      <div class="playbook-intro-row">
+        <p class="playbook-intro-text">
+          The Safety Playbook provides practical tools and implementation guidance for safer transportation
+          systems. Use the primary category filter and secondary multi-select filters to narrow the list by
+          context and safety focus.
+        </p>
+        <a href={base_url("/research-areas/safety-playbook/glossary/")} class="btn playbook-intro-cta">View Safety Glossary</a>
+      </div>
     </div>
 
     {playbookItems.length > 0 ? (
@@ -273,7 +354,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
                 id="playbook-search-input"
                 class="playbook-search-input"
                 type="search"
-                placeholder="Search by title, safety, additional tools/sensors, or keywords"
+                placeholder="Search by title, safety area, additional tools/sensors, or keywords"
                 autocomplete="off"
               />
               <button class="playbook-search-clear" id="playbook-search-clear" type="button">Clear Search</button>
@@ -294,8 +375,16 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
             }))}
           />
 
-          <div class="results-count" id="playbook-results-count">
-            Showing {playbookItems.length} tool{playbookItems.length !== 1 ? "s" : ""}
+          <div class="playbook-pagination-toolbar" data-playbook-toolbar>
+            <div class="results-count" data-playbook-results-count>
+              Showing 1-{Math.min(9, playbookItems.length)} of {playbookItems.length} tool{playbookItems.length !== 1 ? "s" : ""}
+            </div>
+
+            <nav class="playbook-pagination" data-playbook-pagination aria-label="Safety Playbook pagination (top)">
+              <button class="playbook-pagination-button" data-playbook-page-prev type="button">Previous</button>
+              <div class="playbook-pagination-pages" data-playbook-page-numbers></div>
+              <button class="playbook-pagination-button" data-playbook-page-next type="button">Next</button>
+            </nav>
           </div>
 
           <div class="playbook-grid" id="playbook-grid">
@@ -304,10 +393,16 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
             ))}
           </div>
 
-          <div class="playbook-pagination" id="playbook-pagination" aria-label="Safety Playbook pagination">
-            <button class="playbook-pagination-button" id="playbook-page-prev" type="button">Previous</button>
-            <span class="playbook-pagination-status" id="playbook-page-status">Page 1 of 1</span>
-            <button class="playbook-pagination-button" id="playbook-page-next" type="button">Next</button>
+          <div class="playbook-pagination-toolbar" data-playbook-toolbar>
+            <div class="results-count" data-playbook-results-count>
+              Showing 1-{Math.min(9, playbookItems.length)} of {playbookItems.length} tool{playbookItems.length !== 1 ? "s" : ""}
+            </div>
+
+            <nav class="playbook-pagination" data-playbook-pagination aria-label="Safety Playbook pagination (bottom)">
+              <button class="playbook-pagination-button" data-playbook-page-prev type="button">Previous</button>
+              <div class="playbook-pagination-pages" data-playbook-page-numbers></div>
+              <button class="playbook-pagination-button" data-playbook-page-next type="button">Next</button>
+            </nav>
           </div>
         </section>
       </div>
@@ -337,10 +432,15 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
   }
 
   const PAGE_SIZE = 9;
+  // Tracks the current page in the paginated card grid.
   let currentPage = 1;
+  // User-entered search text used to query the Fuse index.
   let activeSearchQuery = "";
+  // Fuse instance built once from card metadata and reused for search updates.
   let fuse: Fuse<SafetyPlaybookSearchDoc> | null = null;
+  // Slugs matched by the latest search query.
   let searchMatchedSlugs = new Set<string>();
+  // Current filter state shared by primary and secondary filter components.
   let activeFilters: SafetyPlaybookFilterDetail = {
     category: "all",
     locations: [],
@@ -354,6 +454,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
       .map((value) => value.trim())
       .filter(Boolean);
 
+  // Build a searchable document list from rendered card data attributes.
   const buildSearchIndex = (cards: NodeListOf<HTMLElement>): void => {
     const docs = Array.from(cards)
       .map((card): SafetyPlaybookSearchDoc | null => {
@@ -387,6 +488,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     });
   };
 
+  // Recalculate search slug matches whenever the query changes.
   const updateSearchMatches = (): void => {
     const query = activeSearchQuery.trim();
 
@@ -399,6 +501,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     searchMatchedSlugs = new Set(matches.map((match) => match.item.slug));
   };
 
+  // Secondary filters are multi-select and match when any selected value is present.
   const matchesGroup = (selectedValues: string[] | undefined, cardValues: string[]): boolean => {
     if (!selectedValues || selectedValues.length === 0) {
       return true;
@@ -407,48 +510,96 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     return selectedValues.some((value: string) => cardValues.includes(value));
   };
 
+  // Intersection-based filtering: category + secondary filters + search (if active).
   const getFilteredCards = (
     cards: NodeListOf<HTMLElement>,
     filters: SafetyPlaybookFilterDetail,
   ): HTMLElement[] => {
-    const hasSearchQuery = activeSearchQuery.trim().length > 0;
-
-    if (hasSearchQuery) {
-      return Array.from(cards).filter((element) => searchMatchedSlugs.has(element.dataset.slug ?? ""));
-    }
-
     const { category, locations, facilities, safeties } = filters;
+    const hasSearchQuery = activeSearchQuery.trim().length > 0;
 
     return Array.from(cards).filter((element) => {
       const matchesCategory = !category || category === "all" || element.dataset.category === category;
       const matchesLocations = matchesGroup(locations, splitDataValues(element.dataset.location));
       const matchesFacilities = matchesGroup(facilities, splitDataValues(element.dataset.facility));
       const matchesSafeties = matchesGroup(safeties, splitDataValues(element.dataset.safety));
+      const matchesSearch = !hasSearchQuery || searchMatchedSlugs.has(element.dataset.slug ?? "");
 
-      return matchesCategory && matchesLocations && matchesFacilities && matchesSafeties;
+      return matchesCategory && matchesLocations && matchesFacilities && matchesSafeties && matchesSearch;
     });
   };
 
+  // Update empty-state messaging when no cards are visible.
   const updateResultsCount = (element: HTMLElement, visibleCount: number): void => {
     const hasSearchQuery = activeSearchQuery.trim().length > 0;
+    const hasFilters =
+      (activeFilters.category ?? "all") !== "all" ||
+      (activeFilters.locations?.length ?? 0) > 0 ||
+      (activeFilters.facilities?.length ?? 0) > 0 ||
+      (activeFilters.safeties?.length ?? 0) > 0;
 
     element.textContent =
       visibleCount === 0
-        ? hasSearchQuery
-          ? "No tools match your search"
-          : "No tools match the selected filters"
-        : `Showing ${visibleCount} tool${visibleCount !== 1 ? "s" : ""}`;
+        ? hasSearchQuery && hasFilters
+          ? "No tools match your search and selected filters"
+          : hasSearchQuery
+            ? "No tools match your search"
+            : "No tools match the selected filters"
+        : "";
   };
 
+        // Show the visible slice and total count in "Showing X-Y of Z tools" format.
+  const updateVisibleRange = (elements: NodeListOf<HTMLElement>, visibleCount: number): void => {
+    if (visibleCount === 0) {
+      elements.forEach((element) => updateResultsCount(element, visibleCount));
+      return;
+    }
+
+    const startIndex = (currentPage - 1) * PAGE_SIZE + 1;
+    const endIndex = Math.min(currentPage * PAGE_SIZE, visibleCount);
+    const label = `Showing ${startIndex}-${endIndex} of ${visibleCount} tool${visibleCount !== 1 ? "s" : ""}`;
+    elements.forEach((element) => {
+      element.textContent = label;
+    });
+  };
+
+  // Render numbered page controls and keep active page highlighted.
+  const renderPageNumbers = (containers: NodeListOf<HTMLElement>, totalPages: number): void => {
+    containers.forEach((container) => {
+      container.innerHTML = "";
+
+      for (let page = 1; page <= totalPages; page += 1) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "playbook-pagination-number";
+        button.textContent = String(page);
+        button.setAttribute("aria-label", `Go to page ${page}`);
+
+        if (page === currentPage) {
+          button.classList.add("is-active");
+          button.setAttribute("aria-current", "page");
+        }
+
+        button.addEventListener("click", () => {
+          currentPage = page;
+          updatePaginationView();
+        });
+
+        container.appendChild(button);
+      }
+    });
+  };
+
+  // Main render/update loop for card visibility, counts, and pagination controls.
   const updatePaginationView = (): void => {
     const cards = document.querySelectorAll<HTMLElement>(".playbook-card");
-    const resultsCount = document.getElementById("playbook-results-count");
-    const pagination = document.getElementById("playbook-pagination");
-    const prevButton = document.getElementById("playbook-page-prev") as HTMLButtonElement | null;
-    const nextButton = document.getElementById("playbook-page-next") as HTMLButtonElement | null;
-    const status = document.getElementById("playbook-page-status");
+    const resultsCount = document.querySelectorAll<HTMLElement>("[data-playbook-results-count]");
+    const pagination = document.querySelectorAll<HTMLElement>("[data-playbook-pagination]");
+    const prevButtons = document.querySelectorAll<HTMLButtonElement>("[data-playbook-page-prev]");
+    const nextButtons = document.querySelectorAll<HTMLButtonElement>("[data-playbook-page-next]");
+    const pageNumberContainers = document.querySelectorAll<HTMLElement>("[data-playbook-page-numbers]");
 
-    if (!resultsCount || !pagination || !prevButton || !nextButton || !status) {
+    if (resultsCount.length === 0 || pagination.length === 0 || prevButtons.length === 0 || nextButtons.length === 0) {
       return;
     }
 
@@ -474,18 +625,24 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
       card.classList.toggle("hidden", !shouldShow);
     });
 
-    updateResultsCount(resultsCount, visibleCount);
+    updateVisibleRange(resultsCount, visibleCount);
 
-    if (visibleCount > PAGE_SIZE) {
-      pagination.hidden = false;
-      prevButton.disabled = currentPage <= 1;
-      nextButton.disabled = currentPage >= totalPages;
-      status.textContent = `Page ${currentPage} of ${totalPages}`;
-    } else {
-      pagination.hidden = true;
-    }
+    renderPageNumbers(pageNumberContainers, totalPages);
+
+    pagination.forEach((element) => {
+      element.hidden = totalPages <= 1;
+    });
+
+    prevButtons.forEach((button) => {
+      button.disabled = currentPage <= 1 || totalPages <= 1;
+    });
+
+    nextButtons.forEach((button) => {
+      button.disabled = currentPage >= totalPages || totalPages <= 1;
+    });
   };
 
+  // Move one page backward/forward and rerender.
   const changePage = (direction: -1 | 1): void => {
     currentPage += direction;
     if (currentPage < 1) {
@@ -494,14 +651,21 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     updatePaginationView();
   };
 
-  const prevButton = document.getElementById("playbook-page-prev");
-  const nextButton = document.getElementById("playbook-page-next");
+  const prevButtons = document.querySelectorAll<HTMLButtonElement>("[data-playbook-page-prev]");
+  const nextButtons = document.querySelectorAll<HTMLButtonElement>("[data-playbook-page-next]");
   const searchInput = document.getElementById("playbook-search-input") as HTMLInputElement | null;
   const clearSearchButton = document.getElementById("playbook-search-clear") as HTMLButtonElement | null;
 
-  prevButton?.addEventListener("click", () => changePage(-1));
-  nextButton?.addEventListener("click", () => changePage(1));
+  // Wire previous/next controls in both top and bottom toolbars.
+  prevButtons.forEach((button) => {
+    button.addEventListener("click", () => changePage(-1));
+  });
 
+  nextButtons.forEach((button) => {
+    button.addEventListener("click", () => changePage(1));
+  });
+
+  // Search input updates the match set, resets to page 1, then rerenders.
   searchInput?.addEventListener("input", (event: Event) => {
     const target = event.target as HTMLInputElement;
     activeSearchQuery = target.value;
@@ -511,6 +675,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     updatePaginationView();
   });
 
+  // Clear the query and rerender from page 1.
   clearSearchButton?.addEventListener("click", () => {
     activeSearchQuery = "";
 
@@ -524,6 +689,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     updatePaginationView();
   });
 
+  // Primary filter updates category and optionally clears secondary filters.
   window.addEventListener("safety-playbook-filter-change", (event: Event) => {
     const detail = (event as CustomEvent<SafetyPlaybookFilterDetail>).detail ?? {};
     activeFilters.category = detail.category ?? "all";
@@ -538,6 +704,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     updatePaginationView();
   });
 
+  // Secondary filter updates locations/facilities/safeties.
   window.addEventListener("safety-playbook-secondary-filter-change", (event: Event) => {
     const detail = (event as CustomEvent<SafetyPlaybookFilterDetail>).detail ?? {};
     activeFilters.locations = detail.locations ?? [];
@@ -548,5 +715,6 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     updatePaginationView();
   });
 
+  // Initial paint.
   updatePaginationView();
 </script>
