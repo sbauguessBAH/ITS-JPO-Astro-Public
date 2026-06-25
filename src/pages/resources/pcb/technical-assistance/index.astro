@@ -1,86 +1,188 @@
 ---
-import { Image } from "astro:assets";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "../_layout.astro";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
+import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import base_url from "@/src/lib/base_url";
-import caveDesignDocuments from "@/src/assets/images/pcb/cave/cave-design-documents.jpg";
-import AcceleratingV2XCohort from "@/src/assets/images/pcb/Accelerating-V2X-Cohort-thumb.png"
 ---
 <style>
-  .ta-index-section {
+  .help-desk {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-  .ta-index-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  .ta-index-card {
-    background: var(--color-white, #fff);
-    border-radius: var(--radius-lg, 1rem);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    flex-direction: column-reverse;
+    gap: var(--size);
+    
+
+    /* Card classes */
+    border: 1px solid var(--border-light);
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    box-sizing: border-box;
+    position: relative;
     overflow: hidden;
-    width: 320px;
-    text-align: center;
-    transition: box-shadow 0.2s;
-  }
-  .ta-index-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
-  }
-  .ta-index-thumb {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    background: #f3f3f3;
-    display: block;
-  }
-  .ta-index-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 1rem 0 0.5rem 0;
-  }
-  .ta-index-link {
-    display: block;
-    color: var(--color-primary, #005ea2);
+    justify-content: space-between;
+    height: auto;
+    outline: none;
+    box-sizing: border-box;
+
+    /* Link classes */
     text-decoration: none;
-    padding: 1rem;
+  }
+
+  .help-desk:hover, .help-desk:focus {
+    text-decoration: none;
+    font-weight: inherit;
+    background: rgba(var(--color-brand-light), 0.5);
+    box-shadow: var(--box-shadow-lg);
+  }
+
+  .help-desk-body {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex: 1 1 auto;
+    flex-direction: column-reverse;
+    place-content: inherit;
+    align-items: inherit;
+    height: auto;
+    word-break: break-words;
+    text-align: left;
+    overflow-y: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .help-desk-text {
+    padding: var(--padding-md);
+  }
+
+  .help-desk-image {
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 992px) {
+    .help-desk {
+      flex-direction: row;
+      align-items: center;
+      max-width: 992px;
+      margin: 0 auto;
+    }
+    .help-desk-body {
+      flex-direction: row;
+    }
+    .help-desk-image-wrapper {
+      flex-basis: 40%;
+      
+    }
+    .help-desk-text {
+      flex-basis: 60%;
+    }
+    
+  }
+</style>
+
+<style>
+  .resource-card:hover {
+    background: rgba(var(--color-brand-light), 0.5);
+    box-shadow: var(--box-shadow-lg);
+  }
+
+  .resource-card-image {
+    width: auto;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .resource-card-body {
+    overflow: visible;
+    padding: 0;
+  }
+
+  .resource-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    height: 100%;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--size)
+  }
+
+  @media (min-width: 992px) {
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 992px;
+      margin: 0 auto;
+    }
   }
 </style>
 
 <Layout>
   <main class="program-main">
+    <ProgramSection size="small">
+      <h2 class="program-title-lg mb-4">
+        V2X Resources
+      </h2>
+      <p class="program-text">
+        Explore Vehicle-to-Everything (V2X) resources such as the Accelerating V2X Cohort, request technical assistance with planning and deployment
+        from the V2X Interopability Help Desk, or learn more about the USDOT's Connected Vehicle Equipment Loan Program.
+      </p>
+      </ProgramSection>
+      <ProgramSection class="pb-5">
+      <a class="help-desk shadow-sm radius-lg" href={base_url("/resources/pcb/technical-assistance/help-desk")}>
+        <div class="help-desk-body">
+          <div class="help-desk-text">
+            <h3 class="program-title-md text-foreground mb-2">
+              V2X Interoperability Help Desk
+            </h3>
+            <p class="program-text">
+              Learn more about the V2X Interoperability Help Desk, a resource that provides technical assistance with every stage of V2X deployments.
+            </p>
+          </div>
+          <div class="help-desk-image-wrapper">
+            <LibraryImage entry="pcb/resources/cave" class="help-desk-image"  />
+          </div>
+        </div>
+      </a>
+    </ProgramSection>
     <ProgramSection class="pb-5" color="gray">
       <h2 class="program-title-lg text-center mb-4">
-        Technical Assistance Resources
+        Additional Resources
       </h2>
-      <div class="ta-index-section">
-         <div class="">
-            <p>Explore technical assistance resources for Connected and Automated Vehicle Education (CAVe) Design Documents and the Accelerating Vehicle-to-Everything (V2X) Cohort. Click a card to learn more about each program.</p>
-          </div>
-        <div class="ta-index-cards">
-          
-          <a href={base_url("/resources/pcb/technical-assistance/cave/")} class="ta-index-link">
-            <div class="ta-index-card">
-
-                <Image alt="CAVe-in-a-box" class="ta-index-thumb" src={caveDesignDocuments}/>
-              <div class="ta-index-title">Connected and Automated Vehicle Education (CAVe)</div>
-            </div>
-          </a>
-         
-          
-          <a href={base_url("/resources/pcb/technical-assistance/v2x-cohort/")} class="ta-index-link">
-
-            <div class="ta-index-card">
-                <Image alt="CAVe-in-a-box" class="ta-index-thumb" src={AcceleratingV2XCohort}/>
-              <div class="ta-index-title">Accelerating Vehicle-to-Everything (V2X) Cohort</div>
-            </div>
-          </a>
-          
-        </div>
+      <div class="card-grid mt-4">
+        <Card class="resource-card" href={`/resources/pcb/technical-assistance/cave`} radius="lg" shadow="sm">
+          <CardBody class="resource-card-body">
+            <LibraryImage entry="pcb/resources/cave" class="resource-card-image" />
+          </CardBody>
+          <CardFooter class="resource-card-footer">
+            <h3 class="program-title-sm text-foreground mb-2">
+              Connected and Automated Vehicle Education (CAVe)
+            </h3>
+            <p class="program-text">
+              The Connected and Automated Vehicle Education (CAVe) Support Services Program provides technical assistance and equipment loads to help accelerate deployments.
+            </p>
+          </CardFooter>
+        </Card>
+        <Card class="resource-card" href={`/resources/pcb/technical-assistance/v2x-cohort`} radius="lg" shadow="sm">
+          <CardBody class="resource-card-body">
+            <LibraryImage entry="pcb/resources/cohort" class="resource-card-image" />
+          </CardBody>
+          <CardFooter class="resource-card-footer">
+            <h3 class="program-title-sm text-foreground mb-2">
+              Accelerating Vehicle-to-Everything (V2X) Cohort
+            </h3>
+            <p class="program-text">
+              The Accelerating V2X Cohort supports public agencies and other infrastructure owners and operators (IOOs) in accelerating the deployment of interoperable vehicle-to-everything (V2X) technologies.
+            </p>
+          </CardFooter>
+        </Card>
       </div>
     </ProgramSection>
   </main>

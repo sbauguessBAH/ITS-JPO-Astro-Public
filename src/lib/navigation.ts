@@ -296,6 +296,10 @@ export const navigation: NavigationItem[] = [
             name: "Technical Assistance",
             pages: [
               {
+                name: "V2X Interoperability Help Desk",
+                url: "/resources/pcb/technical-assistance/help-desk",
+              },
+              {
                 name: "Connected and Automated Vehicle Education (CAVe)",
                 url: "/resources/pcb/technical-assistance/cave",
               },

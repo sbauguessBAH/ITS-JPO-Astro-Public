@@ -4,13 +4,9 @@ import Layout from "../_layout.astro";
 import Card from "@/src/components/programs/card/Card.astro";
 import CardBody from "@/src/components/programs/card/CardBody.astro";
 import CardFooter from "@/src/components/programs/card/CardFooter.astro";
-// import { Image } from "astro:assets";
 import Link from "@/src/components/Link.astro";
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import { getCollection } from "astro:content";
-import DocxIcon from "@/src/components/programs/icons/DocxIcon.astro";
-import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
-import PptIcon from "@/src/components/programs/icons/PptIcon.astro";
 
 const modules = await getCollection("pcbModules").then(modules => modules.sort((a, b) => (a.data.order || 0) - (b.data.order || 0)));
 
