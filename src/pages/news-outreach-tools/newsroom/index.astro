@@ -43,7 +43,7 @@ const toCardItem = (entry: (typeof newsletterEntries)[number]): NewsroomCardItem
 
 const featuredNewsletter: NewsroomCardItem | undefined = newsletterEntries[0] ? toCardItem(newsletterEntries[0]) : undefined;
 
-const archiveNewsletters: NewsroomCardItem[] = newsletterEntries.slice(1, 5).map((entry) => toCardItem(entry));
+const archiveNewsletters: NewsroomCardItem[] = newsletterEntries.slice(1, 4).map((entry) => toCardItem(entry));
 
 const toolkitData = toolkits as { media_toolkits?: MediaToolkitEntry[] };
 
@@ -118,8 +118,8 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
         <div class="row gx-4 gy-4">
           {
             archiveNewsletters.map((newsletter) => (
-              <div class="col-12 col-sm-6 archive-newsletter-col">
-                <NewsroomCard item={newsletter} showPills={false} showColoredLabel={false} ctaText="Read Issue" />
+              <div class="col-12 col-sm-4 archive-newsletter-col">
+                <NewsroomCard item={newsletter} showPills={true} showColoredLabel={false} showImage={true} ctaText="Read Issue" />
               </div>
             ))
           }

@@ -21,6 +21,7 @@ const {
   ctaText = "View Toolkit",
 } = Astro.props;
 
+// Normalize related content types into one render-safe shape.
 const normalizeItem = (value: NewsroomCardInput): NewsroomCardItem => {
   const newsletterValue = value as Newsletter;
 
@@ -39,6 +40,7 @@ const normalizeItem = (value: NewsroomCardInput): NewsroomCardItem => {
 
 const normalizedItem = normalizeItem(item);
 
+// Build predictable data-topic values used by CSS selectors.
 const slugifyForId = (value: string): string =>
   value
     .toLowerCase()
@@ -46,13 +48,20 @@ const slugifyForId = (value: string): string =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
+  // Prefer topic labels, then subtitle as a fallback for pill text/color mapping.
 const labelText = normalizedItem.topics?.join(", ") ?? normalizedItem.subtitle ?? "";
 const labelKey = normalizedItem.topics?.[0] ?? normalizedItem.subtitle ?? "";
 const topicSlug = labelKey ? slugifyForId(labelKey) : "";
+
+  // If no description exists, use date as lightweight metadata text.
 const descriptionText = normalizedItem.description ?? "";
 const fallbackText = !normalizedItem.description && normalizedItem.date ? normalizedItem.date : "";
+
+  // Image display is opt-in and only renders when a source URL exists.
 const shouldRenderImage = Boolean(showImage && normalizedItem.imageUrl);
 const imageAltText = normalizedItem.title?.trim() || "Newsletter image";
+
+  // External links open in a new tab with safe rel attributes.
 const isExternalUrl = Boolean(normalizedItem.url && /^https?:\/\//i.test(normalizedItem.url));
 ---
 
@@ -68,21 +77,24 @@ const isExternalUrl = Boolean(normalizedItem.url && /^https?:\/\//i.test(normali
   <div class="card-body d-flex flex-column justify-content-between ">
     {normalizedItem.subtitle && !showPills && <p class="card-subtitle mb-2">{normalizedItem.subtitle}</p>}
     {
+      // Switch between a visual title image and text title depending on props/content.
       shouldRenderImage ? (
         <div class="card-title-image-wrap" aria-label={imageAltText}>
           <img class="card-title-image" src={normalizedItem.imageUrl} alt={imageAltText} loading="lazy" decoding="async" />
         </div>
+        <h5>{normalizedItem.title}</h5>
       ) : (
-        <h5 class="card-title">{normalizedItem.title}</h5>
+        <h5>{normalizedItem.title}</h5>
       )
     }
 
+    {/* Render description when available, otherwise show fallback date text. */}
     {(descriptionText || fallbackText) && <p class="card-text">{descriptionText || fallbackText}</p>}
 
     <div class="d-flex flex-wrap">
     {
       showPills &&
-        normalizedItem.content_types?.map((ct) => (
+        normalizedItem.topics?.map((ct) => (
           <p class="badge me-1">{ct}</p>
         ))
       }
@@ -112,18 +124,18 @@ const isExternalUrl = Boolean(normalizedItem.url && /^https?:\/\//i.test(normali
   }
 
   .newsletter-card > .card-body > .card-title-image-wrap {
-    height: 200px;
+    height: auto;
     border-radius: 0;
     overflow: hidden;
     background: linear-gradient(90deg, #1C2C4E, #1E4D86);
   }
 
-  .newsletter-card > .card-body > .card-title-image-wrap > .card-title-image {
+  .card-title-image {
     width: 100%;
-    height: 100%;
     object-fit: cover;
     display: block;
   }
+  
 
   .card-subtitle {
     color: #055681;
