@@ -21,7 +21,7 @@ safety:
   - Speeding
   - Congestion
   - Roadway Departure
-  - Heavy Vehicle
+  - Heavy Vehicles
 keywords:
   - Variable Speed Advisory
   - VSA

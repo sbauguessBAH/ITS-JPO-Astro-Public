@@ -13,7 +13,7 @@ facility:
   - Freeway Segment
 safety:
   - Work Zone Safety
-  - Heavy Vehicle
+  - Heavy Vehicles
   - Speeding
 keywords:
   - Truck Mounted Attenuators

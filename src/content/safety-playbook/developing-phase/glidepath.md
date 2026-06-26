@@ -22,7 +22,7 @@ safety:
   - Intersections
   - Speeding
   - Congestion
-  - Heavy Vehicle
+  - Heavy Vehicles
 keywords:
   - Name
   - Glidepath

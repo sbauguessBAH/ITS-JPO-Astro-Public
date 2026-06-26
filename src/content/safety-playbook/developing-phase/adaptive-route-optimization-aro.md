@@ -1,6 +1,6 @@
 ---
 title: Adaptive Route Optimization (ARO)
-category: Developing Phase
+category: Road Weather
 shortDescription: Adaptive Route Optimization (ARO) dynamically updates route guidance using real-time conditions and predictive analytics to improve travel efficiency, reliability, and safety.
 additionalToolsSensors:
   - Real-time traffic flow sensors
@@ -22,7 +22,7 @@ facility:
 safety:
   - Congestion
   - Emergency Response
-  - Heavy Vehicle
+  - Heavy Vehicles
 keywords:
   - Name
   - Adaptive Route Optimization

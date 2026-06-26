@@ -139,7 +139,7 @@ onBeforeUnmount(() => {
     <CheckboxMultiSelectDropdown
       id="playbook-filter-location"
       v-model="selectedLocations"
-      label="Location"
+      label="Area Type"
       :options="props.locations"
       :disabled-options="disabledLocations"
     />
@@ -155,7 +155,7 @@ onBeforeUnmount(() => {
     <CheckboxMultiSelectDropdown
       id="playbook-filter-safety"
       v-model="selectedSafeties"
-      label="Safety Areas"
+      label="Safety Areas (replace with  category)"
       :options="props.safeties"
       :disabled-options="disabledSafeties"
     />

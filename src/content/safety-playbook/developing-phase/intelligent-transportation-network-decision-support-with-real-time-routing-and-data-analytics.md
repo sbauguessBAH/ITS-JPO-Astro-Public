@@ -24,7 +24,7 @@ safety:
   - Congestion
   - Emergency Response
   - Speeding
-  - Heavy Vehicle
+  - Heavy Vehicles
 keywords:
   - Name
   - Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics

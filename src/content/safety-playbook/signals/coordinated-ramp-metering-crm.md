@@ -21,7 +21,7 @@ safety:
   - Speeding
   - Congestion
   - Roadway Departure
-  - Heavy Vehicle
+  - Heavy Vehicles
 keywords:
   - Coordinated Ramp Metering
   - CRM
