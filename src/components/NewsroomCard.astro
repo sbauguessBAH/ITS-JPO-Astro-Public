@@ -74,7 +74,7 @@ const pillItems =
     : normalizedItem.topics;
 ---
 
-<div class:list={["card h-100 toolkit-card", className]}>
+<div class:list={["card toolkit-card", className]}>
   {
     showColoredLabel && (
       <h3 class="colored-label" data-topic={topicSlug}>
@@ -83,7 +83,8 @@ const pillItems =
     )
   }
 
-  <div class="card-body d-flex flex-column">
+  <div class="card-body d-flex flex-column justify-content-between">
+  <div class="">
     {shouldShowSubtitle && <p class="card-subtitle mb-2">{normalizedItem.subtitle}</p>}
     {
       // Switch between a visual title image and text title depending on props/content.
@@ -102,6 +103,7 @@ const pillItems =
     {/* Render description when available, otherwise show fallback date text. */}
     {(descriptionText || fallbackText) && <p class="card-text">{descriptionText || fallbackText}</p>}
 
+
     <div class="d-flex flex-wrap">
     {
       showPills &&
@@ -110,7 +112,7 @@ const pillItems =
         ))
       }
       </div>
-
+    </div>
     {normalizedItem.url && (
       <a href={normalizedItem.url} class="btn" target={isExternalUrl ? "_blank" : undefined} rel={isExternalUrl ? "noopener noreferrer" : undefined}>
         {ctaText}
