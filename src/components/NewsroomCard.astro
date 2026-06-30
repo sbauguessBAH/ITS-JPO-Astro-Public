@@ -7,6 +7,8 @@ interface Props {
   item: NewsroomCardInput;
   class?: string;
   showPills?: boolean;
+  showSubtitle?: boolean;
+  pillSource?: "topics" | "content_types";
   showColoredLabel?: boolean;
   showImage?: boolean;
   ctaText?: string;
@@ -16,6 +18,8 @@ const {
   item,
   class: className = "",
   showPills = true,
+  showSubtitle,
+  pillSource = "topics",
   showColoredLabel = true,
   showImage = false,
   ctaText = "View Toolkit",
@@ -63,6 +67,11 @@ const imageAltText = normalizedItem.title?.trim() || "Newsletter image";
 
   // External links open in a new tab with safe rel attributes.
 const isExternalUrl = Boolean(normalizedItem.url && /^https?:\/\//i.test(normalizedItem.url));
+const shouldShowSubtitle = Boolean(normalizedItem.subtitle && (showSubtitle ?? !showPills));
+const pillItems =
+  pillSource === "content_types"
+    ? (normalizedItem.content_types?.length ? normalizedItem.content_types : normalizedItem.topics)
+    : normalizedItem.topics;
 ---
 
 <div class:list={["card h-100 toolkit-card", className]}>
@@ -74,15 +83,17 @@ const isExternalUrl = Boolean(normalizedItem.url && /^https?:\/\//i.test(normali
     )
   }
 
-  <div class="card-body d-flex flex-column justify-content-between ">
-    {normalizedItem.subtitle && !showPills && <p class="card-subtitle mb-2">{normalizedItem.subtitle}</p>}
+  <div class="card-body d-flex flex-column">
+    {shouldShowSubtitle && <p class="card-subtitle mb-2">{normalizedItem.subtitle}</p>}
     {
       // Switch between a visual title image and text title depending on props/content.
       shouldRenderImage ? (
-        <div class="card-title-image-wrap" aria-label={imageAltText}>
-          <img class="card-title-image" src={normalizedItem.imageUrl} alt={imageAltText} loading="lazy" decoding="async" />
-        </div>
-        <h5>{normalizedItem.title}</h5>
+        <>
+          <div class="card-title-image-wrap" aria-label={imageAltText}>
+            <img class="card-title-image" src={normalizedItem.imageUrl} alt={imageAltText} loading="lazy" decoding="async" />
+          </div>
+          <h5>{normalizedItem.title}</h5>
+        </>
       ) : (
         <h5>{normalizedItem.title}</h5>
       )
@@ -94,7 +105,7 @@ const isExternalUrl = Boolean(normalizedItem.url && /^https?:\/\//i.test(normali
     <div class="d-flex flex-wrap">
     {
       showPills &&
-        normalizedItem.topics?.map((ct) => (
+        pillItems?.map((ct) => (
           <p class="badge me-1">{ct}</p>
         ))
       }
@@ -138,7 +149,8 @@ const isExternalUrl = Boolean(normalizedItem.url && /^https?:\/\//i.test(normali
   
 
   .card-subtitle {
-    color: #055681;
+    color: rgb(var(--bs-primary-rgb));
+    font-size: 1rem;
     font-weight: 600;
   }
 

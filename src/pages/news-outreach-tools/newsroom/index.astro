@@ -92,7 +92,7 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolk
       {
         mediaToolkits.map((mediaKit) => (
           <div class="col-12 col-sm-6 col-xl-3">
-            <NewsroomCard item={mediaKit} showPills={true} showColoredLabel={false} ctaText="Read Kit" />
+            <NewsroomCard item={mediaKit} showPills={true} showSubtitle={true} pillSource="content_types" showColoredLabel={false} ctaText="Read Kit" />
           </div>
         ))
       }
