@@ -58,6 +58,8 @@ const library = defineCollection({
     citation: z.string(),
     /** Origin URL for the source */
     origin: z.union([z.string().url(), z.literal('')]),
+    /** Internal notes about the image */
+    notes: z.string().optional(),
   })
 })
 
@@ -102,6 +104,23 @@ const pcbTrainings = defineCollection({
     image: reference("library"),
     action: z.string().optional(),
     id: z.string(),
+  }),
+});
+
+const pcbModules = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/pcb/modules'}),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    source: z.object({
+      url: z.string(),
+      name: z.string(),
+      id: z.string(),
+    }),
+    order: z.number().optional(),
+    category: z.string(),
+    type: z.enum(["web-based", "in-person"]),
+    image: reference("library"),
   }),
 });
 
@@ -209,6 +228,7 @@ export const collections = {
   pcbTrainings,
   pcbStandardsTrainings,
   pcbTransitStandardsTrainings,
+  pcbModules,
   // ascStandards,
   library,
   automationResources,
