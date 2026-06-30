@@ -96,7 +96,7 @@ const pillItems =
           <h5>{normalizedItem.title}</h5>
         </>
       ) : (
-        <h5>{normalizedItem.title}</h5>
+        <h5 class="card-title">{normalizedItem.title}</h5>
       )
     }
 
@@ -125,27 +125,34 @@ const pillItems =
 .toolkit-card.media-toolkit {
   min-height: 280px; 
 
-  .badge-container { 
-    min-height: 75px;
-  }
+}
+.badge-container { 
+  min-height: 75px;
+  align-items: flex-start;
+  align-content: flex-start;
 }
   .toolkit-card.newsletter-card {
     padding: 0;
   }
-  .newsletter-card >.card-body > .card-title {
+  .featured-newsletter-card .card-title {
     height: 200px;
     color: white;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0;
     background: linear-gradient(90deg, #1C2C4E, #1E4D86);
   }
 
-  .newsletter-card > .card-body > .card-title-image-wrap {
+  .newsletter-card .card-title-image-wrap {
     height: auto;
     border-radius: 0;
     overflow: hidden;
+    background: transparent;
+  }
+
+  .featured-newsletter-card .card-title-image-wrap {
     background: linear-gradient(90deg, #1C2C4E, #1E4D86);
   }
 
