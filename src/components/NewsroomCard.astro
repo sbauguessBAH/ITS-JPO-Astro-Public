@@ -104,7 +104,7 @@ const pillItems =
     {(descriptionText || fallbackText) && <p class="card-text">{descriptionText || fallbackText}</p>}
 
 
-    <div class="d-flex flex-wrap">
+    <div class="d-flex flex-wrap badge-container">
     {
       showPills &&
         pillItems?.map((ct) => (
@@ -122,8 +122,12 @@ const pillItems =
 </div>
 
 <style>
-.toolkit-card {
-  min-height: 250px; 
+.toolkit-card.media-toolkit {
+  min-height: 280px; 
+
+  .badge-container { 
+    min-height: 75px;
+  }
 }
   .toolkit-card.newsletter-card {
     padding: 0;
