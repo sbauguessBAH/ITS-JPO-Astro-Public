@@ -50,7 +50,6 @@ const toolkitData = toolkits as { media_toolkits?: MediaToolkitEntry[] };
 const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolkits) ? toolkitData.media_toolkits : []).slice(0, 3).map((item) => ({
   title: item.title,
   url: item.url,
-  description: item.description,
   date: item.date,
   subtitle: item.subtitle,
   content_types: item.content_types,
