@@ -121,7 +121,7 @@ const slugifyForId = (value: string): string =>
       {
         toolkitList.map((toolkit) => (
           <div class="col-12 col-md-4 toolkit-card-col">
-            <NewsroomCard item={toolkit} />
+            <NewsroomCard item={toolkit} showPills={true} showSubtitle={true} pillSource="content_types" showColoredLabel={false} ctaText="Read Kit" />
           </div>
         ))
       }
