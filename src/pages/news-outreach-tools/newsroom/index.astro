@@ -33,7 +33,7 @@ const toCardItem = (entry: (typeof newsletterEntries)[number]): NewsroomCardItem
   return {
     title: entry.data.title,
     url: base_url(`/news-outreach-tools/newsroom/newsletter-archive/${slug}/`),
-    description: entry.data.description?.trim().length ? entry.data.description : issueSummary,
+    // description: entry.data.description?.trim().length ? entry.data.description : issueSummary,
     date: entry.data.dateLabel,
     subtitle: entry.data.subtitle,
     imageUrl: entry.data.imageUrl,
