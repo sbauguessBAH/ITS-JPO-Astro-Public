@@ -10,6 +10,7 @@ interface Props {
   showSubtitle?: boolean;
   pillSource?: "topics" | "content_types";
   showColoredLabel?: boolean;
+  btnClass?: string;
   showImage?: boolean;
   ctaText?: string;
 }
@@ -22,6 +23,7 @@ const {
   pillSource = "topics",
   showColoredLabel = true,
   showImage = false,
+  btnClass = 'btn w-100',
   ctaText = "View Toolkit",
 } = Astro.props;
 
@@ -114,7 +116,7 @@ const pillItems =
       </div>
     </div>
     {normalizedItem.url && (
-      <a href={normalizedItem.url} class="btn" target={isExternalUrl ? "_blank" : undefined} rel={isExternalUrl ? "noopener noreferrer" : undefined}>
+      <a href={normalizedItem.url} class={btnClass} target={isExternalUrl ? "_blank" : undefined} rel={isExternalUrl ? "noopener noreferrer" : undefined}>
         {ctaText}
       </a>
     )}
