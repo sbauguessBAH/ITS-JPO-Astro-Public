@@ -22,6 +22,10 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  variant: {
+    type: String,
+    default: "default",
+  },
 });
 
 const emit = defineEmits(["update:modelValue"]);
@@ -107,36 +111,24 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="rootEl" class="dropdown-filter">
+  <div ref="rootEl" class="dropdown-filter" :class="`dropdown-filter-${variant}`">
     <label class="dropdown-label" :for="`${id}-trigger`">{{ label }}</label>
 
-    <button
-      :id="`${id}-trigger`"
-      type="button"
-      class="dropdown-trigger"
-      :class="{ 'dropdown-trigger-open': isOpen }"
-      :aria-controls="`${id}-menu`"
-      :aria-expanded="isOpen"
-      @click="toggleOpen"
-    >
+    <button :id="`${id}-trigger`" type="button" class="dropdown-trigger" :class="{ 'dropdown-trigger-open': isOpen }"
+      :aria-controls="`${id}-menu`" :aria-expanded="isOpen" @click="toggleOpen">
       <span class="dropdown-trigger-text">{{ buttonSummary }}</span>
-      <span class="dropdown-trigger-icon" aria-hidden="true"><svg style="fill: gray; height: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M297.4 438.6C309.9 451.1 330.2 451.1 342.7 438.6L502.7 278.6C515.2 266.1 515.2 245.8 502.7 233.3C490.2 220.8 469.9 220.8 457.4 233.3L320 370.7L182.6 233.4C170.1 220.9 149.8 220.9 137.3 233.4C124.8 245.9 124.8 266.2 137.3 278.7L297.3 438.7z"/></svg></span>
+      <span class="dropdown-trigger-icon" aria-hidden="true">
+        <svg style="fill: gray; height: 20px;"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 640 640">
+          <path d="M297.4 438.6C309.9 451.1 330.2 451.1 342.7 438.6L502.7 278.6C515.2 266.1 515.2 245.8 502.7 233.3C490.2 220.8 469.9 220.8 457.4 233.3L320 370.7L182.6 233.4C170.1 220.9 149.8 220.9 137.3 233.4C124.8 245.9 124.8 266.2 137.3 278.7L297.3 438.7z" />
+        </svg>
+      </span>
     </button>
 
-    <div
-      v-if="isOpen"
-      :id="`${id}-menu`"
-      class="dropdown-menu"
-      role="group"
-      :aria-label="`${label} options`"
-    >
+    <div v-if="isOpen" :id="`${id}-menu`" class="dropdown-menu" role="group" :aria-label="`${label} options`">
       <div class="dropdown-actions">
-        <button
-          type="button"
-          class="dropdown-clear"
-          :disabled="selectedCount === 0"
-          @click="clearSelection"
-        >
+        <button type="button" class="dropdown-clear" :disabled="selectedCount === 0" @click="clearSelection">
           Clear
         </button>
       </div>
@@ -144,13 +136,8 @@ onBeforeUnmount(() => {
       <ul class="dropdown-list">
         <li v-for="option in options" :key="option.value" class="dropdown-item">
           <label class="dropdown-checkbox-row" :class="{ 'dropdown-checkbox-row-disabled': isDisabled(option.value) }">
-            <input
-              type="checkbox"
-              class="dropdown-checkbox"
-              :checked="isSelected(option.value)"
-              :disabled="isDisabled(option.value)"
-              @change="updateSelection(option.value, $event.target.checked)"
-            />
+            <input type="checkbox" class="dropdown-checkbox" :checked="isSelected(option.value)"
+              :disabled="isDisabled(option.value)" @change="updateSelection(option.value, $event.target.checked)" />
             <span class="dropdown-option-label">{{ option.label }}</span>
           </label>
         </li>
@@ -161,6 +148,10 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .dropdown-filter {
+  --filter-bg: #ffffff;
+  --filter-color: rgb(5, 86, 129);
+  --filter-border: #e5e7eb;
+
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -168,18 +159,36 @@ onBeforeUnmount(() => {
   overflow: visible;
 }
 
+.dropdown-filter-location {
+  --filter-bg: #e2843224;
+  --filter-color: #9f5d23;
+  --filter-border: #e2843270;
+}
+
+.dropdown-filter-facility {
+  --filter-bg: #43650016;
+  --filter-color: #446500;
+  --filter-border: #43650050;
+}
+
+.dropdown-filter-category {
+  --filter-bg: #091f611e;
+  --filter-color: #091f61;
+  --filter-border: #091f6160;
+}
+
 .dropdown-label {
   font-weight: 700;
-  color: rgb(5, 86, 129);
+  color: var(--filter-color);
   font-size: 0.95rem;
 }
 
 .dropdown-trigger {
-  min-height: 2.75rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.375rem;
+  min-height: 2.5rem;
+  border: 1px solid var(--filter-border);
+  border-radius: 100vh;
   padding: 0.45rem 0.75rem;
-  background: #fff;
+  background: var(--filter-bg);
   width: 100%;
   display: flex;
   align-items: center;
@@ -192,14 +201,14 @@ onBeforeUnmount(() => {
 }
 
 .dropdown-trigger:hover {
-  border-color: rgb(5, 86, 129);
-  background-color: #f8fafb;
+  border-color: var(--filter-color);
+  background-color: var(--filter-bg);
 }
 
 .dropdown-trigger-open {
-  border-color: rgb(5, 86, 129);
-  background-color: #f8fafb;
-  box-shadow: 0 0 0 3px rgba(5, 86, 129, 0.1);
+  border-color: var(--filter-color);
+  background-color: var(--filter-bg);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--filter-color) 18%, transparent);
 }
 
 .dropdown-trigger-text {
@@ -211,12 +220,12 @@ onBeforeUnmount(() => {
 
 .dropdown-trigger:focus {
   outline: none;
-  border-color: rgb(5, 86, 129);
-  box-shadow: 0 0 0 3px rgba(5, 86, 129, 0.1);
+  border-color: var(--filter-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--filter-color) 18%, transparent);
 }
 
 .dropdown-trigger:focus-visible {
-  outline: 2px solid rgb(5, 86, 129);
+  outline: 2px solid var(--filter-color);
   outline-offset: 2px;
 }
 
@@ -257,11 +266,12 @@ onBeforeUnmount(() => {
   border-bottom: 1px solid #e5e7eb;
   display: flex;
   gap: 0.5rem;
+  z-index: 10;
 }
 
 .dropdown-clear {
-  border: 1px solid rgb(5, 86, 129);
-  color: rgb(5, 86, 129);
+  border: 1px solid var(--filter-color);
+  color: var(--filter-color);
   background: #fff;
   border-radius: 999px;
   padding: 0.25rem 0.75rem;
@@ -273,7 +283,7 @@ onBeforeUnmount(() => {
 }
 
 .dropdown-clear:hover:not(:disabled) {
-  background-color: rgba(5, 86, 129, 0.05);
+  background-color: color-mix(in srgb, var(--filter-color) 8%, white);
 }
 
 .dropdown-clear:disabled {
@@ -292,7 +302,7 @@ onBeforeUnmount(() => {
   padding: 0;
 }
 
-.dropdown-item + .dropdown-item {
+.dropdown-item+.dropdown-item {
   border-top: 1px solid #f3f4f6;
 }
 
@@ -316,7 +326,7 @@ onBeforeUnmount(() => {
 }
 
 .dropdown-checkbox {
-  accent-color: rgb(5, 86, 129);
+  accent-color: var(--filter-color);
   cursor: pointer;
   flex-shrink: 0;
 }

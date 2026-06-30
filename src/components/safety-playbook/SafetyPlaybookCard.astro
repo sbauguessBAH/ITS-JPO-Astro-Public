@@ -21,6 +21,23 @@ const normalize = (value: string) =>
 const toDataValue = (values: string[]) => values.map(normalize).join('|');
 const toSearchDataValue = (values: string[]) => values.join('|');
 
+interface ContextTag {
+  label: string;
+  type: 'safety' | 'location' | 'facility';
+}
+
+const uniqueValues = (values: string[]) => [...new Set(values.map((value) => value.trim()).filter(Boolean))];
+
+const safetyTags = uniqueValues(data.safety);
+const areaTypeTags = uniqueValues(data.location);
+const facilityTags = uniqueValues(data.facility);
+
+const contextTags: ContextTag[] = [
+  ...safetyTags.map((label) => ({ label, type: 'safety' as const })),
+  ...areaTypeTags.map((label) => ({ label, type: 'location' as const })),
+  ...facilityTags.map((label) => ({ label, type: 'facility' as const })),
+];
+
 const categoryIconPaths: Record<string, string> = {
   'road-weather': 'M160 384C107 384 64 341 64 288C64 245.5 91.6 209.4 129.9 196.8C128.6 190.1 128 183.1 128 176C128 114.1 178.1 64 240 64C283.1 64 320.5 88.3 339.2 124C353.9 106.9 375.7 96 400 96C444.2 96 480 131.8 480 176C480 181.5 479.4 186.8 478.4 192C478.9 192 479.5 192 480 192C533 192 576 235 576 288C576 341 533 384 480 384L160 384zM166.8 463.6L134.8 559.6C130.6 572.2 117 579 104.4 574.8C91.8 570.6 85 557 89.2 544.4L121.2 448.4C125.4 435.8 139 429 151.6 433.2C164.2 437.4 171 451 166.8 463.6zM286.8 463.6L254.8 559.6C250.6 572.2 237 579 224.4 574.8C211.8 570.6 205 557 209.2 544.4L241.2 448.4C245.4 435.8 259 429 271.6 433.2C284.2 437.4 291 451 286.8 463.6zM398.8 463.6L366.8 559.6C362.6 572.2 349 579 336.4 574.8C323.8 570.6 317 557 321.2 544.4L353.2 448.4C357.4 435.8 371 429 383.6 433.2C396.2 437.4 403 451 398.8 463.6zM518.8 463.6L486.8 559.6C482.6 572.2 469 579 456.4 574.8C443.8 570.6 437 557 441.2 544.4L473.2 448.4C477.4 435.8 491 429 503.6 433.2C516.2 437.4 523 451 518.8 463.6z',
   'signals': 'M224 32C188.7 32 160 60.7 160 96L160 448C160 536.4 231.6 608 320 608C408.4 608 480 536.4 480 448L480 96C480 60.7 451.3 32 416 32L224 32zM320 424C350.9 424 376 449.1 376 480C376 510.9 350.9 536 320 536C289.1 536 264 510.9 264 480C264 449.1 289.1 424 320 424zM376 320C376 350.9 350.9 376 320 376C289.1 376 264 350.9 264 320C264 289.1 289.1 264 320 264C350.9 264 376 289.1 376 320zM320 216C289.1 216 264 190.9 264 160C264 129.1 289.1 104 320 104C350.9 104 376 129.1 376 160C376 190.9 350.9 216 320 216z',
@@ -47,6 +64,7 @@ const categoryIconPath = categoryIconPaths[normalize(data.category)] ?? fallback
   data-facility={toDataValue(data.facility)}
   data-safety={toDataValue(data.safety)}
   data-search-title={data.title}
+  data-search-category={data.category}
   data-search-safety={toSearchDataValue(data.safety)}
   data-search-tools={toSearchDataValue(data.additionalToolsSensors)}
   data-search-keywords={toSearchDataValue(data.keywords)}
@@ -60,13 +78,14 @@ const categoryIconPath = categoryIconPaths[normalize(data.category)] ?? fallback
       </span>
       <span>{data.category}</span>
     </p>
+
     <h3 class="playbook-title">{data.title}</h3>
     <p class="playbook-summary">{data.shortDescription}</p>
 
-    {data.safety.length > 0 && (
-      <div class="playbook-tags" aria-label="Safety focus areas">
-        {data.safety.slice(0, 3).map((tag) => (
-          <span class="playbook-tag">{tag}</span>
+    {contextTags.length > 0 && (
+      <div class="playbook-tags" aria-label="Safety area, area type, and facility tags">
+        {contextTags.map((tag) => (
+          <span class:list={["playbook-tag", `playbook-tag-${tag.type}`]}>{tag.label}</span>
         ))}
       </div>
     )}
@@ -112,7 +131,7 @@ const categoryIconPath = categoryIconPaths[normalize(data.category)] ?? fallback
     letter-spacing: 0.02em;
     text-transform: uppercase;
     font-weight: 700;
-    color: rgb(5, 86, 129);
+    color: #091f61;
     display: flex;
     align-items: center;
     gap: 0.45rem;
@@ -144,7 +163,8 @@ const categoryIconPath = categoryIconPaths[normalize(data.category)] ?? fallback
   .playbook-summary {
     margin: 0;
     color: #4b5563;
-    line-height: 1.5;
+    line-height: 1.3;
+    font-size: 0.95rem;
   }
 
   .playbook-tags {
@@ -154,12 +174,31 @@ const categoryIconPath = categoryIconPaths[normalize(data.category)] ?? fallback
   }
 
   .playbook-tag {
-    background: rgb(239, 246, 251);
-    color: rgb(5, 86, 129);
     border-radius: 999px;
     padding: 0.2rem 0.65rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 600;
+  }
+
+  .playbook-tag-safety {
+     background: #cee5ef;
+    color: #055681;
+  }
+
+
+  .playbook-tag-location {
+    background: #e2843224;
+    color: #9f5d23;
+  }
+
+  .playbook-tag-facility {
+    background: #43650016;
+    color: #446500;
+  }
+
+  .playbook-tag-category {
+    background: #091f612f;
+    color: #091f61;
   }
 
   .playbook-link-button {

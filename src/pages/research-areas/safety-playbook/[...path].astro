@@ -59,7 +59,7 @@ const keywords = [data.title, data.category, ...data.safety, ...data.location, .
     margin: 0 0 0.75rem;
     text-transform: uppercase;
     font-weight: 700;
-    color: #055681;
+    color: #091f61;
     letter-spacing: 0.02em;
   }
 
@@ -111,6 +111,7 @@ const keywords = [data.title, data.category, ...data.safety, ...data.location, .
     padding: 0.25rem 0.7rem;
     font-size: 0.9rem;
     line-height: 1.3;
+    font-weight: 600;
   }
 
   .resource-list {
@@ -127,6 +128,49 @@ const keywords = [data.title, data.category, ...data.safety, ...data.location, .
     text-decoration: underline;
     font-weight: 600;
   }
+
+  .playbook-tag-safety {
+     background: #cee5ef;
+    color: #055681;
+  }
+
+  .playbook-tag-location {
+    background: #e2843224;
+    color: #9f5d23;
+  }
+
+  .playbook-tag-facility {
+    background: #43650016;
+    color: #446500;
+  }
+
+  .playbook-tag-category {
+    background: #091f612f;
+    color: #091f61;
+  }
+
+
+  .playbook-h2-safety {
+    color: #055681;
+  }
+
+  .playbook-h2-location {
+    color: #9f5d23;
+  }
+
+  .playbook-h2-facility {
+    color: #446500;
+  }
+
+  .playbook-h2-category {
+    color: #091f61;
+  }
+
+  .playbook-h2-additional-tools-sensors {
+    color: #3e3e3e;
+  }
+
+
 </style>
 
 <PageLayout title={data.title} bannerImage={banner} currentBreadcrumb={data.title} description={data.shortDescription} keywords={keywords}>
@@ -165,10 +209,10 @@ const keywords = [data.title, data.category, ...data.safety, ...data.location, .
         {
           data.safety.length > 0 && (
             <section class="meta-card">
-              <h2 class="meta-title">Safety Area(s)</h2>
+              <h2 class="meta-title playbook-h2-safety">Safety Area(s)</h2>
               <ul class="meta-list">
                 {data.safety.map((item: string) => (
-                  <li class="meta-list-item">{item}</li>
+                  <li class="meta-list-item playbook-tag-safety">{item}</li>
                 ))}
               </ul>
             </section>
@@ -180,10 +224,10 @@ const keywords = [data.title, data.category, ...data.safety, ...data.location, .
         {
           data.location.length > 0 && (
             <section class="meta-card">
-              <h2 class="meta-title">Location</h2>
+              <h2 class="meta-title playbook-h2-location">Area Type</h2>
               <ul class="meta-list">
                 {data.location.map((item: string) => (
-                  <li class="meta-list-item">{item}</li>
+                  <li class="meta-list-item playbook-tag-location">{item}</li>
                 ))}
               </ul>
             </section>
@@ -193,10 +237,10 @@ const keywords = [data.title, data.category, ...data.safety, ...data.location, .
         {
           data.facility.length > 0 && (
             <section class="meta-card">
-              <h2 class="meta-title">Facility</h2>
-              <ul class="meta-list">
+              <h2 class="meta-title playbook-h2-facility">Facility</h2>
+              <ul class="meta-list ">
                 {data.facility.map((item: string) => (
-                  <li class="meta-list-item">{item}</li>
+                  <li class="meta-list-item playbook-tag-facility">{item}</li>
                 ))}
               </ul>
             </section>
@@ -205,7 +249,7 @@ const keywords = [data.title, data.category, ...data.safety, ...data.location, .
    {
           data.additionalToolsSensors.length > 0 && (
             <section class="meta-card">
-              <h2 class="meta-title">Additional Tools and Sensors</h2>
+              <h2 class="meta-title playbook-h2-additional-tools-sensors">Additional Tools and Sensors</h2>
               <ul class="meta-list">
                 {data.additionalToolsSensors.map((item: string) => (
                   <li class="meta-list-item">{item}</li>

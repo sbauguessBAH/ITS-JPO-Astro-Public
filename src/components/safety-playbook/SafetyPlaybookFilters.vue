@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
 const props = defineProps({
-  categories: {
+  safeties: {
     type: Array,
     required: true,
   },
@@ -12,10 +12,12 @@ const props = defineProps({
   },
 });
 
-const selectedCategory = ref("all");
+const selectedSafety = ref("all");
+const selectedCategories = ref([]);
 const selectedLocations = ref([]);
 const selectedFacilities = ref([]);
-const selectedSafeties = ref([]);
+const searchHasQuery = ref(false);
+const searchMatchedSlugs = ref(new Set());
 
 const normalizeValue = (value) =>
   value
@@ -32,38 +34,59 @@ const matchesGroup = (selectedValues, itemValues) => {
   return selectedValues.some((value) => normalizedItemValues.includes(value));
 };
 
+const matchesCategory = (selectedValues, itemCategory) => {
+  if (!selectedValues || selectedValues.length === 0) {
+    return true;
+  }
+
+  return selectedValues.includes(normalizeValue(itemCategory));
+};
+
+const matchesSearchScope = (itemSlug) => {
+  if (!searchHasQuery.value) {
+    return true;
+  }
+
+  return searchMatchedSlugs.value.has(itemSlug);
+};
+
 const matchingBySecondary = computed(() =>
   props.playbooks.filter((item) => {
+    // Sidebar counts reflect the current secondary filters and active search scope.
+    const categoryMatch = matchesCategory(selectedCategories.value, item.category);
     const locationMatch = matchesGroup(selectedLocations.value, item.location);
     const facilityMatch = matchesGroup(selectedFacilities.value, item.facility);
-    const safetyMatch = matchesGroup(selectedSafeties.value, item.safety);
+    const searchMatch = matchesSearchScope(item.slug);
 
-    return locationMatch && facilityMatch && safetyMatch;
+    return categoryMatch && locationMatch && facilityMatch && searchMatch;
   }),
 );
 
-const categoryCountMap = computed(() => {
+const safetyCountMap = computed(() => {
   const counts = {};
 
   matchingBySecondary.value.forEach((item) => {
-    const key = normalizeValue(item.category);
-    counts[key] = (counts[key] || 0) + 1;
+    // Count each safety once per playbook card to avoid double counting duplicates.
+    const uniqueSafeties = [...new Set(item.safety.map(normalizeValue))];
+    uniqueSafeties.forEach((key) => {
+      counts[key] = (counts[key] || 0) + 1;
+    });
   });
 
   return counts;
 });
 
-const categoriesWithCounts = computed(() =>
-  props.categories.map((category) => ({
-    ...category,
-    count: categoryCountMap.value[category.value] ?? 0,
+const safetiesWithCounts = computed(() =>
+  props.safeties.map((safety) => ({
+    ...safety,
+    count: safetyCountMap.value[safety.value] ?? 0,
   })),
 );
 
 const allCount = computed(() => matchingBySecondary.value.length);
 
 const createDetail = (source = "update") => ({
-  category: selectedCategory.value,
+  safety: selectedSafety.value,
   source,
 });
 
@@ -75,16 +98,16 @@ const dispatchFilterChange = () => {
   );
 };
 
-const setCategory = (categoryValue) => {
-  selectedCategory.value = categoryValue;
+const setSafety = (safetyValue) => {
+  selectedSafety.value = safetyValue;
   dispatchFilterChange();
 };
 
 const clearAll = () => {
-  selectedCategory.value = "all";
+  selectedSafety.value = "all";
+  selectedCategories.value = [];
   selectedLocations.value = [];
   selectedFacilities.value = [];
-  selectedSafeties.value = [];
 
   window.dispatchEvent(
     new CustomEvent("safety-playbook-filter-change", {
@@ -94,48 +117,58 @@ const clearAll = () => {
 };
 
 const onSecondaryFilterChange = (event) => {
+  // Keep primary-sidebar counts in sync with top-filter selections.
   const detail = event?.detail ?? {};
+  selectedCategories.value = detail.categories ?? [];
   selectedLocations.value = detail.locations ?? [];
   selectedFacilities.value = detail.facilities ?? [];
-  selectedSafeties.value = detail.safeties ?? [];
+};
+
+const onSearchChange = (event) => {
+  // Search emits slug matches so counts can recompute without re-querying content.
+  const detail = event?.detail ?? {};
+  searchHasQuery.value = detail.hasQuery ?? false;
+  searchMatchedSlugs.value = new Set(detail.matchedSlugs ?? []);
 };
 
 onMounted(() => {
   window.addEventListener("safety-playbook-secondary-filter-change", onSecondaryFilterChange);
+  window.addEventListener("safety-playbook-search-change", onSearchChange);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("safety-playbook-secondary-filter-change", onSecondaryFilterChange);
+  window.removeEventListener("safety-playbook-search-change", onSearchChange);
 });
 </script>
 
 <template>
-  <nav class="panel" aria-label="Safety playbook filters">
+  <nav class="panel sticky-top" aria-label="Safety playbook filters">
     <h3 class="panel-title">Filter Tools</h3>
 
     <div class="panel-section">
-      <h4 class="panel-section-title">Category</h4>
+      <h4 class="panel-section-title">Safety Areas</h4>
       <button
         type="button"
         class="panel-item"
-        :class="{ 'panel-item-active': selectedCategory === 'all' }"
-        :aria-pressed="selectedCategory === 'all'"
-        @click="setCategory('all')"
+        :class="{ 'panel-item-active': selectedSafety === 'all' }"
+        :aria-pressed="selectedSafety === 'all'"
+        @click="setSafety('all')"
       >
-        <span class="panel-item-text">All Categories</span>
+        <span class="panel-item-text">All Safety Areas</span>
         <span class="panel-count">{{ allCount }}</span>
       </button>
       <button
-        v-for="category in categoriesWithCounts"
-        :key="category.value"
+        v-for="safety in safetiesWithCounts"
+        :key="safety.value"
         type="button"
         class="panel-item"
-        :class="{ 'panel-item-active': selectedCategory === category.value }"
-        :aria-pressed="selectedCategory === category.value"
-        @click="setCategory(category.value)"
+        :class="{ 'panel-item-active': selectedSafety === safety.value }"
+        :aria-pressed="selectedSafety === safety.value"
+        @click="setSafety(safety.value)"
       >
-        <span class="panel-item-text">{{ category.label }}</span>
-        <span class="panel-count">{{ category.count }}</span>
+        <span class="panel-item-text">{{ safety.label }}</span>
+        <span class="panel-count">{{ safety.count }}</span>
       </button>
     </div>
 

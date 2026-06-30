@@ -31,7 +31,8 @@ interface FilterOption {
 
 const playbookItems = (await getCollection("safetyPlaybook")).sort((a, b) => {
   // First sort by category
-  const categoryCompare = a.data.category.localeCompare(b.data.category);
+  const categoryCompare = a.data.category.trim().localeCompare(b.data.category.trim());
+
   if (categoryCompare !== 0) {
     return categoryCompare;
   }
@@ -81,7 +82,7 @@ const buildMultiValueOptions = (valueGroups: string[][]): FilterOption[] => {
     .sort((a, b) => a.label.localeCompare(b.label));
 };
 
-const categories = buildSingleValueOptions(playbookItems.map((item) => item.data.category));
+const categories = buildMultiValueOptions(playbookItems.map((item) => [item.data.category]));
 const locations = buildMultiValueOptions(playbookItems.map((item) => item.data.location));
 const facilities = buildMultiValueOptions(playbookItems.map((item) => item.data.facility));
 const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.safety));
@@ -324,7 +325,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
       <div class="playbook-intro-row">
         <p class="playbook-intro-text">
           The Safety Playbook provides practical tools and implementation guidance for safer transportation
-          systems. Use the primary category filter and secondary multi-select filters to narrow the list by
+          systems. Use the primary safety area filter and secondary multi-select filters to narrow the list by
           context and safety focus.
         </p>
         <a href={base_url("/research-areas/safety-playbook/glossary/")} class="btn playbook-intro-cta">View Safety Glossary</a>
@@ -336,8 +337,9 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
         <aside class="playbook-sidebar">
           <SafetyPlaybookFilters
             client:load
-            categories={categories}
+            safeties={safeties}
             playbooks={playbookItems.map((item) => ({
+              slug: item.id.replace(/\.(md|mdx)$/i, ""),
               category: item.data.category,
               location: item.data.location,
               facility: item.data.facility,
@@ -354,7 +356,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
                 id="playbook-search-input"
                 class="playbook-search-input"
                 type="search"
-                placeholder="Search by title, safety area, additional tools/sensors, or keywords"
+                placeholder="Search by title, category, safety area, additional tools/sensors, or keywords"
                 autocomplete="off"
               />
               <button class="playbook-search-clear" id="playbook-search-clear" type="button">Clear Search</button>
@@ -364,9 +366,9 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
 
           <SafetyPlaybookTopFilters
             client:load
+            categories={categories}
             locations={locations}
             facilities={facilities}
-            safeties={safeties}
             playbooks={playbookItems.map((item) => ({
               category: item.data.category,
               location: item.data.location,
@@ -416,19 +418,25 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
   import Fuse from "fuse.js";
 
   interface SafetyPlaybookFilterDetail {
-    category?: string;
+    safety?: string;
     source?: string;
+    categories?: string[];
     locations?: string[];
     facilities?: string[];
-    safeties?: string[];
   }
 
   interface SafetyPlaybookSearchDoc {
     slug: string;
     title: string;
+    category: string;
     safety: string[];
     additionalToolsSensors: string[];
     keywords: string[];
+  }
+
+  interface SafetyPlaybookSearchDetail {
+    hasQuery: boolean;
+    matchedSlugs: string[];
   }
 
   const PAGE_SIZE = 9;
@@ -442,10 +450,21 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
   let searchMatchedSlugs = new Set<string>();
   // Current filter state shared by primary and secondary filter components.
   let activeFilters: SafetyPlaybookFilterDetail = {
-    category: "all",
+    safety: "all",
+    categories: [],
     locations: [],
     facilities: [],
-    safeties: [],
+  };
+
+  const dispatchSearchChange = (): void => {
+    window.dispatchEvent(
+      new CustomEvent<SafetyPlaybookSearchDetail>("safety-playbook-search-change", {
+        detail: {
+          hasQuery: activeSearchQuery.trim().length > 0,
+          matchedSlugs: Array.from(searchMatchedSlugs),
+        },
+      }),
+    );
   };
 
   const splitDataValues = (raw = ""): string[] =>
@@ -467,6 +486,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
         return {
           slug,
           title: card.dataset.searchTitle ?? "",
+          category: card.dataset.searchCategory ?? "",
           safety: splitDataValues(card.dataset.searchSafety),
           additionalToolsSensors: splitDataValues(card.dataset.searchTools),
           keywords: splitDataValues(card.dataset.searchKeywords),
@@ -474,16 +494,19 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
       })
       .filter((doc): doc is SafetyPlaybookSearchDoc => doc !== null);
 
+  // Set the priority of the searchable fields and configure Fuse.js options for fuzzy matching.
+
     fuse = new Fuse(docs, {
       includeScore: true,
       ignoreLocation: true,
-      threshold: 0.4,
+      threshold: 0,
       minMatchCharLength: 2,
       keys: [
-        { name: "title", weight: 0.45 },
-        { name: "keywords", weight: 0.25 },
+        { name: "title", weight: 0.7 },
+        { name: "category", weight: 0.1 },
+        { name: "keywords", weight: 0.05 },
         { name: "safety", weight: 0.15 },
-        { name: "additionalToolsSensors", weight: 0.15 },
+        { name: "additionalToolsSensors", weight: 0.05 },
       ],
     });
   };
@@ -494,11 +517,13 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
 
     if (!query || !fuse) {
       searchMatchedSlugs = new Set<string>();
+      dispatchSearchChange();
       return;
     }
 
     const matches = fuse.search(query);
     searchMatchedSlugs = new Set(matches.map((match) => match.item.slug));
+    dispatchSearchChange();
   };
 
   // Secondary filters are multi-select and match when any selected value is present.
@@ -515,17 +540,20 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     cards: NodeListOf<HTMLElement>,
     filters: SafetyPlaybookFilterDetail,
   ): HTMLElement[] => {
-    const { category, locations, facilities, safeties } = filters;
+    const { safety, categories, locations, facilities } = filters;
     const hasSearchQuery = activeSearchQuery.trim().length > 0;
 
     return Array.from(cards).filter((element) => {
-      const matchesCategory = !category || category === "all" || element.dataset.category === category;
+      const matchesSafety =
+        !safety ||
+        safety === "all" ||
+        splitDataValues(element.dataset.safety).includes(safety);
+      const matchesCategories = matchesGroup(categories, splitDataValues(element.dataset.category));
       const matchesLocations = matchesGroup(locations, splitDataValues(element.dataset.location));
       const matchesFacilities = matchesGroup(facilities, splitDataValues(element.dataset.facility));
-      const matchesSafeties = matchesGroup(safeties, splitDataValues(element.dataset.safety));
       const matchesSearch = !hasSearchQuery || searchMatchedSlugs.has(element.dataset.slug ?? "");
 
-      return matchesCategory && matchesLocations && matchesFacilities && matchesSafeties && matchesSearch;
+      return matchesSafety && matchesCategories && matchesLocations && matchesFacilities && matchesSearch;
     });
   };
 
@@ -533,10 +561,10 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
   const updateResultsCount = (element: HTMLElement, visibleCount: number): void => {
     const hasSearchQuery = activeSearchQuery.trim().length > 0;
     const hasFilters =
-      (activeFilters.category ?? "all") !== "all" ||
+      (activeFilters.safety ?? "all") !== "all" ||
+      (activeFilters.categories?.length ?? 0) > 0 ||
       (activeFilters.locations?.length ?? 0) > 0 ||
-      (activeFilters.facilities?.length ?? 0) > 0 ||
-      (activeFilters.safeties?.length ?? 0) > 0;
+      (activeFilters.facilities?.length ?? 0) > 0;
 
     element.textContent =
       visibleCount === 0
@@ -689,27 +717,27 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     updatePaginationView();
   });
 
-  // Primary filter updates category and optionally clears secondary filters.
+  // Primary filter updates safety area and optionally clears secondary filters.
   window.addEventListener("safety-playbook-filter-change", (event: Event) => {
     const detail = (event as CustomEvent<SafetyPlaybookFilterDetail>).detail ?? {};
-    activeFilters.category = detail.category ?? "all";
+    activeFilters.safety = detail.safety ?? "all";
 
     if (detail.source === "clear") {
+      activeFilters.categories = [];
       activeFilters.locations = [];
       activeFilters.facilities = [];
-      activeFilters.safeties = [];
     }
 
     currentPage = 1;
     updatePaginationView();
   });
 
-  // Secondary filter updates locations/facilities/safeties.
+  // Secondary filter updates category/location/facility selections.
   window.addEventListener("safety-playbook-secondary-filter-change", (event: Event) => {
     const detail = (event as CustomEvent<SafetyPlaybookFilterDetail>).detail ?? {};
+    activeFilters.categories = detail.categories ?? [];
     activeFilters.locations = detail.locations ?? [];
     activeFilters.facilities = detail.facilities ?? [];
-    activeFilters.safeties = detail.safeties ?? [];
 
     currentPage = 1;
     updatePaginationView();

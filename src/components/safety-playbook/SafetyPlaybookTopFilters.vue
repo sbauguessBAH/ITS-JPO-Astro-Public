@@ -3,15 +3,15 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import CheckboxMultiSelectDropdown from "./CheckboxMultiSelectDropdown.vue";
 
 const props = defineProps({
+  categories: {
+    type: Array,
+    required: true,
+  },
   locations: {
     type: Array,
     required: true,
   },
   facilities: {
-    type: Array,
-    required: true,
-  },
-  safeties: {
     type: Array,
     required: true,
   },
@@ -21,10 +21,13 @@ const props = defineProps({
   },
 });
 
+const selectedCategories = ref([]);
 const selectedLocations = ref([]);
 const selectedFacilities = ref([]);
-const selectedSafeties = ref([]);
-const selectedCategory = ref("all");
+const selectedSafety = ref("all");
+// Search state is broadcast by index.astro and used to gray out eliminated options.
+const searchHasQuery = ref(false);
+const searchMatchedSlugs = ref(new Set());
 
 const normalizeValue = (value) =>
   value
@@ -32,61 +35,106 @@ const normalizeValue = (value) =>
     .trim()
     .replace(/\s+/g, "-");
 
-const matchesCategory = (item) =>
-  !selectedCategory.value || selectedCategory.value === "all" || normalizeValue(item.category) === selectedCategory.value;
+const matchesGroup = (selectedValues, itemValues) => {
+  if (!selectedValues || selectedValues.length === 0) {
+    return true;
+  }
 
-const matchesLocations = (item) => {
-  if (selectedLocations.value.length === 0) return true;
-  const itemLocations = item.location.map(normalizeValue);
-  return selectedLocations.value.some((loc) => itemLocations.includes(loc));
+  const normalizedItemValues = itemValues.map(normalizeValue);
+  return selectedValues.some((value) => normalizedItemValues.includes(value));
 };
 
-const matchesFacilities = (item) => {
-  if (selectedFacilities.value.length === 0) return true;
-  const itemFacilities = item.facility.map(normalizeValue);
-  return selectedFacilities.value.some((fac) => itemFacilities.includes(fac));
+const matchesCategory = (selectedValues, itemCategory) => {
+  if (!selectedValues || selectedValues.length === 0) {
+    return true;
+  }
+
+  return selectedValues.includes(normalizeValue(itemCategory));
 };
 
-const matchesSafeties = (item) => {
-  if (selectedSafeties.value.length === 0) return true;
+const matchesSearchScope = (itemSlug) => {
+  if (!searchHasQuery.value) {
+    return true;
+  }
+
+  return searchMatchedSlugs.value.has(itemSlug);
+};
+
+const matchesSafety = (item) => {
+  if (!selectedSafety.value || selectedSafety.value === "all") {
+    return true;
+  }
+
   const itemSafeties = item.safety.map(normalizeValue);
-  return selectedSafeties.value.some((safe) => itemSafeties.includes(safe));
+  return itemSafeties.includes(selectedSafety.value);
 };
 
-const getMatchingItems = () => {
-  return props.playbooks.filter(
-    (item) => matchesCategory(item) && matchesLocations(item) && matchesFacilities(item) && matchesSafeties(item),
-  );
-};
+// For each dropdown, temporarily ignore that same dimension so users can see
+// which additional options are still reachable under the other active constraints.
+const getSelectionScope = (excludeDimension) => ({
+  categories: excludeDimension === "categories" ? [] : selectedCategories.value,
+  locations: excludeDimension === "locations" ? [] : selectedLocations.value,
+  facilities: excludeDimension === "facilities" ? [] : selectedFacilities.value,
+});
 
-const disabledLocations = computed(() => {
-  const matchingItems = getMatchingItems();
-  return props.locations
+const getScopedMatches = (scope) =>
+  props.playbooks.filter((item) => {
+    const safetyMatch = matchesSafety(item);
+    const categoryMatch = matchesCategory(scope.categories, item.category);
+    const locationMatch = matchesGroup(scope.locations, item.location);
+    const facilityMatch = matchesGroup(scope.facilities, item.facility);
+    const searchMatch = matchesSearchScope(item.slug);
+
+    return safetyMatch && categoryMatch && locationMatch && facilityMatch && searchMatch;
+  });
+
+const getDisabledOptions = ({ options, selectedValues, matchingItems, itemHasValue }) => {
+  const selectedSet = new Set(selectedValues);
+
+  return options
     .filter((option) => {
-      const hasMatch = matchingItems.some((item) => item.location.map(normalizeValue).includes(option.value));
+      // Keep selected options interactive so users can always deselect them.
+      if (selectedSet.has(option.value)) {
+        return false;
+      }
+
+      const hasMatch = matchingItems.some((item) => itemHasValue(item, option.value));
       return !hasMatch;
     })
     .map((option) => option.value);
+};
+
+const disabledCategories = computed(() => {
+  const matchingItems = getScopedMatches(getSelectionScope("categories"));
+
+  return getDisabledOptions({
+    options: props.categories,
+    selectedValues: selectedCategories.value,
+    matchingItems,
+    itemHasValue: (item, optionValue) => normalizeValue(item.category) === optionValue,
+  });
+});
+
+const disabledLocations = computed(() => {
+  const matchingItems = getScopedMatches(getSelectionScope("locations"));
+
+  return getDisabledOptions({
+    options: props.locations,
+    selectedValues: selectedLocations.value,
+    matchingItems,
+    itemHasValue: (item, optionValue) => item.location.map(normalizeValue).includes(optionValue),
+  });
 });
 
 const disabledFacilities = computed(() => {
-  const matchingItems = getMatchingItems();
-  return props.facilities
-    .filter((option) => {
-      const hasMatch = matchingItems.some((item) => item.facility.map(normalizeValue).includes(option.value));
-      return !hasMatch;
-    })
-    .map((option) => option.value);
-});
+  const matchingItems = getScopedMatches(getSelectionScope("facilities"));
 
-const disabledSafeties = computed(() => {
-  const matchingItems = getMatchingItems();
-  return props.safeties
-    .filter((option) => {
-      const hasMatch = matchingItems.some((item) => item.safety.map(normalizeValue).includes(option.value));
-      return !hasMatch;
-    })
-    .map((option) => option.value);
+  return getDisabledOptions({
+    options: props.facilities,
+    selectedValues: selectedFacilities.value,
+    matchingItems,
+    itemHasValue: (item, optionValue) => item.facility.map(normalizeValue).includes(optionValue),
+  });
 });
 
 const dispatchSecondaryChange = () => {
@@ -95,9 +143,9 @@ const dispatchSecondaryChange = () => {
   }
 
   const detail = {
+    categories: selectedCategories.value,
     locations: selectedLocations.value,
     facilities: selectedFacilities.value,
-    safeties: selectedSafeties.value,
   };
 
   window.dispatchEvent(
@@ -107,41 +155,52 @@ const dispatchSecondaryChange = () => {
   );
 };
 
-watch([selectedLocations, selectedFacilities, selectedSafeties], () => {
+watch([selectedCategories, selectedLocations, selectedFacilities], () => {
   dispatchSecondaryChange();
 });
 
 const onPrimaryFilterChange = (event) => {
   const detail = event?.detail ?? {};
 
-  selectedCategory.value = detail.category ?? "all";
+  selectedSafety.value = detail.safety ?? "all";
 
   if (detail.source !== "clear") {
     return;
   }
 
+  selectedCategories.value = [];
   selectedLocations.value = [];
   selectedFacilities.value = [];
-  selectedSafeties.value = [];
+};
+
+const onSearchChange = (event) => {
+  const detail = event?.detail ?? {};
+  // Reassign a new Set to trigger Vue reactivity for computed disabled lists.
+  searchHasQuery.value = detail.hasQuery ?? false;
+  searchMatchedSlugs.value = new Set(detail.matchedSlugs ?? []);
 };
 
 onMounted(() => {
   window.addEventListener("safety-playbook-filter-change", onPrimaryFilterChange);
+  window.addEventListener("safety-playbook-search-change", onSearchChange);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("safety-playbook-filter-change", onPrimaryFilterChange);
+  window.removeEventListener("safety-playbook-search-change", onSearchChange);
 });
 </script>
 
 <template>
   <div class="playbook-top-filters" aria-label="Secondary Safety Playbook filters">
+   
     <CheckboxMultiSelectDropdown
       id="playbook-filter-location"
       v-model="selectedLocations"
       label="Area Type"
       :options="props.locations"
       :disabled-options="disabledLocations"
+      variant="location"
     />
 
     <CheckboxMultiSelectDropdown
@@ -150,14 +209,18 @@ onBeforeUnmount(() => {
       label="Facility"
       :options="props.facilities"
       :disabled-options="disabledFacilities"
+      variant="facility"
     />
 
-    <CheckboxMultiSelectDropdown
-      id="playbook-filter-safety"
-      v-model="selectedSafeties"
-      label="Safety Areas (replace with  category)"
-      :options="props.safeties"
-      :disabled-options="disabledSafeties"
+     <CheckboxMultiSelectDropdown
+      id="playbook-filter-category"
+      v-model="selectedCategories"
+      label="Category"
+      :options="props.categories"
+      :disabled-options="disabledCategories"
+      variant="category"
     />
+
+
   </div>
 </template>
