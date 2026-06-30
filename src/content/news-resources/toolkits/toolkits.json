@@ -85,6 +85,17 @@
     "url":"/news-outreach-tools/news-resources/toolkits/v2x-deployment-program-launch"
 },
 {
+    "id": 32,
+    "title": "ITS JPO 30th Anniversary",
+    "subtitle": "Milestone Kit",
+    "description":"Milestone resources and shareable media for the ITS JPO 30th Anniversary.",
+    "date": "October 2025",
+    "content_types":["news release","fact sheet","infographic", "video b-roll", "sound bites"],
+    "topics":["ITS JPO"],
+    "url":"/news-outreach-tools/news-resources/toolkits/its-jpo-30th-anniversary-kit"
+
+},
+{
     "id": 36,
     "title": "Maricopa County DOT (MCDOT) Connected Vehicle Acceleration Zone (CVAZ)",
     "subtitle": "Media Kit",
@@ -170,17 +181,6 @@
             "office": "Intelligent Transportations Systems Joint Program Office",
             "contact": "Brian.Cronin@dot.gov",
             "profile_image_key": "brian_c"}]
-},
-{
-    "id": 32,
-    "title": "ITS JPO 30th Anniversary",
-    "subtitle": "Milestone Kit",
-    "description":"Milestone resources and shareable media for the ITS JPO 30th Anniversary.",
-    "date": "October 2025",
-    "content_types":["news release","fact sheet","infographic", "video b-roll", "sound bites"],
-    "topics":["ITS JPO"],
-    "url":"/news-outreach-tools/news-resources/toolkits/its-jpo-30th-anniversary-kit"
-
 },
 {
     "id": 33,
