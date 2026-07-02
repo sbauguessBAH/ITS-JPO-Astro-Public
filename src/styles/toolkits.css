@@ -292,6 +292,40 @@
   white-space: nowrap;
 }
 
+.print-materials .kit-thumb-card--document {
+  gap: 0;
+  border: 1px solid var(--kit-border);
+  border-radius: 1rem;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(7, 46, 85, 0.06);
+}
+
+.print-materials .kit-thumb-card--document .kit-thumb-media {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: #f7f8fa;
+}
+
+.print-materials .kit-thumb-card--document .kit-thumb-body {
+  padding: 0.95rem 1rem 1.05rem;
+  background: #ffffff;
+  border-top: 1px solid #d9e0e6;
+}
+
+.print-materials .kit-thumb-card--document .kit-thumb-title-link {
+  display: inline;
+}
+
+.print-materials .kit-thumb-card--document .kit-thumb-title-link .kit-thumb-title {
+  display: inline;
+}
+
+.print-materials .kit-thumb-card--document .kit-thumb-secondary {
+  white-space: nowrap;
+}
+
 .kit-thumb-title {
   margin: 0;
   color: var(--kit-text);
