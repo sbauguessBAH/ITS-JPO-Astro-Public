@@ -100,7 +100,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
 
 <Banner image={bannerImage}>Newsroom</Banner>
 <main class="container my-5 toolkit-page">
-  <div class="toolkit-header">
+  <div class="toolkit-header d-grid gap-3">
     <h1 class="sideways blue kit-page-title">{page.title}</h1>
     {page.intro && <p class="kit-copy kit-page-intro">{page.intro}</p>}
   </div>
@@ -114,7 +114,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
         {
           section.kind === "contacts" &&
             (section.items.length > 0 ? (
-              <div class="kit-grid kit-contact-grid">
+              <div class="d-grid gap-3 kit-contact-grid">
                 {
                   section.items.map((contact) => (
                     <ContactCard
@@ -129,7 +129,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
                 }
               </div>
             ) : (
-              <div class="kit-empty-state">{section.emptyLabel}</div>
+              <div class="kit-empty-state d-flex align-items-center">{section.emptyLabel}</div>
             ))
         }
 
@@ -146,14 +146,14 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
                 }
               </ul>
             ) : (
-              <div class="kit-empty-state">{section.emptyLabel}</div>
+              <div class="kit-empty-state d-flex align-items-center">{section.emptyLabel}</div>
             ))
         }
 
         {
           section.kind === "thumbnails" &&
             (section.items.length > 0 ? (
-              <div class:list={["kit-grid", "kit-thumb-grid", getThumbnailGridClass(section)]}>
+              <div class:list={["d-grid", "kit-thumb-grid", getThumbnailGridClass(section)]}>
                 {
                   section.items.map((item) => {
                     const primaryHref = getPrimaryThumbnailHref(item);
@@ -215,14 +215,14 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
                 }
               </div>
             ) : (
-              <div class="kit-empty-state">{section.emptyLabel}</div>
+              <div class="kit-empty-state d-flex align-items-center">{section.emptyLabel}</div>
             ))
         }
 
         {
           section.kind === "webinars" &&
             (section.items.length > 0 ? (
-              <div class="kit-grid kit-webinar-grid">
+              <div class="d-grid gap-3 kit-webinar-grid">
                 {
                   section.items.map((item) => (
                     <WebinarCard
@@ -238,7 +238,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
                 }
               </div>
             ) : (
-              <div class="kit-empty-state">{section.emptyLabel}</div>
+              <div class="kit-empty-state d-flex align-items-center">{section.emptyLabel}</div>
             ))
         }
       </section>
@@ -248,7 +248,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
   {
     page.cta && (
       <section class="kit-belt-cta">
-        <div class="kit-belt-copy">
+        <div class="kit-belt-copy d-grid gap-3">
           <h3>{page.cta.title}</h3>
           {page.cta.description && <p class="kit-copy">{page.cta.description}</p>}
           {
