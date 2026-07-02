@@ -92,36 +92,9 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
     return undefined;
   }
 
-  try {
-    const parsed = new URL(href);
-    const host = parsed.hostname.toLowerCase();
+  const videoId = href.match(/[?&]v=([^&#]+)/)?.[1] ?? href.match(/youtu\.be\/([^?&#/]+)/)?.[1] ?? href.match(/\/embed\/([^?&#/]+)/)?.[1];
 
-    if (host === "youtu.be") {
-      const videoId = parsed.pathname.split("/").filter(Boolean)[0];
-      return videoId ? `https://www.youtube.com/embed/${videoId}` : undefined;
-    }
-
-    if (host.includes("youtube.com") || host.includes("youtube-nocookie.com")) {
-      const normalizedPath = parsed.pathname.replace(/\/+$/, "");
-
-      if (normalizedPath.startsWith("/embed/")) {
-        const videoId = normalizedPath.split("/")[2];
-        return videoId ? `https://www.youtube.com/embed/${videoId}` : undefined;
-      }
-
-      if (normalizedPath.startsWith("/shorts/")) {
-        const videoId = normalizedPath.split("/")[2];
-        return videoId ? `https://www.youtube.com/embed/${videoId}` : undefined;
-      }
-
-      const videoId = parsed.searchParams.get("v")?.trim();
-      return videoId ? `https://www.youtube.com/embed/${videoId}` : undefined;
-    }
-  } catch {
-    return undefined;
-  }
-
-  return undefined;
+  return videoId ? `https://www.youtube.com/embed/${videoId}` : undefined;
 };
 ---
 

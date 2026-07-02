@@ -379,7 +379,7 @@
     "print_materials": [{
         "title": "UDOT V2X Accelerator Site Factsheet",
         "href": "https://transportationtechnology.utah.gov/wp-content/uploads/2025/10/V2X-factsheet-UDOT-August-2025_Digital10032025_508c.pdf",
-        "img_src": "/assets/images/toolkits/udot-connecting-the-west-thumb.png",
+        "img_src": "/assets/images/toolkits/udot-v2x-factsheet-thumb.png",
         "material_type": "Factsheet",
         "date": "2026"
     }],
