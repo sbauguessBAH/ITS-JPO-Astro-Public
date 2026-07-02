@@ -414,6 +414,7 @@
         "title": "Connecting the West Program",
         "description": "Explore the program page for deployment context, project updates, and supporting materials.",
         "button_text": "Visit Project Site",
+        "preview_image": "/assets/images/toolkits/udot-connecting-the-west-site-preview.png",
         "href": "https://transportationtechnology.utah.gov/connecting-the-west-program/"
     }
 }],
