@@ -114,7 +114,11 @@ type RawWebinarItem = {
   date?: string;
   description?: string;
   duration?: string;
+  recording_href?: string;
+  recording_link?: string;
   recordingLink?: string;
+  slides_href?: string;
+  slides_link?: string;
   slidesLink?: string;
   subtitle?: string;
   title?: string;
@@ -415,8 +419,8 @@ const normalizeWebinars = (items?: RawWebinarItem[]): ToolkitWebinarItem[] => {
     .map((item) => {
       const title = cleanText(item.title);
       const date = cleanText(item.date);
-      const recordingLink = cleanText(item.recordingLink);
-      const slidesLink = cleanText(item.slidesLink);
+      const recordingLink = cleanText(item.recordingLink) || cleanText(item.recording_href) || cleanText(item.recording_link);
+      const slidesLink = cleanText(item.slidesLink) || cleanText(item.slides_href) || cleanText(item.slides_link);
 
       if (!title && !date && !recordingLink && !slidesLink) {
         return undefined;

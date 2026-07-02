@@ -16,6 +16,16 @@ const {
   page,
 } = Astro.props;
 
+type ContactSection = Extract<ToolkitSection, { kind: "contacts" }>;
+type NonContactSection = Exclude<ToolkitSection, { kind: "contacts" }>;
+
+const visibleSections = page.sections.filter(
+  (section): section is NonContactSection => section.kind !== "contacts" && section.items.length > 0,
+);
+const contactSections = page.sections.filter(
+  (section): section is ContactSection => section.kind === "contacts" && section.items.length > 0,
+);
+
 const getThumbnailGridClass = (section: ToolkitSection): string => {
   if (section.kind !== "thumbnails") {
     return "";
@@ -108,36 +118,14 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
   </div>
 
   {
-    page.sections.map((section) => (
+    visibleSections.map((section) => (
       <section class:list={["kit-section", section.className]}>
         <h3>{section.title}</h3>
         {section.description && <p class="kit-copy">{section.description}</p>}
 
         {
-          section.kind === "contacts" &&
-            (section.items.length > 0 ? (
-              <div class="d-grid gap-3 kit-contact-grid">
-                {
-                  section.items.map((contact) => (
-                    <ContactCard
-                      name={contact.name}
-                      profile_image={contact.profileImage}
-                      title={contact.title ?? ""}
-                      office={contact.office ?? ""}
-                      department={contact.department ?? ""}
-                      contact={contact.contact ?? ""}
-                    />
-                  ))
-                }
-              </div>
-            ) : (
-              <div class="kit-empty-state d-flex align-items-center">{section.emptyLabel}</div>
-            ))
-        }
-
-        {
           section.kind === "links" &&
-            (section.items.length > 0 ? (
+            (
               <ul class="kit-link-list">
                 {
                   section.items.map((item) => (
@@ -147,14 +135,12 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
                   ))
                 }
               </ul>
-            ) : (
-              <div class="kit-empty-state d-flex align-items-center">{section.emptyLabel}</div>
-            ))
+            )
         }
 
         {
           section.kind === "thumbnails" &&
-            (section.items.length > 0 ? (
+            (
               <div class:list={["d-grid", "kit-thumb-grid", getThumbnailGridClass(section)]}>
                 {
                   section.items.map((item) => {
@@ -216,14 +202,12 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
                   })
                 }
               </div>
-            ) : (
-              <div class="kit-empty-state d-flex align-items-center">{section.emptyLabel}</div>
-            ))
+            )
         }
 
         {
           section.kind === "webinars" &&
-            (section.items.length > 0 ? (
+            (
               <div class="d-grid gap-3 kit-webinar-grid">
                 {
                   section.items.map((item) => (
@@ -239,9 +223,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
                   ))
                 }
               </div>
-            ) : (
-              <div class="kit-empty-state d-flex align-items-center">{section.emptyLabel}</div>
-            ))
+            )
         }
       </section>
     ))
@@ -275,5 +257,29 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
         </div>
       </section>
     )
+  }
+
+  {
+    contactSections.map((section) => (
+      <section class:list={["kit-section", section.className]}>
+        <h3>{section.title}</h3>
+        {section.description && <p class="kit-copy">{section.description}</p>}
+
+        <div class="d-grid gap-3 kit-contact-grid">
+          {
+            section.items.map((contact) => (
+              <ContactCard
+                name={contact.name}
+                profile_image={contact.profileImage}
+                title={contact.title ?? ""}
+                office={contact.office ?? ""}
+                department={contact.department ?? ""}
+                contact={contact.contact ?? ""}
+              />
+            ))
+          }
+        </div>
+      </section>
+    ))
   }
 </main>
