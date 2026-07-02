@@ -17,6 +17,7 @@ const keywords = [
 
 const description = "Safety Playbook compiles practical guidance, tools, and implementation strategies to support safer transportation systems.";
 
+// Normalize filter labels into a stable slug format shared by cards and filters.
 const normalize = (value: string) =>
   value
     .toLowerCase()
@@ -41,6 +42,7 @@ const playbookItems = (await getCollection("safetyPlaybook")).sort((a, b) => {
   return a.data.title.localeCompare(b.data.title);
 });
 
+// Build option metadata for single-value fields and include counts for each label.
 const buildSingleValueOptions = (values: string[]): FilterOption[] => {
   const counts = values.reduce((acc, rawValue) => {
     const value = rawValue.trim();
@@ -62,6 +64,7 @@ const buildSingleValueOptions = (values: string[]): FilterOption[] => {
     .sort((a, b) => a.label.localeCompare(b.label));
 };
 
+// Build option metadata for array-based fields, counting each value once per item.
 const buildMultiValueOptions = (valueGroups: string[][]): FilterOption[] => {
   const counts = valueGroups.reduce((acc, rawValues) => {
     const uniqueValues = [...new Set(rawValues.map((value) => value.trim()).filter(Boolean))];
@@ -82,6 +85,7 @@ const buildMultiValueOptions = (valueGroups: string[][]): FilterOption[] => {
     .sort((a, b) => a.label.localeCompare(b.label));
 };
 
+  // Precompute dropdown/sidebar options from content to keep client filtering lightweight.
 const categories = buildMultiValueOptions(playbookItems.map((item) => [item.data.category]));
 const locations = buildMultiValueOptions(playbookItems.map((item) => item.data.location));
 const facilities = buildMultiValueOptions(playbookItems.map((item) => item.data.facility));
@@ -432,6 +436,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     safety: string[];
     additionalToolsSensors: string[];
     keywords: string[];
+    location: string[];
   }
 
   interface SafetyPlaybookSearchDetail {
@@ -490,16 +495,21 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
           safety: splitDataValues(card.dataset.searchSafety),
           additionalToolsSensors: splitDataValues(card.dataset.searchTools),
           keywords: splitDataValues(card.dataset.searchKeywords),
+          location: splitDataValues(card.dataset.searchLocation),
         };
       })
       .filter((doc): doc is SafetyPlaybookSearchDoc => doc !== null);
 
-  // Set the priority of the searchable fields and configure Fuse.js options for fuzzy matching.
+
+
+
+
+  // Set the priority of the searchable fields and configure Fuse.js options for fuzzy matching. Threshold allows for some typos and partial matches, while minMatchCharLength of 2 prevents overly broad matches on very short queries.
 
     fuse = new Fuse(docs, {
       includeScore: true,
       ignoreLocation: true,
-      threshold: 0,
+      threshold: 0.15,
       minMatchCharLength: 2,
       keys: [
         { name: "title", weight: 0.7 },
@@ -507,10 +517,15 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
         { name: "keywords", weight: 0.05 },
         { name: "safety", weight: 0.15 },
         { name: "additionalToolsSensors", weight: 0.05 },
+        { name: "location", weight: 0.05 },
       ],
     });
   };
 
+
+
+
+  
   // Recalculate search slug matches whenever the query changes.
   const updateSearchMatches = (): void => {
     const query = activeSearchQuery.trim();

@@ -19,6 +19,7 @@ const selectedFacilities = ref([]);
 const searchHasQuery = ref(false);
 const searchMatchedSlugs = ref(new Set());
 
+// Keep normalization local so matching remains consistent with index/card components.
 const normalizeValue = (value) =>
   value
     .toLowerCase()
@@ -66,7 +67,7 @@ const safetyCountMap = computed(() => {
   const counts = {};
 
   matchingBySecondary.value.forEach((item) => {
-    // Count each safety once per playbook card to avoid double counting duplicates.
+    // Count each safety once per playbook card to avoid double counting duplicate labels.
     const uniqueSafeties = [...new Set(item.safety.map(normalizeValue))];
     uniqueSafeties.forEach((key) => {
       counts[key] = (counts[key] || 0) + 1;
@@ -109,6 +110,7 @@ const clearAll = () => {
   selectedLocations.value = [];
   selectedFacilities.value = [];
 
+  // Mark this as a full reset so sibling filter components can clear their local selections.
   window.dispatchEvent(
     new CustomEvent("safety-playbook-filter-change", {
       detail: createDetail("clear"),
@@ -137,6 +139,7 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
+  // Mirror mounted listeners to prevent stale handlers after hydration updates/navigation.
   window.removeEventListener("safety-playbook-secondary-filter-change", onSecondaryFilterChange);
   window.removeEventListener("safety-playbook-search-change", onSearchChange);
 });

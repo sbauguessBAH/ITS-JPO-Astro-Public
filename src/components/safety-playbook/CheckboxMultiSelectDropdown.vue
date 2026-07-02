@@ -30,6 +30,7 @@ const props = defineProps({
 
 const emit = defineEmits(["update:modelValue"]);
 
+// Local open/close state for the menu and root reference for outside-click detection.
 const isOpen = ref(false);
 const rootEl = ref(null);
 
@@ -51,6 +52,7 @@ const updateSelection = (value, checked) => {
     return;
   }
 
+  // Use a Set to safely add/remove values without mutating the incoming prop array.
   const next = new Set(props.modelValue);
 
   if (checked) {
@@ -67,13 +69,10 @@ const clearSelection = () => {
 };
 
 const toggleOpen = () => {
-  console.log(`[${props.id}] toggleOpen called, isOpen before:`, isOpen.value);
   isOpen.value = !isOpen.value;
-  console.log(`[${props.id}] isOpen after:`, isOpen.value);
 };
 
 const closeDropdown = () => {
-  console.log(`[${props.id}] closeDropdown called`);
   isOpen.value = false;
 };
 
@@ -82,8 +81,8 @@ const onDocumentPointerDown = (event) => {
     return;
   }
 
+  // Close when pointer events land outside this dropdown root.
   const isClickInsideDropdown = rootEl.value.contains(event.target);
-  console.log(`[${props.id}] onDocumentPointerDown - isClickInsideDropdown:`, isClickInsideDropdown, "target:", event.target);
 
   if (!isClickInsideDropdown) {
     closeDropdown();
@@ -91,15 +90,14 @@ const onDocumentPointerDown = (event) => {
 };
 
 const onDocumentKeyDown = (event) => {
+  // Support standard keyboard dismissal.
   if (event.key === "Escape") {
-    console.log(`[${props.id}] Escape pressed`);
     closeDropdown();
   }
 };
 
 onMounted(() => {
-  console.log(`[${props.id}] CheckboxMultiSelectDropdown mounted`);
-  console.log(`[${props.id}] Options:`, props.options);
+  // Global listeners are paired with cleanup on unmount below.
   document.addEventListener("pointerdown", onDocumentPointerDown);
   document.addEventListener("keydown", onDocumentKeyDown);
 });

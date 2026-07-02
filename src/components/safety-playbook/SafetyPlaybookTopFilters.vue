@@ -29,6 +29,7 @@ const selectedSafety = ref("all");
 const searchHasQuery = ref(false);
 const searchMatchedSlugs = ref(new Set());
 
+// Keep formatting aligned with the normalization strategy used by cards and primary filters.
 const normalizeValue = (value) =>
   value
     .toLowerCase()
@@ -77,6 +78,7 @@ const getSelectionScope = (excludeDimension) => ({
   facilities: excludeDimension === "facilities" ? [] : selectedFacilities.value,
 });
 
+// Apply current primary safety, secondary selections, and search scope to build reachable items.
 const getScopedMatches = (scope) =>
   props.playbooks.filter((item) => {
     const safetyMatch = matchesSafety(item);
@@ -98,6 +100,7 @@ const getDisabledOptions = ({ options, selectedValues, matchingItems, itemHasVal
         return false;
       }
 
+      // Disable only when no remaining item can satisfy this option under the current scope.
       const hasMatch = matchingItems.some((item) => itemHasValue(item, option.value));
       return !hasMatch;
     })
@@ -156,6 +159,7 @@ const dispatchSecondaryChange = () => {
 };
 
 watch([selectedCategories, selectedLocations, selectedFacilities], () => {
+  // Broadcast every secondary filter change so card visibility and sidebar counts stay synchronized.
   dispatchSecondaryChange();
 });
 
@@ -168,6 +172,7 @@ const onPrimaryFilterChange = (event) => {
     return;
   }
 
+  // Only clear secondary picks when the primary panel explicitly requests a full reset.
   selectedCategories.value = [];
   selectedLocations.value = [];
   selectedFacilities.value = [];
