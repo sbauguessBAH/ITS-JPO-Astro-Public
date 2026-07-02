@@ -376,16 +376,45 @@
     "content_types":["print materials", "video", "photos", "webinar materials"],
     "topics":["V2X Accelerator", "UDOT"],
     "url":"/news-outreach-tools/news-resources/toolkits/udot-connecting-the-west-program-mediakit",
-    "print_materials": [],
-    "videos": [],
+    "print_materials": [{
+        "title": "UDOT V2X Accelerator Site Factsheet",
+        "href": "https://transportationtechnology.utah.gov/wp-content/uploads/2025/10/V2X-factsheet-UDOT-August-2025_Digital10032025_508c.pdf",
+        "img_src": "/assets/images/toolkits/udot-connecting-the-west-thumb.png",
+        "material_type": "Factsheet",
+        "date": "2026"
+    }],
+    "videos": [{
+        "title": "UDOT Connecting The West Program Video",
+        "produced_by": "UDOT Produced",
+        "duration": "short",
+        "platform": "YouTube",
+        "href": "https://youtu.be/YgtGe58ELrc?si=UQ1h6G1HOvuOpTbJ",
+        "img_src": "/assets/images/toolkits/udot-connecting-the-west-thumb.png",
+        "material_type": "Video",
+        "date": "2026",
+        "availability": "Available"
+    }],
     "image_library": [],
-    "webinar_materials": [],
-    "media_coverage": [],
+    "webinar_materials": [{
+        "title": "UDOT Deployment Concept Webinar",
+        "recording_href": "https://youtu.be/hEgIj59sOYo?si=SNjGUA6-IrBIoPcX",
+        "slides_href": "https://itsa.org/wp-content/uploads/2025/10/UDOT-V2X-Accelerator-Webinar-10-02-25-1.pdf",
+        "date": "October 02, 2026", 
+        "program":"V2X Accelerator Program", 
+        "description":"UDOT Deployment Concept Webinar", 
+        "host": "ITS JPO"
+    }],
+    "media_coverage": [{
+        "type": "article",
+        "title": "Connecting the West Program -- Feature Article",
+        "href": "",
+        "platform" : "ITS International"
+    }],
     "belt_cta": {
         "title": "Connecting the West Program",
         "description": "Explore the program page for deployment context, project updates, and supporting materials.",
         "button_text": "Visit Project Site",
-        "href": ""
+        "href": "https://transportationtechnology.utah.gov/connecting-the-west-program/"
     }
 }],
 "webinars": [{
