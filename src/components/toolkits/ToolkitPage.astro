@@ -51,6 +51,8 @@ const getThumbnailAction = (section: ToolkitSection, item: ToolkitMediaItem) => 
     return undefined;
   }
 
+  const isMediaCoverageSection = section.className.includes("media-coverage");
+
   switch (section.variant) {
     case "graphic":
       return {
@@ -67,7 +69,7 @@ const getThumbnailAction = (section: ToolkitSection, item: ToolkitMediaItem) => 
     default:
       return {
         href: item.downloadHref ?? item.href,
-        label: item.actionLabel ?? "Download Document",
+        label: item.actionLabel ?? (isMediaCoverageSection ? "View Coverage" : "Download Document"),
         tone: "button",
       };
   }

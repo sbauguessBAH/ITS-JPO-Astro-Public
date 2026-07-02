@@ -104,6 +104,9 @@ type RawMediaItem = {
   href?: string;
   image_src?: string;
   img_src?: string;
+  "link-text"?: string;
+  media_type?: string;
+  platform?: string;
   title?: string;
 };
 
@@ -137,7 +140,7 @@ type RawToolkitEntry = {
   id?: number;
   image_library?: RawMediaItem[];
   intro?: string;
-  media_coverage?: RawLinkItem[];
+  media_coverage?: RawMediaItem[];
   office?: string;
   photos?: RawMediaItem[];
   presentations?: RawLinkItem[];
@@ -155,7 +158,7 @@ type RawToolkitEntry = {
   webinar_materials?: RawWebinarItem[];
   b_roll?: RawMediaItem[];
   "b-roll"?: RawMediaItem[];
-  "media-coverage"?: RawLinkItem[];
+  "media-coverage"?: RawMediaItem[];
   "print-materials"?: RawMediaItem[];
   "resource-links"?: RawLinkItem[];
   "webinar-materials"?: RawWebinarItem[];
@@ -386,7 +389,7 @@ const normalizeLinks = (items?: RawLinkItem[]): ToolkitLinkItem[] => {
 const normalizeMediaItems = (items?: RawMediaItem[]): ToolkitMediaItem[] => {
   return (Array.isArray(items) ? items : [])
     .map((item) => {
-      const title = cleanText(item.title);
+      const title = cleanText(item.title) || cleanText(item["link-text"]);
       const href = cleanText(item.href);
       const image = cleanText(item.image_src) || cleanText(item.img_src);
       const downloadHref = cleanText(item.download_href);
@@ -587,10 +590,11 @@ const buildExplicitSections = (toolkit: RawToolkitEntry): ToolkitSection[] => {
   if (hasOwn(toolkit, "media-coverage") || hasOwn(toolkit, "media_coverage")) {
     sections.push({
       className: "media-coverage",
-      emptyLabel: "Add coverage links, press mentions, or article references here.",
-      items: normalizeLinks(toolkit["media-coverage"] ?? toolkit.media_coverage),
-      kind: "links",
+      emptyLabel: "Add coverage cards, press mentions, or article references here.",
+      items: normalizeMediaItems(toolkit["media-coverage"] ?? toolkit.media_coverage),
+      kind: "thumbnails",
       title: "Media Coverage",
+      variant: "document",
     });
   }
 

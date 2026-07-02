@@ -416,8 +416,24 @@
         "button_text": "Visit Project Site",
         "preview_image": "/assets/images/toolkits/udot-connecting-the-west-site-preview.png",
         "href": "https://transportationtechnology.utah.gov/connecting-the-west-program/"
-    }
-}],
+    },
+     "contacts": [
+        {
+            "name": "Norah Ocel",
+            "title": "Program Manager", 
+            "department": "U.S. Department Of Transportation",
+            "office": "Intelligent Transportations Systems Joint Program Office",
+            "contact": "Norah.Ocel@dot.gov",
+            "profile_image_key": "norah_o"},
+        {
+            "name": "Brian Cronin",
+            "title": "Director", 
+            "department": "U.S. Department Of Transportation",
+            "office": "Intelligent Transportations Systems Joint Program Office",
+            "contact": "Brian.Cronin@dot.gov",
+            "profile_image_key": "brian_c"}]
+}
+],
 "webinars": [{
     "id": 20, 
     "date": "February 18, 2026", 

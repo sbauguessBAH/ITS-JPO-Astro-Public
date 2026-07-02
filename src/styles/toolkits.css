@@ -184,7 +184,7 @@
 }
 
 .kit-thumb-card--video,
-.print-materials .kit-thumb-card--document {
+:is(.print-materials, .media-coverage) .kit-thumb-card--document {
   gap: 0;
   border: 1px solid var(--kit-border);
   border-radius: 1rem;
@@ -257,24 +257,24 @@
 }
 
 .kit-thumb-card--video .kit-thumb-body,
-.print-materials .kit-thumb-card--document .kit-thumb-body {
+:is(.print-materials, .media-coverage) .kit-thumb-card--document .kit-thumb-body {
   padding: 0.95rem 1rem 1.05rem;
   background: #ffffff;
   border-top: 1px solid #d9e0e6;
 }
 
 .kit-thumb-card--video .kit-thumb-title-link,
-.print-materials .kit-thumb-card--document .kit-thumb-title-link {
+:is(.print-materials, .media-coverage) .kit-thumb-card--document .kit-thumb-title-link {
   display: inline;
 }
 
 .kit-thumb-card--video .kit-thumb-title-link .kit-thumb-title,
-.print-materials .kit-thumb-card--document .kit-thumb-title-link .kit-thumb-title {
+:is(.print-materials, .media-coverage) .kit-thumb-card--document .kit-thumb-title-link .kit-thumb-title {
   display: inline;
 }
 
 .kit-thumb-card--video .kit-thumb-secondary,
-.print-materials .kit-thumb-card--document .kit-thumb-secondary {
+:is(.print-materials, .media-coverage) .kit-thumb-card--document .kit-thumb-secondary {
   white-space: nowrap;
 }
 
@@ -282,14 +282,14 @@
 .kit-thumb-card--video .kit-thumb-title-link[href^="https://"]::after,
 .kit-thumb-card--video .kit-thumb-secondary[href^="http://"]::after,
 .kit-thumb-card--video .kit-thumb-secondary[href^="https://"]::after,
-.print-materials .kit-thumb-card--document .kit-thumb-title-link[href^="http://"]::after,
-.print-materials .kit-thumb-card--document .kit-thumb-title-link[href^="https://"]::after,
-.print-materials .kit-thumb-card--document .kit-thumb-secondary[href^="http://"]::after,
-.print-materials .kit-thumb-card--document .kit-thumb-secondary[href^="https://"]::after {
+:is(.print-materials, .media-coverage) .kit-thumb-card--document .kit-thumb-title-link[href^="http://"]::after,
+:is(.print-materials, .media-coverage) .kit-thumb-card--document .kit-thumb-title-link[href^="https://"]::after,
+:is(.print-materials, .media-coverage) .kit-thumb-card--document .kit-thumb-secondary[href^="http://"]::after,
+:is(.print-materials, .media-coverage) .kit-thumb-card--document .kit-thumb-secondary[href^="https://"]::after {
   white-space: nowrap;
 }
 
-.print-materials .kit-thumb-card--document .kit-thumb-media {
+:is(.print-materials, .media-coverage) .kit-thumb-card--document .kit-thumb-media {
   border: 0;
   border-radius: 0;
   box-shadow: none;
