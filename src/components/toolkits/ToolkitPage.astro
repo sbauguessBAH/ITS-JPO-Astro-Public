@@ -84,6 +84,45 @@ const getImageSrc = (value?: string | import("astro").ImageMetadata): string | u
 
   return typeof value === "string" ? value : value.src;
 };
+
+const getVideoEmbedSrc = (value?: string): string | undefined => {
+  const href = value?.trim();
+
+  if (!href) {
+    return undefined;
+  }
+
+  try {
+    const parsed = new URL(href);
+    const host = parsed.hostname.toLowerCase();
+
+    if (host === "youtu.be") {
+      const videoId = parsed.pathname.split("/").filter(Boolean)[0];
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : undefined;
+    }
+
+    if (host.includes("youtube.com") || host.includes("youtube-nocookie.com")) {
+      const normalizedPath = parsed.pathname.replace(/\/+$/, "");
+
+      if (normalizedPath.startsWith("/embed/")) {
+        const videoId = normalizedPath.split("/")[2];
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : undefined;
+      }
+
+      if (normalizedPath.startsWith("/shorts/")) {
+        const videoId = normalizedPath.split("/")[2];
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : undefined;
+      }
+
+      const videoId = parsed.searchParams.get("v")?.trim();
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : undefined;
+    }
+  } catch {
+    return undefined;
+  }
+
+  return undefined;
+};
 ---
 
 <Banner image={bannerImage}>Newsroom</Banner>
@@ -147,11 +186,25 @@ const getImageSrc = (value?: string | import("astro").ImageMetadata): string | u
                     const primaryHref = getPrimaryThumbnailHref(item);
                     const action = getThumbnailAction(section, item);
                     const imageSrc = getImageSrc(item.image);
+                    const embedSrc = section.variant === "video" ? getVideoEmbedSrc(primaryHref) : undefined;
 
                     return (
                       <article class:list={["kit-thumb-card", `kit-thumb-card--${section.variant}`]}>
                         {
-                          primaryHref ? (
+                          section.variant === "video" && embedSrc ? (
+                            <div class="ratio ratio-16x9 kit-video-embed">
+                              <iframe
+                                width="640"
+                                height="360"
+                                src={embedSrc}
+                                title={item.title}
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                              ></iframe>
+                            </div>
+                          ) : primaryHref ? (
                             <a href={primaryHref} class="kit-thumb-media-link">
                               <div class="kit-thumb-media">
                                 {imageSrc ? <img src={imageSrc} alt={item.title} loading="lazy" /> : <div class="kit-thumb-placeholder">{getThumbnailPlaceholderLabel(section)}</div>}
