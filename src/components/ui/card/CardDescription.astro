@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import './card.css';
+
+type Props = HTMLAttributes<"div">;
+const {
+  class: className, ...props
+} = Astro.props;
+---
+<div data-slot="program-card-description" class:list={["program-card-description", className]} {...props}>
+  <slot/>
+</div>

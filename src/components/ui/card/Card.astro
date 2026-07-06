@@ -1,0 +1,59 @@
+---
+import base_url from '@/src/lib/base_url';
+import type { HTMLAttributes } from 'astro/types';
+import './card.css';
+
+type Props = HTMLAttributes<"div"> & {
+  /**
+   * Uses Bootstrap box shadow classes
+   *
+   * @default `sm`
+   */
+  shadow?: "none" | "sm" | "md" | "lg";
+  /** @default `default` */
+  size?: "default" | "sm";
+  href?: string;
+  isExternal?: boolean;
+}
+const {
+  shadow = "sm",
+  href,
+  isExternal,
+  class: className,
+  size,
+  ...rest
+} = Astro.props
+const Tag = href ? "a" : "div";
+/**
+ * @privateRemarks
+ *
+ * Bootstrap box shadow options: `shadow-none`, `shadow-sm`, `shadow`, `shadow-lg`
+ *
+ * `shadow-sm` seems to be most consistently used for cards across the site.
+ */
+const shadowClass = {
+  'shadow-none': shadow === 'none',
+  'shadow-sm': shadow === 'sm',
+  'shadow': shadow === 'md',
+  'shadow-lg': shadow === 'lg',
+};
+const linkAttrs = href && isExternal
+  ? { href, target: "_blank", rel: "noopener noreferrer" }
+  : href
+    ? { href: base_url(href) }
+    : undefined;
+---
+<Tag
+  data-slot="program-card"
+  data-size={size}
+  class:list={[
+    "program-card",
+    Object.entries(shadowClass).find(([, isActive]) => isActive)?.[0],
+    href && "program-card-link",
+    className
+  ]}
+  {...linkAttrs}
+  {...rest}
+>
+  <slot/>
+</Tag>
