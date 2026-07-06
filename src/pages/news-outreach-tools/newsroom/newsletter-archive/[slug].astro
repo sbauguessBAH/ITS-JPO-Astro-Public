@@ -48,9 +48,32 @@ const pageKeywords = issue.data.keywords.length > 0 ? issue.data.keywords : ["IT
   </main>
 </PageLayout>
 
-<style>
-  .newsletter-container {
-    max-width: 760px;
+<style lang="scss" is:global>
+.newsletter-container img {
+  width: 100%;
+  height: auto;
+}
+.newsletter-container h4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+
+.newsletter-container h4 a {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #0c77cf;
+  border-radius: 0.25rem;
+  background-color: #0c77cf;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.newsletter-container {
+    max-width: 600px;
     margin: 0 auto;
   }
 
