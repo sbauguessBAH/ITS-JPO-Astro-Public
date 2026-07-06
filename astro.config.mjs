@@ -4,13 +4,17 @@ import vue from "@astrojs/vue";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   // If hosting on a subdomain, set the base here such as /itsjpo, /demo, etc.
   base: "",
+
   site: "https://www.its.dot.gov",
   output: "static",
   integrations: [partytown(), sitemap(), vue()],
+
   redirects: {
     "/index.htm": "/",
     "/about/its_jpo.htm": "/about",
@@ -30,5 +34,9 @@ export default defineConfig({
     "/research_areas/emerging_tech/htm/Next_landing.htm": "/research-areas/V2X-Deployment",
     "/research-areas/artificial-intelligence/transportation-planning-design": "/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice/transportation-planning-design"
   
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

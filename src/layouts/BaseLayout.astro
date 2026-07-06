@@ -1,6 +1,7 @@
 ---
 // Base Layout used across all pages
-
+// TailwindCSS
+import '../styles/global.css'
 
 import USBanner from "../components/USBanner.astro";
 import Footer from "@/src/components/Footer.astro";
@@ -8,6 +9,9 @@ import Header from "@/src/components/layout/Header.astro";
 import base_url from "@/src/lib/base_url";
 import { validateNavigation } from "../lib/navigation";
 import { navigation } from "../lib/navigation";
+import OfficialBanner from "../components/ui/official-banner/official-banner.astro";
+
+
 
 interface Props {
   title: string;

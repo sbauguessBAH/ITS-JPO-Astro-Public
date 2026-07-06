@@ -1,0 +1,67 @@
+---
+const usaFlag = "https://www.transportation.gov/themes/custom/dot_cms/images/assets/us_flag_small.svg";
+const dotGovIcon = "https://www.transportation.gov/themes/custom/dot_cms/images/assets/icon-dot-gov.svg";
+const lockIcon = "https://www.transportation.gov/themes/custom/dot_cms/images/assets/icon-https.svg";
+
+/**
+ * TODO: Gather color codes
+ */
+---
+
+<div class="container max-w-7xl mx-auto">
+  <div class="flex items-center text-sm">
+    <img src={usaFlag} class="w-4 mr-2" />
+    <div class="flex items-baseline gap-0.5">
+      <span>An official website of the United States government.</span>
+      <button
+        id="banner-button"
+        class="text-[#005ea2] flex items-baseline gap-1"
+      >
+        <span class="underline">Here's how you know</span>
+        <i id="banner-arrow" class="fa-solid fa-angle-down "/>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container max-w-7xl mx-auto text-sm hidden" id="banner-content">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+    <div class="flex flex-row items-center gap-4">
+      <img src={dotGovIcon} class="h-12"/>
+      <div class="space-y-0">
+        <p class="font-bold">Official websites use .gov</p>
+        <p>
+          A <span class="font-bold">.gov</span> website belongs to 
+          an official government organization in the United States.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-row items-center gap-4">
+      <img src={lockIcon} class="h-12"/>
+      <div class="space-y-0">
+        <p class="font-bold">Secure .gov websites use HTTPS</p>
+        <p>
+          A <span class="font-bold">lock</span> ( <i class="fa-solid fa-lock fa-xs"></i> ) or
+          <span class="font-bold">https://</span> means you've safely connected 
+          to the .gov website. Share sensitive information only on official, secure websites.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const bannerButton = document.querySelector("#banner-button");
+  const bannerArrow = document.querySelector("#banner-arrow");
+  const bannerContent = document.querySelector("#banner-content");
+
+  bannerButton?.addEventListener("click", () => {
+    bannerArrow?.classList.toggle("fa-angle-down");
+    bannerArrow?.classList.toggle("fa-angle-up");
+
+    bannerContent?.classList.toggle("hidden");
+
+    const isExpanded = bannerButton.getAttribute("aria-expanded") === "true";
+    bannerButton.setAttribute("aria-expanded", String(!isExpanded));
+  });
+</script>
