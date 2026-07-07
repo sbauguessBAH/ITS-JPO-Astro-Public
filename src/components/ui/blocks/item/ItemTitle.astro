@@ -1,13 +1,17 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+import type { HTMLAttributes } from "astro/types";
 
-interface Props extends Omit<HTMLAttributes<'div'>, 'class'> {
-  class?: string
+interface Props extends Omit<HTMLAttributes<"div">, "class"> {
+  class?: string;
 }
 
-const { class: className, ...rest } = Astro.props
+const { class: className, ...rest } = Astro.props;
 ---
 
-<div data-slot="ui_item-title" class:list={['ui_item-title', className]} {...rest}>
+<div
+  data-slot="ui_item-title"
+  class:list={["ui_item-title", className]}
+  {...rest}
+>
   <slot />
 </div>

@@ -1,9 +1,11 @@
 ---
-import LibraryImage, { type LibraryImageEntry } from "@/src/components/programs/LibraryImage.astro";
-import { type LocalImageProps } from 'astro:assets';
-import './section.css';
+import LibraryImage, {
+  type LibraryImageEntry,
+} from "@/src/components/programs/LibraryImage.astro";
+import { type LocalImageProps } from "astro:assets";
+import "./section.css";
 
-type Props = Omit<LocalImageProps, 'alt' | 'src'> & {
+type Props = Omit<LocalImageProps, "alt" | "src"> & {
   alt?: string;
   /** Reference to library entry */
   entry: LibraryImageEntry;
@@ -23,12 +25,13 @@ const {
   ...props
 } = Astro.props;
 ---
+
 <LibraryImage
   entry={entry}
-  class:list={[
-    "ui_section-image",
-    rounded && "ui_section-image_rounded"
-  ]}
-  style={{ width: width ? `${width}px` : undefined, height: height ? `${height}px` : undefined }}
+  class:list={["ui_section-image", rounded && "ui_section-image_rounded"]}
+  style={{
+    width: width ? `${width}px` : undefined,
+    height: height ? `${height}px` : undefined,
+  }}
   {...props}
 />

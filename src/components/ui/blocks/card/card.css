@@ -40,7 +40,9 @@
 .ui_card_link {
   text-decoration: none;
   /* Matches card-hoverable class */
-  transition: transform .3s,box-shadow .3s; 
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .ui_card_link:hover,
@@ -116,7 +118,6 @@
   font-size: var(--text-base);
   color: var(--color-muted-foreground);
 }
-
 
 /* ============================================================
  * CardAction

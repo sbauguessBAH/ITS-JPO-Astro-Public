@@ -10,12 +10,7 @@ type Props = HTMLAttributes<"h1"> & {
   class?: string;
 };
 
-const {
-  class: className,
-  size = "default",
-  as,
-  ...props
-} = Astro.props;
+const { class: className, size = "default", as, ...props } = Astro.props;
 
 const defaultTagBySize: Record<"sm" | "default" | "lg", HeadingTag> = {
   sm: "h3",

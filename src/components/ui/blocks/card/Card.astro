@@ -1,7 +1,7 @@
 ---
-import base_url from '@/src/lib/base_url';
-import type { HTMLAttributes } from 'astro/types';
-import './card.css';
+import base_url from "@/src/lib/base_url";
+import type { HTMLAttributes } from "astro/types";
+import "./card.css";
 
 /**
  * TODO: Test out and clean up horizontal orientation
@@ -18,7 +18,8 @@ type Props = HTMLAttributes<"div"> & {
   href?: string;
   isExternal?: boolean;
   orientation?: "vertical" | "horizontal";
-}
+};
+
 const {
   shadow = "sm",
   href,
@@ -27,7 +28,7 @@ const {
   size,
   orientation = "vertical",
   ...rest
-} = Astro.props
+} = Astro.props;
 
 const Component = href ? "a" : "div";
 /**
@@ -38,18 +39,20 @@ const Component = href ? "a" : "div";
  * `shadow-sm` seems to be most consistently used for cards across the site.
  */
 const shadowClass = {
-  'shadow-none': shadow === 'none',
-  'shadow-sm': shadow === 'sm',
-  'shadow': shadow === 'md',
-  'shadow-lg': shadow === 'lg',
+  "shadow-none": shadow === "none",
+  "shadow-sm": shadow === "sm",
+  shadow: shadow === "md",
+  "shadow-lg": shadow === "lg",
 };
 
-const linkAttrs = href && isExternal
-  ? { href, target: "_blank", rel: "noopener noreferrer" }
-  : href
-    ? { href: base_url(href) }
-    : undefined;
+const linkAttrs =
+  href && isExternal
+    ? { href, target: "_blank", rel: "noopener noreferrer" }
+    : href
+      ? { href: base_url(href) }
+      : undefined;
 ---
+
 <Component
   data-slot="ui_card"
   data-size={size}
@@ -58,10 +61,10 @@ const linkAttrs = href && isExternal
     "ui_card",
     Object.entries(shadowClass).find(([, isActive]) => isActive)?.[0],
     href && "ui_card_link",
-    className
+    className,
   ]}
   {...linkAttrs}
   {...rest}
 >
-  <slot/>
+  <slot />
 </Component>

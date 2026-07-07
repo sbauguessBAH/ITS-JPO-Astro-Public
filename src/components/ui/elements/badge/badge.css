@@ -33,9 +33,7 @@
   transition-timing-function: ease;
   cursor: default;
   user-select: none;
-  
 }
-
 
 /* ---------- Interactions ---------- */
 
@@ -47,7 +45,6 @@
   outline: 2px solid var(--badge-color, var(--color-foreground));
   outline-offset: 2px;
 }
-
 
 /* ---------- Sizes ---------- */
 
@@ -72,7 +69,6 @@
   font-size: var(--text-sm);
 }
 
-
 /* ---------- Rounded ---------- */
 
 .ui_badge[data-rounded="true"] {
@@ -83,29 +79,27 @@
   border-radius: var(--radius-lg);
 }
 
-
 /* ---------- Icons ---------- */
 
 .ui_badge > svg {
   flex-shrink: 0;
   pointer-events: none;
 }
- 
+
 .ui_badge[data-size="sm"] > svg {
   width: calc(var(--spacing) * 3); /* size-3, 12px */
   height: calc(var(--spacing) * 3);
 }
- 
+
 .ui_badge[data-size="default"] > svg {
   width: calc(var(--spacing) * 3.5); /* size-3.5, 14px */
   height: calc(var(--spacing) * 3.5);
 }
- 
+
 .ui_badge[data-size="lg"] > svg {
   width: calc(var(--spacing) * 4); /* size-4, 16px */
   height: calc(var(--spacing) * 4);
 }
-
 
 /* ---------- Colors  ---------- */
 

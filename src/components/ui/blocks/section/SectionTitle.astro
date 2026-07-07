@@ -1,6 +1,6 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import './section.css';
+import type { HTMLAttributes } from "astro/types";
+import "./section.css";
 
 type Props = HTMLAttributes<"h2"> & {
   /**
@@ -14,10 +14,11 @@ type Props = HTMLAttributes<"h2"> & {
 
 const { class: className, as: Tag = "h2", ...rest } = Astro.props;
 ---
+
 <Tag
   data-slot="ui_section-title"
   class:list={["ui_section-title", className]}
   {...rest}
 >
-  <slot/>
+  <slot />
 </Tag>

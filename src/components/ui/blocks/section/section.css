@@ -45,13 +45,16 @@
 
 /* Side-by-side layout once there's room, and only when there's actually an image */
 @media (min-width: 768px) {
-  .ui_section[data-orientation="horizontal"] .ui_section-container:has(.ui_section-image) {
+  .ui_section[data-orientation="horizontal"]
+    .ui_section-container:has(.ui_section-image) {
     flex-direction: row;
     /* align-items left at the flex default (stretch) so both columns share
        the same height and the image can fill it via object-fit: cover below */
   }
 
-  .ui_section[data-orientation="horizontal"] .ui_section-container:has(.ui_section-image) > * {
+  .ui_section[data-orientation="horizontal"]
+    .ui_section-container:has(.ui_section-image)
+    > * {
     min-width: 0;
   }
 
@@ -59,11 +62,15 @@
      --ui-section-content-weight: 2 and --ui-section-image-weight: 1.
      Tied to these classes rather than DOM position, so `reverse` (which
      only reorders visually via `order`) never has to touch the ratio. */
-  .ui_section[data-orientation="horizontal"] .ui_section-container:has(.ui_section-image) .ui_section-content {
+  .ui_section[data-orientation="horizontal"]
+    .ui_section-container:has(.ui_section-image)
+    .ui_section-content {
     flex: var(--ui-section-content-weight, 1) 1 0%;
   }
 
-  .ui_section[data-orientation="horizontal"] .ui_section-container:has(.ui_section-image) .ui_section-image {
+  .ui_section[data-orientation="horizontal"]
+    .ui_section-container:has(.ui_section-image)
+    .ui_section-image {
     flex: var(--ui-section-image-weight, 1) 1 0%;
   }
 }
@@ -188,7 +195,7 @@
 }
 
 .ui_section-highlight_link .ui_section-highlight-inner {
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
 
 .ui_section-highlight_link .ui_section-highlight-inner:hover,

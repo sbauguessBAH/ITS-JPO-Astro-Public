@@ -1,8 +1,10 @@
 ---
-import LibraryImage, { type LibraryImageEntry } from "@/src/components/programs/LibraryImage.astro";
-import { type LocalImageProps } from 'astro:assets';
+import LibraryImage, {
+  type LibraryImageEntry,
+} from "@/src/components/programs/LibraryImage.astro";
+import { type LocalImageProps } from "astro:assets";
 
-type Props = Omit<LocalImageProps, 'alt' | 'src'> & {
+type Props = Omit<LocalImageProps, "alt" | "src"> & {
   alt?: string;
   /** Reference to library entry */
   entry: LibraryImageEntry;
@@ -13,20 +15,15 @@ type Props = Omit<LocalImageProps, 'alt' | 'src'> & {
   rounded?: boolean;
 };
 
-const { 
-  entry,
-  width,
-  height,
-  rounded = true,
-  ...props
-} = Astro.props;
+const { entry, width, height, rounded = true, ...props } = Astro.props;
 ---
-<LibraryImage 
-  entry={entry} 
-  class:list={[
-    "ui_card-image", 
-    rounded && "ui_card-image_rounded"
-  ]}
-  style={{ width: width ? `${width}px` : undefined, height: height ? `${height}px` : undefined}}
+
+<LibraryImage
+  entry={entry}
+  class:list={["ui_card-image", rounded && "ui_card-image_rounded"]}
+  style={{
+    width: width ? `${width}px` : undefined,
+    height: height ? `${height}px` : undefined,
+  }}
   {...props}
 />

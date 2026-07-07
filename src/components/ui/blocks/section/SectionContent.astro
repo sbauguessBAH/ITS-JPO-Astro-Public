@@ -1,15 +1,16 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import './section.css';
+import type { HTMLAttributes } from "astro/types";
+import "./section.css";
 
 type Props = HTMLAttributes<"div">;
 
 const { class: className, ...rest } = Astro.props;
 ---
+
 <div
   data-slot="ui_section-content"
   class:list={["ui_section-content", className]}
   {...rest}
 >
-  <slot/>
+  <slot />
 </div>

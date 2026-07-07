@@ -1,15 +1,16 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
-import './card.css';
+import type { HTMLAttributes } from "astro/types";
+import "./card.css";
 
 type Props = HTMLAttributes<"div">;
 
 const { class: className, ...props } = Astro.props;
 ---
-<div 
-  data-slot="ui_card-action" 
-  class:list={["ui_card-action", className]} 
+
+<div
+  data-slot="ui_card-action"
+  class:list={["ui_card-action", className]}
   {...props}
 >
-  <slot/>
+  <slot />
 </div>
