@@ -4,5 +4,56 @@
       "fileMatch": ["/src/content/library/**"],
       "url": "./.astro/collections/library.schema.json"
     }
-  ]
+  ],
+
+  // ========== Editor ==========
+
+  // Show rulers for recommended length (Prettier defaults to 80)
+  "editor.rulers": [80, 120],
+  "editor.tabSize": 2,
+
+  "editor.formatOnSave": true,
+
+  // Auto fix options on file save
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.prettier": "explicit",
+    "source.sortImports": "explicit"
+  },
+
+  "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // ========== Prettier ==========
+
+  "prettier.enable": true,
+  "prettier.documentSelectors": ["**/*.astro"],
+
+  // ========== ESLint ==========
+  // Automatically detect the correct ESLint workspace for each file
+  "eslint.workingDirectories": [
+    {"mode": "auto"}
+  ],
+
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+
+  // Enable ESLint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml"
+  ],
 }

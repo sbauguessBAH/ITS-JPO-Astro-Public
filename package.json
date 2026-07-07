@@ -8,7 +8,8 @@
     "build": "astro check && astro build",
     "build:noWarn": "astro build --minimumSeverity error",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
@@ -34,6 +35,9 @@
     "eslint": "^10.0.1",
     "eslint-plugin-astro": "^1.4.0",
     "eslint-plugin-perfectionist": "^5.6.0",
+    "prettier": "^3.9.4",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-astro-organize-imports": "^0.4.12",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.0"
   }
