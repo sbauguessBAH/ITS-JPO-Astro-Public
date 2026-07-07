@@ -1,11 +1,21 @@
 ---
+
 import Link from "@/src/components/Link.astro";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import Card from "@/src/components/ui/card/Card.astro";
+import CardContent from "@/src/components/ui/card/CardContent.astro";
+import CardHeader from "@/src/components/ui/card/CardHeader.astro";
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
 import { getCollection } from "astro:content"
+
+/**
+ * Internal page to view catalog of all library images.
+ * 
+ * @privateRemarks
+ * 
+ * This is not intended for public use.
+ */
+export type Props = {};
 
 const collection = await getCollection("library");
 const albums = collection.reduce((acc, item) => {
@@ -54,7 +64,7 @@ const albums = collection.reduce((acc, item) => {
                 <CardHeader class="card-header">
                   <LibraryImage entry={item.id} class="library-image"/>
                 </CardHeader>
-                <CardBody>
+                <CardContent>
                   <h3>{item.id.split("/").slice(-1)[0]}</h3>
                   <dl>
                     <dt>ID</dt>
@@ -66,7 +76,7 @@ const albums = collection.reduce((acc, item) => {
                     <dt>Alt</dt>
                     <dd>{item.data.alt || "MISSING"}</dd>
                   </dl>
-                </CardBody>
+                </CardContent>
               </Card>
             ))}
           </div>

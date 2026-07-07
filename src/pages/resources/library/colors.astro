@@ -1,0 +1,109 @@
+---
+import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
+
+type Palette = {
+  name: string;
+  source: string;
+  notes?: string;
+  colors: {
+    name: string;
+    notes?: string;
+    hex: string;
+    rgb?: string;
+  }[];
+};
+
+const palettes: Palette[] = [
+  {
+    name: "Program",
+    source: "programs.css",
+    colors: [
+      { name: "--shadow-light", hex: "#c4c4c4" },
+      { name: "--border-light", hex: "#e9e9e9" },
+      { name: "--background-light", hex: "#f8f8f8" },
+      { name: "--color-foreground", hex: "#000000", rgb: "0, 0, 0" },
+      { name: "--color-background", hex: "#ffffff", rgb: "256, 256, 256" },
+      { name: "--color-brand-light", hex: "#e9ecef", rgb: "233, 236, 239" },
+      { name: "--color-brand", notes: "ITS JPO Blue", hex: "#005d83", rgb: "0, 93, 131" },
+      { name: "--color-brand-dark", hex: "#055681", notes: "Used for coming-soon-badge, header color, and many other elements", rgb: "5, 86, 129" },
+      { name: "--color-brand-secondary", notes: "USDOT Blue--used for callout box", hex: "#072e55", rgb: "7, 46, 85" },
+      { name: "--color-blue", notes: "JPO Style Guide", hex: "#4ec1e0", rgb: "78, 193, 224" },
+      { name: "--color-green", notes: "JPO Style Guide", hex: "#babf10", rgb: "186, 191, 16" },
+      { name: "--color-green-dark", notes: "JPO Style Guide", hex: "#576538", rgb: "87, 101, 56" },
+      { name: "--color-purple", notes: "JPO Style Guide", hex: "#86254f", rgb: "134, 37, 79" },
+      { name: "--color-orange", notes: "JPO Style Guide", hex: "#e28432", rgb: "226, 132, 50" },
+      { name: "--color-gray-light", hex: "#f7f7f7", rgb: "125, 125, 125" },
+      { name: "--color-gray", hex: "#7d7d7d", notes: "Used for program section background, strategy container on automation-program", rgb: "247, 247, 247" },
+    ]
+  },
+  {
+    name: "Automation Program",
+    source: "automation-program",
+    notes: "Reuses the program colors. No other unique colors",
+    colors: [],
+  },
+  {
+    name: "Intersection Safety",
+    source: "intersection-safety",
+    colors: [
+      {
+        name: "callout-box background",
+        notes: "Same as --color-brand-secondary",
+        hex: "#072e55",
+      },
+    ]
+  },
+  {
+    name: "Artificial Intelligence",
+    source: "artificial-intelligence",
+    colors: [
+      { name: "--ai-blue-primary", hex: "#005ea2" },
+      { name: "--ai-blue-secondary", hex: "#055681" },
+      { name: "--ai-blue-dark", hex: "#091f60" },
+      { name: "--ai-blue-darkest", hex: "#01121b" },
+      { name: "--ai-blue-teal", hex: "#09638c" },
+      { name: "--ai-card-light-blue-bg", hex: "#f0f8ff" },
+      { name: "--ai-card-light-blue-border", hex: "#d1e7f7" },
+      { name: "--ai-card-gray-bg", hex: "#f8f9fa" },
+      { name: "--ai-card-gray-border", hex: "#e7e7e7" },
+      { name: "--ai-text-gray", hex: "#71767a" },
+      { name: "--ai-text-dark", hex: "#232323" },
+      { name: "--ai-text-medium", hex: "#3c3c3c" },
+      { name: "--ai-text-light", hex: "#6c757d" },
+      { name: "--ai-border-light", hex: "#dee2e6" },
+      { name: "--ai-border-lighter", hex: "#e7edf3" },
+      { name: "--ai-border-lightest", hex: "#f0f0f0" },
+      { name: "--ai-section-bg-gray", hex: "#f7f7f7" },
+    ]
+  }
+]
+---
+<style>
+  .color-dot {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+  }
+</style>
+<ProgramLayout title="Library">
+  <div class="container">
+    {palettes.map(palette => (
+      <div>
+        <h2 class="font-bold">{palette.name}</h2>
+        <p>{palette.notes}</p>
+        <div class="row row-cols-6">
+          {palette.colors.map(color => (
+            <div class="border">
+              <small>{color.hex}</small>
+              <div class="color-dot" style={{ backgroundColor: color.hex }}></div>
+              <div class="d-flex flex-column">
+                <strong>{color.name}</strong>
+                <small>{color.notes}</small>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</ProgramLayout>
