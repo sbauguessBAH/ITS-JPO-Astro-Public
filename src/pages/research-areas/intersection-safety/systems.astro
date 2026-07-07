@@ -8,6 +8,7 @@ import { Image } from "astro:assets";
 import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
 import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
 ---
+
 <style>
   .resource-container {
     display: grid;
@@ -101,6 +102,7 @@ import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
     }
   }
 </style>
+
 <Layout>
   <main class="program-main">
     <ProgramSection>
@@ -110,17 +112,29 @@ import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
       <div class="row">
         <div class="col-12 col-lg-8">
           <p class="program-text">
-            Building on the success of the Intersection Safety Challenge, the Intersection Safety Systems 
-            (ISS) development initiative aims to support development of innovative ISS that can operate effectively 
-            under real-world conditions. The goal is to accelerate the development of full end-to-end 
-            prototype ISS and its components, including sensor fusion, AI-based decision-making, and conflict mitigation. 
+            Building on the success of the Intersection Safety Challenge, the
+            Intersection Safety Systems (ISS) development initiative aims to
+            support development of innovative ISS that can operate effectively
+            under real-world conditions. The goal is to accelerate the
+            development of full end-to-end prototype ISS and its components,
+            including sensor fusion, AI-based decision-making, and conflict
+            mitigation.
           </p>
-            <div class="callout-box my-4">
-        <h3 class="callout-title">ISS Prototyping Broad Agency Announcement is Live!</h3>
-        <p class="callout-body">Funding Opportunity | Up to $17M across 3 teams</p>
-        <a href="https://sam.gov/workspace/contract/opp/343dd0f244df4c3a9c9baa9b60b8ac54/view" class="callout-button" target="_blank" rel="noopener noreferrer">Learn More </a>
-      </div> 
-
+          <div class="callout-box my-4">
+            <h3 class="callout-title">
+              ISS Prototyping Broad Agency Announcement is Live!
+            </h3>
+            <p class="callout-body">
+              Funding Opportunity | Up to $17M across 3 teams
+            </p>
+            <a
+              href="https://sam.gov/workspace/contract/opp/343dd0f244df4c3a9c9baa9b60b8ac54/view"
+              class="callout-button"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Learn More
+            </a>
+          </div>
         </div>
         <div class="col-11 col-lg-4">
           <Image
@@ -131,66 +145,78 @@ import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
         </div>
       </div>
 
-   
-      <h2 class="program-title-lg mt-4">
-        Key Research Questions
-      </h2>
+      <h2 class="program-title-lg mt-4">Key Research Questions</h2>
       <ul class="program-list">
         <li>
-          <em>Conflicts.</em> Can an ISS reliably predict conflicts among vehicles and vulnerable road users?
+          <em>Conflicts.</em> Can an ISS reliably predict conflicts among vehicles
+          and vulnerable road users?
         </li>
         <ul>
           <li>How far in advance can conflicts be predicted?</li>
-          <li>Under what conditions can reliable conflict predictions be made?</li>
+          <li>
+            Under what conditions can reliable conflict predictions be made?
+          </li>
         </ul>
         <li>
-          <em>Unsafe Conditions.</em> Can an ISS reliably identify conflicts and characterize unsafe conditions?
-        </li>
-        <ul>
-          <li>What types of unsafe conditions can be reliably identified or anticipated?</li>
-          <li>How quickly can unsafe conditions be reliably identified or anticipated?</li>
-        </ul>
-        <li>
-          <em>Mitigating Strategies.</em> Can an ISS take meaningful mitigating actions, either in the form
-          of warnings or changes to intersection control, to mitigate conflicts and/or unsafe conditions?
+          <em>Unsafe Conditions.</em> Can an ISS reliably identify conflicts and characterize
+          unsafe conditions?
         </li>
         <ul>
           <li>
-            Can changes to intersection control be implemented in real-time to mitigate
-            unsafe conditions (e.g., eliminating permissive vehicle turning movements
-            traversing busy crosswalks)? What changes to control are most effective?
+            What types of unsafe conditions can be reliably identified or
+            anticipated?
           </li>
           <li>
-            Can warnings be issued in real-time to mitigate conflicts? What types of warnings
-            are most effective (e.g., visual, auditory, haptic)?
+            How quickly can unsafe conditions be reliably identified or
+            anticipated?
+          </li>
+        </ul>
+        <li>
+          <em>Mitigating Strategies.</em> Can an ISS take meaningful mitigating actions,
+          either in the form of warnings or changes to intersection control, to mitigate
+          conflicts and/or unsafe conditions?
+        </li>
+        <ul>
+          <li>
+            Can changes to intersection control be implemented in real-time to
+            mitigate unsafe conditions (e.g., eliminating permissive vehicle
+            turning movements traversing busy crosswalks)? What changes to
+            control are most effective?
           </li>
           <li>
-            Can modifications to intersection control be utilized to mitigate individual
-            conflicts (e.g., delay the illumination of a WALK signal until all approaching
-            vehicles have safely cleared the crosswalk)?
+            Can warnings be issued in real-time to mitigate conflicts? What
+            types of warnings are most effective (e.g., visual, auditory,
+            haptic)?
           </li>
           <li>
-            What are potential safety and congestion-reduction impacts resulting from these
-            mitigating strategies?
+            Can modifications to intersection control be utilized to mitigate
+            individual conflicts (e.g., delay the illumination of a WALK signal
+            until all approaching vehicles have safely cleared the crosswalk)?
+          </li>
+          <li>
+            What are potential safety and congestion-reduction impacts resulting
+            from these mitigating strategies?
           </li>
         </ul>
       </ul>
-      <h2 class="program-title-lg my-4">
-        Additional Resources
-      </h2>
+      <h2 class="program-title-lg my-4">Additional Resources</h2>
       <div class="resource-container">
         <Card shadow="sm">
           <CardContent>
             <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">Intersection Safety System (ISS) Prototyping</h3>
-              <p class="resource-card-subtitle">Issued on April 25, 2025 | Closed on May 9, 2025</p>
+              <h3 class="resource-card-title">
+                Intersection Safety System (ISS) Prototyping
+              </h3>
+              <p class="resource-card-subtitle">
+                Issued on April 25, 2025 | Closed on May 9, 2025
+              </p>
             </div>
           </CardContent>
           <CardFooter>
             <div class="resource-link-container px-2">
-              <a 
-                class="resource-button" 
-                rel="noopener noreferrer" 
+              <a
+                class="resource-button"
+                rel="noopener noreferrer"
                 target="_blank"
                 href="https://sam.gov/opp/8573bb118a5e4343a9512fed8b393d63/view"
               >

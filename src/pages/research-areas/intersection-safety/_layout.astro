@@ -4,8 +4,6 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/intersection-safety/banner.jpg";
 import "@/src/styles/programs.css";
 
-
-
 const keywords = [
   "Intersection Safety",
   "Transportation Research",
@@ -14,21 +12,22 @@ const keywords = [
   "ISC",
   "Intersection Safety Technologies",
   "Traffic Control",
-  "Traffic Safety"
+  "Traffic Safety",
 ];
 
 const description = `
   The U.S. DOT aims to transform intersection safety by incentivizing the
   innovative application of new and emerging technologies.
-`
+`;
 ---
+
 <PageLayout
   title="Intersection Safety"
   keywords={keywords}
   description={description}
-   bannerImage={banner}
->  <Fragment slot="banner"> Intersection Safety </Fragment>
+  bannerImage={banner}
+>
+  <Fragment slot="banner"> Intersection Safety </Fragment>
 
- 
-  <slot/>
+  <slot />
 </PageLayout>

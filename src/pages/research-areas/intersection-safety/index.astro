@@ -20,8 +20,8 @@ import integrationIcon from "@/src/assets/images/intersection-safety/integration
 import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-intersection.jpg";
 import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
 import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
-
 ---
+
 <style>
   .overview-section {
     display: flex;
@@ -103,7 +103,7 @@ import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
   }
 
   .stage-image {
-    padding: var(--size)
+    padding: var(--size);
   }
 
   @media (min-width: 1200px) {
@@ -122,7 +122,6 @@ import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
     }
 
     .stage-content {
-
     }
     .stage-left {
       padding-right: var(--size);
@@ -227,7 +226,6 @@ import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
       display: flex;
       align-items: center;
       justify-content: center;
-      
     }
 
     .solution-card {
@@ -240,54 +238,63 @@ import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
     <ProgramSection>
       <div class="overview-section">
         <div class="overview-text">
-          <h2 class="program-title-lg">
-            Overview
-          </h2>
+          <h2 class="program-title-lg">Overview</h2>
           <p class="program-text">
-            The U.S. DOT aims to transform intersection safety by incentivizing the innovative application 
-            of emerging technologies to identify and mitigate unsafe conditions involving vehicles and vulnerable road users 
-            at intersections. This initiative, which is specifically focused on the use of technology, 
-            complements other federal efforts to improve intersection safety.
-            The intersection environment is well-suited to innovative mitigative approaches that leverage and potentially repurpose
-            existing traffic control and support infrastructure.
+            The U.S. DOT aims to transform intersection safety by incentivizing
+            the innovative application of emerging technologies to identify and
+            mitigate unsafe conditions involving vehicles and vulnerable road
+            users at intersections. This initiative, which is specifically
+            focused on the use of technology, complements other federal efforts
+            to improve intersection safety. The intersection environment is
+            well-suited to innovative mitigative approaches that leverage and
+            potentially repurpose existing traffic control and support
+            infrastructure.
           </p>
         </div>
         <div class="overview-image">
-          <Image src={safeIntersectionImage} alt="Safe Intersection Image" class="img-fluid radius-md shadow" />
+          <Image
+            src={safeIntersectionImage}
+            alt="Safe Intersection Image"
+            class="img-fluid radius-md shadow"
+          />
         </div>
       </div>
       <div class="vision-container mt-5">
         <h3 class="program-title-md mb-0 text-center">Vision and Goals</h3>
         <p class="program-text max-w-lg text-center mx-auto">
-          <strong>Transform intersection safety</strong> through the innovative application 
-          of emerging technologies including machine vision, sensor fusion, 
-          and real-time decision-making to identify and mitigate unsafe conditions 
-          involving vehicles and vulnerable road users at intersections.
+          <strong>Transform intersection safety</strong> through the innovative application
+          of emerging technologies including machine vision, sensor fusion, and real-time
+          decision-making to identify and mitigate unsafe conditions involving vehicles
+          and vulnerable road users at intersections.
         </p>
       </div>
     </ProgramSection>
     <ProgramSection color="gray">
-      <h2 class="program-title-lg text-center">
-        Addressing the Problem
-      </h2>
+      <h2 class="program-title-lg text-center">Addressing the Problem</h2>
       <p class="program-text text-center max-w-lg mx-auto">
-        Intersection safety is a growing issue, especially for vulnerable road users.
+        Intersection safety is a growing issue, especially for vulnerable road
+        users.
       </p>
       <div class="problem-container mt-4">
         <Card shadow="sm">
           <CardContent>
             <div class="problem">
               <div class="problem-image">
-                <Image src={intersectionCrashesImage} alt="Intersection Crashes Icon" class="img-fluid" />
+                <Image
+                  src={intersectionCrashesImage}
+                  alt="Intersection Crashes Icon"
+                  class="img-fluid"
+                />
               </div>
               <div class="problem-content">
-                <h3 class="program-title-md">
-                  Intersection Crashes
-                </h3>
+                <h3 class="program-title-md">Intersection Crashes</h3>
                 <p class="program-text">
-                  Each year roughly one-quarter of traffic fatalities and about one-half 
-                  of all traffic injuries in the United States are attributed 
-                  to intersections. <Link href="https://highways.dot.gov/safety/intersection-safety/about" isExternal>FHWA Safety</Link>
+                  Each year roughly one-quarter of traffic fatalities and about
+                  one-half of all traffic injuries in the United States are
+                  attributed to intersections. <Link
+                    href="https://highways.dot.gov/safety/intersection-safety/about"
+                    isExternal>FHWA Safety</Link
+                  >
                 </p>
               </div>
             </div>
@@ -297,16 +304,24 @@ import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
           <CardContent>
             <div class="problem">
               <div class="problem-image">
-                <Image src={userDeathsImage} alt="User Deaths Icon" class="img-fluid" />
+                <Image
+                  src={userDeathsImage}
+                  alt="User Deaths Icon"
+                  class="img-fluid"
+                />
               </div>
               <div class="problem-content">
                 <h3 class="program-title-md">
                   Rising Vulnerable Road User Deaths
                 </h3>
                 <p class="program-text">
-                  Vulnerable road user fatalities are on the rise with pedestrian fatalities 
-                  in 2022 (7,522) at the highest level since 1981, and increasing significantly since 2013 (4,779).
-                  <Link href="https://crashstats.nhtsa.dot.gov/Api/Public/Publication/813590" isExternal>NHTSA</Link>
+                  Vulnerable road user fatalities are on the rise with
+                  pedestrian fatalities in 2022 (7,522) at the highest level
+                  since 1981, and increasing significantly since 2013 (4,779).
+                  <Link
+                    href="https://crashstats.nhtsa.dot.gov/Api/Public/Publication/813590"
+                    isExternal>NHTSA</Link
+                  >
                 </p>
               </div>
             </div>
@@ -315,16 +330,19 @@ import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
       </div>
     </ProgramSection>
     <ProgramSection color="gray">
-      <h2 class="program-title-lg text-center">
-        Proposing a Solution
-      </h2>
+      <h2 class="program-title-lg text-center">Proposing a Solution</h2>
       <p class="program-text text-center max-w-lg mx-auto">
-        Accelerate the deployment of intersection safety systems leveraging Artificial Intelligence (AI) nationwide.
+        Accelerate the deployment of intersection safety systems leveraging
+        Artificial Intelligence (AI) nationwide.
       </p>
       <div class="solution-container mt-4">
         <Card class="solution-card" shadow="sm">
           <CardHeader class="solution-header">
-            <Image src={dataFusionIcon} alt="Data Fusion Icon" class="img-fluid solution-icon" />
+            <Image
+              src={dataFusionIcon}
+              alt="Data Fusion Icon"
+              class="img-fluid solution-icon"
+            />
           </CardHeader>
           <CardContent>
             <h3 class="program-title-md">
@@ -333,8 +351,8 @@ import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
           </CardContent>
           <CardFooter>
             <p class="program-text">
-              Emerging, low-cost sensors can be deployed at intersections for 
-              <strong>improved sensing of vulnerable road users</strong>. Data 
+              Emerging, low-cost sensors can be deployed at intersections for
+              <strong>improved sensing of vulnerable road users</strong>. Data
               from these sensors can be fused and used in new ways by AI.
             </p>
           </CardFooter>
@@ -342,80 +360,102 @@ import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
         <div class="solution-symbol">
           <Image src={plusIcon} alt="Plus Icon" class="img-fluid" />
         </div>
-          <Card class="solution-card" shadow="sm">
-            <CardHeader class="solution-header">
-              <Image src={aiIcon} alt="AI Icon" class="img-fluid solution-icon" />
-            </CardHeader>
-            <CardContent>
-              <h3 class="program-title-md">
-                Artificial Intelligence and Machine Learning
-              </h3>
-            </CardContent>
-            <CardFooter>
-              <p class="program-text">
-                AI/ML can fuse data from multiple machine vision sensing modalities 
-                rapidly to <strong>improve situational awareness</strong> and 
-                <strong>anticipate potential conflicts</strong>.
-              </p>
-            </CardFooter>
-          </Card>
+        <Card class="solution-card" shadow="sm">
+          <CardHeader class="solution-header">
+            <Image src={aiIcon} alt="AI Icon" class="img-fluid solution-icon" />
+          </CardHeader>
+          <CardContent>
+            <h3 class="program-title-md">
+              Artificial Intelligence and Machine Learning
+            </h3>
+          </CardContent>
+          <CardFooter>
+            <p class="program-text">
+              AI/ML can fuse data from multiple machine vision sensing
+              modalities rapidly to <strong
+                >improve situational awareness</strong
+              > and
+              <strong>anticipate potential conflicts</strong>.
+            </p>
+          </CardFooter>
+        </Card>
         <div class="solution-symbol">
           <Image src={equalsIcon} alt="Equals Icon" class="img-fluid" />
         </div>
-          <Card class="solution-card" shadow="sm">
-            <CardHeader class="solution-header">
-              <Image src={integrationIcon} alt="Integration Icon" class="img-fluid solution-icon" />
-            </CardHeader>
-            <CardContent>
-              <h3 class="program-title-md">
-                Low-Cost, High-Value Opportunity for Integration at Scale
-              </h3>
-            </CardContent>
-            <CardFooter>
-              <p class="program-text">
-                These existing technologies have not been deployed together 
-                at intersections broadly, offering an opportunity ripe 
-                for <strong>innovative collaboration</strong>.
-              </p>
-            </CardFooter>
-          </Card>
+        <Card class="solution-card" shadow="sm">
+          <CardHeader class="solution-header">
+            <Image
+              src={integrationIcon}
+              alt="Integration Icon"
+              class="img-fluid solution-icon"
+            />
+          </CardHeader>
+          <CardContent>
+            <h3 class="program-title-md">
+              Low-Cost, High-Value Opportunity for Integration at Scale
+            </h3>
+          </CardContent>
+          <CardFooter>
+            <p class="program-text">
+              These existing technologies have not been deployed together at
+              intersections broadly, offering an opportunity ripe for <strong
+                >innovative collaboration</strong
+              >.
+            </p>
+          </CardFooter>
+        </Card>
       </div>
     </ProgramSection>
     <ProgramSection>
-      <h2 class="program-title-lg">
-        Initiatives
-      </h2>
+      <h2 class="program-title-lg">Initiatives</h2>
       <p class="program-text">
-        AI innovation could make our nation's intersections safer for all road users.
+        AI innovation could make our nation's intersections safer for all road
+        users.
       </p>
       <div class="stage-container mt-4">
         <div class="stage stage-left">
           <div class="stage-image">
-            <Image src={iscLogo} alt="Intersection Safety Challenge Logo" class="img-fluid" />
+            <Image
+              src={iscLogo}
+              alt="Intersection Safety Challenge Logo"
+              class="img-fluid"
+            />
           </div>
           <div class="stage-content">
             <p class="program-text">
-              Multiple teams competed against each other utilizing sensor fusion and 
-              machine learning algorithms to detect, localize, and classify vulnerable 
-              road users and vehicles as well as predict their paths and potential conflicts.
+              Multiple teams competed against each other utilizing sensor fusion
+              and machine learning algorithms to detect, localize, and classify
+              vulnerable road users and vehicles as well as predict their paths
+              and potential conflicts.
             </p>
-            <a class="program-button" href={base_url("/research-areas/intersection-safety/challenge")}>
+            <a
+              class="program-button"
+              href={base_url("/research-areas/intersection-safety/challenge")}
+            >
               Learn More
             </a>
           </div>
         </div>
         <div class="stage stage-right">
           <div class="stage-image">
-            <Image src={issLogo} alt="Intersection Safety Challenge Logo" class="img-fluid" />
+            <Image
+              src={issLogo}
+              alt="Intersection Safety Challenge Logo"
+              class="img-fluid"
+            />
           </div>
           <div class="stage-content">
             <p class="program-text">
-              The Intersection Safety Systems (ISS) initiative is focused on full end-to-end
-              prototype development and testing of systems that can improve intersection safety
-              using technologies described above, including sensor fusion, AI-based decision-making,
-              and conflict mitigation.
+              The Intersection Safety Systems (ISS) initiative is focused on
+              full end-to-end prototype development and testing of systems that
+              can improve intersection safety using technologies described
+              above, including sensor fusion, AI-based decision-making, and
+              conflict mitigation.
             </p>
-            <a class="program-button" href={base_url("/research-areas/intersection-safety/systems")}>
+            <a
+              class="program-button"
+              href={base_url("/research-areas/intersection-safety/systems")}
+            >
               Learn More
             </a>
           </div>
@@ -423,32 +463,32 @@ import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
       </div>
     </ProgramSection>
     <ProgramSection>
-      <h2 class="program-title-lg">
-        Additional Resources
-      </h2>
+      <h2 class="program-title-lg">Additional Resources</h2>
       <div class="resource-container">
         <Card shadow="sm">
           <CardContent>
             <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">Enhancing the Safety of Vulnerable Road Users at Intersections</h3>
+              <h3 class="resource-card-title">
+                Enhancing the Safety of Vulnerable Road Users at Intersections
+              </h3>
               <p class="resource-card-subtitle">Report | February 2023</p>
             </div>
           </CardContent>
           <CardFooter>
             <div class="resource-link-container px-2">
-              <a 
-                class="resource-button" 
-                href="https://rosap.ntl.bts.gov/view/dot/66622" 
-                rel="noopener noreferrer" 
+              <a
+                class="resource-button"
+                href="https://rosap.ntl.bts.gov/view/dot/66622"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 <ExternalLinkIcon size={12} />
                 Summary Report
               </a>
-              <a 
-                class="resource-button" 
-                href="https://www.federalregister.gov/documents/2022/09/16/2022-20188/enhancing-the-safety-of-vulnerable-road-users-at-intersections-request-for-information" 
-                rel="noopener noreferrer" 
+              <a
+                class="resource-button"
+                href="https://www.federalregister.gov/documents/2022/09/16/2022-20188/enhancing-the-safety-of-vulnerable-road-users-at-intersections-request-for-information"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 <ExternalLinkIcon size={12} />
@@ -460,19 +500,23 @@ import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
         <Card shadow="sm">
           <CardContent>
             <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">Enhancing the Safety of Vulnerable Road Users at Intersections</h3>
+              <h3 class="resource-card-title">
+                Enhancing the Safety of Vulnerable Road Users at Intersections
+              </h3>
               <p class="resource-card-subtitle">Webinar | March 17, 2023</p>
             </div>
           </CardContent>
           <CardFooter>
             <div class="resource-link-container px-2">
-              <a 
-                class="resource-button" 
-                href={base_url("/assets/intersection-safety/USDOT_Intersection_Safety_Webinar.pdf")} 
-                rel="noopener noreferrer" 
+              <a
+                class="resource-button"
+                href={base_url(
+                  "/assets/intersection-safety/USDOT_Intersection_Safety_Webinar.pdf",
+                )}
+                rel="noopener noreferrer"
                 target="_blank"
               >
-                <PdfIcon size={12}/>
+                <PdfIcon size={12} />
                 Presentation Material
               </a>
               <!-- <a 
