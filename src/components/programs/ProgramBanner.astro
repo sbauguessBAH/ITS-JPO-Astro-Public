@@ -2,16 +2,17 @@
 const { pathname } = Astro.url;
 const { currentTitle } = Astro.props; // Receive the custom title
 
-const segments = pathname.split('/').filter(Boolean);
+const segments = pathname.split("/").filter(Boolean);
 const breadcrumbs = segments.map((segment, index) => {
-  const href = `/${segments.slice(0, index + 1).join('/')}`;
+  const href = `/${segments.slice(0, index + 1).join("/")}`;
   const isLast = index === segments.length - 1;
 
-  // If it's the last item and we passed a title, use it. 
+  // If it's the last item and we passed a title, use it.
   // Otherwise, format the URL slug.
-  const label = (isLast && currentTitle) 
-    ? currentTitle 
-    : segment.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const label =
+    isLast && currentTitle
+      ? currentTitle
+      : segment.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 
   return { label, href, isLast };
 });
@@ -22,17 +23,23 @@ const breadcrumbs = segments.map((segment, index) => {
     <li>
       <a href="/">Home</a>
     </li>
-    
-    {breadcrumbs.map((crumb, index) => (
-      <li>
-        <span class="separator" aria-hidden="true">/</span>
-        {index === breadcrumbs.length - 1 ? (
-          <span class="current" aria-current="page">{crumb.label}</span>
-        ) : (
-          <a href={crumb.href}>{crumb.label}</a>
-        )}
-      </li>
-    ))}
+
+    {
+      breadcrumbs.map((crumb, index) => (
+        <li>
+          <span class="separator" aria-hidden="true">
+            /
+          </span>
+          {index === breadcrumbs.length - 1 ? (
+            <span class="current" aria-current="page">
+              {crumb.label}
+            </span>
+          ) : (
+            <a href={crumb.href}>{crumb.label}</a>
+          )}
+        </li>
+      ))
+    }
   </ol>
 </nav>
 

@@ -1,16 +1,17 @@
 ---
-import base_url from '@/src/lib/base_url';
+import base_url from "@/src/lib/base_url";
 
 interface Props {
-  items: { name: string, path?: string }[]
+  items: { name: string; path?: string }[];
 }
 
 const { items } = Astro.props;
 ---
+
 <style>
   a:hover {
     font-weight: normal;
-    color: rgb(var(--color-brand-dark))
+    color: rgb(var(--color-brand-dark));
   }
   a {
     color: rgb(var(--color-brand));
@@ -21,13 +22,16 @@ const { items } = Astro.props;
     {
       items.map((item, index) => (
         <li
-          class:list={["breadcrumb-item", { active: index === items.length - 1 }]}
+          class:list={[
+            "breadcrumb-item",
+            { active: index === items.length - 1 },
+          ]}
           aria-current={index === items.length - 1 ? "page" : "false"}
         >
           {index === items.length - 1 || !item.path ? (
             <span>{item.name}</span>
           ) : (
-            <a href={base_url(item.path)} >{item.name}</a>
+            <a href={base_url(item.path)}>{item.name}</a>
           )}
         </li>
       ))

@@ -1,25 +1,25 @@
 ---
-import base_url from '@/src/lib/base_url'
+import base_url from "@/src/lib/base_url";
 
-import type { LibraryImageEntry } from './LibraryImage.astro';
+import type { LibraryImageEntry } from "./LibraryImage.astro";
 
-import LibraryImage from './LibraryImage.astro';
+import LibraryImage from "./LibraryImage.astro";
 
 export interface OverlayResource {
-  backgroundImage: LibraryImageEntry
-  color: OverlayResourceColor
-  description: string
-  iconImage?: LibraryImageEntry
-  isExternalLink?: boolean
-  name: string
-  path: string
+  backgroundImage: LibraryImageEntry;
+  color: OverlayResourceColor;
+  description: string;
+  iconImage?: LibraryImageEntry;
+  isExternalLink?: boolean;
+  name: string;
+  path: string;
 }
 
-export type OverlayResourceColor = "blue" | "green" | "orange" | "purple"
+export type OverlayResourceColor = "blue" | "green" | "orange" | "purple";
 
 type Props = OverlayResource;
 
-const { ...props } = Astro.props
+const { ...props } = Astro.props;
 ---
 
 <style>
@@ -27,20 +27,20 @@ const { ...props } = Astro.props
     position: relative;
     border-radius: var(--radius-md);
     text-decoration: none;
-    box-shadow: var(--box-shadow)
+    box-shadow: var(--box-shadow);
   }
 
   .overlay-card:hover {
     font-weight: inherit;
     text-decoration: none;
-    box-shadow: var(--box-shadow-lg)
+    box-shadow: var(--box-shadow-lg);
   }
 
   .overlay-card:focus {
     font-weight: inherit;
     text-decoration: none;
   }
-  
+
   .overlay-card-image {
     width: 100%;
     height: 100%;
@@ -54,10 +54,10 @@ const { ...props } = Astro.props
   .overlay-card-image-overlay {
     /* 0.85 on homepage */
     background-image: linear-gradient(
-      to bottom, 
-      rgba(7, 46, 85, 0.2), 
+      to bottom,
+      rgba(7, 46, 85, 0.2),
       rgba(7, 46, 85, 1)
-    ); 
+    );
     position: absolute;
     width: 100%;
     height: 100%;
@@ -122,7 +122,7 @@ const { ...props } = Astro.props
       to bottom,
       rgba(var(--color-blue), 0.2),
       rgba(var(--color-blue), 0.4)
-    )
+    );
   }
 
   .overlay-card:hover .gradient-green::after {
@@ -131,7 +131,7 @@ const { ...props } = Astro.props
       to bottom,
       rgba(var(--color-green), 0.2),
       rgba(var(--color-green), 0.4)
-    )
+    );
   }
 
   .overlay-card:hover .gradient-orange::after {
@@ -140,7 +140,7 @@ const { ...props } = Astro.props
       to bottom,
       rgba(var(--color-orange), 0.2),
       rgba(var(--color-orange), 0.4)
-    )
+    );
   }
 
   .overlay-card:hover .gradient-purple::after {
@@ -149,7 +149,7 @@ const { ...props } = Astro.props
       to bottom,
       rgba(var(--color-purple), 0.2),
       rgba(var(--color-purple), 0.4)
-    )
+    );
   }
 
   .overlay-card-body {
@@ -206,43 +206,51 @@ const { ...props } = Astro.props
   }
 </style>
 
-<a 
+<a
   aria-label={`Link to Focus Area: ${props.name}`}
   class:list={["overlay-card"]}
   href={props.isExternalLink ? props.path : base_url(props.path)}
-  {...(props.isExternalLink ? { "rel": "noopener noreferrer", "target": "_blank" } : {})}
+  {...props.isExternalLink
+    ? { rel: "noopener noreferrer", target: "_blank" }
+    : {}}
 >
-  <LibraryImage
-    class="overlay-card-image"
-    entry={props.backgroundImage}
-  />
-  <div class:list={[
+  <LibraryImage class="overlay-card-image" entry={props.backgroundImage} />
+  <div
+    class:list={[
       "overlay-card-image-overlay",
       { "gradient-purple": props.color === "purple" },
       { "gradient-orange": props.color === "orange" },
       { "gradient-green": props.color === "green" },
-      { "gradient-blue": props.color === "blue" }
+      { "gradient-blue": props.color === "blue" },
     ]}
-  />
-  <div class:list={["overlay-card-body", { "overlay-card-body-no-icon": !props.iconImage }]}>
-    {props.iconImage && (
-      <div aria-hidden="true" class="overlay-card-icon-container">
-        <div
-          class:list={[
-            "overlay-card-icon",
-            { "background-purple": props.color === "purple" },
-            { "background-orange": props.color === "orange" },
-            { "background-green": props.color === "green" },
-            { "background-blue": props.color === "blue" }
-          ]}
-        >
-          <LibraryImage
-            class="overlay-card-icon-image" 
-            entry={props.iconImage} 
-          />
+  >
+  </div>
+  <div
+    class:list={[
+      "overlay-card-body",
+      { "overlay-card-body-no-icon": !props.iconImage },
+    ]}
+  >
+    {
+      props.iconImage && (
+        <div aria-hidden="true" class="overlay-card-icon-container">
+          <div
+            class:list={[
+              "overlay-card-icon",
+              { "background-purple": props.color === "purple" },
+              { "background-orange": props.color === "orange" },
+              { "background-green": props.color === "green" },
+              { "background-blue": props.color === "blue" },
+            ]}
+          >
+            <LibraryImage
+              class="overlay-card-icon-image"
+              entry={props.iconImage}
+            />
+          </div>
         </div>
-      </div>
-    )}
+      )
+    }
     <div class="overlay-card-content">
       <h3 class="overlay-card-title">
         {props.name}
