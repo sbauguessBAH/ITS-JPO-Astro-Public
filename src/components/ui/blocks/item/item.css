@@ -1,0 +1,207 @@
+/**
+ * Styles for the Item component (shadcn/ui port, no Tailwind).
+ *
+ * These rules consume shadcn's standard CSS variable names:
+ *   --background, --foreground, --border, --muted, --muted-foreground,
+ *   --accent, --accent-foreground, --ring, --radius
+ * Each `var()`
+ * below also has a fallback value so the component still looks reasonable
+ * with no theme defined at all — treat those fallbacks as a neutral
+ * approximation, not an exact copy of shadcn's palette, since the numeric
+ * values weren't verified against shadcn's actual source in this session.
+ */
+
+.ui_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border-radius: calc(var(--radius, 0.625rem) - 2px);
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--foreground, oklch(0.141 0.005 285.823));
+  background-color: transparent;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* Item as a link (rendered as <a> when `href` is passed) */
+a.ui_item {
+  cursor: pointer;
+}
+
+a.ui_item:hover {
+  background-color: var(--accent, oklch(0.967 0.001 286.375));
+  color: var(--accent-foreground, oklch(0.141 0.005 285.823));
+}
+
+a.ui_item:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring, oklch(0.705 0.015 286.067)) 50%, transparent);
+}
+
+/* --- Variants ------------------------------------------------------- */
+
+.ui_item[data-variant='outline'] {
+  border: 1px solid var(--border, oklch(0.92 0.004 286.32));
+}
+
+.ui_item[data-variant='muted'] {
+  background-color: var(--muted, oklch(0.967 0.001 286.375));
+}
+
+/* --- Sizes ------------------------------------------------------------ */
+
+.ui_item[data-size='default'] {
+  padding: 1rem;
+  min-height: 4rem;
+}
+
+.ui_item[data-size='sm'] {
+  padding: 0.75rem;
+  gap: 0.625rem;
+  font-size: 0.8125rem;
+  min-height: 3.25rem;
+}
+
+.ui_item[data-size='xs'] {
+  padding: 0.5rem 0.625rem;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  min-height: 2.5rem;
+}
+
+/* --- ItemGroup ---------------------------------------------------------- */
+
+.ui_item-group {
+  display: flex;
+  flex-direction: column;
+  border-radius: calc(var(--radius, 0.625rem) - 2px);
+}
+
+.ui_item-group > .ui_item[data-variant='outline'] {
+  border-radius: 0;
+  border-bottom-width: 0;
+}
+
+.ui_item-group > .ui_item[data-variant='outline']:first-child {
+  border-top-left-radius: calc(var(--radius, 0.625rem) - 2px);
+  border-top-right-radius: calc(var(--radius, 0.625rem) - 2px);
+}
+
+.ui_item-group > .ui_item[data-variant='outline']:last-child {
+  border-bottom-left-radius: calc(var(--radius, 0.625rem) - 2px);
+  border-bottom-right-radius: calc(var(--radius, 0.625rem) - 2px);
+  border-bottom-width: 1px;
+}
+
+/* --- ItemSeparator -------------------------------------------------- */
+
+.ui_item-separator {
+  height: 1px;
+  width: 100%;
+  flex-shrink: 0;
+  background-color: var(--border, oklch(0.92 0.004 286.32));
+  margin: 0.25rem 0;
+}
+
+/* --- ItemMedia -------------------------------------------------------- */
+
+.ui_item-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ui_item-media[data-variant='icon'] {
+  width: 2rem;
+  height: 2rem;
+  border-radius: calc(var(--radius, 0.625rem) - 4px);
+  background-color: var(--muted, oklch(0.967 0.001 286.375));
+  color: var(--muted-foreground, oklch(0.552 0.014 285.938));
+}
+
+.ui_item-media[data-variant='icon'] svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.ui_item-media[data-variant='image'] {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: calc(var(--radius, 0.625rem) - 4px);
+  overflow: hidden;
+}
+
+.ui_item-media[data-variant='image'] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ui_item-media[data-variant='default'] svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--muted-foreground, oklch(0.552 0.014 285.938));
+}
+
+/* --- ItemContent ------------------------------------------------------ */
+
+.ui_item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* --- ItemTitle / ItemDescription --------------------------------------- */
+
+.ui_item-title {
+  font-weight: 500;
+  color: var(--foreground, oklch(0.141 0.005 285.823));
+  line-height: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.ui_item-description {
+  margin: 0;
+  color: var(--muted-foreground, oklch(0.552 0.014 285.938));
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- ItemActions -------------------------------------------------------- */
+
+.ui_item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* --- ItemHeader / ItemFooter -------------------------------------------- */
+
+.ui_item-header,
+.ui_item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--muted-foreground, oklch(0.552 0.014 285.938));
+}

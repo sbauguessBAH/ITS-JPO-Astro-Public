@@ -1,0 +1,38 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import './item.css'
+
+interface Props extends Omit<HTMLAttributes<'div'>, 'class'> {
+  /** Visual style of the item. Defaults to "default". */
+  variant?: 'default' | 'outline' | 'muted'
+  /** Spacing/density of the item. Defaults to "default". */
+  size?: 'default' | 'sm' | 'xs'
+  /** If provided, the item renders as an <a> instead of a <div>. */
+  href?: string
+  class?: string
+}
+
+const {
+  variant = 'default',
+  size = 'default',
+  href,
+  class: className,
+  ...rest
+} = Astro.props
+
+// Astro doesn't support a React-style `asChild`/`render` prop, so we swap
+// the rendered tag based on `href` instead — the idiomatic Astro way to
+// make a component polymorphic between a link and a plain container.
+const Tag = href ? 'a' : 'div'
+---
+
+<Tag
+  data-slot="ui_item"
+  data-variant={variant}
+  data-size={size}
+  class:list={['ui_item', className]}
+  href={href}
+  {...rest}
+>
+  <slot />
+</Tag>
