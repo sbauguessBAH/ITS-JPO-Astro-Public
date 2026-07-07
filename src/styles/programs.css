@@ -51,6 +51,18 @@
   --padding-md: 0.75rem;
 
   /*****************************
+    Colors
+  *****************************/
+
+  /* Slightly darker shade of the ITS JPO blue */
+  --color-default: oklch(0.433 0.0983 240.78);
+  --color-default-foreground: oklch(1 0 0);
+
+  /** Base gray color--comparable to --ai-card-gray-border and --ai-text-medium */
+  --color-secondary: oklch(0.928 0 0);
+  --color-secondary-foreground: oklch(0.3562 0 0);
+
+  /*****************************
     Size
   *****************************/
 

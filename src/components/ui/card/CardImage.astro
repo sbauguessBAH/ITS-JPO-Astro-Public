@@ -1,0 +1,32 @@
+---
+import LibraryImage, { type LibraryImageEntry } from "@/src/components/programs/LibraryImage.astro";
+import { type LocalImageProps } from 'astro:assets';
+
+type Props = Omit<LocalImageProps, 'alt' | 'src'> & {
+  alt?: string;
+  /** Reference to library entry */
+  entry: LibraryImageEntry;
+  /** Provide width if horizontal card */
+  width?: number;
+  /** Provide height if vertical card */
+  height?: number;
+  rounded?: boolean;
+};
+
+const { 
+  entry,
+  width,
+  height,
+  rounded = true,
+  ...props
+} = Astro.props;
+---
+<LibraryImage 
+  entry={entry} 
+  class:list={[
+    "ui_card-image", 
+    rounded && "ui_card-image_rounded"
+  ]}
+  style={{ width: width ? `${width}px` : undefined, height: height ? `${height}px` : undefined}}
+  {...props}
+/>

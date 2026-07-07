@@ -3,6 +3,9 @@ import base_url from '@/src/lib/base_url';
 import type { HTMLAttributes } from 'astro/types';
 import './card.css';
 
+/**
+ * TODO: Test out and clean up horizontal orientation
+ */
 type Props = HTMLAttributes<"div"> & {
   /**
    * Uses Bootstrap box shadow classes
@@ -14,6 +17,7 @@ type Props = HTMLAttributes<"div"> & {
   size?: "default" | "sm";
   href?: string;
   isExternal?: boolean;
+  orientation?: "vertical" | "horizontal";
 }
 const {
   shadow = "sm",
@@ -21,9 +25,11 @@ const {
   isExternal,
   class: className,
   size,
+  orientation = "vertical",
   ...rest
 } = Astro.props
-const Tag = href ? "a" : "div";
+
+const Component = href ? "a" : "div";
 /**
  * @privateRemarks
  *
@@ -37,23 +43,25 @@ const shadowClass = {
   'shadow': shadow === 'md',
   'shadow-lg': shadow === 'lg',
 };
+
 const linkAttrs = href && isExternal
   ? { href, target: "_blank", rel: "noopener noreferrer" }
   : href
     ? { href: base_url(href) }
     : undefined;
 ---
-<Tag
-  data-slot="program-card"
+<Component
+  data-slot="ui_card"
   data-size={size}
+  data-orientation={orientation}
   class:list={[
-    "program-card",
+    "ui_card",
     Object.entries(shadowClass).find(([, isActive]) => isActive)?.[0],
-    href && "program-card-link",
+    href && "ui_card_link",
     className
   ]}
   {...linkAttrs}
   {...rest}
 >
   <slot/>
-</Tag>
+</Component>
