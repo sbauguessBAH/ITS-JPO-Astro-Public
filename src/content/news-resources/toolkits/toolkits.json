@@ -1,71 +1,6 @@
 {
     "outreach_toolkits":
     [
-    {
-    "id": 1,
-    "title": "Vehicle-to-Everything (V2X) Deployment Toolkit",
-    "subtitle": "V2X",
-    "description":"Resources to help communities and agencies communicate the benefits of V2X technology to local stakeholders and the public.",
-    "date": "Updated February 2026",
-    "content_types":["fact sheet","talking points", "social posts", "infographic","slides"],
-    "topics":["V2X"],
-    "url":"/news-outreach-tools/news-resources/toolkits/v2x-deployment-toolkit"
-
-    },
-{
-    "id": 2,
-    "title": "Artificial Intelligence in Transportation Toolkit",
-    "subtitle": "AI",
-    "description":"Shareable materials explaining how AI is being used to improve safety and efficiency across the transportation system.",
-    "date": "Updated January 2026",
-    "content_types":["fact sheet","infographic", "talking points", "social posts"],
-    "topics":["AI"],
-    "url":"/news-outreach-tools/news-resources/toolkits/ai-in-transportation-toolkit"
-},
-{
-    "id": 3,
-    "title": "Intersection Safety Challenge Outreach Toolkit",
-    "subtitle": "Intersection Safety",
-    "description":"Materials for local agencies and community partners to raise awareness about ITS-enabled intersection safety technologies.",
-    "date": "Updated December 2025",
-    "content_types":["fact sheet","infographic", "talking points", "slides", "photos"],
-    "topics":["Intersection Safety"],
-    "url":"/news-outreach-tools/news-resources/toolkits/intersection-safety-challenge-outreach-toolkit"
-
-},
-{
-    "id": 4,
-    "title": "Automation Program Stakeholder Toolkit",
-    "subtitle": "Automation",
-    "description":"Resources for stakeholders engaged in automated vehicle research, policy, and deployment conversations.",
-    "date": "Updated November 2025",
-    "content_types":["fact sheet", "slides", "talking points", "social posts"],
-    "topics":["Automation"],
-    "url":"/news-outreach-tools/news-resources/toolkits/automation-program-stakeholder-toolkit"
-
-},
-{
-    "id": 5,
-    "title": "ITS4US Complete Trip Program Toolkit",
-    "subtitle": "ITS4US",
-    "description":"Community-facing materials to share the story of ITS4US deployments improving mobility for underserved populations.",
-    "date": "Updated October 2025",
-    "content_types":["fact sheet", "infographic", "social posts", "photos"],
-    "topics":["ITS4US"],
-    "url":"/news-outreach-tools/news-resources/toolkits/its4us-complete-trip-program-toolkit"
-
-},
-{
-    "id": 6,
-    "title": "ITS for Freight & Commercial Vehicles Toolkit",
-    "subtitle": "Freight",
-    "description":"Resources for freight industry stakeholders, port operators, and fleet managers on ITS technologies for commercial transportation.",
-    "date": "Updated September 2025",
-    "content_types":["fact sheet", "infographic", "talking points"],
-    "topics":["Freight"],
-    "url":"/news-outreach-tools/news-resources/toolkits/its-freight-commercial-vehicles-toolkit"
-
-},
 {
     "id": 36,
     "title": "Media Kit: Maricopa County DOT (MCDOT) Connected Vehicle Acceleration Zone (CVAZ)",
@@ -285,6 +220,71 @@
             "contact": "Brian.Cronin@dot.gov",
             "profile_image_key": "brian_c"}]
         },
+         {
+    "id": 1,
+    "title": "Vehicle-to-Everything (V2X) Deployment Toolkit",
+    "subtitle": "V2X",
+    "description":"Resources to help communities and agencies communicate the benefits of V2X technology to local stakeholders and the public.",
+    "date": "Updated February 2026",
+    "content_types":["fact sheet","talking points", "social posts", "infographic","slides"],
+    "topics":["V2X"],
+    "url":"/news-outreach-tools/news-resources/toolkits/v2x-deployment-toolkit"
+
+    },
+{
+    "id": 2,
+    "title": "Artificial Intelligence in Transportation Toolkit",
+    "subtitle": "AI",
+    "description":"Shareable materials explaining how AI is being used to improve safety and efficiency across the transportation system.",
+    "date": "Updated January 2026",
+    "content_types":["fact sheet","infographic", "talking points", "social posts"],
+    "topics":["AI"],
+    "url":"/news-outreach-tools/news-resources/toolkits/ai-in-transportation-toolkit"
+},
+{
+    "id": 3,
+    "title": "Intersection Safety Challenge Outreach Toolkit",
+    "subtitle": "Intersection Safety",
+    "description":"Materials for local agencies and community partners to raise awareness about ITS-enabled intersection safety technologies.",
+    "date": "Updated December 2025",
+    "content_types":["fact sheet","infographic", "talking points", "slides", "photos"],
+    "topics":["Intersection Safety"],
+    "url":"/news-outreach-tools/news-resources/toolkits/intersection-safety-challenge-outreach-toolkit"
+
+},
+{
+    "id": 4,
+    "title": "Automation Program Stakeholder Toolkit",
+    "subtitle": "Automation",
+    "description":"Resources for stakeholders engaged in automated vehicle research, policy, and deployment conversations.",
+    "date": "Updated November 2025",
+    "content_types":["fact sheet", "slides", "talking points", "social posts"],
+    "topics":["Automation"],
+    "url":"/news-outreach-tools/news-resources/toolkits/automation-program-stakeholder-toolkit"
+
+},
+{
+    "id": 5,
+    "title": "ITS4US Complete Trip Program Toolkit",
+    "subtitle": "ITS4US",
+    "description":"Community-facing materials to share the story of ITS4US deployments improving mobility for underserved populations.",
+    "date": "Updated October 2025",
+    "content_types":["fact sheet", "infographic", "social posts", "photos"],
+    "topics":["ITS4US"],
+    "url":"/news-outreach-tools/news-resources/toolkits/its4us-complete-trip-program-toolkit"
+
+},
+{
+    "id": 6,
+    "title": "ITS for Freight & Commercial Vehicles Toolkit",
+    "subtitle": "Freight",
+    "description":"Resources for freight industry stakeholders, port operators, and fleet managers on ITS technologies for commercial transportation.",
+    "date": "Updated September 2025",
+    "content_types":["fact sheet", "infographic", "talking points"],
+    "topics":["Freight"],
+    "url":"/news-outreach-tools/news-resources/toolkits/its-freight-commercial-vehicles-toolkit"
+
+},
         {
             "id": 33,
     "title": "Transportation Research Board (TRB) Annual Meeting 2026",
