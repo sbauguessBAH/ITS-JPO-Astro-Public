@@ -186,6 +186,96 @@
             "profile_image_key": "brian_c"}]
 },
 {
+    "id": 37,
+    "title": "Media Kit: Texas A&M Transportation Institute (TTI) Texas TRUST V2X Program",
+    "subtitle": "Media Kit",
+    "description":"The TTI Texas TRUST Vehicle-to-Everything (V2X) Program is part of the V2X Accelerator Program funded by the Intelligent Transportation Systems Joint Program Office (ITS JPO).",
+    "date": "2026",
+    "content_types":["print materials", "video", "photos", "webinar materials", "media coverage"],
+    "topics":["V2X", "TTI"],
+    "url":"/news-outreach-tools/news-resources/toolkits/tti-texas-trust-v2x-program-mediakit",
+    "print_materials": [{
+        "title": "TTI Texas TRUST V2X Factsheet",
+        "href": "https://v2xtexastrust.com/wp-content/uploads/2025/10/V2X-factsheet-TRUST-August-2025_Digital10032025_508c-1.pdf",
+        "img_src": "/assets/images/toolkits/tti-texas-trust-v2x-thumb.png",
+        "material_type": "Factsheet",
+        "date": "2026"
+    }],
+    "videos": [{
+        "title": "MCDOT CVAZ Project Video",
+        "produced_by": "MCDOT Produced",
+        "duration": "long",
+        "platform": "YouTube",
+        "href": "https://youtu.be/LuTtkeNEESo?si=sQ4EHZgoMfBHpJzu",
+        "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
+        "material_type": "Video",
+        "date": "2026",
+        "availability": "Available"
+    },
+{
+        "title": "CVAZ History Video",
+        "produced_by": "MCDOT Produced",
+        "duration": "short",
+        "platform": "N/A",
+        "href": "",
+        "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
+        "material_type": "Video",
+        "date": "2026",
+        "availability": "N/A"
+    }],
+    "image_library": [],
+    "webinar_materials": [{
+    "id": 32, 
+    "date": "October 7, 2025", 
+    "program":"V2X Accelerator Program", 
+    "description":"MCDOT Deployment Concept Webinar", 
+    "host": "ITS JPO", 
+    "season": "Fall 2025",
+    "recording_href": "https://youtu.be/J51aSCEx1u0?si=d-XeR07d12DoXki3",
+    "slides_href": "https://itsa.org/wp-content/uploads/2025/10/MCDOT-V2X-Accelerator-Webinar-10-07-25.pdf"
+    }],
+    "media_coverage": [{
+        "title": "Experience How Connected Vehicle Technology Is Shaping Smarter Travel",
+        "href": "",
+        "platform": "Facebook",
+        "media_type": "video"
+    },
+{
+        "title": "CVAZ Showcase Event Post",
+        "href": "",
+        "platform": "Facebook",
+        "media_type": "post"
+    },
+{
+        "title": "Inside Look at New Traffic Technology to Make Roads Safer, More Efficient",
+        "href": "",
+        "platform": "ABC15 News",
+        "media_type": "article"
+    }],
+    "belt_cta": {
+        "title": "Connected Vehicle Acceleration Zone",
+        "description": "For more information on the Maricopa DOT Connected Vehicle Acceleration Zone, visit the project website here.",
+        "button_text": "Visit Project Site",
+        "preview_image": "/assets/images/toolkits/Maricopa-website-thumb.png",
+        "href": "https://www.maricopa.gov/6094/Connected-Vehicle-Acceleration-Zone"
+    },
+      "contacts": [
+        {
+            "name": "Norah Ocel",
+            "title": "Program Manager", 
+            "department": "U.S. Department Of Transportation",
+            "office": "Intelligent Transportations Systems Joint Program Office",
+            "contact": "Norah.Ocel@dot.gov",
+            "profile_image_key": "norah_o"},
+        {
+            "name": "Brian Cronin",
+            "title": "Director", 
+            "department": "U.S. Department Of Transportation",
+            "office": "Intelligent Transportations Systems Joint Program Office",
+            "contact": "Brian.Cronin@dot.gov",
+            "profile_image_key": "brian_c"}]
+},
+{
     "id": 33,
     "title": "Transportation Research Board (TRB) Annual Meeting 2026",
     "subtitle": "Media Kit",
