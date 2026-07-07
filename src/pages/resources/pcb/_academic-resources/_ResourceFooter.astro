@@ -8,6 +8,7 @@ import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 
 import { academicResources } from "./resources";
 ---
+
 <style>
   .resource-card:hover {
     background: rgba(var(--color-brand-light), 0.5);
@@ -55,25 +56,27 @@ import { academicResources } from "./resources";
   }
 </style>
 <ProgramSection color="gray">
-  <h2 class="program-title-lg mb-4 text-center">
-    All Academic Resources
-  </h2>
+  <h2 class="program-title-lg mb-4 text-center">All Academic Resources</h2>
   <div class="card-grid">
-    {academicResources.map(resource => (
-      <Card class="resource-card" href={`/resources/pcb/academic-resources/${resource.slug}`} shadow="none">
-        <CardContent class="resource-card-body">
-          <Image 
-            alt={resource.title}
-            class="resource-card-image"
-            src={resource.image}
-          />
-        </CardContent>
-        <CardFooter class="resource-card-footer">
-          <h3 class="program-title-xs text-foreground">
-            {resource.title}
-          </h3>
-        </CardFooter>
-      </Card>
-    ))}
+    {
+      academicResources.map((resource) => (
+        <Card
+          class="resource-card"
+          href={`/resources/pcb/academic-resources/${resource.slug}`}
+          shadow="none"
+        >
+          <CardContent class="resource-card-body">
+            <Image
+              alt={resource.title}
+              class="resource-card-image"
+              src={resource.image}
+            />
+          </CardContent>
+          <CardFooter class="resource-card-footer">
+            <h3 class="program-title-xs text-foreground">{resource.title}</h3>
+          </CardFooter>
+        </Card>
+      ))
+    }
   </div>
 </ProgramSection>

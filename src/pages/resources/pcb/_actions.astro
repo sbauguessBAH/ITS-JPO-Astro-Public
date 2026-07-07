@@ -7,13 +7,15 @@ import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
 
 const actions = [
   {
-    description: "Discover available training sessions to enhance your ITS knowledge.",
+    description:
+      "Discover available training sessions to enhance your ITS knowledge.",
     image: "pcb/actions/trainings",
     path: "/resources/pcb/trainings",
     title: "Explore ITS Trainings",
   },
   {
-    description: "Access brief videos for quick, focused learning on ITS topics.",
+    description:
+      "Access brief videos for quick, focused learning on ITS topics.",
     image: "pcb/actions/microlearning",
     path: "/resources/pcb/microlearning",
     title: "Explore Microlearning Videos",
@@ -25,7 +27,8 @@ const actions = [
   //   image: "resources",
   // },
   {
-    description: "Engage with your peers to share your challenges, best practices, and experiences advancing ITS technologies.",
+    description:
+      "Engage with your peers to share your challenges, best practices, and experiences advancing ITS technologies.",
     image: "pcb/actions/peer-exchanges",
     path: "/resources/pcb/peer-exchanges",
     title: "Collaborate through Peer Exchanges",
@@ -42,8 +45,9 @@ const actions = [
   //   path: "/resources/pcb/webinars",
   //   image: "webinars"
   // }
-]
+];
 ---
+
 <style>
   .card-grid {
     display: grid;
@@ -60,17 +64,15 @@ const actions = [
   }
 </style>
 <div class="card-grid">
-  {actions.map(action => (
-    <Card href={action.path} size="default">
-      <CardImage entry={action.image} height={200}/>
-      <CardHeader>
-        <CardTitle>
-          {action.title}
-        </CardTitle>
-        <CardDescription>
-          {action.description}
-        </CardDescription>
-      </CardHeader>
-    </Card>
-  ))}
+  {
+    actions.map((action) => (
+      <Card href={action.path} size="default">
+        <CardImage entry={action.image} height={200} />
+        <CardHeader>
+          <CardTitle>{action.title}</CardTitle>
+          <CardDescription>{action.description}</CardDescription>
+        </CardHeader>
+      </Card>
+    ))
+  }
 </div>

@@ -1,7 +1,4 @@
 ---
-// import { Image } from "astro:assets";
-
-// import cohortImage from "@/src/assets/images/pcb/cohort-map.png";
 import Link from "@/src/components/Link.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 
@@ -203,7 +200,7 @@ import CohortMap from "./_cohort-map.vue";
       </p>
     </ProgramSection>
     <ProgramSection class="max-w-lg">
-      <CohortMap client:only="vue"/>
+      <CohortMap client:only="vue" />
       <!-- <figure class="figure">
         <Image
           class="map-card-image"

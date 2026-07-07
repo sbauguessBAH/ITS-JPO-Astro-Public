@@ -5,6 +5,7 @@ import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "../_layout.astro";
 ---
+
 <style>
   .overview-section {
     display: flex;
@@ -31,26 +32,35 @@ import Layout from "../_layout.astro";
 <Layout>
   <main class="program-main">
     <ProgramSection>
-      <Breadcrumb items={[
-        { name: "Peer Exchanges", path: "/resources/pcb/peer-exchanges" },
-        { name: "Queue Warning" }
-      ]}/>
+      <Breadcrumb
+        items={[
+          { name: "Peer Exchanges", path: "/resources/pcb/peer-exchanges" },
+          { name: "Queue Warning" },
+        ]}
+      />
       <div class="overview-section">
         <div class="overview-text">
           <h2 class="program-title-lg">Queue Warning Peer Exchange</h2>
           <p class="program-text">
-            The Queue Warning Peer Exchange, hosted by the U.S. Department of Transportation (USDOT), 
-            brought together transportation professionals to discuss the implementation and benefits 
-            of queue warning systems. These systems are designed to alert drivers of potential hazards 
-            caused by stopped or slow-moving traffic ahead, enhancing safety and reducing the risk of rear-end collisions.
+            The Queue Warning Peer Exchange, hosted by the U.S. Department of
+            Transportation (USDOT), brought together transportation
+            professionals to discuss the implementation and benefits of queue
+            warning systems. These systems are designed to alert drivers of
+            potential hazards caused by stopped or slow-moving traffic ahead,
+            enhancing safety and reducing the risk of rear-end collisions.
           </p>
           <p class="program-text">
-            Participants shared experiences, challenges, and best practices in deploying queue warning technologies 
-            across various jurisdictions, fostering a collaborative environment for knowledge exchange.
+            Participants shared experiences, challenges, and best practices in
+            deploying queue warning technologies across various jurisdictions,
+            fostering a collaborative environment for knowledge exchange.
           </p>
         </div>
         <div class="overview-image">
-          <Image alt="Queue Warning System" class="img-fluid radius-md shadow" src={qwsImage} />
+          <Image
+            alt="Queue Warning System"
+            class="img-fluid radius-md shadow"
+            src={qwsImage}
+          />
         </div>
       </div>
     </ProgramSection>

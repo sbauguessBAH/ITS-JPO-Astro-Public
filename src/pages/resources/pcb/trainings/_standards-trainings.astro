@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-
 import { getCollection, render } from "astro:content";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Card from "@/src/components/ui/blocks/card/Card.astro";
@@ -10,15 +9,13 @@ import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
 import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import base_url from "@/src/lib/base_url";
-
 import Layout from "../_layout.astro";
 
-const trainings: CollectionEntry<"pcbStandardsTrainings">[] = 
-  await getCollection("pcbStandardsTrainings")
-
+const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
+  await getCollection("pcbStandardsTrainings");
 ---
+
 <style>
-  
   .training-card {
     border: 1px solid var(--border-light);
     border-radius: 8px;
@@ -100,7 +97,7 @@ const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
   .training-card-footer {
     background: rgb(var(--color-gray-light));
     display: flex;
-    gap: var(--size-sm)
+    gap: var(--size-sm);
   }
   .training-card-body {
     padding: var(--size);
@@ -118,125 +115,148 @@ const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
   }
   .training-card-button:hover {
     font-weight: inherit;
-    background: rgb(var(--color-brand-dark))
+    background: rgb(var(--color-brand-dark));
   }
 </style>
 <Layout>
   <div class="program-main">
     <ProgramSection>
-      <Breadcrumb items={[
-        { name: "Trainings", path: "/resources/pcb/trainings" },
-        { name: "Standards Trainings" }
-      ]}/>
+      <Breadcrumb
+        items={[
+          { name: "Trainings", path: "/resources/pcb/trainings" },
+          { name: "Standards Trainings" },
+        ]}
+      />
       <h2 class="program-title-lg mb-4">Standards Trainings</h2>
       <p class="program-text">
-        The ITS Professional Capacity Building Program (ITS PCB) is pleased 
-        to offer FREE ITS transit standards training. This series
-        is for practitioners in state and local highway agencies and transit agencies 
-        who seek the skills needed to procure, test, implement, and operate 
-        standards-based systems and devices. Consultants, system designers, integrators, 
-        and testers will also find the training informative.
+        The ITS Professional Capacity Building Program (ITS PCB) is pleased to
+        offer FREE ITS transit standards training. This series is for
+        practitioners in state and local highway agencies and transit agencies
+        who seek the skills needed to procure, test, implement, and operate
+        standards-based systems and devices. Consultants, system designers,
+        integrators, and testers will also find the training informative.
       </p>
       <p class="program-text mb-4">
-        Documents linked below were last updated in 2021. They remain available in their original published format
-        to ensure public access. Click the title to view additional information about each training module.
+        Documents linked below were last updated in 2021. They remain available
+        in their original published format to ensure public access. Click the
+        title to view additional information about each training module.
       </p>
       <div class="training-list">
-        {trainings
-          .toSorted((a, b) => a.data.module - b.data.module)
-          .map(async training => {
-            const { Content } = await render(training);
-            return (
-              // <article class="training-card">
-              //   <div class="training-card-header">
-              //     <p class="training-card-subheading">MODULE {training.data.module} | {training.data.code}</p>
-              //     <div class="training-card-length">{training.data.length}</div>
-              //   </div>
-              //   <h2 class="training-card-heading">{training.data.title}</h2>
-              //   <div class="training-card-body">
-              //     <div 
-              //       class="training-card-preview" 
-              //       id={`preview-${training.id}`}
-              //     >
-              //       {training.body.substring(0, previewLength) + "..."}
-              //     </div>
-              //     <div 
-              //       class="training-card-full" 
-              //       id={`full-${training.id}`}
-              //       hidden
-              //     >
-              //       <Content/>
-              //     </div>
-              //     <button 
-              //       class="training-card-button"
-              //       aria-controls={`full-${training.id}`}
-              //       data-preview-id={`preview-${training.id}`}
-              //       data-full-id={`full-${training.id}`}
-              //     >
-              //       Show More
-              //     </button>
-              //   </div>
-              // </article>
-              <Card id={training.id}>
-                <CardHeader class="p-0">
-                  <button 
-                    aria-controls={`collapse-${training.id}`} 
-                    aria-expanded="false" 
-                    class="training-card-header" 
-                    data-target={`#collapse-${training.id}`}
-                    data-toggle="collapse"
-                    type="button"
-                  >
-                    <div class="card-metadata">
-                      <p class="card-module-number">
-                        MODULE {training.data.module} | {training.data.code}
-                      </p>
-                      <div class="card-module-length">
-                        {training.data.length}
+        {
+          trainings
+            .toSorted((a, b) => a.data.module - b.data.module)
+            .map(async (training) => {
+              const { Content } = await render(training);
+              return (
+                // <article class="training-card">
+                //   <div class="training-card-header">
+                //     <p class="training-card-subheading">MODULE {training.data.module} | {training.data.code}</p>
+                //     <div class="training-card-length">{training.data.length}</div>
+                //   </div>
+                //   <h2 class="training-card-heading">{training.data.title}</h2>
+                //   <div class="training-card-body">
+                //     <div
+                //       class="training-card-preview"
+                //       id={`preview-${training.id}`}
+                //     >
+                //       {training.body.substring(0, previewLength) + "..."}
+                //     </div>
+                //     <div
+                //       class="training-card-full"
+                //       id={`full-${training.id}`}
+                //       hidden
+                //     >
+                //       <Content/>
+                //     </div>
+                //     <button
+                //       class="training-card-button"
+                //       aria-controls={`full-${training.id}`}
+                //       data-preview-id={`preview-${training.id}`}
+                //       data-full-id={`full-${training.id}`}
+                //     >
+                //       Show More
+                //     </button>
+                //   </div>
+                // </article>
+                <Card id={training.id}>
+                  <CardHeader class="p-0">
+                    <button
+                      aria-controls={`collapse-${training.id}`}
+                      aria-expanded="false"
+                      class="training-card-header"
+                      data-target={`#collapse-${training.id}`}
+                      data-toggle="collapse"
+                      type="button"
+                    >
+                      <div class="card-metadata">
+                        <p class="card-module-number">
+                          MODULE {training.data.module} | {training.data.code}
+                        </p>
+                        <div class="card-module-length">
+                          {training.data.length}
+                        </div>
                       </div>
+                      <h3 class="program-title-md">{training.data.title}</h3>
+                    </button>
+                  </CardHeader>
+                  <CardContent class="p-0">
+                    <div
+                      class="collapse training-card-body"
+                      id={`collapse-${training.id}`}
+                    >
+                      <Content />
                     </div>
-                    <h3 class="program-title-md">
-                      {training.data.title}
-                    </h3>
-                  </button>
-                </CardHeader>
-                <CardContent class="p-0">
-                  <div
-                    class="collapse training-card-body" 
-                    id={`collapse-${training.id}`}  
-                  >
-                    <Content/>
-                  </div>
-                </CardContent>
-                <CardFooter class="training-card-footer">
-                  {training.data.presentation && (
-                    <a class="training-card-button" href={base_url(training.data.presentation)} rel="noopener noreferrer" target="_blank">
-                      <PdfIcon/>
-                      Presentation
-                    </a>
-                  )}
-                  {training.data.supplement && (
-                    <a class="training-card-button" href={base_url(training.data.supplement)} rel="noopener noreferrer" target="_blank">
-                      <PdfIcon/>
-                      Supplement
-                    </a>
-                  )}
-                  {training.data.transcript && (
-                    <a class="training-card-button" href={base_url(training.data.transcript)} rel="noopener noreferrer" target="_blank">
-                      <PdfIcon/>
-                      Course Transcript
-                    </a>
-                  )}
-                  {training.data.chat && (
-                    <a class="training-card-button" href={base_url(training.data.chat)} rel="noopener noreferrer" target="_blank">
-                      <PdfIcon/>
-                      Chat Transcript
-                    </a>
-                  )}
-                </CardFooter>
-              </Card>
-            )
-        })}
+                  </CardContent>
+                  <CardFooter class="training-card-footer">
+                    {training.data.presentation && (
+                      <a
+                        class="training-card-button"
+                        href={base_url(training.data.presentation)}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <PdfIcon />
+                        Presentation
+                      </a>
+                    )}
+                    {training.data.supplement && (
+                      <a
+                        class="training-card-button"
+                        href={base_url(training.data.supplement)}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <PdfIcon />
+                        Supplement
+                      </a>
+                    )}
+                    {training.data.transcript && (
+                      <a
+                        class="training-card-button"
+                        href={base_url(training.data.transcript)}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <PdfIcon />
+                        Course Transcript
+                      </a>
+                    )}
+                    {training.data.chat && (
+                      <a
+                        class="training-card-button"
+                        href={base_url(training.data.chat)}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <PdfIcon />
+                        Chat Transcript
+                      </a>
+                    )}
+                  </CardFooter>
+                </Card>
+              );
+            })
+        }
       </div>
     </ProgramSection>
   </div>
@@ -250,16 +270,18 @@ const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
     }
 
     init() {
-      const toggleButtons = document.querySelectorAll<HTMLButtonElement>(".training-card-button");
-      
-      toggleButtons.forEach(button => {
-        button.addEventListener("click", () => this.toggleContent(button))
-      })
+      const toggleButtons = document.querySelectorAll<HTMLButtonElement>(
+        ".training-card-button",
+      );
+
+      toggleButtons.forEach((button) => {
+        button.addEventListener("click", () => this.toggleContent(button));
+      });
     }
 
     toggleContent(button: HTMLButtonElement) {
-      const previewId = button.dataset.previewId
-      const fullId = button.dataset.fullId
+      const previewId = button.dataset.previewId;
+      const fullId = button.dataset.fullId;
 
       if (!previewId || !fullId) return;
 
@@ -268,13 +290,13 @@ const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
 
       if (!previewElement || !fullElement) return;
 
-      const isExpanded = button.getAttribute('aria-expanded') === "true";
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
 
       if (isExpanded) {
         previewElement.removeAttribute("hidden");
         fullElement.setAttribute("hidden", "");
         button.setAttribute("aria-expanded", "false");
-        button.textContent = "Show More"
+        button.textContent = "Show More";
       } else {
         previewElement.setAttribute("hidden", "");
         fullElement.removeAttribute("hidden");
@@ -288,5 +310,5 @@ const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
 
   document.addEventListener("DOMContentLoaded", () => {
     new ContentExpander();
-  })
+  });
 </script>

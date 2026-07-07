@@ -7,6 +7,7 @@ import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 
 import Layout from "../_layout.astro";
 ---
+
 <style>
   .overview-section {
     display: flex;
@@ -33,31 +34,39 @@ import Layout from "../_layout.astro";
 <Layout>
   <main class="program-main">
     <ProgramSection>
-      <Breadcrumb items={[
-        { name: "Peer Exchanges", path: "/resources/pcb/peer-exchanges" },
-        { name: "Mobility on Demand" }
-      ]}/>
+      <Breadcrumb
+        items={[
+          { name: "Peer Exchanges", path: "/resources/pcb/peer-exchanges" },
+          { name: "Mobility on Demand" },
+        ]}
+      />
       <div class="overview-section">
         <div class="overview-text">
           <h2 class="program-title-lg">
             Mobility on Demand (MOD) Peer Exchange
           </h2>
           <p class="program-text">
-            The Mobility on Demand (MOD) Peer Exchange Series, hosted by the U.S. Department 
-            of Transportation (USDOT), facilitated interactive dialogues that brought together 
-            stakeholders to discuss key, targeted topics that impact MOD deployment and adoption. 
+            The Mobility on Demand (MOD) Peer Exchange Series, hosted by the
+            U.S. Department of Transportation (USDOT), facilitated interactive
+            dialogues that brought together stakeholders to discuss key,
+            targeted topics that impact MOD deployment and adoption.
           </p>
           <p class="program-text">
-            This series aimed to support state-of-the-industry knowledge sharing 
-            regarding topic-specific needs and lessons learned, as well as opportunities 
-            for growth to advance MOD as a tool to support mobility and efficiency. 
-            These virtual peer exchanges featured presentations by subject matter experts 
-            and opportunities for attendees to engage with these experts as well 
-            as other peers in the space.
+            This series aimed to support state-of-the-industry knowledge sharing
+            regarding topic-specific needs and lessons learned, as well as
+            opportunities for growth to advance MOD as a tool to support
+            mobility and efficiency. These virtual peer exchanges featured
+            presentations by subject matter experts and opportunities for
+            attendees to engage with these experts as well as other peers in the
+            space.
           </p>
         </div>
         <div class="overview-image">
-          <Image alt="Arlington MOD Vehicle" class="img-fluid radius-md shadow" src={arlingtonImage} />
+          <Image
+            alt="Arlington MOD Vehicle"
+            class="img-fluid radius-md shadow"
+            src={arlingtonImage}
+          />
         </div>
       </div>
     </ProgramSection>

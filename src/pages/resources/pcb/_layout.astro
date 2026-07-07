@@ -4,8 +4,8 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
 import "@/src/styles/programs.css";
 
 const keywords = [
-  "ITS Professional Capacity Building Program", 
-  "ITS PCB Program"
+  "ITS Professional Capacity Building Program",
+  "ITS PCB Program",
 ];
 
 const description = `
@@ -14,8 +14,9 @@ const description = `
   by providing ITS trainings and webinars, fostering cohorts, 
   and providing technical assistance to agencies deploying ITS technologies 
   as identified in 23 USC Sect 514.
-`
+`;
 ---
+
 <PageLayout
   description={description}
   keywords={keywords}
@@ -23,5 +24,5 @@ const description = `
   bannerImage={banner}
 >
   <Fragment slot="banner">ITS Professional Capacity Building</Fragment>
-  <slot/>
+  <slot />
 </PageLayout>

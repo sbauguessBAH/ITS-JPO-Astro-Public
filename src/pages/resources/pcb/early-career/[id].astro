@@ -9,18 +9,18 @@ import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "../_layout.astro";
 import Link from "@/src/components/Link.astro";
 
-
 export async function getStaticPaths() {
   const modules = await getCollection("pcbModules");
   return modules.map((module) => ({
     params: { id: module.id },
     props: { module },
-  }))
+  }));
 }
 
 const { module } = Astro.props;
-const { Content,  } = await render(module);
+const { Content } = await render(module);
 ---
+
 <style lang="scss">
   $screen-lg: 992px;
 
@@ -82,8 +82,6 @@ const { Content,  } = await render(module);
         line-height: 1.2;
       }
     }
-
-    
   }
 
   .module-content {
@@ -105,30 +103,31 @@ const { Content,  } = await render(module);
           <CardContent>
             <dl class="meta-attributes">
               <!-- <div class="meta-attribute"> -->
-                <dt>Name</dt>
-                <dd>{module.data.title}</dd>
+              <dt>Name</dt>
+              <dd>{module.data.title}</dd>
               <!-- </div> -->
               <!-- <div class="meta-attribute"> -->
-                <dt>Number</dt>
-                <dd>{module.data.source.id}</dd>
+              <dt>Number</dt>
+              <dd>{module.data.source.id}</dd>
               <!-- </div> -->
               <!-- <div class="meta-attribute"> -->
-                <dt>Type</dt>
-                <dd>{module.data.type}</dd>
+              <dt>Type</dt>
+              <dd>{module.data.type}</dd>
               <!-- </div> -->
               <!-- <div class="meta-attribute"> -->
-                <dt>Source</dt>
-                <dd>{module.data.source.name}</dd>
+              <dt>Source</dt>
+              <dd>{module.data.source.name}</dd>
               <!-- </div> -->
             </dl>
             <hr class="meta-divider" />
             <p class="meta-disclaimer">
-              This link will take you to the NHI Catalog. Search for the course name or number to register.
+              This link will take you to the NHI Catalog. Search for the course
+              name or number to register.
             </p>
-            <Link 
-              isExternal 
-              variant="button" 
-              href={module.data.source.url} 
+            <Link
+              isExternal
+              variant="button"
+              href={module.data.source.url}
               class="text-center"
             >
               Register

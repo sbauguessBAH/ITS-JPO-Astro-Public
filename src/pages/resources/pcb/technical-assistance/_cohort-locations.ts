@@ -14,7 +14,7 @@ export const mapSettings = {
   totalHeight: 593,
   hoverDelay: 600,
   clickDelay: 50,
-  leaveDelay: 2000
+  leaveDelay: 2000,
 };
 
 type Circle = {
@@ -28,16 +28,16 @@ type Path = {
 };
 
 type IsCircle = Circle & {
-  type: "circle"
+  type: "circle";
   d?: never;
-}
+};
 
 type IsPath = Path & {
-  type: "path"
+  type: "path";
   x?: never;
   y?: never;
   r?: never;
-}
+};
 
 export type CohortMember = Pick<Circle, "x" | "y"> & {
   agency: string;
@@ -118,7 +118,7 @@ export const states: Record<string, State> = {
       {
         agency: "Contra Costa Transportation Authority",
         x: 40,
-        y: 246
+        y: 246,
       },
       {
         agency: "City of Fontana",
