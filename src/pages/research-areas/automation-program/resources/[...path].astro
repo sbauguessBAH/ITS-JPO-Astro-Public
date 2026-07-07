@@ -10,39 +10,39 @@ import { getCollection } from "astro:content";
 export const areas = [
   {
     title: "All",
-    path: undefined
+    path: undefined,
   },
   {
     title: "Analysis, Modeling, and Simulation (AMS)",
-    path: "ams"
+    path: "ams",
   },
   {
     title: "Automated Driving System (ADS) Integration",
-    path: "ads"
+    path: "ads",
   },
   {
     title: "Cooperative Driving Automation (CDA)",
-    path: "cda"
+    path: "cda",
   },
   {
     title: "Human Factors",
-    path: "human-factors"
+    path: "human-factors",
   },
   {
     title: "Other",
-    path: "other"
-  }
-]
+    path: "other",
+  },
+];
 
 export async function getStaticPaths() {
-  return areas.map(area => ({
+  return areas.map((area) => ({
     params: {
-      path: area.path
+      path: area.path,
     },
     props: {
-      title: area.title
-    }
-  }))
+      title: area.title,
+    },
+  }));
 }
 
 const { path } = Astro.params;
@@ -59,20 +59,20 @@ interface Deliverable {
 interface Project {
   area: string;
   title: string;
-  deliverables: Deliverable[]
+  deliverables: Deliverable[];
 }
 
 const projects = resources
   .filter(({ data }) => title === "All" || data.area === title)
   .reduce((acc, { data }) => {
-    const index = acc.findIndex(prev => prev.title === data.project);
+    const index = acc.findIndex((prev) => prev.title === data.project);
 
     if (index >= 0) {
       acc[index].deliverables.push({
         title: data.deliverable,
         year: data.year,
-        url: data.url
-      })
+        url: data.url,
+      });
     } else {
       acc.push({
         title: data.project,
@@ -81,15 +81,16 @@ const projects = resources
           {
             title: data.deliverable,
             year: data.year,
-            url: data.url
-          }
-        ]
-      })
+            url: data.url,
+          },
+        ],
+      });
     }
 
     return acc;
-  }, [] as Project[])
+  }, [] as Project[]);
 ---
+
 <style>
   .resource-container {
     display: flex;
@@ -173,7 +174,7 @@ const projects = resources
   }
 
   .deliverable-title {
-    flex-basis: calc(9/10 * 100%);
+    flex-basis: calc(9 / 10 * 100%);
   }
 
   .deliverable-title:hover {
@@ -192,7 +193,6 @@ const projects = resources
       flex-basis: 25%;
     }
     .resource-menu-item {
-
     }
     .resource-list {
       flex-basis: 75%;
@@ -241,14 +241,10 @@ const projects = resources
     background: rgb(var(--color-brand-light));
   }
 </style>
-<Layout 
-  title="Automation Program"
->
+<Layout title="Automation Program">
   <main class="program-main">
     <ProgramSection>
-      <h2 class="program-title-lg">
-        Resources
-      </h2>
+      <h2 class="program-title-lg">Resources</h2>
       <div class="resource-container mt-4">
         <!-- <nav class="resource-menu">
           {areas.map(area => (
@@ -267,55 +263,58 @@ const projects = resources
         <div class="resource-menu">
           <nav class="panel">
             <h3 class="panel-title">Areas</h3>
-            {areas.map(item => (
-              <a 
-                class:list={["panel-item", {"panel-item-active": item.path === path }]}
-                href={base_url(`/research-areas/automation-program/resources/${item.path ?? ""}`)}
-                data-bs-toggle="tooltip" 
-                data-bs-title={item.title} 
-              >
-                <div class="panel-item-text">
-                  {item.title}
-                </div>
-              </a>
-            ))}
+            {
+              areas.map((item) => (
+                <a
+                  class:list={[
+                    "panel-item",
+                    { "panel-item-active": item.path === path },
+                  ]}
+                  href={base_url(
+                    `/research-areas/automation-program/resources/${item.path ?? ""}`,
+                  )}
+                  data-bs-toggle="tooltip"
+                  data-bs-title={item.title}
+                >
+                  <div class="panel-item-text">{item.title}</div>
+                </a>
+              ))
+            }
           </nav>
         </div>
         <div class="resource-list">
-          {projects.map(project => {
-            const sortedDeliverables = project.deliverables.toSorted((a, b) => b.year - a.year)
-            return (
-              <Card shadow="sm">
-                <CardHeader class="resource-card-header">
-                  <div class="resource-area-badge">
-                    {project.area}
-                  </div>
-                  <h3 class="program-title-md">
-                    {project.title}
-                  </h3>
-                </CardHeader>
-                <CardContent class="resource-card-body">
-                  <ul class="deliverable-list">
-                    {sortedDeliverables.map(deliverable => (
-                      <li class="deliverable-list-item">
-                        <a 
-                          class="deliverable-title" 
-                          href={deliverable.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                        >
-                          {deliverable.title}
-                        </a>
-                        <div class="deliverable-year">
-                          {deliverable.year}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            )
-          })}
+          {
+            projects.map((project) => {
+              const sortedDeliverables = project.deliverables.toSorted(
+                (a, b) => b.year - a.year,
+              );
+              return (
+                <Card shadow="sm">
+                  <CardHeader class="resource-card-header">
+                    <div class="resource-area-badge">{project.area}</div>
+                    <h3 class="program-title-md">{project.title}</h3>
+                  </CardHeader>
+                  <CardContent class="resource-card-body">
+                    <ul class="deliverable-list">
+                      {sortedDeliverables.map((deliverable) => (
+                        <li class="deliverable-list-item">
+                          <a
+                            class="deliverable-title"
+                            href={deliverable.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {deliverable.title}
+                          </a>
+                          <div class="deliverable-year">{deliverable.year}</div>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              );
+            })
+          }
         </div>
       </div>
     </ProgramSection>

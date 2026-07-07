@@ -1,44 +1,50 @@
 ---
-import OverlayCard, { type OverlayResource } from "@/src/components/programs/OverlayCard.astro";
+import OverlayCard, {
+  type OverlayResource,
+} from "@/src/components/programs/OverlayCard.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "../_layout.astro";
 
 const focusAreas: OverlayResource[] = [
-  { 
+  {
     backgroundImage: "automation/focus-areas/cooperative-driving-automation",
     color: "blue",
-    description: "Assess the feasibility of conducting a small-scale CDA pilot (focusing on L0-2 with Interoperable Connectivity) and package the accomplishments for design and architecture.",
+    description:
+      "Assess the feasibility of conducting a small-scale CDA pilot (focusing on L0-2 with Interoperable Connectivity) and package the accomplishments for design and architecture.",
     iconImage: "automation/focus-areas/icon-cda",
     name: "Cooperative Driving Automation (CDA)",
     path: "/research-areas/automation-program/focus-areas/cda",
   },
-  { 
+  {
     backgroundImage: "automation/focus-areas/analysis-modeling-simulation",
     color: "green",
-    description: "Crosscutting research and resource development including design, planning, operations, and impact assessments informed by improved AMS.",
+    description:
+      "Crosscutting research and resource development including design, planning, operations, and impact assessments informed by improved AMS.",
     iconImage: "automation/focus-areas/icon-ams",
     name: "Analysis, Modeling and Simulation (AMS)",
-    path: "/research-areas/automation-program/focus-areas/ams"
+    path: "/research-areas/automation-program/focus-areas/ams",
   },
-  { 
+  {
     backgroundImage: "automation/focus-areas/human-factors",
     color: "orange",
-    description: "Identify likely safety-relevant scenarios where human performance and interaction behaviors with vehicle automation technologies have a mismatch and develop corresponding Human Factors best practices.",
+    description:
+      "Identify likely safety-relevant scenarios where human performance and interaction behaviors with vehicle automation technologies have a mismatch and develop corresponding Human Factors best practices.",
     iconImage: "automation/focus-areas/icon-human-factors",
     name: "Human Factors",
     path: "/research-areas/automation-program/focus-areas/human-factors",
   },
-  { 
+  {
     backgroundImage: "automation/focus-areas/automated-driving-system",
     color: "purple",
-    description: "Explore recommended practices to address safe and efficient Automated Driving System (ADS) Integration into the transportation system.",
+    description:
+      "Explore recommended practices to address safe and efficient Automated Driving System (ADS) Integration into the transportation system.",
     iconImage: "automation/focus-areas/icon-ads",
     name: "Automated Driving System (ADS) Integration",
-    path: "/research-areas/automation-program/focus-areas/ads"
+    path: "/research-areas/automation-program/focus-areas/ads",
   },
-]
-
+];
 ---
+
 <style>
   .roadmap-image {
     width: 100%;
@@ -69,7 +75,6 @@ const focusAreas: OverlayResource[] = [
     justify-content: space-between;
     align-items: center;
   }
-
 </style>
 <style>
   .strategy-container {
@@ -129,20 +134,16 @@ const focusAreas: OverlayResource[] = [
 </style>
 <Layout>
   <main class="program-main">
-    
     <ProgramSection color="gray">
       <h2 class="program-title-lg text-center">Focus Areas</h2>
       <p class="program-text text-center max-w-lg mx-auto">
-        In collaboration with the Operating Administrations, ITS JPO prioritized 
-        near-term research focus areas to directly address strategies stated above, 
-        and achieve desired outcomes across four current focus areas:
+        In collaboration with the Operating Administrations, ITS JPO prioritized
+        near-term research focus areas to directly address strategies stated
+        above, and achieve desired outcomes across four current focus areas:
       </p>
       <div class="focus-area-container mt-4" role="directory">
-        {focusAreas.map(focusArea => (
-          <OverlayCard {...focusArea}/>
-        ))}
+        {focusAreas.map((focusArea) => <OverlayCard {...focusArea} />)}
       </div>
     </ProgramSection>
-    
   </main>
 </Layout>
