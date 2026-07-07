@@ -1,0 +1,19 @@
+---
+import BaseLayout from "@/src/layouts/BaseLayout.astro";
+import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
+import { getToolkitPageBySlug } from "@/src/lib/toolkits";
+
+const page = getToolkitPageBySlug("tti-texas-trust-v2x-program-mediakit");
+
+if (!page) {
+  throw new Error("Toolkit data not found for tti-texas-trust-v2x-program-mediakit.");
+}
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  keywords={page.keywords}
+>
+  <ToolkitPage page={page} />
+</BaseLayout>
