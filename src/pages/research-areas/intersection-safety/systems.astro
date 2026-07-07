@@ -1,12 +1,14 @@
 ---
+import { Image } from "astro:assets";
+
+import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "./_layout.astro";
 import Card from "@/src/components/ui/blocks/card/Card.astro";
 import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
-import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
-import { Image } from "astro:assets";
-import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
 import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
+import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
+
+import Layout from "./_layout.astro";
 ---
 
 <style>
@@ -128,19 +130,19 @@ import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
               Funding Opportunity | Up to $17M across 3 teams
             </p>
             <a
-              href="https://sam.gov/workspace/contract/opp/343dd0f244df4c3a9c9baa9b60b8ac54/view"
               class="callout-button"
-              target="_blank"
+              href="https://sam.gov/workspace/contract/opp/343dd0f244df4c3a9c9baa9b60b8ac54/view"
               rel="noopener noreferrer"
+              target="_blank"
               >Learn More
             </a>
           </div>
         </div>
         <div class="col-11 col-lg-4">
           <Image
-            src={issLogo}
             alt="Intersection Safety Systems Logo"
             class="img-fluid"
+            src={issLogo}
           />
         </div>
       </div>
@@ -216,9 +218,9 @@ import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
             <div class="resource-link-container px-2">
               <a
                 class="resource-button"
+                href="https://sam.gov/opp/8573bb118a5e4343a9512fed8b393d63/view"
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://sam.gov/opp/8573bb118a5e4343a9512fed8b393d63/view"
               >
                 <ExternalLinkIcon size={12} />
                 Sources Sought Notice

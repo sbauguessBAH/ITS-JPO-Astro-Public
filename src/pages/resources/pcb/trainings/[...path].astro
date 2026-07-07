@@ -1,16 +1,19 @@
 ---
 import type { CollectionEntry } from "astro:content";
+
 import { getCollection } from "astro:content";
+
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Card from "@/src/components/ui/blocks/card/Card.astro";
+import CardDescription from "@/src/components/ui/blocks/card/CardDescription.astro";
 import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
 import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import base_url from "@/src/lib/base_url";
-import Layout from "../_layout.astro";
 import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/blocks/card/CardTitle.astro";
-import CardDescription from "@/src/components/ui/blocks/card/CardDescription.astro";
 import Badge from "@/src/components/ui/elements/badge/Badge.astro";
+import base_url from "@/src/lib/base_url";
+
+import Layout from "../_layout.astro";
 
 export const categories: { category?: string; title: string }[] = [
   { category: undefined, title: "All Courses" },
@@ -211,9 +214,9 @@ const getCourseCount = (path?: string) =>
                   <Badge
                     size="lg"
                     style={{
-                      textTransform: "uppercase",
-                      position: "absolute",
                       left: "8px",
+                      position: "absolute",
+                      textTransform: "uppercase",
                       top: "8px",
                     }}
                   >
@@ -224,9 +227,9 @@ const getCourseCount = (path?: string) =>
                       color="secondary"
                       size="lg"
                       style={{
-                        textTransform: "uppercase",
                         position: "absolute",
                         right: "8px",
+                        textTransform: "uppercase",
                         top: "8px",
                       }}
                     >

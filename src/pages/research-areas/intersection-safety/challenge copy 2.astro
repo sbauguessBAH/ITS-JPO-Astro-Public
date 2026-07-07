@@ -1,12 +1,14 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "./_layout.astro";
-import Card from "@/src/components/ui/blocks/card/Card.astro";
-import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
-import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
-import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
 import { Image } from "astro:assets";
+
+import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
 import Link from "@/src/components/Link.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Card from "@/src/components/ui/blocks/card/Card.astro";
+import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
+import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
+
+import Layout from "./_layout.astro";
 ---
 
 <style>
@@ -68,9 +70,9 @@ import Link from "@/src/components/Link.astro";
         </div>
         <div class="col-4">
           <Image
-            src={iscLogo}
             alt="Intersection Safety Challenge Logo"
             class="img-fluid"
+            src={iscLogo}
           />
         </div>
       </div>
@@ -114,9 +116,8 @@ import Link from "@/src/components/Link.astro";
           <p class="program-text">
             View the official press release
             <Link
-              isExternal
               href="https://www.transportation.gov/briefing-room/us-dot-announces-winners-intersection-safety-challenge"
-              >here</Link
+              isExternal>here</Link
             >.
           </p>
         </CardContent>
@@ -160,8 +161,8 @@ import Link from "@/src/components/Link.astro";
             Interested users can download sample data and request access to the
             full challenge dataset from the
             <Link
-              isExternal
               href="https://data.transportation.gov/Roadways-and-Bridges/intersection-safety-Stage-1B-Sample/vq7s-mv3v/about_data"
+              isExternal
             >
               U.S. DOT's public data portal
             </Link>.
@@ -181,9 +182,8 @@ import Link from "@/src/components/Link.astro";
             teams with prize amounts ranging from $166,666 to $750,000, for a
             total of $4,000,000 in prize awards. View the official press release
             <Link
-              isExternal
               href="https://www.transportation.gov/briefing-room/us-dot-announces-winners-intersection-safety-challenge-stage-1b-system-assessment-and"
-              >here</Link
+              isExternal>here</Link
             >.
           </p>
           <p class="program-text">
@@ -193,19 +193,19 @@ import Link from "@/src/components/Link.astro";
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
                   aria-controls="collapseOne"
+                  aria-expanded="true"
+                  class="accordion-button"
+                  data-bs-target="#collapseOne"
+                  data-bs-toggle="collapse"
+                  type="button"
                 >
                   Tier 1 Teams ($750,000 per award)
                 </button>
               </h2>
               <div
-                id="collapseOne"
                 class="accordion-collapse collapse"
+                id="collapseOne"
                 style=""
               >
                 <!--  data-bs-parent="#accordionTeams" -->
@@ -353,19 +353,19 @@ import Link from "@/src/components/Link.astro";
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="true"
                   aria-controls="collapseTwo"
+                  aria-expanded="true"
+                  class="accordion-button"
+                  data-bs-target="#collapseTwo"
+                  data-bs-toggle="collapse"
+                  type="button"
                 >
                   Tier 2 Teams ($166,666 per award)
                 </button>
               </h2>
               <div
-                id="collapseTwo"
                 class="accordion-collapse collapse"
+                id="collapseTwo"
                 style=""
               >
                 <!--  data-bs-parent="#accordionTeams" -->

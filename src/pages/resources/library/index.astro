@@ -1,11 +1,12 @@
 ---
+import { getCollection } from "astro:content";
+
 import Link from "@/src/components/Link.astro";
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
+import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
 import Card from "@/src/components/ui/blocks/card/Card.astro";
 import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
 import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
-import LibraryImage from "@/src/components/programs/LibraryImage.astro";
-import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
-import { getCollection } from "astro:content";
 
 /**
  * Internal page to view catalog of all library images.
@@ -66,7 +67,7 @@ const albums = collection.reduce(
               {items.map((item) => (
                 <Card>
                   <CardHeader class="card-header">
-                    <LibraryImage entry={item.id} class="library-image" />
+                    <LibraryImage class="library-image" entry={item.id} />
                   </CardHeader>
                   <CardContent>
                     <h3>{item.id.split("/").slice(-1)[0]}</h3>
@@ -77,7 +78,7 @@ const albums = collection.reduce(
                       <dd>{item.data.album}</dd>
                       <dt>Citation</dt>
                       <dd>
-                        <Link isExternal href={item.data.origin}>
+                        <Link href={item.data.origin} isExternal>
                           {item.data.citation}
                         </Link>
                       </dd>

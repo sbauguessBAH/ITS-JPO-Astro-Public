@@ -1,15 +1,17 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "../_layout.astro";
-import Card from "@/src/components/ui/blocks/card/Card.astro";
-import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
+import { getCollection } from "astro:content";
+
 import Link from "@/src/components/Link.astro";
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
-import { getCollection } from "astro:content";
-import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Card from "@/src/components/ui/blocks/card/Card.astro";
+import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
 import CardDescription from "@/src/components/ui/blocks/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
+import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/blocks/card/CardTitle.astro";
+
+import Layout from "../_layout.astro";
 
 const modules = await getCollection("pcbModules").then((modules) =>
   modules.sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
@@ -93,7 +95,7 @@ const modules = await getCollection("pcbModules").then((modules) =>
         needs.
       </p>
     </ProgramSection>
-    <ProgramSection size="small" class="pb-5" color="gray">
+    <ProgramSection class="pb-5" color="gray" size="small">
       <h2 class="program-title-md mb-4">
         ITS Short Course Instructor Kit Modules
       </h2>
@@ -207,9 +209,9 @@ const modules = await getCollection("pcbModules").then((modules) =>
           </p>
           <div class="mt-4">
             <Link
-              variant="button"
               href="https://rosap.ntl.bts.gov/view/dot/89169"
               isExternal
+              variant="button"
             >
               View PDF
             </Link>
@@ -236,7 +238,7 @@ const modules = await getCollection("pcbModules").then((modules) =>
         style="padding-top: 2rem; padding-bottom: 2rem; gap: 4rem;"
       >
         <div class="competitions-image shadow-md">
-          <LibraryImage entry="pcb/other/ttt-2025" class="image" />
+          <LibraryImage class="image" entry="pcb/other/ttt-2025" />
         </div>
         <div class="competitions-text">
           <h2 class="program-title-md mb-4">ITS Student Competitions</h2>
@@ -254,9 +256,9 @@ const modules = await getCollection("pcbModules").then((modules) =>
           </p>
           <div class="mt-4">
             <Link
-              variant="button"
               href="https://transportationops.org/transportation-technology-tournament"
               isExternal
+              variant="button"
             >
               Learn More
             </Link>

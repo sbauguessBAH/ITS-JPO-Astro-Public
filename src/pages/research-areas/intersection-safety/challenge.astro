@@ -1,18 +1,20 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "./_layout.astro";
-import Card from "@/src/components/ui/blocks/card/Card.astro";
-import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
-import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
-import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
 import { Image } from "astro:assets";
+
+import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
 import Link from "@/src/components/Link.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Card from "@/src/components/ui/blocks/card/Card.astro";
+import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
 import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
+import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
 import Check2CircleIcon from "@/src/components/ui/icons/Check2CircleIcon.astro";
-import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
 import FilmIcon from "@/src/components/ui/icons/FilmIcon.astro";
 import LinkIcon from "@/src/components/ui/icons/LinkIcon.astro";
+import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
 import base_url from "@/src/lib/base_url";
+
+import Layout from "./_layout.astro";
 ---
 
 <style>
@@ -203,9 +205,9 @@ import base_url from "@/src/lib/base_url";
         </div>
         <div class="col-11 col-md-4">
           <Image
-            src={iscLogo}
             alt="Intersection Safety Challenge Logo"
             class="img-fluid"
+            src={iscLogo}
           />
         </div>
       </div>
@@ -339,17 +341,17 @@ import base_url from "@/src/lib/base_url";
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapse1A"
-                aria-expanded="true"
                 aria-controls="collapse1A"
+                aria-expanded="true"
+                class="accordion-button"
+                data-bs-target="#collapse1A"
+                data-bs-toggle="collapse"
+                type="button"
               >
                 Stage 1A Winning Teams ($150,000 per award)
               </button>
             </h2>
-            <div id="collapse1A" class="accordion-collapse collapse" style="">
+            <div class="accordion-collapse collapse" id="collapse1A" style="">
               <!--  data-bs-parent="#accordionTeams" -->
               <div class="accordion-body">
                 <table class="table table-bordered">
@@ -513,8 +515,8 @@ import base_url from "@/src/lib/base_url";
                 Interested users can download sample data and request access to
                 the full challenge dataset from the
                 <Link
-                  isExternal
                   href="https://data.transportation.gov/Roadways-and-Bridges/intersection-safety-Stage-1B-Sample/vq7s-mv3v/about_data"
+                  isExternal
                 >
                   U.S. DOT's public data portal
                 </Link>.
@@ -522,13 +524,13 @@ import base_url from "@/src/lib/base_url";
             </div>
             <div class="data-collection-video-container">
               <iframe
-                src="https://www.youtube.com/embed/OPx7-PbZW3Y"
-                title="YouTube video player"
-                height="250"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
                 class="data-collection-video"
+                height="250"
+                referrerpolicy="strict-origin-when-cross-origin"
+                src="https://www.youtube.com/embed/OPx7-PbZW3Y"
+                title="YouTube video player"
               >
               </iframe>
               <!-- <p class="data-collection-content">
@@ -563,13 +565,13 @@ import base_url from "@/src/lib/base_url";
             </div>
             <div class="data-collection-video-container">
               <iframe
-                src="https://www.youtube.com/embed/O72fLuJL7ZY"
-                title="YouTube video player"
-                height="250"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
                 class="data-collection-video"
+                height="250"
+                referrerpolicy="strict-origin-when-cross-origin"
+                src="https://www.youtube.com/embed/O72fLuJL7ZY"
+                title="YouTube video player"
               >
               </iframe>
               <!-- <p class="data-collection-content">
@@ -584,19 +586,19 @@ import base_url from "@/src/lib/base_url";
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
                   aria-controls="collapseOne"
+                  aria-expanded="true"
+                  class="accordion-button"
+                  data-bs-target="#collapseOne"
+                  data-bs-toggle="collapse"
+                  type="button"
                 >
                   Tier 1 Teams ($750,000 per award)
                 </button>
               </h2>
               <div
-                id="collapseOne"
                 class="accordion-collapse collapse"
+                id="collapseOne"
                 style=""
               >
                 <!--  data-bs-parent="#accordionTeams" -->
@@ -744,19 +746,19 @@ import base_url from "@/src/lib/base_url";
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="true"
                   aria-controls="collapseTwo"
+                  aria-expanded="true"
+                  class="accordion-button"
+                  data-bs-target="#collapseTwo"
+                  data-bs-toggle="collapse"
+                  type="button"
                 >
                   Tier 2 Teams ($166,666 per award)
                 </button>
               </h2>
               <div
-                id="collapseTwo"
                 class="accordion-collapse collapse"
+                id="collapseTwo"
                 style=""
               >
                 <!--  data-bs-parent="#accordionTeams" -->
@@ -1035,20 +1037,20 @@ import base_url from "@/src/lib/base_url";
             <div class="resource-link-container px-2">
               <a
                 class="resource-button"
-                rel="noopener noreferrer"
-                target="_blank"
                 href={base_url(
                   "/assets/intersection-safety/ISS_Webinar_20260324_final_508.pdf",
                 )}
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <PdfIcon size={12} />
                 Presentation Material
               </a>
               <a
                 class="resource-button"
+                href="https://itsaorg.sharepoint.com/:v:/s/ITSAmerica/IQD8U-n_xaGJT6Hb_HDaPuxhARKaDNZirMggXHKSL5SctJc?e=GOkeq1"
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://itsaorg.sharepoint.com/:v:/s/ITSAmerica/IQD8U-n_xaGJT6Hb_HDaPuxhARKaDNZirMggXHKSL5SctJc?e=GOkeq1"
               >
                 <FilmIcon size={12} />
                 Webinar Recording
@@ -1070,9 +1072,9 @@ import base_url from "@/src/lib/base_url";
             <div class="resource-link-container px-2">
               <a
                 class="resource-button"
+                href="https://rosap.ntl.bts.gov/view/dot/89361"
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://rosap.ntl.bts.gov/view/dot/89361"
               >
                 <LinkIcon size={12} />
                 Link to Report
@@ -1103,9 +1105,9 @@ import base_url from "@/src/lib/base_url";
             <div class="resource-link-container px-2">
               <a
                 class="resource-button"
+                href="https://rosap.ntl.bts.gov/view/dot/89360"
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://rosap.ntl.bts.gov/view/dot/89360"
               >
                 <LinkIcon size={12} />
                 Link to Report
@@ -1137,11 +1139,11 @@ import base_url from "@/src/lib/base_url";
             <div class="resource-link-container px-2">
               <a
                 class="resource-button"
-                rel="noopener noreferrer"
-                target="_blank"
                 href={base_url(
                   "/assets/intersection-safety/USDOT_IntersectionSafetyWebinar3.pdf",
                 )}
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <PdfIcon size={12} />
                 Presentation Material
@@ -1171,11 +1173,11 @@ import base_url from "@/src/lib/base_url";
             <div class="resource-link-container px-2">
               <a
                 class="resource-button"
-                rel="noopener noreferrer"
-                target="_blank"
                 href={base_url(
                   "/assets/intersection-safety/Intersection_Safety_Webinar.pdf",
                 )}
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <PdfIcon size={12} />
                 Presentation Material

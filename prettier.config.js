@@ -3,7 +3,6 @@
  * @type {import("prettier").Config}
  */
 const config = {
-  plugins: ["prettier-plugin-astro", "prettier-plugin-astro-organize-imports"],
   overrides: [
     {
       files: "*.astro",
@@ -12,6 +11,7 @@ const config = {
       },
     },
   ],
+  plugins: ["prettier-plugin-astro", "prettier-plugin-astro-organize-imports"],
 };
 
 export default config;

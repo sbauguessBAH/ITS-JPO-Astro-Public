@@ -34,9 +34,7 @@
 
   // ========== ESLint ==========
   // Automatically detect the correct ESLint workspace for each file
-  "eslint.workingDirectories": [
-    {"mode": "auto"}
-  ],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
 
   "eslint.codeAction.showDocumentation": {
     "enable": true
@@ -48,6 +46,7 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
+    "astro",
     "vue",
     "html",
     "markdown",
@@ -55,5 +54,5 @@
     "jsonc",
     "yaml",
     "toml"
-  ],
+  ]
 }

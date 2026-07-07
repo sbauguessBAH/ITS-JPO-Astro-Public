@@ -1,13 +1,14 @@
 ---
 import { getCollection } from "astro:content";
+import { render } from "astro:content";
 
+import Link from "@/src/components/Link.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Card from "@/src/components/ui/blocks/card/Card.astro";
 import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
 import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
-import { render } from "astro:content";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+
 import Layout from "../_layout.astro";
-import Link from "@/src/components/Link.astro";
 
 export async function getStaticPaths() {
   const modules = await getCollection("pcbModules");
@@ -125,10 +126,10 @@ const { Content } = await render(module);
               name or number to register.
             </p>
             <Link
+              class="text-center"
+              href={module.data.source.url}
               isExternal
               variant="button"
-              href={module.data.source.url}
-              class="text-center"
             >
               Register
             </Link>
