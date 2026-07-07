@@ -21,19 +21,23 @@ Consensus Systems Technologies (ConSysTec)
 Flushing, NY
 
 ### Target Audiences
-* Integrated Corridor Management Project and Operations Team
-* Specification Writers
-* Traffic Procurement Staff
-* Transit ITS Contractors and Consultants
-* Transit Planning, Operations, and Maintenance Staff
-* Transit Procurement Staff
+
+- Integrated Corridor Management Project and Operations Team
+- Specification Writers
+- Traffic Procurement Staff
+- Transit ITS Contractors and Consultants
+- Transit Planning, Operations, and Maintenance Staff
+- Transit Procurement Staff
 
 ### Prerequisite(s)
+
 **Prerequisite(s) Specific to Curriculum Path Categories**
-* Detailed knowledge of transit functions and data exchange among transit functions
-* Detailed concepts of transit management standards
+
+- Detailed knowledge of transit functions and data exchange among transit functions
+- Detailed concepts of transit management standards
 
 ### Learning Objectives/Key Elements
+
 1. Specify and test a transit signal priority implementation
 2. Describe how transit signal priority may be provided in a connected vehicle environment
 3. Explain the role of transit signal priority in Integrated Corridors

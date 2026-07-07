@@ -6,6 +6,7 @@ presentation: "/assets/pcb/transit-standards-trainings/transit-module-22/mt22ppt
 transcript: "/assets/pcb/transit-standards-trainings/transit-module-22/mt22trans.pdf"
 supplement: "/assets/pcb/transit-standards-trainings/transit-module-22/mt22sup.pdf"
 ---
+
 Social media platforms have empowered individuals to share their thoughts about all aspects of daily life—from restaurants to movies to political candidates. Increasingly, they are commenting about public transportation services as well. Social channels like Twitter, Facebook, and Instagram have made it easier for transit customers to report on service, maintenance, and safety-related issues, and to do so in real time.
 
 These comments can be a valuable source of business intelligence for transit providers, providing feedback that can inform decisions on operations, planning, and investment. But despite the widespread use of social media, extracting meaningful information from Facebook posts or Twitter tweets requires specialized analysis techniques.
@@ -17,6 +18,7 @@ Business intelligence combines information from multiple sources, including big 
 This module provides an overview of social media and big data with a focus on deriving business intelligence for transit operators and planners. This course does not attempt to provide a complete treatment of social media, big data, or business intelligence, but rather focuses on the intersection of the three areas in relation to transit.
 
 ### Instructor(s)
+
 Susan Bregman
 Principal
 Oak Square Resources, LLC
@@ -26,17 +28,19 @@ Vice President, Technology
 Consensus Systems Technologies
 
 ### Target Audiences
-* Project Managers
-* Software and Application Developers and Vendors
-* Transit Communications Staff
-* Transit Customer Research Consultants and Contractors
-* Transit Data Analysts
-* Transit Management Staff
-* Transit Marketing Staff
-* Transit Planning, Operations, and Maintenance Staff
-* Transit Research Staff
+
+- Project Managers
+- Software and Application Developers and Vendors
+- Transit Communications Staff
+- Transit Customer Research Consultants and Contractors
+- Transit Data Analysts
+- Transit Management Staff
+- Transit Marketing Staff
+- Transit Planning, Operations, and Maintenance Staff
+- Transit Research Staff
 
 ### Prerequisite(s)
+
 **Recommended Modules**
 None
 
@@ -44,6 +48,7 @@ None
 General knowledge of transit information used in operations and planning
 
 ### Learning Objectives/Key Elements
+
 1. Define business intelligence in relation to transit
 2. Define social media platforms and their application to public transportation
 3. Define big data in relation to social media and transit
