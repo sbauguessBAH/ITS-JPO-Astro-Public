@@ -1,11 +1,14 @@
+/* ============================================================
+ * Base Variables
+ * ============================================================ */
+
 :root {
+  /* ---------- Program Sites ---------- */
+  
   --shadow-light: #c4c4c4;
   --border-light: #e9e9e9;
   --background-light: #f8f8f8;
-
-  /*****************************
-    Variables for Program Sites 
-  *****************************/
+  
   --color-foreground: 0, 0, 0;
   --color-background: 256, 256, 256;
 
@@ -54,39 +57,30 @@
     Colors
   *****************************/
 
-  /* Slightly darker shade of the ITS JPO blue */
-  --color-default: oklch(0.433 0.0983 240.78);
-  --color-default-foreground: oklch(1 0 0);
+  
 
-  /** Base gray color--comparable to --ai-card-gray-border and --ai-text-medium */
-  --color-secondary: oklch(0.928 0 0);
-  --color-secondary-foreground: oklch(0.3562 0 0);
-
-  /*****************************
-    Size
-  *****************************/
+  /* ---------- Sizes ---------- */
+  /* TODO: Clean these up or remove them entirely */
 
   --size-sm: 0.75rem;
   --size: 1.5rem;
   --size-lg: 2rem;
   --size-xl: 4rem;
 
-  /*****************************
-  Colors (inspired by shadcn/ui)
-  *****************************/
+  /* ---------- Colors ---------- */
+  /* Derived from shadcn/ui */
+
   --color-muted: oklch(0.97 0 0);
   --color-muted-foreground: oklch(0.556 0 0);
 
-  /*****************************
-  Layout (from Tailwind)
-  *****************************/
+  /* ---------- Layout ---------- */
+  /* Derived from Tailwind */
 
   /* Spacing */
   --spacing: 0.25rem;
 
-  /*****************************
-  Font (from Tailwind)
-  *****************************/
+  /* ---------- Font ---------- */
+  /* Derived from Tailwind */
 
   /* Font Family */
   --font-heading: "";
@@ -146,18 +140,50 @@
   --tracking-widest: 0.1em;
 }
 
-/*****************************
-  Class Overrides
-*****************************/
+/* ============================================================
+ * Colors
+ * ------------------------------------------------------------
+ * These variables define colors that can be used across the site.
+ * 
+ * Base colors are used in various components to define variants,
+ * so these should be changed with care.
+ * ============================================================ */
+
+:root {
+  /* ------------------------------------------------------------
+   * Base colors
+   * ------------------------------------------------------------ */
+
+  /* Slightly darker variant of ITS JPO blue (--ai-blue-secondary) */
+  --color-default: oklch(0.433 0.0983 240.78);
+  --color-default-foreground: oklch(1 0 0);
+
+  /** Base gray color--comparable to --ai-card-gray-border and --ai-text-medium */
+  --color-secondary: oklch(0.928 0 0);
+  --color-secondary-foreground: oklch(0.3562 0 0);
+   
+  /* ------------------------------------------------------------
+   * Professional Capacity Building (PCB)
+   * ------------------------------------------------------------ */
+
+  /* ---------- V2X Interoperability Help Desk ---------- */
+  --color-pcb-v2x_help_desk-yellow: oklch(0.8205 0.1609 88.37);
+  --color-pcb-v2x_help_desk-blue_dark: oklch(0.2499 0.1019 259.99);
+  --color-pcb-v2x_help_desk-blue: oklch(0.5222 0.1197 244.27);
+}
+
+/* ============================================================
+ * Class Overrides
+ * ============================================================ */
 
 section {
   padding: 0;
   margin: 0;
 }
 
-/*****************************
-  Border Radius
-*****************************/
+/* ============================================================
+ * Border Radius
+ * ============================================================ */
 
 .radius-none {
   border-radius: none;
@@ -175,9 +201,9 @@ section {
   border-radius: var(--radius-lg);
 }
 
-/*****************************
-  Utility Classes
-*****************************/
+/* ============================================================
+ * Utilities
+ * ============================================================ */
 
 .max-w-sm {
   max-width: var(--container-sm);
@@ -215,9 +241,9 @@ section {
   padding: var(--size-lg);
 }
 
-/*****************************
-  Program Classes
-*****************************/
+/* ============================================================
+ * Program classes
+ * ============================================================ */
 
 .program-main {
   display: flex;
@@ -319,9 +345,9 @@ section {
   background: #dee2e6;
 }
 
-/*****************************
-  Color Classes
-*****************************/
+/* ============================================================
+ * Color classes
+ * ============================================================ */
 
 .background-brand-light {
   background: rgb(var(--color-brand-light));
