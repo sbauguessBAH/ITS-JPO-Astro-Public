@@ -1,0 +1,47 @@
+---
+import base_url from '@/src/lib/base_url';
+import type { HTMLAttributes } from 'astro/types';
+import './section.css';
+
+type Props = HTMLAttributes<"li"> & {
+  href?: string;
+  isExternal?: boolean;
+  /**
+   * `horizontal` places the icon beside the text, `vertical` stacks the
+   * icon above it.
+   *
+   * @default `horizontal`
+   */
+  orientation?: "horizontal" | "vertical";
+};
+
+const {
+  href,
+  isExternal,
+  orientation = "horizontal",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const Component = href ? "a" : "div";
+
+const linkAttrs = href && isExternal
+  ? { href, target: "_blank", rel: "noopener noreferrer" }
+  : href
+    ? { href: base_url(href) }
+    : undefined;
+---
+<li
+  data-slot="ui_section-highlight"
+  data-orientation={orientation}
+  class:list={["ui_section-highlight", href && "ui_section-highlight_link", className]}
+  {...rest}
+>
+  <Component
+    data-slot="ui_section-highlight-inner"
+    class="ui_section-highlight-inner"
+    {...linkAttrs}
+  >
+    <slot/>
+  </Component>
+</li>

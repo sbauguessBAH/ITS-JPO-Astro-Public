@@ -1,0 +1,224 @@
+/*******************************************************************************
+* Section
+*******************************************************************************/
+
+.ui_section {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  color: rgb(var(--color-foreground));
+  background-color: transparent;
+  padding-block: calc(var(--spacing) * 16); /* py-16 */
+}
+
+.ui_section[data-color="muted"] {
+  background-color: var(--color-muted);
+}
+
+/*******************************************************************************
+* Section Container
+*
+* Full width of the section; max-width is controlled by the `size` prop.
+*******************************************************************************/
+
+.ui_section-container {
+  box-sizing: border-box;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--padding-md);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 10); /* gap-10 */
+}
+
+.ui_section-container[data-size="sm"] {
+  max-width: var(--container-sm);
+}
+
+.ui_section-container[data-size="default"] {
+  max-width: var(--container-md);
+}
+
+.ui_section-container[data-size="lg"] {
+  max-width: var(--container-lg);
+}
+
+/* Side-by-side layout once there's room, and only when there's actually an image */
+@media (min-width: 768px) {
+  .ui_section[data-orientation="horizontal"] .ui_section-container:has(.ui_section-image) {
+    flex-direction: row;
+    /* align-items left at the flex default (stretch) so both columns share
+       the same height and the image can fill it via object-fit: cover below */
+  }
+
+  .ui_section[data-orientation="horizontal"] .ui_section-container:has(.ui_section-image) > * {
+    min-width: 0;
+  }
+
+  /* Weights come from the `split` prop on <Section>, e.g. split="2/1" sets
+     --ui-section-content-weight: 2 and --ui-section-image-weight: 1.
+     Tied to these classes rather than DOM position, so `reverse` (which
+     only reorders visually via `order`) never has to touch the ratio. */
+  .ui_section[data-orientation="horizontal"] .ui_section-container:has(.ui_section-image) .ui_section-content {
+    flex: var(--ui-section-content-weight, 1) 1 0%;
+  }
+
+  .ui_section[data-orientation="horizontal"] .ui_section-container:has(.ui_section-image) .ui_section-image {
+    flex: var(--ui-section-image-weight, 1) 1 0%;
+  }
+}
+
+/* Reverse: flips which side the image lands on (horizontal), or moves it
+   above the content instead of below (vertical). Works in both orientations
+   since `order` applies to flex children either way. */
+.ui_section[data-reverse] .ui_section-content {
+  order: 2;
+}
+
+.ui_section[data-reverse] .ui_section-image {
+  order: 1;
+}
+
+/*******************************************************************************
+* Section Content
+*
+* Deliberately unopinionated — Title/Description/Highlights/etc go inside
+* in whatever order you want.
+*******************************************************************************/
+
+.ui_section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(var(--spacing) * 4); /* gap-4 */
+  min-width: 0;
+  width: 100%;
+}
+
+/*******************************************************************************
+* Section Headline
+*******************************************************************************/
+
+.ui_section-headline {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/*******************************************************************************
+* Section Icon
+*
+* No icon library assumed — sizes/centers whatever is passed into the slot.
+*******************************************************************************/
+
+.ui_section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: calc(var(--spacing) * 10); /* 2.5rem */
+  height: calc(var(--spacing) * 10);
+  color: rgb(var(--color-foreground));
+}
+
+.ui_section-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/*******************************************************************************
+* Section Title
+*******************************************************************************/
+
+.ui_section-title {
+  margin: 0;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-snug);
+  font-size: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .ui_section-title {
+    font-size: 2.25rem;
+  }
+}
+
+/*******************************************************************************
+* Section Description
+*******************************************************************************/
+
+.ui_section-description {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-muted-foreground);
+}
+
+/*******************************************************************************
+* Section Highlights
+*******************************************************************************/
+
+.ui_section-highlights {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 4); /* gap-4 */
+}
+
+/*******************************************************************************
+* Section Highlight
+*******************************************************************************/
+
+.ui_section-highlight-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--spacing) * 3); /* gap-3 */
+  color: inherit;
+  text-decoration: none;
+}
+
+.ui_section-highlight[data-orientation="vertical"] .ui_section-highlight-inner {
+  flex-direction: column;
+}
+
+.ui_section-highlight_link .ui_section-highlight-inner {
+  transition: opacity .2s;
+}
+
+.ui_section-highlight_link .ui_section-highlight-inner:hover,
+.ui_section-highlight_link .ui_section-highlight-inner:focus {
+  opacity: 0.75;
+}
+
+/* A highlight's title is smaller than a standalone section title —
+   its description already matches at --text-base, so no override needed there */
+.ui_section-highlight .ui_section-title {
+  font-size: var(--text-lg);
+}
+
+/*******************************************************************************
+* Section Image
+*******************************************************************************/
+
+.ui_section-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.ui_section-image_rounded {
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 768px) {
+  .ui_section[data-orientation="horizontal"] .ui_section-image {
+    height: 100%;
+  }
+}
