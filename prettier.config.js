@@ -11,7 +11,7 @@ const config = {
       },
     },
   ],
-  plugins: ["prettier-plugin-astro", "prettier-plugin-astro-organize-imports"],
+  plugins: ["prettier-plugin-astro"],
 };
 
 export default config;
