@@ -45,9 +45,9 @@ const featuredNewsletter: NewsroomCardItem | undefined = newsletterEntries[0] ? 
 
 const archiveNewsletters: NewsroomCardItem[] = newsletterEntries.slice(1, 5).map((entry) => toCardItem(entry));
 
-const toolkitData = toolkits as { media_toolkits?: MediaToolkitEntry[] };
+const toolkitData = toolkits as { outreach_toolkits?: MediaToolkitEntry[] };
 
-const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.media_toolkits) ? toolkitData.media_toolkits : []).slice(0, 3).map((item) => ({
+const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.outreach_toolkits) ? toolkitData.outreach_toolkits : []).slice(0, 3).map((item) => ({
   title: item.title,
   url: item.url,
   date: item.date,
