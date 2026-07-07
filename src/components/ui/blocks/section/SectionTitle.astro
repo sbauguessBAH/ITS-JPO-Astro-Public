@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+
 import "./section.css";
 
 type Props = HTMLAttributes<"h2"> & {
@@ -9,15 +10,15 @@ type Props = HTMLAttributes<"h2"> & {
    *
    * @default `h2`
    */
-  as?: "h1" | "h2" | "h3" | "h4" | "div";
+  as?: "div" | "h1" | "h2" | "h3" | "h4";
 };
 
-const { class: className, as: Tag = "h2", ...rest } = Astro.props;
+const { as: Tag = "h2", class: className, ...rest } = Astro.props;
 ---
 
 <Tag
-  data-slot="ui_section-title"
   class:list={["ui_section-title", className]}
+  data-slot="ui_section-title"
   {...rest}
 >
   <slot />

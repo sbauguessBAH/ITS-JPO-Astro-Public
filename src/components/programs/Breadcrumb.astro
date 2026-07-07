@@ -22,11 +22,11 @@ const { items } = Astro.props;
     {
       items.map((item, index) => (
         <li
+          aria-current={index === items.length - 1 ? "page" : "false"}
           class:list={[
             "breadcrumb-item",
             { active: index === items.length - 1 },
           ]}
-          aria-current={index === items.length - 1 ? "page" : "false"}
         >
           {index === items.length - 1 || !item.path ? (
             <span>{item.name}</span>

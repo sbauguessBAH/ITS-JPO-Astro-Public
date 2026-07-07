@@ -1,30 +1,31 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+
 import "./header.css";
 
 type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 type Props = HTMLAttributes<"h1"> & {
-  size?: "sm" | "default" | "lg";
   as?: HeadingTag;
   class?: string;
+  size?: "default" | "lg" | "sm";
 };
 
-const { class: className, size = "default", as, ...props } = Astro.props;
+const { as, class: className, size = "default", ...props } = Astro.props;
 
-const defaultTagBySize: Record<"sm" | "default" | "lg", HeadingTag> = {
-  sm: "h3",
+const defaultTagBySize: Record<"default" | "lg" | "sm", HeadingTag> = {
   default: "h2",
   lg: "h1",
+  sm: "h3",
 };
 
 const Component = as ?? defaultTagBySize[size];
 ---
 
 <Component
-  data-slot="ui_header"
-  data-size={size}
   class:list={["ui_header", className]}
+  data-size={size}
+  data-slot="ui_header"
   {...props}
 >
   <slot />

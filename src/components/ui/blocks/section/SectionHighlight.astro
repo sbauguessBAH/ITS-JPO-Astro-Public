@@ -1,6 +1,8 @@
 ---
-import base_url from "@/src/lib/base_url";
 import type { HTMLAttributes } from "astro/types";
+
+import base_url from "@/src/lib/base_url";
+
 import "./section.css";
 
 type Props = HTMLAttributes<"li"> & {
@@ -16,10 +18,10 @@ type Props = HTMLAttributes<"li"> & {
 };
 
 const {
+  class: className,
   href,
   isExternal,
   orientation = "horizontal",
-  class: className,
   ...rest
 } = Astro.props;
 
@@ -27,25 +29,25 @@ const Component = href ? "a" : "div";
 
 const linkAttrs =
   href && isExternal
-    ? { href, target: "_blank", rel: "noopener noreferrer" }
+    ? { href, rel: "noopener noreferrer", target: "_blank" }
     : href
       ? { href: base_url(href) }
       : undefined;
 ---
 
 <li
-  data-slot="ui_section-highlight"
-  data-orientation={orientation}
   class:list={[
     "ui_section-highlight",
     href && "ui_section-highlight_link",
     className,
   ]}
+  data-orientation={orientation}
+  data-slot="ui_section-highlight"
   {...rest}
 >
   <Component
-    data-slot="ui_section-highlight-inner"
     class="ui_section-highlight-inner"
+    data-slot="ui_section-highlight-inner"
     {...linkAttrs}
   >
     <slot />

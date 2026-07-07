@@ -1,22 +1,23 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+
 import "./item.css";
 
 interface Props extends Omit<HTMLAttributes<"div">, "class"> {
-  /** Visual style of the item. Defaults to "default". */
-  variant?: "default" | "outline" | "muted";
-  /** Spacing/density of the item. Defaults to "default". */
-  size?: "default" | "sm" | "xs";
+  class?: string;
   /** If provided, the item renders as an <a> instead of a <div>. */
   href?: string;
-  class?: string;
+  /** Spacing/density of the item. Defaults to "default". */
+  size?: "default" | "sm" | "xs";
+  /** Visual style of the item. Defaults to "default". */
+  variant?: "default" | "muted" | "outline";
 }
 
 const {
-  variant = "default",
-  size = "default",
-  href,
   class: className,
+  href,
+  size = "default",
+  variant = "default",
   ...rest
 } = Astro.props;
 
@@ -27,10 +28,10 @@ const Tag = href ? "a" : "div";
 ---
 
 <Tag
+  class:list={["ui_item", className]}
+  data-size={size}
   data-slot="ui_item"
   data-variant={variant}
-  data-size={size}
-  class:list={["ui_item", className]}
   href={href}
   {...rest}
 >

@@ -9,9 +9,9 @@ const { class: className, ...rest } = Astro.props;
 ---
 
 <div
+  class:list={["ui_item-group", className]}
   data-slot="ui_item-group"
   role="list"
-  class:list={["ui_item-group", className]}
   {...rest}
 >
   <slot />

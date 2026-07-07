@@ -3,14 +3,14 @@ import BaseLayout from "@/src/layouts/BaseLayout.astro";
 import "@/src/styles/programs.css";
 
 interface Props {
-  title: string;
   description?: string;
-  keywords?: string[] | string;
+  keywords?: string | string[];
+  title: string;
 }
 
-const { title, description, keywords } = Astro.props;
+const { description, keywords, title } = Astro.props;
 ---
 
-<BaseLayout title={title} keywords={keywords} description={description}>
+<BaseLayout description={description} keywords={keywords} title={title}>
   <slot />
 </BaseLayout>

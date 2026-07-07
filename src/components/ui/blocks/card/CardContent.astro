@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+
 import "./card.css";
 
 type Props = HTMLAttributes<"div">;
@@ -8,8 +9,8 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <div
-  data-slot="ui_card-content"
   class:list={["ui_card-content", className]}
+  data-slot="ui_card-content"
   {...props}
 >
   <slot />

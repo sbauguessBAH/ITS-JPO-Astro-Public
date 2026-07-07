@@ -1,16 +1,16 @@
 ---
 interface Props {
-  color?: "gray" | "blue" | "white";
-  fullWidth?: boolean;
   class?: string;
-  size?: "small" | "large";
+  color?: "blue" | "gray" | "white";
+  fullWidth?: boolean;
+  size?: "large" | "small";
 }
 
 const {
-  color = "white",
-  size,
-  fullWidth,
   class: className,
+  color = "white",
+  fullWidth,
+  size,
 }: Props = Astro.props;
 ---
 

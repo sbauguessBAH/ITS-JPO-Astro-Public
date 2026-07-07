@@ -9,10 +9,10 @@ const { class: className, ...rest } = Astro.props;
 ---
 
 <div
-  data-slot="ui_item-separator"
-  role="separator"
   aria-orientation="horizontal"
   class:list={["ui_item-separator", className]}
+  data-slot="ui_item-separator"
+  role="separator"
   {...rest}
 >
 </div>

@@ -1,7 +1,8 @@
 ---
+import type { ChildNavigationItem } from "@/src/types";
+
 import base_url from "@/src/lib/base_url";
 import { getTrimmedPathname } from "@/src/lib/navigation";
-import type { ChildNavigationItem } from "@/src/types";
 
 const pathname = Astro.url.pathname;
 const trimmedPathname = getTrimmedPathname(pathname);
@@ -131,13 +132,13 @@ const { items } = Astro.props;
   <div class="menu-container">
     <nav class="menu">
       <button
-        class="menu-toggle d-flex d-lg-none"
-        type="button"
-        data-toggle="collapse"
-        data-target="#menu"
         aria-controls="menu"
         aria-expanded="false"
         aria-label="Toggle Program Menu"
+        class="menu-toggle d-flex d-lg-none"
+        data-target="#menu"
+        data-toggle="collapse"
+        type="button"
       >
         Program Menu <i class="menu-toggle-icon fa-solid fa-plus"></i>
       </button>
@@ -165,9 +166,9 @@ const { items } = Astro.props;
                         : base_url(item.url)
                   }
                   {...(item.pages && {
-                    role: "button",
-                    "data-bs-toggle": "dropdown",
                     "aria-expanded": "false",
+                    "data-bs-toggle": "dropdown",
+                    role: "button",
                   })}
                 >
                   {item.name}

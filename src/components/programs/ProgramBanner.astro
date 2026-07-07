@@ -14,7 +14,7 @@ const breadcrumbs = segments.map((segment, index) => {
       ? currentTitle
       : segment.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 
-  return { label, href, isLast };
+  return { href, isLast, label };
 });
 ---
 
@@ -27,11 +27,11 @@ const breadcrumbs = segments.map((segment, index) => {
     {
       breadcrumbs.map((crumb, index) => (
         <li>
-          <span class="separator" aria-hidden="true">
+          <span aria-hidden="true" class="separator">
             /
           </span>
           {index === breadcrumbs.length - 1 ? (
-            <span class="current" aria-current="page">
+            <span aria-current="page" class="current">
               {crumb.label}
             </span>
           ) : (

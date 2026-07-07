@@ -1,24 +1,25 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+
 import "./badge.css";
 
 /**
  * TODO: Update styling including for external link
  */
 type Props = HTMLAttributes<"span"> & {
-  color?: "primary" | "secondary";
-  variant?: "default" | "outline" | "subtle" | "soft";
-  size?: "sm" | "default" | "lg";
-  rounded?: boolean;
   class?: string;
+  color?: "primary" | "secondary";
+  rounded?: boolean;
+  size?: "default" | "lg" | "sm";
+  variant?: "default" | "outline" | "soft" | "subtle";
 };
 
 const {
   class: className,
   color = "primary",
-  variant = "default",
-  size = "default",
   rounded = true,
+  size = "default",
+  variant = "default",
   ...props
 } = Astro.props;
 
@@ -26,12 +27,12 @@ const Component = "span";
 ---
 
 <Component
-  data-slot="ui_badge"
-  data-color={color}
-  data-variant={variant}
-  data-size={size}
-  data-rounded={rounded}
   class:list={["ui_badge", className]}
+  data-color={color}
+  data-rounded={rounded}
+  data-size={size}
+  data-slot="ui_badge"
+  data-variant={variant}
   {...props}
 >
   <slot />

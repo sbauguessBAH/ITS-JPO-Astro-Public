@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+
 import "./section.css";
 
 type Props = HTMLAttributes<"p">;
@@ -8,8 +9,8 @@ const { class: className, ...rest } = Astro.props;
 ---
 
 <p
-  data-slot="ui_section-headline"
   class:list={["ui_section-headline", className]}
+  data-slot="ui_section-headline"
   {...rest}
 >
   <slot />
