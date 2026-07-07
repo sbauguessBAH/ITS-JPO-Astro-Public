@@ -1,14 +1,14 @@
 ---
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "./_layout.astro";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
+import Card from "@/src/components/ui/blocks/card/Card.astro";
+import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
+import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
 import Link from "@/src/components/Link.astro";
 import intersectionCrashesImage from "@/src/assets/images/intersection-safety/intersection-crashes.png";
 import userDeathsImage from "@/src/assets/images/intersection-safety/user-deaths.png";
 import { Image } from "astro:assets";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
 import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
 import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
 import base_url from "@/src/lib/base_url";
@@ -18,8 +18,8 @@ import dataFusionIcon from "@/src/assets/images/intersection-safety/data-fusion.
 import aiIcon from "@/src/assets/images/intersection-safety/ai.png";
 import integrationIcon from "@/src/assets/images/intersection-safety/integration.png";
 import safeIntersectionImage from "@/src/assets/images/intersection-safety/safe-intersection.jpg";
-import BoxArrowUpRightIcon from "@/src/components/programs/icons/BoxArrowUpRightIcon.astro";
-import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
+import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
+import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
 
 ---
 <style>
@@ -275,7 +275,7 @@ import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
       </p>
       <div class="problem-container mt-4">
         <Card shadow="sm">
-          <CardBody>
+          <CardContent>
             <div class="problem">
               <div class="problem-image">
                 <Image src={intersectionCrashesImage} alt="Intersection Crashes Icon" class="img-fluid" />
@@ -291,10 +291,10 @@ import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
                 </p>
               </div>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
         <Card shadow="sm">
-          <CardBody>
+          <CardContent>
             <div class="problem">
               <div class="problem-image">
                 <Image src={userDeathsImage} alt="User Deaths Icon" class="img-fluid" />
@@ -310,7 +310,7 @@ import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
                 </p>
               </div>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
       </div>
     </ProgramSection>
@@ -326,11 +326,11 @@ import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
           <CardHeader class="solution-header">
             <Image src={dataFusionIcon} alt="Data Fusion Icon" class="img-fluid solution-icon" />
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <h3 class="program-title-md">
               Data Fusion Utilizing Existing and Emerging Sensors
             </h3>
-          </CardBody>
+          </CardContent>
           <CardFooter>
             <p class="program-text">
               Emerging, low-cost sensors can be deployed at intersections for 
@@ -346,11 +346,11 @@ import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
             <CardHeader class="solution-header">
               <Image src={aiIcon} alt="AI Icon" class="img-fluid solution-icon" />
             </CardHeader>
-            <CardBody>
+            <CardContent>
               <h3 class="program-title-md">
                 Artificial Intelligence and Machine Learning
               </h3>
-            </CardBody>
+            </CardContent>
             <CardFooter>
               <p class="program-text">
                 AI/ML can fuse data from multiple machine vision sensing modalities 
@@ -366,11 +366,11 @@ import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
             <CardHeader class="solution-header">
               <Image src={integrationIcon} alt="Integration Icon" class="img-fluid solution-icon" />
             </CardHeader>
-            <CardBody>
+            <CardContent>
               <h3 class="program-title-md">
                 Low-Cost, High-Value Opportunity for Integration at Scale
               </h3>
-            </CardBody>
+            </CardContent>
             <CardFooter>
               <p class="program-text">
                 These existing technologies have not been deployed together 
@@ -428,12 +428,12 @@ import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
       </h2>
       <div class="resource-container">
         <Card shadow="sm">
-          <CardBody>
+          <CardContent>
             <div class="resource-card-header p-2">
               <h3 class="resource-card-title">Enhancing the Safety of Vulnerable Road Users at Intersections</h3>
               <p class="resource-card-subtitle">Report | February 2023</p>
             </div>
-          </CardBody>
+          </CardContent>
           <CardFooter>
             <div class="resource-link-container px-2">
               <a 
@@ -442,7 +442,7 @@ import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
                 rel="noopener noreferrer" 
                 target="_blank"
               >
-                <BoxArrowUpRightIcon size={12} />
+                <ExternalLinkIcon size={12} />
                 Summary Report
               </a>
               <a 
@@ -451,19 +451,19 @@ import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
                 rel="noopener noreferrer" 
                 target="_blank"
               >
-                <BoxArrowUpRightIcon size={12} />
+                <ExternalLinkIcon size={12} />
                 Request for Information (RFI)
               </a>
             </div>
           </CardFooter>
         </Card>
         <Card shadow="sm">
-          <CardBody>
+          <CardContent>
             <div class="resource-card-header p-2">
               <h3 class="resource-card-title">Enhancing the Safety of Vulnerable Road Users at Intersections</h3>
               <p class="resource-card-subtitle">Webinar | March 17, 2023</p>
             </div>
-          </CardBody>
+          </CardContent>
           <CardFooter>
             <div class="resource-link-container px-2">
               <a 

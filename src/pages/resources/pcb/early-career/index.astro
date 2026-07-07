@@ -1,16 +1,15 @@
 ---
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "../_layout.astro";
-import Card from "@/src/components/ui/card/Card.astro";
-import CardContent from "@/src/components/ui/card/CardContent.astro";
-import CardFooter from "@/src/components/ui/card/CardFooter.astro";
+import Card from "@/src/components/ui/blocks/card/Card.astro";
+import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
 import Link from "@/src/components/Link.astro";
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import { getCollection } from "astro:content";
-import CardImage from "@/src/components/ui/card/CardImage.astro";
-import CardDescription from "@/src/components/ui/card/CardDescription.astro";
-import CardHeader from "@/src/components/ui/card/CardHeader.astro";
-import CardTitle from "@/src/components/ui/card/CardTitle.astro";
+import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
+import CardDescription from "@/src/components/ui/blocks/card/CardDescription.astro";
+import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
+import CardTitle from "@/src/components/ui/blocks/card/CardTitle.astro";
 
 const modules = await getCollection("pcbModules").then(modules => modules.sort((a, b) => (a.data.order || 0) - (b.data.order || 0)));
 

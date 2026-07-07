@@ -1,17 +1,17 @@
 ---
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "./_layout.astro";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
+import Card from "@/src/components/ui/blocks/card/Card.astro";
+import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
+import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
 import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
 import { Image } from "astro:assets";
 import Link from "@/src/components/Link.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
-import Check2CircleIcon from "@/src/components/programs/icons/Check2CircleIcon.astro";
-import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
-import FilmIcon from "@/src/components/programs/icons/FilmIcon.astro";
-import LinkIcon from "@/src/components/programs/icons/LinkIcon.astro";
+import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
+import Check2CircleIcon from "@/src/components/ui/icons/Check2CircleIcon.astro";
+import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
+import FilmIcon from "@/src/components/ui/icons/FilmIcon.astro";
+import LinkIcon from "@/src/components/ui/icons/LinkIcon.astro";
 import base_url from "@/src/lib/base_url";
 ---
 
@@ -213,7 +213,7 @@ import base_url from "@/src/lib/base_url";
               <p class="program-text text-white text-center mb-0">Concept Assessment</p>
             </div>
           </CardHeader>
-          <CardBody class="p-4">
+          <CardContent class="p-4">
             <p class="program-text">
               Stage 1A brought together innovative teams combining expertise in emerging technologies with traffic and safety engineering to develop new and potentially transformative intersection
               safety approaches. Participants submitted concept papers on their proposed intersection safety system designs.
@@ -232,7 +232,7 @@ import base_url from "@/src/lib/base_url";
                 <p class="program-text mb-0">15 teams selected for prizes and invited to Stage 1B</p>
               </div>
             </div>
-          </CardBody>
+          </CardContent>
           <CardFooter class="p-4">
             <div class="prize-container">
               <div class="prize-container-amount">$1,500,000</div>
@@ -247,7 +247,7 @@ import base_url from "@/src/lib/base_url";
               <p class="program-text text-white text-center mb-0">System Assessment and Virtual Testing</p>
             </div>
           </CardHeader>
-          <CardBody class="p-4">
+          <CardContent class="p-4">
             <p class="program-text">
               Stage 1B challenged the winning teams from Stage 1A to develop, train, and improve algorithms for the detection, localization, classification, path prediction, and conflict prediction of
               vulnerable road users and vehicles utilizing U.S. DOT-provided real-world sensor data collected on a closed course at the Federal Highway Administration (FHWA) Turner-Fairbank Highway
@@ -267,7 +267,7 @@ import base_url from "@/src/lib/base_url";
                 <p class="program-text mb-0">10 teams selected for prizes</p>
               </div>
             </div>
-          </CardBody>
+          </CardContent>
           <CardFooter class="p-4">
             <div class="prize-container">
               <div class="prize-container-amount">$4,000,000</div>
@@ -818,12 +818,12 @@ import base_url from "@/src/lib/base_url";
 
 
         <Card shadow="sm">
-          <CardBody>
+          <CardContent>
             <div class="resource-card-header p-2">
               <h3 class="resource-card-title">Intersection Safety Challenge &mdash; From Conceptualization to Initial Testing</h3>
               <p class="resource-card-subtitle">Webinar | July 27, 2023</p>
             </div>
-          </CardBody>
+          </CardContent>
           <CardFooter>
             <div class="resource-link-container px-2">
               <a class="resource-button" rel="noopener noreferrer" target="_blank" href={base_url("/assets/intersection-safety/USDOT_IntersectionSafetyWebinar3.pdf")}>

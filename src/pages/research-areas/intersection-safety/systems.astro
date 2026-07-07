@@ -1,12 +1,12 @@
 ---
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "./_layout.astro";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
+import Card from "@/src/components/ui/blocks/card/Card.astro";
+import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
 import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
 import { Image } from "astro:assets";
-import BoxArrowUpRightIcon from "@/src/components/programs/icons/BoxArrowUpRightIcon.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
+import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
 ---
 <style>
   .resource-container {
@@ -180,12 +180,12 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
       </h2>
       <div class="resource-container">
         <Card shadow="sm">
-          <CardBody>
+          <CardContent>
             <div class="resource-card-header p-2">
               <h3 class="resource-card-title">Intersection Safety System (ISS) Prototyping</h3>
               <p class="resource-card-subtitle">Issued on April 25, 2025 | Closed on May 9, 2025</p>
             </div>
-          </CardBody>
+          </CardContent>
           <CardFooter>
             <div class="resource-link-container px-2">
               <a 
@@ -194,7 +194,7 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
                 target="_blank"
                 href="https://sam.gov/opp/8573bb118a5e4343a9512fed8b393d63/view"
               >
-                <BoxArrowUpRightIcon size={12} />
+                <ExternalLinkIcon size={12} />
                 Sources Sought Notice
               </a>
             </div>

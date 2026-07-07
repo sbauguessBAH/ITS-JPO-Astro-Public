@@ -3,19 +3,16 @@ import type { CollectionEntry } from "astro:content";
 
 import { getCollection } from "astro:content";
 
-import Card from "@/src/components/ui/card/Card.astro";
-import CardContent from "@/src/components/ui/card/CardContent.astro";
-import CardFooter from "@/src/components/ui/card/CardFooter.astro";
-import CardHeader from "@/src/components/ui/card/CardHeader.astro";
-import LibraryImage from "@/src/components/programs/LibraryImage.astro";
+import Card from "@/src/components/ui/blocks/card/Card.astro";
+import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
+import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import base_url from "@/src/lib/base_url";
-
 import Layout from "../_layout.astro";
-import CardImage from "@/src/components/ui/card/CardImage.astro";
-import CardTitle from "@/src/components/ui/card/CardTitle.astro";
-import CardDescription from "@/src/components/ui/card/CardDescription.astro";
-import Badge from "@/src/components/ui/badge/Badge.astro";
+import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
+import CardTitle from "@/src/components/ui/blocks/card/CardTitle.astro";
+import CardDescription from "@/src/components/ui/blocks/card/CardDescription.astro";
+import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 
 export const categories: { category?: string, title: string }[] = [
   { category: undefined, title: "All Courses" },
