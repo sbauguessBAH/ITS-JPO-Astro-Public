@@ -7,9 +7,9 @@ import caveDiy from "@/src/assets/images/pcb/cave/cave-diy.jpg"
 // import caveLogo from "@/src/assets/images/pcb/cave/cave-logo.png"
 import caveTransparent from "@/src/assets/images/pcb/cave/cave-transparent.png"
 import rsu from "@/src/assets/images/pcb/cave/rsu.png"
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import Card from "@/src/components/ui/card/Card.astro";
+import CardContent from "@/src/components/ui/card/CardContent.astro";
+import CardHeader from "@/src/components/ui/card/CardHeader.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import base_url from "@/src/lib/base_url";
 
@@ -149,7 +149,7 @@ import Layout from "../../_layout.astro";
           <CardHeader class="resource-card-header">
             <Image alt="CAVe-in-a-box" class="resource-card-image" src={caveDesignDocuments}/>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <div class="resource-card-body">
               <div>
                 <h3 class="program-title-sm mb-2">Design Documents</h3>
@@ -168,13 +168,13 @@ import Layout from "../../_layout.astro";
                 </a>
               </div>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
         <Card>
           <CardHeader class="resource-card-header">
             <Image alt="Two people standing over CAVe-in-a-box" class="resource-card-image" src={caveDiy}/>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <div class="resource-card-body">
               <div>
                 <h3 class="program-title-sm mb-2">Do-It-Yourself Guides</h3>
@@ -192,13 +192,13 @@ import Layout from "../../_layout.astro";
                 </a>
               </div>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
         <Card>
           <CardHeader class="resource-card-header">
             <Image alt="A laptop connected to a CAVe-in-a-box" class="resource-card-image" src={caveConfiguration}/>
           </CardHeader>
-          <CardBody>
+          <CardContent>
             <div class="resource-card-body">
               <div>
                 <h3 class="program-title-sm mb-2">Configuration Instructions</h3>
@@ -216,7 +216,7 @@ import Layout from "../../_layout.astro";
                 </a>
               </div>
             </div>
-          </CardBody>
+          </CardContent>
         </Card>
       </div>
     </ProgramSection>

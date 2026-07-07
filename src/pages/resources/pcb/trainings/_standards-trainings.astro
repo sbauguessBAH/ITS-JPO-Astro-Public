@@ -5,10 +5,10 @@ import { getCollection, render } from "astro:content";
 // import { isTemplateExpression } from "typescript";
 
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import Card from "@/src/components/ui/card/Card.astro";
+import CardContent from "@/src/components/ui/card/CardContent.astro";
+import CardFooter from "@/src/components/ui/card/CardFooter.astro";
+import CardHeader from "@/src/components/ui/card/CardHeader.astro";
 import PdfIcon from "@/src/components/programs/icons/PdfIcon.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import base_url from "@/src/lib/base_url";
@@ -202,14 +202,14 @@ const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
                     </h3>
                   </button>
                 </CardHeader>
-                <CardBody class="p-0">
+                <CardContent class="p-0">
                   <div
                     class="collapse training-card-body" 
                     id={`collapse-${training.id}`}  
                   >
                     <Content/>
                   </div>
-                </CardBody>
+                </CardContent>
                 <CardFooter class="training-card-footer">
                   {training.data.presentation && (
                     <a class="training-card-button" href={base_url(training.data.presentation)} rel="noopener noreferrer" target="_blank">

@@ -1,40 +1,21 @@
 ---
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "../_layout.astro";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import Card from "@/src/components/ui/card/Card.astro";
+import CardContent from "@/src/components/ui/card/CardContent.astro";
+import CardFooter from "@/src/components/ui/card/CardFooter.astro";
 import Link from "@/src/components/Link.astro";
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import { getCollection } from "astro:content";
+import CardImage from "@/src/components/ui/card/CardImage.astro";
+import CardDescription from "@/src/components/ui/card/CardDescription.astro";
+import CardHeader from "@/src/components/ui/card/CardHeader.astro";
+import CardTitle from "@/src/components/ui/card/CardTitle.astro";
 
 const modules = await getCollection("pcbModules").then(modules => modules.sort((a, b) => (a.data.order || 0) - (b.data.order || 0)));
 
 ---
 <style>
-  .resource-card:hover {
-    background: rgba(var(--color-brand-light), 0.5);
-    box-shadow: var(--box-shadow-lg);
-  }
-
-  .resource-card-image {
-    width: auto;
-    height: 250px;
-    object-fit: cover;
-  }
-
-  .resource-card-body {
-    overflow: visible;
-    padding: 0;
-  }
-
-  .resource-card-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem;
-    height: 100%;
-  }
-
   .card-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -101,22 +82,6 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
 
 </style>
 
-<style>
-  .document-type-badge {
-    background: #ffffff;
-    border: 1px solid var(--border-light);
-    border-radius: 1rem;
-    font-size: 0.9rem;
-    height: 24px;
-    padding: 0 0.5rem;
-    display: inline;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-</style>
-
 <Layout>
   <main class="program-main">
     <ProgramSection size="small">
@@ -163,23 +128,14 @@ const modules = await getCollection("pcbModules").then(modules => modules.sort((
       </p>
       <div class="card-grid mt-4">
         {modules.map(module => (
-          <Card class="resource-card" href={`/resources/pcb/early-career/${module.id}`} radius="lg" shadow="none">
-            <CardBody class="resource-card-body">
-              {/* <Image 
-                alt={resource.title}
-                class="resource-card-image radius-none shadow"
-                src={resource.image}
-              /> */}
-              <LibraryImage entry={module.data.image} class="resource-card-image" />
-            </CardBody>
-            <CardFooter class="resource-card-footer">
-              <h3 class="program-title-sm text-foreground mb-2">
-                {module.data.title}
-              </h3>
-              <p class="program-text">
-                {module.data.description}
-              </p>
-            </CardFooter>
+          <Card class="resource-card" href={`/resources/pcb/early-career/${module.id}`}>
+            <CardImage entry={module.data.image} height={250}/>
+            <CardHeader>
+              <CardTitle>{module.data.title}</CardTitle>
+              <CardDescription>{module.data.description}</CardDescription>
+            </CardHeader>
+            <CardContent class="resource-card-body">
+            </CardContent>
           </Card>
         ))}
       </div>

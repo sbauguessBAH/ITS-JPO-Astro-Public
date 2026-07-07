@@ -3,15 +3,19 @@ import type { CollectionEntry } from "astro:content";
 
 import { getCollection } from "astro:content";
 
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import Card from "@/src/components/ui/card/Card.astro";
+import CardContent from "@/src/components/ui/card/CardContent.astro";
+import CardFooter from "@/src/components/ui/card/CardFooter.astro";
+import CardHeader from "@/src/components/ui/card/CardHeader.astro";
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../_layout.astro";
+import CardImage from "@/src/components/ui/card/CardImage.astro";
+import CardTitle from "@/src/components/ui/card/CardTitle.astro";
+import CardDescription from "@/src/components/ui/card/CardDescription.astro";
+import Badge from "@/src/components/ui/badge/Badge.astro";
 
 export const categories: { category?: string, title: string }[] = [
   { category: undefined, title: "All Courses" },
@@ -122,19 +126,6 @@ const getCourseCount = (path?: string) => courses.filter((entry) => pathIsCatego
   }
 </style>
 <style>
-  .course-card:hover {
-    box-shadow: var(--box-shadow-lg);
-    background: rgba(var(--color-brand-light), 0.5);
-  }
-  .course-card-header {
-    padding: 0;
-    position: relative;
-  }
-  .course-card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
   .course-card-type {
     margin: 0;
     text-transform: uppercase;
@@ -147,25 +138,15 @@ const getCourseCount = (path?: string) => courses.filter((entry) => pathIsCatego
     color: white;
     background: rgb(var(--color-brand));
   }
-  .course-card-title {
-    text-transform: none;
-    margin: 0;
-    padding: 0;
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-  .course-card-body {
-    padding: var(--size);
-  }
   .course-card-category {
     margin: 0;
+    padding: 0;
     text-transform: uppercase;
     font-weight: 600;
     color: rgb(var(--color-gray));
   }
   .course-card-footer {
-    padding: var(--size);
-    /* background: rgb(var(--color-gray-light)) */
+    padding: calc(var(--spacing) * 4) var(--size);
     color: rgb(var(--color-gray))
   }
 </style>
@@ -206,44 +187,24 @@ const getCourseCount = (path?: string) => courses.filter((entry) => pathIsCatego
           </nav>
         </div>
         <div class="trainings">
-          <!-- <div class="course-grid">
-            {filteredCourses.map(course => (
-              <CourseCard {...course}/>
-            ))}
-          </div> -->
           <div class="course-grid">
             {filteredCourses.map(({ data: course }) => (
               <Card 
                 class="course-card" 
                 href={course.url} 
                 isExternal={course.isExternal} 
-                radius="md"
-                shadow="sm"
               >
-                <CardHeader class="course-card-header">
-                  {course.image && (
-                    <>
-                      <LibraryImage
-                        class="course-card-image"
-                        entry={course.image}
-                      />
-                      <p class="course-card-type">
-                        {course.type}
-                      </p>
-                    </>
-                  )}
+                <CardImage entry={course.image} height={200}/>
+                <Badge size="lg" style={{ textTransform: 'uppercase', position: 'absolute', left: '8px', top: '8px'}}>{course.type}</Badge>
+                {course.isExternal && <Badge color="secondary" size="lg" style={{ textTransform: 'uppercase', position: 'absolute', right: '8px', top: '8px'}}>External Link</Badge>}
+                {/* <p class="course-card-type">
+                  {course.type}
+                </p> */}
+                <CardHeader>
+                  <p class="course-card-category">{course.category.replace("-", " ")}</p>
+                  <CardTitle>{course.title}</CardTitle>
+                  <CardDescription>{course.description}</CardDescription>
                 </CardHeader>
-                <CardBody class="course-card-body">
-                  <p class="course-card-category">
-                      {course.category.replace("-", " ")}
-                    </p>
-                  <h3 class="course-card-title mb-2">
-                    {course.title}
-                  </h3>
-                  <p class="course-card-description">
-                    {course.description}
-                  </p>
-                </CardBody>
                 {course.action === "Register" && (
                   <CardFooter class="course-card-footer">
                     This link will take you to the NHI Catalog. Search for the course name or number to register.

@@ -1,11 +1,13 @@
 ---
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "../_layout.astro";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+import Card from "@/src/components/ui/card/Card.astro";
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import base_url from "@/src/lib/base_url";
+import CardImage from "@/src/components/ui/card/CardImage.astro";
+import CardDescription from "@/src/components/ui/card/CardDescription.astro";
+import CardHeader from "@/src/components/ui/card/CardHeader.astro";
+import CardTitle from "@/src/components/ui/card/CardTitle.astro";
 ---
 <style>
   .help-desk {
@@ -86,29 +88,6 @@ import base_url from "@/src/lib/base_url";
 </style>
 
 <style>
-  .resource-card:hover {
-    background: rgba(var(--color-brand-light), 0.5);
-    box-shadow: var(--box-shadow-lg);
-  }
-
-  .resource-card-image {
-    width: auto;
-    height: 250px;
-    object-fit: cover;
-  }
-
-  .resource-card-body {
-    overflow: visible;
-    padding: 0;
-  }
-
-  .resource-card-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem;
-    height: 100%;
-  }
-
   .card-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -157,31 +136,21 @@ import base_url from "@/src/lib/base_url";
         Additional Resources
       </h2>
       <div class="card-grid mt-4">
-        <Card class="resource-card" href={`/resources/pcb/technical-assistance/cave`} radius="lg" shadow="sm">
-          <CardBody class="resource-card-body">
-            <LibraryImage entry="pcb/resources/cave" class="resource-card-image" />
-          </CardBody>
-          <CardFooter class="resource-card-footer">
-            <h3 class="program-title-sm text-foreground mb-2">
-              Connected and Automated Vehicle Education (CAVe)
-            </h3>
-            <p class="program-text">
+        <Card href={`/resources/pcb/technical-assistance/cave`}>
+          <CardImage entry="pcb/resources/cave" height={250} />
+          <CardHeader>
+            <CardTitle>Connected and Automated Vehicle Education (CAVe)</CardTitle>
+            <CardDescription>
               The Connected and Automated Vehicle Education (CAVe) Support Services Program provides technical assistance and equipment loads to help accelerate deployments.
-            </p>
-          </CardFooter>
+            </CardDescription>
+          </CardHeader>
         </Card>
-        <Card class="resource-card" href={`/resources/pcb/technical-assistance/v2x-cohort`} radius="lg" shadow="sm">
-          <CardBody class="resource-card-body">
-            <LibraryImage entry="pcb/resources/cohort" class="resource-card-image" />
-          </CardBody>
-          <CardFooter class="resource-card-footer">
-            <h3 class="program-title-sm text-foreground mb-2">
-              Accelerating Vehicle-to-Everything (V2X) Cohort
-            </h3>
-            <p class="program-text">
-              The Accelerating V2X Cohort supports public agencies and other infrastructure owners and operators (IOOs) in accelerating the deployment of interoperable vehicle-to-everything (V2X) technologies.
-            </p>
-          </CardFooter>
+        <Card href={`/resources/pcb/technical-assistance/v2x-cohort`}>
+          <CardImage entry="pcb/resources/cohort" height={250} />
+          <CardHeader>
+            <CardTitle>Accelerating Vehicle-to-Everything (V2X) Cohort</CardTitle>
+            <CardDescription>The Accelerating V2X Cohort supports public agencies and other infrastructure owners and operators (IOOs) in accelerating the deployment of interoperable vehicle-to-everything (V2X) technologies.</CardDescription>
+          </CardHeader>
         </Card>
       </div>
     </ProgramSection>

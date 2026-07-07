@@ -1,10 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import LibraryImage from "@/src/components/programs/LibraryImage.astro";
+import Card from "@/src/components/ui/card/Card.astro";
+import CardContent from "@/src/components/ui/card/CardContent.astro";
+import CardHeader from "@/src/components/ui/card/CardHeader.astro";
+import CardImage from "@/src/components/ui/card/CardImage.astro";
 import { render } from "astro:content";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Layout from "../_layout.astro";
@@ -40,17 +40,6 @@ const { Content,  } = await render(module);
       flex-basis: 30%;
     }
 
-    .meta-header {
-      padding: 0;
-      margin: 0;
-
-      .meta-image {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-      }
-    }
-
     .meta-disclaimer {
       color: rgb(var(--color-gray));
       font-size: 1rem;
@@ -68,11 +57,6 @@ const { Content,  } = await render(module);
       font-weight: 600;
       color: rgb(var(--color-gray));
     }
-
-    .meta-body {
-      padding: var(--size);
-    }
-
     .meta-attributes {
       margin-bottom: 0;
       display: grid;
@@ -117,11 +101,9 @@ const { Content,  } = await render(module);
         <Content />
       </div>
       <div class="module-meta">
-        <Card radius="md" shadow="sm">
-          <CardHeader class="meta-header">
-            <LibraryImage entry={module.data.image} class="meta-image" />
-          </CardHeader>
-          <CardBody class="meta-body">
+        <Card shadow="sm">
+          <CardImage entry={module.data.image} height={250} />
+          <CardContent>
             <dl class="meta-attributes">
               <!-- <div class="meta-attribute"> -->
                 <dt>Name</dt>
@@ -152,7 +134,7 @@ const { Content,  } = await render(module);
             >
               Register
             </Link>
-          </CardBody>
+          </CardContent>
         </Card>
       </div>
     </div>
