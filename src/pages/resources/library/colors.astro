@@ -19,69 +19,134 @@ type Palette = {
 const palettes: Palette[] = [
   {
     name: "Program",
-    notes: "These colors are used throughout the ITS JPO website and other program pages",
+    notes:
+      "These colors are used throughout the ITS JPO website and other program pages",
     source: "programs.css",
     colors: [
-      { name: "Foreground", hex: "#000000", rgb: "0, 0, 0", variables: ["--color-foreground"] },
-      { name: "Background", hex: "#ffffff", rgb: "256, 256, 256", variables: ["--color-background"] },
-      { 
-        name: "Gray", 
-        variables: ["--color-gray"], 
-        notes: "Used for program section background, strategy container on automation-program", 
-        hex: "#7d7d7d", 
-        rgb: "247, 247, 247" 
+      {
+        name: "Foreground",
+        hex: "#000000",
+        rgb: "0, 0, 0",
+        variables: ["--color-foreground"],
       },
-      { name: "Gray Light", variables: ["--color-gray-light"], hex: "#f7f7f7", rgb: "125, 125, 125" },
+      {
+        name: "Background",
+        hex: "#ffffff",
+        rgb: "256, 256, 256",
+        variables: ["--color-background"],
+      },
+      {
+        name: "Gray",
+        variables: ["--color-gray"],
+        notes:
+          "Used for program section background, strategy container on automation-program",
+        hex: "#7d7d7d",
+        rgb: "247, 247, 247",
+      },
+      {
+        name: "Gray Light",
+        variables: ["--color-gray-light"],
+        hex: "#f7f7f7",
+        rgb: "125, 125, 125",
+      },
       { name: "Shadow Light", variables: ["--shadow-light"], hex: "#c4c4c4" },
       { name: "Border Light", variables: ["--border-light"], hex: "#e9e9e9" },
-      { name: "Background Light", variables: ["--background-light"], hex: "#f8f8f8" },
-      { name: "Brand Light", variables: ["--color-brand-light"], hex: "#e9ecef", rgb: "233, 236, 239" },
-      { name: "Brand", variables: ["--color-brand"], notes: "ITS JPO Blue", hex: "#005d83", rgb: "0, 93, 131" },
-      { 
-        name: "Brand Dark", variables: ["--color-brand-dark"], 
-        notes: "Used for coming-soon-badge, header color, and many other elements",
+      {
+        name: "Background Light",
+        variables: ["--background-light"],
+        hex: "#f8f8f8",
+      },
+      {
+        name: "Brand Light",
+        variables: ["--color-brand-light"],
+        hex: "#e9ecef",
+        rgb: "233, 236, 239",
+      },
+      {
+        name: "Brand",
+        variables: ["--color-brand"],
+        notes: "ITS JPO Blue",
+        hex: "#005d83",
+        rgb: "0, 93, 131",
+      },
+      {
+        name: "Brand Dark",
+        variables: ["--color-brand-dark"],
+        notes:
+          "Used for coming-soon-badge, header color, and many other elements",
         hex: "#055681",
         rgb: "5, 86, 129",
-        oklch: "0.433 0.0983 240.78"
+        oklch: "0.433 0.0983 240.78",
       },
-      { name: "Brand Secondary", variables: ["--color-brand-secondary"], 
-      notes: "USDOT Blue--used for callout box", hex: "#072e55", rgb: "7, 46, 85" },
-      { name: "Blue", variables: ["--color-blue"], 
-      notes: "JPO Style Guide", hex: "#4ec1e0", rgb: "78, 193, 224" },
-      { name: "Green", variables: ["--color-green"], 
-      notes: "JPO Style Guide", hex: "#babf10", rgb: "186, 191, 16" },
-      { name: "Green Dark", variables: ["--color-green-dark"], 
-      notes: "JPO Style Guide", hex: "#576538", rgb: "87, 101, 56" },
-      { name: "Purple", variables: ["--color-purple"], 
-      notes: "JPO Style Guide", hex: "#86254f", rgb: "134, 37, 79" },
-      { name: "Orange", variables: ["--color-orange"], 
-      notes: "JPO Style Guide", hex: "#e28432", rgb: "226, 132, 50" },
-    ]
+      {
+        name: "Brand Secondary",
+        variables: ["--color-brand-secondary"],
+        notes: "USDOT Blue--used for callout box",
+        hex: "#072e55",
+        rgb: "7, 46, 85",
+      },
+      {
+        name: "Blue",
+        variables: ["--color-blue"],
+        notes: "JPO Style Guide",
+        hex: "#4ec1e0",
+        rgb: "78, 193, 224",
+      },
+      {
+        name: "Green",
+        variables: ["--color-green"],
+        notes: "JPO Style Guide",
+        hex: "#babf10",
+        rgb: "186, 191, 16",
+      },
+      {
+        name: "Green Dark",
+        variables: ["--color-green-dark"],
+        notes: "JPO Style Guide",
+        hex: "#576538",
+        rgb: "87, 101, 56",
+      },
+      {
+        name: "Purple",
+        variables: ["--color-purple"],
+        notes: "JPO Style Guide",
+        hex: "#86254f",
+        rgb: "134, 37, 79",
+      },
+      {
+        name: "Orange",
+        variables: ["--color-orange"],
+        notes: "JPO Style Guide",
+        hex: "#e28432",
+        rgb: "226, 132, 50",
+      },
+    ],
   },
   {
     name: "PCB -> V2X Interoperability Help Desk",
     source: "pcb/v2x-help-desk",
-    notes: "Colors are different from rest of PCB and ITS JPO site but can't change because of logo",
+    notes:
+      "Colors are different from rest of PCB and ITS JPO site but can't change because of logo",
     colors: [
       {
-        name: "Yellow", 
+        name: "Yellow",
         hex: "#EFBD22",
         oklch: "0.8205 0.1609 88.37",
-        variables: ["--color-pcb-v2x_help_desk-yellow"]
+        variables: ["--color-pcb-v2x_help_desk-yellow"],
       },
       {
-        name: "Dark Blue", 
+        name: "Dark Blue",
         hex: "#001D51",
         oklch: "0.2499 0.1019 259.99",
-        variables: ["--color-pcb-v2x_help_desk-blue_dark"]
+        variables: ["--color-pcb-v2x_help_desk-blue_dark"],
       },
       {
         name: "Light Blue",
         hex: "#186FA9",
         oklch: "0.5222 0.1197 244.27",
-        variables: ["--color-pcb-v2x_help_desk-blue"]
-      }
-    ]
+        variables: ["--color-pcb-v2x_help_desk-blue"],
+      },
+    ],
   },
   {
     name: "Automation Program",
@@ -98,33 +163,78 @@ const palettes: Palette[] = [
         notes: "Same as --color-brand-secondary",
         hex: "#072e55",
       },
-    ]
+    ],
   },
   {
     name: "Artificial Intelligence",
     source: "artificial-intelligence",
     colors: [
-      { name: "Primary Blue", variables: ["--ai-blue-primary"], hex: "#005ea2" },
-      { name: "Secondary Blue", variables: ["--ai-blue-secondary"], hex: "#055681" },
+      {
+        name: "Primary Blue",
+        variables: ["--ai-blue-primary"],
+        hex: "#005ea2",
+      },
+      {
+        name: "Secondary Blue",
+        variables: ["--ai-blue-secondary"],
+        hex: "#055681",
+      },
       { name: "Dark Blue", variables: ["--ai-blue-dark"], hex: "#091f60" },
-      { name: "Darkest Blue", variables: ["--ai-blue-darkest"], hex: "#01121b" },
+      {
+        name: "Darkest Blue",
+        variables: ["--ai-blue-darkest"],
+        hex: "#01121b",
+      },
       { name: "Teal Blue", variables: ["--ai-blue-teal"], hex: "#09638c" },
-      { name: "Card Light Blue Background", variables: ["--ai-card-light-blue-bg"], hex: "#f0f8ff" },
-      { name: "Card Light Blue Border", variables: ["--ai-card-light-blue-border"], hex: "#d1e7f7" },
-      { name: "Card Gray Background", variables: ["--ai-card-gray-bg"], hex: "#f8f9fa" },
-      { name: "Card Gray Border", variables: ["--ai-card-gray-border"], hex: "#e7e7e7" },
+      {
+        name: "Card Light Blue Background",
+        variables: ["--ai-card-light-blue-bg"],
+        hex: "#f0f8ff",
+      },
+      {
+        name: "Card Light Blue Border",
+        variables: ["--ai-card-light-blue-border"],
+        hex: "#d1e7f7",
+      },
+      {
+        name: "Card Gray Background",
+        variables: ["--ai-card-gray-bg"],
+        hex: "#f8f9fa",
+      },
+      {
+        name: "Card Gray Border",
+        variables: ["--ai-card-gray-border"],
+        hex: "#e7e7e7",
+      },
       { name: "Text Gray", variables: ["--ai-text-gray"], hex: "#71767a" },
       { name: "Text Dark", variables: ["--ai-text-dark"], hex: "#232323" },
       { name: "Text Medium", variables: ["--ai-text-medium"], hex: "#3c3c3c" },
       { name: "Text Light", variables: ["--ai-text-light"], hex: "#6c757d" },
-      { name: "Border Light", variables: ["--ai-border-light"], hex: "#dee2e6" },
-      { name: "Border Lighter", variables: ["--ai-border-lighter"], hex: "#e7edf3" },
-      { name: "Border Lightest", variables: ["--ai-border-lightest"], hex: "#f0f0f0" },
-      { name: "Section Gray Background", variables: ["--ai-section-bg-gray"], hex: "#f7f7f7" },
-    ]
-  }
-]
+      {
+        name: "Border Light",
+        variables: ["--ai-border-light"],
+        hex: "#dee2e6",
+      },
+      {
+        name: "Border Lighter",
+        variables: ["--ai-border-lighter"],
+        hex: "#e7edf3",
+      },
+      {
+        name: "Border Lightest",
+        variables: ["--ai-border-lightest"],
+        hex: "#f0f0f0",
+      },
+      {
+        name: "Section Gray Background",
+        variables: ["--ai-section-bg-gray"],
+        hex: "#f7f7f7",
+      },
+    ],
+  },
+];
 ---
+
 <style>
   .palette-list {
     display: flex;
@@ -156,25 +266,34 @@ const palettes: Palette[] = [
 </style>
 <ProgramLayout title="Library">
   <div class="container palette-list">
-    {palettes.map(palette => (
-      <div>
-        <h2 class="palette-title">{palette.name}</h2>
-        <p>{palette.notes}</p>
-        <div class="palette-color-grid">
-          {palette.colors.map(color => (
-            <div class="border">
-              <div class="palette-color" style={{ backgroundColor: color.hex }}>
-                <small class="palette-color-code">{color.hex}</small>
+    {
+      palettes.map((palette) => (
+        <div>
+          <h2 class="palette-title">{palette.name}</h2>
+          <p>{palette.notes}</p>
+          <div class="palette-color-grid">
+            {palette.colors.map((color) => (
+              <div class="border">
+                <div
+                  class="palette-color"
+                  style={{ backgroundColor: color.hex }}
+                >
+                  <small class="palette-color-code">{color.hex}</small>
+                </div>
+                <div class="d-flex flex-column">
+                  <strong>{color.name}</strong>
+                  <small>{color.notes}</small>
+                  {color.variables?.map((variable) => (
+                    <Badge color="secondary" size="sm">
+                      {variable}
+                    </Badge>
+                  ))}
+                </div>
               </div>
-              <div class="d-flex flex-column">
-                <strong>{color.name}</strong>
-                <small>{color.notes}</small>
-                {color.variables?.map(variable => (<Badge color="secondary" size="sm">{variable}</Badge>))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </ProgramLayout>
