@@ -97,7 +97,7 @@
 },
 {
     "id": 36,
-    "title": "Maricopa County DOT (MCDOT) Connected Vehicle Acceleration Zone (CVAZ)",
+    "title": "Media Kit: Maricopa County DOT (MCDOT) Connected Vehicle Acceleration Zone (CVAZ)",
     "subtitle": "Media Kit",
     "description":"The MCDOT Connected Vehicle Acceleration Zone is part of the Vehicle-to-Everything (V2X) Accelerator Program funded by the Intelligent Transportation Systems Joint Program Office (ITS JPO).",
     "date": "2026",
@@ -116,7 +116,7 @@
         "produced_by": "MCDOT Produced",
         "duration": "long",
         "platform": "YouTube",
-        "href": "",
+        "href": "https://youtu.be/LuTtkeNEESo?si=sQ4EHZgoMfBHpJzu",
         "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
         "material_type": "Video",
         "date": "2026",
@@ -140,7 +140,9 @@
     "program":"V2X Accelerator Program", 
     "description":"MCDOT Deployment Concept Webinar", 
     "host": "ITS JPO", 
-    "season": "Fall 2025"
+    "season": "Fall 2025",
+    "recording_href": "https://youtu.be/J51aSCEx1u0?si=d-XeR07d12DoXki3",
+    "slides_href": "https://itsa.org/wp-content/uploads/2025/10/MCDOT-V2X-Accelerator-Webinar-10-07-25.pdf"
     }],
     "media_coverage": [{
         "title": "Experience How Connected Vehicle Technology Is Shaping Smarter Travel",
@@ -164,7 +166,8 @@
         "title": "Connected Vehicle Acceleration Zone",
         "description": "For more information on the Maricopa DOT Connected Vehicle Acceleration Zone, visit the project website here.",
         "button_text": "Visit Project Site",
-        "href": ""
+        "preview_image": "/assets/images/toolkits/Maricopa-website-thumb.png",
+        "href": "https://www.maricopa.gov/6094/Connected-Vehicle-Acceleration-Zone"
     },
       "contacts": [
         {
