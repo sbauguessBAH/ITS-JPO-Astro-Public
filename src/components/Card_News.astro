@@ -1,5 +1,4 @@
 ---
-
 import { type CollectionEntry } from "astro:content";
 
 import base_url from "../lib/base_url";
@@ -11,27 +10,25 @@ type Props = {
 const { post } = Astro.props;
 const { date, image, title } = post.data;
 
-const markdownString = post.body?.slice(0, 600);
+const markdownString = post.body?.slice(0, 600) ?? "";
 
 // Define a function to remove Markdown syntax
-function removeMarkdownSyntax(str) {
-  return str
-  .replace(/\*\*([^*]+)\*\*/g, '$1')
-  .replace(/\*([^*]+)\*/g, '$1')
-  .replace(/__([^_]+)__/g, '$1')
-  .replace(/_([^_]+)_/g, '$1')
-  // Remove inline code 
-  .replace(/`([^`]+)`/g, '$1') 
-  // Remove links and images, keep the text 
-  .replace(/! \[([^\] ]+)\] \([^)]*\)/g, '$1') 
-  .replace(/ \[([^\] ]+)\] \([^)]*\)/g, '$1'); 
+function removeMarkdownSyntax(str: string) {
+  return (
+    str
+      .replace(/\*\*([^*]+)\*\*/g, "$1")
+      .replace(/\*([^*]+)\*/g, "$1")
+      .replace(/__([^_]+)__/g, "$1")
+      .replace(/_([^_]+)_/g, "$1")
+      // Remove inline code
+      .replace(/`([^`]+)`/g, "$1")
+      // Remove links and images, keep the text
+      .replace(/! \[([^\] ]+)\] \([^)]*\)/g, "$1")
+      .replace(/ \[([^\] ]+)\] \([^)]*\)/g, "$1")
+  );
 }
 
 const preview = removeMarkdownSyntax(markdownString);
-
-
-
-
 ---
 
 <style>
@@ -45,19 +42,26 @@ const preview = removeMarkdownSyntax(markdownString);
     background-color: #009ad6;
   }
   h2 {
-    text-wrap: balance
+    text-wrap: balance;
   }
   p {
     display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Number of lines to show */
-  overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    overflow: hidden;
   }
 </style>
 
 <div>
-    <time datetime={date.toISOString()}>{date.toLocaleDateString(undefined, { dateStyle: "medium", timeZone: "UTC" })}</time><br />
-    <h2>{title}</h2> 
+  <time datetime={date.toISOString()}
+    >{
+      date.toLocaleDateString(undefined, {
+        dateStyle: "medium",
+        timeZone: "UTC",
+      })
+    }</time
+  ><br />
+  <h2>{title}</h2>
   <p>{preview}</p>
   <a class="btn" href={base_url(`/news-info/news/${post.id}`)}>Read Post</a>
 </div>

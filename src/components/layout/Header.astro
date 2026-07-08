@@ -1,22 +1,25 @@
 ---
 import { Image } from "astro:assets";
+
 import USDOTLogo from "@/src/assets/images/DOT-Logo.svg";
-import youtubeIcon from "@/src/assets/images/Youtube.png";
 import facebookIcon from "@/src/assets/images/Facebook.png";
+import inDeedIcon from "@/src/assets/images/inDeed.png";
 import instgramIcon from "@/src/assets/images/Instagram.png";
 import twitterIcon from "@/src/assets/images/Twitter.png";
-import inDeedIcon from "@/src/assets/images/inDeed.png";
+import youtubeIcon from "@/src/assets/images/Youtube.png";
 import base_url from "@/src/lib/base_url";
 import { getTrimmedPathname, navigation } from "@/src/lib/navigation";
 
 const pathname = Astro.url.pathname;
 const trimmedPathname = getTrimmedPathname(pathname);
 // return true when the current trimmedPathname is the section or any child of it
-const isActiveSection = (sectionUrl) => {
-  const normalize = (u) => (u || "").replace(/\/+$/g, "");
+const isActiveSection = (sectionUrl: string) => {
+  const normalize = (u: string) => (u || "").replace(/\/+$/g, "");
   const normSection = normalize(sectionUrl);
   const normCurrent = normalize(trimmedPathname);
-  return normCurrent === normSection || normCurrent.startsWith(normSection + "/");
+  return (
+    normCurrent === normSection || normCurrent.startsWith(normSection + "/")
+  );
 };
 ---
 
@@ -207,21 +210,22 @@ const isActiveSection = (sectionUrl) => {
     color: #000; /* ensure readable text */
   }
 
-
-
   /* ===== Desktop hover behavior for dropdowns ===== */
   @media (min-width: 992px) {
-    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu, .activeMenu a {
+    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu,
+    .activeMenu a {
       display: block;
       visibility: visible;
       opacity: 1;
       margin-top: 0;
     }
-    .navbar-nav .nav-item.dropdown:hover > .nav-link, .activeMenu a {
+    .navbar-nav .nav-item.dropdown:hover > .nav-link,
+    .activeMenu a {
       color: black !important;
       background-color: white;
     }
-    .navbar-nav .dropend:hover > .dropdown-menu, .activeMenu a {
+    .navbar-nav .dropend:hover > .dropdown-menu,
+    .activeMenu a {
       display: block;
       visibility: visible;
       opacity: 1;
@@ -242,8 +246,6 @@ const isActiveSection = (sectionUrl) => {
     .navbar-nav .dropdown-menu {
       display: none;
     }
- 
-  
   }
 
   /* ===== Responsive adjustments ===== */
@@ -263,19 +265,16 @@ const isActiveSection = (sectionUrl) => {
       width: 100%;
       justify-content: flex-start;
     }
-    
-
   }
 
   @media (max-width: 992px) {
     .navbar-marginbottom {
       margin-bottom: 0;
     }
-      .nav-link.show {
+    .nav-link.show {
       color: black !important;
       background-color: white !important;
     }
-    
   }
 
   @media (max-width: 992px) {
@@ -290,7 +289,7 @@ const isActiveSection = (sectionUrl) => {
       height: 50px;
       background-color: rgb(255, 255, 255, 0.25);
     }
-   .nav-item:last-of-type {
+    .nav-item:last-of-type {
       margin-bottom: 10px;
     }
 
@@ -305,8 +304,6 @@ const isActiveSection = (sectionUrl) => {
       background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
       align-self: center;
     }
-
-   
 
     .Topbar .col-lg-10 {
       width: 50%;
@@ -358,7 +355,6 @@ const isActiveSection = (sectionUrl) => {
       color: #f8f9fa !important;
       border-radius: 10px 10px 0px 0px;
     }
-    
   }
   @media (min-width: 768px) {
     .siteheader {
@@ -368,30 +364,35 @@ const isActiveSection = (sectionUrl) => {
       font-size: 1.7rem;
       line-height: 2.1rem;
     }
-    
   }
 </style>
 
 <div class="top-bar">
-  <div class="container-xl d-flex justify-content-between align-items-center top-bar-container">
+  <div
+    class="container-xl d-flex justify-content-between align-items-center top-bar-container"
+  >
     <a href="https://www.transportation.gov/">
-      <Image src={USDOTLogo} class="dot-logo" alt="U.S Department of Transportation Logo" />
+      <Image
+        alt="U.S Department of Transportation Logo"
+        class="dot-logo"
+        src={USDOTLogo}
+      />
     </a>
     <div class="d-none d-sm-flex flex-row align-items-center gap-2">
       <a href="https://www.youtube.com/@itsjpo" target="_blank">
-        <Image src={youtubeIcon} class="SocialMediaIcon" alt="Youtube Logo" />
+        <Image alt="Youtube Logo" class="SocialMediaIcon" src={youtubeIcon} />
       </a>
       <a href="https://www.facebook.com/USDOTResearch" target="_blank">
-        <Image src={facebookIcon} class="SocialMediaIcon" alt="Facebook Logo" />
+        <Image alt="Facebook Logo" class="SocialMediaIcon" src={facebookIcon} />
       </a>
       <!-- <a href="https://x.com/ITS_USDOT" target="_blank">
     <Image src={instgramIcon} class="SocialMediaIcon" alt="Instagram Logo" />
     </a> -->
       <a href="https://x.com/ITS_USDOT" target="_blank">
-        <Image src={twitterIcon} class="SocialMediaIcon" alt="Twiter Logo" />
+        <Image alt="Twiter Logo" class="SocialMediaIcon" src={twitterIcon} />
       </a>
       <a href="https://www.linkedin.com/company/usdot/" target="_blank">
-        <Image src={inDeedIcon} class="SocialMediaIcon" alt="LinkedIn Logo" />
+        <Image alt="LinkedIn Logo" class="SocialMediaIcon" src={inDeedIcon} />
       </a>
     </div>
   </div>
@@ -401,12 +402,24 @@ const isActiveSection = (sectionUrl) => {
     <div class="header-content">
       <div class="siteheader-wrapper">
         <div class="siteheader d-flex justify-content-between">
-          <a rel="preload" href={base_url("/")} style="text-decoration: none; color: white; text-wrap: balance;">
+          <a
+            href={base_url("/")}
+            rel="preload"
+            style="text-decoration: none; color: white; text-wrap: balance;"
+          >
             Intelligent Transportation Systems
             <br />
             Joint Program Office
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            aria-controls="navbar-content"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            class="navbar-toggler"
+            data-bs-target="#navbar-content"
+            data-bs-toggle="collapse"
+            type="button"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
@@ -417,16 +430,40 @@ const isActiveSection = (sectionUrl) => {
             <ul class="navbar-nav">
               {
                 navigation.map((link) => (
-                  <li class:list={["nav-item dropdown", { activeMenu: isActiveSection(link.url) }]}>
-                    <a class="nav-link dropdown-toggle" id={"navbarDropdown-" + link.name.replaceAll(" ", "-")} role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-haspopup="true" tabindex="0">
+                  <li
+                    class:list={[
+                      "nav-item dropdown",
+                      { activeMenu: isActiveSection(link.url) },
+                    ]}
+                  >
+                    <a
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      class="nav-link dropdown-toggle"
+                      data-bs-auto-close="outside"
+                      data-bs-toggle="dropdown"
+                      id={"navbarDropdown-" + link.name.replaceAll(" ", "-")}
+                      role="button"
+                      tabindex="0"
+                    >
                       {link.name}
                     </a>
-                    <ul class="dropdown-menu mt-0 shadow" aria-labelledby={"navbarDropdown-" + link.name.replaceAll(" ", "-")}>
+                    <ul
+                      aria-labelledby={
+                        "navbarDropdown-" + link.name.replaceAll(" ", "-")
+                      }
+                      class="dropdown-menu mt-0 shadow"
+                    >
                       {link.pages.map((pageLink) => {
                         if (pageLink.isExternal)
                           return (
                             <li>
-                              <a class="dropdown-item externalLink" href={pageLink.url} target="_blank" rel="noopener noreferrer">
+                              <a
+                                class="dropdown-item externalLink"
+                                href={pageLink.url}
+                                rel="noopener noreferrer"
+                                target="_blank"
+                              >
                                 {pageLink.name}
                               </a>
                             </li>
@@ -434,7 +471,10 @@ const isActiveSection = (sectionUrl) => {
 
                         return (
                           <li>
-                            <a class="dropdown-item" href={base_url(pageLink.url)}>
+                            <a
+                              class="dropdown-item"
+                              href={base_url(pageLink.url)}
+                            >
                               {pageLink.name}
                             </a>
                           </li>
@@ -451,6 +491,3 @@ const isActiveSection = (sectionUrl) => {
     </div>
   </div>
 </div>
-
-
-

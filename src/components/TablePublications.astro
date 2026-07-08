@@ -128,19 +128,19 @@ label{
   
       <ul class="checkbox-wrapper">
         <li>
-          <input type="checkbox" id="Webinar" name="typ" value="Webinar" />
+          <input id="Webinar" name="typ" type="checkbox" value="Webinar" />
           <label for="Webinar">Webinar</label><br />
         </li>
         <li>
-          <input type="checkbox" id="Training Materials" name="typ" value="Training Materials" />
+          <input id="Training Materials" name="typ" type="checkbox" value="Training Materials" />
           <label for="Training Materials">Training Materials</label><br />
         </li>
         <li>
-          <input type="checkbox" id="Presentation Slide Deck" name="typ" value="Presentation Slide Deck" />
+          <input id="Presentation Slide Deck" name="typ" type="checkbox" value="Presentation Slide Deck" />
           <label for="Presentation Slide Deck">Presentation Slide Deck</label><br />
         </li>
         <li>
-          <input type="checkbox" id="Publication" name="typ" value="Publication" />
+          <input id="Publication" name="typ" type="checkbox" value="Publication" />
           <label for="Publication">Publication</label>
         </li>
       </ul>
@@ -150,19 +150,19 @@ label{
       <h3>Filter by Phase</h3>
       <ul class="checkbox-wrapper">
         <li>
-          <input type="checkbox" id="pre-deployment" name="pha" value="0" />
+          <input id="pre-deployment" name="pha" type="checkbox" value="0" />
           <label for="pre-deployment">Pre-Deployment Activities</label><br />
         </li>
         <li>
-          <input type="checkbox" id="phase-1" name="pha" value="1" />
+          <input id="phase-1" name="pha" type="checkbox" value="1" />
           <label for="phase-1">Phase 1 (Concept)</label><br />
         </li>
         <li>
-          <input type="checkbox" id="phase-2" name="pha" value="2" />
+          <input id="phase-2" name="pha" type="checkbox" value="2" />
           <label for="phase-2">Phase 2 (Design & Testing)</label><br />
         </li>
         <li>
-          <input type="checkbox" id="phase-3" name="pha" value="3" />
+          <input id="phase-3" name="pha" type="checkbox" value="3" />
           <label for="phase-3">Phase 3 (Operation and Evaluation)</label>
         </li>
       </ul>
@@ -188,28 +188,28 @@ label{
       
 
         <li>
-          <input type="checkbox" id="Program Level" name="awa" value="Program Level" />
+          <input id="Program Level" name="awa" type="checkbox" value="Program Level" />
           <label for="Program Level">Program Level</label><br />
         </li>
         <li>
-          <input type="checkbox" id="California Association of Coordinated Transportation" name="awa" value="California Association of Coordinated Transportation" />
+          <input id="California Association of Coordinated Transportation" name="awa" type="checkbox" value="California Association of Coordinated Transportation" />
           <label for="California Association of Coordinated Transportation">California Association of Coordinated Transportation)</label>
         </li>
         <li>
-          <input type="checkbox" id="Georgia Department of Transportation" name="awa" value="Georgia Department of Transportation|Atlanta Regional Commission" />
+          <input id="Georgia Department of Transportation" name="awa" type="checkbox" value="Georgia Department of Transportation|Atlanta Regional Commission" />
           <label for="Georgia Department of Transportation">Georgia Department of Transportation / Atlanta Regional Commission </label>
         </li>
         <li>
-          <input type="checkbox" id="Heart of Iowa Regional Transit Agency" name="awa" value="Heart of Iowa Regional Transit Agency" />
+          <input id="Heart of Iowa Regional Transit Agency" name="awa" type="checkbox" value="Heart of Iowa Regional Transit Agency" />
           <label for="Heart of Iowa Regional Transit Agency">Heart of Iowa Regional Transit Agency </label><br />
         </li>
         <li>
-          <input type="checkbox" id="Niagara Frontier Transportation Authority" name="awa" value="Niagara Frontier Transportation Authority|ICF International, Inc." />
+          <input id="Niagara Frontier Transportation Authority" name="awa" type="checkbox" value="Niagara Frontier Transportation Authority|ICF International, Inc." />
           <label for="Niagara Frontier Transportation Authority">Niagara Frontier Transportation Authority / ICF International, Inc.</label>
         </li>
       
         <li>
-          <input type="checkbox" id="University of Washington" name="awa" value="University of Washington" />
+          <input id="University of Washington" name="awa" type="checkbox" value="University of Washington" />
           <label for="University of Washington">University of Washington</label>
         </li>
       
@@ -243,7 +243,7 @@ label{
         <td>{item.date}</td>
           <td>{item.task_name}</td>
           <td style="white-space: nowrap;">
-            {item.links.map((links) => (
+            {item.links.map((links: { href?: string; title: string; type: string }) => (
             <a href={links.href}>{links.title}</a><br />))}
           </td>
           <td>
