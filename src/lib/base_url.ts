@@ -10,6 +10,7 @@ export default function base_url(absolutePath: string): string {
     const fullPath = import.meta.env.BASE_URL + absolutePath;
     console.log("FULL PATH: " + fullPath);
     return fullPath;
-  };
+  }
+
   return absolutePath;
 }

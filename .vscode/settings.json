@@ -1,66 +1,54 @@
 {
   "json.schemas": [
     {
-      "fileMatch": ["/src/content/library/**"],
+      "fileMatch": [
+        "/src/content/library/**"
+      ],
       "url": "./.astro/collections/library.schema.json"
     }
   ],
-
-  // ========== Typescript ==========
-
-  "js/ts.tsdk.path": "node_modules/typescript/lib",
-  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  // ========== JS/TS ==========
+  
+  "js/ts.tsserver.log": "verbose",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
 
   // ========== Editor ==========
-
   // Show rulers for recommended length (Prettier defaults to 80)
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "editor.tabSize": 2,
-
-  "editor.formatOnSave": true,
-
-  // Auto fix options on file save
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "never",
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.prettier": "explicit",
-    "source.sortImports": "explicit"
-  },
-
-  "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-
+  // "js/ts.tsdk.path": "node_modules/typescript/lib",
+  
+  // "editor.formatOnSave": true,
+  // // Auto fix options on file save
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll": "never",
+  //   "source.fixAll.eslint": "explicit",
+  //   "source.fixAll.prettier": "explicit"
+  // },
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  // "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  // "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  // "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   // ========== Prettier ==========
-
-  "prettier.enable": true,
-  "prettier.documentSelectors": ["**/*.astro"],
-
+  // "prettier.enable": true,
+  // "prettier.documentSelectors": ["**/*.astro"],
   // ========== ESLint ==========
-  // Automatically detect the correct ESLint workspace for each file
-  "eslint.workingDirectories": [{ "mode": "auto" }],
-
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
+  // "eslint.codeAction.showDocumentation": {
+  //   "enable": true
+  // },
+  // "eslint.enable": false,
+  // // Enable ESLint for all supported languages
+  // "eslint.validate": ["javascript", "typescript", "astro", "vue", "html"],
+  // ========== Astro ==========
+  "files.associations": {
+      "*.astro": "astro"
   },
-
-  // Enable ESLint for all supported languages
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "astro",
-    "vue",
-    "html",
-    "markdown",
-    "css",
-    "json",
-    "jsonc",
-    "yaml",
-    "toml"
-  ]
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }

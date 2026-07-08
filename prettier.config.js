@@ -1,17 +1,19 @@
-/**
- * @see https://prettier.io/docs/configuration
- * @type {import("prettier").Config}
- */
-const config = {
-  overrides: [
-    {
-      files: "*.astro",
-      options: {
-        parser: "astro",
-      },
-    },
-  ],
-  plugins: ["prettier-plugin-astro"],
-};
+// // @ts-check
 
-export default config;
+// /**
+//  * @see https://prettier.io/docs/configuration
+//  * @type {import("prettier").Config}
+//  */
+// const config = {
+//   overrides: [
+//     {
+//       files: "*.astro",
+//       options: {
+//         parser: "astro",
+//       },
+//     },
+//   ],
+//   plugins: ["prettier-plugin-astro"],
+// };
+
+// export default config;
