@@ -5,8 +5,6 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "unifiedjs.vscode-mdx",
-    "Vue.volar",
-    "HTMLHint.vscode-htmlhint",
   ],
   "unwantedRecommendations": []
 }

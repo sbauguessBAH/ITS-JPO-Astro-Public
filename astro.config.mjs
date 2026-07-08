@@ -2,6 +2,7 @@ import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import vue from "@astrojs/vue";
 import { defineConfig } from "astro/config";
+import { fileURLToPath } from "node:url";
 import { loadEnv } from "vite";
 
 /** Load the BASE_URL from a `.env` file */
@@ -14,6 +15,13 @@ export default defineConfig({
   integrations: [partytown(), sitemap(), vue()],
   // site: "https://www.its.dot.gov",
   output: "static",
+  vite: {
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
+    },
+  },
   redirects: {
     "/about/its_jpo.htm": "/about",
     "/asc": "/resources/architecture-and-standards",

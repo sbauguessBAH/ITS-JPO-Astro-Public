@@ -1,12 +1,11 @@
 {
-  "extends": "astro/tsconfigs/base",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "strictNullChecks": true,
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": [".astro/types.d.ts", "**/*.ts", "**/*.astro", "**/*.vue"],
-  "exclude": ["node_modules", "dist"]
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
 }

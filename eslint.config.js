@@ -34,7 +34,7 @@ const baseConfig = {
 
 /** @type {import("eslint").Linter.Config} */
 const typescriptConfig = {
-  files: ["**/*.ts", "**/*.mts", "**/*.astro", "**/*.vue"],
+  files: ["**/*.ts", "**/*.mts", "**/*.astro"], //, "**/*.vue"
   languageOptions: {
     parser: typescriptParser,
     parserOptions: {
@@ -84,7 +84,7 @@ const astroConfig = {
 
 /** @type {import("eslint").Linter.Config} */
 const perfectionistConfig = {
-  files: ["**/*.ts", "**/*.mts", "**/*.astro", "**/*.vue"],
+  files: ["**/*.ts", "**/*.mts", "**/*.astro"], //, "**/*.vue"
   name: "perfectionist/custom",
   plugins: {
     perfectionist: perfectionist,

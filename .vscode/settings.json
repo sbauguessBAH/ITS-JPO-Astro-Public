@@ -7,11 +7,6 @@
       "url": "./.astro/collections/library.schema.json"
     }
   ],
-  // ========== JS/TS ==========
-  
-  "js/ts.tsserver.log": "verbose",
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
 
   // ========== Editor ==========
   // Show rulers for recommended length (Prettier defaults to 80)
@@ -20,35 +15,32 @@
     120
   ],
   "editor.tabSize": 2,
-  // "js/ts.tsdk.path": "node_modules/typescript/lib",
   
-  // "editor.formatOnSave": true,
-  // // Auto fix options on file save
-  // "editor.codeActionsOnSave": {
-  //   "source.fixAll": "never",
-  //   "source.fixAll.eslint": "explicit",
-  //   "source.fixAll.prettier": "explicit"
-  // },
-  // "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "editor.formatOnSave": true,
+
+  // Auto fix options on file save
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.prettier": "explicit"
+  },
+  
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   // "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   // "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   // "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
   // ========== Prettier ==========
-  // "prettier.enable": true,
+
+  "prettier.enable": true,
   // "prettier.documentSelectors": ["**/*.astro"],
+
   // ========== ESLint ==========
-  // "eslint.codeAction.showDocumentation": {
-  //   "enable": true
-  // },
-  // "eslint.enable": false,
-  // // Enable ESLint for all supported languages
-  // "eslint.validate": ["javascript", "typescript", "astro", "vue", "html"],
-  // ========== Astro ==========
-  "files.associations": {
-      "*.astro": "astro"
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
   },
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  }
+  
+  // Enable ESLint for all supported languages
+  "eslint.validate": ["javascript", "typescript", "astro", "vue", "html"],
 }
