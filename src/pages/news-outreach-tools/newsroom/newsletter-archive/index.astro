@@ -68,8 +68,8 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 			volume, and topics.
 		</p>
 
-		<form class="row g-4 reduced-gutters filter mb-4 p-3" aria-label="Newsletter archive filters">
-			<div class="col-12 col-lg-4">
+		<form class="row g-4 reduced-gutters filter mt-1 mb-3 py-3  px-3 pt-0" aria-label="Newsletter archive filters">
+			<div class="col-12 col-lg-2">
 				<label class="form-label" for="year-toggle">Year</label>
 				<div class="dropdown multi-select-dropdown">
 					<button id="year-toggle" type="button" class="dropdown-toggle w-100 text-start" aria-haspopup="listbox" aria-expanded="false">
@@ -94,7 +94,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 				<div class="form-text">Click to open, then check items to select multiple years.</div>
 			</div>
 
-			<fieldset class="col-12 col-lg-4">
+			<fieldset class="col-12 col-lg-2">
 				<legend class="col-form-label pt-0">Volume</legend>
 				<div class="volume-pills">
 					{
@@ -113,7 +113,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 				</div>
 			</fieldset>
 
-			<fieldset class="col-12 col-lg-4">
+			<fieldset class="col-12 col-lg-8">
 				<legend class="col-form-label pt-0">Topics</legend>
 				{
 					topics.length > 0 ? (
@@ -265,8 +265,8 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 
 	.volume-pill-option > input:checked + .volume-pill,
 	.topic-pill-option > input:checked + .topic-pill {
-		background-color: var(--bs-primary);
-		border-color: var(--bs-primary);
+		background-color: #055581;
+		border-color: #055581;
 		color: var(--bs-white);
 	}
 
@@ -289,7 +289,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 	}
 
 	.year-option > input:checked + .year-label {
-		color: var(--bs-primary);
+		color: #055581;
 		font-weight: 600;
 		background-color: var(--bs-primary-bg-subtle);
 	}

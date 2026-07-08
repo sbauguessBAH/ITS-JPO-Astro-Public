@@ -1,7 +1,8 @@
 ---
 import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 import webinars from "@/src/content/news-resources/webinars/webinars.json";
-import BaseLayout from "@/src/layouts/BaseLayout.astro";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import NewsroomCard from "@/src/components/NewsroomCard.astro";
 import WebinarCard from "@/src/components/WebinarCard.astro";
 import type { NewsroomCardItem, Toolkit } from "@/src/types";
@@ -65,15 +66,18 @@ const slugifyForId = (value: string): string =>
     .trim()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
+
+const keywords = ["ITS JPO", "newsroom", "outreach resources", "media kits", "toolkits", "webinars"];
+const description = "Browse ITS JPO outreach resources, including toolkits and webinar archives, and filter by content type and topic.";
 ---
 
-<BaseLayout title="filter" description="Filter news content by type and topic." keywords={"filter"}>
-  <main class="container my-5">
-    <h1 class="h2 mb-4 sideways blue">Outreach Resources</h1>
-    <p></p>
-    <h2 class="heading-border-left blue">All Toolkits</h2>
-    <form class="row g-4 reduced-gutters filter mb-4 p-3" aria-label="News filter">
-      <div class="col-12 col-lg-6">
+<PageLayout title="Outreach Resources" bannerImage={banner} keywords={keywords} description={description} currentBreadcrumb="Outreach Resources">
+  <Fragment slot="banner">Newsroom</Fragment>
+  <main>
+    <h2 class="">Outreach Resources</h2>
+    <h3>All Toolkits</h3>
+    <form class="row g-4 reduced-gutters filter my-2 p-3" aria-label="News filter">
+      <div class="col-12 col-lg-3">
         <label class="form-label" for="content-type-toggle">Content Type</label>
         <div class="dropdown multi-select-dropdown">
           <button id="content-type-toggle" type="button" class="dropdown-toggle w-100 text-start" aria-haspopup="listbox" aria-expanded="false">
@@ -98,7 +102,7 @@ const slugifyForId = (value: string): string =>
         <div class="form-text">Click to open, then check items to select multiple.</div>
       </div>
 
-      <fieldset class="col-12 col-lg-6">
+      <fieldset class="col-12 col-lg-9">
         <legend class="col-form-label pt-0">Topics</legend>
         <div class="topic-pills">
           {
@@ -158,7 +162,7 @@ const slugifyForId = (value: string): string =>
         </div>
     </div>
   </main>
-</BaseLayout>
+</PageLayout>
 
 <script define:vars={{ toolkitList, toolkitPageSize }}>
   const dropdownToggle = document.getElementById("content-type-toggle");
@@ -330,7 +334,7 @@ const slugifyForId = (value: string): string =>
   runFilter();
 </script>
 
-<style>
+<style is:global>
   .reduced-gutters {
     --bs-gutter-x: 14px;
   }
@@ -361,8 +365,8 @@ const slugifyForId = (value: string): string =>
   }
 
   .topic-pill-option > input:checked + .topic-pill {
-    background-color: var(--bs-primary);
-    border-color: var(--bs-primary);
+    background-color: #055581;
+    border-color: #055581;
     color: var(--bs-white);
   }
 
@@ -384,9 +388,11 @@ const slugifyForId = (value: string): string =>
   }
 
   .content-type-option > input:checked + .content-type-label {
-    color: var(--bs-primary);
+    color: #055581;
     font-weight: 600;
-    background-color: var(--bs-primary-bg-subtle);
+    background-color: #d1e7ff;
+    border-radius: 999rem;
+    border: 1px solid white;
   }
 
   .content-type-option > input:focus-visible + .content-type-label {

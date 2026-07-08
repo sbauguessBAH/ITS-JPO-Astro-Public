@@ -1,20 +1,16 @@
 ---
 import WebinarCard from "@/src/components/WebinarCard.astro";
 import bannerImage from "@/src/assets/images/banners/NTL_Banner.png";
-import Banner from "@/src/components/layout/Banner.astro";
+import PageLayout from "@/src/layouts/PageLayout.astro";
 import type { ToolkitMediaItem, ToolkitPageData, ToolkitSection } from "@/src/lib/toolkits";
 import "@/src/styles/toolkits.css";
 import ContactCard from "./ContactCard.astro";
 
 interface Props {
-  eyebrow?: string;
   page: ToolkitPageData;
 }
 
-const {
-  eyebrow = "NEWSROOM",
-  page,
-} = Astro.props;
+const { page } = Astro.props;
 
 type ContactSection = Extract<ToolkitSection, { kind: "contacts" }>;
 type NonContactSection = Exclude<ToolkitSection, { kind: "contacts" }>;
@@ -110,8 +106,15 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
 };
 ---
 
-<Banner image={bannerImage}>Newsroom</Banner>
-<main class="container my-5 toolkit-page">
+<PageLayout
+  title={page.title}
+  description={page.description}
+  keywords={page.keywords}
+  currentBreadcrumb={page.title}
+  bannerImage={bannerImage}
+>
+  <Fragment slot="banner">Newsroom</Fragment>
+  <main class="my-5 toolkit-page">
   <div class="toolkit-header d-grid gap-3">
     <h1 class="sideways blue kit-page-title">{page.title}</h1>
     {page.intro && <p class="kit-copy kit-page-intro">{page.intro}</p>}
@@ -282,4 +285,5 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
       </section>
     ))
   }
-</main>
+  </main>
+</PageLayout>

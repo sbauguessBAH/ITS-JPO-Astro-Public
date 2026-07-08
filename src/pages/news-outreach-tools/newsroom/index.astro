@@ -22,9 +22,7 @@ const keywords = ["ITS JPO", "newsroom", "deployments", "conferences", "exhibits
 const description =
   "The ITS JPO Newsroom section contains a variety of information and resources about various deployments, conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous editions of the ITS JPO Now publication. Check back often as this page is regularly updated with new information.";
 
-const newsletterEntries = (await getCollection("newsletters")).sort((a, b) =>
-  b.data.publishDate.getTime() - a.data.publishDate.getTime(),
-);
+const newsletterEntries = (await getCollection("newsletters")).sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
 const toCardItem = (entry: (typeof newsletterEntries)[number]): NewsroomCardItem => {
   const issueSummary = [entry.data.season, entry.data.volume, entry.data.issue].filter(Boolean).join(" | ");
@@ -61,17 +59,17 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.outreach_to
 <PageLayout title="Newsroom" bannerImage={banner} keywords={keywords} description={description}>
   <Fragment slot="banner">Newsroom</Fragment>
   <main>
-    
-    <div class="row gx-4 gy-4 ">
+    <div class="row gx-4 gy-4">
       <div>
         <h2 class="sideways blue">ITS JPO Newsroom</h2>
-    <p class="mt-3">
-      The ITS JPO Newsroom section contains a variety of information and resources about various deployments, conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives
-      previous editions of the <i>ITS JPO Now</i> publication. Check back often as this page is regularly updated with new information.
-    </p>
+        <p class="mt-3">
+          The ITS JPO Newsroom section contains a variety of information and resources about various deployments, conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also
+          archives previous editions of the <i>ITS JPO Now</i> publication. Check back often as this page is regularly updated with new information.
+        </p>
+      </div>
     </div>
-    </div>
-
+<section class="gray-edge-to-edge">
+  <div class="px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl ">
     <div class="d-flex justify-content-between mt-5">
       <h2 class="pl-3 heading-border-left blue">Media Kits</h2>
       <a href={base_url("/news-outreach-tools/newsroom/outreach-resources/")}>View All Media Kits</a>
@@ -84,7 +82,8 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.outreach_to
           </div>
         ))
       }
-    </div>
+    </div></div>
+  </section>
     <div class="d-flex justify-content-between mt-5">
       <h2 class="pl-3 heading-border-left blue">ITS JPO Newsletter Archive</h2>
       <a href={base_url("/news-outreach-tools/newsroom/newsletter-archive/")}>Browse Full Archive</a>
@@ -142,5 +141,18 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.outreach_to
     .featured-newsletter-card {
       min-height: 100%;
     }
+  }
+
+  .gray-edge-to-edge {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: #f7f7f7;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 2rem 0;
   }
 </style>
