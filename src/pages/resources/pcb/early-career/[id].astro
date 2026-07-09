@@ -2,11 +2,13 @@
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 
-import Link from "@/src/components/Link.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Card from "@/src/components/ui/blocks/card/Card.astro";
 import CardContent from "@/src/components/ui/blocks/card/CardContent.astro";
 import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
+import CopyButton from "@/src/components/ui/blocks/CopyButton.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
+import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
 
 import Layout from "../_layout.astro";
 
@@ -99,7 +101,7 @@ const { Content } = await render(module);
         <Content />
       </div>
       <div class="module-meta">
-        <Card shadow="sm">
+        <Card>
           <CardImage entry={module.data.image} height={250} />
           <CardContent>
             <dl class="meta-attributes">
@@ -109,7 +111,12 @@ const { Content } = await render(module);
               <!-- </div> -->
               <!-- <div class="meta-attribute"> -->
               <dt>Number</dt>
-              <dd>{module.data.source.id}</dd>
+              <dd>
+                <CopyButton
+                  label={module.data.source.id}
+                  text={module.data.source.id}
+                />
+              </dd>
               <!-- </div> -->
               <!-- <div class="meta-attribute"> -->
               <dt>Type</dt>
@@ -125,14 +132,18 @@ const { Content } = await render(module);
               This link will take you to the NHI Catalog. Search for the course
               name or number to register.
             </p>
-            <Link
-              class="text-center"
-              href={module.data.source.url}
-              isExternal
-              variant="button"
+            <Button
+              class="ui:w-fit"
+              link={{
+                href: module.data.source.url,
+                isExternal: true,
+              }}
+              size="lg"
+              variant="subtle"
             >
               Register
-            </Link>
+              <ExternalLinkIcon />
+            </Button>
           </CardContent>
         </Card>
       </div>
