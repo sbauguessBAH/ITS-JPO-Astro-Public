@@ -1,7 +1,10 @@
+@use "./utilities/shadow.scss";
+@use "./utilities/spacing.scss";
+@use "./utilities/size.scss";
+
 /* ============================================================
  * Base Variables
  * ============================================================ */
-
 :root {
   /* ---------- Program Sites ---------- */
 
@@ -39,23 +42,12 @@
   --transition-duration-sm: 0.2s;
   --transition-duration: 0.35s;
 
-  /* 
-  I don't think these are used anywhere, so may be safe to delete
-  */
-  --box-shadow-sm: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  --box-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  --box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-
   --container-sm: 576px;
   --container-md: 768px;
   --container-lg: 992px;
   --container-xl: 1200px;
 
   --padding-md: 0.75rem;
-
-  /*****************************
-    Colors
-  *****************************/
 
   /* ---------- Sizes ---------- */
   /* TODO: Clean these up or remove them entirely */
@@ -65,20 +57,15 @@
   --size-lg: 2rem;
   --size-xl: 4rem;
 
-  /* ---------- Colors ---------- */
-  /* Derived from shadcn/ui */
+  /*****************************
+    Production Variables
+  *****************************/
 
+  /* ---------- Colors (shadcn) ---------- */
   --color-muted: oklch(0.97 0 0);
-  --color-muted-foreground: oklch(0.556 0 0);
+  --color-muted-foreground: oklch(26.703% 0.00906 17.55);
 
-  /* ---------- Layout ---------- */
-  /* Derived from Tailwind */
-
-  /* Spacing */
-  --spacing: 0.25rem;
-
-  /* ---------- Font ---------- */
-  /* Derived from Tailwind */
+  /* ---------- Font (tailwind) ---------- */
 
   /* Font Family */
   --font-heading: "";
@@ -152,6 +139,8 @@
    * Base colors
    * ------------------------------------------------------------ */
 
+  --color-black: oklch(0 0 0);
+
   /* Slightly darker variant of ITS JPO blue (--ai-blue-secondary) */
   --color-default: oklch(0.433 0.0983 240.78);
   --color-default-foreground: oklch(1 0 0);
@@ -177,6 +166,15 @@
 section {
   padding: 0;
   margin: 0;
+}
+
+// Overrides unnecessary whitespace at bottom of pages
+.page-content {
+  margin-bottom: 0 !important;
+}
+
+a::after {
+  content: none !important;
 }
 
 /* ============================================================
@@ -251,7 +249,6 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 /* .program-padding {
   padding-bottom: 4rem;
 }
