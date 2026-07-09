@@ -400,16 +400,28 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
   }
   
-  .dropdown-toggle {
+
+
+  #content-type-toggle.dropdown-toggle {
     display: flex;
     background-color: #fff;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
+    justify-content: space-between;
     align-items: center;
   }
-  .dropdown-toggle:focus {
+  #content-type-toggle.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
   }
+  #content-type-toggle.dropdown-toggle:after{
+      content: '\f078';
+      font-family: "Font Awesome 6 Free";
+      font-weight: 800;
+      font-size:16px;
+      
+  }
+
+
 
   .multi-select-dropdown .dropdown-menu {
     display: none;
@@ -424,11 +436,7 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     display: inline-block;
     max-width: 100%;
   }
-.dropdown-toggle:after{
-    content: '\f078';
-    font-family: FontAwesome;
-    font-size:16px;
-}
+
 
   .toolkit-empty-state {
     margin-top: 1.5rem;

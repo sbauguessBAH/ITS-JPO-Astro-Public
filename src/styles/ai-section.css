@@ -582,7 +582,8 @@ border-radius: 1rem;
 
 .reset-link .data-card::after {
   content: "\f061";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 6 Free";
+font-weight: 800;
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -606,7 +607,8 @@ border-radius: 1rem;
 /* Card H5 with external link icon */
 .card h5:after {
   content: "\00a0\f08e";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 6 Free";
+font-weight: 800;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
