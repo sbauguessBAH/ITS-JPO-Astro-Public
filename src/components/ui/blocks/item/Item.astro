@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-import "./item.css";
+import "./item.scss";
 
 interface Props extends Omit<HTMLAttributes<"div">, "class"> {
   class?: string;
@@ -21,9 +21,6 @@ const {
   ...rest
 } = Astro.props;
 
-// Astro doesn't support a React-style `asChild`/`render` prop, so we swap
-// the rendered tag based on `href` instead — the idiomatic Astro way to
-// make a component polymorphic between a link and a plain container.
 const Tag = href ? "a" : "div";
 ---
 
