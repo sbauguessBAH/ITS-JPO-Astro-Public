@@ -6,6 +6,7 @@ import Accordion from "@/src/components/Accordion.astro";
 import AccordionItem from "@/src/components/AccordionItem.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
 import FilmIcon from "@/src/components/ui/icons/FilmIcon.astro";
 import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
 import base_url from "@/src/lib/base_url";
@@ -102,30 +103,32 @@ const presenters = [
           (Jones, Colyar, Bettger)
         </p>
         <div class="resource-links">
-          <a
-            class="resource-card-button"
-            href="https://usdot.zoomgov.com/rec/play/L-LJM258S-zzuAK7XPdQJ2Jm-xU1VZ2khZeuZZN3r9t7bsT8Y8YnBpSxkiwloSAorqg1LXUOTT_AD-ox.CxTZrofJLj9jDlfM?startTime=1684256417000"
-            rel="noopener noreferrer"
-            target="_blank"
+          <Button
+            link={{
+              href: "https://usdot.zoomgov.com/rec/play/L-LJM258S-zzuAK7XPdQJ2Jm-xU1VZ2khZeuZZN3r9t7bsT8Y8YnBpSxkiwloSAorqg1LXUOTT_AD-ox.CxTZrofJLj9jDlfM?startTime=1684256417000",
+              isExternal: true,
+            }}
+            variant="subtle"
           >
             <FilmIcon />
             Webinar Replay
-          </a>
+          </Button>
+          <Button
+            link={{
+              href: base_url(
+                "/assets/pcb/cs4ops/part-1/s230516_Crowdsourcing_for_Advancing_Operations_Introduction_and_Application_Highlights_presentation.pdf",
+              ),
+              isNewWindow: true,
+            }}
+            variant="subtle"
+          >
+            <PdfIcon />
+            PDF
+          </Button>
           <!-- <a class="resource-card-button" href={base_url("/assets/pcb/cs4ops/part-1/s230516_Crowdsourcing_for_Advancing_Operations_Introduction_and_Application_Highlights_presentation.pptx")} rel="noopener noreferrer" target="_blank">
             <PptIcon/>
             PowerPoint
           </a> -->
-          <a
-            class="resource-card-button"
-            href={base_url(
-              "/assets/pcb/cs4ops/part-1/s230516_Crowdsourcing_for_Advancing_Operations_Introduction_and_Application_Highlights_presentation.pdf",
-            )}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <PdfIcon />
-            PDF
-          </a>
         </div>
       </div>
       <h3 class="program-title-md">Learning Objectives</h3>

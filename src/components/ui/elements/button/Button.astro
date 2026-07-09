@@ -7,6 +7,7 @@ import "./button.scss";
 type LinkProps = {
   href: string;
   isExternal?: boolean;
+  isNewWindow?: boolean;
   isSameWindow?: boolean;
 };
 
@@ -42,7 +43,8 @@ if (link) {
   linkHref = link.isExternal || isTelOrMail ? link.href : base_url(link.href);
   linkRel = !isTelOrMail && link.isExternal ? "noopener noreferrer" : undefined;
   linkTarget =
-    !isTelOrMail && link.isExternal && !link.isSameWindow
+    !isTelOrMail &&
+    (link.isNewWindow || (link.isExternal && !link.isSameWindow))
       ? "_blank"
       : undefined;
 }

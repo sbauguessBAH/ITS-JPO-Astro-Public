@@ -1,5 +1,11 @@
 ---
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Item from "@/src/components/ui/blocks/item/Item.astro";
+import ItemContent from "@/src/components/ui/blocks/item/ItemContent.astro";
+import ItemDescription from "@/src/components/ui/blocks/item/ItemDescription.astro";
+import ItemHeader from "@/src/components/ui/blocks/item/ItemHeader.astro";
+import ItemMedia from "@/src/components/ui/blocks/item/ItemMedia.astro";
+import ItemTitle from "@/src/components/ui/blocks/item/ItemTitle.astro";
 import BullseyeIcon from "@/src/components/ui/icons/BullseyeIcon.astro";
 import CheckIcon from "@/src/components/ui/icons/CheckIcon.astro";
 import CompassIcon from "@/src/components/ui/icons/CompassIcon.astro";
@@ -90,6 +96,21 @@ import Layout from "../_layout.astro";
         approaches for the safe and efficient integration of Automated Driving
         Systems into the transportation ecosystem.
       </p>
+      <Item variant="outline">
+        <ItemHeader />
+        <ItemMedia>
+          <BullseyeIcon size={24} />
+        </ItemMedia>
+
+        <ItemContent>
+          <ItemTitle>Goal</ItemTitle>
+          <ItemDescription>
+            Explore recommended practices to address safe and efficient
+            Automated Driving System (ADS) Integration into the transportation
+            system.
+          </ItemDescription>
+        </ItemContent>
+      </Item>
       <div class="area-container mt-4">
         <div class="area-card">
           <div class="area-card-header">

@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 
-import Link from "@/src/components/Link.astro";
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Card from "@/src/components/ui/blocks/card/Card.astro";
@@ -10,6 +9,8 @@ import CardDescription from "@/src/components/ui/blocks/card/CardDescription.ast
 import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/blocks/card/CardTitle.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
+import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
 
 import Layout from "../_layout.astro";
 
@@ -208,13 +209,17 @@ const modules = await getCollection("pcbModules").then((modules) =>
             established and emerging roles across employment sectors.
           </p>
           <div class="mt-4">
-            <Link
-              href="https://rosap.ntl.bts.gov/view/dot/89169"
-              isExternal
-              variant="button"
+            <Button
+              link={{
+                href: "https://rosap.ntl.bts.gov/view/dot/89169",
+                isExternal: true,
+              }}
+              size="lg"
+              variant="subtle"
             >
               View PDF
-            </Link>
+              <ExternalLinkIcon />
+            </Button>
           </div>
         </div>
         <div class="career-areas-image ratio ratio-1x1 mx-auto">
@@ -255,13 +260,17 @@ const modules = await getCollection("pcbModules").then((modules) =>
             their submission to judges&mdash;all expenses paid!
           </p>
           <div class="mt-4">
-            <Link
-              href="https://transportationops.org/transportation-technology-tournament"
-              isExternal
-              variant="button"
+            <Button
+              link={{
+                href: "https://transportationops.org/transportation-technology-tournament",
+                isExternal: true,
+              }}
+              size="lg"
+              variant="subtle"
             >
               Learn More
-            </Link>
+              <ExternalLinkIcon />
+            </Button>
           </div>
         </div>
       </div>

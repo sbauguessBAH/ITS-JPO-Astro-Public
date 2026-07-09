@@ -8,10 +8,13 @@ import CardDescription from "@/src/components/ui/blocks/card/CardDescription.ast
 import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/blocks/card/CardTitle.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
+import EmailIcon from "@/src/components/ui/icons/EmailIcon.astro";
+import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
+import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../../_layout.astro";
-import Videos from "./_videos.astro";
 ---
 
 <style>
@@ -122,14 +125,17 @@ import Videos from "./_videos.astro";
             experience.
           </p>
           <div class="pt-4">
-            <a
-              class="cave-button"
-              href="https://usdot-carma.atlassian.net/wiki/spaces/CMNT/pages/2628485130/CAVe-in-a-box+Training"
-              rel="noopener noreferrer"
-              target="_blank"
+            <Button
+              link={{
+                href: "https://usdot-carma.atlassian.net/wiki/spaces/CMNT/pages/2628485130/CAVe-in-a-box+Training",
+                isExternal: true,
+              }}
+              size="lg"
+              variant="subtle"
             >
               Learn More
-            </a>
+              <ExternalLinkIcon />
+            </Button>
           </div>
         </div>
         <div class="overview-image">
@@ -159,15 +165,18 @@ import Videos from "./_videos.astro";
           </CardHeader>
           <CardContent>
             <CardAction>
-              <a
-                class="cave-button"
-                href={base_url(
-                  "/assets/pcb/cave/CAVe_in_a_box_SysDes_April2022.pdf",
-                )}
-                target="_blank"
+              <Button
+                link={{
+                  href: base_url(
+                    "/assets/pcb/cave/CAVe_in_a_box_SysDes_April2022.pdf",
+                  ),
+                  isNewWindow: true,
+                }}
+                variant="subtle"
               >
+                <PdfIcon />
                 View PDF
-              </a>
+              </Button>
             </CardAction>
           </CardContent>
         </Card>
@@ -182,15 +191,18 @@ import Videos from "./_videos.astro";
           </CardHeader>
           <CardContent>
             <CardAction>
-              <a
-                class="cave-button"
-                href={base_url(
-                  "/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf",
-                )}
-                target="_blank"
+              <Button
+                link={{
+                  href: base_url(
+                    "/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf",
+                  ),
+                  isNewWindow: true,
+                }}
+                variant="subtle"
               >
+                <PdfIcon />
                 View PDF
-              </a>
+              </Button>
             </CardAction>
           </CardContent>
         </Card>
@@ -205,21 +217,24 @@ import Videos from "./_videos.astro";
           </CardHeader>
           <CardContent>
             <CardAction>
-              <a
-                class="cave-button"
-                href={base_url(
-                  "/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf",
-                )}
-                target="_blank"
+              <Button
+                link={{
+                  href: base_url(
+                    "/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf",
+                  ),
+                  isNewWindow: true,
+                }}
+                variant="subtle"
               >
+                <PdfIcon />
                 View PDF
-              </a>
+              </Button>
             </CardAction>
           </CardContent>
         </Card>
       </div>
     </ProgramSection>
-    <ProgramSection>
+    <!-- <ProgramSection>
       <h2 class="program-title-lg text-center mb-4">
         CAVe-in-a-box Video Series
       </h2>
@@ -232,7 +247,7 @@ import Videos from "./_videos.astro";
         CAVe-in-a-box.
       </p>
       <Videos />
-    </ProgramSection>
+    </ProgramSection> -->
     <ProgramSection class="pb-2">
       <div class="overview-section">
         <div class="overview-text">
@@ -251,14 +266,17 @@ import Videos from "./_videos.astro";
             automated vehicle projects to life!
           </p>
           <div class="pt-4">
-            <a
-              class="cave-button"
-              href="mailto:cavsupportservices@dot.gov?subject=CAVe-in-a-box Equipment Request"
-              rel="noopener noreferrer"
-              target="_blank"
+            <Button
+              link={{
+                href: "mailto:cavsupportservices@dot.gov?subject=CAVe-in-a-box Equipment Request",
+                isExternal: true,
+              }}
+              size="lg"
+              variant="subtle"
             >
+              <EmailIcon />
               Get Equipment
-            </a>
+            </Button>
           </div>
         </div>
         <div class="overview-image">

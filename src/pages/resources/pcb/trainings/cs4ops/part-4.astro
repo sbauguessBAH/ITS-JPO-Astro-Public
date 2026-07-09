@@ -7,6 +7,7 @@ import Accordion from "@/src/components/Accordion.astro";
 import AccordionItem from "@/src/components/AccordionItem.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
 import FilmIcon from "@/src/components/ui/icons/FilmIcon.astro";
 import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
 import base_url from "@/src/lib/base_url";
@@ -111,15 +112,28 @@ const presenters = [
           (Colyar, Marik, Zhang, Dilmore)
         </p>
         <div class="resource-links">
-          <a
-            class="resource-card-button"
-            href="https://usdot.zoomgov.com/rec/play/bTqAM-d2viu7vUKcGAuVmTKXmaVr66M6AV-6VQ8ywl72pwS_M8axgnvvGYKg0Cab4DN1XMoaxFCnV2Hg.Dgzmj9pLgRz_2C5J?continueMode=true.aspx"
-            rel="noopener noreferrer"
-            target="_blank"
+          <Button
+            link={{
+              href: "https://usdot.zoomgov.com/rec/play/bTqAM-d2viu7vUKcGAuVmTKXmaVr66M6AV-6VQ8ywl72pwS_M8axgnvvGYKg0Cab4DN1XMoaxFCnV2Hg.Dgzmj9pLgRz_2C5J?continueMode=true.aspx",
+              isExternal: true,
+            }}
+            variant="subtle"
           >
             <FilmIcon />
             Webinar Replay
-          </a>
+          </Button>
+          <Button
+            link={{
+              href: base_url(
+                "/assets/pcb/cs4ops/part-4/s230815_Crowdsourcing_Course_Road_Weather_and_Arterial_Management_presentation.pdf",
+              ),
+              isNewWindow: true,
+            }}
+            variant="subtle"
+          >
+            <PdfIcon />
+            PDF
+          </Button>
           <!-- <a 
             class="resource-card-button" 
             href={base_url("/assets/pcb/cs4ops/part-4/s230815_Crowdsourcing_Course_Road_Weather_and_Arterial_Management_presentation.pptx")} 
@@ -129,17 +143,6 @@ const presenters = [
             <PptIcon/>
             PowerPoint
           </a> -->
-          <a
-            class="resource-card-button"
-            href={base_url(
-              "/assets/pcb/cs4ops/part-4/s230815_Crowdsourcing_Course_Road_Weather_and_Arterial_Management_presentation.pdf",
-            )}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <PdfIcon />
-            PDF
-          </a>
         </div>
       </div>
       <h3 class="program-title-md">Learning Objectives</h3>
