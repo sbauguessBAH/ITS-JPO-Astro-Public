@@ -3,7 +3,7 @@ import type { HTMLAttributes } from "astro/types";
 
 import base_url from "@/src/lib/base_url";
 
-import "./card.css";
+import "./card.scss";
 
 /**
  * TODO: Test out and clean up horizontal orientation
@@ -12,12 +12,6 @@ type Props = HTMLAttributes<"div"> & {
   href?: string;
   isExternal?: boolean;
   orientation?: "horizontal" | "vertical";
-  /**
-   * Uses Bootstrap box shadow classes
-   *
-   * @default `sm`
-   */
-  shadow?: "lg" | "md" | "none" | "sm";
   /** @default `default` */
   size?: "default" | "sm";
 };
@@ -27,25 +21,11 @@ const {
   href,
   isExternal,
   orientation = "vertical",
-  shadow = "sm",
   size,
   ...rest
 } = Astro.props;
 
 const Component = href ? "a" : "div";
-/**
- * @privateRemarks
- *
- * Bootstrap box shadow options: `shadow-none`, `shadow-sm`, `shadow`, `shadow-lg`
- *
- * `shadow-sm` seems to be most consistently used for cards across the site.
- */
-const shadowClass = {
-  shadow: shadow === "md",
-  "shadow-lg": shadow === "lg",
-  "shadow-none": shadow === "none",
-  "shadow-sm": shadow === "sm",
-};
 
 const linkAttrs =
   href && isExternal
@@ -56,12 +36,7 @@ const linkAttrs =
 ---
 
 <Component
-  class:list={[
-    "ui_card",
-    Object.entries(shadowClass).find(([, isActive]) => isActive)?.[0],
-    href && "ui_card_link",
-    className,
-  ]}
+  class:list={["ui_card", className]}
   data-orientation={orientation}
   data-size={size}
   data-slot="ui_card"
