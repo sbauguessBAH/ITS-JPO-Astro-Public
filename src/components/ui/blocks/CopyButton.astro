@@ -1,0 +1,67 @@
+---
+import Button from "../elements/button/Button.astro";
+
+interface Props {
+  /** The text to copy to the clipboard when clicked. */
+  text: string;
+  /** Optional label shown inside the button. Defaults to "Copy". */
+  label?: string;
+  class?: string;
+}
+
+const { text, label = "Copy", class: className } = Astro.props;
+---
+
+<Button
+  class:list={["ui_copy-button", className]}
+  color="primary"
+  data-copy-text={text}
+  size="sm"
+  type="button"
+  variant="ghost"
+>
+  <span class="ui_copy-button__label">{label}</span>
+  <svg
+    aria-hidden="true"
+    fill="none"
+    height="14"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="14"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
+    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"> </path>
+  </svg>
+</Button>
+
+<script>
+  document.addEventListener("click", (e: MouseEvent) => {
+    const button = (e.target as Element).closest<HTMLElement>(
+      "[data-copy-text]",
+    );
+    if (!button) return;
+
+    const text = button.dataset.copyText;
+    if (!text) return;
+
+    navigator.clipboard.writeText(text).then(() => {
+      const labelEl = button.querySelector<HTMLElement>(
+        ".ui_copy-button__label",
+      );
+      if (!labelEl) return;
+
+      const original = labelEl.textContent;
+      labelEl.textContent = "Copied!";
+      button.setAttribute("aria-disabled", "true");
+
+      setTimeout(() => {
+        labelEl.textContent = original;
+        button.removeAttribute("aria-disabled");
+      }, 2000);
+    });
+  });
+</script>
