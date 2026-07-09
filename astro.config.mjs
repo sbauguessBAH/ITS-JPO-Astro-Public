@@ -2,6 +2,7 @@ import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import vue from "@astrojs/vue";
 import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,5 +36,8 @@ export default defineConfig({
       "/research-areas/V2X-Deployment/deployment/accelerator/",
     "/resources/asc": "/resources/architecture-and-standards",
     "/resources/Professional-Capacity-Building/": "/resources/pcb",
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

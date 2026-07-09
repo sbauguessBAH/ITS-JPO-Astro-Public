@@ -1,0 +1,5 @@
+/* 
+  Tailwind is configured to use a prefix of "tw" to avoid conflicts with other CSS frameworks.
+  This means it can be selectively used without affecting the rest of the application.
+ */
+@import "tailwindcss" prefix(tw);
