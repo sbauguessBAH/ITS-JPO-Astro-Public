@@ -1,18 +1,29 @@
 ---
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
+import SectionDescription from "@/src/components/ui/blocks/section/SectionDescription.astro";
+import SectionHighlight from "@/src/components/ui/blocks/section/SectionHighlight.astro";
+import SectionHighlights from "@/src/components/ui/blocks/section/SectionHighlights.astro";
+import SectionTitle from "@/src/components/ui/blocks/section/SectionTitle.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
+import EmailIcon from "@/src/components/ui/icons/EmailIcon.astro";
 
 import Layout from "../_layout.astro";
+import HelpDeskLogo from "./_help-desk-logo.astro";
 ---
 
 <style></style>
 <style>
   .strategy-container {
-    background: rgb(var(--color-gray-light));
+    /* background: rgb(var(--color-gray-light)); */
     border-radius: var(--radius-md);
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 1rem;
   }
   .strategy {
     display: flex;
@@ -21,7 +32,7 @@ import Layout from "../_layout.astro";
   .strategy-content {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.1rem;
   }
   .strategy-title {
     color: rgb(var(--color-brand-dark));
@@ -55,26 +66,208 @@ import Layout from "../_layout.astro";
     }
   }
 </style>
+
+<style>
+  .hd-banner-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: 0 70%;
+    display: block;
+    border-radius: var(--radius-lg);
+  }
+  .hd-banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .hd-banner-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: -20px;
+    backdrop-filter: blur(5px);
+    background:
+      linear-gradient(
+        to right,
+        rgba(var(--color-default) / 0.5) 0%,
+        transparent 85%
+      ),
+      linear-gradient(
+        to right,
+        rgba(var(--color-default) / 0.85) 0%,
+        rgba(var(--color-default) / 0.5) 45%,
+        rgba(var(--color-default) / 0.15) 70%,
+        transparent 90%
+      );
+    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 85%);
+    mask-image: linear-gradient(to right, black 50%, transparent 85%);
+    z-index: 1;
+  }
+  .hd-banner-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
+
+  .hd-main {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .hd-main-left {
+    flex-basis: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .hd-main-right {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .topic-box {
+    border-width: 3px 1px 1px;
+    border-style: solid;
+    border-color: rgb(0, 113, 188) rgb(215, 230, 245) rgb(215, 230, 245);
+    border-image: none;
+    border-radius: 12px;
+    padding: 22px 24px;
+    background: rgb(249, 251, 253);
+  }
+
+  .topic-box-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: rgb(17, 46, 81);
+    margin: 0px 0px 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  .topic {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 9px 0px;
+    border-bottom: 1px solid rgb(231, 238, 246);
+  }
+
+  .topic-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgb(61, 69, 81);
+  }
+
+  .topic-icon {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: rgb(234, 241, 248);
+    color: rgb(0, 113, 188);
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8.5px;
+    font-weight: 900;
+    margin-top: 2px;
+  }
+
+  .hd-equip-main {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    background: rgb(var(--color-gray-light), 0.5);
+    padding: 2rem;
+    border: 1px solid rgb(var(--color-gray-light));
+    border-radius: var(--radius-lg);
+  }
+
+  .hd-equip-banner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    background: rgb(var(--color-brand-secondary));
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .hd-equip-banner-left {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .hd-equip-banner-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: 0 70%;
+    display: block;
+    border-radius: var(--radius-lg);
+  }
+
+  .hd-equip-banner-text {
+    flex-basis: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+  }
+
+  .hd-equip-banner-subtitle {
+    color: var(--color-secondary);
+  }
+
+  .loan-banner {
+    background: rgb(var(--color-brand-secondary));
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+  }
+</style>
 <Layout>
   <main class="program-main">
-    <ProgramSection size="small">
-      <h2 class="program-title-lg mb-4">V2X Interoperability Help Desk</h2>
-      <p class="program-text">
-        The help desk is your direct line to technical experts supporting your
-        V2X deployment. Whether you're selecting equipment, creating MAP
-        messages, integrating signal phase and timing, or troubleshooting data
-        flow, the help desk is here to help ensure interoperability and
-        compliance with standards.
-      </p>
-    </ProgramSection>
-    <ProgramSection>
-      <div class="strategy-grid">
-        <div class="strategy-container mt-4" role="list">
-          <h3 class="program-title-md">Why use the help desk?</h3>
+    <div class="container-lg hd-banner-wrapper">
+      <LibraryImage class="hd-banner-image" entry="pcb/carma" />
+      <HelpDeskLogo class="hd-banner-logo" />
+    </div>
+    <div class="hd-main">
+      <div class="hd-main-left">
+        <!-- <h2 class="program-title-lg mb-4">V2X Interoperability Help Desk</h2> -->
+        <h3 class="program-title-md">What is the Help Desk?</h3>
+        <p class="program-text">
+          The help desk is your direct line to technical experts supporting your
+          V2X deployment. Whether you're selecting equipment, creating MAP
+          messages, integrating signal phase and timing, or troubleshooting data
+          flow, the help desk is here to help ensure interoperability and
+          compliance with standards.
+        </p>
+        <h4 class="program-title-sm">Why use the help desk?</h4>
+        <div class="strategy-container">
           <div class="strategy">
             <div aria-hidden="true" class="strategy-icon">1</div>
             <div class="strategy-content" role="listitem">
-              <h4 class="strategy-title">Personalized Technical Support</h4>
+              <h5 class="strategy-title">Personalized Technical Support</h5>
               <p class="strategy-description">
                 Get answers to your deployment-specific questions.
               </p>
@@ -83,7 +276,7 @@ import Layout from "../_layout.astro";
           <div class="strategy">
             <div aria-hidden="true" class="strategy-icon">2</div>
             <div class="strategy-content" role="listitem">
-              <h4 class="strategy-title">Interoperability Assistance</h4>
+              <h5 class="strategy-title">Interoperability Assistance</h5>
               <p class="strategy-description">
                 Align with national standards and effective practices.
               </p>
@@ -92,7 +285,7 @@ import Layout from "../_layout.astro";
           <div class="strategy">
             <div aria-hidden="true" class="strategy-icon">3</div>
             <div class="strategy-content" role="listitem">
-              <h4 class="strategy-title">Access to tools and templates</h4>
+              <h5 class="strategy-title">Access to tools and templates</h5>
               <p class="strategy-description">
                 Save time with vetted, open-source resources.
               </p>
@@ -101,9 +294,9 @@ import Layout from "../_layout.astro";
           <div class="strategy">
             <div aria-hidden="true" class="strategy-icon">4</div>
             <div class="strategy-content" role="listitem">
-              <h4 class="strategy-title">
+              <h5 class="strategy-title">
                 Connect with other available resources
-              </h4>
+              </h5>
               <p class="strategy-description">
                 Learn how to engage with loan programs, testbeds, and peer
                 networks.
@@ -111,48 +304,290 @@ import Layout from "../_layout.astro";
             </div>
           </div>
         </div>
-        <div class="strategy-container mt-4" role="list">
-          <h3 class="program-title-md">Common topics we support</h3>
-          <div class="strategy">
-            <div aria-hidden="true" class="strategy-icon">1</div>
-            <div class="strategy-content" role="listitem">
-              <h4 class="strategy-title">Building compliant MAP messages</h4>
+        <h5 class="strategy-title">All at no cost to you!</h5>
+      </div>
+      <div class="hd-main-right">
+        <div class="topic-box">
+          <h3 class="topic-box-title">Common Topics We Support</h3>
+          <div>
+            <div class="topic">
+              <div class="topic-icon">✓</div>
+              <div class="topic-text">Building compliant MAP messages.</div>
+            </div>
+            <div class="topic">
+              <div class="topic-icon">✓</div>
+              <div class="topic-text">
+                Configuring roadside units and onboard units and message types.
+              </div>
+            </div>
+            <div class="topic">
+              <div class="topic-icon">✓</div>
+              <div class="topic-text">
+                Troubleshooting communication errors.
+              </div>
+            </div>
+            <div class="topic">
+              <div class="topic-icon">✓</div>
+              <div class="topic-text">
+                Selecting the right open-source tools.
+              </div>
+            </div>
+            <div class="topic">
+              <div class="topic-icon">✓</div>
+              <div class="topic-text">
+                Understanding standards and protocols.
+              </div>
             </div>
           </div>
-          <div class="strategy">
-            <div aria-hidden="true" class="strategy-icon">2</div>
-            <div class="strategy-content" role="listitem">
-              <h4 class="strategy-title">
-                Configuring roadside units and onboard units and message types
-              </h4>
+        </div>
+        <div class="topic-box" style="border: 0;">
+          <p style="font-weight: var(--font-weight-medium);">
+            <strong>Deployment doesn't have to be complicated.</strong> Get expert
+            support at every stage — from planning to deployment — at no cost.
+          </p>
+          <Button
+            color="primary"
+            link={{ href: "mailto:cavsupportservices@dot.gov" }}
+            size="lg"
+            variant="default"
+          >
+            Contact the help desk
+            <EmailIcon />
+          </Button>
+        </div>
+      </div>
+    </div>
+    <div class="hd-equip-main">
+      <div class="hd-equip-banner">
+        <div class="hd-equip-banner-left">
+          <LibraryImage
+            class="hd-equip-banner-image"
+            entry="pcb/cave-box-ground"
+          />
+        </div>
+        <div class="hd-equip-banner-text">
+          <h3 class="program-title-md text-white">
+            Accelerate Your V2X Deployment with USDOT's Open-Source Connected
+            Vehicle Equipment Loan Program
+          </h3>
+          <p class="program-text hd-equip-banner-subtitle">
+            Get access to real-world roadside and vehicle onboard equipment at
+            no cost, to make informed procurement decisions.
+          </p>
+          <h3 class="program-title-md">
+            <span style="color: rgb(255, 255, 255);">Borrow. </span>
+            <span style="color: rgb(244, 205, 82);">Test. </span>
+            <span style="color: rgb(143, 207, 122);">Deploy. </span>
+          </h3>
+        </div>
+      </div>
+      <div class="hd-main">
+        <div class="hd-main-left">
+          <!-- <h2 class="program-title-lg mb-4">V2X Interoperability Help Desk</h2> -->
+          <h3 class="program-title-md">What is the loan program?</h3>
+          <p class="program-text">
+            The Connected Vehicle Equipment Loan Program gives agencies,
+            researchers, and developers no-cost access to connected vehicle
+            hardware. Use real devices — roadside units, onboard units,
+            antennas, test tools, and more — to test vehicle-to-everything (V2X)
+            applications, validate interoperability, and accelerate deployment
+            timelines.
+          </p>
+          <h4 class="program-title-sm">Why use the loan program?</h4>
+          <div class="strategy-container">
+            <div class="strategy">
+              <div
+                aria-hidden="true"
+                class="strategy-icon"
+                style="background: rgb(0, 30, 81, 0.2); color: black;"
+              >
+                1
+              </div>
+              <div class="strategy-content" role="listitem">
+                <h5 class="strategy-title" style="color: rgb(0, 30, 81);">
+                  Try before you buy
+                </h5>
+                <p class="strategy-description">
+                  Explore solutions in a risk-free environment before initiating
+                  procurement.
+                </p>
+              </div>
+            </div>
+            <div class="strategy">
+              <div
+                aria-hidden="true"
+                class="strategy-icon"
+                style="background: rgb(230, 184, 47, 0.2); color: black;"
+              >
+                2
+              </div>
+              <div class="strategy-content" role="listitem">
+                <h5 class="strategy-title" style="  color: rgb(138, 106, 19);">
+                  Test in the real world
+                </h5>
+                <p class="strategy-description">
+                  Use proven, standards-compliant hardware.
+                </p>
+              </div>
+            </div>
+            <div class="strategy">
+              <div
+                aria-hidden="true"
+                class="strategy-icon"
+                style="background: rgb(46, 107, 61, 0.2); color: black;"
+              >
+                3
+              </div>
+              <div class="strategy-content" role="listitem">
+                <h5 class="strategy-title" style="color: rgb(46, 107, 61);">
+                  Improve interoperability
+                </h5>
+                <p class="strategy-description">
+                  Validate your future V2X system against your existing
+                  hardware.
+                </p>
+              </div>
+            </div>
+            <div class="strategy">
+              <div
+                aria-hidden="true"
+                class="strategy-icon"
+                style="background: #1b70ab1b; color: black;"
+              >
+                4
+              </div>
+              <div class="strategy-content" role="listitem">
+                <h5 class="strategy-title" style="color: #1b70ab;">
+                  Access expert support
+                </h5>
+                <p class="strategy-description">
+                  Get assistance from technical leads and documentation.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="strategy">
-            <div aria-hidden="true" class="strategy-icon">3</div>
-            <div class="strategy-content" role="listitem">
-              <h4 class="strategy-title">
-                Troubleshooting communication errors
-              </h4>
-            </div>
-          </div>
-          <div class="strategy">
-            <div aria-hidden="true" class="strategy-icon">4</div>
-            <div class="strategy-content" role="listitem">
-              <h4 class="strategy-title">
-                Selecting the right open-source tools
-              </h4>
-            </div>
-          </div>
-          <div class="strategy">
-            <div aria-hidden="true" class="strategy-icon">5</div>
-            <div class="strategy-content" role="listitem">
-              <h4 class="strategy-title">
-                Understanding standards and protocols
-              </h4>
+        </div>
+        <div class="hd-main-right">
+          <div
+            class="topic-box"
+            style="border-color: rgb(230, 184, 47) rgb(240, 227, 187) rgb(240, 227, 187); background: rgb(255, 255, 255);"
+          >
+            <h3 class="topic-box-title">Available Equipment Includes</h3>
+            <div>
+              <div class="topic">
+                <div
+                  class="topic-icon"
+                  style="background: rgb(251, 241, 218);
+  color: rgb(138, 106, 19);"
+                >
+                  ✓
+                </div>
+                <div class="topic-text">Roadside units</div>
+              </div>
+              <div class="topic">
+                <div
+                  class="topic-icon"
+                  style="background: rgb(251, 241, 218);
+  color: rgb(138, 106, 19);"
+                >
+                  ✓
+                </div>
+                <div class="topic-text">
+                  Vehicle onboard units and applications
+                </div>
+              </div>
+              <div class="topic">
+                <div
+                  class="topic-icon"
+                  style="background: rgb(251, 241, 218);
+  color: rgb(138, 106, 19);"
+                >
+                  ✓
+                </div>
+                <div class="topic-text">
+                  Signal phase and timing and MAP message test devices
+                </div>
+              </div>
+              <div class="topic">
+                <div
+                  class="topic-icon"
+                  style="background: rgb(251, 241, 218);
+  color: rgb(138, 106, 19);"
+                >
+                  ✓
+                </div>
+                <div class="topic-text">
+                  Smart work zone sensors and arrow boards
+                </div>
+              </div>
+              <div class="topic">
+                <div
+                  class="topic-icon"
+                  style="background: rgb(251, 241, 218);
+  color: rgb(138, 106, 19);"
+                >
+                  ✓
+                </div>
+                <div class="topic-text">Traffic signal controllers</div>
+              </div>
+              <div class="topic">
+                <div
+                  class="topic-icon"
+                  style="background: rgb(251, 241, 218);
+  color: rgb(138, 106, 19);"
+                >
+                  ✓
+                </div>
+                <div class="topic-text">Thermal sensors</div>
+              </div>
+              <div class="topic">
+                <div
+                  class="topic-icon"
+                  style="background: rgb(251, 241, 218);
+  color: rgb(138, 106, 19);"
+                >
+                  ✓
+                </div>
+                <div class="topic-text">Test laptops and tablets</div>
+              </div>
+              <div class="topic">
+                <div
+                  class="topic-icon"
+                  style="background: rgb(251, 241, 218);
+  color: rgb(138, 106, 19);"
+                >
+                  ✓
+                </div>
+                <div class="topic-text">
+                  Global positioning system tracking kits
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </ProgramSection>
+    </div>
+    <div class="loan-banner">
+      <div>
+        <h3 class="program-title-md text-white">Ready to Get Started?</h3>
+        <p class="program-text text-white">
+          Explore the full equipment list, learn how the program works, and
+          submit your loan request at <a
+            class="text-white"
+            href="mailto:cavsupportservices@dot.gov"
+            >cavsupportservices@dot.gov</a
+          >.
+        </p>
+      </div>
+      <Button
+        color="secondary"
+        link={{ href: "mailto:cavsupportservices@dot.gov" }}
+        size="lg"
+        variant="default"
+      >
+        Request a loan
+        <EmailIcon />
+      </Button>
+    </div>
   </main>
 </Layout>

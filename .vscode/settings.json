@@ -1,21 +1,21 @@
 {
   "json.schemas": [
     {
-      "fileMatch": [
-        "/src/content/library/**"
-      ],
+      "fileMatch": ["/src/content/library/**"],
       "url": "./.astro/collections/library.schema.json"
     }
   ],
 
+  // ========== Tailwind ==========
+  "files.associations": { "*.css": "tailwindcss" },
+  "editor.quickSuggestions": { "strings": "on" },
+  "tailwindCSS.classAttributes": ["class", "ui", "className"],
+
   // ========== Editor ==========
   // Show rulers for recommended length (Prettier defaults to 80)
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [80, 120],
   "editor.tabSize": 2,
-  
+
   "editor.formatOnSave": true,
 
   // Auto fix options on file save
@@ -24,7 +24,7 @@
     "source.fixAll.eslint": "explicit",
     "source.fixAll.prettier": "explicit"
   },
-  
+
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   // "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -40,7 +40,7 @@
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
-  
+
   // Enable ESLint for all supported languages
-  "eslint.validate": ["javascript", "typescript", "astro", "vue", "html"],
+  "eslint.validate": ["javascript", "typescript", "astro", "vue", "html"]
 }
