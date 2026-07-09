@@ -15,34 +15,31 @@ import base_url from "@/src/lib/base_url";
 
 import Layout from "../_layout.astro";
 
-export const categories: { category?: string; title: string }[] = [
-  { category: undefined, title: "All Courses" },
-  { category: "its-basics", title: "ITS Basics" },
-  { category: "its-architecture", title: "ITS Architecture" },
-  { category: "systems-engineering", title: "Systems Engineering" },
-  { category: "v2x", title: "Vehicle-to-Everything (V2X)" },
-  {
-    category: "tsmo",
-    title: "Transportation Systems Management and Operations (TSMO)",
-  },
-  { category: "rwm", title: "Road Weather Management (RWM)" },
-  { category: "tim", title: "Traffic Incident Management (TIM)" },
-  { category: "cybersecurity", title: "Cybersecurity" },
-  { category: "standards", title: "Standards" },
-];
-
 export function getStaticPaths() {
+  const categories: { category?: string; title: string }[] = [
+    { category: undefined, title: "All Courses" },
+    { category: "its-basics", title: "ITS Basics" },
+    { category: "its-architecture", title: "ITS Architecture" },
+    { category: "systems-engineering", title: "Systems Engineering" },
+    { category: "v2x", title: "Vehicle-to-Everything (V2X)" },
+    {
+      category: "tsmo",
+      title: "Transportation Systems Management and Operations (TSMO)",
+    },
+    { category: "rwm", title: "Road Weather Management (RWM)" },
+    { category: "tim", title: "Traffic Incident Management (TIM)" },
+    { category: "cybersecurity", title: "Cybersecurity" },
+    { category: "standards", title: "Standards" },
+  ];
+
   return categories.map((item) => ({
-    params: {
-      path: item.category,
-    },
-    props: {
-      title: item.title,
-    },
+    params: { path: item.category },
+    props: { categories, title: item.title },
   }));
 }
 
 const { path } = Astro.params;
+const { categories } = Astro.props;
 
 const pathIsCategory = (
   entry: CollectionEntry<"pcbTrainings">,
@@ -52,9 +49,7 @@ const pathIsCategory = (
 };
 
 const courses = await getCollection("pcbTrainings");
-const filteredCourses = await getCollection("pcbTrainings", (entry) =>
-  pathIsCategory(entry, path),
-);
+const filteredCourses = courses.filter((entry) => pathIsCategory(entry, path));
 const getCourseCount = (path?: string) =>
   courses.filter((entry) => pathIsCategory(entry, path)).length;
 ---
@@ -205,11 +200,7 @@ const getCourseCount = (path?: string) =>
           <div class="course-grid">
             {
               filteredCourses.map(({ data: course }) => (
-                <Card
-                  class="course-card"
-                  href={course.url}
-                  isExternal={course.isExternal}
-                >
+                <Card href={course.url} isExternal={course.isExternal}>
                   <CardImage entry={course.image} height={200} />
                   <Badge
                     size="lg"
