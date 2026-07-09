@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # Dist folders
 itstest_programs*
+
+.agents/
+skills-lock.json
