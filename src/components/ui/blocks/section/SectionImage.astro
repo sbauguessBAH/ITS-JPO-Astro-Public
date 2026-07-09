@@ -5,8 +5,6 @@ import LibraryImage, {
   type LibraryImageEntry,
 } from "@/src/components/programs/LibraryImage.astro";
 
-import "./section.css";
-
 type Props = Omit<LocalImageProps, "alt" | "src"> & {
   alt?: string;
   /** Reference to library entry */
