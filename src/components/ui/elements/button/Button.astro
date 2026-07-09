@@ -1,0 +1,64 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import base_url from "../../../../lib/base_url";
+import "./button.scss";
+
+type LinkProps = {
+  href: string;
+  isExternal?: boolean;
+  isSameWindow?: boolean;
+};
+
+type Props = HTMLAttributes<"button"> & {
+  class?: string;
+  color?: "primary" | "secondary";
+  link?: LinkProps;
+  size?: "default" | "icon" | "icon-lg" | "icon-sm" | "lg" | "sm";
+  type?: "button" | "reset" | "submit";
+  variant?: "default" | "ghost" | "outline" | "soft" | "subtle";
+};
+
+const {
+  class: className,
+  color = "primary",
+  link,
+  size = "default",
+  type = "button",
+  variant = "default",
+  ...props
+} = Astro.props;
+
+const isLink = !!link;
+const Component = isLink ? "a" : "button";
+
+let linkHref: string | undefined;
+let linkRel: string | undefined;
+let linkTarget: string | undefined;
+
+if (link) {
+  const isTelOrMail =
+    link.href.startsWith("mailto:") || link.href.startsWith("tel:");
+  linkHref = link.isExternal || isTelOrMail ? link.href : base_url(link.href);
+  linkRel = !isTelOrMail && link.isExternal ? "noopener noreferrer" : undefined;
+  linkTarget =
+    !isTelOrMail && link.isExternal && !link.isSameWindow
+      ? "_blank"
+      : undefined;
+}
+---
+
+<Component
+  class:list={["ui_button", className]}
+  data-color={color}
+  data-size={size}
+  data-slot="ui_button"
+  data-variant={variant}
+  href={linkHref}
+  rel={linkRel}
+  target={linkTarget}
+  type={!isLink ? type : undefined}
+  {...props}
+>
+  <slot />
+</Component>

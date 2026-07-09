@@ -1,0 +1,251 @@
+/* ============================================================
+ * Button
+ * ============================================================ */
+
+.ui_button {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  /* Font */
+  font-family: inherit;
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+
+  /* Shape */
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: var(--radius-md);
+
+  /* Interaction */
+  transition-property:
+    color, background-color, border-color, opacity, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+
+  // ---------- Disabled ----------
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  // ---------- Focus ----------
+
+  &:focus-visible {
+    outline: 2px solid var(--button-color, currentColor);
+    outline-offset: 2px;
+  }
+
+  // ---------- Icons ----------
+
+  > svg {
+    flex-shrink: 0;
+    pointer-events: none;
+  }
+
+  // ---------- Sizes ----------
+
+  &[data-size="sm"] {
+    height: calc(var(--spacing) * 7); /* h-7, 28px */
+    gap: var(--spacing); /* gap-1, 4px */
+    padding: var(--spacing) calc(var(--spacing) * 2.5);
+    font-size: var(--text-sm);
+
+    > svg {
+      width: calc(var(--spacing) * 3); /* size-3, 12px */
+      height: calc(var(--spacing) * 3);
+    }
+  }
+
+  &[data-size="default"] {
+    height: calc(var(--spacing) * 8); /* h-8, 32px */
+    gap: calc(var(--spacing) * 1.5); /* gap-1.5, 6px */
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
+    font-size: var(--text-sm);
+
+    > svg {
+      width: calc(var(--spacing) * 3.5); /* size-3.5, 14px */
+      height: calc(var(--spacing) * 3.5);
+    }
+  }
+
+  &[data-size="lg"] {
+    height: calc(var(--spacing) * 9); /* h-9, 36px */
+    gap: calc(var(--spacing) * 1.5); /* gap-1.5, 6px */
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 4);
+    font-size: var(--text-base);
+
+    > svg {
+      width: calc(var(--spacing) * 3.5); /* size-3.5, 14px */
+      height: calc(var(--spacing) * 3.5);
+    }
+  }
+
+  // ---------- Icon Sizes ----------
+
+  &[data-size="icon-sm"] {
+    width: calc(var(--spacing) * 7); /* 28px — matches sm height */
+    height: calc(var(--spacing) * 7);
+    padding: 0;
+
+    > svg {
+      width: calc(var(--spacing) * 3); /* size-3, 12px */
+      height: calc(var(--spacing) * 3);
+    }
+  }
+
+  &[data-size="icon"] {
+    width: calc(var(--spacing) * 8); /* 32px — matches default height */
+    height: calc(var(--spacing) * 8);
+    padding: 0;
+
+    > svg {
+      width: calc(var(--spacing) * 3.5); /* size-3.5, 14px */
+      height: calc(var(--spacing) * 3.5);
+    }
+  }
+
+  &[data-size="icon-lg"] {
+    width: calc(var(--spacing) * 9); /* 36px — matches lg height */
+    height: calc(var(--spacing) * 9);
+    padding: 0;
+
+    > svg {
+      width: calc(var(--spacing) * 3.5); /* size-3.5, 14px */
+      height: calc(var(--spacing) * 3.5);
+    }
+  }
+
+  // ---------- Colors ----------
+
+  &[data-color="primary"] {
+    --button-color: var(--color-default);
+    --button-color-foreground: var(--color-default-foreground);
+  }
+
+  &[data-color="secondary"] {
+    --button-color: var(--color-secondary);
+    --button-color-foreground: var(--color-secondary-foreground);
+  }
+
+  // ---------- Variants ----------
+
+  /* Default: Solid background, high-contrast text */
+  &[data-variant="default"] {
+    background-color: var(--button-color);
+    color: var(--button-color-foreground);
+    border-color: var(--button-color);
+
+    &:hover:not(:disabled):not([aria-disabled="true"]) {
+      opacity: 0.9;
+    }
+
+    &:active:not(:disabled):not([aria-disabled="true"]) {
+      opacity: 0.8;
+    }
+  }
+
+  /* Outline: Border + text, transparent background */
+  &[data-variant="outline"] {
+    background-color: transparent;
+    color: var(--button-color);
+    border-color: var(--button-color);
+
+    &:hover:not(:disabled):not([aria-disabled="true"]) {
+      background-color: color-mix(
+        in oklch,
+        var(--button-color) 8%,
+        transparent
+      );
+    }
+
+    &:active:not(:disabled):not([aria-disabled="true"]) {
+      background-color: color-mix(
+        in oklch,
+        var(--button-color) 14%,
+        transparent
+      );
+    }
+  }
+
+  /* Subtle: Border + lighter tinted background */
+  &[data-variant="subtle"] {
+    background-color: color-mix(in oklch, var(--button-color) 12%, transparent);
+    color: var(--button-color);
+    border-color: color-mix(in oklch, var(--button-color) 35%, transparent);
+
+    &:hover:not(:disabled):not([aria-disabled="true"]) {
+      background-color: color-mix(
+        in oklch,
+        var(--button-color) 18%,
+        transparent
+      );
+    }
+
+    &:active:not(:disabled):not([aria-disabled="true"]) {
+      background-color: color-mix(
+        in oklch,
+        var(--button-color) 24%,
+        transparent
+      );
+    }
+  }
+
+  /* Soft: No border, lighter tinted background only */
+  &[data-variant="soft"] {
+    background-color: color-mix(in oklch, var(--button-color) 12%, transparent);
+    color: var(--button-color);
+    border-color: transparent;
+
+    &:hover:not(:disabled):not([aria-disabled="true"]) {
+      background-color: color-mix(
+        in oklch,
+        var(--button-color) 18%,
+        transparent
+      );
+    }
+
+    &:active:not(:disabled):not([aria-disabled="true"]) {
+      background-color: color-mix(
+        in oklch,
+        var(--button-color) 24%,
+        transparent
+      );
+    }
+  }
+
+  /* Ghost: No background or border, text only with hover tint */
+  &[data-variant="ghost"] {
+    background-color: transparent;
+    color: var(--button-color);
+    border-color: transparent;
+
+    &:hover:not(:disabled):not([aria-disabled="true"]) {
+      background-color: color-mix(
+        in oklch,
+        var(--button-color) 8%,
+        transparent
+      );
+    }
+
+    &:active:not(:disabled):not([aria-disabled="true"]) {
+      background-color: color-mix(
+        in oklch,
+        var(--button-color) 14%,
+        transparent
+      );
+    }
+  }
+}
