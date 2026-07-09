@@ -352,7 +352,7 @@ const createSectionFromSeed = (seed: DefaultSectionSeed): ToolkitSection => {
 
 const normalizeContacts = (contacts?: RawContact[]): ToolkitContact[] => {
   return (Array.isArray(contacts) ? contacts : [])
-    .map((contact) => {
+    .map((contact): ToolkitContact | undefined => {
       const name = cleanText(contact.name);
 
       if (!name) {
@@ -375,7 +375,7 @@ const normalizeContacts = (contacts?: RawContact[]): ToolkitContact[] => {
 
 const normalizeLinks = (items?: RawLinkItem[]): ToolkitLinkItem[] => {
   return (Array.isArray(items) ? items : [])
-    .map((item) => {
+    .map((item): ToolkitLinkItem | undefined => {
       const title = cleanText(item.title) || cleanText(item["link-text"]);
 
       if (!title) {
@@ -409,7 +409,7 @@ const normalizeMediaItems = (items?: RawMediaItem[]): ToolkitMediaItem[] => {
         href: href || undefined,
         image: image || undefined,
         title: title || "Media Asset",
-      };
+      } as ToolkitMediaItem;
     })
     .filter((item): item is ToolkitMediaItem => Boolean(item));
 };
@@ -434,7 +434,7 @@ const normalizeWebinars = (items?: RawWebinarItem[]): ToolkitWebinarItem[] => {
         slidesLink: slidesLink || undefined,
         subtitle: cleanText(item.subtitle) || undefined,
         title: title || "Webinar Material",
-      };
+      } as ToolkitWebinarItem;
     })
     .filter((item): item is ToolkitWebinarItem => Boolean(item));
 };
