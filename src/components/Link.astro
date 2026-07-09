@@ -1,30 +1,42 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import base_url from '../lib/base_url';
+import type { HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<'a'> {
-  /** 
+import base_url from "../lib/base_url";
+
+interface Props extends HTMLAttributes<"a"> {
+  href: string;
+  /**
    * Use if the href provided is not an internal Astro path (/*).
    * This will prevent the href from being modified during site build
    */
-   isExternal?: boolean;
+  isExternal?: boolean;
   /**
    * External links will open in a new window by default.
    * Setting this will open them in the same window
    */
   isSameWindow?: boolean;
-  href: string;
-  variant?: 'default' | 'button';
+  variant?: "button" | "default";
 }
 
-const { isExternal, isSameWindow, type, href, variant, class: className, ...rest } = Astro.props;
+const {
+  class: className,
+  href,
+  isExternal,
+  isSameWindow,
+  type,
+  variant,
+  ...rest
+} = Astro.props;
 
 // If the link starts with mailto: or tel:, we don't need these additional props
 const telOrMail = href.startsWith("mailto:") || href.startsWith("tel:");
-const rel = {...(!telOrMail && isExternal && { rel: "noopener noreferrer" })};
-const target = {...(!telOrMail && isExternal && !isSameWindow && { target: "_blank" })}
-const classes = variant === 'button' ? `link-button ${className}` : className;
+const rel = { ...(!telOrMail && isExternal && { rel: "noopener noreferrer" }) };
+const target = {
+  ...(!telOrMail && isExternal && !isSameWindow && { target: "_blank" }),
+};
+const classes = variant === "button" ? `link-button ${className}` : className;
 ---
+
 <style>
   .link-button {
     text-decoration: none;
@@ -49,5 +61,5 @@ const classes = variant === 'button' ? `link-button ${className}` : className;
   {...rest}
   class={classes}
 >
-  <slot/>
+  <slot />
 </a>
