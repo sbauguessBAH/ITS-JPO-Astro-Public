@@ -27,6 +27,7 @@ export const navigation: NavigationItem[] = [
           { name: "ITS JPO NOW", url: "/about/contact-us/mailinglist/ITS-JPO-NOW", pages: [
             
             { name: "May 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026" },
+            { name: "July 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026" },
 
           ] },
         ],
