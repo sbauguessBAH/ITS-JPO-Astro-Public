@@ -9,7 +9,7 @@
   // ========== Tailwind ==========
   "files.associations": { "*.css": "tailwindcss" },
   "editor.quickSuggestions": { "strings": "on" },
-  "tailwindCSS.classAttributes": ["class", "ui", "className"],
+  "tailwindCSS.classAttributes": ["class", "ui", "className", "class:list"],
 
   // ========== Editor ==========
   // Show rulers for recommended length (Prettier defaults to 80)

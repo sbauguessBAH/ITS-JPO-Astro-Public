@@ -4,7 +4,6 @@
 
 .ui_button {
   /* Layout */
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
@@ -53,79 +52,6 @@
   > svg {
     flex-shrink: 0;
     pointer-events: none;
-  }
-
-  // ---------- Sizes ----------
-
-  &[data-size="sm"] {
-    height: calc(var(--spacing) * 7); /* h-7, 28px */
-    gap: var(--spacing); /* gap-1, 4px */
-    padding: var(--spacing) calc(var(--spacing) * 2.5);
-    font-size: var(--text-sm);
-
-    > svg {
-      width: calc(var(--spacing) * 3); /* size-3, 12px */
-      height: calc(var(--spacing) * 3);
-    }
-  }
-
-  &[data-size="default"] {
-    height: calc(var(--spacing) * 8); /* h-8, 32px */
-    gap: calc(var(--spacing) * 1.5); /* gap-1.5, 6px */
-    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
-    font-size: var(--text-sm);
-
-    > svg {
-      width: calc(var(--spacing) * 3.5); /* size-3.5, 14px */
-      height: calc(var(--spacing) * 3.5);
-    }
-  }
-
-  &[data-size="lg"] {
-    height: calc(var(--spacing) * 9); /* h-9, 36px */
-    gap: calc(var(--spacing) * 1.5); /* gap-1.5, 6px */
-    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 4);
-    font-size: var(--text-base);
-
-    > svg {
-      width: calc(var(--spacing) * 3.5); /* size-3.5, 14px */
-      height: calc(var(--spacing) * 3.5);
-    }
-  }
-
-  // ---------- Icon Sizes ----------
-
-  &[data-size="icon-sm"] {
-    width: calc(var(--spacing) * 7); /* 28px — matches sm height */
-    height: calc(var(--spacing) * 7);
-    padding: 0;
-
-    > svg {
-      width: calc(var(--spacing) * 3); /* size-3, 12px */
-      height: calc(var(--spacing) * 3);
-    }
-  }
-
-  &[data-size="icon"] {
-    width: calc(var(--spacing) * 8); /* 32px — matches default height */
-    height: calc(var(--spacing) * 8);
-    padding: 0;
-
-    > svg {
-      width: calc(var(--spacing) * 3.5); /* size-3.5, 14px */
-      height: calc(var(--spacing) * 3.5);
-    }
-  }
-
-  &[data-size="icon-lg"] {
-    width: calc(var(--spacing) * 9); /* 36px — matches lg height */
-    height: calc(var(--spacing) * 9);
-    padding: 0;
-
-    > svg {
-      width: calc(var(--spacing) * 3.5); /* size-3.5, 14px */
-      height: calc(var(--spacing) * 3.5);
-    }
   }
 
   // ---------- Colors ----------
@@ -185,29 +111,6 @@
     background-color: color-mix(in oklch, var(--button-color) 12%, transparent);
     color: var(--button-color);
     border-color: color-mix(in oklch, var(--button-color) 35%, transparent);
-
-    &:hover:not(:disabled):not([aria-disabled="true"]) {
-      background-color: color-mix(
-        in oklch,
-        var(--button-color) 18%,
-        transparent
-      );
-    }
-
-    &:active:not(:disabled):not([aria-disabled="true"]) {
-      background-color: color-mix(
-        in oklch,
-        var(--button-color) 24%,
-        transparent
-      );
-    }
-  }
-
-  /* Soft: No border, lighter tinted background only */
-  &[data-variant="soft"] {
-    background-color: color-mix(in oklch, var(--button-color) 12%, transparent);
-    color: var(--button-color);
-    border-color: transparent;
 
     &:hover:not(:disabled):not([aria-disabled="true"]) {
       background-color: color-mix(

@@ -1,5 +1,115 @@
-/* 
-  Tailwind is configured to use a prefix of "tw" to avoid conflicts with other CSS frameworks.
-  This means it can be selectively used without affecting the rest of the application.
- */
-@import "tailwindcss" prefix(tw);
+/* =============================================================================
+ * Tailwind Configuration
+ * -----------------------------------------------------------------------------
+ * Tailwind is configured with a `tw` prefix to avoid conflict
+ * with other CSS frameworks. Classes can be used like `tw:text-sm`.
+ *
+ * Preflight is removed to prevent conflicts with other CSS frameworks.
+ * `new-age.css` defines normalizations and resets currently, but
+ * that should eventually be migrated here.
+
+ * The three lines below can be replaced with 
+ * `@import "tailwindcss" prefix(tw);` to enable Preflight in the future.
+ * ============================================================================= */
+
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
+
+/* =============================================================================
+ * Tailwind Colors
+ * -----------------------------------------------------------------------------
+ * These colors are exposed to Tailwind directly via the `@theme`
+ * directive. This allows us to use them in Tailwind classes
+ * like `tw:bg-cyan` or `tw:text-crimson`.
+ *
+ * Colors here should match the color name we want to use
+ * when referencing them in classes.
+ * ============================================================================= */
+
+@theme {
+  /* Default color palette is disabled to prevent conflicts. */
+  --color--*: initial;
+
+  /* Base Colors */
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* Presentation Colors */
+  --color-gray-light: oklch(0.9034 0.0013 106.43);
+  --color-cyan: oklch(0.7579 0.1111 218.87);
+  --color-lime: oklch(0.775 0.1685 111.65);
+  --color-crimson: oklch(0.4379 0.1412 359.79);
+  --color-orange: oklch(0.7015 0.1476 57.27);
+  --color-gold: oklch(0.8105 0.1682 79.31);
+  --color-yellow: oklch(0.8396 0.1716 90.43);
+}
+
+/* =============================================================================
+ * Semantic Colors
+ * -----------------------------------------------------------------------------
+ * Semantic colors are design tokens for specific use cases.
+ *
+ * The `@theme inline` allows you to reference other color variables.
+ * Colors should be defined in `:root` first so that they can be used 
+ * as variables in other CSS files or in the `@theme` block.
+ * ============================================================================= */
+
+:root {
+  --tw-background: oklch(1 0 0);
+  --tw-foreground: oklch(0.145 0 0);
+
+  --tw-primary: oklch(0.433 0.0983 240.78);
+  --tw-primary-foreground: oklch(0.205 0 0);
+
+  --tw-secondary: oklch(0.97 0 0);
+  --tw-secondary-foreground: oklch(0.205 0 0);
+
+  --tw-accent: oklch(0.8396 0.1716 90.43);
+  --tw-accent-foreground: oklch(0.205 0 0);
+
+  --tw-muted: oklch(0.97 0 0);
+  --tw-muted-foreground: oklch(0.556 0 0);
+
+  --tw-border: oklch(0.928 0 0);
+}
+
+/* Theme colors */
+@theme inline {
+  --color-background: var(--tw-background);
+  --color-foreground: var(--tw-foreground);
+
+  --color-primary: var(--tw-primary);
+  --color-primary-foreground: var(--tw-primary-foreground);
+
+  --color-secondary: var(--tw-secondary);
+  --color-secondary-foreground: var(--tw-secondary-foreground);
+
+  --color-accent: var(--tw-accent);
+  --color-accent-foreground: var(--tw-accent-foreground);
+
+  --color-muted: var(--tw-muted);
+  --color-muted-foreground: var(--tw-muted-foreground);
+
+  --color-border: var(--tw-border);
+}
+
+/* =============================================================================
+ * Customizations
+ * -----------------------------------------------------------------------------
+ * Use @layer to modify Tailwind's base, components, and utilities layers.
+ * This is useful for adding global styles or overriding Tailwind defaults.
+ *
+ * You can also include any CSS selectors here that should be applied globally.
+ * ============================================================================= */
+
+/* Might already be in normalize/reset layer but just to be safe */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Modify Tailwind Preflight layer */
+@layer base {
+}

@@ -1,296 +1,887 @@
 ---
+/**
+ * Color Palettes used across the ITS JPO website.
+ *
+ * @remarks
+ *
+ * Colors were converted from Hex to OKLCH using this tool: {@link https://oklch.com/}.
+ * OKLCH colors support better mixing and enables more auto-generated variants.
+ */
 import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
-import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 
-type Palette = {
-  colors: {
-    hex: string;
-    name: string;
-    notes?: string;
-    oklch?: string;
-    rgb?: string;
-    variables?: string[];
-  }[];
+type ColorFormat = "hex" | "oklch" | "pantone" | "rgb";
+
+type ColorPalette = {
   name: string;
   notes?: string;
   source: string;
+  swatches: (ColorSwatchBase | ColorSwatchComponent | ColorSwatchGradient)[];
 };
 
-const palettes: Palette[] = [
-  {
-    colors: [
-      {
-        hex: "#000000",
-        name: "Foreground",
-        rgb: "0, 0, 0",
-        variables: ["--color-foreground"],
+type ColorSwatch = {
+  disabled?: boolean;
+  name?: string;
+  notes?: string;
+  variables?: string[];
+};
+
+type ColorSwatchBase = ColorSwatch & {
+  type: "swatch";
+  values: ColorValue[];
+};
+
+type ColorSwatchComponent = ColorSwatch & {
+  type: "component";
+  values: {
+    background: ColorValue[];
+    foreground: ColorValue[];
+  };
+};
+
+type ColorSwatchGradient = ColorSwatch & {
+  type: "gradient";
+  values: {
+    left: ColorValue[];
+    right: ColorValue[];
+  };
+};
+
+type ColorValue = {
+  active?: boolean;
+  format: ColorFormat;
+  value: string;
+};
+
+const PALETTE_SEMANTIC: ColorPalette = {
+  name: "Semantic Tailwind Colors",
+  notes:
+    "Semantic colors are used for specific purposes. They are generally derived from global colors but may differ slightly in certain circumstances. They are defined in the 'root:' block of 'globals.css' and are exposed to Tailwind via the '@theme inline' block.",
+  source: "globals.css",
+  swatches: [
+    {
+      name: "Background",
+      notes: "This is pure white for a clean neutral background",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#ffffff" },
+        { active: true, format: "oklch", value: "oklch(1 0 0)" },
+      ],
+      variables: ["--tw-background", "--color-background"],
+    },
+    {
+      name: "Foreground",
+      notes:
+        "This is slightly lighter than pure black to reduce eye strain and improve readability.",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#0a0a0a" },
+        { active: true, format: "oklch", value: "oklch(0.145 0 0)" },
+      ],
+      variables: ["--tw-foreground", "--color-foreground"],
+    },
+    {
+      name: "Primary",
+      notes:
+        "Default state, primary action. Matches Brand Dark color and AI Blue Secondary. Currently in headers and most buttons, but doesn't match JPO Presentation Palette",
+      type: "component",
+      values: {
+        background: [
+          { format: "hex", value: "#055681" },
+          {
+            active: true,
+            format: "oklch",
+            value: "oklch(0.433 0.0983 240.78)",
+          },
+        ],
+        foreground: [
+          { format: "hex", value: "#ffffff" },
+          { active: true, format: "oklch", value: "oklch(0.205 0 0)" },
+        ],
       },
-      {
-        hex: "#ffffff",
-        name: "Background",
-        rgb: "256, 256, 256",
-        variables: ["--color-background"],
+      variables: [
+        "--tw-primary",
+        "--tw-primary-foreground",
+        "--color-primary",
+        "--color-primary-foreground",
+      ],
+    },
+    {
+      name: "Secondary",
+      notes:
+        "Lower emphasis actions, buttons, supporting surfaces. Very similar to existing colors for card backgrounds, surfaces, section, etc. ",
+      type: "component",
+      values: {
+        background: [
+          { format: "hex", value: "#f7f7f7" },
+          { active: true, format: "oklch", value: "oklch(0.97 0 0)" },
+        ],
+        foreground: [
+          { format: "hex", value: "#171717" },
+          { active: true, format: "oklch", value: "oklch(0.205 0 0)" },
+        ],
       },
-      {
-        hex: "#7d7d7d",
-        name: "Gray",
-        notes:
-          "Used for program section background, strategy container on automation-program",
-        rgb: "247, 247, 247",
-        variables: ["--color-gray"],
+      variables: [
+        "--tw-secondary",
+        "--tw-secondary-foreground",
+        "--color-secondary",
+        "--color-secondary-foreground",
+      ],
+    },
+    {
+      name: "Accent",
+      notes:
+        "A pop of color as needed. Matches JPO Presentation template yellow. Use for buttons, links, etc. that need extra attention.",
+      type: "component",
+      values: {
+        background: [
+          { format: "hex", value: "#f5c400" },
+          {
+            active: true,
+            format: "oklch",
+            value: "oklch(0.8396 0.1716 90.43)",
+          },
+        ],
+        foreground: [
+          { format: "hex", value: "#171717" },
+          { active: true, format: "oklch", value: "oklch(0.205 0 0)" },
+        ],
       },
-      {
-        hex: "#f7f7f7",
-        name: "Gray Light",
-        rgb: "125, 125, 125",
-        variables: ["--color-gray-light"],
+      variables: [
+        "--tw-accent",
+        "--tw-accent-foreground",
+        "--color-accent",
+        "--color-accent-foreground",
+      ],
+    },
+    {
+      name: "Muted",
+      notes:
+        "Descriptions, placeholders, more subdued surfaces. Comparable to Program Gray but not quite the same.",
+      type: "component",
+      values: {
+        background: [
+          { format: "hex", value: "#f7f7f7" },
+          { active: true, format: "oklch", value: "oklch(0.97 0 0)" },
+        ],
+        foreground: [
+          { format: "hex", value: "#737373" },
+          { active: true, format: "oklch", value: "oklch(0.556 0 0)" },
+        ],
       },
-      { hex: "#c4c4c4", name: "Shadow Light", variables: ["--shadow-light"] },
-      { hex: "#e9e9e9", name: "Border Light", variables: ["--border-light"] },
-      {
-        hex: "#f8f8f8",
-        name: "Background Light",
-        variables: ["--background-light"],
+      variables: [
+        "--tw-muted",
+        "--tw-muted-foreground",
+        "--color-muted",
+        "--color-muted-foreground",
+      ],
+    },
+    {
+      name: "Border",
+      notes:
+        "This matches the AI card border and is slightly different than the border color we were using for program sites.",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#e7e7e7" },
+        { active: true, format: "oklch", value: "oklch(0.928 0 0)" },
+      ],
+      variables: ["--tw-border", "--color-border"],
+    },
+  ],
+};
+
+const PALETTE_GLOBAL: ColorPalette = {
+  name: "Global Tailwind Colors",
+  notes:
+    "These colors are used across the website. This is what I've constructed as the most accurate and complete color source.",
+  source: "globals.css",
+  swatches: [
+    {
+      name: "Black",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#000000" }],
+      variables: ["--color-black"],
+    },
+    {
+      name: "White",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#ffffff" }],
+      variables: ["--color-white"],
+    },
+  ],
+};
+
+const PALETTE_JPO_PRESENTATION: ColorPalette = {
+  name: "JPO Presentation Palette",
+  notes:
+    "These are the official colors recommended from the ITS JPO presentation template and was last updated in early 2026.",
+  source: "ITS JPO PowerPoint Template",
+  swatches: [
+    {
+      name: "",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#003D7D" },
+        { format: "pantone", value: "Pantone 281 C" },
+        { format: "oklch", value: "oklch(0.3667 0.1222 255.34)" },
+      ],
+      variables: [],
+    },
+    {
+      name: "DOT Dark Blue",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#001E51" },
+        { format: "oklch", value: "oklch(0.2523 0.1004 259.54)" },
+      ],
+      variables: [],
+    },
+    {
+      name: "DOT Blue Gray",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#A0A9B0" },
+        { format: "oklch", value: "oklch(0.7298 0.0144 241.03)" },
+      ],
+      variables: [],
+    },
+    {
+      name: "DOT Light Gray",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#DFDFDE" },
+        { active: true, format: "oklch", value: "oklch(0.9034 0.0013 106.43)" },
+      ],
+      variables: ["--color-gray-light"],
+    },
+    {
+      name: "",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#005D83" },
+        { format: "pantone", value: "Pantone 624 C" },
+        { format: "oklch", value: "oklch(0.4516 0.0959 235.08)" },
+      ],
+      variables: [],
+    },
+    {
+      name: "Cyan Blue",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#4EC1E0" },
+        { format: "pantone", value: "Pantone 637 C" },
+        { active: true, format: "oklch", value: "oklch(0.7579 0.1111 218.87)" },
+      ],
+      variables: ["--color-cyan"],
+    },
+    {
+      name: "Lime Green",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#BABF10" },
+        { format: "pantone", value: "Pantone 583 C" },
+        { active: true, format: "oklch", value: "oklch(0.775 0.1685 111.65)" },
+      ],
+      variables: ["--color-lime"],
+    },
+    {
+      name: "Crimson Red",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#8B254F" },
+        { format: "pantone", value: "Pantone 7435 C" },
+        { active: true, format: "oklch", value: "oklch(0.4379 0.1412 359.79)" },
+      ],
+      variables: ["--color-crimson"],
+    },
+    {
+      name: "",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#4D3040" },
+        { format: "pantone", value: "Pantone 5185 C" },
+        { active: true, format: "oklch", value: "oklch(0.35 0.0487 345.7)" },
+      ],
+      variables: [],
+    },
+    {
+      name: "Orange",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#E28432" },
+        { format: "pantone", value: "Pantone 7413 C" },
+        { active: true, format: "oklch", value: "oklch(0.7015 0.1476 57.27)" },
+      ],
+      variables: ["--color-orange"],
+    },
+    {
+      name: "Gold",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#fab200" },
+        { active: true, format: "oklch", value: "oklch(0.8105 0.1682 79.31)" },
+      ],
+      variables: ["--color-gold"],
+    },
+    {
+      name: "Yellow",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#F5C400" },
+        { format: "pantone", value: "Pantone 7406 C" },
+        { active: true, format: "oklch", value: "oklch(0.8396 0.1716 90.43)" },
+      ],
+      variables: ["--color-yellow"],
+    },
+  ],
+};
+
+const PALETTE_PROGRAM: ColorPalette = {
+  name: "Program",
+  notes:
+    "These colors are used throughout the ITS JPO website and other program pages. It was the original program palette created by Caden and likely derived from the old ITS JPO style guide and existing site colors.",
+  source: "programs.scss",
+  swatches: [
+    {
+      disabled: true,
+      name: "Gray",
+      notes:
+        "Can be replaced by semantic secondary foreground color. Used for program section background, strategy container on automation-program",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#7d7d7d" },
+        { active: true, format: "rgb", value: "rgb(247, 247, 247)" },
+      ],
+      variables: ["--color-gray"],
+    },
+    {
+      disabled: true,
+      name: "Gray Light",
+      notes: "Can be replaced by semantic muted or secondary background",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#f7f7f7" },
+        { active: true, format: "rgb", value: "rgb(125, 125, 125)" },
+      ],
+      variables: ["--color-gray-light"],
+    },
+    {
+      name: "Shadow Light",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#c4c4c4" }],
+      variables: ["--shadow-light"],
+    },
+    {
+      disabled: true,
+      name: "Border Light",
+      notes:
+        "Should be replaced by semantic border color since that's close enough",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#e9e9e9" }],
+      variables: ["--border-light"],
+    },
+    {
+      name: "Background Light",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#f8f8f8" }],
+      variables: ["--background-light"],
+    },
+    {
+      name: "Brand Light",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#e9ecef" },
+        { active: true, format: "rgb", value: "rgb(233, 236, 239)" },
+      ],
+      variables: ["--color-brand-light"],
+    },
+    {
+      name: "Brand",
+      notes: "ITS JPO Blue",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#005d83" },
+        { active: true, format: "rgb", value: "rgb(0, 93, 131)" },
+      ],
+      variables: ["--color-brand"],
+    },
+    {
+      disabled: true,
+      name: "Brand Dark",
+      notes: "Matches primary color",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#055681" },
+        { active: true, format: "rgb", value: "rgb(5, 86, 129)" },
+      ],
+      variables: ["--color-brand-dark"],
+    },
+    {
+      name: "Brand Secondary",
+      notes: "USDOT Blue--used for callout box",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#072e55" },
+        { active: true, format: "rgb", value: "rgb(7, 46, 85)" },
+        { format: "oklch", value: "oklch(0.433 0.0983 240.78)" },
+      ],
+      variables: ["--color-brand-secondary"],
+    },
+    {
+      disabled: true,
+      name: "Blue",
+      notes:
+        "From original ITS JPO style guide. Duplicated in JPO Presentation Palette",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#4ec1e0" },
+        { active: true, format: "rgb", value: "rgb(78, 193, 224)" },
+      ],
+    },
+    {
+      disabled: true,
+      name: "Green",
+      notes:
+        "From original ITS JPO style guide. Duplicated in JPO Presentation Palette",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#babf10" },
+        { active: true, format: "pantone", value: "186, 191, 16" },
+        { format: "oklch", value: "" },
+      ],
+    },
+    {
+      name: "Green Dark",
+      notes: "JPO Style Guide",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#576538" },
+        { active: true, format: "rgb", value: "rgb(87, 101, 56)" },
+        { format: "oklch", value: "" },
+      ],
+      variables: ["--color-green-dark"],
+    },
+    {
+      disabled: true,
+      name: "Purple",
+      notes:
+        "From original ITS JPO style guide. Slightly different than JPO Presentation Palette so going with that one instead.",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#86254f" },
+        { active: true, format: "rgb", value: "rgb(134, 37, 79)" },
+      ],
+    },
+    {
+      disabled: true,
+      name: "Orange",
+      notes:
+        "From original ITS JPO style guide. Duplicated in JPO Presentation Palette",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#e28432" },
+        { active: true, format: "rgb", value: "rgb(226, 132, 50)" },
+      ],
+    },
+  ],
+};
+
+const PALETTE_SITE: ColorPalette = {
+  name: "Site colors",
+  notes: "These are used for various elements across the website.",
+  source: "globals.css",
+  swatches: [
+    {
+      name: "DOT Header",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#091f61" }],
+    },
+    {
+      disabled: true,
+      name: "Yellow",
+      notes:
+        "Used for a lot of buttons. Very similar to JPO Presentation Template yellow. Will use that for buttons/ui components going forward.",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#EFBD27" }],
+    },
+    {
+      notes:
+        "Used for hot topic title banner on homepage. Seems to be very close to existing colors",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#005f85" },
+        { active: true, format: "rgb", value: "rgb(0, 95, 133)" },
+      ],
+    },
+    {
+      name: "Text Dark",
+      notes:
+        "Seems to be from Bootstrap or another package. Might not be necessary with semantic colors anymore.",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#212529" }],
+    },
+    {
+      name: "JPO Header",
+      type: "gradient",
+      values: {
+        left: [{ active: true, format: "hex", value: "#0a1e62" }],
+        right: [{ active: true, format: "hex", value: "#09638c" }],
       },
-      {
-        hex: "#e9ecef",
-        name: "Brand Light",
-        rgb: "233, 236, 239",
-        variables: ["--color-brand-light"],
+    },
+    {
+      name: "JPO Footer",
+      type: "gradient",
+      values: {
+        left: [{ active: true, format: "hex", value: "#081334" }],
+        right: [{ active: true, format: "hex", value: "#091F61" }],
       },
-      {
-        hex: "#005d83",
-        name: "Brand",
-        notes: "ITS JPO Blue",
-        rgb: "0, 93, 131",
-        variables: ["--color-brand"],
-      },
-      {
-        hex: "#055681",
-        name: "Brand Dark",
-        notes:
-          "Used for coming-soon-badge, header color, and many other elements",
-        oklch: "0.433 0.0983 240.78",
-        rgb: "5, 86, 129",
-        variables: ["--color-brand-dark"],
-      },
-      {
-        hex: "#072e55",
-        name: "Brand Secondary",
-        notes: "USDOT Blue--used for callout box",
-        rgb: "7, 46, 85",
-        variables: ["--color-brand-secondary"],
-      },
-      {
-        hex: "#4ec1e0",
-        name: "Blue",
-        notes: "JPO Style Guide",
-        rgb: "78, 193, 224",
-        variables: ["--color-blue"],
-      },
-      {
-        hex: "#babf10",
-        name: "Green",
-        notes: "JPO Style Guide",
-        rgb: "186, 191, 16",
-        variables: ["--color-green"],
-      },
-      {
-        hex: "#576538",
-        name: "Green Dark",
-        notes: "JPO Style Guide",
-        rgb: "87, 101, 56",
-        variables: ["--color-green-dark"],
-      },
-      {
-        hex: "#86254f",
-        name: "Purple",
-        notes: "JPO Style Guide",
-        rgb: "134, 37, 79",
-        variables: ["--color-purple"],
-      },
-      {
-        hex: "#e28432",
-        name: "Orange",
-        notes: "JPO Style Guide",
-        rgb: "226, 132, 50",
-        variables: ["--color-orange"],
-      },
-    ],
-    name: "Program",
-    notes:
-      "These colors are used throughout the ITS JPO website and other program pages",
-    source: "programs.scss",
-  },
-  {
-    colors: [
-      {
-        hex: "#EFBD22",
-        name: "Yellow",
-        oklch: "0.8205 0.1609 88.37",
-        variables: ["--color-pcb-v2x_help_desk-yellow"],
-      },
-      {
-        hex: "#001D51",
-        name: "Dark Blue",
-        oklch: "0.2499 0.1019 259.99",
-        variables: ["--color-pcb-v2x_help_desk-blue_dark"],
-      },
-      {
-        hex: "#186FA9",
-        name: "Light Blue",
-        oklch: "0.5222 0.1197 244.27",
-        variables: ["--color-pcb-v2x_help_desk-blue"],
-      },
-    ],
-    name: "PCB -> V2X Interoperability Help Desk",
-    notes:
-      "Colors are different from rest of PCB and ITS JPO site but can't change because of logo",
-    source: "pcb/v2x-help-desk",
-  },
-  {
-    colors: [],
-    name: "Automation Program",
-    notes: "Reuses the program colors. No other unique colors",
-    source: "automation-program",
-  },
-  {
-    colors: [
-      {
-        hex: "#072e55",
-        name: "callout-box background",
-        notes: "Same as --color-brand-secondary",
-      },
-    ],
-    name: "Intersection Safety",
-    source: "intersection-safety",
-  },
-  {
-    colors: [
-      {
-        hex: "#005ea2",
-        name: "Primary Blue",
-        variables: ["--ai-blue-primary"],
-      },
-      {
-        hex: "#055681",
-        name: "Secondary Blue",
-        variables: ["--ai-blue-secondary"],
-      },
-      { hex: "#091f60", name: "Dark Blue", variables: ["--ai-blue-dark"] },
-      {
-        hex: "#01121b",
-        name: "Darkest Blue",
-        variables: ["--ai-blue-darkest"],
-      },
-      { hex: "#09638c", name: "Teal Blue", variables: ["--ai-blue-teal"] },
-      {
-        hex: "#f0f8ff",
-        name: "Card Light Blue Background",
-        variables: ["--ai-card-light-blue-bg"],
-      },
-      {
-        hex: "#d1e7f7",
-        name: "Card Light Blue Border",
-        variables: ["--ai-card-light-blue-border"],
-      },
-      {
-        hex: "#f8f9fa",
-        name: "Card Gray Background",
-        variables: ["--ai-card-gray-bg"],
-      },
-      {
-        hex: "#e7e7e7",
-        name: "Card Gray Border",
-        variables: ["--ai-card-gray-border"],
-      },
-      { hex: "#71767a", name: "Text Gray", variables: ["--ai-text-gray"] },
-      { hex: "#232323", name: "Text Dark", variables: ["--ai-text-dark"] },
-      { hex: "#3c3c3c", name: "Text Medium", variables: ["--ai-text-medium"] },
-      { hex: "#6c757d", name: "Text Light", variables: ["--ai-text-light"] },
-      {
-        hex: "#dee2e6",
-        name: "Border Light",
-        variables: ["--ai-border-light"],
-      },
-      {
-        hex: "#e7edf3",
-        name: "Border Lighter",
-        variables: ["--ai-border-lighter"],
-      },
-      {
-        hex: "#f0f0f0",
-        name: "Border Lightest",
-        variables: ["--ai-border-lightest"],
-      },
-      {
-        hex: "#f7f7f7",
-        name: "Section Gray Background",
-        variables: ["--ai-section-bg-gray"],
-      },
-    ],
-    name: "Artificial Intelligence",
-    source: "artificial-intelligence",
-  },
+    },
+  ],
+};
+
+const PALETTE_PROGRAM_AI: ColorPalette = {
+  name: "Artificial Intelligence",
+  notes:
+    "Seems to have been created for the AI Program website. Not 100% sure where some of these were derived from or if they were custom additions",
+  source: "artificial-intelligence",
+  swatches: [
+    {
+      name: "Primary Blue",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#005ea2" }],
+      variables: ["--ai-blue-primary"],
+    },
+    {
+      disabled: true,
+      name: "Secondary Blue",
+      notes: "Matches Primary/Brand Dark color",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#055681" }],
+      variables: ["--ai-blue-secondary"],
+    },
+    {
+      name: "Dark Blue",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#091f60" }],
+      variables: ["--ai-blue-dark"],
+    },
+    {
+      name: "Darkest Blue",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#01121b" }],
+      variables: ["--ai-blue-darkest"],
+    },
+    {
+      name: "Teal Blue",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#09638c" }],
+      variables: ["--ai-blue-teal"],
+    },
+    {
+      name: "Card Light Blue Background",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#f0f8ff" }],
+      variables: ["--ai-card-light-blue-bg"],
+    },
+    {
+      name: "Card Light Blue Border",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#d1e7f7" }],
+      variables: ["--ai-card-light-blue-border"],
+    },
+    {
+      name: "Card Gray Background",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#f8f9fa" }],
+      variables: ["--ai-card-gray-bg"],
+    },
+    {
+      disabled: true,
+      name: "Card Gray Border",
+      notes: "This matches the current semantic border color",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#e7e7e7" }],
+      variables: ["--ai-card-gray-border"],
+    },
+    {
+      name: "Text Gray",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#71767a" }],
+      variables: ["--ai-text-gray"],
+    },
+    {
+      name: "Text Dark",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#232323" }],
+      variables: ["--ai-text-dark"],
+    },
+    {
+      name: "Text Medium",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#3c3c3c" }],
+      variables: ["--ai-text-medium"],
+    },
+    {
+      name: "Text Light",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#6c757d" }],
+      variables: ["--ai-text-light"],
+    },
+    {
+      name: "Border Light",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#dee2e6" }],
+      variables: ["--ai-border-light"],
+    },
+    {
+      name: "Border Lighter",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#e7edf3" }],
+      variables: ["--ai-border-lighter"],
+    },
+    {
+      name: "Border Lightest",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#f0f0f0" }],
+      variables: ["--ai-border-lightest"],
+    },
+    {
+      disabled: true,
+      name: "Section Gray Background",
+      notes:
+        "Can be replaced by semantic muted or secondary background since it's identical",
+      type: "swatch",
+      values: [{ active: true, format: "hex", value: "#f7f7f7" }],
+      variables: ["--ai-section-bg-gray"],
+    },
+  ],
+};
+
+const PALETTE_PROGRAM_AUTOMATION: ColorPalette = {
+  name: "Automation Program",
+  notes: "Reuses the program colors. No other unique colors",
+  source: "automation-program",
+  swatches: [],
+};
+
+const PALETTE_PROGRAM_PCB_HELP_DESK: ColorPalette = {
+  name: "PCB / V2X Interoperability Help Desk",
+  notes:
+    "Colors are different from rest of PCB and ITS JPO site but can't change because of logo",
+  source: "pcb/v2x-help-desk",
+  swatches: [
+    {
+      disabled: true,
+      name: "Yellow",
+      notes: "Very similar to JPO Presentation Template yellow.",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#EFBD22" },
+        { active: true, format: "oklch", value: "oklch(0.8205 0.1609 88.37)" },
+      ],
+      variables: ["--color-pcb-v2x_help_desk-yellow"],
+    },
+    {
+      name: "Dark Blue",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#001D51" },
+        { active: true, format: "oklch", value: "oklch(0.2499 0.1019 259.99)" },
+      ],
+      variables: ["--color-pcb-v2x_help_desk-blue_dark"],
+    },
+    {
+      name: "Light Blue",
+      type: "swatch",
+      values: [
+        { format: "hex", value: "#186FA9" },
+        { active: true, format: "oklch", value: "oklch(0.5222 0.1197 244.27)" },
+      ],
+      variables: ["--color-pcb-v2x_help_desk-blue"],
+    },
+  ],
+};
+
+const palettes: ColorPalette[] = [
+  PALETTE_SEMANTIC,
+  PALETTE_GLOBAL,
+  PALETTE_JPO_PRESENTATION,
+  PALETTE_PROGRAM,
+  PALETTE_SITE,
+  PALETTE_PROGRAM_AI,
+  PALETTE_PROGRAM_AUTOMATION,
+  PALETTE_PROGRAM_PCB_HELP_DESK,
 ];
+
+function getSwatchBackground(
+  swatch: ColorSwatchBase | ColorSwatchComponent | ColorSwatchGradient,
+) {
+  if (swatch.type === "swatch") {
+    // If type is swatch, then background style is just the color bg.
+    const color = swatch.values.find((value) => value.format === "hex");
+    return { background: color?.value };
+  } else if (swatch.type === "component") {
+    // If type is component, then background style is the background color and foreground is a dot on top.
+    const color = swatch.values.background.find(
+      (value) => value.format === "hex",
+    );
+    return { background: color?.value };
+  } else if (swatch.type === "gradient") {
+    // If type is gradient, backgroundImage of left to right gradient of both colors.
+    const leftColor = swatch.values.left.find(
+      (value) => value.format === "hex",
+    );
+    const rightColor = swatch.values.right.find(
+      (value) => value.format === "hex",
+    );
+    return {
+      backgroundImage: `linear-gradient(to right, ${leftColor?.value}, ${rightColor?.value})`,
+    };
+  }
+  return {};
+}
+
+function getSwatchForeground(
+  swatch: ColorSwatchBase | ColorSwatchComponent | ColorSwatchGradient,
+) {
+  if (swatch.type === "component") {
+    const color = swatch.values.foreground.find(
+      (value) => value.format === "hex",
+    );
+    return { color: color?.value };
+  }
+  return {};
+}
 ---
 
-<style>
-  .palette-list {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--spacing) * 8);
-  }
-
-  .palette-title {
-    font-size: var(--text-3xl);
-    font-weight: var(--font-weight-bold);
-    padding: 0;
-  }
-
-  .palette-color-grid {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-  }
-
-  .palette-color {
-    width: 100%;
-    height: 6rem;
-    margin: 0;
-  }
-
-  .palette-color-code {
-    background: white;
-    margin: 0;
-  }
-</style>
 <ProgramLayout title="Library">
-  <div class="container palette-list">
+  <div class="tw:flex tw:flex-col tw:gap-8 tw:max-w-7xl tw:mx-auto">
+    <div>
+      <p>
+        This page shows all the colors I've found so far that are used across
+        the site. There's definitely more that can be added, but I tried to
+        focus on identifying the main ones so we can start to ensure consistency
+        throughout pages. There are a couple different palettes depending on
+        where the colors were found. Not all of them are used on the site, but
+        lots of them are and many have similar/redundant swatches.
+      </p>
+      <p>
+        Different color formats are also included throughout the site. The color
+        format used on the active site has a checkmark next to it. New colors
+        for Tailwind are defined in OKLCH format for better color mixing and
+        generation of variants.
+      </p>
+    </div>
     {
       palettes.map((palette) => (
         <div>
-          <h2 class="palette-title">{palette.name}</h2>
+          <h2 class="tw:font-bold tw:text-3xl tw:bg-card">{palette.name}</h2>
+          <span class="tw:bg-black/5 tw:text-base tw:w-fit tw:rounded-xl tw:px-2.5 tw:py-0.5 tw:text-black/50">
+            {palette.source}
+          </span>
           <p>{palette.notes}</p>
-          <div class="palette-color-grid">
-            {palette.colors.map((color) => (
-              <div class="border">
+          <div class="tw:grid tw:grid-cols-2">
+            {palette.swatches.map((swatch) => {
+              return (
                 <div
-                  class="palette-color"
-                  style={{ backgroundColor: color.hex }}
+                  class:list={[
+                    "tw:flex tw:flex-row tw:p-3 tw:gap-4 tw:border tw:border-black/5",
+                    swatch.disabled ? "tw:bg-black/5 tw:opacity-50" : "",
+                  ]}
                 >
-                  <small class="palette-color-code">{color.hex}</small>
+                  <div
+                    class="tw:size-20 tw:shrink-0 tw:rounded-xl tw:justify-center tw:items-center tw:flex"
+                    style={getSwatchBackground(swatch)}
+                  >
+                    {swatch.type === "component" && (
+                      <span
+                        class="tw:text-2xl"
+                        style={getSwatchForeground(swatch)}
+                      >
+                        abc
+                      </span>
+                    )}
+                  </div>
+
+                  <div class="tw:flex tw:justify-between tw:w-full">
+                    <div class="tw:flex tw:flex-col tw:gap-1 tw:w-full">
+                      <div class="tw:font-semibold tw:text-sm tw:flex tw:gap-0.5 tw:items-baseline">
+                        {swatch.name}
+                      </div>
+                      <small class="tw:text-black/60">{swatch.notes}</small>
+                      <div class="tw:flex tw:flex-row tw:flex-wrap tw:gap-0.5">
+                        {swatch.variables?.map((variable) => (
+                          <span class="tw:bg-black/5 tw:text-xs tw:w-fit tw:rounded-xl tw:h-4 tw:px-1 tw:text-black/50">
+                            {variable}
+                          </span>
+                        ))}
+                      </div>
+                      <div class="tw:flex tw:flex-col tw:w-full">
+                        {swatch.type === "component" ? (
+                          <div class="tw:grid tw:grid-cols-2 tw:gap-1">
+                            <div class="tw:flex tw:flex-col tw:border-border tw:border tw:p-1 tw:rounded-md">
+                              <span class="tw:text-xs tw:uppercase tw:font-bold">
+                                Background:
+                              </span>
+                              {swatch.values.background.map((colorValue) => (
+                                <span class="tw:font-mono tw:text-xs">
+                                  {colorValue.active && "✓ "}
+                                  {colorValue.format}: {colorValue.value}
+                                </span>
+                              ))}
+                            </div>
+                            <div class="tw:flex tw:flex-col tw:border-border tw:border tw:p-1 tw:rounded-md">
+                              <span class="tw:text-xs tw:uppercase tw:font-bold">
+                                Foreground:
+                              </span>
+                              {swatch.values.foreground.map((colorValue) => (
+                                <span class="tw:font-mono tw:text-xs">
+                                  {colorValue.active && "✓ "}
+                                  {colorValue.format}: {colorValue.value}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        ) : swatch.type === "gradient" ? (
+                          <div class="tw:grid tw:grid-cols-2 tw:gap-1">
+                            <div class="tw:flex tw:flex-col tw:border-border tw:border tw:p-1 tw:rounded-md">
+                              <span class="tw:text-xs tw:uppercase tw:font-bold">
+                                Left:
+                              </span>
+                              {swatch.values.left.map((colorValue) => (
+                                <span class="tw:font-mono tw:text-xs">
+                                  {colorValue.active && "✓ "}
+                                  {colorValue.format}: {colorValue.value}
+                                </span>
+                              ))}
+                            </div>
+                            <div class="tw:flex tw:flex-col tw:border-border tw:border tw:p-1 tw:rounded-md">
+                              <span class="tw:text-xs tw:uppercase tw:font-bold">
+                                Right:
+                              </span>
+                              {swatch.values.right.map((colorValue) => (
+                                <span class="tw:font-mono tw:text-xs">
+                                  {colorValue.active && "✓ "}
+                                  {colorValue.format}: {colorValue.value}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <div class="tw:flex tw:w-full tw:flex-col tw:border-border tw:border tw:p-1 tw:rounded-md">
+                            {swatch.values.map((colorValue) => (
+                              <span class="tw:font-mono tw:text-xs">
+                                {colorValue.active && "✓ "}
+                                {colorValue.format}: {colorValue.value}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="d-flex flex-column">
-                  <strong>{color.name}</strong>
-                  <small>{color.notes}</small>
-                  {color.variables?.map((variable) => (
-                    <Badge color="secondary" size="sm">
-                      {variable}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       ))
