@@ -7,7 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   // If hosting on a subdomain, set the base here such as /itsjpo, /demo, etc.
-  base: "/its-jpo",
+  base: "/",
   integrations: [partytown(), sitemap(), vue()],
   // site: "https://www.its.dot.gov",
   output: "static",
