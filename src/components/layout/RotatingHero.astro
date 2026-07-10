@@ -3,7 +3,7 @@ import base_url from "@/src/lib/base_url";
 import hero1 from "@/src/assets/images/Hero-Image-02.jpg";
 import hero2 from "@/src/assets/images/Hero-ITS-JPO-NOW.png";
 import hero3 from "@/src/assets/images/Hero-Background-4.png";
-import hero4 from "@/src/assets/images/Hero-IntersectionSafety.png";
+import hero4 from "@/src/assets/images/Hero-WorldCup-Map.jpg";
 
 import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
 ---
@@ -65,9 +65,7 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
         <div class="content-box">
           <h2 class="newsLetterHeader">ITS JPO NOW</h2>
           <p class="fw-bold">July 2026</p>
-          <p>
-            Read highlights from the 2026 ITS America Conference & Expo, major announcements across V2X, ITS4US, and AI initiatives, and upcoming events including ITE Annual Meeting 2026.
-          </p>
+          <p>Read highlights from the 2026 ITS America Conference & Expo, major announcements across V2X, ITS4US, and AI initiatives, and upcoming events including ITE Annual Meeting 2026.</p>
           <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-4 icon-arrow-button">Read Latest Issue</a>
         </div>
       </div>
@@ -76,12 +74,32 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
     <section class="slide" style={`background-image: url(${hero4.src})`}>
       <div class="container-xl">
         <div class="content-box">
-          <h2>Check Out New Resources Related to Intersection Safety</h2>
-          <p class="fs-6">
-            Want to learn more about ITS for intersection safety and results from the USDOT ISC? Check out new resources now posted to the website, including two new reports related to the technical
-            evaluation results and insights from the Challenge Stage 1B, a new video summarizing the results, and presentation materials from the webinar held on March 26.
+          <h2>ITS for Planned Special Events Executive Briefing & World Cup 2026</h2>
+          <p class="fs-5">
+            The ITS JPO’s Deployment Evaluation Program (DEP) released five new Executive Briefings synthesize findings from real-world deployments, highlighting documented benefits, costs, and
+            lessons learned to help transportation agencies make informed investment and operational decisions.
           </p>
-          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026/#check-out-new-resources-related-to-intersection-safety")} class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button">Read the Intersection Safety article</a>
+          <a
+            href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026/#its-for-planned-special-events-executive-briefing-world-cup-2026")}
+            class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button"
+          >
+            Read the article
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" style={`background-image: url(${hero4.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2>FIFA AccessMap Multimodal Event Edition</h2>
+          <p class="fs-5">
+            The Taskar Center for Accessible Technology (TCAT) at the University of Washington (UW) partnered with the Seattle FIFA World Cup 2026 Local Organizing Committee to develop custom
+            AccessMap features.
+          </p>
+          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026/#world-cup-accessmap")} class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button">
+            Read the article
+          </a>
         </div>
       </div>
     </section>
@@ -89,12 +107,15 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
     <section class="slide" style={`background-image: url(${hero5.src})`}>
       <div class="container-xl">
         <div class="content-box">
-          <h2>Initial Prototype of National V2X Deployment Map Now Available</h2>
+          <h2 class="newsLetterHeader">Ready, Set, Robot!</h2>
+          <h2>Join the $1.5 million DOT Bots Challenge Now</h2>
           <p class="">
-            The ITS JPO has launched an interactive map showcasing V2X deployments nationwide. The map compiles data from USDOT funded projects, Accelerating V2X Cohort members, and the FCC Universal
-            Licensing System. Users can explore deployment details at national, state, and local levels. This is an initial prototype that will continue to evolve as more data becomes available.
+            The Challenge offers up to $1.5 million in prize funding for innovative ideas on how advanced robotics technologies can solve public sector transportation challenges, improve
+            infrastructure, and keep travelers and workers safe.
           </p>
-          <a href="https://www.its.dot.gov/scrc/index.html#/technology-areas/v2x/map" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank">Explore V2X Deployments</a>
+          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026/#join-the-dot-bots-challenge")} class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button">
+            Join the Challenge
+          </a>
         </div>
       </div>
     </section>
@@ -357,23 +378,24 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
     }
   }
 
-  .icon-arrow-button::after {  
+  .icon-arrow-button::after {
     content: "\f061";
     font-family: FontAwesome;
     margin-left: 0.5rem;
     display: inline-block;
-    }
+  }
 
-    .icon-external-link::after {
-      content: "\f35d";
-      font-family: FontAwesome;
+  .icon-external-link::after {
+    content: "\f35d";
+    font-family: FontAwesome;
     margin-left: 0.5rem;
-    
-    display: inline-block;
-    }
 
-    .icon-external-link:hover::after, .icon-arrow-button:hover::after {
-      transform: translateX(5px);
-      transition: transform 0.3s ease-in-out;
-    }
+    display: inline-block;
+  }
+
+  .icon-external-link:hover::after,
+  .icon-arrow-button:hover::after {
+    transform: translateX(5px);
+    transition: transform 0.3s ease-in-out;
+  }
 </style>
