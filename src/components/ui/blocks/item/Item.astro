@@ -1,8 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-import "./item.scss";
-
 interface Props extends Omit<HTMLAttributes<"div">, "class"> {
   class?: string;
   /** If provided, the item renders as an <a> instead of a <div>. */

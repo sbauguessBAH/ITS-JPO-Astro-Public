@@ -1,6 +1,3 @@
-@use "../../../../styles/utilities/shadow.scss";
-@use "../../../../styles/utilities/spacing.scss" as *;
-
 .ui_card {
   @include shadow.shadow("sm");
 

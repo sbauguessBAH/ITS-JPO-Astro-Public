@@ -1,7 +1,3 @@
-@use "./utilities/shadow.scss";
-@use "./utilities/spacing.scss";
-@use "./utilities/size.scss";
-
 /* ============================================================
  * Base Variables
  * ============================================================ */
@@ -131,16 +127,6 @@
  * ============================================================ */
 
 :root {
-  /* color Default was replaced by color Primary */
-
-  /** Base gray color--comparable to --ai-card-gray-border and --ai-text-medium */
-  --color-secondary: oklch(0.928 0 0);
-  --color-secondary-foreground: oklch(0.3562 0 0);
-
-  /* ------------------------------------------------------------
-   * Professional Capacity Building (PCB)
-   * ------------------------------------------------------------ */
-
   /* ---------- V2X Interoperability Help Desk ---------- */
   --color-pcb-v2x_help_desk-yellow: oklch(0.8205 0.1609 88.37);
   --color-pcb-v2x_help_desk-blue_dark: oklch(0.2499 0.1019 259.99);
@@ -169,21 +155,21 @@ a::after {
  * Border Radius
  * ============================================================ */
 
-.radius-none {
-  border-radius: none;
-}
+// .radius-none {
+//   border-radius: none;
+// }
 
-.radius-sm {
-  border-radius: var(--radius-sm);
-}
+// .radius-sm {
+//   border-radius: var(--radius-sm);
+// }
 
-.radius-md {
-  border-radius: var(--radius-md);
-}
+// .radius-md {
+//   border-radius: var(--radius-md);
+// }
 
-.radius-lg {
-  border-radius: var(--radius-lg);
-}
+// .radius-lg {
+//   border-radius: var(--radius-lg);
+// }
 
 /* ============================================================
  * Utilities
@@ -202,28 +188,28 @@ a::after {
 //   max-width: var(--container-xl);
 // }
 
-.gap-md {
-  gap: var(--size-md);
-}
-.gap-lg {
-  gap: var(--size-lg);
-}
+// .gap-md {
+//   gap: var(--size-md);
+// }
+// .gap-lg {
+//   gap: var(--size-lg);
+// }
 
-.gap-xl {
-  gap: var(--size-xl);
-}
+// .gap-xl {
+//   gap: var(--size-xl);
+// }
 
-.padding-lg {
-  padding: var(--size-lg);
-}
+// .padding-lg {
+//   padding: var(--size-lg);
+// }
 
-.padding-size {
-  padding: var(--size);
-}
+// .padding-size {
+//   padding: var(--size);
+// }
 
-.padding-size-lg {
-  padding: var(--size-lg);
-}
+// .padding-size-lg {
+//   padding: var(--size-lg);
+// }
 
 /* ============================================================
  * Program classes
@@ -232,10 +218,6 @@ a::after {
 .program-main {
   display: flex;
   flex-direction: column;
-
-  /* Should eventually be moved to body/html */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 /* .program-padding {
   padding-bottom: 4rem;
@@ -332,50 +314,50 @@ a::after {
  * Color classes
  * ============================================================ */
 
-.background-brand-light {
-  background: rgb(var(--color-brand-light));
-}
+// .background-brand-light {
+//   background: rgb(var(--color-brand-light));
+// }
 
-.background-brand {
-  background: rgb(var(--color-brand));
-}
+// .background-brand {
+//   background: rgb(var(--color-brand));
+// }
 
-.background-brand-dark {
-  background: rgb(var(--color-brand-dark));
-}
+// .background-brand-dark {
+//   background: rgb(var(--color-brand-dark));
+// }
 
-.background-brand-secondary {
-  background: rgb(var(--color-brand-secondary));
-}
+// .background-brand-secondary {
+//   background: rgb(var(--color-brand-secondary));
+// }
 
-.background-blue {
-  background: rgb(var(--color-blue));
-}
+// .background-blue {
+//   background: rgb(var(--color-blue));
+// }
 
-.background-green {
-  background: rgb(var(--color-green));
-}
+// .background-green {
+//   background: rgb(var(--color-green));
+// }
 
-.background-green-dark {
-  background: rgb(var(--color-green-dark));
-}
+// .background-green-dark {
+//   background: rgb(var(--color-green-dark));
+// }
 
-.background-orange {
-  background: rgb(var(--color-orange));
-}
+// .background-orange {
+//   background: rgb(var(--color-orange));
+// }
 
-.background-purple {
-  background: rgb(var(--color-purple));
-}
+// .background-purple {
+//   background: rgb(var(--color-purple));
+// }
 
-.background-light {
-  background: rgb(var(--color-gray-light));
-}
+// .background-light {
+//   background: rgb(var(--color-gray-light));
+// }
 
-.background-white {
-  background: white;
-}
+// .background-white {
+//   background: white;
+// }
 
-.text-foreground {
-  color: rgb(0, 0, 0);
-}
+// .text-foreground {
+//   color: rgb(0, 0, 0);
+// }

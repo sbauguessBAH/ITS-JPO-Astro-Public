@@ -4,7 +4,6 @@ import type { HTMLAttributes } from "astro/types";
 import { cva } from "class-variance-authority";
 
 import base_url from "../../../../lib/base_url";
-import "./button.scss";
 
 type LinkProps = {
   href: string;
@@ -52,19 +51,94 @@ if (link) {
 }
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "tw:inline-flex tw:shrink-0 tw:items-center tw:justify-center tw:align-middle tw:whitespace-nowrap tw:font-medium tw:text-sm tw:leading-none tw:tracking-[0.01em] tw:no-underline tw:rounded-[var(--radius-md)] tw:border tw:border-solid tw:border-transparent tw:transition-[color,background-color,border-color,opacity,box-shadow] tw:duration-150 tw:ease-[ease] tw:cursor-pointer tw:select-none tw:outline-none tw:disabled:opacity-50 tw:disabled:pointer-events-none tw:aria-[disabled=true]:opacity-50 tw:aria-[disabled=true]:pointer-events-none tw:focus-visible:outline-2 tw:focus-visible:outline-solid tw:focus-visible:outline-offset-2 tw:focus-visible:outline-[color:currentColor] [&>svg]:tw:shrink-0 [&>svg]:tw:pointer-events-none",
   {
     compoundVariants: [
+      // primary
       {
+        class:
+          "tw:bg-primary tw:text-primary-foreground tw:border-primary tw:hover:opacity-90 tw:active:opacity-80",
         color: "primary",
         variant: "default",
       },
+      {
+        class:
+          "tw:bg-transparent tw:text-primary tw:border-primary tw:hover:bg-primary/8 tw:active:bg-primary/14",
+        color: "primary",
+        variant: "outline",
+      },
+      {
+        class:
+          "tw:bg-primary/12 tw:text-primary tw:border-primary/35 tw:hover:bg-primary/18 tw:active:bg-primary/24",
+        color: "primary",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-primary tw:border-transparent tw:hover:bg-primary/8 tw:active:bg-primary/14",
+        color: "primary",
+        variant: "ghost",
+      },
+
+      // secondary
+      {
+        class:
+          "tw:bg-secondary tw:text-secondary-foreground tw:border-secondary tw:hover:opacity-90 tw:active:opacity-80",
+        color: "secondary",
+        variant: "default",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-secondary tw:border-secondary tw:hover:bg-secondary/8 tw:active:bg-secondary/14",
+        color: "secondary",
+        variant: "outline",
+      },
+      {
+        class:
+          "tw:bg-secondary/12 tw:text-secondary tw:border-secondary/35 tw:hover:bg-secondary/18 tw:active:bg-secondary/24",
+        color: "secondary",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-secondary tw:border-transparent tw:hover:bg-secondary/8 tw:active:bg-secondary/14",
+        color: "secondary",
+        variant: "ghost",
+      },
+
+      // accent
+      {
+        class:
+          "tw:bg-accent tw:text-accent-foreground tw:border-accent tw:hover:opacity-90 tw:active:opacity-80",
+        color: "accent",
+        variant: "default",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-accent tw:border-accent tw:hover:bg-accent/8 tw:active:bg-accent/14",
+        color: "accent",
+        variant: "outline",
+      },
+      {
+        class:
+          "tw:bg-accent/12 tw:text-accent tw:border-accent/35 tw:hover:bg-accent/18 tw:active:bg-accent/24",
+        color: "accent",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-accent tw:border-transparent tw:hover:bg-accent/8 tw:active:bg-accent/14",
+        color: "accent",
+        variant: "ghost",
+      },
     ],
+
     defaultVariants: {
       color: "primary",
       size: "default",
       variant: "default",
     },
+
     variants: {
       color: {
         accent: "",
@@ -73,16 +147,13 @@ const buttonVariants = cva(
       },
       size: {
         default:
-          "h-9 gap-1.5 px-2.5 in-data-[slot=button-group]:rounded-md has-[>svg:first-child]:pl-2 has-[>svg:last-child]:pr-2",
-        icon: "size-9",
-        "icon-lg": "size-10",
+          "tw:rounded-lg tw:h-9 tw:gap-1.5 tw:px-2.5 has-[>svg:first-child]:tw:pl-2 has-[>svg:last-child]:tw:pr-2",
+        icon: "tw:rounded-lg tw:size-9",
+        "icon-lg": "tw:rounded-xl tw:size-10",
         "icon-sm":
-          "size-8 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-md",
-        "icon-xs":
-          "size-6 rounded-[min(var(--radius-md),8px)] in-data-[slot=button-group]:rounded-md [&_svg:not([class*='size-'])]:size-3",
-        lg: "h-10 gap-1.5 px-2.5 has-[>svg:first-child]:pl-2 has-[>svg:last-child]:pr-2",
-        sm: "h-8 gap-1 rounded-[min(var(--radius-md),10px)] px-2.5 in-data-[slot=button-group]:rounded-md has-[>svg:first-child]:pl-1.5 has-[>svg:last-child]:pr-1.5",
-        xs: "h-6 gap-1 rounded-[min(var(--radius-md),8px)] px-2 text-xs in-data-[slot=button-group]:rounded-md has-[>svg:first-child]:pl-1.5 has-[>svg:last-child]:pr-1.5 [&_svg:not([class*='size-'])]:size-3",
+          "tw:rounded tw:size-8 tw:rounded-[min(var(--radius-md),10px)]",
+        lg: "tw:rounded-xl tw:h-10 tw:gap-1.5 tw:px-2.5 has-[>svg:first-child]:tw:pl-2 has-[>svg:last-child]:tw:pr-2",
+        sm: "tw:rounded tw:h-8 tw:gap-1 tw:rounded-[min(var(--radius-md),10px)] tw:px-2.5 has-[>svg:first-child]:tw:pl-1.5 has-[>svg:last-child]:tw:pr-1.5",
       },
       variant: {
         default: "",
@@ -96,14 +167,8 @@ const buttonVariants = cva(
 ---
 
 <Component
-  class:list={[
-    "tw:inline-flex tw:items-center tw:justify-center tw:shrink-0 tw:whitespace-nowrap tw:align-middle",
-    className,
-  ]}
-  data-color={color}
-  data-size={size}
+  class:list={[buttonVariants({ color, size, variant }), className]}
   data-slot="ui_button"
-  data-variant={variant}
   href={linkHref}
   rel={linkRel}
   target={linkTarget}

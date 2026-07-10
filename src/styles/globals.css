@@ -112,4 +112,8 @@
 
 /* Modify Tailwind Preflight layer */
 @layer base {
+  /* Overrides */
+  button {
+    border-radius: inherit !important;
+  }
 }
