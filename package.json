@@ -9,18 +9,18 @@
     "build:noWarn": "astro build --minimumSeverity error",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.4.2",
-    "@astrojs/sitemap": "^3.7.0",
     "@astrojs/vue": "^5.1.4",
     "@popperjs/core": "^2.11.8",
     "astro": "^5.17.3",
     "bootstrap": "^5.3.8",
+    "class-variance-authority": "^0.7.1",
     "datatables.net": "^2.1.4",
-    "globals": "^17.7.0",
     "vue": "^3.5.28"
   },
   "engines": {
@@ -30,17 +30,19 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@astrojs/sitemap": "^3.7.0",
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/vite": "^4.3.2",
     "@types/bootstrap": "^5.2.10",
     "@types/node": "^24.13.2",
     "@typescript-eslint/parser": "^8.63.0",
     "astro-eslint-parser": "^1.4.0",
-    "class-variance-authority": "^0.7.1",
     "eslint": "^10.6.0",
     "eslint-plugin-astro": "^1.7.0",
     "eslint-plugin-perfectionist": "^5.6.0",
     "eslint-plugin-prettier": "^5.5.6",
+    "globals": "^17.7.0",
     "prettier": "^3.9.4",
     "prettier-plugin-astro": "^0.14.1",
     "sass": "^1.93.2",
