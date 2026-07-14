@@ -1,9 +1,7 @@
 ---
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
-import NewsroomCard from "@/src/components/NewsroomCard.astro";
 import base_url from "@/src/lib/base_url";
-import type { NewsroomCardItem } from "@/src/types";
 import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 import { getCollection } from "astro:content";
 
@@ -18,42 +16,53 @@ type MediaToolkitEntry = {
   location?: string;
 };
 
+type HighlightLink = {
+  title: string;
+  url: string;
+};
+
 const keywords = ["ITS JPO", "newsroom", "deployments", "conferences", "exhibits", "newsworthy stories", "ITS JPO Now", "publications"];
 const description =
   "The ITS JPO Newsroom section contains a variety of information and resources about various deployments, conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also archives previous editions of the ITS JPO Now publication. Check back often as this page is regularly updated with new information.";
 
 const newsletterEntries = (await getCollection("newsletters")).sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
-const toCardItem = (entry: (typeof newsletterEntries)[number]): NewsroomCardItem => {
-  const issueSummary = [entry.data.season, entry.data.volume, entry.data.issue].filter(Boolean).join(" | ");
+const toHref = (value?: string): string => {
+  if (!value) {
+    return "#";
+  }
+
+  return value.startsWith("/") ? base_url(value) : value;
+};
+
+const toNewsletterLink = (entry: (typeof newsletterEntries)[number]): HighlightLink => {
   const slug = entry.id.replace(/\.(md|mdx)$/i, "");
 
   return {
     title: entry.data.title,
     url: base_url(`/news-outreach-tools/newsroom/newsletter-archive/${slug}/`),
-    // description: entry.data.description?.trim().length ? entry.data.description : issueSummary,
-    date: entry.data.dateLabel,
-    subtitle: entry.data.subtitle,
-    imageUrl: entry.data.imageUrl,
-    topics: entry.data.topics,
   };
 };
 
-const featuredNewsletter: NewsroomCardItem | undefined = newsletterEntries[0] ? toCardItem(newsletterEntries[0]) : undefined;
+const featuredNewsletter: HighlightLink | undefined = newsletterEntries[0] ? toNewsletterLink(newsletterEntries[0]) : undefined;
 
-const archiveNewsletters: NewsroomCardItem[] = newsletterEntries.slice(1, 5).map((entry) => toCardItem(entry));
+const toolkitData = toolkits as { outreach_toolkits?: MediaToolkitEntry[]; media_toolkits?: MediaToolkitEntry[] };
 
-const toolkitData = toolkits as { outreach_toolkits?: MediaToolkitEntry[] };
+const mediaKitHighlights: HighlightLink[] = (Array.isArray(toolkitData.media_toolkits) ? toolkitData.media_toolkits : [])
+  .map((item) => ({
+    title: item.title?.trim() ?? "",
+    url: toHref(item.url),
+  }))
+  .filter((item) => item.title.length > 0)
+  .slice(0, 3);
 
-const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.outreach_toolkits) ? toolkitData.outreach_toolkits : []).slice(0, 3).map((item) => ({
-  title: item.title,
-  url: item.url,
-  date: item.date,
-  subtitle: item.subtitle,
-  class: "media-toolkit",
-  content_types: item.content_types,
-  topics: item.topics,
-}));
+const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_toolkits) ? toolkitData.outreach_toolkits : [])
+  .map((item) => ({
+    title: item.title?.trim() ?? "",
+    url: toHref(item.url),
+  }))
+  .filter((item) => item.title.length > 0)
+  .slice(0, 3);
 ---
 
 <PageLayout title="Newsroom" bannerImage={banner} keywords={keywords} description={description}>
@@ -68,51 +77,64 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.outreach_to
         </p>
       </div>
     </div>
-<section class="gray-edge-to-edge">
-  <div class="px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl ">
-    <div class="d-flex justify-content-between mt-5">
-      <h2 class="pl-3 heading-border-left blue">Media Kits</h2>
-      <a href={base_url("/news-outreach-tools/newsroom/outreach-resources/")}>View All Media Kits</a>
-    </div>
-    <div class="row gx-4 gy-4 mt-1">
-      {
-        mediaToolkits.map((mediaKit) => (
-          <div class="col-12 col-sm-6 col-xl-4">
-            <NewsroomCard item={mediaKit} showPills={true} showSubtitle={true} pillSource="content_types" showColoredLabel={false} ctaText="Read Kit" />
-          </div>
-        ))
-      }
-    </div></div>
-  </section>
-    <div class="d-flex justify-content-between mt-5">
-      <h2 class="pl-3 heading-border-left blue">ITS JPO Newsletter Archive</h2>
-      <a href={base_url("/news-outreach-tools/newsroom/newsletter-archive/")}>Browse Full Archive</a>
-    </div>
-    <div class="row gx-4 gy-4 mt-1 align-items-stretch newsletter-layout">
-      {
-        featuredNewsletter && (
-          <NewsroomCard
-            item={featuredNewsletter}
-            class="col-12 col-xl-4 featured-newsletter-col newsletter-card featured-newsletter-card"
-            showPills={false}
-            showColoredLabel={false}
-            showImage={true}
-            ctaText="Read Current Issue"
-          />
-        )
-      }
-      <div class="col-12 col-xl-8">
-        <div class="row gx-4 gy-4">
-          {
-            archiveNewsletters.map((newsletter) => (
-              <div class="col-12 col-sm-6 archive-newsletter-col">
-                <NewsroomCard class="newsletter-card" btnClass="newsletter-link" item={newsletter} showPills={false} showColoredLabel={false} showImage={false} ctaText="Read Issue" />
-              </div>
-            ))
-          }
+    <section class="newsroom-cta-grid mt-5" aria-label="Newsroom call to action sections">
+      <div class="row gx-4 gy-4 align-items-stretch">
+        <div class="col-12 col-lg-4 d-flex">
+          <article class="cta-panel w-100">
+            <h2 class="pl-3 heading-border-left blue">ITS JPO NOW</h2>
+            <p>
+              Explore the ITS JPO NOW newsletter to stay current on program milestones, events, and featured transportation technology stories.
+            </p>
+            <ul class="cta-link-list">
+              {featuredNewsletter && (
+                <li>
+                  <a href={featuredNewsletter.url}>Read Most Recent Issue</a>
+                </li>
+              )}
+            </ul>
+            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/newsletter-archive/")}>Browse Full Archive</a>
+          </article>
+        </div>
+
+        <div class="col-12 col-lg-4 d-flex">
+          <article class="cta-panel w-100">
+            <h2 class="pl-3 heading-border-left blue">Media Kits</h2>
+            <p>
+              Access curated media kit highlights with ready-to-share resources that support communications around key ITS JPO initiatives.
+            </p>
+            <ul class="cta-link-list">
+              {
+                mediaKitHighlights.map((item) => (
+                  <li>
+                    <a href={item.url}>{item.title}</a>
+                  </li>
+                ))
+              }
+            </ul>
+            <a class="btn btn-primary mt-auto align-self-start" href="#">View All Media Kits</a>
+          </article>
+        </div>
+
+        <div class="col-12 col-lg-4 d-flex">
+          <article class="cta-panel w-100">
+            <h2 class="pl-3 heading-border-left blue">Outreach Resources</h2>
+            <p>
+              Find outreach resource highlights that help partners and stakeholders communicate ITS benefits through practical, audience-ready materials.
+            </p>
+            <ul class="cta-link-list">
+              {
+                outreachHighlights.map((item) => (
+                  <li>
+                    <a href={item.url}>{item.title}</a>
+                  </li>
+                ))
+              }
+            </ul>
+            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/outreach-resources/")}>View Outreach Resources</a>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 </PageLayout>
 
@@ -125,34 +147,53 @@ const mediaToolkits: NewsroomCardItem[] = (Array.isArray(toolkitData.outreach_to
     border-color: #055581;
     border-bottom: none;
   }
-  .featured-newsletter-col {
-    display: flex;
-  }
 
-  .featured-newsletter-card {
-    width: 100%;
-  }
-
-  .featured-newsletter-card > .card-body {
-    min-height: 100%;
-  }
-
-  @media (min-width: 1200px) {
-    .featured-newsletter-card {
-      min-height: 100%;
-    }
-  }
-
-  .gray-edge-to-edge {
+  .newsroom-cta-grid {
     position: relative;
     left: 50%;
     right: 50%;
     width: 100vw;
     transform: translateX(-50%);
     background: #f7f7f7;
-    justify-content: center;
-    align-items: center;
-    display: flex;
     padding: 2rem 0;
+  }
+
+  .newsroom-cta-grid .row {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .cta-panel {
+    background: #fff;
+    border: 1px solid #dce3e8;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .cta-panel p {
+    margin: 0;
+  }
+
+  .cta-link-list {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .cta-link-list a {
+    text-decoration: underline;
+    text-underline-offset: 0.15rem;
+  }
+
+  @media (max-width: 991.98px) {
+    .newsroom-cta-grid {
+      padding: 1.5rem 0;
+    }
   }
 </style>
