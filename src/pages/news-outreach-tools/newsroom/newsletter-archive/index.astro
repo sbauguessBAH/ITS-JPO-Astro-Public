@@ -9,7 +9,6 @@ import { getCollection } from "astro:content";
 type FilterableNewsletter = {
 	card: NewsroomCardItem;
 	year: string;
-	volume: string;
 	topics: string[];
 };
 
@@ -22,7 +21,7 @@ const keywords = [
 ];
 
 const description =
-	"Browse the ITS JPO newsletter archive and filter issues by year, volume, and topics.";
+	"Browse the ITS JPO newsletter archive and filter issues by year and topics.";
 
 const rawNewsletters = (await getCollection("newsletters")).sort((a, b) =>
 	b.data.publishDate.getTime() - a.data.publishDate.getTime(),
@@ -37,25 +36,26 @@ const extractYear = (date: Date): string => String(date.getUTCFullYear());
 const newsletterRows: FilterableNewsletter[] = rawNewsletters.map((item) => {
 	const issueSummary = [item.data.season, item.data.volume, item.data.issue].filter(Boolean).join(" | ");
 	const slug = item.id.replace(/\.(md|mdx)$/i, "");
+	const cardSummary = [item.data.dateLabel, issueSummary].filter(Boolean).join(" | ");
+	const descriptionText = item.data.description?.trim() ?? "";
+	const cardDescription = descriptionText.length > 0 ? descriptionText : cardSummary;
 
 	return {
 		card: {
 			title: item.data.title,
 			url: base_url(`/news-outreach-tools/newsroom/newsletter-archive/${slug}/`),
-			description: item.data.description?.trim().length ? item.data.description : issueSummary,
+			description: cardDescription,
 			date: item.data.dateLabel,
-			subtitle: item.data.subtitle,
+			subtitle: cardSummary || item.data.subtitle,
 			topics: item.data.topics,
 			imageUrl: item.data.imageUrl,
 		},
 		year: extractYear(item.data.publishDate),
-		volume: item.data.volume ?? "",
 		topics: item.data.topics ?? [],
 	};
 });
 
 const years = uniqueStrings(newsletterRows.map((row) => row.year)).sort((a, b) => b.localeCompare(a));
-const volumes = uniqueStrings(newsletterRows.map((row) => row.volume)).sort((a, b) => b.localeCompare(a));
 const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 ---
 
@@ -65,11 +65,11 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		<h2 class="sideways blue">ITS JPO Newsletter Archive</h2>
 		<p>
 			Browse past editions of <i>ITS JPO Now</i>. Use the filters below to narrow by year,
-			volume, and topics.
+			and topics.
 		</p>
 
 		<form class="row g-4 reduced-gutters filter mt-1 mb-3 py-3  px-3 pt-0" aria-label="Newsletter archive filters">
-			<div class="col-12 col-lg-2">
+			<div class="col-12 col-lg-3">
 				<label class="form-label" for="year-toggle">Year</label>
 				<div class="dropdown multi-select-dropdown">
 					<button id="year-toggle" type="button" class="dropdown-toggle w-100 text-start" aria-haspopup="listbox" aria-expanded="false">
@@ -91,29 +91,10 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 						}
 					</div>
 				</div>
-				<div class="form-text">Click to open, then check items to select multiple years.</div>
+				<div class="form-text">Check items to select multiple years.</div>
 			</div>
 
-			<fieldset class="col-12 col-lg-2">
-				<legend class="col-form-label pt-0">Volume</legend>
-				<div class="volume-pills">
-					{
-						volumes.map((volume) => {
-							const id = `volume-${volume.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
-							return (
-								<div class="volume-pill-option">
-									<input class="visually-hidden volume-input" type="checkbox" id={id} name="volume" value={volume} />
-									<label class="volume-pill" for={id}>
-										{volume}
-									</label>
-								</div>
-							);
-						})
-					}
-				</div>
-			</fieldset>
-
-			<fieldset class="col-12 col-lg-8">
+			<fieldset class="col-12 col-lg-9">
 				<legend class="col-form-label pt-0">Topics</legend>
 				{
 					topics.length > 0 ? (
@@ -142,8 +123,8 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		<div id="newsletter-cards" class="row gx-4 gy-4 newsletter-gradient">
 			{
 				newsletterRows.map((row) => (
-					<div class="col-12 col-sm-6 col-xl-3 newsletter-card-col">
-						<NewsroomCard item={row.card} class="newsletter-card" showPills={false} showColoredLabel={false} ctaText="Read Issue" />
+					<div class="col-12 col-md-4 d-flex newsletter-card-col">
+						<NewsroomCard item={row.card} class="w-100" showPills={true} showSubtitle={true} showColoredLabel={false} showImage={true} ctaText="Read Issue" />
 					</div>
 				))
 			}
@@ -169,12 +150,11 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 			.filter((el) => el instanceof HTMLInputElement)
 			.map((cb) => cb.value);
 
-	const getFilteredMatches = (selectedYears, selectedVolumes, selectedTopics) => {
+	const getFilteredMatches = (selectedYears, selectedTopics) => {
 		return newsletterRows.map((row) => {
 			const hasYear = selectedYears.length === 0 || selectedYears.includes(row.year);
-			const hasVolume = selectedVolumes.length === 0 || selectedVolumes.includes(row.volume);
 			const hasTopic = selectedTopics.length === 0 || (row.topics ?? []).some((topic) => selectedTopics.includes(topic));
-			return hasYear && hasVolume && hasTopic;
+			return hasYear && hasTopic;
 		});
 	};
 
@@ -187,9 +167,8 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 
 	const runFilter = () => {
 		const selectedYears = getSelectedValues("year");
-		const selectedVolumes = getSelectedValues("volume");
 		const selectedTopics = getSelectedValues("topic");
-		applyToDOM(getFilteredMatches(selectedYears, selectedVolumes, selectedTopics));
+		applyToDOM(getFilteredMatches(selectedYears, selectedTopics));
 		updateYearLabel();
 	};
 
@@ -221,7 +200,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		}
 	});
 
-	["year", "volume", "topic"].forEach((name) => {
+	["year", "topic"].forEach((name) => {
 		document.querySelectorAll(`input[name="${name}"]`).forEach((el) => {
 			el.addEventListener("change", runFilter);
 		});
@@ -231,7 +210,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 	runFilter();
 </script>
 
-<style>
+<style is:global>
 	.reduced-gutters {
 		--bs-gutter-x: 14px;
 	}
@@ -242,14 +221,12 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		border-radius: 12px;
 	}
 
-	.volume-pills,
 	.topic-pills {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
 	}
 
-	.volume-pill,
 	.topic-pill {
 		display: inline-flex;
 		align-items: center;
@@ -263,14 +240,12 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		color: black;
 	}
 
-	.volume-pill-option > input:checked + .volume-pill,
 	.topic-pill-option > input:checked + .topic-pill {
 		background-color: #055581;
 		border-color: #055581;
-		color: var(--bs-white);
+		color: white;
 	}
 
-	.volume-pill-option > input:focus-visible + .volume-pill,
 	.topic-pill-option > input:focus-visible + .topic-pill {
 		outline: 0;
 		box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
@@ -299,15 +274,16 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
 	}
 
-	.dropdown-toggle {
+	#year-toggle.dropdown-toggle {
 		display: flex;
 		background-color: #fff;
 		border: 1px solid #ced4da;
 		border-radius: 0.25rem;
 		align-items: center;
+		justify-content: space-between;
 	}
 
-	.dropdown-toggle:focus {
+	#year-toggle.dropdown-toggle:focus {
 		box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 	}
 
@@ -327,10 +303,11 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		max-width: 100%;
 	}
 
-	.dropdown-toggle:after {
+	#year-toggle.dropdown-toggle:after {
 		content: '\f078';
 		font-family: "Font Awesome 6 Free";
-font-weight: 800;
+		font-weight: 800;
 		font-size: 16px;
 	}
 </style>
+
