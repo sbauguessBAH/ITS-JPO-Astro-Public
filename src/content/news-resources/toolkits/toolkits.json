@@ -182,7 +182,18 @@
         "date": "2026",
         "availability": "N/A"
         }],
-        "image_library": [],
+        "image_library": [
+            {
+                "title": "TTI Texas TRUST V2X Program Image 1",
+                "img_src": "/assets/images/toolkits/media-toolkits/TTI/img-library/TTI-1723241132986.jfif",
+                "alt_description": "TTI Texas TRUST V2X Program image 1"
+            },
+            {
+                "title": "TTI Texas TRUST V2X Program Image 2",
+                "img_src": "/assets/images/toolkits/media-toolkits/TTI/img-library/TTI-1723241133405.jfif",
+                "alt_description": "TTI Texas TRUST V2X Program image 2"
+            }
+        ],
     "webinar_materials": [{
     "id": 40, 
     "date": "October 15, 2025", 
