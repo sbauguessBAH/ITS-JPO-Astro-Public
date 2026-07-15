@@ -38,7 +38,7 @@ const newsletterRows: FilterableNewsletter[] = rawNewsletters.map((item) => {
 	const slug = item.id.replace(/\.(md|mdx)$/i, "");
 	const cardSummary = [item.data.dateLabel, issueSummary].filter(Boolean).join(" | ");
 	const descriptionText = item.data.description?.trim() ?? "";
-	const cardDescription = descriptionText.length > 0 ? `${cardSummary} - ${descriptionText}` : cardSummary;
+	const cardDescription = descriptionText.length > 0 ? descriptionText : cardSummary;
 
 	return {
 		card: {
@@ -46,7 +46,7 @@ const newsletterRows: FilterableNewsletter[] = rawNewsletters.map((item) => {
 			url: base_url(`/news-outreach-tools/newsroom/newsletter-archive/${slug}/`),
 			description: cardDescription,
 			date: item.data.dateLabel,
-			subtitle: issueSummary || item.data.subtitle,
+			subtitle: cardSummary || item.data.subtitle,
 			topics: item.data.topics,
 			imageUrl: item.data.imageUrl,
 		},
@@ -124,7 +124,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 			{
 				newsletterRows.map((row) => (
 					<div class="col-12 col-md-4 d-flex newsletter-card-col">
-						<NewsroomCard item={row.card} class="w-100" showPills={true} showSubtitle={true} showColoredLabel={false} ctaText="Read Issue" />
+						<NewsroomCard item={row.card} class="w-100" showPills={true} showSubtitle={true} showColoredLabel={false} showImage={true} ctaText="Read Issue" />
 					</div>
 				))
 			}

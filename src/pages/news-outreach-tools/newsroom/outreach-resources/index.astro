@@ -124,7 +124,7 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     <div id="toolkit-cards" class="row gx-4 gy-4">
       {
         toolkitList.map((toolkit) => (
-          <div class="col-12 col-md-4 toolkit-card-col">
+          <div class="col-12 col-md-4 toolkit-card-col d-flex">
             <NewsroomCard item={toolkit} showPills={true} showSubtitle={false} pillSource="content_types" showColoredLabel={true} ctaText="Read Kit" />
           </div>
         ))
