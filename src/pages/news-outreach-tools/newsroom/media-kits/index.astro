@@ -1,39 +1,21 @@
 ---
 import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
-import webinars from "@/src/content/news-resources/webinars/webinars.json";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import NewsroomCard from "@/src/components/NewsroomCard.astro";
-import WebinarCard from "@/src/components/WebinarCard.astro";
 import type { NewsroomCardItem, Toolkit } from "@/src/types";
-
-type WebinarEntry = {
-  title?: string;
-  recordingLink?: string;
-  slidesLink?: string;
-  description?: string;
-  date?: string;
-  subtitle?: string;
-  duration?: string;
-};
 
 const toolkitData = toolkits as {
   accelerator_media_toolkits?: Toolkit[];
-  outreach_toolkits?: Toolkit[];
   media_toolkits?: Toolkit[];
 };
 
-const webinarData = webinars as {
-  webinars?: WebinarEntry[];
-};
-
-const allToolkits: Toolkit[] = [
+const allMediaKits: Toolkit[] = [
   ...(Array.isArray(toolkitData?.accelerator_media_toolkits) ? toolkitData.accelerator_media_toolkits : []),
-  ...(Array.isArray(toolkitData?.outreach_toolkits) ? toolkitData.outreach_toolkits : []),
   ...(Array.isArray(toolkitData?.media_toolkits) ? toolkitData.media_toolkits : []),
 ];
 
-const toolkitList: NewsroomCardItem[] = allToolkits.map((toolkit) => ({
+const toolkitList: NewsroomCardItem[] = allMediaKits.map((toolkit) => ({
   title: toolkit.title,
   url: toolkit.url,
   description: toolkit.description,
@@ -52,16 +34,6 @@ const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
 const contentTypes = uniqueStrings(toolkitList.flatMap((toolkit) => toolkit.content_types ?? []));
 const topics = uniqueStrings(toolkitList.flatMap((toolkit) => toolkit.topics ?? []));
 
-const webinarList: Required<WebinarEntry>[] = (Array.isArray(webinarData?.webinars) ? webinarData.webinars : []).map((webinar) => ({
-  title: webinar.title ?? "",
-  recordingLink: webinar.recordingLink ?? "",
-  slidesLink: webinar.slidesLink ?? "",
-  description: webinar.description ?? "",
-  date: webinar.date ?? "",
-  subtitle: webinar.subtitle ?? "",
-  duration: webinar.duration ?? "",
-}));
-
 const slugifyForId = (value: string): string =>
   value
     .toLowerCase()
@@ -69,16 +41,16 @@ const slugifyForId = (value: string): string =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-const keywords = ["ITS JPO", "newsroom", "outreach resources", "media kits", "toolkits", "webinars"];
-const description = "Browse ITS JPO outreach resources, including toolkits and webinar archives, and filter by content type and topic.";
+const keywords = ["ITS JPO", "newsroom", "media kits", "toolkits", "V2X", "transportation communications"];
+const description = "Browse ITS JPO media kits and filter by content type and topic.";
 ---
 
-<PageLayout title="Outreach Resources" bannerImage={banner} keywords={keywords} description={description} currentBreadcrumb="Outreach Resources">
+<PageLayout title="Media Kits" bannerImage={banner} keywords={keywords} description={description} currentBreadcrumb="Media Kits">
   <Fragment slot="banner">Newsroom</Fragment>
   <main>
-    <h2 class="">Outreach Resources</h2>
-    <h3>All Toolkits</h3>
-    <form class="row g-4 reduced-gutters filter my-2 p-3" aria-label="News filter">
+    <h2 class="">Media Kits</h2>
+    <h3>All Media Kits</h3>
+    <form class="row g-4 reduced-gutters filter my-2 p-3" aria-label="Media kit filter">
       <div class="col-12 col-lg-3">
         <label class="form-label" for="content-type-toggle">Content Type</label>
         <div class="dropdown multi-select-dropdown">
@@ -126,14 +98,14 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     <div id="toolkit-cards" class="row gx-4 gy-4">
       {
         toolkitList.map((toolkit) => (
-          <div class="col-12 col-md-4 toolkit-card-col d-flex ">
+          <div class="col-12 col-md-4 toolkit-card-col d-flex">
             <NewsroomCard item={toolkit} showPills={true} showSubtitle={false} pillSource="content_types" showColoredLabel={true} ctaText="Read Kit" />
           </div>
         ))
       }
     </div>
-    <p id="toolkit-empty-state" class="toolkit-empty-state" hidden>No toolkits match the selected filters.</p>
-    <nav id="toolkit-pagination" class="toolkit-pagination" aria-label="Toolkit pagination" hidden>
+    <p id="toolkit-empty-state" class="toolkit-empty-state" hidden>No media kits match the selected filters.</p>
+    <nav id="toolkit-pagination" class="toolkit-pagination" aria-label="Media kit pagination" hidden>
       <button id="toolkit-pagination-prev" type="button" class="toolkit-pagination-button">
         Previous
       </button>
@@ -142,27 +114,6 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
         Next
       </button>
     </nav>
-    <div>
-        <h2 class="heading-border-left blue mt-4">Webinar Archives</h2>
-        <p></p>
-        <div class="row gx-4 gy-4">
-          {
-            webinarList.map((webinar) => (
-              <div class="col-12 col-md-6 col-xl-4">
-                <WebinarCard
-                  date={webinar.date}
-                  subtitle={webinar.subtitle}
-                  title={webinar.title}
-                  description={webinar.description}
-                  duration={webinar.duration}
-                  recordingLink={webinar.recordingLink}
-                  slidesLink={webinar.slidesLink}
-                />
-              </div>
-            ))
-          }
-        </div>
-    </div>
   </main>
 </PageLayout>
 
@@ -294,7 +245,6 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     toggleDropdown();
   });
 
-  // close when clicking outside
   document.addEventListener("click", (e) => {
     const target = e.target;
     if (!dropdownMenu?.contains(target) && !dropdownToggle?.contains(target)) {
@@ -302,7 +252,6 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     }
   });
 
-  // keyboard: close on Escape
   dropdownToggle?.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       toggleDropdown(false);
@@ -310,7 +259,6 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     }
   });
 
-  // listen to content-type checkbox changes
   Array.from(document.querySelectorAll('input[name="content-type"]')).forEach((el) => {
     el.addEventListener("change", () => runFilter());
   });
@@ -331,7 +279,6 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     runFilter({ resetPage: false });
   });
 
-  // initialize
   updateDropdownLabel();
   runFilter();
 </script>
@@ -401,8 +348,6 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
   }
-  
-
 
   #content-type-toggle.dropdown-toggle {
     display: flex;
@@ -412,25 +357,26 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     justify-content: space-between;
     align-items: center;
   }
+
   #content-type-toggle.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
   }
-  #content-type-toggle.dropdown-toggle:after{
-      content: '\f078';
-      font-family: "Font Awesome 6 Free";
-      font-weight: 800;
-      font-size:16px;
-      
+
+  #content-type-toggle.dropdown-toggle:after {
+    content: '\f078';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 800;
+    font-size: 16px;
   }
-
-
 
   .multi-select-dropdown .dropdown-menu {
     display: none;
   }
+
   .multi-select-dropdown .dropdown-menu.show {
     display: block;
   }
+
   .multi-select-dropdown .dropdown-label {
     white-space: nowrap;
     overflow: hidden;
@@ -438,7 +384,6 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     display: inline-block;
     max-width: 100%;
   }
-
 
   .toolkit-empty-state {
     margin-top: 1.5rem;
@@ -488,6 +433,4 @@ const description = "Browse ITS JPO outreach resources, including toolkits and w
     opacity: 0.5;
     cursor: not-allowed;
   }
-
-
 </style>

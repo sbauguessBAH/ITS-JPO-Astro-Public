@@ -46,9 +46,18 @@ const toNewsletterLink = (entry: (typeof newsletterEntries)[number]): HighlightL
 
 const featuredNewsletter: HighlightLink | undefined = newsletterEntries[0] ? toNewsletterLink(newsletterEntries[0]) : undefined;
 
-const toolkitData = toolkits as { outreach_toolkits?: MediaToolkitEntry[]; media_toolkits?: MediaToolkitEntry[] };
+const toolkitData = toolkits as {
+  accelerator_media_toolkits?: MediaToolkitEntry[];
+  outreach_toolkits?: MediaToolkitEntry[];
+  media_toolkits?: MediaToolkitEntry[];
+};
 
-const mediaKitHighlights: HighlightLink[] = (Array.isArray(toolkitData.media_toolkits) ? toolkitData.media_toolkits : [])
+const allMediaKits: MediaToolkitEntry[] = [
+  ...(Array.isArray(toolkitData.accelerator_media_toolkits) ? toolkitData.accelerator_media_toolkits : []),
+  ...(Array.isArray(toolkitData.media_toolkits) ? toolkitData.media_toolkits : []),
+];
+
+const mediaKitHighlights: HighlightLink[] = allMediaKits
   .map((item) => ({
     title: item.title?.trim() ?? "",
     url: toHref(item.url),
@@ -122,7 +131,7 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
                 ))
               }
             </ul>
-            <a class="btn btn-primary mt-auto align-self-start" href="#">View All Media Kits</a>
+            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/media-kits/")}>View All Media Kits</a>
           </article>
         </div>
 
