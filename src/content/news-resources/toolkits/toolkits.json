@@ -28,7 +28,88 @@
             "date": "2026",
             "availability": "Available"
         }],
-            "image_library": [],
+            "image_library": [
+                {
+                    "title": "MCDOT V2X Deployment Image 1",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/1719530988503.jfif",
+                    "alt_description": "MCDOT V2X Deployment image 1"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 2",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/1719530988813.jfif",
+                    "alt_description": "MCDOT V2X Deployment image 2"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 3",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/1719530992477.jfif",
+                    "alt_description": "MCDOT V2X Deployment image 3"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 4",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/1719530993219.jfif",
+                    "alt_description": "MCDOT V2X Deployment image 4"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 5",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/1719530993714.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 5"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 6",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/CVAZ_Phx_Press_Event_10_062124.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 6"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 7",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/CVAZ_Phx_Press_Event_12_062124.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 7"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 8",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/CVAZ_Phx_Press_Event_35_062124.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 8"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 9",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/CVAZ_Phx_Press_Event_38_062124.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 9"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 10",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2603.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 10"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 11",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2609.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 11"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 12",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2613.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 12"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 13",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2626.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 13"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 14",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2631.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 14"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 15",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2639.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 15"
+                },
+                {
+                    "title": "MCDOT V2X Deployment Image 16",
+                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2646.jpg",
+                    "alt_description": "MCDOT V2X Deployment image 16"
+                }
+            ],
             "webinar_materials": [{
                 "id": 32, 
                 "date": "October 7, 2025", 
