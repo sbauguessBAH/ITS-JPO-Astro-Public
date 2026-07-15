@@ -150,6 +150,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
                     const primaryHref = getPrimaryThumbnailHref(item);
                     const action = getThumbnailAction(section, item);
                     const imageSrc = getImageSrc(item.image);
+                    const imageAlt = item.altDescription ?? item.title;
                     const embedSrc = section.variant === "video" ? getVideoEmbedSrc(primaryHref) : undefined;
 
                     return (
@@ -171,12 +172,12 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
                           ) : primaryHref ? (
                             <a href={primaryHref} class="kit-thumb-media-link">
                               <div class="kit-thumb-media">
-                                {imageSrc ? <img src={imageSrc} alt={item.title} loading="lazy" /> : <div class="kit-thumb-placeholder">{getThumbnailPlaceholderLabel(section)}</div>}
+                                {imageSrc ? <img src={imageSrc} alt={imageAlt} loading="lazy" /> : <div class="kit-thumb-placeholder">{getThumbnailPlaceholderLabel(section)}</div>}
                               </div>
                             </a>
                           ) : (
                             <div class="kit-thumb-media">
-                              {imageSrc ? <img src={imageSrc} alt={item.title} loading="lazy" /> : <div class="kit-thumb-placeholder">{getThumbnailPlaceholderLabel(section)}</div>}
+                              {imageSrc ? <img src={imageSrc} alt={imageAlt} loading="lazy" /> : <div class="kit-thumb-placeholder">{getThumbnailPlaceholderLabel(section)}</div>}
                             </div>
                           )
                         }

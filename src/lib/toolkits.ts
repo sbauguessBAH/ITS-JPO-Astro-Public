@@ -19,6 +19,7 @@ export type ToolkitLinkItem = {
 
 export type ToolkitMediaItem = {
   actionLabel?: string;
+  altDescription?: string;
   downloadHref?: string;
   href?: string;
   image?: string | ImageMetadata;
@@ -99,6 +100,9 @@ type RawLinkItem = {
 
 type RawMediaItem = {
   actionLabel?: string;
+  alt?: string;
+  alt_description?: string;
+  alt_text?: string;
   cta_text?: string;
   download_href?: string;
   href?: string;
@@ -396,6 +400,7 @@ const normalizeMediaItems = (items?: RawMediaItem[]): ToolkitMediaItem[] => {
       const title = cleanText(item.title) || cleanText(item["link-text"]);
       const href = cleanText(item.href);
       const image = cleanText(item.image_src) || cleanText(item.img_src);
+      const altDescription = cleanText(item.alt_description) || cleanText(item.alt_text) || cleanText(item.alt);
       const downloadHref = cleanText(item.download_href);
       const actionLabel = cleanText(item.actionLabel) || cleanText(item.cta_text);
 
@@ -405,6 +410,7 @@ const normalizeMediaItems = (items?: RawMediaItem[]): ToolkitMediaItem[] => {
 
       return {
         actionLabel: actionLabel || undefined,
+        altDescription: altDescription || undefined,
         downloadHref: downloadHref || undefined,
         href: href || undefined,
         image: image || undefined,
