@@ -112,16 +112,27 @@
         "produced_by": "UDOT Produced",
         "duration": "short",
         "platform": "YouTube",
-        "href": "https://youtu.be/YgtGe58ELrc?si=UQ1h6G1HOvuOpTbJ",
+        "href": "https://www.youtube.com/watch?v=YgtGe58ELrc",
         "img_src": "/assets/images/toolkits/udot-connecting-the-west-thumb.png",
         "material_type": "Video",
         "date": "2026",
         "availability": "Available"
     }],
-    "image_library": [],
+    "image_library": [
+        {
+            "title": "UDOT V2X Deployment Image 1",
+            "img_src": "/assets/images/toolkits/media-toolkits/UDOT/img-library/UDOT-29960088.jpeg",
+            "alt_description": "Woman with brown shoulder length hair and a plaid shirt standing in front of an orange UDOT truck.  She is standing behind a podium and speaking to a crowd.  The crowd can be seen facing away from the camera, one person is holding a phone seemingly taking a picture of the woman at the podium."
+        },
+        {
+            "title": "UDOT V2X Deployment Image 2",
+            "img_src": "/assets/images/toolkits/media-toolkits/UDOT/img-library/UDOT-448939943_866950625467470_7662647061832058959.jpg",
+            "alt_description": "Three UDOT personnel standing in front of an electrical box outside. The personell closest to the box has his hands up infront of him like he is explaining how the electrical box works. "
+        }
+    ],
     "webinar_materials": [{
         "title": "UDOT Deployment Concept Webinar",
-        "recording_href": "https://youtu.be/hEgIj59sOYo?si=SNjGUA6-IrBIoPcX",
+        "recording_href": "https://www.youtube.com/watch?v=hEgIj59sOYo",
         "slides_href": "https://itsa.org/wp-content/uploads/2025/10/UDOT-V2X-Accelerator-Webinar-10-02-25-1.pdf",
         "date": "October 02, 2026", 
         "program":"V2X Accelerator Program", 
@@ -131,7 +142,7 @@
     "media_coverage": [{
         "type": "article",
         "title": "Connecting the West Program -- Feature Article",
-        "href": "",
+        "href": "https://digital.itsinternational.com/2026/mar-apr/html5/?pn=15",
         "platform" : "ITS International"
     }],
     "belt_cta": {
