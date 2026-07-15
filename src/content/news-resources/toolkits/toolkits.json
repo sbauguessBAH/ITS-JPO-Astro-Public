@@ -311,7 +311,8 @@
             "office": "Intelligent Transportations Systems Joint Program Office",
             "contact": "Brian.Cronin@dot.gov",
             "profile_image_key": "brian_c"}]
-        },
+        }],
+        "outreach_toolkits": [
          {
     "id": 1,
     "title": "Vehicle-to-Everything (V2X) Deployment Toolkit",
