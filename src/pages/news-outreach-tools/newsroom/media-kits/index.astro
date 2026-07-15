@@ -12,7 +12,6 @@ const toolkitData = toolkits as {
 
 const allMediaKits: Toolkit[] = [
   ...(Array.isArray(toolkitData?.accelerator_media_toolkits) ? toolkitData.accelerator_media_toolkits : []),
-  ...(Array.isArray(toolkitData?.media_toolkits) ? toolkitData.media_toolkits : []),
 ];
 
 const toolkitList: NewsroomCardItem[] = allMediaKits.map((toolkit) => ({
