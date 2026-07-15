@@ -74,7 +74,7 @@ const pillItems = pillSource === "content_types" ? (normalizedItem.content_types
 const shouldShowBadges = Boolean(showPills && pillItems?.length);
 ---
 
-<div class:list={["card toolkit-card d-flex", className, shouldRenderImage && "toolkit-card--with-image"]}>
+<div class:list={["card toolkit-card", className, shouldRenderImage && "toolkit-card--with-image"]}>
   <div class="card-body">
     {
       // Render image first so it sits at the top of the card.
@@ -213,6 +213,7 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
   }
 
   .colored-label {
