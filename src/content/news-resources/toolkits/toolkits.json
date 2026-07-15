@@ -1,5 +1,5 @@
 {
-    "outreach_toolkits":
+    "media_toolkits":
     [
 {
     "id": 36,
@@ -22,23 +22,12 @@
             "produced_by": "MCDOT Produced",
             "duration": "long",
             "platform": "YouTube",
-            "href": "https://youtu.be/LuTtkeNEESo?si=sQ4EHZgoMfBHpJzu",
+            "href": "https://www.youtube.com/watch?v=LuTtkeNEESo",
             "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
             "material_type": "Video",
             "date": "2026",
             "availability": "Available"
-        },
-        {
-            "title": "CVAZ History Video",
-            "produced_by": "MCDOT Produced",
-            "duration": "short",
-            "platform": "N/A",
-            "href": "",
-            "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
-            "material_type": "Video",
-            "date": "2026",
-            "availability": "N/A"
-            }],
+        }],
             "image_library": [],
             "webinar_materials": [{
                 "id": 32, 
@@ -47,7 +36,7 @@
                 "description":"MCDOT Deployment Concept Webinar", 
                 "host": "ITS JPO", 
                 "season": "Fall 2025",
-                "recording_href": "https://youtu.be/J51aSCEx1u0?si=d-XeR07d12DoXki3",
+                "recording_href": "https://www.youtube.com/watch?v=J51aSCEx1u0",
                 "slides_href": "https://itsa.org/wp-content/uploads/2025/10/MCDOT-V2X-Accelerator-Webinar-10-07-25.pdf"
                 }],
                 "media_coverage": [{
@@ -168,18 +157,18 @@
             "contact": "Brian.Cronin@dot.gov",
             "profile_image_key": "brian_c"}]
 },
-                            {
-                                "id": 37,
-                                "title": "Media Kit: Texas A&M Transportation Institute (TTI) Texas TRUST V2X Program",
-                                "subtitle": "Media Kit",
-                                "description":"The TTI Texas TRUST Vehicle-to-Everything (V2X) Program is part of the V2X Accelerator Program funded by the Intelligent Transportation Systems Joint Program Office (ITS JPO).",
-                                "date": "2026",
-                                "content_types":["print materials", "video", "photos", "webinar materials", "media coverage"],
-                                "topics":["V2X", "TTI"],
-                                "url":"/news-outreach-tools/news-resources/toolkits/tti-texas-trust-v2x-program-mediakit",
-                                "print_materials": [{
+{
+     "id": 37,
+    "title": "Media Kit: Texas A&M Transportation Institute (TTI) Texas TRUST V2X Program",
+    "subtitle": "Media Kit",
+    "description":"The TTI Texas TRUST Vehicle-to-Everything (V2X) Program is part of the V2X Accelerator Program funded by the Intelligent Transportation Systems Joint Program Office (ITS JPO).",
+    "date": "2026",
+    "content_types":["print materials", "video", "photos", "webinar materials", "media coverage"],
+    "topics":["V2X", "TTI"],
+    "url":"/news-outreach-tools/news-resources/toolkits/tti-texas-trust-v2x-program-mediakit",
+    "print_materials": [{
                                     "title": "TTI Texas TRUST V2X Factsheet",
-                                    "href": "https://v2xtexastrust.com/wp-content/uploads/2025/10/V2X-factsheet-TRUST-August-2025_Digital10032025_508c-1.pdf",
+                                    "href": "/public/assets/documents/toolkits/26.05.06_V2X factsheet-UDOT.pdf",
                                     "img_src": "/assets/images/toolkits/connecting-the-west-thumb.png",
                                     "material_type": "Factsheet",
                                     "date": "2026"
@@ -203,8 +192,8 @@
     "slides_href": "https://itsa.org/event/v2x-accelerator-deployment-concept-series-webinar-3-texas-am-transportation-institute/"
     }],
     "media_coverage": [{
-        "title": "Texas TRUST V2X Program -- Feature Article",
-        "href": "",
+        "title": "How The West was One: Texas TRUST V2X Program -- Feature Article",
+        "href": "https://digital.itsinternational.com/2026/mar-apr/html5/?pn=15",
         "platform": "ITS International",
         "media_type": "article"
         }],
