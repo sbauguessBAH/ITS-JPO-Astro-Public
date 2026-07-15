@@ -37,14 +37,17 @@ const extractYear = (date: Date): string => String(date.getUTCFullYear());
 const newsletterRows: FilterableNewsletter[] = rawNewsletters.map((item) => {
 	const issueSummary = [item.data.season, item.data.volume, item.data.issue].filter(Boolean).join(" | ");
 	const slug = item.id.replace(/\.(md|mdx)$/i, "");
+	const cardSummary = [item.data.dateLabel, issueSummary].filter(Boolean).join(" | ");
+	const descriptionText = item.data.description?.trim() ?? "";
+	const cardDescription = descriptionText.length > 0 ? `${cardSummary} - ${descriptionText}` : cardSummary;
 
 	return {
 		card: {
 			title: item.data.title,
 			url: base_url(`/news-outreach-tools/newsroom/newsletter-archive/${slug}/`),
-			description: item.data.description?.trim().length ? item.data.description : issueSummary,
+			description: cardDescription,
 			date: item.data.dateLabel,
-			subtitle: item.data.subtitle,
+			subtitle: issueSummary || item.data.subtitle,
 			topics: item.data.topics,
 			imageUrl: item.data.imageUrl,
 		},
@@ -142,8 +145,8 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		<div id="newsletter-cards" class="row gx-4 gy-4 newsletter-gradient">
 			{
 				newsletterRows.map((row) => (
-					<div class="col-12 col-sm-6 col-xl-3 newsletter-card-col">
-						<NewsroomCard item={row.card} class="newsletter-card" showPills={false} showColoredLabel={false} ctaText="Read Issue" />
+					<div class="col-12 col-md-4 d-flex newsletter-card-col">
+						<NewsroomCard item={row.card} class="w-100" showPills={true} showSubtitle={true} showColoredLabel={false} ctaText="Read Issue" />
 					</div>
 				))
 			}
