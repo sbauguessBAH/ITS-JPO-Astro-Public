@@ -9,7 +9,7 @@
     "date": "2026",
     "content_types":["print materials", "video", "photos", "webinar materials", "media coverage"],
     "topics":["V2X", "MCDOT"],
-    "url":"/news-outreach-tools/news-resources/toolkits/mcdot-connected-vehicle-acceleration-zone-mediakit",
+    "url":"/news-outreach-tools/news-resources/media-toolkits/mcdot-connected-vehicle-acceleration-zone-mediakit",
     "print_materials": [{
         "title": "MCDOT V2X Accelerator Site Factsheet",
         "href": "",
@@ -169,7 +169,7 @@
     "date": "2026",
     "content_types":["print materials", "video", "photos", "webinar materials"],
     "topics":["V2X Accelerator", "UDOT"],
-    "url":"/news-outreach-tools/news-resources/toolkits/udot-connecting-the-west-program-mediakit",
+    "url":"/news-outreach-tools/news-resources/media-toolkits/udot-connecting-the-west-program-mediakit",
     "print_materials": [{
         "title": "UDOT V2X Accelerator Site Factsheet",
         "href": "/public/assets/documents/toolkits/26.05.06_V2X factsheet-UDOT.pdf",
@@ -246,7 +246,7 @@
     "date": "2026",
     "content_types":["print materials", "video", "photos", "webinar materials", "media coverage"],
     "topics":["V2X", "TTI"],
-    "url":"/news-outreach-tools/news-resources/toolkits/tti-texas-trust-v2x-program-mediakit",
+    "url":"/news-outreach-tools/news-resources/media-toolkits/tti-texas-trust-v2x-program-mediakit",
     "print_materials": [{
                                     "title": "TTI Texas TRUST V2X Factsheet",
                                     "href": "/public/assets/documents/toolkits/26.05.06_V2X factsheet-UDOT.pdf",
