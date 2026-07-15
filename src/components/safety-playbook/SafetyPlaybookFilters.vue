@@ -158,7 +158,7 @@ onBeforeUnmount(() => {
         :aria-pressed="selectedSafety === 'all'"
         @click="setSafety('all')"
       >
-        <span class="panel-item-text">All Safety Areas</span>
+        <span class="panel-item-text">Total Strategies</span>
         <span class="panel-count">{{ allCount }}</span>
       </button>
       <button

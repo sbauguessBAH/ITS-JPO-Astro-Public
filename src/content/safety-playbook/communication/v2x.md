@@ -1,5 +1,5 @@
 ---
-title: V2X
+title: Vehicle-to-everything (V2X)
 category: Communication
 shortDescription: V2X enables real-time wireless communication among vehicles, infrastructure, pedestrians, and networks to improve safety and mobility.
 additionalToolsSensors:

@@ -360,7 +360,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
                 id="playbook-search-input"
                 class="playbook-search-input"
                 type="search"
-                placeholder="Search by title, category, safety area, additional tools/sensors, or keywords"
+                placeholder="Search by title, description, category, safety area, additional tools/sensors, or keywords"
                 autocomplete="off"
               />
               <button class="playbook-search-clear" id="playbook-search-clear" type="button">Clear Search</button>
@@ -432,6 +432,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
   interface SafetyPlaybookSearchDoc {
     slug: string;
     title: string;
+    description: string;
     category: string;
     safety: string[];
     additionalToolsSensors: string[];
@@ -491,6 +492,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
         return {
           slug,
           title: card.dataset.searchTitle ?? "",
+          description: card.dataset.searchDescription ?? "",
           category: card.dataset.searchCategory ?? "",
           safety: splitDataValues(card.dataset.searchSafety),
           additionalToolsSensors: splitDataValues(card.dataset.searchTools),
@@ -509,10 +511,11 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     fuse = new Fuse(docs, {
       includeScore: true,
       ignoreLocation: true,
-      threshold: 0.15,
+      threshold: 0.3,
       minMatchCharLength: 2,
       keys: [
         { name: "title", weight: 0.7 },
+        { name: "description", weight: 0.1 },
         { name: "category", weight: 0.1 },
         { name: "keywords", weight: 0.05 },
         { name: "safety", weight: 0.15 },

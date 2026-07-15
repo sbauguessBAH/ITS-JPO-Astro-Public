@@ -68,6 +68,7 @@ const categoryIconPath = categoryIconPaths[normalize(data.category)] ?? fallback
   data-safety={toDataValue(data.safety)}
   data-search-title={data.title}
   data-search-category={data.category}
+  data-search-description={data.shortDescription}
   data-search-safety={toSearchDataValue(data.safety)}
   data-search-tools={toSearchDataValue(data.additionalToolsSensors)}
   data-search-keywords={toSearchDataValue(data.keywords)}
@@ -162,6 +163,7 @@ const categoryIconPath = categoryIconPaths[normalize(data.category)] ?? fallback
     margin: 0;
     font-size: 1.15rem;
     line-height: 1.4;
+    text-transform: none;
   }
 
   .playbook-summary {
