@@ -2,7 +2,7 @@
 import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
 import { getToolkitPageBySlug } from "@/src/lib/toolkits";
 
-const page = getToolkitPageBySlug("udot-connecting-the-west-program-mediakit");
+const page = getToolkitPageBySlug("udot-connecting-the-west-program-mediakit", "media-toolkits");
 
 if (!page) {
   throw new Error("Toolkit data not found for udot-connecting-the-west-program-mediakit.");

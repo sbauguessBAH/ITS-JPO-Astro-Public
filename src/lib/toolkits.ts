@@ -82,6 +82,8 @@ export type ToolkitPageData = {
   title: string;
 };
 
+export type ToolkitFolder = "media-toolkits" | "outreach-toolkits";
+
 type RawContact = {
   contact?: string;
   department?: string;
@@ -173,6 +175,7 @@ type RawToolkitEntry = {
 };
 
 type RawToolkitCollection = {
+  accelerator_media_toolkits?: RawToolkitEntry[];
   media_toolkits?: RawToolkitEntry[];
   outreach_toolkits?: RawToolkitEntry[];
 };
@@ -644,14 +647,34 @@ const buildSections = (toolkit: RawToolkitEntry): ToolkitSection[] => {
   return explicitKeys.some((key) => hasOwn(toolkit, key)) ? buildExplicitSections(toolkit) : buildDefaultSections(toolkit.content_types);
 };
 
-const getToolkitBySlug = (slug: string): RawToolkitEntry | undefined => {
-  const allToolkits = [...(toolkitCollection.outreach_toolkits ?? []), ...(toolkitCollection.media_toolkits ?? [])];
+const getToolkitCollectionsInPriorityOrder = (folder?: ToolkitFolder): RawToolkitEntry[][] => {
+  const mediaToolkits = [...(toolkitCollection.accelerator_media_toolkits ?? []), ...(toolkitCollection.media_toolkits ?? [])];
+  const outreachToolkits = [...(toolkitCollection.outreach_toolkits ?? [])];
 
-  return allToolkits.find((toolkit) => getSlugFromUrl(toolkit.url) === slug);
+  switch (folder) {
+    case "media-toolkits":
+      return [mediaToolkits, outreachToolkits];
+    case "outreach-toolkits":
+      return [outreachToolkits, mediaToolkits];
+    default:
+      return [outreachToolkits, mediaToolkits];
+  }
 };
 
-export const getToolkitPageBySlug = (slug: string): ToolkitPageData | undefined => {
-  const toolkit = getToolkitBySlug(slug);
+const getToolkitBySlug = (slug: string, folder?: ToolkitFolder): RawToolkitEntry | undefined => {
+  for (const collection of getToolkitCollectionsInPriorityOrder(folder)) {
+    const match = collection.find((toolkit) => getSlugFromUrl(toolkit.url) === slug);
+
+    if (match) {
+      return match;
+    }
+  }
+
+  return undefined;
+};
+
+export const getToolkitPageBySlug = (slug: string, folder?: ToolkitFolder): ToolkitPageData | undefined => {
+  const toolkit = getToolkitBySlug(slug, folder);
 
   if (!toolkit || !hasText(toolkit.title)) {
     return undefined;

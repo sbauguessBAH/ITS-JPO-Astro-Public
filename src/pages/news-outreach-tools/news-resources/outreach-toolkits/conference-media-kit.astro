@@ -2,7 +2,7 @@
 import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
 import { getToolkitPageBySlug } from "@/src/lib/toolkits";
 
-const page = getToolkitPageBySlug("conference-media-kit");
+const page = getToolkitPageBySlug("conference-media-kit", "outreach-toolkits");
 
 if (!page) {
   throw new Error("Toolkit data not found for conference-media-kit.");

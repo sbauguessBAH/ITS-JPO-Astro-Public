@@ -2,7 +2,7 @@
 import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
 import { getToolkitPageBySlug } from "@/src/lib/toolkits";
 
-const page = getToolkitPageBySlug("intersection-safety-challenge-outreach-toolkit");
+const page = getToolkitPageBySlug("intersection-safety-challenge-outreach-toolkit", "outreach-toolkits");
 
 if (!page) {
   throw new Error("Toolkit data not found for intersection-safety-challenge-outreach-toolkit.");

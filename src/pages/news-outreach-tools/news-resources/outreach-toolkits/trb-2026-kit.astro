@@ -2,7 +2,7 @@
 import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
 import { getToolkitPageBySlug } from "@/src/lib/toolkits";
 
-const page = getToolkitPageBySlug("trb-2026-kit");
+const page = getToolkitPageBySlug("trb-2026-kit", "outreach-toolkits");
 
 if (!page) {
   throw new Error("Toolkit data not found for trb-2026-kit.");
