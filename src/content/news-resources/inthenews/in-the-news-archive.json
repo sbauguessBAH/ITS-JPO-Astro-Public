@@ -1,0 +1,835 @@
+﻿[
+  {
+    "title": "Trump's Transportation Secretary Sean P. Duffy Visits Reliable Robotics to See How American Innovators are Unlocking the Future of Flight",
+    "date": "6/17/2026",
+    "featured": [],
+    "news_src": "U.S. DOT",
+    "location": "Albuquerque, NM",
+    "desc": "U.S. Transportation Secretary Sean P. Duffy today toured Reliable Robotics at Albuquerque International Sunport to see how this American innovator is unlocking the future of flight. Along with the City of Albuquerque, Reliable Robotics was selected by the Federal Aviation Administration (FAA) in March to participate in the Department's Advanced Air Mobility Integration Pilot Program (eIPP).",
+    "url": "https://www.transportation.gov/briefing-room/trumps-transportation-secretary-sean-p-duffy-visits-reliable-robotics-see-how",
+    "news_src_url": "https://www.transportation.gov/briefing-room/trumps-transportation-secretary-sean-p-duffy-visits-reliable-robotics-see-how",
+    "image": "newsroom/postThumbnails/UnlocktheFutureOfFlight.png",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": [],
+      "technology-areas": ["Innovative Aviation Technology", "Rural ITS"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Utah DOT Helps Save Lives Via Smart Signal Technology",
+    "date": "6/12/2026",
+    "featured": ["v2x"],
+    "news_src": "AASHTO",
+    "location": "UT",
+    "desc": "The Utah Department of Transportation recently partnered with Brigham City to equip its ambulances and fire trucks with vehicle-to-everything or V2X technology that provides traffic signal pre-emption to those vehicles during emergencies.",
+    "url": "https://aashtojournal.transportation.org/utah-dot-helps-save-lives-via-smart-signal-technology/",
+    "news_src_url": "https://aashtojournal.transportation.org/utah-dot-helps-save-lives-via-smart-signal-technology/",
+    "image": "newsroom/postThumbnails/061226-Utah-DOT-signal-1.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": [],
+      "technology-areas": ["Interoperable Connectivity (V2X)", "Incident and Emergency Management"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Bozeman using new AI technology to help improve traffic safety",
+    "date": "6/8/2026",
+    "featured": ["ai"],
+    "news_src": "KBZK 7",
+    "location": "Bozeman, MT",
+    "desc": "When most people hear 'artificial intelligence,' they may think of robots or futuristic technology. But in Bozeman, AI is about to be used for something closer to home: making the city's streets safer.",
+    "url": "https://www.kbzk.com/news/local-news/bozeman-using-new-ai-technology-to-help-improve-traffic-safety",
+    "news_src_url": "https://www.kbzk.com/news/local-news/bozeman-using-new-ai-technology-to-help-improve-traffic-safety",
+    "image": "newsroom/postThumbnails/ewscripps.brightspotcdn.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SS4A Grants"],
+      "technology-areas": ["Artificial Intelligence", "Mobility"],
+      "topics": []
+    }
+  },
+  {
+    "title": "SmartScan Vehicle Brings Real-Time Roadway Condition Data Collection to Alexandria Streets Starting March 17",
+    "date": "3/13/2026",
+    "featured": [],
+    "news_src": "City of Alexandria",
+    "location": "Alexandria, VA",
+    "desc": "Beginning Tuesday, March 17, residents may notice City vehicles equipped with cameras and sensors driving along Alexandria streets as part of a pilot program to help the City better understand roadway conditions in real time and support proactive decision making on road safety and maintenance.",
+    "url": "https://www.alexandriava.gov/news-tes/2026-03-13/smartscan-vehicle-brings-real-time-roadway-condition-data-collection-to",
+    "news_src_url": "https://www.alexandriava.gov/news-tes/2026-03-13/smartscan-vehicle-brings-real-time-roadway-condition-data-collection-to",
+    "image": "newsroom/postThumbnails/87933b72-83b8-4d80-9692-bed8e5cc5b33.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Asset Management"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Phase one of the I-40 Tradeport Corridor project launches in Albuquerque",
+    "date": "2/24/2026",
+    "featured": [],
+    "news_src": "KOAT",
+    "location": "Albuquerque, NM",
+    "desc": "Phase one of the I-40 Tradeport Corridor project has begun in Albuquerque, aiming to connect freight movement from the Port of Los Angeles through Arizona and into Albuquerque, while creating new opportunities for jobs and development.",
+    "url": "https://www.koat.com/article/phase-one-of-the-i-40-tradeport-corridor-project-launches-in-albuquerque/70477149",
+    "news_src_url": "https://www.koat.com/article/phase-one-of-the-i-40-tradeport-corridor-project-launches-in-albuquerque/70477149",
+    "image": "newsroom/postThumbnails/e91fa32e-cd65-45ef-814f-43ffe947b0cd.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Freight Operations", "Mobility", "Interoperable Connectivity (V2X)"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Charleston deploys AI traffic lights with federal grant to improve safety traffic on Calhoun Street",
+    "date": "2/19/2026",
+    "featured": ["ai"],
+    "news_src": "WCBD",
+    "location": "Charleston, SC",
+    "desc": "New AI technology-based traffic signals have been implemented along one of Downtown Charleston's busiest corridors, Calhoun Street. The City of Charleston and the U.S. DOT's large effort to improve traffic flow and safety.",
+    "url": "https://www.counton2.com/news/latest-news/charleston-deploys-ai-traffic-lights-with-federal-grant-to-improve-safety-traffic-on-calhoun-street/",
+    "news_src_url": "https://www.counton2.com/news/latest-news/charleston-deploys-ai-traffic-lights-with-federal-grant-to-improve-safety-traffic-on-calhoun-street/",
+    "image": "newsroom/postThumbnails/Charleston deploys AI traffic lights.png",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Artificial Intelligence", "Mobility"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Boston Curb Lab: Using AI and Open data to improve curb management",
+    "date": "2/11/2026",
+    "featured": ["ai"],
+    "news_src": "City of Boston",
+    "location": "Boston, MA",
+    "desc": "Bringing modern data tools and artificial intelligence to curb management; making Boston's streets safer, more accessible, and easier to navigate for everyone.",
+    "url": "https://www.boston.gov/departments/emerging-technology/boston-curb-lab-using-ai-and-open-data-improve-curb-management",
+    "news_src_url": "https://www.boston.gov/departments/emerging-technology/boston-curb-lab-using-ai-and-open-data-improve-curb-management",
+    "image": "newsroom/postThumbnails/seal_dark_1000x1000.png",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Complete Streets", "Mobility", "Freight Operations", "Artificial Intelligence"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Harris County making progress on countywide road flood warning system",
+    "date": "2/6/2026",
+    "featured": [],
+    "news_src": "KTRK",
+    "location": "Houston, TX",
+    "desc": "Harris County continues to advance a roadway flood warning system that will detect flooding and alert drivers.",
+    "url": "https://abc13.com/post/harris-county-making-progress-countywide-road-flood-warning-system/18556527/#:~:text=flooding-,Harris%20County%20making%20progress%20on%20countywide%20road%20flood%20warning%20system,the%20sensors%20will%20be%20placed",
+    "news_src_url": "https://abc13.com/post/harris-county-making-progress-countywide-road-flood-warning-system/18556527/#:~:text=flooding-,Harris%20County%20making%20progress%20on%20countywide%20road%20flood%20warning%20system,the%20sensors%20will%20be%20placed",
+    "image": "newsroom/postThumbnails/18556837_020626-ktrk-2M-img.png",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Road Weather Management", "Mobility"],
+      "topics": []
+    }
+  },
+  {
+    "title": "New traffic safety upgrades coming to Downtown Las Vegas",
+    "date": "2/5/2026",
+    "featured": [],
+    "news_src": "KLAS",
+    "location": "Las Vegas, NV",
+    "desc": "New safety upgrades are coming to Downtown Las Vegas in the form of automated smart signals designed to detect pedestrians and adjust traffic flow.",
+    "url": "https://www.8newsnow.com/news/new-traffic-safety-upgrades-coming-to-downtown-las-vegas/",
+    "news_src_url": "https://www.8newsnow.com/news/new-traffic-safety-upgrades-coming-to-downtown-las-vegas/",
+    "image": "newsroom/postThumbnails/1834227732397426465.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Interoperable Connectivity (V2X)", "Complete Streets", "Mobility"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Trump's Transportation Secretary Sean P. Duffy Hosts First-Ever National AV Safety Forum to Empower AV Innovators to Build Safely and Affordably in U.S.",
+    "date": "3/11/2026",
+    "featured": [],
+    "news_src": "U.S. DOT",
+    "location": "N/A",
+    "desc": "U.S. Transportation Secretary Sean P. Duffy and National Highway Traffic Safety Administration (NHTSA) Administrator Jonathan Morrison today announced next steps to spur innovation and enhance safety for automated vehicles at USDOT's first-ever AV Safety Forum. They were joined by White House Office of Science and Technology Policy Director Michael Kratsios.",
+    "url": "https://www.transportation.gov/briefing-room/driving-news-trumps-transportation-secretary-sean-p-duffy-hosts-first-ever-national",
+    "news_src_url": "https://www.transportation.gov/briefing-room/driving-news-trumps-transportation-secretary-sean-p-duffy-hosts-first-ever-national",
+    "image": "newsroom/postThumbnails/S1 in Zoox.png",
+    "alt_image": "Secretary Duffy visits with Zoox at the Innovation Plaza",
+    "tags": {
+      "grant-programs": [],
+      "technology-areas": ["Driving Automation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Trump's Transportation Secretary Sean P. Duffy and FAA Unveil Eight Selections for Pilot Program Testing Next-Gen Aircraft in America's Skies",
+    "date": "3/9/2026",
+    "featured": [],
+    "news_src": "U.S. DOT",
+    "location": "N/A",
+    "desc": "U.S. Transportation Secretary Sean P. Duffy and the Federal Aviation Administration (FAA) today announced eight proposals were selected as part of the brand-new Advanced Air Mobility and Electric Vertical Takeoff and Landing (eVTOL) Integration Pilot Program (eIPP). eVTOLs are futuristic aircraft that have the potential to generate new jobs, connect communities, and strengthen American leadership in aviation.",
+    "url": "https://www.transportation.gov/briefing-room/future-aviation-here-trumps-transportation-secretary-sean-p-duffy-and-faa-unveil",
+    "news_src_url": "https://www.transportation.gov/briefing-room/future-aviation-here-trumps-transportation-secretary-sean-p-duffy-and-faa-unveil",
+    "image": "newsroom/postThumbnails/Next-Gen-Aircraft.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": [],
+      "technology-areas": ["Innovative Aviation Technology"],
+      "topics": []
+    }
+  },
+  {
+    "title": "UDOT expands smart technology across snowplows on key winter routes",
+    "date": "2/25/2026",
+    "featured": [],
+    "news_src": "Utah DOT",
+    "location": "Utah",
+    "desc": "The Utah Department of Transportation is expanding vehicle-to-everything (V2X) smart technology across northern Utah, equipping 259 snowplows and nearly 1,275 signalized intersections on essential winter routes.",
+    "url": "https://connect.udot.utah.gov/2026/02/25/udot-expands-smart-technology-acrosssnowplows-on-key-winter-routes/",
+    "news_src_url": "https://connect.udot.utah.gov/2026/02/25/udot-expands-smart-technology-acrosssnowplows-on-key-winter-routes/",
+    "image": "newsroom/postThumbnails/UDOT.webp",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["V2X Accelerator Program"],
+      "technology-areas": ["Interoperable Connectivity (V2X)", "Road Weather Management"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Choctaw Nation of Oklahoma Awarded Nearly $2 Million USDOT SMART Grant",
+    "date": "1/20/2026",
+    "featured": ["innovative-aviation-technology"],
+    "news_src": "Choctaw Nation",
+    "location": "Durant, Oklahoma",
+    "desc": "The Choctaw Nation of Oklahoma has received a nearly $2 million Strengthening Mobility and Revolutionizing Transportation (SMART) Grant from the U.S. Department of Transportation (USDOT), marking a major milestone in advancing healthcare logistics and transportation innovation across the reservation.",
+    "url": "https://www.choctawnation.com/news/news-releases/choctaw-nation-of-oklahoma-awarded-nearly-2-million-usdot-smart-grant/",
+    "news_src_url": "https://www.choctawnation.com/news/news-releases/choctaw-nation-of-oklahoma-awarded-nearly-2-million-usdot-smart-grant/",
+    "image": "newsroom/postThumbnails/Choctaw_Nation_SMART_Grant.png",
+    "alt_image": "Choctaw community leaders gathered around a drone",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Innovative Aviation Technology"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Utah, Wyoming, Colorado Team on Connected Vehicle Project",
+    "date": "10/7/2025",
+    "featured": ["v2x"],
+    "news_src": "GovTech",
+    "location": "N/A",
+    "desc": "Connecting the West is an initiative being led by transportation departments in the three states, to form a 1,200-mile network across their terrain. Technology interoperability is key, an official said.",
+    "url": "https://www.govtech.com/transportation/utah-wyoming-colorado-team-on-connected-vehicle-project",
+    "news_src_url": "https://www.govtech.com/transportation/utah-wyoming-colorado-team-on-connected-vehicle-project",
+    "image": "newsroom/postThumbnails/Utah Wyoming Colorado Team on Connected Vehicle Project.jpeg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["V2X Accelerator Program"],
+      "technology-areas": ["Interoperable Connectivity (V2X)", "Freeway Operations"],
+      "topics": []
+    }
+  },
+  {
+    "title": "UMD Tests Medical Drone Deliveries in Crisfield",
+    "date": "9/15/2025",
+    "featured": ["innovative-aviation-technology"],
+    "news_src": "sUAS News",
+    "location": "Crisfield, Maryland",
+    "desc": "There are healthcare challenges across the United States, but in rural areas where transportation barriers are common, access to timely care is especially difficult. Rural residents are 15% more likely to have diabetes and 58% more likely to have heart disease than their urban counterparts.",
+    "url": "https://www.suasnews.com/2025/09/umd-tests-medical-drone-deliveries-in-crisfield/",
+    "news_src_url": "https://www.suasnews.com/2025/09/umd-tests-medical-drone-deliveries-in-crisfield/",
+    "image": "newsroom/postThumbnails/UMD Tests Medical Drone Deliveries in Crisfield.webp",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Innovative Aviation Technology"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Western Reserve Transit Authority Unveils New, Advanced Safety Technology Integrating into Fleet",
+    "date": "9/11/2025",
+    "featured": [""],
+    "news_src": "Mahoning Matters",
+    "location": "Mahoning Valley, Ohio",
+    "desc": "The Western Reserve Transit Authority (WRTA) marked a significant milestone in public transportation with the unveiling of new, advanced safety technology that will be integrated into its fleet.",
+    "url": "https://www.mahoningmatters.com/news/local/article312065299.html",
+    "news_src_url": "https://www.mahoningmatters.com/news/local/article312065299.html",
+    "image": "newsroom/postThumbnails/9.9.25 Dean at Podium.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Transit Innovation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "SARTA Showcases the New Anti-Collision Bus Technology Coming Soon to Stark County",
+    "date": "9/10/2025",
+    "featured": ["transit-innovation"],
+    "news_src": "The Alliance Review",
+    "location": "Stark County, Ohio",
+    "desc": "The Stark Area Regional Transit Authority will have two smart buses on the road next year.",
+    "url": "https://www.the-review.com/story/news/local/canton/2025/09/10/sarta-showcases-federally-funded-anti-collision-technology/85979774007/",
+    "news_src_url": "https://www.the-review.com/story/news/local/canton/2025/09/10/sarta-showcases-federally-funded-anti-collision-technology/85979774007/",
+    "image": "newsroom/postThumbnails/SARTA Showcases the New Anti-Collision Bus Technology Coming Soon to Stark County.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Transit Innovation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "WRTA Showcases New Bus Technology",
+    "date": "9/9/2025",
+    "featured": ["transit-innovation"],
+    "news_src": "WKBN",
+    "location": "Youngstown, Ohio",
+    "desc": "The Western Reserve Transit Authority (WRTA) and the U.S. Department of Transportation showcased new technology designed to make buses safer.",
+    "url": "https://www.wkbn.com/news/local-news/youngstown-news/wrta-to-showcase-new-bus-technology/",
+    "news_src_url": "https://www.wkbn.com/news/local-news/youngstown-news/wrta-to-showcase-new-bus-technology/",
+    "image": "newsroom/postThumbnails/WRTA Showcases New Bus Technology.png",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Transit Innovation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "TruWeather Launches First-Ever, Low-Altitude Weather Sensor Network in AllianceTexas",
+    "date": "8/20/2025",
+    "featured": [],
+    "news_src": "Hillwood",
+    "location": "TX",
+    "desc": "SMART Grant Helps Develop and Pilot a Micro-Weather Sensor Network to Support Next-Generation Transportation Technologies",
+    "url": "https://www.hillwood.com/newsroom/press-releases/truweather-launches-first-ever-low-altitude-weather-sensor-network-in-alliancetexas/",
+    "news_src_url": "https://www.hillwood.com/newsroom/press-releases/truweather-launches-first-ever-low-altitude-weather-sensor-network-in-alliancetexas/",
+    "image": "newsroom/postThumbnails/ba160537-4dc0-4f6c-a9832-8241fb90eb05-1568x1045.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Mobility", "Freight Operations", "Innovative Aviation Technology"],
+      "topics": []
+    }
+  },
+  {
+    "title": "West Virginia Hails USDOT Grant for Bridge Monitoring",
+    "date": "8/15/2025",
+    "featured": [],
+    "news_src": "AASHTO",
+    "location": "West Virginia",
+    "desc": "West Virginia Governor Patrick Morrisey highlighted the success of the stateâ€™s new Structural Health Monitoring or SHM system for bridges made possible by a federal SMART grant issued via the U.S. Department of Transportation in December 2024.",
+    "url": "https://aashtojournal.transportation.org/west-virginia-hails-usdot-grant-for-bridge-monitoring/",
+    "news_src_url": "https://aashtojournal.transportation.org/west-virginia-hails-usdot-grant-for-bridge-monitoring/",
+    "image": "newsroom/postThumbnails/081525-WVDOT-2.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Asset Management"],
+      "topics": []
+    }
+  },
+  {
+    "title": "West Virginia Wants to Install More Structural Monitoring Systems on Older State Bridge",
+    "date": "8/14/2025",
+    "featured": [],
+    "news_src": "Construction Equipment Guide",
+    "location": "West Virginia",
+    "desc": "West Virginia plans to expand high-tech structural monitoring systems on bridges using funds from the USDOT's SMART Grant Program. The initiative aims to detect issues early, prioritize repairs, and enhance safety, efficiency, and innovation in infrastructure management statewide.",
+    "url": "https://www.constructionequipmentguide.com/west-virginia-wants-to-install-more-structural-monitoring-systems-on-older-state-bridges/68759",
+    "news_src_url": "https://www.constructionequipmentguide.com/west-virginia-wants-to-install-more-structural-monitoring-systems-on-older-state-bridges/68759",
+    "image": "newsroom/postThumbnails/West Virginia Hails USDOT Grant for Bridge Monitoring.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Asset Management"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Highway Officials Say Sensors on Huntington Bridge Provide Real-Time Structural Conditions",
+    "date": "8/7/2025",
+    "featured": [],
+    "news_src": "WV MetroNews",
+    "location": "Huntington, West Virginia",
+    "desc": "State and federal highway officials say a new bridge monitoring system being used on a Huntington bridge will increase safety and save money.",
+    "url": "https://wvmetronews.com/2025/08/07/highway-officials-say-sensors-on-huntington-bridge-provide-real-time-structural-conditions/",
+    "news_src_url": "https://wvmetronews.com/2025/08/07/highway-officials-say-sensors-on-huntington-bridge-provide-real-time-structural-conditions/",
+    "image": "newsroom/postThumbnails/Highway Officials Say Sensors on Huntington Bridge Provide Real-Time Structural Conditions.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Asset Management"],
+      "topics": []
+    }
+  },
+  {
+    "title": "USDOT Awards $3.2 Billion in Infrastructure Grant Funding",
+    "date": "5/7/2025",
+    "featured": [""],
+    "news_src": "Mass Transit",
+    "location": "N/A",
+    "desc": "The U.S. Department of Transportation (USDOT) has awarded $3.2 billion in funding through 180 infrastructure grants for more than 3,200 projects. Since assuming office, USDOT has approved a total of 329 grants.",
+    "url": "https://www.masstransitmag.com/management/press-release/55288673/us-department-of-transportation-dot-usdot-awards-32-billion-in-infrastructure-grant-funding",
+    "news_src_url": "https://www.masstransitmag.com/management/press-release/55288673/us-department-of-transportation-dot-usdot-awards-32-billion-in-infrastructure-grant-funding",
+    "image": "newsroom/postThumbnails/USDOT Awards 32 Billion in Infrastructure Grant Funding.png",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Transit Innovation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "U.S. Transportation Secretary Sean P. Duffy Approves Another 180 Grants to Get America Building Again",
+    "date": "5/6/2025",
+    "featured": [""],
+    "news_src": "U.S. DOT",
+    "location": "N/A",
+    "desc": "U.S. Transportation Secretary Sean P. Duffy today announced the Department has approved another 180 infrastructure grants to get America building again. The latest grants, which total more than $3.2 billion, are part of the unprecedented backlog of more than 3,200 projects the previous administration announced but did not execute. Since assuming office, Secretary Duffy and the Department of Transportation have approved a total of 329 grants, or roughly 10% of the Bidenâ€“Buttigieg backlog.",
+    "url": "https://www.transportation.gov/briefing-room/us-transportation-secretary-sean-p-duffy-approves-another-180-grants-get-america",
+    "news_src_url": "https://www.transportation.gov/briefing-room/us-transportation-secretary-sean-p-duffy-approves-another-180-grants-get-america",
+    "image": "newsroom/postThumbnails/Press Release Topper-Blue.png",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Transit Innovation", "Incident and Emergency Management", "Work Zone Management"],
+      "topics": []
+    }
+  },
+  {
+    "title": "NHTSA Introduces New Automated Vehicle Framework",
+    "date": "4/25/2025",
+    "featured": [""],
+    "news_src": "AASHTO",
+    "location": "N/A",
+    "desc": "The National Highway Traffic Safety Administration unveiled a new automated vehicle or AV framework to help establish a single set of national regulations to avoid what the agency termed a â€œharmful patchworkâ€ of state laws.",
+    "url": "https://aashtojournal.transportation.org/nhtsa-introduces-new-automated-vehicle-framework/",
+    "news_src_url": "https://aashtojournal.transportation.org/nhtsa-introduces-new-automated-vehicle-framework/",
+    "image": "newsroom/postThumbnails/NHTSA Introduces New Automated Vehicle Framework.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": [],
+      "technology-areas": ["Driving Automation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "U.S. Department of Transportation Innovation Agenda",
+    "date": "4/24/2025",
+    "featured": [""],
+    "news_src": "U.S. DOT",
+    "location": "N/A",
+    "desc": "From the Wright Brothers to the moon landing, America has always pushed the boundaries of whatâ€™s possible with new technology. The golden age of transportation is paved over generations of American ingenuity pioneering our global future. The Department of Transportation will be chronicling our latest progress under President Donald Trumpâ€™s historic innovation agenda.",
+    "url": "https://www.transportation.gov/innovation-agenda",
+    "news_src_url": "https://www.transportation.gov/innovation-agenda",
+    "image": "newsroom/postThumbnails/US Department of Transportation Innovation Agenda.png",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": [],
+      "technology-areas": ["Driving Automation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Trump's Transportation Secretary Sean P. Duffy Unveils New Automated Vehicle Framework as Part of Innovation Agenda",
+    "date": "4/24/2025",
+    "featured": [""],
+    "news_src": "U.S. DOT",
+    "location": "N/A",
+    "desc": "U.S. Transportation Secretary Sean P. Duffy today unveiled the National Highway Traffic Safety Administrationâ€™s (NHTSA) new Automated Vehicle (AV) Framework as part of his transportation innovation agenda. The new framework will unleash American ingenuity, maintain key safety standards, and prevent a harmful patchwork of state laws and regulations.",
+    "url": "https://www.transportation.gov/briefing-room/trumps-transportation-secretary-sean-p-duffy-unveils-new-automated-vehicle-framework",
+    "news_src_url": "https://www.transportation.gov/briefing-room/trumps-transportation-secretary-sean-p-duffy-unveils-new-automated-vehicle-framework",
+    "image": "newsroom/postThumbnails/Unveils New Automated Vehicle Framework as Part of Innovation Agenda.png",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": [],
+      "technology-areas": ["Driving Automation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Tennessee State University Partners with Nashville DOT on $10 Million SMART Grant",
+    "date": "2/5/2025",
+    "featured": [],
+    "news_src": "Tennessee State University Newsroom",
+    "location": "Nashville, Tennessee",
+    "desc": "Tennessee State Universityâ€™s College of Engineering will receive $700,000 as part of a $10 million SMART Grant awarded to the City of Nashville by the U.S. Department of Transportation. TSU will partner with Nashvilleâ€™s Department of Transportation (NDOT) and WeGo Public Transit to conduct research aimed at improving pedestrian safety and reducing traffic fatalities.",
+    "url": "https://tnstatenewsroom.com/tsu-partners-with-ndot-on-10-million-smart-grant/",
+    "news_src_url": "https://tnstatenewsroom.com/tsu-partners-with-ndot-on-10-million-smart-grant/",
+    "image": "newsroom/postThumbnails/Tennessee State University Partners with Nashville DOT on 10 Million SMART Grant.jpeg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Transit Innovation", "Interoperable Connectivity (V2X)"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Video: USDOT Releases Data from Intersection Safety Challenge Assessment and Testing",
+    "date": "1/22/2025",
+    "featured": ["safety"],
+    "news_src": "Traffic Technology Today",
+    "location": "New Town, N.D.",
+    "desc": "The USDOT has released data collected for the Intersection Safety Challenge Stage 1B: System Assessment and Virtual Testing on its ITS DataHub for further research and development to transform intersection safetyâ€¦ The Stage 1B Challenge Dataset includes data at a single, signalized four-way intersection from 20 roadside sensors and traffic control devices, including eight closed-circuit television (CCTV) visual cameras, five thermal cameras, two lidar sensors, and four radar sensors. The data can be used to develop and train models that can anticipate potential conflicts and provide enough time for warnings or other real-time countermeasures.",
+    "url": "https://www.traffictechnologytoday.com/news/intersections/video-usdot-releases-data-from-intersection-safety-challenge-assessment-and-testing.html",
+    "news_src_url": "https://www.traffictechnologytoday.com/news/intersections/video-usdot-releases-data-from-intersection-safety-challenge-assessment-and-testing.html",
+    "image": "newsroom/postThumbnails/01_USDOT-releases-data-from-Intersection-Safety-Challenge.png",
+    "alt_image": "Screen shot of video from news story.",
+    "tags": {
+      "grant-programs": ["Intersection Safety Challenge"],
+      "technology-areas": ["Interoperable Connectivity (V2X)", "Artificial Intelligence", "Arterial Operations"],
+      "topics": []
+    }
+  },
+  {
+    "title": "AI Traffic Safety Project Wins $750K Prize from U.S. Transportation Dept.",
+    "date": "1/17/2025",
+    "featured": ["safety"],
+    "news_src": "University of Hawai'i News",
+    "location": "MÄnoa, Hawaii",
+    "desc": "The University of HawaiÊ»i at MÄnoa earned a $750,000 award from the U.S. Department of Transportation (DOT), securing its position as a leader in transportation safety innovation. A team, led by Department of Civil, Environmental and Construction Engineering Professor Guohui Zhang, has developed an advanced artificial intelligence system that uses multiple types of sensors to detect and prevent potential crashes at intersections.",
+    "url": "https://www.hawaii.edu/news/2025/01/17/ai-traffic-safety-project/",
+    "news_src_url": "https://www.hawaii.edu/news/2025/01/17/ai-traffic-safety-project/",
+    "image": "newsroom/postThumbnails/02_manoa-engineering-intersection-safety-challenge.jpg",
+    "alt_image": "Cars in the middle of an intersection.",
+    "tags": {
+      "grant-programs": ["Intersection Safety Challenge"],
+      "technology-areas": ["Interoperable Connectivity (V2X)", "Artificial Intelligence", "Arterial Operations"],
+      "topics": []
+    }
+  },
+  {
+    "title": "TRB 2025: Annual Meeting Review, by Brian Cronin",
+    "date": "1/17/2025",
+    "featured": [],
+    "news_src": "Traffic Technology Today",
+    "location": "",
+    "desc": "Also at TRB, on Tuesday, the USDOT announced the winners of the Intersection Safety Challenge Stage 1B: System Assessment and Virtual Testing Primary Track, which awarded $4 million among 10 prizewinning teams. The purpose of the multistage competition is to encourage teams of innovators and end-users to develop, prototype, and test intersection safety systems that leverage emerging technologies (including AI and machine learning) to identify and mitigate unsafe conditions involving vehicles and vulnerable road users at roadway intersections.",
+    "url": "https://www.traffictechnologytoday.com/opinion/trb-2025-annual-meeting-review-by-brian-cronin.html",
+    "news_src_url": "https://www.traffictechnologytoday.com/opinion/trb-2025-annual-meeting-review-by-brian-cronin.html",
+    "image": "newsroom/postThumbnails/03_TRB-annual-meeting-entrance.jpg",
+    "alt_image": "TRB 2025: Annual Meeting review, by Brian Cronin",
+    "tags": {
+      "grant-programs": [],
+      "technology-areas": [],
+      "topics": []
+    }
+  },
+  {
+    "title": "Alaska DOT&PF Granted $1.13 million for Seward Highway Avalanche Mitigation",
+    "date": "1/9/2025",
+    "featured": [],
+    "news_src": "Alaska's News Source",
+    "location": "Girdwood, Alaska",
+    "desc": "Using the grant, the DOT plans to reduce the risk of avalanches by using technology to predict and manage them in the future. With the funding, one of the pieces of technology the DOT plans to use includes a radar to identify when avalanches are in motion. If detected, flashing lights on the highway or closure gates will be triggered.",
+    "url": "https://www.alaskasnewssource.com/2025/01/10/alaska-dotpf-granted-113-million-seward-highway-avalanche-mitigation/",
+    "news_src_url": "https://www.alaskasnewssource.com/2025/01/10/alaska-dotpf-granted-113-million-seward-highway-avalanche-mitigation/",
+    "image": "newsroom/postThumbnails/04_Alaska-Seward-Highway-Avalanche-Mitigation.png",
+    "alt_image": "Screen shot of video from news story including the text: Grant Funding for Avalanche Midigation.",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Incident and Emergency Management"],
+      "topics": []
+    }
+  },
+  {
+    "title": "With $2M SMART Grant, Indiana Aims to Offer Drone Training",
+    "date": "1/7/2025",
+    "featured": ["innovative-aviation-technology"],
+    "news_src": "GovTech",
+    "location": "Indiana",
+    "desc": "The Hoosier State will receive a Strengthening Mobility and Revolutionizing Transportation Grant from the Federal Department of Transportation. Plans include teaching students about flying drones and collecting data.",
+    "url": "https://www.govtech.com/products/with-2m-smart-grant-indiana-aims-to-offer-drone-training",
+    "news_src_url": "https://www.govtech.com/products/with-2m-smart-grant-indiana-aims-to-offer-drone-training",
+    "image": "newsroom/postThumbnails/05_Indiana-to-Offer-Drone-Training.webp",
+    "alt_image": "Photo of three drones on a blue sky",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Innovative Aviation Technology"],
+      "topics": []
+    }
+  },
+  {
+    "title": "North Carolina Secures Grant for Drone-in-a-Box Technology to Enhance Disaster Response Effort",
+    "date": "12/31/2024",
+    "featured": [],
+    "news_src": "Drone XL",
+    "location": "North Carolina",
+    "desc": "The program, operated by the North Carolina Department of Transportation (NCDOT), will see disaster response efforts strengthened across the state using drone-in-a-box technology, reports Police1. Which will deliver medicine and supplies to hard-to-access and dangerous areas as well as collect data, allowing authorities to assess the damage from above in a safer and more efficient manner. A $1.1 million grant from the U.S. Department of Transportation, a part of the Strengthening Mobility and Revolutionizing Transportation (SMART) Grants Program, will fund the initiative, making NCDOT one of 47 who received funding across the U.S.",
+    "url": "https://dronexl.co/2024/12/29/north-carolina-drone-in-a-box-disaster-response-effort/",
+    "news_src_url": "https://dronexl.co/2024/12/29/north-carolina-drone-in-a-box-disaster-response-effort/",
+    "image": "newsroom/postThumbnails/06_north-carolina-drone-in-a-box-disaster-response.webp",
+    "alt_image": "North Carolina Secures Grant For Drone-In-A-Box Technology To Enhance Disaster Response Effort",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Innovative Aviation Technology"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Successful drone test flights advance medical delivery",
+    "date": "10/10/2024",
+    "featured": [],
+    "news_src": "University of North Dakota",
+    "location": "North Dakota",
+    "desc": "Regular drone flights for medications are now a step closer to reality for the Mandan Hidatsa and Arikara Nation.On Wednesday, Sept. 18, the MHA Drone Team successfully completed a pair of proof-of-concept flights between Elbowoods Memorial Health Center in New Town, N.D., and Twin Buttes, N.D. Normally, people residing in New Town would have to make the nearly two-hour-drive to the health center to receive medications.",
+    "url": "https://blogs.und.edu/und-today/2024/10/successful-drone-test-flights-advance-medical-delivery/",
+    "news_src_url": "https://blogs.und.edu/und-today/2024/10/successful-drone-test-flights-advance-medical-delivery/",
+    "image": "newsroom/postThumbnails/07_mha-dronesIMG-9782WEB.jpg",
+    "alt_image": "Members of the MHA Drone Team, on the occasion of a pair of successful test flights. Photo by Mike Haman, UND.",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Innovative Aviation Technology"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Drones enhance medical services for Tribal Nations in the Midwest",
+    "date": "7/18/2024",
+    "featured": [],
+    "news_src": "KFYR TV",
+    "location": "New Town, North Dakota",
+    "desc": "Today's technology will soon deliver medication and food through the sky straight to your door. In March last year, the MHA's three affiliated tribes secured two million dollars in grant funding to launch a drone project to help people get their medication. These drones are the next big step in accessibility. Director of the S.M.A.R.T. Grants Program Stan Caldwell said the key takeaway of the project is to deliver medical supplies to tribes in remote areas.",
+    "url": "https://www.kfyrtv.com/2024/07/18/drones-enhance-medical-services-tribal-nations-midwest/",
+    "news_src_url": "https://www.kfyrtv.com/2024/07/18/drones-enhance-medical-services-tribal-nations-midwest/",
+    "image": "newsroom/postThumbnails/Drones enhance medical services for Tribal Nations.jpg",
+    "alt_image": "",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Innovative Aviation Technology"],
+      "topics": []
+    }
+  },
+  {
+    "title": "DOT begins offering contactless payment option on select public transit routes",
+    "date": "10/8/2024",
+    "featured": ["transit-innovation"],
+    "news_src": "Hartford Business Journal",
+    "location": "Connecticut",
+    "desc": "The state Department of Transportation has launched a contactless payment program for buses that run on River Valley Transit and CT Transitâ€™s Meriden division routes. The program, announced Tuesday morning, allows riders to pay the fare by tapping their credit card, debit card or mobile wallet.",
+    "url": "https://www.hartfordbusiness.com/article/dot-begins-offering-contactless-payment-option-on-select-public-transit-routes",
+    "news_src_url": "https://www.hartfordbusiness.com/article/dot-begins-offering-contactless-payment-option-on-select-public-transit-routes",
+    "image": "newsroom/postThumbnails/08_DOT-begins-offering-contactless-payment.webp",
+    "alt_image": "Ben Limmer, state DOT bureau chief of public transportation, speaks during an announcement Tuesday about a new contactless payment option for bus riders.",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Transit Innovation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Charleston leaders developing tech to improve pedestrian safety downtown",
+    "date": "8/20/2024",
+    "featured": ["safety"],
+    "news_src": "WISTV",
+    "location": "Charleston, South Carolina",
+    "desc": "City leaders are cracking down on pedestrian and bicyclist safety along the Meeting Street, Calhoun Street and Courtenay Drive corridor. The City of Charleston is working on the addition of a connected vehicle and traffic responsive signal system. This system adds cameras and detection devices along intersections from the Meeting Street to Courtenay Drive corridor to gather traffic data. The new devices will use artificial intelligence and internet technologies to detect jaywalking, collision near-misses and red-light running. The collected data will guide city adjustments to crosswalks and traffic signal times...",
+    "url": "https://www.wistv.com/2024/08/20/charleston-leaders-developing-tech-improve-pedestrian-safety-downtown/",
+    "news_src_url": "https://www.forbes.com/sites/edgarsten/2024/08/16/long-awaited-plan-to-prevent-highway-deaths-via-v2x-revealed/",
+    "image": "newsroom/postThumbnails/Charleston-pedestrian-safety-downtown.png",
+    "alt_image": "City leaders are cracking down on pedestrian and bicyclist safety along the Meeting Street, Calhoun Street and Courtenay Drive corridor.",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Artificial Intelligence", "Arterial Operations"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Proposed $900k pilot program could make dangerous Charleston corridor safer",
+    "date": "5/13/2024",
+    "featured": [],
+    "news_src": "Live5News",
+    "location": "Charleston, South Carolina",
+    "desc": "Just over $900,000 worth of sensors and cameras could bring a monitoring system to the Calhoun Street Corridor if a federal grant is approved by the City of Charleston. With fast-moving cars, people walking and cyclists riding every day along Calhoun Street from the James Island Connector to Meeting Street, it makes it a busy area. But itâ€™s also home to the most dangerous corridor in the state with 70 total crashes as of 2022 South Carolina Department of Transportation data. And thatâ€™s just for pedestrians and cyclists alone...",
+    "url": "https://www.live5news.com/2024/05/13/proposed-900k-pilot-program-could-make-dangerous-charleston-corridor-safer/",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/Proposed-$900k-pilot-program-could-make-dangerous-Charleston-corridor-safer.png",
+    "alt_image": "Screen shot of video from news story.",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Arterial Operations"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Leveraging AI-Powered Technology to Gather Traffic Safety Data",
+    "date": "5/8/2024",
+    "featured": [],
+    "news_src": "DOT SBIR Webpage",
+    "location": "Yakama Nation, WA",
+    "desc": "Since 2021, dozens of residents have been killed and hundreds of others have been seriously injured on the stretch of US-97 running through the Yakama Indian Reservation in Washington State. Traffic safety is an urgent concern for the Confederated Tribes and Bands of the Yakama Nation: in Washington state, rural communities experience twice as many traffic fatalities per vehicle mile traveled as urban areas. The disparity is even higher for Native Americans in Washington, who experience nearly four times the traffic fatality rate as non-native Americans. And amongst all Native American communities in Washington State, the Yakama Nation has both the highest rates of pedestrian and vehicle fatalities.",
+    "url": "https://www.volpe.dot.gov/work-us/small-business-innovation-research/leveraging-ai-powered-technology-gather-traffic-safety",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/aiways-header.png",
+    "alt_image": "MUST deployment at Yakama Nation for traffic & road conditions monitoring and hazardous events detection (AIWaysion Image)",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Artificial Intelligence", "Arterial Operations"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Fort Worth Is Only Texas City To Snag $2M Federal â€˜SMARTâ€™ Grant for Revolutionizing Transportation",
+    "date": "4/18/2024",
+    "featured": [],
+    "news_src": "Dallas Innovates",
+    "location": "Fort Worth, TX",
+    "desc": "The city of Fort Worth has been awarded $2 million through Strengthening Mobility and Revolutionizing Transportation (SMART) Grants funding, in partnership with the North Central Texas Council of Governments, for a project that will pilot low-altitude weather sensors on freight routes used by autonomous vehicles.",
+    "url": "https://dallasinnovates.com/fort-worth-is-only-texas-city-to-snag-2m-federal-smart-grant-for-revolutionizing-transportation/",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/Volvo-Autonomous-Solutions-is-partnering-with-Uber-Freight-and-DHL-in-its-initial-test-trucking-runs-from-its-new-Fort-Worth-office-Photo-VAS-970x464-1.png",
+    "alt_image": "Volvo Autonomous Solutions partnered with Uber Freight and DHL in its initial 2023 manual test trucking runs from its new Fort Worth office. [Photo: VAS]",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Road Weather Management", "Driving Automation", "Freight Operations"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Wyoming Helps Navigational Apps Improve Road Closure Data",
+    "date": "4/12/2024",
+    "featured": ["v2x"],
+    "news_src": "Transportation Topics",
+    "location": "WY",
+    "desc": "Wyoming is sharing road closure data directly with Google and other navigation companies to save lives when Interstate 80 travelers find themselves stranded in bad weather after taking alternative routes on impassable roads, since some GPS systems rely on cellphone probes rather than actual road conditions. The Wyoming Department of Transportation has expanded its sharing road-closure data with companies that provide navigation tools to improve safety and move freight, especially due to I-80 closures and the need for accurate motorist information during the critical months of March and April, which usually see the most snow.",
+    "url": "https://www.ttnews.com/articles/wyoming-road-closure-data",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/Wyoming-Winter-Storms-1200.jpg",
+    "alt_image": "Motorists following suggested detours have ended up stranded on inaccessible roads without fuel, food or water, according to the Wyoming Department of Transportation. (WYDOT)",
+    "tags": {
+      "grant-programs": ["CV Pilot Deployment Program"],
+      "technology-areas": ["Road Weather Management", "Freeway Operations", "Road Weather Management"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Wyoming sharing road-closure data with Google Maps through consulting firm Trihydro",
+    "date": "4/12/2024",
+    "featured": [],
+    "news_src": "Transportation Today",
+    "location": "WY",
+    "desc": "The Wyoming Department of Transportation (WYDOT) recently entered into an agreement with engineering and environmental consulting firm Trihydro to be a third-party distributor of Situation Data Exchange (SDX) data through Google Maps. Navigational apps collect data from other drivers using the app and use this information to recommend alternate routes or report road closures. Local roads often are not updated quickly enough to reflect changing road conditions, meaning the information can be inaccurate.",
+    "url": "https://transportationtodaynews.com/news/32713-wyoming-sharing-road-closure-data-with-google-maps-through-consulting-firm-trihydro/",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/AdobeStock_165860611(Medium).jpeg",
+    "alt_image": "Photo of a road closed sign.",
+    "tags": {
+      "grant-programs": ["CV Pilot Deployment Program"],
+      "technology-areas": ["Road Weather Management", "Freeway Operations"],
+      "topics": []
+    }
+  },
+  {
+    "title": "NJ Transit receives $1.6M for AI-powered safety systems",
+    "date": "4/8/2024",
+    "featured": [""],
+    "news_src": "NJBiz",
+    "location": "NJ Transit",
+    "desc": "The United States Department of Transportation last week awarded NJ Transit a $1.6 million grant for the implementation of artificial intelligence-based safety systems on light rail vehicles and at grade crossings...",
+    "url": "https://njbiz.com/nj-transit-receives-1-6m-for-ai-powered-safety-systems/",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/NJ-Transit-2014_Depositphotos_43641345_L-875x535.jpg",
+    "alt_image": "An NJ Transit light rail car stops at the Washington Park station in Newark in this 2014 photo. - DEPOSIT PHOTOS",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Transit Innovation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Chattanooga Sets The Pace For Pedestrian Safety With $2M USDOT Smart Grant",
+    "date": "3/21/2024",
+    "featured": [""],
+    "news_src": "Chattanooga Pulse",
+    "location": "Chattanooga, TN",
+    "desc": "Earlier this month, officials from the City of Chattanooga and the UTC were notified that they are among the 34 recipients of a SMART â€œPlanning and Prototyping Grantâ€ from a pool of 321 applicants nationwide. Chattanooga is the sole city...",
+    "url": "https://www.chattanoogapulse.com/local-news/automotive/chattanooga-sets-the-pace-for-pedestrian-safety-with-2m-usdo/",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/pedestrian-safety-1.jpg",
+    "alt_image": "Pedestrian safety in Chattanooga ",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Interoperable Connectivity (V2X)"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Five rail transit projects receive federal grants to demonstrate new technologies",
+    "date": "3/21/2024",
+    "featured": [""],
+    "news_src": "Trains",
+    "location": "Washington, D.C.",
+    "desc": "Five rail-related projects are among those selected for funding under the U.S. Department of Transportationâ€™s Strengthening Mobility and Revolutionizing Transportation, or SMART, grant program announced last week by the USDOT. A total of 34 projects in 22 states...",
+    "url": "https://www.trains.com/trn/news-reviews/news-wire/five-rail-transit-projects-receive-federal-grants-to-demonstrate-new-technologies/",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/TRN_Metro-North_diesel_train.jpg",
+    "alt_image": "With a Brookville BL20GH on the point, a Metro-North Waterbury Branch train passes through Westport, Conn., on Aug. 8, 2019. Metr-North has received a grant for an automated railcar inspection system. David Lassen",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Transit Innovation"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Yakama Nation, Bellevue awarded traffic safety grants",
+    "date": "3/14/2024",
+    "featured": [],
+    "news_src": "NonStop Local",
+    "location": "Washington, D.C.",
+    "desc": "The City of Bellevue and the Yakama Nation are getting $2.9 million to improve traffic safety. The Strengthening Mobility and Revolutionizing Transportation (SMART) grants were announced...",
+    "url": "https://www.nbcrightnow.com/news/yakama-nation-bellevue-awarded-traffic-safety-grants/article_75629802-e17f-11ee-8c47-bf18c2b18d6f.html",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/Yakama.png",
+    "alt_image": "Screen shot of video from news story.",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Artificial Intelligence", "Arterial Operations"],
+      "topics": []
+    }
+  },
+  {
+    "title": "Senator Grassley announces $2 million for Dubuque to develop C-V2X communications",
+    "date": "3/14/2024",
+    "featured": ["v2x"],
+    "news_src": "KWWL",
+    "location": "Dubuque, IA",
+    "desc": "Iowa Senator Chuck Grassley has announced that $2 million from the bipartisan infrastructure law will be devoted to develop Cellular Vehicle-to-Everything communications (C-V2X) in Dubuque. The funding will help develop...",
+    "url": "https://www.kwwl.com/news/dubuque/senator-grassley-announces-2-million-for-dubuque-to-develop-c-v2x-communications/article_712882ee-e213-11ee-87ec-5f4cfc9643dc.html",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/65f312bf496fe.image.jpg",
+    "alt_image": "Senator Chuck Grassley",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Interoperable Connectivity (V2X)"],
+      "topics": []
+    }
+  },
+  {
+    "title": "How a SMART grant will help make Cleveland intersections safer",
+    "date": "10/18/2023",
+    "featured": [],
+    "news_src": "Cleveland 19 News",
+    "location": "Cleveland, OH",
+    "desc": "The city of Cleveland is looking to upgrade technology on traffic lights, working to make intersections safer for not just first responders, but everyone using them. The city received $1.8 million in federal money from the SMART grant, which is meant to...",
+    "url": "https://www.cleveland19.com/2023/10/18/how-smart-grant-will-help-make-cleveland-intersections-safer/",
+    "news_src_url": "",
+    "image": "newsroom/postThumbnails/Cleveland-SMART-grant.png",
+    "alt_image": "Screen shot of video from news story.",
+    "tags": {
+      "grant-programs": ["SMART Grants"],
+      "technology-areas": ["Arterial Operations"],
+      "topics": []
+    }
+  }
+]
