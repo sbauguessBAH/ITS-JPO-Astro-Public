@@ -6,7 +6,6 @@ import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
 type NewsTags = {
-  "grant-programs"?: string[];
   "technology-areas"?: string[];
   topics?: string[];
 };
@@ -26,6 +25,12 @@ type ArchiveArticle = {
 
 type RenderArticle = ArchiveArticle & {
   thumbnail?: ImageMetadata;
+};
+
+type ArticleFilterData = {
+  title: string;
+  desc: string;
+  tags: string[];
 };
 
 const thumbnailModules = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/newsroom/postThumbnails/*", {
@@ -66,6 +71,24 @@ const resolveThumbnail = (imagePath?: string): ImageMetadata | undefined => {
   return thumbnails[`/src/assets/images/newsroom/postThumbnails/${fileName}`];
 };
 
+const normalizeTagValues = (values?: string[]): string[] => {
+  if (!Array.isArray(values)) {
+    return [];
+  }
+
+  return values
+    .map((value) => value?.trim())
+    .filter((value): value is string => Boolean(value));
+};
+
+const collectAllTags = (tags?: NewsTags): string[] => {
+  if (!tags) {
+    return [];
+  }
+
+  return Object.keys(tags).flatMap((tagGroup) => normalizeTagValues(tags[tagGroup as keyof NewsTags]));
+};
+
 const tagGroups: Array<{ key: keyof NewsTags; label: string }> = [
   { key: "technology-areas", label: "Technology Areas" },
   { key: "topics", label: "Topics" },
@@ -81,6 +104,16 @@ const articles: RenderArticle[] = archiveArticles
     thumbnail: resolveThumbnail(article.image),
   }));
 
+const technologyAreasList = Array.from(
+  new Set(archiveArticles.flatMap((article) => normalizeTagValues(article.tags?.["technology-areas"]))),
+).sort((a, b) => a.localeCompare(b));
+
+const articleFilterData: ArticleFilterData[] = articles.map((article) => ({
+  title: (article.title ?? "").toLowerCase(),
+  desc: (article.desc ?? "").toLowerCase(),
+  tags: collectAllTags(article.tags),
+}));
+
 const pageSize = 10;
 ---
 
@@ -91,6 +124,25 @@ const pageSize = 10;
     <p class="mt-2">
       Explore news coverage and announcements related to ITS innovation deployments, pilots, and transportation safety efforts.
     </p>
+
+    <section class="news-filter-panel" aria-label="In the News filters">
+      <div class="news-filter-grid">
+        <div class="news-filter-field">
+          <label for="news-filter-technology-areas">Technology Area</label>
+          <select id="news-filter-technology-areas" class="news-filter-select" multiple>
+            {technologyAreasList.map((technology) => <option value={technology}>{technology}</option>)}
+          </select>
+          <p class="news-filter-help">Select one or more options.</p>
+        </div>
+
+        <div class="news-filter-field">
+          <label for="news-filter-search">Search</label>
+          <input id="news-filter-search" class="news-filter-input" type="search" placeholder="Search title or description" />
+        </div>
+      </div>
+
+      <button id="news-filter-clear" type="button" class="news-filter-clear">Clear filters</button>
+    </section>
 
     <section id="news-article-list" class="news-article-list" aria-label="In the News archive">
       {
@@ -161,8 +213,11 @@ const pageSize = 10;
   </main>
 </PageLayout>
 
-<script define:vars={{ pageSize }}>
+<script define:vars={{ pageSize, articleFilterData }}>
   const articleRows = Array.from(document.querySelectorAll(".news-article")).filter((el) => el instanceof HTMLElement);
+  const technologyAreasFilter = document.getElementById("news-filter-technology-areas");
+  const searchInput = document.getElementById("news-filter-search");
+  const clearFiltersButton = document.getElementById("news-filter-clear");
   const paginationNav = document.getElementById("news-pagination");
   const paginationPrev = document.getElementById("news-pagination-prev");
   const paginationNext = document.getElementById("news-pagination-next");
@@ -170,8 +225,42 @@ const pageSize = 10;
   const emptyState = document.getElementById("news-empty-state");
 
   let currentPage = 1;
+  let filteredIndexes = articleRows.map((_, index) => index);
 
-  const pageCount = () => Math.ceil(articleRows.length / pageSize);
+  const getSelectedValues = (element) => {
+    if (!(element instanceof HTMLSelectElement)) {
+      return [];
+    }
+
+    return Array.from(element.selectedOptions).map((option) => option.value);
+  };
+
+  const articleHasTags = (article, selectedTags) => {
+    if (selectedTags.length === 0) {
+      return true;
+    }
+
+    return article.tags.some((tag) => selectedTags.includes(tag));
+  };
+
+  const updateFilteredIndexes = () => {
+    const selectedTechnologyAreas = getSelectedValues(technologyAreasFilter);
+    const searchValue = searchInput instanceof HTMLInputElement ? searchInput.value.trim().toLowerCase() : "";
+
+    filteredIndexes = articleFilterData
+      .map((article, index) => ({ article, index }))
+      .filter(({ article }) => articleHasTags(article, selectedTechnologyAreas))
+      .filter(({ article }) => {
+        if (!searchValue) {
+          return true;
+        }
+
+        return article.title.includes(searchValue) || article.desc.includes(searchValue);
+      })
+      .map(({ index }) => index);
+  };
+
+  const pageCount = () => Math.ceil(filteredIndexes.length / pageSize);
 
   const renderPagination = () => {
     const totalPages = pageCount();
@@ -185,6 +274,10 @@ const pageSize = 10;
     }
 
     paginationPages.replaceChildren();
+
+    if (!totalPages) {
+      return;
+    }
 
     for (let pageNumber = 1; pageNumber <= totalPages; pageNumber += 1) {
       const pageButton = document.createElement("button");
@@ -210,24 +303,52 @@ const pageSize = 10;
   };
 
   const applyPagination = () => {
+    updateFilteredIndexes();
+
     const totalPages = pageCount();
 
-    if (totalPages > 0 && currentPage > totalPages) {
+    if (totalPages === 0) {
+      currentPage = 1;
+    } else if (currentPage > totalPages) {
       currentPage = totalPages;
     }
 
     const start = (currentPage - 1) * pageSize;
+    const visibleIndexes = new Set(filteredIndexes.slice(start, start + pageSize));
 
     articleRows.forEach((row, index) => {
-      row.style.display = index >= start && index < start + pageSize ? "" : "none";
+      row.style.display = visibleIndexes.has(index) ? "" : "none";
     });
 
     if (emptyState instanceof HTMLElement) {
-      emptyState.hidden = articleRows.length > 0;
+      emptyState.hidden = filteredIndexes.length > 0;
     }
 
     renderPagination();
   };
+
+  const onFilterChange = () => {
+    currentPage = 1;
+    applyPagination();
+  };
+
+  technologyAreasFilter?.addEventListener("change", onFilterChange);
+  searchInput?.addEventListener("input", onFilterChange);
+
+  clearFiltersButton?.addEventListener("click", () => {
+
+    if (technologyAreasFilter instanceof HTMLSelectElement) {
+      Array.from(technologyAreasFilter.options).forEach((option) => {
+        option.selected = false;
+      });
+    }
+
+    if (searchInput instanceof HTMLInputElement) {
+      searchInput.value = "";
+    }
+
+    onFilterChange();
+  });
 
   paginationPrev?.addEventListener("click", () => {
     if (currentPage > 1) {
@@ -247,6 +368,67 @@ const pageSize = 10;
 </script>
 
 <style is:global>
+  .news-filter-panel {
+    margin-top: 1.25rem;
+    border: 1px solid #d9e3ec;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background: #f7fbff;
+  }
+
+  .news-filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .news-filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .news-filter-field label {
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+  }
+
+  .news-filter-select,
+  .news-filter-input {
+    width: 100%;
+    border: 1px solid #94a3b8;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.65rem;
+    font: inherit;
+    color: #0f172a;
+    background: #fff;
+  }
+
+  .news-filter-select {
+    min-height: 8.25rem;
+  }
+
+  .news-filter-help {
+    margin: 0;
+    color: #475569;
+    font-size: 0.82rem;
+  }
+
+  .news-filter-clear {
+    margin-top: 0.85rem;
+    border: 1px solid #055581;
+    color: #055581;
+    background: #fff;
+    border-radius: 0.375rem;
+    padding: 0.4rem 0.75rem;
+    line-height: 1.2;
+  }
+
+  .news-filter-clear:hover {
+    background: #ebf5fc;
+  }
+
   .news-article-list {
     display: flex;
     flex-direction: column;
@@ -374,12 +556,24 @@ const pageSize = 10;
   }
 
   @media (max-width: 991.98px) {
+    .news-filter-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .news-article {
       grid-template-columns: 220px minmax(0, 1fr);
     }
   }
 
   @media (max-width: 767.98px) {
+    .news-filter-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .news-filter-select {
+      min-height: 6.5rem;
+    }
+
     .news-article {
       grid-template-columns: 1fr;
     }
