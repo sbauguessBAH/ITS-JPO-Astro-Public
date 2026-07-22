@@ -414,7 +414,8 @@ const pageSize = 10;
     display: none;
   }
 
-  .news-filter-panel .p-chip {
+  .news-filter-panel .p-chip,
+  .news-filter-panel .p-multiselect-chip {
     border-radius: 50px;
     background-color: rgb(216, 216, 216);
     padding: 0 3px 0 12px;
@@ -422,7 +423,12 @@ const pageSize = 10;
     color: #000;
   }
 
-  .news-filter-panel .technologyAreaContainer .p-chip {
+  .news-filter-panel .p-multiselect-chip-item {
+    display: inline-flex;
+  }
+
+  .news-filter-panel .technologyAreaContainer .p-chip,
+  .news-filter-panel .technologyAreaContainer .p-multiselect-chip {
     background-color: rgba(255, 196, 3, 0.343);
     color: #000;
   }
