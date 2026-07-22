@@ -127,7 +127,7 @@ const pageSize = 10;
 
     <section class="news-filter-panel" aria-label="In the News filters">
       <div class="news-filter-grid">
-        <div class="news-filter-field">
+        <div class="news-filter-field technologyAreaContainer">
           <label for="news-filter-technology-areas">Technology Area</label>
           <select id="news-filter-technology-areas" class="news-filter-select" multiple>
             {technologyAreasList.map((technology) => <option value={technology}>{technology}</option>)}
@@ -369,39 +369,39 @@ const pageSize = 10;
 
 <style is:global>
   .news-filter-panel {
-    margin-top: 1.25rem;
-    border: 1px solid #d9e3ec;
-    border-radius: 0.75rem;
-    padding: 1rem;
-    background: #f7fbff;
+    margin-top: 1rem;
+    padding: 0;
+    background: transparent;
   }
 
   .news-filter-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.9rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .news-filter-field {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.3rem;
   }
 
   .news-filter-field label {
-    font-weight: 600;
-    color: #1f2937;
+    font-weight: 500;
+    color: gray;
     margin: 0;
   }
 
   .news-filter-select,
   .news-filter-input {
     width: 100%;
-    border: 1px solid #94a3b8;
-    border-radius: 0.5rem;
-    padding: 0.5rem 0.65rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
     font: inherit;
-    color: #0f172a;
+    color: #111827;
     background: #fff;
   }
 
@@ -409,24 +409,47 @@ const pageSize = 10;
     min-height: 8.25rem;
   }
 
+  .news-filter-select option {
+    padding: 0.4rem 0.5rem;
+  }
+
+  #news-filter-technology-areas option:checked {
+    background-color: rgba(255, 196, 3, 0.343);
+    color: #000;
+  }
+
+  .news-filter-select option:focus {
+    background-color: rgb(238, 238, 238);
+    color: #000;
+  }
+
+  .news-filter-input {
+    opacity: 1;
+    position: relative;
+    z-index: 0;
+    min-height: 42px;
+  }
+
   .news-filter-help {
     margin: 0;
-    color: #475569;
+    color: gray;
     font-size: 0.82rem;
   }
 
   .news-filter-clear {
     margin-top: 0.85rem;
-    border: 1px solid #055581;
-    color: #055581;
+    border: 1px solid gray;
+    color: #1a3654;
     background: #fff;
-    border-radius: 0.375rem;
+    border-radius: 8px;
     padding: 0.4rem 0.75rem;
     line-height: 1.2;
   }
 
   .news-filter-clear:hover {
-    background: #ebf5fc;
+    border-color: #047cad;
+    color: #047cad;
+    background: #f4f8fb;
   }
 
   .news-article-list {
