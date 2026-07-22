@@ -4,23 +4,19 @@ import InputText from "primevue/inputtext";
 import MultiSelect from "primevue/multiselect";
 
 type FilterDetail = {
-  grantPrograms?: string[];
   technologyAreas: string[];
   searchQuery: string;
 };
 
 const props = defineProps<{
-  grantProgramsList?: string[];
   technologyAreasList: string[];
 }>();
 
-const grantPrograms = ref<string[]>([]);
 const technologyAreas = ref<string[]>([]);
 const searchQuery = ref("");
 
 const emitFilterChange = () => {
   const detail: FilterDetail = {
-    grantPrograms: [...grantPrograms.value],
     technologyAreas: [...technologyAreas.value],
     searchQuery: searchQuery.value,
   };
@@ -33,7 +29,6 @@ const emitFilterChange = () => {
 };
 
 const clearFilters = () => {
-  grantPrograms.value = [];
   technologyAreas.value = [];
   searchQuery.value = "";
   emitFilterChange();
@@ -47,17 +42,6 @@ onMounted(() => {
 <template>
   <section class="news-filter-panel" aria-label="In the News filters">
     <div class="news-filter-grid">
-      <div class="news-filter-field grantProgramContainer">
-        <label for="grantPrograms">Grant Program</label>
-        <MultiSelect
-          id="grantPrograms"
-          v-model="grantPrograms"
-          :options="props.grantProgramsList"
-          display="chip"
-          :showClear="true"
-          @change="emitFilterChange"
-        />
-      </div>
 
       <div class="news-filter-field technologyAreaContainer">
         <label for="technologyAreas">Technology Area</label>
