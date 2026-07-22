@@ -90,7 +90,7 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
       <div class="container-xl">
       <div class="row gx-4 gy-4 align-items-stretch">
         <div class="col-12 col-lg-3 d-flex">
-          <article class="cta-panel w-100">
+          <article class="cta-panel cta-panel--newsletter w-100">
             <h2 class="cta-heading">
               <span class="cta-heading-icon" aria-hidden="true">
                 <i class="fa-solid fa-newspaper"></i>
@@ -106,13 +106,16 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
                   <a href={featuredNewsletter.url}>Read Most Recent Issue</a>
                 </li>
               )}
+              <li>
+                <a href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" target="_blank" rel="noopener noreferrer">Join our ITS JPO Mailing List</a>
+              </li>
             </ul>
-            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/newsletter-archive/")}>Browse Full Archive</a>
+            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/newsletter-archive/")}>Newsletter Archive</a>
           </article>
         </div>
 
         <div class="col-12 col-lg-3 d-flex">
-          <article class="cta-panel w-100">
+          <article class="cta-panel cta-panel--news w-100">
             <h2 class="cta-heading">
               <span class="cta-heading-icon" aria-hidden="true">
                 <i class="fa-solid fa-rss"></i>
@@ -128,7 +131,7 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
         </div>
 
         <div class="col-12 col-lg-3 d-flex">
-          <article class="cta-panel w-100">
+          <article class="cta-panel cta-panel--kits w-100">
             <h2 class="cta-heading">
               <span class="cta-heading-icon" aria-hidden="true">
                 <i class="fa-solid fa-photo-film"></i>
@@ -147,12 +150,12 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
                 ))
               }
             </ul>
-            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/media-kits/")}>View All Media Kits</a>
+            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/media-kits/")}>All Media Kits</a>
           </article>
         </div>
 
         <div class="col-12 col-lg-3 d-flex">
-          <article class="cta-panel w-100">
+          <article class="cta-panel cta-panel--outreach w-100">
             <h2 class="cta-heading">
               <span class="cta-heading-icon" aria-hidden="true">
                 <i class="fa-solid fa-bullhorn"></i>
@@ -171,7 +174,7 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
                 ))
               }
             </ul>
-            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/outreach-resources/")}>View Outreach Resources</a>
+            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/outreach-resources/")}>Outreach Resources</a>
           </article>
         </div>
       </div>
@@ -205,48 +208,113 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
   }
 
   .cta-panel {
-    background: #fff;
-    border: 1px solid #dce3e8;
-    border-radius: 0.5rem;
-    padding: 1.25rem;
+    --panel-accent: #055581;
+    --panel-soft: rgba(5, 85, 129, 0.12);
+    --panel-glow: rgba(5, 85, 129, 0.18);
+    --panel-on-accent: #ffffff;
+    --panel-link: #0f3e5f;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid color-mix(in srgb, var(--panel-accent) 24%, #cfd9e2);
+    border-radius: .75rem;
+    padding: 1.35rem;
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 1rem;
+    min-height: 100%;
+    transition: transform 180ms ease;
+  }
+
+  .cta-panel:hover,
+  .cta-panel:focus-within {
+    transform: translateY(-4px);
+  }
+
+  .cta-panel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--panel-accent);
+  }
+
+  .cta-panel--newsletter {
+    --panel-accent: #091f61;
+    --panel-soft: rgba(9, 31, 97, 0.13);
+    --panel-glow: rgba(9, 31, 97, 0.16);
+    --panel-on-accent: #ffffff;
+    --panel-link: #0a245e;
+  }
+
+  .cta-panel--news {
+    --panel-accent: #09628c;
+    --panel-soft: rgba(9, 98, 140, 0.14);
+    --panel-glow: rgba(9, 98, 140, 0.16);
+    --panel-on-accent: #ffffff;
+    --panel-link: #0b4f71;
+  }
+
+  .cta-panel--kits {
+    --panel-accent: #babf10;
+    --panel-soft: rgba(186, 191, 16, 0.2);
+    --panel-glow: rgba(186, 191, 16, 0.2);
+    --panel-on-accent: #1f2400;
+    --panel-link: #3a3f00;
+  }
+
+  .cta-panel--kits .cta-heading-icon,
+  .cta-panel--kits .cta-heading-icon i {
+    color: #ffffff;
+  }
+
+  .cta-panel--outreach {
+    --panel-accent: #e28432;
+    --panel-soft: rgba(226, 132, 50, 0.17);
+    --panel-glow: rgba(226, 132, 50, 0.16);
+    --panel-on-accent: #ffffff;
+    --panel-link: #8a460f;
   }
 
   .cta-heading {
     margin: 0;
     display: flex;
     align-items: center;
-    gap: 0.55rem;
-    color: #055581;
-    font-size: 1.45rem;
+    gap: 0.65rem;
+    color: #0b385a;
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.45rem);
+    line-height: 1.2;
   }
 
   .cta-heading-icon {
     width: 2rem;
     height: 2rem;
-    border-radius: 50%;
-    background: #055581;
-    color: #fff;
+    border-radius: 0.6rem;
+    background: var(--panel-accent);
+    color: var(--panel-on-accent);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    position: relative;
   }
 
   .cta-heading-icon i {
-    color: #fff;
+    color: var(--panel-on-accent);
     line-height: 1;
   }
 
   .cta-panel p {
     margin: 0;
+    color: #1e3a4a;
+    line-height: 1.45;
   }
 
   .cta-link-list {
-    margin: 0;
+    margin: 0.1rem 0;
     padding-left: 0;
     list-style: none;
     display: flex;
@@ -254,14 +322,92 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
     gap: 0.55rem;
   }
 
+  .cta-link-list li {
+    width: 100%;
+  }
+
   .cta-link-list a {
-    text-decoration: underline;
-    text-underline-offset: 0.15rem;
+    color: var(--panel-link);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    width: 100%;
+    background: color-mix(in srgb, var(--panel-soft) 55%, #ffffff);
+    border: 1px solid color-mix(in srgb, var(--panel-accent) 24%, #ffffff);
+    border-radius: .5rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.92rem;
+    transition: transform 160ms ease, background-color 160ms ease;
+  }
+
+  .cta-link-list a::before {
+    content: "\f0c1";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.72rem;
+    color: color-mix(in srgb, var(--panel-accent) 82%, #000000);
+  }
+
+  .cta-link-list a:hover,
+  .cta-link-list a:focus-visible {
+    transform: translateX(2px);
+    background: color-mix(in srgb, var(--panel-soft) 85%, #ffffff);
+  }
+
+  .cta-panel .btn {
+    border-radius: .5rem;
+    border: none;
+    background: var(--panel-accent);
+    color: var(--panel-on-accent);
+    padding: 0.58rem 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    transition: transform 160ms ease;
+  }
+
+  .cta-panel .btn::after {
+    content: "\f061";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.74rem;
+    transition: transform 160ms ease;
+  }
+
+  .cta-panel .btn:hover,
+  .cta-panel .btn:focus-visible {
+    transform: translateY(-1px);
+    background: color-mix(in srgb, var(--panel-accent) 84%, #000000);
+    color: var(--panel-on-accent);
+  }
+
+  .cta-panel .btn:hover::after,
+  .cta-panel .btn:focus-visible::after {
+    transform: translateX(2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-panel,
+    .cta-link-list a,
+    .cta-panel .btn,
+    .cta-panel .btn::after {
+      transition: none;
+    }
   }
 
   @media (max-width: 991.98px) {
     .newsroom-cta-grid {
       padding: 1.5rem 0;
+    }
+
+    .cta-panel {
+      border-radius: 0.9rem;
+      padding: 1.2rem;
     }
   }
 </style>
