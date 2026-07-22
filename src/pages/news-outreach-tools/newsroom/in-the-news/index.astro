@@ -126,6 +126,8 @@ const pageSize = 10;
       Explore news coverage and announcements related to ITS innovation deployments, pilots, and transportation safety efforts.
     </p>
 
+    <InTheNewsFilters client:load technologyAreasList={technologyAreasList} />
+
     <section id="news-article-list" class="news-article-list" aria-label="In the News archive">
       {
         articles.map((article) => {

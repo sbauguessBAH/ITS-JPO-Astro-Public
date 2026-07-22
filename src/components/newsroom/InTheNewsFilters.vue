@@ -4,13 +4,13 @@ import InputText from "primevue/inputtext";
 import MultiSelect from "primevue/multiselect";
 
 type FilterDetail = {
-  grantPrograms: string[];
+  grantPrograms?: string[];
   technologyAreas: string[];
   searchQuery: string;
 };
 
 const props = defineProps<{
-  grantProgramsList: string[];
+  grantProgramsList?: string[];
   technologyAreasList: string[];
 }>();
 
