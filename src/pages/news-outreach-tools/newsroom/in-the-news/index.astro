@@ -2,6 +2,7 @@
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import archiveData from "@/src/content/news-resources/inthenews/in-the-news-archive.json";
+import InTheNewsFilters from "@/src/components/newsroom/InTheNewsFilters.vue";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
@@ -125,25 +126,6 @@ const pageSize = 10;
       Explore news coverage and announcements related to ITS innovation deployments, pilots, and transportation safety efforts.
     </p>
 
-    <section class="news-filter-panel" aria-label="In the News filters">
-      <div class="news-filter-grid">
-        <div class="news-filter-field technologyAreaContainer">
-          <label for="news-filter-technology-areas">Technology Area</label>
-          <select id="news-filter-technology-areas" class="news-filter-select" multiple>
-            {technologyAreasList.map((technology) => <option value={technology}>{technology}</option>)}
-          </select>
-          <p class="news-filter-help">Select one or more options.</p>
-        </div>
-
-        <div class="news-filter-field">
-          <label for="news-filter-search">Search</label>
-          <input id="news-filter-search" class="news-filter-input" type="search" placeholder="Search title or description" />
-        </div>
-      </div>
-
-      <button id="news-filter-clear" type="button" class="news-filter-clear">Clear filters</button>
-    </section>
-
     <section id="news-article-list" class="news-article-list" aria-label="In the News archive">
       {
         articles.map((article) => {
@@ -215,9 +197,6 @@ const pageSize = 10;
 
 <script define:vars={{ pageSize, articleFilterData }}>
   const articleRows = Array.from(document.querySelectorAll(".news-article")).filter((el) => el instanceof HTMLElement);
-  const technologyAreasFilter = document.getElementById("news-filter-technology-areas");
-  const searchInput = document.getElementById("news-filter-search");
-  const clearFiltersButton = document.getElementById("news-filter-clear");
   const paginationNav = document.getElementById("news-pagination");
   const paginationPrev = document.getElementById("news-pagination-prev");
   const paginationNext = document.getElementById("news-pagination-next");
@@ -226,13 +205,19 @@ const pageSize = 10;
 
   let currentPage = 1;
   let filteredIndexes = articleRows.map((_, index) => index);
+  let activeFilters = {
+    technologyAreas: [],
+    searchQuery: "",
+  };
 
-  const getSelectedValues = (element) => {
-    if (!(element instanceof HTMLSelectElement)) {
+  const normalizeStringArray = (value) => {
+    if (!Array.isArray(value)) {
       return [];
     }
 
-    return Array.from(element.selectedOptions).map((option) => option.value);
+    return value
+      .map((item) => (typeof item === "string" ? item.trim() : ""))
+      .filter((item) => Boolean(item));
   };
 
   const articleHasTags = (article, selectedTags) => {
@@ -244,8 +229,8 @@ const pageSize = 10;
   };
 
   const updateFilteredIndexes = () => {
-    const selectedTechnologyAreas = getSelectedValues(technologyAreasFilter);
-    const searchValue = searchInput instanceof HTMLInputElement ? searchInput.value.trim().toLowerCase() : "";
+    const selectedTechnologyAreas = activeFilters.technologyAreas;
+    const searchValue = activeFilters.searchQuery.trim().toLowerCase();
 
     filteredIndexes = articleFilterData
       .map((article, index) => ({ article, index }))
@@ -332,20 +317,17 @@ const pageSize = 10;
     applyPagination();
   };
 
-  technologyAreasFilter?.addEventListener("change", onFilterChange);
-  searchInput?.addEventListener("input", onFilterChange);
+  window.addEventListener("in-the-news-filter-change", (event) => {
+    const detail = event instanceof CustomEvent ? event.detail : null;
 
-  clearFiltersButton?.addEventListener("click", () => {
-
-    if (technologyAreasFilter instanceof HTMLSelectElement) {
-      Array.from(technologyAreasFilter.options).forEach((option) => {
-        option.selected = false;
-      });
+    if (!detail || typeof detail !== "object") {
+      return;
     }
 
-    if (searchInput instanceof HTMLInputElement) {
-      searchInput.value = "";
-    }
+    activeFilters = {
+      technologyAreas: normalizeStringArray(detail.technologyAreas),
+      searchQuery: typeof detail.searchQuery === "string" ? detail.searchQuery : "",
+    };
 
     onFilterChange();
   });
@@ -387,11 +369,12 @@ const pageSize = 10;
   }
 
   .news-filter-field label {
-    font-weight: 500;
     color: gray;
     margin: 0;
   }
 
+  .news-filter-panel .p-multiselect,
+  .news-filter-panel .p-inputtext,
   .news-filter-select,
   .news-filter-input {
     width: 100%;
@@ -409,6 +392,54 @@ const pageSize = 10;
     min-height: 8.25rem;
   }
 
+  .news-filter-panel .p-multiselect-overlay {
+    border-radius: 8px;
+  }
+
+  .news-filter-panel .p-checkbox-box {
+    border-width: 1px;
+    border-color: gray;
+  }
+
+  .news-filter-panel .p-checkbox-box.p-highlight {
+    background: #06a2e4 !important;
+    border-color: #06a2e4 !important;
+  }
+
+  .news-filter-panel .p-checkbox-box.p-highlight .p-checkbox-icon {
+    color: #fff !important;
+    font-size: 1.1rem;
+  }
+
+  .news-filter-panel .p-multiselect-header {
+    display: none;
+  }
+
+  .news-filter-panel .p-chip {
+    border-radius: 50px;
+    background-color: rgb(216, 216, 216);
+    padding: 0 3px 0 12px;
+    margin: 4px 2px;
+  }
+
+  .news-filter-panel .p-chip {
+    background-color: #06a1e439;
+    color: #000;
+  }
+
+  .news-filter-panel .technologyAreaContainer .p-chip {
+    background-color: rgba(255, 196, 3, 0.343);
+    color: #000;
+  }
+
+  .news-filter-panel #technologyAreas_list .p-checkbox-box:has(svg) {
+    background-color: rgb(177, 136, 1) !important;
+  }
+
+  .news-filter-panel .p-checkbox-box:has(svg) {
+    background-color: #047cad !important;
+  }
+
   .news-filter-select option {
     padding: 0.4rem 0.5rem;
   }
@@ -418,6 +449,7 @@ const pageSize = 10;
     color: #000;
   }
 
+  .news-filter-panel .p-multiselect-option.p-focus,
   .news-filter-select option:focus {
     background-color: rgb(238, 238, 238);
     color: #000;
