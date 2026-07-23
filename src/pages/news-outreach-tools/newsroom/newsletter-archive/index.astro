@@ -34,7 +34,7 @@ const uniqueStrings = (values: Array<string | undefined | null>): string[] => {
 const extractYear = (date: Date): string => String(date.getUTCFullYear());
 
 const newsletterRows: FilterableNewsletter[] = rawNewsletters.map((item) => {
-	const issueSummary = [item.data.season, item.data.volume, item.data.issue].filter(Boolean).join(" | ");
+	const issueSummary = [item.data.season, item.data.issue].filter(Boolean).join(" | ");
 	const slug = item.id.replace(/\.(md|mdx)$/i, "");
 	const cardSummary = [item.data.dateLabel, issueSummary].filter(Boolean).join(" | ");
 	const descriptionText = item.data.description?.trim() ?? "";
