@@ -27,6 +27,7 @@ export const navigation: NavigationItem[] = [
           { name: "ITS JPO NOW", url: "/about/contact-us/mailinglist/ITS-JPO-NOW", pages: [
             
             { name: "May 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026" },
+            { name: "July 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026" },
 
           ] },
         ],
@@ -269,7 +270,6 @@ export const navigation: NavigationItem[] = [
         ],
       },
       { name: "Cybersecurity", url: "/resources/Cybersecurity" },
-      { name: "Deployment Evaluation", url: "/resources/Deployment-Evaluation" },
       { name: "National Transportation Library", url: "/resources/national-transportation-library" },
       {
         name: "Professional Capacity Building",
@@ -287,6 +287,20 @@ export const navigation: NavigationItem[] = [
           {
             name: "Microlearning Videos",
             url: "/resources/pcb/microlearning",
+          },
+          {
+            name: "Early Career Development",
+            url: "/resources/pcb/early-career",
+            pages: [
+              {
+                name: "Introduction to Intelligent Transportation Systems (ITS)",
+                url: "/resources/pcb/early-career/introduction-to-its",
+              },
+              {
+                name: "Applying Systems Engineering to ITS Projects",
+                url: "/resources/pcb/early-career/applying-se-to-its-projects",
+              }
+            ]
           },
           {
             name: "Technical Assistance",
@@ -323,6 +337,7 @@ export const navigation: NavigationItem[] = [
           //  }
         ],
       },
+      { name: "Deployment Evaluation", url: "https://www.itskrs.its.dot.gov/?utm_campaign=its-jpo&utm_source=de-landing-page&utm_medium=image-button", isExternal: true},
       { name: "Smart Community Resource Center", url: "https://www.its.dot.gov/scrc", isExternal: true },
       { name: "ITS CodeHub", url: "https://www.its.dot.gov/code", isExternal: true },
       { name: "ITS DataHub", url: "https://www.its.dot.gov/data", isExternal: true },

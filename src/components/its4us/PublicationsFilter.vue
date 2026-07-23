@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
 const props = defineProps({
   deploymentAcronyms: {
@@ -9,38 +9,75 @@ const props = defineProps({
   phases: {
     type: Array,
     required: true
+  },
+  publicationFilters: {
+    type: Array,
+    required: true
   }
 });
 
 const emit = defineEmits(['filter-change']);
 
-const activeFilterType = ref(null); // 'acronym' or 'phase'
-const activeFilterValue = ref(null);
+const activePhase = ref(null);
+const activeAcronym = ref(null);
 
-const handleFilterClick = (type, value) => {
-  // Toggle off if clicking active filter
-  if (activeFilterType.value === type && activeFilterValue.value === value) {
-    activeFilterType.value = null;
-    activeFilterValue.value = null;
-    emit('filter-change', { type: null, value: null });
-    // Dispatch custom window event for Astro page to listen to
-    window.dispatchEvent(new CustomEvent('publications-filter-change', {
-      detail: { type: null, value: null }
-    }));
-  } else {
-    activeFilterType.value = type;
-    activeFilterValue.value = value;
-    emit('filter-change', { type, value });
-    // Dispatch custom window event for Astro page to listen to
-    window.dispatchEvent(new CustomEvent('publications-filter-change', {
-      detail: { type, value }
-    }));
-  }
+const dispatchFilters = () => {
+  const detail = {
+    phase: activePhase.value,
+    acronym: activeAcronym.value
+  };
+
+  emit('filter-change', detail);
+  window.dispatchEvent(new CustomEvent('publications-filter-change', { detail }));
 };
 
-const isActive = (type, value) => {
-  return activeFilterType.value === type && activeFilterValue.value === value;
+const handlePhaseClick = (phase) => {
+  activePhase.value = activePhase.value === phase ? null : phase;
+  dispatchFilters();
 };
+
+const handleAcronymClick = (acronym) => {
+  activeAcronym.value = activeAcronym.value === acronym ? null : acronym;
+  dispatchFilters();
+};
+
+const isPhaseActive = (phase) => activePhase.value === phase;
+const isAcronymActive = (acronym) => activeAcronym.value === acronym;
+
+const phaseCountMap = computed(() => {
+  const counts = {};
+
+  props.phases.forEach((phase) => {
+    counts[String(phase.value)] = 0;
+  });
+
+  props.publicationFilters.forEach((publication) => {
+    if (activeAcronym.value && publication.acronym !== activeAcronym.value) return;
+    const key = String(publication.phase);
+    if (counts[key] !== undefined) {
+      counts[key] += 1;
+    }
+  });
+
+  return counts;
+});
+
+const acronymCountMap = computed(() => {
+  const counts = {};
+
+  props.deploymentAcronyms.forEach((acronym) => {
+    counts[acronym.value] = 0;
+  });
+
+  props.publicationFilters.forEach((publication) => {
+    if (activePhase.value !== null && Number(publication.phase) !== Number(activePhase.value)) return;
+    if (counts[publication.acronym] !== undefined) {
+      counts[publication.acronym] += 1;
+    }
+  });
+
+  return counts;
+});
 
 const slugifyForId = (value) =>
   String(value)
@@ -62,11 +99,11 @@ const getAcronymTooltipId = (value) => `deployment-acronym-tooltip-${slugifyForI
       <button
         v-for="phase in phases"
         :key="phase.value"
-        @click="handleFilterClick('phase', phase.value)"
-        :class="['panel-item', { 'panel-item-active': isActive('phase', phase.value) }]"
+        @click="handlePhaseClick(phase.value)"
+        :class="['panel-item', { 'panel-item-active': isPhaseActive(phase.value) }]"
       >
         <div class="panel-item-text">Phase {{ phase.value }}</div>
-        <div class="panel-count">{{ phase.count }}</div>
+        <div class="panel-count">{{ phaseCountMap[String(phase.value)] ?? 0 }}</div>
       </button>
     </div>
 
@@ -75,12 +112,12 @@ const getAcronymTooltipId = (value) => `deployment-acronym-tooltip-${slugifyForI
       <h4 class="panel-section-title">Deployment Acronym</h4>
       <div v-for="acronym in deploymentAcronyms" :key="acronym.value" class="panel-item-wrapper">
         <button
-          @click="handleFilterClick('acronym', acronym.value)"
+          @click="handleAcronymClick(acronym.value)"
           :aria-describedby="getAcronymTooltipId(acronym.value)"
-          :class="['panel-item', { 'panel-item-active': isActive('acronym', acronym.value) }]"
+          :class="['panel-item', { 'panel-item-active': isAcronymActive(acronym.value) }]"
         >
           <div class="panel-item-text">{{ acronym.label }}</div>
-          <div class="panel-count">{{ acronym.count }}</div>
+          <div class="panel-count">{{ acronymCountMap[acronym.value] ?? 0 }}</div>
         </button>
 
        
