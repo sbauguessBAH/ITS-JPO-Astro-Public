@@ -4,12 +4,12 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Card from "@/src/components/ui/blocks/card/Card.astro";
-import CardDescription from "@/src/components/ui/blocks/card/CardDescription.astro";
-import CardFooter from "@/src/components/ui/blocks/card/CardFooter.astro";
-import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
-import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
-import CardTitle from "@/src/components/ui/blocks/card/CardTitle.astro";
+import Card from "@/src/components/ui/elements/card/Card.astro";
+import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
+import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
+import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
+import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
+import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
 import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 import base_url from "@/src/lib/base_url";
 
@@ -90,7 +90,7 @@ const getCourseCount = (path?: string) =>
         to the NHI catalog. From there, you can search for the course you're
         interested in.
       </p>
-      <div class="tw:flex tw:flex-col tw:lg:flex-row tw:gap-6">
+      <div class="tw:flex tw:flex-col tw:gap-6 tw:lg:flex-row">
         <div class="tw:basis-1/4">
           <nav
             class:list={[
@@ -147,7 +147,7 @@ const getCourseCount = (path?: string) =>
                     <div
                       class:list={[
                         "tw:bg-muted",
-                        "tw:py-0 tw:px-3",
+                        "tw:px-3 tw:py-0",
                         "tw:h-6",
                         "tw:rounded-xl",
                         "tw:group-data-[active=true]:bg-primary",

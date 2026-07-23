@@ -3,11 +3,11 @@ import OverlayCard, {
   type OverlayResource,
 } from "@/src/components/programs/OverlayCard.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Card from "@/src/components/ui/blocks/card/Card.astro";
-import CardDescription from "@/src/components/ui/blocks/card/CardDescription.astro";
-import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
-import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
-import CardTitle from "@/src/components/ui/blocks/card/CardTitle.astro";
+import Card from "@/src/components/ui/elements/card/Card.astro";
+import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
+import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
+import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
+import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
 
 import Layout from "./_layout.astro";
 
@@ -102,7 +102,7 @@ const RESOURCES: OverlayResource[] = [
 <Layout>
   <main class="tw:flex tw:flex-col">
     <ProgramSection size="small">
-      <div class="tw:flex tw:flex-col-reverse tw:lg:flex-row tw:gap-6">
+      <div class="tw:flex tw:flex-col-reverse tw:gap-6 tw:lg:flex-row">
         <div class="tw:lg:basis-7/12">
           <h2 class="tw:title-lg mb-4">Program Overview</h2>
           <p class="program-text">
@@ -131,25 +131,25 @@ const RESOURCES: OverlayResource[] = [
           <iframe
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-            class="tw:rounded-2xl tw:w-full tw:aspect-video"
+            class="tw:aspect-video tw:w-full tw:rounded-2xl"
             src="https://www.youtube.com/embed/hUhdaE4Zpw4?si=VwVIeMvEmmeKiR6Q"
             title="YouTube video player"></iframe>
         </div>
       </div>
     </ProgramSection>
     <ProgramSection>
-      <h2 class="tw:title-lg tw:text-center tw:mb-4">
+      <h2 class="tw:title-lg tw:mb-4 tw:text-center">
         Spotlight on Training and Technical Assistance Resources
       </h2>
       <div
-        class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:auto-rows-[minmax(100px,300px)]"
+        class="tw:grid tw:auto-rows-[minmax(100px,300px)] tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2"
         role="directory"
       >
         {RESOURCES.map((resource) => <OverlayCard {...resource} />)}
       </div>
     </ProgramSection>
     <ProgramSection class="pb-5" color="gray">
-      <h2 class="tw:title-lg tw:text-center tw:mb-4">
+      <h2 class="tw:title-lg tw:mb-4 tw:text-center">
         What do you want to do?
       </h2>
       <div
