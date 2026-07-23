@@ -61,10 +61,13 @@
   --tw-foreground: oklch(0.145 0 0);
 
   --tw-primary: oklch(0.433 0.0983 240.78);
-  --tw-primary-foreground: oklch(0.205 0 0);
+  --tw-primary-foreground: oklch(1 0 0);
 
-  --tw-secondary: oklch(0.97 0 0);
-  --tw-secondary-foreground: oklch(0.205 0 0);
+  --tw-secondary: oklch(0.2523 0.1004 259.54);
+  --tw-secondary-foreground: oklch(1 0 0);
+
+  --tw-neutral: oklch(0.97 0 0);
+  --tw-neutral-foreground: oklch(0.205 0 0);
 
   --tw-accent: oklch(0.8396 0.1716 90.43);
   --tw-accent-foreground: oklch(0.205 0 0);
@@ -85,6 +88,9 @@
 
   --color-secondary: var(--tw-secondary);
   --color-secondary-foreground: var(--tw-secondary-foreground);
+
+  --color-neutral: var(--tw-neutral);
+  --color-neutral-foreground: var(--tw-neutral-foreground);
 
   --color-accent: var(--tw-accent);
   --color-accent-foreground: var(--tw-accent-foreground);
@@ -115,5 +121,11 @@
   /* Overrides */
   button {
     border-radius: inherit !important;
+  }
+}
+
+@layer components {
+  .tw\:title-lg {
+    @apply tw:m-0 tw:mb-2 tw:p-0 tw:text-3xl tw:font-bold tw:text-primary;
   }
 }

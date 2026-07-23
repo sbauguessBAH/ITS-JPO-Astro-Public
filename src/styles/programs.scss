@@ -215,10 +215,10 @@ a::after {
  * Program classes
  * ============================================================ */
 
-.program-main {
-  display: flex;
-  flex-direction: column;
-}
+// .program-main {
+//   display: flex;
+//   flex-direction: column;
+// }
 /* .program-padding {
   padding-bottom: 4rem;
 }
@@ -233,14 +233,6 @@ a::after {
   }
 } */
 
-.program-title-lg {
-  color: rgb(var(--color-brand-dark));
-  font-weight: 800;
-  font-size: 2rem;
-  margin: 0;
-  margin-bottom: 0.5rem;
-  padding: 0;
-}
 .program-title-md {
   color: rgb(var(--color-brand-dark));
   font-weight: 700;
