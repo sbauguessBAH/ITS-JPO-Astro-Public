@@ -9,6 +9,7 @@ export default defineConfig({
   // If hosting on a subdomain, set the base here such as /itsjpo, /demo, etc.
   base: "/",
   integrations: [partytown(), sitemap(), vue()],
+  site: "http://localhost:4321",
   // site: "https://www.its.dot.gov",
   output: "static",
   redirects: {

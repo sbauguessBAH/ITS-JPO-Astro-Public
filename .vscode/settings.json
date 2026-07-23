@@ -9,7 +9,8 @@
   // ========== Tailwind ==========
   "files.associations": { "*.css": "tailwindcss" },
   "editor.quickSuggestions": { "strings": "on" },
-  "tailwindCSS.classAttributes": ["class", "ui", "className", "class:list"],
+  "tailwindCSS.classAttributes": ["class", "className", "class:list"],
+  "tailwindCSS.classFunctions": ["cva", "cn"],
 
   // ========== Editor ==========
   // Show rulers for recommended length (Prettier defaults to 80)
@@ -34,6 +35,7 @@
   // ========== Prettier ==========
 
   "prettier.enable": true,
+  "prettier.configPath": "./prettier.config.js",
   // "prettier.documentSelectors": ["**/*.astro"],
 
   // ========== ESLint ==========
