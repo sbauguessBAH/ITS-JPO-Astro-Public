@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<div
+  data-slot="alert-description"
+  class:list={[
+    "tw:text-base tw:text-balance tw:md:text-pretty tw:[&_a]:underline tw:[&_a]:underline-offset-3 tw:[&_p:not(:last-child)]:mb-4",
+    className,
+  ]}
+  {...props}
+>
+  <slot />
+</div>
