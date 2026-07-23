@@ -51,7 +51,7 @@ if (link) {
 }
 
 const buttonVariants = cva(
-  "tw:inline-flex tw:shrink-0 tw:items-center tw:justify-center tw:align-middle tw:whitespace-nowrap tw:font-medium tw:text-sm tw:leading-none tw:tracking-[0.01em] tw:no-underline tw:rounded-[var(--radius-md)] tw:border tw:border-solid tw:border-transparent tw:transition-[color,background-color,border-color,opacity,box-shadow] tw:duration-150 tw:ease-[ease] tw:cursor-pointer tw:select-none tw:outline-none tw:disabled:opacity-50 tw:disabled:pointer-events-none tw:aria-[disabled=true]:opacity-50 tw:aria-[disabled=true]:pointer-events-none tw:focus-visible:outline-2 tw:focus-visible:outline-solid tw:focus-visible:outline-offset-2 tw:focus-visible:outline-[color:currentColor] [&>svg]:tw:shrink-0 [&>svg]:tw:pointer-events-none",
+  "tw:inline-flex tw:shrink-0 tw:items-center tw:justify-center tw:align-middle tw:whitespace-nowrap tw:font-medium tw:text-sm tw:leading-none tw:tracking-[0.01em] tw:no-underline! tw:rounded-[var(--radius-md)] tw:border tw:border-solid tw:border-transparent tw:transition-[color,background-color,border-color,opacity,box-shadow] tw:duration-150 tw:ease-[ease] tw:cursor-pointer tw:select-none tw:outline-none tw:disabled:opacity-50 tw:disabled:pointer-events-none tw:aria-[disabled=true]:opacity-50 tw:aria-[disabled=true]:pointer-events-none tw:focus-visible:outline-2 tw:focus-visible:outline-solid tw:focus-visible:outline-offset-2 tw:focus-visible:outline-[color:currentColor] [&>svg]:tw:shrink-0 [&>svg]:tw:pointer-events-none",
   {
     compoundVariants: [
       // primary
@@ -83,51 +83,77 @@ const buttonVariants = cva(
       // secondary
       {
         class:
-          "tw:bg-secondary tw:text-secondary-foreground tw:border-secondary tw:hover:opacity-90 tw:active:opacity-80",
+          "tw:bg-secondary tw:text-secondary-foreground! tw:border-secondary tw:hover:opacity-90 tw:active:opacity-80",
         color: "secondary",
         variant: "default",
       },
       {
         class:
-          "tw:bg-transparent tw:text-secondary tw:border-secondary tw:hover:bg-secondary/8 tw:active:bg-secondary/14",
+          "tw:bg-transparent tw:text-secondary! tw:border-secondary tw:hover:bg-secondary/8 tw:active:bg-secondary/14",
         color: "secondary",
         variant: "outline",
       },
       {
         class:
-          "tw:bg-secondary/12 tw:text-secondary tw:border-secondary/35 tw:hover:bg-secondary/18 tw:active:bg-secondary/24",
+          "tw:bg-secondary/12 tw:text-secondary! tw:border-secondary/35 tw:hover:bg-secondary/18 tw:active:bg-secondary/24",
         color: "secondary",
         variant: "subtle",
       },
       {
         class:
-          "tw:bg-transparent tw:text-secondary tw:border-transparent tw:hover:bg-secondary/8 tw:active:bg-secondary/14",
+          "tw:bg-transparent tw:text-secondary! tw:border-transparent tw:hover:bg-secondary/8 tw:active:bg-secondary/14",
         color: "secondary",
+        variant: "ghost",
+      },
+
+      // neutral
+      {
+        class:
+          "tw:bg-neutral tw:text-neutral-foreground! tw:border-neutral tw:hover:opacity-90 tw:active:opacity-80",
+        color: "neutral",
+        variant: "default",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-neutral! tw:border-neutral tw:hover:bg-neutral/8 tw:active:bg-neutral/14",
+        color: "neutral",
+        variant: "outline",
+      },
+      {
+        class:
+          "tw:bg-neutral/12 tw:text-neutral! tw:border-neutral/35 tw:hover:bg-neutral/18 tw:active:bg-neutral/24",
+        color: "neutral",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-neutral! tw:border-transparent tw:hover:bg-neutral/8 tw:active:bg-neutral/14",
+        color: "neutral",
         variant: "ghost",
       },
 
       // accent
       {
         class:
-          "tw:bg-accent tw:text-accent-foreground tw:border-accent tw:hover:opacity-90 tw:active:opacity-80",
+          "tw:bg-accent tw:text-accent-foreground! tw:border-accent tw:hover:opacity-90 tw:active:opacity-80",
         color: "accent",
         variant: "default",
       },
       {
         class:
-          "tw:bg-transparent tw:text-accent tw:border-accent tw:hover:bg-accent/8 tw:active:bg-accent/14",
+          "tw:bg-transparent tw:text-accent! tw:border-accent tw:hover:bg-accent/8 tw:active:bg-accent/14",
         color: "accent",
         variant: "outline",
       },
       {
         class:
-          "tw:bg-accent/12 tw:text-accent tw:border-accent/35 tw:hover:bg-accent/18 tw:active:bg-accent/24",
+          "tw:bg-accent/12 tw:text-accent! tw:border-accent/35 tw:hover:bg-accent/18 tw:active:bg-accent/24",
         color: "accent",
         variant: "subtle",
       },
       {
         class:
-          "tw:bg-transparent tw:text-accent tw:border-transparent tw:hover:bg-accent/8 tw:active:bg-accent/14",
+          "tw:bg-transparent tw:text-accent! tw:border-transparent tw:hover:bg-accent/8 tw:active:bg-accent/14",
         color: "accent",
         variant: "ghost",
       },
@@ -142,18 +168,19 @@ const buttonVariants = cva(
     variants: {
       color: {
         accent: "",
+        neutral: "",
         primary: "",
         secondary: "",
       },
       size: {
         default:
-          "tw:rounded-lg tw:h-9 tw:gap-1.5 tw:px-2.5 has-[>svg:first-child]:tw:pl-2 has-[>svg:last-child]:tw:pr-2",
+          "tw:rounded-lg tw:h-9 tw:gap-1.5 tw:px-3 has-[>svg:first-child]:tw:pl-2 has-[>svg:last-child]:tw:pr-2",
         icon: "tw:rounded-lg tw:size-9",
         "icon-lg": "tw:rounded-xl tw:size-10",
         "icon-sm":
           "tw:rounded tw:size-8 tw:rounded-[min(var(--radius-md),10px)]",
-        lg: "tw:rounded-xl tw:h-10 tw:gap-1.5 tw:px-2.5 has-[>svg:first-child]:tw:pl-2 has-[>svg:last-child]:tw:pr-2",
-        sm: "tw:rounded tw:h-8 tw:gap-1 tw:rounded-[min(var(--radius-md),10px)] tw:px-2.5 has-[>svg:first-child]:tw:pl-1.5 has-[>svg:last-child]:tw:pr-1.5",
+        lg: "tw:rounded-xl tw:h-10 tw:gap-1.5 tw:px-3 has-[>svg:first-child]:tw:pl-2 has-[>svg:last-child]:tw:pr-2",
+        sm: "tw:rounded tw:h-8 tw:gap-1 tw:rounded-[min(var(--radius-md),10px)] tw:px-3 has-[>svg:first-child]:tw:pl-1.5 has-[>svg:last-child]:tw:pr-1.5",
       },
       variant: {
         default: "",
