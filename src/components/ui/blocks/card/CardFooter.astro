@@ -7,8 +7,17 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <div
-  class:list={["ui_card-footer", className]}
-  data-slot="ui_card-footer"
+  class:list={[
+    // Layout
+    "tw:flex tw:items-center",
+    "tw:mt-auto tw:p-4 tw:data-[size=sm]:p-3",
+
+    // Appearance
+    "tw:bg-muted/50",
+    "tw-rounded-b-2xl tw:border-t tw:border-border",
+    className,
+  ]}
+  data-slot="card-footer"
   {...props}
 >
   <slot />

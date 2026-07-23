@@ -7,8 +7,13 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <div
-  class:list={["ui_card-title", className]}
-  data-slot="ui_card-title"
+  class:list={[
+    "tw:cn-font-heading tw:text-base tw:leading-snug",
+    "tw:font-bold tw:group-data-[size=sm]/card:font-semibold",
+    "tw:text-xl tw:group-data-[size=sm]/card:text-lg",
+    className,
+  ]}
+  data-slot="card-title"
   {...props}
 >
   <slot />

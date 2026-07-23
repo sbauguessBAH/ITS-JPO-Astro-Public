@@ -16,11 +16,15 @@ type Props = Omit<LocalImageProps, "alt" | "src"> & {
   width?: number;
 };
 
-const { entry, height, rounded = true, width, ...props } = Astro.props;
+const { entry, height, rounded = false, width, ...props } = Astro.props;
 ---
 
 <LibraryImage
-  class:list={["ui_card-image", rounded && "ui_card-image_rounded"]}
+  class:list={[
+    "tw:h-auto tw:w-full tw:object-cover",
+    rounded && "tw:rounded-2xl",
+  ]}
+  data-slot="card-image"
   entry={entry}
   style={{
     height: height ? `${height}px` : undefined,

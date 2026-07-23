@@ -34,10 +34,31 @@ const linkAttrs =
 ---
 
 <Component
-  class:list={["ui_card", className]}
+  class:list={[
+    // Layout
+    "tw:group/card tw:content-flex-start tw:relative tw:flex tw:flex-col tw:overflow-hidden",
+    "tw:h-auto",
+    "tw:gap-4 tw:py-4",
+    "data-[size=sm]:tw:gap-3 data-[size=sm]:tw:py-3",
+    "tw:has-[>img:first-child]:pt-0",
+    "tw:has-data-[slot=card-footer]:pb-0",
+    "tw:data-[size=sm]:has-data-[slot=card-footer]:pb-0",
+
+    // Appearance
+    "tw:bg-background",
+    "tw:text-sm tw:text-foreground",
+    "tw:border-box tw:rounded-2xl tw:border tw:border-border tw:outline-none",
+    "tw:*:[img:first-child]:rounded-t-2xl tw:*:[img:last-child]:rounded-b-2xl",
+    "tw:shadow-sm tw:[a]:hover:shadow-2xl",
+
+    // Link
+    "tw:[a]:hover:-translate-y-px tw:[a]:hover:transition-all",
+    "tw:[a]:no-underline! tw:[a]:hover:no-underline!",
+    className,
+  ]}
   data-orientation={orientation}
   data-size={size}
-  data-slot="ui_card"
+  data-slot="card"
   {...linkAttrs}
   {...rest}
 >
