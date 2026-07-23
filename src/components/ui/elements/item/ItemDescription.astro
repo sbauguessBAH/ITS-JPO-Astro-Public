@@ -1,17 +1,20 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-interface Props extends Omit<HTMLAttributes<"p">, "class"> {
+type Props = HTMLAttributes<"div"> & {
   class?: string;
-}
+};
 
-const { class: className, ...rest } = Astro.props;
+const { class: className, ...props } = Astro.props;
 ---
 
 <p
-  class:list={["ui_item-description", className]}
-  data-slot="ui_item-description"
-  {...rest}
+  class:list={[
+    "line-clamp-2 text-left text-sm leading-normal font-normal text-muted-foreground group-data-[size=xs]/item:text-xs [&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary",
+    className,
+  ]}
+  data-slot="item-description"
+  {...props}
 >
   <slot />
 </p>

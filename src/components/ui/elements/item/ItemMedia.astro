@@ -1,20 +1,38 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { cva } from "class-variance-authority";
 
-interface Props extends Omit<HTMLAttributes<"div">, "class"> {
+type Props = HTMLAttributes<"div"> & {
   class?: string;
   /** Defaults to "default". Use "icon" for a boxed icon, "image" for a thumbnail. */
   variant?: "default" | "icon" | "image";
-}
+};
 
-const { class: className, variant = "default", ...rest } = Astro.props;
+const { class: className, variant = "default", ...props } = Astro.props;
+
+const itemMediaVariants = cva(
+  "flex shrink-0 items-center justify-center gap-2 group-has-data-[slot=item-description]/item:translate-y-0.5 group-has-data-[slot=item-description]/item:self-start [&_svg]:pointer-events-none",
+  {
+    variants: {
+      variant: {
+        default: "bg-transparent",
+        icon: "[&_svg:not([class*='size-'])]:size-4",
+        image:
+          "size-10 overflow-hidden rounded-sm group-data-[size=sm]/item:size-8 group-data-[size=xs]/item:size-6 [&_img]:size-full [&_img]:object-cover",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  },
+);
 ---
 
 <div
-  class:list={["ui_item-media", className]}
-  data-slot="ui_item-media"
+  class:list={[itemMediaVariants({ variant }), className]}
+  data-slot="item-media"
   data-variant={variant}
-  {...rest}
+  {...props}
 >
   <slot />
 </div>
