@@ -6,10 +6,43 @@ import CardHeader from "@/src/components/ui/blocks/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/blocks/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/blocks/card/CardTitle.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../_layout.astro";
 import HelpDeskLogo from "./_help-desk-logo.astro";
+
+const RESOURCES = [
+  {
+    description:
+      "The Connected and Automated Vehicle Education (CAVe) Support Services Program provides technical assistance and equipment loads to help accelerate deployments.",
+    image: "pcb/cave-box",
+    path: "/resources/pcb/technical-assistance/cave",
+    title: "Connected and Automated Vehicle Education (CAVe)",
+  },
+  {
+    description:
+      "The Accelerating V2X Cohort supports public agencies and other infrastructure owners and operators (IOOs) in accelerating the deployment of interoperable vehicle-to-everything (V2X) technologies.",
+    image: "pcb/cohort",
+    path: "/resources/pcb/technical-assistance/v2x-cohort",
+    title: "Accelerating Vehicle-to-Everything (V2X) Cohort",
+  },
+  {
+    description:
+      "An online resource connecting states, tribal governments, and local communities with resources to help develop intelligent transportation systems for smart community transportation programs.",
+    image: "pcb/scrc-background",
+    isExternal: true,
+    path: "https://www.its.dot.gov/scrc/index.html",
+    title: "Smart Community Resource Center",
+  },
+  {
+    description:
+      "A comprehensive training program provides foundational trainings for practitioners as well as technical trainings on V2X standards.",
+    image: "pcb/v2x-intersection",
+    path: "/resources/pcb/trainings/v2x-trainings",
+    title: "Vehicle-to-Everything (V2X) Training",
+  },
+];
 ---
 
 <style>
@@ -142,10 +175,8 @@ import HelpDeskLogo from "./_help-desk-logo.astro";
 
 <Layout>
   <main class="program-main">
-    <p>Include cards for SCRC, V2X Trainings</p>
     <ProgramSection size="small">
-      <h2 class="program-title-lg mb-4">V2X Deployment Resources</h2>
-
+      <Heading>Technical Assistance Resources</Heading>
       <p class="program-text">
         Explore Vehicle-to-Everything (V2X) resources such as the Accelerating
         V2X Cohort, request technical assistance with planning and deployment
@@ -185,34 +216,18 @@ import HelpDeskLogo from "./_help-desk-logo.astro";
       <!-- <p class="program-text mb-4">
         Explore additional resources for deployers.
       </p> -->
-      <div class="card-grid mt-4">
-        <Card href={`/resources/pcb/technical-assistance/cave`}>
-          <CardImage entry="pcb/cave-box" height={250} />
-          <CardHeader>
-            <CardTitle
-              >Connected and Automated Vehicle Education (CAVe)</CardTitle
-            >
-            <CardDescription>
-              The Connected and Automated Vehicle Education (CAVe) Support
-              Services Program provides technical assistance and equipment loads
-              to help accelerate deployments.
-            </CardDescription>
-          </CardHeader>
-        </Card>
-        <Card href={`/resources/pcb/technical-assistance/v2x-cohort`}>
-          <CardImage entry="pcb/cohort" height={250} />
-          <CardHeader>
-            <CardTitle
-              >Accelerating Vehicle-to-Everything (V2X) Cohort</CardTitle
-            >
-            <CardDescription
-              >The Accelerating V2X Cohort supports public agencies and other
-              infrastructure owners and operators (IOOs) in accelerating the
-              deployment of interoperable vehicle-to-everything (V2X)
-              technologies.</CardDescription
-            >
-          </CardHeader>
-        </Card>
+      <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2">
+        {
+          RESOURCES.map((item) => (
+            <Card href={item.path} isExternal={item.isExternal}>
+              <CardImage entry={item.image} height={250} />
+              <CardHeader>
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))
+        }
       </div>
     </div>
   </main>

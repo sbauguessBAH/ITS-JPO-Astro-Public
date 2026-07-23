@@ -55,80 +55,6 @@ const getCourseCount = (path?: string) =>
 ---
 
 <style>
-  .trainings-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size);
-  }
-
-  @media (min-width: 992px) {
-    .trainings-container {
-      flex-direction: row;
-    }
-
-    .trainings-panel {
-      flex-basis: 25%;
-    }
-
-    .trainings {
-      flex-basis: 75%;
-    }
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--size);
-    }
-  }
-</style>
-<style>
-  .panel {
-    border-radius: var(--radius-md);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--border-light);
-    /* box-shadow: var(--box-shadow); */
-  }
-  .panel-title {
-    background: rgb(var(--color-brand-dark));
-    color: white;
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
-    padding: 1rem;
-    text-transform: none;
-    font-size: 1.4rem;
-    margin: 0;
-  }
-  .panel-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-decoration: none;
-    border-bottom: 1px solid var(--border-light);
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    /* color: black; */
-  }
-  .panel-count {
-    background: rgb(var(--color-gray-light));
-    padding: 0 0.75rem;
-    height: 1.5rem;
-    border-radius: var(--radius-lg);
-  }
-  .panel-item:hover {
-    font-weight: 600;
-    background: rgb(var(--color-brand-light));
-  }
-  .panel-item-active {
-    background: rgb(var(--color-brand-light));
-  }
-  .panel-item-active .panel-count {
-    background: rgb(var(--color-brand-dark));
-    color: white;
-  }
-  .panel-item-active:hover {
-    background: rgb(var(--color-brand-light));
-  }
-</style>
-<style>
   .course-card-type {
     margin: 0;
     text-transform: uppercase;
@@ -148,10 +74,6 @@ const getCourseCount = (path?: string) =>
     font-weight: 600;
     color: rgb(var(--color-gray));
   }
-  .course-card-footer {
-    padding: calc(var(--spacing) * 4) var(--size);
-    color: rgb(var(--color-gray));
-  }
 </style>
 <Layout>
   <main class="program-main">
@@ -168,27 +90,70 @@ const getCourseCount = (path?: string) =>
         to the NHI catalog. From there, you can search for the course you're
         interested in.
       </p>
-      <div class="trainings-container">
-        <div class="trainings-panel">
-          <nav class="panel">
-            <h3 class="panel-title">Categories</h3>
+      <div class="tw:flex tw:flex-col tw:lg:flex-row tw:gap-6">
+        <div class="tw:basis-1/4">
+          <nav
+            class:list={[
+              "tw:rounded-2xl",
+              "tw:flex",
+              "tw:flex-col",
+              "tw:border",
+              "tw:border-border",
+            ]}
+          >
+            <h3
+              class:list={[
+                "tw:bg-primary",
+                "tw:text-primary-foreground!",
+                "tw:p-4",
+                "tw:text-lg",
+                "tw:rounded-t-2xl",
+                "tw:font-semibold",
+                "tw:normal-case!",
+                "tw:mb-0!",
+              ]}
+            >
+              Categories
+            </h3>
             {
               categories
                 .filter((item) => getCourseCount(item.category) > 0)
                 .map((item) => (
                   <a
                     class:list={[
-                      "panel-item",
-                      { "panel-item-active": item.category === path },
+                      "tw:group",
+                      "tw:flex",
+                      "tw:flex-row",
+                      "tw:justify-between",
+                      "tw:decoration-0!",
+                      "tw:border-b",
+                      "tw:border-border",
+                      "tw:py-2",
+                      "tw:px-4",
+                      "tw:font-semibold",
+                      "tw:hover:font-semibold",
+                      "tw:hover:bg-muted",
+                      "tw:hover:text-primary!",
+                      "tw:data-[active=true]:bg-muted",
                     ]}
+                    data-active={item.category === path}
                     data-bs-title={item.title}
                     data-bs-toggle="tooltip"
                     href={base_url(
                       `/resources/pcb/trainings/${item.category ?? ""}`,
                     )}
                   >
-                    <div class="panel-item-text">{item.title}</div>
-                    <div class="panel-count">
+                    <div>{item.title}</div>
+                    <div
+                      class:list={[
+                        "tw:bg-muted",
+                        "tw:py-0 tw:px-3",
+                        "tw:h-6",
+                        "tw:rounded-xl",
+                        "tw:group-data-[active=true]:bg-primary",
+                        "tw:group-data-[active=true]:text-primary-foreground",
+                      ]}
+                    >
                       {getCourseCount(item.category)}
                     </div>
                   </a>
@@ -196,8 +161,8 @@ const getCourseCount = (path?: string) =>
             }
           </nav>
         </div>
-        <div class="trainings">
-          <div class="course-grid">
+        <div class="tw:basis-3/4">
+          <div class="tw:grid tw:grid-cols-1 tw:gap-4 tw:md:grid-cols-2">
             {
               filteredCourses.map(({ data: course }) => (
                 <Card href={course.url} isExternal={course.isExternal}>
@@ -238,7 +203,7 @@ const getCourseCount = (path?: string) =>
                     <CardDescription>{course.description}</CardDescription>
                   </CardHeader>
                   {course.action === "Register" && (
-                    <CardFooter class="course-card-footer">
+                    <CardFooter class="tw:text-muted-foreground">
                       This link will take you to the NHI Catalog. Search for the
                       course name or number to register.
                     </CardFooter>
