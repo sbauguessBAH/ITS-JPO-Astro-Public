@@ -51,31 +51,31 @@ if (link) {
 }
 
 const buttonVariants = cva(
-  "tw:inline-flex tw:shrink-0 tw:items-center tw:justify-center tw:align-middle tw:whitespace-nowrap tw:font-medium tw:text-sm tw:leading-none tw:tracking-[0.01em] tw:no-underline! tw:rounded-[var(--radius-md)] tw:border tw:border-solid tw:border-transparent tw:transition-[color,background-color,border-color,opacity,box-shadow] tw:duration-150 tw:ease-[ease] tw:cursor-pointer tw:select-none tw:outline-none tw:disabled:opacity-50 tw:disabled:pointer-events-none tw:aria-[disabled=true]:opacity-50 tw:aria-[disabled=true]:pointer-events-none tw:focus-visible:outline-2 tw:focus-visible:outline-solid tw:focus-visible:outline-offset-2 tw:focus-visible:outline-[color:currentColor] [&>svg]:tw:shrink-0 [&>svg]:tw:pointer-events-none",
+  "tw:inline-flex tw:shrink-0 tw:items-center tw:justify-center tw:align-middle tw:whitespace-nowrap tw:font-medium tw:text-sm tw:leading-none tw:tracking-[0.01em] tw:no-underline! tw:rounded-[var(--radius-md)] tw:border tw:border-solid tw:border-transparent tw:transition-[color,background-color,border-color,opacity,box-shadow] tw:duration-150 tw:ease-[ease] tw:cursor-pointer tw:select-none tw:outline-none tw:disabled:opacity-50 tw:disabled:pointer-events-none tw:aria-[disabled=true]:opacity-50 tw:aria-[disabled=true]:pointer-events-none tw:focus-visible:outline-2 tw:focus-visible:outline-solid tw:focus-visible:outline-offset-2 tw:focus-visible:outline-[color:currentColor] tw:[&>svg]:shrink-0 tw:[&>svg]:pointer-events-none",
   {
     compoundVariants: [
       // primary
       {
         class:
-          "tw:bg-primary tw:text-primary-foreground tw:border-primary tw:hover:opacity-90 tw:active:opacity-80",
+          "tw:bg-primary! tw:text-primary-foreground! tw:border-primary tw:hover:opacity-90 tw:active:opacity-80",
         color: "primary",
         variant: "default",
       },
       {
         class:
-          "tw:bg-transparent tw:text-primary tw:border-primary tw:hover:bg-primary/8 tw:active:bg-primary/14",
+          "tw:bg-transparent! tw:text-primary! tw:border-primary tw:hover:bg-primary/8 tw:active:bg-primary/14",
         color: "primary",
         variant: "outline",
       },
       {
         class:
-          "tw:bg-primary/12 tw:text-primary tw:border-primary/35 tw:hover:bg-primary/18 tw:active:bg-primary/24",
+          "tw:bg-primary/12! tw:text-primary! tw:border-primary/35 tw:hover:bg-primary/18 tw:active:bg-primary/24",
         color: "primary",
         variant: "subtle",
       },
       {
         class:
-          "tw:bg-transparent tw:text-primary tw:border-transparent tw:hover:bg-primary/8 tw:active:bg-primary/14",
+          "tw:bg-transparent! tw:text-primary! tw:border-transparent tw:hover:bg-primary/8 tw:active:bg-primary/14",
         color: "primary",
         variant: "ghost",
       },

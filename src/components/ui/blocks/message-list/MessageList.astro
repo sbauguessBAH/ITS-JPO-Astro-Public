@@ -1,0 +1,92 @@
+---
+import CheckIcon from "../../icons/CheckIcon.astro";
+
+type Props = {
+  items?: string[];
+  color?: "default" | "accent";
+  class?: string;
+  classes?: {
+    base?: string;
+    title?: string;
+    itemWrapper?: string;
+    item?: string;
+    iconContainer?: string;
+    icon?: string;
+  };
+  title?: string;
+};
+
+const {
+  items,
+  color = "default",
+  class: className,
+  classes,
+  title,
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    "tw:flex tw:flex-col tw:gap-4 tw:rounded-2xl tw:border tw:border-t-4 tw:px-4 tw:py-4",
+    color === "default" &&
+      "tw:border-primary/20 tw:border-t-primary tw:bg-primary/5",
+    color === "accent" &&
+      "tw:border-accent/20 tw:border-t-accent tw:bg-accent/5",
+    classes?.base,
+    className,
+  ]}
+  data-slot="message-list"
+>
+  {
+    title && (
+      <div
+        class:list={[
+          "tw:text-base tw:font-semibold tw:uppercase",
+          color === "default" && "tw:text-primary",
+          color === "accent" && "tw:text-accent",
+          classes?.title,
+        ]}
+      >
+        {title}
+      </div>
+    )
+  }
+  <div class="tw:flex tw:flex-col tw:divide-y tw:divide-muted-foreground/20">
+    {
+      items?.map((item) => (
+        <div
+          class:list={[
+            "tw:flex tw:flex-row tw:items-center tw:gap-2 tw:py-2",
+            classes?.itemWrapper,
+          ]}
+        >
+          <div
+            class:list={[
+              "tw:flex tw:size-5 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full",
+              color === "default" && "tw:bg-primary/20",
+              color === "accent" && "tw:bg-accent/20",
+              classes?.iconContainer,
+            ]}
+          >
+            <CheckIcon
+              size={18}
+              class:list={[
+                color === "default" && "tw:text-primary",
+                color === "accent" && "tw:text-accent",
+                classes?.icon,
+              ]}
+            />
+          </div>
+          <span
+            class:list={[
+              "tw:text-base tw:text-muted-foreground",
+              classes?.item,
+            ]}
+          >
+            {item}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</div>
