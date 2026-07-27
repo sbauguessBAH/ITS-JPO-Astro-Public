@@ -34,7 +34,7 @@ const baseConfig = {
 
 /** @type {import("eslint").Linter.Config} */
 const typescriptConfig = {
-  files: ["**/*.ts", "**/*.mts", "**/*.astro"], //, "**/*.vue"
+  files: ["**/*.ts", "**/*.mts", "**/*.astro", "**/*.vue"],
   languageOptions: {
     parser: typescriptParser,
     parserOptions: {
