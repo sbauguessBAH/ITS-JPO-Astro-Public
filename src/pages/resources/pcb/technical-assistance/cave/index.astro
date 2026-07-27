@@ -1,6 +1,7 @@
 ---
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardAction from "@/src/components/ui/elements/card/CardAction.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
@@ -8,10 +9,7 @@ import CardDescription from "@/src/components/ui/elements/card/CardDescription.a
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
-import Button from "@/src/components/ui/elements/button/Button.astro";
-import EmailIcon from "@/src/components/ui/icons/EmailIcon.astro";
-import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
-import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../../_layout.astro";
@@ -134,7 +132,7 @@ import Layout from "../../_layout.astro";
               variant="subtle"
             >
               Learn More
-              <ExternalLinkIcon />
+              <Icon name="external-link" />
             </Button>
           </div>
         </div>
@@ -174,7 +172,7 @@ import Layout from "../../_layout.astro";
                 }}
                 variant="subtle"
               >
-                <PdfIcon />
+                <Icon name="pdf" />
                 View PDF
               </Button>
             </CardAction>
@@ -200,7 +198,7 @@ import Layout from "../../_layout.astro";
                 }}
                 variant="subtle"
               >
-                <PdfIcon />
+                <Icon name="pdf" />
                 View PDF
               </Button>
             </CardAction>
@@ -226,7 +224,7 @@ import Layout from "../../_layout.astro";
                 }}
                 variant="subtle"
               >
-                <PdfIcon />
+                <Icon name="pdf" />
                 View PDF
               </Button>
             </CardAction>
@@ -274,7 +272,7 @@ import Layout from "../../_layout.astro";
               size="lg"
               variant="subtle"
             >
-              <EmailIcon />
+              <Icon name="email" />
               Get Equipment
             </Button>
           </div>

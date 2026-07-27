@@ -6,8 +6,7 @@ import AlertDescription from "@/src/components/ui/elements/alert/AlertDescriptio
 import AlertTitle from "@/src/components/ui/elements/alert/AlertTitle.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
 import Heading from "@/src/components/ui/elements/heading/Heading.astro";
-import CheckIcon from "@/src/components/ui/icons/CheckIcon.astro";
-import EmailIcon from "@/src/components/ui/icons/EmailIcon.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
 
 import Layout from "../_layout.astro";
 import HelpDeskLogo from "./_help-desk-logo.astro";
@@ -241,7 +240,7 @@ const LOAN_PROGRAM_BENEFITS = [
               COMMON_TOPICS.map((item) => (
                 <div class="topic">
                   <div class="tw:flex tw:size-5 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--help-desk-blue)/10">
-                    <CheckIcon class="tw:fill-(--help-desk-blue)" />
+                    <Icon class="tw:fill-(--help-desk-blue)" name="check" />
                   </div>
                   <div class="topic-text">{item}</div>
                 </div>
@@ -260,7 +259,7 @@ const LOAN_PROGRAM_BENEFITS = [
             size="lg"
             variant="default"
           >
-            <EmailIcon />
+            <Icon name="email" />
             Contact the help desk
           </Button>
         </div>
@@ -347,7 +346,7 @@ const LOAN_PROGRAM_BENEFITS = [
                 AVAILABLE_EQUIPMENT.map((item) => (
                   <div class="topic">
                     <div class="tw:flex tw:size-5 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--help-desk-yellow)/10">
-                      <CheckIcon class="tw:fill-(--help-desk-yellow)" />
+                      <Icon class="tw:fill-(--help-desk-yellow)" name="check" />
                     </div>
                     <div class="topic-text">{item}</div>
                   </div>
@@ -373,7 +372,7 @@ const LOAN_PROGRAM_BENEFITS = [
           size="lg"
           variant="default"
         >
-          <EmailIcon />
+          <Icon name="email" />
           Request a loan
         </Button>
       </AlertAction>

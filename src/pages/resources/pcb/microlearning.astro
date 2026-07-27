@@ -2,13 +2,13 @@
 import { getCollection } from "astro:content";
 
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro"
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
-import Badge from "@/src/components/ui/elements/badge/Badge.astro";
-import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
 
 import Layout from "./_layout.astro";
 
@@ -48,7 +48,7 @@ const categories = await getCollection("pcbMicrolearning");
               <Card href={training.url} isExternal>
                 <CardImage entry={training.image} height={225}/>
                 <Badge color="secondary" size="lg" style={{ position: 'absolute', right: '8px', top: '8px' }}>
-                  <ExternalLinkIcon/>
+                  <Icon name="external-link"/>
                 </Badge>
                 <CardHeader>
                   <CardTitle>{training.title}</CardTitle>

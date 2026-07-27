@@ -8,8 +8,7 @@ import AccordionItem from "@/src/components/AccordionItem.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
-import FilmIcon from "@/src/components/ui/icons/FilmIcon.astro";
-import PdfIcon from "@/src/components/ui/icons/PdfIcon.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../../_layout.astro";
@@ -122,7 +121,7 @@ const presenters = [
             }}
             variant="subtle"
           >
-            <FilmIcon />
+            <Icon name="film" />
             Webinar Replay
           </Button>
           <Button
@@ -134,7 +133,7 @@ const presenters = [
             }}
             variant="subtle"
           >
-            <PdfIcon />
+            <Icon name="pdf" />
             PDF
           </Button>
           <!-- <a 

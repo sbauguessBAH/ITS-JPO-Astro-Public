@@ -3,12 +3,12 @@ import { getCollection } from "astro:content";
 import { render } from "astro:content";
 
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import CopyButton from "@/src/components/ui/blocks/CopyButton.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
-import CopyButton from "@/src/components/ui/blocks/CopyButton.astro";
-import Button from "@/src/components/ui/elements/button/Button.astro";
-import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
 
 import Layout from "../_layout.astro";
 
@@ -142,7 +142,7 @@ const { Content } = await render(module);
               variant="subtle"
             >
               Register
-              <ExternalLinkIcon />
+              <Icon name="external-link" />
             </Button>
           </CardContent>
         </Card>

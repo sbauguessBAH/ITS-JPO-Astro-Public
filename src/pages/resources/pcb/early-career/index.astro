@@ -3,14 +3,14 @@ import { getCollection } from "astro:content";
 
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
-import Button from "@/src/components/ui/elements/button/Button.astro";
-import ExternalLinkIcon from "@/src/components/ui/icons/ExternalLinkIcon.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
 
 import Layout from "../_layout.astro";
 
@@ -218,7 +218,7 @@ const modules = await getCollection("pcbModules").then((modules) =>
               variant="subtle"
             >
               View PDF
-              <ExternalLinkIcon />
+              <Icon name="external-link" />
             </Button>
           </div>
         </div>
@@ -269,7 +269,7 @@ const modules = await getCollection("pcbModules").then((modules) =>
               variant="subtle"
             >
               Learn More
-              <ExternalLinkIcon />
+              <Icon name="external-link" />
             </Button>
           </div>
         </div>

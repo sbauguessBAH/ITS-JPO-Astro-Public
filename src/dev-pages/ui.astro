@@ -1,6 +1,7 @@
 ---
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import ProgramLayout from "@/src/components/programs/ProgramLayout.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
 import Item from "@/src/components/ui/elements/item/Item.astro";
 import ItemActions from "@/src/components/ui/elements/item/ItemActions.astro";
 import ItemContent from "@/src/components/ui/elements/item/ItemContent.astro";
@@ -10,8 +11,8 @@ import ItemGroup from "@/src/components/ui/elements/item/ItemGroup.astro";
 import ItemHeader from "@/src/components/ui/elements/item/ItemHeader.astro";
 import ItemMedia from "@/src/components/ui/elements/item/ItemMedia.astro";
 import ItemTitle from "@/src/components/ui/elements/item/ItemTitle.astro";
-import Button from "@/src/components/ui/elements/button/Button.astro";
-import BullseyeIcon from "@/src/components/ui/icons/BullseyeIcon.astro";
+
+import Icon from "../components/ui/icon/Icon.astro";
 
 const itemGroups: Array<{
   className: string;
@@ -179,15 +180,15 @@ const itemGroups: Array<{
     </div>
     <div>
       With icon
-      <Button size="sm"> Small <BullseyeIcon /></Button>
-      <Button size="default"> Default <BullseyeIcon /></Button>
-      <Button size="lg"> Large <BullseyeIcon /></Button>
+      <Button size="sm"> Small <Icon name="bullseye" /></Button>
+      <Button size="default"> Default <Icon name="bullseye" /></Button>
+      <Button size="lg"> Large <Icon name="bullseye" /></Button>
     </div>
     <div>
       Icon only
-      <Button size="icon-sm"> <BullseyeIcon /> </Button>
-      <Button size="icon"> <BullseyeIcon /> </Button>
-      <Button size="icon-lg"> <BullseyeIcon /> </Button>
+      <Button size="icon-sm"> <Icon name="bullseye" /> </Button>
+      <Button size="icon"> <Icon name="bullseye" /> </Button>
+      <Button size="icon-lg"> <Icon name="bullseye" /> </Button>
     </div>
     <div>
       Primary Variants
@@ -222,7 +223,7 @@ const itemGroups: Array<{
                 )}
                 {item.media && (
                   <ItemMedia variant="icon">
-                    <BullseyeIcon size={24} />
+                    <Icon name="bullseye" size={24} />
                   </ItemMedia>
                 )}
                 {item.content && (
