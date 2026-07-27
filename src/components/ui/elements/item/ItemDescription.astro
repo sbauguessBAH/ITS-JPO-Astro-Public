@@ -10,7 +10,7 @@ const { class: className, ...props } = Astro.props;
 
 <p
   class:list={[
-    "line-clamp-2 text-left text-sm leading-normal font-normal text-muted-foreground group-data-[size=xs]/item:text-xs [&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary",
+    "tw:mb-0! tw:line-clamp-2 tw:text-left tw:text-base! tw:leading-normal tw:font-normal tw:text-muted-foreground tw:group-data-[size=xs]/item:text-xs! tw:[&>a]:underline tw:[&>a]:underline-offset-4 tw:[&>a:hover]:text-primary",
     className,
   ]}
   data-slot="item-description"

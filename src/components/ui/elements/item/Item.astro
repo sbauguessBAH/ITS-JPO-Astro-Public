@@ -1,4 +1,5 @@
 ---
+import base_url from "@/src/lib/base_url";
 import type { HTMLAttributes } from "astro/types";
 import { cva } from "class-variance-authority";
 
@@ -6,6 +7,7 @@ type Props = HTMLAttributes<"div"> & {
   class?: string;
   /** If provided, the item renders as an <a> instead of a <div>. */
   href?: string;
+  isExternal?: boolean;
   /** Spacing/density of the item. Defaults to "default". */
   size?: "default" | "sm" | "xs";
   /** Visual style of the item. Defaults to "default". */
@@ -17,24 +19,25 @@ const {
   href,
   size = "default",
   variant = "default",
+  isExternal,
   ...props
 } = Astro.props;
 
 const Tag = href ? "a" : "div";
 
 const itemVariants = cva(
-  "group/item flex w-full flex-wrap items-center rounded-lg border text-sm transition-colors duration-100 outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 [a]:transition-colors [a]:hover:bg-muted",
+  "tw:group/item tw:flex tw:w-full tw:flex-wrap tw:items-center tw:rounded-2xl tw:border tw:text-sm tw:transition-colors tw:duration-100 tw:outline-none tw:focus-visible:border-ring tw:focus-visible:ring-[3px] tw:focus-visible:ring-ring/50 tw:[a]:no-underline! tw:[a]:transition-colors tw:[a]:hover:bg-muted",
   {
     variants: {
       variant: {
-        default: "border-transparent",
-        outline: "border-border",
-        muted: "border-transparent bg-muted/50",
+        default: "tw:border-transparent",
+        outline: "tw:border-border",
+        muted: "tw:border-transparent tw:bg-muted/50",
       },
       size: {
-        default: "gap-2.5 px-3 py-2.5",
-        sm: "gap-2.5 px-3 py-2.5",
-        xs: "gap-2 px-2.5 py-2 in-data-[slot=dropdown-menu-content]:p-0",
+        default: "tw:gap-2.5 tw:px-3 tw:py-2.5",
+        sm: "tw:gap-2.5 tw:px-3 tw:py-2.5",
+        xs: "tw:gap-2 tw:px-2.5 tw:py-2 tw:in-data-[slot=dropdown-menu-content]:p-0",
       },
     },
     defaultVariants: {
@@ -43,6 +46,13 @@ const itemVariants = cva(
     },
   },
 );
+
+const linkAttrs =
+  href && isExternal
+    ? { href, rel: "noopener noreferrer", target: "_blank" }
+    : href
+      ? { href: base_url(href) }
+      : undefined;
 ---
 
 <Tag
@@ -50,7 +60,7 @@ const itemVariants = cva(
   data-slot="item"
   data-size={size}
   data-variant={variant}
-  href={href}
+  {...linkAttrs}
   {...props}
 >
   <slot />
