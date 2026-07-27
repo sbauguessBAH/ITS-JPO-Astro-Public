@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+
 import { cva } from "class-variance-authority";
 
 type Props = HTMLAttributes<"div"> & {
@@ -13,6 +14,9 @@ const { class: className, variant = "default", ...props } = Astro.props;
 const itemMediaVariants = cva(
   "tw:flex tw:shrink-0 tw:items-center tw:justify-center tw:gap-2 tw:group-has-data-[slot=item-description]/item:translate-y-0.5 tw:group-has-data-[slot=item-description]/item:self-start tw:[&_svg]:pointer-events-none",
   {
+    defaultVariants: {
+      variant: "default",
+    },
     variants: {
       variant: {
         default: "tw:bg-transparent",
@@ -20,9 +24,6 @@ const itemMediaVariants = cva(
         image:
           "tw:size-10 tw:overflow-hidden tw:rounded-sm tw:group-data-[size=sm]/item:size-8 tw:group-data-[size=xs]/item:size-6 tw:[&_img]:size-full tw:[&_img]:object-cover",
       },
-    },
-    defaultVariants: {
-      variant: "default",
     },
   },
 );

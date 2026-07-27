@@ -1,7 +1,9 @@
 ---
-import base_url from "@/src/lib/base_url";
 import type { HTMLAttributes } from "astro/types";
+
 import { cva } from "class-variance-authority";
+
+import base_url from "@/src/lib/base_url";
 
 type Props = HTMLAttributes<"div"> & {
   class?: string;
@@ -17,9 +19,9 @@ type Props = HTMLAttributes<"div"> & {
 const {
   class: className,
   href,
+  isExternal,
   size = "default",
   variant = "default",
-  isExternal,
   ...props
 } = Astro.props;
 
@@ -28,21 +30,21 @@ const Tag = href ? "a" : "div";
 const itemVariants = cva(
   "tw:group/item tw:flex tw:w-full tw:flex-wrap tw:items-center tw:rounded-2xl tw:border tw:text-sm tw:transition-colors tw:duration-100 tw:outline-none tw:focus-visible:border-ring tw:focus-visible:ring-[3px] tw:focus-visible:ring-ring/50 tw:[a]:no-underline! tw:[a]:transition-colors tw:[a]:hover:bg-muted",
   {
+    defaultVariants: {
+      size: "default",
+      variant: "default",
+    },
     variants: {
-      variant: {
-        default: "tw:border-transparent",
-        outline: "tw:border-border",
-        muted: "tw:border-transparent tw:bg-muted/50",
-      },
       size: {
         default: "tw:gap-2.5 tw:px-3 tw:py-2.5",
         sm: "tw:gap-2.5 tw:px-3 tw:py-2.5",
         xs: "tw:gap-2 tw:px-2.5 tw:py-2 tw:in-data-[slot=dropdown-menu-content]:p-0",
       },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
+      variant: {
+        default: "tw:border-transparent",
+        muted: "tw:border-transparent tw:bg-muted/50",
+        outline: "tw:border-border",
+      },
     },
   },
 );
@@ -56,9 +58,9 @@ const linkAttrs =
 ---
 
 <Tag
-  class:list={[itemVariants({ variant, size }), className]}
-  data-slot="item"
+  class:list={[itemVariants({ size, variant }), className]}
   data-size={size}
+  data-slot="item"
   data-variant={variant}
   {...linkAttrs}
   {...props}

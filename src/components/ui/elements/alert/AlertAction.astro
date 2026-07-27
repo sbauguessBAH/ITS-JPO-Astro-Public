@@ -9,11 +9,11 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <div
-  data-slot="alert-action"
   class:list={[
     "tw:col-start-2 tw:row-span-2 tw:row-start-1 tw:self-start tw:justify-self-end",
     className,
   ]}
+  data-slot="alert-action"
   {...props}
 >
   <slot />

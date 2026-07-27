@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+
 import { cva } from "class-variance-authority";
 
 /**
@@ -12,47 +13,47 @@ type Props = HTMLAttributes<"div"> & {
   variant?: "default";
 };
 
-const { class: className, variant, color, ...props } = Astro.props;
+const { class: className, color, variant, ...props } = Astro.props;
 
 const alertVariants = cva(
   "tw:group/alert tw:w-full tw:gap-0.5 tw:rounded-2xl tw:border tw:border-transparent tw:px-8 tw:py-6 tw:text-left tw:grid tw:auto-rows-min tw:items-start tw:has-data-[slot=alert-action]:grid-cols-[1fr_auto] tw:has-data-[slot=alert-description]:grid-rows-[auto_auto]",
   {
-    variants: {
-      variant: {
-        default: "",
+    compoundVariants: [
+      {
+        class:
+          "tw:bg-primary tw:text-primary-foreground tw:*:data-[slot=alert-description]:[&_a]:text-primary-foreground! tw:*:data-[slot=alert-title]:[&_a]:text-primary-foreground! tw:[&_a]:underline-offset-3",
+        color: "primary",
+        variant: "default",
       },
+      {
+        class:
+          "tw:bg-secondary tw:text-secondary-foreground tw:*:data-[slot=alert-description]:[&_a]:text-secondary-foreground! tw:*:data-[slot=alert-title]:[&_a]:text-secondary-foreground! tw:[&_a]:underline-offset-3",
+        color: "secondary",
+        variant: "default",
+      },
+    ],
+    defaultVariants: {
+      color: "primary",
+      variant: "default",
+    },
+    variants: {
       color: {
         primary: "",
         secondary: "",
       },
-    },
-    compoundVariants: [
-      {
-        color: "primary",
-        variant: "default",
-        class:
-          "tw:bg-primary tw:text-primary-foreground tw:*:data-[slot=alert-description]:[&_a]:text-primary-foreground! tw:*:data-[slot=alert-title]:[&_a]:text-primary-foreground! tw:[&_a]:underline-offset-3",
+      variant: {
+        default: "",
       },
-      {
-        color: "secondary",
-        variant: "default",
-        class:
-          "tw:bg-secondary tw:text-secondary-foreground tw:*:data-[slot=alert-description]:[&_a]:text-secondary-foreground! tw:*:data-[slot=alert-title]:[&_a]:text-secondary-foreground! tw:[&_a]:underline-offset-3",
-      },
-    ],
-    defaultVariants: {
-      variant: "default",
-      color: "primary",
     },
   },
 );
 ---
 
 <div
-  class:list={[alertVariants({ variant, color }), className]}
+  class:list={[alertVariants({ color, variant }), className]}
+  data-color={color}
   data-slot="alert"
   data-variant={variant}
-  data-color={color}
   role="alert"
   {...props}
 >
