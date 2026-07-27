@@ -1,12 +1,14 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cva } from "class-variance-authority";
+
 /**
  * TODO: Update styling including for external link
  */
 type Props = HTMLAttributes<"span"> & {
   class?: string;
-  color?: "primary" | "secondary";
+  color?: "neutral" | "primary" | "secondary";
   rounded?: boolean;
   size?: "default" | "lg" | "sm";
   variant?: "default" | "outline" | "soft" | "subtle";
@@ -21,11 +23,54 @@ const {
   ...props
 } = Astro.props;
 
+const badgeVariants = cva(
+  "tw:[&_svg]:pointer-events-none tw:[&_svg]:shrink-0 tw:inline-flex tw:w-fit tw:shrink-0 tw:items-center tw:justify-center tw:overflow-hidden tw:rounded-xl tw:border tw:border-transparent tw:align-middle tw:leading-normal tw:font-medium tw:whitespace-nowrap tw:ring-transparent tw:ring-offset-2 tw:transition-colors tw:duration-100 tw:hover:opacity-85 tw:focus-visible:ring-2",
+  {
+    compoundVariants: [
+      {
+        class: "tw:bg-neutral tw:text-neutral-foreground",
+        color: "neutral",
+        variant: "default",
+      },
+      {
+        class:
+          "tw:bg-neutral/80 tw:text-neutral-foreground/80 tw:border-neutral/80",
+        color: "neutral",
+        variant: "subtle",
+      },
+    ],
+    defaultVariants: {
+      color: "neutral",
+      size: "default",
+      variant: "default",
+    },
+    variants: {
+      color: {
+        neutral: "",
+        primary: "",
+        secondary: "",
+      },
+      size: {
+        default:
+          "tw:h-6 tw:gap-1 tw:py-2 tw:px-2.5 tw:text-sm tw:[&_svg]:size-3.5",
+        lg: "tw:h-7 tw:gap-1.5 tw:py-2.5 tw:px-3 tw:text-sm tw:[&_svg]:size-4",
+        sm: "tw:h-5 tw:gap-1 tw:py-2 tw:px-2 tw:text-xs tw:[&_svg]:size-3",
+      },
+      variant: {
+        default: "",
+        outline: "",
+        soft: "",
+        subtle: "",
+      },
+    },
+  },
+);
+
 const Component = "span";
 ---
 
 <Component
-  class:list={["ui_badge", className]}
+  class:list={[badgeVariants({ color, size, variant }), className]}
   data-color={color}
   data-rounded={rounded}
   data-size={size}

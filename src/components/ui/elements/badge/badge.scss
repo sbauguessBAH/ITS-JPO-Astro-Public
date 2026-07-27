@@ -3,82 +3,16 @@
  * ============================================================ */
 
 .ui_badge {
-  /* Layout */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
-  width: fit-content;
-  white-space: nowrap;
-  vertical-align: middle;
-
-  /* Font */
-  font-family: inherit;
-  font-weight: var(--font-weight-medium);
   line-height: 1;
   letter-spacing: 0.01em;
 
-  /* Border */
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  border-radius: var(--radius-lg);
-
-  /* Interaction */
-  transition-property: color, background-color, border-color, opacity;
-  transition-duration: 150ms;
-  transition-timing-function: ease;
   cursor: default;
   user-select: none;
 
   // ---------- Interactions ----------
-
-  &:hover {
-    opacity: 0.85;
-  }
-
   &:focus-visible {
     outline: 2px solid var(--badge-color, var(--color-foreground));
     outline-offset: 2px;
-  }
-
-  // ---------- Sizes ----------
-
-  &[data-size="sm"] {
-    height: calc(var(--spacing) * 5); /* h-5 */
-    gap: var(--spacing);
-    padding: calc(var(--spacing) / 2) calc(var(--spacing) * 2);
-    font-size: var(--text-xs);
-
-    > svg {
-      width: calc(var(--spacing) * 3); /* size-3, 12px */
-      height: calc(var(--spacing) * 3);
-    }
-  }
-
-  &[data-size="default"] {
-    height: calc(var(--spacing) * 6); /* h-6 */
-    gap: calc(var(--spacing) * 1.25);
-    padding: calc(var(--spacing) / 2) calc(var(--spacing) * 2.5);
-    font-size: var(--text-xs);
-
-    > svg {
-      width: calc(var(--spacing) * 3.5); /* size-3.5, 14px */
-      height: calc(var(--spacing) * 3.5);
-    }
-  }
-
-  &[data-size="lg"] {
-    height: calc(var(--spacing) * 7); /* h-7 */
-    gap: calc(var(--spacing) * 1.5);
-    padding: calc(var(--spacing) * 0.75) calc(var(--spacing) * 3);
-    font-size: var(--text-sm);
-
-    > svg {
-      width: calc(var(--spacing) * 4); /* size-4, 16px */
-      height: calc(var(--spacing) * 4);
-    }
   }
 
   // ---------- Rounded ----------
