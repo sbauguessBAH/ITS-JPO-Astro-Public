@@ -147,10 +147,10 @@ onBeforeUnmount(() => {
 
 <template>
   <nav class="panel sticky-top" aria-label="Safety playbook filters">
-    <h3 class="panel-title">Filter Tools</h3>
+    <h3 class="panel-title">Safety Areas</h3>
 
     <div class="panel-section">
-      <h4 class="panel-section-title">Safety Areas</h4>
+     
       <button
         type="button"
         class="panel-item"
@@ -174,10 +174,10 @@ onBeforeUnmount(() => {
         <span class="panel-count">{{ safety.count }}</span>
       </button>
     </div>
-
-    <div class="panel-actions">
-      <button type="button" class="clear-button" @click="clearAll">Clear All Filters</button>
+ <div class="panel-actions">
+      <button type="button" class="clear-button playbook-clear-button" @click="clearAll">Clear All Filters</button>
     </div>
+    
   </nav>
 </template>
 
@@ -267,15 +267,5 @@ onBeforeUnmount(() => {
 
 .clear-button {
   width: 100%;
-  border: 1px solid rgb(5, 86, 129);
-  color: rgb(5, 86, 129);
-  background: #fff;
-  font-weight: 600;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.375rem;
-}
-
-.clear-button:hover {
-  background: rgb(239, 246, 251);
 }
 </style>
