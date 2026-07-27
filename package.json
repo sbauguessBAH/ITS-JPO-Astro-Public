@@ -10,14 +10,16 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "storybook": "storybook dev",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
-    "@astrojs/react": "^4.4.2",
+    "@astrojs/react": "^5.0.7",
     "@astrojs/vue": "^5.1.4",
     "@popperjs/core": "^2.11.8",
-    "astro": "^5.17.3",
+    "astro": "^5.18.2",
     "bootstrap": "^5.3.8",
     "class-variance-authority": "^0.7.1",
     "datatables.net": "^2.1.4",
@@ -33,6 +35,9 @@
     "@astrojs/sitemap": "^3.7.0",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.61.1",
+    "@storybook-astro/framework": "^1.9.0",
+    "@storybook/addon-docs": "^10.5.5",
+    "@storybook/builder-vite": "^10.5.5",
     "@tailwindcss/vite": "^4.3.2",
     "@types/bootstrap": "^5.2.10",
     "@types/node": "^24.13.2",
@@ -47,6 +52,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "sass": "^1.93.2",
+    "storybook": "^10.5.5",
     "tailwindcss": "^4.3.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.63.0"

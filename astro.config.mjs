@@ -40,5 +40,8 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["@storybook/addon-docs"],
+    },
   },
 });
