@@ -1,151 +1,63 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import BullseyeIcon from "@/src/components/ui/icons/BullseyeIcon.astro";
-import CheckIcon from "@/src/components/ui/icons/CheckIcon.astro";
-import CompassIcon from "@/src/components/ui/icons/CompassIcon.astro";
-import ListIcon from "@/src/components/ui/icons/ListIcon.astro";
+import FocusAreaFeature from "@/src/components/automation-program/FocusAreaFeature.astro";
+import FocusAreaHighlight from "@/src/components/automation-program/FocusAreaHighlight.astro";
+import FocusAreaLayout from "@/src/components/automation-program/FocusAreaLayout.astro";
 
 import Layout from "../_layout.astro";
 ---
 
-<style>
-  /* General Styles */
-  .subtitle {
-    color: rgb(var(--color-brand-dark));
-    font-size: 22px;
-    text-transform: none;
-  }
-</style>
-<style>
-  /* Focus Area Cards */
-  .area-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
-  }
-  @media (min-width: 992px) {
-    .area-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  .area-card {
-    border: 1px solid var(--border-light);
-    padding: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border-radius: 8px;
-  }
-  .area-card-header {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    align-items: center;
-    color: rgb(var(--color-brand-dark));
-  }
-  .area-card-title {
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    color: inherit;
-  }
-</style>
-<style>
-  .highlight-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    /* padding: 1rem; */
-  }
-  /* Highlight Cards */
-  .highlight-card {
-    border: 1px solid var(--border-light);
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    border-left: 4px solid rgb(var(--color-brand-dark));
-  }
-  .highlight-card-header {
-    background: rgb(var(--color-gray-light));
-    padding: 1rem 1rem;
-    margin: 0;
-    color: rgb(var(--color-brand-dark));
-    font-size: 18px;
-    font-weight: medium;
-  }
-  .highlight-card-content {
-    padding: 1rem;
-    margin: 0;
-    font-size: 1.1rem;
-  }
-</style>
 <Layout title="Automation Program">
   <main class="program-main">
-    <ProgramSection size="small">
-      <h2 class="program-title-lg">Analysis, Modeling, and Simulation (AMS)</h2>
-      <p class="max-w-lg program-text">
+    <FocusAreaLayout>
+      <slot slot="title">Analysis, Modeling, and Simulation (AMS)</slot>
+      <slot slot="description">
         Analysis, Modeling and Simulation (AMS) provides tools and methodologies
         to evaluate the impacts of transportation technologies and strategies
         before deployment, enabling data-driven decision making.
-      </p>
-      <div class="area-container mt-4">
-        <div class="area-card">
-          <div class="area-card-header">
-            <BullseyeIcon size={24} />
-            <h3 class="area-card-title">Goal</h3>
-          </div>
-          <p class="program-text">
+      </slot>
+      <slot slot="features">
+        <FocusAreaFeature icon="bullseye">
+          <slot slot="title"> Goal </slot>
+          <slot slot="description">
             Crosscutting research and resource development including design,
             planning, operations, and impact assessments informed by improved
             AMS.
-          </p>
-        </div>
-        <div class="area-card">
-          <div class="area-card-header">
-            <CompassIcon size={24} />
-            <h3 class="area-card-title">Approach</h3>
-          </div>
-          <p class="program-text">
+          </slot>
+        </FocusAreaFeature>
+        <FocusAreaFeature icon="compass">
+          <slot slot="title"> Approach </slot>
+          <slot slot="description">
             Engage stakeholders to prioritize AMS capabilities for ITS,
             collaborate on research and development to enhance these
             capabilities, and develop resources to support their understanding
             and use.
-          </p>
-        </div>
-        <div class="area-card">
-          <div class="area-card-header">
-            <CheckIcon size={24} />
-            <h3 class="area-card-title">Anticipated Outcomes</h3>
-          </div>
-          <p class="program-text">
+          </slot>
+        </FocusAreaFeature>
+        <FocusAreaFeature icon="check">
+          <slot slot="title"> Anticipated Outcomes </slot>
+          <slot slot="description">
             A robust and reliable set of ITS specific AMS tools and resources
             for better transportation decision-making and impact assessments.
-          </p>
-        </div>
-        <div class="area-card">
-          <div class="area-card-header">
-            <ListIcon size={24} />
-            <h3 class="area-card-title">Near-Term Actions</h3>
-          </div>
-          <p class="program-text">
+          </slot>
+        </FocusAreaFeature>
+        <FocusAreaFeature icon="list">
+          <slot slot="title"> Near-Term Actions </slot>
+          <slot slot="description">
             Conduct foundational research and development, collect, integrate
             and manage data, enhance models, perform case studies and testing,
             and facilitate outreach and knowledge transfer.
-          </p>
-        </div>
-      </div>
-    </ProgramSection>
-    <ProgramSection>
-      <h3 class="program-title-md">Current Project Highlights</h3>
-      <div class="highlight-container mt-4">
-        <div class="highlight-card">
-          <h4 class="highlight-card-header">
+          </slot>
+        </FocusAreaFeature>
+      </slot>
+      <slot slot="highlights">
+        <FocusAreaHighlight>
+          <slot slot="title">
             Understanding the Costs Associated with Connected and Automated
             Vehicles
-          </h4>
-          <div class="highlight-card-content">
+          </slot>
+          <slot slot="description">
             The objectives of this project are to
-            <ol>
+            <ol class="tw:text-base!">
               <li>
                 Update the 2018 CAV Cost Tool using Volpe independent review
                 recommendations and to account for new data surrounding the
@@ -162,24 +74,22 @@ import Layout from "../_layout.astro";
                 their stakeholders.
               </li>
             </ol>
-          </div>
-        </div>
-        <div class="highlight-card">
-          <h4 class="highlight-card-header">
-            AMS Framework for Automated Trucks
-          </h4>
-          <div class="highlight-card-content">
+          </slot>
+        </FocusAreaHighlight>
+        <FocusAreaHighlight>
+          <slot slot="title"> AMS Framework for Automated Trucks </slot>
+          <slot slot="description">
             Develop an AMS framework that is specifically designed for connected
             and automated trucks given the unique aspects of connected and
             automated trucks compared to other general road users.
-          </div>
-        </div>
-        <div class="highlight-card">
-          <h4 class="highlight-card-header">
+          </slot>
+        </FocusAreaHighlight>
+        <FocusAreaHighlight>
+          <slot slot="title">
             Acquiring Baseline and ADAS-equipped Commercial Freight Driving
             Performance Datasets
-          </h4>
-          <div class="highlight-card-content">
+          </slot>
+          <slot slot="description">
             Improve current AMS capabilities in assessing the performance of
             connected and automated trucks (CAT) by collecting/acquiring and
             assembling comparable CAT datasets. Datasets generated from this
@@ -187,9 +97,9 @@ import Layout from "../_layout.astro";
             data from ADAS-driven trucks, will support the development of new
             CAT operations models that will allow for more realistic assessment
             of CAT impacts on traffic system performance.
-          </div>
-        </div>
-      </div>
-    </ProgramSection>
+          </slot>
+        </FocusAreaHighlight>
+      </slot>
+    </FocusAreaLayout>
   </main>
 </Layout>

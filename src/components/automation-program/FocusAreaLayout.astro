@@ -1,0 +1,24 @@
+---
+import ItemGroup from "@/src/components/ui/elements/item/ItemGroup.astro";
+import Heading from "../ui/elements/heading/Heading.astro";
+---
+
+<div class="tw:flex tw:flex-col tw:gap-8 tw:pb-16">
+  <div class="tw:flex tw:flex-col">
+    <Heading>
+      <slot name="title" />
+    </Heading>
+    <p class="max-w-lg program-text tw:m-0 tw:p-0">
+      <slot name="description" />
+    </p>
+    <ItemGroup class="tw:grid tw:grid-cols-1 tw:md:grid-cols-2">
+      <slot name="features" />
+    </ItemGroup>
+  </div>
+  <div class="tw:flex tw:flex-col tw:gap-4">
+    <Heading size="md">Current Project Highlights</Heading>
+    <ItemGroup class="tw:flex tw:flex-col">
+      <slot name="highlights" />
+    </ItemGroup>
+  </div>
+</div>

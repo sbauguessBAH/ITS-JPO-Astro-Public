@@ -2,9 +2,20 @@
 import { getCollection } from "astro:content";
 
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
+import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
+import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
+import Item from "@/src/components/ui/elements/item/Item.astro";
+import ItemActions from "@/src/components/ui/elements/item/ItemActions.astro";
+import ItemContent from "@/src/components/ui/elements/item/ItemContent.astro";
+import ItemDescription from "@/src/components/ui/elements/item/ItemDescription.astro";
+import ItemGroup from "@/src/components/ui/elements/item/ItemGroup.astro";
+import ItemTitle from "@/src/components/ui/elements/item/ItemTitle.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../_layout.astro";
@@ -152,12 +163,6 @@ const projects = resources
     font-weight: 600;
   }
 
-  .resource-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size);
-  }
-
   .deliverable-list {
     list-style: none;
     padding: 0;
@@ -209,15 +214,6 @@ const projects = resources
     border: 1px solid var(--border-light);
     /* box-shadow: var(--box-shadow); */
   }
-  .panel-title {
-    background: rgb(var(--color-brand-dark));
-    color: white;
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
-    padding: 1rem;
-    text-transform: none;
-    font-size: 1.4rem;
-    margin: 0;
-  }
   .panel-item {
     display: flex;
     flex-direction: row;
@@ -246,25 +242,17 @@ const projects = resources
 <Layout title="Automation Program">
   <main class="program-main">
     <ProgramSection>
-      <h2 class="program-title-lg">Resources</h2>
+      <Heading>Resources</Heading>
       <div class="resource-container mt-4">
-        <!-- <nav class="resource-menu">
-          {areas.map(area => (
-            <a
-              class:list={[
-                "resource-menu-item",
-                { "resource-menu-item-active": area.title === title }
-              ]}
-              href={base_url(`/research-areas/automation-program/resources/${area.path ?? ""}`)}
-              aria-label={`Show resources for ${area.title}`}
+        <div class="tw:basis-1/4">
+          <nav
+            class="tw:flex tw:flex-col tw:rounded-2xl tw:border tw:border-border"
+          >
+            <h3
+              class="tw:m-0! tw:rounded-t-2xl tw:bg-primary tw:p-4! tw:text-xl! tw:text-white! tw:normal-case!"
             >
-              {area.title}
-            </a>
-          ))}
-        </nav> -->
-        <div class="resource-menu">
-          <nav class="panel">
-            <h3 class="panel-title">Areas</h3>
+              Areas
+            </h3>
             {
               areas.map((item) => (
                 <a
@@ -284,7 +272,7 @@ const projects = resources
             }
           </nav>
         </div>
-        <div class="resource-list">
+        <div class="tw:flex tw:basis-3/4 tw:flex-col tw:gap-4">
           {
             projects.map((project) => {
               const sortedDeliverables = project.deliverables.toSorted(
@@ -292,26 +280,37 @@ const projects = resources
               );
               return (
                 <Card>
-                  <CardHeader class="resource-card-header">
-                    <div class="resource-area-badge">{project.area}</div>
-                    <h3 class="program-title-md">{project.title}</h3>
+                  <CardHeader>
+                    <Badge color="neutral" variant="subtle">
+                      {project.area}
+                    </Badge>
+                    <CardTitle class="tw:text-primary!">
+                      {project.title}
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent class="resource-card-body">
-                    <ul class="deliverable-list">
+                  <CardContent>
+                    <ItemGroup>
                       {sortedDeliverables.map((deliverable) => (
-                        <li class="deliverable-list-item">
-                          <a
-                            class="deliverable-title"
-                            href={deliverable.url}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                          >
-                            {deliverable.title}
-                          </a>
-                          <div class="deliverable-year">{deliverable.year}</div>
-                        </li>
+                        <Item
+                          href={deliverable.url}
+                          isExternal
+                          size="xs"
+                          variant="muted"
+                        >
+                          <ItemContent>
+                            <ItemTitle class="tw:text-base!">
+                              {deliverable.title}
+                            </ItemTitle>
+                            <ItemDescription>
+                              {deliverable.year}
+                            </ItemDescription>
+                          </ItemContent>
+                          <ItemActions>
+                            <Icon class="tw:size-3" name="external-link" />
+                          </ItemActions>
+                        </Item>
                       ))}
-                    </ul>
+                    </ItemGroup>
                   </CardContent>
                 </Card>
               );

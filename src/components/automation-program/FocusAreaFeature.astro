@@ -1,0 +1,32 @@
+---
+import Item from "@/src/components/ui/elements/item/Item.astro";
+import ItemContent from "@/src/components/ui/elements/item/ItemContent.astro";
+import ItemDescription from "@/src/components/ui/elements/item/ItemDescription.astro";
+import ItemMedia from "@/src/components/ui/elements/item/ItemMedia.astro";
+import ItemTitle from "@/src/components/ui/elements/item/ItemTitle.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
+import type { IconName } from "@/src/components/ui/icon/icons";
+
+type Props = {
+  icon: IconName;
+};
+
+const { icon } = Astro.props;
+---
+
+<Item class="tw:items-start tw:gap-4 tw:px-4 tw:py-4" variant="outline">
+  <ItemMedia
+    class="tw:rounded-xl tw:border tw:border-primary/20 tw:bg-primary/10 tw:p-2"
+    variant="icon"
+  >
+    <Icon class="tw:size-6 tw:text-primary" name={icon} />
+  </ItemMedia>
+  <ItemContent>
+    <ItemTitle class="tw:text-lg tw:font-semibold! tw:text-primary">
+      <slot name="title" />
+    </ItemTitle>
+    <ItemDescription class="tw:line-clamp-none tw:text-base">
+      <slot name="description" />
+    </ItemDescription>
+  </ItemContent>
+</Item>
