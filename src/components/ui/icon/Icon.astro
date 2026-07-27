@@ -1,0 +1,52 @@
+---
+/**
+ * Icon component to dynamically render pre-installed icons
+ *
+ * @remarks
+ * This component uses `import.meta.glob` to dynamically load SVG icons from
+ * the `src/icons/` directory.
+ *
+ * To add a new icon:
+ *
+ * 1. Place the `.svg` file in the `src/icons/` directory.
+ * 2. Add the icon name to the `ICON_NAMES` array in `src/components/ui/icon/icons.ts`.
+ *
+ * @privateRemarks
+ * I tried to keep this component as simple as possible. I drew inspiration from
+ * a few different places and created a unique implementation:
+ *
+ * - [Astro Icon](https://github.com/natemoo-re/astro-icon/blob/main/README.md)
+ * - [Frontendland/webcoreui](https://github.com/Frontendland/webcoreui)
+ * - [fulldotdev/ui](https://github.com/fulldotdev/ui)
+ */
+import type { HTMLAttributes } from "astro/types";
+import type { IconName } from "./icons";
+import { ICON_NAMES } from "./icons";
+
+type Props = HTMLAttributes<"svg"> & {
+  size?: number | string;
+  class?: string;
+  name: IconName;
+};
+
+const { name, class: className, size = 24 } = Astro.props;
+
+const icons = import.meta.glob<{ default: any }>("/src/icons/*.svg");
+
+async function findIcon() {
+  console.log(icons);
+  const iconPath = `/src/icons/${name}.svg`;
+  if (!icons[iconPath]) {
+    throw new Error(`Icon file not found: ${iconPath}`);
+  }
+
+  const icon = await icons[iconPath]();
+  return icon;
+}
+
+// Resolve the icon component dynamically
+const svg = await findIcon();
+const Component = svg.default;
+---
+
+<Component width={size} height={size} fill="currentColor" class={className} />
