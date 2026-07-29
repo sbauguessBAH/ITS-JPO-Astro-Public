@@ -28,12 +28,6 @@ type RenderArticle = ArchiveArticle & {
   thumbnail?: ImageMetadata;
 };
 
-type ArticleFilterData = {
-  title: string;
-  desc: string;
-  tags: string[];
-};
-
 const thumbnailModules = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/newsroom/postThumbnails/*", {
   eager: true,
 });
@@ -108,14 +102,6 @@ const articles: RenderArticle[] = archiveArticles
 const technologyAreasList = Array.from(
   new Set(archiveArticles.flatMap((article) => normalizeTagValues(article.tags?.["technology-areas"]))),
 ).sort((a, b) => a.localeCompare(b));
-
-const articleFilterData: ArticleFilterData[] = articles.map((article) => ({
-  title: (article.title ?? "").toLowerCase(),
-  desc: (article.desc ?? "").toLowerCase(),
-  tags: collectAllTags(article.tags),
-}));
-
-const pageSize = 10;
 ---
 
 <PageLayout title="In the News" bannerImage={banner} keywords={keywords} description={description} currentBreadcrumb="In the News">
@@ -135,9 +121,19 @@ const pageSize = 10;
           const source = article.news_src?.trim() || "Source";
           const location = article.location?.trim();
           const date = article.date?.trim();
+          const articleTags = collectAllTags(article.tags);
+          const searchTagValues = articleTags.map((tag) => tag.toLowerCase());
 
           return (
-            <article class="news-article">
+            <article
+              class="news-article"
+              data-tags={articleTags.join("|")}
+              data-search-title={title}
+              data-search-desc={article.desc?.trim() ?? ""}
+              data-search-source={source}
+              data-search-location={location ?? ""}
+              data-search-tags={searchTagValues.join("|")}
+            >
               <div class="news-article-media">
                 {
                   article.thumbnail ? (
@@ -199,22 +195,95 @@ const pageSize = 10;
   </main>
 </PageLayout>
 
-<script define:vars={{ pageSize, articleFilterData }}>
+<script>
+  import Fuse from "fuse.js";
+
+  interface InTheNewsSearchDoc {
+    index: number;
+    title: string;
+    description: string;
+    source: string;
+    location: string;
+    searchTags: string[];
+  }
+
+  interface InTheNewsFilterState {
+    technologyAreas: string[];
+    searchQuery: string;
+  }
+
   const articleRows = Array.from(document.querySelectorAll(".news-article")).filter((el) => el instanceof HTMLElement);
   const paginationNav = document.getElementById("news-pagination");
   const paginationPrev = document.getElementById("news-pagination-prev");
   const paginationNext = document.getElementById("news-pagination-next");
   const paginationPages = document.getElementById("news-pagination-pages");
   const emptyState = document.getElementById("news-empty-state");
+  const PAGE_SIZE = 10;
 
   let currentPage = 1;
   let filteredIndexes = articleRows.map((_, index) => index);
-  let activeFilters = {
+  let fuzzySearch: Fuse<InTheNewsSearchDoc> | null = null;
+  let searchMatchedIndexes = new Set<number>();
+  let activeFilters: InTheNewsFilterState = {
     technologyAreas: [],
     searchQuery: "",
   };
 
-  const normalizeStringArray = (value) => {
+  const splitPipeValues = (raw = ""): string[] =>
+    raw
+      .split("|")
+      .map((value) => value.trim())
+      .filter((value) => Boolean(value));
+
+  const buildSearchIndex = () => {
+    if (fuzzySearch) {
+      return;
+    }
+
+    const docs = articleRows.map((article, index) => ({
+      index,
+      title: (article.dataset.searchTitle ?? "").toLowerCase(),
+      description: (article.dataset.searchDesc ?? "").toLowerCase(),
+      source: (article.dataset.searchSource ?? "").toLowerCase(),
+      location: (article.dataset.searchLocation ?? "").toLowerCase(),
+      searchTags: splitPipeValues(article.dataset.searchTags).map((tag) => tag.toLowerCase()),
+    }));
+
+    fuzzySearch = new Fuse(docs, {
+      includeScore: true,
+      ignoreLocation: true,
+      threshold: 0.3,
+      minMatchCharLength: 2,
+      keys: [
+        { name: "title", weight: 0.7 },
+        { name: "description", weight: 0.1 },
+        { name: "source", weight: 0.05 },
+        { name: "location", weight: 0.05 },
+        { name: "searchTags", weight: 0.15 },
+      ],
+    });
+  };
+
+  const updateSearchMatches = (query: string): void => {
+    const searchValue = typeof query === "string" ? query.trim() : "";
+
+    if (!searchValue) {
+      searchMatchedIndexes = new Set<number>();
+      return;
+    }
+
+    buildSearchIndex();
+
+    if (!fuzzySearch) {
+      searchMatchedIndexes = new Set<number>();
+      return;
+    }
+
+    const matches = fuzzySearch.search(searchValue);
+    searchMatchedIndexes = new Set(matches.map((match) => match.item.index));
+  };
+
+  const normalizeStringArray = (value: unknown): string[] => {
     if (!Array.isArray(value)) {
       return [];
     }
@@ -224,32 +293,35 @@ const pageSize = 10;
       .filter((item) => Boolean(item));
   };
 
-  const articleHasTags = (article, selectedTags) => {
+  const articleHasTags = (article: HTMLElement, selectedTags: string[]): boolean => {
     if (selectedTags.length === 0) {
       return true;
     }
 
-    return article.tags.some((tag) => selectedTags.includes(tag));
+    const articleTags = splitPipeValues(article.dataset.tags);
+    return articleTags.some((tag) => selectedTags.includes(tag));
   };
 
   const updateFilteredIndexes = () => {
     const selectedTechnologyAreas = activeFilters.technologyAreas;
-    const searchValue = activeFilters.searchQuery.trim().toLowerCase();
+    const searchValue = activeFilters.searchQuery.trim();
 
-    filteredIndexes = articleFilterData
+    updateSearchMatches(searchValue);
+
+    filteredIndexes = articleRows
       .map((article, index) => ({ article, index }))
       .filter(({ article }) => articleHasTags(article, selectedTechnologyAreas))
-      .filter(({ article }) => {
+      .filter(({ index }) => {
         if (!searchValue) {
           return true;
         }
 
-        return article.title.includes(searchValue) || article.desc.includes(searchValue);
+        return searchMatchedIndexes.has(index);
       })
       .map(({ index }) => index);
   };
 
-  const pageCount = () => Math.ceil(filteredIndexes.length / pageSize);
+  const pageCount = () => Math.ceil(filteredIndexes.length / PAGE_SIZE);
 
   const renderPagination = () => {
     const totalPages = pageCount();
@@ -302,8 +374,8 @@ const pageSize = 10;
       currentPage = totalPages;
     }
 
-    const start = (currentPage - 1) * pageSize;
-    const visibleIndexes = new Set(filteredIndexes.slice(start, start + pageSize));
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const visibleIndexes = new Set(filteredIndexes.slice(start, start + PAGE_SIZE));
 
     articleRows.forEach((row, index) => {
       row.style.display = visibleIndexes.has(index) ? "" : "none";
