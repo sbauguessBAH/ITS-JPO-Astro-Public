@@ -395,6 +395,10 @@ const pageSize = 10;
     border-radius: 8px;
   }
 
+  .news-filter-panel .p-multiselect {
+    --p-multiselect-chip-border-radius: 50px;
+  }
+
   .news-filter-panel .p-checkbox-box {
     border-width: 1px;
     border-color: gray;
@@ -410,17 +414,22 @@ const pageSize = 10;
     font-size: 1.1rem;
   }
 
+  .news-filter-panel .p-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
   .news-filter-panel .p-multiselect-header {
     display: none;
   }
 
   .news-filter-panel .p-chip,
   .news-filter-panel .p-multiselect-chip {
-    border-radius: 50px;
-    background-color: rgb(216, 216, 216);
-    padding: 0 3px 0 12px;
+    border-radius: 50px !important;
+    background-color: rgb(216, 216, 216) !important;
+    padding: 0 3px 0 12px !important;
     margin: 4px 2px;
-    color: #000;
+    color: #000 !important;
   }
 
   .news-filter-panel .p-multiselect-chip-item {
@@ -429,8 +438,8 @@ const pageSize = 10;
 
   .news-filter-panel .technologyAreaContainer .p-chip,
   .news-filter-panel .technologyAreaContainer .p-multiselect-chip {
-    background-color: rgba(255, 196, 3, 0.343);
-    color: #000;
+    background-color: rgba(255, 196, 3, 0.343) !important;
+    color: #000 !important;
   }
 
   .news-filter-panel #technologyAreas_list .p-checkbox-box:has(svg) {
@@ -440,6 +449,11 @@ const pageSize = 10;
   .news-filter-panel .p-multiselect-option.p-focus {
     background-color: rgb(238, 238, 238);
     color: #000;
+  }
+
+  .p-multiselect-list-container {
+    background-color: #fff;
+    padding: 0.5rem;
   }
 
   .news-filter-input {
