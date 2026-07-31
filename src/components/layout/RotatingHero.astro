@@ -7,6 +7,7 @@ import hero3 from "@/src/assets/images/hero-bg/FIFA-AccessMap-Multimodal-Event-E
 
 import hero4 from "@/src/assets/images/hero-bg/ITS-for-Planned-Special-Events-Executive-Briefing-World-Cup-2026.jpg";
 import hero5 from "@/src/assets/images/hero-bg/Ready-Set-Robot-1.jpg";
+import heroAI from "@/src/assets/images/hero-bg/AI-Procurement-Webinar.jpg";
 ---
 
 <div class="hero-carousel">
@@ -51,15 +52,17 @@ import hero5 from "@/src/assets/images/hero-bg/Ready-Set-Robot-1.jpg";
       </div>
     </section> -->
 
-    <section class="slide" style={`background-image: url(${hero1.src})`}>
+    <section class="slide" style={`background-image: url(${heroAI.src})`}>
       <div class="container-xl">
         <div class="content-box">
-          <h2 class="newsLetterHeader">ISS Prototyping Broad Agency Announcement is Live!</h2>
-          <p class="fs-4">Funding Opportunity | Up to $17M across 3 teams</p>
-          <a href="https://sam.gov/workspace/contract/opp/343dd0f244df4c3a9c9baa9b60b8ac54/view" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button">Learn More</a>
+          <h2 class="newsLetterHeader">National Webinar: Demystifying AI Procurement</h2>
+          <p class="fs-4">Discover actionable strategies from agencies navigating AI procurement across the multimodal transportation landscape.</p>
+          <a href="https://itsa-org.zoom.us/webinar/register/WN_RUS21Y4XTq-hG_5_JPYGBA#/registration" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">Register Now</a>
         </div>
       </div>
     </section>
+
+  
 
     <section class="slide" style={`background-image: url(${hero2.src})`}>
       <div class="container-xl">
@@ -124,7 +127,7 @@ import hero5 from "@/src/assets/images/hero-bg/Ready-Set-Robot-1.jpg";
   const carousel = document.querySelector(".hero-carousel .slides") as HTMLElement;
   const contentBoxes = document.querySelectorAll(".content-box");
   const slideWidth = carousel?.offsetWidth || 0;
-  const totalSlides = 4;
+  const totalSlides = 5;
   let currentSlide = 0;
   let autoRotateInterval: ReturnType<typeof setInterval>;
 
