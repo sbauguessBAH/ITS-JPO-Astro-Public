@@ -86,6 +86,7 @@ export const navigation: NavigationItem[] = [
                   { name: "AI Governance", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-governance" },
                   { name: "AI Definitions & Concepts", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-definitions-concepts" },
                   { name: "AI Methods & Sub-Methods", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-methods-sub-methods" },
+                  { name: "AI Procurement National Webinar", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-procurement-national-webinar" },
                 ],
               },
             ],
