@@ -28,88 +28,6 @@
             "date": "2026",
             "availability": "Available"
         }],
-            "image_library": [
-                {
-                    "title": "MCDOT V2X Deployment Image 1",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/1719530988503.jfif",
-                    "alt_description": "A woman in a bright pink blouse speaks at a podium during a Maricopa County Transportation press event, with panelists seated behind her."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 2",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/1719530988813.jfif",
-                    "alt_description": "Four attendees pose for a photo inside the Maricopa County Transportation lobby after the CVAZ press event."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 3",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/1719530992477.jfif",
-                    "alt_description": "A man in a navy blazer addresses the audience at the podium while panelists listen during the transportation press event."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 4",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/1719530993219.jfif",
-                    "alt_description": "An older man in a gray suit speaks at the podium as panelists sit on either side in the Maricopa County lobby."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 5",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/1719530993714.jpg",
-                    "alt_description": "A large group of officials and partners pose in front of a fire department truck outdoors under clear skies."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 6",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/CVAZ_Phx_Press_Event_10_062124.jpg",
-                    "alt_description": "A television reporter interviews a speaker in the Maricopa County Transportation lobby while a camera operator films."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 7",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/CVAZ_Phx_Press_Event_12_062124.jpg",
-                    "alt_description": "Overhead view of the CVAZ press event with speakers at the podium, media cameras, and attendees gathered across the lobby."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 8",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/CVAZ_Phx_Press_Event_35_062124.jpg",
-                    "alt_description": "Two participants smile while talking in the lobby as other attendees stand nearby during the transportation event."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 9",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/CVAZ_Phx_Press_Event_38_062124.jpg",
-                    "alt_description": "Four attendees stand shoulder to shoulder for a portrait in front of the Maricopa County Transportation display wall."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 10",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2603.jpg",
-                    "alt_description": "A wide shot shows an older speaker at the podium with five seated panelists during the CVAZ press conference."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 11",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2609.jpg",
-                    "alt_description": "Another wide angle of the older speaker at the podium, with panelists seated and county flags visible behind them."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 12",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2613.jpg",
-                    "alt_description": "A man in a navy blazer speaks at the podium as panelists look on during the Maricopa County Transportation event."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 13",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2626.jpg",
-                    "alt_description": "An older man speaks at the podium while panelists listen from both sides in the transportation department lobby."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 14",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2631.jpg",
-                    "alt_description": "The older speaker pauses at the podium as seated panelists and county flags frame the press event."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 15",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2639.jpg",
-                    "alt_description": "A woman in a pink blouse speaks at the podium while panelists sit to her left and right."
-                },
-                {
-                    "title": "MCDOT V2X Deployment Image 16",
-                    "img_src": "/assets/images/toolkits/media-toolkits/MCDOT/img-library/IMG_2646.jpg",
-                    "alt_description": "A man in a dark suit delivers remarks at the podium with panelists seated nearby in the Maricopa County lobby."
-                }
-            ],
             "webinar_materials": [{
                 "id": 32, 
                 "date": "October 7, 2025", 
@@ -188,18 +106,6 @@
         "date": "2026",
         "availability": "Available"
     }],
-    "image_library": [
-        {
-            "title": "UDOT V2X Deployment Image 1",
-            "img_src": "/assets/images/toolkits/media-toolkits/UDOT/img-library/UDOT-29960088.jpeg",
-            "alt_description": "Woman with brown shoulder length hair and a plaid shirt standing in front of an orange UDOT truck.  She is standing behind a podium and speaking to a crowd.  The crowd can be seen facing away from the camera, one person is holding a phone seemingly taking a picture of the woman at the podium."
-        },
-        {
-            "title": "UDOT V2X Deployment Image 2",
-            "img_src": "/assets/images/toolkits/media-toolkits/UDOT/img-library/UDOT-448939943_866950625467470_7662647061832058959.jpg",
-            "alt_description": "Three UDOT personnel standing in front of an electrical box outside. The personell closest to the box has his hands up infront of him like he is explaining how the electrical box works. "
-        }
-    ],
     "webinar_materials": [{
         "title": "UDOT Deployment Concept Webinar",
         "recording_href": "https://www.youtube.com/watch?v=hEgIj59sOYo",
@@ -263,18 +169,6 @@
         "date": "2026",
         "availability": "N/A"
         }],
-        "image_library": [
-            {
-                "title": "TTI Texas TRUST V2X Program Image 1",
-                "img_src": "/assets/images/toolkits/media-toolkits/TTI/img-library/TTI-1723241132986.jfif",
-                "alt_description": "TTI Texas TRUST V2X Program image 1"
-            },
-            {
-                "title": "TTI Texas TRUST V2X Program Image 2",
-                "img_src": "/assets/images/toolkits/media-toolkits/TTI/img-library/TTI-1723241133405.jfif",
-                "alt_description": "TTI Texas TRUST V2X Program image 2"
-            }
-        ],
     "webinar_materials": [{
     "id": 40, 
     "date": "October 15, 2025", 
