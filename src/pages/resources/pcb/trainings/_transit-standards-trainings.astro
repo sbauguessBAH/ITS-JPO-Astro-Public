@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 // import { isTemplateExpression } from "typescript";
 
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
@@ -108,6 +108,11 @@ const trainings: CollectionEntry<"pcbTransitStandardsTrainings">[] =
     padding: var(--size);
     padding-top: var(--size-sm);
   }
+  .training-card-content {
+    margin: 0;
+    /* Keep module text readable without invoking markdown component rendering for each item. */
+    white-space: pre-line;
+  }
   .training-card-button {
     text-decoration: none;
     color: white;
@@ -152,8 +157,8 @@ const trainings: CollectionEntry<"pcbTransitStandardsTrainings">[] =
       <div class="training-list">
         {trainings
           .toSorted((a, b) => a.data.module - b.data.module)
-          .map(async training => {
-            const { Content } = await render(training);
+          // Render body text directly so large module lists do not eagerly compile markdown components.
+          .map(training => {
             return (
               // <article class="training-card">
               //   <div class="training-card-header">
@@ -213,7 +218,7 @@ const trainings: CollectionEntry<"pcbTransitStandardsTrainings">[] =
                     class="collapse training-card-body" 
                     id={`collapse-${training.id}`}  
                   >
-                    <Content/>
+                    <p class="training-card-content">{training.body}</p>
                   </div>
                 </CardBody>
                 <CardFooter class="training-card-footer">
@@ -249,52 +254,3 @@ const trainings: CollectionEntry<"pcbTransitStandardsTrainings">[] =
     </ProgramSection>
   </div>
 </Layout>
-
-<script>
-  class ContentExpander extends HTMLElement {
-    constructor() {
-      super();
-      this.init();
-    }
-
-    init() {
-      const toggleButtons = document.querySelectorAll<HTMLButtonElement>(".training-card-button");
-      
-      toggleButtons.forEach(button => {
-        button.addEventListener("click", () => this.toggleContent(button))
-      })
-    }
-
-    toggleContent(button: HTMLButtonElement) {
-      const previewId = button.dataset.previewId
-      const fullId = button.dataset.fullId
-
-      if (!previewId || !fullId) return;
-
-      const previewElement = document.getElementById(previewId);
-      const fullElement = document.getElementById(fullId);
-
-      if (!previewElement || !fullElement) return;
-
-      const isExpanded = button.getAttribute('aria-expanded') === "true";
-
-      if (isExpanded) {
-        previewElement.removeAttribute("hidden");
-        fullElement.setAttribute("hidden", "");
-        button.setAttribute("aria-expanded", "false");
-        button.textContent = "Show More"
-      } else {
-        previewElement.setAttribute("hidden", "");
-        fullElement.removeAttribute("hidden");
-        button.setAttribute("aria-expanded", "true");
-        button.textContent = "Show Less";
-      }
-    }
-  }
-
-  customElements.define("content-expander", ContentExpander);
-
-  document.addEventListener("DOMContentLoaded", () => {
-    new ContentExpander();
-  })
-</script>

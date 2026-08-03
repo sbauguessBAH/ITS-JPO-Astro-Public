@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
-    "build:noWarn": "astro build --minimumSeverity error",
+    "build": "node --max-old-space-size=8192 ./node_modules/astro/astro.js check && node --max-old-space-size=8192 ./node_modules/astro/astro.js build",
+    "build:noWarn": "node --max-old-space-size=8192 ./node_modules/astro/astro.js build --minimumSeverity error",
     "preview": "astro preview",
     "astro": "astro"
   },
