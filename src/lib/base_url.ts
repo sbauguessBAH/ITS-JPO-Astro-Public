@@ -8,7 +8,6 @@ export default function base_url(absolutePath: string): string {
   // So we only check if it's not the default base URL here. 
   if (import.meta.env.BASE_URL !== "/") {
     const fullPath = import.meta.env.BASE_URL + absolutePath;
-    console.log("FULL PATH: " + fullPath);
     return fullPath;
   };
   return absolutePath;
