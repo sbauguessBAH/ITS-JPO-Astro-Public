@@ -143,15 +143,7 @@
                                     "material_type": "Factsheet",
                                     "date": "2026"
                                     }],
-                                    "videos": [{
-                                        "title": "TTI Texas TRUST Short Project Video",
-        "produced_by": "TTI Produced",
-        "duration": "long",
-        "platform": "YouTube",
-        "material_type": "Video",
-        "date": "2026",
-        "availability": "N/A"
-        }],
+                        
     "webinar_materials": [{
     "id": 40, 
     "date": "October 15, 2025", 
