@@ -161,9 +161,10 @@
     "slides_href": "https://itsa.org/event/v2x-accelerator-deployment-concept-series-webinar-3-texas-am-transportation-institute/"
     }],
     "media_coverage": [{
-        "title": "How The West was One: Texas TRUST V2X Program -- Feature Article",
-        "href": "https://digital.itsinternational.com/2026/mar-apr/html5/?pn=15",
+        "title": "Developing Trust: The Greater Houston Area",
+        "href": "https://digital.itsinternational.com/2026/mar-apr/html5/?pn=17",
         "platform": "ITS International",
+        "img_src": "/assets/images/toolkits/media-toolkits/TTI/houston-preview.png",
         "media_type": "article"
         }],
         "belt_cta": {
