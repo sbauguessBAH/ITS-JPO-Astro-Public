@@ -8,6 +8,7 @@ import hero3 from "@/src/assets/images/hero-bg/FIFA-AccessMap-Multimodal-Event-E
 import hero4 from "@/src/assets/images/hero-bg/ITS-for-Planned-Special-Events-Executive-Briefing-World-Cup-2026.jpg";
 import hero5 from "@/src/assets/images/hero-bg/Ready-Set-Robot-1.jpg";
 import heroAI from "@/src/assets/images/hero-bg/AI-Procurement-Webinar.jpg";
+import heroCdaBaa from "@/src/assets/images/hero-bg/Hero-CDABAA.jpg";
 ---
 
 <div class="hero-carousel">
@@ -62,6 +63,16 @@ import heroAI from "@/src/assets/images/hero-bg/AI-Procurement-Webinar.jpg";
       </div>
     </section>
 
+    <section class="slide" style={`background-image: url(${heroCdaBaa.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2 class="newsLetterHeader">CDA Small-Scale Industry Prototype BAA is Live!</h2>
+          <p>The official Cooperative Driving Automation (CDA) Small-Scale Industry Prototype Broad Agency Announcement (BAA) is live on SAM.gov with up to $5M funding. Open to U.S. entities. Proposals due Sept 13, 2026.</p>
+          <a href="https://sam.gov/workspace/contract/opp/fa7c3868d1de4478942fab3856ce243e/view" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">Learn More</a>
+        </div>
+      </div>
+    </section>
+
   
 
     <section class="slide" style={`background-image: url(${hero2.src})`}>
@@ -75,7 +86,7 @@ import heroAI from "@/src/assets/images/hero-bg/AI-Procurement-Webinar.jpg";
       </div>
     </section>
 
-    <section class="slide" style={`background-image: url(${hero3.src})`}>
+    <!-- <section class="slide" style={`background-image: url(${hero3.src})`}>
       <div class="container-xl">
         <div class="content-box">
           <h2>DEP Executive Briefing & World Cup 2026</h2>
@@ -90,7 +101,7 @@ import heroAI from "@/src/assets/images/hero-bg/AI-Procurement-Webinar.jpg";
           </a>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="slide" style={`background-image: url(${hero4.src})`}>
       <div class="container-xl">
@@ -127,7 +138,7 @@ import heroAI from "@/src/assets/images/hero-bg/AI-Procurement-Webinar.jpg";
   const carousel = document.querySelector(".hero-carousel .slides") as HTMLElement;
   const contentBoxes = document.querySelectorAll(".content-box");
   const slideWidth = carousel?.offsetWidth || 0;
-  const totalSlides = 5;
+  const totalSlides = 6;
   let currentSlide = 0;
   let autoRotateInterval: ReturnType<typeof setInterval>;
 
