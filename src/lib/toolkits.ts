@@ -108,6 +108,7 @@ type RawMediaItem = {
   cta_text?: string;
   download_href?: string;
   href?: string;
+  image?: string;
   image_src?: string;
   img_src?: string;
   "link-text"?: string;
@@ -402,7 +403,8 @@ const normalizeMediaItems = (items?: RawMediaItem[]): ToolkitMediaItem[] => {
     .map((item) => {
       const title = cleanText(item.title) || cleanText(item["link-text"]);
       const href = cleanText(item.href);
-      const image = cleanText(item.image_src) || cleanText(item.img_src);
+      const imageValue = cleanText(item.image_src) || cleanText(item.img_src) || cleanText(item.image);
+      const image = imageValue?.startsWith("assets/") ? `/${imageValue}` : imageValue;
       const altDescription = cleanText(item.alt_description) || cleanText(item.alt_text) || cleanText(item.alt);
       const downloadHref = cleanText(item.download_href);
       const actionLabel = cleanText(item.actionLabel) || cleanText(item.cta_text);

@@ -100,7 +100,7 @@
     "media_coverage": [{
         "type": "article",
         "title": "Connecting the West Program -- Feature Article",
-        "preview_image": "/assets/images/toolkits/how_the_west_one_article_thumb.png",  
+        "img_src": "/assets/images/toolkits/media-toolkits/UDOT/how_the_west_one_article_thumb.png",  
         "href": "https://digital.itsinternational.com/2026/mar-apr/html5/?pn=15",
         "platform" : "ITS International"
     }],
