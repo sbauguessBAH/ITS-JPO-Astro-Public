@@ -79,6 +79,7 @@ export type ToolkitPageData = {
   intro?: string;
   keywords: string[];
   sections: ToolkitSection[];
+  showJumpMenu?: boolean;
   title: string;
 };
 
@@ -157,6 +158,7 @@ type RawToolkitEntry = {
   presentations?: RawLinkItem[];
   print_materials?: RawMediaItem[];
   resource_section_title?: string;
+  show_jump_menu?: boolean;
   shareable_graphics?: RawMediaItem[];
   social_posts?: RawLinkItem[];
   sound_bites?: RawMediaItem[];
@@ -691,6 +693,7 @@ export const getToolkitPageBySlug = (slug: string, folder?: ToolkitFolder): Tool
     intro: cleanText(toolkit.intro) || cleanText(toolkit.description) || undefined,
     keywords: uniqueStrings([...(toolkit.topics ?? []), toolkit.subtitle, title]),
     sections: buildSections(toolkit),
+    showJumpMenu: toolkit.show_jump_menu === true,
     title,
   };
 };

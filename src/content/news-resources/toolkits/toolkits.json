@@ -69,6 +69,7 @@
     "date": "2026",
     "content_types":["print materials", "video", "photos", "webinar materials"],
     "topics":["V2X Accelerator", "UDOT"],
+    "show_jump_menu": true,
     "url":"/news-outreach-tools/news-resources/media-toolkits/udot-connecting-the-west-program-mediakit",
     "print_materials": [{
         "title": "UDOT V2X Accelerator Site Factsheet",

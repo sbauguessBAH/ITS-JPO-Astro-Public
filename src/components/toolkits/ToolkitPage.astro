@@ -21,6 +21,16 @@ const visibleSections = page.sections.filter(
 const contactSections = page.sections.filter(
   (section): section is ContactSection => section.kind === "contacts" && section.items.length > 0,
 );
+const jumpSections = [...visibleSections, ...contactSections];
+
+const getSectionId = (section: ToolkitSection): string => {
+  const slug = section.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+  return `toolkit-${slug || "section"}`;
+};
 
 const getThumbnailGridClass = (section: ToolkitSection): string => {
   if (section.kind !== "thumbnails") {
@@ -120,9 +130,26 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
     {page.intro && <p class="kit-copy kit-page-intro">{page.intro}</p>}
   </div>
 
-  {
-    visibleSections.map((section) => (
-      <section class:list={["kit-section", section.className]}>
+  <div class:list={["kit-content", page.showJumpMenu && "kit-content--with-jump-menu"]}>
+    {
+      page.showJumpMenu && jumpSections.length > 0 && (
+        <aside class="kit-jump-menu" aria-label="Jump to section">
+          <h2>Jump to Section</h2>
+          <ul class="kit-jump-list">
+            {
+              jumpSections.map((section) => (
+                <li><a href={`#${getSectionId(section)}`}>{section.title}</a></li>
+              ))
+            }
+          </ul>
+        </aside>
+      )
+    }
+
+    <div class="kit-content-main">
+    {
+      visibleSections.map((section) => (
+      <section id={getSectionId(section)} class:list={["kit-section", section.className]}>
         <h3>{section.title}</h3>
         {section.description && <p class="kit-copy">{section.description}</p>}
 
@@ -265,7 +292,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
 
   {
     contactSections.map((section) => (
-      <section class:list={["kit-section", section.className]}>
+      <section id={getSectionId(section)} class:list={["kit-section", section.className]}>
         <h3>{section.title}</h3>
         {section.description && <p class="kit-copy">{section.description}</p>}
 
@@ -286,5 +313,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
       </section>
     ))
   }
+    </div>
+  </div>
   </main>
 </PageLayout>
