@@ -1,11 +1,10 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
-import Button from "@/src/components/ui/elements/button/Button.astro";
 import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 import base_url from "@/src/lib/base_url";
 
@@ -15,7 +14,7 @@ import HelpDeskLogo from "./_help-desk-logo.astro";
 const RESOURCES = [
   {
     description:
-      "The Connected and Automated Vehicle Education (CAVe) Support Services Program provides technical assistance and equipment loads to help accelerate deployments.",
+      "The Connected and Automated Vehicle Education (CAVe) Support Services Program provides technical assistance and equipment loans to help accelerate deployments.",
     image: "pcb/cave-box",
     path: "/resources/pcb/technical-assistance/cave",
     title: "Connected and Automated Vehicle Education (CAVe)",
@@ -45,154 +44,36 @@ const RESOURCES = [
 ];
 ---
 
-<style>
-  .help-desk {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: var(--size);
-
-    /* Card classes */
-    border: 1px solid var(--border-light);
-    background-color: rgb(var(--color-background));
-    color: rgb(var(--color-foreground));
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    justify-content: space-between;
-    height: auto;
-    outline: none;
-    box-sizing: border-box;
-
-    /* Link classes */
-    text-decoration: none;
-  }
-
-  .help-desk:hover,
-  .help-desk:focus {
-    text-decoration: none;
-    font-weight: inherit;
-    background: rgba(var(--color-brand-light), 0.5);
-    box-shadow: var(--box-shadow-lg);
-  }
-
-  .help-desk-body {
-    display: flex;
-    position: relative;
-    width: 100%;
-    flex: 1 1 auto;
-    flex-direction: column-reverse;
-    place-content: inherit;
-    align-items: inherit;
-    height: auto;
-    word-break: break-words;
-    text-align: left;
-    overflow-y: auto;
-  }
-
-  .help-desk-text {
-    padding: var(--padding-md);
-  }
-
-  .help-desk-image {
-    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-    height: auto;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  @media (min-width: 992px) {
-    .help-desk {
-      flex-direction: row;
-      align-items: center;
-      max-width: 992px;
-      margin: 0 auto;
-    }
-    .help-desk-body {
-      flex-direction: row;
-    }
-    .help-desk-image-wrapper {
-      flex-basis: 40%;
-    }
-    .help-desk-text {
-      flex-basis: 60%;
-    }
-  }
-</style>
-
-<style>
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: calc(var(--spacing) * 6);
-  }
-
-  @media (min-width: 992px) {
-    .card-grid {
-      grid-template-columns: repeat(2, 1fr);
-      width: 1200px;
-      margin: 0 auto;
-    }
-  }
-</style>
-
-<style>
-  .hd-equip-banner {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 2rem;
-    gap: 4rem;
-    background: rgb(var(--color-brand-secondary));
-    padding: 3rem;
-    border-radius: var(--radius-lg);
-  }
-
-  .hd-equip-banner-left {
-    flex-basis: 40%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .hd-equip-banner-logo {
-    width: 100%;
-    height: auto;
-  }
-
-  .hd-equip-banner-text {
-    flex-basis: 60%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
-  }
-
-  .hd-equip-banner-subtitle {
-    color: var(--color-secondary);
-  }
-</style>
-
 <Layout>
-  <main class="program-main">
-    <ProgramSection size="small">
-      <Heading>Technical Assistance Resources</Heading>
+  <main class="tw:flex tw:flex-col tw:gap-4 tw:pb-12">
+    <Heading>Technical Assistance Resources</Heading>
+    <div class="tw:flex tw:flex-col tw:gap-6">
       <p class="program-text">
-        Explore Vehicle-to-Everything (V2X) resources such as the Accelerating
-        V2X Cohort, request technical assistance with planning and deployment
-        from the V2X Interopability Help Desk, or learn more about the USDOT's
-        Connected Vehicle Equipment Loan Program.
+        From planning through deployment, USDOT provides a wide range of
+        technical assistance resources to support agencies implementing
+        Vehicle-to-Everything (V2X) and other Intelligent Transportation Systems
+        (ITS) technologies. This includes personalized technical support and
+        equipment loans from the V2X Interoperability Help Desk, collaboration
+        opportunities with peer agencies through the Accelerating
+        Vehicle-to-Everything (V2X) Cohort, and a large collection of additional
+        resources and trainings related to ITS and V2X. Explore these
+        USDOT-sponsored resources, tools, and technical assistance opportunities
+        below.
       </p>
-      <div class="hd-equip-banner">
-        <div class="hd-equip-banner-left">
-          <HelpDeskLogo class="hd-equip-banner-logo" />
+      <div
+        class="tw:flex tw:flex-row tw:items-center tw:justify-between tw:gap-16 tw:rounded-2xl tw:bg-secondary tw:p-12"
+      >
+        <div class="tw:flex tw:basis-2/5 tw:flex-col tw:justify-center">
+          <HelpDeskLogo class="tw:h-auto tw:w-full" />
         </div>
-        <div class="hd-equip-banner-text">
+        <div
+          class="tw:flex tw:basis-3/5 tw:flex-col tw:justify-center tw:text-white"
+        >
           <h3 class="program-title-md text-white">
             Deploy V2X smarter—with free loans, open-source tools, and expert
             support.
           </h3>
-          <p class="program-text hd-equip-banner-subtitle">
+          <p class="program-text tw:text-neutral">
             Get expert support at every stage — from planning to deployment — at
             no cost. In addition to technical support, the V2X Interoperability
             Help Desk provides access to real-world roadside and vehicle onboard
@@ -200,18 +81,16 @@ const RESOURCES = [
           </p>
           <Button
             class="ui:w-fit"
+            color="accent"
             link={{
               href: base_url("/resources/pcb/technical-assistance/help-desk"),
             }}
             size="lg"
-            style="background: rgb(244, 205, 82); color: black;"
           >
             Visit the Help Desk
           </Button>
         </div>
       </div>
-    </ProgramSection>
-    <div style="margin: 2rem 0;">
       <!-- <h3 class="program-title-md">Additional Resources</h3> -->
       <!-- <p class="program-text mb-4">
         Explore additional resources for deployers.
