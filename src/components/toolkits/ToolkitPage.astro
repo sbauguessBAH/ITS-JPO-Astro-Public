@@ -5,6 +5,7 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
 import type { ToolkitMediaItem, ToolkitPageData, ToolkitSection } from "@/src/lib/toolkits";
 import "@/src/styles/toolkits.css";
 import ContactCard from "./ContactCard.astro";
+import MediaCoverageList from "./MediaCoverageList.astro";
 
 interface Props {
   page: ToolkitPageData;
@@ -234,6 +235,12 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
                 }
               </div>
             )
+        }
+
+        {
+          section.kind === "media-coverage" && (
+            <MediaCoverageList section={section} />
+          )
         }
 
         {

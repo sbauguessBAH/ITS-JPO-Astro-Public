@@ -26,6 +26,16 @@ export type ToolkitMediaItem = {
   title: string;
 };
 
+export type ToolkitMediaCoverageItem = {
+  date?: string;
+  description?: string;
+  href?: string;
+  mediaType?: string;
+  platform?: string;
+  title: string;
+  topic?: string;
+};
+
 export type ToolkitWebinarItem = {
   date: string;
   description?: string;
@@ -58,6 +68,10 @@ export type ToolkitSection =
       items: ToolkitMediaItem[];
       kind: "thumbnails";
       variant: ToolkitThumbnailVariant;
+    })
+  | (ToolkitSectionBase & {
+      items: ToolkitMediaCoverageItem[];
+      kind: "media-coverage";
     })
   | (ToolkitSectionBase & {
       items: ToolkitWebinarItem[];
@@ -107,6 +121,8 @@ type RawMediaItem = {
   alt_description?: string;
   alt_text?: string;
   cta_text?: string;
+  date?: string;
+  description?: string;
   download_href?: string;
   href?: string;
   image?: string;
@@ -115,7 +131,9 @@ type RawMediaItem = {
   "link-text"?: string;
   media_type?: string;
   platform?: string;
+  topic?: string;
   title?: string;
+  type?: string;
 };
 
 type RawWebinarItem = {
@@ -427,6 +445,28 @@ const normalizeMediaItems = (items?: RawMediaItem[]): ToolkitMediaItem[] => {
     .filter((item): item is ToolkitMediaItem => Boolean(item));
 };
 
+const normalizeMediaCoverageItems = (items?: RawMediaItem[]): ToolkitMediaCoverageItem[] => {
+  return (Array.isArray(items) ? items : [])
+    .map((item): ToolkitMediaCoverageItem | undefined => {
+      const title = cleanText(item.title) || cleanText(item["link-text"]);
+
+      if (!title) {
+        return undefined;
+      }
+
+      return {
+        date: cleanText(item.date) || undefined,
+        description: cleanText(item.description) || undefined,
+        href: cleanText(item.href) || undefined,
+        mediaType: cleanText(item.media_type) || cleanText(item.type) || undefined,
+        platform: cleanText(item.platform) || undefined,
+        title,
+        topic: cleanText(item.topic) || undefined,
+      };
+    })
+    .filter((item): item is ToolkitMediaCoverageItem => Boolean(item));
+};
+
 const normalizeWebinars = (items?: RawWebinarItem[]): ToolkitWebinarItem[] => {
   return (Array.isArray(items) ? items : [])
     .map((item) => {
@@ -607,11 +647,10 @@ const buildExplicitSections = (toolkit: RawToolkitEntry): ToolkitSection[] => {
   if (hasOwn(toolkit, "media-coverage") || hasOwn(toolkit, "media_coverage")) {
     sections.push({
       className: "media-coverage",
-      emptyLabel: "Add coverage cards, press mentions, or article references here.",
-      items: normalizeMediaItems(toolkit["media-coverage"] ?? toolkit.media_coverage),
-      kind: "thumbnails",
+      emptyLabel: "Add coverage items, press mentions, or article references here.",
+      items: normalizeMediaCoverageItems(toolkit["media-coverage"] ?? toolkit.media_coverage),
+      kind: "media-coverage",
       title: "Media Coverage",
-      variant: "document",
     });
   }
 
