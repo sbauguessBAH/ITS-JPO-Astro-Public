@@ -1,5 +1,6 @@
 ---
 import type { ToolkitMediaCoverageItem, ToolkitSection } from "@/src/lib/toolkits";
+import MediaCoverageCard from "./MediaCoverageCard.astro";
 
 interface Props {
   section: Extract<ToolkitSection, { kind: "media-coverage" }>;
@@ -36,21 +37,6 @@ const getCoverageByTopic = (items: ToolkitMediaCoverageItem[]): Array<[string, T
 const recentCoverage = getMostRecentCoverage(section.items);
 const coverageByTopic = getCoverageByTopic(section.items);
 const hasMoreCoverage = section.items.length > 6;
-
-const renderMediaCoverageCard = (item: ToolkitMediaCoverageItem) => {
-  const metadata = [item.mediaType, item.platform, item.date].filter(Boolean);
-
-  return (
-    <article class="kit-media-card">
-      <div class="kit-media-card-copy">
-        {metadata.length > 0 && <p class="kit-media-card-meta">{metadata.join(" · ")}</p>}
-        <h4>{item.title}</h4>
-        {item.description && <p>{item.description}</p>}
-      </div>
-      {item.href && <a class="kit-media-card-link" href={item.href}>View Coverage</a>}
-    </article>
-  );
-};
 ---
 
 <div class="kit-media-coverage" data-media-coverage>
@@ -61,7 +47,7 @@ const renderMediaCoverageCard = (item: ToolkitMediaCoverageItem) => {
   </div>
 
   <div class="kit-media-coverage-view" data-media-coverage-view="recent">
-    {recentCoverage.map((item) => renderMediaCoverageCard(item))}
+    {recentCoverage.map((item) => <MediaCoverageCard item={item} />)}
   </div>
 
   <div class="kit-media-coverage-view" data-media-coverage-view="topic" hidden>
@@ -69,7 +55,7 @@ const renderMediaCoverageCard = (item: ToolkitMediaCoverageItem) => {
       coverageByTopic.map(([topic, items]) => (
         <section class="kit-media-topic-group">
           <h4>{topic}</h4>
-          {items.map((item) => renderMediaCoverageCard(item))}
+          {items.map((item) => <MediaCoverageCard item={item} />)}
         </section>
       ))
     }
