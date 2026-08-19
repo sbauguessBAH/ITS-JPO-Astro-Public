@@ -380,7 +380,6 @@
   font-weight: 700;
 }
 
-.kit-media-coverage-controls button,
 .kit-media-coverage-expand {
   border: 1px solid var(--kit-brand);
   border-radius: 999px;
@@ -391,15 +390,37 @@
   cursor: pointer;
 }
 
-.kit-media-coverage-controls button {
-  padding: 0.4rem 0.8rem;
+.kit-media-coverage-switch {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid var(--kit-brand);
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(7, 46, 85, 0.04);
 }
 
-.kit-media-coverage-controls button[aria-pressed="true"],
-.kit-media-coverage-controls button:hover,
-.kit-media-coverage-controls button:focus-visible {
-  background: var(--kit-brand);
-  color: #ffffff;
+.kit-media-coverage-switch button {
+  min-height: 2.5rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  color: var(--kit-brand-dark);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.kit-media-coverage-switch button[aria-pressed="true"] {
+  background: var(--kit-highlight);
+  color: #1d2430;
+}
+
+.kit-media-coverage-switch button:not([aria-pressed="true"]):hover,
+.kit-media-coverage-switch button:not([aria-pressed="true"]):focus-visible {
+  background: var(--kit-surface);
+  color: var(--kit-brand);
 }
 
 .kit-media-coverage-view {

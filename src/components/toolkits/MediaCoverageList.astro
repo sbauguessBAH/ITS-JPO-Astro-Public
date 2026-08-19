@@ -42,8 +42,10 @@ const hasMoreCoverage = section.items.length > 6;
 <div class="kit-media-coverage" data-media-coverage>
   <div class="kit-media-coverage-controls" role="group" aria-label="Organize media coverage">
     <span>Organize by:</span>
-    <button type="button" data-media-coverage-toggle="recent" aria-pressed="true">Most Recent</button>
-    <button type="button" data-media-coverage-toggle="topic" aria-pressed="false">By Topic</button>
+    <div class="kit-media-coverage-switch">
+      <button type="button" data-media-coverage-toggle="recent" aria-pressed="true">Most Recent</button>
+      <button type="button" data-media-coverage-toggle="topic" aria-pressed="false">By Topic</button>
+    </div>
   </div>
 
   <div class="kit-media-coverage-view" data-media-coverage-view="recent">
