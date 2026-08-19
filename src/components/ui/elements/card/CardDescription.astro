@@ -7,7 +7,10 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <div
-  class:list={["tw:text-sm tw:text-muted-foreground", className]}
+  class:list={[
+    "data-[size=sm]:text-sm tw:text-base tw:text-muted-foreground",
+    className,
+  ]}
   data-slot="card-description"
   {...props}
 >
