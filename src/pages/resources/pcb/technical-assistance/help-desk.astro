@@ -1,5 +1,6 @@
 ---
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
+import Message from "@/src/components/ui/blocks/message/Message.astro";
 import Alert from "@/src/components/ui/elements/alert/Alert.astro";
 import AlertAction from "@/src/components/ui/elements/alert/AlertAction.astro";
 import AlertDescription from "@/src/components/ui/elements/alert/AlertDescription.astro";
@@ -233,9 +234,13 @@ const LOAN_PROGRAM_BENEFITS = [
         <h5 class="strategy-title">All at no cost to you!</h5>
       </div>
       <div class="tw:flex tw:basis-2/5 tw:flex-col tw:gap-4">
-        <div class="topic-box">
-          <h3 class="topic-box-title">Common Topics We Support</h3>
-          <div>
+        <Message
+          class="tw:border-(--help-desk-blue)/10 tw:border-l-(--help-desk-blue) tw:bg-(--help-desk-blue)/3"
+        >
+          <slot slot="title">
+            <span class="tw:uppercase">Common Topics</span>
+          </slot>
+          <slot slot="content">
             {
               COMMON_TOPICS.map((item) => (
                 <div class="topic">
@@ -246,23 +251,27 @@ const LOAN_PROGRAM_BENEFITS = [
                 </div>
               ))
             }
-          </div>
-        </div>
-        <div class="topic-box" style="border: 0;">
-          <p>
-            <strong>Deployment doesn't have to be complicated.</strong> Get expert
-            support at every stage — from planning to deployment — at no cost.
-          </p>
-          <Button
-            color="primary"
-            link={{ href: "mailto:cavsupportservices@dot.gov" }}
-            size="lg"
-            variant="default"
-          >
-            <Icon name="email" />
-            Contact the help desk
-          </Button>
-        </div>
+          </slot>
+        </Message>
+        <Message
+          class="tw:border-(--help-desk-blue)/10 tw:border-l-(--help-desk-blue) tw:bg-(--help-desk-blue)/3"
+        >
+          <slot slot="content">
+            <p>
+              <strong>Deployment doesn't have to be complicated.</strong> Get expert
+              support at every stage — from planning to deployment — at no cost.
+            </p>
+            <Button
+              color="primary"
+              link={{ href: "mailto:cavsupportservices@dot.gov" }}
+              size="lg"
+              variant="default"
+            >
+              <Icon name="email" />
+              Contact the help desk
+            </Button>
+          </slot>
+        </Message>
       </div>
     </div>
     <div
@@ -336,12 +345,13 @@ const LOAN_PROGRAM_BENEFITS = [
           </div>
         </div>
         <div class="hd-main-right">
-          <div
-            class="topic-box"
-            style="border-color: rgb(230, 184, 47) rgb(240, 227, 187) rgb(240, 227, 187); background: rgb(255, 255, 255);"
+          <Message
+            class="tw:border-(--help-desk-yellow)/10 tw:border-l-(--help-desk-yellow) tw:bg-white"
           >
-            <h3 class="topic-box-title">Available Equipment Includes</h3>
-            <div>
+            <slot slot="title">
+              <span class="uppercase">Available Equipment</span>
+            </slot>
+            <slot slot="content">
               {
                 AVAILABLE_EQUIPMENT.map((item) => (
                   <div class="topic">
@@ -352,8 +362,8 @@ const LOAN_PROGRAM_BENEFITS = [
                   </div>
                 ))
               }
-            </div>
-          </div>
+            </slot>
+          </Message>
         </div>
       </div>
     </div>
