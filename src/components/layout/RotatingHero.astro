@@ -1,11 +1,14 @@
 ---
 import base_url from "@/src/lib/base_url";
-import hero1 from "@/src/assets/images/Hero-Image-02.jpg";
-import hero2 from "@/src/assets/images/Hero-ITS-JPO-NOW.png";
-import hero3 from "@/src/assets/images/Hero-Background-4.png";
-import hero4 from "@/src/assets/images/Hero-IntersectionSafety.png";
 
-import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
+import hero1 from "@/src/assets/images/hero-bg/Hero-Background-4.png";
+import hero2 from "@/src/assets/images/hero-bg/Hero-ITS-JPO-NOW.png";
+import hero3 from "@/src/assets/images/hero-bg/FIFA-AccessMap-Multimodal-Event-Edition.jpg";
+
+import hero4 from "@/src/assets/images/hero-bg/ITS-for-Planned-Special-Events-Executive-Briefing-World-Cup-2026.jpg";
+import hero5 from "@/src/assets/images/hero-bg/Ready-Set-Robot-1.jpg";
+import heroAI from "@/src/assets/images/hero-bg/AI-Procurement-Webinar.jpg";
+import heroCdaBaa from "@/src/assets/images/hero-bg/Hero-CDABAA.jpg";
 ---
 
 <div class="hero-carousel">
@@ -50,39 +53,66 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
       </div>
     </section> -->
 
-    <section class="slide" style={`background-image: url(${hero3.src})`}>
+    <section class="slide" style={`background-image: url(${heroAI.src})`}>
       <div class="container-xl">
         <div class="content-box">
-          <h2 class="newsLetterHeader">ISS Prototyping Broad Agency Announcement is Live!</h2>
-          <p class="fs-4">Funding Opportunity | Up to $17M across 3 teams</p>
-          <a href="https://sam.gov/workspace/contract/opp/343dd0f244df4c3a9c9baa9b60b8ac54/view" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button">Learn More</a>
+          <h2 class="newsLetterHeader">National Webinar: Demystifying AI Procurement</h2>
+          <p class="fs-4">Discover actionable strategies from agencies navigating AI procurement across the multimodal transportation landscape.</p>
+          <a href="https://itsa-org.zoom.us/webinar/register/WN_RUS21Y4XTq-hG_5_JPYGBA#/registration" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">Register Now</a>
         </div>
       </div>
     </section>
+
+    <section class="slide" style={`background-image: url(${heroCdaBaa.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2 class="newsLetterHeader">CDA Small-Scale Industry Prototype BAA is Live!</h2>
+          <p>The official Cooperative Driving Automation (CDA) Small-Scale Industry Prototype Broad Agency Announcement (BAA) is live on SAM.gov with up to $5M funding. Open to U.S. entities. Proposals due Sept 13, 2026.</p>
+          <a href="https://sam.gov/workspace/contract/opp/fa7c3868d1de4478942fab3856ce243e/view" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+  
 
     <section class="slide" style={`background-image: url(${hero2.src})`}>
       <div class="container-xl">
         <div class="content-box">
           <h2 class="newsLetterHeader">ITS JPO NOW</h2>
-          <p class="fw-bold">May 2026</p>
-          <p>
-            Georgia launches an accessible multimodal trip planner, USDOT unveils an interactive V2X deployment map, and Detroit hosts cutting-edge connected vehicle demonstrations—don't miss the May
-            edition!
-          </p>
-          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-4 icon-arrow-button">Read Latest Issue</a>
+          <p class="fw-bold">July 2026</p>
+          <p>Check out the July ITS JPO Now, JPO’s bimonthly digest! Never miss an edition hereafter—join our mailing list on the About subpage.</p>
+          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-4 icon-arrow-button">Read Latest Issue</a>
         </div>
       </div>
     </section>
 
+    <!-- <section class="slide" style={`background-image: url(${hero3.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2>DEP Executive Briefing & World Cup 2026</h2>
+          <p class="fs-5">
+            Check out the recently released Deployment Evaluation Program (DEP) briefings, like the ITS for Planned Special Events briefing, to explore how they help local and regional agencies implement proven technology frameworks that maximize safety and mobility and help prepare for major events like World Cup 2026.
+          </p>
+          <a
+            href="https://www.itskrs.its.dot.gov/success-strategies/executive-briefings/all"
+            class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button icon-external-link"  target="_blank" rel="noopener noreferrer"
+          >
+            View DEP Executive Briefings
+          </a>
+        </div>
+      </div>
+    </section> -->
+
     <section class="slide" style={`background-image: url(${hero4.src})`}>
       <div class="container-xl">
         <div class="content-box">
-          <h2>Check Out New Resources Related to Intersection Safety</h2>
-          <p class="fs-6">
-            Want to learn more about ITS for intersection safety and results from the USDOT ISC? Check out new resources now posted to the website, including two new reports related to the technical
-            evaluation results and insights from the Challenge Stage 1B, a new video summarizing the results, and presentation materials from the webinar held on March 26.
+          <h2>FIFA AccessMap Multimodal Event Edition</h2>
+          <p class="fs-5">
+            The Taskar Center for Accessible Technology at the University of Washington, one of the ITS4US Deployment Program’s deployment sites, partnered with the Seattle FIFA World Cup 2026 Local Organizing Committee to develop custom AccessMap features. The result is the FIFA AccessMap Multimodal Event Edition, which delivers an accessibility-first, multimodal trip planning experience.
           </p>
-          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026/#check-out-new-resources-related-to-intersection-safety")} class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button">Read the Intersection Safety article</a>
+          <a href="https://www.seattlefwc26.org/destination/transportation" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button icon-external-link" target="_blank" rel="noopener noreferrer">
+           See AccessMap at FIFA 2026
+          </a>
         </div>
       </div>
     </section>
@@ -90,12 +120,14 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
     <section class="slide" style={`background-image: url(${hero5.src})`}>
       <div class="container-xl">
         <div class="content-box">
-          <h2>Initial Prototype of National V2X Deployment Map Now Available</h2>
+          <h2 class="newsLetterHeader">Ready, Set, Robot!</h2>
+          <h2>Join the $1.5 million DOT Bots Challenge Now</h2>
           <p class="">
-            The ITS JPO has launched an interactive map showcasing V2X deployments nationwide. The map compiles data from USDOT funded projects, Accelerating V2X Cohort members, and the FCC Universal
-            Licensing System. Users can explore deployment details at national, state, and local levels. This is an initial prototype that will continue to evolve as more data becomes available.
+            The USDOT recently announced the launch of the USDOT DOT Bots Challenge, which offers up to $1.5 million in prize funding for innovative ideas on how advanced robotics technologies can solve public sector transportation challenges, improve infrastructure, and keep travelers and workers safe. Stage I of the Challenge is open for submissions through August 10, 2026.
           </p>
-          <a href="https://www.its.dot.gov/scrc/index.html#/technology-areas/v2x/map" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank">Explore V2X Deployments</a>
+          <a href="https://www.transportation.gov/policy-initiatives/nett/robotics" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-arrow-button icon-external-link" target="_blank" rel="noopener noreferrer">
+            Enter the DOT Bots Challenge
+          </a>
         </div>
       </div>
     </section>
@@ -106,7 +138,7 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
   const carousel = document.querySelector(".hero-carousel .slides") as HTMLElement;
   const contentBoxes = document.querySelectorAll(".content-box");
   const slideWidth = carousel?.offsetWidth || 0;
-  const totalSlides = 4;
+  const totalSlides = 6;
   let currentSlide = 0;
   let autoRotateInterval: ReturnType<typeof setInterval>;
 
@@ -249,8 +281,7 @@ import hero5 from "@/src/assets/images/Hero-V2X-Map.png";
   .slides::scroll-button(left),
   .slides::scroll-button(right) {
     content: "\f053";
-    font-family: "Font Awesome 6 Free";
-font-weight: 800;
+    font-family: FontAwesome;
     font-size: 16px;
     position: absolute;
     bottom: 1.25rem;
@@ -359,25 +390,24 @@ font-weight: 800;
     }
   }
 
-  .icon-arrow-button::after {  
+  .icon-arrow-button::after {
     content: "\f061";
-    font-family: "Font Awesome 6 Free";
-font-weight: 800;
+    font-family: FontAwesome;
     margin-left: 0.5rem;
     display: inline-block;
-    }
+  }
 
-    .icon-external-link::after {
-      content: "\f35d";
-      font-family: "Font Awesome 6 Free";
-font-weight: 800;
+  .icon-external-link::after {
+    content: "\f35d";
+    font-family: FontAwesome;
     margin-left: 0.5rem;
-    
-    display: inline-block;
-    }
 
-    .icon-external-link:hover::after, .icon-arrow-button:hover::after {
-      transform: translateX(5px);
-      transition: transform 0.3s ease-in-out;
-    }
+    display: inline-block;
+  }
+
+  .icon-external-link:hover::after,
+  .icon-arrow-button:hover::after {
+    transform: translateX(5px);
+    transition: transform 0.3s ease-in-out;
+  }
 </style>

@@ -39,52 +39,72 @@ const newsletterEntries = (await getCollection("newsletters")).sort((a, b) =>
           <p class="text-muted mb-4">Browse past issues of ITS JPO NOW</p>
           
           <div class="row">
-            {
-              newsletterEntries.length > 0 ? (
-                newsletterEntries.map((entry) => {
-                  const slug = entry.id.replace(/\.(md|mdx)$/i, "");
-                  const issueTitle = `${entry.data.dateLabel}${entry.data.volume ? ` • ${entry.data.volume}` : ""}${entry.data.issue ? ` ${entry.data.issue}` : ""}`;
-                  return (
-                    <div class="col-md-6 mb-4">
-                      <div class="card newsletter-card h-100">
-                        {entry.data.imageUrl && (
-                          <img
-                            src={entry.data.imageUrl}
-                            class="card-img-top"
-                            alt={`${entry.data.dateLabel} Newsletter`}
-                          />
-                        )}
-                        <div class="card-body d-flex flex-column">
-                          <h3 class="card-title h5">{issueTitle}</h3>
-                          <p class="card-text">{entry.data.description ?? "Read the latest ITS JPO NOW issue."}</p>
-                          <div class="mt-auto">
-                            <a href={base_url(`/news-outreach-tools/newsroom/newsletter-archive/${slug}/`)} class="btn btn-outline-primary">
-                              Read {entry.data.dateLabel} Issue
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })
-              ) : (
-                <div class="col-md-6 mb-4">
-                  <div class="card newsletter-card h-100 bg-light">
-                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
-                      <h3 class="card-title h5 text-muted">Future Issues</h3>
-                      <p class="card-text text-muted">
-                        More newsletter issues coming soon! Subscribe to receive the latest
-                        updates directly to your inbox.
-                      </p>
-                      <a
-                        href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-primary"
-                      >
-                        Subscribe Now
-                      </a>
-                    </div>
+            <!-- August 2026 Flash Edition -->
+            <div class="col-md-6 mb-4">
+              <div class="card newsletter-card h-100">
+                <img 
+                  src="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13450898/6819164/govdelivery-banners-flash_crop.jpg" 
+                  class="card-img-top" 
+                  alt="August 2026 Flash Edition Newsletter"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">August 2026 Flash Edition</h3>
+                  <p class="card-text">
+                    Read this Flash Edition for updates on the CDA Small-Scale Industry Prototype
+                    solicitation and the National Webinar on Demystifying AI Procurement.
+                  </p>
+                  <div class="mt-auto">
+                    <a href={base_url('/about/contact-us/mailinglist/ITS-JPO-NOW/august-2026-flash')} class="btn btn-outline-primary">
+                      Read Flash Edition
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- July 2026 Issue -->
+            <div class="col-md-6 mb-4">
+              <div class="card newsletter-card h-100">
+                <img 
+                  src="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/06/13932453/6977182/govdelivery-banners-july_crop.jpg" 
+                  class="card-img-top" 
+                  alt="July 2026 Newsletter"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">July 2026</h3>
+                  <p class="card-text">
+                    Read highlights from the 2026 ITS America Conference &amp; Expo,
+                    major announcements across V2X, ITS4US, and AI initiatives,
+                    and upcoming events including ITE Annual Meeting 2026.
+                  </p>
+                  <div class="mt-auto">
+                    <a href={base_url('/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026')} class="btn btn-outline-primary">
+                      Read July 2026 Issue
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- May 2026 Issue -->
+            <div class="col-md-6 mb-4">
+              <div class="card newsletter-card h-100">
+                <img 
+                  src="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13451089/6858046/govdelivery-banners-may_crop.jpg" 
+                  class="card-img-top" 
+                  alt="May 2026 Newsletter"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">May 2026</h3>
+                  <p class="card-text">
+                    Read about the Georgia G-MAP launch, work zone safety initiatives, 
+                    new data stories on ITS DataHub, and upcoming events including the 
+                    OmniAir Plugfest and ITS America Conference.
+                  </p>
+                  <div class="mt-auto">
+                    <a href={base_url('/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026')} class="btn btn-outline-primary">
+                      Read May 2026 Issue
+                    </a>
                   </div>
                 </div>
               )

@@ -1994,5 +1994,175 @@
       "traceability"
     ],
     "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90803"
+  },
+  {
+    "id": "fhwa-jpo-21-878-nfta-phase-2",
+    "resourceTitle": "Phase 2 Performance Measurement and Evaluation Support Plan",
+    "publicationCode": "FHWA-JPO-21-878",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-K: Performance Measurement and Independent Evaluation Support",
+    "phase": 2,
+    "publishDate": "2026-05-28",
+    "type": "Publication",
+    "keywords": [
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "Complete Trip",
+      "Self-Driving Shuttle",
+      "Open Trip Planner",
+      "Systems Integration",
+      "Performance Measurement",
+      "ITS4US"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/91205"
+  },
+  {
+    "id": "fhwa-jpo-23-103",
+    "resourceTitle": "Phase 2 Operational Readiness Plan",
+    "publicationCode": "FHWA-JPO-23-103",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-G: System Test Planning",
+    "phase": 2,
+    "publishDate": "2026-05-28",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "operational readiness",
+      "accessibility",
+      "demonstration"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/91206"
+  },
+  {
+    "id": "fhwa-jpo-23-107",
+    "resourceTitle": "Phase 2 Comprehensive Maintenance and Operations Plan",
+    "publicationCode": "FHWA-JPO-23-107",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-I: Maintenance and Operations Planning",
+    "phase": 2,
+    "publishDate": "2026-05-28",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "Operations",
+      "Maintenance",
+      "Operations and Maintenance Plan"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/91207"
+  },
+  {
+    "id": "fhwa-jpo-23-999",
+    "resourceTitle": "Phase 2 System Design Document",
+    "publicationCode": "FHWA-JPO-23-999",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-B: Systems Architecture and Design",
+    "phase": 2,
+    "publishDate": "2026-05-28",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "installation",
+      "system design"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/91208"
+  },
+  {
+    "id": "fhwa-jpo-22-981",
+    "resourceTitle": "Phase 2 System Architecture Document",
+    "publicationCode": "FHWA-JPO-22-981",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-B: Systems Architecture and Design",
+    "phase": 2,
+    "publishDate": "2026-05-28",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete Trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "participant training",
+      "stakeholder education",
+      "System Architecture Document"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/91209"
+  },
+  {
+    "id": "fhwa-jpo-23-991",
+    "resourceTitle": "Phase 2 Comprehensive Installation Plan",
+    "publicationCode": "FHWA-JPO-23-991",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-D: Comprehensive Acquisition Plan",
+    "phase": 2,
+    "publishDate": "2026-05-28",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "installation",
+      "equipment"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/91210"
+  },
+  {
+    "id": "fhwa-jpo-21-898-nfta-phase-2",
+    "resourceTitle": "Phase 2 Human Use Approval Summary",
+    "publicationCode": "FHWA-JPO-21-898",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-K: Performance Measurement and Independent Evaluation Support",
+    "phase": 2,
+    "publishDate": "2026-05-28",
+    "type": "Publication",
+    "keywords": [
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "Buffalo All Access Platform",
+      "Self-Driving Shuttle",
+      "Systems Integration",
+      "Human Subjects",
+      "Institutional Review Board",
+      "ITS4US"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/91211"
+  },
+  {
+    "id": "fhwa-jpo-23-995",
+    "resourceTitle": "Phase 2 System Test Plan",
+    "publicationCode": "FHWA-JPO-23-995",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-G: System Test Planning",
+    "phase": 2,
+    "publishDate": "2026-05-28",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "system testing",
+      "accessibility"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/91212"
   }
 ]

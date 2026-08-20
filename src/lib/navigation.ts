@@ -23,7 +23,15 @@ export const navigation: NavigationItem[] = [
         name: "Join Our Mailing List",
         url: "/about/contact-us/mailinglist",
         isEnabled: true,
-        pages: [{ name: "ITS JPO NOW", url: "/about/contact-us/mailinglist/ITS-JPO-NOW" }],
+        pages: [
+          { name: "ITS JPO NOW", url: "/about/contact-us/mailinglist/ITS-JPO-NOW", pages: [
+            
+            { name: "August 2026 Flash Edition", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/august-2026-flash" },
+            { name: "May 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026" },
+            { name: "July 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026" },
+
+          ] },
+        ],
       },
     ],
   },
@@ -89,6 +97,7 @@ export const navigation: NavigationItem[] = [
                   { name: "AI Governance", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-governance" },
                   { name: "AI Definitions & Concepts", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-definitions-concepts" },
                   { name: "AI Methods & Sub-Methods", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-methods-sub-methods" },
+                  { name: "AI Procurement National Webinar", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-procurement-national-webinar" },
                 ],
               },
             ],
@@ -261,7 +270,6 @@ export const navigation: NavigationItem[] = [
         ],
       },
       { name: "Cybersecurity", url: "/resources/Cybersecurity" },
-      { name: "Deployment Evaluation", url: "/resources/Deployment-Evaluation" },
       { name: "National Transportation Library", url: "/resources/national-transportation-library" },
       {
         name: "Professional Capacity Building",
@@ -329,6 +337,7 @@ export const navigation: NavigationItem[] = [
           //  }
         ],
       },
+      { name: "Deployment Evaluation", url: "https://www.itskrs.its.dot.gov/?utm_campaign=its-jpo&utm_source=de-landing-page&utm_medium=image-button", isExternal: true},
       { name: "Smart Community Resource Center", url: "https://www.its.dot.gov/scrc", isExternal: true },
       { name: "ITS CodeHub", url: "https://www.its.dot.gov/code", isExternal: true },
       { name: "ITS DataHub", url: "https://www.its.dot.gov/data", isExternal: true },
@@ -404,10 +413,12 @@ export function generateBreadcrumbItem(navigationItem: AnyNavigationItem) {
  */
 export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
   const trimmedPathname = getTrimmedPathname(pathname);
+  // Normalize case so route matching is stable across case-insensitive file systems.
+  const normalizedPathname = trimmedPathname.toLowerCase();
 
   const breadcrumbs: BreadcrumbItem[] = [];
 
-  let navigationItem: AnyNavigationItem | undefined = navigation.find((section) => trimmedPathname.startsWith(section.url));
+  let navigationItem: AnyNavigationItem | undefined = navigation.find((section) => normalizedPathname.startsWith(section.url.toLowerCase()));
 
   while (navigationItem !== undefined) {
     // If it exists, add it to the current breadcrumb list
@@ -415,13 +426,29 @@ export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
 
     // If it's an exact match, it's already been added
     // If it's not a match but there are no subpages, then there's nothing left to add
-    if (trimmedPathname === navigationItem.url || !navigationItem.pages) break;
+    if (normalizedPathname === navigationItem.url.toLowerCase() || !navigationItem.pages) break;
 
-    // Move to the deepest matching child. If there is no child match, stop.
-    const nextItem = navigationItem.pages.filter((page) => trimmedPathname.startsWith(page.url)).sort((a, b) => b.url.length - a.url.length)[0];
+    // Track the next best descendant; do not mutate in-loop to avoid stale/self references.
+    let nextNavigationItem: AnyNavigationItem | undefined;
 
-    if (!nextItem || nextItem.url === navigationItem.url) break;
-    navigationItem = nextItem;
+    // If it's not an exact match, look through child items to see if there's an exact match
+    for (const page of navigationItem.pages) {
+      const pageUrl = page.url.toLowerCase();
+
+      // If there's a page with an exact match, continue
+      if (normalizedPathname === pageUrl) {
+        nextNavigationItem = page;
+        break;
+      }
+
+      if (normalizedPathname.startsWith(pageUrl)) {
+        nextNavigationItem = page;
+      }
+    }
+
+    // Stop if no deeper match is found or matching no longer makes forward progress.
+    if (!nextNavigationItem || nextNavigationItem === navigationItem) break;
+    navigationItem = nextNavigationItem;
   }
 
   // Catch undefined navigation item and return it
@@ -436,21 +463,34 @@ export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
 export function findSection(pathname: string): AnyNavigationItem | undefined {
   // Trim path name in case any extra characters are included
   const trimmedPathname = getTrimmedPathname(pathname);
+  // Normalize case so route matching is stable across case-insensitive file systems.
+  const normalizedPathname = trimmedPathname.toLowerCase();
 
-  let navigationItem: AnyNavigationItem | undefined = navigation.find((section) => trimmedPathname.startsWith(section.url));
+  let navigationItem: AnyNavigationItem | undefined = navigation.find((section) => normalizedPathname.startsWith(section.url.toLowerCase()));
 
   while (navigationItem !== undefined) {
     // If the item is an exact match, return it now
-    if (trimmedPathname === navigationItem.url) return navigationItem;
+    if (normalizedPathname === navigationItem.url.toLowerCase()) return navigationItem;
 
     // If there are no child pages, there's nothing left to match. Return undefined;
     if (!navigationItem.pages) return undefined;
 
-    // Move to the deepest matching child. If there is no child match, stop.
-    const nextItem = navigationItem.pages.filter((page) => trimmedPathname.startsWith(page.url)).sort((a, b) => b.url.length - a.url.length)[0];
+    // Track the next best descendant; do not mutate in-loop to avoid stale/self references.
+    let nextNavigationItem: AnyNavigationItem | undefined;
 
-    if (!nextItem || nextItem.url === navigationItem.url) return undefined;
-    navigationItem = nextItem;
+    // If it's not an exact match, look through child items to see if there's an exact match
+    for (const page of navigationItem.pages) {
+      const pageUrl = page.url.toLowerCase();
+
+      if (normalizedPathname === pageUrl) return page;
+      if (normalizedPathname.startsWith(pageUrl)) {
+        nextNavigationItem = page;
+      }
+    }
+
+    // Return undefined if traversal cannot progress to a deeper matching node.
+    if (!nextNavigationItem || nextNavigationItem === navigationItem) return undefined;
+    navigationItem = nextNavigationItem;
   }
 
   // Catch undefined navigation item and return it

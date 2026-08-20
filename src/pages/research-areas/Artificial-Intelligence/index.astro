@@ -7,6 +7,7 @@ import intelligenceInMotionBg from "@/src/assets/images/ai/intelligenc-in-motion
 import getAIReadyImage from "@/src/assets/images/ai/GetAIReady.png";
 import putAIIntoPracticeImage from "@/src/assets/images/ai/PutAIIntoPractice.png";
 import learnConnectImage from "@/src/assets/images/ai/Learn-Connect.jpeg";
+import procurementWebinarImage from "@/src/assets/images/ai/JPO-National-AI-Procurement-Webinar-Image.jpg";
 import "@/src/styles/ai-section.css";
 ---
 
@@ -65,6 +66,37 @@ import "@/src/styles/ai-section.css";
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12 col-md">
+        <h2>Spotlight</h2>
+
+        <!-- Spotlight: National Webinar -->
+        <div class="spotlight-card rounded-4 overflow-hidden mb-4">
+          <div class="row g-0 h-100">
+            <div class="col-md-7 d-flex flex-column justify-content-center p-4 p-lg-5">
+              <span class="spotlight-tag mb-3">Upcoming Webinar</span>
+              <h3 class="text-white fw-bold mb-3">National Webinar: Demystifying AI Procurement</h3>
+              <p class="text-white mb-3" style="opacity: 0.9;">Discover actionable strategies from agencies navigating AI procurement across the multimodal transportation landscape.</p>
+              <p class="spotlight-date mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16" style="vertical-align: -2px;">
+                  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                </svg>
+                September 17, 2026 &nbsp;&bull;&nbsp; 1:00 PM–4:00 PM ET &nbsp;&bull;&nbsp; Virtual
+              </p>
+              <div>
+                <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-procurement-national-webinar")} class="btn btn-light fw-semibold px-4">Learn More</a>
+              </div>
+            </div>
+            <div class="col-md-5 spotlight-img-col">
+              <Image src={procurementWebinarImage} alt="National Webinar: Demystifying AI Procurement" class="spotlight-img" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+
+
 
     <!-- <h2>Objectives and Approach</h2>
 
@@ -138,6 +170,58 @@ import "@/src/styles/ai-section.css";
   </main>
 </PageLayout>
 <style>
+  .spotlight-card {
+    background: linear-gradient(120deg, #01141e 0%, #0a5c8a 55%, #05547e 100%);
+    box-shadow: 0 6px 24px rgba(3, 43, 82, 0.25);
+    max-height: 350px;
+  }
+
+  .spotlight-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: fit-content;
+  }
+
+  .spotlight-date {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.925rem;
+  }
+
+  .spotlight-img-col {
+    position: relative;
+    min-height: 0;
+  }
+
+  .spotlight-img {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 767px) {
+    .spotlight-card {
+      max-height: none;
+    }
+
+    .spotlight-img-col {
+      min-height: 200px;
+    }
+
+    .spotlight-img {
+      position: absolute;
+      inset: 0;
+    }
+  }
+
   .intelligence-in-motion {
     background-size: cover;
     background-position: center;

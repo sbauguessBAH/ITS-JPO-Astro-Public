@@ -43,8 +43,9 @@ const pathIsCategory = (entry: CollectionEntry<"pcbTrainings">, path?: string) =
   return !path || entry.data.category === path
 }
 
+// Load once and derive filtered views to avoid duplicating collection work at build time.
 const courses = await getCollection("pcbTrainings");
-const filteredCourses = await getCollection("pcbTrainings", (entry) => pathIsCategory(entry, path));
+const filteredCourses = courses.filter((entry) => pathIsCategory(entry, path));
 const getCourseCount = (path?: string) => courses.filter((entry) => pathIsCategory(entry, path)).length;
 ---
 <style>

@@ -1,0 +1,207 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import base_url from "@/src/lib/base_url";
+import procurementWebinarImage from "@/src/assets/images/ai/JPO-National-AI-Procurement-Webinar-Image.jpg";
+import "@/src/styles/ai-section.css";
+---
+
+<PageLayout title="AI Procurement National Webinar" bannerImage={banner}>
+  <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
+  <main>
+    <!-- Hero spotlight card -->
+    <div class="spotlight-card rounded-4 overflow-hidden mb-5">
+      <div class="row g-0 h-100">
+        <div class="col-md-12 d-flex flex-column justify-content-center p-4 p-lg-5">
+          <h2 class="text-white fw-bold mb-3">National Webinar: Demystifying AI Procurement</h2>
+          <p class="text-white mb-3" style="opacity: 0.9;">Actionable Strategies for Transportation Agencies</p>
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="event-pill">
+              <span class="event-pill-icon"><i class="fa-regular fa-calendar"></i></span>
+              September 17, 2026
+            </span>
+            <span class="event-pill">
+              <span class="event-pill-icon"><i class="far fa-clock"></i></span>
+              1:00 PM–4:00 PM ET
+            </span>
+            <span class="event-pill">
+              <span class="event-pill-icon"><i class="fa-solid fa-laptop"></i></span>
+              Virtual - Zoom & Mentimeter
+            </span>
+          </div>
+          <p class="text-white mb-3 fst-italic fs-6" style="opacity: 0.9;">Hosted by the USDOT Intelligent Transportation Systems Joint Program Office (ITS JPO)</p>
+
+          <div>
+            <a href="https://itsa-org.zoom.us/webinar/register/WN_RUS21Y4XTq-hG_5_JPYGBA#/registration" class="btn btn-light fw-semibold px-4" target="_blank" rel="noopener noreferrer">
+              Register Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Overview</h2>
+        <p>
+          As artificial intelligence becomes increasingly central to transportation, multimodal public sector agencies face unique and rapidly evolving challenges in technology acquisition. This
+          interactive national webinar is designed to build a common understanding on issues, identify effective practices and approaches, and establish a shared language around AI procurement themes,
+          helping agencies across the country confidently navigate this shifting landscape.
+        </p>
+
+        <h2 class="mt-5">Key Takeaways & Highlights</h2>
+
+        <div class="row g-4 mt-1">
+          <!-- Card 1 -->
+          <div class="col-md-6">
+            <div class="card p-4 h-100">
+              <h3>Defining AI Considerations</h3>
+              <p class="mb-0">Analyze and address critical AI risks, validation protocols, and assurance frameworks across the core project lifecycle phases: Pre-Award, Award, and Post-Award.</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-6">
+            <div class="card p-4 h-100">
+              <h3>Cross-Agency Collaboration</h3>
+              <p class="mb-0">Connect and break down silos between vital operational roles including technical program areas, information technology (IT), legal, and finance/acquisitions.</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-6">
+            <div class="card p-4 h-100">
+                <h3>Risk Mitigation</h3>
+                <p class="mb-0">Equip transportation agencies with actionable insights and proven framework updates to accurately identify and minimize AI-specific procurement risks.</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="col-md-6">
+            <div class="card p-4 h-100">
+              <h3>Real-World Practices</h3>
+              <p class="mb-0">
+                Evaluate mature, effective AI procurement strategies through multi-perspective case studies featuring State DOT, metropolitan planning organization (MPO), transit, and local agency
+                examples.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="mt-5">Who Should Attend</h2>
+    <p>
+      This event is open to public sector leadership, management, and technical specialists across all types of multimodal agencies (States, local agencies, MPOs, transit authorities, and Tribes). If
+      you lead or support technical programs, acquisitions, finance, legal frameworks, or IT infrastructure, this session will provide essential tools for cross-functional alignment on this critical
+      emerging topic.
+    </p>
+
+
+        <h2 class="mt-5">Webinar Materials</h2>
+        <div class="row g-4 mt-1">
+          <div class="col-md-6 col-lg-5">
+            <div class="card p-4 h-100">
+              <h3>Webinar Flyer</h3>
+              <p class="mb-4">Printable PDF outlining the Demystifying AI Procurement: Actionable Strategies for Transportation Agencies webinar.</p>
+              <div class="mt-auto">
+                <a
+                  href={base_url("/assets/documents/ai/ITSJPO_National_AI_Procurement_Webinar_Sept_17_2026_Flyer.pdf")}
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- Bottom CTA -->
+    <div class="cta-banner rounded-4 text-center p-5 mt-5 mb-2">
+      <h2 class="text-white fw-bold mb-2">Reserve Your Spot</h2>
+      <p class="text-white mb-4" style="opacity: 0.9; font-size: 1.1rem;">Registration is free and open to all public sector transportation professionals.</p>
+      <a href="https://itsa-org.zoom.us/webinar/register/WN_RUS21Y4XTq-hG_5_JPYGBA#/registration" class="btn btn-light fw-semibold px-5 py-2 fs-5" target="_blank" rel="noopener noreferrer">
+        Register Now
+      </a>
+    </div>
+  </main>
+</PageLayout>
+<style>
+  .spotlight-card,
+  .cta-banner {
+    background: linear-gradient(120deg, #01141e 0%, #05547e 100%);
+    box-shadow: 0 6px 24px rgba(3, 43, 82, 0.25);
+  }
+
+  .spotlight-card {
+    max-height: 350px;
+  }
+
+  .event-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem 0.35rem 0.4rem;
+    border-radius: 2rem;
+  }
+
+  .event-pill-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background-color: #efbd27;
+    color: #01141e;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .spotlight-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: fit-content;
+  }
+
+  .spotlight-date {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.925rem;
+  }
+
+  .spotlight-img-col {
+    position: relative;
+    min-height: 0;
+  }
+
+  .spotlight-img {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 767px) {
+    .spotlight-card {
+      max-height: none;
+    }
+
+    .spotlight-img-col {
+      min-height: 200px;
+    }
+  }
+</style>
