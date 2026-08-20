@@ -705,7 +705,9 @@
     position: sticky;
     top: 6.25rem;
     display: block;
-    padding: 1rem 0;
+    padding: 1rem;
+    z-index: 1000;
+    background: #ffffff;
   }
 
   .kit-jump-menu h2 {
