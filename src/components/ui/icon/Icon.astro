@@ -20,17 +20,18 @@
  * - [fulldotdev/ui](https://github.com/fulldotdev/ui)
  */
 import type { HTMLAttributes } from "astro/types";
+
 import type { IconName } from "./icons";
-import { ICON_NAMES } from "./icons";
 
 type Props = HTMLAttributes<"svg"> & {
-  size?: number | string;
   class?: string;
   name: IconName;
+  size?: number | string;
 };
 
-const { name, class: className, size = 24 } = Astro.props;
+const { class: className, name, size = 24 } = Astro.props;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const icons = import.meta.glob<{ default: any }>("/src/icons/*.svg");
 
 async function findIcon() {
@@ -49,4 +50,4 @@ const svg = await findIcon();
 const Component = svg.default;
 ---
 
-<Component width={size} height={size} fill="currentColor" class={className} />
+<Component class={className} fill="currentColor" height={size} width={size} />
