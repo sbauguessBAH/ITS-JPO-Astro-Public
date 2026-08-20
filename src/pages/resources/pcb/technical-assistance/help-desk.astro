@@ -85,17 +85,6 @@ const LOAN_PROGRAM_BENEFITS = [
 ];
 ---
 
-<style></style>
-<style>
-  @media (min-width: 992px) {
-    .strategy-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-  }
-</style>
-
 <style>
   .hd-banner-image {
     width: 100%;
@@ -136,54 +125,6 @@ const LOAN_PROGRAM_BENEFITS = [
     -webkit-mask-image: linear-gradient(to right, black 50%, transparent 85%);
     mask-image: linear-gradient(to right, black 50%, transparent 85%);
     z-index: 1;
-  }
-
-  .topic-box {
-    border-width: 3px 1px 1px;
-    border-style: solid;
-    border-color: rgb(0, 113, 188) rgb(215, 230, 245) rgb(215, 230, 245);
-    border-image: none;
-    border-radius: 12px;
-    padding: 22px 24px;
-    background: rgb(249, 251, 253);
-  }
-
-  .topic-box-title {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: rgb(17, 46, 81);
-    margin: 0px 0px 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-  }
-
-  .topic {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    padding: 9px 0px;
-    border-bottom: 1px solid rgb(231, 238, 246);
-  }
-
-  .topic-text {
-    font-size: 13.5px;
-    line-height: 1.6;
-    color: rgb(61, 69, 81);
-  }
-
-  .topic-icon {
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    background: rgb(234, 241, 248);
-    color: rgb(0, 113, 188);
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 8.5px;
-    font-weight: 900;
-    margin-top: 2px;
   }
 
   :root {
@@ -241,16 +182,18 @@ const LOAN_PROGRAM_BENEFITS = [
             <span class="tw:uppercase">Common Topics</span>
           </slot>
           <slot slot="content">
-            {
-              COMMON_TOPICS.map((item) => (
-                <div class="topic">
-                  <div class="tw:flex tw:size-5 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--help-desk-blue)/10">
-                    <Icon class="tw:fill-(--help-desk-blue)" name="check" />
+            <div class="tw:flex tw:flex-col tw:divide-y tw:divide-muted">
+              {
+                COMMON_TOPICS.map((item) => (
+                  <div class="tw:flex tw:gap-2 tw:py-2">
+                    <div class="tw:flex tw:size-5 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--help-desk-blue)/10">
+                      <Icon class="tw:fill-(--help-desk-blue)" name="check" />
+                    </div>
+                    <div class="tw:text-sm">{item}</div>
                   </div>
-                  <div class="topic-text">{item}</div>
-                </div>
-              ))
-            }
+                ))
+              }
+            </div>
           </slot>
         </Message>
         <Message
@@ -344,7 +287,7 @@ const LOAN_PROGRAM_BENEFITS = [
             }
           </div>
         </div>
-        <div class="hd-main-right">
+        <div class="tw:basis-2/5">
           <Message
             class="tw:border-(--help-desk-yellow)/10 tw:border-l-(--help-desk-yellow) tw:bg-white"
           >
@@ -352,16 +295,25 @@ const LOAN_PROGRAM_BENEFITS = [
               <span class="uppercase">Available Equipment</span>
             </slot>
             <slot slot="content">
-              {
-                AVAILABLE_EQUIPMENT.map((item) => (
-                  <div class="topic">
-                    <div class="tw:flex tw:size-5 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--help-desk-yellow)/10">
-                      <Icon class="tw:fill-(--help-desk-yellow)" name="check" />
+              <div class="tw:mb-4">
+                The Connected Vehicle Equipment Loan Program provides a wide
+                range of equipment for agencies that includes:
+              </div>
+              <div class="tw:flex tw:flex-col tw:divide-y tw:divide-muted">
+                {
+                  AVAILABLE_EQUIPMENT.map((item) => (
+                    <div class="tw:flex tw:gap-2 tw:py-2">
+                      <div class="tw:flex tw:size-5 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--help-desk-yellow)/10">
+                        <Icon
+                          class="tw:fill-(--help-desk-yellow)"
+                          name="check"
+                        />
+                      </div>
+                      <div class="tw:text-sm">{item}</div>
                     </div>
-                    <div class="topic-text">{item}</div>
-                  </div>
-                ))
-              }
+                  ))
+                }
+              </div>
             </slot>
           </Message>
         </div>
