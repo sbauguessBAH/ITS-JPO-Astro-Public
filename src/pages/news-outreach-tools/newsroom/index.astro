@@ -2,19 +2,7 @@
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import base_url from "@/src/lib/base_url";
-import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 import { getCollection } from "astro:content";
-
-type MediaToolkitEntry = {
-  title?: string;
-  url?: string;
-  description?: string;
-  date?: string;
-  subtitle?: string;
-  content_types?: string[];
-  topics?: string[];
-  location?: string;
-};
 
 type HighlightLink = {
   title: string;
@@ -27,14 +15,6 @@ const description =
 
 const newsletterEntries = (await getCollection("newsletters")).sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
-const toHref = (value?: string): string => {
-  if (!value) {
-    return "#";
-  }
-
-  return value.startsWith("/") ? base_url(value) : value;
-};
-
 const toNewsletterLink = (entry: (typeof newsletterEntries)[number]): HighlightLink => {
   const slug = entry.id.replace(/\.(md|mdx)$/i, "");
 
@@ -45,33 +25,6 @@ const toNewsletterLink = (entry: (typeof newsletterEntries)[number]): HighlightL
 };
 
 const featuredNewsletter: HighlightLink | undefined = newsletterEntries[0] ? toNewsletterLink(newsletterEntries[0]) : undefined;
-
-const toolkitData = toolkits as {
-  accelerator_media_toolkits?: MediaToolkitEntry[];
-  outreach_toolkits?: MediaToolkitEntry[];
-  media_toolkits?: MediaToolkitEntry[];
-};
-
-const allMediaKits: MediaToolkitEntry[] = [
-  ...(Array.isArray(toolkitData.accelerator_media_toolkits) ? toolkitData.accelerator_media_toolkits : []),
-  ...(Array.isArray(toolkitData.media_toolkits) ? toolkitData.media_toolkits : []),
-];
-
-const mediaKitHighlights: HighlightLink[] = allMediaKits
-  .map((item) => ({
-    title: item.title?.trim() ?? "",
-    url: toHref(item.url),
-  }))
-  .filter((item) => item.title.length > 0)
-  .slice(0, 3);
-
-const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_toolkits) ? toolkitData.outreach_toolkits : [])
-  .map((item) => ({
-    title: item.title?.trim() ?? "",
-    url: toHref(item.url),
-  }))
-  .filter((item) => item.title.length > 0)
-  .slice(0, 3);
 ---
 
 <PageLayout title="Newsroom" bannerImage={banner} keywords={keywords} description={description}>
@@ -130,53 +83,6 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
           </article>
         </div>
 
-        <div class="col-12 col-lg-3 d-flex">
-          <article class="cta-panel cta-panel--kits w-100">
-            <h2 class="cta-heading">
-              <span class="cta-heading-icon" aria-hidden="true">
-                <i class="fa-solid fa-photo-film"></i>
-              </span>
-              <span>Media Kits</span>
-            </h2>
-            <p>
-              Access curated media kit highlights with ready-to-share resources that support communications around key ITS JPO initiatives.
-            </p>
-            <ul class="cta-link-list">
-              {
-                mediaKitHighlights.map((item) => (
-                  <li>
-                    <a href={item.url}>{item.title}</a>
-                  </li>
-                ))
-              }
-            </ul>
-            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/media-kits/")}>All Media Kits</a>
-          </article>
-        </div>
-
-        <div class="col-12 col-lg-3 d-flex">
-          <article class="cta-panel cta-panel--outreach w-100">
-            <h2 class="cta-heading">
-              <span class="cta-heading-icon" aria-hidden="true">
-                <i class="fa-solid fa-bullhorn"></i>
-              </span>
-              <span>Outreach Resources</span>
-            </h2>
-            <p>
-              Find outreach resource highlights that help partners and stakeholders communicate ITS benefits through practical, audience-ready materials.
-            </p>
-            <ul class="cta-link-list">
-              {
-                outreachHighlights.map((item) => (
-                  <li>
-                    <a href={item.url}>{item.title}</a>
-                  </li>
-                ))
-              }
-            </ul>
-            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/outreach-resources/")}>Outreach Resources</a>
-          </article>
-        </div>
       </div>
       </div>
     </section>

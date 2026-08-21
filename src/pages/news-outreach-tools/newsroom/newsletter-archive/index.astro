@@ -123,18 +123,21 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		<div id="newsletter-cards" class="row gx-4 gy-4 newsletter-gradient">
 			{
 				newsletterRows.map((row) => (
-					<div class="col-12 col-md-4 d-flex newsletter-card-col">
+					<div class="col-12 col-md-4 d-flex newsletter-card-col" data-year={row.year} data-topics={row.topics.join("|")}>
 						<NewsroomCard item={row.card} class="w-100" showPills={true} showSubtitle={true} showColoredLabel={false} showImage={true} ctaText="Read Issue" />
 					</div>
 				))
 			}
 		</div>
+		<p id="newsletter-empty-state" class="form-text d-none" role="status">No newsletters match the selected filters.</p>
 	</main>
 </PageLayout>
 
-<script define:vars={{ newsletterRows }}>
+<script>
 	const yearToggle = document.getElementById("year-toggle");
 	const yearMenu = document.getElementById("year-list");
+	const cardColumns = Array.from(document.querySelectorAll<HTMLElement>("#newsletter-cards .newsletter-card-col"));
+	const emptyState = document.getElementById("newsletter-empty-state");
 
 	const updateYearLabel = () => {
 		const selected = Array.from(document.querySelectorAll('input[name="year"]:checked'))
@@ -145,24 +148,26 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		labelEl.textContent = selected.length === 0 ? "Select years" : selected.join(", ");
 	};
 
-	const getSelectedValues = (name) =>
+	const getSelectedValues = (name: string): string[] =>
 		Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
 			.filter((el) => el instanceof HTMLInputElement)
 			.map((cb) => cb.value);
 
-	const getFilteredMatches = (selectedYears, selectedTopics) => {
-		return newsletterRows.map((row) => {
-			const hasYear = selectedYears.length === 0 || selectedYears.includes(row.year);
-			const hasTopic = selectedTopics.length === 0 || (row.topics ?? []).some((topic) => selectedTopics.includes(topic));
+	const getFilteredMatches = (selectedYears: string[], selectedTopics: string[]): boolean[] => {
+		return cardColumns.map((cardColumn) => {
+			const year = cardColumn.dataset.year ?? "";
+			const topics = (cardColumn.dataset.topics ?? "").split("|").filter(Boolean);
+			const hasYear = selectedYears.length === 0 || selectedYears.includes(year);
+			const hasTopic = selectedTopics.length === 0 || topics.some((topic) => selectedTopics.includes(topic));
 			return hasYear && hasTopic;
 		});
 	};
 
-	const applyToDOM = (matches) => {
-		const cols = document.querySelectorAll("#newsletter-cards .newsletter-card-col");
-		cols.forEach((col, index) => {
+	const applyToDOM = (matches: boolean[]) => {
+		cardColumns.forEach((col, index) => {
 			col.style.display = matches[index] ? "" : "none";
 		});
+		emptyState?.classList.toggle("d-none", matches.some(Boolean));
 	};
 
 	const runFilter = () => {
@@ -172,7 +177,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		updateYearLabel();
 	};
 
-	const toggleYearDropdown = (show) => {
+	const toggleYearDropdown = (show?: boolean) => {
 		const expanded = typeof show === "boolean" ? show : !(yearToggle?.getAttribute("aria-expanded") === "true");
 		yearToggle?.setAttribute("aria-expanded", expanded ? "true" : "false");
 		if (yearMenu) {
@@ -188,7 +193,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 
 	document.addEventListener("click", (e) => {
 		const target = e.target;
-		if (!yearMenu?.contains(target) && !yearToggle?.contains(target)) {
+		if (!(target instanceof Node) || (!yearMenu?.contains(target) && !yearToggle?.contains(target))) {
 			toggleYearDropdown(false);
 		}
 	});
