@@ -27,6 +27,10 @@ export const ICON_NAMES = [
   "list",
   "pdf",
   "ppt",
+  "telephone-outbound-fill",
+  "basket-fill",
+  "flask-fill",
+  "router-fill",
 ] as const;
 
 export type IconName = (typeof ICON_NAMES)[number];
