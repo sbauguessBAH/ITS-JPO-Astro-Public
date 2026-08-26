@@ -32,7 +32,8 @@ export default defineConfig({
     "/isc/?utm_source=tradeshow%2526utm_medium=banner%2526utm_id=events": "/research-areas/intersection-safety/systems",
     "/research_areas/emerging_tech/pdf/Accelerate_V2X_Deployment.pdf": "/research-areas/V2X-Deployment/deployment/accelerator/",
     "/research_areas/emerging_tech/htm/Next_landing.htm": "/research-areas/V2X-Deployment",
-    "/research-areas/artificial-intelligence/transportation-planning-design": "/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice/transportation-planning-design"
+    "/research-areas/artificial-intelligence/transportation-planning-design": "/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice/transportation-planning-design",
+    "'project_mang/index.htm": "/news-info/project-management",
   
   },
 });
