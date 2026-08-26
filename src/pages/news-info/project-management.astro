@@ -1,0 +1,100 @@
+---
+import banner from "@/src/assets/images/banners/Default_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "../../lib/base_url";
+
+const keywords = [
+  "Publication Guidelines",
+  "ITS JPO Publications",
+  "Section 508 Compliance",
+  "Document Submission Guidelines",
+  "National Transportation Library",
+  "USDOT Publication Standards",
+  "Government Publishing Guidelines",
+  "Meta Tags Requirements",
+  "GPO Style Manual",
+  "Document Accessibility",
+  "Federal Report Template",
+  "Image Attribution Guidelines",
+  "Transportation Documentation",
+  "Report Formatting Standards",
+  "Federal Publication Requirements",
+];
+
+const description =
+  "The ITS JPO has established a set of project management templates developed as program support tools. The project management templates help set organizational expectations and identify areas of responsibility. By implementing the templates across the ITS JPO portfolio, we can improve the communication of projects statuses, streamline reporting requirements, establish better short and long term project planning along with many other beneficial activities. This unified management approach ensures that project objectives are met. Consistent with expectations established by the ITS JPO, a portfolio-wide adoption of a standardized project management approach will include the utilization of the common reporting formats and project templates provided below.";
+---
+
+<PageLayout title="Project Management Materials" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">Project Management Materials</Fragment>
+  <main class="publication-guidelines-main ">
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <h2 class="mt-2">Project Management Materials</h2>
+        <p>
+        The ITS JPO has established a set of 
+        <a href="https://usg02.safelinks.protection.office365.us/?url=http%3A%2F%2Fitsjpo_templates.zip%2F&data=05%7C02%7CNealis_Christina%40bah.com%7Ce338121c0d9146c517cc08deffad63b1%7C66d73691ea9748b195d5e94f0a46b878%7C1%7C0%7C639229317319578491%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=Xm%2BuDIaNTqR8I8m36HjDuPVLbpThkYfjQfrx1dNv5uQ%3D&reserved=0">project management templates</a> developed as program support tools.
+        The project management templates help set organizational expectations and identify areas of responsibility. 
+        By implementing the templates across the ITS JPO portfolio, we can improve the communication of projects statuses, 
+        streamline reporting requirements, establish better short and long term project planning along with many other 
+        beneficial activities. This unified management approach ensures that project objectives are met. Consistent with 
+        expectations established by the ITS JPO, a portfolio-wide adoption of a standardized project management approach 
+        will include the utilization of the common reporting formats and project templates provided below.
+        </p>
+        <ul>
+            <li>Monthly Status Report</li>
+            <li>Project Schedule</li>
+            <li>Communications Management Plan</li>
+            <li>Risk Register</li>
+        </ul>
+        <p>Utilizing uniform methodology across all projects within the ITS JPO establishes a common approach across the 
+            entire program.  Projects governed by established project management processes are effectively planned; have 
+            appropriate change control processes in place; deliver the right product or service on time and within budget; 
+            and ultimately generate efficiencies for the agencies.</p>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .coming-soon-icon {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+
+  .coming-soon-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #055681;
+  }
+
+  .callout-box {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-left: 5px solid #055681;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .callout-header-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+  }
+
+  .callout-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #333;
+  }
+
+  .callout-body p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
