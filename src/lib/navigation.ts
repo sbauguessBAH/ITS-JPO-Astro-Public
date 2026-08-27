@@ -43,7 +43,6 @@ export const navigation: NavigationItem[] = [
           { name: "ITS JPO NOW Newsletter", url: "/news-outreach-tools/newsroom/newsletter-archive" },
           { name: "In the News", url: "/news-outreach-tools/newsroom/in-the-news" },
           { name: "Media Kits", url: "/news-outreach-tools/newsroom/media-kits" },
-          { name: "Outreach Resources", url: "/news-outreach-tools/newsroom/outreach-resources" },
         ],
       },
       {
