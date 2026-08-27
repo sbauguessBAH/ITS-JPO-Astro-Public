@@ -24,7 +24,7 @@ const { Content } = await render(issue);
 
 const pageTitle = `${issue.data.title} - ${issue.data.dateLabel}`;
 const bannerTitle = issue.data.bannerTitle ?? pageTitle;
-const pageDescription = issue.data.description ?? "ITS JPO NOW newsletter issue";
+const pageDescription = issue.data.description ?? "ITS JPO Now newsletter issue";
 const pageKeywords = issue.data.keywords.length > 0 ? issue.data.keywords : ["ITS JPO", "newsletter", issue.data.dateLabel];
 ---
 
