@@ -208,7 +208,7 @@ const description = "Browse ITS JPO media kits and filter by content type and to
     const visibleIndexes = new Set(matchingIndexes.slice(startIndex, startIndex + toolkitPageSize));
 
     toolkitCols.forEach((col, index) => {
-      col.style.display = visibleIndexes.has(index) ? "" : "none";
+      col.style.setProperty("display", visibleIndexes.has(index) ? "" : "none", "important");
     });
 
     if (emptyState instanceof HTMLElement) {
