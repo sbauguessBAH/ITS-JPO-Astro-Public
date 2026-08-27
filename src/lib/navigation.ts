@@ -40,7 +40,7 @@ export const navigation: NavigationItem[] = [
         url: "/news-outreach-tools/newsroom",
         pages: [
           { name: "Home", url: "/news-outreach-tools/newsroom/" },
-          { name: "ITS JPO NOW Newsletter", url: "/news-outreach-tools/newsroom/newsletter-archive" },
+          { name: "ITS JPO Now Newsletter", url: "/news-outreach-tools/newsroom/newsletter-archive" },
           { name: "In the News", url: "/news-outreach-tools/newsroom/in-the-news" },
           { name: "Media Kits", url: "/news-outreach-tools/newsroom/media-kits" },
         ],

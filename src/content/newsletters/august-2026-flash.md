@@ -1,5 +1,5 @@
 ---
-title: ITS JPO NOW
+title: ITS JPO Now
 publishDate: 2026-08-01
 dateLabel: August 2026 - Flash Edition
 subtitle: Flash Edition
@@ -17,7 +17,7 @@ keywords:
   - Cooperative Driving Automation
   - CDA
   - AI procurement
-bannerTitle: ITS JPO NOW - Flash Edition
+bannerTitle: ITS JPO Now - Flash Edition
 ---
 
 ## Cooperative Driving Automation (CDA) Small-Scale Industry Prototype Solicitation is LIVE!

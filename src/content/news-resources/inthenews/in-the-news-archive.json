@@ -1,22 +1,5 @@
 ﻿[
   {
-    "title": "Trump's Transportation Secretary Sean P. Duffy Visits Reliable Robotics to See How American Innovators are Unlocking the Future of Flight",
-    "date": "6/17/2026",
-    "featured": [],
-    "news_src": "U.S. DOT",
-    "location": "Albuquerque, NM",
-    "desc": "U.S. Transportation Secretary Sean P. Duffy today toured Reliable Robotics at Albuquerque International Sunport to see how this American innovator is unlocking the future of flight. Along with the City of Albuquerque, Reliable Robotics was selected by the Federal Aviation Administration (FAA) in March to participate in the Department's Advanced Air Mobility Integration Pilot Program (eIPP).",
-    "url": "https://www.transportation.gov/briefing-room/trumps-transportation-secretary-sean-p-duffy-visits-reliable-robotics-see-how",
-    "news_src_url": "https://www.transportation.gov/briefing-room/trumps-transportation-secretary-sean-p-duffy-visits-reliable-robotics-see-how",
-    "image": "newsroom/postThumbnails/UnlocktheFutureOfFlight.png",
-    "alt_image": "",
-    "tags": {
-      "grant-programs": [],
-      "technology-areas": ["Innovative Aviation Technology", "Rural ITS"],
-      "topics": []
-    }
-  },
-  {
     "title": "Utah DOT Helps Save Lives Via Smart Signal Technology",
     "date": "6/12/2026",
     "featured": ["v2x"],
@@ -64,23 +47,6 @@
     "tags": {
       "grant-programs": [],
       "technology-areas": ["Driving Automation"],
-      "topics": []
-    }
-  },
-  {
-    "title": "Trump's Transportation Secretary Sean P. Duffy and FAA Unveil Eight Selections for Pilot Program Testing Next-Gen Aircraft in America's Skies",
-    "date": "3/9/2026",
-    "featured": [],
-    "news_src": "U.S. DOT",
-    "location": "N/A",
-    "desc": "U.S. Transportation Secretary Sean P. Duffy and the Federal Aviation Administration (FAA) today announced eight proposals were selected as part of the brand-new Advanced Air Mobility and Electric Vertical Takeoff and Landing (eVTOL) Integration Pilot Program (eIPP). eVTOLs are futuristic aircraft that have the potential to generate new jobs, connect communities, and strengthen American leadership in aviation.",
-    "url": "https://www.transportation.gov/briefing-room/future-aviation-here-trumps-transportation-secretary-sean-p-duffy-and-faa-unveil",
-    "news_src_url": "https://www.transportation.gov/briefing-room/future-aviation-here-trumps-transportation-secretary-sean-p-duffy-and-faa-unveil",
-    "image": "newsroom/postThumbnails/Next-Gen-Aircraft.jpg",
-    "alt_image": "",
-    "tags": {
-      "grant-programs": [],
-      "technology-areas": ["Innovative Aviation Technology"],
       "topics": []
     }
   },
@@ -200,23 +166,6 @@
     "tags": {
       "grant-programs": ["Intersection Safety Challenge"],
       "technology-areas": ["Interoperable Connectivity (V2X)", "Artificial Intelligence", "Arterial Operations"],
-      "topics": []
-    }
-  },
-  {
-    "title": "TRB 2025: Annual Meeting Review, by Brian Cronin",
-    "date": "1/17/2025",
-    "featured": [],
-    "news_src": "Traffic Technology Today",
-    "location": "",
-    "desc": "Also at TRB, on Tuesday, the USDOT announced the winners of the Intersection Safety Challenge Stage 1B: System Assessment and Virtual Testing Primary Track, which awarded $4 million among 10 prizewinning teams. The purpose of the multistage competition is to encourage teams of innovators and end-users to develop, prototype, and test intersection safety systems that leverage emerging technologies (including AI and machine learning) to identify and mitigate unsafe conditions involving vehicles and vulnerable road users at roadway intersections.",
-    "url": "https://www.traffictechnologytoday.com/opinion/trb-2025-annual-meeting-review-by-brian-cronin.html",
-    "news_src_url": "https://www.traffictechnologytoday.com/opinion/trb-2025-annual-meeting-review-by-brian-cronin.html",
-    "image": "newsroom/postThumbnails/03_TRB-annual-meeting-entrance.jpg",
-    "alt_image": "TRB 2025: Annual Meeting review, by Brian Cronin",
-    "tags": {
-      "grant-programs": [],
-      "technology-areas": [],
       "topics": []
     }
   }
