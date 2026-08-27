@@ -161,7 +161,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 	const applyToDOM = (matches) => {
 		const cols = document.querySelectorAll("#newsletter-cards .newsletter-card-col");
 		cols.forEach((col, index) => {
-			col.style.display = matches[index] ? "" : "none";
+			col.style.setProperty("display", matches[index] ? "" : "none", "important");
 		});
 	};
 
