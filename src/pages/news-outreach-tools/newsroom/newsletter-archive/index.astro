@@ -122,9 +122,9 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 
 		<div id="newsletter-cards" class="row gx-4 gy-4 newsletter-gradient">
 			{
-				newsletterRows.map((row) => (
+				newsletterRows.map((row, index) => (
 					<div class="col-12 col-md-4 d-flex newsletter-card-col">
-						<NewsroomCard item={row.card} class="w-100" showPills={true} showSubtitle={true} showColoredLabel={false} showImage={true} ctaText="Read Issue" />
+						<NewsroomCard item={row.card} class="w-100" showPills={true} showSubtitle={true} showColoredLabel={false} showImage={true} showNewBadge={index === 0} ctaText="Read Issue" />
 					</div>
 				))
 			}

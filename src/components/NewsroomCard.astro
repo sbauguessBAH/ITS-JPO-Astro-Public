@@ -12,6 +12,7 @@ interface Props {
   showColoredLabel?: boolean;
   btnClass?: string;
   showImage?: boolean;
+  showNewBadge?: boolean;
   ctaText?: string;
 }
 
@@ -23,6 +24,7 @@ const {
   pillSource = "topics",
   showColoredLabel = true,
   showImage = false,
+  showNewBadge = false,
   btnClass = "btn w-100 mt-2",
   ctaText = "View Toolkit",
 } = Astro.props;
@@ -78,7 +80,12 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
   <div class="card-body">
     {
       // Render image first so it sits at the top of the card.
-      shouldRenderImage && <img class="card-title-image" src={normalizedItem.imageUrl} alt={imageAltText} loading="lazy" decoding="async" />
+      shouldRenderImage && (
+        <div class="card-title-image-wrap">
+          <img class="card-title-image" src={normalizedItem.imageUrl} alt={imageAltText} loading="lazy" decoding="async" />
+          {showNewBadge && <span class="card-new-badge">New</span>}
+        </div>
+      )
     }
 
     <div class="toolkit-card-content">
@@ -174,8 +181,26 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
   }
 
   .card-title-image-wrap {
+    position: relative;
     width: 100%;
     margin: 0;
+  }
+
+  .card-new-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #a3cfbb;
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    background-color: #d1e7dd;
+    color: #0f5132;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    box-shadow: 0 0 0.6rem rgba(25, 135, 84, 0.55);
   }
 
   .card-title-image {
