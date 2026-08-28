@@ -356,6 +356,15 @@ const createSectionFromSeed = (seed: DefaultSectionSeed): ToolkitSection => {
         kind: "links",
         title: seed.title,
       };
+    case "media-coverage":
+      return {
+        className: seed.className,
+        description: seed.description,
+        emptyLabel: seed.emptyLabel,
+        items: [],
+        kind: "media-coverage",
+        title: seed.title,
+      };
     case "thumbnails":
       return {
         className: seed.className,
