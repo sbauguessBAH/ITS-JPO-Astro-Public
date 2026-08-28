@@ -79,7 +79,7 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
   <main>
     <div class="row gx-4 gy-4">
       <div>
-        <h2>ITS JPO Newsroom</h2>
+        <h2>ITS JPO Now Archive</h2>
         <p class="mt-3">
           The ITS JPO Newsroom section contains a variety of information and resources about various deployments, conferences & exhibits, and other newsworthy stories. The ITS JPO Newsroom also
           archives previous editions of the <i>ITS JPO Now</i> publication. Check back often as this page is regularly updated with new information.
@@ -101,16 +101,11 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
               Explore the ITS JPO Now newsletter to stay current on program milestones, events, and featured transportation technology stories.
             </p>
             <ul class="cta-link-list">
-              {featuredNewsletter && (
-                <li>
-                  <a href={featuredNewsletter.url}>Read Most Recent Issue</a>
-                </li>
-              )}
               <li>
                 <a href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" target="_blank" rel="noopener noreferrer">Join our ITS JPO Mailing List</a>
               </li>
             </ul>
-            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/newsletter-archive/")}>Newsletter Archive</a>
+            <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/newsletter-archive/")}>Explore Newsletters</a>
           </article>
         </div>
 
@@ -141,7 +136,7 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
             <p>
               Access curated media kit highlights with ready-to-share resources that support communications around key ITS JPO initiatives.
             </p>
-            <ul class="cta-link-list">
+            <!-- <ul class="cta-link-list">
               {
                 mediaKitHighlights.map((item) => (
                   <li>
@@ -149,7 +144,7 @@ const outreachHighlights: HighlightLink[] = (Array.isArray(toolkitData.outreach_
                   </li>
                 ))
               }
-            </ul>
+            </ul> -->
             <a class="btn btn-primary mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/media-kits/")}>All Media Kits</a>
           </article>
         </div>

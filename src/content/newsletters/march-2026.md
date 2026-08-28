@@ -3,8 +3,6 @@ title: ITS JPO Now
 publishDate: 2026-03-01
 dateLabel: March 2026
 subtitle: Inaugural Issue
-season: Spring 2026
-volume: Vol 14
 issue: Issue 1
 description: Check out the inaugural ITS JPO Now issue featuring the redesigned ITS JPO website and YouTube channel, V2X cohort updates, intersection safety data releases, and upcoming events.
 imageUrl: https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/02/13220761/6730551/govdelivery-newletter-template-25anniversary-header_crop.jpg
