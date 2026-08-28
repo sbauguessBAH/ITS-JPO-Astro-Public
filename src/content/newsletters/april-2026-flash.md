@@ -1,7 +1,7 @@
 ---
 title: ITS JPO Now
 publishDate: 2026-04-16
-dateLabel: April 2026 - Flash Edition
+dateLabel: April 2026 | Flash Edition
 subtitle: Flash Edition
 description: Learn about the FY 2026 Safe Streets and Roads for All funding opportunity and how it can support V2X applications and demonstrations.
 imageUrl: https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13450898/6819164/govdelivery-banners-flash_crop.jpg

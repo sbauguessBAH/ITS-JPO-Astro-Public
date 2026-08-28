@@ -1,7 +1,7 @@
 ---
 title: ITS JPO Now
 publishDate: 2026-06-05
-dateLabel: June 2026 - Flash Edition
+dateLabel: June 2026 | Flash Edition
 subtitle: Flash Edition
 description: Learn about the Intersection Safety Systems Prototyping Broad Agency Announcement and its opportunity to support real-world safety system development, testing, and deployment.
 imageUrl: https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13450898/6819164/govdelivery-banners-flash_crop.jpg

@@ -1,7 +1,7 @@
 ---
 title: ITS JPO Now
 publishDate: 2026-08-01
-dateLabel: August 2026 - Flash Edition
+dateLabel: August 2026 | Flash Edition
 subtitle: Flash Edition
 description: Read updates on the CDA Small-Scale Industry Prototype solicitation and the National Webinar on Demystifying AI Procurement.
 imageUrl: https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13450898/6819164/govdelivery-banners-flash_crop.jpg

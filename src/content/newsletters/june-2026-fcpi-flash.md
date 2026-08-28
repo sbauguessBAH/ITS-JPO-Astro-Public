@@ -1,7 +1,7 @@
 ---
 title: ITS JPO Now
 publishDate: 2026-06-23
-dateLabel: June 2026 - Flash Edition
+dateLabel: June 2026 | Flash Edition
 subtitle: Flash Edition
 description: Learn about the FY 2026 Small Business Innovation Research solicitation for the Freight Corridor Predictive Intelligence project.
 imageUrl: https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13450898/6819164/govdelivery-banners-flash_crop.jpg
