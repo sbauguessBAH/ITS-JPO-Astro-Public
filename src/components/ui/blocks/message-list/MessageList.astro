@@ -1,26 +1,26 @@
 ---
-import CheckIcon from "../../icons/CheckIcon.astro";
+import Icon from "../../icon/Icon.astro";
 
 type Props = {
-  items?: string[];
-  color?: "default" | "accent";
   class?: string;
   classes?: {
     base?: string;
-    title?: string;
-    itemWrapper?: string;
-    item?: string;
-    iconContainer?: string;
     icon?: string;
+    iconContainer?: string;
+    item?: string;
+    itemWrapper?: string;
+    title?: string;
   };
+  color?: "accent" | "default";
+  items?: string[];
   title?: string;
 };
 
 const {
-  items,
-  color = "default",
   class: className,
   classes,
+  color = "default",
+  items,
   title,
 } = Astro.props;
 ---
@@ -68,13 +68,14 @@ const {
               classes?.iconContainer,
             ]}
           >
-            <CheckIcon
-              size={18}
+            <Icon
               class:list={[
                 color === "default" && "tw:text-primary",
                 color === "accent" && "tw:text-accent",
                 classes?.icon,
               ]}
+              name="check"
+              size={18}
             />
           </div>
           <span

@@ -35,7 +35,6 @@ const { class: className, name, size = 24 } = Astro.props;
 const icons = import.meta.glob<{ default: any }>("/src/icons/*.svg");
 
 async function findIcon() {
-  console.log(icons);
   const iconPath = `/src/icons/${name}.svg`;
   if (!icons[iconPath]) {
     throw new Error(`Icon file not found: ${iconPath}`);
