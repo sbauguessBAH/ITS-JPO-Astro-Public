@@ -7,16 +7,9 @@
     "subtitle": "Media Kit",
     "description":"The MCDOT Connected Vehicle Acceleration Zone is part of the Vehicle-to-Everything (V2X) Accelerator Program funded by the Intelligent Transportation Systems Joint Program Office (ITS JPO).",
     "date": "2026",
-    "content_types":["print materials", "video", "photos", "webinar materials", "media coverage"],
+    "content_types":["video", "photos", "webinar materials", "media coverage"],
     "topics":["V2X", "MCDOT"],
     "url":"/news-outreach-tools/news-resources/media-toolkits/mcdot-connected-vehicle-acceleration-zone-mediakit",
-    "print_materials": [{
-        "title": "MCDOT V2X Accelerator Site Factsheet",
-        "href": "",
-        "img_src": "/assets/images/toolkits/maricopa-connected-vehicle-thumb.png",
-        "material_type": "Factsheet",
-        "date": "2026"
-        }],
         "videos": [{
             "title": "MCDOT CVAZ Project Video",
             "produced_by": "MCDOT Produced",
