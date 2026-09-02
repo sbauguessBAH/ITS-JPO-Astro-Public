@@ -47,21 +47,16 @@
                     },
                     "contacts": [
                         {
-                            "name": "Norah Ocel",
+                            "name": "Justin Anderson",
                             "title": "Program Manager", 
                             "department": "U.S. Department Of Transportation",
                             "office": "Intelligent Transportations Systems Joint Program Office",
-                            "contact": "Norah.Ocel@dot.gov",
-                            "profile_image_key": "norah_o"},
-                            {
-                                "name": "Brian Cronin",
-                                "title": "Director", 
-                                "department": "U.S. Department Of Transportation",
-                                "office": "Intelligent Transportations Systems Joint Program Office",
-                                "contact": "Brian.Cronin@dot.gov",
-                                "profile_image_key": "brian_c"}]
-                            },
-                            {
+                            "contact": "justin.anderson@dot.gov",
+                            "profile_image_key": "justin_a"
+                        }
+                        ]
+                    },
+    {
     "id": 35,
     "title": "Utah Department of Transportation (UDOT) Connecting the West Program",
     "subtitle": "Media Kit",
@@ -135,20 +130,13 @@
         "href": "https://transportationtechnology.utah.gov/connecting-the-west-program/"
     },
      "contacts": [
-        {
-            "name": "Norah Ocel",
-            "title": "Program Manager", 
-            "department": "U.S. Department Of Transportation",
-            "office": "Intelligent Transportations Systems Joint Program Office",
-            "contact": "Norah.Ocel@dot.gov",
-            "profile_image_key": "norah_o"},
-        {
-            "name": "Brian Cronin",
-            "title": "Director", 
-            "department": "U.S. Department Of Transportation",
-            "office": "Intelligent Transportations Systems Joint Program Office",
-            "contact": "Brian.Cronin@dot.gov",
-            "profile_image_key": "brian_c"}]
+       {
+                            "name": "Justin Anderson",
+                            "title": "Program Manager", 
+                            "department": "U.S. Department Of Transportation",
+                            "office": "Intelligent Transportations Systems Joint Program Office",
+                            "contact": "justin.anderson@dot.gov",
+                            "profile_image_key": "justin_a"}]
 },
 {
      "id": 37,
@@ -190,21 +178,15 @@
         "href": "https://v2xtexastrust.com/"
     },
     "contacts": [
-        {
-            "name": "Norah Ocel",
-            "title": "Program Manager", 
-            "department": "U.S. Department Of Transportation",
-            "office": "Intelligent Transportations Systems Joint Program Office",
-            "contact": "Norah.Ocel@dot.gov",
-            "profile_image_key": "norah_o"},
-            {
-                "name": "Brian Cronin",
-            "title": "Director", 
-            "department": "U.S. Department Of Transportation",
-            "office": "Intelligent Transportations Systems Joint Program Office",
-            "contact": "Brian.Cronin@dot.gov",
-            "profile_image_key": "brian_c"}]
-        }],
+         {
+                            "name": "Justin Anderson",
+                            "title": "Program Manager", 
+                            "department": "U.S. Department Of Transportation",
+                            "office": "Intelligent Transportations Systems Joint Program Office",
+                            "contact": "justin.anderson@dot.gov",
+                            "profile_image_key": "justin_a"}]
+         }
+        ],
         "outreach_toolkits": [
          {
     "id": 1,
