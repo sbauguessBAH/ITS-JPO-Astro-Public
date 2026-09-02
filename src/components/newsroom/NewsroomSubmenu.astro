@@ -1,0 +1,99 @@
+---
+import base_url from "@/src/lib/base_url";
+---
+
+<section class="newsroom-cta-grid mt-2" aria-label="Newsroom navigation">
+  <div class="container-xl">
+    <div class="row gx-4 gy-4 align-items-stretch">
+      <div class="col-12 col-lg-4 d-flex">
+        <article class="cta-panel cta-panel--newsletter w-100">
+          <h2 class="cta-heading">
+            <span class="cta-heading-icon" aria-hidden="true"><i class="fa-solid fa-newspaper"></i></span>
+            <span>ITS JPO Now</span>
+          </h2>
+          <p>Explore the ITS JPO Now newsletter to stay current on program milestones, events, and featured transportation technology stories.</p>
+          <ul class="cta-link-list">
+            <li><a href="https://public.govdelivery.com/accounts/USDOTFHWA/subscriber/new?topic_id=USDOTFHWA_180" target="_blank" rel="noopener noreferrer">Join our ITS JPO Mailing List</a></li>
+          </ul>
+          <a class="btn mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/newsletter-archive/")}>Explore Newsletters</a>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-4 d-flex">
+        <article class="cta-panel cta-panel--news w-100">
+          <h2 class="cta-heading">
+            <span class="cta-heading-icon" aria-hidden="true"><i class="fa-solid fa-rss"></i></span>
+            <span>In the News</span>
+          </h2>
+          <p>Browse transportation stories covered in the media, including local and national reporting on ITS JPO-supported deployments, technology pilots, safety initiatives, and real-world project outcomes.</p>
+          <a class="btn mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/in-the-news/")}>Explore Articles</a>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-4 d-flex">
+        <article class="cta-panel cta-panel--kits w-100">
+          <h2 class="cta-heading">
+            <span class="cta-heading-icon" aria-hidden="true"><i class="fa-solid fa-photo-film"></i></span>
+            <span>Media Kits</span>
+          </h2>
+          <p>Access curated media kit highlights with ready-to-share resources that support communications around key ITS JPO initiatives.</p>
+          <a class="btn mt-auto align-self-start" href={base_url("/news-outreach-tools/newsroom/media-kits/")}>All Media Kits</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .newsroom-cta-grid {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: #f7f7f7;
+    padding: 2rem 0;
+  }
+
+  .newsroom-cta-grid .row { margin: 0 auto; }
+
+  .cta-panel {
+    --panel-accent: #055581;
+    --panel-soft: rgba(5, 85, 129, 0.12);
+    --panel-on-accent: #ffffff;
+    --panel-link: #0f3e5f;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid color-mix(in srgb, var(--panel-accent) 24%, #cfd9e2);
+    border-radius: 0.75rem;
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 100%;
+    transition: transform 180ms ease;
+  }
+
+  .cta-panel:hover, .cta-panel:focus-within { transform: translateY(-4px); }
+  .cta-panel::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--panel-accent); }
+  .cta-panel--newsletter { --panel-accent: #091f61; --panel-soft: rgba(9, 31, 97, 0.13); --panel-link: #0a245e; }
+  .cta-panel--news { --panel-accent: #09628c; --panel-soft: rgba(9, 98, 140, 0.14); --panel-link: #0b4f71; }
+  .cta-panel--kits { --panel-accent: #babf10; --panel-soft: rgba(186, 191, 16, 0.2); --panel-on-accent: #1f2400; --panel-link: #3a3f00; }
+  .cta-panel--kits .cta-heading-icon, .cta-panel--kits .cta-heading-icon i { color: #ffffff; }
+  .cta-heading { margin: 0; display: flex; align-items: center; gap: 0.65rem; color: #0b385a; font-size: clamp(1.2rem, 1rem + 0.8vw, 1.45rem); line-height: 1.2; }
+  .cta-heading-icon { width: 2rem; height: 2rem; border-radius: 0.6rem; background: var(--panel-accent); color: var(--panel-on-accent); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem; }
+  .cta-heading-icon i { color: var(--panel-on-accent); line-height: 1; }
+  .cta-panel p { margin: 0; color: #1e3a4a; line-height: 1.45; }
+  .cta-link-list { margin: 0.1rem 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .cta-link-list li { width: 100%; }
+  .cta-link-list a { color: var(--panel-link); text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; width: 100%; background: color-mix(in srgb, var(--panel-soft) 55%, #ffffff); border: 1px solid color-mix(in srgb, var(--panel-accent) 24%, #ffffff); border-radius: 0.5rem; padding: 0.3rem 0.6rem; font-size: 0.92rem; transition: transform 160ms ease, background-color 160ms ease; }
+  .cta-link-list a::before { content: "\f0c1"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.72rem; color: color-mix(in srgb, var(--panel-accent) 82%, #000000); }
+  .cta-link-list a:hover, .cta-link-list a:focus-visible { transform: translateX(2px); background: color-mix(in srgb, var(--panel-soft) 85%, #ffffff); }
+  .cta-panel .btn { border-radius: 0.5rem; border: none; background: var(--panel-accent); color: var(--panel-on-accent); padding: 0.58rem 0.95rem; font-weight: 600; letter-spacing: 0.01em; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; transition: transform 160ms ease; }
+  .cta-panel .btn::after { content: "\f061"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.74rem; transition: transform 160ms ease; }
+  .cta-panel .btn:hover, .cta-panel .btn:focus-visible { transform: translateY(-1px); background: color-mix(in srgb, var(--panel-accent) 84%, #000000); color: var(--panel-on-accent); }
+  .cta-panel .btn:hover::after, .cta-panel .btn:focus-visible::after { transform: translateX(2px); }
+
+  @media (prefers-reduced-motion: reduce) { .cta-panel, .cta-link-list a, .cta-panel .btn, .cta-panel .btn::after { transition: none; } }
+  @media (max-width: 991.98px) { .newsroom-cta-grid { padding: 1.5rem 0; } .cta-panel { border-radius: 0.9rem; padding: 1.2rem; } }
+</style>
