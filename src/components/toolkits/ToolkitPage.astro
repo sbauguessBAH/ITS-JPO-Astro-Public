@@ -121,6 +121,10 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
   title={page.title}
   description={page.description}
   keywords={page.keywords}
+  additionalBreadcrumbs={[
+    { name: "Newsroom", url: "/news-outreach-tools/newsroom/" },
+    { name: "Media Kits", url: "/news-outreach-tools/newsroom/media-kits/" },
+  ]}
   currentBreadcrumb={page.title}
   bannerImage={bannerImage}
 >

@@ -3,7 +3,6 @@ import toolkits from "@/src/content/news-resources/toolkits/toolkits.json";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import banner from "@/src/assets/images/banners/NTL_Banner.png";
 import NewsroomCard from "@/src/components/NewsroomCard.astro";
-import NewsroomSubmenu from "@/src/components/newsroom/NewsroomSubmenu.astro";
 import type { NewsroomCardItem, Toolkit } from "@/src/types";
 
 const toolkitData = toolkits as {
@@ -49,7 +48,6 @@ const description = "Browse ITS JPO media kits and filter by content type and to
   <Fragment slot="banner">Newsroom</Fragment>
   <main>
     <h2 class="">Media Kits</h2>
-    <NewsroomSubmenu />
     <h3>All Media Kits</h3>
     <form class="row g-4 reduced-gutters filter my-2 p-3" aria-label="Media kit filter">
       <div class="col-12 col-lg-3">
