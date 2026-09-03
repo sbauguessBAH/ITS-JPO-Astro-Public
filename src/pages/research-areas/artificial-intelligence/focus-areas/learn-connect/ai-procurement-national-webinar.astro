@@ -50,6 +50,65 @@ import "@/src/styles/ai-section.css";
           helping agencies across the country confidently navigate this shifting landscape.
         </p>
 
+        <h2 class="mt-5">Agenda (Draft) and Speakers</h2>
+        <div class="table-responsive webinar-agenda">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Time (ET)</th>
+                <th scope="col">Session</th>
+                <th scope="col">Agency Panelists</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1:00 - 1:20 PM</th>
+                <td><strong>Introduction and Overview</strong></td>
+                <td>USDOT Representative</td>
+              </tr>
+              <tr>
+                <th scope="row">1:20 - 2:00 PM</th>
+                <td><strong>Pre-Award Phase</strong><span class="d-block agenda-subtitle">Agency Panel #1</span></td>
+                <td>
+                  <strong>Steven Younkin</strong> - Chief Engineer, City of Greeley, CO<br />
+                  <strong>Rose Vath</strong> - AI &amp; Business Intelligence and Performance Manager, Vermont Agency of Transportation<br />
+                  <strong>Aaron Cushman</strong> - IT/ITS Division Manager, Nashville DOT
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2:00 - 2:45 PM</th>
+                <td><strong>Award Phase</strong><span class="d-block agenda-subtitle">Agency Panel #2</span></td>
+                <td>
+                  <strong>Jinghua Xu</strong> - Department Manager of Modeling, Southern California Association of Governments<br />
+                  <strong>Ploi Intaratip</strong> - Assistant Traffic Liaison Engineer, Missouri DOT<br />
+                  <strong>Alicia Winkelblech</strong> - Director of Transportation, City of Arlington, TX<br />
+                  <strong>Namita Uppal</strong> - Director and Chief Procurement Officer, Miami-Dade County Strategic Procurement Department
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2:45 - 3:00 PM</th>
+                <td><strong>Break</strong></td>
+                <td>&mdash;</td>
+              </tr>
+              <tr>
+                <th scope="row">3:00 - 3:50 PM</th>
+                <td><strong>Post-Award Phase</strong><span class="d-block agenda-subtitle">Agency Panel #3 - Lightning Talks</span></td>
+                <td>
+                  <strong>Bhaskar Rudrakshala</strong> - Division Chief of Application Development &amp; Support, Caltrans<br />
+                  <strong>Skye Guo</strong> - ITS Specialist, District DOT<br />
+                  <strong>Christina Karanikolas</strong> - Manager of Engineering, RTC of Southern Nevada<br />
+                  <strong>John Hibbard</strong> - Division Director of Operations, Georgia DOT
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3:50 - 4:00 PM</th>
+                <td><strong>Closeout</strong></td>
+                <td>USDOT Representative</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <h2 class="mt-5">Key Takeaways & Highlights</h2>
 
         <div class="row g-4 mt-1">
@@ -105,6 +164,23 @@ import "@/src/styles/ai-section.css";
               <div class="mt-auto">
                 <a
                   href={base_url("/assets/documents/ai/ITSJPO_National_AI_Procurement_Webinar_Sept_17_2026_Flyer.pdf")}
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  Download
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <div class="card p-4 h-100">
+              <h3>Webinar Agenda</h3>
+              <p class="mb-4">Printable PDF outlining the agenda, session topics, and speakers for the Demystifying AI Procurement: Actionable Strategies for Transportation Agencies webinar.</p>
+              <div class="mt-auto">
+                <a
+                  href={base_url("/assets/documents/ai/AI%20Procurement%20Webinar%20Flyer_Agenda%20and%20Speakers%20v2.pdf")}
                   class="btn btn-primary"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -193,6 +269,41 @@ import "@/src/styles/ai-section.css";
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .webinar-agenda {
+    border: 1px solid #d9dee2;
+  }
+
+  .webinar-agenda thead th {
+    border: 0;
+    background-color: #1d5d88;
+    color: #fff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .webinar-agenda th,
+  .webinar-agenda td {
+    padding: 0.85rem;
+    vertical-align: top;
+    text-align: start;
+  }
+
+  .webinar-agenda tbody th {
+    min-width: 130px;
+    color: #164a6d;
+    font-weight: 700;
+  }
+
+  .webinar-agenda tbody tr:nth-child(even) > * {
+    background-color: #f4f6f7;
+  }
+
+  .agenda-subtitle {
+    margin-top: 0.25rem;
+    color: #5f6870;
+    font-size: 0.9rem;
   }
 
   @media (max-width: 767px) {
