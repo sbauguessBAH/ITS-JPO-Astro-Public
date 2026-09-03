@@ -79,9 +79,9 @@ import heroCdaBaa from "@/src/assets/images/hero-bg/Hero-CDABAA.jpg";
       <div class="container-xl">
         <div class="content-box">
           <h2 class="newsLetterHeader">ITS JPO NOW</h2>
-          <p class="fw-bold">July 2026</p>
-          <p>Check out the July ITS JPO Now, JPO’s bimonthly digest! Never miss an edition hereafter—join our mailing list on the About subpage.</p>
-          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-4 icon-arrow-button">Read Latest Issue</a>
+          <p class="fw-bold">September 2026</p>
+          <p>Check out the September ITS JPO NOW for the latest updates on V2X, ITS4US, AI, cooperative driving automation, and intersection safety.</p>
+          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/september-2026/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-4 icon-arrow-button">Read Latest Issue</a>
         </div>
       </div>
     </section>
@@ -124,8 +124,7 @@ import heroCdaBaa from "@/src/assets/images/hero-bg/Hero-CDABAA.jpg";
 <script>
   const carousel = document.querySelector(".hero-carousel .slides") as HTMLElement;
   const contentBoxes = document.querySelectorAll(".content-box");
-  const slideWidth = carousel?.offsetWidth || 0;
-  const totalSlides = 6;
+  const slides = carousel?.querySelectorAll(".slide") ?? [];
   let currentSlide = 0;
   let autoRotateInterval: ReturnType<typeof setInterval>;
 
@@ -147,8 +146,8 @@ import heroCdaBaa from "@/src/assets/images/hero-bg/Hero-CDABAA.jpg";
   }
 
   function rotateToNextSlide() {
-    if (!carousel) return;
-    currentSlide = (currentSlide + 1) % totalSlides;
+    if (!carousel || slides.length === 0) return;
+    currentSlide = (currentSlide + 1) % slides.length;
     carousel.scrollTo({
       left: currentSlide * carousel.offsetWidth,
       behavior: "smooth",
