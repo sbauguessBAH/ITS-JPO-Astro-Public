@@ -93,6 +93,11 @@ export const navigation: NavigationItem[] = [
               },
             ],
           },
+          {
+            name: "Contact",
+            url: "/research-areas/artificial-intelligence/contact",
+            isEnabled: true,
+          },
         ],
       },
       {
