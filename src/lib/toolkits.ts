@@ -298,7 +298,7 @@ const defaultSectionsByContentType: Record<string, DefaultSectionSeed> = {
     emptyLabel: "Add shareable video thumbnails or external video links here.",
     key: "shareable-videos",
     kind: "thumbnails",
-    title: "Shareable Videos of Keynote Speakers",
+    title: "Shareable Videos",
     variant: "video",
   },
   "video b-roll": {
@@ -576,7 +576,7 @@ const buildExplicitSections = (toolkit: RawToolkitEntry): ToolkitSection[] => {
       emptyLabel: "Add shareable video thumbnails or external video links here.",
       items: normalizeMediaItems(toolkit.videos),
       kind: "thumbnails",
-      title: "Shareable Videos of Keynote Speakers",
+      title: "Shareable Videos",
       variant: "video",
     });
   }
