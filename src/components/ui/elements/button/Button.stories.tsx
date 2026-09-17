@@ -31,38 +31,6 @@ export default meta;
 
 export const Default = {};
 
-export const SecondaryOutline = {
-  args: {
-    color: "secondary",
-    variant: "outline",
-  },
-};
-
-export const AccentSubtle = {
-  args: {
-    color: "accent",
-    variant: "subtle",
-  },
-};
-
-export const Ghost = {
-  args: {
-    variant: "ghost",
-  },
-};
-
-export const Small = {
-  args: {
-    size: "sm",
-  },
-};
-
-export const Large = {
-  args: {
-    size: "lg",
-  },
-};
-
 export const Disabled = {
   args: {
     disabled: true,

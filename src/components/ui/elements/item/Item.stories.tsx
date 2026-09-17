@@ -110,7 +110,7 @@ export const Linked = {
 };
 
 export const Group = {
-  render: ItemGroup,
+  component: ItemGroup,
   args: {
     class: "tw:max-w-2xl",
     slots: {

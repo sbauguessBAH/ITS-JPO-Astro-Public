@@ -1,0 +1,32 @@
+import {
+  Canvas,
+  Controls,
+  Description,
+  Meta,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import * as ButtonStories from "./Button.stories";
+import * as ButtonGalleries from "./ButtonGalleries.stories";
+
+<Meta of={ButtonStories} />
+
+<Title />
+<Subtitle />
+<Description />
+<Primary />
+
+## Galleries
+
+### Colors
+
+<Canvas of={ButtonGalleries.Colors} meta={ButtonGalleries} sourceState="none" />
+
+### Sizes
+
+<Canvas of={ButtonGalleries.Sizes} meta={ButtonGalleries} sourceState="none" />
+
+<Stories includePrimary={false} title="Behaviors" />
+<Controls />

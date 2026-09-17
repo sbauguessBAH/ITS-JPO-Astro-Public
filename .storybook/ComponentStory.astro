@@ -1,0 +1,16 @@
+---
+type Props = {
+  columns?: number;
+};
+
+const { columns = 1 } = Astro.props;
+---
+
+<div class="tw:overflow-x-auto tw:pb-2">
+  <div
+    class="tw:grid tw:w-fit tw:items-center tw:gap-x-4 tw:gap-y-3"
+    style={`grid-template-columns: minmax(6rem, auto) repeat(${columns}, minmax(8rem, 1fr));`}
+  >
+    <slot />
+  </div>
+</div>

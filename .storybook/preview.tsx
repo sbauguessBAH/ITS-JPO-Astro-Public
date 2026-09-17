@@ -1,4 +1,5 @@
 import "./preview.css";
+import React from "react";
 import {
   Title,
   Subtitle,
@@ -16,20 +17,23 @@ const preview = {
         date: /Date$/i,
       },
     },
+    docs: {
+      canvas: {
+        sourceState: "none",
+      },
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Stories includePrimary={false} title="Variants" />
+          <Controls />
+        </>
+      ),
+    },
   },
   tags: ["autodocs"],
-  docs: {
-    page: () => (
-      <>
-        <Title />
-        <Subtitle />
-        <Description />
-        <Primary />
-        <Controls />
-        <Stories />
-      </>
-    ),
-  },
 };
 
 export default preview;

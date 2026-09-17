@@ -27,6 +27,7 @@ const RESOURCES = [
     title: "Accelerating Vehicle-to-Everything (V2X) Cohort",
   },
   {
+    class: "tw:object-bottom",
     description:
       "An online resource connecting states, tribal governments, and local communities with resources to help develop intelligent transportation systems for smart community transportation programs.",
     image: "pcb/scrc-background",
@@ -99,7 +100,11 @@ const RESOURCES = [
         {
           RESOURCES.map((item) => (
             <Card href={item.path} isExternal={item.isExternal}>
-              <CardImage entry={item.image} height={250} />
+              <CardImage
+                class:list={item.class ? item.class : ""}
+                entry={item.image}
+                height={250}
+              />
               <CardHeader>
                 <CardTitle>{item.title}</CardTitle>
                 <CardDescription>{item.description}</CardDescription>
