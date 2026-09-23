@@ -44,6 +44,7 @@ export const navigation: NavigationItem[] = [
       { name: "Latest News from USDOT", url: "https://www.transportation.gov/newsroom", isExternal: true },
       { name: "Image Library", url: "/news-info/image-library" },
       { name: "Video Library", url: "/news-info/video-library" },
+      { name: "Project Delivery Templates", url: "/news-info/project-delivery-templates" },
       {
         name: "Publication Editorial Guidelines",
         url: "/news-info/Publication-Editorial-Guidelines",
