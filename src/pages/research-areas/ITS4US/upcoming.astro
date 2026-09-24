@@ -149,6 +149,11 @@ import "@/src/styles/deployments.css";
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
   }
+
+  .video-container iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
 </style>
 
 <PageLayout title="ITS4US Upcoming Activities">
@@ -172,6 +177,21 @@ import "@/src/styles/deployments.css";
                 </div>
                 <div class="text-md-end">
                   <p class="fs-3 text-gold mb-0">Coming Soon</p>
+                </div>
+              </div>
+
+              <div class="announcement-details rounded-4 p-4 mx-auto my-4" style="max-width: 900px;">
+                <div class="video-container">
+                  <iframe
+                    class="rounded-3 shadow-sm"
+                    src="https://www.youtube.com/embed/9DkjQLxPtPM"
+                    title="ITS4US Deployment Accelerator Program video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  >
+                  </iframe>
                 </div>
               </div>
 
