@@ -3,6 +3,7 @@ import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import base_url from "@/src/lib/base_url";
 import fhwaClasThumb from "@/src/assets/images/ai/FHWA-CLAS-Thumb.png";
+import fhwaClasAIThumb from "@/src/assets/images/ai/FHWA-CLAS-AI-Thumb.png";
 import procurementWebinarImage from "@/src/assets/images/ai/JPO-National-AI-Procurement-Webinar-Image.jpg";
 import { Image } from "astro:assets";
 import "@/src/styles/ai-section.css";
@@ -33,7 +34,7 @@ import "@/src/styles/ai-section.css";
       <div class="col-lg-10">
         <h2 id="ai-readiness">AI Readiness and Assessment Tools</h2>
         <p>
-          In an era of rapid technological shifts, transportation agencies face the daunting task of moving from curiosity to being "road-ready". A Capability Maturity Model (CMM) can serve as a
+          In an era of rapid technological shifts, transportation agencies face the daunting task of moving from curiosity to being "road-ready." A Capability Maturity Model (CMM) can serve as a
           guiding "compass" for this journey, providing a structured approach to assess an agency's readiness for AI implementation at different scales. For transportation agencies of different types
           and sizes, an AI CMM offers a customizable, structured approach to self-assessment that bridges the gap between different program areas or roles.
         </p><p>
@@ -48,7 +49,7 @@ import "@/src/styles/ai-section.css";
             <sub>REPORT</sub>
             <h5 class="card-title">AI for ITS Capability Maturity Model (CMM) and Readiness Checklists</h5>
             <p class="card-text">
-              The AI for ITS CMM and Readiness Checklists can help agencies assess their AI readiness. A new report framework, quick start guide and online tool will be available in Fall 2026.
+              The AI for ITS CMM and Readiness Checklists can help agencies assess their AI readiness. A new report framework, quick start guide and online tool will be available in fall 2026.
             </p>
           </div>
         </a>
@@ -81,7 +82,7 @@ import "@/src/styles/ai-section.css";
                 <h5 class="card-title">More Topics in Development</h5>
                 <p class="card-text flex-grow-1">
                   Additional AI insight topics will be added as the series grows. Topics include: AI Assurance & Risk Management, AI & Data Management, AI & Cybersecurity Security, AI Infrastructure,
-                  AI Lifecycle Management, AI Transparency & Trust, and AI & Workforce Readiness
+                  AI Lifecycle Management, AI Transparency & Trust, and AI & Workforce Readiness.
                 </p>
               </div>
             </div>
@@ -96,7 +97,7 @@ import "@/src/styles/ai-section.css";
 
         <ul>
           <li><em>Webinars and Workshops:</em> Accessible platforms for rapid information dissemination and deeper dives into specific technical topics.</li>
-          <li><em>Peer Exchanges and Cohorts:</em> Collaborative dialogue amongst agencies with similar challenges sharing AI implementation strategies in a structured, small-group setting.</li>
+          <li><em>Peer Exchanges and Cohorts:</em> Collaborative dialogue among agencies with similar challenges sharing AI implementation strategies in a structured, small-group setting.</li>
           <li><em>Conferences:</em> In-person networking opportunities for cross-program AI connections and the showcasing of success stories and effective practices.</li>
           <li>
             <em>Case Study Libraries and Playbooks:</em> Centralized digital hubs that house standardized templates, procurement language, and lessons learned to provide a self-service path to maturity.
@@ -104,27 +105,8 @@ import "@/src/styles/ai-section.css";
         </ul>
 
         <div class="row mt-4">
-          <div class="col-lg-4 mb-4">
-            <div class="card resource-card h-100 d-flex flex-column">
-              <div class="card-img-top-wrapper">
-                <Image src={fhwaClasThumb} alt="FHWA CLAS Innovation Exchange" class="card-image card-image--no-radius" />
-              </div>
-              <div class="card-body d-flex flex-column">
-                <sub class="resource-subtitle">WEBINAR SLIDES</sub>
-                <h5 class="card-title">Federal Highway Administration (FHWA) Center for Local Aid Support (CLAS) ITS JPO AI Program Introduction</h5>
-                <p class="card-text flex-grow-1">
-                  Introductory slides on the ITS JPO AI Program presented at the FHWA CLAS Innovation Exchange. Covers program overview, focus areas, and resources for local agencies.
-                </p>
-                <hr class="my-3" />
-                <div class="resource-meta">
-                  <p class="resource-date mb-2"><strong>Date:</strong> May 21, 2026</p>
-                  <p class="resource-tags mb-3"><strong>Tags:</strong> FHWA CLAS Innovation Exchange</p>
-                </div>
-                <a href={base_url("/assets/documents/Data & AI w notes - JPO AI Program - FHWA CLAS 26-05-21.pdf")} class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer">VIEW SLIDES</a>
-              </div>
-            </div>
-          </div>
-
+          
+          
           <div class="col-lg-4 mb-4">
             <div class="card resource-card h-100 d-flex flex-column">
               <div class="card-img-top-wrapper">
@@ -143,21 +125,52 @@ import "@/src/styles/ai-section.css";
               </div>
             </div>
           </div>
-
           <div class="col-lg-4 mb-4">
-            <div class="card resource-card h-100 d-flex flex-column card-grayed-out">
+            <div class="card resource-card h-100 d-flex flex-column">
               <div class="card-img-top-wrapper">
-                <div class="placeholder-image"></div>
+                <Image src={fhwaClasAIThumb} alt="FHWA CLAS Project Delivery" class="card-image card-image--no-radius" />
               </div>
               <div class="card-body d-flex flex-column">
-                <h5 class="card-title">AI Procurement Peer Exchange</h5>
-                <p class="card-text flex-grow-1"><em>Coming soon</em></p>
+                <h5 class="card-title">AI in Transportation: Project Delivery</h5>
+                <p class="card-text flex-grow-1">
+                  Slides from the June 2026 Federal Highway Administration (FHWA) Center for Local Aid Support (CLAS) Innovation Exchange Webinar on "AI in Transportation: Project Delivery."
+                </p>
                 <hr class="my-3" />
+                 <div class="resource-meta">
+                  <p class="resource-date mb-2"><strong>Date:</strong> June 25, 2026</p>
+                  <p class="resource-tags mb-3"><strong>Tags:</strong> FHWA CLAS Innovation Exchange</p>
+                </div>
+                                <a href={base_url("/assets/documents/ai/JPO AI Program_FHWA CLAS Webinar_06-25-26_Project Delivery_508.pdf")} class="btn btn-primary mt-auto mb-1" target="_blank" rel="noopener noreferrer">SLIDES: ITS JPO INTRO</a>
+
+                <a href={base_url("/assets/documents/ai/RTC of Washoe County NV Presentation FHWA CLAS 6-25-26.pdf")} class="btn btn-primary mt-auto mb-1" target="_blank" rel="noopener noreferrer">SLIDES: RTC WASHOE, NV</a>
+                <a href={base_url("/assets/documents/ai/City of Greeley CO Presentation FHWA CLAS 6-25-26.pdf")} class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer">SLIDES: GREELEY, CO</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="card resource-card h-100 d-flex flex-column">
+              <div class="card-img-top-wrapper">
+                <Image src={fhwaClasThumb} alt="FHWA CLAS Innovation Exchange" class="card-image card-image--no-radius" />
+              </div>
+              <div class="card-body d-flex flex-column">
+                <sub class="resource-subtitle">WEBINAR SLIDES</sub>
+                <h5 class="card-title">AI in Transportation: Data Collection for Asset Management</h5>
+                <p class="card-text flex-grow-1">
+                  Slides from the May 2026 Federal Highway Administration (FHWA) Center for Local Aid Support (CLAS) Innovation Exchange webinar on "AI in Transportation: Data Collection for Asset Management."
+                </p>
+                <hr class="my-3" />
+                <div class="resource-meta">
+                  <p class="resource-date mb-2"><strong>Date:</strong> May 21, 2026</p>
+                  <p class="resource-tags mb-3"><strong>Tags:</strong> FHWA CLAS Innovation Exchange</p>
+                </div>
+                <a href={base_url("/assets/documents/ai/JPO AI Program_FHWA CLAS Webinar_05-21-26_Data_508.pdf")} class="btn btn-primary mt-auto mb-1" target="_blank" rel="noopener noreferrer">SLIDES: ITS JPO INTRO</a>
+                <a href={base_url("/assets/documents/ai/Beverly MA Presentation FHWA CLAS 5-21-26.pdf")} class="btn btn-primary mt-auto mb-1" target="_blank" rel="noopener noreferrer">SLIDES: BEVERLY, MA</a>
+                <a href={base_url("/assets/documents/ai/Huntington County IN Presentation FHWA CLAS 5-21-26.pdf")} class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer">SLIDES: HUNTINGTON, IN</a>
               </div>
             </div>
           </div>
         </div>
-
+        
         <h2 id="ai-materials">AI Informational Materials</h2>
         <p>
           High-quality informational materials serve as the essential bridge between AI concepts and actual AI implementation.  This includes development of a range of AI information materials

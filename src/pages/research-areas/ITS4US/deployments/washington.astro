@@ -11,6 +11,8 @@ import navImage1 from "@/src/assets/images/its4us/TDEI/TDEI-link.png";
 import navImage2 from "@/src/assets/images/its4us/DataHub-link.png";
 import navImage3 from "@/src/assets/images/its4us/CodeHub-link.png";
 import tdeiInfographic from "@/src/assets/images/its4us/TDEI-infographic.png";
+import tdeiOverviewThumbnail from "@/src/assets/images/its4us/TDEI/UW-TDEI-Accelerator_June2026-Thumb.pdf.png";
+import tdeiValuePropositionThumbnail from "@/src/assets/images/its4us/TDEI/TDEI-Value-Proposition_20260914-Thumb.png";
 import "@/src/styles/deployments.css";
 ---
 
@@ -116,6 +118,34 @@ import "@/src/styles/deployments.css";
         <span><b>AccessMap Multimodal</b> — A trip planner that allows users to express sidewalk preferences and receive suitable paths via mapped infrastructure.</span>
       </li>
     </ul>
+
+    <section class="additional-materials-callout-group" aria-labelledby="additional-materials-heading">
+      <h2 id="additional-materials-heading">Additional Materials</h2>
+      <div class="additional-materials-callout">
+        <div>
+          <Image src={tdeiOverviewThumbnail} alt="TDEI Overview factsheet thumbnail" class="img-fluid" width={300} />
+        </div>
+        <div>
+          <h3>TDEI Overview</h3>
+          <p>Learn more about the University of Washington's Transportation Data Exchange Initiative.</p>
+          <a class="btn btn-primary btn-lg mt-3" href={base_url("/assets/documents/its4us/UW%20TDEI%20Accelerator__June2026.pdf")} target="_blank" rel="noopener noreferrer">
+            Download the TDEI Overview factsheet
+          </a>
+        </div>
+      </div>
+      <div class="additional-materials-callout">
+        <div>
+          <Image src={tdeiValuePropositionThumbnail} alt="TDEI Value Proposition factsheet thumbnail" class="img-fluid" width={300} />
+        </div>
+        <div>
+          <h3>TDEI Value Proposition</h3>
+          <p>Explore the value proposition for the University of Washington's Transportation Data Exchange Initiative.</p>
+          <a class="btn btn-primary btn-lg mt-3" href={base_url("/assets/documents/its4us/TDEI%20Value%20Proposition_20260914.pdf")} target="_blank" rel="noopener noreferrer">
+            Download the TDEI Value Proposition factsheet
+          </a>
+        </div>
+      </div>
+    </section>
     
     <section class="gray-edge-to-edge mt-4">
       <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl">
@@ -175,6 +205,48 @@ import "@/src/styles/deployments.css";
 
   .infographic{
     padding: 0 1rem;
+  }
+
+  .additional-materials-callout-group {
+    margin: 40px 0;
+  }
+
+  .additional-materials-callout {
+    display: grid;
+    grid-template-columns: minmax(180px, 280px) minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+    margin: 40px 0;
+    padding: 24px;
+    border-left: 4px solid #614384;
+    border-radius: 8px;
+    background-color: #f3f4f6;
+  }
+
+  .additional-materials-callout h3,
+  .additional-materials-callout p {
+    margin: 0;
+  }
+
+  .additional-materials-callout h3 {
+    margin-bottom: 12px;
+  }
+
+  .additional-materials-callout img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+  }
+
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 767px) {
+    .additional-materials-callout {
+      grid-template-columns: 1fr;
+    }
   }
 
   .icon-list {

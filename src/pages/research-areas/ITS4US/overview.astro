@@ -159,6 +159,28 @@ import "@/src/styles/programs.css";
     fill: white;
     display: block;
   }
+
+  .overview-handout-callout {
+    margin-top: 40px;
+    padding: 20px;
+    border-left: 4px solid rgb(5, 86, 129);
+    background-color: #f3f4f6;
+    border-radius: 8px;
+  }
+
+  .overview-handout-callout p {
+    margin: 0 0 12px;
+  }
+
+  .overview-handout-callout .btn {
+    white-space: normal;
+    text-align: left;
+  }
+
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 1.25rem;
+  }
 </style>
 
 <PageLayout title="Program Overview">
@@ -220,6 +242,12 @@ import "@/src/styles/programs.css";
           <span><strong>Measure impact </strong>of solutions and share results with the deployment community</span>
         </li>
       </ul>
+      <div class="overview-handout-callout">
+        <p>To find out more information about the ITS4US Program:</p>
+        <a class="btn btn-primary btn-lg" href={base_url("/assets/documents/its4us/26.07.21%20ITS4US%20Overview%20One-Pager.pdf")} target="_blank" rel="noopener noreferrer">
+          Download the ITS4US Program Overview handout
+        </a>
+      </div>
     </div>
     <div class="col-12 col-lg-6">
       <h2 class="pt-3">Promoting Replicability</h2>
