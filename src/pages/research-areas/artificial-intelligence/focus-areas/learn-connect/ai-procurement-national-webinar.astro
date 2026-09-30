@@ -33,9 +33,9 @@ import "@/src/styles/ai-section.css";
           <p class="text-white mb-3 fst-italic fs-6" style="opacity: 0.9;">Hosted by the USDOT Intelligent Transportation Systems Joint Program Office (ITS JPO)</p>
 
           <div>
-            <a href="https://itsa-org.zoom.us/webinar/register/WN_RUS21Y4XTq-hG_5_JPYGBA#/registration" class="btn btn-light fw-semibold px-4" target="_blank" rel="noopener noreferrer">
-              Register Now
-            </a>
+            <a href="#" class="btn btn-light fw-semibold px-5 py-2 fs-5" target="_blank" rel="noopener noreferrer">
+        Watch the Recording
+      </a>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@ import "@/src/styles/ai-section.css";
       </div>
     </div>
 
-    <h2 class="mt-5">Who Should Attend</h2>
+    <h2 class="mt-5">Who This Webinar Was For</h2>
     <p>
       This event is open to public sector leadership, management, and technical specialists across all types of multimodal agencies (States, local agencies, MPOs, transit authorities, and Tribes). If
       you lead or support technical programs, acquisitions, finance, legal frameworks, or IT infrastructure, this session will provide essential tools for cross-functional alignment on this critical
@@ -160,14 +160,70 @@ import "@/src/styles/ai-section.css";
 
 
         <h2 class="mt-5">Webinar Materials</h2>
+        <h3 class="fs-4 mb-3">Watch</h3>
+
+        <div class="card p-3 mb-4 bg-light">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-3">
+              <iframe
+                class="recording-embed rounded"
+                src="https://www.youtube.com/embed/2XQ1vCWbExk"
+                title="Demystifying AI Procurement webinar recording"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="col-md-9">
+              <h3>Webinar Recording</h3>
+              <p class="mb-0">Watch the recording of the “Demystifying AI Procurement: Actionable Strategies for Transportation Agencies” webinar held on September 17, 2026.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="fs-4 mb-3">Download</h3>
         <div class="row g-4 mt-1">
+          <div class="col-md-6 col-lg-5">
+            <div class="card p-4 h-100">
+              <h3>ITS JPO Slides</h3>
+              <p class="mb-4">PDF version of the U.S. DOT ITS JPO slides presented during the webinar.</p>
+              <div class="mt-auto">
+                <a
+                  href={base_url("/assets/documents/ai/ITS%20JPO%20Slides%20AI%20Procurement%20Webinar_FINAL508.pdf")}
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  Download
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <div class="card p-4 h-100">
+              <h3>Agency Speaker Slides</h3>
+              <p class="mb-4">Compiled PDF of slides agency speakers featured during the webinar's panel sessions.</p>
+              <div class="mt-auto">
+                <a
+                  href={base_url("/assets/documents/ai/Presenter%20Slides.pdf")}
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  Download
+                </a>
+              </div>
+            </div>
+          </div>
           <div class="col-md-6 col-lg-5">
             <div class="card p-4 h-100">
               <h3>Webinar Flyer</h3>
               <p class="mb-4">Printable PDF outlining the Demystifying AI Procurement: Actionable Strategies for Transportation Agencies webinar.</p>
               <div class="mt-auto">
                 <a
-                  href={base_url("/assets/documents/ai/ITSJPO_National_AI_Procurement_Webinar_Sept_17_2026_Flyer.pdf")}
+                  href={base_url("/assets/documents/ai/AI_Procurement_Webinar_Flyer_FINAL508.pdf")}
                   class="btn btn-primary"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -184,7 +240,7 @@ import "@/src/styles/ai-section.css";
               <p class="mb-4">Printable PDF outlining the agenda, session topics, and speakers for the Demystifying AI Procurement: Actionable Strategies for Transportation Agencies webinar.</p>
               <div class="mt-auto">
                 <a
-                  href={base_url("/assets/documents/ai/AI%20Procurement%20Webinar%20Flyer_Agenda%20and%20Speakers%20v3.pdf")}
+                  href={base_url("/assets/documents/ai/AI%20Procurement%20Webinar%20Flyer_Agenda%20and%20Speakers%20v4.pdf")}
                   class="btn btn-primary"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -199,10 +255,10 @@ import "@/src/styles/ai-section.css";
 
     <!-- Bottom CTA -->
     <div class="cta-banner rounded-4 text-center p-5 mt-5 mb-2">
-      <h2 class="text-white fw-bold mb-2">Reserve Your Spot</h2>
-      <p class="text-white mb-4" style="opacity: 0.9; font-size: 1.1rem;">Registration is free and open to all public sector transportation professionals.</p>
-      <a href="https://itsa-org.zoom.us/webinar/register/WN_RUS21Y4XTq-hG_5_JPYGBA#/registration" class="btn btn-light fw-semibold px-5 py-2 fs-5" target="_blank" rel="noopener noreferrer">
-        Register Now
+      <h2 class="text-white fw-bold mb-2">Missed the Live Session?</h2>
+      <p class="text-white mb-4" style="opacity: 0.9; font-size: 1.1rem;">Catch up with the full recording and downloadable materials above.</p>
+      <a href="https://www.youtube.com/watch?v=2XQ1vCWbExk" class="btn btn-light fw-semibold px-5 py-2 fs-5" target="_blank" rel="noopener noreferrer">
+        Watch the Recording
       </a>
     </div>
   </main>
@@ -216,6 +272,12 @@ import "@/src/styles/ai-section.css";
 
   .spotlight-card {
     max-height: 350px;
+  }
+
+  .recording-embed {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
   }
 
   .event-pill {
