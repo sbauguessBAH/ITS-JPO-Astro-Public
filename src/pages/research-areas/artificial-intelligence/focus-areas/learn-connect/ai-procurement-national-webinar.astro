@@ -33,7 +33,7 @@ import "@/src/styles/ai-section.css";
           <p class="text-white mb-3 fst-italic fs-6" style="opacity: 0.9;">Hosted by the USDOT Intelligent Transportation Systems Joint Program Office (ITS JPO)</p>
 
           <div>
-            <a href="#" class="btn btn-light fw-semibold px-5 py-2 fs-5" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/watch?v=2XQ1vCWbExk" class="btn btn-light fw-semibold px-5 py-2 fs-5" target="_blank" rel="noopener noreferrer">
         Watch the Recording
       </a>
           </div>
@@ -115,7 +115,7 @@ import "@/src/styles/ai-section.css";
 
         <h2 class="mt-5">Key Takeaways & Highlights</h2>
 
-        <div class="row g-4 mt-1">
+        <div class="row g-4">
           <!-- Card 1 -->
           <div class="col-md-6">
             <div class="card p-4 h-100">
@@ -160,9 +160,9 @@ import "@/src/styles/ai-section.css";
 
 
         <h2 class="mt-5">Webinar Materials</h2>
-        <h3 class="fs-4 mb-3">Watch</h3>
+        <h3 class="fs-4 h3divider">Watch</h3>
 
-        <div class="card p-3 mb-4 bg-light">
+        <div class="card p-3 mb-4" style="background-color: #f4f6f7; border: 1px solid #d9dee2;">
           <div class="row g-4 align-items-center">
             <div class="col-md-3">
               <iframe
@@ -181,9 +181,9 @@ import "@/src/styles/ai-section.css";
           </div>
         </div>
 
-        <h3 class="fs-4 mb-3">Download</h3>
-        <div class="row g-4 mt-1">
-          <div class="col-md-6 col-lg-5">
+        <h3 class="fs-4 h3divider">Download</h3>
+        <div class="row g-4">
+          <div class="col-md-6">
             <div class="card p-4 h-100">
               <h3>ITS JPO Slides</h3>
               <p class="mb-4">PDF version of the U.S. DOT ITS JPO slides presented during the webinar.</p>
@@ -200,7 +200,7 @@ import "@/src/styles/ai-section.css";
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-5">
+          <div class="col-md-6">
             <div class="card p-4 h-100">
               <h3>Agency Speaker Slides</h3>
               <p class="mb-4">Compiled PDF of slides agency speakers featured during the webinar's panel sessions.</p>
@@ -217,7 +217,7 @@ import "@/src/styles/ai-section.css";
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-5">
+          <div class="col-md-6">
             <div class="card p-4 h-100">
               <h3>Webinar Flyer</h3>
               <p class="mb-4">Printable PDF outlining the Demystifying AI Procurement: Actionable Strategies for Transportation Agencies webinar.</p>
@@ -234,7 +234,7 @@ import "@/src/styles/ai-section.css";
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-5">
+          <div class="col-md-6">
             <div class="card p-4 h-100">
               <h3>Webinar Agenda</h3>
               <p class="mb-4">Printable PDF outlining the agenda, session topics, and speakers for the Demystifying AI Procurement: Actionable Strategies for Transportation Agencies webinar.</p>
@@ -380,5 +380,19 @@ import "@/src/styles/ai-section.css";
     .spotlight-img-col {
       min-height: 200px;
     }
+  }
+
+  .h3divider {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    margin-top: 2rem;
+  }
+
+  .h3divider::after {
+    content: "";
+    flex: 1;
+    height: 3px;
+    background-color: #1d5d88;
   }
 </style>
