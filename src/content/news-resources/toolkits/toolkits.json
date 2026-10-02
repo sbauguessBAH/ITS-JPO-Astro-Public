@@ -4,6 +4,7 @@
 {
     "title": "V2X Interoperability Toolkit",
     "subtitle": "Media Kit",
+    "show_jump_menu": false,
     "description": "Media kits from the V2X Accelerator sites, program-wide materials, and V2X use case scenarios.",
     "topics": ["V2X", "Interoperability", "V2X Accelerator Program"],
     "url": "/news-outreach-tools/news-resources/media-toolkits/v2x-interoperability-toolkit",

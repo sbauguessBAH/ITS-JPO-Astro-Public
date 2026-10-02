@@ -835,7 +835,7 @@ export const getToolkitPageBySlug = (slug: string, folder?: ToolkitFolder): Tool
     intro: cleanText(toolkit.intro) || cleanText(toolkit.description) || undefined,
     keywords: uniqueStrings([...(toolkit.topics ?? []), toolkit.subtitle, title]),
     sections: buildSections(toolkit),
-    showJumpMenu: folder === "media-toolkits" || toolkit.show_jump_menu === true,
+    showJumpMenu: toolkit.show_jump_menu ?? (folder === "media-toolkits"),
     title,
   };
 };
