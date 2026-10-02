@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "node --max-old-space-size=8192 ./node_modules/astro/astro.js check && node --max-old-space-size=8192 ./node_modules/astro/astro.js build",
-    "build:noWarn": "node --max-old-space-size=8192 ./node_modules/astro/astro.js build --minimumSeverity error",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 astro check && cross-env NODE_OPTIONS=--max-old-space-size=8192 astro build",
+    "build:noWarn": "cross-env NODE_OPTIONS=--max-old-space-size=8192 astro build --minimumSeverity error",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -21,6 +21,8 @@
     "astro": "^5.17.3",
     "bootstrap": "^5.3.8",
     "datatables.net": "^2.1.4",
+    "fuse.js": "^7.5.0",
+    "primevue": "^5.0.0",
     "sass": "^1.93.2",
     "vue": "^3.5.28"
   },
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "cross-env": "^7.0.3",
     "eslint": "^10.0.1",
     "eslint-plugin-astro": "^1.4.0",
     "eslint-plugin-perfectionist": "^5.6.0",
