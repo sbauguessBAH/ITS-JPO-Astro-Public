@@ -1,0 +1,12 @@
+---
+import ToolkitPage from "@/src/components/toolkits/ToolkitPage.astro";
+import { getToolkitPageBySlug } from "@/src/lib/toolkits";
+
+const page = getToolkitPageBySlug("v2x-interoperability-toolkit", "media-toolkits");
+
+if (!page) {
+  throw new Error("Toolkit data not found for v2x-interoperability-toolkit.");
+}
+---
+
+<ToolkitPage page={page} />
