@@ -36,7 +36,7 @@ const parentProps = { ...(parentId && {'data-bs-parent': `#${parentId}`}) };
       aria-expanded={showOnLoad ? "true" : "false"}
       aria-controls={itemId}
     >
-      {titleHtml ? <Fragment set:html={title}/> : title}
+      <slot name="header">{titleHtml ? <Fragment set:html={title}/> : title}</slot>
     </button>
   </h2>
   <div 

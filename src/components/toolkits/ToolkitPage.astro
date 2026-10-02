@@ -6,6 +6,8 @@ import type { ToolkitMediaItem, ToolkitPageData, ToolkitSection } from "@/src/li
 import "@/src/styles/toolkits.css";
 import ContactCard from "./ContactCard.astro";
 import MediaCoverageList from "./MediaCoverageList.astro";
+import MaterialPreview from "./MaterialPreview.astro";
+import UseCaseScenarios from "./UseCaseScenarios.astro";
 
 interface Props {
   page: ToolkitPageData;
@@ -17,7 +19,7 @@ type ContactSection = Extract<ToolkitSection, { kind: "contacts" }>;
 type NonContactSection = Exclude<ToolkitSection, { kind: "contacts" }>;
 
 const visibleSections = page.sections.filter(
-  (section): section is NonContactSection => section.kind !== "contacts" && section.items.length > 0,
+  (section): section is NonContactSection => section.kind !== "contacts" && (section.items.length > 0 || section.kind === "materials" || section.kind === "scenarios"),
 );
 const contactSections = page.sections.filter(
   (section): section is ContactSection => section.kind === "contacts" && section.items.length > 0,
@@ -157,6 +159,27 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
       <section id={getSectionId(section)} class:list={["kit-section", section.className]}>
         <h3>{section.title}</h3>
         {section.description && <p class="kit-copy">{section.description}</p>}
+
+        {section.kind === "sites" && (
+          <div class="kit-site-grid">
+            {section.items.map((site) => (
+              <article class="kit-site-card">
+                {getImageSrc(site.image) && <img src={getImageSrc(site.image)} alt={site.altDescription ?? site.title} loading="lazy" />}
+                <div class="kit-site-body">
+                  <p class="kit-material-meta">{site.site}</p>
+                  <h4>{site.href ? <a href={site.href}>{site.title}</a> : site.title}</h4>
+                  {site.href && <a href={site.href} class="kit-document-link">View Media Kit</a>}
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+
+        {section.kind === "materials" && (section.items.length ? (
+          <div class="kit-program-grid">{section.items.map((item) => <MaterialPreview item={item} />)}</div>
+        ) : <p class="kit-copy">{section.emptyLabel}</p>)}
+
+        {section.kind === "scenarios" && <UseCaseScenarios section={section} id={getSectionId(section)} />}
 
         {
           section.kind === "links" &&

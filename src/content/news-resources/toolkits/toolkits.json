@@ -2,6 +2,20 @@
     "accelerator_media_toolkits":
     [
 {
+    "title": "V2X Interoperability Toolkit",
+    "subtitle": "Media Kit",
+    "description": "Media kits from the V2X Accelerator sites, program-wide materials, and V2X use case scenarios.",
+    "topics": ["V2X", "Interoperability", "V2X Accelerator Program"],
+    "url": "/news-outreach-tools/news-resources/media-toolkits/v2x-interoperability-toolkit",
+    "accelerator_sites": [
+        { "title": "Connecting the West", "site": "UDOT", "toolkit_slug": "udot-connecting-the-west-program-mediakit" },
+        { "title": "Texas TRUST", "site": "TTI", "toolkit_slug": "tti-texas-trust-v2x-program-mediakit" },
+        { "title": "CVAZ", "site": "CVAZ", "toolkit_slug": "mcdot-connected-vehicle-acceleration-zone-mediakit" }
+    ],
+    "program_materials": [],
+    "use_case_scenarios": []
+},
+{
     "id": 36,
     "title": "Maricopa County DOT (MCDOT) Connected Vehicle Acceleration Zone (CVAZ)",
     "subtitle": "Media Kit",

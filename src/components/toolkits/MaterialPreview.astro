@@ -1,0 +1,44 @@
+---
+import type { ToolkitResource } from "@/src/lib/toolkits";
+
+interface Props {
+  item: ToolkitResource;
+  embed?: boolean;
+}
+
+const { item, embed = false } = Astro.props;
+const href = item.href ?? item.downloadHref;
+const image = typeof item.image === "string" ? item.image : item.image?.src;
+let embedSrc: string | undefined;
+
+if (embed && item.contentType === "Video" && href) {
+  try {
+    const url = new URL(href);
+    const host = url.hostname.toLowerCase();
+    const videoId = host === "youtu.be"
+      ? url.pathname.split("/")[1]
+      : ["youtube.com", "www.youtube.com", "m.youtube.com"].includes(host)
+        ? url.searchParams.get("v") ?? url.pathname.match(/^\/(?:embed|shorts)\/([^/]+)/)?.[1]
+        : undefined;
+    if (videoId && /^[a-zA-Z0-9_-]+$/.test(videoId)) {
+      embedSrc = `https://www.youtube.com/embed/${videoId}`;
+    }
+  } catch {}
+}
+---
+
+<article class="kit-material-card" data-scenario-material data-site={item.site ?? ""} data-content-type={item.contentType}>
+  {embedSrc ? (
+    <div class="ratio ratio-16x9 kit-video-embed">
+      <iframe src={embedSrc} title={item.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  ) : (
+    <div class="kit-material-preview">
+      {image ? <img src={image} alt={item.altDescription ?? item.title} loading="lazy" /> : <span>{item.contentType}</span>}
+    </div>
+  )}
+  <div class="kit-material-body">
+    <p class="kit-material-meta">{item.site && `${item.site} / `}{item.contentType}</p>
+    <h4>{href ? <a href={href}>{item.title}</a> : item.title}</h4>
+  </div>
+</article>

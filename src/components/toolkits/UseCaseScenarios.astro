@@ -1,0 +1,119 @@
+---
+import Accordion from "@/src/components/Accordion.astro";
+import AccordionItem from "@/src/components/AccordionItem.astro";
+import type { ToolkitSection } from "@/src/lib/toolkits";
+import MaterialPreview from "./MaterialPreview.astro";
+
+interface Props {
+  section: Extract<ToolkitSection, { kind: "scenarios" }>;
+  id: string;
+}
+
+const { section, id } = Astro.props;
+const sites = [...new Set([...section.sites, ...section.items.flatMap((item) => item.sites)])];
+const status = (materials: typeof section.items[number]["materials"]) => {
+  if (!materials.length) return "Coming Soon";
+  const videos = materials.filter((item) => item.contentType === "Video").length;
+  const factsheets = materials.length - videos;
+  return [videos ? `${videos} video${videos === 1 ? "" : "s"}` : "", factsheets ? `${factsheets} factsheet${factsheets === 1 ? "" : "s"}` : ""].filter(Boolean).join(" / ");
+};
+---
+
+<toolkit-scenarios>
+  <div class="kit-scenario-filters">
+    <label for={`${id}-site`}>Site
+      <select id={`${id}-site`} data-site-filter>
+        <option value="">All Sites</option>
+        {sites.map((site) => <option value={site}>{site}</option>)}
+      </select>
+    </label>
+    <label for={`${id}-type`}>Content Type
+      <select id={`${id}-type`} data-type-filter>
+        <option value="">All Content Types</option>
+        <option value="Factsheet">Factsheet</option>
+        <option value="Video">Videos</option>
+      </select>
+    </label>
+    <button type="button" class="kit-filter-reset" data-reset-filters>Reset Filters</button>
+  </div>
+  <p class="kit-scenario-results" role="status" aria-live="polite" data-results>{section.items.length} scenarios</p>
+  <Accordion id={`${id}-accordion`}>
+    {section.items.map((scenario, index) => (
+      <div data-scenario data-sites={JSON.stringify(scenario.sites)}>
+        <AccordionItem title={scenario.title} parentId={`${id}-accordion`} index={index}>
+          <span slot="header" class="kit-scenario-heading">
+            <span class="kit-scenario-title">{scenario.title}</span>
+            {scenario.description && <span class="kit-scenario-context">{scenario.description}</span>}
+            <span class="kit-scenario-status" data-scenario-status>{status(scenario.materials)}</span>
+          </span>
+          {scenario.materials.length ? (
+            <div class="kit-scenario-materials">
+              {scenario.materials.map((item) => <MaterialPreview item={item} embed />)}
+            </div>
+          ) : <p class="kit-copy">Coming Soon</p>}
+        </AccordionItem>
+      </div>
+    ))}
+  </Accordion>
+  <p class="kit-copy" data-no-results hidden={section.items.length > 0}>{section.items.length ? "No scenarios match these filters." : section.emptyLabel}</p>
+</toolkit-scenarios>
+
+<script>
+  class ToolkitScenarios extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.initialized) return;
+      this.dataset.initialized = "true";
+      const siteFilter = this.querySelector<HTMLSelectElement>("[data-site-filter]")!;
+      const typeFilter = this.querySelector<HTMLSelectElement>("[data-type-filter]")!;
+      const scenarios = [...this.querySelectorAll<HTMLElement>("[data-scenario]")];
+      const results = this.querySelector<HTMLElement>("[data-results]")!;
+      const noResults = this.querySelector<HTMLElement>("[data-no-results]")!;
+
+      const update = () => {
+        let count = 0;
+        for (const scenario of scenarios) {
+          const sites: string[] = JSON.parse(scenario.dataset.sites ?? "[]");
+          const materials = [...scenario.querySelectorAll<HTMLElement>("[data-scenario-material]")];
+          let videos = 0;
+          let factsheets = 0;
+          for (const material of materials) {
+            const matchesSite = !siteFilter.value || (material.dataset.site ? material.dataset.site === siteFilter.value : sites.includes(siteFilter.value));
+            const matchesType = !typeFilter.value || material.dataset.contentType === typeFilter.value;
+            material.hidden = !(matchesSite && matchesType);
+            if (!material.hidden) {
+              if (material.dataset.contentType === "Video") videos++;
+              else factsheets++;
+            }
+          }
+          const comingSoon = !materials.length && !typeFilter.value && (!siteFilter.value || sites.includes(siteFilter.value));
+          scenario.hidden = !(videos + factsheets > 0 || comingSoon);
+          if (!scenario.hidden) count++;
+          scenario.querySelector<HTMLElement>("[data-scenario-status]")!.textContent = !materials.length
+            ? "Coming Soon"
+            : [videos ? `${videos} video${videos === 1 ? "" : "s"}` : "", factsheets ? `${factsheets} factsheet${factsheets === 1 ? "" : "s"}` : ""].filter(Boolean).join(" / ");
+          if (scenario.hidden) {
+            scenario.querySelector(".accordion-collapse")?.classList.remove("show");
+            const button = scenario.querySelector(".accordion-button");
+            button?.classList.add("collapsed");
+            button?.setAttribute("aria-expanded", "false");
+            scenario.querySelectorAll<HTMLIFrameElement>("iframe").forEach((iframe) => {
+              iframe.src = iframe.src;
+            });
+          }
+        }
+        results.textContent = `${count} scenario${count === 1 ? "" : "s"}`;
+        noResults.hidden = count > 0;
+      };
+
+      siteFilter.addEventListener("change", update);
+      typeFilter.addEventListener("change", update);
+      this.querySelector("[data-reset-filters]")?.addEventListener("click", () => {
+        siteFilter.value = "";
+        typeFilter.value = "";
+        update();
+      });
+      update();
+    }
+  }
+  if (!customElements.get("toolkit-scenarios")) customElements.define("toolkit-scenarios", ToolkitScenarios);
+</script>
