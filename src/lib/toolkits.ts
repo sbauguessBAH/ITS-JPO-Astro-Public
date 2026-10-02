@@ -48,6 +48,22 @@ export type ToolkitWebinarItem = {
 
 export type ToolkitThumbnailVariant = "document" | "graphic" | "video";
 
+export type ToolkitResource = ToolkitMediaItem & {
+  contentType: "Factsheet" | "Video";
+  site?: string;
+};
+
+export type ToolkitSite = ToolkitMediaItem & {
+  site: string;
+};
+
+export type ToolkitScenario = {
+  title: string;
+  description?: string;
+  sites: string[];
+  materials: ToolkitResource[];
+};
+
 type ToolkitSectionBase = {
   className: string;
   description?: string;
@@ -56,6 +72,19 @@ type ToolkitSectionBase = {
 };
 
 export type ToolkitSection =
+  | (ToolkitSectionBase & {
+      items: ToolkitSite[];
+      kind: "sites";
+    })
+  | (ToolkitSectionBase & {
+      items: ToolkitResource[];
+      kind: "materials";
+    })
+  | (ToolkitSectionBase & {
+      items: ToolkitScenario[];
+      kind: "scenarios";
+      sites: string[];
+    })
   | (ToolkitSectionBase & {
       items: ToolkitContact[];
       kind: "contacts";
@@ -160,6 +189,14 @@ type RawCta = {
 };
 
 type RawToolkitEntry = {
+  accelerator_sites?: Array<{ title: string; site: string; toolkit_slug: string; image_src?: string }>;
+  program_materials?: Array<RawMediaItem & { content_type: "Factsheet" | "Video"; site?: string }>;
+  use_case_scenarios?: Array<{
+    title: string;
+    description?: string;
+    sites?: string[];
+    materials?: Array<RawMediaItem & { content_type: "Factsheet" | "Video"; site?: string }>;
+  }>;
   belt_cta?: RawCta;
   contacts?: RawContact[];
   content_types?: string[];
@@ -206,7 +243,7 @@ type DefaultSectionSeed = {
   description?: string;
   emptyLabel: string;
   key: string;
-  kind: ToolkitSection["kind"];
+  kind: Exclude<ToolkitSection["kind"], "sites" | "materials" | "scenarios">;
   title: string;
   variant?: ToolkitThumbnailVariant;
 };
@@ -539,6 +576,60 @@ const buildDefaultSections = (contentTypes?: string[]): ToolkitSection[] => {
 const buildExplicitSections = (toolkit: RawToolkitEntry): ToolkitSection[] => {
   const sections: ToolkitSection[] = [];
 
+  const normalizeResources = (items: RawToolkitEntry["program_materials"]): ToolkitResource[] =>
+    (items ?? []).flatMap((item) => normalizeMediaItems([item]).map((media) => ({
+      ...media,
+      contentType: item.content_type,
+      site: cleanText(item.site) || undefined,
+    })));
+
+  if (hasOwn(toolkit, "accelerator_sites")) {
+    sections.push({
+      className: "accelerator-sites",
+      emptyLabel: "Coming Soon",
+      items: (toolkit.accelerator_sites ?? []).map((site) => {
+        const entry = getToolkitBySlug(site.toolkit_slug, "media-toolkits");
+        return {
+          title: site.title,
+          site: site.site,
+          href: entry?.url,
+          image: site.image_src ?? entry?.belt_cta?.preview_image,
+        };
+      }),
+      kind: "sites",
+      title: "V2X Accelerator Sites",
+    });
+  }
+
+  if (hasOwn(toolkit, "program_materials")) {
+    sections.push({
+      className: "program-materials",
+      emptyLabel: "Coming Soon",
+      items: normalizeResources(toolkit.program_materials),
+      kind: "materials",
+      title: "Program Wide Materials",
+    });
+  }
+
+  if (hasOwn(toolkit, "use_case_scenarios")) {
+    sections.push({
+      className: "use-case-scenarios",
+      emptyLabel: "Coming Soon",
+      items: (toolkit.use_case_scenarios ?? []).map((scenario) => {
+        const materials = normalizeResources(scenario.materials);
+        return {
+          title: scenario.title,
+          description: scenario.description,
+          sites: uniqueStrings([...(scenario.sites ?? []), ...materials.map((material) => material.site)]),
+          materials,
+        };
+      }),
+      kind: "scenarios",
+      sites: uniqueStrings((toolkit.accelerator_sites ?? []).map((site) => site.site)),
+      title: "V2X Use Case Scenarios",
+    });
+  }
+
   if (hasOwn(toolkit, "contacts")) {
     sections.push({
       className: "contacts",
@@ -674,6 +765,9 @@ const buildExplicitSections = (toolkit: RawToolkitEntry): ToolkitSection[] => {
 
 const buildSections = (toolkit: RawToolkitEntry): ToolkitSection[] => {
   const explicitKeys = [
+    "accelerator_sites",
+    "program_materials",
+    "use_case_scenarios",
     "contacts",
     "resource-links",
     "document_links",
