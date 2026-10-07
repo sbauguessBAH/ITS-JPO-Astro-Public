@@ -1,41 +1,76 @@
 ---
-title: ITS Roadway Equipment
-category: Systems Monitoring
-shortDescription: ITS roadway equipment collects and communicates real-time traffic, weather, and roadway condition data to support safer and more efficient operations.
+title: "ITS Roadway Equipment"
+category: "Systems Monitoring"
+shortDescription: "ITS roadway equipment collects and transmits real-time data on traffic, weather, and road conditions to traffic management centers and vehicles. This information helps improve traffic flow, enhance safety, and support proactive roadway management."
 additionalToolsSensors:
-  - Dynamic roadside ITS controllers
-  - Weather-resistant sensing units
-  - Centralized IoT-based management platforms
-  - Advanced traffic flow monitors
-  - Roadside automation components
+  - "Dynamic roadside ITS controllers"
+  - "Weather-resistant sensing units"
+  - "Centralized IoT-based management platforms"
+  - "Advanced traffic flow monitors"
+  - "Roadside automation components"
 location:
-  - Rural
-  - Suburban
-  - Urban
+  - "Rural"
+  - "Suburban"
+  - "Urban"
 facility:
-  - Intersection
-  - Interchange
-  - Freeway Segment
-  - Arterial/Collector Segment
-  - Local Segment
+  - "Intersection"
+  - "Interchange"
+  - "Freeway Segment"
+  - "Arterial/Collector Segment"
+  - "Local Segment"
 safety:
-  - Congestion
-  - Emergency Response
-  - Speeding
-  - Work Zone Safety
+  - "Congestion"
+  - "Emergency Response"
+  - "Speeding"
+  - "Work Zone Safety"
 keywords:
-  - ITS field devices
-  - Roadside sensors
-  - Real-time monitoring
-  - Traffic data collection
-  - Road weather integration
+  - "ITS Roadway Equipment"
+  - "Automated traffic data collection system"
+  - "Automatic traffic recorder system"
+  - "Bluetooth travel time sensor system"
+  - "CCTV traffic monitoring system"
+  - "Loop detector vehicle detection system"
+  - "Radar detector vehicle detection system"
+  - "Roadside unit communication system"
+  - "Environmental sensor station data collection system"
+  - "Road weather information system monitoring system"
+  - "Ramp metering system"
+  - "Lane control signal system"
+  - "Dynamic message sign system"
+  - "Dynamic curve warning system"
+  - "Intersection conflict warning system"
+  - "Queue warning system"
+  - "Speed feedback sign system"
+  - "Pedestrian detection system"
+  - "Overweight vehicle detection system"
+  - "Railroad grade crossing warning system"
+  - "Real-time traffic monitoring system"
+  - "Traffic management field device system"
+  - "Intelligent transportation system field equipment"
+  - "Roadway safety warning system"
+  - "Incident detection and response support system"
+  - "Traffic flow monitoring system"
+  - "ITS roadway equipment"
+  - "Intelligent Transportation Systems"
+  - "Roadside unit"
+  - "Dynamic message sign"
+  - "Loop detector"
+  - "CCTV camera"
+  - "Road Weather Information System"
+  - "Environmental sensor station"
+  - "Ramp meter"
+  - "Lane control signal"
 resources:
-  - label: FHWA Resource Center
-    url: https://www.transportation.gov/grants/dot-navigator/fhwa-resource-center
+  - label: "Web Page: FHWA Resource Center"
+    url: "https://www.transportation.gov/grants/dot-navigator/fhwa-resource-center"
+  - label: "Executive Briefing: Data Collection and ITS"
+    url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-05/executive-briefing/2022%20Executive%20Briefing_Data%20Collection%20and%20ITS_final%20508_05142025_0.pdf"
+  - label: "Fact Sheet: Improving Safety and Operations Using Low-Cost ITS Applications on Local and Rural Roads"
+    url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/2022-06/its_apps.pdf"
 order: 38
 ---
-ITS roadway equipment includes sensors, cameras, detectors, communications devices, and control systems used to monitor and manage transportation networks.
+Intelligent Transportation Systems (ITS) roadway equipment is a set of advanced technologies that monitor and communicate real-time information about traffic, road surfaces, and environmental conditions. This includes sensors embedded in or alongside roadways, cameras, radar and lidar detectors, weather stations, and connected communication devices that relay data to traffic management centers and vehicles. By continuously gathering and transmitting information, ITS equipment enables transportation agencies to manage traffic proactively, reduce congestion, and respond quickly to incidents such as crashes, road blockages, or adverse weather conditions.
 
-These assets provide critical data for traffic operations, incident response, weather management, and traveler information services.
+For example, sensors can detect traffic volume, speed, and vehicle types, allowing adaptive traffic signal control and dynamic lane management. Weather sensors can monitor rainfall, ice, or snow accumulation, triggering alerts or automated maintenance responses. Road surface sensors can detect potholes, cracks, or uneven surfaces, helping prioritize repairs and improve long-term road safety. Connected vehicles can also receive this information in real time, enabling safer driving and better route planning.
 
-A well-managed equipment ecosystem improves situational awareness and enables more proactive safety and mobility decisions.
+Overall, ITS roadway equipment provides critical situation awareness, enhances roadway safety, reduces travel delays, and supports smarter, data-driven transportation management for both agencies and road users.

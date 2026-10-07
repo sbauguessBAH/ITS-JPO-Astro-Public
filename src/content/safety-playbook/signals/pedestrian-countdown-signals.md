@@ -1,36 +1,67 @@
 ---
-title: Pedestrian Countdown Signals
-category: Signals
-shortDescription: Pedestrian countdown signals display remaining crossing time to improve pedestrian decision-making and crossing safety.
+title: "Pedestrian Countdown Signals"
+category: "Signals"
+shortDescription: "Pedestrian countdown signals improve safety and traffic flow by showing pedestrians the remaining time to cross intersections. This information helps pedestrians make informed crossing decisions, reducing crashes and enhancing overall traffic efficiency, especially in busy urban areas."
 additionalToolsSensors:
-  - Real-time countdown LEDs
-  - Pedestrian detection sensors
-  - Push-button activators
-  - Adaptive signal communication
-  - Durable enclosures
+  - "Real-time countdown LEDs"
+  - "Pedestrian detection sensors"
+  - "Push-button activators"
+  - "Adaptive signal communication"
+  - "Durable enclosures"
 location:
-  - Suburban
-  - Urban
+  - "Suburban"
+  - "Urban"
 facility:
-  - Intersection
+  - "Intersection"
 safety:
-  - Pedestrian Safety
-  - Intersection Safety
+  - "Pedestrian Safety"
+  - "Intersection Safety"
 keywords:
-  - Pedestrian countdown
-  - Crossing timer
-  - Pedestrian clearance interval
-  - Signalized crosswalk
-  - MUTCD pedestrian signal
+  - "Pedestrian Countdown Signals"
+  - "Pedestrian timing display system"
+  - "Countdown timer system"
+  - "Pedestrian clearance interval indication system"
+  - "Pedestrian phase timing system"
+  - "Signalized crosswalk control system"
+  - "MUTCD-compliant pedestrian signal system"
+  - "Pedestrian signal head system"
+  - "Pedestrian interval display system"
+  - "Pedestrian safety enhancement system"
+  - "Real-time crossing time display system"
+  - "Collision awareness support system"
+  - "Driver and pedestrian awareness system"
+  - "CMS integration"
+  - "DMS integration"
+  - "Signal timing communication system"
+  - "Traffic safety device system"
+  - "Pedestrian signal indication system"
+  - "Flashing hand indication system"
+  - "Steady hand indication system"
+  - "Upraised hand symbol display system"
+  - "Walking person symbol display system"
+  - "Pedestrian signal timing accuracy system"
+  - "Pedestrian safety"
+  - "Pedestrian signal heads"
+  - "Signalized crosswalk"
+  - "MUTCD pedestrian signal"
+  - "Pedestrian clearance interval"
+  - "Countdown display"
+  - "Countdown timer"
+  - "CMS"
+  - "DMS"
 resources:
-  - label: FHWA Pedestrian Countdown Signals
-    url: https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-19-046.pdf
-  - label: PedBikeInfo Resource
-    url: https://www.pedbikeinfo.org/downloads/InnovativePedSigns_Unsignalized.pdf
+  - label: "Brief: Safety Evaluation of Pedestrian Countdown Signals"
+    url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-19-046.pdf"
+  - label: "Report: The Effects of Innovative Pedestrian Signs at Unsignalized Locations: A Tale of Three Treatments"
+    url: "https://www.pedbikeinfo.org/downloads/InnovativePedSigns_Unsignalized.pdf"
+  - label: "Report: The Effects of Pedestrian Countdown Timers on Safety and Efficiency of Operations at Signalized Intersections"
+    url: "https://rosap.ntl.bts.gov/view/dot/25907"
+  - label: "Report: Safety Evaluation of Pedestrian Countdown Signals"
+    url: "https://www.fhwa.dot.gov/publications/research/safety/19045/19045.pdf"
+  - label: "Report: Countdown Pedestrian Signals (CPS) Legibility and Comprehension without Flashing Hand: Phase I and Phase II Final Report"
+    url: "https://rosap.ntl.bts.gov/view/dot/62438"
 order: 27
 ---
-Pedestrian countdown signals provide visual timing information during the clearance interval to help pedestrians make safer crossing decisions.
+Pedestrian countdown signals are traffic safety devices designed to enhance pedestrian safety and improve traffic efficiency at intersections. By displaying the remaining time for pedestrians to safely cross the street, these signals help individuals make informed decisions about when to begin or finish crossing. This reduces the likelihood of pedestrians being caught in the roadway as traffic resumes, lowering the risk of collisions.
 
-These displays improve predictability for both pedestrians and drivers, reducing uncertainty and conflict at intersections.
-
-They are a common treatment in urban areas with high pedestrian volumes and complex crossing conditions.
+In addition to improving safety, countdown signals contribute to smoother traffic flow. Drivers can better anticipate pedestrian behavior, and pedestrians can avoid unnecessary delays, resulting in more efficient intersection operation. They are particularly beneficial in urban environments and areas with high pedestrian activity, such as school zones, transit stops, and commercial districts. By providing clear, real-time information to pedestrians, countdown signals support safer, more predictable, and more efficient movement for both pedestrians and vehicles. This technology uses traffic signal timers that display the time for pedestrians to safely cross the street, counting down from the start of the walk phase to the end. It provides pedestrians with clear information on how much time they have to cross, reducing the likelihood of being in the intersection during a signal change, and improving overall pedestrian safety at crosswalks.

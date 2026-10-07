@@ -1,36 +1,67 @@
 ---
-title: Integrated Intelligent Intersection Control System (III-CS)
-category: Developing Phase
-shortDescription: III-CS is a smart intersection control approach that uses real-time sensing and adaptive signal control to reduce severe conflicts and delay.
+title: "Integrated Intelligent Intersection Control System (III-CS)"
+category: "Developing Phase"
+shortDescription: "The Integrated Intelligent Intersection Control System (III-CS) is a smart traffic control solution that improves intersection safety and efficiency using real-time sensing and adaptive signal control. It reduces rear-end and angled crashes by optimizing green signal termination and applying all-red extensions when red-light running is detected. By minimizing traffic delays and enhancing safety for pedestrians and cyclists, III-CS supports smoother traffic flow and safer intersections."
 additionalToolsSensors:
-  - Multi-modal traffic detection tools
-  - Connected signal IoT controllers
-  - Drone-based monitoring systems
-  - Adaptive signal adjustment software
-  - Real-time analytics dashboards
+  - "Multi-modal traffic detection tools"
+  - "Connected signal IoT controllers"
+  - "Drone-based monitoring systems"
+  - "Adaptive signal adjustment software"
+  - "Real-time analytics dashboards"
 location:
-  - Suburban
-  - Urban
+  - "Suburban"
+  - "Urban"
 facility:
-  - Intersection
+  - "Intersection"
 safety:
-  - Intersection Safety
-  - Pedestrian Safety
-  - Cyclist Safety
-  - Congestion
+  - "Intersection Safety"
+  - "Pedestrian Safety"
+  - "Cyclist Safety"
+  - "Congestion"
 keywords:
-  - III-CS
-  - Intelligent intersection control
-  - Real-time conflict detection
-  - Red-light running mitigation
-  - Adaptive signal timing
+  - "Integrated Intelligent Intersection Control System"
+  - "III-CS"
+  - "Integrated intersection safety control system"
+  - "Real-time conflict detection system"
+  - "Intersection conflict monitoring system"
+  - "Sensor-based detection system"
+  - "Camera-based intersection monitoring system"
+  - "Conflict analysis system"
+  - "Conflict event logging system"
+  - "Intersection hazard identification system"
+  - "Vehicle conflict alert system"
+  - "Pedestrian conflict alert system"
+  - "Signal timing optimization system"
+  - "Intersection safety system integration"
+  - "Safety countermeasure activation system"
+  - "Real-time conflict data processing system"
+  - "Traffic signal coordination system"
+  - "Intersection infrastructure monitoring system"
+  - "Automated warning system"
+  - "Traffic operations safety system"
+  - "Collision risk reduction system"
+  - "Intelligent intersection control system"
+  - "Data-driven intersection management system"
+  - "Intersection safety"
+  - "Conflict detection"
+  - "Sensors"
+  - "Cameras"
+  - "Signal timing"
+  - "Vehicle conflict alert"
+  - "Pedestrian conflict alert"
 resources:
-  - label: III-CS ROSA P
-    url: https://rosap.ntl.bts.gov/view/dot/61151
+  - label: "Tech Report: An Integrated Intelligent Intersection Control System (III-CS) for Safety Improvement and Delay Minimization"
+    url: "https://rosap.ntl.bts.gov/view/dot/61151"
+  - label: "Research Brief: Practical Performance Indices to Enable Ranking of Signalized Corridors"
+    url: "https://rosap.ntl.bts.gov/view/dot/92712"
+  - label: "Report: Safety Evaluation of Intersection Conflict Warning System"
+    url: "https://rosap.ntl.bts.gov/view/dot/35745"
+  - label: "Webpage: Surrogate Safety Assessment Model Overview"
+    url: "https://highways.dot.gov/turner-fairbank-highway-research-center/software/ssam"
 order: 29
 ---
-The Integrated Intelligent Intersection Control System combines sensing, analytics, and adaptive control to improve intersection safety and efficiency.
+The Integrated Intelligent Intersection Control System (III-CS) is an advanced intelligent transportation system designed to address safety and operational challenges at signalized intersections. It uses real-time traffic data to dynamically control signal phases, reducing rear-end collisions through an optimal green termination algorithm that prevents sudden stops and improves driver response. To mitigate severe angled crashes, the system detects red-light running vehicles and activates an all-red extension, allowing the intersection to clear before conflicting movements are released. In addition to improving safety, III-CS reduces overall traffic delays by adaptively optimizing signal timing based on current traffic demand.
 
-It can reduce rear-end and angle crash risk through dynamic timing strategies and all-red extensions when high-risk events are detected.
+The system enhances safety for vulnerable road users, including pedestrians and cyclists, by detecting their presence and adjusting signal timing to provide safer crossing opportunities. III-CS integrates multiple tools and technologies such as machine vision cameras, radar and lidar sensors, loop detectors, and sensor fusion techniques to accurately monitor vehicle and pedestrian movements under varying conditions. Real-time decision-making algorithms analyze this data to apply appropriate control actions and safety measures. By combining advanced sensors, intelligent control strategies, and ITS infrastructure, the Integrated Intelligent Intersection Control System contributes to safer, more efficient intersections and supports broader transportation safety goals.
 
-III-CS also supports safer operations for pedestrians and cyclists through multimodal detection and responsive control logic.
+This system integrates various intelligent transportation technologies to manage and optimize traffic flow at intersections using advanced sensors, cameras, and communication systems to monitor traffic conditions, detect vehicles and pedestrians, and adjust signal timings.

@@ -1,34 +1,66 @@
 ---
-title: Dynamic Curve Speed Warning System
-category: Other
-shortDescription: Dynamic curve warning systems detect approach speed and provide active alerts to improve speed compliance on high-risk curves.
+title: "Dynamic Curve Speed Warning System"
+category: "Other"
+shortDescription: "Dynamic curve warning systems enhance roadway safety by alerting drivers when they approach curves at unsafe speeds. These systems can improve speed compliance, increase driver awareness, and reduce run-off-the-road crashes."
 additionalToolsSensors:
-  - Real-time speed-sensing radars
-  - Geo-referenced curve attributes
+  - "Real-time speed-sensing radars"
+  - "Geo-referenced curve attributes"
 location:
-  - Rural
-  - Suburban
-  - Urban
+  - "Rural"
+  - "Suburban"
+  - "Urban"
 facility:
-  - Arterial/Collector Segment
+  - "Arterial/Collector Segment"
 safety:
-  - Roadway Departure
-  - Speeding
+  - "Roadway Departure"
+  - "Speeding"
 keywords:
-  - Dynamic curve warning
-  - Speed-activated warning
-  - Curve compliance
-  - Advisory speed display
-  - Run-off-road crash reduction
+  - "Dynamic Curve Speed Warning System"
+  - "Dynamic curve speed warning system"
+  - "Curve hazard warning system"
+  - "Real-time speed warning system"
+  - "Speed detection system"
+  - "Radar-based speed detection system"
+  - "Vehicle detection system"
+  - "Advisory speed display system"
+  - "Speed-activated warning system"
+  - "Curve safety warning system"
+  - "Curve compliance system"
+  - "Speed reduction system"
+  - "Crash reduction system"
+  - "Roadway curve warning system"
+  - "Real-time driver alert system"
+  - "CMS integration"
+  - "DMS integration"
+  - "Dynamic message sign system"
+  - "LED warning sign system"
+  - "Curve warning beacon system"
+  - "Visual signage system"
+  - "Traffic safety enhancement system"
+  - "Driver behavior modification system"
+  - "Roadway geometry hazard detection system"
+  - "Curve safety"
+  - "Curve hazard warning"
+  - "Curve warning beacon"
+  - "CMS"
+  - "DMS"
+  - "Dynamic message signs"
+  - "Dynamic speed feedback"
+  - "Speed reduction"
+  - "Roadway curves"
 resources:
-  - label: FHWA Curve Speed Warning
-    url: https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-14-020.pdf
-  - label: MnDOT Curve Warning Report
-    url: https://mdl.mndot.gov/_flysystem/fedora/2023-01/201812.pdf
+  - label: "Report: Evaluation of Dynamic Speed Feedback Signs on Curves: A National Demonstration Project"
+    url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-14-020.pdf"
+  - label: "Report: In-Vehicle Dynamic Curve-Speed Warnings at High-Risk Rural Curves"
+    url: "https://mdl.mndot.gov/_flysystem/fedora/2023-01/201812.pdf"
+  - label: "Flyer: Horizontal Curve Safety"
+    url: "https://highways.dot.gov/safety/rwd/keep-vehicles-road/horizontal-curve-safety"
+  - label: "Report: Making Our Roads Safer: One Countermeasure at a Time"
+    url: "https://rosap.ntl.bts.gov/view/dot/88186"
 order: 26
 ---
-Dynamic curve speed warning systems activate warnings when vehicles approach curves above safe advisory speeds.
+Dynamic curve warning systems are traffic safety technologies designed to reduce crashes on road segments with sharp or high-risk horizontal curves. These systems monitor approaching vehicle speeds and activate advanced warning signs when a driver exceeds a safe threshold speed for the curve. By providing timely visual and, in some cases, auditory alerts, dynamic curve systems prompt drivers to slow down and navigate curves more safely.
 
-By improving speed choice at horizontal curves, these systems help reduce roadway departure crashes and improve driver awareness.
+These systems improve adherence to advisory speed limits, which is critical for preventing loss-of-control and run-off-the-road crashes, a leading cause of severe roadway crashes. Dynamic curve warning systems also enhance driver awareness by drawing attention to upcoming roadway geometry and changing conditions. They are especially effective in adverse weather such as rain, fog, or snow, when visibility and pavement conditions can increase crash risk. As a key component of modern transportation safety strategies, dynamic curve systems help reduce curve-related crashes and improve safety for all roadway users.
 
-They are especially useful where crash history, geometry, or weather conditions increase curve-related risk.
+This technology uses sensors to monitor vehicle speeds as they approach curves on the road and displays real-time warnings alerting drivers to reduce their speed, reducing the risk of losing control and preventing run-off-road and rollover crashes.
