@@ -1,6 +1,6 @@
 ---
 title: "Yellow Change Intervals"
-category: "-Use of Freeway Shoulders for Travel Guide for Planning, Evaluating, and Designing Part-Time Shoulder Use as a Traffic Management Strategy \u003chttps://ops-dr.fhwa.dot.gov/publications/fhwahop15023/ch4.htm\u003e"
+category: "Signals"
 shortDescription: "Yellow Change Intervals (YCI) systems dynamically adjust the timing of yellow traffic signals based on real-time traffic conditions, vehicle speeds, and intersection-specific characteristics, providing safer and more predictable transitions for drivers."
 additionalToolsSensors:
   - "Vehicle detection systems"
