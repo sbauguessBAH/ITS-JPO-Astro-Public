@@ -55,14 +55,19 @@ keywords:
 resources:
   - label: "Guide: An Overview"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop24063/fhwahop24063.pdf"
+    description: This resource provides background on An Overview and its relevance to Traffic Management Cameras.
   - label: "Fact Sheet: The Next Generation of Traffic Management Systems and Centers"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-24-153.pdf"
+    description: This resource provides background on The Next Generation of Traffic Management Systems and Centers and its relevance to Traffic Management Cameras.
   - label: "Guide: Speed Enforcement Camera Systems Operational Guidelines"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/Speed_enforcement_camera_systems_operational_guidelines.pdf"
+    description: This resource provides background on Speed Enforcement Camera Systems Operational Guidelines and its relevance to Traffic Management Cameras.
   - label: "Webpage: NHTSA Speed Safety Camera Enforcement"
     url: "https://www.nhtsa.gov/book/countermeasures-that-work/speeding-and-speed-management/countermeasures/enforcement/speed"
+    description: This resource provides background on NHTSA Speed Safety Camera Enforcement and its relevance to Traffic Management Cameras.
   - label: "Fact Sheet: Coordinating High-Resolution Traffic Cameras"
     url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-15-068.pdf"
+    description: This resource provides background on Coordinating High-Resolution Traffic Cameras and its relevance to Traffic Management Cameras.
 order: 41
 ---
 Traffic management cameras play a critical role in modern transportation systems by providing continuous monitoring and data collection for roadways and intersections. These cameras analyze vehicle movements to determine traffic flow patterns, peak hours, average speeds, and congestion levels, allowing transportation agencies to optimize signal timing and manage traffic efficiently.

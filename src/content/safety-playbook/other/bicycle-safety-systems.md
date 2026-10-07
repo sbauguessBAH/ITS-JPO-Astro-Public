@@ -54,14 +54,19 @@ keywords:
 resources:
   - label: "Resource Sheet: Bicycle and Pedestrian Planning"
     url: "https://www.transportation.gov/sites/dot.gov/files/2023-07/Final%20Resource%20Sheet_Bike%20and%20Pedestrian%20Planning%207.25.2023_0.pdf"
+    description: This resource provides background on Bicycle and Pedestrian Planning and its relevance to Bicycle Safety Systems.
   - label: "Guide: Guide for Improving Pedestrian Safety at Uncontrolled Crossing Locations"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/2022-07/fhwasa18077.pdf"
+    description: This resource provides background on Guide for Improving Pedestrian Safety at Uncontrolled Crossing Locations and its relevance to Bicycle Safety Systems.
   - label: "Webinar: Livable Communities and Bicycle/Pedestrian Planning"
     url: "https://www.pedbikeinfo.org/pdf/Webinar_PBIC_LC_030111.pdf"
+    description: "This resource provides background on Webinar: Livable Communities and Bicycle/Pedestrian Planning and its relevance to Bicycle Safety Systems."
   - label: "Report: Developing Crash Modification Factors for Separated Bicycle Lanes"
     url: "https://rosap.ntl.bts.gov/view/dot/71847"
+    description: This resource provides background on Developing Crash Modification Factors for Separated Bicycle Lanes and its relevance to Bicycle Safety Systems.
   - label: "Technical Brief: Enhancing Vulnerable Road User Detection and Volumetric Data Quality With Lidar Sensors"
     url: "https://rosap.ntl.bts.gov/view/dot/79736"
+    description: This resource provides background on Enhancing Vulnerable Road User Detection and Volumetric Data Quality With Lidar Sensors and its relevance to Bicycle Safety Systems.
 order: 35
 ---
 Bicycle safety systems are designed to enhance the protection and visibility of cyclists on the road through a combination of advanced technologies and smart accessories. Radar systems alert cyclists to approach vehicles, improving situational awareness and helping prevent collisions. Smart helmets and crash sensors provide built-in lights, turn signals, and emergency alerts to notify others in case of crashes. Devices like Strava Beacon share a rider’s real-time location with selected contacts, ensuring that someone is aware of their whereabouts during a ride.

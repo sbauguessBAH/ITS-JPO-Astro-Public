@@ -2,8 +2,7 @@
 title: "Integrated Corridor Management (ICM)"
 category: "Traffic Operations"
 shortDescription: "Integrated Corridor Management (ICM) is a framework that integrates and optimizes the management of multiple transportation systems along a corridor, including highways, arterial roads, public transit, and freight routes. By leveraging real-time data, predictive analytics, and inter-agency collaboration, ICM enhances mobility, reduces congestion, and improves travel reliability."
-additionalToolsSensors:
-  []
+additionalToolsSensors: []
 location:
   - "Suburban"
   - "Urban"
@@ -55,14 +54,19 @@ keywords:
 resources:
   - label: "Report: Integrated Corridor Management and Traffic Incident Management: A Primer"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop16035/index.htm"
+    description: "This resource provides background on Integrated Corridor Management and Traffic Incident Management: A Primer and its relevance to Integrated Corridor Management (ICM)."
   - label: "Report: Integrated Corridor Management: ICM Implementation Guide"
     url: "https://rosap.ntl.bts.gov/view/dot/3667"
+    description: "This resource provides background on Integrated Corridor Management: ICM Implementation Guide and its relevance to Integrated Corridor Management (ICM)."
   - label: "Report: Elements of Business Rules and Decision Support Systems within Integrated Corridor Management: Understanding the Intersection of These Three Components"
     url: "https://rosap.ntl.bts.gov/view/dot/42533"
+    description: "This resource provides background on Elements of Business Rules and Decision Support Systems within Integrated Corridor Management: Understanding the Intersection of These Three Components and its relevance to Integrated Corridor Management (ICM)."
   - label: "Media: Mainstreaming Integrated Corridor Management (ICM) 6-Video Series"
     url: "https://highways.dot.gov/media/82506"
+    description: This resource provides background on Mainstreaming Integrated Corridor Management (ICM) 6-Video Series and its relevance to Integrated Corridor Management (ICM).
   - label: "Report: Integrated Corridor Management (ICM) Program: Major Achievements, Key Findings, and Outlook"
     url: "https://rosap.ntl.bts.gov/view/dot/43581"
+    description: "This resource provides background on Integrated Corridor Management (ICM) Program: Major Achievements, Key Findings, and Outlook and its relevance to Integrated Corridor Management (ICM)."
 order: 54
 ---
 Integrated Corridor Management (ICM) is a strategic approach that seeks to unify and optimize the operations of diverse transportation modes and systems along a single corridor. This includes highways, arterial roads, public transit systems, freight hubs, and even non-motorized travel options like pedestrian and cycling pathways. By managing these systems as a cohesive whole, ICM ensures that traffic flow, capacity, and traveler experience are maximized through real-time coordination and dynamic responses to traffic conditions, incidents, or surges in demand.

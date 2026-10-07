@@ -46,14 +46,19 @@ keywords:
 resources:
   - label: "Informational Guide: Yellow Change Intervals"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/Yellow%20Change%20Intervals_508_0.pdf"
+    description: This resource provides background on Yellow Change Intervals and its relevance to Yellow Change Intervals.
   - label: "Manual: Guidelines for Traffic Signal Vehicle Change and Clearance Intervals"
     url: "https://www.codot.gov/safety/traffic-safety/assets/documents/cdot-vehicle-change-and-clearance-interval-guidelines-v1-31.pdf"
+    description: This resource provides background on Guidelines for Traffic Signal Vehicle Change and Clearance Intervals and its relevance to Yellow Change Intervals.
   - label: "Fact Sheet: Optimizing Vehicle Trajectories at Fixed-Time Traffic Signal Intersections Using Cooperative Driving Automation (CDA)"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-093.pdf"
+    description: This resource provides background on Optimizing Vehicle Trajectories at Fixed-Time Traffic Signal Intersections Using Cooperative Driving Automation and its relevance to Yellow Change Intervals.
   - label: "Fact Sheet: Proven Safety Countermeasures: Yellow Change Intervals"
     url: "https://rosap.ntl.bts.gov/view/dot/66811"
+    description: "This resource provides background on Proven Safety Countermeasures: Yellow Change Intervals and its relevance to Yellow Change Intervals."
   - label: "Report: Traffic Signal Change and Clearance Interval Pooled Fund Study"
     url: "https://rosap.ntl.bts.gov/view/dot/72449"
+    description: This resource provides background on Traffic Signal Change and Clearance Interval Pooled Fund Study and its relevance to Yellow Change Intervals.
 order: 46
 ---
 Yellow Change Interval (YCI) systems are designed to optimize the timing of the yellow phase at traffic signals, reducing the risk of red-light running and intersection-related collisions. By incorporating real-time traffic data, vehicle detection sensors, and AI-driven algorithms, YCI ensures that the duration of the yellow light adapts dynamically to the actual driving conditions.

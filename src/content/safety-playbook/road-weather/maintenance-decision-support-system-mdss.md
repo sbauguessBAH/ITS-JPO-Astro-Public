@@ -2,8 +2,7 @@
 title: "Maintenance Decision Support System (MDSS)"
 category: "Road Weather"
 shortDescription: "A Maintenance Decision Support System (MDSS) helps transportation agencies manage road maintenance operations, particularly during adverse weather conditions. It provides real-time and predictive insights by analyzing roadway and weather data from various sensors and technologies. The system offers actionable recommendations, such as when to deploy snowplows, apply deicing chemicals, or issue safety advisories. By supporting proactive and informed decision-making, MDSS ensures roads remain safe, reduces operational costs, and minimizes environmental impacts during maintenance activities."
-additionalToolsSensors:
-  []
+additionalToolsSensors: []
 location:
   - "Rural"
   - "Suburban"
@@ -57,14 +56,19 @@ keywords:
 resources:
   - label: "Fact Sheet: Maintenance Decision Support System"
     url: "https://rosap.ntl.bts.gov/view/dot/36927/dot_36927_DS1.pdf"
+    description: This resource provides background on Maintenance Decision Support System and its relevance to Maintenance Decision Support System (MDSS).
   - label: "Web Page: FHWA Maintenance Decision Support System (MDSS) Showcase"
     url: "https://ops.fhwa.dot.gov/weather/seminars/mdss_showcase/index.htm"
+    description: This resource provides background on FHWA Maintenance Decision Support System (MDSS) Showcase and its relevance to Maintenance Decision Support System (MDSS).
   - label: "2019 Road Weather Management Performance Measures Update - Chapter 3. Application of Road Weather Management Tools and Technologies - FHWA Office of Operations"
     url: "https://ops.fhwa.dot.gov/Publications/fhwahop19089/ch3.htm"
+    description: This resource provides background on 2019 Road Weather Management Performance Measures Update - Chapter 3. Application of Road Weather Management Tools and Technologies - FHWA Office of Operations and its relevance to Maintenance Decision Support System (MDSS).
   - label: "Web Page: Maintenance Decision Support System (MDSS)"
     url: "https://ral.ucar.edu/technologies/artificial-intelligence-and-machine-learning"
+    description: This resource provides background on Maintenance Decision Support System and its relevance to Maintenance Decision Support System (MDSS).
   - label: "Assessment: Benefit-Cost Assessment of a Maintenance Decision Support System (MDSS) Implementation: The City and County of Denver"
     url: "https://rosap.ntl.bts.gov/view/dot/4007"
+    description: "This resource provides background on Benefit-Cost Assessment of a Maintenance Decision Support System (MDSS) Implementation: The City and County of Denver and its relevance to Maintenance Decision Support System (MDSS)."
 order: 52
 ---
 A Maintenance Decision Support System (MDSS) is an advanced tool that combines technology, data analysis, and predictive modeling to support roadway maintenance activities, particularly under challenging weather conditions. It integrates a variety of real-time data sources, including roadway sensors, weather stations, and vehicle-mounted systems, to provide transportation agencies with detailed recommendations on how to manage maintenance tasks effectively. MDSS is designed to enhance roadway safety, conserve maintenance resources, and minimize environmental impacts by optimizing decision-making processes for tasks like snow removal, deicing, and traffic management in adverse conditions.

@@ -2,8 +2,7 @@
 title: "Parking and Curb Management"
 category: "Systems Monitoring"
 shortDescription: "Parking and Curb Management integrates technology and data analytics to optimize the use of parking spaces and curbside areas in urban environments. Using real-time sensors, dynamic pricing, and digital communication platforms, this approach ensures efficient allocation of parking for vehicles, delivery zones, and multimodal uses like ride-share pickups or bike parking. Parking and Curb Management enhances urban mobility, reduces congestion, and improves the efficient use of limited curbside resources in an evolving urban landscape."
-additionalToolsSensors:
-  []
+additionalToolsSensors: []
 location:
   - "Suburban"
   - "Urban"
@@ -47,14 +46,19 @@ keywords:
 resources:
   - label: "Infographic: Essential ITS: Parking and Curb Management"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/doc/Parking%20and%20Curb%20Management_FINAL508.pdf"
+    description: "This resource provides background on Infographic: Essential ITS: Parking and Curb Management and its relevance to Parking and Curb Management."
   - label: "Web Page: Essential ITS: Parking and Curb Management"
     url: "https://www.itskrs.its.dot.gov/benefits/essential-its/parking-and-curb-management"
+    description: "This resource provides background on Essential ITS: Parking and Curb Management and its relevance to Parking and Curb Management."
   - label: "Plan: An Open Data Approach to Curbside Management [Data Management Plan]"
     url: "https://rosap.ntl.bts.gov/view/dot/88673"
+    description: "This resource provides background on Plan: An Open Data Approach to Curbside Management [Data Management Plan] and its relevance to Parking and Curb Management."
   - label: "Executive Briefing: Curbside Management"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2024-02/executive-briefing/2023%20Executive%20Briefing_Curbside%20Management_v2.pdf"
+    description: "This resource provides background on Executive Briefing: Curbside Management and its relevance to Parking and Curb Management."
   - label: "Dataset: An Open Data Approach to Curbside Management [supporting dataset"
     url: "https://rosap.ntl.bts.gov/view/dot/88674#tabs-4"
+    description: This resource provides background on An Open Data Approach to Curbside Management [supporting dataset and its relevance to Parking and Curb Management.
 order: 56
 ---
 Parking and Curb Management is a forward-thinking framework that addresses the challenges of limited urban curbside space and parking availability. With increasing demands from personal vehicles, delivery fleets, ride-share services, transit stops, and micromobility options like scooters and bikes, curbside areas have become critical bottlenecks in city transportation systems. This management strategy uses technology to monitor, allocate, and optimize the utilization of curbside resources in real time, ensuring they meet dynamic urban demands effectively and equitably.

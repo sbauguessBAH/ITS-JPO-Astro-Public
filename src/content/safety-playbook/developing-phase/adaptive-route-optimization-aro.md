@@ -23,7 +23,7 @@ safety:
   - "Congestion"
   - "Emergency Response"
   - "Heavy Vehicle"
-  - "Road Weather"
+  - "Road Weather Safety"
 keywords:
   - "Adaptive Route Optimization"
   - "ARO"
@@ -63,12 +63,16 @@ keywords:
 resources:
   - label: "Report: Complete Trip Data: Data Integration, Sharing, and Use"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop22063/fhwahop22063.pdf"
+    description: "This resource provides background on Complete Trip Data: Data Integration, Sharing, and Use and its relevance to Adaptive Route Optimization (ARO)."
   - label: "Report: Adaptive Route Optimization"
     url: "https://ops-dr.fhwa.dot.gov/publications/fhwahop22055/fhwahop22055.pdf"
+    description: This resource provides background on Adaptive Route Optimization and its relevance to Adaptive Route Optimization (ARO).
   - label: "Report: Adaptive Route Optimization for Operations: Feasibility and Readiness Report"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop24043/fhwahop24043.pdf"
+    description: "This resource provides background on Adaptive Route Optimization for Operations: Feasibility and Readiness Report and its relevance to Adaptive Route Optimization (ARO)."
   - label: "Handbook: Application of Travel Time Data and Statistics to Travel Time Reliability Analyses"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop21058/fhwahop21058.pdf"
+    description: This resource provides background on Application of Travel Time Data and Statistics to Travel Time Reliability Analyses and its relevance to Adaptive Route Optimization (ARO).
 order: 51
 ---
 Adaptive Route Optimization (ARO) represents a cutting-edge evolution in traffic and navigation systems, leveraging real-time communication, robust data analytics, and artificial intelligence to optimize travel routes dynamically. Unlike static routing systems, ARO continuously monitors traffic flow, road conditions, and live incidents through a network of sensors, GPS-equipped vehicles, and crowdsourced data platforms. This data is processed using AI-powered algorithms and predictive analytics, enabling the system to compute the most efficient routes instantly. Whether for daily commuters, logistics fleets, or public transit, ARO delivers actionable, real-time routing guidance tailored to the current transportation ecosystem.

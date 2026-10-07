@@ -50,10 +50,13 @@ keywords:
 resources:
   - label: "Fact Sheet: Enhancing Vulnerable Road User Detection and Volume Data Through the Use of Infrared Thermal Imaging Sensors"
     url: "https://highways.dot.gov/media/52641"
+    description: This resource provides background on Enhancing Vulnerable Road User Detection and Volume Data Through the Use of Infrared Thermal Imaging Sensors and its relevance to Thermal Cameras.
   - label: "Fact Sheet: Wildlife Crossing Web-Connected Cameras Offer Improved Monitoring for Highways"
     url: "https://www.fhwa.dot.gov/publications/research/ear/16033/index.cfm"
+    description: This resource provides background on Wildlife Crossing Web-Connected Cameras Offer Improved Monitoring for Highways and its relevance to Thermal Cameras.
   - label: "Lessons Learned: Choose Thermal Cameras To Detect Pedestrians in Dark Non-Lit Areas As They Can Outperform CCTV Night Vision Under Conditions With Low to No Light"
     url: "https://www.itskrs.its.dot.gov/2021-l01076"
+    description: "This resource provides background on Lessons Learned: Choose Thermal Cameras To Detect Pedestrians in Dark Non-Lit Areas As They Can Outperform CCTV Night Vision Under Conditions With Low to No Light and its relevance to Thermal Cameras."
 order: 13
 ---
 Thermal cameras are powerful tools in transportation systems, providing enhanced monitoring and safety capabilities by detecting heat signatures from vehicles, infrastructure, and pedestrians. In public transportation, these cameras help identify incidents such as overheating components or stopped vehicles on tracks, allowing operators to respond quickly and prevent crashes.

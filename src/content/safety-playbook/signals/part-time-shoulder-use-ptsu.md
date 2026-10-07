@@ -55,14 +55,19 @@ keywords:
 resources:
   - label: "Tech Report: Decision Support Framework and Parameters for Dynamic Part-Time Shoulder Use"
     url: "https://rosap.ntl.bts.gov/view/dot/43718"
+    description: This resource provides background on Decision Support Framework and Parameters for Dynamic Part-Time Shoulder Use and its relevance to Part-time Shoulder Use.
   - label: "Fact Sheet: FHWA Decision Support Framework and Parameters for Dynamic Part-Time Shoulder Use: Considerations for Opening Freeway Shoulders for Travel as a Traffic Management Strategy"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-24-172.pdf"
+    description: "This resource provides background on FHWA Decision Support Framework and Parameters for Dynamic Part-Time Shoulder Use: Considerations for Opening Freeway Shoulders for Travel as a Traffic Management Strategy and its relevance to Part-time Shoulder Use."
   - label: "Report: Part-Time Shoulder Use Synthesis of Practice"
     url: "https://rosap.ntl.bts.gov/view/dot/77376"
+    description: This resource provides background on Part-Time Shoulder Use Synthesis of Practice and its relevance to Part-time Shoulder Use.
   - label: "Fact Sheet: Traffic Management Systems (TMSs) Supporting the Use of Part-Time Shoulders"
     url: "https://rosap.ntl.bts.gov/view/dot/78201"
+    description: This resource provides background on Traffic Management Systems (TMSs) Supporting the Use of Part-Time Shoulders and its relevance to Part-time Shoulder Use.
   - label: "Chapter 4: -Use of Freeway Shoulders for Travel Guide for Planning, Evaluating, and Designing Part-Time Shoulder Use as a Traffic Management Strategy"
     url: "https://ops-dr.fhwa.dot.gov/publications/fhwahop15023/ch4.htm"
+    description: "This resource provides background on Chapter 4: -Use of Freeway Shoulders for Travel Guide for Planning, Evaluating, and Designing Part-Time Shoulder Use as a Traffic Management Strategy and its relevance to Part-time Shoulder Use."
 order: 45
 ---
 Part-Time Shoulder Use (PTSU) is a dynamic and efficient traffic management solution aimed at improving roadway performance by temporarily converting shoulders into operational travel lanes. This strategy is typically employed during peak congestion hours, unexpected traffic surges, or specific events, offering a cost-effective alternative to extensive roadway expansion. Using advanced traffic sensors and monitoring technologies, PTSU systems assess real-time traffic and roadway conditions to determine when it's safe and beneficial to open shoulders for vehicular use.

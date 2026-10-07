@@ -52,15 +52,20 @@ keywords:
   - "Network impact assessment"
 resources:
   - label: "Technical Report: Review of Literature and Practices for Incident Management Programs"
-    url: "https://www.bing.com/ck/a?!\u0026\u0026p=26ae8bd75eb06836661b466a557b109ab392338a7857f6f8f64205f3668ccd34JmltdHM9MTc3MzAxNDQwMA\u0026ptn=3\u0026ver=2\u0026hsh=4\u0026fclid=2720647a-db9e-6db5-2404-7249da156c08\u0026psq=Optimization+Management+Model+for+Incident+Response+FWHA+DOT+pdf+resource\u0026u=a1aHR0cHM6Ly9yb3NhcC5udGwuYnRzLmdvdi92aWV3L2RvdC8zMjY4OC9kb3RfMzI2ODhfRFMxLnBkZg"
+    url: "https://www.bing.com/ck/a?!&&p=26ae8bd75eb06836661b466a557b109ab392338a7857f6f8f64205f3668ccd34JmltdHM9MTc3MzAxNDQwMA&ptn=3&ver=2&hsh=4&fclid=2720647a-db9e-6db5-2404-7249da156c08&psq=Optimization+Management+Model+for+Incident+Response+FWHA+DOT+pdf+resource&u=a1aHR0cHM6Ly9yb3NhcC5udGwuYnRzLmdvdi92aWV3L2RvdC8zMjY4OC9kb3RfMzI2ODhfRFMxLnBkZg"
+    description: This resource provides background on Review of Literature and Practices for Incident Management Programs and its relevance to Optimization Management Model for Incident Response.
   - label: "Presentation: Traffic Incident Management"
     url: "https://www.transportation.gov/sites/dot.gov/files/docs/01%20Traffic%20Incident%20Management%20US%20-%20English.pdf"
+    description: This resource provides background on Traffic Incident Management and its relevance to Optimization Management Model for Incident Response.
   - label: "Web Page: Traffic Analysis Tools"
     url: "https://ops.fhwa.dot.gov/trafficanalysistools/"
+    description: This resource provides background on Traffic Analysis Tools and its relevance to Optimization Management Model for Incident Response.
   - label: "Briefing: Next Generation Traffic Incident Management"
     url: "https://www.itskrs.its.dot.gov/briefings/executive-briefing/next-generation-traffic-incident-management"
+    description: This resource provides background on Next Generation Traffic Incident Management and its relevance to Optimization Management Model for Incident Response.
   - label: "Fact Sheet: Predictive Real-Time Traffic Management in Large-Scale Networks Using Model-Based Artificial Intelligence"
     url: "https://rosap.ntl.bts.gov/view/dot/74165"
+    description: This resource provides background on Predictive Real-Time Traffic Management in Large-Scale Networks Using Model-Based Artificial Intelligence and its relevance to Optimization Management Model for Incident Response.
 order: 49
 ---
 The Optimization Management Model for Incident Response integrates advanced technologies, communication systems, and analytical tools to improve how transportation agencies detect, respond to, and manage incidents, such as accidents, breakdowns, or debris on the roadway. The model is built on real-time data collection from sensors, cameras, vehicle communication systems, and crowd-sourced apps, allowing for the immediate detection of incidents.

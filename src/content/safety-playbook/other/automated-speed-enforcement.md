@@ -51,14 +51,19 @@ keywords:
 resources:
   - label: "Report: Speed Safety Camera Program Planning and Operations Guide"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop24063/fhwahop24063.pdf"
+    description: This resource provides background on Speed Safety Camera Program Planning and Operations Guide and its relevance to Automated Speed Enforcement.
   - label: "Webpage: Speed Safety Cameras"
     url: "https://www.nhtsa.gov/book/countermeasures-that-work/speeding-and-speed-management/countermeasures/enforcement/speed"
+    description: This resource provides background on Speed Safety Cameras and its relevance to Automated Speed Enforcement.
   - label: "Report: System Analysis of Automated Speed Enforcement Implementation (DOT HS 812 257"
     url: "https://rosap.ntl.bts.gov/view/dot/1983"
+    description: This resource provides background on System Analysis of Automated Speed Enforcement Implementation (DOT HS 812 257 and its relevance to Automated Speed Enforcement.
   - label: "Report: LIDAR Speed-Measuring Device Performance Specifications"
     url: "https://rosap.ntl.bts.gov/view/dot/40783"
+    description: This resource provides background on LIDAR Speed-Measuring Device Performance Specifications and its relevance to Automated Speed Enforcement.
   - label: "Report: Exploring Driver Adaptation to L2 Driving Automation Using Existing Naturalistic Driving Data (DOT HS 813 827"
     url: "https://rosap.ntl.bts.gov/view/dot/93144"
+    description: This resource provides background on Exploring Driver Adaptation to L2 Driving Automation Using Existing Naturalistic Driving Data (DOT HS 813 827 and its relevance to Automated Speed Enforcement.
 order: 34
 ---
 Automated speed enforcement systems are advanced technologies designed to enhance traffic safety and reduce speed-related incidents. These systems use speed cameras and sensors to detect vehicles exceeding posted speed limits, capturing violations and issuing citations automatically. By consistently enforcing speed limits, they encourage safer driving behaviors and reduce the likelihood of crashes caused by excessive speed.

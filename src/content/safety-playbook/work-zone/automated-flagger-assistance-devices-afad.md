@@ -53,16 +53,22 @@ keywords:
 resources:
   - label: "Report: Integrating Emerging Data Sources into Operational Practice: State of the Practice Review"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop17042/fhwahop17042.pdf"
+    description: "This resource provides background on Integrating Emerging Data Sources into Operational Practice: State of the Practice Review and its relevance to Automated Flagger Assistance Devices."
   - label: "Fact Sheet: FHWA Road Weather Management Program - Integrating Mobile Observations"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop17042/index.htm"
+    description: This resource provides background on FHWA Road Weather Management Program - Integrating Mobile Observations and its relevance to Automated Flagger Assistance Devices.
   - label: "Webpage: Highway Work Zones and Signs, Signals, and Barricades"
     url: "https://www.osha.gov/highway-workzones"
+    description: This resource provides background on Highway Work Zones and Signs, Signals, and Barricades and its relevance to Automated Flagger Assistance Devices.
   - label: "Report: User-Centered Smart Traffic Sign Development Implementation Study"
     url: "https://rosap.ntl.bts.gov/view/dot/92357"
+    description: This resource provides background on User-Centered Smart Traffic Sign Development Implementation Study and its relevance to Automated Flagger Assistance Devices.
   - label: "Desktop Reference: Proven Safety Countermeasures in Work Zones"
     url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/2024-10/PSCs_Work%20Zone%20Desktop%20Reference_508.pdf"
+    description: "This resource provides background on Desktop Reference: Proven Safety Countermeasures in Work Zones and its relevance to Automated Flagger Assistance Devices."
   - label: "Webpage: Worker Safety"
     url: "https://ops.fhwa.dot.gov/wz/workersafety/index.htm"
+    description: This resource provides background on Worker Safety and its relevance to Automated Flagger Assistance Devices.
 order: 30
 ---
 Automated Flagger Assistance Devices (AFADs) are designed to enhance safety and efficiency in roadway work zones by replacing or assisting human flaggers in one-lane, two-way traffic situations. These devices allow operators to control traffic from a protected location away from the roadway, significantly reducing the risk of traffic-related injuries. AFADs improve operational efficiency by using standardized and consistent signal cycles, which help minimize human error and maintain smoother traffic flow through work zones.

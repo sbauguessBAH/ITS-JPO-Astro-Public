@@ -60,14 +60,19 @@ keywords:
 resources:
   - label: "Brief: Compendium of Wrong-Way-Driving Treatments and Countermeasures"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-23-035.pdf"
+    description: This resource provides background on Compendium of Wrong-Way-Driving Treatments and Countermeasures and its relevance to Wrong-Way Driving Detection and Warning System.
   - label: "Technical Report: Detection and Warning Systems for Wrong-Way Driving"
     url: "https://rosap.ntl.bts.gov/view/dot/29573"
+    description: This resource provides background on Detection and Warning Systems for Wrong-Way Driving and its relevance to Wrong-Way Driving Detection and Warning System.
   - label: "Technical Brief: Development of Crash Modification Factors for Wrong-Way Driving Treatments"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-22-112.pdf"
+    description: This resource provides background on Development of Crash Modification Factors for Wrong-Way Driving Treatments and its relevance to Wrong-Way Driving Detection and Warning System.
   - label: "Executive Briefing: Errant Driving Behavior Countermeasure Systems"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-05/executive-briefing/12_Errant%20Driving_FINAL508_05222025.pdf"
+    description: "This resource provides background on Executive Briefing: Errant Driving Behavior Countermeasure Systems and its relevance to Wrong-Way Driving Detection and Warning System."
   - label: "Video: FDOT Wrong-Way Driving Initiative"
     url: "https://www.youtube.com/watch?v=c8BAMdHT6GE"
+    description: This resource provides background on FDOT Wrong-Way Driving Initiative and its relevance to Wrong-Way Driving Detection and Warning System.
 order: 33
 ---
 Wrong-way driving detection and warning systems are advanced traffic safety technologies designed to prevent severe and often high-impact crashes caused by vehicles traveling against traffic flow. These systems detect vehicles entering highways or freeways via exit ramps and immediately alert drivers through LED-enhanced warning signs, encouraging them to self-correct. When a wrong-way event occurs, the system automatically notifies traffic management centers and law enforcement, sending images, timestamps, and metadata to support rapid response.

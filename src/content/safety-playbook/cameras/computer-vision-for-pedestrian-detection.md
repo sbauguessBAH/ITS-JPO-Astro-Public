@@ -51,10 +51,13 @@ keywords:
 resources:
   - label: "Fact Sheet: Real-Time Pedestrian Detection: Layered Object Recognition System for Pedestrian Collision Sensing"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-10-022.pdf"
+    description: "This resource provides background on Real-Time Pedestrian Detection: Layered Object Recognition System for Pedestrian Collision Sensing and its relevance to Computer Vision for Pedestrian Detection."
   - label: "Fact Sheet: Using Artificial Intelligence to Improve Safety for Vulnerable Road Users"
     url: "https://rosap.ntl.bts.gov/view/dot/75735"
+    description: This resource provides background on Using Artificial Intelligence to Improve Safety for Vulnerable Road Users and its relevance to Computer Vision for Pedestrian Detection.
   - label: "Case Study: Leveraging Existing Infrastructure and Computer Vision for Pedestrian Detection"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2022-03/case-study/Pedestrian%20Detection%20Case%20Study_FINAL_508_PDF.pdf"
+    description: This resource provides background on Leveraging Existing Infrastructure and Computer Vision for Pedestrian Detection and its relevance to Computer Vision for Pedestrian Detection.
 order: 28
 ---
 Computer vision-based pedestrian detection is a technology that uses cameras, image processing, and artificial intelligence to detect, track, and analyze pedestrian movements in real time. It plays a critical role in improving traffic safety by alerting drivers to the presence of pedestrians, helping reduce collisions and supporting advanced driver-assistance systems such as pedestrian pre-collision warning and automatic braking.

@@ -55,24 +55,34 @@ keywords:
 resources:
   - label: "Report: Guidance on Using Traffic Management Centers for Work Zone Management"
     url: "https://ai.studio/apps/2461fc58-68bf-4590-a0e6-3efe76afbd79"
+    description: This resource provides background on Guidance on Using Traffic Management Centers for Work Zone Management and its relevance to Nighttime Visibility for Safety.
   - label: "Report: Methods for Maintaining Traffic Sign Retroreflectivity"
     url: "https://highways.dot.gov/safety/other/visibility/methods-maintaining-traffic-sign-retroreflectivity"
+    description: This resource provides background on Methods for Maintaining Traffic Sign Retroreflectivity and its relevance to Nighttime Visibility for Safety.
   - label: "Website: Sign Retroreflectivity"
     url: "https://highways.dot.gov/safety/other/visibility/sign-retroreflectivity"
+    description: This resource provides background on Sign Retroreflectivity and its relevance to Nighttime Visibility for Safety.
   - label: "· Regulations / Standards"
     url: "https://highways.dot.gov/safety/other/visibility/nighttime-visibility-sign-retroreflectivity-regulations-standards"
+    description: This resource provides background on · Regulations / Standards and its relevance to Nighttime Visibility for Safety.
   - label: "· Technical Guidance"
     url: "https://highways.dot.gov/safety/other/visibility/nighttime-visibility-sign-retroreflectivity-technical-guidance"
+    description: This resource provides background on · Technical Guidance and its relevance to Nighttime Visibility for Safety.
   - label: "· Implementation Tools"
     url: "https://highways.dot.gov/safety/other/visibility/nighttime-visibility-sign-retroreflectivity-implementation-tools"
+    description: This resource provides background on · Implementation Tools and its relevance to Nighttime Visibility for Safety.
   - label: "· Frequently Asked Questions"
     url: "https://highways.dot.gov/safety/other/visibility/nighttime-visibility-sign-retroreflectivity-frequently-asked-questions"
+    description: This resource provides background on · Frequently Asked Questions and its relevance to Nighttime Visibility for Safety.
   - label: "· Research"
     url: "https://highways.dot.gov/safety/other/visibility/nighttime-visibility-sign-retroreflectivity-research"
+    description: This resource provides background on · Research and its relevance to Nighttime Visibility for Safety.
   - label: "· Technical Contacts"
     url: "https://highways.dot.gov/safety/other/visibility/technical-contacts"
+    description: This resource provides background on · Technical Contacts and its relevance to Nighttime Visibility for Safety.
   - label: "Report: Research on Traffic Sign Retroreflective Sheeting Performance: A Synthesis of Practice"
     url: "https://rosap.ntl.bts.gov/view/dot/56868"
+    description: "This resource provides background on Research on Traffic Sign Retroreflective Sheeting Performance: A Synthesis of Practice and its relevance to Nighttime Visibility for Safety."
 order: 37
 ---
 Nighttime visibility plays a critical role in ensuring road safety, as the risk of crashes is significantly higher after dark. Enhanced lighting and visibility measures help drivers detect hazards earlier, reducing reaction times and lowering the nighttime fatality rate, which is approximately three times higher than during the day. Well-designed lighting improves pedestrian safety by making crosswalks and walkways more visible, helping prevent crashes and fatalities.

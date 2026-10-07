@@ -27,8 +27,10 @@ keywords:
 resources:
   - label: FHWA Pedestrian Hybrid Beacons
     url: https://highways.dot.gov/safety/proven-safety-countermeasures/pedestrian-hybrid-beacons
+    description: This resource provides background on FHWA Pedestrian Hybrid Beacons and its relevance to Pedestrian Hybrid Beacons.
   - label: PHB ROSA P
     url: https://rosap.ntl.bts.gov/view/dot/86138
+    description: This resource provides background on PHB ROSA P and its relevance to Pedestrian Hybrid Beacons.
 order: 23
 ---
 Pedestrian Hybrid Beacons are signalized crossing treatments typically used where pedestrian demand and vehicle speeds make unsignalized crossing difficult.

@@ -55,10 +55,13 @@ keywords:
 resources:
   - label: "Executive Briefing: Artificial Intelligence and Machine Learning for Transportation"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/doc/06_AI%20ML%20in%20Transportation_Final%20508_01_25_22.pdf"
+    description: "This resource provides background on Executive Briefing: Artificial Intelligence and Machine Learning for Transportation and its relevance to Machine Learning (ML) Assessment for Traffic Signals."
   - label: "Final Report: Artificial Intelligence (AI)-Enabled Intelligent Transportation Systems (ITS) Capability Maturity Model (CMM) and Readiness Checklists"
-    url: "https://www.bing.com/ck/a?!\u0026\u0026p=9e309be301236912a67241aa7018ec5c5607810e114aeda7515bf6c73d5ad059JmltdHM9MTc3MzAxNDQwMA\u0026ptn=3\u0026ver=2\u0026hsh=4\u0026fclid=2720647a-db9e-6db5-2404-7249da156c08\u0026psq=Machine+Learning+(ML)+Assessment+for+Traffic+Signals+FWHA+DOT+pdf+resource\u0026u=a1aHR0cHM6Ly9yb3NhcC5udGwuYnRzLmdvdi92aWV3L2RvdC83ODg3OS9kb3RfNzg4NzlfRFMxLnBkZg"
+    url: "https://www.bing.com/ck/a?!&&p=9e309be301236912a67241aa7018ec5c5607810e114aeda7515bf6c73d5ad059JmltdHM9MTc3MzAxNDQwMA&ptn=3&ver=2&hsh=4&fclid=2720647a-db9e-6db5-2404-7249da156c08&psq=Machine+Learning+(ML)+Assessment+for+Traffic+Signals+FWHA+DOT+pdf+resource&u=a1aHR0cHM6Ly9yb3NhcC5udGwuYnRzLmdvdi92aWV3L2RvdC83ODg3OS9kb3RfNzg4NzlfRFMxLnBkZg"
+    description: This resource provides background on Artificial Intelligence (AI)-Enabled Intelligent Transportation Systems (ITS) Capability Maturity Model (CMM) and Readiness Checklists and its relevance to Machine Learning (ML) Assessment for Traffic Signals.
   - label: "Report: ATCMTD Final Report for the TDOT Artificial Intelligence-Based Decision Support System"
     url: "https://ops.fhwa.dot.gov/fastact/atcmtd/2018/awards/TDOT_ATCMTD_Final_Report_for_ICM_DSS.pdf"
+    description: This resource provides background on ATCMTD Final Report for the TDOT Artificial Intelligence-Based Decision Support System and its relevance to Machine Learning (ML) Assessment for Traffic Signals.
 order: 50
 ---
 Machine Learning Assessment for Traffic Signals represents a transformative advancement in traffic management, offering an intelligent framework for analyzing and improving signal timing across complex transportation systems. By utilizing real-time data collected from sensors tracking vehicles, pedestrians, and cyclists, along with historical traffic flow and incident data, machine learning algorithms provide unparalleled insights into the performance of traffic signals. These algorithms can identify inefficiencies such as long queues, uneven green light durations, or conflicts between different modes of transportation (e.g., buses, cars, and pedestrians) at intersections.

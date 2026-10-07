@@ -2,8 +2,7 @@
 title: "Road Weather Management"
 category: "Road Weather"
 shortDescription: "Road Weather Management uses weather monitoring systems, predictive analytics, and real-time communication tools to address the impact of adverse weather conditions on transportation. By integrating road-specific weather data and technologies like connected vehicles and automated alerts, it increases safety, reduces delays, and supports proactive decision-making for maintenance and operations. This approach ensures roads remain safe and operational despite challenges like heavy rainfall, snow, ice, fog, or wind."
-additionalToolsSensors:
-  []
+additionalToolsSensors: []
 location:
   - "Rural"
   - "Suburban"
@@ -55,14 +54,19 @@ keywords:
 resources:
   - label: "Report: Road Weather Management Product Guide"
     url: "https://ops-dr.fhwa.dot.gov/weather/resources/publications/fhwa/rwmpg05.pdf"
+    description: This resource provides background on Road Weather Management Product Guide and its relevance to Road Weather Management.
   - label: "Fact Sheet: Road Weather Management Best Practices, Version 3.0"
     url: "https://rosap.ntl.bts.gov/view/dot/25953/dot_25953_DS1.pdf"
+    description: This resource provides background on Road Weather Management Best Practices, Version 3.0 and its relevance to Road Weather Management.
   - label: "Presentation: FHWA Road Weather Management Program Update"
     url: "https://transportation.org/winter-weather-management/wp-content/uploads/sites/50/2023/03/S1_FHWA-1.pdf"
+    description: This resource provides background on FHWA Road Weather Management Program Update and its relevance to Road Weather Management.
   - label: "Web Page: FHWA Road Weather Management Program"
     url: "https://ops.fhwa.dot.gov/Weather/"
+    description: This resource provides background on FHWA Road Weather Management Program and its relevance to Road Weather Management.
   - label: "Report: 2015 Road Weather Management Performance Measures Survey, Analysis, and Report (FHWA-HOP-16-001)"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop16001/fhwahop16001.pdf"
+    description: This resource provides background on 2015 Road Weather Management Performance Measures Survey, Analysis, and Report and its relevance to Road Weather Management.
 order: 53
 ---
 Road Weather Management is a critical domain within intelligent transportation systems (ITS), dedicated to mitigating the effects of adverse weather on road safety and mobility. Weather conditions such as snow, ice, heavy rain, fog, and high winds can significantly impair visibility, traction, and traffic flow, leading to increased risks of accidents and disruptions. Road Weather Management leverages a combination of cutting-edge sensors, data analytics, and communication tools to monitor, predict, and respond to these challenges in real time, ensuring that transportation systems operate smoothly under varying weather conditions.

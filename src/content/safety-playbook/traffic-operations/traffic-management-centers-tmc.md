@@ -58,14 +58,19 @@ keywords:
 resources:
   - label: "Report: Next Generation of Traffic Management Systems and Centers: A Primer"
     url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-24-081.pdf"
+    description: "This resource provides background on Next Generation of Traffic Management Systems and Centers: A Primer and its relevance to Traffic Management Centers."
   - label: "Web Page: Transportation Management Center Pooled Fund Study (TMC PFS)"
     url: "https://tmcpfs.ops.fhwa.dot.gov/"
+    description: This resource provides background on Transportation Management Center Pooled Fund Study and its relevance to Traffic Management Centers.
   - label: "Web Page: Transportation Management Centers"
     url: "https://ops.fhwa.dot.gov/freewaymgmt/trans_mgmnt.htm"
+    description: This resource provides background on Transportation Management Centers and its relevance to Traffic Management Centers.
   - label: "Report: -Review of Traffic Management Systems Current Practice"
     url: "https://rosap.ntl.bts.gov/view/dot/72446"
+    description: This resource provides background on -Review of Traffic Management Systems Current Practice and its relevance to Traffic Management Centers.
   - label: "Web Page: Model Systems Engineering Documents for Closed Circuit Television (CCTV) Systems"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop18060/index.htm#toc"
+    description: This resource provides background on Model Systems Engineering Documents for Closed Circuit Television (CCTV) Systems and its relevance to Traffic Management Centers.
 order: 36
 ---
 Traffic Management Centers (TMCs) are critical facilities responsible for overseeing and optimizing transportation systems. They monitor traffic signals, intersections, and roadway conditions in real time, ensuring efficient traffic flow and rapid identification of issues. In the event of incidents such as crashes or road hazards, TMCs coordinate response efforts with emergency services to minimize disruptions and maintain safety.

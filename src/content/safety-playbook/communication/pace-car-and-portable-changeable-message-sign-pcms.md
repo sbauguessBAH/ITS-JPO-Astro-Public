@@ -55,12 +55,16 @@ keywords:
 resources:
   - label: "Handbook: PCMS"
     url: "https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/reports/03066/"
+    description: This resource provides background on PCMS and its relevance to Pace Car and Portable Changeable Message Sign (PCMS).
   - label: "Handbook: PCMS"
     url: "https://rosap.ntl.bts.gov/view/dot/56395"
+    description: This resource provides background on PCMS and its relevance to Pace Car and Portable Changeable Message Sign (PCMS).
   - label: "Study: Use a Combination of Portable Changeable Message Signs and Flashing Amber/White Lights as Traffic Control Treatments to Reduce Speed and Speed Variation in Work Zones"
     url: "https://www.itskrs.its.dot.gov/2022-l01126"
+    description: This resource provides background on Use a Combination of Portable Changeable Message Signs and Flashing Amber/White Lights as Traffic Control Treatments to Reduce Speed and Speed Variation in Work Zones and its relevance to Pace Car and Portable Changeable Message Sign (PCMS).
   - label: "Guide: Changeable Message Signs (CMS) Usage (IIM-TOD-13-03.5)"
     url: "https://www.vdot.virginia.gov/doing-business/technical-guidance-and-support/technical-guidance-documents/iim-tod-13-03-changeable-message-signs-cms-usage/"
+    description: This resource provides background on Changeable Message Signs (CMS) Usage and its relevance to Pace Car and Portable Changeable Message Sign (PCMS).
 order: 10
 ---
 Portable Changeable Message Signs are versatile traffic safety and management devices designed to communicate important information to drivers in real time. They are commonly deployed in work zones, construction areas, crash sites, and along roadways where traffic conditions may change unexpectedly. These signs can display messages about lane closures, detours, hazardous conditions, and other critical safety information, helping to reduce confusion and improve traffic flow.

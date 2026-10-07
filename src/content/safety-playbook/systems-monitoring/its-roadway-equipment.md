@@ -63,10 +63,13 @@ keywords:
 resources:
   - label: "Web Page: FHWA Resource Center"
     url: "https://www.transportation.gov/grants/dot-navigator/fhwa-resource-center"
+    description: This resource provides background on FHWA Resource Center and its relevance to ITS Roadway Equipment.
   - label: "Executive Briefing: Data Collection and ITS"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-05/executive-briefing/2022%20Executive%20Briefing_Data%20Collection%20and%20ITS_final%20508_05142025_0.pdf"
+    description: "This resource provides background on Executive Briefing: Data Collection and ITS and its relevance to ITS Roadway Equipment."
   - label: "Fact Sheet: Improving Safety and Operations Using Low-Cost ITS Applications on Local and Rural Roads"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/2022-06/its_apps.pdf"
+    description: This resource provides background on Improving Safety and Operations Using Low-Cost ITS Applications on Local and Rural Roads and its relevance to ITS Roadway Equipment.
 order: 38
 ---
 Intelligent Transportation Systems (ITS) roadway equipment is a set of advanced technologies that monitor and communicate real-time information about traffic, road surfaces, and environmental conditions. This includes sensors embedded in or alongside roadways, cameras, radar and lidar detectors, weather stations, and connected communication devices that relay data to traffic management centers and vehicles. By continuously gathering and transmitting information, ITS equipment enables transportation agencies to manage traffic proactively, reduce congestion, and respond quickly to incidents such as crashes, road blockages, or adverse weather conditions.

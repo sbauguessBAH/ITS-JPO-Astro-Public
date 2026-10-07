@@ -64,14 +64,19 @@ keywords:
 resources:
   - label: "Webpage: Ramp Metering"
     url: "https://www.in.gov/indot/traffic-engineering/ramp-metering/"
+    description: This resource provides background on Ramp Metering and its relevance to Coordinated Ramp Metering (CRM).
   - label: "Webpage: -Freeway Management Program Freeway Operations and Traffic Management"
     url: "https://ops.fhwa.dot.gov/freewaymgmt/frwy_ops.htm"
+    description: This resource provides background on -Freeway Management Program Freeway Operations and Traffic Management and its relevance to Coordinated Ramp Metering (CRM).
   - label: "· -Ramp Metering: Informational Brief A Proven, Effective Strategy"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop14021/index.htm"
+    description: "This resource provides background on · -Ramp Metering: Informational Brief A Proven, Effective Strategy and its relevance to Coordinated Ramp Metering (CRM)."
   - label: "· Freeway Management and Operations Handbook, September 2003,"
     url: "https://ops.fhwa.dot.gov/freewaymgmt/publications/frwy_mgmt_handbook/fmoh_complete_all.pdf"
+    description: This resource provides background on · Freeway Management and Operations Handbook, September 2003, and its relevance to Coordinated Ramp Metering (CRM).
   - label: "Report: Integration of Ramp Metering and Off-RampProgression"
     url: "https://rosap.ntl.bts.gov/view/dot/53605"
+    description: This resource provides background on Integration of Ramp Metering and Off-RampProgression and its relevance to Coordinated Ramp Metering (CRM).
 order: 43
 ---
 Coordinated Ramp Metering is a sophisticated transportation management strategy designed to regulate traffic entering highways through a system of interconnected on-ramp signals. Unlike isolated ramp metering, which controls individual ramps independently, coordinated ramp metering employs advanced technologies such as sensors, predictive modeling, and communication platforms to manage multiple ramps as a unified system. By analyzing real-time data on vehicle speeds, volumes, and congestion levels across the network, the system dynamically adjusts the metering rates to maintain optimal traffic flow on both the highways and feeder ramps.

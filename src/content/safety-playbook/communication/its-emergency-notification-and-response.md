@@ -49,10 +49,13 @@ keywords:
 resources:
   - label: "Fact Sheet: Transportation Emergency Response"
     url: "https://www.transportation.gov/sites/dot.gov/files/2021-03/Transportation-Emergency-Response-Factsheet-5-Surface-Public.pdf"
+    description: This resource provides background on Transportation Emergency Response and its relevance to ITS Emergency Notification and Response.
   - label: "Web Page: Incident and Emergency Response Essential ITS Benefits"
     url: "https://www.itskrs.its.dot.gov/benefits/essential-its/incident-and-emergency-response"
+    description: This resource provides background on Incident and Emergency Response Essential ITS Benefits and its relevance to ITS Emergency Notification and Response.
   - label: "Fact Sheet: ITS for Incident Response"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2026-02/snapshot/ITS%20for%20Incident%20Response%20Snapshot_FINAL508.pdf"
+    description: This resource provides background on ITS for Incident Response and its relevance to ITS Emergency Notification and Response.
 order: 39
 ---
 Emergency Notification and Response Systems are essential components of contemporary emergency management, designed to quickly inform the public and coordinate response efforts during critical situations. These systems can broadcast urgent information to large populations, reducing confusion and enhancing safety during events such as severe weather, missing persons incidents, or other emergencies. They communicate through multiple channels, including SMS, email, social media, and public address systems, to reach the widest possible audience. Beyond public notifications, ENS supports coordination among emergency personnel by providing real-time updates, improving the efficiency and effectiveness of response efforts. By delivering timely, accurate, and targeted information, ENS systems play a vital role in protecting lives, reducing risks, and maintaining public safety during emergencies.

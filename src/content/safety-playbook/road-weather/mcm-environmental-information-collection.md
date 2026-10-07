@@ -54,12 +54,16 @@ keywords:
 resources:
   - label: "Web Page: ARC-IT MCM Environmental Information Collection"
     url: "https://www.arc-it.us/html/functionalobjects/funobj35.html"
+    description: This resource provides background on ARC-IT MCM Environmental Information Collection and its relevance to Maintenance and Construction Management (MCM) Environmental Information Collection.
   - label: "Web Page: Virginia Statewide ITS Architecture MCM Environmental Information Collection"
     url: "https://local.iteris.com/virginiaitsarchitecture/architectures/statewide/html/requirements/funcarea35.html"
+    description: This resource provides background on Virginia Statewide ITS Architecture MCM Environmental Information Collection and its relevance to Maintenance and Construction Management (MCM) Environmental Information Collection.
   - label: "Web Page: MCM Environmental Informational Collection Functional"
-    url: "https://www.bing.com/ck/a?!\u0026\u0026p=bd849fe9ec2d01dfa4dfcd41fcb1b7a848963cb83da01946689da65339d95628JmltdHM9MTc4NTk3NDQwMA\u0026ptn=3\u0026ver=2\u0026hsh=4\u0026fclid=2acfcda7-a5e3-69ee-2bc5-dbaaa4826833\u0026psq=mcm+environmental+information+collection\u0026u=a1aHR0cDovL3d3dy5ydGMud2EuZ292L3dwLWNvbnRlbnQvdXBsb2Fkcy92Zi1hcmNoZGIyL2h0bWwvcmVxL2Z1bjM1Lmh0bQ"
+    url: "https://www.bing.com/ck/a?!&&p=bd849fe9ec2d01dfa4dfcd41fcb1b7a848963cb83da01946689da65339d95628JmltdHM9MTc4NTk3NDQwMA&ptn=3&ver=2&hsh=4&fclid=2acfcda7-a5e3-69ee-2bc5-dbaaa4826833&psq=mcm+environmental+information+collection&u=a1aHR0cDovL3d3dy5ydGMud2EuZ292L3dwLWNvbnRlbnQvdXBsb2Fkcy92Zi1hcmNoZGIyL2h0bWwvcmVxL2Z1bjM1Lmh0bQ"
+    description: This resource provides background on MCM Environmental Informational Collection Functional and its relevance to Maintenance and Construction Management (MCM) Environmental Information Collection.
   - label: "Executive Briefing: Rural Road Weather Management Systems"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-05/executive-briefing/11_Rural%20Road%20Weather%20Management%20Systems_FINAL508_05072025.pdf"
+    description: "This resource provides background on Executive Briefing: Rural Road Weather Management Systems and its relevance to Maintenance and Construction Management (MCM) Environmental Information Collection."
 order: 11
 ---
 The MCM Environmental Information Collection system is a comprehensive solution for monitoring and assessing environmental conditions on roadways. It collects real-time data from a network of environmental sensors deployed along roads and mounted on maintenance vehicles, capturing key parameters such as road surface temperature, moisture levels, ice formation, salinity, and overall weather conditions. By aggregating this data, the system provides a detailed and continuously updated picture of roadway conditions, helping transportation agencies maintain safe and efficient travel.

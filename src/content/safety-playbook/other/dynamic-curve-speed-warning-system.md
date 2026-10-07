@@ -51,12 +51,16 @@ keywords:
 resources:
   - label: "Report: Evaluation of Dynamic Speed Feedback Signs on Curves: A National Demonstration Project"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-14-020.pdf"
+    description: "This resource provides background on Evaluation of Dynamic Speed Feedback Signs on Curves: A National Demonstration Project and its relevance to Dynamic Curve Speed Warning System."
   - label: "Report: In-Vehicle Dynamic Curve-Speed Warnings at High-Risk Rural Curves"
     url: "https://mdl.mndot.gov/_flysystem/fedora/2023-01/201812.pdf"
+    description: This resource provides background on In-Vehicle Dynamic Curve-Speed Warnings at High-Risk Rural Curves and its relevance to Dynamic Curve Speed Warning System.
   - label: "Flyer: Horizontal Curve Safety"
     url: "https://highways.dot.gov/safety/rwd/keep-vehicles-road/horizontal-curve-safety"
+    description: This resource provides background on Horizontal Curve Safety and its relevance to Dynamic Curve Speed Warning System.
   - label: "Report: Making Our Roads Safer: One Countermeasure at a Time"
     url: "https://rosap.ntl.bts.gov/view/dot/88186"
+    description: "This resource provides background on Making Our Roads Safer: One Countermeasure at a Time and its relevance to Dynamic Curve Speed Warning System."
 order: 26
 ---
 Dynamic curve warning systems are traffic safety technologies designed to reduce crashes on road segments with sharp or high-risk horizontal curves. These systems monitor approaching vehicle speeds and activate advanced warning signs when a driver exceeds a safe threshold speed for the curve. By providing timely visual and, in some cases, auditory alerts, dynamic curve systems prompt drivers to slow down and navigate curves more safely.

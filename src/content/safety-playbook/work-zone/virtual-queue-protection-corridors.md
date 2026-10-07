@@ -18,7 +18,7 @@ safety:
   - "Heavy Vehicle"
   - "Speeding"
   - "Congestion"
-  - "Work Zones"
+  - "Work Zone Safety"
 keywords:
   - "Virtual Queue Protection Corridors"
   - "Virtual queue protection corridor system"
@@ -56,14 +56,19 @@ keywords:
 resources:
   - label: "Presentation: Traffic Management Systems (TMSs) Actively Managing the Display of Queue Warning Messages"
     url: "https://tmcpfs.ops.fhwa.dot.gov/pdfs/Task-2396_Presentation.pdf"
+    description: This resource provides background on Traffic Management Systems (TMSs) Actively Managing the Display of Queue Warning Messages and its relevance to Virtual Queue Protection Corridors.
   - label: "Newsletter: STIC Innovation in Motion e-Newsletter, February 2025 Edition"
     url: "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/about-us/commissions-committees/statetransportationinnovationcouncil/documents/e-newsletter/2025/february%202025%20edition.pdf"
+    description: This resource provides background on STIC Innovation in Motion e-Newsletter, February 2025 Edition and its relevance to Virtual Queue Protection Corridors.
   - label: "Report: Traffic Management Systems Actively Managing the Display of Queue Warning Messages"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-049.pdf"
+    description: This resource provides background on Traffic Management Systems Actively Managing the Display of Queue Warning Messages and its relevance to Virtual Queue Protection Corridors.
   - label: "Executive Briefing: Vehicle-to-Everything (V2X) Technology - Queue Warning"
     url: "https://www.itskrs.its.dot.gov/briefings/executive-briefing/vehicle-everything-v2x-technology-queue-warning"
+    description: "This resource provides background on Executive Briefing: Vehicle-to-Everything (V2X) Technology - Queue Warning and its relevance to Virtual Queue Protection Corridors."
   - label: "Virtual Queue Protection Corridors Case Study"
     url: "https://www.transportationops.org/case-studies/virtual-queue-protection-corridors"
+    description: This resource provides background on Virtual Queue Protection Corridors Case Study and its relevance to Virtual Queue Protection Corridors.
 order: 17
 ---
 Virtual Queue Protection Corridors are an advanced traffic safety and management solution aimed at preventing collisions and improving driver safety in and around work zones. These corridors use a combination of IoT-enabled sensors, automated detection systems, and real-time communication technologies to monitor and manage vehicle queues dynamically. By detecting the formation and progression of queues in real-time, these systems can identify when vehicles are slowing down or coming to a stop, which often occurs suddenly in construction zones, posing significant safety risks. The gathered data, combined with AI-powered traffic flow models, enables dynamic responses, such as activating warning signs, adjusting speed limits, or providing direct notifications to connected vehicles.

@@ -2,8 +2,7 @@
 title: "Advanced Traffic Management Systems Software"
 category: "Systems Monitoring"
 shortDescription: "Advanced Traffic Management Systems (ATMS) Software is a platform that integrates real-time data collection, communication, and analytics to optimize the efficiency and safety of transportation networks. It centralizes traffic monitoring and control, enabling agencies to respond dynamically to traffic conditions, incidents, and congestion. By leveraging IoT sensors, predictive algorithms, and Vehicle-to-Infrastructure communication, ATMS software can improve safety and traffic flow."
-additionalToolsSensors:
-  []
+additionalToolsSensors: []
 location:
   - "Urban"
 facility:
@@ -17,7 +16,7 @@ safety:
   - "Emergency Response"
   - "Speeding"
   - "Road Weather Safety"
-  - "Intersections"
+  - "Intersection Safety"
 keywords:
   - "Advanced Traffic Management Systems Software"
   - "Real-time traffic management platform"
@@ -53,14 +52,19 @@ keywords:
 resources:
   - label: "Report: Next Generation of Traffic Management Systems and Centers: A Primer"
     url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-24-081.pdf"
+    description: "This resource provides background on Next Generation of Traffic Management Systems and Centers: A Primer and its relevance to Advanced Traffic Management Systems Software."
   - label: "Report: Active Traffic Management (ATM) Implementation and Operations Guide"
     url: "https://rosap.ntl.bts.gov/view/dot/41042/dot_41042_DS1.pdf"
+    description: This resource provides background on Active Traffic Management (ATM) Implementation and Operations Guide and its relevance to Advanced Traffic Management Systems Software.
   - label: "Web Page: Real-Time System Management Information Program"
     url: "https://ops.fhwa.dot.gov/1201/"
+    description: This resource provides background on Real-Time System Management Information Program and its relevance to Advanced Traffic Management Systems Software.
   - label: "Fact Sheet: Decision Support for Traffic Management Systems"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-23-044.pdf"
+    description: This resource provides background on Decision Support for Traffic Management Systems and its relevance to Advanced Traffic Management Systems Software.
   - label: "Report: Review of Traffic Management Systems-Current Practice"
     url: "https://rosap.ntl.bts.gov/view/dot/72446"
+    description: This resource provides background on Review of Traffic Management Systems-Current Practice and its relevance to Advanced Traffic Management Systems Software.
 order: 55
 ---
 Advanced Traffic Management Systems (ATMS) Software is an integral part of modern intelligent transportation systems, offering comprehensive solutions for monitoring, controlling, and optimizing traffic operations in urban and regional networks. ATMS software serves as the centralized hub for transportation agencies, collecting data from IoT-enabled traffic sensors, cameras, and connected vehicle systems. This data is processed in real-time using cloud-based platforms and artificial intelligence algorithms to provide actionable insights, such as identifying bottlenecks, predicting traffic surges, and detecting incidents like accidents or stalled vehicles.

@@ -129,6 +129,12 @@ const keywords = [data.title, data.category, ...data.safety, ...data.location, .
     font-weight: 600;
   }
 
+  .resource-description {
+    margin: 0.25rem 0 0;
+    color: rgb(var(--color-gray));
+    line-height: 1.45;
+  }
+
   .playbook-tag-safety {
      background: #cee5ef;
     color: #055681;
@@ -189,12 +195,13 @@ const keywords = [data.title, data.category, ...data.safety, ...data.location, .
           data.resources.length > 0 && (
             <section class="meta-card p-0 mt-2">
               <h3 class="mt-4">Additional Resources</h3>
-              <ul >
-                {data.resources.map((resource: { label: string; url: string }) => (
+              <ul class="resource-list">
+                {data.resources.map((resource: { label: string; url: string; description?: string }) => (
                   <li>
-                    <a  href={resource.url} target="_blank" rel="noopener noreferrer">
+                    <a class="resource-link" href={resource.url} target="_blank" rel="noopener noreferrer">
                       {resource.label}
                     </a>
+                    {resource.description && <p class="resource-description">{resource.description}</p>}
                   </li>
                 ))}
               </ul>

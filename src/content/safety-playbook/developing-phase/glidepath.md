@@ -19,7 +19,7 @@ facility:
   - "Intersection"
   - "Interchange"
 safety:
-  - "Intersections"
+  - "Intersection Safety"
   - "Speeding"
   - "Congestion"
   - "Heavy Vehicle"
@@ -56,12 +56,16 @@ keywords:
 resources:
   - label: "Report: Eco-Approach and Departure at Signalized IntersectionsFHWA-HRT-15-011"
     url: "https://rosap.ntl.bts.gov/view/dot/34781"
+    description: This resource provides background on Eco-Approach and Departure at Signalized IntersectionsFHWA-HRT-15-011 and its relevance to Glidepath.
   - label: "Briefing: Cooperative Driving Automation (CDA) Update for the Research and Technology Coordinating Committee Meeting"
     url: "https://www.nationalacademies.org/cdn/materials/9fba1271-edaa-46f2-8144-4f66113db38b"
+    description: This resource provides background on Cooperative Driving Automation (CDA) Update for the Research and Technology Coordinating Committee Meeting and its relevance to Glidepath.
   - label: "Report: Cooperative Automation Research CARMA Proof-of-Concept TSMO Use Case 2"
     url: "https://www.fhwa.dot.gov/publications/research/operations/21069/21069.pdf"
+    description: This resource provides background on Cooperative Automation Research CARMA Proof-of-Concept TSMO Use Case 2 and its relevance to Glidepath.
   - label: "Brief: Eco-Drive Experiment on Rolling Terrain for Fuel Consumption Optimization"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-18-010.pdf"
+    description: This resource provides background on Eco-Drive Experiment on Rolling Terrain for Fuel Consumption Optimization and its relevance to Glidepath.
 order: 47
 ---
 Glidepath is a transportation system enhancement that leverages advanced communication and sensor technologies to optimize traffic flow and improve fuel efficiency. By incorporating tools such as GPS tracking, traffic signal phase and timing (SPaT) messages, and vehicle-to-infrastructure (V2I) communication, Glidepath provides vehicles with guidance on the optimal speed needed to synchronize their travel with traffic signal changes. This functionality aims to minimize stop-and-going driving by helping vehicles seamlessly "glide" through green lights, reducing delays and enhancing the overall efficiency of roadway networks.

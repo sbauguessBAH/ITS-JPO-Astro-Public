@@ -50,14 +50,19 @@ keywords:
 resources:
   - label: "Handbook: Traffic Signal Program Handbook"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop23041/fhwahop23041.pdf"
+    description: This resource provides background on Traffic Signal Program Handbook and its relevance to Traffic Signal Coordination.
   - label: "Manual Chapter: Traffic Signal Timing Manual, Chapter 6"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop08024/chapter6.htm"
+    description: "This resource provides background on Manual Chapter: Traffic Signal Timing Manual, Chapter 6 and its relevance to Traffic Signal Coordination."
   - label: "Guide: Signal Timing Under Saturated Conditions"
     url: "https://rosap.ntl.bts.gov/view/dot/20668"
+    description: This resource provides background on Signal Timing Under Saturated Conditions and its relevance to Traffic Signal Coordination.
   - label: "Fact Sheet: Advanced Traffic Signal Control Optimization in a Cooperative Driving Automation Environment"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-096.pdf"
+    description: This resource provides background on Advanced Traffic Signal Control Optimization in a Cooperative Driving Automation Environment and its relevance to Traffic Signal Coordination.
   - label: "Report: Signal Timing on a Shoestring"
     url: "https://rosap.ntl.bts.gov/view/dot/732"
+    description: This resource provides background on Signal Timing on a Shoestring and its relevance to Traffic Signal Coordination.
 order: 32
 ---
 Traffic signal coordination is a key component of intelligent transportation systems (ITS) designed to optimize traffic flow along arterial corridors. By synchronizing the timing of multiple traffic signals, vehicles can pass through consecutive intersections with minimal stopping, reducing delays and improving overall travel efficiency. This coordination relies on advanced technologies, including traffic sensors, adaptive algorithms, and central traffic management software, which monitors traffic patterns and adjusts signal phases in real time.

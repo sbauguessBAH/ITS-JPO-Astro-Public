@@ -231,6 +231,7 @@ const safetyPlaybook = defineCollection({
     resources: z.array(z.object({
       label: z.string(),
       url: z.string().url(),
+      description: z.string().optional(),
     })).default([]),
     order: z.number().int().optional(),
   })

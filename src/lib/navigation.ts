@@ -247,6 +247,10 @@ export const navigation: NavigationItem[] = [
         url: "/research-areas/safety-playbook",
         pages: [
           {
+            name: "Safety Playbook Home",
+            url: "/research-areas/safety-playbook/",
+          },
+          {
             name: "Safety Areas and Descriptions Glossary",
             url: "/research-areas/safety-playbook/glossary",
           },

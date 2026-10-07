@@ -55,8 +55,10 @@ keywords:
 resources:
   - label: "Web Page: Arizona DOT Dust Detection and Warning System"
     url: "https://www.transportationops.org/case-studies/arizona-dot-dust-detection-and-warning-system"
+    description: This resource provides background on Arizona DOT Dust Detection and Warning System and its relevance to Dual Use Safety Technology (DUST) Warning System.
   - label: "Report: Early Warning Sensor Network for Brown-Out Conditions: Phase II - Field Testing and Assessment"
     url: "https://rosap.ntl.bts.gov/view/dot/32233"
+    description: "This resource provides background on Early Warning Sensor Network for Brown-Out Conditions: Phase II - Field Testing and Assessment and its relevance to Dual Use Safety Technology (DUST) Warning System."
 order: 2
 ---
 The Dual Use Safety Technology (DUST) Warning System is designed to address weather-related challenges along Interstate 10 in Arizona, particularly in areas prone to dust storms and winter icing. Developed and deployed by the Arizona Department of Transportation, the system provides early detection and warning capabilities that help drivers and transportation managers respond more effectively to hazardous road conditions.

@@ -56,14 +56,19 @@ keywords:
 resources:
   - label: "Web Page: Essential ITS: Smart Work Zones"
     url: "https://www.itskrs.its.dot.gov/benefits/essential-its/smart-work-zones"
+    description: "This resource provides background on Essential ITS: Smart Work Zones and its relevance to Smart Work Zones (SWZ)."
   - label: "Case Study: ’FDOTs Smart Work Zone Initiative"
     url: "https://www.transportationops.org/case-studies/fdots-smart-work-zone-initiative"
+    description: This resource provides background on ’FDOTs Smart Work Zone Initiative and its relevance to Smart Work Zones (SWZ).
   - label: "Report: Development of Design Guidance for Smart Work Zone Systems (FHWA-ICT-24-001)"
     url: "https://rosap.ntl.bts.gov/view/dot/73130"
+    description: This resource provides background on Development of Design Guidance for Smart Work Zone Systems and its relevance to Smart Work Zones (SWZ).
   - label: "Executive Briefing: ITS Deployment Evaluation: ITS for Work Zones"
     url: "https://rosap.ntl.bts.gov/view/dot/65711"
+    description: "This resource provides background on Executive Briefing: ITS Deployment Evaluation: ITS for Work Zones and its relevance to Smart Work Zones (SWZ)."
   - label: "Report: Smarter Work Zones"
     url: "https://rosap.ntl.bts.gov/view/dot/48718"
+    description: This resource provides background on Smarter Work Zones and its relevance to Smart Work Zones (SWZ).
 order: 15
 ---
 Smart work zones are technologically enhanced construction and maintenance areas designed to improve safety, efficiency, and traffic management. By leveraging tools such as Automated Flagger Assistance Devices, Queue Warning Systems, sensors, and real-time communication platforms, these zones actively monitor both traffic and worker activity. Traffic flow is optimized through dynamic speed limits, detour recommendations, and live updates to drivers, helping to reduce congestion and enhance travel efficiency.

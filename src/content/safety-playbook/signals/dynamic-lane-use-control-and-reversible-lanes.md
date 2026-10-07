@@ -54,14 +54,19 @@ keywords:
 resources:
   - label: "Executive Briefing: Advanced Traffic Management Strategies"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-06/executive-briefing/EB04-ATM%20STRATEGIES%202019_FINAL508_06022025.pdf"
+    description: "This resource provides background on Executive Briefing: Advanced Traffic Management Strategies and its relevance to Dynamic Lane Use Control and Reversible Lanes."
   - label: "Technical Brief: Simulator Assessment of Alternative Lane Grouping at Signalized Intersections"
     url: "https://rosap.ntl.bts.gov/view/dot/42421"
+    description: This resource provides background on Simulator Assessment of Alternative Lane Grouping at Signalized Intersections and its relevance to Dynamic Lane Use Control and Reversible Lanes.
   - label: "Technical Report: Active Traffic Management (ATM) Implementation and Operations Guide"
     url: "https://ops-dr.fhwa.dot.gov/publications/fhwahop17056/fhwahop17056.pdf"
+    description: This resource provides background on Active Traffic Management (ATM) Implementation and Operations Guide and its relevance to Dynamic Lane Use Control and Reversible Lanes.
   - label: "Report: Simulator Assessment of Alternative Lane Grouping at Signalized Intersections"
     url: "https://rosap.ntl.bts.gov/view/dot/40085"
+    description: This resource provides background on Simulator Assessment of Alternative Lane Grouping at Signalized Intersections and its relevance to Dynamic Lane Use Control and Reversible Lanes.
   - label: "Report: Cooperative Driving Automation-Highway Driving Simulator Architecture: High-Level Architecture Design"
     url: "https://rosap.ntl.bts.gov/view/dot/86226"
+    description: "This resource provides background on Cooperative Driving Automation-Highway Driving Simulator Architecture: High-Level Architecture Design and its relevance to Dynamic Lane Use Control and Reversible Lanes."
 order: 31
 ---
 Dynamic Lane Use Control is a proactive traffic operations approach designed to optimize roadway performance by dynamically managing how lanes are used in response to real-time traffic conditions. Using data from traffic sensors, cameras, and traffic management centers, the system can open or close lanes, shift lane directions, or designate special-use lanes to maximize facility throughput. This flexibility allows transportation agencies to make better use of existing roadway capacity without the need for physical expansion.

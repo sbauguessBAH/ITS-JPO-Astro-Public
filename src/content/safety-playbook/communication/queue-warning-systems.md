@@ -17,7 +17,7 @@ facility:
 safety:
   - "Congestion"
   - "Speeding"
-  - "Work Zones"
+  - "Work Zone Safety"
 keywords:
   - "Queue Warning Systems"
   - "Automated queue detection system"
@@ -58,12 +58,16 @@ keywords:
 resources:
   - label: "Presentation: Traffic Management Systems (TMSs) Actively Managing the Display of Queue Warning Messages"
     url: "https://highways.dot.gov/media/67636"
+    description: This resource provides background on Traffic Management Systems (TMSs) Actively Managing the Display of Queue Warning Messages and its relevance to Queue Warning Systems.
   - label: "Guide: Work Zone Intelligent Transportation Systems Implementation Guide"
     url: "https://www.transportationops.org/publications/work-zone-intelligent-transportation-systems-implementation-guide"
+    description: This resource provides background on Work Zone Intelligent Transportation Systems Implementation Guide and its relevance to Queue Warning Systems.
   - label: "Report: Benefits Related to Traffic Congestion and Safety Can Be Limited by Various Factors"
     url: "https://www.gao.gov/assets/gao-23-105740.pdf"
+    description: This resource provides background on Benefits Related to Traffic Congestion and Safety Can Be Limited by Various Factors and its relevance to Queue Warning Systems.
   - label: "Report: System Monitoring of Auto Traffic Queue Detection and Congestion Impact Assessment"
     url: "https://rosap.ntl.bts.gov/view/dot/63565"
+    description: This resource provides background on System Monitoring of Auto Traffic Queue Detection and Congestion Impact Assessment and its relevance to Queue Warning Systems.
 order: 7
 ---
 Queue Warning Systems are advanced traffic management tools that enhance road safety and optimize traffic flow by providing real-time alerts about slowdowns, stopped vehicles, or potential congestion ahead. These systems use technologies such as radar sensors, loop detectors, cameras, and wireless communication networks to monitor traffic conditions continuously. When a queue or sudden reduction in speed is detected, the system activates dynamic warning signs, flashing lights, or variable message displays to alert drivers, giving them sufficient time to react and avoid collisions.

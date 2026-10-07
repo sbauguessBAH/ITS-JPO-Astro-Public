@@ -1,5 +1,5 @@
 ---
-title: "Road Weather Information Systems (RWIS) \u0026 Environmental Sensor Stations (ESS)"
+title: "Road Weather Information Systems (RWIS) & Environmental Sensor Stations (ESS)"
 category: "Road Weather"
 shortDescription: "Road Weather Information Systems (RWIS) play a role in enhancing road safety, efficiency, and the collection of data for clear decision making. This infrastructure uses sensors that monitor roadway conditions, such as temperature, precipitation, wind, and surface state which enhances driver safety by providing real-time weather information, which helps in preparing for and responding to various weather conditions that can lead to crashes due to reduced visibility and slippery roads. An Environmental Sensor Station (ESS) is a key component of Road Weather Information Systems (RWIS). It is a physical site equipped with advanced sensors that collect real-time data on atmospheric, road surface, and subsurface conditions. These sensors monitor parameters such as temperature, humidity, precipitation type and intensity, wind speed and direction, road surface temperature, pavement conditions, and even subsurface moisture levels."
 additionalToolsSensors:
@@ -60,14 +60,18 @@ keywords:
   - "Maintenance Decision Support System"
   - "MDSS"
 resources:
-  - label: "Web Page: FHWA’s Road Weather Management Program’s Frequently Asked Questions (RWMP\u0027s Frequently Asked Questions"
+  - label: "Web Page: FHWA’s Road Weather Management Program’s Frequently Asked Questions (RWMP's Frequently Asked Questions"
     url: "https://ops.fhwa.dot.gov/Weather/faq.htm"
+    description: This resource provides background on FHWA’s Road Weather Management Program’s Frequently Asked Questions (RWMP's Frequently Asked Questions and its relevance to Road Weather Information Systems (RWIS) & Environmental Sensor Stations (ESS).
   - label: "Fact Sheet: Florida Department of Transportation Bridge Wind Speed Alerting System"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop21088/fhwahop21088.pdf"
+    description: This resource provides background on Florida Department of Transportation Bridge Wind Speed Alerting System and its relevance to Road Weather Information Systems (RWIS) & Environmental Sensor Stations (ESS).
   - label: "Fact Sheet: Weather-Savvy Roads: Getting Data into the Weather Data Environment (FHWA-HOP-18-029)"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop18029/fhwahop18029.pdf"
+    description: "This resource provides background on Weather-Savvy Roads: Getting Data into the Weather Data Environment and its relevance to Road Weather Information Systems (RWIS) & Environmental Sensor Stations (ESS)."
   - label: "Report: Integrating Road Weather Technology Data in Highway Operations (MC-24-SHA/UM/612)"
     url: "https://rosap.ntl.bts.gov/view/dot/78701/dot_78701_DS1.pdf?utm_source"
+    description: This resource provides background on Integrating Road Weather Technology Data in Highway Operations and its relevance to Road Weather Information Systems (RWIS) & Environmental Sensor Stations (ESS).
 order: 1
 ---
 Road Weather Information Systems (RWIS) play a vital role in transportation operations by providing accurate, real time, and predictive information about weather and road conditions. These systems support transportation managers, road operators, and maintenance crews by enabling data driven decisions that enhance safety, reduce operational costs, and maintain efficient traffic flow, particularly during winter weather events.

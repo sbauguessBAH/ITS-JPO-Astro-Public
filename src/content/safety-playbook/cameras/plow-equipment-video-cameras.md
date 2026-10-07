@@ -55,12 +55,16 @@ keywords:
 resources:
   - label: "Lesson Learned: Video Cameras Equipped With Lens Cleaning Systems Are Universally Recommended To Help Winter Maintenance Vehicle Drivers Observe and Operate Plow Equipment More Safely and Effectively"
     url: "https://www.itskrs.its.dot.gov/2022-l01144"
+    description: "This resource provides background on Lesson Learned: Video Cameras Equipped With Lens Cleaning Systems Are Universally Recommended To Help Winter Maintenance Vehicle Drivers Observe and Operate Plow Equipment More Safely and Effectively and its relevance to Plow Equipment Video Cameras."
   - label: "Innovation Summary: Snowplow Cameras and Automated Vehicle Locator Innovation"
     url: "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/images/about-us/statetransportationinnovationcouncil/innovations/publishingimages/snow-plow-cameras-and-avl/snow%20plow%20camera%20and%20avl%20lessons%20learned.pdf"
+    description: "This resource provides background on Innovation Summary: Snowplow Cameras and Automated Vehicle Locator Innovation and its relevance to Plow Equipment Video Cameras."
   - label: "Research Brief: Recommendations for Adding Camera Systems on Snowplows"
     url: "https://mdl.mndot.gov/items/CR1703B"
+    description: This resource provides background on Recommendations for Adding Camera Systems on Snowplows and its relevance to Plow Equipment Video Cameras.
   - label: "Report: Aftermarket Cameras in Winter Maintenance Vehicles"
     url: "https://rosap.ntl.bts.gov/view/dot/60913"
+    description: This resource provides background on Aftermarket Cameras in Winter Maintenance Vehicles and its relevance to Plow Equipment Video Cameras.
 order: 9
 ---
 Video cameras installed on plow equipment are essential tools for improving both safety and operational efficiency in winter maintenance operations. These cameras allow operators to monitor the functioning of snowplows and associated equipment in real time, ensuring that all processes are performed correctly and efficiently. They also provide valuable guidance for material application, helping to ensure that salt, sand, or other de-icing materials are spread evenly across road surfaces for maximum effectiveness.

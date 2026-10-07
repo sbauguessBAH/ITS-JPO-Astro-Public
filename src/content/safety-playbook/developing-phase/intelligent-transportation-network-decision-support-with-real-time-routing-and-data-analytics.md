@@ -56,15 +56,20 @@ keywords:
   - "Real-time routing"
 resources:
   - label: "Report: Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics"
-    url: "https://www.bing.com/ck/a?!\u0026\u0026p=87a5e9986a1c5f3bd78a3c26cbd27b2ce4497c3a40f6e1a04ba46ccdc282f23fJmltdHM9MTc3MzAxNDQwMA\u0026ptn=3\u0026ver=2\u0026hsh=4\u0026fclid=2720647a-db9e-6db5-2404-7249da156c08\u0026psq=Intelligent+Transportation+Network+Decision+Support+with+Real-time+Routing+and+Data+Analytics++FWHA+DOT+pdf+resource\u0026u=a1aHR0cHM6Ly9yb3NhcC5udGwuYnRzLmdvdi92aWV3L2RvdC84NTE1MC9kb3RfODUxNTBfRFMxLnBkZg"
+    url: "https://www.bing.com/ck/a?!&&p=87a5e9986a1c5f3bd78a3c26cbd27b2ce4497c3a40f6e1a04ba46ccdc282f23fJmltdHM9MTc3MzAxNDQwMA&ptn=3&ver=2&hsh=4&fclid=2720647a-db9e-6db5-2404-7249da156c08&psq=Intelligent+Transportation+Network+Decision+Support+with+Real-time+Routing+and+Data+Analytics++FWHA+DOT+pdf+resource&u=a1aHR0cHM6Ly9yb3NhcC5udGwuYnRzLmdvdi92aWV3L2RvdC84NTE1MC9kb3RfODUxNTBfRFMxLnBkZg"
+    description: This resource provides background on Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics and its relevance to Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics.
   - label: "Report: Predictive Analytics for Traffic Management Systems"
     url: "https://www.itskrs.its.dot.gov/SRC-2024-3"
+    description: This resource provides background on Predictive Analytics for Traffic Management Systems and its relevance to Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics.
   - label: "Report: Decision Support for Traffic Management Systems-Current Practices"
     url: "https://www.fhwa.dot.gov/publications/research/operations/21108/21108.pdf"
+    description: This resource provides background on Decision Support for Traffic Management Systems-Current Practices and its relevance to Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics.
   - label: "Webpage: Applying Predictive Analytics into the Real-time Management and Operation of Traffic Management Systems (TMSs)"
     url: "https://tmcpfs.ops.fhwa.dot.gov/projects/predictiveanalytics.htm"
+    description: This resource provides background on Applying Predictive Analytics into the Real-time Management and Operation of Traffic Management Systems and its relevance to Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics.
   - label: "Report: Decision Support Methods and Tools for Traffic Management Systems"
     url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-23-071.pdf"
+    description: This resource provides background on Decision Support Methods and Tools for Traffic Management Systems and its relevance to Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics.
 order: 48
 ---
 Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics is a comprehensive system that uses advanced data collection, communication, and processing technologies to enhance the efficiency and functionality of modern transportation networks. This system gathers data from diverse sources, including IoT-enabled sensors, GPS-equipped vehicles, crowdsourced traffic reporting apps, and geographic information systems (GIS). These inputs are combined and analyzed using big data analytics and artificial intelligence to deliver actionable insights for real-time traffic management and decision-making.

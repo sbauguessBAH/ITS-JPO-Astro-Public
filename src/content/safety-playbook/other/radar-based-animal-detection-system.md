@@ -50,12 +50,16 @@ keywords:
 resources:
   - label: "Research Report: The Reliability and Effectiveness of a Radar-Based Animal Detection System"
     url: "https://apps.itd.idaho.gov/apps/research/Completed/RP247.pdf"
+    description: This resource provides background on The Reliability and Effectiveness of a Radar-Based Animal Detection System and its relevance to Radar-Based Animal Detection System.
   - label: "Study: Radar-Based Animal Detection System on U.S. Highway-95 Reduced Traffic Speeds by 0.7 to 4.4 Miles per Hour"
     url: "https://www.itskrs.its.dot.gov/2021-b01581"
+    description: This resource provides background on Radar-Based Animal Detection System on U.S. Highway-95 Reduced Traffic Speeds by 0.7 to 4.4 Miles per Hour and its relevance to Radar-Based Animal Detection System.
   - label: "Webpage: Wildlife Crossings Program"
     url: "https://highways.dot.gov/federal-lands/wildlife-crossings"
+    description: This resource provides background on Wildlife Crossings Program and its relevance to Radar-Based Animal Detection System.
   - label: "Report To Congress: Wildlife-Vehicle Collision Reduction Study"
     url: "https://www.fhwa.dot.gov/publications/research/safety/08034/09.cfm"
+    description: This resource provides background on Wildlife-Vehicle Collision Reduction Study and its relevance to Radar-Based Animal Detection System.
 order: 24
 ---
 Radar-based animal detection systems are advanced technologies designed to improve road safety and support wildlife conservation by detecting animals near roadways. These systems use Doppler radar and other sensing technologies to identify large mammals and other wildlife approaching highways, providing early warnings to drivers and helping prevent collisions. When animals are detected, the system can automatically activate warning signs, alerting motorists to potential hazards and increasing compliance.

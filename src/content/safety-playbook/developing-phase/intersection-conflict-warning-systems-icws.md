@@ -53,10 +53,13 @@ keywords:
 resources:
   - label: "Report: Intersection Conflict Warning System Human Factors"
     url: "https://www.fhwa.dot.gov/publications/research/safety/16061/16061.pdf"
+    description: This resource provides background on Intersection Conflict Warning System Human Factors and its relevance to Intersection Conflict Warning Systems.
   - label: "Flyer: Intersection Conflict Warning Systems"
     url: "https://www.in.gov/indot/files/ICWS-Flyer.pdf"
+    description: This resource provides background on Intersection Conflict Warning Systems and its relevance to Intersection Conflict Warning Systems.
   - label: "Brief: Safety Evaluation of Intersection Conflict Warning Systems (ICWS)"
     url: "https://rosap.ntl.bts.gov/view/dot/35746"
+    description: This resource provides background on Safety Evaluation of Intersection Conflict Warning Systems and its relevance to Intersection Conflict Warning Systems.
 order: 25
 ---
 Intersection Conflict Warning Systems (ICWS) are advanced traffic safety technologies designed to proactively enhance intersection safety. These systems continuously monitor traffic flow and vehicle movements to identify developing hazards before they escalate, giving drivers timely alerts to adjust their behavior and avoid potential collisions. Unlike traditional traffic signals, ICWS act as dynamic safety interventions, providing real-time feedback based on immediate conditions rather than fixed control patterns.

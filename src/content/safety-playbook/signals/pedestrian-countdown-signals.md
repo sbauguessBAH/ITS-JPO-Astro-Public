@@ -52,14 +52,19 @@ keywords:
 resources:
   - label: "Brief: Safety Evaluation of Pedestrian Countdown Signals"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-19-046.pdf"
+    description: This resource provides background on Safety Evaluation of Pedestrian Countdown Signals and its relevance to Pedestrian Countdown Signals.
   - label: "Report: The Effects of Innovative Pedestrian Signs at Unsignalized Locations: A Tale of Three Treatments"
     url: "https://www.pedbikeinfo.org/downloads/InnovativePedSigns_Unsignalized.pdf"
+    description: "This resource provides background on The Effects of Innovative Pedestrian Signs at Unsignalized Locations: A Tale of Three Treatments and its relevance to Pedestrian Countdown Signals."
   - label: "Report: The Effects of Pedestrian Countdown Timers on Safety and Efficiency of Operations at Signalized Intersections"
     url: "https://rosap.ntl.bts.gov/view/dot/25907"
+    description: This resource provides background on The Effects of Pedestrian Countdown Timers on Safety and Efficiency of Operations at Signalized Intersections and its relevance to Pedestrian Countdown Signals.
   - label: "Report: Safety Evaluation of Pedestrian Countdown Signals"
     url: "https://www.fhwa.dot.gov/publications/research/safety/19045/19045.pdf"
+    description: This resource provides background on Safety Evaluation of Pedestrian Countdown Signals and its relevance to Pedestrian Countdown Signals.
   - label: "Report: Countdown Pedestrian Signals (CPS) Legibility and Comprehension without Flashing Hand: Phase I and Phase II Final Report"
     url: "https://rosap.ntl.bts.gov/view/dot/62438"
+    description: "This resource provides background on Countdown Pedestrian Signals (CPS) Legibility and Comprehension without Flashing Hand: Phase I and Phase II Final Report and its relevance to Pedestrian Countdown Signals."
 order: 27
 ---
 Pedestrian countdown signals are traffic safety devices designed to enhance pedestrian safety and improve traffic efficiency at intersections. By displaying the remaining time for pedestrians to safely cross the street, these signals help individuals make informed decisions about when to begin or finish crossing. This reduces the likelihood of pedestrians being caught in the roadway as traffic resumes, lowering the risk of collisions.
