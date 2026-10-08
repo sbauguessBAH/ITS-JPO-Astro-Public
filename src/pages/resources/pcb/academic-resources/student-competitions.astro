@@ -7,19 +7,6 @@ import Layout from "../_layout.astro";
 import ResourceFooter from "./_ResourceFooter.astro";
 ---
 
-<style>
-  .table th,
-  .table td {
-    text-align: left;
-  }
-  .table {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-  }
-  .table a:hover {
-    font-weight: normal;
-  }
-</style>
 <Layout>
   <main class="program-main pb-0">
     <ProgramSection class="pb-0">
@@ -52,7 +39,9 @@ import ResourceFooter from "./_ResourceFooter.astro";
     </ProgramSection>
     <ProgramSection>
       <h2 class="program-title-lg">Previous Winners</h2>
-      <table class="table">
+      <table
+        class="table tw:mt-4! tw:mb-8! tw:[&_a:hover]:font-normal! tw:[&_td]:text-left! tw:[&_th]:text-left!"
+      >
         <thead class="thead-dark">
           <tr>
             <th scope="col">Year</th>
