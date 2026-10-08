@@ -1,13 +1,10 @@
 ---
-import { Image } from "astro:assets";
-
-import modImage from "@/src/assets/images/pcb/peer-exchanges/mod.jpg";
-import qWarnImage from "@/src/assets/images/pcb/peer-exchanges/queue-warning.png";
 import Link from "@/src/components/Link.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
+import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
 
 import Layout from "../_layout.astro";
@@ -16,14 +13,14 @@ const resources = [
   {
     description:
       "The U.S. Department of Transportation (USDOT) facilitated a series of virtual peer exchanges designed to share best practices and lessons learned in planning and deploying Queue Warning Systems (QWS).",
-    image: qWarnImage,
+    image: "pcb/peer-exchange-queue-warning",
     slug: "queue-warning",
     title: "Queue Warning Peer Exchange",
   },
   {
     description:
       "The U.S. Department of Transportation (USDOT) facilitated interactive dialogues that brought together stakeholders to discuss key, targeted topics that impact MOD deployment and adoption.",
-    image: modImage,
+    image: "pcb/peer-exchange-mod",
     slug: "mod",
     title: "Mobility on Demand (MOD) Peer Exchange",
   },
@@ -52,10 +49,10 @@ const resources = [
         {
           resources.map((resource) => (
             <Card href={`/resources/pcb/peer-exchanges/${resource.slug}`}>
-              <Image
+              <CardImage
                 alt={resource.title}
-                class="tw:h-50 tw:w-full tw:object-cover"
-                src={resource.image}
+                entry={resource.image}
+                height={200}
               />
               <CardHeader>
                 <CardTitle>{resource.title}</CardTitle>

@@ -1,8 +1,6 @@
 ---
-import { Image } from "astro:assets";
-
-import arlingtonImage from "@/src/assets/images/pcb/peer-exchanges/arlington-mod.jpg";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 
 import Layout from "../_layout.astro";
@@ -41,10 +39,10 @@ import Layout from "../_layout.astro";
           </p>
         </div>
         <div class="tw:lg:basis-2/5">
-          <Image
+          <LibraryImage
             alt="Arlington MOD Vehicle"
             class="tw:h-auto tw:w-full tw:rounded-2xl tw:shadow-sm"
-            src={arlingtonImage}
+            entry="pcb/peer-exchange-arlington-mod"
           />
         </div>
       </div>
