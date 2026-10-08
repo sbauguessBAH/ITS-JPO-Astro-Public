@@ -1,15 +1,15 @@
 ---
-import OverlayCard, {
-  type OverlayResource,
-} from "@/src/components/programs/OverlayCard.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import OverlayCard, {
+  type OverlayCardProps,
+} from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
 
 import Layout from "../_layout.astro";
 
-const focusAreas: OverlayResource[] = [
+const focusAreas: OverlayCardProps[] = [
   {
     backgroundImage: "automation/focus-areas/cooperative-driving-automation",
-    color: "blue",
+    color: "cyan",
     description:
       "Assess the feasibility of conducting a small-scale CDA pilot (focusing on L0-2 with Interoperable Connectivity) and package the accomplishments for design and architecture.",
     iconImage: "automation/focus-areas/icon-cda",
@@ -18,7 +18,7 @@ const focusAreas: OverlayResource[] = [
   },
   {
     backgroundImage: "automation/focus-areas/analysis-modeling-simulation",
-    color: "green",
+    color: "lime",
     description:
       "Crosscutting research and resource development including design, planning, operations, and impact assessments informed by improved AMS.",
     iconImage: "automation/focus-areas/icon-ams",
@@ -36,7 +36,7 @@ const focusAreas: OverlayResource[] = [
   },
   {
     backgroundImage: "automation/focus-areas/automated-driving-system",
-    color: "purple",
+    color: "crimson",
     description:
       "Explore recommended practices to address safe and efficient Automated Driving System (ADS) Integration into the transportation system.",
     iconImage: "automation/focus-areas/icon-ads",

@@ -1,8 +1,8 @@
 ---
-import OverlayCard, {
-  type OverlayResource,
-} from "@/src/components/programs/OverlayCard.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import OverlayCard, {
+  type OverlayCardProps,
+} from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
@@ -62,10 +62,10 @@ const ACTIONS = [
   },
 ];
 
-const RESOURCES: OverlayResource[] = [
+const RESOURCES: OverlayCardProps[] = [
   {
     backgroundImage: "pcb/scrc-background",
-    color: "blue",
+    color: "cyan",
     description:
       "An online resource connecting states, tribal governments, and local communities with resources to help develop intelligent transportation systems for smart community transportation programs.",
     isExternalLink: true,
@@ -74,7 +74,7 @@ const RESOURCES: OverlayResource[] = [
   },
   {
     backgroundImage: "pcb/v2x-intersection",
-    color: "green",
+    color: "lime",
     description:
       "A comprehensive training program provides foundational trainings for practitioners as well as technical trainings on V2X standards.",
     name: "Vehicle-to-Everything (V2X) Training",
@@ -90,7 +90,7 @@ const RESOURCES: OverlayResource[] = [
   },
   {
     backgroundImage: "pcb/cohort",
-    color: "purple",
+    color: "crimson",
     description:
       "A community of practice of state and local agencies -- and other infrastructure owners and operators (IOOs) -- sharing best practices and lessons learned to  accelerate the deployment of V2X technologies.",
     name: "Accelerating V2X Cohort",

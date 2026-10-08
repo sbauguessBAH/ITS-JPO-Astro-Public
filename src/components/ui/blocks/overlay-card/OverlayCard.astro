@@ -1,0 +1,143 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import type { LibraryImageEntry } from "@/src/components/programs/LibraryImage.astro";
+
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
+import base_url from "@/src/lib/base_url";
+
+export type OverlayCardPreset =
+  | "crimson"
+  | "cyan"
+  | "gold"
+  | "lime"
+  | "orange"
+  | "primary"
+  | "secondary";
+
+export type OverlayCardProps = Props;
+
+type Props = Omit<HTMLAttributes<"a">, "href" | "style"> & {
+  /** Reference to library entry */
+  backgroundImage: LibraryImageEntry;
+  /**
+   * A preset name, or any CSS color (`#86254f`, `oklch(...)`, `var(--my-color)`).
+   * Sets the `--overlay-card` variable, which drives the hover tint and icon circle.
+   *
+   * @default `primary`
+   */
+  color?: (string & {}) | OverlayCardPreset;
+  description: string;
+  /** Reference to library entry. Rendered inside a colored circle. */
+  iconImage?: LibraryImageEntry;
+  isExternalLink?: boolean;
+  name: string;
+  path: string;
+};
+
+const {
+  backgroundImage,
+  class: className,
+  color = "primary",
+  description,
+  iconImage,
+  isExternalLink,
+  name,
+  path,
+  ...rest
+} = Astro.props;
+
+// Presets only set the CSS variable, so custom colors can override it the same way.
+const presets: Record<OverlayCardPreset, string> = {
+  crimson: "tw:[--overlay-card:var(--tw-color-crimson)]",
+  cyan: "tw:[--overlay-card:var(--tw-color-cyan)]",
+  gold: "tw:[--overlay-card:var(--tw-color-gold)]",
+  lime: "tw:[--overlay-card:var(--tw-color-lime)]",
+  orange: "tw:[--overlay-card:var(--tw-color-orange)]",
+  primary: "tw:[--overlay-card:var(--tw-primary)]",
+  secondary: "tw:[--overlay-card:var(--tw-secondary)]",
+};
+
+const presetClass = presets[color as OverlayCardPreset] as string | undefined;
+
+const linkAttrs = isExternalLink
+  ? { href: path, rel: "noopener noreferrer", target: "_blank" }
+  : { href: base_url(path) };
+---
+
+<a
+  class:list={[
+    // Layout
+    "tw:group/overlay-card tw:relative tw:isolate tw:flex tw:h-full tw:min-h-72 tw:overflow-hidden",
+
+    // Appearance
+    "tw:rounded-2xl tw:shadow-sm tw:hover:shadow-2xl",
+    "tw:text-white tw:no-underline! tw:hover:no-underline!",
+    "tw:transition-all tw:duration-300 tw:hover:-translate-y-px",
+    "tw:outline-none tw:focus-visible:ring-2 tw:focus-visible:ring-(--overlay-card) tw:focus-visible:ring-offset-2",
+
+    presetClass,
+    className,
+  ]}
+  data-slot="overlay_card"
+  style={presetClass ? undefined : { "--overlay-card": color }}
+  {...linkAttrs}
+  {...rest}
+>
+  <LibraryImage
+    class="tw:absolute tw:inset-0 tw:-z-20 tw:size-full tw:object-cover tw:transition-transform tw:duration-500 tw:group-hover/overlay-card:scale-105"
+    data-slot="overlay_card-image"
+    entry={backgroundImage}
+  />
+
+  <div
+    aria-hidden="true"
+    class="tw:absolute tw:inset-0 tw:-z-10 tw:bg-linear-to-b tw:from-secondary/20 tw:to-secondary"
+    data-slot="overlay_card-scrim"
+  >
+  </div>
+
+  <div
+    aria-hidden="true"
+    class="tw:absolute tw:inset-0 tw:-z-10 tw:bg-linear-to-b tw:from-(--overlay-card)/20 tw:to-(--overlay-card)/40 tw:opacity-0 tw:transition-opacity tw:duration-300 tw:group-hover/overlay-card:opacity-100 tw:group-focus-visible/overlay-card:opacity-100"
+    data-slot="overlay_card-tint"
+  >
+  </div>
+
+  <div
+    class:list={[
+      "tw:flex tw:w-full tw:flex-col tw:gap-4 tw:px-4 tw:pt-4 tw:pb-8",
+      !iconImage && "tw:justify-end",
+    ]}
+    data-slot="overlay_card-body"
+  >
+    {
+      iconImage && (
+        <div
+          aria-hidden="true"
+          class="tw:flex tw:items-center tw:justify-center tw:py-4"
+          data-slot="overlay_card-icon"
+        >
+          <div class="tw:flex tw:size-30 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--overlay-card)">
+            <LibraryImage class="tw:h-auto tw:w-3/5" entry={iconImage} />
+          </div>
+        </div>
+      )
+    }
+
+    <div class="tw:flex tw:flex-col tw:gap-2 tw:px-4">
+      <h3
+        class="tw:m-0! tw:p-0! tw:text-2xl! tw:leading-tight! tw:font-semibold! tw:text-white!"
+        data-slot="overlay_card-title"
+      >
+        {name}
+      </h3>
+      <p
+        class="tw:m-0! tw:text-lg! tw:leading-snug! tw:text-white!"
+        data-slot="overlay_card-description"
+      >
+        {description}
+      </p>
+    </div>
+  </div>
+</a>
