@@ -19,36 +19,37 @@ export const navigation: NavigationItem[] = [
           { name: "Charter", url: "/about/itspac/charter" },
         ],
       },
-      {
-        name: "Join Our Mailing List",
+      { 
+        name: "Join Our Mailing List", 
         url: "/about/contact-us/mailinglist",
         isEnabled: true,
-       
+        pages: [
+          { name: "ITS JPO NOW", url: "/about/contact-us/mailinglist/ITS-JPO-NOW", pages: [
+            
+            { name: "September 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/september-2026" },
+            { name: "August 2026 Flash Edition", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/august-2026-flash" },
+            { name: "May 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026" },
+            { name: "July 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026" },
+
+          ] },
+        ],
       },
     ],
   },
 
   {
-    name: "News & Outreach Tools",
-    url: "/news-outreach-tools",
+    name: "News & Info",
+    url: "/news-info",
     pages: [
       { name: "Latest News from USDOT", url: "https://www.transportation.gov/newsroom", isExternal: true },
-      { name: "Image Library", url: "/news-outreach-tools/image-library" },
-      { name: "Video Library", url: "/news-outreach-tools/video-library" },
-      {
-        name: "Newsroom",
-        url: "/news-outreach-tools/newsroom",
-        pages: [
-          { name: "Home", url: "/news-outreach-tools/newsroom/" },
-          { name: "ITS JPO Now Newsletter", url: "/news-outreach-tools/newsroom/newsletter-archive" },
-          { name: "In the News", url: "/news-outreach-tools/newsroom/in-the-news" },
-          { name: "Media Kits", url: "/news-outreach-tools/newsroom/media-kits" },
-        ],
-      },
+      { name: "Image Library", url: "/news-info/image-library" },
+      { name: "Video Library", url: "/news-info/video-library" },
+      { name: "Project Delivery Templates", url: "/news-info/project-delivery-templates" },
       {
         name: "Publication Editorial Guidelines",
-        url: "/news-outreach-tools/Publication-Editorial-Guidelines",
+        url: "/news-info/Publication-Editorial-Guidelines",
         isEnabled: true,
+       
       },
     ],
   },
@@ -177,6 +178,7 @@ export const navigation: NavigationItem[] = [
           { name: "Videos", url: "/research-areas/ITS4US/videos" },
           { name: "Documentation", url: "/research-areas/ITS4US/documents" },
           { name: "Upcoming Activities", url: "/research-areas/ITS4US/upcoming" },
+
         ],
       },
       {
@@ -263,6 +265,7 @@ export const navigation: NavigationItem[] = [
           { name: "Overview", url: "/resources/architecture-and-standards" },
           { name: "National ITS Reference Architecture", url: "/resources/architecture-and-standards/reference-architecture" },
           { name: "Standards", url: "/resources/architecture-and-standards/standards" },
+
         ],
       },
       { name: "Cybersecurity", url: "/resources/Cybersecurity" },
