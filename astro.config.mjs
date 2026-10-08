@@ -14,7 +14,7 @@ export default defineConfig({
   base: BASE_URL,
   site: "https://www.its.dot.gov",
   output: "static",
-  integrations: [partytown(), sitemap(), vue({ appEntrypoint: "./src/vue-app.ts" })],
+  integrations: [partytown(), sitemap(), vue()],
   redirects: {
     "/index.htm": "/",
     "/about/its_jpo.htm": "/about",
@@ -22,7 +22,7 @@ export default defineConfig({
     "/contacts/stafflisting.htm": "/about/contact-us/staff-listing",
     "/its4us/index.htm": "/research-areas/ITS4US",
     "/its4us/": "/research-areas/ITS4US",
-    "/communications/its_images.htm": "/news-outreach-tools/image-library",
+    "/communications/its_images.htm": "/news-info/image-library",
     "/pcb": "/resources/pcb",
     "/resources/Professional-Capacity-Building/": "/resources/pcb",
     "/research-areas/Intersection-Safety-Challenge": "/research-areas/intersection-safety/systems",
