@@ -560,18 +560,14 @@ import "@/src/styles/deployments.css";
 
               <section class="resource-materials" aria-labelledby="resource-materials-title">
                 <h2 id="resource-materials-title">Resource Materials</h2>
-                <h3 class="fs-4 mb-3">Watch</h3>
-
-
-
-                <h3 class="fs-4 mb-3">Download</h3>
+                
                 <div class="d-grid gap-4">
                   <article class="resource-material">
                     <Image src={postcardImage} alt="ITS4US Deployment Accelerator Postcard" class="img-fluid rounded" />
                     <div>
                       <h3>ITS4US Deployment Accelerator Postcard</h3>
                       <p>Informational postcard regarding solicitation and expected outcomes of the ITS4US Deployment Accelerator Program.</p>
-                      <a class="btn " href="#resource-placeholder">Download</a>
+                      <a class="btn " href={base_url("/assets/documents/its4us/ITS4US%20Deployment%20Accelerator%20Program%20Postcard.pdf")} download>Download</a>
                     </div>
                   </article>
 
@@ -580,7 +576,7 @@ import "@/src/styles/deployments.css";
                     <div>
                       <h3>ITS4US Deployment Accelerator Factsheet</h3>
                       <p>Factsheet with information about the ITS4US Deployment Accelerator Program, support for deployers, a solicitation timeline, and other resources like ITS CodeHub and DataHub.</p>
-                      <a class="btn " href="#resource-placeholder">Download</a>
+                      <a class="btn " href={base_url("/assets/documents/its4us/ITS4US%20Deployment%20Accelerator%20Program%20Factsheet.pdf")} download>Download</a>
                     </div>
                   </article>
 
