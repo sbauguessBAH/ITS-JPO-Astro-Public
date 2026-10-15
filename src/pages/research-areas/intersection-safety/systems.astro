@@ -15,6 +15,58 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
     gap: var(--size);
   }
 
+  .team-card-description {
+    font-size: medium;
+    text-wrap: pretty;
+  }
+
+  .team-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--size);
+  }
+
+  .team-card-title {
+    margin-bottom: 1rem;
+  }
+
+  :global(.astro-card.team-card) {
+    background-color: var(--background-light);
+    border-color: var(--border-light);
+  }
+
+  .team-card-description {
+    flex: 1;
+    
+  }
+
+  .team-card-partners {
+    margin: 0 0 1rem;
+  }
+
+  .team-card-partners strong {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .team-partner-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .team-partner-list li {
+    background-color: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    font-size: 0.875rem;
+    line-height: 1.35;
+    padding: 0.35rem 0.55rem;
+  }
+
   .resource-card-header {
     display: flex;
     flex-direction: column;
@@ -100,6 +152,18 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+  @media (min-width: 768px) {
+    .team-card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .team-card-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
 </style>
 <Layout>
   <main class="program-main">
@@ -125,7 +189,94 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
         </div>
       </div>
 
-   
+      <section aria-labelledby="iss-teams-heading">
+        <h2 id="iss-teams-heading" class="program-title-lg mt-4">
+          Overview of the ISS Teams
+        </h2>
+        <div class="team-card-grid">
+          <Card shadow="sm" radius="md" class="team-card">
+            <CardBody>
+              <h3 class="program-title-md team-card-title">DERQ USA</h3>
+              <p class="program-text team-card-description">
+                Derq USA is partnering with the Texas Department of Transportation (TxDOT), City of Houston, Virginia DOT, and Cities of Alexandria and Falls Church in Virginia to prototype its ISS, leveraging cutting-edge technology to identify and mitigate unsafe conditions at intersections. The ISS fuses video cameras (primary sensor), Light Detection and Ranging (LiDAR) or radar data, signal controller events, and Vehicle-to-Everything (V2X) messages at the roadside edge. Derq's intent-classification methods predict red-light violation and pedestrian crossing intent before entering the roadway. The system then uses conflict mitigation logic to select an appropriate response: warnings to drivers and pedestrians through V2X infrastructure, activation of dynamic signage, or changes to intersection control. Derq will test the ISS prototype at the Virginia Tech Transportation Institute (VTTI) Virginia Smart Roads as well as at the Texas A&amp;M Transportation Institute (TTI) Proving Grounds.
+              </p>
+              <div class="program-text team-card-partners">
+                <strong>Public Sector Partners</strong>
+                <ul class="team-partner-list">
+                  <li>TxDOT</li>
+                  <li>City of Houston, TX</li>
+                  <li>Virginia DOT</li>
+                  <li>City of Alexandria, VA</li>
+                  <li>City of Falls Church, VA</li>
+                </ul>
+              </div>
+              <div class="program-text team-card-partners">
+                <strong>Other Partners</strong>
+                <ul class="team-partner-list">
+                  <li>VTTI</li>
+                  <li>TTI</li>
+                  <li>WSP USA, Inc.</li>
+                  <li>Intelligent Transportation Society of America</li>
+                  <li>AT&amp;T</li>
+                </ul>
+              </div>
+            </CardBody>
+          </Card>
+
+          <Card shadow="sm" radius="md" class="team-card">
+            <CardBody>
+              <h3 class="program-title-md team-card-title">UCLA</h3>
+              <p class="program-text team-card-description">
+                The University of California, Los Angeles (UCLA) is partnering with the Contra Costa Transportation Authority (CCTA) and the California Department of Transportation (Caltrans) to prototype InfraShield, an ISS designed to predict individual conflicts, identify recurring unsafe conditions, and support timely, risk-controlled mitigation at signalized and other complex intersections. The concept combines an offline deployment-design process with an online edge computing safety pipeline. The ISS prototype will support visual cameras, LiDAR, radar, and optional thermal/infrared sensing, supplemented where available by traffic controller and V2X data. Mitigation will be introduced through three staged operating modes: <em>Observe and Diagnose</em> (records trajectories, unsafe conditions, recommended actions, and other data), <em>Warn and Advise</em> (provides targeted warnings through visual or auditory devices, mobile or network-based alerts, and V2X messages), and <em>Control or Operational Support</em> (supports agency-approved, controller-safe responses, e.g., all-red extension). UCLA will test the ISS prototype at the GoMentum Station in Concord, CA.
+              </p>
+              <div class="program-text team-card-partners">
+                <strong>Public Sector Partners</strong>
+                <ul class="team-partner-list">
+                  <li>CCTA</li>
+                  <li>Caltrans</li>
+                </ul>
+              </div>
+              <div class="program-text team-card-partners">
+                <strong>Other Partners</strong>
+                <ul class="team-partner-list">
+                  <li>GoMentum Station</li>
+                </ul>
+              </div>
+            </CardBody>
+          </Card>
+
+          <Card shadow="sm" radius="md" class="team-card">
+            <CardBody>
+              <h3 class="program-title-md team-card-title">UMTRI</h3>
+              <p class="program-text team-card-description">
+                The University of Michigan Transportation Research Institute (UMTRI) is partnering with the Michigan Department of Transport (MDOT), the Southeast Michigan Council of Governments (SEMCOG), and the City of Ann Arbor, Michigan to prototype SAFETI, Safety Actions for Everyone at Traffic Intersections, targeting individual conflicts and unsafe conditions. The ISS uses LiDAR as its primary sensor but can integrate existing roadside cameras or other available sensors. The ISS employs a modular, distributed edge-computing architecture with an edge layer for real-time functions as well as a cloud layer to support higher-level safety applications (e.g., network-wide conflict analysis). The ISS predicts and mitigates real-time conflicts at intersections through a layered multimodal framework spanning infrastructure warnings, traffic signal control, V2X communications, and 5G-enabled alerts to smartphones, in-vehicle dashboards, and other connected devices. UMTRI will test the ISS prototype at the MCity Test Facility.
+              </p>
+              <div class="program-text team-card-partners">
+                <strong>Public Sector Partners</strong>
+                <ul class="team-partner-list">
+                  <li>MDOT</li>
+                  <li>SEMCOG</li>
+                  <li>City of Ann Arbor, MI</li>
+                </ul>
+              </div>
+              <div class="program-text team-card-partners">
+                <strong>Other Partners</strong>
+                <ul class="team-partner-list">
+                  <li>General Motors</li>
+                  <li>Ford</li>
+                  <li>Volkswagen</li>
+                  <li>Shulman Technology</li>
+                  <li>Ouster</li>
+                  <li>Verizon</li>
+                  <li>AWS</li>
+                  <li>NVIDIA</li>
+                </ul>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+      </section>
+
       <h2 class="program-title-lg mt-4">
         Key Research Questions
       </h2>
