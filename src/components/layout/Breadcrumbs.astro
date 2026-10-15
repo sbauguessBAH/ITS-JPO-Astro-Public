@@ -1,17 +1,19 @@
 ---
 import base_url from "@/src/lib/base_url";
 import { findBreadcrumbItems } from "@/src/lib/navigation";
+import type { BreadcrumbItem } from "@/src/types";
 
 interface Props {
+  additionalBreadcrumbs?: BreadcrumbItem[];
   currentBreadcrumb?: string;
 }
 
-const { currentBreadcrumb } = Astro.props;
+const { additionalBreadcrumbs = [], currentBreadcrumb } = Astro.props;
 
 const path = Astro.url.pathname;
 
 const items = findBreadcrumbItems(path);
-const breadcrumbs = currentBreadcrumb ? [...items, { name: currentBreadcrumb, url: ""}] : items;
+const breadcrumbs = currentBreadcrumb ? [...items, ...additionalBreadcrumbs, { name: currentBreadcrumb, url: ""}] : [...items, ...additionalBreadcrumbs];
 ---
 
 <style>

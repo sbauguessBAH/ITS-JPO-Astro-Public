@@ -1,0 +1,54 @@
+{
+	"newsletters": [
+        {
+			"title": "ITS JPO Now",
+			"url": "/example",
+			"description": "",
+			"date": "March 2026",
+			"subtitle": "Latest Issue",
+			"issue": "Issue 2",
+			"img": "",
+			"imageUrl": "https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13451089/6858046/govdelivery-banners-may_crop.jpg"
+		},
+		{
+			"title": "ITS JPO Now",
+			"url": "/second-example-link",
+			"description": "",
+			"date": "January 2026",
+			"subtitle": "ITS JPO",
+			"issue": "Issue 1",
+			"img": "",
+			"imageUrl": ""
+		},
+		{
+			"title": "ITS JPO Now",
+			"url": "",
+			"description": "",
+			"date": "October 2025",
+			"subtitle": "ITS JPO",
+			"issue": "Issue 4",
+			"img": "",
+			"imageUrl": ""
+		},
+		{
+			"title": "ITS JPO Now",
+			"url": "",
+			"description": "",
+			"date": "July 2025",
+			"subtitle": "ITS JPO",
+			"issue": "Issue 3",
+			"img": "",
+			"imageUrl": ""
+		},
+		{
+			"title": "ITS JPO Now",
+			"url": "",
+			"description": "",
+			"date": "April 2025",
+			"subtitle": "ITS JPO",
+			"issue": "Issue 2",
+			"img": "",
+			"imageUrl": ""
+		}
+	]
+}

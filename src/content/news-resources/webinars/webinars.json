@@ -1,0 +1,49 @@
+{
+	"webinars": [
+        {
+			"title": "ITS JPO Now",
+			"recordingLink": "/example",
+			"slidesLink": "/example-slides",
+			"description": "",
+			"date": "March 2026",
+			"subtitle": "Latest Issue",
+			"duration": "Spring 2026"
+		},
+		{
+			"title": "ITS JPO Now",
+			"recordingLink": "/example",
+			"slidesLink": "/example-slides",
+			"description": "",
+			"date": "March 2026",
+			"subtitle": "Latest Issue",
+			"duration": "Spring 2026"
+		},
+		{
+			"title": "ITS JPO Now",
+			"recordingLink": "/example",
+			"slidesLink": "/example-slides",
+			"description": "",
+			"date": "March 2026",
+			"subtitle": "Latest Issue",
+			"duration": "Spring 2026"
+		},
+		{
+			"title": "ITS JPO Now",
+			"recordingLink": "/example",
+			"slidesLink": "/example-slides",
+			"description": "",
+			"date": "March 2026",
+			"subtitle": "Latest Issue",
+			"duration": "Spring 2026"
+		},
+		{
+			"title": "ITS JPO Now",
+			"recordingLink": "/example",
+			"slidesLink": "/example-slides",
+			"description": "",
+			"date": "March 2026",
+			"subtitle": "Latest Issue",
+			"duration": "Spring 2026"
+		}
+	]
+}

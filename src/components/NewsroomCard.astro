@@ -1,0 +1,286 @@
+---
+import type { NewsroomCardItem, Newsletter, Toolkit } from "@/src/types";
+
+type NewsroomCardInput = NewsroomCardItem | Toolkit | Newsletter;
+
+interface Props {
+  item: NewsroomCardInput;
+  class?: string;
+  showPills?: boolean;
+  showSubtitle?: boolean;
+  pillSource?: "topics" | "content_types";
+  showColoredLabel?: boolean;
+  btnClass?: string;
+  showImage?: boolean;
+  showNewBadge?: boolean;
+  ctaText?: string;
+}
+
+const {
+  item,
+  class: className = "",
+  showPills = true,
+  showSubtitle,
+  pillSource = "topics",
+  showColoredLabel = true,
+  showImage = false,
+  showNewBadge = false,
+  btnClass = "btn w-100 mt-2",
+  ctaText = "View Toolkit",
+} = Astro.props;
+
+// Normalize related content types into one render-safe shape.
+const normalizeItem = (value: NewsroomCardInput): NewsroomCardItem => {
+  const newsletterValue = value as Newsletter;
+
+  return {
+    title: value.title,
+    url: value.url,
+    description: value.description,
+    content_types: value.content_types,
+    topics: value.topics,
+    issue: newsletterValue.issue,
+    date: value.date,
+    subtitle: value.subtitle,
+    imageUrl: newsletterValue.imageUrl,
+  };
+};
+
+const normalizedItem = normalizeItem(item);
+
+// Build predictable data-topic values used by CSS selectors.
+const slugifyForId = (value: string): string =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+// Prefer topic labels, then subtitle as a fallback for pill text/color mapping.
+const labelText = normalizedItem.topics?.join(", ") ?? normalizedItem.subtitle ?? "";
+const labelKey = normalizedItem.topics?.[0] ?? normalizedItem.subtitle ?? "";
+const topicSlug = labelKey ? slugifyForId(labelKey) : "";
+
+// If no description exists, use date as lightweight metadata text.
+const descriptionText = normalizedItem.description ?? "";
+const fallbackText = !normalizedItem.description && normalizedItem.date ? normalizedItem.date : "";
+
+// Image display is opt-in and only renders when a source URL exists.
+const shouldRenderImage = Boolean(showImage && normalizedItem.imageUrl);
+const imageAltText = normalizedItem.title?.trim() || "Newsletter image";
+
+// External links open in a new tab with safe rel attributes.
+const isExternalUrl = Boolean(normalizedItem.url && /^https?:\/\//i.test(normalizedItem.url));
+const shouldShowSubtitle = Boolean(normalizedItem.subtitle && (showSubtitle ?? !showPills));
+const pillItems = pillSource === "content_types" ? (normalizedItem.content_types?.length ? normalizedItem.content_types : normalizedItem.topics) : normalizedItem.topics;
+const shouldShowBadges = Boolean(showPills && pillItems?.length);
+---
+
+<div class:list={["card toolkit-card", className, shouldRenderImage && "toolkit-card--with-image"]}>
+  <div class="card-body">
+    {
+      // Render image first so it sits at the top of the card.
+      shouldRenderImage && (
+        <div class="card-title-image-wrap">
+          <img class="card-title-image" src={normalizedItem.imageUrl} alt={imageAltText} loading="lazy" decoding="async" />
+          {showNewBadge && <span class="card-new-badge">New</span>}
+        </div>
+      )
+    }
+
+    <div class="toolkit-card-content">
+      {
+        showColoredLabel && (
+          <h3 class="colored-label" data-topic={topicSlug}>
+            {labelText}
+          </h3>
+        )
+      }
+      <div>
+        {shouldShowSubtitle && <p class="card-subtitle mb-2">{normalizedItem.subtitle}</p>}
+        <h5 class="card-title">{normalizedItem.title}</h5>
+
+        {/* Render description when available, otherwise show fallback date text. */}
+        {(descriptionText || fallbackText) && <p class="card-text">{descriptionText || fallbackText}</p>}
+
+        {
+          shouldShowBadges && (
+            <div class="d-flex flex-wrap badge-container">
+              {pillItems?.map((ct) => (
+                <p class="badge me-1">{ct}</p>
+              ))}
+            </div>
+          )
+        }
+      </div>
+      {
+        normalizedItem.url && (
+          <a href={normalizedItem.url} class={btnClass} target={isExternalUrl ? "_blank" : undefined} rel={isExternalUrl ? "noopener noreferrer" : undefined}>
+            {ctaText}
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .toolkit-card {
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+  .newsletter-link {
+    text-decoration: none;
+  }
+  .toolkit-card.media-toolkit {
+    min-height: 280px;
+  }
+  .badge-container {
+    min-height: 75px;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+  .toolkit-card.newsletter-card {
+    padding: 0;
+    flex-direction: row;
+  }
+  .featured-newsletter-card .card-title {
+    height: 200px;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    background: linear-gradient(90deg, #1c2c4e, #1e4d86);
+  }
+
+  .newsletter-card .card-title-image-wrap {
+    height: auto;
+    border-radius: 0;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .featured-newsletter-card .card-title-image-wrap {
+    background: linear-gradient(90deg, #1c2c4e, #1e4d86);
+  }
+
+  .card-title-image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .card-title-image-wrap {
+    position: relative;
+    width: 100%;
+    margin: 0;
+  }
+
+  .card-new-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #a3cfbb;
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    background-color: #d1e7dd;
+    color: #0f5132;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    box-shadow: 0 0 0.6rem rgba(25, 135, 84, 0.55);
+  }
+
+  .card-title-image {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .toolkit-card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1rem;
+    justify-content: space-between;
+  }
+
+  .toolkit-card--with-image .card-body > a {
+    margin: 0 1rem 1rem;
+    width: auto;
+    align-self: flex-start;
+  }
+
+  .card-subtitle {
+    color: rgb(var(--bs-primary-rgb));
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .badge {
+    background-color: #e8f1f9;
+    color: #1f5493;
+    text-transform: capitalize;
+    border-radius: 100rem;
+  }
+  .toolkit-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .colored-label {
+    display: inline-block;
+    width: fit-content;
+    margin: 0 0 0.75rem 0;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.2;
+    background-color: rgba(108, 117, 125, 0.18);
+    color: rgb(38, 42, 46);
+  }
+
+  .colored-label[data-topic="v2x"] {
+    background-color: rgba(0, 123, 255, 0.18);
+    color: rgb(1, 16, 32);
+  }
+
+  .colored-label[data-topic="ai"] {
+    background-color: rgba(23, 162, 184, 0.18);
+    color: rgb(2, 32, 36);
+  }
+
+  .colored-label[data-topic="intersection-safety"] {
+    background-color: rgba(220, 53, 69, 0.18);
+    color: rgb(220, 53, 69);
+  }
+
+  .colored-label[data-topic="automation"] {
+    background-color: rgba(40, 167, 69, 0.18);
+    color: rgb(3, 29, 9);
+  }
+
+  .colored-label[data-topic="its4us"] {
+    background-color: rgba(255, 193, 7, 0.18);
+    color: rgb(34, 32, 26);
+  }
+
+  .colored-label[data-topic="freight"] {
+    background-color: rgba(52, 58, 64, 0.12);
+    color: rgb(52, 58, 64);
+  }
+</style>
