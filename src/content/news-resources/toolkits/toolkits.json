@@ -13,7 +13,53 @@
         { "title": "Texas TRUST", "site": "TTI", "toolkit_slug": "tti-texas-trust-v2x-program-mediakit" },
         { "title": "CVAZ", "site": "CVAZ", "toolkit_slug": "mcdot-connected-vehicle-acceleration-zone-mediakit" }
     ],
-    "program_materials": [],
+    "program_materials": [
+        {
+            "title": "Direct and Network Communications",
+            "content_type": "Factsheet",
+            "format": "PDF",
+            "description": "Explains how direct V2X and network-assisted V2X differ, and when each communication mode is best suited for safety and mobility use cases.",
+            "actionLabel": "Download PDF"
+        },
+        {
+            "title": "V2X Accelerator Program Sites Map",
+            "content_type": "Image",
+            "format": "PNG",
+            "description": "Shows the locations of the three V2X Accelerator Program deployment sites and highlights the geographic areas where V2X technologies are being deployed and demonstrated.",
+            "actionLabel": "Download PNG"
+        },
+        {
+            "title": "V2X Accelerator Program Logo",
+            "content_type": "Image",
+            "format": "PNG",
+            "description": "Provides the official V2X Accelerator Program logo for use in presentations, documents, and other program materials.",
+            "actionLabel": "Download PNG"
+        },
+        {
+            "title": "Learn from the Leaders: What is V2X?",
+            "content_type": "Video Series",
+            "format": "YouTube",
+            "description": "Provides a brief introduction to V2X technology from Brian Cronin, Director of USDOT's Intelligent Transportation Systems Joint Program Office.",
+            "href": "/news-outreach-tools/video-library",
+            "actionLabel": "Watch Video"
+        },
+        {
+            "title": "USDOT Awards Nearly $60 Million in Advanced Vehicle Technology Grants to Arizona, Texas and Utah",
+            "content_type": "Media Coverage",
+            "format": "Web Article",
+            "description": "Highlights how the three V2X deployments will serve as national models to advance connected vehicle technology and help save lives on our nation's roadways.",
+            "href": "https://highways.dot.gov/newsroom/usdot-awards-nearly-60-million-advanced-vehicle-technology-grants-arizona-texas-and-utah",
+            "actionLabel": "Read Article"
+        },
+        {
+            "title": "V2X Accelerator Program Website",
+            "content_type": "Website",
+            "format": "Website",
+            "description": "Provides an overview of the V2X Accelerator Program, site-specific information, and program documentation and resources.",
+            "href": "https://www.its.dot.gov/research-areas/V2X-Deployment/deployment/accelerator/",
+            "actionLabel": "Visit Website"
+        }
+    ],
     "use_case_scenarios": []
 },
 {

@@ -20,7 +20,9 @@ export type ToolkitLinkItem = {
 export type ToolkitMediaItem = {
   actionLabel?: string;
   altDescription?: string;
+  description?: string;
   downloadHref?: string;
+  format?: string;
   href?: string;
   image?: string | ImageMetadata;
   title: string;
@@ -49,7 +51,7 @@ export type ToolkitWebinarItem = {
 export type ToolkitThumbnailVariant = "document" | "graphic" | "video";
 
 export type ToolkitResource = ToolkitMediaItem & {
-  contentType: "Factsheet" | "Video";
+  contentType: string;
   site?: string;
 };
 
@@ -153,6 +155,7 @@ type RawMediaItem = {
   date?: string;
   description?: string;
   download_href?: string;
+  format?: string;
   href?: string;
   image?: string;
   image_src?: string;
@@ -190,12 +193,12 @@ type RawCta = {
 
 type RawToolkitEntry = {
   accelerator_sites?: Array<{ title: string; site: string; toolkit_slug: string; image_src?: string }>;
-  program_materials?: Array<RawMediaItem & { content_type: "Factsheet" | "Video"; site?: string }>;
+  program_materials?: Array<RawMediaItem & { content_type: string; site?: string }>;
   use_case_scenarios?: Array<{
     title: string;
     description?: string;
     sites?: string[];
-    materials?: Array<RawMediaItem & { content_type: "Factsheet" | "Video"; site?: string }>;
+    materials?: Array<RawMediaItem & { content_type: string; site?: string }>;
   }>;
   belt_cta?: RawCta;
   contacts?: RawContact[];
@@ -482,7 +485,9 @@ const normalizeMediaItems = (items?: RawMediaItem[]): ToolkitMediaItem[] => {
       return {
         actionLabel: actionLabel || undefined,
         altDescription: altDescription || undefined,
+        description: cleanText(item.description) || undefined,
         downloadHref: downloadHref || undefined,
+        format: cleanText(item.format) || undefined,
         href: href || undefined,
         image: image || undefined,
         title: title || "Media Asset",
@@ -580,6 +585,7 @@ const buildExplicitSections = (toolkit: RawToolkitEntry): ToolkitSection[] => {
     (items ?? []).flatMap((item) => normalizeMediaItems([item]).map((media) => ({
       ...media,
       contentType: item.content_type,
+      format: cleanText(item.format) || undefined,
       site: cleanText(item.site) || undefined,
     })));
 
@@ -607,7 +613,7 @@ const buildExplicitSections = (toolkit: RawToolkitEntry): ToolkitSection[] => {
       emptyLabel: "Coming Soon",
       items: normalizeResources(toolkit.program_materials),
       kind: "materials",
-      title: "Program Wide Materials",
+      title: "Program-Wide Materials",
     });
   }
 

@@ -38,7 +38,9 @@ if (embed && item.contentType === "Video" && href) {
     </div>
   )}
   <div class="kit-material-body">
-    <p class="kit-material-meta">{item.site && `${item.site} / `}{item.contentType}</p>
+    <p class="kit-material-meta">{item.site && `${item.site} / `}{item.contentType}{item.format && ` / ${item.format}`}</p>
     <h4>{href ? <a href={href}>{item.title}</a> : item.title}</h4>
+    {item.description && <p class="kit-material-description">{item.description}</p>}
+    {href && item.actionLabel && <a class="kit-material-action" href={href}>{item.actionLabel} &rsaquo;</a>}
   </div>
 </article>

@@ -73,6 +73,19 @@
   font-size: 0.85rem;
 }
 
+.kit-material-description {
+  margin: 0;
+  color: var(--kit-muted);
+  line-height: 1.5;
+}
+
+.kit-material-action {
+  width: fit-content;
+  color: var(--kit-brand);
+  font-size: 0.9rem;
+  text-underline-offset: 0.2em;
+}
+
 .kit-material-preview {
   display: grid;
   place-items: center;
