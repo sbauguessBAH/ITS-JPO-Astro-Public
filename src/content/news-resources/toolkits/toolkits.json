@@ -18,6 +18,8 @@
             "title": "Direct and Network Communications",
             "content_type": "Factsheet",
             "format": "PDF",
+            "href" : "https://www.its.dot.gov/scrc/assets/Direct_Network_V2X_FINAL_20260212-gviIJGij.pdf",
+            "image_src": "/assets/images/toolkits/media-toolkits/V2X/Direct-and-Network-thumb.png",
             "description": "Explains how direct V2X and network-assisted V2X differ, and when each communication mode is best suited for safety and mobility use cases.",
             "actionLabel": "Download PDF"
         },
@@ -25,6 +27,7 @@
             "title": "V2X Accelerator Program Sites Map",
             "content_type": "Image",
             "format": "PNG",
+            "image_src": "/assets/images/toolkits/media-toolkits/V2X/V2X-Accelerator-site-thumb.png",
             "description": "Shows the locations of the three V2X Accelerator Program deployment sites and highlights the geographic areas where V2X technologies are being deployed and demonstrated.",
             "actionLabel": "Download PNG"
         },
@@ -49,6 +52,7 @@
             "format": "Web Article",
             "description": "Highlights how the three V2X deployments will serve as national models to advance connected vehicle technology and help save lives on our nation's roadways.",
             "href": "https://highways.dot.gov/newsroom/usdot-awards-nearly-60-million-advanced-vehicle-technology-grants-arizona-texas-and-utah",
+            "image_src": "/assets/images/toolkits/media-toolkits/V2X/USDOT-awards-Vehicle-Grants.png",
             "actionLabel": "Read Article"
         },
         {
