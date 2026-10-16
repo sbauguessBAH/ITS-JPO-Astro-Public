@@ -165,7 +165,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
             {section.items.map((site) => (
               <article class="kit-site-card">
                 {getImageSrc(site.image) && <img src={getImageSrc(site.image)} alt={site.altDescription ?? site.title} loading="lazy" />}
-                <div class="kit-site-body">
+                <div class="kit-site-body kit-color-description">
                   <p class="kit-material-meta">{site.site}</p>
                   <h4>{site.href ? <a href={site.href}>{site.title}</a> : site.title}</h4>
                   {site.href && <a href={site.href} class="kit-document-link">View Media Kit</a>}

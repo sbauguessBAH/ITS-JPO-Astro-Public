@@ -70,7 +70,6 @@
 
 .kit-material-meta {
   margin: 0;
-  color: var(--kit-muted);
   font-size: 0.85rem;
 }
 
@@ -911,4 +910,25 @@ toolkit-scenarios [hidden] {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+}
+
+.kit-color-description {
+  background-color: #036080;
+  border-top: 5px solid #04A2D8;
+  color: #ffffff !important;
+
+  a {
+    color: #ffffff !important;
+    text-decoration: none;
+  }
+}
+
+.kit-site-card:nth-child(2) .kit-color-description {
+  background-color: #7E0E0E;
+  border-top: 5px solid #E41919;
+}
+
+.kit-site-card:nth-child(3) .kit-color-description {
+  background-color: #9A3B14;
+  border-top: 5px solid #F37133;
 }
