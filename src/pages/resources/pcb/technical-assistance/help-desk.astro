@@ -17,6 +17,7 @@ import ItemHeader from "@/src/components/ui/elements/item/ItemHeader.astro";
 import ItemMedia from "@/src/components/ui/elements/item/ItemMedia.astro";
 import ItemTitle from "@/src/components/ui/elements/item/ItemTitle.astro";
 import Icon from "@/src/components/ui/icon/Icon.astro";
+import IconTile from "@/src/components/ui/icon/IconTile.astro";
 
 import Layout from "../_layout.astro";
 import HelpDeskLogo from "./_help-desk-logo.astro";
@@ -282,14 +283,15 @@ const LOAN_PROGRAM_BENEFITS: {
           {
             LOAN_PROGRAM_BENEFITS.map((item) => (
               <Item class="p-3 items-start" variant="outline">
-                <ItemMedia
-                  class="tw:flex tw:size-10 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-2xl tw:text-lg tw:font-semibold tw:[&_svg]:size-4.5"
-                  style={{
-                    backgroundColor: item.color.background,
-                    color: item.color.text,
-                  }}
-                >
-                  {item.icon && <Icon name={item.icon} />}
+                <ItemMedia>
+                  <IconTile
+                    style={{
+                      backgroundColor: item.color.background,
+                      color: item.color.text,
+                    }}
+                  >
+                    <Icon name={item.icon} />
+                  </IconTile>
                 </ItemMedia>
                 <ItemContent>
                   <ItemTitle>{item.title}</ItemTitle>
@@ -311,9 +313,9 @@ const LOAN_PROGRAM_BENEFITS: {
         <div class="mt-2 tw:flex tw:flex-row tw:flex-wrap tw:gap-1">
           {
             AVAILABLE_EQUIPMENT.map((item) => (
-              <div class="tw:inline-flex tw:h-9 tw:w-fit tw:shrink-0 tw:items-center tw:justify-center tw:overflow-hidden tw:rounded-full tw:border tw:border-(--help-desk-yellow) tw:bg-(--help-desk-yellow)/20 tw:px-3 tw:py-3 tw:align-middle tw:text-sm tw:font-medium">
+              <Badge color="accent" size="xl" variant="subtle">
                 {item}
-              </div>
+              </Badge>
             ))
           }
         </div>

@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 
 import { getCollection } from "astro:content";
 
+import ExternalLinkBadge from "@/src/components/ui/blocks/external-link-badge/ExternalLinkBadge.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
 import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
@@ -182,20 +183,7 @@ const getCourseCount = (path?: string) =>
                   >
                     {course.type}
                   </Badge>
-                  {course.isExternal && (
-                    <Badge
-                      color="secondary"
-                      size="lg"
-                      style={{
-                        position: "absolute",
-                        right: "8px",
-                        textTransform: "uppercase",
-                        top: "8px",
-                      }}
-                    >
-                      External Link
-                    </Badge>
-                  )}
+                  {course.isExternal && <ExternalLinkBadge />}
                   {/* <p class="course-card-type">
                   {course.type}
                 </p> */}

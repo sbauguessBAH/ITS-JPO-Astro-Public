@@ -3,15 +3,14 @@ import { getCollection } from "astro:content";
 
 import Page from "@/src/components/ui/blocks/page/Page.astro";
 import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import ExternalLinkBadge from "@/src/components/ui/blocks/external-link-badge/ExternalLinkBadge.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
-import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
 import Heading from "@/src/components/ui/elements/heading/Heading.astro";
-import Icon from "@/src/components/ui/icon/Icon.astro";
 
 import Layout from "./_layout.astro";
 
@@ -49,13 +48,7 @@ const categories = await getCollection("pcbMicrolearning");
                 {trainings.map((training) => (
                   <Card href={training.url} isExternal>
                     <CardImage entry={training.image} height={225} />
-                    <Badge
-                      color="secondary"
-                      size="lg"
-                      style={{ position: "absolute", right: "8px", top: "8px" }}
-                    >
-                      <Icon name="external-link" />
-                    </Badge>
+                    <ExternalLinkBadge />
                     <CardHeader>
                       <CardTitle>{training.title}</CardTitle>
                       <CardDescription>{training.description}</CardDescription>
