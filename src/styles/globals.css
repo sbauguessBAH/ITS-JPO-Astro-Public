@@ -76,6 +76,9 @@
   --tw-muted-foreground: oklch(0.556 0 0);
 
   --tw-border: oklch(0.928 0 0);
+
+  /* Focus ring and focused border color */
+  --tw-ring: oklch(0.433 0.0983 240.78);
 }
 
 /* Theme colors */
@@ -99,6 +102,8 @@
   --color-muted-foreground: var(--tw-muted-foreground);
 
   --color-border: var(--tw-border);
+
+  --color-ring: var(--tw-ring);
 }
 
 /* =============================================================================

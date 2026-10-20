@@ -23,9 +23,17 @@ import type { HTMLAttributes } from "astro/types";
 
 import type { IconName } from "./icons";
 
+/**
+ * Icon component that can be used to render pre-installed SVG icons dynamically.
+ *
+ * All HTML attributes for SVGs are accepted along with two custom props for `name`
+ * and `size`.
+ */
 type Props = HTMLAttributes<"svg"> & {
   class?: string;
+  /** Name of icon to render */
   name: IconName;
+  /** Size of icon as a number or string */
   size?: number | string;
 };
 

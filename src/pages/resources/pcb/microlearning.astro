@@ -1,9 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 import Badge from "@/src/components/ui/elements/badge/Badge.astro";
-import Card from "@/src/components/ui/elements/card/Card.astro"
+import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
@@ -14,12 +17,12 @@ import Layout from "./_layout.astro";
 
 const categories = await getCollection("pcbMicrolearning");
 ---
+
 <style>
   .micro-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: var(--size);
-    margin-bottom: 4rem;
   }
 
   @media (min-width: 1200px) {
@@ -27,38 +30,43 @@ const categories = await getCollection("pcbMicrolearning");
       grid-template-columns: repeat(3, 1fr);
     }
   }
-
 </style>
 <Layout>
-  <main class="program-main">
-    <ProgramSection>
-      <h2 class="program-title-lg mb-4">
-        Microlearning Videos
-      </h2>
-      <!-- <p class="program-text mb-4">
+  <Page>
+    <PageHeader title="Microlearning Videos" />
+    <PageBody>
+      <p class="program-text tw:m-0!">
         Access brief videos for quick, focused learning on ITS topics.
-      </p> -->
-      <div>
-        {categories.map(({ data: { title, trainings } }) => (
-          <h3 class="program-title-md mb-4">
-            {title}
-          </h3>
-          <div class="micro-grid">
-            {trainings.map(training => (
-              <Card href={training.url} isExternal>
-                <CardImage entry={training.image} height={225}/>
-                <Badge color="secondary" size="lg" style={{ position: 'absolute', right: '8px', top: '8px' }}>
-                  <Icon name="external-link"/>
-                </Badge>
-                <CardHeader>
-                  <CardTitle>{training.title}</CardTitle>
-                  <CardDescription>{training.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        ))}
+      </p>
+      <div class="tw:flex tw:flex-col tw:gap-8">
+        {
+          categories.map(({ data: { title, trainings } }) => (
+            <section class="tw:flex tw:flex-col tw:gap-4">
+              <Heading as="h2" size="md">
+                {title}
+              </Heading>
+              <div class="micro-grid">
+                {trainings.map((training) => (
+                  <Card href={training.url} isExternal>
+                    <CardImage entry={training.image} height={225} />
+                    <Badge
+                      color="secondary"
+                      size="lg"
+                      style={{ position: "absolute", right: "8px", top: "8px" }}
+                    >
+                      <Icon name="external-link" />
+                    </Badge>
+                    <CardHeader>
+                      <CardTitle>{training.title}</CardTitle>
+                      <CardDescription>{training.description}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+            </section>
+          ))
+        }
       </div>
-    </ProgramSection>
-  </main>
+    </PageBody>
+  </Page>
 </Layout>

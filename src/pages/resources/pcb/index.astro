@@ -1,13 +1,19 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import OverlayCard, {
   type OverlayCardProps,
 } from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
+import SectionDescription from "@/src/components/ui/blocks/section/SectionDescription.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 
 import Layout from "./_layout.astro";
 
@@ -100,12 +106,12 @@ const RESOURCES: OverlayCardProps[] = [
 ---
 
 <Layout>
-  <main class="tw:flex tw:flex-col">
-    <ProgramSection size="small">
-      <div class="tw:flex tw:flex-col-reverse tw:gap-6 tw:lg:flex-row">
-        <div class="tw:lg:basis-7/12">
-          <h2 class="tw:title-lg mb-4">Program Overview</h2>
-          <p class="program-text">
+  <Page>
+    <PageHeader title="Program Overview" />
+    <PageBody class="tw:gap-12">
+      <Section orientation="horizontal" size="xl">
+        <SectionContent>
+          <SectionDescription>
             The ITS Professional Capacity Building (PCB) Program supports
             activities that deliver multimodal ITS learning opportunities to
             transportation professionals by providing ITS trainings and
@@ -118,16 +124,16 @@ const RESOURCES: OverlayCardProps[] = [
             >
               23 USC 514
             </a>.
-          </p>
-          <p class="program-text">
+          </SectionDescription>
+          <SectionDescription>
             The ITS PCB Program works with Federal, State, and local
             transportation stakeholders to ensure they have adequate knowledge
             of ITS for consideration in the transportation planning process and
             that the United States has a workforce capable of developing,
             operating, and maintaining ITS.
-          </p>
-        </div>
-        <div class="tw:lg:basis-5/12">
+          </SectionDescription>
+        </SectionContent>
+        <div data-slot="section-image">
           <iframe
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -135,38 +141,36 @@ const RESOURCES: OverlayCardProps[] = [
             src="https://www.youtube.com/embed/hUhdaE4Zpw4?si=VwVIeMvEmmeKiR6Q"
             title="YouTube video player"></iframe>
         </div>
-      </div>
-    </ProgramSection>
-    <ProgramSection>
-      <h2 class="tw:title-lg tw:mb-4 tw:text-center">
-        Spotlight on Training and Technical Assistance Resources
-      </h2>
-      <div
-        class="tw:grid tw:auto-rows-[minmax(100px,300px)] tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2"
-        role="directory"
-      >
-        {RESOURCES.map((resource) => <OverlayCard {...resource} />)}
-      </div>
-    </ProgramSection>
-    <ProgramSection class="pb-5" color="gray">
-      <h2 class="tw:title-lg tw:mb-4 tw:text-center">
-        What do you want to do?
-      </h2>
-      <div
-        class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
-      >
-        {
-          ACTIONS.filter((action) => action.show).map((action) => (
-            <Card href={action.path}>
-              <CardImage entry={action.image} height={200} />
-              <CardHeader>
-                <CardTitle>{action.title}</CardTitle>
-                <CardDescription>{action.description}</CardDescription>
-              </CardHeader>
-            </Card>
-          ))
-        }
-      </div>
-    </ProgramSection>
-  </main>
+      </Section>
+      <section class="tw:flex tw:flex-col tw:gap-6">
+        <Heading size="md">
+          Spotlight on Training and Technical Assistance Resources
+        </Heading>
+        <div
+          class="tw:grid tw:auto-rows-[minmax(100px,300px)] tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2"
+          role="directory"
+        >
+          {RESOURCES.map((resource) => <OverlayCard {...resource} />)}
+        </div>
+      </section>
+      <section class="tw:flex tw:flex-col tw:gap-6">
+        <Heading size="md">What do you want to do?</Heading>
+        <div
+          class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
+        >
+          {
+            ACTIONS.filter((action) => action.show).map((action) => (
+              <Card href={action.path}>
+                <CardImage entry={action.image} height={200} />
+                <CardHeader>
+                  <CardTitle>{action.title}</CardTitle>
+                  <CardDescription>{action.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))
+          }
+        </div>
+      </section>
+    </PageBody>
+  </Page>
 </Layout>

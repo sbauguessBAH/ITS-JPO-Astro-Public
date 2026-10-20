@@ -3,7 +3,9 @@ import type { CollectionEntry } from "astro:content";
 
 import { getCollection } from "astro:content";
 
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
@@ -76,20 +78,22 @@ const getCourseCount = (path?: string) =>
   }
 </style>
 <Layout>
-  <main class="program-main">
-    <ProgramSection>
-      <h2 class="program-title-lg mb-4">ITS Trainings</h2>
-      <p class="program-text">
-        The ITS PCB Program offers a comprehensive suite of trainings covering a
-        range of topics from foundational concepts to emerging transportation
-        technologies. Discover and take these free trainings to help enhance
-        your ITS knowledge and skills.
-      </p>
-      <p class="program-text mb-4">
-        For National Highway Institute (NHI) Trainings, the link will take you
-        to the NHI catalog. From there, you can search for the course you're
-        interested in.
-      </p>
+  <Page>
+    <PageHeader title="ITS Trainings" />
+    <PageBody>
+      <div class="tw:flex tw:flex-col tw:gap-4">
+        <p class="program-text tw:m-0!">
+          The ITS PCB Program offers a comprehensive suite of trainings covering
+          a range of topics from foundational concepts to emerging
+          transportation technologies. Discover and take these free trainings to
+          help enhance your ITS knowledge and skills.
+        </p>
+        <p class="program-text tw:m-0!">
+          For National Highway Institute (NHI) Trainings, the link will take you
+          to the NHI catalog. From there, you can search for the course you're
+          interested in.
+        </p>
+      </div>
       <div class="tw:flex tw:flex-col tw:gap-6 tw:lg:flex-row">
         <div class="tw:basis-1/4">
           <nav
@@ -214,6 +218,6 @@ const getCourseCount = (path?: string) =>
           </div>
         </div>
       </div>
-    </ProgramSection>
-  </main>
+    </PageBody>
+  </Page>
 </Layout>

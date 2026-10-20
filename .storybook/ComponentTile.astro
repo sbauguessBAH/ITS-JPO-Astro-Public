@@ -1,0 +1,12 @@
+---
+type Props = {
+  label: string;
+};
+
+const { label } = Astro.props;
+---
+
+<div class="tw:flex tw:flex-col tw:items-center tw:gap-2 tw:p-4 tw:text-center">
+  <slot />
+  <span class="tw:text-xs tw:text-muted-foreground">{label}</span>
+</div>

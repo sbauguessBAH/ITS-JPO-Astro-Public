@@ -1,15 +1,34 @@
 import "./preview.css";
-import React from "react";
+import React, { useContext } from "react";
 import {
   Title,
   Subtitle,
   Description,
-  Primary,
+  Canvas,
   Controls,
-  Stories,
+  DocsContext,
+  Subheading,
 } from "@storybook/addon-docs/blocks";
 
+const StoriesWithControls = () => {
+  const context = useContext(DocsContext);
+
+  return context.componentStories().map((story) => (
+    <React.Fragment key={story.id}>
+      <Subheading>{story.name}</Subheading>
+      <Description of={story.moduleExport} />
+      <Canvas of={story.moduleExport} />
+      {story.parameters?.controls?.disable ? null : (
+        <Controls of={story.moduleExport} />
+      )}
+    </React.Fragment>
+  ));
+};
+
 const preview = {
+  argTypes: {
+    class: { table: { disable: true } },
+  },
   parameters: {
     controls: {
       matchers: {
@@ -26,9 +45,7 @@ const preview = {
           <Title />
           <Subtitle />
           <Description />
-          <Primary />
-          <Stories includePrimary={false} title="Variants" />
-          <Controls />
+          <StoriesWithControls />
         </>
       ),
     },
