@@ -34,18 +34,19 @@ const linkAttrs =
 ---
 
 <li
-  class:list={[
-    "ui_section-highlight",
-    href && "ui_section-highlight_link",
-    className,
-  ]}
+  class:list={["tw:group/section-highlight", className]}
   data-orientation={orientation}
-  data-slot="ui_section-highlight"
+  data-slot="section-highlight"
   {...rest}
 >
   <Component
-    class="ui_section-highlight-inner"
-    data-slot="ui_section-highlight-inner"
+    class:list={[
+      "tw:flex tw:items-start tw:gap-3 tw:text-inherit! tw:no-underline!",
+      "tw:group-data-[orientation=vertical]/section-highlight:flex-col",
+      href &&
+        "tw:transition-opacity tw:hover:no-underline! tw:hover:opacity-75 tw:focus:opacity-75",
+    ]}
+    data-slot="section-highlight-inner"
     {...linkAttrs}
   >
     <slot />

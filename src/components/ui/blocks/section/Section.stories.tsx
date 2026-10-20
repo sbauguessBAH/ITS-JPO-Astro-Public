@@ -68,6 +68,73 @@ const sectionSlots = {
   ],
 };
 
+const contentSlots = sectionSlots.default[0];
+
+const iconHighlight = (label: string, props = {}) => ({
+  component: SectionHighlight,
+  props,
+  slots: {
+    default: [
+      {
+        component: SectionIcon,
+        slots: {
+          default: {
+            component: Icon,
+            props: { name: "bullseye", size: 40 },
+          },
+        },
+      },
+      {
+        component: SectionContent,
+        slots: {
+          default: [
+            {
+              component: SectionTitle,
+              props: { as: "h3" },
+              slots: { default: label },
+            },
+            {
+              component: SectionDescription,
+              slots: {
+                default: "Short supporting description for this highlight.",
+              },
+            },
+          ],
+        },
+      },
+    ],
+  },
+});
+
+const highlightSlots = {
+  default: [
+    {
+      component: SectionContent,
+      slots: {
+        default: [
+          {
+            component: SectionTitle,
+            slots: { default: "Why participate" },
+          },
+          {
+            component: SectionHighlights,
+            slots: {
+              default: [
+                iconHighlight("Hands-on training", { href: "/resources/" }),
+                iconHighlight("Peer exchange"),
+                iconHighlight("Vertical highlight", {
+                  orientation: "vertical",
+                }),
+              ],
+            },
+          },
+        ],
+      },
+    },
+    sectionSlots.default[1],
+  ],
+};
+
 const meta = {
   title: "UI/Blocks/Section",
   component: Section,
@@ -81,7 +148,7 @@ const meta = {
       control: { type: "select" },
     },
     size: {
-      options: ["sm", "default", "lg"],
+      options: ["sm", "default", "lg", "xl"],
       control: { type: "select" },
     },
     split: {
@@ -122,5 +189,45 @@ export const Muted = {
     color: "muted",
     orientation: "horizontal",
     split: "1/2",
+  },
+};
+
+export const ReversedVertical = {
+  args: {
+    reverse: true,
+  },
+};
+
+export const WithoutImage = {
+  args: {
+    orientation: "horizontal",
+    slots: { default: [contentSlots] },
+  },
+};
+
+export const Highlights = {
+  args: {
+    orientation: "horizontal",
+    slots: highlightSlots,
+  },
+};
+
+export const Small = {
+  args: {
+    size: "sm",
+  },
+};
+
+export const Large = {
+  args: {
+    orientation: "horizontal",
+    size: "lg",
+  },
+};
+
+export const ExtraLarge = {
+  args: {
+    orientation: "horizontal",
+    size: "xl",
   },
 };

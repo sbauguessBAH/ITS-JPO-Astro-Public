@@ -28,7 +28,7 @@ type Props = {
    *
    * @default `default`
    */
-  size?: "default" | "lg" | "sm";
+  size?: "default" | "lg" | "sm" | "xl";
   /**
    * Relative width of SectionContent vs SectionImage when
    * `orientation="horizontal"`, expressed as `content/image`.
@@ -53,20 +53,48 @@ const {
 } = Astro.props;
 
 const [contentWeight, imageWeight] = split.split("/").map(Number);
+
+const sizeClasses = {
+  default: "tw:max-w-[768px]",
+  lg: "tw:max-w-[992px]",
+  sm: "tw:max-w-[576px]",
+  xl: "tw:max-w-[1200px]",
+};
 ---
 
 <section
-  class:list={["ui_section", className]}
+  class:list={[
+    "tw:group/section tw:relative tw:box-border tw:w-full tw:py-16",
+    "tw:bg-transparent tw:text-foreground",
+    "tw:data-[color=muted]:bg-muted",
+    className,
+  ]}
   data-color={color}
   data-orientation={orientation}
   data-reverse={reverse ? "" : undefined}
-  data-slot="ui_section"
+  data-slot="section"
   {...rest}
 >
   <div
-    class="ui_section-container"
+    class:list={[
+      "tw:mx-auto tw:box-border tw:flex tw:w-full tw:flex-col tw:gap-10 tw:px-3",
+      sizeClasses[size],
+
+      // `reverse` flips sides when horizontal, or puts the image above when vertical
+      "tw:group-data-[reverse]/section:*:data-[slot=section-content]:order-2",
+      "tw:group-data-[reverse]/section:*:data-[slot=section-image]:order-1",
+
+      // Side-by-side only once there's room and an image in the slot.
+      // Weights come from `split`; tied to slots rather than DOM order so `reverse` never affects the ratio.
+      // Class names must stay literal strings so Tailwind can detect them.
+      "tw:md:group-data-[orientation=horizontal]/section:has-data-[slot=section-image]:flex-row",
+      "tw:md:group-data-[orientation=horizontal]/section:has-data-[slot=section-image]:*:min-w-0",
+      "tw:md:group-data-[orientation=horizontal]/section:has-data-[slot=section-image]:*:data-[slot=section-content]:flex-(--ui-section-content-weight)",
+      "tw:md:group-data-[orientation=horizontal]/section:has-data-[slot=section-image]:*:data-[slot=section-image]:flex-(--ui-section-image-weight)",
+      "tw:md:group-data-[orientation=horizontal]/section:*:data-[slot=section-image]:h-full",
+    ]}
     data-size={size}
-    data-slot="ui_section-container"
+    data-slot="section-container"
     style={`--ui-section-content-weight: ${contentWeight}; --ui-section-image-weight: ${imageWeight};`}
   >
     <slot />

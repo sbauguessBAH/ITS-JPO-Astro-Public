@@ -7,8 +7,11 @@ const { class: className, ...rest } = Astro.props;
 ---
 
 <ul
-  class:list={["ui_section-highlights", className]}
-  data-slot="ui_section-highlights"
+  class:list={[
+    "tw:m-0! tw:flex tw:w-full tw:list-none tw:flex-col tw:gap-4 tw:p-0!",
+    className,
+  ]}
+  data-slot="section-highlights"
   {...rest}
 >
   <slot />

@@ -28,10 +28,11 @@ const {
 
 <LibraryImage
   class:list={[
-    "ui_section-image",
-    rounded && "ui_section-image_rounded",
+    "tw:block tw:h-auto tw:w-full tw:object-cover",
+    rounded && "tw:rounded-2xl",
     className,
   ]}
+  data-slot="section-image"
   entry={entry}
   style={{
     height: height ? `${height}px` : undefined,
