@@ -1,26 +1,22 @@
 ---
-import edCox from "@/src/assets/images/pcb/webinars/headshots/ed-cox.jpg";
-import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar.png";
-import kellyWells from "@/src/assets/images/pcb/webinars/headshots/kelly-wells.jpg";
-import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Profile from "@/src/components/ui/blocks/profile/Profile.astro";
 import Accordion from "@/src/components/ui/elements/accordion/Accordion.astro";
 import AccordionContent from "@/src/components/ui/elements/accordion/AccordionContent.astro";
 import AccordionItem from "@/src/components/ui/elements/accordion/AccordionItem.astro";
 import AccordionTrigger from "@/src/components/ui/elements/accordion/AccordionTrigger.astro";
-import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
 import Icon from "@/src/components/ui/icon/Icon.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../../_layout.astro";
-import HostCard from "./_host-card.astro";
 
 const hosts = [
   {
     description:
       "Ralph Volpe is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Systems Operations Specialist for the FHWA Resource Center, Operations Technical Service Team. Mr. Volpe is responsible for providing technical assistance, training, and deploying strategies and techniques to FHWA's internal and external customers on topics such as TSMO, integrated corridor management, active transportation and demand management, operations performance management, and organizing/planning for operations. Before joining FHWA in 2001, Mr. Volpe was a specialist in planning and public transportation for the Tennessee Department of Transportation. Mr. Volpe holds a BS in Logistics and MS in civil engineering from the University of Tennessee, Knoxville.",
-    image: ralphVolpe,
+    image: "pcb/portraits/ralph-volpe",
     name: "Ralph Volpe",
     title:
       "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist",
@@ -31,7 +27,7 @@ const presenters = [
   {
     description:
       "Kelly Wells has been at NCDOT for over 20 years, mostly working in TSMO. She currently manages DriveNC.gov, NC 511, NCDOT Customer Service, and Probe Speed Data. Ms. Wells began her career at FHWA and has a Civil Engineering degree from George Washington University.",
-    image: kellyWells,
+    image: "pcb/portraits/kelly-wells",
     name: "Kelly Wells",
     title:
       "Emergency Management Instructor, North Carolina Department of Transportation (NCDOT)",
@@ -39,7 +35,7 @@ const presenters = [
   {
     description:
       "Ed Cox is the ITS Engineering Director with the Indiana Department of Transportation's Traffic Management group. He has more than 20 years of experience in traffic operations for INDOT. Mr. Cox is a 1991 graduate of Purdue University with a BS in Civil Engineering. He is also an Indiana Professional Engineer.",
-    image: edCox,
+    image: "pcb/portraits/ed-cox",
     name: "Ed Cox",
     title:
       "ITS Engineering Director, Indiana Department of Transportation's (INDOT) Traffic Management",
@@ -47,7 +43,7 @@ const presenters = [
   {
     description:
       "James Colyar is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Specialist with the FHWA Office of Operations. He has been with FHWA for over 20 years. Mr. Colyar has experience in traffic engineering, traffic analysis and modeling, intelligent transportation systems, and transportation systems management and operations. Mr. Colyar holds an MS in civil engineering from North Carolina State University and an MS in Transportation Policy, Operations & Logistics from George Mason University.",
-    image: jamesColyar,
+    image: "pcb/portraits/james-colyar",
     name: "James Colyar",
     title:
       "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Office of Operations",
@@ -368,8 +364,9 @@ const presenters = [
       <h3 class="program-title-md mb-4">Host</h3>
       {
         hosts.map((item) => (
-          <HostCard
-            description={item.description}
+          <Profile
+            bio={item.description}
+            class="tw:mb-4"
             image={item.image}
             name={item.name}
             title={item.title}
@@ -379,8 +376,9 @@ const presenters = [
       <h3 class="program-title-md mb-4">Presenters</h3>
       {
         presenters.map((item) => (
-          <HostCard
-            description={item.description}
+          <Profile
+            bio={item.description}
+            class="tw:mb-4"
             image={item.image}
             name={item.name}
             title={item.title}

@@ -1,9 +1,7 @@
 ---
-import gregJones from "@/src/assets/images/pcb/webinars/headshots/greg-jones.png";
-import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar.png";
-import natalieBettger from "@/src/assets/images/pcb/webinars/headshots/natalie-bettger.png";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Profile from "@/src/components/ui/blocks/profile/Profile.astro";
 import Accordion from "@/src/components/ui/elements/accordion/Accordion.astro";
 import AccordionContent from "@/src/components/ui/elements/accordion/AccordionContent.astro";
 import AccordionItem from "@/src/components/ui/elements/accordion/AccordionItem.astro";
@@ -13,13 +11,12 @@ import Icon from "@/src/components/ui/icon/Icon.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../../_layout.astro";
-import HostCard from "./_host-card.astro";
 
 const hosts = [
   {
     description:
       "Mr. Jones is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a freeway management and intelligent transportation systems (ITS) specialist at the FHWA Resource Center in Atlanta, GA. He provides technical assistance, training, and promotion of new technologies in the field of freeway operations and transportation management. Before that, Jones was FHWA's regional ITS specialist for the Southwestern United States and also worked in the Florida, Georgia, and Maryland Divisions. Jones graduated from the University of Tennessee with a bachelor's degree in civil engineering.",
-    image: gregJones,
+    image: "pcb/portraits/greg-jones",
     name: "Greg Jones",
     title: "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Resource Center",
   },
@@ -29,7 +26,7 @@ const presenters = [
   {
     description:
       "Mr. Colyar is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Specialist with the FHWA Office of Operations. He has been with FHWA for over 20 years. He has experience in traffic engineering, traffic analysis and modeling, intelligent transportation systems, and transportation systems management and operations. Mr. Colyar holds a master's in civil engineering from North Carolina State University and a master's in Transportation Policy, Operations & Logistics from George Mason University.",
-    image: jamesColyar,
+    image: "pcb/portraits/james-colyar",
     name: "James Colyar",
     title:
       "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Office of Operations",
@@ -37,7 +34,7 @@ const presenters = [
   {
     description:
       "Ms. Bettger is a Senior Program Manager for the North Central Texas Council of Governments (NCTCOG). NCTCOG serves the Dallas-Fort Worth region by developing transportation plans and programs that address the complex needs of the rapidly growing area. Natalie is currently NCTCOG's Senior Program Manager for Congestion Management and Innovative Project Delivery Program Area. This area includes planning in the areas of TSMO, aviation, congestion management, safety, security, special events, public involvement, and marketing. Her responsibilities also include coordinating with partner agencies to implement congestion management strategies, traffic signal retiming, incident management, safety, and operational projects.",
-    image: natalieBettger,
+    image: "pcb/portraits/natalie-bettger",
     name: "Natalie Bettger",
     title:
       "Senior Program Manager, North Central Texas Council of Governments (NCTCOG)",
@@ -412,8 +409,9 @@ const presenters = [
       <h3 class="program-title-md mb-4">Host</h3>
       {
         hosts.map((item) => (
-          <HostCard
-            description={item.description}
+          <Profile
+            bio={item.description}
+            class="tw:mb-4"
             image={item.image}
             name={item.name}
             title={item.title}
@@ -423,8 +421,9 @@ const presenters = [
       <h3 class="program-title-md mb-4">Presenters</h3>
       {
         presenters.map((item) => (
-          <HostCard
-            description={item.description}
+          <Profile
+            bio={item.description}
+            class="tw:mb-4"
             image={item.image}
             name={item.name}
             title={item.title}

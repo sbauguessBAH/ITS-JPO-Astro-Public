@@ -1,10 +1,7 @@
 ---
-import johnParker from "@/src/assets/images/pcb/webinars/headshots/john-parker.png";
-import ralphVolpe from "@/src/assets/images/pcb/webinars/headshots/ralph-volpe.png";
-import salCowan from "@/src/assets/images/pcb/webinars/headshots/sal-cowan.jpg";
-import vaishaliShah from "@/src/assets/images/pcb/webinars/headshots/vaishali-shah.png";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Profile from "@/src/components/ui/blocks/profile/Profile.astro";
 import Accordion from "@/src/components/ui/elements/accordion/Accordion.astro";
 import AccordionContent from "@/src/components/ui/elements/accordion/AccordionContent.astro";
 import AccordionItem from "@/src/components/ui/elements/accordion/AccordionItem.astro";
@@ -14,13 +11,12 @@ import Icon from "@/src/components/ui/icon/Icon.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../../_layout.astro";
-import HostCard from "./_host-card.astro";
 
 const hosts = [
   {
     description:
       "Mr. Volpe is responsible for providing technical assistance, training, and deploying strategies and techniques to FHWA's internal and external customers on topics such as TSMO, integrated corridor management, active transportation and demand management, operations performance management, and organizing/planning for operations. Before joining FHWA in 2001, Mr. Volpe was a specialist in planning and public transportation for the Tennessee Department of Transportation. Mr. Volpe holds a Bachelor of Science in Logistics and Master of Science in civil engineering from the University of Tennessee, Knoxville.",
-    image: ralphVolpe,
+    image: "pcb/portraits/ralph-volpe",
     name: "Ralph Volpe",
     title:
       "USDOT/FHWA Resource Center, Operations Technical Service Team, FHWA EDC-6 Crowdsourcing Program Co-Lead and Transportation Systems Operations Specialist",
@@ -31,7 +27,7 @@ const presenters = [
   {
     description:
       "In his role, Mr. Cowan oversees the Department's TSM&O programs, including the Office of Emergency Management, Security, and Response where the State's TIM program is managed.",
-    image: salCowan,
+    image: "pcb/portraits/sal-cowan",
     name: "Sal Cowan",
     title:
       "New Jersey Department of Transportation, Senior Director of Mobility, Traveler Information Instructor",
@@ -39,7 +35,7 @@ const presenters = [
   {
     description:
       "Ms. Shah has led and contributed to FHWA, USDOT ITS JPO, FAA, and National Cooperative Highway Research Program efforts, helping public agencies improve decision-making through new technologies, tools, and processes. Ms. Shah holds a BS degree from the University of Maryland and an MS degree from the University of Texas.",
-    image: vaishaliShah,
+    image: "pcb/portraits/vaishali-shah",
     name: "Vaishali Shah",
     title:
       "AEM Corporation, Sr. Director of Transportation Systems Corporation, TIM Instructor, Support Lead for the EDC-5/6 Crowdsourcing Innovation",
@@ -47,7 +43,7 @@ const presenters = [
   {
     description:
       "Mr. Parker is responsible for Information Technology (IT) and Geographic Information Systems projects, as well as operational and safety studies. His projects include Truck Parking Management System, third-party navigation app integration, Emergency Vehicle Warning System (HAAS alert) implementation, and various ITS projects for the Turnpike. Before joining the PTC, John worked at Pennsylvania Department of Transportation for 17 years where he was responsible for the management of the Statewide Bridge Program and IT projects for the Program Center. Mr. Parker currently serves as a member of the Innovation Council for the PTC and is a member of the Eastern Transportation Coalition's third-party navigation and mapping initiative.",
-    image: johnParker,
+    image: "pcb/portraits/john-parker",
     name: "John Parker",
     title:
       "Pennsylvania Turnpike Commission (PTC), Senior Traffic Operations Project Manager, TIM Subject Matter Expert",
@@ -414,8 +410,9 @@ const presenters = [
       <h3 class="program-title-md mb-4">Host</h3>
       {
         hosts.map((item) => (
-          <HostCard
-            description={item.description}
+          <Profile
+            bio={item.description}
+            class="tw:mb-4"
             image={item.image}
             name={item.name}
             title={item.title}
@@ -425,8 +422,9 @@ const presenters = [
       <h3 class="program-title-md mb-4">Presenters</h3>
       {
         presenters.map((item) => (
-          <HostCard
-            description={item.description}
+          <Profile
+            bio={item.description}
+            class="tw:mb-4"
             image={item.image}
             name={item.name}
             title={item.title}

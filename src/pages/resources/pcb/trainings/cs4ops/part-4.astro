@@ -1,26 +1,22 @@
 ---
-import jamesColyar from "@/src/assets/images/pcb/webinars/headshots/james-colyar.png";
-import jeremyDilmore from "@/src/assets/images/pcb/webinars/headshots/jeremy-dilmore.jpg";
-import stephanieMarik from "@/src/assets/images/pcb/webinars/headshots/stephanie-marik.jpg";
-import wangZhang from "@/src/assets/images/pcb/webinars/headshots/wang-zhang.png";
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Profile from "@/src/components/ui/blocks/profile/Profile.astro";
 import Accordion from "@/src/components/ui/elements/accordion/Accordion.astro";
 import AccordionContent from "@/src/components/ui/elements/accordion/AccordionContent.astro";
 import AccordionItem from "@/src/components/ui/elements/accordion/AccordionItem.astro";
 import AccordionTrigger from "@/src/components/ui/elements/accordion/AccordionTrigger.astro";
-import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
 import Icon from "@/src/components/ui/icon/Icon.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../../_layout.astro";
-import HostCard from "./_host-card.astro";
 
 const hosts = [
   {
     description:
       "Mr. Colyar (host) is a FHWA EDC-6 Crowdsourcing Program Co-Lead and a Transportation Specialist with the FHWA Office of Operations. He has been with FHWA for over 20 years. He has experience in traffic engineering, traffic analysis and modeling, intelligent transportation systems, and transportation systems management and operations. Mr. Colyar holds an MS in civil engineering from North Carolina State University and an MS in Transportation Policy, Operations & Logistics from George Mason University.",
-    image: jamesColyar,
+    image: "pcb/portraits/james-colyar",
     name: "James Colyar",
     title:
       "FHWA EDC-6 Crowdsourcing Program Co-Lead, FHWA Office of Operations",
@@ -31,14 +27,14 @@ const presenters = [
   {
     description:
       "Ms. Marik has worked in Operations for The Ohio Department of Transportation since 2013. In her current role as the Transportation Systems Performance Engineer, within the Office of Traffic Management, she provides engineering analysis and creates reports and dashboards related to congestion, mobility, and incident management.",
-    image: stephanieMarik,
+    image: "pcb/portraits/stephanie-marik",
     name: "Stephanie Marik",
     title: "Road Weather Instructor, Ohio Department of Transporation",
   },
   {
     description:
       "Dr. Zhang (Arterial Co-Instructor) is the transportation data program manager at the Maricopa Association of Governments (MAG). He received his Ph.D. in civil engineering from Virginia Tech in 2006. For the last fifteen years at MAG, his work involves transportation data collection and processing, and applying data analytics and visualizations to system analysis, transportation modeling, and planning studies. He has experience in leveraging a wide span of transportation data from traditional ones to cutting-edge ones.",
-    image: wangZhang,
+    image: "pcb/portraits/wang-zhang",
     name: "Dr. Wang Zhang",
     title:
       "Transportation Data Program Manager, Maricopa Association of Governments",
@@ -46,7 +42,7 @@ const presenters = [
   {
     description:
       "Mr. Dilmore (Arterial Co-Instructor) is the Transportation Systems Management and Operation Engineer for the Florida Department of Transportation District 5. In this position, he is responsible for leading FDOT’s technology efforts including working in the fields of signal timing optimization, managed lanes, simulation modeling, and connected and autonomous vehicles.",
-    image: jeremyDilmore,
+    image: "pcb/portraits/jeremy-dilmore",
     name: "Jeremy Dilmore",
     title:
       "Transportation Systems Management and Operation Engineer, Florida Department of Transportation District 5",
@@ -440,8 +436,9 @@ const presenters = [
       <h3 class="program-title-md mb-4">Host</h3>
       {
         hosts.map((item) => (
-          <HostCard
-            description={item.description}
+          <Profile
+            bio={item.description}
+            class="tw:mb-4"
             image={item.image}
             name={item.name}
             title={item.title}
@@ -451,8 +448,9 @@ const presenters = [
       <h3 class="program-title-md mb-4">Presenters</h3>
       {
         presenters.map((item) => (
-          <HostCard
-            description={item.description}
+          <Profile
+            bio={item.description}
+            class="tw:mb-4"
             image={item.image}
             name={item.name}
             title={item.title}
