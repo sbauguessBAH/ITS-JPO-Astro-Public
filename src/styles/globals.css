@@ -125,6 +125,10 @@
 @layer base {
   /* Overrides */
   button {
+    font-family: inherit;
+  }
+
+  button:not([data-slot="ui_button"]) {
     border-radius: inherit !important;
   }
 }

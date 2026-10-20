@@ -10,16 +10,16 @@ const sizes = [
   { label: "Large", size: "lg" },
 ];
 
-// Icon pixel size paired with each button size so icons scale with the button
+// Icon-only button size paired with each button size
 const iconSizes = [
-  { label: "Small", size: "sm", iconSize: "icon-sm", pixels: 16 },
-  { label: "Default", size: "default", iconSize: "icon", pixels: 18 },
-  { label: "Large", size: "lg", iconSize: "icon-lg", pixels: 20 },
+  { label: "Small", size: "sm", iconSize: "icon-sm" },
+  { label: "Default", size: "default", iconSize: "icon" },
+  { label: "Large", size: "lg", iconSize: "icon-lg" },
 ];
 
-const icon = (name: string, pixels: number) => ({
+const icon = (name: string) => ({
   component: Icon,
-  props: { name, size: pixels },
+  props: { name },
 });
 
 const label = (text: string, emphasis = false) =>
@@ -137,6 +137,9 @@ export const Sizes = {
   },
 };
 
+/**
+ * Buttons are sized
+ */
 export const Icons = {
   // @ts-expect-error storybook-astro does not export types
   render: (args) => ({
@@ -147,7 +150,7 @@ export const Icons = {
         "<span></span>",
         ...iconSizes.map(({ label: text }) => label(text, true)),
         label("Icon only"),
-        ...iconSizes.map(({ iconSize, pixels }) => ({
+        ...iconSizes.map(({ iconSize }) => ({
           component: Button,
           props: {
             "aria-label": "Download",
@@ -155,19 +158,19 @@ export const Icons = {
             size: iconSize,
             variant: args.variant,
           },
-          slots: { default: icon("download", pixels) },
+          slots: { default: icon("download") },
         })),
         label("Leading icon"),
-        ...iconSizes.map(({ size, pixels }) => ({
+        ...iconSizes.map(({ size }) => ({
           component: Button,
           props: { color: args.color, size, variant: args.variant },
-          slots: { default: [icon("download", pixels), "Download"] },
+          slots: { default: [icon("download"), "Download"] },
         })),
         label("Trailing icon"),
-        ...iconSizes.map(({ size, pixels }) => ({
+        ...iconSizes.map(({ size }) => ({
           component: Button,
           props: { color: args.color, size, variant: args.variant },
-          slots: { default: ["Continue", icon("chevron-right", pixels)] },
+          slots: { default: ["Continue", icon("chevron-right")] },
         })),
       ],
     },

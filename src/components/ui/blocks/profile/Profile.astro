@@ -37,13 +37,15 @@ const { bio, class: className, image, name, title, ...rest } = Astro.props;
   </ItemMedia>
   <ItemContent>
     <div>
-      <ItemTitle class="tw:line-clamp-none! tw:text-xl!">{name}</ItemTitle>
+      <ItemTitle class="tw:line-clamp-none! tw:text-xl! tw:font-semibold!"
+        >{name}</ItemTitle
+      >
       <ItemDescription
         class="tw:mt-0! tw:line-clamp-none! tw:text-sm! tw:font-medium!"
       >
         {title}
       </ItemDescription>
     </div>
-    <p class="tw:m-0 tw:mt-2">{bio}</p>
+    <p class="tw:m-0 tw:mt-2 tw:text-base">{bio}</p>
   </ItemContent>
 </Item>

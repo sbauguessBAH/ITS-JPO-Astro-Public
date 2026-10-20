@@ -37,7 +37,7 @@ type Props = HTMLAttributes<"svg"> & {
   size?: number | string;
 };
 
-const { class: className, name, size = 24 } = Astro.props;
+const { class: className, name, size = 24, ...props } = Astro.props;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const icons = import.meta.glob<{ default: any }>("/src/icons/*.svg");
@@ -57,4 +57,10 @@ const svg = await findIcon();
 const Component = svg.default;
 ---
 
-<Component class={className} fill="currentColor" height={size} width={size} />
+<Component
+  class={className}
+  fill="currentColor"
+  height={size}
+  width={size}
+  {...props}
+/>

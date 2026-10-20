@@ -16,10 +16,12 @@
 export const ICON_NAMES = [
   "bullseye",
   "check",
+  "check-lg",
   "check2-circle",
   "chevron-down",
   "chevron-right",
   "compass",
+  "copy",
   "docx",
   "download",
   "email",
