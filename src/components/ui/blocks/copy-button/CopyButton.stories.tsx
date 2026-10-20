@@ -12,9 +12,3 @@ const meta = {
 export default meta;
 
 export const Default = {};
-
-export const CustomLabel = {
-  args: {
-    label: "Copy URL",
-  },
-};
