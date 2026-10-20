@@ -24,6 +24,7 @@ type Props = HTMLAttributes<"button"> & {
 const {
   class: className,
   color = "primary",
+  disabled,
   link,
   size = "default",
   type = "button",
@@ -51,7 +52,7 @@ if (link) {
 }
 
 const buttonVariants = cva(
-  "tw:inline-flex tw:box-border tw:shrink-0 tw:items-center tw:justify-center tw:align-middle tw:whitespace-nowrap tw:font-medium tw:text-sm tw:leading-none tw:tracking-[0.01em] tw:no-underline! tw:border tw:border-solid tw:transition-[color,background-color,border-color,opacity,box-shadow] tw:duration-150 tw:ease-[ease] tw:cursor-pointer tw:select-none tw:outline-none tw:disabled:opacity-50 tw:disabled:pointer-events-none tw:aria-[disabled=true]:opacity-50 tw:aria-[disabled=true]:pointer-events-none tw:focus-visible:outline-2 tw:focus-visible:outline-solid tw:focus-visible:outline-offset-2 tw:focus-visible:outline-[color:currentColor] tw:[&_svg]:shrink-0 tw:[&_svg]:pointer-events-none",
+  "tw:group/button tw:inline-flex tw:box-border tw:shrink-0 tw:items-center tw:justify-center tw:align-middle tw:whitespace-nowrap tw:font-medium tw:text-sm! tw:leading-none! tw:tracking-[0.01em] tw:no-underline! tw:border tw:border-solid tw:transition-[color,background-color,border-color,opacity,box-shadow,translate] tw:duration-150 tw:ease-[ease] tw:cursor-pointer tw:select-none tw:outline-hidden tw:disabled:opacity-50 tw:disabled:pointer-events-none tw:aria-[disabled=true]:opacity-50 tw:aria-[disabled=true]:pointer-events-none tw:focus-visible:border-ring tw:focus-visible:ring-3 tw:focus-visible:ring-ring/50 tw:active:not-aria-[haspopup]:translate-y-px tw:[&_svg]:shrink-0 tw:[&_svg]:pointer-events-none",
   {
     compoundVariants: [
       // primary
@@ -174,12 +175,12 @@ const buttonVariants = cva(
       },
       size: {
         default:
-          "tw:rounded-lg tw:h-9 tw:gap-1.5 tw:px-2.5 tw:has-[>svg:first-child]:pl-2 tw:has-[>svg:last-child]:pr-2 tw:[&_svg]:size-4",
-        icon: "tw:rounded-lg tw:size-9 tw:[&_svg]:size-4",
-        "icon-lg": "tw:rounded-lg tw:size-10 tw:[&_svg]:size-4",
-        "icon-sm": "tw:rounded-md tw:size-8 tw:[&_svg]:size-4",
-        lg: "tw:rounded-lg tw:h-10 tw:gap-1.5 tw:px-2.5 tw:has-[>svg:first-child]:pl-2 tw:has-[>svg:last-child]:pr-2 tw:[&_svg]:size-4",
-        sm: "tw:rounded-md tw:h-8 tw:gap-1 tw:px-2.5 tw:text-[0.8rem] tw:has-[>svg:first-child]:pl-1.5 tw:has-[>svg:last-child]:pr-1.5 tw:[&_svg]:size-3.5",
+          "tw:rounded-lg! tw:h-9 tw:gap-1.5 tw:px-2.5 tw:has-[>svg:first-child]:pl-2 tw:has-[>svg:last-child]:pr-2 tw:has-data-[icon=inline-start]:pl-2 tw:has-data-[icon=inline-end]:pr-2 tw:[&_svg]:size-4",
+        icon: "tw:rounded-lg! tw:size-9 tw:[&_svg]:size-4",
+        "icon-lg": "tw:rounded-lg! tw:size-10 tw:[&_svg]:size-4",
+        "icon-sm": "tw:rounded-lg! tw:size-8 tw:[&_svg]:size-4",
+        lg: "tw:rounded-lg! tw:h-10 tw:gap-1.5 tw:px-2.5 tw:has-[>svg:first-child]:pl-2 tw:has-[>svg:last-child]:pr-2 tw:has-data-[icon=inline-start]:pl-2 tw:has-data-[icon=inline-end]:pr-2 tw:[&_svg]:size-4",
+        sm: "tw:rounded-lg! tw:h-8 tw:gap-1 tw:px-2.5 tw:text-[0.8rem]! tw:has-[>svg:first-child]:pl-1.5 tw:has-[>svg:last-child]:pr-1.5 tw:has-data-[icon=inline-start]:pl-1.5 tw:has-data-[icon=inline-end]:pr-1.5 tw:[&_svg]:size-3.5",
       },
       variant: {
         default: "",
@@ -193,10 +194,14 @@ const buttonVariants = cva(
 ---
 
 <Component
+  aria-disabled={isLink && disabled ? "true" : undefined}
   class:list={[buttonVariants({ color, size, variant }), className]}
   data-slot="ui_button"
+  data-ui-button
+  disabled={!isLink ? disabled : undefined}
   href={linkHref}
   rel={linkRel}
+  tabindex={isLink && disabled ? -1 : undefined}
   target={linkTarget}
   type={!isLink ? type : undefined}
   {...props}

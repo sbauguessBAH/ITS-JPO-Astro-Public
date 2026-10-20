@@ -128,7 +128,7 @@
     font-family: inherit;
   }
 
-  button:not([data-slot="ui_button"]) {
+  button:not([data-ui-button]) {
     border-radius: inherit !important;
   }
 }
