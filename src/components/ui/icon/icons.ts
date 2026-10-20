@@ -14,6 +14,7 @@
  * to look up icons from the `src/icons/` folder.
  */
 export const ICON_NAMES = [
+  "arrow-up-right",
   "bullseye",
   "check",
   "check-lg",
