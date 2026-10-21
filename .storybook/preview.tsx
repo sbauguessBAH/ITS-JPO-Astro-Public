@@ -1,4 +1,5 @@
 import "./preview.css";
+import { astroSource } from "./source";
 import React, { useContext } from "react";
 import {
   Title,
@@ -9,6 +10,24 @@ import {
   DocsContext,
   Subheading,
 } from "@storybook/addon-docs/blocks";
+import { SyntaxHighlighter } from "storybook/internal/components";
+
+// Prism has no Astro grammar: markup plus a TypeScript frontmatter fence.
+const astroLanguage = (Prism: any) => {
+  Prism.languages.astro = Prism.languages.extend("markup", {});
+  Prism.languages.insertBefore("astro", "comment", {
+    frontmatter: {
+      pattern: /^---[\s\S]*?\n---/,
+      inside: {
+        punctuation: /^---|---$/,
+        rest: Prism.languages.typescript,
+      },
+    },
+  });
+};
+astroLanguage.displayName = "astro";
+astroLanguage.aliases = [];
+SyntaxHighlighter.registerLanguage("astro", astroLanguage);
 
 const StoriesWithControls = () => {
   const context = useContext(DocsContext);
@@ -17,7 +36,10 @@ const StoriesWithControls = () => {
     <React.Fragment key={story.id}>
       <Subheading>{story.name}</Subheading>
       <Description of={story.moduleExport} />
-      <Canvas of={story.moduleExport} />
+      <Canvas
+        of={story.moduleExport}
+        sourceState={story.name === "Default" ? "shown" : "none"}
+      />
       {story.parameters?.controls?.disable ? null : (
         <Controls of={story.moduleExport} />
       )}
@@ -39,6 +61,11 @@ const preview = {
     docs: {
       canvas: {
         sourceState: "none",
+      },
+      source: {
+        type: "dynamic",
+        language: "astro",
+        transform: astroSource,
       },
       page: () => (
         <>

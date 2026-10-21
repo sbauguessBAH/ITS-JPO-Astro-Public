@@ -1,8 +1,8 @@
 ---
+import OverlayCard from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
 import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
-import OverlayCard from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
 import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 import PageLayout from "@/src/layouts/PageLayout.astro";
@@ -34,7 +34,7 @@ import "@/src/styles/globals.css";
       </Fragment>
     </PageHeader>
     <PageBody>
-      <section id="overview" class="tw:flex tw:flex-col tw:gap-4">
+      <section class="tw:flex tw:flex-col tw:gap-4" id="overview">
         <Heading as="h2" size="md">Why it matters</Heading>
         <p class="tw:m-0">
           The ITS PCB Program works with Federal, State, and local
@@ -44,7 +44,7 @@ import "@/src/styles/globals.css";
           and maintaining ITS.
         </p>
       </section>
-      <section id="resources" class="tw:flex tw:flex-col tw:gap-4">
+      <section class="tw:flex tw:flex-col tw:gap-4" id="resources">
         <Heading as="h2" size="md">Spotlight resources</Heading>
         <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2">
           <OverlayCard

@@ -1,8 +1,6 @@
 ---
 import banner from "@/src/assets/images/pcb/banner.png";
-import PageLayout from "@/src/layouts/PageLayout.astro";
-import "@/src/styles/programs.scss";
-import "@/src/styles/globals.css";
+import TailwindLayout from "@/src/layouts/TailwindLayout.astro";
 
 const keywords = [
   "ITS Professional Capacity Building Program",
@@ -18,7 +16,7 @@ const description = `
 `;
 ---
 
-<PageLayout
+<TailwindLayout
   bannerImage={banner}
   description={description}
   keywords={keywords}
@@ -26,4 +24,4 @@ const description = `
 >
   <Fragment slot="banner">ITS Professional Capacity Building</Fragment>
   <slot />
-</PageLayout>
+</TailwindLayout>

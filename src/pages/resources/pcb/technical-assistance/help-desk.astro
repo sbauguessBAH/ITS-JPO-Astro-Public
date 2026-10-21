@@ -13,7 +13,6 @@ import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 import Item from "@/src/components/ui/elements/item/Item.astro";
 import ItemContent from "@/src/components/ui/elements/item/ItemContent.astro";
 import ItemDescription from "@/src/components/ui/elements/item/ItemDescription.astro";
-import ItemHeader from "@/src/components/ui/elements/item/ItemHeader.astro";
 import ItemMedia from "@/src/components/ui/elements/item/ItemMedia.astro";
 import ItemTitle from "@/src/components/ui/elements/item/ItemTitle.astro";
 import Icon from "@/src/components/ui/icon/Icon.astro";
@@ -313,7 +312,16 @@ const LOAN_PROGRAM_BENEFITS: {
         <div class="mt-2 tw:flex tw:flex-row tw:flex-wrap tw:gap-1">
           {
             AVAILABLE_EQUIPMENT.map((item) => (
-              <Badge color="accent" size="xl" variant="subtle">
+              <Badge
+                size="xl"
+                style={{
+                  backgroundColor: "rgb(230, 184, 47, 0.2)",
+                  // borderColor: "rgb(138, 106, 19)",
+                  borderColor: "transparent",
+                  color: "rgb(138, 106, 19)",
+                }}
+                variant="subtle"
+              >
                 {item}
               </Badge>
             ))

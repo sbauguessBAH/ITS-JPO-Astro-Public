@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { getCollection } from "astro:content";
+
+import TrainingModuleItem from "@/src/components/programs/TrainingModuleItem.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import ItemGroup from "@/src/components/ui/elements/item/ItemGroup.astro";
+import { getMarkdownPreview } from "@/src/lib/markdown";
+
+import Layout from "../_layout.astro";
+
+const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
+  await getCollection("pcbStandardsTrainings");
+---
+
+<Layout>
+  <Page class="tw:mx-auto tw:w-full tw:max-w-7xl">
+    <PageHeader>
+      <slot slot="title">Standards Trainings</slot>
+    </PageHeader>
+    <PageBody>
+      <div>
+        <p class="program-text">
+          The ITS Professional Capacity Building Program (ITS PCB) is pleased to
+          offer FREE ITS transit standards training. This series is for
+          practitioners in state and local highway agencies and transit agencies
+          who seek the skills needed to procure, test, implement, and operate
+          standards-based systems and devices. Consultants, system designers,
+          integrators, and testers will also find the training informative.
+        </p>
+        <p class="program-text mb-4">
+          Documents linked below were last updated in 2021. They remain
+          available in their original published format to ensure public access.
+          Click the title to view additional information about each training
+          module.
+        </p>
+      </div>
+      <ItemGroup class="tw:gap-4">
+        {
+          trainings
+            .toSorted((a, b) => a.data.module - b.data.module)
+            .map((training) => (
+              <TrainingModuleItem
+                description={training.data.code}
+                href={`/resources/pcb/trainings/standards-trainings/${training.id}`}
+                length={training.data.length}
+                module={training.data.module}
+                summary={getMarkdownPreview(training.body)}
+                title={training.data.title}
+              />
+            ))
+        }
+      </ItemGroup>
+    </PageBody>
+  </Page>
+</Layout>

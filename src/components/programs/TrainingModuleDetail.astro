@@ -1,0 +1,100 @@
+---
+import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Badge from "@/src/components/ui/elements/badge/Badge.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
+
+interface Props {
+  chat?: string;
+  code?: string;
+  length: string;
+  module: number;
+  parent: { name: string; path: string };
+  presentation?: string;
+  supplement?: string;
+  title: string;
+  transcript?: string;
+}
+
+const {
+  chat,
+  code,
+  length,
+  module,
+  parent,
+  presentation,
+  supplement,
+  title,
+  transcript,
+} = Astro.props;
+
+const resources = [
+  { href: presentation, label: "Presentation" },
+  { href: supplement, label: "Supplement" },
+  { href: transcript, label: "Course Transcript" },
+  { href: chat, label: "Chat Transcript" },
+].filter((resource) => !!resource.href);
+---
+
+<style>
+  a::after {
+    content: "" !important;
+  }
+  .training-content :global(h3) {
+    color: var(--tw-primary) !important;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-transform: none;
+    margin: 1.5rem 0 0.5rem;
+  }
+  .training-content :global(h3:first-child) {
+    margin-top: 0;
+  }
+  .training-content :global(p) {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+</style>
+<Page class="tw:mx-auto tw:w-full tw:max-w-7xl">
+  <div>
+    <Breadcrumb
+      items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        parent,
+        { name: `Module ${module}` },
+      ]}
+    />
+    <PageHeader
+      headline={code ? `Module ${module} | ${code}` : `Module ${module}`}
+      title={title}
+    >
+      <Badge class="tw:w-fit" color="neutral" size="sm" slot="description">
+        {length}
+      </Badge>
+      {
+        resources.length > 0 && (
+          <Fragment slot="links">
+            {resources.map((resource) => (
+              <Button
+                link={{ href: resource.href!, isNewWindow: true }}
+                variant="subtle"
+              >
+                <Icon name="pdf" />
+                {resource.label}
+              </Button>
+            ))}
+          </Fragment>
+        )
+      }
+    </PageHeader>
+  </div>
+  <PageBody class="tw:pt-0">
+    <div class="training-content">
+      <slot />
+    </div>
+  </PageBody>
+</Page>

@@ -1,50 +1,40 @@
 ---
 import { getCollection } from "astro:content";
 
+import ExternalLinkBadge from "@/src/components/ui/blocks/external-link-badge/ExternalLinkBadge.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
 import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
-import ExternalLinkBadge from "@/src/components/ui/blocks/external-link-badge/ExternalLinkBadge.astro";
+import PageDescription from "@/src/components/ui/blocks/page/PageDescription.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
+import SectionTitle from "@/src/components/ui/blocks/section/SectionTitle.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
-import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 
 import Layout from "./_layout.astro";
 
 const categories = await getCollection("pcbMicrolearning");
 ---
 
-<style>
-  .micro-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: var(--size);
-  }
-
-  @media (min-width: 1200px) {
-    .micro-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-</style>
 <Layout>
-  <Page>
-    <PageHeader title="Microlearning Videos" />
-    <PageBody>
-      <p class="program-text tw:m-0!">
+  <Page class="tw:mx-auto tw:max-w-7xl">
+    <PageHeader>
+      <slot slot="title">Microlearning Videos</slot>
+      <slot slot="description">
         Access brief videos for quick, focused learning on ITS topics.
-      </p>
-      <div class="tw:flex tw:flex-col tw:gap-8">
-        {
-          categories.map(({ data: { title, trainings } }) => (
-            <section class="tw:flex tw:flex-col tw:gap-4">
-              <Heading as="h2" size="md">
-                {title}
-              </Heading>
-              <div class="micro-grid">
+      </slot>
+    </PageHeader>
+    <PageBody>
+      {
+        categories.map(({ data: { title, trainings } }) => (
+          <Section class="tw:flex tw:flex-col tw:gap-8">
+            <SectionTitle>{title}</SectionTitle>
+            <SectionContent>
+              <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3">
                 {trainings.map((training) => (
                   <Card href={training.url} isExternal>
                     <CardImage entry={training.image} height={225} />
@@ -56,10 +46,10 @@ const categories = await getCollection("pcbMicrolearning");
                   </Card>
                 ))}
               </div>
-            </section>
-          ))
-        }
-      </div>
+            </SectionContent>
+          </Section>
+        ))
+      }
     </PageBody>
   </Page>
 </Layout>

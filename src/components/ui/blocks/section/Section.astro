@@ -28,7 +28,7 @@ type Props = {
    *
    * @default `default`
    */
-  size?: "default" | "lg" | "sm" | "xl";
+  size?: "default" | "lg" | "md" | "sm";
   /**
    * Relative width of SectionContent vs SectionImage when
    * `orientation="horizontal"`, expressed as `content/image`.
@@ -55,10 +55,10 @@ const {
 const [contentWeight, imageWeight] = split.split("/").map(Number);
 
 const sizeClasses = {
-  default: "tw:max-w-[768px]",
+  default: "tw:max-w-7xl",
   lg: "tw:max-w-[992px]",
+  md: "tw:max-w-[768px]",
   sm: "tw:max-w-[576px]",
-  xl: "tw:max-w-[1200px]",
 };
 ---
 

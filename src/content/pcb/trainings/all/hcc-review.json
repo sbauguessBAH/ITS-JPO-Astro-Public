@@ -20,7 +20,6 @@
     "type": "web-based",
     "action": "Register"
   },
-
   {
     "title": "Standards Trainings",
     "description": "The module-based training series is for practitioners in state and local highway agencies and transit agencies who seek the skills needed to procure, test, implement, and operate standards-based ITS systems and devices. Consultants, system designers, integrators, and testers will also find the training informative.",
@@ -30,7 +29,8 @@
     "isExternal": false,
     "category": "standards",
     "type": "web-based",
-    "action": "View Trainings"
+    "action": "View Trainings",
+    "id": "standards-trainings"
   },
   {
     "title": "Transit Standards Trainings",
@@ -41,6 +41,7 @@
     "isExternal": false,
     "category": "standards",
     "type": "web-based",
-    "action": "View Trainings"
+    "action": "View Trainings",
+    "id": "transit-standards-trainings"
   }
 ]

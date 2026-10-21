@@ -1,0 +1,53 @@
+---
+import type { ImageMetadata } from "astro";
+import type { ChildNavigationItem, NavigationItem } from "@/src/types";
+import Banner from "@/src/components/layout/Banner.astro";
+import Breadcrumbs from "@/src/components/layout/Breadcrumbs.astro";
+import base_url from "@/src/lib/base_url";
+import { navigation } from "@/src/lib/navigation";
+import BaseLayout from "./BaseLayout.astro";
+import "@/src/styles/programs.scss";
+import "@/src/styles/globals.css";
+
+/**
+ * Page Layout using Tailwind CSS for styling
+ */
+interface Props {
+  bannerImage?: ImageMetadata;
+  currentBreadcrumb?: string;
+  description?: string;
+  keywords?: string | string[];
+  title: string;
+}
+
+const { bannerImage, currentBreadcrumb, description, keywords, title } =
+  Astro.props;
+
+const getTrimmedPath = (path: string): string => path.replaceAll("/", "");
+
+const currentPath = getTrimmedPath(Astro.url.pathname);
+
+const isActive = (item: ChildNavigationItem | NavigationItem): boolean => {
+  if (item.isExternal) return false;
+  const trimmedPath = getTrimmedPath(base_url(item.url));
+  return currentPath.startsWith(trimmedPath);
+};
+
+const activeSection: NavigationItem | undefined = navigation.find((section) =>
+  isActive(section),
+);
+---
+
+<BaseLayout description={description} keywords={keywords} title={title}>
+  <Banner image={bannerImage}>
+    <slot name="banner" title="banner" />
+    <slot name="image" slot="image" />
+  </Banner>
+  <main>
+    <div class="tw:mx-auto tw:w-full tw:max-w-7xl">
+      <Breadcrumbs currentBreadcrumb={currentBreadcrumb} />
+    </div>
+    <slot />
+  </main>
+  <slot name="footer" title="footer" />
+</BaseLayout>

@@ -8,6 +8,7 @@ import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Section from "@/src/components/ui/blocks/section/Section.astro";
 import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
 import SectionDescription from "@/src/components/ui/blocks/section/SectionDescription.astro";
+import SectionTitle from "@/src/components/ui/blocks/section/SectionTitle.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
@@ -107,9 +108,11 @@ const RESOURCES: OverlayCardProps[] = [
 
 <Layout>
   <Page>
-    <PageHeader title="Program Overview" />
-    <PageBody class="tw:gap-12">
-      <Section orientation="horizontal" size="xl">
+    <PageHeader class="tw:mx-auto tw:w-full tw:max-w-7xl">
+      <slot slot="title">Program Overview</slot>
+    </PageHeader>
+    <PageBody>
+      <Section orientation="horizontal" split="1/1">
         <SectionContent>
           <SectionDescription>
             The ITS Professional Capacity Building (PCB) Program supports
@@ -142,35 +145,39 @@ const RESOURCES: OverlayCardProps[] = [
             title="YouTube video player"></iframe>
         </div>
       </Section>
-      <section class="tw:flex tw:flex-col tw:gap-6">
-        <Heading size="md">
-          Spotlight on Training and Technical Assistance Resources
-        </Heading>
-        <div
-          class="tw:grid tw:auto-rows-[minmax(100px,300px)] tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2"
-          role="directory"
-        >
-          {RESOURCES.map((resource) => <OverlayCard {...resource} />)}
-        </div>
-      </section>
-      <section class="tw:flex tw:flex-col tw:gap-6">
-        <Heading size="md">What do you want to do?</Heading>
-        <div
-          class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
-        >
-          {
-            ACTIONS.filter((action) => action.show).map((action) => (
-              <Card href={action.path}>
-                <CardImage entry={action.image} height={200} />
-                <CardHeader>
-                  <CardTitle>{action.title}</CardTitle>
-                  <CardDescription>{action.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))
-          }
-        </div>
-      </section>
+      <Section>
+        <SectionContent class="tw:flex tw:flex-col tw:gap-6">
+          <SectionTitle>
+            Spotlight on Training and Technical Assistance Resources
+          </SectionTitle>
+          <div
+            class="tw:grid tw:auto-rows-[minmax(100px,300px)] tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2"
+            role="directory"
+          >
+            {RESOURCES.map((resource) => <OverlayCard {...resource} />)}
+          </div>
+        </SectionContent>
+      </Section>
+      <Section>
+        <SectionContent class="tw:flex tw:flex-col tw:gap-6">
+          <SectionTitle>What do you want to do?</SectionTitle>
+          <div
+            class="tw:grid tw:w-full tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
+          >
+            {
+              ACTIONS.filter((action) => action.show).map((action) => (
+                <Card href={action.path}>
+                  <CardImage entry={action.image} height={200} />
+                  <CardHeader>
+                    <CardTitle>{action.title}</CardTitle>
+                    <CardDescription>{action.description}</CardDescription>
+                  </CardHeader>
+                </Card>
+              ))
+            }
+          </div>
+        </SectionContent>
+      </Section>
     </PageBody>
   </Page>
 </Layout>

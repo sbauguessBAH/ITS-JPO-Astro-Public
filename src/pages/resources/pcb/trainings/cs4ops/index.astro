@@ -2,60 +2,52 @@
 import Link from "@/src/components/Link.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Card from "@/src/components/ui/elements/card/Card.astro";
-import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
-import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
+import Item from "@/src/components/ui/elements/item/Item.astro";
+import ItemActions from "@/src/components/ui/elements/item/ItemActions.astro";
+import ItemContent from "@/src/components/ui/elements/item/ItemContent.astro";
+import ItemDescription from "@/src/components/ui/elements/item/ItemDescription.astro";
+import ItemGroup from "@/src/components/ui/elements/item/ItemGroup.astro";
+import ItemMedia from "@/src/components/ui/elements/item/ItemMedia.astro";
+import ItemTitle from "@/src/components/ui/elements/item/ItemTitle.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
+import IconTile from "@/src/components/ui/icon/IconTile.astro";
 
 import Layout from "../../_layout.astro";
+
+const webinars = [
+  {
+    date: "May 16, 2023",
+    summary:
+      "The webinar aims to enhance participants' understanding of how crowdsourced data can improve transportation operations. It will explore whether specific applications of crowdsourcing align with organizational needs and provide an opportunity for peers to share their experiences with using crowdsourced data in real-time and archived contexts. The focus will be on its impact on Transportation Management Systems Operations (TMSO), safety, and investment decision-making.",
+    title: "Introduction and Application Highlights",
+  },
+  {
+    date: "June 20, 2023",
+    summary:
+      "The webinar will cover key aspects of crowdsourced data, including common sources, providers, data fields, and potential uses. It will address data validation considerations for integrating crowdsourced data into Transportation Systems Management and Operations (TSMO). Additionally, the session will highlight the importance of effective data management for both crowdsourced and broader agency data, and provide a high-level overview of how modern data management practices differ from traditional approaches.",
+    title: "Data Sources and Management",
+  },
+  {
+    date: "July 18, 2023",
+    summary:
+      "The webinar will examine the components and challenges of State and local Traffic Incident Management (TIM) and Traveler Information Programs. It will explore how crowdsourced data can enhance these programs and address key aspects of TIM. Participants will also have the opportunity to share their experiences with using crowdsourced data to improve TIM and Traveler Information services.",
+    title: "Traveler Information and Traffic Incident Management (TIM)",
+  },
+  {
+    date: "August 15, 2023",
+    summary:
+      "The webinar will focus on the components and challenges associated with State and local arterial and road weather management programs. It will explore how crowdsourced data can enhance these programs and address key aspects of arterial and road weather management. Participants will also have the chance to share their experiences with utilizing crowdsourced data to improve these management programs.",
+    title: "Road Weather and Arterial Management",
+  },
+  {
+    date: "September 19, 2023",
+    summary:
+      "The webinar will cover the components and challenges faced by State and local work zone and emergency management programs. It will explore how crowdsourced data can enhance these programs and provide insights into its application. Participants will have the opportunity to share their experiences with crowdsourced data in these contexts and learn key steps for exploring its use in their own regions.",
+    title: "Emergency and Work Zone Management, and Next Steps",
+  },
+];
 ---
 
-<style>
-  .training-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size);
-  }
-  .card-metadata {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    align-items: start;
-  }
-  .card-module-number {
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: rgb(var(--color-gray));
-  }
-  .card-module-length {
-    background: #efefef;
-    border-radius: 16px;
-    padding: 0.2rem 1rem;
-    font-size: 0.8rem;
-  }
-  .training-card-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 0.2rem;
-    background: none;
-    border: none;
-    padding: var(--size-sm);
-    padding-bottom: 0;
-    text-align: left;
-  }
-
-  .training-card-body {
-    padding: var(--size-sm);
-    padding-top: 0;
-  }
-  .training-link {
-    text-decoration: none;
-    color: inherit;
-  }
-</style>
 <Layout>
   <main class="program-main">
     <ProgramSection>
@@ -104,154 +96,47 @@ import Layout from "../../_layout.astro";
         each to view the webinar recording, download webinar presentations, and
         review the question-and-answer component for each webinar.
       </p>
-      <div class="training-list mt-2 mb-4">
-        <Card>
-          <CardHeader class="pb-0">
-            <div class="training-card-header">
-              <div class="card-metadata">
-                <p class="card-module-number">May 16, 2023</p>
-                <div class="card-module-length">Part 1 of 5</div>
-              </div>
-              <Link
-                class="training-link"
-                href="/resources/pcb/trainings/cs4ops/part-1"
-              >
-                <h3 class="program-title-sm">
-                  Introduction and Application Highlights
-                </h3>
-              </Link>
-            </div>
-          </CardHeader>
-          <CardContent class="pt-0">
-            <div class="training-card-body">
-              The webinar aims to enhance participants' understanding of how
-              crowdsourced data can improve transportation operations. It will
-              explore whether specific applications of crowdsourcing align with
-              organizational needs and provide an opportunity for peers to share
-              their experiences with using crowdsourced data in real-time and
-              archived contexts. The focus will be on its impact on
-              Transportation Management Systems Operations (TMSO), safety, and
-              investment decision-making.
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader class="pb-0">
-            <div class="training-card-header">
-              <div class="card-metadata">
-                <p class="card-module-number">June 20, 2023</p>
-                <div class="card-module-length">Part 2 of 5</div>
-              </div>
-              <Link
-                class="training-link"
-                href="/resources/pcb/trainings/cs4ops/part-2"
-              >
-                <h3 class="program-title-sm">Data Sources and Management</h3>
-              </Link>
-            </div>
-          </CardHeader>
-          <CardContent class="pt-0">
-            <div class="training-card-body">
-              The webinar will cover key aspects of crowdsourced data, including
-              common sources, providers, data fields, and potential uses. It
-              will address data validation considerations for integrating
-              crowdsourced data into Transportation Systems Management and
-              Operations (TSMO). Additionally, the session will highlight the
-              importance of effective data management for both crowdsourced and
-              broader agency data, and provide a high-level overview of how
-              modern data management practices differ from traditional
-              approaches.
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader class="pb-0">
-            <div class="training-card-header">
-              <div class="card-metadata">
-                <p class="card-module-number">July 18, 2023</p>
-                <div class="card-module-length">Part 3 of 5</div>
-              </div>
-              <Link
-                class="training-link"
-                href="/resources/pcb/trainings/cs4ops/part-3"
-              >
-                <h3 class="program-title-sm">
-                  Traveler Information and Traffic Incident Management (TIM)
-                </h3>
-              </Link>
-            </div>
-          </CardHeader>
-          <CardContent class="pt-0">
-            <div class="training-card-body">
-              The webinar will examine the components and challenges of State
-              and local Traffic Incident Management (TIM) and Traveler
-              Information Programs. It will explore how crowdsourced data can
-              enhance these programs and address key aspects of TIM.
-              Participants will also have the opportunity to share their
-              experiences with using crowdsourced data to improve TIM and
-              Traveler Information services.
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader class="pb-0">
-            <div class="training-card-header">
-              <div class="card-metadata">
-                <p class="card-module-number">August 15, 2023</p>
-                <div class="card-module-length">Part 4 of 5</div>
-              </div>
-              <Link
-                class="training-link"
-                href="/resources/pcb/trainings/cs4ops/part-4"
-              >
-                <h3 class="program-title-sm">
-                  Road Weather and Arterial Management
-                </h3>
-              </Link>
-            </div>
-          </CardHeader>
-          <CardContent class="pt-0">
-            <div class="training-card-body">
-              The webinar will focus on the components and challenges associated
-              with State and local arterial and road weather management
-              programs. It will explore how crowdsourced data can enhance these
-              programs and address key aspects of arterial and road weather
-              management. Participants will also have the chance to share their
-              experiences with utilizing crowdsourced data to improve these
-              management programs.
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader class="pb-0">
-            <div class="training-card-header">
-              <div class="card-metadata">
-                <p class="card-module-number">September 19, 2023</p>
-                <div class="card-module-length">Part 5 of 5</div>
-              </div>
-              <Link
-                class="training-link"
-                href="/resources/pcb/trainings/cs4ops/part-5"
-              >
-                <h3 class="program-title-sm">
-                  Emergency and Work Zone Management, and Next Steps
-                </h3>
-              </Link>
-            </div>
-          </CardHeader>
-          <CardContent class="pt-0">
-            <div class="training-card-body">
-              The webinar will cover the components and challenges faced by
-              State and local work zone and emergency management programs. It
-              will explore how crowdsourced data can enhance these programs and
-              provide insights into its application. Participants will have the
-              opportunity to share their experiences with crowdsourced data in
-              these contexts and learn key steps for exploring its use in their
-              own regions.
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+      <ItemGroup class="tw:mt-2 tw:mb-4 tw:gap-4">
+        {
+          webinars.map((webinar, index) => (
+            <Item
+              class="tw:flex-nowrap tw:items-start tw:gap-4 tw:p-4!"
+              href={`/resources/pcb/trainings/cs4ops/part-${index + 1}`}
+              variant="outline"
+            >
+              <ItemMedia>
+                <IconTile class="tw:bg-primary/10" size="lg">
+                  <span class="tw:text-3xl tw:font-semibold tw:text-primary">
+                    {index + 1}
+                  </span>
+                </IconTile>
+              </ItemMedia>
+              <ItemContent>
+                <div>
+                  <ItemTitle class="tw:line-clamp-none! tw:text-xl! tw:font-semibold!">
+                    <span class="tw:sr-only">
+                      Part {index + 1} of {webinars.length}:
+                    </span>
+                    {webinar.title}
+                  </ItemTitle>
+                  <ItemDescription class="tw:mt-0! tw:line-clamp-none! tw:text-sm! tw:font-medium!">
+                    {webinar.date}
+                  </ItemDescription>
+                </div>
+                <p class="tw:m-0 tw:mt-2 tw:text-base tw:text-foreground">
+                  {webinar.summary}
+                </p>
+              </ItemContent>
+              <ItemActions>
+                <Icon
+                  class="tw:size-4 tw:text-muted-foreground"
+                  name="arrow-up-right"
+                />
+              </ItemActions>
+            </Item>
+          ))
+        }
+      </ItemGroup>
       <p>
         To request course delivery (virtual or in person), contact the FHWA
         Office of Operations Crowdsourcing Innovation Team

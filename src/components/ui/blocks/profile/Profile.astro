@@ -1,5 +1,5 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { ComponentProps, HTMLAttributes } from "astro/types";
 
 import type { LibraryImageEntry } from "@/src/components/programs/LibraryImage.astro";
 
@@ -19,14 +19,25 @@ type Props = HTMLAttributes<"div"> & {
   name: string;
   /** Job title and organization */
   title: string;
+  /** Visual style of the underlying Item */
+  variant?: ComponentProps<typeof Item>["variant"];
 };
 
-const { bio, class: className, image, name, title, ...rest } = Astro.props;
+const {
+  bio,
+  class: className,
+  image,
+  name,
+  title,
+  variant,
+  ...rest
+} = Astro.props;
 ---
 
 <Item
-  class:list={["tw:flex-nowrap tw:items-start tw:gap-4", className]}
+  class:list={["tw:flex-nowrap tw:items-start tw:gap-4 tw:p-6!", className]}
   data-slot="profile"
+  variant={variant}
   {...rest}
 >
   <ItemMedia
