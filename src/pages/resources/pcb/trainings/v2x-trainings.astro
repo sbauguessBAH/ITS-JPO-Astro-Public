@@ -10,7 +10,12 @@ import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 // import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 // import CardHeader from "@/src/components/programs/card/CardHeader.astro";
 // import Icon from "@/src/components/ui/icon/Icon.astro";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
+import SectionTitle from "@/src/components/ui/blocks/section/SectionTitle.astro";
 
 // import base_url from "@/src/lib/base_url";
 import Layout from "../_layout.astro";
@@ -23,25 +28,6 @@ import Layout from "../_layout.astro";
 //   );
 ---
 
-<style>
-  .overview-section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size);
-  }
-
-  @media (min-width: 992px) {
-    .overview-section {
-      flex-direction: row;
-    }
-    .overview-image {
-      flex-basis: 40%;
-    }
-    .overview-text {
-      flex-basis: 60%;
-    }
-  }
-</style>
 <style>
   .training-list {
     display: flex;
@@ -104,19 +90,17 @@ import Layout from "../_layout.astro";
   }
 </style>
 <Layout>
-  <div class="program-main">
-    <ProgramSection class="pb-0">
-      <Breadcrumb
-        items={[
-          { name: "Trainings", path: "/resources/pcb/trainings" },
-          { name: "V2X Trainings" },
-        ]}
-      />
-      <h2 class="program-title-lg mb-4">
-        Vehicle-to-Everything (V2X) Trainings
-      </h2>
-      <div class="overview-section">
-        <div class="overview-text">
+  <Page>
+    <Breadcrumb
+      items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        { name: "V2X Trainings" },
+      ]}
+    />
+    <PageHeader title="Vehicle-to-Everything (V2X) Trainings" />
+    <PageBody>
+      <Section orientation="horizontal" split="2/1">
+        <SectionContent>
           <p class="program-text">
             The ITS Professional Capacity Building Program developed curriculum
             designed for professionals who are eager to understand and implement
@@ -151,8 +135,8 @@ import Layout from "../_layout.astro";
               real-world use cases.
             </li>
           </ul>
-        </div>
-        <div class="overview-image">
+        </SectionContent>
+        <div data-slot="section-image">
           <figure class="figure">
             <Image
               alt="V2X Training Overview"
@@ -162,26 +146,33 @@ import Layout from "../_layout.astro";
             <figaption class="figure-caption"> Source: USDOT </figaption>
           </figure>
         </div>
-      </div>
-      <h3 class="program-title-md mb-2 mt-4">Foundational V2X Training</h3>
-      <p class="program-text">
-        Vehicle-to-everything (V2X) is the use of wireless communications
-        technologies to enable vehicles to communicate with each other, other
-        road users such as pedestrians and bicyclists, and infrastructure. These
-        technologies have the potential to make significant impacts improving
-        safety and enhancing mobility. This foundational-level course provides
-        participants with a basic understanding of V2X concepts. Participants
-        are introduced to the key components that enable a V2X ecosystem, the
-        potential benefits of the technology, and example use cases and the
-        messages and standards supporting them while ensuring safety and
-        privacy. This 4-hour introductory course is currently be offered in
-        collaboration with ITS America to ITS State Chapters&mdash;as well as
-        others&mdash; across the United States.
-      </p>
-      <p class="program-text">
-        Entities interested in this training should contact the ITS PCB Program
-        at <Link href="mailto:itspcb@dot.gov" isExternal>itspcb@dot.gov</Link>.
-      </p>
+      </Section>
+      <Section>
+        <SectionContent>
+          <SectionTitle>Foundational V2X Training</SectionTitle>
+          <p class="program-text">
+            Vehicle-to-everything (V2X) is the use of wireless communications
+            technologies to enable vehicles to communicate with each other,
+            other road users such as pedestrians and bicyclists, and
+            infrastructure. These technologies have the potential to make
+            significant impacts improving safety and enhancing mobility. This
+            foundational-level course provides participants with a basic
+            understanding of V2X concepts. Participants are introduced to the
+            key components that enable a V2X ecosystem, the potential benefits
+            of the technology, and example use cases and the messages and
+            standards supporting them while ensuring safety and privacy. This
+            4-hour introductory course is currently be offered in collaboration
+            with ITS America to ITS State Chapters&mdash;as well as
+            others&mdash; across the United States.
+          </p>
+          <p class="program-text">
+            Entities interested in this training should contact the ITS PCB
+            Program at <Link href="mailto:itspcb@dot.gov" isExternal
+              >itspcb@dot.gov</Link
+            >.
+          </p>
+        </SectionContent>
+      </Section>
       <!-- <h3 class="program-title-md mb-2 mt-4">
         V2X Standards Trainings
       </h3>
@@ -337,8 +328,8 @@ import Layout from "../_layout.astro";
           </a>
         </li>
       </ul> -->
-    </ProgramSection>
-  </div>
+    </PageBody>
+  </Page>
 </Layout>
 
 <script>

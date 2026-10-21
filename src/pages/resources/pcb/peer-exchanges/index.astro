@@ -1,6 +1,10 @@
 ---
 import Link from "@/src/components/Link.astro";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
@@ -28,24 +32,26 @@ const resources = [
 ---
 
 <Layout>
-  <main class="program-main">
-    <ProgramSection>
-      <h2 class="program-title-lg tw:mb-4">Peer Exchanges</h2>
-      <p class="program-text">
-        The ITS PCB Program facilitates peer exchanges to allow practitioners to
-        share knowledge, experiences, and best practices with one another. These
-        knowledge transfer events may be conducted as in-person or virtual
-        events that cover a variety of topics related to intelligent
-        transportation systems (ITS) and emerging transportation technologies.
-      </p>
-      <p class="program-text">
-        If your agency is interested in conducting a peer exchange, please
-        contact the ITS PCB Program at <Link
-          href="mailto:itspcb@dot.gov"
-          isExternal>itspcb@dot.gov</Link
-        >.
-      </p>
-      <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:lg:grid-cols-2">
+  <Page>
+    <PageHeader title="Peer Exchanges" />
+    <PageBody>
+      <div>
+        <p>
+          The ITS PCB Program facilitates peer exchanges to allow practitioners
+          to share knowledge, experiences, and best practices with one another.
+          These knowledge transfer events may be conducted as in-person or
+          virtual events that cover a variety of topics related to intelligent
+          transportation systems (ITS) and emerging transportation technologies.
+        </p>
+        <p>
+          If your agency is interested in conducting a peer exchange, please
+          contact the ITS PCB Program at <Link
+            href="mailto:itspcb@dot.gov"
+            isExternal>itspcb@dot.gov</Link
+          >.
+        </p>
+      </div>
+      <!-- <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:lg:grid-cols-2">
         {
           resources.map((resource) => (
             <Card href={`/resources/pcb/peer-exchanges/${resource.slug}`}>
@@ -61,7 +67,7 @@ const resources = [
             </Card>
           ))
         }
-      </div>
-    </ProgramSection>
-  </main>
+      </div> -->
+    </PageBody>
+  </Page>
 </Layout>

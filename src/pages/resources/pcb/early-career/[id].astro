@@ -2,8 +2,10 @@
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import CopyButton from "@/src/components/ui/blocks/copy-button/CopyButton.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
@@ -94,61 +96,63 @@ const { Content } = await render(module);
   }
 </style>
 <Layout>
-  <ProgramSection>
-    <div class="module-layout">
-      <div class="module-content">
-        <h2 class="program-title-lg mb-4">{module.data.title}</h2>
-        <Content />
+  <Page>
+    <PageHeader title={module.data.title} />
+    <PageBody>
+      <div class="module-layout">
+        <div class="module-content">
+          <Content />
+        </div>
+        <div class="module-meta">
+          <Card>
+            <CardImage entry={module.data.image} height={250} />
+            <CardContent>
+              <dl class="meta-attributes">
+                <!-- <div class="meta-attribute"> -->
+                <dt>Name</dt>
+                <dd>{module.data.title}</dd>
+                <!-- </div> -->
+                <!-- <div class="meta-attribute"> -->
+                <dt>Number</dt>
+                <dd>
+                  <CopyButton
+                    label={module.data.source.id}
+                    text={module.data.source.id}
+                  />
+                </dd>
+                <!-- </div> -->
+                <!-- <div class="meta-attribute"> -->
+                <dt>Type</dt>
+                <dd>{module.data.type}</dd>
+                <!-- </div> -->
+                <!-- <div class="meta-attribute"> -->
+                <dt>Source</dt>
+                <dd>{module.data.source.name}</dd>
+                <!-- </div> -->
+              </dl>
+              <hr class="meta-divider" />
+              <p class="meta-disclaimer">
+                This link will take you to the NHI Catalog. Search for the
+                course name or number to register.
+              </p>
+              <Button
+                class="ui:w-fit"
+                link={{
+                  href: module.data.source.url,
+                  isExternal: true,
+                }}
+                size="lg"
+                variant="subtle"
+              >
+                Register
+                <Icon name="external-link" />
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
       </div>
-      <div class="module-meta">
-        <Card>
-          <CardImage entry={module.data.image} height={250} />
-          <CardContent>
-            <dl class="meta-attributes">
-              <!-- <div class="meta-attribute"> -->
-              <dt>Name</dt>
-              <dd>{module.data.title}</dd>
-              <!-- </div> -->
-              <!-- <div class="meta-attribute"> -->
-              <dt>Number</dt>
-              <dd>
-                <CopyButton
-                  label={module.data.source.id}
-                  text={module.data.source.id}
-                />
-              </dd>
-              <!-- </div> -->
-              <!-- <div class="meta-attribute"> -->
-              <dt>Type</dt>
-              <dd>{module.data.type}</dd>
-              <!-- </div> -->
-              <!-- <div class="meta-attribute"> -->
-              <dt>Source</dt>
-              <dd>{module.data.source.name}</dd>
-              <!-- </div> -->
-            </dl>
-            <hr class="meta-divider" />
-            <p class="meta-disclaimer">
-              This link will take you to the NHI Catalog. Search for the course
-              name or number to register.
-            </p>
-            <Button
-              class="ui:w-fit"
-              link={{
-                href: module.data.source.url,
-                isExternal: true,
-              }}
-              size="lg"
-              variant="subtle"
-            >
-              Register
-              <Icon name="external-link" />
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
-  </ProgramSection>
+    </PageBody>
+  </Page>
 </Layout>
 <script>
   const content = document.querySelector(".module-content");

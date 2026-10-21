@@ -1,11 +1,13 @@
 ---
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
-import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../_layout.astro";
@@ -46,21 +48,26 @@ const RESOURCES = [
 ---
 
 <Layout>
-  <main class="tw:flex tw:flex-col tw:gap-4 tw:pb-12">
-    <Heading>Technical Assistance Resources</Heading>
-    <div class="tw:flex tw:flex-col tw:gap-6">
-      <p class="program-text">
-        From planning through deployment, USDOT provides a wide range of
-        technical assistance resources to support agencies implementing
-        Vehicle-to-Everything (V2X) and other Intelligent Transportation Systems
-        (ITS) technologies. This includes personalized technical support and
-        equipment loans from the V2X Interoperability Help Desk, collaboration
-        opportunities with peer agencies through the Accelerating
-        Vehicle-to-Everything (V2X) Cohort, and a large collection of additional
-        resources and trainings related to ITS and V2X. Explore these
-        USDOT-sponsored resources, tools, and technical assistance opportunities
-        below.
-      </p>
+  <Page>
+    <PageHeader>
+      <slot slot="title">Technical Assistance Resources</slot>
+      <slot slot="description">
+        <p>
+          From planning through deployment, USDOT provides a wide range of
+          technical assistance resources to support agencies implementing
+          Vehicle-to-Everything (V2X) and other Intelligent Transportation
+          Systems (ITS) technologies. This includes personalized technical
+          support and equipment loans from the V2X Interoperability Help Desk,
+          collaboration opportunities with peer agencies through the
+          Accelerating Vehicle-to-Everything (V2X) Cohort, and a large
+          collection of additional resources and trainings related to ITS and
+          V2X. Explore these USDOT-sponsored resources, tools, and technical
+          assistance opportunities below.
+        </p>
+      </slot>
+    </PageHeader>
+    <PageBody class="tw:gap-6">
+      <p class="program-text"></p>
       <div
         class="tw:flex tw:flex-row tw:items-center tw:justify-between tw:gap-16 tw:rounded-2xl tw:bg-secondary tw:p-12"
       >
@@ -113,6 +120,6 @@ const RESOURCES = [
           ))
         }
       </div>
-    </div>
-  </main>
+    </PageBody>
+  </Page>
 </Layout>

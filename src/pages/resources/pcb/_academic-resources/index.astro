@@ -1,5 +1,7 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
@@ -11,10 +13,10 @@ import { academicResources } from "./resources";
 ---
 
 <Layout>
-  <main class="program-main">
-    <ProgramSection>
-      <h2 class="program-title-lg">Academic Resources</h2>
-      <p class="program-text">
+  <Page>
+    <PageHeader title="Academic Resources" />
+    <PageBody>
+      <p class="program-text tw:m-0!">
         Connect faculty and instructors with tools and materials to support
         students in preparing for careers in ITS.
       </p>
@@ -35,6 +37,6 @@ import { academicResources } from "./resources";
           ))
         }
       </div>
-    </ProgramSection>
-  </main>
+    </PageBody>
+  </Page>
 </Layout>

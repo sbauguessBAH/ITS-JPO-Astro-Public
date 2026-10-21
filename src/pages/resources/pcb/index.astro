@@ -4,10 +4,8 @@ import OverlayCard, {
 } from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
 import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
-import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Section from "@/src/components/ui/blocks/section/Section.astro";
 import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
-import SectionDescription from "@/src/components/ui/blocks/section/SectionDescription.astro";
 import SectionTitle from "@/src/components/ui/blocks/section/SectionTitle.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
@@ -108,35 +106,35 @@ const RESOURCES: OverlayCardProps[] = [
 
 <Layout>
   <Page>
-    <PageHeader class="tw:mx-auto tw:w-full tw:max-w-7xl">
-      <slot slot="title">Program Overview</slot>
-    </PageHeader>
     <PageBody>
-      <Section orientation="horizontal" split="1/1">
-        <SectionContent>
-          <SectionDescription>
-            The ITS Professional Capacity Building (PCB) Program supports
-            activities that deliver multimodal ITS learning opportunities to
-            transportation professionals by providing ITS trainings and
-            webinars, fostering cohorts, and providing technical assistance to
-            agencies deploying ITS technologies, as authorized by
-            <a
-              href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section514&num=0&edition=prelim"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              23 USC 514
-            </a>.
-          </SectionDescription>
-          <SectionDescription>
-            The ITS PCB Program works with Federal, State, and local
-            transportation stakeholders to ensure they have adequate knowledge
-            of ITS for consideration in the transportation planning process and
-            that the United States has a workforce capable of developing,
-            operating, and maintaining ITS.
-          </SectionDescription>
-        </SectionContent>
-        <div data-slot="section-image">
+      <div class="tw:flex tw:flex-col tw:items-center tw:gap-6 tw:lg:flex-row">
+        <div class="tw:flex tw:flex-col tw:gap-4 tw:lg:basis-[55%]">
+          <Heading>Program Overview</Heading>
+          <div>
+            <p class="program-text">
+              The ITS Professional Capacity Building (PCB) Program supports
+              activities that deliver multimodal ITS learning opportunities to
+              transportation professionals by providing ITS trainings and
+              webinars, fostering cohorts, and providing technical assistance to
+              agencies deploying ITS technologies, as authorized by
+              <a
+                href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section514&num=0&edition=prelim"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                23 USC 514
+              </a>.
+            </p>
+            <p class="program-text">
+              The ITS PCB Program works with Federal, State, and local
+              transportation stakeholders to ensure they have adequate knowledge
+              of ITS for consideration in the transportation planning process
+              and that the United States has a workforce capable of developing,
+              operating, and maintaining ITS.
+            </p>
+          </div>
+        </div>
+        <div class="tw:w-full tw:max-w-4xl tw:lg:basis-[45%]">
           <iframe
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -144,7 +142,7 @@ const RESOURCES: OverlayCardProps[] = [
             src="https://www.youtube.com/embed/hUhdaE4Zpw4?si=VwVIeMvEmmeKiR6Q"
             title="YouTube video player"></iframe>
         </div>
-      </Section>
+      </div>
       <Section>
         <SectionContent class="tw:flex tw:flex-col tw:gap-6">
           <SectionTitle>

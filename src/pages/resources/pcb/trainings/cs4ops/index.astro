@@ -1,7 +1,12 @@
 ---
 import Link from "@/src/components/Link.astro";
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
+import SectionTitle from "@/src/components/ui/blocks/section/SectionTitle.astro";
 import Item from "@/src/components/ui/elements/item/Item.astro";
 import ItemActions from "@/src/components/ui/elements/item/ItemActions.astro";
 import ItemContent from "@/src/components/ui/elements/item/ItemContent.astro";
@@ -49,121 +54,138 @@ const webinars = [
 ---
 
 <Layout>
-  <main class="program-main">
-    <ProgramSection>
-      <Breadcrumb
-        items={[
-          { name: "Trainings", path: "/resources/pcb/trainings" },
-          { name: "Crowdsourcing for Operations" },
-        ]}
-      />
-      <h2 class="program-title-lg mb-4">Crowdsourcing for Operations</h2>
-      <p class="program-text">
-        Most public agencies and private companies use crowdsourcing, which is
-        the practice of addressing a need or a problem by enlisting the services
-        of large numbers of people through technology. Organizations crowdsource
-        product reviews, idea generation, feature detection, funding, and much
-        more. With the proliferation of location-based technologies, an
-        unprecedented wave of crowdsourced data is available to transportation
-        agencies. Moreover, analytics tools and services make processing and
-        using crowdsourced data a true game-changer for advancing intelligent
-        transportation systems (ITS) solutions and <Link
-          href="https://ops.fhwa.dot.gov/tsmo/"
-          isExternal
-          >transportation systems management and operations (TSMO)</Link
-        >.
-      </p>
-      <p class="program-text">
-        Since 2019, the FHWA Every Day Counts (EDC) Innovation,
-        <Link
-          href="https://www.fhwa.dot.gov/innovation/everydaycounts/edc_6/crowdsourcing.cfm"
-          isExternal>Crowdsourcing for Advancing Operations</Link
-        >, has been supporting the adoption of crowdsourced data and tools to
-        advance transportation operations across 35+ States and their local
-        agencies to improve traffic incident, road weather, work zone, traffic
-        signal, traveler information and emergency management, along with a host
-        of other ITS and TSMO practices.
-      </p>
-      <p class="program-text">
-        The Crowdsourcing Innovation Team in collaboration with the ITS Joint
-        Program Office (JPO) Professional Capacity Building (PCB) Program
-        delivered an introductory Crowdsourcing course through a series of five
-        webinars, featuring State and local practitioner perspectives.
-      </p>
-      <h3 class="program-title-md">Webinar Series</h3>
-      <p class="program-text">
-        The following lists the live webinar dates and course topics. Click on
-        each to view the webinar recording, download webinar presentations, and
-        review the question-and-answer component for each webinar.
-      </p>
-      <ItemGroup class="tw:mt-2 tw:mb-4 tw:gap-4">
-        {
-          webinars.map((webinar, index) => (
-            <Item
-              class="tw:flex-nowrap tw:items-start tw:gap-4 tw:p-4!"
-              href={`/resources/pcb/trainings/cs4ops/part-${index + 1}`}
-              variant="outline"
-            >
-              <ItemMedia>
-                <IconTile class="tw:bg-primary/10" size="lg">
-                  <span class="tw:text-3xl tw:font-semibold tw:text-primary">
-                    {index + 1}
-                  </span>
-                </IconTile>
-              </ItemMedia>
-              <ItemContent>
-                <div>
-                  <ItemTitle class="tw:line-clamp-none! tw:text-xl! tw:font-semibold!">
-                    <span class="tw:sr-only">
-                      Part {index + 1} of {webinars.length}:
-                    </span>
-                    {webinar.title}
-                  </ItemTitle>
-                  <ItemDescription class="tw:mt-0! tw:line-clamp-none! tw:text-sm! tw:font-medium!">
-                    {webinar.date}
-                  </ItemDescription>
-                </div>
-                <p class="tw:m-0 tw:mt-2 tw:text-base tw:text-foreground">
-                  {webinar.summary}
-                </p>
-              </ItemContent>
-              <ItemActions>
-                <Icon
-                  class="tw:size-4 tw:text-muted-foreground"
-                  name="arrow-up-right"
-                />
-              </ItemActions>
-            </Item>
-          ))
-        }
-      </ItemGroup>
-      <p>
-        To request course delivery (virtual or in person), contact the FHWA
-        Office of Operations Crowdsourcing Innovation Team
-        <Link
-          href="https://ops.fhwa.dot.gov/crowdsourcing/contacts.cfm"
-          isExternal>here</Link
-        >.
-      </p>
-      <h3 class="program-title-md mt-4">Target Audience</h3>
-      <p class="program-text">
-        The target audience for this webinar series includes transportation
-        professionals with an interest in or responsibility for the management
-        and operations of roadway systems, including local, State, or Federal
-        Departments of Transportation or Public Works as well as consultant,
-        university, or contractor support. No prior experience is required to
-        attend this webinar series; however, participants are advised to attend
-        the first two and the final webinars in this series either during the
-        live delivery or as a recorded event.
-      </p>
-      <h3 class="program-title-md">Disclaimer</h3>
-      <p class="program-text">
-        The U.S. Government does not endorse products or manufacturers.
-        Trademarks or manufacturer's names appear in these webinars only because
-        they are considered essential to the objective of the webinar. They are
-        included for informational purposes only and are not intended to reflect
-        a preference, approval, or endorsement of any one product or entity.
-      </p>
-    </ProgramSection>
-  </main>
+  <Page>
+    <Breadcrumb
+      items={[
+        { name: "Trainings", path: "/resources/pcb/trainings" },
+        { name: "Crowdsourcing for Operations" },
+      ]}
+    />
+    <PageHeader title="Crowdsourcing for Operations" />
+    <PageBody>
+      <div>
+        <p class="program-text">
+          Most public agencies and private companies use crowdsourcing, which is
+          the practice of addressing a need or a problem by enlisting the
+          services of large numbers of people through technology. Organizations
+          crowdsource product reviews, idea generation, feature detection,
+          funding, and much more. With the proliferation of location-based
+          technologies, an unprecedented wave of crowdsourced data is available
+          to transportation agencies. Moreover, analytics tools and services
+          make processing and using crowdsourced data a true game-changer for
+          advancing intelligent transportation systems (ITS) solutions and <Link
+            href="https://ops.fhwa.dot.gov/tsmo/"
+            isExternal
+            >transportation systems management and operations (TSMO)</Link
+          >.
+        </p>
+        <p class="program-text">
+          Since 2019, the FHWA Every Day Counts (EDC) Innovation,
+          <Link
+            href="https://www.fhwa.dot.gov/innovation/everydaycounts/edc_6/crowdsourcing.cfm"
+            isExternal>Crowdsourcing for Advancing Operations</Link
+          >, has been supporting the adoption of crowdsourced data and tools to
+          advance transportation operations across 35+ States and their local
+          agencies to improve traffic incident, road weather, work zone, traffic
+          signal, traveler information and emergency management, along with a
+          host of other ITS and TSMO practices.
+        </p>
+        <p class="program-text">
+          The Crowdsourcing Innovation Team in collaboration with the ITS Joint
+          Program Office (JPO) Professional Capacity Building (PCB) Program
+          delivered an introductory Crowdsourcing course through a series of
+          five webinars, featuring State and local practitioner perspectives.
+        </p>
+      </div>
+      <Section>
+        <SectionContent>
+          <SectionTitle>Webinar Series</SectionTitle>
+          <p class="program-text">
+            The following lists the live webinar dates and course topics. Click
+            on each to view the webinar recording, download webinar
+            presentations, and review the question-and-answer component for each
+            webinar.
+          </p>
+          <ItemGroup class="tw:w-full tw:gap-4">
+            {
+              webinars.map((webinar, index) => (
+                <Item
+                  class="tw:flex-nowrap tw:items-start tw:gap-4 tw:p-4!"
+                  href={`/resources/pcb/trainings/cs4ops/part-${index + 1}`}
+                  variant="outline"
+                >
+                  <ItemMedia>
+                    <IconTile class="tw:bg-primary/10" size="lg">
+                      <span class="tw:text-3xl tw:font-semibold tw:text-primary">
+                        {index + 1}
+                      </span>
+                    </IconTile>
+                  </ItemMedia>
+                  <ItemContent>
+                    <div>
+                      <ItemTitle class="tw:line-clamp-none! tw:text-xl! tw:font-semibold!">
+                        <span class="tw:sr-only">
+                          Part {index + 1} of {webinars.length}:
+                        </span>
+                        {webinar.title}
+                      </ItemTitle>
+                      <ItemDescription class="tw:mt-0! tw:line-clamp-none! tw:text-sm! tw:font-medium!">
+                        {webinar.date}
+                      </ItemDescription>
+                    </div>
+                    <p class="tw:m-0 tw:mt-2 tw:text-base tw:text-foreground">
+                      {webinar.summary}
+                    </p>
+                  </ItemContent>
+                  <ItemActions>
+                    <Icon
+                      class="tw:size-4 tw:text-muted-foreground"
+                      name="arrow-up-right"
+                    />
+                  </ItemActions>
+                </Item>
+              ))
+            }
+          </ItemGroup>
+          <p>
+            To request course delivery (virtual or in person), contact the FHWA
+            Office of Operations Crowdsourcing Innovation Team
+            <Link
+              href="https://ops.fhwa.dot.gov/crowdsourcing/contacts.cfm"
+              isExternal>here</Link
+            >.
+          </p>
+        </SectionContent>
+      </Section>
+      <Section>
+        <SectionContent>
+          <SectionTitle>Target Audience</SectionTitle>
+          <p class="program-text">
+            The target audience for this webinar series includes transportation
+            professionals with an interest in or responsibility for the
+            management and operations of roadway systems, including local,
+            State, or Federal Departments of Transportation or Public Works as
+            well as consultant, university, or contractor support. No prior
+            experience is required to attend this webinar series; however,
+            participants are advised to attend the first two and the final
+            webinars in this series either during the live delivery or as a
+            recorded event.
+          </p>
+        </SectionContent>
+      </Section>
+      <Section>
+        <SectionContent>
+          <SectionTitle>Disclaimer</SectionTitle>
+          <p class="program-text">
+            The U.S. Government does not endorse products or manufacturers.
+            Trademarks or manufacturer's names appear in these webinars only
+            because they are considered essential to the objective of the
+            webinar. They are included for informational purposes only and are
+            not intended to reflect a preference, approval, or endorsement of
+            any one product or entity.
+          </p>
+        </SectionContent>
+      </Section>
+    </PageBody>
+  </Page>
 </Layout>
