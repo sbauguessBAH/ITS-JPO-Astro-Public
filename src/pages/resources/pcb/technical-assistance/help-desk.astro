@@ -164,9 +164,9 @@ const LOAN_PROGRAM_BENEFITS: {
       <LibraryImage class="hd-banner-image" entry="pcb/carma" />
       <HelpDeskLogo class="tw:absolute tw:top-0 tw:left-0 tw:z-10" />
     </div>
-    <PageHeader title="V2X Interoperability Help Desk" />
     <PageBody class="tw:gap-0 tw:pt-0">
       <Section>
+        <SectionTitle>V2X Interoperability Help Desk</SectionTitle>
         <SectionContent class="tw:items-stretch">
           <div
             class="tw:space-between tw:flex tw:flex-row tw:items-start tw:gap-32"
@@ -303,6 +303,7 @@ const LOAN_PROGRAM_BENEFITS: {
                   <Item class="p-3 items-start" variant="outline">
                     <ItemMedia>
                       <IconTile
+                        size="lg"
                         style={{
                           backgroundColor: item.color.background,
                           color: item.color.text,
@@ -328,7 +329,9 @@ const LOAN_PROGRAM_BENEFITS: {
                 range of equipment for agencies including:
               </p>
             </div>
-            <div class="mt-2 tw:flex tw:flex-row tw:flex-wrap tw:gap-1">
+            <div
+              class="tw:flex tw:max-w-5xl tw:flex-row tw:flex-wrap tw:gap-1.5"
+            >
               {
                 AVAILABLE_EQUIPMENT.map((item) => (
                   <Badge
@@ -347,7 +350,7 @@ const LOAN_PROGRAM_BENEFITS: {
               }
             </div>
           </div>
-          <Alert class="tw:mb-8" color="secondary">
+          <Alert color="secondary">
             <AlertTitle>Ready to get started?</AlertTitle>
             <AlertDescription>
               Explore the full equipment list, learn how the program works, and

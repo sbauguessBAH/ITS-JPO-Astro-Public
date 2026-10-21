@@ -1,6 +1,5 @@
 ---
 import Link from "@/src/components/Link.astro";
-import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
 import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
@@ -55,12 +54,6 @@ const webinars = [
 
 <Layout>
   <Page>
-    <Breadcrumb
-      items={[
-        { name: "Trainings", path: "/resources/pcb/trainings" },
-        { name: "Crowdsourcing for Operations" },
-      ]}
-    />
     <PageHeader title="Crowdsourcing for Operations" />
     <PageBody>
       <div>

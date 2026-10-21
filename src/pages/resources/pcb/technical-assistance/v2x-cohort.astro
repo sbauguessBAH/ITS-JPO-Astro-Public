@@ -28,142 +28,9 @@ import CohortMap from "./_cohort-map.vue";
     background: rgb(var(--color-gray-light));
   }
 </style>
-<!-- <style>
-  .state[data-v-f7523441] {
-    fill: #cae2e7;
-    stroke: #fff;
-  }
-
-  .borders[data-v-f7523441] {
-    stroke: #fff;
-    stroke-width: 1;
-  }
-
-  .dccircle[data-v-f7523441] {
-    display: yes;
-  }
-
-  .map-marker[data-v-f7523441] {
-    fill: #122e50;
-  }
-
-  .separator1[data-v-f7523441] {
-    stroke: #b0b0b0;
-    stroke-width: 2;
-  }
-
-  .stateGroup .fl[data-v-f7523441],
-  .stateGroup .ga[data-v-f7523441],
-  .stateGroup .nc[data-v-f7523441],
-  .stateGroup .va[data-v-f7523441],
-  .stateGroup .dc[data-v-f7523441],
-  .stateGroup .md[data-v-f7523441],
-  .stateGroup .de[data-v-f7523441],
-  .stateGroup .pa[data-v-f7523441],
-  .stateGroup .nj[data-v-f7523441],
-  .stateGroup .ny[data-v-f7523441],
-  .stateGroup .ri[data-v-f7523441],
-  .stateGroup .me[data-v-f7523441],
-  .stateGroup .oh[data-v-f7523441],
-  .stateGroup .mi[data-v-f7523441],
-  .stateGroup .ky[data-v-f7523441],
-  .stateGroup .tn[data-v-f7523441],
-  .stateGroup .mo[data-v-f7523441],
-  .stateGroup .il[data-v-f7523441],
-  .stateGroup .la[data-v-f7523441],
-  .stateGroup .ia[data-v-f7523441],
-  .stateGroup .mn[data-v-f7523441],
-  .stateGroup .ne[data-v-f7523441],
-  .stateGroup .wy[data-v-f7523441],
-  .stateGroup .co[data-v-f7523441],
-  .stateGroup .tx[data-v-f7523441],
-  .stateGroup .ut[data-v-f7523441],
-  .stateGroup .az[data-v-f7523441],
-  .stateGroup .ca[data-v-f7523441],
-  .stateGroup .wa[data-v-f7523441],
-  .stateGroup .ak[data-v-f7523441],
-  .stateGroup .hi[data-v-f7523441],
-  .stateGroup .or[data-v-f7523441],
-  .stateGroup .ks[data-v-f7523441],
-  .stateGroup .ct[data-v-f7523441],
-  .stateGroup .nv[data-v-f7523441] {
-    fill: #56bbc4;
-    cursor: pointer;
-  }
-
-  .stateGroup .fl[data-v-f7523441]:hover,
-  .stateGroup .ga[data-v-f7523441]:hover,
-  .stateGroup .nc[data-v-f7523441]:hover,
-  .stateGroup .va[data-v-f7523441]:hover,
-  .stateGroup .dc[data-v-f7523441]:hover,
-  .stateGroup .md[data-v-f7523441]:hover,
-  .stateGroup .de[data-v-f7523441]:hover,
-  .stateGroup .pa[data-v-f7523441]:hover,
-  .stateGroup .nj[data-v-f7523441]:hover,
-  .stateGroup .ny[data-v-f7523441]:hover,
-  .stateGroup .ri[data-v-f7523441]:hover,
-  .stateGroup .me[data-v-f7523441]:hover,
-  .stateGroup .oh[data-v-f7523441]:hover,
-  .stateGroup .mi[data-v-f7523441]:hover,
-  .stateGroup .ky[data-v-f7523441]:hover,
-  .stateGroup .tn[data-v-f7523441]:hover,
-  .stateGroup .mo[data-v-f7523441]:hover,
-  .stateGroup .il[data-v-f7523441]:hover,
-  .stateGroup .la[data-v-f7523441]:hover,
-  .stateGroup .ia[data-v-f7523441]:hover,
-  .stateGroup .mn[data-v-f7523441]:hover,
-  .stateGroup .ne[data-v-f7523441]:hover,
-  .stateGroup .wy[data-v-f7523441]:hover,
-  .stateGroup .co[data-v-f7523441]:hover,
-  .stateGroup .tx[data-v-f7523441]:hover,
-  .stateGroup .ut[data-v-f7523441]:hover,
-  .stateGroup .az[data-v-f7523441]:hover,
-  .stateGroup .ca[data-v-f7523441]:hover,
-  .stateGroup .wa[data-v-f7523441]:hover,
-  .stateGroup .ak[data-v-f7523441]:hover,
-  .stateGroup .hi[data-v-f7523441]:hover,
-  .stateGroup .or[data-v-f7523441]:hover,
-  .stateGroup .ks[data-v-f7523441]:hover,
-  .stateGroup .ct[data-v-f7523441]:hover,
-  .stateGroup .nv[data-v-f7523441]:hover {
-    fill: #3f8a91;
-    transform-origin: center;
-    z-index: 10000;
-  }
-
-  .stateGroup:hover .map-marker[data-v-f7523441] {
-    stroke-width: 4;
-    stroke: #122e50;
-    transition: all;
-    transition-duration: 0.1s;
-  }
-
-  .active-class[data-v-f7523441] {
-    display: block;
-    position: absolute;
-    opacity: 100;
-  }
-
-  .fade-enter-from[data-v-f7523441],
-  .fade-leave-to[data-v-f7523441] {
-    opacity: 0;
-  }
-
-  h1[data-v-fa17fe83] {
-    margin: 0;
-  }
-
-  a[data-v-fa17fe83] {
-    all: revert;
-  }
-
-  h1[data-v-0bad3acb] {
-    margin: 0;
-  }
-</style> -->
 
 <Layout>
-  <Page>
+  <Page class="tw:gap-2!">
     <PageHeader title="Accelerating V2X Cohort" />
     <PageBody>
       <div>
@@ -200,27 +67,27 @@ import CohortMap from "./_cohort-map.vue";
           >.
         </p>
       </div>
-      <Section size="md">
-        <SectionContent class="tw:items-stretch">
+      <Section size="lg">
+        <SectionContent>
           <CohortMap client:only="vue" />
           <!-- <figure class="figure">
-        <Image
-          class="map-card-image"
-          src={cohortImage}
-          alt="Map of the United States with cohort states shaded in and yellow points with the names of each cohort agency"
-        />
-        <figcaption class="figure-caption">
-          Source: USDOT (last updated June 2025)
-        </figcaption>
-      </figure> -->
+            <Image
+              class="map-card-image"
+              src={cohortImage}
+              alt="Map of the United States with cohort states shaded in and yellow points with the names of each cohort agency"
+            />
+            <figcaption class="figure-caption">
+              Source: USDOT (last updated June 2025)
+            </figcaption>
+          </figure> -->
           <!-- <Card class="map-card">
-        <CardBody>
-          
-        </CardBody>
-        <CardFooter class="map-card-footer">
-          Last Updated: January 2025
-        </CardFooter>
-      </Card> -->
+            <CardBody>
+              
+            </CardBody>
+            <CardFooter class="map-card-footer">
+              Last Updated: January 2025
+            </CardFooter>
+          </Card> -->
         </SectionContent>
       </Section>
     </PageBody>

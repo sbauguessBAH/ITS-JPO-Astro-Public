@@ -147,7 +147,7 @@ section {
   margin-bottom: 0 !important;
 }
 
-a::after {
+a:not(.dropdown-toggle)::after {
   content: none !important;
 }
 

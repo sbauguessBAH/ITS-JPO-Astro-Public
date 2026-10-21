@@ -22,20 +22,6 @@ const modules = await getCollection("pcbModules").then((modules) =>
 );
 ---
 
-<style>
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: var(--size);
-  }
-
-  @media (min-width: 992px) {
-    .card-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-</style>
-
 <!-- Overview Section -->
 <style>
   .competitions-section {
@@ -65,43 +51,24 @@ const modules = await getCollection("pcbModules").then((modules) =>
   }
 </style>
 
-<style>
-  .career-areas-section {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: var(--size);
-  }
-
-  @media (min-width: 992px) {
-    .career-areas-section {
-      flex-direction: row;
-      align-items: center;
-    }
-    .career-areas-image {
-      flex-basis: 30%;
-    }
-    .career-areas-text {
-      flex-basis: 60%;
-    }
-  }
-</style>
-
 <Layout>
   <Page>
-    <PageHeader title="Early Career Development Resources" />
-    <PageBody class="tw:gap-16">
-      <p class="program-text tw:m-0!">
-        Intelligent Transportation Systems (ITS) provide promising solutions for
-        improving safety, mobility, and efficiency in the transportation
-        network. Engaging current and prospective early career professionals in
-        transportation-related fields provides tools to think critically and
-        develop novel approaches for the most pressing transportation issues and
-        needs.
-      </p>
-      <section class="tw:flex tw:flex-col">
-        <Heading class="tw:mb-4!" size="md">
-          ITS Short Course Instructor Kit Modules
-        </Heading>
+    <PageHeader>
+      <slot slot="title">Early Career Development Resources</slot>
+      <slot slot="description">
+        <p class="program-text">
+          Intelligent Transportation Systems (ITS) provide promising solutions
+          for improving safety, mobility, and efficiency in the transportation
+          network. Engaging current and prospective early career professionals
+          in transportation-related fields provides tools to think critically
+          and develop novel approaches for the most pressing transportation
+          issues and needs.
+        </p>
+      </slot>
+    </PageHeader>
+    <PageBody>
+      <section class="tw:flex tw:flex-col tw:gap-2">
+        <Heading size="md">ITS Short Course Instructor Kit Modules</Heading>
         <p class="program-text">
           The ITS Short Course Instructor Kit Modules are freestanding classes
           (or training components) that provide structured content to enhance
@@ -133,13 +100,10 @@ const modules = await getCollection("pcbModules").then((modules) =>
           Ready to lead your next session? Browse the available modules and
           their materials below.
         </p>
-        <div class="card-grid mt-4">
+        <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2">
           {
             modules.map((module) => (
-              <Card
-                class="resource-card"
-                href={`/resources/pcb/early-career/${module.id}`}
-              >
+              <Card href={`/resources/pcb/early-career/${module.id}`}>
                 <CardImage entry={module.data.image} height={250} />
                 <CardHeader>
                   <CardTitle>{module.data.title}</CardTitle>
@@ -151,9 +115,11 @@ const modules = await getCollection("pcbModules").then((modules) =>
           }
         </div>
       </section>
-      <section class="career-areas-section">
-        <div class="career-areas-text">
-          <Heading class="tw:mb-4!" size="md">ITS Careers</Heading>
+      <section
+        class="tw:flex tw:flex-col-reverse tw:gap-8 tw:lg:flex-row tw:lg:items-center"
+      >
+        <div class="tw:flex tw:basis-2/3 tw:flex-col tw:gap-2">
+          <Heading size="md">ITS Careers</Heading>
           <p class="program-text">
             Intelligent Transportation Systems (ITS) offer a powerful,
             cost-effective approach to improving roadway safety and efficiency,
@@ -174,30 +140,32 @@ const modules = await getCollection("pcbModules").then((modules) =>
             interest (e.g., engineering, planning, policy), highlighting both
             established and emerging roles across employment sectors.
           </p>
-          <div class="mt-4">
-            <Button
-              link={{
-                href: "https://rosap.ntl.bts.gov/view/dot/89169",
-                isExternal: true,
-              }}
-              size="lg"
-              variant="subtle"
-            >
-              View PDF
-              <Icon name="external-link" />
-            </Button>
-          </div>
+          <Button
+            class="tw:w-fit"
+            link={{
+              href: "https://rosap.ntl.bts.gov/view/dot/89169",
+              isExternal: true,
+            }}
+          >
+            View PDF
+            <Icon name="external-link" />
+          </Button>
         </div>
-        <div class="career-areas-image ratio ratio-1x1 mx-auto">
-          <LibraryImage entry="pcb/career-areas-diagram" />
+        <div class="tw:mx-auto tw:aspect-square tw:basis-1/3">
+          <LibraryImage
+            class="tw:h-auto tw:w-full"
+            entry="pcb/career-areas-diagram"
+          />
         </div>
       </section>
-      <section class="competitions-section">
-        <div class="competitions-image shadow-md">
+      <section
+        class="tw:flex tw:flex-col tw:gap-8 tw:lg:flex-row tw:lg:items-center"
+      >
+        <div class="tw:basis-2/5">
           <LibraryImage class="image" entry="pcb/ttt-winners-2025" />
         </div>
-        <div class="competitions-text">
-          <Heading class="tw:mb-4!" size="md">ITS Student Competitions</Heading>
+        <div class="tw:flex tw:basis-3/5 tw:flex-col tw:gap-2">
+          <Heading size="md">ITS Student Competitions</Heading>
           <p class="program-text">
             The Transportation Technology Tournament (TTT) is an annual event
             hosted jointly by the National Operations Center of Excellence
@@ -210,19 +178,16 @@ const modules = await getCollection("pcbModules").then((modules) =>
             Finalist teams are invited to the ITE Annual Meeting to present
             their submission to judges&mdash;all expenses paid!
           </p>
-          <div class="mt-4">
-            <Button
-              link={{
-                href: "https://transportationops.org/transportation-technology-tournament",
-                isExternal: true,
-              }}
-              size="lg"
-              variant="subtle"
-            >
-              Learn More
-              <Icon name="external-link" />
-            </Button>
-          </div>
+          <Button
+            class="tw:w-fit"
+            link={{
+              href: "https://transportationops.org/transportation-technology-tournament",
+              isExternal: true,
+            }}
+          >
+            Learn More
+            <Icon name="external-link" />
+          </Button>
         </div>
       </section>
     </PageBody>

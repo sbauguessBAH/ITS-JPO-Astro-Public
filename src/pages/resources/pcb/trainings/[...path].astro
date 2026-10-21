@@ -7,6 +7,10 @@ import ExternalLinkBadge from "@/src/components/ui/blocks/external-link-badge/Ex
 import Page from "@/src/components/ui/blocks/page/Page.astro";
 import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Panel from "@/src/components/ui/blocks/panel/Panel.astro";
+import PanelGroup from "@/src/components/ui/blocks/panel/PanelGroup.astro";
+import PanelHeader from "@/src/components/ui/blocks/panel/PanelHeader.astro";
+import PanelItem from "@/src/components/ui/blocks/panel/PanelItem.astro";
 import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
@@ -14,7 +18,6 @@ import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
-import base_url from "@/src/lib/base_url";
 
 import Layout from "../_layout.astro";
 
@@ -97,74 +100,28 @@ const getCourseCount = (path?: string) =>
       </div>
       <div class="tw:flex tw:flex-col tw:gap-6 tw:lg:flex-row">
         <div class="tw:basis-1/4">
-          <nav
-            class:list={[
-              "tw:rounded-2xl",
-              "tw:flex",
-              "tw:flex-col",
-              "tw:border",
-              "tw:border-border",
-            ]}
-          >
-            <h3
-              class:list={[
-                "tw:bg-primary",
-                "tw:text-primary-foreground!",
-                "tw:p-4",
-                "tw:text-lg",
-                "tw:rounded-t-2xl",
-                "tw:font-semibold",
-                "tw:normal-case!",
-                "tw:mb-0!",
-              ]}
-            >
-              Categories
-            </h3>
-            {
-              categories
-                .filter((item) => getCourseCount(item.category) > 0)
-                .map((item) => (
-                  <a
-                    class:list={[
-                      "tw:group",
-                      "tw:flex",
-                      "tw:flex-row",
-                      "tw:justify-between",
-                      "tw:decoration-0!",
-                      "tw:border-b",
-                      "tw:border-border",
-                      "tw:py-2",
-                      "tw:px-4",
-                      "tw:font-semibold",
-                      "tw:hover:font-semibold",
-                      "tw:hover:bg-muted",
-                      "tw:hover:text-primary!",
-                      "tw:data-[active=true]:bg-muted",
-                    ]}
-                    data-active={item.category === path}
-                    data-bs-title={item.title}
-                    data-bs-toggle="tooltip"
-                    href={base_url(
-                      `/resources/pcb/trainings/${item.category ?? ""}`,
-                    )}
-                  >
-                    <div>{item.title}</div>
-                    <div
-                      class:list={[
-                        "tw:bg-muted",
-                        "tw:px-3 tw:py-0",
-                        "tw:h-6",
-                        "tw:rounded-xl",
-                        "tw:group-data-[active=true]:bg-primary",
-                        "tw:group-data-[active=true]:text-primary-foreground",
-                      ]}
+          <Panel label="Course categories">
+            <PanelHeader>Categories</PanelHeader>
+            <PanelGroup>
+              {
+                categories
+                  .filter((item) => getCourseCount(item.category) > 0)
+                  .map((item) => (
+                    <PanelItem
+                      active={item.category === path}
+                      data-bs-title={item.title}
+                      data-bs-toggle="tooltip"
+                      href={`/resources/pcb/trainings/${item.category ?? ""}`}
                     >
-                      {getCourseCount(item.category)}
-                    </div>
-                  </a>
-                ))
-            }
-          </nav>
+                      {item.title}
+                      <Fragment slot="end">
+                        {getCourseCount(item.category)}
+                      </Fragment>
+                    </PanelItem>
+                  ))
+              }
+            </PanelGroup>
+          </Panel>
         </div>
         <div class="tw:basis-3/4">
           <div class="tw:grid tw:grid-cols-1 tw:gap-4 tw:md:grid-cols-2">
@@ -173,7 +130,7 @@ const getCourseCount = (path?: string) =>
                 <Card href={course.url} isExternal={course.isExternal}>
                   <CardImage entry={course.image} height={200} />
                   <Badge
-                    size="lg"
+                    size="xl"
                     style={{
                       left: "8px",
                       position: "absolute",
@@ -183,7 +140,9 @@ const getCourseCount = (path?: string) =>
                   >
                     {course.type}
                   </Badge>
-                  {course.isExternal && <ExternalLinkBadge />}
+                  {course.isExternal && (
+                    <ExternalLinkBadge color="neutral" size="xl" />
+                  )}
                   {/* <p class="course-card-type">
                   {course.type}
                 </p> */}

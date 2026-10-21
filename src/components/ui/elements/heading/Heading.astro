@@ -21,14 +21,14 @@ const defaultTagBySize: Record<"default" | "md" | "sm", HeadingTag> = {
 
 const Component = as ?? defaultTagBySize[size];
 
-const headerVariants = cva("tw:normal-case! tw:m-0! tw:p-0! tw:text-primary", {
+const headerVariants = cva("tw:normal-case! tw:m-0! tw:p-0! tw:text-primary!", {
   defaultVariants: {
     size: "default",
   },
   variants: {
     size: {
       default: "tw:text-4xl! tw:font-bold! tw:leading-snug tw:tracking-tight",
-      md: "tw:text-2xl! tw:font-semibold tw:leading-tight tw:tracking-tight",
+      md: "tw:text-3xl! tw:font-semibold tw:leading-tight tw:tracking-tight",
       sm: "tw:text-lg! tw:font-semibold tw:leading-tight tw:tracking-tight",
     },
   },
