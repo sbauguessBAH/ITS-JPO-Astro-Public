@@ -2,6 +2,10 @@
 import { getCollection } from "astro:content";
 
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Panel from "@/src/components/ui/blocks/panel/Panel.astro";
+import PanelGroup from "@/src/components/ui/blocks/panel/PanelGroup.astro";
+import PanelHeader from "@/src/components/ui/blocks/panel/PanelHeader.astro";
+import PanelItem from "@/src/components/ui/blocks/panel/PanelItem.astro";
 import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
@@ -15,7 +19,6 @@ import ItemDescription from "@/src/components/ui/elements/item/ItemDescription.a
 import ItemGroup from "@/src/components/ui/elements/item/ItemGroup.astro";
 import ItemTitle from "@/src/components/ui/elements/item/ItemTitle.astro";
 import Icon from "@/src/components/ui/icon/Icon.astro";
-import base_url from "@/src/lib/base_url";
 
 import Layout from "../_layout.astro";
 
@@ -205,71 +208,27 @@ const projects = resources
     }
   }
 </style>
-<style>
-  .panel {
-    border-radius: var(--radius-md);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--border-light);
-    /* box-shadow: var(--box-shadow); */
-  }
-  .panel-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-decoration: none;
-    border-bottom: 1px solid var(--border-light);
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    /* color: black; */
-  }
-  .panel-item:hover {
-    font-weight: 600;
-    background: rgb(var(--color-brand-light));
-  }
-  .panel-item-active {
-    background: rgb(var(--color-brand-light));
-  }
-  .panel-item-active .panel-count {
-    background: rgb(var(--color-brand-dark));
-    color: white;
-  }
-  .panel-item-active:hover {
-    background: rgb(var(--color-brand-light));
-  }
-</style>
 <Layout title="Automation Program">
   <main class="program-main">
     <ProgramSection>
       <Heading>Resources</Heading>
       <div class="resource-container mt-4">
         <div class="tw:basis-1/4">
-          <nav
-            class="tw:flex tw:flex-col tw:rounded-2xl tw:border tw:border-border"
-          >
-            <h3
-              class="tw:m-0! tw:rounded-t-2xl tw:bg-primary tw:p-4! tw:text-xl! tw:text-white! tw:normal-case!"
-            >
-              Areas
-            </h3>
-            {
-              areas.map((item) => (
-                <a
-                  class:list={[
-                    "panel-item",
-                    { "panel-item-active": item.path === path },
-                  ]}
-                  data-bs-title={item.title}
-                  data-bs-toggle="tooltip"
-                  href={base_url(
-                    `/research-areas/automation-program/resources/${item.path ?? ""}`,
-                  )}
-                >
-                  <div class="panel-item-text">{item.title}</div>
-                </a>
-              ))
-            }
-          </nav>
+          <Panel label="Resource areas">
+            <PanelHeader>Areas</PanelHeader>
+            <PanelGroup>
+              {
+                areas.map((item) => (
+                  <PanelItem
+                    active={item.path === path}
+                    href={`/research-areas/automation-program/resources/${item.path ?? ""}`}
+                  >
+                    {item.title}
+                  </PanelItem>
+                ))
+              }
+            </PanelGroup>
+          </Panel>
         </div>
         <div class="tw:flex tw:basis-3/4 tw:flex-col tw:gap-4">
           {
@@ -280,7 +239,7 @@ const projects = resources
               return (
                 <Card>
                   <CardHeader>
-                    <Badge color="neutral" variant="subtle">
+                    <Badge color="neutral" size="lg">
                       {project.area}
                     </Badge>
                     <CardTitle class="tw:text-primary!">
@@ -288,21 +247,21 @@ const projects = resources
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ItemGroup>
+                    <ItemGroup class="tw:grid tw:grid-cols-2">
                       {sortedDeliverables.map((deliverable) => (
                         <Item
                           href={deliverable.url}
                           isExternal
-                          size="xs"
+                          size="sm"
                           variant="muted"
                         >
                           <ItemContent>
-                            <ItemTitle class="tw:text-base!">
-                              {deliverable.title}
-                            </ItemTitle>
                             <ItemDescription>
                               {deliverable.year}
                             </ItemDescription>
+                            <ItemTitle class="tw:text-base!">
+                              {deliverable.title}
+                            </ItemTitle>
                           </ItemContent>
                           <ItemActions>
                             <Icon class="tw:size-3" name="external-link" />

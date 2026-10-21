@@ -3,6 +3,9 @@ import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import OverlayCard, {
   type OverlayCardProps,
 } from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 
 import Layout from "../_layout.astro";
 
@@ -134,17 +137,22 @@ const focusAreas: OverlayCardProps[] = [
   }
 </style>
 <Layout>
-  <main class="program-main">
-    <ProgramSection color="gray">
-      <h2 class="program-title-lg text-center">Focus Areas</h2>
-      <p class="program-text text-center max-w-lg mx-auto">
-        In collaboration with the Operating Administrations, ITS JPO prioritized
-        near-term research focus areas to directly address strategies stated
-        above, and achieve desired outcomes across four current focus areas:
-      </p>
+  <Page class="tw:gap-4!">
+    <PageHeader>
+      <slot slot="title">Focus Areas</slot>
+      <slot slot="description">
+        <p class="program-text">
+          In collaboration with the Operating Administrations, ITS JPO
+          prioritized near-term research focus areas to directly address
+          strategies stated above, and achieve desired outcomes across four
+          current focus areas:
+        </p>
+      </slot>
+    </PageHeader>
+    <PageBody>
       <div class="focus-area-container mt-4" role="directory">
         {focusAreas.map((focusArea) => <OverlayCard {...focusArea} />)}
       </div>
-    </ProgramSection>
-  </main>
+    </PageBody>
+  </Page>
 </Layout>
