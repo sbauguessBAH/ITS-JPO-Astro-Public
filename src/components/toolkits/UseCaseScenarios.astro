@@ -14,29 +14,35 @@ const sites = [...new Set([...section.sites, ...section.items.flatMap((item) => 
 const status = (materials: typeof section.items[number]["materials"]) => {
   if (!materials.length) return "Coming Soon";
   const videos = materials.filter((item) => item.contentType === "Video").length;
-  const factsheets = materials.length - videos;
-  return [videos ? `${videos} video${videos === 1 ? "" : "s"}` : "", factsheets ? `${factsheets} factsheet${factsheets === 1 ? "" : "s"}` : ""].filter(Boolean).join(" / ");
+  const factsheets = materials.filter((item) => item.contentType === "Factsheet").length;
+  const images = materials.filter((item) => item.contentType === "Image").length;
+  return `${factsheets} factsheet${factsheets === 1 ? "" : "s"} / ${images} images / ${videos} video${videos === 1 ? "" : "s"}`;
 };
 ---
 
 <toolkit-scenarios>
   <div class="kit-scenario-filters">
-    <label for={`${id}-site`}>Site
-      <select id={`${id}-site`} data-site-filter>
-        <option value="">All Sites</option>
-        {sites.map((site) => <option value={site}>{site}</option>)}
-      </select>
-    </label>
-    <label for={`${id}-type`}>Content Type
-      <select id={`${id}-type`} data-type-filter>
-        <option value="">All Content Types</option>
-        <option value="Factsheet">Factsheet</option>
-        <option value="Video">Videos</option>
-      </select>
-    </label>
-    <button type="button" class="kit-filter-reset" data-reset-filters>Reset Filters</button>
+    <div class="kit-scenario-filter-group" role="group" aria-labelledby={`${id}-site-label`}>
+      <span class="kit-filter-label" id={`${id}-site-label`}>Site</span>
+      {["", ...sites].map((site) => (
+        <label class="kit-filter-option">
+          <input class="visually-hidden" type="radio" name={`${id}-site`} value={site} checked={site === ""} data-site-filter />
+          <span>{site === "" ? "All" : site === "UDOT" ? "CTW" : site}</span>
+        </label>
+      ))}
+    </div>
+    <div class="kit-scenario-filter-group" role="group" aria-labelledby={`${id}-type-label`}>
+      <span class="kit-filter-label" id={`${id}-type-label`}>Content Type</span>
+      {[["", "All"], ["Factsheet", "Factsheets"], ["Image", "Images"], ["Video", "Videos"]].map(([value, label]) => (
+        <label class="kit-filter-option">
+          <input class="visually-hidden" type="radio" name={`${id}-type`} value={value} checked={value === ""} data-type-filter />
+          <span>{label}</span>
+        </label>
+      ))}
+    </div>
+    <button type="button" class="kit-filter-reset" data-reset-filters>Clear filters</button>
   </div>
-  <p class="kit-scenario-results" role="status" aria-live="polite" data-results>{section.items.length} scenarios</p>
+  <p class="kit-scenario-results visually-hidden" role="status" aria-live="polite" data-results>{section.items.length} scenarios</p>
   <Accordion id={`${id}-accordion`}>
     {section.items.map((scenario, index) => (
       <div data-scenario data-sites={JSON.stringify(scenario.sites)}>
@@ -44,7 +50,7 @@ const status = (materials: typeof section.items[number]["materials"]) => {
           <span slot="header" class="kit-scenario-heading">
             <span class="kit-scenario-title">{scenario.title}</span>
             {scenario.description && <span class="kit-scenario-context">{scenario.description}</span>}
-            <span class="kit-scenario-status" data-scenario-status>{status(scenario.materials)}</span>
+            <span class:list={["kit-scenario-status", { "kit-coming-soon": !scenario.materials.length }]} data-scenario-status>{status(scenario.materials)}</span>
           </span>
           {scenario.materials.length ? (
             <div class="kit-scenario-materials">
@@ -63,34 +69,38 @@ const status = (materials: typeof section.items[number]["materials"]) => {
     connectedCallback() {
       if (this.dataset.initialized) return;
       this.dataset.initialized = "true";
-      const siteFilter = this.querySelector<HTMLSelectElement>("[data-site-filter]")!;
-      const typeFilter = this.querySelector<HTMLSelectElement>("[data-type-filter]")!;
+      const siteFilters = [...this.querySelectorAll<HTMLInputElement>("[data-site-filter]")];
+      const typeFilters = [...this.querySelectorAll<HTMLInputElement>("[data-type-filter]")];
       const scenarios = [...this.querySelectorAll<HTMLElement>("[data-scenario]")];
       const results = this.querySelector<HTMLElement>("[data-results]")!;
       const noResults = this.querySelector<HTMLElement>("[data-no-results]")!;
 
       const update = () => {
+        const site = siteFilters.find((input) => input.checked)!.value;
+        const type = typeFilters.find((input) => input.checked)!.value;
         let count = 0;
         for (const scenario of scenarios) {
           const sites: string[] = JSON.parse(scenario.dataset.sites ?? "[]");
           const materials = [...scenario.querySelectorAll<HTMLElement>("[data-scenario-material]")];
           let videos = 0;
           let factsheets = 0;
+          let images = 0;
           for (const material of materials) {
-            const matchesSite = !siteFilter.value || (material.dataset.site ? material.dataset.site === siteFilter.value : sites.includes(siteFilter.value));
-            const matchesType = !typeFilter.value || material.dataset.contentType === typeFilter.value;
+            const matchesSite = !site || (material.dataset.site ? material.dataset.site === site : sites.includes(site));
+            const matchesType = !type || material.dataset.contentType === type;
             material.hidden = !(matchesSite && matchesType);
             if (!material.hidden) {
               if (material.dataset.contentType === "Video") videos++;
-              else factsheets++;
+              else if (material.dataset.contentType === "Image") images++;
+              else if (material.dataset.contentType === "Factsheet") factsheets++;
             }
           }
-          const comingSoon = !materials.length && !typeFilter.value && (!siteFilter.value || sites.includes(siteFilter.value));
-          scenario.hidden = !(videos + factsheets > 0 || comingSoon);
+          const comingSoon = !materials.length && !type && (!site || sites.includes(site));
+          scenario.hidden = !(videos + factsheets + images > 0 || comingSoon);
           if (!scenario.hidden) count++;
           scenario.querySelector<HTMLElement>("[data-scenario-status]")!.textContent = !materials.length
             ? "Coming Soon"
-            : [videos ? `${videos} video${videos === 1 ? "" : "s"}` : "", factsheets ? `${factsheets} factsheet${factsheets === 1 ? "" : "s"}` : ""].filter(Boolean).join(" / ");
+            : `${factsheets} factsheet${factsheets === 1 ? "" : "s"} / ${images} images / ${videos} video${videos === 1 ? "" : "s"}`;
           if (scenario.hidden) {
             scenario.querySelector(".accordion-collapse")?.classList.remove("show");
             const button = scenario.querySelector(".accordion-button");
@@ -105,11 +115,9 @@ const status = (materials: typeof section.items[number]["materials"]) => {
         noResults.hidden = count > 0;
       };
 
-      siteFilter.addEventListener("change", update);
-      typeFilter.addEventListener("change", update);
+      [...siteFilters, ...typeFilters].forEach((input) => input.addEventListener("change", update));
       this.querySelector("[data-reset-filters]")?.addEventListener("click", () => {
-        siteFilter.value = "";
-        typeFilter.value = "";
+        [...siteFilters, ...typeFilters].forEach((input) => { input.checked = input.value === ""; });
         update();
       });
       update();

@@ -116,35 +116,72 @@ toolkit-scenarios {
   display: block;
 }
 
+.kit-section.use-case-scenarios {
+  padding: clamp(1rem, 3vw, 2rem);
+  background: #efefef;
+}
+
 .kit-scenario-filters {
   display: flex;
-  align-items: end;
+  align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.kit-scenario-filters label {
-  display: grid;
-  gap: 0.4rem;
-  flex: 1 1 12rem;
-  color: var(--kit-text);
-  font-weight: 600;
-}
-
-.kit-scenario-filters select,
-.kit-filter-reset {
-  min-height: 2.75rem;
-  max-width: 100%;
-  padding: 0.5rem 0.75rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
   border: 1px solid var(--kit-border);
   border-radius: 4px;
   background: #ffffff;
+}
+
+.kit-scenario-filter-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kit-filter-label {
+  color: var(--kit-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.kit-filter-option {
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+}
+
+.kit-filter-option > span {
+  display: inline-block;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--kit-border);
+  border-radius: 999px;
+  background: #ffffff;
   color: var(--kit-text);
-  font: inherit;
+  font-size: 0.8rem;
+}
+
+.kit-filter-option > input:checked + span {
+  border-color: var(--kit-highlight);
+  background: var(--kit-highlight);
+}
+
+.kit-filter-option > input:focus-visible + span {
+  outline: 2px solid var(--kit-brand);
+  outline-offset: 3px;
 }
 
 .kit-filter-reset {
+  margin-left: auto;
+  padding: 0.5rem;
+  border: 0;
+  background: transparent;
+  color: var(--kit-muted);
+  font: inherit;
+  font-size: 0.8rem;
+  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -155,7 +192,10 @@ toolkit-scenarios {
 
 .kit-scenario-heading {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
   gap: 0.45rem;
+  flex: 1;
   min-width: 0;
   padding-right: 1rem;
   overflow-wrap: anywhere;
@@ -169,7 +209,62 @@ toolkit-scenarios {
 }
 
 .kit-scenario-status {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin-left: 1rem;
+  font-size: 0.7rem;
   font-weight: 600;
+}
+
+.kit-coming-soon {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--kit-border);
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+toolkit-scenarios .accordion {
+  display: grid;
+  gap: 0.75rem;
+}
+
+toolkit-scenarios .accordion-item {
+  border: 1px solid var(--kit-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+toolkit-scenarios .accordion-button {
+  background: #ffffff;
+  box-shadow: none;
+}
+
+toolkit-scenarios .accordion-button::after {
+  display: grid;
+  place-items: center;
+  background-image: none;
+  content: "+";
+  transform: none;
+  font-weight: 400;
+}
+
+toolkit-scenarios .accordion-button:not(.collapsed)::after {
+  content: "-";
+}
+
+@media (max-width: 639px) {
+  .kit-scenario-heading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .kit-scenario-status {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin-left: 0;
+  }
 }
 
 toolkit-scenarios [hidden] {
