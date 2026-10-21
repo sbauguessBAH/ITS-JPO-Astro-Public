@@ -39,7 +39,13 @@
   background: #ffffff;
 }
 
+.kit-site-card {
+  display: flex;
+  flex-direction: column;
+}
+
 .kit-site-card > img {
+  flex-shrink: 0;
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -52,6 +58,11 @@
   display: grid;
   gap: 0.65rem;
   padding: 1rem;
+}
+
+.kit-site-body {
+  flex: 1;
+  align-content: start;
 }
 
 .kit-site-body h4,
