@@ -619,7 +619,7 @@ toolkit-scenarios [hidden] {
 .kit-media-topic-group > h4 {
   margin: 0;
   color: var(--kit-text);
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 .kit-media-card {
@@ -930,9 +930,17 @@ toolkit-scenarios [hidden] {
   border-top: 5px solid #04A2D8;
   color: #ffffff !important;
 
+  h4 {
+    font-size: 20px;
+  }
+
   a {
     color: #ffffff !important;
     text-decoration: none;
+  }
+
+  p {
+      font-size: 14px;
   }
 }
 

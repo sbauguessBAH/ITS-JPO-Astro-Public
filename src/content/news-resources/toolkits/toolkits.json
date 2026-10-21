@@ -9,9 +9,9 @@
     "topics": ["V2X", "Interoperability", "V2X Accelerator Program"],
     "url": "/news-outreach-tools/news-resources/media-toolkits/v2x-interoperability-toolkit",
     "accelerator_sites": [
-        { "title": "Connecting the West", "site": "UDOT", "toolkit_slug": "udot-connecting-the-west-program-mediakit" },
-        { "title": "Texas TRUST", "site": "TTI", "toolkit_slug": "tti-texas-trust-v2x-program-mediakit" },
-        { "title": "CVAZ", "site": "CVAZ", "toolkit_slug": "mcdot-connected-vehicle-acceleration-zone-mediakit" }
+        { "title": "Connecting the West (CTW)", "site": "UDOT", "description": "Utah DOT \u2014 Salt Lake City and connecting interstates in Utah, Colorado & Wyoming", "toolkit_slug": "udot-connecting-the-west-program-mediakit" },
+        { "title": "Texas TRUST V2X", "site": "TTI", "description": "Texas A&M Transportation Institute (TTI) \u2014 Houston, Bryan/College Station & connecting routes", "toolkit_slug": "tti-texas-trust-v2x-program-mediakit" },
+        { "title": "Connected Vehicle Acceleration Zone (CVAZ)", "site": "CVAZ", "description": "Maricopa County DOT \u2014 Maricopa County, Arizona", "toolkit_slug": "mcdot-connected-vehicle-acceleration-zone-mediakit" }
     ],
     "program_materials": [
         {

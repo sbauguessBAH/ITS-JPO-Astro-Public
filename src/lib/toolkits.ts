@@ -192,7 +192,7 @@ type RawCta = {
 };
 
 type RawToolkitEntry = {
-  accelerator_sites?: Array<{ title: string; site: string; toolkit_slug: string; image_src?: string }>;
+  accelerator_sites?: Array<{ title: string; site: string; description?: string; toolkit_slug: string; image_src?: string }>;
   program_materials?: Array<RawMediaItem & { content_type: string; site?: string }>;
   use_case_scenarios?: Array<{
     title: string;
@@ -598,6 +598,7 @@ const buildExplicitSections = (toolkit: RawToolkitEntry): ToolkitSection[] => {
         return {
           title: site.title,
           site: site.site,
+          description: site.description,
           href: entry?.url,
           image: site.image_src ?? entry?.belt_cta?.preview_image,
         };
