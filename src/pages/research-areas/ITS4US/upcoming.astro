@@ -101,11 +101,11 @@ import "@/src/styles/deployments.css";
     gap: 0.5rem 2rem;
   }
 
-  /* Arrange the solicitation milestones in a horizontal, four-stage timeline. */
+  /* Arrange the solicitation milestones in a horizontal, five-stage timeline. */
   .solicitation-timeline {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
     margin: 2rem 0 3rem;
   }
 
@@ -137,10 +137,10 @@ import "@/src/styles/deployments.css";
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 1.25rem;
+    padding: 0.75rem 0.5rem;
     background: #06235d;
     color: white;
-    font-size: clamp(1.15rem, 2vw, 1.75rem);
+    font-size: clamp(1rem, 1.35vw, 1.35rem);
     font-weight: 700;
     line-height: 1.1;
     border-radius: 0.75rem 0.75rem 0 0;
@@ -154,10 +154,10 @@ import "@/src/styles/deployments.css";
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.75rem 0.5rem;
     background: #f1f1f1;
     color: #111;
-    font-size: clamp(1.1rem, 2vw, 1.75rem);
+    font-size: clamp(0.95rem, 1.2vw, 1.2rem);
     line-height: 1.1;
     margin-top: 2.15rem;
     border-radius: 0 0 0.75rem 0.75rem;
@@ -487,17 +487,22 @@ import "@/src/styles/deployments.css";
                 <div class="timeline-step">
                   <div class="timeline-heading">BAA Posted on SAM.gov</div>
                   <span class="timeline-marker" aria-hidden="true"></span>
-                  <div class="timeline-detail">2026</div>
+                  <div class="timeline-detail">Oct 20, 2026</div>
                 </div>
                 <div class="timeline-step">
-                  <div class="timeline-heading">Question &amp; Answer Period</div>
+                  <div class="timeline-heading">Questions Due</div>
                   <span class="timeline-marker" aria-hidden="true"></span>
-                  <div class="timeline-detail">2 Weeks Post-BAA Release</div>
+                  <div class="timeline-detail">Nov 4, 2026</div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-heading">Answers Provided</div>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-detail">Nov 18, 2026</div>
                 </div>
                 <div class="timeline-step">
                   <div class="timeline-heading">Proposal Deadline</div>
                   <span class="timeline-marker" aria-hidden="true"></span>
-                  <div class="timeline-detail">45 Days Post-BAA Release</div>
+                  <div class="timeline-detail">Jan 11, 2027</div>
                 </div>
                 <div class="timeline-step">
                   <div class="timeline-heading">Awards Anticipated</div>
