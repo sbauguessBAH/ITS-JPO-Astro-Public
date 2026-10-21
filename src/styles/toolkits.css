@@ -57,12 +57,18 @@
 .kit-material-body {
   display: grid;
   gap: 0.65rem;
-  padding: 1rem;
+  padding: .75rem;
 }
 
 .kit-site-body {
   flex: 1;
   align-content: start;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.kit-site-body p {
+  margin: 0;
 }
 
 .kit-site-body h4,
@@ -119,6 +125,8 @@ toolkit-scenarios {
 .kit-section.use-case-scenarios {
   padding: clamp(1rem, 3vw, 2rem);
   background: #efefef;
+  box-shadow: 0 0 0 100vmax #efefef;
+  clip-path: inset(0 -100vmax);
 }
 
 .kit-scenario-filters {
@@ -321,6 +329,15 @@ toolkit-scenarios [hidden] {
   width: 100%;
   height: 2px;
   background: linear-gradient(90deg, var(--kit-accent) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.toolkit-page:has(.accelerator-sites) .kit-section::before {
+  height: 1px;
+  opacity: 0.25;
+}
+
+.toolkit-page:has(.accelerator-sites) .kit-content-main > .kit-section:first-child::before {
+  content: none;
 }
 
 .kit-section > h3,
