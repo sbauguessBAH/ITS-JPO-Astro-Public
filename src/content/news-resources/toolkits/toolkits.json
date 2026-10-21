@@ -64,7 +64,88 @@
             "actionLabel": "Visit Website"
         }
     ],
-    "use_case_scenarios": []
+    "use_case_scenarios": [
+        {
+            "title": "Connected Intersection (CI) Issuing Preferential Treatment",
+            "materials": []
+        },
+        {
+            "title": "Vehicle Equipped with OEM Red Light Violation Warning (RLVW) Application",
+            "materials": []
+        },
+        {
+            "title": "Spot Weather Impact Warning",
+            "materials": []
+        },
+        {
+            "title": "Driver Warning of VRU at Signalized Intersection",
+            "materials": []
+        },
+        {
+            "title": "SPaT-Enabled Intersection VRU Identification and Protection",
+            "materials": []
+        },
+        {
+            "title": "Traffic Signal Preemption and Priority",
+            "materials": []
+        },
+        {
+            "title": "Enhanced Highway Construction Worker Safety",
+            "materials": []
+        },
+        {
+            "title": "Red Light Violation Warning (RLVW)",
+            "sites": ["UDOT", "TTI", "CVAZ"],
+            "materials": [
+                {
+                    "title": "Red Light Violation Warning",
+                    "content_type": "Factsheet",
+                    "format": "PDF",
+                    "actionLabel": "Download PDF"
+                },
+                {
+                    "title": "Red Light Violation Warning B-Roll (In-Cab), Pt. 1",
+                    "content_type": "Video",
+                    "format": "Video file",
+                    "site": "TTI",
+                    "actionLabel": "Watch Video"
+                },
+                {
+                    "title": "Red Light Violation Warning B-Roll (In-Cab), Pt. 2",
+                    "content_type": "Video",
+                    "format": "Video file",
+                    "site": "TTI",
+                    "actionLabel": "Watch Video"
+                },
+                {
+                    "title": "Red Light Violation Warning B-Roll (In-Cab), Pt. 3",
+                    "content_type": "Video",
+                    "format": "Video file",
+                    "site": "TTI",
+                    "actionLabel": "Watch Video"
+                },
+                {
+                    "title": "Right Turn on Red Light Violation Warning B-Roll (In-Cab)",
+                    "content_type": "Video",
+                    "format": "Video file",
+                    "site": "TTI",
+                    "actionLabel": "Watch Video"
+                }
+            ]
+        },
+        {
+            "title": "Emergency Vehicle Priority",
+            "materials": []
+        },
+        {
+            "title": "Transit Signal Priority",
+            "materials": []
+        },
+        {
+            "title": "Pedestrian and Road User Safety",
+            "materials": []
+        }
+    ]
 },
 {
     "id": 36,
