@@ -16,7 +16,7 @@ facility:
   - "Freeway Segment"
   - "Arterial/Collector Segment"
 safety:
-  - "Road Weather Safety"
+  - "Road Weather"
   - "Emergency Response"
   - "Nighttime Visibility"
 keywords:

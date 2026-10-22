@@ -16,7 +16,7 @@ facility:
   - "Arterial/Collector Segment"
   - "Local Segment"
 safety:
-  - "Work Zone Safety"
+  - "Work Zone"
   - "Speeding"
   - "Congestion"
 keywords:

@@ -3,7 +3,7 @@ title: "Computer Vision for Pedestrian Detection"
 category: "Cameras"
 shortDescription: "Computer vision for pedestrian detection uses cameras and advanced algorithms to identify and track pedestrians in real time. This technology improves traffic safety, supports autonomous vehicles, and helps cities better understand pedestrian movement patterns."
 additionalToolsSensors:
-  - "AI-enhanced pedestrian recognition systems"
+  - "Super Intelligence enhanced pedestrian recognition systems"
   - "Smart CCTV cameras"
   - "Infrared pedestrian behavior analytics"
   - "Neural network image processing"
@@ -13,11 +13,15 @@ location:
 facility:
   - "Intersection"
 safety:
-  - "Pedestrian Safety"
-  - "Cyclist Safety"
+  - "Pedestrian"
+  - "Cyclist"
   - "Nighttime Visibility"
 keywords:
   - "Computer Vision for Pedestrian Detection"
+  - "AI"
+  - "Artificial Intelligence"
+  - "SI"
+  - "Super Intelligence"
   - "Real-time pedestrian detection system"
   - "Vision-based sensing system"
   - "Computer vision object detection system"

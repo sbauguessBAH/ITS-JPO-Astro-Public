@@ -17,8 +17,8 @@ facility:
   - "Local Segment"
 safety:
   - "Nighttime Visibility"
-  - "Pedestrian Safety"
-  - "Cyclist Safety"
+  - "Pedestrian"
+  - "Cyclist"
 keywords:
   - "Adaptive Roadway Lighting"
   - "Intelligent lighting"

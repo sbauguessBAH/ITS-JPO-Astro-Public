@@ -19,8 +19,8 @@ facility:
 safety:
   - "Congestion"
   - "Speeding"
-  - "Work Zone Safety"
-  - "Road Weather Safety"
+  - "Work Zone"
+  - "Road Weather"
   - "Heavy Vehicle"
 keywords:
   - "Changeable Message Signs"

@@ -13,7 +13,7 @@ location:
 facility:
   - "Intersection"
 safety:
-  - "Intersection Safety"
+  - "Intersection"
   - "Speeding"
   - "Nighttime Visibility"
 keywords:

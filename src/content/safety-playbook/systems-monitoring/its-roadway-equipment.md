@@ -22,7 +22,7 @@ safety:
   - "Congestion"
   - "Emergency Response"
   - "Speeding"
-  - "Work Zone Safety"
+  - "Work Zone"
 keywords:
   - "ITS Roadway Equipment"
   - "Automated traffic data collection system"

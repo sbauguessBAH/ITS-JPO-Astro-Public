@@ -17,7 +17,7 @@ facility:
   - "Arterial/Collector Segment"
 safety:
   - "Emergency Response"
-  - "Work Zone Safety"
+  - "Work Zone"
   - "Congestion"
 keywords:
   - "Yellow Change Interval"

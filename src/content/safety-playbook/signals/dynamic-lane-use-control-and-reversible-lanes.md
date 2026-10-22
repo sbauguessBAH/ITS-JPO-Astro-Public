@@ -18,7 +18,7 @@ facility:
 safety:
   - "Congestion"
   - "Speeding"
-  - "Work Zone Safety"
+  - "Work Zone"
 keywords:
   - "Dynamic Lane Use Control and Reversible Lanes"
   - "Dynamic lane control system"

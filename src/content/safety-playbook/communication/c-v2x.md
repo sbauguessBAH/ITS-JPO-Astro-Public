@@ -12,9 +12,9 @@ location:
 facility:
   - "Freeway Segment"
 safety:
-  - "Intersection Safety"
-  - "Pedestrian Safety"
-  - "Cyclist Safety"
+  - "Intersection"
+  - "Pedestrian"
+  - "Cyclist"
   - "Speeding"
 keywords:
   - "Cellular Vehicle-to-Everything"

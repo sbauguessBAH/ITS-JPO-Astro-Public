@@ -15,8 +15,8 @@ facility:
   - "Freeway Segment"
   - "Arterial/Collector Segment"
 safety:
-  - "Road Weather Safety"
-  - "Work Zone Safety"
+  - "Road Weather"
+  - "Work Zone"
 keywords:
   - "MCM Environmental Information Collection"
   - "MCM"

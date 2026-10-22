@@ -13,7 +13,7 @@ facility:
   - "Arterial/Collector Segment"
   - "Local Segment"
 safety:
-  - "Road Weather Safety"
+  - "Road Weather"
   - "Roadway Departure"
   - "Congestion"
   - "Emergency Response"

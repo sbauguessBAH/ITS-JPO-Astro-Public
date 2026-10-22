@@ -14,8 +14,8 @@ location:
 facility:
   - "Intersection"
 safety:
-  - "Pedestrian Safety"
-  - "Intersection Safety"
+  - "Pedestrian"
+  - "Intersection"
 keywords:
   - "Pedestrian Countdown Signals"
   - "Pedestrian timing display system"

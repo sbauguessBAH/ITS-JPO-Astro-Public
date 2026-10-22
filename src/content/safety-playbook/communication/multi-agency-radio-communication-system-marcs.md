@@ -14,7 +14,7 @@ facility:
   - "n/a"
 safety:
   - "Emergency Response"
-  - "Work Zone Safety"
+  - "Work Zone"
   - "Congestion"
 keywords:
   - "Multi-Agency Radio Communication System"

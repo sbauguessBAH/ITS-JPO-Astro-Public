@@ -14,9 +14,9 @@ location:
 facility:
   - "Intersection"
 safety:
-  - "Intersection Safety"
+  - "Intersection"
   - "Congestion"
-  - "Pedestrian Safety"
+  - "Pedestrian"
 keywords:
   - "Traffic Signal Coordination"
   - "Coordinated signal timing system"

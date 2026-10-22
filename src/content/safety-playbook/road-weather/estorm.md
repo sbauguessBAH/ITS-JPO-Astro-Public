@@ -16,7 +16,7 @@ facility:
   - "Interchange"
   - "Arterial/Collector Segment"
 safety:
-  - "Intersection Safety"
+  - "Intersection"
   - "Congestion"
   - "Emergency Response"
 keywords:

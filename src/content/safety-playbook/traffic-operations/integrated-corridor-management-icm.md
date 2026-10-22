@@ -14,7 +14,7 @@ safety:
   - "Congestion"
   - "Emergency Response"
   - "Speeding"
-  - "Work Zone Safety"
+  - "Work Zone"
 keywords:
   - "Integrated Corridor Management"
   - "ICM"

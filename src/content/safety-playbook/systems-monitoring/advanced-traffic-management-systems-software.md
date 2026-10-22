@@ -15,8 +15,8 @@ safety:
   - "Congestion"
   - "Emergency Response"
   - "Speeding"
-  - "Road Weather Safety"
-  - "Intersection Safety"
+  - "Road Weather"
+  - "Intersection"
 keywords:
   - "Advanced Traffic Management Systems Software"
   - "Real-time traffic management platform"

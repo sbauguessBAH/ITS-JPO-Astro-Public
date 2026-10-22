@@ -16,7 +16,7 @@ facility:
   - "Freeway Segment"
   - "Arterial/Collector Segment"
 safety:
-  - "Work Zone Safety"
+  - "Work Zone"
   - "Speeding"
   - "Congestion"
 keywords:

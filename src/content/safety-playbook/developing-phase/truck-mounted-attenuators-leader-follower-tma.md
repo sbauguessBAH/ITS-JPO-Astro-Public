@@ -12,7 +12,7 @@ location:
 facility:
   - "Freeway Segment"
 safety:
-  - "Work Zone Safety"
+  - "Work Zone"
   - "Heavy Vehicle"
   - "Speeding"
 keywords:

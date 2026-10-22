@@ -19,8 +19,8 @@ facility:
   - "Local Segment"
 safety:
   - "Nighttime Visibility"
-  - "Pedestrian Safety"
-  - "Cyclist Safety"
+  - "Pedestrian"
+  - "Cyclist"
 keywords:
   - "Nighttime Visibility for Safety"
   - "Nighttime visibility enhancement system"

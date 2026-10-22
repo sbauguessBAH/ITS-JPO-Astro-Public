@@ -19,7 +19,7 @@ facility:
   - "Intersection"
   - "Interchange"
 safety:
-  - "Intersection Safety"
+  - "Intersection"
   - "Speeding"
   - "Congestion"
   - "Heavy Vehicle"

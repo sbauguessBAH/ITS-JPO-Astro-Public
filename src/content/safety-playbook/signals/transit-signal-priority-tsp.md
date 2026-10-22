@@ -15,8 +15,8 @@ facility:
   - "Intersection"
 safety:
   - "Congestion"
-  - "Intersection Safety"
-  - "Pedestrian Safety"
+  - "Intersection"
+  - "Pedestrian"
   - "Heavy Vehicle"
 keywords:
   - "Transit Signal Priority"

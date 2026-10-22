@@ -14,7 +14,7 @@ location:
 facility:
   - "Freeway Segment"
 safety:
-  - "Road Weather Safety"
+  - "Road Weather"
 keywords:
   - "Dual Use Safety Technology Warning System"
   - "DUST"

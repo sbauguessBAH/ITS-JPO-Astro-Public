@@ -16,7 +16,7 @@ facility:
   - "n/a"
 safety:
   - "Emergency Response"
-  - "Work Zone Safety"
+  - "Work Zone"
   - "Congestion"
 keywords:
   - "Highway Advisory Radio"

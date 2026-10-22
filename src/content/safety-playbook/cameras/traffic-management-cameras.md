@@ -18,7 +18,7 @@ location:
 facility:
   - "Intersection"
 safety:
-  - "Intersection Safety"
+  - "Intersection"
   - "Speeding"
 keywords:
   - "Traffic Management Cameras"

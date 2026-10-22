@@ -9,8 +9,8 @@ location:
 facility:
   - "Arterial/Collector Segment"
 safety:
-  - "Pedestrian Safety"
-  - "Cyclist Safety"
+  - "Pedestrian"
+  - "Cyclist"
   - "Congestion"
   - "Heavy Vehicle"
 keywords:

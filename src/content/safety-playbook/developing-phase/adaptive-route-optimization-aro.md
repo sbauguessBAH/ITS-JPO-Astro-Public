@@ -23,7 +23,7 @@ safety:
   - "Congestion"
   - "Emergency Response"
   - "Heavy Vehicle"
-  - "Road Weather Safety"
+  - "Road Weather"
 keywords:
   - "Adaptive Route Optimization"
   - "ARO"

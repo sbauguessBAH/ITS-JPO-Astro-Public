@@ -14,7 +14,7 @@ facility:
   - "Intersection"
 safety:
   - "Emergency Response"
-  - "Intersection Safety"
+  - "Intersection"
   - "Congestion"
   - "Heavy Vehicle"
 keywords:

@@ -16,9 +16,9 @@ location:
 facility:
   - "Intersection"
 safety:
-  - "Intersection Safety"
-  - "Pedestrian Safety"
-  - "Cyclist Safety"
+  - "Intersection"
+  - "Pedestrian"
+  - "Cyclist"
   - "Congestion"
 keywords:
   - "Machine Learning Assessment for Traffic Signals"

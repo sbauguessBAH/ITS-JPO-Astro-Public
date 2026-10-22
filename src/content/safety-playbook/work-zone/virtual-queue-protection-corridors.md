@@ -18,7 +18,7 @@ safety:
   - "Heavy Vehicle"
   - "Speeding"
   - "Congestion"
-  - "Work Zone Safety"
+  - "Work Zone"
 keywords:
   - "Virtual Queue Protection Corridors"
   - "Virtual queue protection corridor system"

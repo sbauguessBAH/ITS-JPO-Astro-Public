@@ -17,7 +17,7 @@ facility:
 safety:
   - "Congestion"
   - "Speeding"
-  - "Work Zone Safety"
+  - "Work Zone"
 keywords:
   - "Queue Warning Systems"
   - "Automated queue detection system"

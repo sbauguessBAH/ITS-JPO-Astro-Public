@@ -14,7 +14,7 @@ location:
 facility:
   - "Intersection"
 safety:
-  - "Intersection Safety"
+  - "Intersection"
   - "Speeding"
   - "Congestion"
 keywords:

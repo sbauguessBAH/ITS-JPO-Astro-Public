@@ -20,7 +20,7 @@ facility:
 safety:
   - "Congestion"
   - "Emergency Response"
-  - "Road Weather Safety"
+  - "Road Weather"
 keywords:
   - "Traffic Management Centers"
   - "TMC"

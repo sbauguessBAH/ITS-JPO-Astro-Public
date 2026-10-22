@@ -15,7 +15,7 @@ facility:
 safety:
   - "Speeding"
   - "Congestion"
-  - "Road Weather Safety"
+  - "Road Weather"
 keywords:
   - "Variable Speed Limits"
   - "VSL"

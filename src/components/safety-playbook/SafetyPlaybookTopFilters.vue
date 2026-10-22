@@ -202,7 +202,7 @@ onBeforeUnmount(() => {
     <CheckboxMultiSelectDropdown
       id="playbook-filter-location"
       v-model="selectedLocations"
-      label="Area Type"
+      label="Area Types"
       :options="props.locations"
       :disabled-options="disabledLocations"
       variant="location"
@@ -211,7 +211,7 @@ onBeforeUnmount(() => {
     <CheckboxMultiSelectDropdown
       id="playbook-filter-facility"
       v-model="selectedFacilities"
-      label="Facility"
+      label="Facility Types"
       :options="props.facilities"
       :disabled-options="disabledFacilities"
       variant="facility"
@@ -220,7 +220,7 @@ onBeforeUnmount(() => {
      <CheckboxMultiSelectDropdown
       id="playbook-filter-category"
       v-model="selectedCategories"
-      label="Category"
+      label="Categories"
       :options="props.categories"
       :disabled-options="disabledCategories"
       variant="category"

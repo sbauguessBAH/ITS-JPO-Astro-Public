@@ -19,7 +19,7 @@ facility:
 safety:
   - "Speeding"
   - "Roadway Departure"
-  - "Pedestrian Safety"
+  - "Pedestrian"
 keywords:
   - "Dynamic Speed Feedback Signs"
   - "DSFS"

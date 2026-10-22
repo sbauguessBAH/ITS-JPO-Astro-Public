@@ -17,7 +17,7 @@ facility:
   - "Arterial/Collector Segment"
 safety:
   - "Speeding"
-  - "Pedestrian Safety"
+  - "Pedestrian"
   - "Roadway Departure"
 keywords:
   - "Automated Speed Enforcement"

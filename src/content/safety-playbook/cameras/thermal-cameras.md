@@ -15,8 +15,8 @@ facility:
   - "Freeway Segment"
 safety:
   - "Nighttime Visibility"
-  - "Pedestrian Safety"
-  - "Cyclist Safety"
+  - "Pedestrian"
+  - "Cyclist"
 keywords:
   - "Thermal Cameras"
   - "Infrared imaging system"

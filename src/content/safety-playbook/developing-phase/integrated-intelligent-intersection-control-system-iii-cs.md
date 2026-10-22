@@ -14,9 +14,9 @@ location:
 facility:
   - "Intersection"
 safety:
-  - "Intersection Safety"
-  - "Pedestrian Safety"
-  - "Cyclist Safety"
+  - "Intersection"
+  - "Pedestrian"
+  - "Cyclist"
   - "Congestion"
 keywords:
   - "Integrated Intelligent Intersection Control System"

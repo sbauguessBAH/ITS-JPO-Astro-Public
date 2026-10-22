@@ -13,9 +13,9 @@ location:
 facility:
   - "Intersection"
 safety:
-  - "Intersection Safety"
+  - "Intersection"
   - "Congestion"
-  - "Pedestrian Safety"
+  - "Pedestrian"
 keywords:
   - "Adaptive Traffic Signals"
   - "Adaptive signal control system"

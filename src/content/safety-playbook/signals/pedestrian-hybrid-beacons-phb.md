@@ -16,8 +16,8 @@ facility:
   - Arterial/Collector Segment
   - Local Segment
 safety:
-  - Pedestrian Safety
-  - Intersection Safety
+  - Pedestrian
+  - Intersection
 keywords:
   - Pedestrian Hybrid Beacons
   - PHB

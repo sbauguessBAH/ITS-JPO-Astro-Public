@@ -15,7 +15,7 @@ location:
 facility:
   - "Intersection"
 safety:
-  - "Intersection Safety"
+  - "Intersection"
   - "Speeding"
 keywords:
   - "Red Light Cameras"
