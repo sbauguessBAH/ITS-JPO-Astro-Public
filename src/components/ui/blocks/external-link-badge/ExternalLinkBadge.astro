@@ -1,0 +1,84 @@
+---
+import type { ComponentProps } from "astro/types";
+
+import Badge from "../../elements/badge/Badge.astro";
+import Icon from "../../icon/Icon.astro";
+
+type Props = Omit<ComponentProps<typeof Badge>, "children"> & {
+  /** Text revealed when the parent card is hovered or focused. */
+  label?: string;
+};
+
+const {
+  class: className,
+  color = "secondary",
+  label = "External Link",
+  size = "lg",
+  ...rest
+} = Astro.props;
+---
+
+<!-- Expands when the closest [data-slot="card"] is hovered/focused; see script. -->
+<Badge
+  class:list={[
+    "tw:group/external-link-badge",
+    // Storybook has no Bootstrap reboot, so `min-w` would otherwise add to the padding.
+    "tw:box-border",
+    "tw:absolute tw:top-2 tw:right-2",
+    "tw:gap-0! tw:uppercase",
+    className,
+  ]}
+  color={color}
+  data-slot="external-link-badge"
+  data-state="collapsed"
+  size={size}
+  {...rest}
+>
+  <!-- End-aligned so the text stays beside the icon and is revealed from the right. -->
+  <span
+    class:list={[
+      "tw:flex tw:max-w-0 tw:justify-end tw:overflow-hidden tw:whitespace-nowrap",
+      "tw:transition-[max-width] tw:duration-200 tw:ease-out tw:motion-reduce:transition-none",
+      "tw:group-data-[state=expanded]/external-link-badge:max-w-(--label-width)",
+    ]}
+    data-slot="external-link-badge-label"
+  >
+    <span class="tw:shrink-0 tw:pr-1.5">{label}</span>
+  </span>
+  <Icon aria-hidden="true" name="external-link" />
+</Badge>
+
+<script>
+  const BADGE = '[data-slot="external-link-badge"]';
+  const CARD = '[data-slot="card"]';
+  const LABEL = '[data-slot="external-link-badge-label"]';
+
+  // Delegated so badges added after load (e.g. Storybook) also work.
+  const sync =
+    (state: "collapsed" | "expanded") => (e: MouseEvent | FocusEvent) => {
+      const target = e.target as Element;
+      // Fall back to the badge itself when it is not inside a card.
+      const trigger =
+        target.closest<HTMLElement>(CARD) ?? target.closest<HTMLElement>(BADGE);
+      if (!trigger) return;
+      // Ignore moves between elements that are both inside the trigger.
+      if (trigger.contains(e.relatedTarget as Node | null)) return;
+
+      const badges = trigger.matches(BADGE)
+        ? [trigger]
+        : trigger.querySelectorAll<HTMLElement>(BADGE);
+      badges.forEach((badge) => {
+        // max-width can only animate to a concrete length, so measure the text.
+        const text = badge.querySelector<HTMLElement>(LABEL)?.firstElementChild;
+        if (text instanceof HTMLElement) {
+          badge.style.setProperty("--label-width", `${text.offsetWidth}px`);
+        }
+        badge.dataset.state = state;
+      });
+    };
+
+  document.addEventListener("mouseover", sync("expanded"));
+  document.addEventListener("mouseout", sync("collapsed"));
+  document.addEventListener("focusin", sync("expanded"));
+  document.addEventListener("focusout", sync("collapsed"));
+</script>

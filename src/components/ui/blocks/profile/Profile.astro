@@ -1,0 +1,62 @@
+---
+import type { ComponentProps, HTMLAttributes } from "astro/types";
+
+import type { LibraryImageEntry } from "@/src/components/programs/LibraryImage.astro";
+
+import LibraryImage from "@/src/components/programs/LibraryImage.astro";
+
+import Item from "../../elements/item/Item.astro";
+import ItemContent from "../../elements/item/ItemContent.astro";
+import ItemDescription from "../../elements/item/ItemDescription.astro";
+import ItemMedia from "../../elements/item/ItemMedia.astro";
+import ItemTitle from "../../elements/item/ItemTitle.astro";
+
+type Props = HTMLAttributes<"div"> & {
+  bio: string;
+  class?: string;
+  /** Reference to library entry. Its alt text is used for the portrait. */
+  image: LibraryImageEntry;
+  name: string;
+  /** Job title and organization */
+  title: string;
+  /** Visual style of the underlying Item */
+  variant?: ComponentProps<typeof Item>["variant"];
+};
+
+const {
+  bio,
+  class: className,
+  image,
+  name,
+  title,
+  variant,
+  ...rest
+} = Astro.props;
+---
+
+<Item
+  class:list={["tw:flex-nowrap tw:items-start tw:gap-4 tw:p-6!", className]}
+  data-slot="profile"
+  variant={variant}
+  {...rest}
+>
+  <ItemMedia
+    class="tw:h-auto! tw:w-30! tw:rounded-lg! tw:[&_img]:h-auto! tw:[&_img]:object-contain!"
+    variant="image"
+  >
+    <LibraryImage entry={image} />
+  </ItemMedia>
+  <ItemContent>
+    <div>
+      <ItemTitle class="tw:line-clamp-none! tw:text-xl! tw:font-semibold!"
+        >{name}</ItemTitle
+      >
+      <ItemDescription
+        class="tw:mt-0! tw:line-clamp-none! tw:text-sm! tw:font-medium!"
+      >
+        {title}
+      </ItemDescription>
+    </div>
+    <p class="tw:m-0 tw:mt-2 tw:text-base">{bio}</p>
+  </ItemContent>
+</Item>

@@ -1,0 +1,73 @@
+---
+import type { ComponentProps, HTMLAttributes } from "astro/types";
+
+import Button from "../../elements/button/Button.astro";
+import Item from "../../elements/item/Item.astro";
+import ItemContent from "../../elements/item/ItemContent.astro";
+import ItemDescription from "../../elements/item/ItemDescription.astro";
+import ItemTitle from "../../elements/item/ItemTitle.astro";
+import Icon from "../../icon/Icon.astro";
+
+type LinkProps = NonNullable<ComponentProps<typeof Button>["link"]>;
+
+type Props = Omit<HTMLAttributes<"div">, "title"> & {
+  /** Presenters, e.g. "(Jones, Colyar, Bettger)" */
+  attribution?: string;
+  class?: string;
+  /** Presentation slides (PDF); opens in a new window unless overridden */
+  pdf?: LinkProps;
+  /** Presentation title */
+  title: string;
+  /** Webinar recording; treated as external unless overridden */
+  webinar?: LinkProps;
+};
+
+const {
+  attribution,
+  class: className,
+  pdf,
+  title,
+  webinar,
+  ...rest
+} = Astro.props;
+---
+
+<Item
+  class:list={["tw:p-6!", className]}
+  data-slot="presentation"
+  variant="muted"
+  {...rest}
+>
+  <ItemContent class="tw:gap-4">
+    <div>
+      <ItemTitle class="tw:line-clamp-none! tw:text-xl! tw:font-semibold!">
+        {title}
+      </ItemTitle>
+      {
+        attribution && (
+          <ItemDescription class="tw:line-clamp-none!">
+            {attribution}
+          </ItemDescription>
+        )
+      }
+    </div>
+    <div>
+      {
+        webinar && (
+          <Button link={{ isExternal: true, ...webinar }}>
+            Webinar Replay
+            <Icon name="external-link" />
+          </Button>
+        )
+      }
+      {
+        pdf && (
+          <Button link={{ isNewWindow: true, ...pdf }}>
+            PDF
+            <Icon name="pdf" />
+          </Button>
+        )
+      }
+    </div>
+  </ItemContent>
+</Item>
