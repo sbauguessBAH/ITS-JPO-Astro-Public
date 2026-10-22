@@ -1,13 +1,16 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "./_layout.astro";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
 import { Image } from "astro:assets";
-import BoxArrowUpRightIcon from "@/src/components/programs/icons/BoxArrowUpRightIcon.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
+
+import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
+import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Card from "@/src/components/ui/elements/card/Card.astro";
+import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
+import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
+
+import Layout from "./_layout.astro";
 ---
+
 <style>
   .resource-container {
     display: grid;
@@ -37,7 +40,6 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
 
   .team-card-description {
     flex: 1;
-    
   }
 
   .team-card-partners {
@@ -165,6 +167,7 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
     }
   }
 </style>
+
 <Layout>
   <main class="program-main">
     <ProgramSection>
@@ -174,31 +177,50 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
       <div class="row">
         <div class="col-12 col-lg-8">
           <p class="program-text">
-            Building on the success of the Intersection Safety Challenge, the Intersection Safety Systems 
-            (ISS) development initiative aims to support development of innovative ISS that can operate effectively 
-            under real-world conditions. The goal is to accelerate the development of full end-to-end 
-            prototype ISS and its components, including sensor fusion, Super Intelligence based decision-making, and conflict mitigation. 
+            Building on the success of the Intersection Safety Challenge, the
+            Intersection Safety Systems (ISS) development initiative aims to
+            support development of innovative ISS that can operate effectively
+            under real-world conditions. The goal is to accelerate the
+            development of full end-to-end prototype ISS and its components,
+            including sensor fusion, Super Intelligence based decision-making,
+            and conflict mitigation.
           </p>
         </div>
         <div class="col-11 col-lg-4">
           <Image
-            src={issLogo}
             alt="Intersection Safety Systems Logo"
             class="img-fluid"
+            src={issLogo}
           />
         </div>
       </div>
 
       <section aria-labelledby="iss-teams-heading">
-        <h2 id="iss-teams-heading" class="program-title-lg mt-4">
+        <h2 class="program-title-lg mt-4" id="iss-teams-heading">
           Overview of the ISS Teams
         </h2>
         <div class="team-card-grid">
-          <Card shadow="sm" radius="md" class="team-card">
-            <CardBody>
+          <Card class="team-card">
+            <CardContent>
               <h3 class="program-title-md team-card-title">DERQ USA</h3>
               <p class="program-text team-card-description">
-                Derq USA is partnering with the Texas Department of Transportation (TxDOT), City of Houston, Virginia DOT, and Cities of Alexandria and Falls Church in Virginia to prototype its ISS, leveraging cutting-edge technology to identify and mitigate unsafe conditions at intersections. The ISS fuses video cameras (primary sensor), Light Detection and Ranging (LiDAR) or radar data, signal controller events, and Vehicle-to-Everything (V2X) messages at the roadside edge. Derq's intent-classification methods predict red-light violation and pedestrian crossing intent before entering the roadway. The system then uses conflict mitigation logic to select an appropriate response: warnings to drivers and pedestrians through V2X infrastructure, activation of dynamic signage, or changes to intersection control. Derq will test the ISS prototype at the Virginia Tech Transportation Institute (VTTI) Virginia Smart Roads as well as at the Texas A&amp;M Transportation Institute (TTI) Proving Grounds.
+                Derq USA is partnering with the Texas Department of
+                Transportation (TxDOT), City of Houston, Virginia DOT, and
+                Cities of Alexandria and Falls Church in Virginia to prototype
+                its ISS, leveraging cutting-edge technology to identify and
+                mitigate unsafe conditions at intersections. The ISS fuses video
+                cameras (primary sensor), Light Detection and Ranging (LiDAR) or
+                radar data, signal controller events, and Vehicle-to-Everything
+                (V2X) messages at the roadside edge. Derq's
+                intent-classification methods predict red-light violation and
+                pedestrian crossing intent before entering the roadway. The
+                system then uses conflict mitigation logic to select an
+                appropriate response: warnings to drivers and pedestrians
+                through V2X infrastructure, activation of dynamic signage, or
+                changes to intersection control. Derq will test the ISS
+                prototype at the Virginia Tech Transportation Institute (VTTI)
+                Virginia Smart Roads as well as at the Texas A&amp;M
+                Transportation Institute (TTI) Proving Grounds.
               </p>
               <div class="program-text team-card-partners">
                 <strong>Public Sector Partners</strong>
@@ -220,14 +242,33 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
                   <li>AT&amp;T</li>
                 </ul>
               </div>
-            </CardBody>
+            </CardContent>
           </Card>
 
-          <Card shadow="sm" radius="md" class="team-card">
-            <CardBody>
+          <Card class="team-card">
+            <CardContent>
               <h3 class="program-title-md team-card-title">UCLA</h3>
               <p class="program-text team-card-description">
-                The University of California, Los Angeles (UCLA) is partnering with the Contra Costa Transportation Authority (CCTA) and the California Department of Transportation (Caltrans) to prototype InfraShield, an ISS designed to predict individual conflicts, identify recurring unsafe conditions, and support timely, risk-controlled mitigation at signalized and other complex intersections. The concept combines an offline deployment-design process with an online edge computing safety pipeline. The ISS prototype will support visual cameras, LiDAR, radar, and optional thermal/infrared sensing, supplemented where available by traffic controller and V2X data. Mitigation will be introduced through three staged operating modes: <em>Observe and Diagnose</em> (records trajectories, unsafe conditions, recommended actions, and other data), <em>Warn and Advise</em> (provides targeted warnings through visual or auditory devices, mobile or network-based alerts, and V2X messages), and <em>Control or Operational Support</em> (supports agency-approved, controller-safe responses, e.g., all-red extension). UCLA will test the ISS prototype at the GoMentum Station in Concord, CA.
+                The University of California, Los Angeles (UCLA) is partnering
+                with the Contra Costa Transportation Authority (CCTA) and the
+                California Department of Transportation (Caltrans) to prototype
+                InfraShield, an ISS designed to predict individual conflicts,
+                identify recurring unsafe conditions, and support timely,
+                risk-controlled mitigation at signalized and other complex
+                intersections. The concept combines an offline deployment-design
+                process with an online edge computing safety pipeline. The ISS
+                prototype will support visual cameras, LiDAR, radar, and
+                optional thermal/infrared sensing, supplemented where available
+                by traffic controller and V2X data. Mitigation will be
+                introduced through three staged operating modes: <em
+                  >Observe and Diagnose</em
+                > (records trajectories, unsafe conditions, recommended actions, and
+                other data), <em>Warn and Advise</em> (provides targeted warnings
+                through visual or auditory devices, mobile or network-based alerts,
+                and V2X messages), and <em>Control or Operational Support</em> (supports
+                agency-approved, controller-safe responses, e.g., all-red extension).
+                UCLA will test the ISS prototype at the GoMentum Station in Concord,
+                CA.
               </p>
               <div class="program-text team-card-partners">
                 <strong>Public Sector Partners</strong>
@@ -242,14 +283,30 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
                   <li>GoMentum Station</li>
                 </ul>
               </div>
-            </CardBody>
+            </CardContent>
           </Card>
 
-          <Card shadow="sm" radius="md" class="team-card">
-            <CardBody>
+          <Card class="team-card">
+            <CardContent>
               <h3 class="program-title-md team-card-title">UMTRI</h3>
               <p class="program-text team-card-description">
-                The University of Michigan Transportation Research Institute (UMTRI) is partnering with the Michigan Department of Transport (MDOT), the Southeast Michigan Council of Governments (SEMCOG), and the City of Ann Arbor, Michigan to prototype SAFETI, Safety Actions for Everyone at Traffic Intersections, targeting individual conflicts and unsafe conditions. The ISS uses LiDAR as its primary sensor but can integrate existing roadside cameras or other available sensors. The ISS employs a modular, distributed edge-computing architecture with an edge layer for real-time functions as well as a cloud layer to support higher-level safety applications (e.g., network-wide conflict analysis). The ISS predicts and mitigates real-time conflicts at intersections through a layered multimodal framework spanning infrastructure warnings, traffic signal control, V2X communications, and 5G-enabled alerts to smartphones, in-vehicle dashboards, and other connected devices. UMTRI will test the ISS prototype at the MCity Test Facility.
+                The University of Michigan Transportation Research Institute
+                (UMTRI) is partnering with the Michigan Department of Transport
+                (MDOT), the Southeast Michigan Council of Governments (SEMCOG),
+                and the City of Ann Arbor, Michigan to prototype SAFETI, Safety
+                Actions for Everyone at Traffic Intersections, targeting
+                individual conflicts and unsafe conditions. The ISS uses LiDAR
+                as its primary sensor but can integrate existing roadside
+                cameras or other available sensors. The ISS employs a modular,
+                distributed edge-computing architecture with an edge layer for
+                real-time functions as well as a cloud layer to support
+                higher-level safety applications (e.g., network-wide conflict
+                analysis). The ISS predicts and mitigates real-time conflicts at
+                intersections through a layered multimodal framework spanning
+                infrastructure warnings, traffic signal control, V2X
+                communications, and 5G-enabled alerts to smartphones, in-vehicle
+                dashboards, and other connected devices. UMTRI will test the ISS
+                prototype at the MCity Test Facility.
               </p>
               <div class="program-text team-card-partners">
                 <strong>Public Sector Partners</strong>
@@ -272,74 +329,87 @@ import CardFooter from "@/src/components/programs/card/CardFooter.astro";
                   <li>NVIDIA</li>
                 </ul>
               </div>
-            </CardBody>
+            </CardContent>
           </Card>
         </div>
       </section>
 
-      <h2 class="program-title-lg mt-4">
-        Key Research Questions
-      </h2>
+      <h2 class="program-title-lg mt-4">Key Research Questions</h2>
       <ul class="program-list">
         <li>
-          <em>Conflicts.</em> Can an ISS reliably predict conflicts among vehicles and vulnerable road users?
+          <em>Conflicts.</em> Can an ISS reliably predict conflicts among vehicles
+          and vulnerable road users?
         </li>
         <ul>
           <li>How far in advance can conflicts be predicted?</li>
-          <li>Under what conditions can reliable conflict predictions be made?</li>
+          <li>
+            Under what conditions can reliable conflict predictions be made?
+          </li>
         </ul>
         <li>
-          <em>Unsafe Conditions.</em> Can an ISS reliably identify conflicts and characterize unsafe conditions?
-        </li>
-        <ul>
-          <li>What types of unsafe conditions can be reliably identified or anticipated?</li>
-          <li>How quickly can unsafe conditions be reliably identified or anticipated?</li>
-        </ul>
-        <li>
-          <em>Mitigating Strategies.</em> Can an ISS take meaningful mitigating actions, either in the form
-          of warnings or changes to intersection control, to mitigate conflicts and/or unsafe conditions?
+          <em>Unsafe Conditions.</em> Can an ISS reliably identify conflicts and characterize
+          unsafe conditions?
         </li>
         <ul>
           <li>
-            Can changes to intersection control be implemented in real-time to mitigate
-            unsafe conditions (e.g., eliminating permissive vehicle turning movements
-            traversing busy crosswalks)? What changes to control are most effective?
+            What types of unsafe conditions can be reliably identified or
+            anticipated?
           </li>
           <li>
-            Can warnings be issued in real-time to mitigate conflicts? What types of warnings
-            are most effective (e.g., visual, auditory, haptic)?
+            How quickly can unsafe conditions be reliably identified or
+            anticipated?
+          </li>
+        </ul>
+        <li>
+          <em>Mitigating Strategies.</em> Can an ISS take meaningful mitigating actions,
+          either in the form of warnings or changes to intersection control, to mitigate
+          conflicts and/or unsafe conditions?
+        </li>
+        <ul>
+          <li>
+            Can changes to intersection control be implemented in real-time to
+            mitigate unsafe conditions (e.g., eliminating permissive vehicle
+            turning movements traversing busy crosswalks)? What changes to
+            control are most effective?
           </li>
           <li>
-            Can modifications to intersection control be utilized to mitigate individual
-            conflicts (e.g., delay the illumination of a WALK signal until all approaching
-            vehicles have safely cleared the crosswalk)?
+            Can warnings be issued in real-time to mitigate conflicts? What
+            types of warnings are most effective (e.g., visual, auditory,
+            haptic)?
           </li>
           <li>
-            What are potential safety and congestion-reduction impacts resulting from these
-            mitigating strategies?
+            Can modifications to intersection control be utilized to mitigate
+            individual conflicts (e.g., delay the illumination of a WALK signal
+            until all approaching vehicles have safely cleared the crosswalk)?
+          </li>
+          <li>
+            What are potential safety and congestion-reduction impacts resulting
+            from these mitigating strategies?
           </li>
         </ul>
       </ul>
-      <h2 class="program-title-lg my-4">
-        Additional Resources
-      </h2>
+      <h2 class="program-title-lg my-4">Additional Resources</h2>
       <div class="resource-container">
-        <Card shadow="sm">
-          <CardBody>
+        <Card>
+          <CardContent>
             <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">Intersection Safety System (ISS) Prototyping</h3>
-              <p class="resource-card-subtitle">Issued on April 25, 2025 | Closed on May 9, 2025</p>
+              <h3 class="resource-card-title">
+                Intersection Safety System (ISS) Prototyping
+              </h3>
+              <p class="resource-card-subtitle">
+                Issued on April 25, 2025 | Closed on May 9, 2025
+              </p>
             </div>
-          </CardBody>
+          </CardContent>
           <CardFooter>
             <div class="resource-link-container px-2">
-              <a 
-                class="resource-button" 
-                rel="noopener noreferrer" 
-                target="_blank"
+              <a
+                class="resource-button"
                 href="https://sam.gov/opp/8573bb118a5e4343a9512fed8b393d63/view"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <BoxArrowUpRightIcon size={12} />
+                <Icon name="external-link" size={12} />
                 Sources Sought Notice
               </a>
             </div>
