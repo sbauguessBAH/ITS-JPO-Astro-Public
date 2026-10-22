@@ -1,9 +1,8 @@
 ---
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
-import type { ChildNavigationItem } from "@/src/types";
 import PageLayout from "@/src/layouts/PageLayout.astro";
-import "@/src/styles/programs.css";
-
+import "@/src/styles/programs.scss";
+import "@/src/styles/globals.css";
 
 const keywords = [
   "Automation Program",
@@ -18,15 +17,15 @@ const description = `
   The ITS JPO Automation Program focuses on the safe deployment 
   of automated driving systems and advanced driver assistance systems 
   through collaboration and research.
-`
+`;
 ---
-<PageLayout
-  title="Automation Program"
-  keywords={keywords}
-  description={description}
-     bannerImage={banner}
 
+<PageLayout
+  bannerImage={banner}
+  description={description}
+  keywords={keywords}
+  title="Automation Program"
 >
-<Fragment slot="banner"> Automation Program </Fragment>
-  <slot/>
+  <Fragment slot="banner"> Automation Program </Fragment>
+  <slot />
 </PageLayout>
