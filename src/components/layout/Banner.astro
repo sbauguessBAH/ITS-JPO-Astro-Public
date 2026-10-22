@@ -73,7 +73,7 @@ const SUBNAV_ID = "navbar-content2";
                   return (
                     <li class:list={["nav-item", { dropdown: hasDropdown, activeMenu: trimmedPathname.startsWith(link.url) }]}>
                       <a
-                        class:list={["nav-link", { "dropdown-toggle": hasDropdown, active: comparePathname(pathname, link.url, false) }]}
+                        class:list={["nav-link", { "dropdown-toggle": hasDropdown, active: comparePathname(pathname, link.url, hasDropdown || link.hasGeneratedChildItems) }]}
                         href={base_url(link.url)}
                         id={linkId}
                         role="button"
