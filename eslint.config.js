@@ -19,7 +19,13 @@ const typescriptPlugin = tseslint.plugin;
 /** @type {import("eslint").Linter.Config} */
 const baseConfig = {
   name: "base/custom",
-  ignores: ["**/dist", "**/node_modules", "**/.astro", "**/.github"],
+  ignores: [
+    "**/dist",
+    "**/node_modules",
+    "**/.astro",
+    "**/.github",
+    "public/assets/js",
+  ],
   languageOptions: {
     globals: {
       ...globals.browser,
