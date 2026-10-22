@@ -17,7 +17,8 @@
   "editor.rulers": [80, 120],
   "editor.tabSize": 2,
 
-  "editor.formatOnSave": true,
+  // Re-enable when ready
+  "editor.formatOnSave": false,
 
   // Auto fix options on file save
   "editor.codeActionsOnSave": {

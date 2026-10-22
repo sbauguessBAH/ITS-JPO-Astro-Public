@@ -4,14 +4,21 @@ import "@/src/styles/programs.scss";
 import "@/src/styles/globals.css";
 
 interface Props {
+	title: string;
   description?: string;
-  keywords?: string | string[];
-  title: string;
+  keywords?: string[] | string;
 }
 
-const { description, keywords, title } = Astro.props;
+const { 
+  title, 
+  description, 
+  keywords 
+} = Astro.props;
 ---
-
-<BaseLayout description={description} keywords={keywords} title={title}>
-  <slot />
+<BaseLayout 
+  title={title} 
+  keywords={keywords} 
+  description={description}
+>
+  <slot/>
 </BaseLayout>
