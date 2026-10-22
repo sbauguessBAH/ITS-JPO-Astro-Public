@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"div">;
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<!-- tw:pt-8 -->
+<div
+  class:list={["tw:flex tw:flex-col tw:gap-12", className]}
+  data-slot="page-body"
+  {...rest}
+>
+  <slot />
+</div>
