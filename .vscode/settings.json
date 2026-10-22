@@ -4,5 +4,47 @@
       "fileMatch": ["/src/content/library/**"],
       "url": "./.astro/collections/library.schema.json"
     }
-  ]
+  ],
+
+  // ========== Editor ==========
+  // Show rulers for recommended length (Prettier defaults to 80)
+  "editor.rulers": [80, 120],
+  "editor.tabSize": 2,
+
+  // Re-enable when ready
+  "editor.formatOnSave": false,
+
+  // Auto fix options on file save
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never"
+    // Re-add when ready
+    // "source.fixAll.eslint": "explicit",
+    // "source.fixAll.prettier": "explicit"
+  },
+
+  // Re-add when ready
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // Leave commented out
+  // "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  // "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  // "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // ========== Prettier ==========
+
+  // Re-enable when ready
+  "prettier.enable": false,
+  "prettier.configPath": "./prettier.config.js",
+
+  // Leave commented out
+  // "prettier.documentSelectors": ["**/*.astro"],
+
+  // ========== ESLint ==========
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+
+  // Enable ESLint for all supported languages
+  "eslint.validate": ["javascript", "typescript", "astro", "vue", "html"]
 }
