@@ -13,7 +13,9 @@ const config = {
       },
     },
   ],
-  plugins: ["prettier-plugin-astro"],
+  plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  tailwindStylesheet: "./src/styles/globals.css",
+  // tailwindAttributes: ["class", "class:list", "cva"],
 };
 
 export default config;

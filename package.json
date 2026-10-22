@@ -12,17 +12,20 @@
     "lint": "eslint .",
     "test:e2e": "playwright test",
     "test:vr": "node scripts/visual-regression.mjs",
-    "test:vr:report": "playwright show-report .playwright/report"
+    "test:vr:report": "playwright show-report .playwright/report",
+    "storybook": "storybook dev -p 4000",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
-    "@astrojs/react": "^4.4.2",
+    "@astrojs/react": "^5.0.7",
     "@astrojs/vue": "^5.1.4",
     "@popperjs/core": "^2.11.8",
     "astro": "^5.18.2",
     "bootstrap": "^5.3.8",
     "datatables.net": "^2.1.4",
-    "vue": "^3.5.28"
+    "vue": "^3.5.28",
+    "class-variance-authority": "^0.7.1"
   },
   "engines": {
     "node": ">=22.0.0 || >=24.0.0",
@@ -47,6 +50,13 @@
     "prettier": "^3.9.4",
     "prettier-plugin-astro": "^0.14.1",
     "sass": "^1.93.2",
-    "@playwright/test": "^1.61.1"
+    "@playwright/test": "^1.61.1",
+    "@storybook-astro/framework": "^1.13.0",
+    "@storybook/addon-docs": "^10.5.5",
+    "@storybook/builder-vite": "^10.5.5",
+    "@tailwindcss/vite": "^4.3.2",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "storybook": "^10.5.5",
+    "tailwindcss": "^4.3.2"
   }
 }
