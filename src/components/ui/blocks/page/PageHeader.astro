@@ -1,0 +1,79 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import Heading from "../../elements/heading/Heading.astro";
+
+type Props = Omit<HTMLAttributes<"header">, "title"> & {
+  /** Heading tag for the title; defaults to the tag implied by `size`. */
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  /** Intro text below the title */
+  description?: string;
+  /** Small text above the title */
+  headline?: string;
+  /** Title text size */
+  size?: "default" | "md" | "sm";
+  /** Main title */
+  title?: string;
+};
+
+const {
+  as,
+  class: className,
+  description,
+  headline,
+  size = "default",
+  title,
+  ...rest
+} = Astro.props;
+
+const hasHeadline = !!headline || Astro.slots.has("headline");
+const hasTitle = !!title || Astro.slots.has("title");
+const hasDescription = !!description || Astro.slots.has("description");
+const hasLinks = Astro.slots.has("links");
+---
+
+<header
+  class:list={["tw:flex tw:flex-col tw:gap-2", className]}
+  data-slot="page-header"
+  {...rest}
+>
+  {
+    hasHeadline && (
+      <div
+        class="tw:text-sm tw:font-semibold tw:tracking-wide tw:text-muted-foreground tw:uppercase"
+        data-slot="page-header-headline"
+      >
+        <slot name="headline">{headline}</slot>
+      </div>
+    )
+  }
+  {
+    hasTitle && (
+      <Heading as={as} data-slot="page-header-title" size={size}>
+        <slot name="title">{title}</slot>
+      </Heading>
+    )
+  }
+  {
+    hasDescription && (
+      // tw:max-w-3xl
+      <div
+        class="tw:flex tw:flex-col tw:gap-4 tw:text-lg tw:leading-relaxed tw:[&_p]:m-0!"
+        data-slot="page-header-description"
+      >
+        <slot name="description">{description}</slot>
+      </div>
+    )
+  }
+  {
+    hasLinks && (
+      <div
+        class="tw:mt-2 tw:flex tw:flex-wrap tw:gap-3"
+        data-slot="page-header-links"
+      >
+        <slot name="links" />
+      </div>
+    )
+  }
+  <slot />
+</header>

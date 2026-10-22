@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"nav"> & {
+  class?: string;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<nav
+  aria-label="breadcrumb"
+  class:list={["tw:w-full", className]}
+  data-slot="breadcrumb"
+  {...props}
+>
+  <slot />
+</nav>

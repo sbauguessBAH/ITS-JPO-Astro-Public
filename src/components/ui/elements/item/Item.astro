@@ -1,0 +1,69 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cva } from "class-variance-authority";
+
+import base_url from "@/src/lib/base_url";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+  /** If provided, the item renders as an <a> instead of a <div>. */
+  href?: string;
+  isExternal?: boolean;
+  /** Spacing/density of the item. Defaults to "default". */
+  size?: "default" | "sm" | "xs";
+  /** Visual style of the item. Defaults to "default". */
+  variant?: "default" | "muted" | "outline";
+};
+
+const {
+  class: className,
+  href,
+  isExternal,
+  size = "default",
+  variant = "default",
+  ...props
+} = Astro.props;
+
+const Tag = href ? "a" : "div";
+
+const itemVariants = cva(
+  "tw:group/item tw:flex tw:w-full tw:flex-wrap tw:items-center tw:rounded-2xl tw:border tw:text-sm tw:transition-colors tw:duration-100 tw:outline-none tw:focus-visible:border-ring tw:focus-visible:ring-[3px] tw:focus-visible:ring-ring/50 tw:[a]:no-underline! tw:[a]:transition-colors tw:[a]:hover:bg-muted",
+  {
+    defaultVariants: {
+      size: "default",
+      variant: "default",
+    },
+    variants: {
+      size: {
+        default: "tw:gap-2.5 tw:px-3 tw:py-2.5",
+        sm: "tw:gap-2.5 tw:px-3 tw:py-2.5",
+        xs: "tw:gap-2 tw:px-2.5 tw:py-2 tw:in-data-[slot=dropdown-menu-content]:p-0",
+      },
+      variant: {
+        default: "tw:border-transparent",
+        muted: "tw:border-transparent tw:bg-muted/50",
+        outline: "tw:border-border",
+      },
+    },
+  },
+);
+
+const linkAttrs =
+  href && isExternal
+    ? { href, rel: "noopener noreferrer", target: "_blank" }
+    : href
+      ? { href: base_url(href) }
+      : undefined;
+---
+
+<Tag
+  class:list={[itemVariants({ size, variant }), className]}
+  data-size={size}
+  data-slot="item"
+  data-variant={variant}
+  {...linkAttrs}
+  {...props}
+>
+  <slot />
+</Tag>

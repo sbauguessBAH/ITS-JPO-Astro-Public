@@ -1,0 +1,166 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cva } from "class-variance-authority";
+
+type Props = HTMLAttributes<"span"> & {
+  class?: string;
+  /**
+   * Use `custom` to opt out of theme colors and set them with classes such as
+   * `tw:bg-cyan tw:text-black tw:border-cyan`.
+   */
+  color?: "accent" | "custom" | "neutral" | "primary" | "secondary";
+  size?: "default" | "lg" | "sm" | "xl";
+  variant?: "default" | "ghost" | "outline" | "subtle";
+};
+
+const {
+  class: className,
+  color = "primary",
+  size = "default",
+  variant = "default",
+  ...props
+} = Astro.props;
+
+const badgeVariants = cva(
+  "tw:group/badge tw:inline-flex tw:w-fit tw:shrink-0 tw:items-center tw:justify-center tw:overflow-hidden tw:rounded-4xl tw:border tw:border-solid tw:align-middle tw:leading-none tw:font-medium tw:whitespace-nowrap tw:transition-all tw:outline-none tw:focus-visible:border-ring tw:focus-visible:ring-[3px] tw:focus-visible:ring-ring/50 tw:[&>svg]:pointer-events-none tw:[&>svg]:shrink-0",
+  {
+    compoundVariants: [
+      // primary
+      {
+        class: "tw:bg-primary tw:text-primary-foreground tw:border-primary",
+        color: "primary",
+        variant: "default",
+      },
+      {
+        class: "tw:bg-transparent tw:text-primary tw:border-primary",
+        color: "primary",
+        variant: "outline",
+      },
+      {
+        class: "tw:bg-primary/12 tw:text-primary tw:border-primary/35",
+        color: "primary",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-primary tw:border-transparent tw:hover:bg-primary/10",
+        color: "primary",
+        variant: "ghost",
+      },
+
+      // secondary
+      {
+        class:
+          "tw:bg-secondary tw:text-secondary-foreground tw:border-secondary",
+        color: "secondary",
+        variant: "default",
+      },
+      {
+        class: "tw:bg-transparent tw:text-secondary tw:border-secondary",
+        color: "secondary",
+        variant: "outline",
+      },
+      {
+        class: "tw:bg-secondary/12 tw:text-secondary tw:border-secondary/35",
+        color: "secondary",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-secondary tw:border-transparent tw:hover:bg-secondary/10",
+        color: "secondary",
+        variant: "ghost",
+      },
+
+      // neutral: the token is near-white, so outline/subtle use its foreground
+      {
+        class: "tw:bg-neutral tw:text-neutral-foreground tw:border-neutral",
+        color: "neutral",
+        variant: "default",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-neutral-foreground tw:border-neutral-foreground/35",
+        color: "neutral",
+        variant: "outline",
+      },
+      {
+        class:
+          "tw:bg-neutral-foreground/8 tw:text-neutral-foreground tw:border-neutral-foreground/20",
+        color: "neutral",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-neutral-foreground tw:border-transparent tw:hover:bg-neutral-foreground/8",
+        color: "neutral",
+        variant: "ghost",
+      },
+
+      // accent: the token is yellow, so text uses its foreground
+      {
+        class: "tw:bg-accent tw:text-accent-foreground tw:border-accent",
+        color: "accent",
+        variant: "default",
+      },
+      {
+        class: "tw:bg-transparent tw:text-accent-foreground tw:border-accent",
+        color: "accent",
+        variant: "outline",
+      },
+      {
+        class: "tw:bg-accent/25 tw:text-accent-foreground tw:border-accent/60",
+        color: "accent",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-accent-foreground tw:border-transparent tw:hover:bg-accent/25",
+        color: "accent",
+        variant: "ghost",
+      },
+    ],
+    defaultVariants: {
+      color: "primary",
+      size: "default",
+      variant: "default",
+    },
+    variants: {
+      color: {
+        accent: "",
+        custom: "",
+        neutral: "",
+        primary: "",
+        secondary: "",
+      },
+      size: {
+        default:
+          "tw:h-4.5 tw:min-w-5 tw:gap-1 tw:px-2 tw:py-0.5 tw:text-xs tw:[&>svg]:size-3! tw:has-data-[icon=inline-start]:pl-1.5 tw:has-data-[icon=inline-end]:pr-1.5",
+        lg: "tw:h-5.5 tw:min-w-5.5 tw:gap-1 tw:px-2.5 tw:py-0.5 tw:text-xs tw:[&>svg]:size-3.5! tw:has-data-[icon=inline-start]:pl-2 tw:has-data-[icon=inline-end]:pr-2",
+        sm: "tw:h-4 tw:min-w-4.5 tw:gap-1 tw:px-2 tw:py-0.25 tw:text-xs tw:[&>svg]:size-3! tw:has-data-[icon=inline-start]:pl-1.5 tw:has-data-[icon=inline-end]:pr-1.5",
+        xl: "tw:h-6 tw:min-w-6 tw:gap-1.5 tw:px-3 tw:py-0.75 tw:text-sm tw:[&>svg]:size-3.5! tw:has-data-[icon=inline-start]:pl-2.5 tw:has-data-[icon=inline-end]:pr-2.5",
+      },
+      variant: {
+        default: "",
+        ghost: "",
+        outline: "",
+        subtle: "",
+      },
+    },
+  },
+);
+
+const Component = "span";
+---
+
+<Component
+  class:list={[badgeVariants({ color, size, variant }), className]}
+  data-color={color}
+  data-size={size}
+  data-slot="ui_badge"
+  data-variant={variant}
+  {...props}
+>
+  <slot />
+</Component>
