@@ -1,101 +1,50 @@
 ---
 import { getCollection } from "astro:content";
 
-import Card from "@/src/components/programs/card/Card.astro"
-import CardBody from "@/src/components/programs/card/CardBody.astro"
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import LibraryImage from "@/src/components/programs/LibraryImage.astro";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import ExternalLinkBadge from "@/src/components/ui/blocks/external-link-badge/ExternalLinkBadge.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Card from "@/src/components/ui/elements/card/Card.astro";
+import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
+import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
+import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
+import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 
 import Layout from "./_layout.astro";
 
 const categories = await getCollection("pcbMicrolearning");
 ---
-<style>
-  .micro-card:hover {
-    background: rgba(var(--color-brand-light), 0.5);
-  }
-  .micro-card-header {
-    padding: 0;
-  }
-  .micro-card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  .micro-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: var(--size);
-    margin-bottom: 4rem;
-  }
 
-  @media (min-width: 1200px) {
-    .micro-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .micro-card-body {
-    flex-direction: column;
-    padding: var(--size);
-  }
-
-  .micro-card-title {
-    font-weight: 700;
-    font-size: 1.2rem;
-  }
-
-a[href^="http://"] .micro-card-title:after,
-a[href^="https://"] .micro-card-title:after {
-  content: '\00a0\f08e';
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-}
-
-</style>
 <Layout>
-  <main class="program-main">
-    <ProgramSection>
-      <h2 class="program-title-lg mb-4">
-        Microlearning Videos
-      </h2>
-      <!-- <p class="program-text mb-4">
+  <Page class="tw:mx-auto tw:max-w-7xl">
+    <PageHeader>
+      <slot slot="title">Microlearning Videos</slot>
+      <slot slot="description">
         Access brief videos for quick, focused learning on ITS topics.
-      </p> -->
-      <div>
-        {categories.map(({ data: { title, trainings } }) => (
-          <h3 class="program-title-md mb-4">
-            {title}
-          </h3>
-          <div class="micro-grid">
-            {trainings.map(training => (
-              <Card class="micro-card" href={training.url} isExternal>
-                {training.image && 
-                  <CardHeader class="micro-card-header">
-                    <LibraryImage
-                      class="micro-card-image" 
-                      entry={training.image}
-                    />
+      </slot>
+    </PageHeader>
+    <PageBody>
+      {
+        categories.map(({ data: { title, trainings } }) => (
+          <div class="tw:flex tw:flex-col tw:gap-4">
+            <Heading size="md">{title}</Heading>
+            <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3">
+              {trainings.map((training) => (
+                <Card href={training.url} isExternal>
+                  <CardImage entry={training.image} height={225} />
+                  <ExternalLinkBadge color="neutral" size="xl" />
+                  <CardHeader>
+                    <CardTitle>{training.title}</CardTitle>
+                    <CardDescription>{training.description}</CardDescription>
                   </CardHeader>
-                }
-                <CardBody class="micro-card-body">
-                  <h4 class="micro-card-title">
-                    {training.title}
-                  </h4>
-                  <p>
-                    {training.description}
-                  </p>
-                </CardBody>
-              </Card>
-            ))}
+                </Card>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </ProgramSection>
-  </main>
+        ))
+      }
+    </PageBody>
+  </Page>
 </Layout>

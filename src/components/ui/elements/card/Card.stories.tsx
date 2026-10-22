@@ -13,7 +13,7 @@ const cardSlots = {
     {
       component: CardImage,
       props: {
-        entry: "pcb/resources/cohort",
+        entry: "pcb/cohort",
         height: 220,
       },
     },
