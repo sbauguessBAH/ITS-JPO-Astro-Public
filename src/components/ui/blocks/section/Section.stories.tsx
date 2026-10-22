@@ -62,7 +62,7 @@ const sectionSlots = {
     {
       component: SectionImage,
       props: {
-        entry: "pcb/resources/cave",
+        entry: "pcb/cave-box",
       },
     },
   ],

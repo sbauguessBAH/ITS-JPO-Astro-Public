@@ -12,6 +12,7 @@ Transit agencies are implementing more ITS and information technology (IT) syste
 The use of Enterprise Architecture (EA) principles and tools provide managers and staff better visibility into the components of their organization and the overall relationships among their enterprise's people, processes, applications, data, and technology components.
 
 The purpose of Module 17 is to provide an introduction to Enterprise Architecture (EA) for transit managers and staff. It describes the four layers commonly seen in transit enterprise architectures:
+
 1. Business Architecture
 2. Data or Information Architecture
 3. Applications Architecture
@@ -28,28 +29,28 @@ Seattle, WA, USA
 
 ### Target Audiences
 
-* Asset Management Staff
-* Metropolitan Planning Organizations (MPO) Staff
-* Process Improvement Staff
-* Project Managers
-* Transit Budgeting and Accounting Staff
-* Transit Enterprise Architects
-* Transit IT Staff
-* Transit ITS Staff
-* Transit Management Staff
-* Transit Managers
-* Transit Planning, Operations, and Maintenance Staff
-* Transit System Designers
+- Asset Management Staff
+- Metropolitan Planning Organizations (MPO) Staff
+- Process Improvement Staff
+- Project Managers
+- Transit Budgeting and Accounting Staff
+- Transit Enterprise Architects
+- Transit IT Staff
+- Transit ITS Staff
+- Transit Management Staff
+- Transit Managers
+- Transit Planning, Operations, and Maintenance Staff
+- Transit System Designers
 
 ### Prerequisite(s)
 
 **Recommended Prerequisite(s) Specific to Curriculum Path Categories**
 
-| | Decision-Maker | Project Manager | Project Engineer |
-| --- | :---: | :---: | :---: |
-| Module 1:<br>Introduction to ITS Transit Standards | ✓ | ✓ | ✓ |
-| Module 2:<br>Transit Management Standards, Part 1 of 2 | ✓ | ✓ | ✓ |
-| Module 3:<br>Transit Communications Interface Profiles (TCIP), Part 1 of 2 | ✓ | ✓ | ✓ |
+|                                                                            | Decision-Maker | Project Manager | Project Engineer |
+| -------------------------------------------------------------------------- | :------------: | :-------------: | :--------------: |
+| Module 1:<br>Introduction to ITS Transit Standards                         |       ✓        |        ✓        |        ✓         |
+| Module 2:<br>Transit Management Standards, Part 1 of 2                     |       ✓        |        ✓        |        ✓         |
+| Module 3:<br>Transit Communications Interface Profiles (TCIP), Part 1 of 2 |       ✓        |        ✓        |        ✓         |
 
 ### Learning Objectives/Key Elements
 
