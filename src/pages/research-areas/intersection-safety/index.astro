@@ -31,144 +31,6 @@ import base_url from "@/src/lib/base_url";
 import Layout from "./_layout.astro";
 ---
 
-<style>
-  .stage-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    /* gap: var(--size); */
-  }
-
-  .stage-image {
-    padding: var(--size);
-  }
-
-  @media (min-width: 1200px) {
-    .stage-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .stage {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .stage-image {
-      height: 200px;
-      width: auto;
-    }
-
-    .stage-content {
-    }
-    .stage-left {
-      padding-right: var(--size);
-      border-right: 1px solid var(--border-light);
-    }
-
-    .stage-right {
-      padding-left: var(--size);
-    }
-  }
-</style>
-<style>
-  .resource-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: var(--size);
-  }
-
-  .resource-card-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .resource-card-title {
-    text-transform: none;
-  }
-  .resource-card-subtitle {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-  }
-  .resource-button {
-    border: 1px solid #dee2e6;
-    padding: 0.2rem 0.5rem;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: black;
-    border-radius: var(--radius-sm);
-    transition: all var(--transition-duration) ease-in-out;
-  }
-  .resource-button::after {
-    content: "";
-  }
-  .resource-button:hover {
-    font-weight: 600;
-    background: #dee2e6;
-  }
-
-  .resource-link-container {
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-
-  @media (min-width: 1200px) {
-    .resource-container {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-</style>
-<style>
-  .solution-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size);
-    align-items: center;
-  }
-
-  .solution-symbol {
-    width: 50px;
-  }
-
-  .solution-icon {
-    max-width: 200px;
-  }
-
-  .solution-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .solution-card {
-    padding: var(--size);
-  }
-
-  @media (min-width: 1200px) {
-    .solution-container {
-      display: grid;
-      grid-template-columns: 1fr 0.1fr 1fr 0.1fr 1fr;
-      grid-auto-rows: 1fr;
-      gap: var(--size);
-    }
-
-    .solution-symbol {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .solution-card {
-      height: 100%;
-    }
-  }
-</style>
 <Layout>
   <Page fullWidth>
     <PageBody>
@@ -383,11 +245,11 @@ import Layout from "./_layout.astro";
           users.
         </p>
         <div class="tw:flex tw:flex-col tw:gap-4 tw:lg:flex-row">
-          <Item>
+          <Item class="tw:content-start">
             <ItemHeader>
               <Image
                 alt="Intersection Safety Challenge Logo"
-                class="tw:h-auto tw:w-full"
+                class="tw:h-24 tw:w-auto tw:max-w-full"
                 src={iscLogo}
               />
             </ItemHeader>
@@ -412,11 +274,11 @@ import Layout from "./_layout.astro";
             </ItemContent>
           </Item>
           <Separator class="tw:lg:h-auto tw:lg:w-px tw:lg:self-stretch" />
-          <Item>
+          <Item class="tw:content-start">
             <ItemHeader>
               <Image
                 alt="Intersection Safety Challenge Logo"
-                class="tw:h-auto tw:w-full"
+                class="tw:h-24 tw:w-auto tw:max-w-full"
                 src={issLogo}
               />
             </ItemHeader>
