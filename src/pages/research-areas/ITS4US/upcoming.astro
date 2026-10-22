@@ -3,10 +3,26 @@ import base_url from "@/src/lib/base_url";
 import PageLayout from "@/src/layouts/PageLayout.astro";
 import HeroImage from "@/src/assets/images/its4us/upcoming/ITS4US_Deployment_Accelerator_BG.png";
 import Image from "astro/components/Image.astro";
+import dotLogo from "@/src/assets/images/its4us/upcoming/DOT-logo-2.png";
+import acceleratorLogo from "@/src/assets/images/its4us/upcoming/ITS4US_Deployment_Accelerator_logo.png";
+import linkImage1 from "@/src/assets/images/its4us/HC/HC-link.png";
+import linkImage2 from "@/src/assets/images/its4us/documentation-thumb.png";
+import linkImage3 from "@/src/assets/images/its4us/DataHub-link.png";
+import linkImage4 from "@/src/assets/images/its4us/CodeHub-link.png";
+import postcardImage from "@/src/assets/images/ai/ITS4US-Deployment-Accelerator-Postcard.png";
+import factsheetImage from "@/src/assets/images/ai/ITS4US-Deployment-Accelerator-Factsheet.png";
+import checklistImage from "@/src/assets/images/its4us/upcoming/ITS4US-Deployment-Accelerator-Eligibility-Checklist.png";
+import "@/src/styles/deployments.css";
 ---
 
 <style>
-  section{
+  hr {
+    border: 0;
+    height: 1px;
+    background: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 1rem 0;
+  }
+  section {
     padding: 0;
   }
   .announcement-section {
@@ -14,13 +30,40 @@ import Image from "astro/components/Image.astro";
     overflow: hidden;
     text-wrap: pretty;
   }
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     text-wrap: balance;
+    color: white;
   }
 
-  .hero-image {
-    height: 200px;
-    object-fit: cover;
+  .hero-banner {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+  }
+
+  .hero-banner-logos {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .hero-logo-left {
+    width: min(300px, 38vw);
+    height: auto;
+    filter: drop-shadow(0px 0px 50px #091d59);
+  }
+
+  .hero-logo-right {
+    width: min(360px, 54vw);
+    height: auto;
+    filter: drop-shadow(0px 0px 10px white);
   }
 
   .announcement-details {
@@ -32,16 +75,105 @@ import Image from "astro/components/Image.astro";
     content: "→";
     color: #ffd700;
     font-weight: bold;
-    margin-right: 10px;
     font-size: 1.3rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .announcement-details p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin: 1.5rem 0 0 0;
   }
 
   .announcement-details li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 1.9rem;
   }
 
-  .announcement-details li:last-child {
-    border-bottom: none;
+  /* Keep the four program-at-a-glance facts balanced across the available width. */
+  .program-glance-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 2rem;
+  }
+
+  /* Arrange the solicitation milestones in a horizontal, five-stage timeline. */
+  .solicitation-timeline {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 2rem 0 3rem;
+  }
+
+  /* Establish a positioning context for each milestone and its arrow connector. */
+  .timeline-step {
+    position: relative;
+    min-width: 0;
+    text-align: center;
+  }
+
+  /* Stretch the teal chevron across each milestone stack between its two boxes. */
+  .timeline-step::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 6.1rem;
+    left: 0;
+    width: 103%;
+    height: 2.15rem;
+    background: linear-gradient(90deg, #08728a, #12a99a);
+    clip-path: polygon(0 0, 97% 0, 100% 50%, 97% 100%, 0 100%, 3% 50%);
+  }
+
+  /* Style the dark milestone label as a standard rectangle above the chevron. */
+  .timeline-heading {
+    position: relative;
+    z-index: 1;
+    min-height: 6.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 0.5rem;
+    background: #06235d;
+    color: white;
+    font-size: clamp(1rem, 1.35vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.1;
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  /* Provide the light lower panel for the date or timing associated with each milestone. */
+  .timeline-detail {
+    position: relative;
+    z-index: 1;
+    min-height: 6.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 0.5rem;
+    background: #f1f1f1;
+    color: #111;
+    font-size: clamp(0.95rem, 1.2vw, 1.2rem);
+    line-height: 1.1;
+    margin-top: 2.15rem;
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+
+  /* Place the gold vertical marker across the heading/detail boundary. */
+  .timeline-marker {
+    position: absolute;
+    z-index: 2;
+    top: 5.65rem;
+    left: 50%;
+    width: 0.65rem;
+    height: 3.25rem;
+    transform: translateX(-50%);
+    background: #d99a1e;
+    border-radius: 0.5rem;
   }
 
   .text-gold {
@@ -57,9 +189,235 @@ import Image from "astro/components/Image.astro";
   }
 
   @media (max-width: 768px) {
-    .hero-image {
-      height: 150px;
+    .hero-banner {
+      min-height: 160px;
+      padding: 1rem;
     }
+
+    .hero-logo-left {
+      width: min(200px, 34vw);
+    }
+
+    .hero-logo-right {
+      width: min(180px, 50vw);
+    }
+    .team-include-box {
+      width: 33%;
+    }
+
+    /* Stack the program facts when the viewport is too narrow for two columns. */
+    .program-glance-list {
+      grid-template-columns: 1fr;
+    }
+
+    /* Convert the horizontal timeline into a readable vertical sequence on mobile. */
+    .solicitation-timeline {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    /* Keep the chevron between the stacked boxes at the smaller mobile height. */
+    .timeline-step::after {
+      top: 5rem;
+      left: 0;
+      width: 100%;
+      height: 1.75rem;
+      transform: none;
+    }
+
+    /* Reduce the panels on mobile while preserving their stable two-part structure. */
+    .timeline-heading,
+    .timeline-detail {
+      min-height: 5rem;
+    }
+
+    .timeline-detail {
+      margin-top: 1.75rem;
+    }
+
+    /* Reposition the marker to match the shorter mobile heading. */
+    .timeline-marker {
+      top: 4.55rem;
+    }
+  }
+
+  .team-include-box {
+    background: #091d59;
+    border: 4px solid #ffd700;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: white;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-wrap: balance;
+    width: 100%;
+  }
+
+  .replicator-item {
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 1.5rem;
+  }
+
+  .replicator-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .replicator-icon {
+    width: 3.25rem;
+    height: 3.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #d99a1e;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .replicator-item p {
+    margin: 0.65rem 0 0;
+    font-size: 1.2rem;
+    line-height: 1.45;
+  }
+
+  .icon-bullet-list {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+  }
+
+  .icon-bullet-list li {
+    position: relative;
+    margin: 0.7rem 0;
+    padding-left: 2.4rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .icon-bullet-list li::before {
+    content: "";
+    position: absolute;
+    top: 0.55rem;
+    left: 0.45rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: #d99a1e;
+  }
+
+  .icon-bullet-list--circle-icons li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-left: 0;
+  }
+
+  .icon-bullet-list--circle-icons li::before {
+    display: none;
+  }
+
+  .icon-bullet-list--circle-icons i {
+    flex: 0 0 2.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    border: 3px solid #d99a1e;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.15rem;
+    text-align: center;
+  }
+
+  .resource-materials {
+    margin: 2rem 0;
+  }
+
+  .resource-materials > h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .resource-material {
+    display: grid;
+    grid-template-columns: minmax(220px, 36%) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+    padding: 1.75rem;
+    border-left: 6px solid #d99a1e;
+    border-radius: 0.75rem;
+    background: #f1f2f4;
+    color: #091d59;
+  }
+
+  .resource-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    padding: 1rem;
+    border: 2px dashed #2c7ba0;
+    background: #dce5ea;
+    color: #2c7ba0;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .resource-material h3 {
+    margin-bottom: 0.75rem;
+    color: #0b5e8b;
+  }
+
+
+  @media (max-width: 768px) {
+    .replicator-item {
+      grid-template-columns: 2.75rem minmax(0, 1fr);
+      gap: 0.75rem;
+    }
+
+    .replicator-icon {
+      width: 2.6rem;
+      height: 2.6rem;
+      font-size: 1.15rem;
+    }
+
+    .replicator-item p {
+      margin-top: 0.35rem;
+      font-size: 1.05rem;
+    }
+
+    .resource-material {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      padding: 1.25rem;
+    }
+  }
+
+  .link-color-fix:hover {
+    color: #2c7ba0;
+  }
+  .full-width-bg {
+    width: calc(100% + 6rem);
+    margin-left: -3rem;
+    margin-right: -3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .video-container iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
   }
 </style>
 
@@ -70,8 +428,12 @@ import Image from "astro/components/Image.astro";
       <div class="row">
         <div class="col-12">
           <section class="announcement-section text-white rounded-4 shadow my-5">
-           
-            <Image src={HeroImage} alt="Ameraican Flag decrotive image." width={800} class="hero-image w-100 d-block"/>
+            <div class="hero-banner" style={`background-image: linear-gradient(to right, rgba(8, 19, 52, 0.78), rgba(9, 31, 97, 0)), url(${HeroImage.src});`}>
+              <div class="hero-banner-logos">
+                <Image src={dotLogo} alt="U.S. Department of Transportation logo" class="hero-logo-left" width={360} />
+                <Image src={acceleratorLogo} alt="ITS4US Deployment Accelerator logo" class="hero-logo-right" width={360} />
+              </div>
+            </div>
             <div class="p-5">
               <div class="d-flex justify-content-between align-items-start mb-4 gap-4 flex-column flex-md-row">
                 <div class="text-start">
@@ -79,34 +441,251 @@ import Image from "astro/components/Image.astro";
                   <p class="fs-4 fst-italic mb-0">Bringing American Innovation to Your Community</p>
                 </div>
                 <div class="text-md-end">
-                  <p class="fs-3 text-gold mb-0">Coming Soon</p>
+                  <p class="fs-3 text-gold mb-0">Submit Proposals Now!</p>
                 </div>
               </div>
+              <div class="announcement-details rounded-4 p-4 mx-auto my-4 d-flex align-items-center gap-3">
+                <span class="replicator-icon flex-shrink-0" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></span>
+                <div class="fs-5 lh-base">
+                  ITS4US Deployment Accelerator Program accepting proposals now on
+                  <a
+                    href="https://sam.gov/workspace/contract/opp/8433753e4422447fa62b661ec5d8b9da/view"
+                    class="text-gold fw-bold text-decoration-underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >SAM.gov</a>!
+                </div>
+              </div>
+              <p>
+                <strong>ITS4US Deployment Accelerator Program</strong> is a new ITS JPO initiative, in coordination with FTA, to pilot systematically replicating successful technology deployments across
+                multiple locations nationwide.
+              </p>
+              <p>This project aims to significantly accelerate targeted follow-on deployments following the successful path charted by the ITS4US program sites.</p>
 
-              <div class="announcement-details rounded-4 p-4 mx-auto my-4" style="max-width: 900px;">
-                <ul class="list-unstyled mb-0">
-                  <li class="py-3 fs-5 lh-base">
-                    Integrating demand-response transportation scheduling with medical appointment systems to create a seamless, patient-centered experience.
+              <div class="announcement-details rounded-4 p-4 mx-auto my-4">
+                <h3><strong>Proof-of-Concept that:</strong></h3>
+                <ul class="icon-bullet-list icon-bullet-list--circle-icons mb-0">
+                  <li class="fs-5 lh-base"><i class="fa-solid fa-microchip" aria-hidden="true"></i><span>Leverages proven ITS technologies.</span></li>
+                  <li class="fs-5 lh-base">
+                    <i class="fa-solid fa-users-gear" aria-hidden="true"></i><span>Provides knowledge and technical expertise of current deployers with future deployers.</span>
                   </li>
-                  <li class="py-3 fs-5 lh-base">
-                    Improving access to care through smarter, more coordinated mobility solutions built on the proven open-source platform developed under the ITS4US Program.
-                  </li>
+                  <li class="fs-5 lh-base"><i class="fa-solid fa-seedling" aria-hidden="true"></i><span>Provides seed funding to replicate project with facilitated peer exchange.</span></li>
                 </ul>
               </div>
 
-              <p class="text-center fs-3 fw-bold mt-5 text-gold text-uppercase" style="letter-spacing: 2px;">
-                STAY TUNED FOR UPCOMING SOLICITATION
-              </p>
+              <div class="announcement-details rounded-4 p-4 mx-auto my-4">
+                <h3><strong>Program at a Glance:</strong></h3>
+                <ul class="list-unstyled mb-0 program-glance-list">
+                  <li class="fs-5 lh-base"><strong>Anticipated Awards:</strong> Up to 5 deployers</li>
+                  <li class="fs-5 lh-base"><strong>Deployment Period:</strong> 12 months</li>
+                  <li class="fs-5 lh-base"><strong>Period of Performance:</strong> 18 months</li>
+                  <li class="fs-5 lh-base"><strong>Documentation Period:</strong> 6 months following deployment</li>
+                </ul>
+              </div>
+
+              <div class="solicitation-timeline" aria-label="Planned solicitation timeline">
+                <div class="timeline-step">
+                  <div class="timeline-heading">BAA Posted on SAM.gov</div>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-detail">Oct 20, 2026</div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-heading">Questions Due</div>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-detail">Nov 4, 2026</div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-heading">Answers Provided</div>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-detail">Nov 18, 2026</div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-heading">Proposal Deadline</div>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-detail">Jan 11, 2027</div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-heading">Awards Anticipated</div>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-detail">FY2027</div>
+                </div>
+              </div>
+
+              <div class="announcement-details rounded-4 p-4 mx-auto my-4">
+                <h3><strong>Replicator Requirements:</strong></h3>
+
+                <div class="replicator-item">
+                  <span class="replicator-icon" aria-hidden="true"><i class="fa-solid fa-users"></i></span>
+                  <div>
+                    <p><strong>Propose a multi-disciplinary team that must include:</strong></p>
+                    <ul class="icon-bullet-list">
+                      <li>Mobility Services Operator/Provider</li>
+                      <li>Software Integrator</li>
+                      <li>Healthcare Partner (Public/Private)</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="replicator-item">
+                  <span class="replicator-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                  <p><strong>Demonstrate their successful deployment within 12 months.</strong></p>
+                </div>
+
+                <div class="replicator-item">
+                  <span class="replicator-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+                  <p><strong>Publish changes and extensions of the Health Connector Middleware components (MOD-EHR and MOD-Medicaid) as open-source code on the ITS CodeHub.</strong></p>
+                </div>
+
+                <div class="replicator-item">
+                  <span class="replicator-icon" aria-hidden="true"><i class="fa-solid fa-pen"></i></span>
+                  <p><strong>Document effectiveness of support and artifacts provided by USDOT.</strong></p>
+                </div>
+
+                <div class="replicator-item">
+                  <span class="replicator-icon" aria-hidden="true"><i class="fa-solid fa-share-nodes"></i></span>
+                  <p><strong>Engage cohort peers in structured knowledge sharing.</strong></p>
+                </div>
+              </div>
+
+              <div class="announcement-details rounded-4 p-4 mx-auto my-4">
+                <h3><strong>Benefits to Awardees</strong></h3>
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <div class="border border-warning rounded-4 h-100 p-4">
+                      <h3>Technical Support</h3>
+                      <p class="mb-0">Direct access to technical expertise from the HIRTA Health Connector team, the people who built and operate the system every day.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="border border-warning rounded-4 h-100 p-4">
+                      <h3>Tested Technology</h3>
+                      <p class="mb-0">Proven open-source code ready to deploy. MOD-HER and MOD-Medicaid are available on ITS CodeHub today.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="border border-warning rounded-4 h-100 p-4">
+                      <h3>Peer Cohort</h3>
+                      <p class="mb-0">Fellow deployers working through the same challenges at the same time, with structured knowledge sharing across all awardee sites.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rounded-4 p-4 mt-4" style="background: #091d59;">
+                  <h3>The Bottom Line:</h3>
+                  <p class="mb-0">Awardees enter with working code, tested partnerships, peer support, and expert guidance, dramatically reducing deployment risk, cost, and timeline compared to starting from scratch.</p>
+                </div>
+              </div>
+
+              <section class="resource-materials" aria-labelledby="resource-materials-title">
+                <h2 id="resource-materials-title">Resource Materials</h2>
+                
+                <div class="d-grid gap-4">
+                  <article class="resource-material">
+                    <Image src={postcardImage} alt="ITS4US Deployment Accelerator Postcard" class="img-fluid rounded" />
+                    <div>
+                      <h3>ITS4US Deployment Accelerator Postcard</h3>
+                      <p>Informational postcard regarding solicitation and expected outcomes of the ITS4US Deployment Accelerator Program.</p>
+                      <a class="btn " href={base_url("/assets/documents/its4us/ITS4US%20Deployment%20Accelerator%20Program%20Postcard.pdf")} download>Download</a>
+                    </div>
+                  </article>
+
+                  <article class="resource-material">
+                    <Image src={factsheetImage} alt="ITS4US Deployment Accelerator Factsheet" class="img-fluid rounded" />
+                    <div>
+                      <h3>ITS4US Deployment Accelerator Factsheet</h3>
+                      <p>Factsheet with information about the ITS4US Deployment Accelerator Program, support for deployers, a solicitation timeline, and other resources like ITS CodeHub and DataHub.</p>
+                      <a class="btn " href={base_url("/assets/documents/its4us/ITS4US%20Deployment%20Accelerator%20Program%20Factsheet.pdf")} download>Download</a>
+                    </div>
+                  </article>
+
+                  <article class="resource-material">
+                    <Image src={checklistImage} alt="ITS4US Deployment Accelerator Eligibility Checklist" class="img-fluid rounded" />
+                    <div>
+                      <h3>ITS4US Deployment Accelerator Eligibility Checklist</h3>
+                      <p>Checklist outlining eligibility requirements for the planned ITS4US Deployment Accelerator Program funding opportunity.</p>
+                      <a class="btn" href={base_url("/assets/documents/its4us/ITS4US-Deployment-Accelerator-Checklist-Flyer.pdf")} download>Download</a>
+                    </div>
+                  </article>
+
+                  <article class="resource-material">
+                    <div class="video-container">
+                      <iframe
+                        src="https://www.youtube.com/embed/9DkjQLxPtPM"
+                        title="ITS4US Deployment Accelerator Program - Pre-Solicitation Webinar"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <div>
+                      <h3>ITS4US Deployment Accelerator BAA Pre-Solicitation Webinar</h3>
+                      <p>Video recording of the Broad Agency Announcement (BAA) webinar of the ITS4US Deployment Accelerator Program, including support for deployers, a solicitation timeline, and other resources.</p>
+                      <a class="btn btn-warning" href="https://www.youtube.com/watch?v=9DkjQLxPtPM" target="_blank" rel="noopener noreferrer">Watch Webinar</a>
+                    </div>
+                  </article>
+
+                  <article class="resource-material">
+                    <div class="video-container">
+                      <iframe
+                        src="https://www.youtube.com/embed/7p5LlQCsyso"
+                        title="ITS4US Deployment Accelerator Program Informational Video"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <div>
+                      <h3>ITS4US Deployment Accelerator Program Informational Video</h3>
+                      <p>Video with information about the ITS4US Deployment Accelerator Program, support for deployers, a solicitation timeline, and other resources.</p>
+                      <a class="btn btn-warning" href="https://youtu.be/7p5LlQCsyso" target="_blank" rel="noopener noreferrer">Watch Video</a>
+                    </div>
+                  </article>
+                </div>
+              </section>
+
+              <div class="full-width-bg">
+                <div class="px-xs-4 px-sm-4 px-md-4 px-lg-4">
+                  <h2 class="text-center mb-3">Health Connector Resources to Explore</h2>
+
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card rounded-3 h-100 p-2">
+                        <Image src={linkImage1} alt="HIRTA Health Connector website link" class="img-fluid rounded mb-2" width={300} />
+                        <a href="https://transithealthconnector.org/" target="_blank" rel="noopener noreferrer" class="link-color-fix">Health Connector Website</a>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card rounded-3 h-100 p-2">
+                        <Image src={linkImage2} alt="Health Connector Documentation Thumbnail" class="img-fluid rounded mb-2" width={300} />
+                        <a href={base_url("/research-areas/ITS4US/documents/")} class="link-color-fix">Health Connector Documentation</a>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card rounded-3 h-100 p-2">
+                        <Image src={linkImage3} alt="ITS DataHub link" class="img-fluid rounded mb-2" width={300} />
+                        <a href="https://www.its.dot.gov/data/" target="_blank" rel="noopener noreferrer" class="link-color-fix">ITS Data Hub</a>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card rounded-3 h-100 p-2">
+                        <Image src={linkImage4} alt="ITS CodeHub link" class="img-fluid rounded mb-2" width={300} />
+                        <a href="https://www.its.dot.gov/code/" target="_blank" rel="noopener noreferrer" class="link-color-fix">ITS Code Hub</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-center fs-3 fw-bold mt-5 text-gold text-uppercase" style="letter-spacing: 2px;">STAY TUNED FOR PLANNED 2026 SOLICITATION</p>
 
               <div class="bg-white rounded-4 shadow p-4 mt-5 mx-auto" style="max-width: 900px;">
                 <h3 class="text-center fs-4 mb-3" style="color: #1e5a7d;">Want to Learn More?</h3>
                 <p class="text-center fs-5 lh-base mb-0" style="color: #333;">
-                  Check the <a href={base_url("/research-areas/ITS4US")} class="link-custom fw-bold">ITS4US Website</a> or sign-up for the 
+                  Check the <a href={base_url("/research-areas/ITS4US")} class="link-custom fw-bold">ITS4US Website</a> or sign-up for the
                   <a href={base_url("/about/contact-us/mailinglist")} class="link-custom fw-bold">ITS JPO newsletter</a>.
                 </p>
               </div>
             </div>
-            
           </section>
         </div>
       </div>

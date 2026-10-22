@@ -11,7 +11,7 @@ import ItemGroup from "@/src/components/ui/elements/item/ItemGroup.astro";
 import base_url from "@/src/lib/base_url";
 import { getMarkdownPreview } from "@/src/lib/markdown";
 
-import Layout from "../_layout.astro";
+import Layout from "../../_layout.astro";
 
 const trainings: CollectionEntry<"pcbTransitStandardsTrainings">[] =
   await getCollection("pcbTransitStandardsTrainings");

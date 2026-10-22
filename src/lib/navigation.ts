@@ -31,8 +31,20 @@ export const navigation: NavigationItem[] = [
             name: "ITS JPO NOW",
             pages: [
               {
+                name: "September 2026",
+                url: "/about/contact-us/mailinglist/ITS-JPO-NOW/september-2026",
+              },
+              {
+                name: "August 2026 Flash Edition",
+                url: "/about/contact-us/mailinglist/ITS-JPO-NOW/august-2026-flash",
+              },
+              {
                 name: "May 2026",
                 url: "/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026",
+              },
+              {
+                name: "July 2026",
+                url: "/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026",
               },
             ],
             url: "/about/contact-us/mailinglist/ITS-JPO-NOW",
@@ -55,6 +67,10 @@ export const navigation: NavigationItem[] = [
       { name: "Image Library", url: "/news-info/image-library" },
       { name: "Video Library", url: "/news-info/video-library" },
       {
+        name: "Project Delivery Templates",
+        url: "/news-info/project-delivery-templates",
+      },
+      {
         isEnabled: true,
         name: "Publication Editorial Guidelines",
         url: "/news-info/Publication-Editorial-Guidelines",
@@ -75,20 +91,27 @@ export const navigation: NavigationItem[] = [
             name: "Overview",
             pages: [
               {
-                name: "How Does AI Work",
-                url: "/research-areas/Artificial-Intelligence/overview/how-ai-works",
-              },
-              {
-                name: "Where Can AI Advance Transportation",
-                url: "/research-areas/Artificial-Intelligence/overview/where-ai-advances-transportation",
-              },
-              {
-                name: "What Are AI Transportation Use Cases",
-                url: "/research-areas/Artificial-Intelligence/overview/ai-use-cases",
-              },
-              {
-                name: "What Is The JPO AI Implementation Approach",
-                url: "/research-areas/Artificial-Intelligence/overview/jpo-implementation-approach",
+                isEnabled: true,
+                name: "Learn & Connect",
+                pages: [
+                  {
+                    name: "AI Governance",
+                    url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-governance",
+                  },
+                  {
+                    name: "AI Definitions & Concepts",
+                    url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-definitions-concepts",
+                  },
+                  {
+                    name: "AI Methods & Sub-Methods",
+                    url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-methods-sub-methods",
+                  },
+                  {
+                    name: "AI Procurement National Webinar",
+                    url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-procurement-national-webinar",
+                  },
+                ],
+                url: "/research-areas/artificial-intelligence/focus-areas/learn-connect",
               },
             ],
             url: "/research-areas/Artificial-Intelligence/overview",
@@ -126,6 +149,11 @@ export const navigation: NavigationItem[] = [
               },
             ],
             url: "/research-areas/Artificial-Intelligence/focus-areas",
+          },
+          {
+            isEnabled: true,
+            name: "Contact",
+            url: "/research-areas/artificial-intelligence/contact",
           },
         ],
         url: "/research-areas/Artificial-Intelligence",
@@ -362,10 +390,6 @@ export const navigation: NavigationItem[] = [
       },
       { name: "Cybersecurity", url: "/resources/Cybersecurity" },
       {
-        name: "Deployment Evaluation",
-        url: "/resources/Deployment-Evaluation",
-      },
-      {
         name: "National Transportation Library",
         url: "/resources/national-transportation-library",
       },
@@ -454,6 +478,26 @@ export const navigation: NavigationItem[] = [
         name: "ITS DataHub",
         url: "https://www.its.dot.gov/data",
       },
+      {
+        isExternal: true,
+        name: "Deployment Evaluation",
+        url: "https://www.itskrs.its.dot.gov/?utm_campaign=its-jpo&utm_source=de-landing-page&utm_medium=image-button",
+      },
+      {
+        isExternal: true,
+        name: "Smart Community Resource Center",
+        url: "https://www.its.dot.gov/scrc",
+      },
+      {
+        isExternal: true,
+        name: "ITS CodeHub",
+        url: "https://www.its.dot.gov/code",
+      },
+      {
+        isExternal: true,
+        name: "ITS DataHub",
+        url: "https://www.its.dot.gov/data",
+      },
     ],
     url: "/resources",
   },
@@ -524,11 +568,13 @@ export function findBreadcrumbItem(
  */
 export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
   const trimmedPathname = getTrimmedPathname(pathname);
+  // Normalize case so route matching is stable across case-insensitive file systems.
+  const normalizedPathname = trimmedPathname.toLowerCase();
 
   const breadcrumbs: BreadcrumbItem[] = [];
 
   let navigationItem: AnyNavigationItem | undefined = navigation.find(
-    (section) => trimmedPathname.startsWith(section.url),
+    (section) => normalizedPathname.startsWith(section.url.toLowerCase()),
   );
 
   while (navigationItem !== undefined) {
@@ -537,20 +583,33 @@ export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
 
     // If it's an exact match, it's already been added
     // If it's not a match but there are no subpages, then there's nothing left to add
-    if (trimmedPathname === navigationItem.url || !navigationItem.pages) break;
+    if (
+      normalizedPathname === navigationItem.url.toLowerCase() ||
+      !navigationItem.pages
+    )
+      break;
 
-    let nextItem: AnyNavigationItem | undefined = undefined;
+    // Track the next best descendant; do not mutate in-loop to avoid stale/self references.
+    let nextNavigationItem: AnyNavigationItem | undefined;
+
+    const nextItem: AnyNavigationItem | undefined = undefined;
     for (const page of navigationItem.pages) {
-      if (trimmedPathname === page.url) {
-        nextItem = page;
+      const pageUrl = page.url.toLowerCase();
+
+      // If there's a page with an exact match, continue
+      if (normalizedPathname === pageUrl) {
+        nextNavigationItem = page;
         break;
       }
-      if (trimmedPathname.startsWith(page.url)) {
-        nextItem = page;
+
+      if (normalizedPathname.startsWith(pageUrl)) {
+        nextNavigationItem = page;
       }
     }
-    if (!nextItem) break; // No child matched — stop instead of looping forever
-    navigationItem = nextItem;
+
+    // Stop if no deeper match is found or matching no longer makes forward progress.
+    if (!nextNavigationItem || nextNavigationItem === navigationItem) break;
+    navigationItem = nextNavigationItem;
   }
 
   // Catch undefined navigation item and return it
@@ -602,25 +661,38 @@ export function findNavigationItem(
 export function findSection(pathname: string): AnyNavigationItem | undefined {
   // Trim path name in case any extra characters are included
   const trimmedPathname = getTrimmedPathname(pathname);
+  // Normalize case so route matching is stable across case-insensitive file systems.
+  const normalizedPathname = trimmedPathname.toLowerCase();
 
   let navigationItem: AnyNavigationItem | undefined = navigation.find(
-    (section) => trimmedPathname.startsWith(section.url),
+    (section) => normalizedPathname.startsWith(section.url.toLowerCase()),
   );
 
   while (navigationItem !== undefined) {
     // If the item is an exact match, return it now
-    if (trimmedPathname === navigationItem.url) return navigationItem;
+    if (normalizedPathname === navigationItem.url.toLowerCase())
+      return navigationItem;
 
     // If there are no child pages, there's nothing left to match. Return undefined;
     if (!navigationItem.pages) return undefined;
 
+    // Track the next best descendant; do not mutate in-loop to avoid stale/self references.
+    let nextNavigationItem: AnyNavigationItem | undefined;
+
     // If it's not an exact match, look through child items to see if there's an exact match
     for (const page of navigationItem.pages) {
-      if (trimmedPathname === page.url) return page;
-      if (trimmedPathname.startsWith(page.url)) {
-        navigationItem = page;
+      const pageUrl = page.url.toLowerCase();
+
+      if (normalizedPathname === pageUrl) return page;
+      if (normalizedPathname.startsWith(pageUrl)) {
+        nextNavigationItem = page;
       }
     }
+
+    // Return undefined if traversal cannot progress to a deeper matching node.
+    if (!nextNavigationItem || nextNavigationItem === navigationItem)
+      return undefined;
+    navigationItem = nextNavigationItem;
   }
 
   // Catch undefined navigation item and return it

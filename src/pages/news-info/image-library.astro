@@ -174,7 +174,7 @@ const description =
   <Fragment slot="banner"> Image Library </Fragment>
   <main>
     <h2 class="sideways blue">
-      Images courtesy of the U.S. Department of Transportation
+      Images Courtesy of the U.S. Department of Transportation
     </h2>
     <p>Click image for downloadable high resolution version.</p>
 
@@ -362,4 +362,29 @@ const description =
       <a href="mailto:Norah.Ocel@dot.gov">Norah.Ocel@dot.gov</a>
     </p>
   </div>
+
+  <div class="modal-bg" id="astro-img-modal" style="display:none;">
+    <button aria-label="Close" class="modal-close" id="astro-img-modal-close"
+      >&times;</button
+    >
+    <img alt="" class="modal-img" id="astro-img-modal-img" src="" />
+    <a
+      download
+      href=""
+      id="astro-img-modal-download"
+      style="position:absolute;bottom:2rem;right:2rem;z-index:1100;background:#005ea2;color:#fff;padding:0.75rem 1.5rem;border-radius:0.5rem;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.13);"
+      >Download</a
+    >
+    <div id="astro-img-modal-alt" style="display:none;"></div>
+  </div>
 </PageLayout>
+<div class="container my-5 p-4">
+  <h3>For additional images please contact</h3>
+  <p>
+    <strong>Ocel, Norah P.E., PMP</strong><br />
+    Program Manager<br />
+    Strategic Technology for Roadway Safety<br />
+    202-366-2639<br />
+    <a href="mailto:Norah.Ocel@dot.gov">Norah.Ocel@dot.gov</a>
+  </p>
+</div>

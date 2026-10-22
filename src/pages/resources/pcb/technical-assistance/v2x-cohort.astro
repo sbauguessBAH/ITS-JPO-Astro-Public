@@ -5,6 +5,7 @@ import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Section from "@/src/components/ui/blocks/section/Section.astro";
 import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 
 import Layout from "../_layout.astro";
 import CohortMap from "./_cohort-map.vue";
@@ -69,6 +70,9 @@ import CohortMap from "./_cohort-map.vue";
       </div>
       <Section size="lg">
         <SectionContent>
+          <Heading class="tw:text-center" size="md">
+            Accelerating V2X Cohort Members
+          </Heading>
           <CohortMap client:only="vue" />
           <!-- <figure class="figure">
             <Image

@@ -10,7 +10,7 @@ import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import ItemGroup from "@/src/components/ui/elements/item/ItemGroup.astro";
 import { getMarkdownPreview } from "@/src/lib/markdown";
 
-import Layout from "../_layout.astro";
+import Layout from "../../_layout.astro";
 
 const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
   await getCollection("pcbStandardsTrainings");

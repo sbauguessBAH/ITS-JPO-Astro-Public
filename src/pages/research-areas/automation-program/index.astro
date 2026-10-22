@@ -80,7 +80,7 @@ const strategies = [
   },
   {
     description:
-      "Identify challenges/issues that can negatively impact safe and efficient integration of Automated Driving System (ADS) technologies, such as lack of AV preparedness, limited understanding of ADS use cases that can maximize benefits, and not-well-understood ADS capabilities/safety protocols that vary between manufacturers and across ODDs.",
+      "Identify challenges/issues that can negatively impact safe and efficient integration of Automated Driving System (ADS) technologies, such as lack of AV preparedness, limited understanding of ADS use cases that can maximize benefits, and not-well-understood ADS capabilities/safety protocols that vary between manufacturers and across Operational Design Domains (ODDs).",
     number: 4,
     title: "Automated Driving Systems (ADS) Technologies",
   },
@@ -145,56 +145,56 @@ const strategies = [
             ))
           }
         </div>
-      </div>
-      <ProgramSection color="gray">
-        <div class="tw:mx-auto tw:max-w-5xl tw:text-center">
-          <Heading size="md">Focus Areas</Heading>
-          <p class="program-text">
-            In collaboration with the Operating Administrations, ITS JPO
-            prioritized near-term research focus areas to directly address
-            strategies stated above, and achieve desired outcomes across four
-            current focus areas:
-          </p>
-        </div>
-        <div
-          class="mt-4 tw:grid tw:grid-cols-1 tw:gap-4 tw:min-[992px]:grid-cols-2"
-          role="directory"
-        >
-          {focusAreas.map((focusArea) => <OverlayCard {...focusArea} />)}
-        </div>
-      </ProgramSection>
-      <div
-        class="tw:mx-auto tw:flex tw:w-full tw:max-w-5xl tw:flex-col tw:gap-4"
-      >
-        <div class="tw:flex tw:flex-col tw:gap-2 tw:text-center">
-          <Heading size="md">Program Roadmap</Heading>
-          <p class="program-text">
-            In collaboration with the Operating Administrations, ITS JPO
-            prioritized near-term research focus areas to directly address
-            strategies stated above, and achieve desired outcomes across four
-            current focus areas:
-          </p>
-        </div>
-        <Card>
-          <CardHeader class="tw:overflow-x-auto">
-            <Roadmap className="tw:w-full tw:min-w-4xl" />
-          </CardHeader>
-          <CardContent
-            class="tw:flex tw:flex-col tw:justify-between tw:gap-2 tw:md:flex-row"
+        <ProgramSection color="gray">
+          <div class="tw:mx-auto tw:max-w-5xl tw:text-center">
+            <Heading size="md">Focus Areas</Heading>
+            <p class="program-text">
+              In collaboration with the Operating Administrations, ITS JPO
+              prioritized near-term research focus areas to directly address
+              strategies stated above, and achieve desired outcomes across four
+              current focus areas:
+            </p>
+          </div>
+          <div
+            class="mt-4 tw:grid tw:grid-cols-1 tw:gap-4 tw:min-[992px]:grid-cols-2"
+            role="directory"
           >
-            <CardDescription>Last Updated: May 2025</CardDescription>
-            <Button
-              color="neutral"
-              link={{
-                href: base_url("/assets/images/automation/roadmap.png"),
-                isNewWindow: true,
-              }}
+            {focusAreas.map((focusArea) => <OverlayCard {...focusArea} />)}
+          </div>
+        </ProgramSection>
+        <div
+          class="tw:mx-auto tw:flex tw:w-full tw:max-w-5xl tw:flex-col tw:gap-4"
+        >
+          <div class="tw:flex tw:flex-col tw:gap-2 tw:text-center">
+            <Heading size="md">Program Roadmap</Heading>
+            <p class="program-text">
+              In collaboration with the Operating Administrations, ITS JPO
+              prioritized near-term research focus areas to directly address
+              strategies stated above, and achieve desired outcomes across four
+              current focus areas:
+            </p>
+          </div>
+          <Card>
+            <CardHeader class="tw:overflow-x-auto">
+              <Roadmap className="tw:w-full tw:min-w-4xl" />
+            </CardHeader>
+            <CardContent
+              class="tw:flex tw:flex-col tw:justify-between tw:gap-2 tw:md:flex-row"
             >
-              <Icon name="download" />
-              Download Image
-            </Button>
-          </CardContent>
-        </Card>
+              <CardDescription>Last Updated: May 2025</CardDescription>
+              <Button
+                color="neutral"
+                link={{
+                  href: base_url("/assets/images/automation/roadmap.png"),
+                  isNewWindow: true,
+                }}
+              >
+                <Icon name="download" />
+                Download Image
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </PageBody>
   </Page>

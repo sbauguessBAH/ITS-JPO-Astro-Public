@@ -126,6 +126,31 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
     width: 100%;
     aspect-ratio: 16/9;
   }
+  .accelerator-announcement {
+    background: #06235d;
+    color: white;
+    backdrop-filter: blur(10px);
+  }
+  .accelerator-announcement-icon {
+    width: 3.25rem;
+    height: 3.25rem;
+    flex: 0 0 3.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #d99a1e;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.15rem;
+  }
+  .accelerator-announcement a {
+    color: #ffd700;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .accelerator-announcement a:hover {
+    color: white;
+  }
 </style>
 
 <PageLayout title="ITS4US Home">
@@ -134,8 +159,9 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center my-4">Providing safe, efficient, and affordable mobility options for everyone:<br />ITS4US – it's transportation for all of us.</h2>
+          <h2 class=" my-4">Providing safe, efficient, and affordable mobility options for everyone:<br />ITS4US – it's transportation for all of us.</h2>
         </div>
+     
         <div class="row">
           <div class="col-12 col-lg-6">
             <p>
@@ -208,8 +234,8 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
           <div class="col-12 col-lg-6 ratio-16x9">
             <div class="w-100 video-container ratio-16x9">
               <iframe
-                class="rounded-4"
-                src="https://www.youtube.com/embed/RLxx90VCmKk"
+                class="rounded-4 shadow-sm"
+                src="https://www.youtube.com/embed/VgQDCelHSEs"
                 title="ITS4US Deployment Program Overview"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -218,6 +244,15 @@ import logo from "@/src/assets/images/banners/ITS4US_logo_white.png";
               >
               </iframe>
             </div>
+          </div>
+        </div>
+           <div class="col-12">
+          <div class="accelerator-announcement rounded-4 p-4 mx-auto my-4 d-flex align-items-center gap-3">
+            <span class="accelerator-announcement-icon" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></span>
+            <p class="fs-5 lh-base mb-0">
+              ITS4US Deployment Accelerator Program accepting proposals now on
+              <a href="https://sam.gov/workspace/contract/opp/8433753e4422447fa62b661ec5d8b9da/view" target="_blank" rel="noopener noreferrer">SAM.gov</a>!
+            </p>
           </div>
         </div>
       </div>

@@ -4,14 +4,18 @@ import vue from "@astrojs/vue";
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
+import { loadEnv } from "vite";
+
+/** Load the BASE_URL from a `.env` file */
+const { BASE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), "");
+
 // https://astro.build/config
 export default defineConfig({
   // If hosting on a subdomain, set the base here such as /itsjpo, /demo, etc.
-  base: "/its",
-  integrations: [partytown(), sitemap(), vue()],
-  site: "http://localhost:4321",
-  // site: "https://www.its.dot.gov",
+  base: BASE_URL,
+  site: "https://www.its.dot.gov",
   output: "static",
+  integrations: [partytown(), sitemap(), vue()],
   redirects: {
     "/about/its_jpo.htm": "/about",
     "/asc": "/resources/architecture-and-standards",

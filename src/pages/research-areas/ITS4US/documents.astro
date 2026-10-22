@@ -53,6 +53,17 @@ const phaseCounts = sortedPublications.reduce((acc, pub) => {
 const phases = Object.entries(phaseCounts)
   .map(([value, count]) => ({ value: parseInt(value), count }))
   .sort((a, b) => a.value - b.value);
+
+const normalizeDeploymentAcronym = (acronym: string) => {
+  if (acronym === 'ARC' || acronym === 'GDOT') return 'ARC/GDOT';
+  if (acronym === 'ICF' || acronym === 'NFTA') return 'ICF/NFTA';
+  return acronym;
+};
+
+const publicationFilters = sortedPublications.map((pub) => ({
+  phase: pub.data.phase,
+  acronym: normalizeDeploymentAcronym(pub.data.deploymentAcronym)
+}));
 ---
 
 <style>
@@ -108,6 +119,45 @@ const phases = Object.entries(phaseCounts)
     color: rgb(var(--color-brand-dark));
   }
 </style>
+<style is:global>
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .pagination-btn {
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #1f2937;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .pagination-btn:hover:not(:disabled) {
+    border-color: #055681;
+    color: #055681;
+  }
+
+  .pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .pagination-btn.is-active {
+    background: #055681;
+    border-color: #055681;
+    color: #fff;
+    font-weight: 700;
+  }
+</style>
 
 <PageLayout title="ITS4US Publications">
   <Fragment slot="banner">ITS4US</Fragment>
@@ -133,6 +183,7 @@ const phases = Object.entries(phaseCounts)
           client:load
           deploymentAcronyms={deploymentAcronyms}
           phases={phases}
+          publicationFilters={publicationFilters}
         />
       </aside>
 
@@ -147,58 +198,138 @@ const phases = Object.entries(phaseCounts)
             <PublicationCard publication={pub.data} />
           ))}
         </div>
+
+        <nav class="pagination-controls" id="publications-pagination" aria-label="Publications pagination"></nav>
       </div>
     </div>
   </main>
 </PageLayout>
 
 <script>
+  const ITEMS_PER_PAGE = 12;
+
+  let currentPage = 1;
+  let activePhaseFilter = '';
+  let activeAcronymFilter = '';
+
   // Define linked acronym groups
   const linkedAcronyms: Record<string, string[]> = {
     'ARC/GDOT': ['ARC', 'GDOT'],
     'ICF/NFTA': ['ICF', 'NFTA']
   };
 
-  // Filter publications using CSS visibility toggle
-  window.addEventListener('publications-filter-change', (event) => {
-    const { type, value } = (event as CustomEvent).detail;
-    const cards = document.querySelectorAll('.publication-card');
-    const resultsCount = document.getElementById('results-count');
-    
-    if (!cards || !resultsCount) return;
-    
-    let visibleCount = 0;
-    
-    // Show/hide cards based on filter
-    cards.forEach(card => {
-      const htmlCard = card as HTMLElement;
-      let shouldShow = true;
-      
-      if (type && value !== null) {
-        if (type === 'acronym') {
-          const cardAcronym = htmlCard.dataset.deploymentAcronym;
-          // Check if filter value is a combined acronym
-          if (linkedAcronyms[value]) {
-            shouldShow = linkedAcronyms[value].includes(cardAcronym || '');
-          } else {
-            shouldShow = cardAcronym === value;
-          }
-        } else if (type === 'phase') {
-          shouldShow = htmlCard.dataset.phase === String(value);
+  const cards = Array.from(document.querySelectorAll('.publication-card')) as HTMLElement[];
+  const resultsCount = document.getElementById('results-count');
+  const paginationEl = document.getElementById('publications-pagination');
+
+  const clampPage = (page: number, totalPages: number) => Math.max(1, Math.min(page, totalPages));
+
+  const matchesFilter = (card: HTMLElement) => {
+    if (activeAcronymFilter) {
+      const cardAcronym = card.dataset.deploymentAcronym || '';
+      if (linkedAcronyms[activeAcronymFilter]) {
+        if (!linkedAcronyms[activeAcronymFilter].includes(cardAcronym)) {
+          return false;
         }
+      } else if (cardAcronym !== activeAcronymFilter) {
+        return false;
       }
-      
-      if (shouldShow) {
-        htmlCard.classList.remove('hidden');
-        visibleCount++;
-      } else {
-        htmlCard.classList.add('hidden');
-      }
+    }
+
+    if (activePhaseFilter && card.dataset.phase !== activePhaseFilter) {
+      return false;
+    }
+
+    return true;
+  };
+
+  const createPageButton = (label: string, page: number, isActive = false) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = `pagination-btn${isActive ? ' is-active' : ''}`;
+    button.textContent = label;
+    button.addEventListener('click', () => {
+      currentPage = page;
+      applyFiltersAndPagination(true);
     });
-    
-    // Update count
-    resultsCount.textContent = visibleCount === 0 
-      ? 'No publications found'
-      : `Showing ${visibleCount} publication${visibleCount !== 1 ? 's' : ''}`;
+    return button;
+  };
+
+  const renderPagination = (totalPages: number) => {
+    if (!paginationEl) return;
+
+    paginationEl.innerHTML = '';
+
+    if (totalPages <= 1) {
+      paginationEl.setAttribute('hidden', 'true');
+      return;
+    }
+
+    paginationEl.removeAttribute('hidden');
+
+    const prevBtn = createPageButton('Previous', currentPage - 1);
+    prevBtn.disabled = currentPage === 1;
+    paginationEl.appendChild(prevBtn);
+
+    const pagesToShow = new Set<number>([1, totalPages, currentPage - 1, currentPage, currentPage + 1]);
+    const visiblePages = Array.from(pagesToShow)
+      .filter((page) => page >= 1 && page <= totalPages)
+      .sort((a, b) => a - b);
+
+    let lastPage = 0;
+    visiblePages.forEach((page) => {
+      if (lastPage && page - lastPage > 1) {
+        const dots = document.createElement('span');
+        dots.textContent = '...';
+        paginationEl.appendChild(dots);
+      }
+      paginationEl.appendChild(createPageButton(String(page), page, page === currentPage));
+      lastPage = page;
+    });
+
+    const nextBtn = createPageButton('Next', currentPage + 1);
+    nextBtn.disabled = currentPage === totalPages;
+    paginationEl.appendChild(nextBtn);
+  };
+
+  const updateResultsText = (totalResults: number, startIndex: number, endIndex: number) => {
+    if (!resultsCount) return;
+    if (totalResults === 0) {
+      resultsCount.textContent = 'No publications found';
+      return;
+    }
+    resultsCount.textContent = `Showing ${startIndex}-${endIndex} of ${totalResults} publication${totalResults !== 1 ? 's' : ''}`;
+  };
+
+  const applyFiltersAndPagination = (preservePage = false) => {
+    if (!cards.length) return;
+
+    const filteredCards = cards.filter(matchesFilter);
+    const totalResults = filteredCards.length;
+    const totalPages = Math.max(1, Math.ceil(totalResults / ITEMS_PER_PAGE));
+
+    currentPage = preservePage ? clampPage(currentPage, totalPages) : 1;
+
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+
+    cards.forEach((card) => card.classList.add('hidden'));
+    filteredCards.forEach((card, index) => {
+      const onCurrentPage = index >= start && index < end;
+      card.classList.toggle('hidden', !onCurrentPage);
+    });
+
+    updateResultsText(totalResults, totalResults ? start + 1 : 0, Math.min(end, totalResults));
+    renderPagination(totalPages);
+  };
+
+  // Filter publications and apply pagination
+  window.addEventListener('publications-filter-change', (event) => {
+    const { phase, acronym } = (event as CustomEvent).detail || {};
+    activePhaseFilter = phase == null ? '' : String(phase);
+    activeAcronymFilter = acronym == null ? '' : String(acronym);
+    applyFiltersAndPagination(false);
   });
+
+  applyFiltersAndPagination(false);
 </script>

@@ -186,6 +186,8 @@ a .card p, .card a p {
   color: var(--ai-blue-secondary);
   font-weight: 600;
   margin-bottom: 1rem;
+      text-wrap: balance;
+  
 }
 
 .insight-card .card-title:after {
