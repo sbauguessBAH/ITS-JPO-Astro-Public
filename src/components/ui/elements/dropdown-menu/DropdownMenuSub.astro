@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<div
+  class:list={["tw:relative", className]}
+  data-slot="dropdown-menu-sub"
+  {...props}
+>
+  <slot />
+</div>

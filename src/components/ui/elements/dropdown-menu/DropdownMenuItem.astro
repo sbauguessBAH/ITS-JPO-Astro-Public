@@ -1,0 +1,52 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import base_url from "@/src/lib/base_url";
+
+import { menuItemClass } from "./styles";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+  /** Close the menu after selection. @default `true` */
+  closeOnClick?: boolean;
+  disabled?: boolean;
+  /** Renders the item as a link */
+  href?: string;
+  /** Align with items that have an indicator */
+  inset?: boolean;
+  isExternal?: boolean;
+};
+
+const {
+  class: className,
+  closeOnClick = true,
+  disabled,
+  href,
+  inset,
+  isExternal,
+  ...props
+} = Astro.props;
+
+const isLink = !!href && !disabled;
+const Component = isLink ? "a" : "div";
+
+const linkAttrs = isLink
+  ? isExternal
+    ? { href, rel: "noopener noreferrer", target: "_blank" }
+    : { href: base_url(href) }
+  : undefined;
+---
+
+<Component
+  aria-disabled={disabled ? "true" : undefined}
+  class:list={[menuItemClass, className]}
+  data-close-on-click={String(closeOnClick)}
+  data-inset={inset ? "" : undefined}
+  data-slot="dropdown-menu-item"
+  role="menuitem"
+  tabindex="-1"
+  {...linkAttrs}
+  {...props}
+>
+  <slot />
+</Component>

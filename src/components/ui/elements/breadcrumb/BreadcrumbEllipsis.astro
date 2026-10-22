@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import Icon from "../../icon/Icon.astro";
+
+type Props = HTMLAttributes<"span"> & {
+  class?: string;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<span
+  aria-hidden="true"
+  class:list={[
+    "tw:flex tw:size-6 tw:items-center tw:justify-center",
+    className,
+  ]}
+  data-slot="breadcrumb-ellipsis"
+  role="presentation"
+  {...props}
+>
+  <Icon name="three-dots" size={16} />
+  <span class="tw:sr-only">More</span>
+</span>
