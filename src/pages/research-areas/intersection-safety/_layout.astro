@@ -1,7 +1,8 @@
 ---
 import banner from "@/src/assets/images/intersection-safety/banner.jpg";
-import PageLayout from "@/src/layouts/PageLayout.astro";
 import "@/src/styles/programs.scss";
+import "@/src/styles/globals.css";
+import TailwindLayout from "@/src/layouts/TailwindLayout.astro";
 
 const keywords = [
   "Intersection Safety",
@@ -20,7 +21,7 @@ const description = `
 `;
 ---
 
-<PageLayout
+<TailwindLayout
   bannerImage={banner}
   description={description}
   keywords={keywords}
@@ -29,4 +30,4 @@ const description = `
   <Fragment slot="banner"> Intersection Safety </Fragment>
 
   <slot />
-</PageLayout>
+</TailwindLayout>
