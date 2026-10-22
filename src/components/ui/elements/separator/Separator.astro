@@ -1,0 +1,41 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cva } from "class-variance-authority";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+  /** Purely visual separators are hidden from assistive tech. Defaults to true. */
+  decorative?: boolean;
+  orientation?: "horizontal" | "vertical";
+};
+
+const {
+  class: className,
+  decorative = true,
+  orientation = "horizontal",
+  ...props
+} = Astro.props;
+
+const separatorVariants = cva("tw:shrink-0 tw:bg-border", {
+  defaultVariants: {
+    orientation: "horizontal",
+  },
+  variants: {
+    orientation: {
+      horizontal: "tw:h-px tw:w-full",
+      vertical: "tw:w-px tw:self-stretch",
+    },
+  },
+});
+---
+
+<div
+  aria-orientation={decorative ? undefined : orientation}
+  class:list={[separatorVariants({ orientation }), className]}
+  data-orientation={orientation}
+  data-slot="separator"
+  role={decorative ? "none" : "separator"}
+  {...props}
+>
+</div>

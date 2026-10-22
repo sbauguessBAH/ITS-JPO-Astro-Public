@@ -1,0 +1,30 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import Icon from "../../icon/Icon.astro";
+import { menuItemClass } from "./styles";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+  disabled?: boolean;
+  inset?: boolean;
+};
+
+const { class: className, disabled, inset, ...props } = Astro.props;
+---
+
+<div
+  aria-disabled={disabled ? "true" : undefined}
+  aria-expanded="false"
+  aria-haspopup="menu"
+  class:list={[menuItemClass, className]}
+  data-inset={inset ? "" : undefined}
+  data-slot="dropdown-menu-sub-trigger"
+  data-state="closed"
+  role="menuitem"
+  tabindex="-1"
+  {...props}
+>
+  <slot />
+  <Icon class="tw:ml-auto" name="chevron-right" size={16} />
+</div>

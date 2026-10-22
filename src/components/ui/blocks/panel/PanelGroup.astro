@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"ul">;
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ul
+  class:list={["tw:m-0! tw:flex tw:list-none tw:flex-col tw:p-0!", className]}
+  data-slot="panel-group"
+  {...rest}
+>
+  <slot />
+</ul>

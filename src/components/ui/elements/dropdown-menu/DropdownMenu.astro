@@ -1,0 +1,378 @@
+---
+/**
+ * Dropdown menu root. Compose with `DropdownMenuTrigger` and `DropdownMenuContent`.
+ *
+ * @remarks
+ * Rendered as a `<dropdown-menu>` custom element, as in the Astro docs on
+ * client-side scripts. It follows the WAI-ARIA menu button pattern:
+ *
+ * - Trigger: `Enter`, `Space`, `ArrowDown` (first item), `ArrowUp` (last item)
+ * - Menu: `ArrowUp`/`ArrowDown`, `Home`/`End`, typeahead, `Enter`/`Space` to select
+ * - `Escape` closes and returns focus to the trigger; `Tab` closes
+ * - Submenus: `ArrowRight` opens, `ArrowLeft` closes; hover also opens
+ *
+ * Content is positioned with CSS only, so it can be clipped by an ancestor
+ * with `overflow: hidden`.
+ */
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<dropdown-menu
+  class:list={["tw:relative tw:inline-block", className]}
+  data-slot="dropdown-menu"
+  {...props}
+>
+  <slot />
+</dropdown-menu>
+
+<script>
+  const ROOT = '[data-slot="dropdown-menu"]';
+  const SUB = '[data-slot="dropdown-menu-sub"]';
+  const UNIT = `${ROOT}, ${SUB}`;
+  const ROOT_TRIGGER = '[data-slot="dropdown-menu-trigger"]';
+  const SUB_TRIGGER = '[data-slot="dropdown-menu-sub-trigger"]';
+  const TRIGGER = `${ROOT_TRIGGER}, ${SUB_TRIGGER}`;
+  const CONTENT =
+    '[data-slot="dropdown-menu-content"], [data-slot="dropdown-menu-sub-content"]';
+  const MENU = '[role="menu"]';
+  const ITEM = '[role="menuitem"]';
+
+  type FocusTarget = "first" | "last" | "menu" | "none";
+
+  let idCounter = 0;
+
+  class DropdownMenu extends HTMLElement {
+    #typeaheadBuffer = "";
+    #typeaheadTimer = 0;
+    #hoverTimer = 0;
+    // Menus opened by hover close on leave; a click makes them stay open
+    #hoverOpened = false;
+
+    connectedCallback() {
+      this.addEventListener("click", this.#onClick);
+      this.addEventListener("keydown", this.#onKeydown);
+      // Hover moves focus so pointer and keyboard share one highlight state
+      this.addEventListener("pointermove", this.#onPointerMove);
+      this.addEventListener("pointerenter", this.#onPointerEnter);
+      this.addEventListener("pointerleave", this.#onPointerLeave);
+      document.addEventListener("click", this.#onOutsideClick);
+    }
+
+    disconnectedCallback() {
+      window.clearTimeout(this.#hoverTimer);
+      this.removeEventListener("click", this.#onClick);
+      this.removeEventListener("keydown", this.#onKeydown);
+      this.removeEventListener("pointermove", this.#onPointerMove);
+      this.removeEventListener("pointerenter", this.#onPointerEnter);
+      this.removeEventListener("pointerleave", this.#onPointerLeave);
+      document.removeEventListener("click", this.#onOutsideClick);
+    }
+
+    // Links trigger and content with ids so no manual wiring is needed
+    #parts(unit: Element) {
+      const trigger = unit.querySelector<HTMLElement>(
+        `:scope > :is(${TRIGGER})`,
+      );
+      const content = unit.querySelector<HTMLElement>(
+        `:scope > :is(${CONTENT})`,
+      );
+      if (!trigger || !content) return null;
+
+      if (!content.id) content.id = `dropdown-menu-content-${++idCounter}`;
+      if (!trigger.id) trigger.id = `dropdown-menu-trigger-${++idCounter}`;
+      trigger.setAttribute("aria-controls", content.id);
+      content.setAttribute("aria-labelledby", trigger.id);
+
+      return { content, trigger };
+    }
+
+    #isOpen(unit: Element) {
+      return this.#parts(unit)?.content.dataset.state === "open";
+    }
+
+    #setOpen(unit: Element, open: boolean) {
+      const parts = this.#parts(unit);
+      if (!parts) return;
+
+      const state = open ? "open" : "closed";
+      parts.content.dataset.state = state;
+      parts.trigger.dataset.state = state;
+      parts.trigger.setAttribute("aria-expanded", String(open));
+    }
+
+    #close(unit: Element, restoreFocus = false) {
+      if (unit === this) this.#hoverOpened = false;
+      unit
+        .querySelectorAll(UNIT)
+        .forEach((child) => this.#setOpen(child, false));
+      this.#setOpen(unit, false);
+      if (restoreFocus) this.#parts(unit)?.trigger.focus();
+    }
+
+    #getItems(menu: Element) {
+      return Array.from(menu.querySelectorAll<HTMLElement>(ITEM)).filter(
+        (item) =>
+          item.closest(MENU) === menu &&
+          item.getAttribute("aria-disabled") !== "true",
+      );
+    }
+
+    #labelGroups(content: Element) {
+      content
+        .querySelectorAll<HTMLElement>('[role="group"]')
+        .forEach((group) => {
+          const label = group.querySelector<HTMLElement>(
+            ':scope > [data-slot="dropdown-menu-label"]',
+          );
+          if (!label) return;
+          label.id ||= `dropdown-menu-label-${++idCounter}`;
+          group.setAttribute("aria-labelledby", label.id);
+        });
+    }
+
+    // Closes the other submenus of the same menu
+    #closeSiblings(unit: Element) {
+      const parentMenu = unit.parentElement?.closest(MENU);
+      if (!parentMenu) return;
+
+      parentMenu.querySelectorAll(SUB).forEach((sub) => {
+        if (
+          sub !== unit &&
+          sub.parentElement?.closest(MENU) === parentMenu &&
+          this.#isOpen(sub)
+        ) {
+          this.#close(sub);
+        }
+      });
+    }
+
+    #open(unit: Element, focus: FocusTarget = "menu") {
+      const parts = this.#parts(unit);
+      if (!parts) return;
+
+      this.#closeSiblings(unit);
+      this.#setOpen(unit, true);
+      this.#labelGroups(parts.content);
+
+      const items = this.#getItems(parts.content);
+      if (focus === "first") (items[0] ?? parts.content).focus();
+      else if (focus === "last")
+        (items[items.length - 1] ?? parts.content).focus();
+      else if (focus === "menu") parts.content.focus();
+    }
+
+    #moveFocus(menu: Element, key: string) {
+      const items = this.#getItems(menu);
+      if (!items.length) return;
+
+      const index = items.indexOf(document.activeElement as HTMLElement);
+      let next: number;
+      if (key === "Home") next = 0;
+      else if (key === "End") next = items.length - 1;
+      else if (key === "ArrowDown")
+        next = index < 0 ? 0 : (index + 1) % items.length;
+      else
+        next =
+          index < 0
+            ? items.length - 1
+            : (index - 1 + items.length) % items.length;
+
+      items[next].focus();
+    }
+
+    #typeahead(menu: Element, key: string) {
+      this.#typeaheadBuffer += key.toLowerCase();
+      window.clearTimeout(this.#typeaheadTimer);
+      this.#typeaheadTimer = window.setTimeout(
+        () => (this.#typeaheadBuffer = ""),
+        500,
+      );
+
+      const items = this.#getItems(menu);
+      const current = items.indexOf(document.activeElement as HTMLElement);
+      // A single character starts after the current item so repeats cycle through matches
+      const start = current + (this.#typeaheadBuffer.length === 1 ? 1 : 0);
+      const ordered = [...items.slice(start), ...items.slice(0, start)];
+
+      ordered
+        .find((item) =>
+          item.textContent
+            ?.trim()
+            .toLowerCase()
+            .startsWith(this.#typeaheadBuffer),
+        )
+        ?.focus();
+    }
+
+    #onPointerEnter = (event: PointerEvent) => {
+      window.clearTimeout(this.#hoverTimer);
+      const trigger = this.#parts(this)?.trigger;
+      if (
+        !trigger ||
+        event.pointerType === "touch" ||
+        trigger.dataset.openOnHover === undefined ||
+        this.#isOpen(this)
+      ) {
+        return;
+      }
+
+      this.#hoverTimer = window.setTimeout(
+        () => {
+          this.#open(this, "none");
+          this.#hoverOpened = true;
+        },
+        Number(trigger.dataset.hoverDelay ?? 50),
+      );
+    };
+
+    #onPointerLeave = (event: PointerEvent) => {
+      window.clearTimeout(this.#hoverTimer);
+      if (!this.#hoverOpened || event.pointerType === "touch") return;
+
+      // The delay lets the pointer cross the gap between trigger and content
+      const trigger = this.#parts(this)?.trigger;
+      this.#hoverTimer = window.setTimeout(
+        () => this.#close(this),
+        Number(trigger?.dataset.hoverCloseDelay ?? 150),
+      );
+    };
+
+    #onOutsideClick = (event: MouseEvent) => {
+      if (!this.contains(event.target as Node)) this.#close(this);
+    };
+
+    #onClick = (event: MouseEvent) => {
+      const target = event.target as Element;
+
+      const trigger = target.closest<HTMLElement>(TRIGGER);
+      if (trigger) {
+        if (trigger.getAttribute("aria-disabled") === "true") return;
+
+        const unit = trigger.parentElement?.closest(UNIT);
+        if (!unit) return;
+
+        const isSubTrigger = trigger.matches(SUB_TRIGGER);
+        if (!isSubTrigger && this.#hoverOpened) {
+          // Clicking a hover-opened menu keeps it open
+          this.#hoverOpened = false;
+          return;
+        }
+        if (!isSubTrigger && this.#isOpen(unit)) {
+          this.#close(unit, true);
+        } else {
+          // `detail` is 0 for keyboard-initiated clicks
+          const keyboard = event.detail === 0;
+          this.#open(unit, keyboard ? "first" : isSubTrigger ? "none" : "menu");
+        }
+        return;
+      }
+
+      const item = target.closest<HTMLElement>(ITEM);
+      if (!item) return;
+
+      if (item.getAttribute("aria-disabled") === "true") {
+        event.preventDefault();
+        return;
+      }
+      if (item.dataset.closeOnClick !== "false") this.#close(this, true);
+    };
+
+    #onKeydown = (event: KeyboardEvent) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+
+      if (target.matches(ROOT_TRIGGER)) {
+        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+          const unit = target.parentElement?.closest(UNIT);
+          if (!unit || target.getAttribute("aria-disabled") === "true") return;
+          event.preventDefault();
+          this.#open(unit, event.key === "ArrowDown" ? "first" : "last");
+        }
+        return;
+      }
+
+      const menu = target.closest<HTMLElement>(MENU);
+      if (!menu) return;
+
+      switch (event.key) {
+        case "Escape":
+          event.preventDefault();
+          this.#close(this, true);
+          break;
+        case "Tab":
+          // Focus returns to the trigger first so Tab continues from there
+          this.#close(this, true);
+          break;
+        case "ArrowDown":
+        case "ArrowUp":
+        case "Home":
+        case "End":
+          event.preventDefault();
+          this.#moveFocus(menu, event.key);
+          break;
+        case "ArrowRight":
+          if (target.matches(SUB_TRIGGER) && target.parentElement) {
+            event.preventDefault();
+            this.#open(target.parentElement, "first");
+          }
+          break;
+        case "ArrowLeft":
+          if (menu.parentElement?.matches(SUB)) {
+            event.preventDefault();
+            this.#close(menu.parentElement, true);
+          }
+          break;
+        case "Enter":
+        case " ":
+          if (target.matches(ITEM)) {
+            event.preventDefault();
+            target.click();
+          }
+          break;
+        default:
+          if (
+            event.key.length === 1 &&
+            !event.ctrlKey &&
+            !event.metaKey &&
+            !event.altKey
+          ) {
+            this.#typeahead(menu, event.key);
+          }
+      }
+    };
+
+    #onPointerMove = (event: PointerEvent) => {
+      const item = (event.target as Element).closest<HTMLElement>(ITEM);
+      const menu = item?.closest(MENU);
+      if (!item || !menu || item.getAttribute("aria-disabled") === "true") {
+        return;
+      }
+
+      if (document.activeElement !== item) item.focus({ preventScroll: true });
+
+      const ownSub = item.matches(SUB_TRIGGER) ? item.parentElement : null;
+      menu.querySelectorAll(SUB).forEach((sub) => {
+        if (
+          sub !== ownSub &&
+          sub.parentElement?.closest(MENU) === menu &&
+          this.#isOpen(sub)
+        ) {
+          this.#close(sub);
+        }
+      });
+
+      if (ownSub && !this.#isOpen(ownSub)) this.#open(ownSub, "none");
+    };
+  }
+
+  // Guard against double registration when the script is re-evaluated (HMR)
+  if (!customElements.get("dropdown-menu")) {
+    customElements.define("dropdown-menu", DropdownMenu);
+  }
+</script>

@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+/**
+ * AccordionItem represents a single collapsible item within an accordion. It contains a trigger and content panel.
+ */
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+  /** Open when the page loads */
+  open?: boolean;
+};
+
+const { class: className, open, ...props } = Astro.props;
+---
+
+<div
+  class:list={["tw:border-border tw:not-last:border-b", className]}
+  data-slot="accordion-item"
+  data-state={open ? "open" : "closed"}
+  {...props}
+>
+  <slot />
+</div>

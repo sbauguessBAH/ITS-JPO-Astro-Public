@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<div class={className} data-slot="dropdown-menu-group" role="group" {...props}>
+  <slot />
+</div>

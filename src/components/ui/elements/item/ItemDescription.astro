@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<p
+  class:list={[
+    "tw:mb-0! tw:line-clamp-2 tw:text-left tw:text-base! tw:leading-normal tw:font-normal tw:text-muted-foreground tw:group-data-[size=xs]/item:text-xs! tw:[&>a]:underline tw:[&>a]:underline-offset-4 tw:[&>a:hover]:text-primary",
+    className,
+  ]}
+  data-slot="item-description"
+  {...props}
+>
+  <slot />
+</p>

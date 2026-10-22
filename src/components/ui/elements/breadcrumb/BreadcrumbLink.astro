@@ -1,0 +1,29 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import base_url from "@/src/lib/base_url";
+
+type Props = HTMLAttributes<"a"> & {
+  class?: string;
+  href: string;
+  isExternal?: boolean;
+};
+
+const { class: className, href, isExternal, ...props } = Astro.props;
+
+const linkAttrs = isExternal
+  ? { href, rel: "noopener noreferrer", target: "_blank" }
+  : { href: base_url(href) };
+---
+
+<a
+  class:list={[
+    "tw:text-primary tw:no-underline! tw:transition-colors tw:hover:text-primary/80 tw:hover:underline!",
+    className,
+  ]}
+  data-slot="breadcrumb-link"
+  {...linkAttrs}
+  {...props}
+>
+  <slot />
+</a>
