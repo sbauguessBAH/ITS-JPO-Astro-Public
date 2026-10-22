@@ -1,0 +1,19 @@
+---
+import Item from "@/src/components/ui/elements/item/Item.astro";
+import ItemContent from "@/src/components/ui/elements/item/ItemContent.astro";
+import ItemDescription from "@/src/components/ui/elements/item/ItemDescription.astro";
+import ItemTitle from "@/src/components/ui/elements/item/ItemTitle.astro";
+---
+
+<Item
+  class="tw:border-l-6! tw:border-l-primary/80! tw:bg-primary/5 tw:px-4 tw:py-4"
+>
+  <ItemContent>
+    <ItemTitle class="tw:text-xl tw:font-semibold! tw:text-primary">
+      <slot name="title" />
+    </ItemTitle>
+    <ItemDescription class="tw:text-foreground!">
+      <slot name="description" />
+    </ItemDescription>
+  </ItemContent>
+</Item>
