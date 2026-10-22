@@ -1,86 +1,182 @@
 ---
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import OverlayCard, {
+  type OverlayCardProps,
+} from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import Card from "@/src/components/ui/elements/card/Card.astro";
+import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
+import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
+import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
+import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 
-import Actions from "./_actions.astro";
 import Layout from "./_layout.astro";
-import Resources from "./_resources.astro";
----
-<!-- Overview Section -->
-<style>
-  .overview-section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size);
-  }
-  /* .overview-video {
-    border-radius: var(--radius-md);
-  } */
-  .video {
-    border-radius: var(--radius-lg);
-  }
 
-  @media (min-width: 992px) {
-    .overview-section {
-      flex-direction: row;
-      align-items: start;
-    }
-    .overview-video {
-      flex-basis: 45%;
-    }
-    .overview-text {
-      flex-basis: 55%;
-    }
-  }
-</style>
+const ACTIONS = [
+  {
+    description:
+      "Discover available training sessions to enhance your ITS knowledge.",
+    image: "pcb/trainings",
+    path: "/resources/pcb/trainings",
+    show: true,
+    title: "Explore ITS Trainings",
+  },
+  {
+    description:
+      "Access educational resources for testing and deploying V2X technologies.",
+    image: "v2x-tools",
+    path: "/resources/cave",
+    show: false,
+    title: "Access V2X Educational Resources",
+  },
+  {
+    description:
+      "Access brief videos for quick, focused learning on ITS topics.",
+    image: "pcb/microlearning",
+    path: "/resources/pcb/microlearning",
+    show: true,
+    title: "Explore Microlearning Videos",
+  },
+  {
+    description:
+      "Engage with your peers to share your challenges, best practices, and experiences advancing ITS technologies.",
+    image: "pcb/peer-exchanges",
+    path: "/resources/pcb/peer-exchanges",
+    show: true,
+    title: "Collaborate through Peer Exchanges",
+  },
+  {
+    description:
+      "Learn about upcoming webinars on ITS and emerging transportation technologies, or view past webinars.",
+    image: "webinars",
+    path: "/resources/webinars",
+    show: false,
+    title: "View or Register for Webinars",
+  },
+  {
+    description:
+      "Connect with tools and materials to support students and faculty in preparing for careers in ITS.",
+    image: "resources",
+    path: "/resources/pcb/academic-resources",
+    show: false,
+    title: "Access Academic Resources",
+  },
+];
+
+const RESOURCES: OverlayCardProps[] = [
+  {
+    backgroundImage: "pcb/scrc-background",
+    color: "cyan",
+    description:
+      "An online resource connecting states, tribal governments, and local communities with resources to help develop intelligent transportation systems for smart community transportation programs.",
+    isExternalLink: true,
+    name: "Smart Community Resource Center",
+    path: "https://www.its.dot.gov/scrc/index.html",
+  },
+  {
+    backgroundImage: "pcb/v2x-intersection",
+    color: "lime",
+    description:
+      "A comprehensive training program provides foundational trainings for practitioners as well as technical trainings on V2X standards.",
+    name: "Vehicle-to-Everything (V2X) Training",
+    path: "/resources/pcb/trainings/v2x-trainings",
+  },
+  {
+    backgroundImage: "pcb/cave-box",
+    color: "orange",
+    description:
+      "Hands-on learning experience to aid curriculum, and support instruction for community colleges and trade schools, facilitate benchmarking connected vehicle equipment, and support onboarding of ITS technicians.",
+    name: "Connected and Automated Vehicle Education (CAVe)",
+    path: "/resources/pcb/technical-assistance/cave",
+  },
+  {
+    backgroundImage: "pcb/cohort",
+    color: "crimson",
+    description:
+      "A community of practice of state and local agencies -- and other infrastructure owners and operators (IOOs) -- sharing best practices and lessons learned to  accelerate the deployment of V2X technologies.",
+    name: "Accelerating V2X Cohort",
+    path: "/resources/pcb/technical-assistance/v2x-cohort",
+  },
+];
+---
 
 <Layout>
-  <main class="program-main">
-    <ProgramSection size="small">
-      <div class="overview-section">
-        <div class="overview-text">
-          <h2 class="program-title-lg mb-4">Program Overview</h2>
-          <p class="program-text">
-            The ITS Professional Capacity Building (PCB) Program supports activities 
-            that deliver multimodal ITS learning opportunities to transportation professionals 
-            by providing ITS trainings and webinars, fostering cohorts, 
-            and providing technical assistance to agencies deploying ITS technologies, as authorized by 
-            <a 
-              href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section514&num=0&edition=prelim" 
-              rel="noopener noreferrer" 
-              target="_blank"
-            >
-              23 USC 514
-            </a>. 
-          </p>
-          <p class="program-text">
-            The ITS PCB Program works with Federal, State, and local transportation stakeholders 
-            to ensure they have adequate knowledge of ITS 
-            for consideration in the transportation planning process and that the United States 
-            has a workforce capable of developing, operating, and maintaining ITS.
-          </p>
+  <Page class="tw:pb-0!" fullWidth>
+    <PageBody>
+      <div
+        class="tw:mx-auto tw:flex tw:w-full tw:max-w-7xl tw:flex-col tw:items-center tw:gap-6 tw:px-4 tw:lg:flex-row tw:xl:px-0"
+      >
+        <div class="tw:flex tw:flex-col tw:gap-4 tw:lg:basis-[55%]">
+          <Heading>Program Overview</Heading>
+          <div>
+            <p class="program-text">
+              The ITS Professional Capacity Building (PCB) Program supports
+              activities that deliver multimodal ITS learning opportunities to
+              transportation professionals by providing ITS trainings and
+              webinars, fostering cohorts, and providing technical assistance to
+              agencies deploying ITS technologies, as authorized by
+              <a
+                href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section514&num=0&edition=prelim"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                23 USC 514
+              </a>.
+            </p>
+            <p class="program-text">
+              The ITS PCB Program works with Federal, State, and local
+              transportation stakeholders to ensure they have adequate knowledge
+              of ITS for consideration in the transportation planning process
+              and that the United States has a workforce capable of developing,
+              operating, and maintaining ITS.
+            </p>
+          </div>
         </div>
-        <div class="ratio ratio-16x9 overview-video">
+        <div class="tw:w-full tw:max-w-4xl tw:lg:basis-[45%]">
           <iframe
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-            class="video"
+            class="tw:aspect-video tw:w-full tw:rounded-2xl"
             src="https://www.youtube.com/embed/KhvOK2qsJXg"
-            title="YouTube video player"
-          ></iframe>
+            title="YouTube video player"></iframe>
         </div>
       </div>
-    </ProgramSection>
-    <ProgramSection>
-      <h2 class="program-title-lg text-center mb-4">
-        Spotlight on Training and Technical Assistance Resources
-      </h2>
-      <Resources/>
-    </ProgramSection>
-    <ProgramSection class="pb-5" color="gray">
-      <h2 class="program-title-lg text-center mb-4">
-        What do you want to do?
-      </h2>
-      <Actions/>
-    </ProgramSection>
-  </main>
+      <div class="tw:mx-auto tw:w-full tw:max-w-7xl tw:px-4 tw:xl:px-0">
+        <div class="tw:flex tw:flex-col tw:gap-6">
+          <Heading size="md">
+            Spotlight on Training and Technical Assistance Resources
+          </Heading>
+          <div
+            class="tw:grid tw:auto-rows-[minmax(100px,300px)] tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2"
+            role="directory"
+          >
+            {RESOURCES.map((resource) => <OverlayCard {...resource} />)}
+          </div>
+        </div>
+      </div>
+      <div class="tw:bg-muted tw:py-12">
+        <div class="tw:mx-auto tw:w-full tw:max-w-7xl tw:px-4 tw:xl:px-0">
+          <div class="tw:flex tw:flex-col tw:gap-6">
+            <Heading size="md">What do you want to do?</Heading>
+            <div
+              class="tw:grid tw:w-full tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
+            >
+              {
+                ACTIONS.filter((action) => action.show).map((action) => (
+                  <Card href={action.path}>
+                    <CardImage entry={action.image} height={200} />
+                    <CardHeader>
+                      <CardTitle>{action.title}</CardTitle>
+                      <CardDescription>{action.description}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </PageBody>
+  </Page>
 </Layout>
