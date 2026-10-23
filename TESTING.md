@@ -39,7 +39,7 @@ The suite is configured in `playwright.visual.config.ts` and `tests/visual/`. It
 
 ### CI
 
-`.github/workflows/visual-regression.yml` runs on every pull request against the PR's **base commit** (the parent branch for stacked PRs). The changed pages are listed in the job summary and the full report with diff images is uploaded as the `visual-regression-report` artifact (14 days). Differences do not fail the PR check; review them and confirm they are intentional. It can also be run manually (`workflow_dispatch`) with any base ref.
+`.github/workflows/visual-regression.yml` is currently **manual only** (`workflow_dispatch`, with a `base` ref input, default `origin/main`) because a run builds the site twice and screenshots every page. The `pull_request` trigger is commented out in the workflow; uncomment it to run on every PR against the PR's **base commit** (the parent branch for stacked PRs). The changed pages are listed in the job summary and the full report with diff images is uploaded as the `visual-regression-report` artifact (14 days). Differences do not fail the check; review them and confirm they are intentional.
 
 ### Notes on stability
 

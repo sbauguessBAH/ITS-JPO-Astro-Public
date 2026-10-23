@@ -1,8 +1,10 @@
 name: Visual Regression
 on:
-  pull_request:
-    paths-ignore:
-      - "**.md"
+  # Re-enable to run on every pull request (expensive: builds the site twice
+  # and screenshots every page).
+  # pull_request:
+  #   paths-ignore:
+  #     - "**.md"
   workflow_dispatch:
     inputs:
       base:
