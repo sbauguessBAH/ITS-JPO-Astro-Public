@@ -6,22 +6,44 @@ Some initial tests have been set up to perform visual regression testing to ensu
 
 ## Visual Regression
 
-The visual regression testing compares pages against an initial snapshot to identify any changes. To update the initial snapshot, run the test command with the `--update-snapshots` flag, such as if you've confirmed visual changes are accurate and want to compare against a new baseline.
+Visual regression screenshots **every page in the generated sitemap** (~125 pages, full page, desktop Chromium) and compares them against a baseline built from another git ref. This identifies unintended visual changes in a PR.
 
-I choose to run the visual regression against only one project/browser for simplicity.
+### How baselines are stored
 
-This visual regression test relies on the `xml2js` devDependency to be able to scan the generated sitemap from Astro and check all URLs.
+Baseline images are **not committed**. With >100 pages (several MB each), committed PNGs would bloat the repo, be platform-specific (macOS vs Linux rendering), and go stale after every merge. Instead, every run:
+
+1. Builds the **base ref** in a temporary git worktree and screenshots each page into `.vr/baseline/` (git-ignored).
+2. Builds the **current checkout** and compares each page against that baseline.
+
+Both sides render on the same machine, so there is no OS/font drift, and stacked PRs naturally compare against their parent branch. Pages added in the branch are reported as _new_ (skipped), and pages removed fail with a "Page was removed" error.
+
+### Running locally
 
 ```zsh
-# Create a build
-npm run build
+# Compare the current checkout against main
+npm run test:vr
 
-# Stat preview server
-npm run preview
+# Compare against another ref, such as a parent branch in a PR stack
+npm run test:vr -- --base feat/ui-library
 
-# Create or update baseline snapshots
-npm run test:e2e -- visual-regression.spec.ts --project=chromium --update-snapshots
+# Re-run against an existing baseline without rebuilding it
+npm run test:vr -- --reuse-baseline
 
-# Check against baseline snapshots
-npm run test:e2e -- --project=chromium
+# Open the HTML report with expected / actual / diff images
+npm run test:vr:report
 ```
+
+Options for `scripts/visual-regression.mjs`: `--base <ref>` (default `main`), `--reuse-baseline`, `--skip-build` (reuse the existing `dist/`), and `--baseline-only`.
+
+The suite is configured in `playwright.visual.config.ts` and `tests/visual/`. It is separate from the default `npm run test:e2e` config. Pages are discovered from `dist/sitemap-*.xml`, so there is no need to start a server; Playwright starts `astro preview` itself.
+
+### CI
+
+`.github/workflows/visual-regression.yml` runs on every pull request against the PR's **base commit** (the parent branch for stacked PRs). The changed pages are listed in the job summary and the full report with diff images is uploaded as the `visual-regression-report` artifact (14 days). Differences do not fail the PR check; review them and confirm they are intentional. It can also be run manually (`workflow_dispatch`) with any base ref.
+
+### Notes on stability
+
+- Animations are disabled, reduced motion is on, lazy images are loaded eagerly, and the page height must settle before capture.
+- Analytics and video embeds are blocked and `iframe`/`video` elements are masked. CDN assets (Bootstrap, fonts) are loaded from the network.
+- A page may differ by up to 0.1% of pixels (`maxDiffPixelRatio`) before it is flagged.
+- Content that is generated in a non-deterministic order (for example collection entries without an explicit sort) will show up as a false difference; sort it in the page.
