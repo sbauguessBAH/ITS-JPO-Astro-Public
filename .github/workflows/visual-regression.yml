@@ -50,7 +50,7 @@ jobs:
         with:
           name: visual-regression-report
           path: |
-            playwright-report/
-            test-results/
+            .playwright/report/
+            .playwright/results/
           if-no-files-found: ignore
           retention-days: 14

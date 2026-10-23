@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "test:e2e": "playwright test",
     "test:vr": "node scripts/visual-regression.mjs",
-    "test:vr:report": "playwright show-report"
+    "test:vr:report": "playwright show-report .playwright/report"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
