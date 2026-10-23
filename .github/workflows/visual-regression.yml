@@ -1,0 +1,56 @@
+name: Visual Regression
+on:
+  # Re-enable to run on every pull request (expensive: builds the site twice
+  # and screenshots every page).
+  # pull_request:
+  #   paths-ignore:
+  #     - "**.md"
+  workflow_dispatch:
+    inputs:
+      base:
+        description: Git ref to use as the baseline (branch, tag, or SHA)
+        default: origin/main
+        required: true
+
+concurrency:
+  group: visual-regression-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  visual-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history so the base ref can be checked out into a worktree
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+      # Baselines are rebuilt from the PR's base (not stored) so stacked PRs
+      # are compared against their parent branch.
+      - name: Run visual regression against base
+        # Differences are informational: review them in the job summary/report.
+        continue-on-error: true
+        run: >-
+          node scripts/visual-regression.mjs
+          --base "${{ github.event.pull_request.base.sha || inputs.base }}"
+      - name: Upload report and diffs
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-report
+          path: |
+            .playwright/report/
+            .playwright/results/
+          if-no-files-found: ignore
+          retention-days: 14

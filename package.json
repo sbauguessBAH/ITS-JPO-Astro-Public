@@ -9,7 +9,10 @@
     "build:noWarn": "node --max-old-space-size=8192 ./node_modules/astro/astro.js build --minimumSeverity error",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:e2e": "playwright test",
+    "test:vr": "node scripts/visual-regression.mjs",
+    "test:vr:report": "playwright show-report .playwright/report"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
@@ -43,6 +46,7 @@
     "globals": "^17.7.0",
     "prettier": "^3.9.4",
     "prettier-plugin-astro": "^0.14.1",
-    "sass": "^1.93.2"
+    "sass": "^1.93.2",
+    "@playwright/test": "^1.61.1"
   }
 }
