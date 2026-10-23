@@ -1,0 +1,41 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import Icon from "../../icon/Icon.astro";
+import Button from "../button/Button.astro";
+
+/**
+ * AccordionTrigger represents the button that toggles the visibility of an accordion item's content panel.
+ */
+type Props = Omit<HTMLAttributes<"button">, "color" | "type"> & {
+  class?: string;
+  /** Disabled triggers will be grayed out and will not toggle the accordion item's content panel */
+  disabled?: boolean;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<Button
+  aria-expanded="false"
+  class:list={[
+    // `pr-1` keeps the chevron's rotated bounding box inside the trigger, which otherwise flashes a scrollbar in scrollable ancestors
+    "tw:group/accordion-trigger tw:h-auto! tw:w-full tw:items-start! tw:justify-between! tw:gap-4! tw:py-3! tw:pr-1! tw:pl-0! tw:text-left tw:text-base! tw:leading-snug! tw:font-medium! tw:whitespace-normal! tw:hover:underline! tw:hover:underline-offset-4",
+    // The extra attribute selector outranks the button's own `text-neutral!` and `text-sm!`
+    "tw:data-slot:text-base! tw:data-slot:leading-snug! tw:data-slot:text-foreground!",
+    className,
+  ]}
+  color="neutral"
+  data-slot="accordion-trigger"
+  data-state="closed"
+  type="button"
+  variant="ghost"
+  {...props}
+>
+  <span><slot /></span>
+  <Icon
+    class="tw:mt-[3px] tw:text-muted-foreground tw:transition-transform tw:duration-200 tw:group-data-[state=open]/accordion-trigger:rotate-180 tw:motion-reduce:transition-none"
+    name="chevron-down"
+    size={16}
+  />
+</Button>

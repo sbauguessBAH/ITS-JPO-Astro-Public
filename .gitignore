@@ -26,3 +26,13 @@ pnpm-debug.log*
 
 # Dist folders
 itstest_programs*
+
+.agents/
+skills-lock.json
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

@@ -1,0 +1,39 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cva } from "class-variance-authority";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+  /** Defaults to "default". Use "icon" for a boxed icon, "image" for a thumbnail. */
+  variant?: "default" | "icon" | "image";
+};
+
+const { class: className, variant = "default", ...props } = Astro.props;
+
+const itemMediaVariants = cva(
+  "tw:flex tw:shrink-0 tw:items-center tw:justify-center tw:gap-2 tw:group-has-data-[slot=item-description]/item:translate-y-0.5 tw:group-has-data-[slot=item-description]/item:self-start tw:[&_svg]:pointer-events-none",
+  {
+    defaultVariants: {
+      variant: "default",
+    },
+    variants: {
+      variant: {
+        default: "tw:bg-transparent",
+        icon: "tw:[&_svg:not([class*='size-'])]:size-4",
+        image:
+          "tw:size-10 tw:overflow-hidden tw:rounded-sm tw:group-data-[size=sm]/item:size-8 tw:group-data-[size=xs]/item:size-6 tw:[&_img]:size-full tw:[&_img]:object-cover",
+      },
+    },
+  },
+);
+---
+
+<div
+  class:list={[itemMediaVariants({ variant }), className]}
+  data-slot="item-media"
+  data-variant={variant}
+  {...props}
+>
+  <slot />
+</div>
