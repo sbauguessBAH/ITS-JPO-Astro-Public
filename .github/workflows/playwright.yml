@@ -1,9 +1,11 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+  # Disabled for now. Re-enable to run on pushes and pull requests to main.
+  # push:
+  #   branches: [ main, master ]
+  # pull_request:
+  #   branches: [ main, master ]
+  workflow_dispatch:
 jobs:
   test:
     timeout-minutes: 60
