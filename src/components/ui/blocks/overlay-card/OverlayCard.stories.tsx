@@ -18,7 +18,7 @@ const meta = {
     },
   },
   args: {
-    backgroundImage: "pcb/resources/cave",
+    backgroundImage: "pcb/cave-box",
     class: "tw:max-w-md",
     color: "primary",
     description:

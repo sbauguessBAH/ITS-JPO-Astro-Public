@@ -20,24 +20,24 @@ Centreville, VA, USA
 
 ### Target Audiences
 
-* Asset Management Staff
-* Human Service Transportation Planners/Coordinators
-* Metropolitan Planning Organizations (MPO) Staff
-* Mobility Coordinators/Managers
-* Transit IT Staff
-* Transit ITS Staff
-* Transit Management Staff
-* Transit Planning, Operations, and Maintenance Staff
-* Transit Procurement Staff
+- Asset Management Staff
+- Human Service Transportation Planners/Coordinators
+- Metropolitan Planning Organizations (MPO) Staff
+- Mobility Coordinators/Managers
+- Transit IT Staff
+- Transit ITS Staff
+- Transit Management Staff
+- Transit Planning, Operations, and Maintenance Staff
+- Transit Procurement Staff
 
 ### Prerequisite(s)
 
 **Recommended Prerequisite(s) Specific to Curriculum Path Categories**
 
-| | Decision-Maker | Project Manager | Project Engineer |
-| --- | :---: | :---: | :---: |
-| Module 1:<br>Introduction to ITS Transit Standards | ✓ | ✓ | ✓ |
-| Module 2:<br>Transit Management Standards, Part 1 of 2 | ✓ | ✓ | ✓ |
+|                                                        | Decision-Maker | Project Manager | Project Engineer |
+| ------------------------------------------------------ | :------------: | :-------------: | :--------------: |
+| Module 1:<br>Introduction to ITS Transit Standards     |       ✓        |        ✓        |        ✓         |
+| Module 2:<br>Transit Management Standards, Part 1 of 2 |       ✓        |        ✓        |        ✓         |
 
 ### Learning Objectives/Key Elements
 
