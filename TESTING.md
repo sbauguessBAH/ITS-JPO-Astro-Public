@@ -57,7 +57,7 @@ npm run test:vr:report
 
 Options for `scripts/visual-regression.mjs`: `--base <ref>` (default `main`), `--reuse-baseline`, `--skip-build` (reuse the existing `dist/`), and `--baseline-only`.
 
-The `visual` project in `playwright.config.ts` runs `tests/visual/`, and `scripts/visual-regression.mjs` sets `VR=1` and handles the two builds. Pages are discovered from `dist/sitemap-*.xml`. Expected / actual / diff images are in the HTML report (`.playwright/report/`).
+The `visual` project in `playwright.config.ts` runs `tests/visual/`, and `scripts/visual-regression.mjs` sets `VR=1` and handles the two builds. Pages are discovered from `dist/sitemap-*.xml`. Expected / actual / diff images for changed pages are in the HTML report (`.playwright/report/`). Locally the report also attaches a screenshot of every page (about 3x larger); this is turned off in CI.
 
 ### CI
 

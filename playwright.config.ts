@@ -35,6 +35,9 @@ const visualProject = {
     ...devices["Desktop Chrome"],
     contextOptions: { reducedMotion: "reduce" as const },
     deviceScaleFactor: 1,
+    // Attach a screenshot to every test in the report locally; skipped in CI
+    // to keep the uploaded report small.
+    screenshot: process.env.CI ? ("off" as const) : ("on" as const),
     trace: "off" as const,
     viewport: { height: 900, width: 1280 },
   },
