@@ -2,7 +2,29 @@
 
 The official [Testing](https://docs.astro.build/en/guides/testing/) guide from Astro describes how to set up Vitest and [Playwright](https://playwright.dev/docs/intro).
 
-Some initial tests have been set up to perform visual regression testing to ensure changes to CSS styles do not have unintended consequences.
+## Playwright
+
+Tests live in `tests/` and run against the **built** site, served by `astro preview`. Playwright starts the server itself (and reuses one if it is already running on port 4321), but it does not build, so build first.
+
+```zsh
+npm run build:noWarn
+
+# Smoke tests in Chromium, Firefox, and WebKit
+npm run test:e2e
+
+# Open the HTML report
+npx playwright show-report
+```
+
+Everything is configured in `playwright.config.ts`. The default projects are the browsers; visual regression is a separate `visual` project that is only enabled by `npm run test:vr` (see below).
+
+### Output folders
+
+Playwright's standard locations are used (all git-ignored):
+
+- `playwright-report/` is the HTML report from the last run.
+- `test-results/` holds per-test artifacts (traces, screenshot diffs) and `results.json`.
+- `playwright/.baseline/` holds visual regression baseline images generated for the current run.
 
 ## Visual Regression
 
@@ -12,7 +34,7 @@ Visual regression screenshots **every page in the generated sitemap** (~125 page
 
 Baseline images are **not committed**. With >100 pages (several MB each), committed PNGs would bloat the repo, be platform-specific (macOS vs Linux rendering), and go stale after every merge. Instead, every run:
 
-1. Builds the **base ref** in a temporary git worktree and screenshots each page into `.vr/baseline/` (git-ignored).
+1. Builds the **base ref** in a temporary git worktree and screenshots each page into `playwright/.baseline/` (git-ignored).
 2. Builds the **current checkout** and compares each page against that baseline.
 
 Both sides render on the same machine, so there is no OS/font drift, and stacked PRs naturally compare against their parent branch. Pages added in the branch are reported as _new_ (skipped), and pages removed fail with a "Page was removed" error.
@@ -35,11 +57,11 @@ npm run test:vr:report
 
 Options for `scripts/visual-regression.mjs`: `--base <ref>` (default `main`), `--reuse-baseline`, `--skip-build` (reuse the existing `dist/`), and `--baseline-only`.
 
-The suite is configured in `playwright.visual.config.ts` and `tests/visual/`. It is separate from the default `npm run test:e2e` config. Pages are discovered from `dist/sitemap-*.xml`, so there is no need to start a server; Playwright starts `astro preview` itself.
+The `visual` project in `playwright.config.ts` runs `tests/visual/`, and `scripts/visual-regression.mjs` sets `VR=1` and handles the two builds. Pages are discovered from `dist/sitemap-*.xml`. Expected / actual / diff images are in the HTML report (`playwright-report/`).
 
 ### CI
 
-`.github/workflows/visual-regression.yml` is currently **manual only** (`workflow_dispatch`, with a `base` ref input, default `origin/main`) because a run builds the site twice and screenshots every page. The `pull_request` trigger is commented out in the workflow; uncomment it to run on every PR against the PR's **base commit** (the parent branch for stacked PRs). The changed pages are listed in the job summary and the full report with diff images is uploaded as the `visual-regression-report` artifact (14 days). Differences do not fail the check; review them and confirm they are intentional.
+`.github/workflows/visual-regression.yml` is currently **manual only** (`workflow_dispatch`, with a `base` ref input, default `origin/main`) because a run builds the site twice and screenshots every page. The `pull_request` trigger is commented out in the workflow; uncomment it to run on every PR against the PR's **base commit** (the parent branch for stacked PRs). The changed pages are listed in the job summary and the full report with diff images is uploaded (`playwright-report/` and `test-results/`) as the `visual-regression-report` artifact (14 days). Differences do not fail the check; review them and confirm they are intentional.
 
 ### Notes on stability
 

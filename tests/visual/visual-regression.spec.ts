@@ -4,7 +4,7 @@ import path from "node:path";
 
 const root = path.resolve(process.env.VR_ROOT ?? ".");
 const isBaseline = process.env.VR_PHASE === "baseline";
-const baselineDir = path.resolve(".vr/baseline");
+const baselineDir = path.resolve("playwright/.baseline");
 const manifestPath = path.join(baselineDir, "pages.json");
 
 /** Reads every page path from the sitemap(s) Astro generated in `dist/`. */
