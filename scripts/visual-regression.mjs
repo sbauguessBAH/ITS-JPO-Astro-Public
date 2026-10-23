@@ -3,12 +3,12 @@
  * Visual regression against a base git ref.
  *
  * 1. Builds the base ref in a temporary git worktree and screenshots every
- *    page in its sitemap into `playwright/.baseline` (git-ignored).
+ *    page in its sitemap into `.playwright/baseline` (git-ignored).
  * 2. Builds the current working tree and compares every page to the baseline.
  *
  * Usage: node scripts/visual-regression.mjs [options]
  *   --base <ref>        Git ref to use as the baseline (default: main)
- *   --reuse-baseline    Skip the base build and reuse an existing `playwright/.baseline`
+ *   --reuse-baseline    Skip the base build and reuse an existing `.playwright/baseline`
  *   --skip-build        Do not rebuild the current tree (use the existing dist/)
  *   --baseline-only     Only capture the baseline
  */
@@ -28,7 +28,7 @@ const { values: opts } = parseArgs({
 });
 
 const repo = process.cwd();
-const baselineDir = path.join(repo, "playwright", ".baseline");
+const baselineDir = path.join(repo, ".playwright", "baseline");
 const playwrightArgs = ["playwright", "test", "--project=visual"];
 
 function run(cmd, args, { cwd = repo, env = {}, allowFail = false } = {}) {
@@ -91,7 +91,7 @@ function captureBaseline() {
 }
 
 function summarize() {
-  const resultsPath = path.join(repo, "test-results", "results.json");
+  const resultsPath = path.join(repo, ".playwright", "results.json");
   if (!fs.existsSync(resultsPath)) return;
   const report = JSON.parse(fs.readFileSync(resultsPath, "utf8"));
 
@@ -132,7 +132,7 @@ if (!opts["reuse-baseline"]) {
   captureBaseline();
 } else if (!fs.existsSync(baselineDir)) {
   throw new Error(
-    "--reuse-baseline was set but playwright/.baseline does not exist.",
+    "--reuse-baseline was set but .playwright/baseline does not exist.",
   );
 }
 
