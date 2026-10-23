@@ -27,7 +27,7 @@ const e2eProjects = [
  */
 const visualProject = {
   name: "visual",
-  snapshotDir: "./playwright/.baseline",
+  snapshotDir: "./.playwright/baseline",
   snapshotPathTemplate: "{snapshotDir}/{arg}{ext}",
   testMatch: "**/visual/**/*.spec.ts",
   timeout: 120_000,
@@ -43,11 +43,12 @@ const visualProject = {
 export default defineConfig({
   forbidOnly: !!process.env.CI,
   fullyParallel: true,
+  outputDir: ".playwright/results",
   projects: isVisual ? [visualProject] : e2eProjects,
   reporter: [
     ["list"],
-    ["html", { open: "never" }],
-    ["json", { outputFile: "test-results/results.json" }],
+    ["html", { open: "never", outputFolder: ".playwright/report" }],
+    ["json", { outputFile: ".playwright/results.json" }],
   ],
   retries: process.env.CI ? 2 : 0,
   testDir: "./tests",
