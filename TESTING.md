@@ -20,26 +20,23 @@ Everything is configured in `playwright.config.ts`. The default projects are the
 
 ### Output folders
 
-Everything Playwright generates goes into a single git-ignored `.playwright/` folder:
+Playwright uses a git-ignored `.playwright/` folder. This is slightly different from normal conventions, but I did this so that all Playwright files are grouped together cleanly.
 
 - `.playwright/report/` is the HTML report from the last run (`npx playwright show-report .playwright/report`).
-- `.playwright/results/` holds per-test artifacts (traces, screenshot diffs), and `.playwright/results.json` is the JSON summary.
-- `.playwright/baseline/` holds the visual regression baseline images generated for the current run.
+- `.playwright/results/` holds per-test artifacts (traces, screenshot diffs) and a JSON summary `.playwright/results.json`.
+- `.playwright/baseline/` holds the visual regression baseline images generated.
 
 ## Visual Regression
 
-Visual regression screenshots **every page in the generated sitemap** (~125 pages, full page, desktop Chromium) and compares them against a baseline built from another git ref. This identifies unintended visual changes in a PR.
+Visual regression screenshots every page in the generated sitemap (`dist/sitemap-*.xml`) and compares them against a baseline to identify unintended changes. Unintended changes are reported by Playwright and include diffs and screenshots of every page.
 
-### How baselines are stored
-
-Baseline images are **not committed**. With >100 pages (several MB each), committed PNGs would bloat the repo, be platform-specific (macOS vs Linux rendering), and go stale after every merge. Instead, every run:
-
-1. Builds the **base ref** in a temporary git worktree and screenshots each page into `.playwright/baseline/` (git-ignored).
-2. Builds the **current checkout** and compares each page against that baseline.
-
-Both sides render on the same machine, so there is no OS/font drift, and stacked PRs naturally compare against their parent branch. Pages added in the branch are reported as _new_ (skipped), and pages removed fail with a "Page was removed" error.
+Baseline images are **not committed** because they are relatively large and would likely fail in a commit. In the future, you might be able to set up Git LFS or something if we have a need to persist them.
 
 ### Running locally
+
+A separate `visual` project has been set up in `playwright.config.ts` so that `tests/visual/` can be run independently or alongside the rest of the end-to-end tests. Additionally, some commands and a helper script have been set up to allow us to run visual comparisons against another git ref, such as comparing a feature branch to `main`.
+ 
+To take advantage of the helper script, you should use the commands below:
 
 ```zsh
 # Compare the current checkout against main
@@ -55,17 +52,24 @@ npm run test:vr -- --reuse-baseline
 npm run test:vr:report
 ```
 
-Options for `scripts/visual-regression.mjs`: `--base <ref>` (default `main`), `--reuse-baseline`, `--skip-build` (reuse the existing `dist/`), and `--baseline-only`.
+The `scripts/visual-regression.mjs` script handles comparing two different versions of the website by doing the following:
 
-The `visual` project in `playwright.config.ts` runs `tests/visual/`, and `scripts/visual-regression.mjs` sets `VR=1` and handles the two builds. Pages are discovered from `dist/sitemap-*.xml`. Expected / actual / diff images for changed pages are in the HTML report (`.playwright/report/`). Locally the report also attaches a full-page screenshot of every page (about 130 MB instead of 20 MB); this is turned off in CI.
+1. Builds the **base ref** in a temporary git worktree and screenshots each page into `.playwright/baseline/` (git-ignored).
+2. Builds the **current checkout** and compares each page against that baseline.
+
+Both sides render on the same machine, so there is no OS/font drift, and stacked PRs naturally compare against their parent branch. Pages added in the branch are reported as _new_ (skipped), and pages removed fail with a "Page was removed" error. 
+
+You can customize the base using `--base <ref>` (default `main`). Additionally, you can reuse existing images with `--reuse-baseline`, reuse the existing `dist/` with `--skip-build`, and/or choose to use `--baseline-only`.
 
 ### CI
 
-`.github/workflows/visual-regression.yml` is currently **manual only** (`workflow_dispatch`, with a `base` ref input, default `origin/main`) because a run builds the site twice and screenshots every page. The `pull_request` trigger is commented out in the workflow; uncomment it to run on every PR against the PR's **base commit** (the parent branch for stacked PRs). The changed pages are listed in the job summary and the full report with diff images is uploaded (`.playwright/report/` and `.playwright/results/`) as the `visual-regression-report` artifact (14 days). Differences do not fail the check; review them and confirm they are intentional.
+`.github/workflows/visual-regression.yml` is currently manual (`workflow_dispatch`, with a `base` ref input, default `origin/main`) since it takes a bit of time to run, however it can be enabled if we ever want it to automatically run on every pull request change. The changed pages are listed in the job summary and the full report with diff images is uploaded (`.playwright/report/` and `.playwright/results/`) as the `visual-regression-report` artifact. 
 
-### Notes on stability
+Differences do not force the check to fail, since lots of changes are usually intentional. So you do need to look and confirm manually that all the changes make sense.
+
+### Additional Notes
 
 - Animations are disabled, reduced motion is on, lazy images are loaded eagerly, and the page height must settle before capture.
 - Analytics and video embeds are blocked and `iframe`/`video` elements are masked. CDN assets (Bootstrap, fonts) are loaded from the network.
 - A page may differ by up to 0.1% of pixels (`maxDiffPixelRatio`) before it is flagged.
-- Content that is generated in a non-deterministic order (for example collection entries without an explicit sort) will show up as a false difference; sort it in the page.
+- Content that is generated in a non-deterministic order (for example collection entries without an explicit sort) will show up as a false difference. This can generally be ignored.
