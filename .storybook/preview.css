@@ -1,0 +1,7 @@
+@import "../src/styles/globals.css";
+
+/* The site sets this via public/assets/css/main.css, which Storybook doesn't load. */
+body,
+.sbdocs {
+  font-family: "Source Sans 3", sans-serif;
+}
