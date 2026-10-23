@@ -3,12 +3,12 @@
  * Visual regression against a base git ref.
  *
  * 1. Builds the base ref in a temporary git worktree and screenshots every
- *    page in its sitemap into `.vr/baseline` (git-ignored).
+ *    page in its sitemap into `playwright/.baseline` (git-ignored).
  * 2. Builds the current working tree and compares every page to the baseline.
  *
  * Usage: node scripts/visual-regression.mjs [options]
  *   --base <ref>        Git ref to use as the baseline (default: main)
- *   --reuse-baseline    Skip the base build and reuse an existing `.vr/baseline`
+ *   --reuse-baseline    Skip the base build and reuse an existing `playwright/.baseline`
  *   --skip-build        Do not rebuild the current tree (use the existing dist/)
  *   --baseline-only     Only capture the baseline
  */
@@ -28,9 +28,8 @@ const { values: opts } = parseArgs({
 });
 
 const repo = process.cwd();
-const vrDir = path.join(repo, ".vr");
-const baselineDir = path.join(vrDir, "baseline");
-const config = "playwright.visual.config.ts";
+const baselineDir = path.join(repo, "playwright", ".baseline");
+const playwrightArgs = ["playwright", "test", "--project=visual"];
 
 function run(cmd, args, { cwd = repo, env = {}, allowFail = false } = {}) {
   console.log(`\n$ ${cmd} ${args.join(" ")}  (${cwd})`);
@@ -76,8 +75,13 @@ function captureBaseline() {
     run("npm", ["run", "build:noWarn"], { cwd: worktree });
 
     fs.rmSync(baselineDir, { force: true, recursive: true });
-    run("npx", ["playwright", "test", "-c", config], {
-      env: { VR_PHASE: "baseline", VR_PORT: "4322", VR_ROOT: worktree },
+    run("npx", [...playwrightArgs, "--update-snapshots=all"], {
+      env: {
+        VR: "1",
+        VR_PHASE: "baseline",
+        VR_PORT: "4322",
+        VR_ROOT: worktree,
+      },
     });
   } finally {
     run("git", ["worktree", "remove", "--force", worktree], {
@@ -87,7 +91,7 @@ function captureBaseline() {
 }
 
 function summarize() {
-  const resultsPath = path.join(vrDir, "results.json");
+  const resultsPath = path.join(repo, "test-results", "results.json");
   if (!fs.existsSync(resultsPath)) return;
   const report = JSON.parse(fs.readFileSync(resultsPath, "utf8"));
 
@@ -127,7 +131,9 @@ function summarize() {
 if (!opts["reuse-baseline"]) {
   captureBaseline();
 } else if (!fs.existsSync(baselineDir)) {
-  throw new Error("--reuse-baseline was set but .vr/baseline does not exist.");
+  throw new Error(
+    "--reuse-baseline was set but playwright/.baseline does not exist.",
+  );
 }
 
 if (opts["baseline-only"]) process.exit(0);
@@ -137,9 +143,9 @@ if (!opts["skip-build"]) run("npm", ["run", "build:noWarn"]);
 console.log(
   `\nComparing ${output("git", ["rev-parse", "--short", "HEAD"])} against ${opts.base}`,
 );
-const status = run("npx", ["playwright", "test", "-c", config], {
+const status = run("npx", [...playwrightArgs, "--update-snapshots=none"], {
   allowFail: true,
-  env: { VR_PHASE: "compare" },
+  env: { VR: "1", VR_PHASE: "compare" },
 });
 summarize();
 process.exit(status);
