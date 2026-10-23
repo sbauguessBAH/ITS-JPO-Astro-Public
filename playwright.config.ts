@@ -3,7 +3,8 @@ import path from "node:path";
 
 /**
  * Both the regular (e2e) and visual regression tests run against the built
- * site, served by `astro preview`. Run `npm run build` first.
+ * site, served by `astro preview`. Make sure to run `npm run build` first
+ * before tests so that Playwright runs against the most current static build.
  *
  * Visual regression is opt-in (`VR=1`, set by `npm run test:vr`) because it
  * needs a baseline to compare against. See TESTING.md.
@@ -22,8 +23,7 @@ const e2eProjects = [
 ].map((project) => ({ ...project, testIgnore: "**/visual/**" }));
 
 /**
- * Chromium only, with a fixed viewport. Baselines are generated from the base
- * git ref on each run and are never committed.
+ * Uses Chromium to run visual regression tests with a fixed viewport and local screenshots.
  */
 const visualProject = {
   name: "visual",
@@ -35,8 +35,7 @@ const visualProject = {
     ...devices["Desktop Chrome"],
     contextOptions: { reducedMotion: "reduce" as const },
     deviceScaleFactor: 1,
-    // Attach a screenshot to every test in the report locally; skipped in CI
-    // to keep the uploaded report small.
+    // Attach screenshots when running tests locally
     screenshot: process.env.CI
       ? ("off" as const)
       : { fullPage: true, mode: "on" as const },
@@ -64,7 +63,7 @@ export default defineConfig({
   webServer: {
     command: `npx astro preview --host 127.0.0.1 --port ${port}`,
     cwd: path.resolve(process.env.VR_ROOT ?? "."),
-    // A baseline run serves a different build, so never reuse a running server
+    // Make sure baseline builds from a different git ref use a new server.
     reuseExistingServer: !process.env.CI && !isVisual,
     timeout: 60_000,
     url: baseURL,
