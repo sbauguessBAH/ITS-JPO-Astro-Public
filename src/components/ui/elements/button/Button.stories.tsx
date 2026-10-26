@@ -2,7 +2,7 @@ import ComponentStory from "../../../../../.storybook/ComponentStory.astro";
 import Button from "./Button.astro";
 import Icon from "../../icon/Icon.astro";
 
-const colors = ["primary", "secondary", "accent"];
+const colors = ["primary", "secondary", "accent", "neutral"];
 const variants = ["default", "outline", "subtle", "ghost"];
 const sizes = [
   { label: "Small", size: "sm" },
@@ -36,15 +36,15 @@ const meta = {
   component: Button,
   argTypes: {
     color: {
-      options: ["primary", "secondary", "accent"],
+      options: colors,
       control: { type: "select" },
     },
     variant: {
-      options: ["default", "outline", "subtle", "ghost"],
+      options: variants,
       control: { type: "select" },
     },
     size: {
-      options: ["sm", "default", "lg"],
+      options: ["sm", "default", "lg", "icon-sm", "icon", "icon-lg"],
       control: { type: "select" },
     },
     type: { table: { disable: true } },
@@ -129,6 +129,17 @@ export const Sizes = {
         ...sizes.map(({ label: text, size }) =>
           button(text, { color: args.color, variant: args.variant, size }),
         ),
+        label("Icon size"),
+        ...iconSizes.map(({ iconSize }) => ({
+          component: Button,
+          props: {
+            "aria-label": "Download",
+            color: args.color,
+            size: iconSize,
+            variant: args.variant,
+          },
+          slots: { default: icon("download") },
+        })),
       ],
     },
   }),
