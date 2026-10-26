@@ -4,12 +4,12 @@ import { Image } from "astro:assets";
 import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
 import Link from "@/src/components/Link.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import ResourceCard from "@/src/components/ui/blocks/resource-card/ResourceCard.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
 import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import Icon from "@/src/components/ui/icon/Icon.astro";
-import base_url from "@/src/lib/base_url";
 
 import Layout from "./_layout.astro";
 ---
@@ -1022,178 +1022,90 @@ import Layout from "./_layout.astro";
     <ProgramSection>
       <h2 class="program-title-lg mb-4">Additional Resources</h2>
 
-      <div class="resource-container">
-        <Card>
-          <CardHeader>
-            <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">
-                Intersection Safety Systems (ISS) – Insights from the U.S. DOT
-                Intersection Safety Challenge Stage 1B
-              </h3>
-              <p class="resource-card-subtitle">Webinar | March 26, 2026</p>
-            </div>
-          </CardHeader>
-          <CardFooter>
-            <div class="resource-link-container px-2">
-              <a
-                class="resource-button"
-                href={base_url(
-                  "/assets/intersection-safety/ISS_Webinar_20260324_final_508.pdf",
-                )}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Icon name="pdf" size={12} />
-                Presentation Material
-              </a>
-              <a
-                class="resource-button"
-                href="https://itsaorg.sharepoint.com/:v:/s/ITSAmerica/IQD8U-n_xaGJT6Hb_HDaPuxhARKaDNZirMggXHKSL5SctJc?e=GOkeq1"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Icon name="film" size={12} />
-                Webinar Recording
-              </a>
-            </div>
-          </CardFooter>
-        </Card>
+      <div
+        class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
+      >
+        <ResourceCard
+          links={[
+            {
+              icon: "pdf",
+              link: {
+                href: "/assets/intersection-safety/ISS_Webinar_20260324_final_508.pdf",
+                isNewWindow: true,
+              },
+              name: "Presentation Material",
+            },
+            {
+              icon: "film",
+              link: {
+                href: "https://itsaorg.sharepoint.com/:v:/s/ITSAmerica/IQD8U-n_xaGJT6Hb_HDaPuxhARKaDNZirMggXHKSL5SctJc?e=GOkeq1",
+                isExternal: true,
+              },
+              name: "Webinar Recording",
+            },
+          ]}
+          subtitle="Webinar | March 26, 2026"
+          title="Intersection Safety Systems (ISS) – Insights from the U.S. DOT Intersection Safety Challenge Stage 1B"
+        />
 
-        <Card>
-          <CardHeader>
-            <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">
-                Intersection Safety Challenge – Stage 1B Lessons Learned Report
-              </h3>
-              <p class="resource-card-subtitle">Report | February 2026</p>
-            </div>
-          </CardHeader>
-          <CardFooter>
-            <div class="resource-link-container px-2">
-              <a
-                class="resource-button"
-                href="https://rosap.ntl.bts.gov/view/dot/89361"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Icon name="link" size={12} />
-                Link to Report
-              </a>
-              <!-- <a 
-                class="resource-button" 
-                rel="noopener noreferrer" 
-                target="_blank"
-                href="https://itsa.adobeconnect.com/p9rpflh67mnj/"
-              >
-                <Icon name="film" size={12} />
-                Recording
-              </a> -->
-            </div>
-          </CardFooter>
-        </Card>
+        <ResourceCard
+          links={[
+            {
+              icon: "link",
+              link: {
+                href: "https://rosap.ntl.bts.gov/view/dot/89361",
+                isExternal: true,
+              },
+              name: "Link to Report",
+            },
+          ]}
+          subtitle="Report | February 2026"
+          title="Intersection Safety Challenge – Stage 1B Lessons Learned Report"
+        />
 
-        <Card>
-          <CardHeader>
-            <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">
-                Intersection Safety Challenge – Stage 1B Evaluation Report
-              </h3>
-              <p class="resource-card-subtitle">Report | June 2025</p>
-            </div>
-          </CardHeader>
-          <CardFooter>
-            <div class="resource-link-container px-2">
-              <a
-                class="resource-button"
-                href="https://rosap.ntl.bts.gov/view/dot/89360"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Icon name="link" size={12} />
-                Link to Report
-              </a>
-              <!-- <a 
-                class="resource-button" 
-                rel="noopener noreferrer" 
-                target="_blank"
-                href="https://itsa.adobeconnect.com/p9rpflh67mnj/"
-              >
-                <Icon name="film" size={12} />
-                Recording
-              </a> -->
-            </div>
-          </CardFooter>
-        </Card>
+        <ResourceCard
+          links={[
+            {
+              icon: "link",
+              link: {
+                href: "https://rosap.ntl.bts.gov/view/dot/89360",
+                isExternal: true,
+              },
+              name: "Link to Report",
+            },
+          ]}
+          subtitle="Report | June 2025"
+          title="Intersection Safety Challenge – Stage 1B Evaluation Report"
+        />
 
-        <Card>
-          <CardContent>
-            <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">
-                Intersection Safety Challenge &mdash; From Conceptualization to
-                Initial Testing
-              </h3>
-              <p class="resource-card-subtitle">Webinar | July 27, 2023</p>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <div class="resource-link-container px-2">
-              <a
-                class="resource-button"
-                href={base_url(
-                  "/assets/intersection-safety/USDOT_IntersectionSafetyWebinar3.pdf",
-                )}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Icon name="pdf" size={12} />
-                Presentation Material
-              </a>
-              <!-- <a 
-                class="resource-button" 
-                rel="noopener noreferrer" 
-                target="_blank"
-                href="https://www.fhwa.dot.gov/publications/research/safety/23066/index.cfm#webinar-presentation"
-              >
-                <Icon name="film" size={12} />
-                Recording
-              </a> -->
-            </div>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader>
-            <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">
-                Intersection Safety Challenge Prize Competition
-              </h3>
-              <p class="resource-card-subtitle">Webinar | May 22, 2023</p>
-            </div>
-          </CardHeader>
-          <CardFooter>
-            <div class="resource-link-container px-2">
-              <a
-                class="resource-button"
-                href={base_url(
-                  "/assets/intersection-safety/Intersection_Safety_Webinar.pdf",
-                )}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Icon name="pdf" size={12} />
-                Presentation Material
-              </a>
-              <!-- <a 
-                class="resource-button" 
-                rel="noopener noreferrer" 
-                target="_blank"
-                href="https://itsa.adobeconnect.com/p9rpflh67mnj/"
-              >
-                <Icon name="film" size={12} />
-                Recording
-              </a> -->
-            </div>
-          </CardFooter>
-        </Card>
+        <ResourceCard
+          links={[
+            {
+              icon: "pdf",
+              link: {
+                href: "/assets/intersection-safety/USDOT_IntersectionSafetyWebinar3.pdf",
+                isNewWindow: true,
+              },
+              name: "Presentation Material",
+            },
+          ]}
+          subtitle="Webinar | July 27, 2023"
+          title="Intersection Safety Challenge — From Conceptualization to Initial Testing"
+        />
+        <ResourceCard
+          links={[
+            {
+              icon: "pdf",
+              link: {
+                href: "/assets/intersection-safety/Intersection_Safety_Webinar.pdf",
+                isNewWindow: true,
+              },
+              name: "Presentation Material",
+            },
+          ]}
+          subtitle="Webinar | May 22, 2023"
+          title="Intersection Safety Challenge Prize Competition"
+        />
       </div>
     </ProgramSection>
   </main>

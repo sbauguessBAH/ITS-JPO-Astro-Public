@@ -144,14 +144,13 @@ const getCourseCount = (path?: string) =>
                   {course.isExternal && (
                     <ExternalLinkBadge color="neutral" size="xl" />
                   )}
-                  {/* <p class="course-card-type">
-                  {course.type}
-                </p> */}
                   <CardHeader>
-                    <p class="course-card-category">
-                      {course.category.replace("-", " ")}
-                    </p>
-                    <CardTitle>{course.title}</CardTitle>
+                    <div>
+                      <span class="tw:text-sm tw:text-primary tw:uppercase tw:font-semibold">
+                        {course.category.replace("-", " ")}
+                      </span>
+                      <CardTitle>{course.title}</CardTitle>
+                    </div>
                     <CardDescription>{course.description}</CardDescription>
                   </CardHeader>
                   {course.action === "Register" && (
