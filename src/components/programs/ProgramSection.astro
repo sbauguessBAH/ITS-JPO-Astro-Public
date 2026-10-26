@@ -1,6 +1,6 @@
 ---
 interface Props {
-  color?: "gray" | "blue" | "white";
+  color?: "gray" | "blue" | "white" | "muted";
   fullWidth?: boolean;
   class?: string;
   size?: "small" | "large";
@@ -48,6 +48,7 @@ const { color = "white", size, fullWidth, class: className }: Props = Astro.prop
   {"background-light": color === "gray"},
   {"background-blue-light": color === "blue"},
   {"background-white": color === "white"},
+  {"tw:bg-muted": color === "muted"},
   "program-section-wrapper",
   {"program-section-wrapper-large": size === "large"},
   {"program-section-wrapper-small": size === "small"},

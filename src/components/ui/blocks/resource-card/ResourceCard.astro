@@ -1,6 +1,8 @@
 ---
 import type { ComponentProps, HTMLAttributes } from "astro/types";
 
+import type { IconName } from "../../icon/icons";
+
 import Button from "../../elements/button/Button.astro";
 import Card from "../../elements/card/Card.astro";
 import CardDescription from "../../elements/card/CardDescription.astro";
@@ -8,7 +10,6 @@ import CardFooter from "../../elements/card/CardFooter.astro";
 import CardHeader from "../../elements/card/CardHeader.astro";
 import CardTitle from "../../elements/card/CardTitle.astro";
 import Icon from "../../icon/Icon.astro";
-import type { IconName } from "../../icon/icons";
 
 export type ResourceCardLink = {
   /** Icon shown before the name. Defaults to `external-link` (after the name) for external links. */
@@ -34,10 +35,10 @@ const { class: className, links, subtitle, title, ...rest } = Astro.props;
     <CardTitle>{title}</CardTitle>
     {subtitle && <CardDescription>{subtitle}</CardDescription>}
   </CardHeader>
-  <CardFooter class="tw:flex-wrap tw:gap-2">
+  <CardFooter class="tw:flex-wrap tw:gap-2 tw:bg-background!">
     {
       links.map(({ icon, link, name }) => (
-        <Button class="tw:w-fit" color="accent" link={link} size="sm">
+        <Button class="tw:w-fit" color="neutral" link={link} size="sm" variant="outline">
           {icon && <Icon name={icon} size={12} />}
           {name}
           {!icon && link.isExternal && <Icon name="external-link" size={12} />}

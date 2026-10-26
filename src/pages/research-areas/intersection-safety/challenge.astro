@@ -13,185 +13,19 @@ import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
 import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 import Icon from "@/src/components/ui/icon/Icon.astro";
 
 import Layout from "./_layout.astro";
 ---
 
-<style>
-  .program-text {
-    text-wrap: pretty;
-  }
-  .resource-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: var(--size);
-  }
-
-  .resource-card-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .resource-card-title {
-    text-transform: none;
-  }
-  .resource-card-subtitle {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-  }
-  .resource-button {
-    border: 1px solid #dee2e6;
-    padding: 0.2rem 0.5rem;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: black;
-    border-radius: var(--radius-sm);
-    transition: all var(--transition-duration) ease-in-out;
-  }
-  .resource-button::after {
-    content: "";
-  }
-  .resource-button:hover {
-    font-weight: 600;
-    background: #dee2e6;
-  }
-
-  .resource-link-container {
-    display: inline-flex;
-    flex-direction: row;
-    gap: 4px;
-  }
-
-  @media (min-width: 1200px) {
-    .resource-container {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  tbody tr td {
-    text-align: left;
-  }
-  .stage-header {
-    /* width: 100%;
-    padding: var(--size);
-    background: rgb(var(--color-brand-dark)); */
-    /* background-image: linear-gradient(to right,#0a1e62,#09638c); */
-  }
-
-  .stage-header-1a {
-    background-image: linear-gradient(to right, #0a1e62, #09638c);
-    width: 100%;
-    padding: var(--size);
-  }
-
-  .stage-header-1b {
-    background-image: linear-gradient(to right, #09638c, #0a1e62);
-    width: 100%;
-    padding: var(--size);
-  }
-
-  .stage-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-auto-rows: 1fr;
-    gap: var(--size);
-  }
-
-  .prize-container {
-    background: rgba(152, 194, 86, 0.3);
-    border: 1px solid rgb(80, 154, 53);
-    border-radius: var(--radius-md);
-    padding: var(--size-sm);
-    text-align: center;
-    width: 100%;
-  }
-
-  .prize-container-amount {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgb(80, 154, 53);
-  }
-
-  .challenge-element-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .challenge-element {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    display: flex;
-    padding: 8px 0;
-    gap: var(--size-sm);
-  }
-
-  .challenge-element-icon {
-    color: rgb(80, 154, 53);
-  }
-
-  @media (min-width: 1200px) {
-    .stage-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  .stage-wrapper {
-    background: rgb(var(--color-gray-light));
-    border-radius: var(--radius-md);
-  }
-
-  .data-collection-wrapper {
-    background: rgb(var(--color-brand-light));
-    /* border-radius: var(--radius-md); */
-    padding: var(--size-lg);
-  }
-
-  .data-collection {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-lg);
-  }
-
-  .data-collection-video-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size);
-  }
-
-  .data-collection-video {
-    border-radius: var(--radius-md);
-    max-width: 500px;
-  }
-
-  .data-collection-content {
-    font-size: 1rem;
-  }
-
-  @media (min-width: 992px) {
-    .data-collection {
-      flex-direction: row;
-      align-items: start;
-      justify-content: space-between;
-    }
-    .data-collection-content {
-      flex-basis: 60%;
-    }
-    .data-collection-video-container {
-      flex-basis: 40%;
-    }
-  }
-</style>
 <Layout>
   <main class="program-main">
     <ProgramSection>
-      <h2 class="program-title-lg">Challenge Summary</h2>
+      <Heading as="h2" class="tw:mb-4!">Challenge Summary</Heading>
       <div class="row">
         <div class="col-12 col-md-8">
-          <p class="program-text">
+          <p class="program-text tw:text-pretty">
             In response to growing concerns regarding the safety of vulnerable
             road users at intersections, the U.S. DOT launched the Intersection
             Safety Challenge to transform intersection safety through the
@@ -213,72 +47,90 @@ import Layout from "./_layout.astro";
         </div>
       </div>
     </ProgramSection>
-    <ProgramSection color="gray">
-      <h2 class="program-title-lg text-center">Challenge Structure</h2>
-      <p class="program-text mb-4 max-w-lg mx-auto text-center">
+    <ProgramSection color="muted">
+      <Heading as="h2" class="tw:mb-4! tw:text-center">
+        Challenge Structure
+      </Heading>
+      <p
+        class="program-text tw:mx-auto tw:mb-4 tw:max-w-5xl tw:text-center tw:text-pretty"
+      >
         The competition was split into two stages with Stage 1A focused on
         concept assessment and Stage 1B focused on system assessment and virtual
         testing.
       </p>
-      <div class="stage-container">
-        <Card>
+      <div
+        class="tw:grid tw:auto-rows-fr tw:grid-cols-1 tw:gap-6 tw:xl:grid-cols-2"
+      >
+        <Card class="tw:pt-0">
           <CardHeader class="p-0">
-            <div class="stage-header stage-header-1a">
-              <h3 class="program-title-md text-white text-center mb-0">
+            <div
+              class="tw:w-full tw:bg-linear-to-r tw:from-[#0a1e62] tw:to-[#09638c] tw:p-6"
+            >
+              <Heading as="h3" class="tw:text-center tw:text-white!" size="md">
                 Stage 1A
-              </h3>
-              <p class="program-text text-white text-center mb-0">
+              </Heading>
+              <p
+                class="program-text tw:text-pretty text-white text-center mb-0"
+              >
                 Concept Assessment
               </p>
             </div>
           </CardHeader>
           <CardContent class="p-4">
-            <p class="program-text">
+            <p class="program-text tw:text-pretty">
               Stage 1A brought together innovative teams combining expertise in
               emerging technologies with traffic and safety engineering to
               develop new and potentially transformative intersection safety
               approaches. Participants submitted concept papers on their
               proposed intersection safety system designs.
             </p>
-            <div class="challenge-element-list">
-              <div class="challenge-element">
-                <div class="challenge-element-icon">
+            <div class="tw:flex tw:flex-col">
+              <div class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2">
+                <div class="tw:text-[rgb(80,154,53)]">
                   <Icon name="check2-circle" size={20} />
                 </div>
-                <p class="program-text mb-0">
+                <p class="program-text tw:text-pretty mb-0">
                   120 innovative concept papers submitted
                 </p>
               </div>
-              <div class="challenge-element">
-                <div class="challenge-element-icon">
+              <div class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2 tw:last:border-b-0">
+                <div class="tw:text-[rgb(80,154,53)]">
                   <Icon name="check2-circle" size={20} />
                 </div>
-                <p class="program-text mb-0">
+                <p class="program-text tw:text-pretty mb-0">
                   15 teams selected for prizes and invited to Stage 1B
                 </p>
               </div>
             </div>
           </CardContent>
           <CardFooter class="p-4">
-            <div class="prize-container">
-              <div class="prize-container-amount">$1,500,000</div>
-              <p class="program-text mb-0">Total prize pool</p>
+            <div
+              class="tw:w-full tw:rounded-lg tw:border tw:border-[rgb(80,154,53)] tw:bg-[rgba(152,194,86,0.3)] tw:p-3 tw:text-center"
+            >
+              <div class="tw:text-2xl tw:font-bold tw:text-[rgb(80,154,53)]">
+                $1,500,000
+              </div>
+              <p class="program-text tw:text-pretty mb-0">Total prize pool</p>
             </div>
           </CardFooter>
         </Card>
-        <Card>
+        <Card class="tw:pt-0">
           <CardHeader class="p-0">
-            <div class="stage-header stage-header-1b">
-              <h3 class="program-title-md text-white text-center mb-0">
+            <div
+              class="tw:w-full tw:bg-linear-to-r tw:from-[#09638c] tw:to-[#0a1e62] tw:p-6"
+            >
+              <Heading as="h3" class="tw:text-center tw:text-white!" size="md">
                 Stage 1B
-              </h3>
-              <p class="program-text text-white text-center mb-0">
+              </Heading>
+              <p
+                class="program-text tw:text-pretty text-white text-center mb-0"
+              >
                 System Assessment and Virtual Testing
               </p>
             </div>
           </CardHeader>
           <CardContent class="p-4">
-            <p class="program-text">
+            <p class="program-text tw:text-pretty">
               Stage 1B challenged the winning teams from Stage 1A to develop,
               train, and improve algorithms for the detection, localization,
               classification, path prediction, and conflict prediction of
@@ -287,37 +139,45 @@ import Layout from "./_layout.astro";
               Highway Administration (FHWA) Turner-Fairbank Highway Research
               Center (TFHRC).
             </p>
-            <div class="challenge-element-list">
-              <div class="challenge-element">
-                <div class="challenge-element-icon">
+            <div class="tw:flex tw:flex-col">
+              <div class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2">
+                <div class="tw:text-[rgb(80,154,53)]">
                   <Icon name="check2-circle" size={20} />
                 </div>
-                <p class="program-text mb-0">
+                <p class="program-text tw:text-pretty mb-0">
                   13 teams participated by developing and training algorithms
                 </p>
               </div>
-              <div class="challenge-element">
-                <div class="challenge-element-icon">
+              <div class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2 tw:last:border-b-0">
+                <div class="tw:text-[rgb(80,154,53)]">
                   <Icon name="check2-circle" size={20} />
                 </div>
-                <p class="program-text mb-0">10 teams selected for prizes</p>
+                <p class="program-text tw:text-pretty mb-0">
+                  10 teams selected for prizes
+                </p>
               </div>
             </div>
           </CardContent>
           <CardFooter class="p-4">
-            <div class="prize-container">
-              <div class="prize-container-amount">$4,000,000</div>
-              <p class="program-text mb-0">Total prize pool</p>
+            <div
+              class="tw:w-full tw:rounded-lg tw:border tw:border-[rgb(80,154,53)] tw:bg-[rgba(152,194,86,0.3)] tw:p-3 tw:text-center"
+            >
+              <div class="tw:text-2xl tw:font-bold tw:text-[rgb(80,154,53)]">
+                $4,000,000
+              </div>
+              <p class="program-text tw:text-pretty mb-0">Total prize pool</p>
             </div>
           </CardFooter>
         </Card>
       </div>
     </ProgramSection>
     <ProgramSection>
-      <h2 class="program-title-lg mb-4">Stage 1A &mdash; Concept Assessment</h2>
-      <div class="stage-wrapper padding-size-lg">
-        <h3 class="program-title-md my-2">Summary</h3>
-        <p class="program-text">
+      <Heading as="h2" class="tw:mb-4!">
+        Stage 1A &mdash; Concept Assessment
+      </Heading>
+      <div class="tw:rounded-lg tw:bg-muted tw:p-8">
+        <Heading as="h3" class="tw:my-2!" size="md">Summary</Heading>
+        <p class="program-text tw:text-pretty">
           Stage 1A brought together innovative teams combining expertise in
           emerging technologies with experience in traffic and safety
           engineering to develop new and potentially transformative intersection
@@ -326,8 +186,8 @@ import Layout from "./_layout.astro";
           mitigate unsafe conditions involving vehicles and vulnerable road
           users.
         </p>
-        <h3 class="program-title-md my-2">Results</h3>
-        <p class="program-text">
+        <Heading as="h3" class="tw:my-2!" size="md">Results</Heading>
+        <p class="program-text tw:text-pretty">
           The U.S. DOT evaluated 120 innovative concept papers, selecting 15
           teams for prizes. Of these 15 teams, 2 were led by State DOTs, 7 by
           academic institutions, and 6 by other organizations. Following final
@@ -335,7 +195,7 @@ import Layout from "./_layout.astro";
           each and were invited to participate in Stage 1B: System Assessment
           and Virtual Testing.
         </p>
-        <p class="program-text">
+        <p class="program-text tw:text-pretty">
           Learn more about the winning teams and their approaches below.
         </p>
         <Accordion>
@@ -345,7 +205,7 @@ import Layout from "./_layout.astro";
             </AccordionTrigger>
             <AccordionContent>
               <div>
-                <table class="table table-bordered">
+                <table class="table table-bordered tw:[&_td]:text-left">
                   <thead>
                     <tr>
                       <th scope="col">Team Lead Entity</th>
@@ -468,13 +328,13 @@ import Layout from "./_layout.astro";
       <hr class="m-0 p-0" />
     </div>
     <ProgramSection>
-      <h2 class="program-title-lg mb-4">
+      <Heading as="h2" class="tw:mb-4!">
         Stage 1B &mdash; System Assessment and Virtual Testing
-      </h2>
-      <div class="stage-wrapper">
-        <div class="padding-size-lg">
-          <h3 class="program-title-md">Summary</h3>
-          <p class="program-text">
+      </Heading>
+      <div class="tw:rounded-lg tw:bg-muted">
+        <div class="tw:p-8">
+          <Heading as="h3" class="tw:mb-2!" size="md">Summary</Heading>
+          <p class="program-text tw:text-pretty">
             Stage 1B challenged the winning teams from Stage 1A to develop,
             train, and improve algorithms for the detection, localization,
             classification, path prediction, and conflict prediction of
@@ -484,25 +344,29 @@ import Layout from "./_layout.astro";
             Center (TFHRC).
           </p>
         </div>
-        <div class="data-collection-wrapper">
-          <h3 class="program-title-md my-2">Data Collection</h3>
-          <div class="data-collection">
-            <div class="data-collection-content">
-              <p class="program-text">
+        <div class="tw:bg-[rgb(var(--color-brand-light))] tw:p-8">
+          <Heading as="h3" class="tw:my-2!" size="md">
+            Data Collection
+          </Heading>
+          <div
+            class="tw:flex tw:flex-col tw:gap-8 tw:lg:flex-row tw:lg:items-start tw:lg:justify-between"
+          >
+            <div class="tw:text-base tw:lg:basis-[60%]">
+              <p class="program-text tw:text-pretty">
                 The Intersection Safety Challenge Dataset features a
                 comprehensive collection of conflict/non-conflict scenario data
                 involving various road users, captured under various weather and
                 lighting conditions by visual and thermal cameras, LiDAR, and
                 radar sensors.
               </p>
-              <p class="program-text">
+              <p class="program-text tw:text-pretty">
                 Teams used the data to develop and train models that predict
                 potential conflicts and provide enough time for warnings or
                 other real-time countermeasures. This rich and unique dataset
                 lays the foundation for key research efforts aimed at improving
                 intersection safety.
               </p>
-              <p class="program-text">
+              <p class="program-text tw:text-pretty">
                 Interested users can download sample data and request access to
                 the full challenge dataset from the
                 <Link
@@ -513,11 +377,11 @@ import Layout from "./_layout.astro";
                 </Link>.
               </p>
             </div>
-            <div class="data-collection-video-container">
+            <div class="tw:flex tw:flex-col tw:gap-6 tw:lg:basis-[40%]">
               <iframe
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
-                class="data-collection-video"
+                class="tw:max-w-125 tw:rounded-lg"
                 height="250"
                 height="250"
                 referrerpolicy="strict-origin-when-cross-origin"
@@ -527,7 +391,7 @@ import Layout from "./_layout.astro";
                 title="YouTube video player"
               >
               </iframe>
-              <!-- <p class="data-collection-content">
+              <!-- <p class="tw:text-base">
                 Learn how the U.S. DOT collected multi-sensor data at the Federal Highway Administration (FHWA) 
                 Turner-Fairbank Highway Research Center (TFHRC) to lay the foundation for key research efforts 
                 aimed at improving intersection safety.
@@ -535,15 +399,17 @@ import Layout from "./_layout.astro";
             </div>
           </div>
         </div>
-        <div class="padding-size-lg">
-          <h3 class="program-title-md mt-4">Results</h3>
-          <div class="data-collection">
-            <div class="data-collection-content">
-              <p class="program-text">
+        <div class="tw:p-8">
+          <Heading as="h3" class="tw:mt-4! tw:mb-2!" size="md">Results</Heading>
+          <div
+            class="tw:flex tw:flex-col tw:gap-8 tw:lg:flex-row tw:lg:items-start tw:lg:justify-between"
+          >
+            <div class="tw:text-base tw:lg:basis-[60%]">
+              <p class="program-text tw:text-pretty">
                 The USDOT awarded 10 teams prize amounts ranging from $166,666
                 to $750,000, for a total of $4,000,000 in prize awards.
               </p>
-              <p class="program-text">
+              <p class="program-text tw:text-pretty">
                 Stage 1B demonstrated that many teams could perform acceptable
                 detection, localization, and classification under ideal
                 conditions. However, there is room for improvement for night and
@@ -553,22 +419,22 @@ import Layout from "./_layout.astro";
                 conflict mitigation strategies. Learn more about the results
                 from the Stage 1B competition by watching the video at right.
               </p>
-              <p class="program-text">
+              <p class="program-text tw:text-pretty">
                 Learn more about the winning teams and their approaches below.
               </p>
             </div>
-            <div class="data-collection-video-container">
+            <div class="tw:flex tw:flex-col tw:gap-6 tw:lg:basis-[40%]">
               <iframe
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
-                class="data-collection-video"
+                class="tw:max-w-125 tw:rounded-lg"
                 height="250"
                 referrerpolicy="strict-origin-when-cross-origin"
                 src="https://www.youtube.com/embed/dFRmr6x22ow"
                 title="YouTube video player"
               >
               </iframe>
-              <!-- <p class="data-collection-content">
+              <!-- <p class="tw:text-base">
                 Learn how the U.S. DOT collected multi-sensor data at the Federal Highway Administration (FHWA) 
                 Turner-Fairbank Highway Research Center (TFHRC) to lay the foundation for key research efforts 
                 aimed at improving intersection safety.
@@ -583,7 +449,7 @@ import Layout from "./_layout.astro";
               </AccordionTrigger>
               <AccordionContent>
                 <div>
-                  <table class="table table-bordered">
+                  <table class="table table-bordered tw:[&_td]:text-left">
                     <thead>
                       <tr>
                         <th scope="col">Team Lead Entity</th>
@@ -729,7 +595,7 @@ import Layout from "./_layout.astro";
               </AccordionTrigger>
               <AccordionContent>
                 <div>
-                  <table class="table table-bordered">
+                  <table class="table table-bordered tw:[&_td]:text-left">
                     <thead>
                       <tr>
                         <th scope="col">Team Lead Entity</th>
@@ -986,7 +852,7 @@ import Layout from "./_layout.astro";
       </div>
     </ProgramSection>
     <ProgramSection>
-      <h2 class="program-title-lg mb-4">Additional Resources</h2>
+      <Heading as="h2" class="tw:mb-4!">Additional Resources</Heading>
 
       <div
         class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
@@ -1017,12 +883,11 @@ import Layout from "./_layout.astro";
         <ResourceCard
           links={[
             {
-              icon: "link",
               link: {
                 href: "https://rosap.ntl.bts.gov/view/dot/89361",
                 isExternal: true,
               },
-              name: "Link to Report",
+              name: "Report",
             },
           ]}
           subtitle="Report | February 2026"
@@ -1032,12 +897,11 @@ import Layout from "./_layout.astro";
         <ResourceCard
           links={[
             {
-              icon: "link",
               link: {
                 href: "https://rosap.ntl.bts.gov/view/dot/89360",
                 isExternal: true,
               },
-              name: "Link to Report",
+              name: "Report",
             },
           ]}
           subtitle="Report | June 2025"
