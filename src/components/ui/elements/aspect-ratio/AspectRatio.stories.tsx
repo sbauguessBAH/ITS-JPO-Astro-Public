@@ -22,6 +22,11 @@ const meta = {
     class:
       "tw:flex tw:items-center tw:justify-center tw:rounded-md tw:bg-muted tw:text-muted-foreground",
   },
+  parameters: {
+    docs: {
+      codePanel: true
+    }
+  }
 };
 
 export default meta;
