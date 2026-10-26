@@ -5,6 +5,10 @@ import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
 import Link from "@/src/components/Link.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
 import ResourceCard from "@/src/components/ui/blocks/resource-card/ResourceCard.astro";
+import Accordion from "@/src/components/ui/elements/accordion/Accordion.astro";
+import AccordionContent from "@/src/components/ui/elements/accordion/AccordionContent.astro";
+import AccordionItem from "@/src/components/ui/elements/accordion/AccordionItem.astro";
+import AccordionTrigger from "@/src/components/ui/elements/accordion/AccordionTrigger.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
 import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
@@ -334,23 +338,13 @@ import Layout from "./_layout.astro";
         <p class="program-text">
           Learn more about the winning teams and their approaches below.
         </p>
-        <div class="accordion" id="accordionTeams1a">
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                aria-controls="collapse1A"
-                aria-expanded="true"
-                class="accordion-button"
-                data-bs-target="#collapse1A"
-                data-bs-toggle="collapse"
-                type="button"
-              >
-                Stage 1A Winning Teams ($150,000 per award)
-              </button>
-            </h2>
-            <div class="accordion-collapse collapse" id="collapse1A" style="">
-              <!--  data-bs-parent="#accordionTeams" -->
-              <div class="accordion-body">
+        <Accordion>
+          <AccordionItem>
+            <AccordionTrigger>
+              Stage 1A Winning Teams ($150,000 per award)
+            </AccordionTrigger>
+            <AccordionContent>
+              <div>
                 <table class="table table-bordered">
                   <thead>
                     <tr>
@@ -462,9 +456,9 @@ import Layout from "./_layout.astro";
                   </tbody>
                 </table>
               </div>
-            </div>
-          </div>
-        </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
         <!-- <h3 class="program-title-md mt-4">
           Additional Resources
         </h3> -->
@@ -582,27 +576,13 @@ import Layout from "./_layout.astro";
             </div>
           </div>
 
-          <div class="accordion" id="accordionTeams">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  aria-controls="collapseOne"
-                  aria-expanded="true"
-                  class="accordion-button"
-                  data-bs-target="#collapseOne"
-                  data-bs-toggle="collapse"
-                  type="button"
-                >
-                  Tier 1 Teams ($750,000 per award)
-                </button>
-              </h2>
-              <div
-                class="accordion-collapse collapse"
-                id="collapseOne"
-                style=""
-              >
-                <!--  data-bs-parent="#accordionTeams" -->
-                <div class="accordion-body">
+          <Accordion>
+            <AccordionItem>
+              <AccordionTrigger>
+                Tier 1 Teams ($750,000 per award)
+              </AccordionTrigger>
+              <AccordionContent>
+                <div>
                   <table class="table table-bordered">
                     <thead>
                       <tr>
@@ -741,28 +721,14 @@ import Layout from "./_layout.astro";
                     </tbody>
                   </table>
                 </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button
-                  aria-controls="collapseTwo"
-                  aria-expanded="true"
-                  class="accordion-button"
-                  data-bs-target="#collapseTwo"
-                  data-bs-toggle="collapse"
-                  type="button"
-                >
-                  Tier 2 Teams ($166,666 per award)
-                </button>
-              </h2>
-              <div
-                class="accordion-collapse collapse"
-                id="collapseTwo"
-                style=""
-              >
-                <!--  data-bs-parent="#accordionTeams" -->
-                <div class="accordion-body">
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem>
+              <AccordionTrigger>
+                Tier 2 Teams ($166,666 per award)
+              </AccordionTrigger>
+              <AccordionContent>
+                <div>
                   <table class="table table-bordered">
                     <thead>
                       <tr>
@@ -1013,9 +979,9 @@ import Layout from "./_layout.astro";
                     </tbody>
                   </table>
                 </div>
-              </div>
-            </div>
-          </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
     </ProgramSection>
