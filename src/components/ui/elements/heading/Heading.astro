@@ -3,6 +3,8 @@ import type { HTMLAttributes } from "astro/types";
 
 import { cva } from "class-variance-authority";
 
+import { cn } from "@/src/lib/utils";
+
 type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 type Props = HTMLAttributes<"h1"> & {
@@ -36,7 +38,7 @@ const headerVariants = cva("tw:normal-case! tw:m-0! tw:p-0! tw:text-primary!", {
 ---
 
 <Component
-  class:list={[headerVariants({ size }), className]}
+  class={cn(headerVariants({ size }), className)}
   data-slot="ui_header"
   {...props}
 >

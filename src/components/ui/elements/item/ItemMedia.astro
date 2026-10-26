@@ -3,6 +3,8 @@ import type { HTMLAttributes } from "astro/types";
 
 import { cva } from "class-variance-authority";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"div"> & {
   class?: string;
   /** Defaults to "default". Use "icon" for a boxed icon, "image" for a thumbnail. */
@@ -30,7 +32,7 @@ const itemMediaVariants = cva(
 ---
 
 <div
-  class:list={[itemMediaVariants({ variant }), className]}
+  class={cn(itemMediaVariants({ variant }), className)}
   data-slot="item-media"
   data-variant={variant}
   {...props}

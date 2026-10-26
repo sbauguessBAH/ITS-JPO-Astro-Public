@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"ol"> & {
   class?: string;
 };
@@ -9,10 +11,10 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <ol
-  class:list={[
+  class={cn(
     "tw:m-0 tw:flex tw:list-none tw:flex-wrap tw:items-center tw:gap-2 tw:p-0 tw:text-sm tw:text-muted-foreground",
     className,
-  ]}
+  )}
   data-slot="breadcrumb-list"
   {...props}
 >

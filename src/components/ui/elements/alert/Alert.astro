@@ -3,6 +3,8 @@ import type { HTMLAttributes } from "astro/types";
 
 import { cva } from "class-variance-authority";
 
+import { cn } from "@/src/lib/utils";
+
 /**
  * @privateRemarks
  * TODO: Add outline variants and perhaps variants for other colors
@@ -50,7 +52,7 @@ const alertVariants = cva(
 ---
 
 <div
-  class:list={[alertVariants({ color, variant }), className]}
+  class={cn(alertVariants({ color, variant }), className)}
   data-color={color}
   data-slot="alert"
   data-variant={variant}

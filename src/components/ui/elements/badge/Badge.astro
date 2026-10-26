@@ -3,6 +3,8 @@ import type { HTMLAttributes } from "astro/types";
 
 import { cva } from "class-variance-authority";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"span"> & {
   class?: string;
   /**
@@ -155,7 +157,7 @@ const Component = "span";
 ---
 
 <Component
-  class:list={[badgeVariants({ color, size, variant }), className]}
+  class={cn(badgeVariants({ color, size, variant }), className)}
   data-color={color}
   data-size={size}
   data-slot="ui_badge"
