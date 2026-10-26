@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 import Heading from "../../elements/heading/Heading.astro";
 
 type Props = Omit<HTMLAttributes<"header">, "title"> & {
@@ -33,7 +35,7 @@ const hasLinks = Astro.slots.has("links");
 ---
 
 <header
-  class:list={["tw:flex tw:flex-col tw:gap-2", className]}
+  class={cn("tw:flex tw:flex-col tw:gap-2", className)}
   data-slot="page-header"
   {...rest}
 >

@@ -16,6 +16,8 @@
  */
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"div"> & {
   class?: string;
 };
@@ -24,7 +26,7 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <dropdown-menu
-  class:list={["tw:relative tw:inline-block", className]}
+  class={cn("tw:relative tw:inline-block", className)}
   data-slot="dropdown-menu"
   {...props}
 >

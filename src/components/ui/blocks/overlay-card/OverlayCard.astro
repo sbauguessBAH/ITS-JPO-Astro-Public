@@ -5,6 +5,7 @@ import type { LibraryImageEntry } from "@/src/components/programs/LibraryImage.a
 
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import base_url from "@/src/lib/base_url";
+import { cn } from "@/src/lib/utils";
 
 export type OverlayCardPreset =
   "crimson" | "cyan" | "gold" | "lime" | "orange" | "primary" | "secondary";
@@ -20,7 +21,7 @@ type Props = Omit<HTMLAttributes<"a">, "href" | "style"> & {
    *
    * @default `primary`
    */
-  color?: (string & {}) | OverlayCardPreset;
+  color?: OverlayCardPreset | (string & {});
   description: string;
   /** Reference to library entry. Rendered inside a colored circle. */
   iconImage?: LibraryImageEntry;
@@ -60,7 +61,7 @@ const linkAttrs = isExternalLink
 ---
 
 <a
-  class:list={[
+  class={cn(
     // Layout
     "tw:group/overlay-card tw:relative tw:isolate tw:flex tw:h-full tw:min-h-72 tw:overflow-hidden",
 
@@ -72,7 +73,7 @@ const linkAttrs = isExternalLink
 
     presetClass,
     className,
-  ]}
+  )}
   data-slot="overlay_card"
   style={presetClass ? undefined : { "--overlay-card": color }}
   {...linkAttrs}
@@ -99,10 +100,10 @@ const linkAttrs = isExternalLink
   </div>
 
   <div
-    class:list={[
+    class={cn(
       "tw:flex tw:w-full tw:flex-col tw:gap-4 tw:px-4 tw:pt-4 tw:pb-8",
       !iconImage && "tw:justify-end",
-    ]}
+    )}
     data-slot="overlay_card-body"
   >
     {

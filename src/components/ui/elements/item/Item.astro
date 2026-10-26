@@ -4,6 +4,7 @@ import type { HTMLAttributes } from "astro/types";
 import { cva } from "class-variance-authority";
 
 import base_url from "@/src/lib/base_url";
+import { cn } from "@/src/lib/utils";
 
 type Props = HTMLAttributes<"div"> & {
   class?: string;
@@ -58,7 +59,7 @@ const linkAttrs =
 ---
 
 <Tag
-  class:list={[itemVariants({ size, variant }), className]}
+  class={cn(itemVariants({ size, variant }), className)}
   data-size={size}
   data-slot="item"
   data-variant={variant}

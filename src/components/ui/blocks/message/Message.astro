@@ -1,4 +1,6 @@
 ---
+import { cn } from "@/src/lib/utils";
+
 import type { IconName } from "../../icon/icons";
 
 import Icon from "../../icon/Icon.astro";
@@ -16,13 +18,13 @@ const { class: className, headline, icon, title } = Astro.props;
 ---
 
 <div
-  class:list={[
+  class={cn(
     "tw:flex tw:flex-col tw:gap-2 tw:rounded-2xl tw:p-6",
     // "tw:bg-primary/5",
     "tw:border tw:border-l-4",
     // "tw:border-primary/10 tw:border-l-primary",
     className,
-  ]}
+  )}
   data-slot="message"
 >
   <div

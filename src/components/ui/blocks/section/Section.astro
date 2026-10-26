@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = {
   /**
    * `muted` fills the full width of the section with a light gray
@@ -63,12 +65,12 @@ const sizeClasses = {
 ---
 
 <section
-  class:list={[
+  class={cn(
     "tw:group/section tw:relative tw:box-border tw:w-full tw:py-16",
     "tw:bg-transparent tw:text-foreground",
     "tw:data-[color=muted]:bg-muted",
     className,
-  ]}
+  )}
   data-color={color}
   data-orientation={orientation}
   data-reverse={reverse ? "" : undefined}
@@ -76,7 +78,7 @@ const sizeClasses = {
   {...rest}
 >
   <div
-    class:list={[
+    class={cn(
       "tw:mx-auto tw:box-border tw:flex tw:w-full tw:flex-col tw:gap-4 tw:px-3",
       sizeClasses[size],
 
@@ -92,7 +94,7 @@ const sizeClasses = {
       "tw:md:group-data-[orientation=horizontal]/section:has-data-[slot=section-image]:*:data-[slot=section-content]:flex-(--ui-section-content-weight)",
       "tw:md:group-data-[orientation=horizontal]/section:has-data-[slot=section-image]:*:data-[slot=section-image]:flex-(--ui-section-image-weight)",
       "tw:md:group-data-[orientation=horizontal]/section:*:data-[slot=section-image]:h-full",
-    ]}
+    )}
     data-size={size}
     data-slot="section-container"
     style={`--ui-section-content-weight: ${contentWeight}; --ui-section-image-weight: ${imageWeight};`}
