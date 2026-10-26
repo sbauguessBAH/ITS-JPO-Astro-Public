@@ -217,6 +217,7 @@ const uniqueAwardee = [...new Set(tableContent.map(item => item.awardee_deployme
           <td>{item.task_name}</td>
           <td style="white-space: nowrap;">
             {item.links.map((links) => (
+            // @ts-expect-error TODO: links union lacks href
             <a href={links.href}>{links.title}</a><br />))}
           </td>
           <td>
