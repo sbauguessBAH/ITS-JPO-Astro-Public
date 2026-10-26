@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+type Props = Omit<HTMLAttributes<"div">, "style"> & {
+  class?: string;
+  ratio: number;
+};
+
+const { class: className, ratio, ...props } = Astro.props;
+---
+
+<div
+  {...props}
+  class={cn("tw:w-full tw:max-w-2xl", className)}
+  data-slot="ui_aspect_ratio"
+  style={`aspect-ratio: ${ratio};`}
+>
+  <slot />
+</div>
