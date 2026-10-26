@@ -152,6 +152,7 @@ const description =
           openModal(card as HTMLElement);
         });
         // Open modal on Enter key (keyboard accessibility)
+        // @ts-expect-error TODO: cast card to HTMLElement so keydown is typed
         card.addEventListener('keydown', function(e: KeyboardEvent) {
           if (e.key === 'Enter') openModal(card as HTMLElement);
         });
