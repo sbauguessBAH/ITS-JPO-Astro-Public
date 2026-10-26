@@ -2,7 +2,9 @@
 import { Image } from "astro:assets";
 
 import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import ResourceCard from "@/src/components/ui/blocks/resource-card/ResourceCard.astro";
 import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
@@ -10,18 +12,17 @@ import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
 import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 
 import Layout from "./_layout.astro";
 ---
 
 <Layout>
-  <main class="program-main">
-    <ProgramSection>
-      <h2 class="program-title-lg">
-        Intersection Safety Systems (ISS) Development
-      </h2>
-      <div class="row">
-        <div class="col-12 col-lg-8">
+  <Page>
+    <PageHeader title="Intersection Safety Systems (ISS) Development" />
+    <PageBody>
+      <div class="tw:flex tw:lg:flex-row tw:items-center tw:flex-col tw:gap-6">
+        <div class="tw:lg:basis-3/5">
           <p class="program-text">
             Building on the success of the Intersection Safety Challenge, the
             Intersection Safety Systems (ISS) development initiative aims to
@@ -32,7 +33,7 @@ import Layout from "./_layout.astro";
             and conflict mitigation.
           </p>
         </div>
-        <div class="col-11 col-lg-4">
+        <div class="tw:lg:basis-2/5">
           <Image
             alt="Intersection Safety Systems Logo"
             class="img-fluid"
@@ -40,11 +41,10 @@ import Layout from "./_layout.astro";
           />
         </div>
       </div>
-
-      <section aria-labelledby="iss-teams-heading">
-        <h2 class="program-title-lg mt-4" id="iss-teams-heading">
+      <div class="tw:flex tw:flex-col tw:gap-4">
+        <Heading size="md">
           Overview of the ISS Teams
-        </h2>
+        </Heading>
         <div
           class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:xl:grid-cols-3"
         >
@@ -77,23 +77,23 @@ import Layout from "./_layout.astro";
               <div class="tw:flex tw:w-full tw:flex-col tw:gap-2">
                 <strong>Public Sector Partners</strong>
                 <div class="tw:flex tw:flex-wrap tw:gap-2">
-                  <Badge variant="subtle">TxDOT</Badge>
-                  <Badge variant="subtle">City of Houston, TX</Badge>
-                  <Badge variant="subtle">Virginia DOT</Badge>
-                  <Badge variant="subtle">City of Alexandria, VA</Badge>
-                  <Badge variant="subtle">City of Falls Church, VA</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">TxDOT</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">City of Houston, TX</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">Virginia DOT</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">City of Alexandria, VA</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">City of Falls Church, VA</Badge>
                 </div>
               </div>
               <div class="tw:flex tw:w-full tw:flex-col tw:gap-2">
                 <strong>Other Partners</strong>
                 <div class="tw:flex tw:flex-wrap tw:gap-2">
-                  <Badge variant="subtle">VTTI</Badge>
-                  <Badge variant="subtle">TTI</Badge>
-                  <Badge variant="subtle">WSP USA, Inc.</Badge>
-                  <Badge variant="subtle">
+                  <Badge color="neutral" size="xl" variant="subtle">VTTI</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">TTI</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">WSP USA, Inc.</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">
                     Intelligent Transportation Society of America
                   </Badge>
-                  <Badge variant="subtle">AT&amp;T</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">AT&amp;T</Badge>
                 </div>
               </div>
             </CardFooter>
@@ -131,14 +131,14 @@ import Layout from "./_layout.astro";
               <div class="tw:flex tw:w-full tw:flex-col tw:gap-2">
                 <strong>Public Sector Partners</strong>
                 <div class="tw:flex tw:flex-wrap tw:gap-2">
-                  <Badge variant="subtle">CCTA</Badge>
-                  <Badge variant="subtle">Caltrans</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">CCTA</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">Caltrans</Badge>
                 </div>
               </div>
               <div class="tw:flex tw:w-full tw:flex-col tw:gap-2">
                 <strong>Other Partners</strong>
                 <div class="tw:flex tw:flex-wrap tw:gap-2">
-                  <Badge variant="subtle">GoMentum Station</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">GoMentum Station</Badge>
                 </div>
               </div>
             </CardFooter>
@@ -173,30 +173,30 @@ import Layout from "./_layout.astro";
               <div class="tw:flex tw:w-full tw:flex-col tw:gap-2">
                 <strong>Public Sector Partners</strong>
                 <div class="tw:flex tw:flex-wrap tw:gap-2">
-                  <Badge variant="subtle">MDOT</Badge>
-                  <Badge variant="subtle">SEMCOG</Badge>
-                  <Badge variant="subtle">City of Ann Arbor, MI</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">MDOT</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">SEMCOG</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">City of Ann Arbor, MI</Badge>
                 </div>
               </div>
               <div class="tw:flex tw:w-full tw:flex-col tw:gap-2">
                 <strong>Other Partners</strong>
                 <div class="tw:flex tw:flex-wrap tw:gap-2">
-                  <Badge variant="subtle">General Motors</Badge>
-                  <Badge variant="subtle">Ford</Badge>
-                  <Badge variant="subtle">Volkswagen</Badge>
-                  <Badge variant="subtle">Shulman Technology</Badge>
-                  <Badge variant="subtle">Ouster</Badge>
-                  <Badge variant="subtle">Verizon</Badge>
-                  <Badge variant="subtle">AWS</Badge>
-                  <Badge variant="subtle">NVIDIA</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">General Motors</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">Ford</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">Volkswagen</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">Shulman Technology</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">Ouster</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">Verizon</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">AWS</Badge>
+                  <Badge color="neutral" size="xl" variant="subtle">NVIDIA</Badge>
                 </div>
               </div>
             </CardFooter>
           </Card>
         </div>
-      </section>
-
-      <h2 class="program-title-lg mt-4">Key Research Questions</h2>
+      </div>
+      <div class="tw:flex tw:flex-col tw:gap-4">
+<Heading size="md">Key Research Questions</Heading>
       <ul class="program-list">
         <li>
           <em>Conflicts.</em> Can an ISS reliably predict conflicts among vehicles
@@ -250,7 +250,9 @@ import Layout from "./_layout.astro";
           </li>
         </ul>
       </ul>
-      <h2 class="program-title-lg my-4">Additional Resources</h2>
+      </div>
+      <div class="tw:flex tw:flex-col tw:gap-4">
+        <Heading size="md">Additional Resources</Heading>
       <div
         class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
       >
@@ -268,6 +270,7 @@ import Layout from "./_layout.astro";
           title="Intersection Safety System (ISS) Prototyping"
         />
       </div>
-    </ProgramSection>
-  </main>
+      </div>
+    </PageBody>
+    </Page>
 </Layout>
