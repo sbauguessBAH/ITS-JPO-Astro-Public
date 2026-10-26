@@ -14,6 +14,8 @@
  */
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 /**
  * Accordion displays a list of collapsible items, each with a trigger and content panel.
  */
@@ -31,7 +33,7 @@ const { class: className, type = "multiple", ...props } = Astro.props;
 ---
 
 <ui-accordion
-  class:list={["tw:block tw:w-full", className]}
+  class={cn("tw:block tw:w-full", className)}
   data-slot="accordion"
   data-type={type}
   {...props}

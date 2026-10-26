@@ -2,6 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 
 import base_url from "@/src/lib/base_url";
+import { cn } from "@/src/lib/utils";
 
 type Props = HTMLAttributes<"a"> & {
   /** Marks the current item; sets `data-active` and `aria-current="page"`. */
@@ -26,7 +27,7 @@ const linkAttrs = isExternal
 <li class="tw:m-0! tw:border-b tw:border-border tw:p-0! tw:last:border-b-0">
   <a
     aria-current={active ? "page" : undefined}
-    class:list={[
+    class={cn(
       "tw:group/panel-item tw:flex tw:flex-row tw:items-center tw:justify-between tw:gap-2",
       "tw:px-4 tw:py-2",
       "tw:font-semibold tw:hover:font-semibold",
@@ -36,7 +37,7 @@ const linkAttrs = isExternal
       "tw:focus-visible:outline-2 tw:focus-visible:-outline-offset-2 tw:focus-visible:outline-ring",
       "tw:data-[active=true]:bg-muted",
       className,
-    ]}
+    )}
     data-active={active}
     data-slot="panel-item"
     {...linkAttrs}
@@ -46,11 +47,11 @@ const linkAttrs = isExternal
     {
       Astro.slots.has("end") && (
         <span
-          class:list={[
+          class={cn(
             "tw:h-6 tw:rounded-xl tw:bg-muted tw:px-3",
             "tw:group-data-[active=true]/panel-item:bg-primary",
             "tw:group-data-[active=true]/panel-item:text-primary-foreground",
-          ]}
+          )}
           data-slot="panel-item-end"
         >
           <slot name="end" />

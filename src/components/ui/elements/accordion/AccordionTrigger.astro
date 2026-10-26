@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 import Icon from "../../icon/Icon.astro";
 import Button from "../button/Button.astro";
 
@@ -18,13 +20,13 @@ const { class: className, ...props } = Astro.props;
 
 <Button
   aria-expanded="false"
-  class:list={[
+  class={cn(
     // `pr-1` keeps the chevron's rotated bounding box inside the trigger, which otherwise flashes a scrollbar in scrollable ancestors
     "tw:group/accordion-trigger tw:h-auto! tw:w-full tw:items-start! tw:justify-between! tw:gap-4! tw:py-3! tw:pr-1! tw:pl-0! tw:text-left tw:text-base! tw:leading-snug! tw:font-medium! tw:whitespace-normal! tw:hover:underline! tw:hover:underline-offset-4",
     // The extra attribute selector outranks the button's own `text-neutral!` and `text-sm!`
     "tw:data-slot:text-base! tw:data-slot:leading-snug! tw:data-slot:text-foreground!",
     className,
-  ]}
+  )}
   color="neutral"
   data-slot="accordion-trigger"
   data-state="closed"

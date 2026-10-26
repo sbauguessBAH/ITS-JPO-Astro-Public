@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"h2"> & {
   /**
    * The heading level to render. Defaults to `h2` since a Section is
@@ -15,12 +17,12 @@ const { as: Tag = "h2", class: className, ...rest } = Astro.props;
 ---
 
 <Tag
-  class:list={[
+  class={cn(
     "tw:m-0! tw:text-[1.75rem]! tw:leading-snug! tw:font-bold! tw:normal-case tw:md:text-3xl!",
     // A highlight's title is smaller than a standalone section title
     "tw:in-data-[slot=section-highlight]:text-lg! tw:md:in-data-[slot=section-highlight]:text-lg!",
     className,
-  ]}
+  )}
   data-slot="section-title"
   {...rest}
 >

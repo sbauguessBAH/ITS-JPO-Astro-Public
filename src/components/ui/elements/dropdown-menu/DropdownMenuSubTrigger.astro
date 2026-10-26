@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 import Icon from "../../icon/Icon.astro";
 import { menuItemClass } from "./styles";
 
@@ -17,7 +19,7 @@ const { class: className, disabled, inset, ...props } = Astro.props;
   aria-disabled={disabled ? "true" : undefined}
   aria-expanded="false"
   aria-haspopup="menu"
-  class:list={[menuItemClass, className]}
+  class={cn(menuItemClass, className)}
   data-inset={inset ? "" : undefined}
   data-slot="dropdown-menu-sub-trigger"
   data-state="closed"

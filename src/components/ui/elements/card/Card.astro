@@ -2,6 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 
 import base_url from "@/src/lib/base_url";
+import { cn } from "@/src/lib/utils";
 
 /**
  * TODO: Test out and clean up horizontal orientation
@@ -34,7 +35,7 @@ const linkAttrs =
 ---
 
 <Component
-  class:list={[
+  class={cn(
     // Layout
     "tw:group/card tw:content-flex-start tw:relative tw:flex tw:flex-col tw:overflow-hidden",
     "tw:h-auto",
@@ -56,7 +57,7 @@ const linkAttrs =
     "tw:[a]:hover:-translate-y-px tw:[a]:hover:transition-all",
     "tw:[a]:no-underline! tw:[a]:hover:no-underline!",
     className,
-  ]}
+  )}
   data-orientation={orientation}
   data-size={size}
   data-slot="card"

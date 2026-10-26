@@ -2,6 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 
 import base_url from "@/src/lib/base_url";
+import { cn } from "@/src/lib/utils";
 
 type Props = HTMLAttributes<"li"> & {
   href?: string;
@@ -34,18 +35,18 @@ const linkAttrs =
 ---
 
 <li
-  class:list={["tw:group/section-highlight", className]}
+  class={cn("tw:group/section-highlight", className)}
   data-orientation={orientation}
   data-slot="section-highlight"
   {...rest}
 >
   <Component
-    class:list={[
+    class={cn(
       "tw:flex tw:items-start tw:gap-3 tw:text-inherit! tw:no-underline!",
       "tw:group-data-[orientation=vertical]/section-highlight:flex-col",
       href &&
         "tw:transition-opacity tw:hover:no-underline! tw:hover:opacity-75 tw:focus:opacity-75",
-    ]}
+    )}
     data-slot="section-highlight-inner"
     {...linkAttrs}
   >

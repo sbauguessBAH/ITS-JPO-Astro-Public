@@ -4,6 +4,7 @@ import { type LocalImageProps } from "astro:assets";
 import LibraryImage, {
   type LibraryImageEntry,
 } from "@/src/components/programs/LibraryImage.astro";
+import { cn } from "@/src/lib/utils";
 
 type Props = Omit<LocalImageProps, "alt" | "src"> & {
   alt?: string;
@@ -27,11 +28,11 @@ const {
 ---
 
 <LibraryImage
-  class:list={[
+  class={cn(
     "tw:block tw:h-auto tw:w-full tw:object-cover",
     rounded && "tw:rounded-2xl",
     className,
-  ]}
+  )}
   data-slot="section-image"
   entry={entry}
   style={{

@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"h3"> & {
   /** Heading tag; pick the level that fits the page outline. */
   as?: "h2" | "h3" | "h4" | "h5" | "h6";
@@ -10,12 +12,12 @@ const { as: Tag = "h3", class: className, ...rest } = Astro.props;
 ---
 
 <Tag
-  class:list={[
+  class={cn(
     "tw:m-0! tw:p-4",
     "tw:bg-primary tw:text-primary-foreground!",
     "tw:text-lg tw:font-semibold tw:normal-case!",
     className,
-  ]}
+  )}
   data-slot="panel-header"
   {...rest}
 >

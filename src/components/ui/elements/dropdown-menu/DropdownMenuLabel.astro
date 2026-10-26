@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"div"> & {
   class?: string;
   inset?: boolean;
@@ -10,10 +12,10 @@ const { class: className, inset, ...props } = Astro.props;
 ---
 
 <div
-  class:list={[
+  class={cn(
     "tw:box-border tw:px-4 tw:pt-1 tw:pb-0.5 tw:text-xs tw:leading-tight tw:font-semibold tw:text-muted-foreground tw:data-[inset]:pl-8",
     className,
-  ]}
+  )}
   data-inset={inset ? "" : undefined}
   data-slot="dropdown-menu-label"
   {...props}

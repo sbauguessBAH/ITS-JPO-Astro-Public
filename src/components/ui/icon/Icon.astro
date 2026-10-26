@@ -21,6 +21,8 @@
  */
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 import type { IconName } from "./icons";
 
 /**
@@ -58,7 +60,7 @@ const Component = svg.default;
 ---
 
 <Component
-  class={className}
+  class={cn(className)}
   fill="currentColor"
   height={size}
   width={size}

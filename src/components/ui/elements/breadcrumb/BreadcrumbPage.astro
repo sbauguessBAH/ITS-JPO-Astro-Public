@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"span"> & {
   class?: string;
 };
@@ -10,7 +12,7 @@ const { class: className, ...props } = Astro.props;
 
 <span
   aria-current="page"
-  class:list={["tw:font-normal tw:text-foreground", className]}
+  class={cn("tw:font-normal tw:text-foreground", className)}
   data-slot="breadcrumb-page"
   {...props}
 >

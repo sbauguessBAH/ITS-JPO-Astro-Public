@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 import base_url from "../../../../lib/base_url";
 
 type LinkProps = {
@@ -48,7 +50,11 @@ if (link) {
 
 <Component
   aria-disabled={isLink && disabled ? "true" : undefined}
-  class:list={["standard-button", { "standard-button--lg": size === "lg" }, className]}
+  class={cn(
+    "standard-button",
+    { "standard-button--lg": size === "lg" },
+    className,
+  )}
   data-slot="standard-button"
   data-ui-button
   disabled={!isLink ? disabled : undefined}

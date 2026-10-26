@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"li"> & {
   class?: string;
 };
@@ -9,12 +11,12 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <li
-  class:list={[
+  class={cn(
     "tw:inline-flex tw:items-center tw:gap-2",
     // Separator between items
     "tw:not-first:before:text-muted-foreground tw:not-first:before:content-['/']",
     className,
-  ]}
+  )}
   data-slot="breadcrumb-item"
   {...props}
 >

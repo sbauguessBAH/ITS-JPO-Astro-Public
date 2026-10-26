@@ -2,6 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 
 import base_url from "@/src/lib/base_url";
+import { cn } from "@/src/lib/utils";
 
 type Props = HTMLAttributes<"a"> & {
   class?: string;
@@ -17,10 +18,10 @@ const linkAttrs = isExternal
 ---
 
 <a
-  class:list={[
+  class={cn(
     "tw:text-primary tw:no-underline! tw:transition-colors tw:hover:text-primary/80 tw:hover:underline!",
     className,
-  ]}
+  )}
   data-slot="breadcrumb-link"
   {...linkAttrs}
   {...props}

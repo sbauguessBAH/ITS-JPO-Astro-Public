@@ -1,16 +1,18 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"div">;
 
 const { class: className, ...rest } = Astro.props;
 ---
 
 <div
-  class:list={[
+  class={cn(
     "tw:flex tw:w-full tw:min-w-0 tw:flex-col tw:items-start tw:gap-4",
     className,
-  ]}
+  )}
   data-slot="section-content"
   {...rest}
 >

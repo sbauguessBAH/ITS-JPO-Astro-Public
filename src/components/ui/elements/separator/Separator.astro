@@ -3,6 +3,8 @@ import type { HTMLAttributes } from "astro/types";
 
 import { cva } from "class-variance-authority";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"div"> & {
   class?: string;
   /** Purely visual separators are hidden from assistive tech. Defaults to true. */
@@ -32,7 +34,7 @@ const separatorVariants = cva("tw:shrink-0 tw:bg-border", {
 
 <div
   aria-orientation={decorative ? undefined : orientation}
-  class:list={[separatorVariants({ orientation }), className]}
+  class={cn(separatorVariants({ orientation }), className)}
   data-orientation={orientation}
   data-slot="separator"
   role={decorative ? "none" : "separator"}

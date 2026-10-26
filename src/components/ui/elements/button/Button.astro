@@ -3,6 +3,8 @@ import type { HTMLAttributes } from "astro/types";
 
 import { cva } from "class-variance-authority";
 
+import { cn } from "@/src/lib/utils";
+
 import base_url from "../../../../lib/base_url";
 
 type LinkProps = {
@@ -195,7 +197,7 @@ const buttonVariants = cva(
 
 <Component
   aria-disabled={isLink && disabled ? "true" : undefined}
-  class:list={[buttonVariants({ color, size, variant }), className]}
+  class={cn(buttonVariants({ color, size, variant }), className)}
   data-slot="ui_button"
   data-ui-button
   disabled={!isLink ? disabled : undefined}

@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 import Icon from "../../icon/Icon.astro";
 
 type Props = HTMLAttributes<"span"> & {
@@ -12,10 +14,7 @@ const { class: className, ...props } = Astro.props;
 
 <span
   aria-hidden="true"
-  class:list={[
-    "tw:flex tw:size-6 tw:items-center tw:justify-center",
-    className,
-  ]}
+  class={cn("tw:flex tw:size-6 tw:items-center tw:justify-center", className)}
   data-slot="breadcrumb-ellipsis"
   role="presentation"
   {...props}

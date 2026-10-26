@@ -2,6 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 
 import base_url from "@/src/lib/base_url";
+import { cn } from "@/src/lib/utils";
 
 import { menuItemClass } from "./styles";
 
@@ -39,7 +40,7 @@ const linkAttrs = isLink
 
 <Component
   aria-disabled={disabled ? "true" : undefined}
-  class:list={[menuItemClass, className]}
+  class={cn(menuItemClass, className)}
   data-close-on-click={String(closeOnClick)}
   data-inset={inset ? "" : undefined}
   data-slot="dropdown-menu-item"

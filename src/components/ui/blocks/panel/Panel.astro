@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"nav"> & {
   /** Accessible name for the navigation landmark; required unless `aria-labelledby` is set. */
   label?: string;
@@ -11,12 +13,12 @@ const { class: className, label, ...rest } = Astro.props;
 
 <nav
   aria-label={label}
-  class:list={[
+  class={cn(
     "tw:flex tw:flex-col tw:overflow-hidden",
     "tw:rounded-2xl tw:border tw:border-border",
     "tw:bg-background tw:text-foreground",
     className,
-  ]}
+  )}
   data-slot="panel"
   {...rest}
 >

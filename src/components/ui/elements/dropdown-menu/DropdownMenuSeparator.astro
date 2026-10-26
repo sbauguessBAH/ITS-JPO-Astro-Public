@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { cn } from "@/src/lib/utils";
+
 type Props = HTMLAttributes<"div"> & {
   class?: string;
 };
@@ -10,7 +12,7 @@ const { class: className, ...props } = Astro.props;
 
 <div
   aria-orientation="horizontal"
-  class:list={["tw:-mx-1 tw:my-1 tw:h-px tw:bg-black/15", className]}
+  class={cn("tw:-mx-1 tw:my-1 tw:h-px tw:bg-black/15", className)}
   data-slot="dropdown-menu-separator"
   role="separator"
   {...props}

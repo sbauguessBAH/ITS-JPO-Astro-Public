@@ -3,6 +3,8 @@ import type { HTMLAttributes } from "astro/types";
 
 import { cva } from "class-variance-authority";
 
+import { cn } from "@/src/lib/utils";
+
 /**
  * IconTile component for displaying an icon within a styled tile.
  *
@@ -45,7 +47,7 @@ const iconTileVariants = cva(
 
 <div
   aria-hidden="true"
-  class:list={[iconTileVariants({ size, variant }), className]}
+  class={cn(iconTileVariants({ size, variant }), className)}
   data-size={size}
   data-slot="icon-tile"
   data-variant={variant}
