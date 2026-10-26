@@ -3,10 +3,9 @@ import { Image } from "astro:assets";
 
 import issLogo from "@/src/assets/images/intersection-safety/iss-logo.png";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import ResourceCard from "@/src/components/ui/blocks/resource-card/ResourceCard.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
-import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
-import Icon from "@/src/components/ui/icon/Icon.astro";
 
 import Layout from "./_layout.astro";
 ---
@@ -389,32 +388,22 @@ import Layout from "./_layout.astro";
         </ul>
       </ul>
       <h2 class="program-title-lg my-4">Additional Resources</h2>
-      <div class="resource-container">
-        <Card>
-          <CardContent>
-            <div class="resource-card-header p-2">
-              <h3 class="resource-card-title">
-                Intersection Safety System (ISS) Prototyping
-              </h3>
-              <p class="resource-card-subtitle">
-                Issued on April 25, 2025 | Closed on May 9, 2025
-              </p>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <div class="resource-link-container px-2">
-              <a
-                class="resource-button"
-                href="https://sam.gov/opp/8573bb118a5e4343a9512fed8b393d63/view"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Icon name="external-link" size={12} />
-                Sources Sought Notice
-              </a>
-            </div>
-          </CardFooter>
-        </Card>
+      <div
+        class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
+      >
+        <ResourceCard
+          links={[
+            {
+              link: {
+                href: "https://sam.gov/opp/8573bb118a5e4343a9512fed8b393d63/view",
+                isExternal: true,
+              },
+              name: "Sources Sought Notice",
+            },
+          ]}
+          subtitle="Issued on April 25, 2025 | Closed on May 9, 2025"
+          title="Intersection Safety System (ISS) Prototyping"
+        />
       </div>
     </ProgramSection>
   </main>
