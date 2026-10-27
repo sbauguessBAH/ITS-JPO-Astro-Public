@@ -7,91 +7,84 @@ import Layout from "../_layout.astro";
 ---
 
 <Layout title="Automation Program">
-  <main class="program-main">
-    <FocusAreaLayout>
-      <slot slot="title">Cooperative Driving Automation (CDA)</slot>
-      <slot slot="description">
-        Cooperative Driving Automation enables automated vehicles to communicate
-        with other vehicles, infrastructure, and road users to coordinate
-        movements and improve safety, efficiency, and mobility.
-      </slot>
-      <slot slot="features">
-        <FocusAreaFeature icon="bullseye">
-          <slot slot="title"> Goal </slot>
-          <slot slot="description">
-            Assess the feasibility of conducting a small-scale Cooperative
-            Driving Automation pilot (focusing on L0-2 with Interoperable
-            Connectivity) and package the accomplishments for design and
-            architecture.
-          </slot>
-        </FocusAreaFeature>
-        <FocusAreaFeature icon="compass">
-          <slot slot="title"> Approach </slot>
-          <slot slot="description">
-            Facilitate selected multimodal deployment use cases where
-            infrastructure and AVs face clear operational challenges, without
-            overlapping industry R&D.
-          </slot>
-        </FocusAreaFeature>
-        <FocusAreaFeature icon="check">
-          <slot slot="title"> Anticipated Outcomes </slot>
-          <slot slot="description">
-            Reduced AV incidents/impacts and more successful overall deployment.
-          </slot>
-        </FocusAreaFeature>
-        <FocusAreaFeature icon="list">
-          <slot slot="title"> Near-Term Actions </slot>
-          <slot slot="description">
-            Address foundational CDA research such as in architecture and
-            standards, research and assess potential CDA use cases, and support
-            cross-cutting activities such as related analysis, modeling, and
-            simulation across modes and use case scenarios.
-          </slot>
-        </FocusAreaFeature>
-      </slot>
-      <slot slot="highlights">
-        <FocusAreaHighlight>
-          <slot slot="title"> CDA Design and Architecture </slot>
-          <slot slot="description">
-            The objectives of this project are to:
-            <ol class="tw:text-base">
-              <li>
-                Develop and/or improve the CARMA Ecosystem's architecture and
-                interfaces.
-              </li>
-              <li>
-                Develop a CDA domain achievable within the next 5-7 years.
-              </li>
-              <li>
-                Develop an understanding of spectrum requirements for the
-                deployment of the use cases/applications developed thus far in
-                the CDA Program.
-              </li>
-            </ol>
-          </slot>
-        </FocusAreaHighlight>
-        <FocusAreaHighlight>
-          <slot slot="title">
-            Near Term CDA Small Scale Prototype Planning
-          </slot>
-          <slot slot="description">
-            This project engages IOOs, OEMs, industry members and SDOs to assess
-            readiness for CDA prototypes and/or pilot using stakeholder
-            engagement and planning.
-          </slot>
-        </FocusAreaHighlight>
-        <FocusAreaHighlight>
-          <slot slot="title">
-            Truck Platooning Impacts on Bridges, Phase II: Structural
-            Serviceability
-          </slot>
-          <slot slot="description">
-            Structural Serviceability will investigate potential impacts on
-            service and fatigue limit states of common bridge types from most
-            probable truck platoon configurations identified in Phase I.
-          </slot>
-        </FocusAreaHighlight>
-      </slot>
-    </FocusAreaLayout>
-  </main>
+  <FocusAreaLayout>
+    <slot slot="title">Cooperative Driving Automation (CDA)</slot>
+    <slot slot="description">
+      Cooperative Driving Automation enables automated vehicles to communicate
+      with other vehicles, infrastructure, and road users to coordinate
+      movements and improve safety, efficiency, and mobility.
+    </slot>
+    <slot slot="features">
+      <FocusAreaFeature icon="bullseye">
+        <slot slot="title"> Goal </slot>
+        <slot slot="description">
+          Assess the feasibility of conducting a small-scale Cooperative Driving
+          Automation pilot (focusing on L0-2 with Interoperable Connectivity)
+          and package the accomplishments for design and architecture.
+        </slot>
+      </FocusAreaFeature>
+      <FocusAreaFeature icon="compass">
+        <slot slot="title"> Approach </slot>
+        <slot slot="description">
+          Facilitate selected multimodal deployment use cases where
+          infrastructure and AVs face clear operational challenges, without
+          overlapping industry R&D.
+        </slot>
+      </FocusAreaFeature>
+      <FocusAreaFeature icon="check">
+        <slot slot="title"> Anticipated Outcomes </slot>
+        <slot slot="description">
+          Reduced AV incidents/impacts and more successful overall deployment.
+        </slot>
+      </FocusAreaFeature>
+      <FocusAreaFeature icon="list">
+        <slot slot="title"> Near-Term Actions </slot>
+        <slot slot="description">
+          Address foundational CDA research such as in architecture and
+          standards, research and assess potential CDA use cases, and support
+          cross-cutting activities such as related analysis, modeling, and
+          simulation across modes and use case scenarios.
+        </slot>
+      </FocusAreaFeature>
+    </slot>
+    <slot slot="highlights">
+      <FocusAreaHighlight>
+        <slot slot="title"> CDA Design and Architecture </slot>
+        <slot slot="description">
+          The objectives of this project are to:
+          <ol class="tw:text-base">
+            <li>
+              Develop and/or improve the CARMA Ecosystem's architecture and
+              interfaces.
+            </li>
+            <li>Develop a CDA domain achievable within the next 5-7 years.</li>
+            <li>
+              Develop an understanding of spectrum requirements for the
+              deployment of the use cases/applications developed thus far in the
+              CDA Program.
+            </li>
+          </ol>
+        </slot>
+      </FocusAreaHighlight>
+      <FocusAreaHighlight>
+        <slot slot="title"> Near Term CDA Small Scale Prototype Planning </slot>
+        <slot slot="description">
+          This project engages IOOs, OEMs, industry members and SDOs to assess
+          readiness for CDA prototypes and/or pilot using stakeholder engagement
+          and planning.
+        </slot>
+      </FocusAreaHighlight>
+      <FocusAreaHighlight>
+        <slot slot="title">
+          Truck Platooning Impacts on Bridges, Phase II: Structural
+          Serviceability
+        </slot>
+        <slot slot="description">
+          Structural Serviceability will investigate potential impacts on
+          service and fatigue limit states of common bridge types from most
+          probable truck platoon configurations identified in Phase I.
+        </slot>
+      </FocusAreaHighlight>
+    </slot>
+  </FocusAreaLayout>
 </Layout>
