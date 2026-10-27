@@ -83,6 +83,9 @@ const sections = [
 const meta = {
   title: "UI/Blocks/Page",
   component: Page,
+  parameters: {
+    layout: "fullScreen",
+  },
   argTypes: {
     as: {
       options: ["main", "div"],

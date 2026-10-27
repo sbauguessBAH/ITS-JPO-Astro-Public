@@ -1,4 +1,15 @@
+import ComponentStory from "../../../../../.storybook/ComponentStory.astro";
 import Heading from "./Heading.astro";
+
+const sizes = [
+  { label: "XL", size: "xl" },
+  { label: "Default", size: "default" },
+  { label: "Medium", size: "md" },
+  { label: "Small", size: "sm" },
+];
+
+const label = (text: string) =>
+  `<span class="tw:text-sm tw:text-muted-foreground">${text}</span>`;
 
 const meta = {
   title: "UI/Elements/Heading",
@@ -9,7 +20,7 @@ const meta = {
       control: { type: "select" },
     },
     size: {
-      options: ["sm", "default", "md"],
+      options: ["sm", "default", "md", "xl"],
       control: { type: "select" },
     },
   },
@@ -25,15 +36,24 @@ export default meta;
 
 export const Default = {};
 
-export const Medium = {
-  args: {
-    size: "md",
-  },
-};
-
-export const Small = {
-  args: {
-    size: "sm",
+export const Sizes = {
+  // @ts-expect-error storybook-astro does not export types
+  render: () => ({
+    component: ComponentStory,
+    props: { columns: 1 },
+    slots: {
+      default: sizes.flatMap(({ label: text, size }) => [
+        label(text),
+        {
+          component: Heading,
+          props: { size },
+          slots: { default: "Connected transportation" },
+        },
+      ]),
+    },
+  }),
+  parameters: {
+    controls: { disable: true },
   },
 };
 
