@@ -1,7 +1,10 @@
 import { StorybookConfig } from "@storybook-astro/framework/node";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  ],
   framework: {
     name: "@storybook-astro/framework",
     options: {},

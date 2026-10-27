@@ -1,6 +1,10 @@
+/// <reference path="./prismjs.d.ts" />
+
+import "prismjs/themes/prism.css";
 import "./preview.css";
 import { astroSource } from "./source";
-import React, { useContext } from "react";
+import Prism from "prismjs";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Title,
   Subtitle,
@@ -8,8 +12,11 @@ import {
   Canvas,
   Controls,
   DocsContext,
+  DocsContainer,
+  Source,
   Subheading,
 } from "@storybook/addon-docs/blocks";
+import { MDXProvider } from "@storybook/addon-docs/mdx-react-shim";
 import { SyntaxHighlighter } from "storybook/internal/components";
 
 // Prism has no Astro grammar: markup plus a TypeScript frontmatter fence.
@@ -26,8 +33,86 @@ const astroLanguage = (Prism: any) => {
   });
 };
 astroLanguage.displayName = "astro";
-astroLanguage.aliases = [];
+astroLanguage.aliases = [] as string[];
 SyntaxHighlighter.registerLanguage("astro", astroLanguage);
+
+let astroHighlighterPromise: Promise<(code: string) => string> | undefined;
+const getAstroHighlighter = () =>
+  (astroHighlighterPromise ??= (async () => {
+    (globalThis as typeof globalThis & { Prism?: typeof Prism }).Prism = Prism;
+    await import("prismjs/components/prism-typescript");
+    const { runHighlighterWithAstro } =
+      await import("@astrojs/prism/dist/highlighter");
+    return (code: string) => runHighlighterWithAstro("astro", code).html;
+  })());
+
+const MarkdownCodeBlock = ({
+  children,
+}: React.HTMLAttributes<HTMLPreElement>) => {
+  if (!React.isValidElement(children)) return <pre>{children}</pre>;
+
+  const code = children.props as {
+    className?: string;
+    children?: React.ReactNode;
+  };
+  if (typeof code.children !== "string") return <pre>{children}</pre>;
+
+  const language = code.className?.replace(/^language-/, "");
+  const source = code.children.replace(/\n$/, "");
+
+  if (language === "astro") {
+    return <AstroMarkdownSource code={source} />;
+  }
+
+  return (
+    <Source
+      code={source}
+      language={language as React.ComponentProps<typeof Source>["language"]}
+    />
+  );
+};
+
+const AstroMarkdownSource = ({ code }: { code: string }) => {
+  const [html, setHtml] = useState("");
+
+  useEffect(() => {
+    let active = true;
+    getAstroHighlighter()
+      .then((highlight) => {
+        if (active) setHtml(highlight(code));
+      })
+      .catch(() => {
+        if (active) setHtml("");
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [code]);
+
+  if (!html) return <Source code={code} language="text" />;
+
+  return (
+    <SyntaxHighlighter
+      language="text"
+      copyable
+      bordered
+      padded
+      className="astro-mdx-source"
+      renderer={() => <span dangerouslySetInnerHTML={{ __html: html }} />}
+    >
+      {code}
+    </SyntaxHighlighter>
+  );
+};
+
+const DocsContainerWithCodeBlocks = (
+  props: React.ComponentProps<typeof DocsContainer>,
+) => (
+  <MDXProvider components={{ pre: MarkdownCodeBlock }}>
+    <DocsContainer {...props} />
+  </MDXProvider>
+);
 
 const StoriesWithControls = () => {
   const context = useContext(DocsContext);
@@ -59,6 +144,7 @@ const preview = {
       },
     },
     docs: {
+      container: DocsContainerWithCodeBlocks,
       canvas: {
         sourceState: "none",
       },
