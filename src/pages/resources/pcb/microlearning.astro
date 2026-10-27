@@ -3,8 +3,8 @@ import { getCollection } from "astro:content";
 
 import ExternalLinkBadge from "@/src/components/ui/blocks/external-link-badge/ExternalLinkBadge.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
@@ -18,33 +18,35 @@ const categories = await getCollection("pcbMicrolearning");
 ---
 
 <Layout>
-  <Page class="tw:mx-auto tw:max-w-7xl">
+  <Page>
     <PageHeader>
       <slot slot="title">Microlearning Videos</slot>
       <slot slot="description">
         Access brief videos for quick, focused learning on ITS topics.
       </slot>
     </PageHeader>
-    <PageBody>
-      {
-        categories.map(({ data: { title, trainings } }) => (
-          <div class="tw:flex tw:flex-col tw:gap-4">
-            <Heading size="md">{title}</Heading>
-            <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3">
-              {trainings.map((training) => (
-                <Card href={training.url} isExternal>
-                  <CardImage entry={training.image} height={225} />
-                  <ExternalLinkBadge color="neutral" size="xl" />
-                  <CardHeader>
-                    <CardTitle>{training.title}</CardTitle>
-                    <CardDescription>{training.description}</CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
+    <Section>
+      <div class="tw:flex tw:flex-col tw:gap-12">
+        {
+          categories.map(({ data: { title, trainings } }) => (
+            <div class="tw:flex tw:flex-col tw:gap-4">
+              <Heading size="md">{title}</Heading>
+              <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3">
+                {trainings.map((training) => (
+                  <Card href={training.url} isExternal>
+                    <CardImage entry={training.image} height={225} />
+                    <ExternalLinkBadge color="neutral" size="xl" />
+                    <CardHeader>
+                      <CardTitle>{training.title}</CardTitle>
+                      <CardDescription>{training.description}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
             </div>
-          </div>
-        ))
-      }
-    </PageBody>
+          ))
+        }
+      </div>
+    </Section>
   </Page>
 </Layout>

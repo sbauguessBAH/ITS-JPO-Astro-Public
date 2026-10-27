@@ -5,12 +5,12 @@ import { getCollection } from "astro:content";
 
 import ExternalLinkBadge from "@/src/components/ui/blocks/external-link-badge/ExternalLinkBadge.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Panel from "@/src/components/ui/blocks/panel/Panel.astro";
 import PanelGroup from "@/src/components/ui/blocks/panel/PanelGroup.astro";
 import PanelHeader from "@/src/components/ui/blocks/panel/PanelHeader.astro";
 import PanelItem from "@/src/components/ui/blocks/panel/PanelItem.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
 import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
@@ -85,7 +85,7 @@ const getCourseCount = (path?: string) =>
 <Layout>
   <Page>
     <PageHeader title="ITS Trainings" />
-    <PageBody>
+    <Section>
       <div class="tw:flex tw:flex-col tw:gap-4">
         <p class="program-text tw:m-0!">
           The ITS PCB Program offers a comprehensive suite of trainings covering
@@ -166,6 +166,6 @@ const getCourseCount = (path?: string) =>
           </div>
         </div>
       </div>
-    </PageBody>
+    </Section>
   </Page>
 </Layout>

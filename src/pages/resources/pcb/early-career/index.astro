@@ -3,8 +3,9 @@ import { getCollection } from "astro:content";
 
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import SectionHeader from "@/src/components/ui/blocks/section/SectionHeader.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
@@ -12,7 +13,6 @@ import CardDescription from "@/src/components/ui/elements/card/CardDescription.a
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
-import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 import Icon from "@/src/components/ui/icon/Icon.astro";
 
 import Layout from "../_layout.astro";
@@ -66,9 +66,9 @@ const modules = await getCollection("pcbModules").then((modules) =>
         </p>
       </slot>
     </PageHeader>
-    <PageBody>
-      <section class="tw:flex tw:flex-col tw:gap-2">
-        <Heading size="md">ITS Short Course Instructor Kit Modules</Heading>
+    <Section>
+      <SectionHeader title="ITS Short Course Instructor Kit Modules" />
+      <div class="tw:flex tw:flex-col tw:gap-2">
         <p class="program-text">
           The ITS Short Course Instructor Kit Modules are freestanding classes
           (or training components) that provide structured content to enhance
@@ -114,12 +114,14 @@ const modules = await getCollection("pcbModules").then((modules) =>
             ))
           }
         </div>
-      </section>
-      <section
+      </div>
+    </Section>
+    <Section color="muted">
+      <div
         class="tw:flex tw:flex-col-reverse tw:gap-8 tw:lg:flex-row tw:lg:items-center"
       >
         <div class="tw:flex tw:basis-2/3 tw:flex-col tw:gap-2">
-          <Heading size="md">ITS Careers</Heading>
+          <SectionHeader title="ITS Careers" />
           <p class="program-text">
             Intelligent Transportation Systems (ITS) offer a powerful,
             cost-effective approach to improving roadway safety and efficiency,
@@ -157,15 +159,17 @@ const modules = await getCollection("pcbModules").then((modules) =>
             entry="pcb/career-areas-diagram"
           />
         </div>
-      </section>
-      <section
+      </div>
+    </Section>
+    <Section>
+      <div
         class="tw:flex tw:flex-col tw:gap-8 tw:lg:flex-row tw:lg:items-center"
       >
         <div class="tw:basis-2/5">
           <LibraryImage class="image" entry="pcb/ttt-winners-2025" />
         </div>
         <div class="tw:flex tw:basis-3/5 tw:flex-col tw:gap-2">
-          <Heading size="md">ITS Student Competitions</Heading>
+          <SectionHeader title="ITS Student Competitions" />
           <p class="program-text">
             The Transportation Technology Tournament (TTT) is an annual event
             hosted jointly by the National Operations Center of Excellence
@@ -189,7 +193,7 @@ const modules = await getCollection("pcbModules").then((modules) =>
             <Icon name="external-link" />
           </Button>
         </div>
-      </section>
-    </PageBody>
+      </div>
+    </Section>
   </Page>
 </Layout>

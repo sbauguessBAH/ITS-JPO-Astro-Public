@@ -5,8 +5,8 @@ import { getCollection } from "astro:content";
 
 import TrainingModuleItem from "@/src/components/programs/TrainingModuleItem.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
 import ItemGroup from "@/src/components/ui/elements/item/ItemGroup.astro";
 import { getMarkdownPreview } from "@/src/lib/markdown";
 
@@ -17,11 +17,11 @@ const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
 ---
 
 <Layout>
-  <Page class="tw:mx-auto tw:w-full tw:max-w-7xl">
+  <Page>
     <PageHeader>
       <slot slot="title">Standards Trainings</slot>
     </PageHeader>
-    <PageBody>
+    <Section>
       <div>
         <p class="program-text">
           The ITS Professional Capacity Building Program (ITS PCB) is pleased to
@@ -54,6 +54,6 @@ const trainings: CollectionEntry<"pcbStandardsTrainings">[] =
             ))
         }
       </ItemGroup>
-    </PageBody>
+    </Section>
   </Page>
 </Layout>

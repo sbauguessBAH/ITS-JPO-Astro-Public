@@ -1,11 +1,9 @@
 ---
 import Link from "@/src/components/Link.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Section from "@/src/components/ui/blocks/section/Section.astro";
-import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
-import SectionTitle from "@/src/components/ui/blocks/section/SectionTitle.astro";
+import SectionHeader from "@/src/components/ui/blocks/section/SectionHeader.astro";
 import Item from "@/src/components/ui/elements/item/Item.astro";
 import ItemActions from "@/src/components/ui/elements/item/ItemActions.astro";
 import ItemContent from "@/src/components/ui/elements/item/ItemContent.astro";
@@ -55,7 +53,7 @@ const webinars = [
 <Layout>
   <Page>
     <PageHeader title="Crowdsourcing for Operations" />
-    <PageBody>
+    <Section>
       <div>
         <p class="program-text">
           Most public agencies and private companies use crowdsourcing, which is
@@ -90,95 +88,86 @@ const webinars = [
           five webinars, featuring State and local practitioner perspectives.
         </p>
       </div>
-      <Section>
-        <SectionContent>
-          <SectionTitle>Webinar Series</SectionTitle>
-          <p class="program-text">
-            The following lists the live webinar dates and course topics. Click
-            on each to view the webinar recording, download webinar
-            presentations, and review the question-and-answer component for each
-            webinar.
-          </p>
-          <ItemGroup class="tw:w-full tw:gap-4">
-            {
-              webinars.map((webinar, index) => (
-                <Item
-                  class="tw:flex-nowrap tw:items-start tw:gap-4 tw:p-4!"
-                  href={`/resources/pcb/trainings/cs4ops/part-${index + 1}`}
-                  variant="outline"
-                >
-                  <ItemMedia>
-                    <IconTile class="tw:bg-primary/10" size="lg">
-                      <span class="tw:text-3xl tw:font-semibold tw:text-primary">
-                        {index + 1}
-                      </span>
-                    </IconTile>
-                  </ItemMedia>
-                  <ItemContent>
-                    <div>
-                      <ItemTitle class="tw:line-clamp-none! tw:text-xl! tw:font-semibold!">
-                        <span class="tw:sr-only">
-                          Part {index + 1} of {webinars.length}:
-                        </span>
-                        {webinar.title}
-                      </ItemTitle>
-                      <ItemDescription class="tw:mt-0! tw:line-clamp-none! tw:text-sm! tw:font-medium!">
-                        {webinar.date}
-                      </ItemDescription>
-                    </div>
-                    <p class="tw:m-0 tw:mt-2 tw:text-base tw:text-foreground">
-                      {webinar.summary}
-                    </p>
-                  </ItemContent>
-                  <ItemActions>
-                    <Icon
-                      class="tw:size-4 tw:text-muted-foreground"
-                      name="arrow-up-right"
-                    />
-                  </ItemActions>
-                </Item>
-              ))
-            }
-          </ItemGroup>
-          <p>
-            To request course delivery (virtual or in person), contact the FHWA
-            Office of Operations Crowdsourcing Innovation Team
-            <Link
-              href="https://ops.fhwa.dot.gov/crowdsourcing/contacts.cfm"
-              isExternal>here</Link
-            >.
-          </p>
-        </SectionContent>
-      </Section>
-      <Section>
-        <SectionContent>
-          <SectionTitle>Target Audience</SectionTitle>
-          <p class="program-text">
-            The target audience for this webinar series includes transportation
-            professionals with an interest in or responsibility for the
-            management and operations of roadway systems, including local,
-            State, or Federal Departments of Transportation or Public Works as
-            well as consultant, university, or contractor support. No prior
-            experience is required to attend this webinar series; however,
-            participants are advised to attend the first two and the final
-            webinars in this series either during the live delivery or as a
-            recorded event.
-          </p>
-        </SectionContent>
-      </Section>
-      <Section>
-        <SectionContent>
-          <SectionTitle>Disclaimer</SectionTitle>
-          <p class="program-text">
-            The U.S. Government does not endorse products or manufacturers.
-            Trademarks or manufacturer's names appear in these webinars only
-            because they are considered essential to the objective of the
-            webinar. They are included for informational purposes only and are
-            not intended to reflect a preference, approval, or endorsement of
-            any one product or entity.
-          </p>
-        </SectionContent>
-      </Section>
-    </PageBody>
+    </Section>
+    <Section>
+      <SectionHeader title="Webinar Series" />
+      <p class="program-text">
+        The following lists the live webinar dates and course topics. Click on
+        each to view the webinar recording, download webinar presentations, and
+        review the question-and-answer component for each webinar.
+      </p>
+      <ItemGroup class="tw:w-full tw:gap-4">
+        {
+          webinars.map((webinar, index) => (
+            <Item
+              class="tw:flex-nowrap tw:items-start tw:gap-4 tw:p-4!"
+              href={`/resources/pcb/trainings/cs4ops/part-${index + 1}`}
+              variant="outline"
+            >
+              <ItemMedia>
+                <IconTile class="tw:bg-primary/10" size="lg">
+                  <span class="tw:text-3xl tw:font-semibold tw:text-primary">
+                    {index + 1}
+                  </span>
+                </IconTile>
+              </ItemMedia>
+              <ItemContent>
+                <div>
+                  <ItemTitle class="tw:line-clamp-none! tw:text-xl! tw:font-semibold!">
+                    <span class="tw:sr-only">
+                      Part {index + 1} of {webinars.length}:
+                    </span>
+                    {webinar.title}
+                  </ItemTitle>
+                  <ItemDescription class="tw:mt-0! tw:line-clamp-none! tw:text-sm! tw:font-medium!">
+                    {webinar.date}
+                  </ItemDescription>
+                </div>
+                <p class="tw:m-0 tw:mt-2 tw:text-base tw:text-foreground">
+                  {webinar.summary}
+                </p>
+              </ItemContent>
+              <ItemActions>
+                <Icon
+                  class="tw:size-4 tw:text-muted-foreground"
+                  name="arrow-up-right"
+                />
+              </ItemActions>
+            </Item>
+          ))
+        }
+      </ItemGroup>
+      <p>
+        To request course delivery (virtual or in person), contact the FHWA
+        Office of Operations Crowdsourcing Innovation Team
+        <Link
+          href="https://ops.fhwa.dot.gov/crowdsourcing/contacts.cfm"
+          isExternal>here</Link
+        >.
+      </p>
+    </Section>
+    <Section>
+      <SectionHeader title="Target Audience" />
+      <p class="program-text">
+        The target audience for this webinar series includes transportation
+        professionals with an interest in or responsibility for the management
+        and operations of roadway systems, including local, State, or Federal
+        Departments of Transportation or Public Works as well as consultant,
+        university, or contractor support. No prior experience is required to
+        attend this webinar series; however, participants are advised to attend
+        the first two and the final webinars in this series either during the
+        live delivery or as a recorded event.
+      </p>
+    </Section>
+    <Section>
+      <SectionHeader title="Disclaimer" />
+      <p class="program-text">
+        The U.S. Government does not endorse products or manufacturers.
+        Trademarks or manufacturer's names appear in these webinars only because
+        they are considered essential to the objective of the webinar. They are
+        included for informational purposes only and are not intended to reflect
+        a preference, approval, or endorsement of any one product or entity.
+      </p>
+    </Section>
   </Page>
 </Layout>

@@ -1,7 +1,6 @@
 ---
 import Section from "@/src/components/ui/blocks/section/Section.astro";
-import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
-import SectionTitle from "@/src/components/ui/blocks/section/SectionTitle.astro";
+import SectionHeader from "@/src/components/ui/blocks/section/SectionHeader.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
@@ -12,26 +11,20 @@ import { academicResources } from "./resources";
 ---
 
 <Section color="muted">
-  <SectionContent class="tw:items-stretch">
-    <SectionTitle class="tw:self-center">All Academic Resources</SectionTitle>
-    <div class="tw:grid tw:grid-cols-2 tw:gap-6 tw:lg:grid-cols-4">
-      {
-        academicResources.map((resource) => (
-          <Card href={`/resources/pcb/academic-resources/${resource.slug}`}>
-            <CardImage
-              alt={resource.title}
-              entry={resource.image}
-              height={150}
-            />
-            <CardHeader>
-              <CardTitle>{resource.title}</CardTitle>
-              <CardDescription class="tw:line-clamp-2">
-                {resource.description}
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        ))
-      }
-    </div>
-  </SectionContent>
+  <SectionHeader title="All Academic Resources" />
+  <div class="tw:grid tw:grid-cols-2 tw:gap-6 tw:lg:grid-cols-4">
+    {
+      academicResources.map((resource) => (
+        <Card href={`/resources/pcb/academic-resources/${resource.slug}`}>
+          <CardImage alt={resource.title} entry={resource.image} height={150} />
+          <CardHeader>
+            <CardTitle>{resource.title}</CardTitle>
+            <CardDescription class="tw:line-clamp-2">
+              {resource.description}
+            </CardDescription>
+          </CardHeader>
+        </Card>
+      ))
+    }
+  </div>
 </Section>

@@ -1,8 +1,9 @@
 ---
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageContainer from "@/src/components/ui/blocks/page/PageContainer.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
 import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
 import Icon from "@/src/components/ui/icon/Icon.astro";
@@ -59,8 +60,8 @@ const resources = [
     margin-bottom: 1rem;
   }
 </style>
-<Page class="tw:mx-auto tw:w-full tw:max-w-7xl">
-  <div>
+<Page>
+  <PageContainer>
     <Breadcrumb
       items={[
         { name: "Trainings", path: "/resources/pcb/trainings" },
@@ -68,33 +69,33 @@ const resources = [
         { name: `Module ${module}` },
       ]}
     />
-    <PageHeader
-      headline={code ? `Module ${module} | ${code}` : `Module ${module}`}
-      title={title}
-    >
-      <Badge class="tw:w-fit" color="neutral" size="sm" slot="description">
-        {length}
-      </Badge>
-      {
-        resources.length > 0 && (
-          <Fragment slot="links">
-            {resources.map((resource) => (
-              <Button
-                link={{ href: resource.href!, isNewWindow: true }}
-                variant="subtle"
-              >
-                <Icon name="pdf" />
-                {resource.label}
-              </Button>
-            ))}
-          </Fragment>
-        )
-      }
-    </PageHeader>
-  </div>
-  <PageBody class="tw:pt-0">
+  </PageContainer>
+  <PageHeader
+    headline={code ? `Module ${module} | ${code}` : `Module ${module}`}
+    title={title}
+  >
+    <Badge class="tw:w-fit" color="neutral" size="sm" slot="description">
+      {length}
+    </Badge>
+    {
+      resources.length > 0 && (
+        <div class="tw:flex tw:flex-wrap tw:gap-2 tw:pt-2">
+          {resources.map((resource) => (
+            <Button
+              link={{ href: resource.href!, isNewWindow: true }}
+              variant="subtle"
+            >
+              <Icon name="pdf" />
+              {resource.label}
+            </Button>
+          ))}
+        </div>
+      )
+    }
+  </PageHeader>
+  <Section>
     <div class="training-content">
       <slot />
     </div>
-  </PageBody>
+  </Section>
 </Page>

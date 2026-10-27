@@ -1,7 +1,7 @@
 ---
 import LibraryImage from "@/src/components/programs/LibraryImage.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
@@ -17,10 +17,10 @@ import Layout from "../../_layout.astro";
 ---
 
 <Layout>
-  <Page fullWidth>
-    <PageBody>
+  <Page>
+    <Section>
       <div
-        class="tw:mx-auto tw:flex tw:w-full tw:max-w-7xl tw:flex-col tw:items-center tw:gap-6 tw:px-4 tw:lg:flex-row tw:xl:px-0"
+        class="tw:flex tw:w-full tw:flex-col tw:items-center tw:gap-6 tw:lg:flex-row"
       >
         <div class="tw:flex tw:flex-col tw:gap-4 tw:lg:basis-2/3">
           <Heading>What is CAVe-in-a-box?</Heading>
@@ -69,89 +69,85 @@ import Layout from "../../_layout.astro";
           </figure>
         </div>
       </div>
-      <div class="tw:bg-muted tw:py-12">
-        <div class="tw:mx-auto tw:w-full tw:max-w-7xl tw:px-4 tw:xl:px-0">
-          <div class="tw:flex tw:flex-col tw:gap-6">
-            <Heading size="md">Open-Source Resources</Heading>
-            <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:lg:grid-cols-3">
-              <Card>
-                <CardImage entry="pcb/cave-box" height={200} />
-                <CardHeader>
-                  <CardTitle>Design Documents</CardTitle>
-                  <CardDescription>
-                    Learn how to set up, configure, and explore all that
-                    CAVe-in-a-box has to offer.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button
-                    link={{
-                      href: base_url(
-                        "/assets/pcb/cave/CAVe_in_a_box_SysDes_April2022.pdf",
-                      ),
-                      isNewWindow: true,
-                    }}
-                  >
-                    View PDF
-                    <Icon name="pdf" />
-                  </Button>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardImage entry="pcb/cave-box-assembly" height={200} />
-                <CardHeader>
-                  <CardTitle> Do-It-Yourself Guides </CardTitle>
-                  <CardDescription>
-                    Build your own CAVe-in-a-box from the ground up with the
-                    infrastructure kit assembly instructions.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button
-                    link={{
-                      href: base_url(
-                        "/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf",
-                      ),
-                      isNewWindow: true,
-                    }}
-                  >
-                    View PDF
-                    <Icon name="pdf" />
-                  </Button>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardImage entry="pcb/cave-box-configuration" height={200} />
-                <CardHeader>
-                  <CardTitle>Configuration Instructions</CardTitle>
-                  <CardDescription>
-                    Explore how you can setup and configure your CAVe-in-a-box
-                    toolkit.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button
-                    link={{
-                      href: base_url(
-                        "/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf",
-                      ),
-                      isNewWindow: true,
-                    }}
-                  >
-                    View PDF
-                    <Icon name="pdf" />
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
+    </Section>
+    <Section color="muted">
+      <Heading size="md">Open-Source Resources</Heading>
+      <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:lg:grid-cols-3">
+        <Card>
+          <CardImage entry="pcb/cave-box" height={200} />
+          <CardHeader>
+            <CardTitle>Design Documents</CardTitle>
+            <CardDescription>
+              Learn how to set up, configure, and explore all that CAVe-in-a-box
+              has to offer.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button
+              link={{
+                href: base_url(
+                  "/assets/pcb/cave/CAVe_in_a_box_SysDes_April2022.pdf",
+                ),
+                isNewWindow: true,
+              }}
+            >
+              View PDF
+              <Icon name="pdf" />
+            </Button>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardImage entry="pcb/cave-box-assembly" height={200} />
+          <CardHeader>
+            <CardTitle> Do-It-Yourself Guides </CardTitle>
+            <CardDescription>
+              Build your own CAVe-in-a-box from the ground up with the
+              infrastructure kit assembly instructions.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button
+              link={{
+                href: base_url(
+                  "/assets/pcb/cave/CAVe_in_a_box_Infrastructure_Kit_Assembly_Instructions_FINAL_2022.pdf",
+                ),
+                isNewWindow: true,
+              }}
+            >
+              View PDF
+              <Icon name="pdf" />
+            </Button>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardImage entry="pcb/cave-box-configuration" height={200} />
+          <CardHeader>
+            <CardTitle>Configuration Instructions</CardTitle>
+            <CardDescription>
+              Explore how you can setup and configure your CAVe-in-a-box
+              toolkit.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button
+              link={{
+                href: base_url(
+                  "/assets/pcb/cave/CAVe_in_a_box_Network_Instruction_Set_2022.pdf",
+                ),
+                isNewWindow: true,
+              }}
+            >
+              View PDF
+              <Icon name="pdf" />
+            </Button>
+          </CardContent>
+        </Card>
       </div>
-      <!-- <Section>
-      <SectionContent>
-        <SectionTitle class="tw:self-center">
+    </Section>
+    <!-- <Section>
+        <Heading class="tw:text-center" size="md">
           CAVe-in-a-box Video Series
-        </SectionTitle>
+        </Heading>
         <p class="program-text text-center max-w-lg mx-auto mb-4">
           The video series is designed to make learning easy and practical.
           These videos show you how to setup and use the CAVe-in-a-box system,
@@ -161,10 +157,10 @@ import Layout from "../../_layout.astro";
           successfully use CAVe-in-a-box.
         </p>
         <Videos />
-      </SectionContent>
     </Section> -->
+    <Section>
       <div
-        class="tw:mx-auto tw:flex tw:w-full tw:max-w-7xl tw:flex-col tw:items-center tw:gap-6 tw:px-4 tw:lg:flex-row tw:xl:px-0"
+        class="tw:flex tw:w-full tw:flex-col tw:items-center tw:gap-6 tw:lg:flex-row"
       >
         <div class="tw:flex tw:flex-col tw:gap-4 tw:lg:basis-2/3">
           <Heading size="md">Need equipment? We've got you covered!</Heading>
@@ -201,6 +197,6 @@ import Layout from "../../_layout.astro";
           />
         </div>
       </div>
-    </PageBody>
+    </Section>
   </Page>
 </Layout>
