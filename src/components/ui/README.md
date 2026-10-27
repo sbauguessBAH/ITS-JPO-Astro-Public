@@ -19,3 +19,19 @@ Instead of custom CSS files, UI components mostly reliy on Tailwind classes. The
 #### Class names
 
 Tailwind classes are implemented to prevent conflict with any Bootstrap CSS classes along with any custom classes that may have already been defined. Hence, to use a Tailwind class you must prefix it with `tw:`
+
+## Types of components
+
+### Elements
+
+UI Elements are primitive UI components and sub-components that can be composed in any way you desire. Content is always passed to the default slot. While there are recommended composition patterns, you can technically arrange sub-components in any way you would like.
+
+### Blocks
+
+Blocks tend to be more restrictive and preconfigured. For example, the Page block wraps a page and contains a PageHeader block. The PageHeader takes a title prop to pass in the title, and the title will be formatted for consistency. However, you can still use slots 
+
+### Summary
+
+Elements rely on slots and are highly customizable in terms of what content can be nested.
+
+Blocks are designed for specific use cases where a standard pattern can be expected for content.

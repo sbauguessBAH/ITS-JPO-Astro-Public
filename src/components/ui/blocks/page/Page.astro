@@ -9,7 +9,7 @@ type Props = HTMLAttributes<"div"> & {
    *
    * @default `main`
    */
-  as?: "div" | "main" | "section";
+  as?: "div" | "main";
 };
 
 const {
@@ -21,7 +21,7 @@ const {
 
 <Tag
   class={cn(
-    "tw:flex tw:flex-col tw:gap-8 tw:px-4 tw:xl:px-0 tw:w-full",
+    "tw:flex tw:flex-col tw:gap-8 tw:w-full",
     className,
   )}
   data-slot="page"

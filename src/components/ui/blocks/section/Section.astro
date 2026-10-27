@@ -3,6 +3,12 @@ import type { HTMLAttributes } from "astro/types";
 
 import { cn } from "@/src/lib/utils";
 
+import PageContainer from "../page/PageContainer.astro";
+
+/**
+ * Section is a full-width band whose content sits in a `PageContainer`.
+ * Put a `SectionBody` inside and pass it classes to control the layout.
+ */
 type Props = {
   /**
    * `muted` fills the full width of the section with a light gray
@@ -12,93 +18,28 @@ type Props = {
    */
   color?: "default" | "muted";
   /**
-   * Stack content above/below the image (`vertical`), or place them
-   * side by side once there's room (`horizontal`).
-   *
-   * @default `vertical`
-   */
-  orientation?: "horizontal" | "vertical";
-  /**
-   * Flips which side the image renders on when `orientation="horizontal"`,
-   * or moves it above the content when `orientation="vertical"`.
-   *
-   * @default `false`
-   */
-  reverse?: boolean;
-  /**
    * Max-width of the inner content container.
    *
    * @default `default`
    */
-  size?: "default" | "lg" | "md" | "sm";
-  /**
-   * Relative width of SectionContent vs SectionImage when
-   * `orientation="horizontal"`, expressed as `content/image`.
-   * Has no visual effect in `vertical` orientation, and no effect if
-   * there's no SectionImage in the slot. Unaffected by `reverse` — the
-   * ratio stays attached to content/image regardless of which side
-   * they land on.
-   *
-   * @default `1/1`
-   */
-  split?: "1/1" | "1/2" | "1/3" | "2/1" | "3/1";
+  size?: "default" | "sm";
 } & HTMLAttributes<"section">;
 
-const {
-  class: className,
-  color = "default",
-  orientation = "vertical",
-  reverse = false,
-  size = "default",
-  split = "1/1",
-  ...rest
-} = Astro.props;
-
-const [contentWeight, imageWeight] = split.split("/").map(Number);
-
-const sizeClasses = {
-  default: "tw:max-w-7xl",
-  lg: "tw:max-w-5xl",
-  md: "tw:max-w-[768px]",
-  sm: "tw:max-w-[576px]",
-};
+const { class: className, color = "default", size = "default", ...rest } = Astro.props;
 ---
 
 <section
   class={cn(
-    "tw:group/section tw:relative tw:box-border tw:w-full tw:py-16",
+    "tw:relative tw:box-border tw:w-full tw:py-12",
     "tw:bg-transparent tw:text-foreground",
     "tw:data-[color=muted]:bg-muted",
     className,
   )}
   data-color={color}
-  data-orientation={orientation}
-  data-reverse={reverse ? "" : undefined}
-  data-slot="section"
+  data-slot="ui-section"
   {...rest}
 >
-  <div
-    class={cn(
-      "tw:mx-auto tw:box-border tw:flex tw:w-full tw:flex-col tw:gap-4 tw:px-3",
-      sizeClasses[size],
-
-      // `reverse` flips sides when horizontal, or puts the image above when vertical
-      "tw:group-data-[reverse]/section:*:data-[slot=section-content]:order-2",
-      "tw:group-data-[reverse]/section:*:data-[slot=section-image]:order-1",
-
-      // Side-by-side only once there's room and an image in the slot.
-      // Weights come from `split`; tied to slots rather than DOM order so `reverse` never affects the ratio.
-      // Class names must stay literal strings so Tailwind can detect them.
-      "tw:md:group-data-[orientation=horizontal]/section:has-data-[slot=section-image]:flex-row",
-      "tw:md:group-data-[orientation=horizontal]/section:has-data-[slot=section-image]:*:min-w-0",
-      "tw:md:group-data-[orientation=horizontal]/section:has-data-[slot=section-image]:*:data-[slot=section-content]:flex-(--ui-section-content-weight)",
-      "tw:md:group-data-[orientation=horizontal]/section:has-data-[slot=section-image]:*:data-[slot=section-image]:flex-(--ui-section-image-weight)",
-      "tw:md:group-data-[orientation=horizontal]/section:*:data-[slot=section-image]:h-full",
-    )}
-    data-size={size}
-    data-slot="section-container"
-    style={`--ui-section-content-weight: ${contentWeight}; --ui-section-image-weight: ${imageWeight};`}
-  >
+  <PageContainer class="tw:flex tw:flex-col tw:gap-6" size={size}>
     <slot />
-  </div>
+  </PageContainer>
 </section>

@@ -7,7 +7,7 @@ import * as TableStories from "./Table.stories";
 
 ## Composition
 
-Compose a table from header, body, row, and cell components. Add `hasBorder` to show borders around the table and its cells.
+Compose a table from header, body, row, and cell components. Rows are separated by divider borders.
 
 ```astro
 ---
@@ -21,7 +21,7 @@ import TableHeader from "@/src/components/ui/elements/table/TableHeader.astro";
 import TableRow from "@/src/components/ui/elements/table/TableRow.astro";
 ---
 
-<Table hasBorder>
+<Table>
   <TableCaption>Recent invoices.</TableCaption>
   <TableHeader>
     <TableRow>

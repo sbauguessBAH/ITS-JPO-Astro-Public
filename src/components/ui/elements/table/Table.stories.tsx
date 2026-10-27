@@ -1,5 +1,6 @@
 import Table from "./Table.astro";
 import TableBody from "./TableBody.astro";
+import TableCaption from "./TableCaption.astro";
 import TableCell from "./TableCell.astro";
 import TableHead from "./TableHead.astro";
 import TableHeader from "./TableHeader.astro";
@@ -20,6 +21,10 @@ const tableRow = (
 
 const tableSlots = {
   default: [
+    {
+      component: TableCaption,
+      slots: { default: "Recent invoices." },
+    },
     {
       component: TableHeader,
       slots: {
@@ -44,7 +49,6 @@ const meta = {
   component: Table,
   tags: ["!autodocs"],
   args: {
-    hasBorder: false,
     slots: tableSlots,
   },
 };
@@ -52,9 +56,3 @@ const meta = {
 export default meta;
 
 export const Default = {};
-
-export const Bordered = {
-  args: {
-    hasBorder: true,
-  },
-};
