@@ -125,6 +125,7 @@ export default defineConfig([
   prettierConfig,
   perfectionistConfig,
 
-  ...eslintPluginAstro.configs.recommended,
+  ...eslintPluginAstro.configs["flat/recommended"],
+  ...eslintPluginAstro.configs["flat/jsx-a11y-recommended"],
   astroConfig,
 ]);
