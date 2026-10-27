@@ -16,7 +16,7 @@ const root = ref<HTMLElement | null>(null);
 const trigger = ref<HTMLButtonElement | null>(null);
 const optionGroup = ref<HTMLElement | null>(null);
 const isOpen = ref(false);
-const buttonSummary = computed(() => props.modelValue.length ? `${props.modelValue.length} selected` : "All");
+const buttonSummary = computed(() => props.modelValue.length ? props.modelValue.join(", ") : "All");
 
 const close = (restoreFocus = false) => {
   isOpen.value = false;
@@ -49,12 +49,8 @@ const clear = () => {
   trigger.value?.focus();
 };
 
-const onOutsidePointer = (event: PointerEvent) => {
+const onOutsideInteraction = (event: PointerEvent | FocusEvent) => {
   if (event.target instanceof Node && !root.value?.contains(event.target)) close();
-};
-
-const onFocusOut = (event: FocusEvent) => {
-  if (!(event.relatedTarget instanceof Node) || !root.value?.contains(event.relatedTarget)) close();
 };
 
 const onOptionKeydown = (event: KeyboardEvent) => {
@@ -74,12 +70,18 @@ const onOptionKeydown = (event: KeyboardEvent) => {
   inputs[nextIndex]?.focus();
 };
 
-onMounted(() => document.addEventListener("pointerdown", onOutsidePointer));
-onBeforeUnmount(() => document.removeEventListener("pointerdown", onOutsidePointer));
+onMounted(() => {
+  document.addEventListener("pointerdown", onOutsideInteraction);
+  document.addEventListener("focusin", onOutsideInteraction);
+});
+onBeforeUnmount(() => {
+  document.removeEventListener("pointerdown", onOutsideInteraction);
+  document.removeEventListener("focusin", onOutsideInteraction);
+});
 </script>
 
 <template>
-  <div ref="root" class="multi-select" @focusout="onFocusOut" @keydown.esc.prevent.stop="close(true)">
+  <div ref="root" class="multi-select" @keydown.esc.prevent.stop="close(true)">
     <button
       :id="id"
       ref="trigger"
@@ -146,7 +148,7 @@ onBeforeUnmount(() => document.removeEventListener("pointerdown", onOutsidePoint
   width: 100%;
   min-height: 2.5rem;
   border: 1px solid var(--filter-border);
-  border-radius: 100vh;
+  border-radius: 1.25rem;
   padding: 0.45rem 0.75rem;
   font: inherit;
   font-weight: 600;
@@ -160,9 +162,8 @@ onBeforeUnmount(() => document.removeEventListener("pointerdown", onOutsidePoint
 .multi-select-summary {
   flex: 1;
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .multi-select-chevron {

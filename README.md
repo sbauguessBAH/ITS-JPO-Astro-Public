@@ -17,8 +17,10 @@ The In the News filters use a native text input and the local Vue
 [MultiSelect](src/components/MultiSelect.vue), with no UI-library dependency.
 The multiselect accepts string options and a string-array `v-model`, plus an
 `id` and accessible `label`. Its presentation follows the Safety-Playbook branch's
-checkbox dropdown: a pill-shaped "All" / "N selected" trigger, rotating chevron,
-and a Clear action inside the scrollable menu. It retains native checkboxes,
+checkbox dropdown: a rounded trigger displaying "All" or the selected option names,
+a rotating chevron, and a Clear action inside the scrollable menu. Selected names
+wrap rather than being truncated. Clicking an option's text or checkbox toggles it.
+It retains native checkboxes,
 arrow/Home/End navigation, and Escape, Tab-away, or outside-click dismissal.
 The existing `in-the-news-filter-change` event still supplies `technologyAreas`
 and `searchQuery` to the archive. Field and dropdown styling is maintained in the
@@ -37,4 +39,3 @@ Required Node V19 or above (V22 recomended).
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
