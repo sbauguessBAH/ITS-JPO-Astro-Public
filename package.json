@@ -11,6 +11,7 @@
     "astro": "astro",
     "lint": "eslint .",
     "test:e2e": "playwright test",
+    "test:a11y": "A11Y=1 playwright test --project=accessibility",
     "test:vr": "node scripts/visual-regression.mjs",
     "test:vr:report": "playwright show-report .playwright/report"
   },
@@ -48,6 +49,7 @@
     "prettier": "^3.9.4",
     "prettier-plugin-astro": "^0.14.1",
     "sass": "^1.93.2",
+    "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.61.1"
   }
 }
