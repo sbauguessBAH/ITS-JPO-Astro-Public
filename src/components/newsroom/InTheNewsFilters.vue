@@ -54,7 +54,7 @@ onMounted(() => {
   <section class="news-filter-panel" aria-label="In the News filters">
     <div class="news-filter-grid">
 
-      <div class="news-filter-field technologyAreaContainer">
+      <div class="news-filter-field">
         <label for="technologyAreas">Technology Area</label>
         <MultiSelect
           id="technologyAreas"

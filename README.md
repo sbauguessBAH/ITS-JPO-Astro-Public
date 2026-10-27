@@ -16,10 +16,12 @@ Welcome to the ITS JPO DOT Website project! This repository is dedicated to crea
 The In the News filters use a native text input and the local Vue
 [MultiSelect](src/components/MultiSelect.vue), with no UI-library dependency.
 The multiselect accepts string options and a string-array `v-model`, plus an
-`id` and accessible `label`. It supports removable chips, clearing selections,
-native checkboxes, arrow/Home/End navigation, and Escape or outside-click dismissal.
+`id` and accessible `label`. Its presentation follows the Safety-Playbook branch's
+checkbox dropdown: a pill-shaped "All" / "N selected" trigger, rotating chevron,
+and a Clear action inside the scrollable menu. It retains native checkboxes,
+arrow/Home/End navigation, and Escape, Tab-away, or outside-click dismissal.
 The existing `in-the-news-filter-change` event still supplies `technologyAreas`
-and `searchQuery` to the archive. Field and chip styling is maintained in the
+and `searchQuery` to the archive. Field and dropdown styling is maintained in the
 component and the [archive page](src/pages/news-outreach-tools/newsroom/in-the-news/index.astro).
 
 ## Commands
@@ -35,5 +37,4 @@ Required Node V19 or above (V22 recomended).
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
 

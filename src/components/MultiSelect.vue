@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, onMounted, ref } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from "vue";
 
 const props = defineProps<{
   id: string;
@@ -16,6 +16,7 @@ const root = ref<HTMLElement | null>(null);
 const trigger = ref<HTMLButtonElement | null>(null);
 const optionGroup = ref<HTMLElement | null>(null);
 const isOpen = ref(false);
+const buttonSummary = computed(() => props.modelValue.length ? `${props.modelValue.length} selected` : "All");
 
 const close = (restoreFocus = false) => {
   isOpen.value = false;
@@ -41,11 +42,6 @@ const toggleOption = (option: string) => {
       ? props.modelValue.filter((value) => value !== option)
       : [...props.modelValue, option],
   );
-};
-
-const removeOption = (option: string) => {
-  emit("update:modelValue", props.modelValue.filter((value) => value !== option));
-  trigger.value?.focus();
 };
 
 const clear = () => {
@@ -84,55 +80,50 @@ onBeforeUnmount(() => document.removeEventListener("pointerdown", onOutsidePoint
 
 <template>
   <div ref="root" class="multi-select" @focusout="onFocusOut" @keydown.esc.prevent.stop="close(true)">
-    <div class="multi-select-control" @click.self="toggle">
-      <div v-if="modelValue.length" class="multi-select-chips" @click.self="toggle">
-        <span v-for="option in modelValue" :key="option" class="multi-select-chip">
-          <span>{{ option }}</span>
-          <button type="button" class="multi-select-remove" :aria-label="`Remove ${option}`" @click="removeOption(option)">
-            <svg viewBox="0 0 20 20" aria-hidden="true">
-              <circle cx="10" cy="10" r="8" />
-              <path d="m7 7 6 6m0-6-6 6" />
-            </svg>
-          </button>
-        </span>
-      </div>
-      <button
-        v-if="modelValue.length"
-        type="button"
-        class="multi-select-clear"
-        :aria-label="`Clear ${label}`"
-        @click="clear"
-      >
-        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 4 12 12m0-12L4 16" /></svg>
-      </button>
-      <button
-        :id="id"
-        ref="trigger"
-        type="button"
-        class="multi-select-trigger"
-        :aria-label="`${label}, ${modelValue.length} selected`"
-        :aria-expanded="isOpen"
-        :aria-controls="`${id}-options`"
-        @click="toggle"
-        @keydown.down.prevent="open()"
-        @keydown.up.prevent="open(true)"
-      >
-        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 7 6 6 6-6" /></svg>
-      </button>
-    </div>
+    <button
+      :id="id"
+      ref="trigger"
+      type="button"
+      class="multi-select-trigger"
+      :class="{ 'multi-select-trigger-open': isOpen }"
+      :aria-label="`${label}: ${buttonSummary}`"
+      :aria-expanded="isOpen"
+      :aria-controls="`${id}-options`"
+      @click="toggle"
+      @keydown.down.prevent="open()"
+      @keydown.up.prevent="open(true)"
+    >
+      <span class="multi-select-summary">{{ buttonSummary }}</span>
+      <svg class="multi-select-chevron" viewBox="0 0 20 20" aria-hidden="true">
+        <path d="m4 7 6 6 6-6" />
+      </svg>
+    </button>
     <div
       v-show="isOpen"
       :id="`${id}-options`"
       ref="optionGroup"
       class="multi-select-options"
       role="group"
-      :aria-label="label"
+      :aria-label="`${label} options`"
       @keydown="onOptionKeydown"
     >
-      <label v-for="option in options" :key="option" class="multi-select-option">
-        <input type="checkbox" :checked="modelValue.includes(option)" @change="toggleOption(option)" />
-        <span>{{ option }}</span>
-      </label>
+      <div class="multi-select-actions">
+        <button
+          type="button"
+          class="multi-select-clear"
+          :aria-label="`Clear ${label}`"
+          :disabled="modelValue.length === 0"
+          @click="clear"
+        >Clear</button>
+      </div>
+      <ul class="multi-select-list">
+        <li v-for="option in options" :key="option" class="multi-select-item">
+          <label class="multi-select-option">
+            <input type="checkbox" :checked="modelValue.includes(option)" @change="toggleOption(option)" />
+            <span>{{ option }}</span>
+          </label>
+        </li>
+      </ul>
       <p v-if="!options.length" class="multi-select-empty">No options available.</p>
     </div>
   </div>
@@ -142,131 +133,152 @@ onBeforeUnmount(() => document.removeEventListener("pointerdown", onOutsidePoint
 .multi-select {
   position: relative;
   min-width: 0;
-  --multi-select-chip-background: rgb(216, 216, 216);
-  --multi-select-checkbox-color: #047cad;
+  --filter-bg: #fff;
+  --filter-color: rgb(5, 86, 129);
+  --filter-border: #e5e7eb;
 }
 
-.multi-select-control {
+.multi-select-trigger {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  justify-content: space-between;
+  gap: 0.5rem;
   width: 100%;
-  min-height: 42px;
-  border: 1px solid gray;
-  border-radius: 8px;
-  padding: 0.5rem 0.75rem;
+  min-height: 2.5rem;
+  border: 1px solid var(--filter-border);
+  border-radius: 100vh;
+  padding: 0.45rem 0.75rem;
   font: inherit;
+  font-weight: 600;
+  text-align: left;
   color: #111827;
-  background: #fff;
+  background: var(--filter-bg);
   cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.multi-select-chips {
-  display: flex;
+.multi-select-summary {
   flex: 1;
-  flex-wrap: wrap;
   min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.multi-select-chip {
-  display: inline-flex;
-  align-items: center;
-  max-width: 100%;
-  margin: 4px 2px;
-  border-radius: 50px;
-  padding: 0 3px 0 12px;
-  background: var(--multi-select-chip-background);
-  color: #000;
-}
-
-.multi-select-chip > span {
-  overflow-wrap: anywhere;
-  min-width: 0;
-}
-
-.multi-select button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.multi-select-chevron {
   flex-shrink: 0;
-  border: 0;
-  padding: 0;
-  color: inherit;
-  background: transparent;
-  cursor: pointer;
-}
-
-.multi-select .multi-select-trigger {
-  flex-grow: 1;
-  justify-content: flex-end;
-  align-self: stretch;
-  min-width: 1.5rem;
-}
-
-.multi-select-chips ~ .multi-select-trigger {
-  flex-grow: 0;
-}
-
-.multi-select-clear {
-  margin-left: auto;
-}
-
-.multi-select svg {
   width: 1.25rem;
   height: 1.25rem;
+  color: #666;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.7;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s ease;
+}
+
+.multi-select-trigger-open .multi-select-chevron {
+  transform: rotate(180deg);
+}
+
+.multi-select-trigger:hover,
+.multi-select-trigger:focus,
+.multi-select-trigger-open {
+  border-color: var(--filter-color);
+}
+
+.multi-select-trigger:focus,
+.multi-select-trigger-open {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--filter-color) 18%, transparent);
 }
 
 .multi-select button:focus-visible {
-  outline: 2px solid #047cad;
+  outline: 2px solid var(--filter-color);
   outline-offset: 2px;
-  border-radius: 3px;
-}
-
-.multi-select-control:focus-within {
-  border-color: #047cad;
 }
 
 .multi-select-options {
   position: absolute;
-  top: calc(100% + 0.25rem);
+  top: calc(100% + 0.5rem);
   left: 0;
-  z-index: 10;
+  z-index: 50;
   width: 100%;
-  max-height: 14rem;
+  max-height: 18rem;
   overflow-y: auto;
-  padding: 0.5rem;
-  border: 1px solid gray;
-  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
   background: #fff;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 12%);
+}
+
+.multi-select-actions {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 0.5rem 0.65rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.multi-select-clear {
+  border: 1px solid var(--filter-color);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  color: var(--filter-color);
+  background: #fff;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.multi-select-clear:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--filter-color) 8%, white);
+}
+
+.multi-select-clear:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.multi-select-list,
+.multi-select-item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.multi-select-item + .multi-select-item {
+  border-top: 1px solid #f3f4f6;
 }
 
 .multi-select .multi-select-option {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   margin: 0;
-  padding: 0.4rem 0.5rem;
+  padding: 0.6rem 0.75rem;
   font: inherit;
-  color: #000;
+  font-size: 0.95rem;
+  color: #1f2937;
   cursor: pointer;
   overflow-wrap: anywhere;
+  transition: background-color 0.15s ease;
 }
 
 .multi-select-option:hover,
 .multi-select-option:focus-within {
-  background: rgb(238, 238, 238);
+  background: #f9fafb;
 }
 
 .multi-select-option input {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
   margin: 0;
-  accent-color: var(--multi-select-checkbox-color);
+  accent-color: var(--filter-color);
+  cursor: pointer;
+  scroll-margin-top: 3.5rem;
 }
 
 .multi-select-empty {
