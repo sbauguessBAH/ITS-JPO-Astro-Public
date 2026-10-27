@@ -3,8 +3,10 @@ import { Image } from "astro:assets";
 
 import iscLogo from "@/src/assets/images/intersection-safety/isc-logo.png";
 import Link from "@/src/components/Link.astro";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
 import ResourceCard from "@/src/components/ui/blocks/resource-card/ResourceCard.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import SectionHeader from "@/src/components/ui/blocks/section/SectionHeader.astro";
 import Accordion from "@/src/components/ui/elements/accordion/Accordion.astro";
 import AccordionContent from "@/src/components/ui/elements/accordion/AccordionContent.astro";
 import AccordionItem from "@/src/components/ui/elements/accordion/AccordionItem.astro";
@@ -14,17 +16,18 @@ import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
 import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import Heading from "@/src/components/ui/elements/heading/Heading.astro";
+import Separator from "@/src/components/ui/elements/separator/Separator.astro";
 import Icon from "@/src/components/ui/icon/Icon.astro";
 
 import Layout from "./_layout.astro";
 ---
 
 <Layout>
-  <main class="program-main">
-    <ProgramSection>
-      <Heading as="h2" class="tw:mb-4!">Challenge Summary</Heading>
-      <div class="row">
-        <div class="col-12 col-md-8">
+  <Page>
+    <Section>
+      <SectionHeader title="Challenge Summary" />
+      <div class="tw:flex tw:flex-col tw:gap-6 tw:md:flex-row">
+        <div class="tw:md:basis-2/3">
           <p class="program-text tw:text-pretty">
             In response to growing concerns regarding the safety of vulnerable
             road users at intersections, the U.S. DOT launched the Intersection
@@ -38,7 +41,7 @@ import Layout from "./_layout.astro";
             real-time roadway ISS concepts that leverage sensor fusion and AI.
           </p>
         </div>
-        <div class="col-11 col-md-4">
+        <div class="tw:md:basis-1/3">
           <Image
             alt="Intersection Safety Challenge Logo"
             class="img-fluid"
@@ -46,18 +49,18 @@ import Layout from "./_layout.astro";
           />
         </div>
       </div>
-    </ProgramSection>
-    <ProgramSection color="muted">
-      <Heading as="h2" class="tw:mb-4! tw:text-center">
-        Challenge Structure
-      </Heading>
-      <p
-        class="program-text tw:mx-auto tw:mb-4 tw:max-w-5xl tw:text-center tw:text-pretty"
-      >
-        The competition was split into two stages with Stage 1A focused on
-        concept assessment and Stage 1B focused on system assessment and virtual
-        testing.
-      </p>
+    </Section>
+    <Section color="muted">
+      <SectionHeader class="tw:text-center" title="Challenge Structure">
+        <p
+          class="program-text tw:mx-auto tw:max-w-5xl tw:text-pretty"
+          slot="description"
+        >
+          The competition was split into two stages with Stage 1A focused on
+          concept assessment and Stage 1B focused on system assessment and
+          virtual testing.
+        </p>
+      </SectionHeader>
       <div
         class="tw:grid tw:auto-rows-fr tw:grid-cols-1 tw:gap-6 tw:xl:grid-cols-2"
       >
@@ -70,7 +73,7 @@ import Layout from "./_layout.astro";
                 Stage 1A
               </Heading>
               <p
-                class="program-text tw:text-pretty text-white text-center mb-0"
+                class="program-text text-white text-center mb-0 tw:text-pretty"
               >
                 Concept Assessment
               </p>
@@ -85,19 +88,23 @@ import Layout from "./_layout.astro";
               proposed intersection safety system designs.
             </p>
             <div class="tw:flex tw:flex-col">
-              <div class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2">
+              <div
+                class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2"
+              >
                 <div class="tw:text-[rgb(80,154,53)]">
                   <Icon name="check2-circle" size={20} />
                 </div>
-                <p class="program-text tw:text-pretty mb-0">
+                <p class="program-text mb-0 tw:text-pretty">
                   120 innovative concept papers submitted
                 </p>
               </div>
-              <div class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2 tw:last:border-b-0">
+              <div
+                class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2 tw:last:border-b-0"
+              >
                 <div class="tw:text-[rgb(80,154,53)]">
                   <Icon name="check2-circle" size={20} />
                 </div>
-                <p class="program-text tw:text-pretty mb-0">
+                <p class="program-text mb-0 tw:text-pretty">
                   15 teams selected for prizes and invited to Stage 1B
                 </p>
               </div>
@@ -110,7 +117,7 @@ import Layout from "./_layout.astro";
               <div class="tw:text-2xl tw:font-bold tw:text-[rgb(80,154,53)]">
                 $1,500,000
               </div>
-              <p class="program-text tw:text-pretty mb-0">Total prize pool</p>
+              <p class="program-text mb-0 tw:text-pretty">Total prize pool</p>
             </div>
           </CardFooter>
         </Card>
@@ -123,7 +130,7 @@ import Layout from "./_layout.astro";
                 Stage 1B
               </Heading>
               <p
-                class="program-text tw:text-pretty text-white text-center mb-0"
+                class="program-text text-white text-center mb-0 tw:text-pretty"
               >
                 System Assessment and Virtual Testing
               </p>
@@ -140,19 +147,23 @@ import Layout from "./_layout.astro";
               Center (TFHRC).
             </p>
             <div class="tw:flex tw:flex-col">
-              <div class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2">
+              <div
+                class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2"
+              >
                 <div class="tw:text-[rgb(80,154,53)]">
                   <Icon name="check2-circle" size={20} />
                 </div>
-                <p class="program-text tw:text-pretty mb-0">
+                <p class="program-text mb-0 tw:text-pretty">
                   13 teams participated by developing and training algorithms
                 </p>
               </div>
-              <div class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2 tw:last:border-b-0">
+              <div
+                class="tw:flex tw:gap-3 tw:border-b tw:border-black/10 tw:py-2 tw:last:border-b-0"
+              >
                 <div class="tw:text-[rgb(80,154,53)]">
                   <Icon name="check2-circle" size={20} />
                 </div>
-                <p class="program-text tw:text-pretty mb-0">
+                <p class="program-text mb-0 tw:text-pretty">
                   10 teams selected for prizes
                 </p>
               </div>
@@ -165,16 +176,14 @@ import Layout from "./_layout.astro";
               <div class="tw:text-2xl tw:font-bold tw:text-[rgb(80,154,53)]">
                 $4,000,000
               </div>
-              <p class="program-text tw:text-pretty mb-0">Total prize pool</p>
+              <p class="program-text mb-0 tw:text-pretty">Total prize pool</p>
             </div>
           </CardFooter>
         </Card>
       </div>
-    </ProgramSection>
-    <ProgramSection>
-      <Heading as="h2" class="tw:mb-4!">
-        Stage 1A &mdash; Concept Assessment
-      </Heading>
+    </Section>
+    <Section>
+      <SectionHeader title="Stage 1A — Concept Assessment" />
       <div class="tw:rounded-lg tw:bg-muted tw:p-8">
         <Heading as="h3" class="tw:my-2!" size="md">Summary</Heading>
         <p class="program-text tw:text-pretty">
@@ -323,14 +332,10 @@ import Layout from "./_layout.astro";
           Additional Resources
         </h3> -->
       </div>
-    </ProgramSection>
-    <div class="container-xl">
-      <hr class="m-0 p-0" />
-    </div>
-    <ProgramSection>
-      <Heading as="h2" class="tw:mb-4!">
-        Stage 1B &mdash; System Assessment and Virtual Testing
-      </Heading>
+    </Section>
+    <Section>
+      <Separator />
+      <SectionHeader title="Stage 1B — System Assessment and Virtual Testing" />
       <div class="tw:rounded-lg tw:bg-muted">
         <div class="tw:p-8">
           <Heading as="h3" class="tw:mb-2!" size="md">Summary</Heading>
@@ -850,9 +855,9 @@ import Layout from "./_layout.astro";
           </Accordion>
         </div>
       </div>
-    </ProgramSection>
-    <ProgramSection>
-      <Heading as="h2" class="tw:mb-4!">Additional Resources</Heading>
+    </Section>
+    <Section>
+      <SectionHeader title="Additional Resources" />
 
       <div
         class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
@@ -937,6 +942,6 @@ import Layout from "./_layout.astro";
           title="Intersection Safety Challenge Prize Competition"
         />
       </div>
-    </ProgramSection>
-  </main>
+    </Section>
+  </Page>
 </Layout>
