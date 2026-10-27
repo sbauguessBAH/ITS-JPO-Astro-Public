@@ -85,7 +85,7 @@ onBeforeUnmount(() => document.removeEventListener("pointerdown", onOutsidePoint
 <template>
   <div ref="root" class="multi-select" @focusout="onFocusOut" @keydown.esc.prevent.stop="close(true)">
     <div class="multi-select-control" @click.self="toggle">
-      <div v-if="modelValue.length" class="multi-select-chips">
+      <div v-if="modelValue.length" class="multi-select-chips" @click.self="toggle">
         <span v-for="option in modelValue" :key="option" class="multi-select-chip">
           <span>{{ option }}</span>
           <button type="button" class="multi-select-remove" :aria-label="`Remove ${option}`" @click="removeOption(option)">
@@ -163,6 +163,7 @@ onBeforeUnmount(() => document.removeEventListener("pointerdown", onOutsidePoint
 
 .multi-select-chips {
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
   min-width: 0;
 }
@@ -200,6 +201,10 @@ onBeforeUnmount(() => document.removeEventListener("pointerdown", onOutsidePoint
   justify-content: flex-end;
   align-self: stretch;
   min-width: 1.5rem;
+}
+
+.multi-select-chips ~ .multi-select-trigger {
+  flex-grow: 0;
 }
 
 .multi-select-clear {
