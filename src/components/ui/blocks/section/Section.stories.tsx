@@ -40,7 +40,7 @@ const meta = {
       control: { type: "select" },
     },
     size: {
-      options: ["sm", "default"],
+      options: ["sm", "default", "lg"],
       control: { type: "select" },
     },
   },
@@ -55,9 +55,22 @@ export default meta;
 
 export const Default = {};
 
+/**
+ * Muted sections usually pair with `size="lg"` so the content has room inside the background
+ */
 export const Muted = {
   args: {
     color: "muted",
+    size: "lg",
+  },
+};
+
+/**
+ * Adds vertical padding around the content
+ */
+export const Large = {
+  args: {
+    size: "lg",
   },
 };
 
