@@ -13,6 +13,7 @@ import path from "node:path";
  * - `VR_PORT` preview server port (defaults to 4321)
  */
 const isVisual = !!process.env.VR;
+const isAccessibility = !!process.env.A11Y;
 const port = Number(process.env.VR_PORT ?? 4321);
 const baseURL = `http://127.0.0.1:${port}`;
 
@@ -20,7 +21,19 @@ const e2eProjects = [
   { name: "chromium", use: { ...devices["Desktop Chrome"] } },
   { name: "firefox", use: { ...devices["Desktop Firefox"] } },
   { name: "webkit", use: { ...devices["Desktop Safari"] } },
-].map((project) => ({ ...project, testIgnore: "**/visual/**" }));
+].map((project) => ({
+  ...project,
+  testIgnore: ["**/accessibility/**", "**/visual/**"],
+}));
+
+const accessibilityProject = {
+  name: "accessibility",
+  testMatch: "**/accessibility/**/*.spec.ts",
+  use: {
+    ...devices["Desktop Chrome"],
+    screenshot: "only-on-failure" as const,
+  },
+};
 
 /**
  * Uses Chromium to run visual regression tests with a fixed viewport and local screenshots.
@@ -48,7 +61,11 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   fullyParallel: true,
   outputDir: ".playwright/results",
-  projects: isVisual ? [visualProject] : e2eProjects,
+  projects: isVisual
+    ? [visualProject]
+    : isAccessibility
+      ? [accessibilityProject]
+      : e2eProjects,
   reporter: [
     ["list"],
     ["html", { open: "never", outputFolder: ".playwright/report" }],

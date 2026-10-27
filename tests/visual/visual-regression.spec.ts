@@ -2,30 +2,12 @@ import { expect, type Page, test } from "@playwright/test";
 import fs from "node:fs";
 import path from "node:path";
 
+import { readSitemapPaths } from "../helpers/sitemap";
+
 const root = path.resolve(process.env.VR_ROOT ?? ".");
 const isBaseline = process.env.VR_PHASE === "baseline";
 const baselineDir = path.resolve(".playwright/baseline");
 const manifestPath = path.join(baselineDir, "pages.json");
-
-/** Reads every page path from the sitemap(s) Astro generated in `dist/`. */
-function readSitemapPaths(projectRoot: string): string[] {
-  const dist = path.join(projectRoot, "dist");
-  const files = fs
-    .readdirSync(dist)
-    .filter((f) => /^sitemap-\d+\.xml$/.test(f));
-  if (files.length === 0) {
-    throw new Error(`No sitemap-*.xml found in ${dist}. Run a build first.`);
-  }
-
-  const paths = new Set<string>();
-  for (const file of files) {
-    const xml = fs.readFileSync(path.join(dist, file), "utf8");
-    for (const [, loc] of xml.matchAll(/<loc>(.*?)<\/loc>/g)) {
-      paths.add(new URL(loc).pathname);
-    }
-  }
-  return [...paths].sort();
-}
 
 /** Make the page deterministic: trigger lazy content, wait for fonts/images. */
 async function settle(page: Page) {

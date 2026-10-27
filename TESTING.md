@@ -18,6 +18,8 @@ npx playwright show-report
 
 Everything is configured in `playwright.config.ts`. The default projects are the browsers; visual regression is a separate `visual` project that is only enabled by `npm run test:vr` (see below).
 
+Accessibility tests are opt-in and run in Chromium with `npm run test:a11y`.
+
 ### Output folders
 
 Playwright uses a git-ignored `.playwright/` folder. This is slightly different from normal conventions, but I did this so that all Playwright files are grouped together cleanly.
@@ -25,6 +27,17 @@ Playwright uses a git-ignored `.playwright/` folder. This is slightly different 
 - `.playwright/report/` is the HTML report from the last run (`npx playwright show-report .playwright/report`).
 - `.playwright/results/` holds per-test artifacts (traces, screenshot diffs) and a JSON summary `.playwright/results.json`.
 - `.playwright/baseline/` holds the visual regression baseline images generated.
+
+### Accessibility
+
+Accessibility tests use axe-core through `@axe-core/playwright` and run in Chromium against the built site. The initial scope includes every sitemap page under `resources/pcb`, `research-areas/automation`, and `research-areas/intersection-safety`. Feel free to add any other routes you want to test too.
+
+```zsh
+npm run build:noWarn
+npm run test:a11y
+```
+
+The checks cover WCAG 2.0, 2.1, and 2.2 Level A and AA rules. New routes in these sections are picked up automatically from the sitemap.
 
 ## Visual Regression
 
