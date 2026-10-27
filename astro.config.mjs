@@ -14,7 +14,7 @@ export default defineConfig({
   base: BASE_URL,
   site: "https://www.its.dot.gov",
   output: "static",
-  integrations: [partytown(), sitemap(), vue({ appEntrypoint: "./src/vue-app.ts" })],
+  integrations: [partytown(), sitemap(), vue()],
   redirects: {
     "/index.htm": "/",
     "/about/its_jpo.htm": "/about",

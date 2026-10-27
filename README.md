@@ -11,6 +11,17 @@ Welcome to the ITS JPO DOT Website project! This repository is dedicated to crea
 - **Modular Design**: Implement a modular architecture to simplify updates and maintenance.
 - **Responsive Design**: Ensure the website is accessible and user-friendly across all devices.
 
+### Newsroom filters
+
+The In the News filters use a native text input and the local Vue
+[MultiSelect](src/components/MultiSelect.vue), with no UI-library dependency.
+The multiselect accepts string options and a string-array `v-model`, plus an
+`id` and accessible `label`. It supports removable chips, clearing selections,
+native checkboxes, arrow/Home/End navigation, and Escape or outside-click dismissal.
+The existing `in-the-news-filter-change` event still supplies `technologyAreas`
+and `searchQuery` to the archive. Field and chip styling is maintained in the
+component and the [archive page](src/pages/news-outreach-tools/newsroom/in-the-news/index.astro).
+
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -24,6 +35,5 @@ Required Node V19 or above (V22 recomended).
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
 
 

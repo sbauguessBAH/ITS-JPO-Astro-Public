@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import InputText from "primevue/inputtext";
-import MultiSelect from "primevue/multiselect";
+import MultiSelect from "../MultiSelect.vue";
 
 type FilterDetail = {
   technologyAreas: string[];
@@ -34,6 +33,18 @@ const clearFilters = () => {
   emitFilterChange();
 };
 
+const updateTechnologyAreas = (value: string[]) => {
+  technologyAreas.value = value;
+  emitFilterChange();
+};
+
+const updateSearchQuery = (event: Event) => {
+  if (event.target instanceof HTMLInputElement) {
+    searchQuery.value = event.target.value;
+    emitFilterChange();
+  }
+};
+
 onMounted(() => {
   emitFilterChange();
 });
@@ -47,17 +58,16 @@ onMounted(() => {
         <label for="technologyAreas">Technology Area</label>
         <MultiSelect
           id="technologyAreas"
-          v-model="technologyAreas"
+          label="Technology Area"
+          :model-value="technologyAreas"
           :options="props.technologyAreasList"
-          display="chip"
-          :showClear="true"
-          @change="emitFilterChange"
+          @update:model-value="updateTechnologyAreas"
         />
       </div>
 
       <div class="news-filter-field">
         <label for="searchInput">Search</label>
-        <InputText id="searchInput" v-model="searchQuery" type="text" class="news-filter-input" @input="emitFilterChange" />
+        <input id="searchInput" :value="searchQuery" type="text" class="news-filter-input" @input="updateSearchQuery" />
       </div>
     </div>
 
