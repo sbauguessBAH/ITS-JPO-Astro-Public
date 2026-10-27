@@ -1,0 +1,41 @@
+import {
+  Canvas,
+  Controls,
+  Description,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import * as AspectRatioStories from "./AspectRatio.stories";
+
+<Meta of={AspectRatioStories} name="Docs" />
+
+<Title />
+<Subtitle />
+<Description />
+
+## Usage
+
+`AspectRatio` accepts a numeric ratio, expressed as width divided by height. For example, `16 / 9` creates a widescreen frame.
+
+Place the content in the default slot. For images, fill the frame and use `object-fit: cover` to crop without changing the aspect ratio.
+
+```astro
+---
+import AspectRatio from
+  "@/src/components/ui/elements/aspect-ratio/AspectRatio.astro";
+---
+
+<AspectRatio ratio={16 / 9}>
+  <img
+    src="/path/to/image.jpg"
+    alt="Description of the image"
+    class="tw:h-full tw:w-full tw:rounded-md tw:object-cover"
+  />
+</AspectRatio>
+```
+
+## Example
+
+<Canvas of={AspectRatioStories.Default} sourceState="shown" />
+<Controls of={AspectRatioStories.Default} />
