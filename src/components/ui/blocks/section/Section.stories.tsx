@@ -31,6 +31,9 @@ const sectionSlots = {
 const meta = {
   title: "UI/Blocks/Section",
   component: Section,
+  parameters: {
+    layout: "fullScreen",
+  },
   argTypes: {
     color: {
       options: ["default", "muted"],
