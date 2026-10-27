@@ -8,17 +8,19 @@ import { cn } from "@/src/lib/utils";
 type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 type Props = HTMLAttributes<"h1"> & {
+  /** Default is h2 since banner uses h1 */
   as?: HeadingTag;
   class?: string;
-  size?: "default" | "md" | "sm";
+  size?: "lg" | "default" | "md" | "sm";
 };
 
 const { as, class: className, size = "default", ...props } = Astro.props;
 
-const defaultTagBySize: Record<"default" | "md" | "sm", HeadingTag> = {
-  default: "h1",
-  md: "h2",
-  sm: "h3",
+const defaultTagBySize: Record<"lg" | "default" | "md" | "sm", HeadingTag> = {
+  lg: "h1",
+  default: "h2",
+  md: "h3",
+  sm: "h4",
 };
 
 const Component = as ?? defaultTagBySize[size];
@@ -32,6 +34,7 @@ const headerVariants = cva("tw:normal-case! tw:m-0! tw:p-0! tw:text-primary!", {
       default: "tw:text-4xl! tw:font-bold! tw:leading-snug tw:tracking-tight",
       md: "tw:text-3xl! tw:font-semibold tw:leading-tight tw:tracking-tight",
       sm: "tw:text-lg! tw:font-semibold tw:leading-tight tw:tracking-tight",
+      lg: "tw:text-5xl! tw:font-bold! tw:leading-snug tw:tracking-tight",
     },
   },
 });
