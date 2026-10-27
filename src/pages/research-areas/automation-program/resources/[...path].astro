@@ -1,17 +1,18 @@
 ---
 import { getCollection } from "astro:content";
 
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Panel from "@/src/components/ui/blocks/panel/Panel.astro";
 import PanelGroup from "@/src/components/ui/blocks/panel/PanelGroup.astro";
 import PanelHeader from "@/src/components/ui/blocks/panel/PanelHeader.astro";
 import PanelItem from "@/src/components/ui/blocks/panel/PanelItem.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
 import Badge from "@/src/components/ui/elements/badge/Badge.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
-import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 import Item from "@/src/components/ui/elements/item/Item.astro";
 import ItemActions from "@/src/components/ui/elements/item/ItemActions.astro";
 import ItemContent from "@/src/components/ui/elements/item/ItemContent.astro";
@@ -209,10 +210,10 @@ const projects = resources
   }
 </style>
 <Layout title="Automation Program">
-  <main class="program-main">
-    <ProgramSection>
-      <Heading>Resources</Heading>
-      <div class="resource-container mt-4">
+  <Page>
+    <PageHeader title="Resources" />
+    <Section>
+      <div class="resource-container">
         <div class="tw:basis-1/4">
           <Panel label="Resource areas">
             <PanelHeader>Areas</PanelHeader>
@@ -276,6 +277,6 @@ const projects = resources
           }
         </div>
       </div>
-    </ProgramSection>
-  </main>
+    </Section>
+  </Page>
 </Layout>

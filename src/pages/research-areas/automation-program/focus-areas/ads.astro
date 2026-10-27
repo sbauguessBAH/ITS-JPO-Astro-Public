@@ -7,85 +7,79 @@ import Layout from "../_layout.astro";
 ---
 
 <Layout title="Automation Program">
-  <main class="program-main">
-    <FocusAreaLayout>
-      <slot slot="title">Automated Driving System (ADS) Integration</slot>
-      <slot slot="features">
-        <FocusAreaFeature icon="bullseye">
-          <slot slot="title">Goal</slot>
-          <slot slot="description">
-            Explore recommended practices to address safe and efficient
-            Automated Driving System (ADS) Integration into the transportation
-            system.
-          </slot>
-        </FocusAreaFeature>
-        <FocusAreaFeature icon="compass">
-          <slot slot="title">Approach</slot>
-          <slot slot="description">
-            Address gaps in transportation system oversight and understanding of
-            ADS performance inhibiting safe and efficient ADS integration.
-          </slot>
-        </FocusAreaFeature>
-        <FocusAreaFeature icon="check">
-          <slot slot="title">Anticipated Outcomes</slot>
-          <slot slot="description">
-            Enhance safety and efficiency around AV operations and system user
-            acceptance with national-level consistency.
-          </slot>
-        </FocusAreaFeature>
-        <FocusAreaFeature icon="list">
-          <slot slot="title"> Near-Term Actions </slot>
-          <slot slot="description">
-            Develop a deeper understanding of ADS technology capabilities,
-            applications/use cases, and relevant gaps in oversight that affect
-            safe AV operations.
-          </slot>
-        </FocusAreaFeature>
-      </slot>
-      <slot slot="description">
-        ADS Integration research focuses on addressing challenges and developing
-        approaches for the safe and efficient integration of Automated Driving
-        Systems into the transportation ecosystem.
-      </slot>
-      <slot slot="highlights">
-        <FocusAreaHighlight>
-          <slot slot="title">
-            ADS & Traffic Regulations Voluntary Specifications Development
-            Playbook
-          </slot>
-          <slot slot="description">
-            This project uses the prototype traffic regulation data framework
-            completed in a previous project to advance the conversation about
-            the development of a voluntary data specification for traffic
-            regulations.
-          </slot>
-        </FocusAreaHighlight>
-        <FocusAreaHighlight>
-          <slot slot="title">
-            Develop Innovative Techniques/Methods-Support Changeable Roadway
-            Testing Environment
-          </slot>
-          <slot slot="description">
-            This project will evaluate the feasibility of mimicking roadway
-            features that will facilitate depiction of realistic roadway
-            scenarios to all road users that can be easily custom configured or
-            changed to a different scenario without permanently changing basic
-            test facilities' roadway configurations.
-          </slot>
-        </FocusAreaHighlight>
-        <FocusAreaHighlight>
-          <slot slot="title">
-            ADS Integration &amp; Recommended Practices
-          </slot>
-          <slot slot="description">
-            USDOT aims to establish initial national-level recommended practices
-            for integration of ADS into the transportation system to provide
-            states, localities, automation companies, and other road users with
-            a well-supported, consistent basis for ADS expectations and
-            assurances that operations will be safe and efficient.
-          </slot>
-        </FocusAreaHighlight>
-      </slot>
-    </FocusAreaLayout>
-  </main>
+  <FocusAreaLayout>
+    <slot slot="title">Automated Driving System (ADS) Integration</slot>
+    <slot slot="features">
+      <FocusAreaFeature icon="bullseye">
+        <slot slot="title">Goal</slot>
+        <slot slot="description">
+          Explore recommended practices to address safe and efficient Automated
+          Driving System (ADS) Integration into the transportation system.
+        </slot>
+      </FocusAreaFeature>
+      <FocusAreaFeature icon="compass">
+        <slot slot="title">Approach</slot>
+        <slot slot="description">
+          Address gaps in transportation system oversight and understanding of
+          ADS performance inhibiting safe and efficient ADS integration.
+        </slot>
+      </FocusAreaFeature>
+      <FocusAreaFeature icon="check">
+        <slot slot="title">Anticipated Outcomes</slot>
+        <slot slot="description">
+          Enhance safety and efficiency around AV operations and system user
+          acceptance with national-level consistency.
+        </slot>
+      </FocusAreaFeature>
+      <FocusAreaFeature icon="list">
+        <slot slot="title"> Near-Term Actions </slot>
+        <slot slot="description">
+          Develop a deeper understanding of ADS technology capabilities,
+          applications/use cases, and relevant gaps in oversight that affect
+          safe AV operations.
+        </slot>
+      </FocusAreaFeature>
+    </slot>
+    <slot slot="description">
+      ADS Integration research focuses on addressing challenges and developing
+      approaches for the safe and efficient integration of Automated Driving
+      Systems into the transportation ecosystem.
+    </slot>
+    <slot slot="highlights">
+      <FocusAreaHighlight>
+        <slot slot="title">
+          ADS & Traffic Regulations Voluntary Specifications Development
+          Playbook
+        </slot>
+        <slot slot="description">
+          This project uses the prototype traffic regulation data framework
+          completed in a previous project to advance the conversation about the
+          development of a voluntary data specification for traffic regulations.
+        </slot>
+      </FocusAreaHighlight>
+      <FocusAreaHighlight>
+        <slot slot="title">
+          Develop Innovative Techniques/Methods-Support Changeable Roadway
+          Testing Environment
+        </slot>
+        <slot slot="description">
+          This project will evaluate the feasibility of mimicking roadway
+          features that will facilitate depiction of realistic roadway scenarios
+          to all road users that can be easily custom configured or changed to a
+          different scenario without permanently changing basic test facilities'
+          roadway configurations.
+        </slot>
+      </FocusAreaHighlight>
+      <FocusAreaHighlight>
+        <slot slot="title"> ADS Integration &amp; Recommended Practices </slot>
+        <slot slot="description">
+          USDOT aims to establish initial national-level recommended practices
+          for integration of ADS into the transportation system to provide
+          states, localities, automation companies, and other road users with a
+          well-supported, consistent basis for ADS expectations and assurances
+          that operations will be safe and efficient.
+        </slot>
+      </FocusAreaHighlight>
+    </slot>
+  </FocusAreaLayout>
 </Layout>

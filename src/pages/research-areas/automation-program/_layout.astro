@@ -1,6 +1,6 @@
 ---
 import banner from "@/src/assets/images/banners/Automation_Banner.png";
-import PageLayout from "@/src/layouts/PageLayout.astro";
+import TailwindLayout from "@/src/layouts/TailwindLayout.astro";
 import "@/src/styles/programs.scss";
 import "@/src/styles/globals.css";
 
@@ -20,7 +20,7 @@ const description = `
 `;
 ---
 
-<PageLayout
+<TailwindLayout
   bannerImage={banner}
   description={description}
   keywords={keywords}
@@ -28,4 +28,4 @@ const description = `
 >
   <Fragment slot="banner"> Automation Program </Fragment>
   <slot />
-</PageLayout>
+</TailwindLayout>

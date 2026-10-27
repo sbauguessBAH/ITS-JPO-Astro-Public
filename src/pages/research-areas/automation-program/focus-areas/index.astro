@@ -3,8 +3,8 @@ import OverlayCard, {
   type OverlayCardProps,
 } from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
 
 import Layout from "../_layout.astro";
 
@@ -136,7 +136,7 @@ const focusAreas: OverlayCardProps[] = [
   }
 </style>
 <Layout>
-  <Page class="tw:gap-4!">
+  <Page>
     <PageHeader>
       <slot slot="title">Focus Areas</slot>
       <slot slot="description">
@@ -148,10 +148,10 @@ const focusAreas: OverlayCardProps[] = [
         </p>
       </slot>
     </PageHeader>
-    <PageBody>
+    <Section>
       <div class="focus-area-container mt-4" role="directory">
         {focusAreas.map((focusArea) => <OverlayCard {...focusArea} />)}
       </div>
-    </PageBody>
+    </Section>
   </Page>
 </Layout>
