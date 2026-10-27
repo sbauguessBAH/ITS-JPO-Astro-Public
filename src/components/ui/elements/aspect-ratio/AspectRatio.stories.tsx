@@ -10,6 +10,7 @@ const ratios = {
 const meta = {
   title: "UI/Elements/AspectRatio",
   component: AspectRatio,
+  tags: ["!autodocs"],
   argTypes: {
     ratio: {
       control: { type: "select" },
@@ -24,7 +25,7 @@ const meta = {
   },
   parameters: {
     docs: {
-      codePanel: true
+      codePanel: true,
     }
   }
 };
