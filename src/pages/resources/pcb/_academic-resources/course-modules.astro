@@ -1,8 +1,9 @@
 ---
 import Breadcrumb from "@/src/components/programs/Breadcrumb.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageContainer from "@/src/components/ui/blocks/page/PageContainer.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
 
 import Layout from "../_layout.astro";
 import ResourceFooter from "./_ResourceFooter.astro";
@@ -10,17 +11,19 @@ import ResourceFooter from "./_ResourceFooter.astro";
 
 <Layout>
   <Page>
-    <Breadcrumb
-      items={[
-        {
-          name: "Academic Resources",
-          path: "/resources/pcb/academic-resources",
-        },
-        { name: "Course Modules" },
-      ]}
-    />
+    <PageContainer>
+      <Breadcrumb
+        items={[
+          {
+            name: "Academic Resources",
+            path: "/resources/pcb/academic-resources",
+          },
+          { name: "Course Modules" },
+        ]}
+      />
+    </PageContainer>
     <PageHeader title="ITS Academic Course Modules" />
-    <PageBody>
+    <Section>
       <div>
         <p class="program-text">
           ITS provide promising solutions for improving traffic safety and
@@ -63,7 +66,7 @@ import ResourceFooter from "./_ResourceFooter.astro";
           <em>Status: Under Development</em>
         </p>
       </div>
-    </PageBody>
+    </Section>
   </Page>
   <ResourceFooter />
 </Layout>

@@ -1,10 +1,8 @@
 ---
 import Link from "@/src/components/Link.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Section from "@/src/components/ui/blocks/section/Section.astro";
-import SectionContent from "@/src/components/ui/blocks/section/SectionContent.astro";
 import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 
 import Layout from "../_layout.astro";
@@ -31,9 +29,9 @@ import CohortMap from "./_cohort-map.vue";
 </style>
 
 <Layout>
-  <Page class="tw:gap-2!">
+  <Page>
     <PageHeader title="Accelerating V2X Cohort" />
-    <PageBody>
+    <Section>
       <div>
         <p class="program-text">
           The Accelerating V2X Cohort is a collaborative initiative by the
@@ -68,13 +66,13 @@ import CohortMap from "./_cohort-map.vue";
           >.
         </p>
       </div>
-      <Section size="lg">
-        <SectionContent>
-          <Heading class="tw:text-center" size="md">
-            Accelerating V2X Cohort Members
-          </Heading>
-          <CohortMap client:only="vue" />
-          <!-- <figure class="figure">
+    </Section>
+    <Section>
+      <Heading class="tw:text-center" size="md">
+        Accelerating V2X Cohort Members
+      </Heading>
+      <CohortMap client:only="vue" />
+      <!-- <figure class="figure">
             <Image
               class="map-card-image"
               src={cohortImage}
@@ -84,7 +82,7 @@ import CohortMap from "./_cohort-map.vue";
               Source: USDOT (last updated June 2025)
             </figcaption>
           </figure> -->
-          <!-- <Card class="map-card">
+      <!-- <Card class="map-card">
             <CardBody>
               
             </CardBody>
@@ -92,8 +90,6 @@ import CohortMap from "./_cohort-map.vue";
               Last Updated: January 2025
             </CardFooter>
           </Card> -->
-        </SectionContent>
-      </Section>
-    </PageBody>
+    </Section>
   </Page>
 </Layout>

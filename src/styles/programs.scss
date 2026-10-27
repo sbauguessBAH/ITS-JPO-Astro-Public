@@ -137,8 +137,15 @@
  * Class Overrides
  * ============================================================ */
 
-section {
+section:not([data-slot="ui-section"]) {
   padding: 0;
+  margin: 0;
+}
+
+// The UI Section block sets its own vertical padding with Tailwind utilities,
+// so only clear the horizontal padding that legacy global CSS adds to sections.
+section[data-slot="ui-section"] {
+  padding-inline: 0;
   margin: 0;
 }
 

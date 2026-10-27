@@ -4,8 +4,8 @@ import { render } from "astro:content";
 
 import CopyButton from "@/src/components/ui/blocks/copy-button/CopyButton.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
 import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
 import Button from "@/src/components/ui/elements/button/Button.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
@@ -98,7 +98,7 @@ const { Content } = await render(module);
 <Layout>
   <Page>
     <PageHeader title={module.data.title} />
-    <PageBody>
+    <Section>
       <div class="module-layout">
         <div class="module-content">
           <Content />
@@ -150,7 +150,7 @@ const { Content } = await render(module);
           </Card>
         </div>
       </div>
-    </PageBody>
+    </Section>
   </Page>
 </Layout>
 <script>

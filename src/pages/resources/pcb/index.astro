@@ -3,7 +3,7 @@ import OverlayCard, {
   type OverlayCardProps,
 } from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
 import Card from "@/src/components/ui/elements/card/Card.astro";
 import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
 import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
@@ -102,10 +102,10 @@ const RESOURCES: OverlayCardProps[] = [
 ---
 
 <Layout>
-  <Page class="tw:pb-0!" fullWidth>
-    <PageBody>
+  <Page>
+    <Section>
       <div
-        class="tw:mx-auto tw:flex tw:w-full tw:max-w-7xl tw:flex-col tw:items-center tw:gap-6 tw:px-4 tw:lg:flex-row tw:xl:px-0"
+        class="tw:flex tw:w-full tw:flex-col tw:items-center tw:gap-6 tw:lg:flex-row"
       >
         <div class="tw:flex tw:flex-col tw:gap-4 tw:lg:basis-[55%]">
           <Heading>Program Overview</Heading>
@@ -142,41 +142,35 @@ const RESOURCES: OverlayCardProps[] = [
             title="YouTube video player"></iframe>
         </div>
       </div>
-      <div class="tw:mx-auto tw:w-full tw:max-w-7xl tw:px-4 tw:xl:px-0">
-        <div class="tw:flex tw:flex-col tw:gap-6">
-          <Heading size="md">
-            Spotlight on Training and Technical Assistance Resources
-          </Heading>
-          <div
-            class="tw:grid tw:auto-rows-[minmax(100px,300px)] tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2"
-            role="directory"
-          >
-            {RESOURCES.map((resource) => <OverlayCard {...resource} />)}
-          </div>
-        </div>
+    </Section>
+    <Section>
+      <Heading size="md">
+        Spotlight on Training and Technical Assistance Resources
+      </Heading>
+      <div
+        class="tw:grid tw:auto-rows-[minmax(100px,300px)] tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2"
+        role="directory"
+      >
+        {RESOURCES.map((resource) => <OverlayCard {...resource} />)}
       </div>
-      <div class="tw:bg-muted tw:py-12">
-        <div class="tw:mx-auto tw:w-full tw:max-w-7xl tw:px-4 tw:xl:px-0">
-          <div class="tw:flex tw:flex-col tw:gap-6">
-            <Heading size="md">What do you want to do?</Heading>
-            <div
-              class="tw:grid tw:w-full tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
-            >
-              {
-                ACTIONS.filter((action) => action.show).map((action) => (
-                  <Card href={action.path}>
-                    <CardImage entry={action.image} height={200} />
-                    <CardHeader>
-                      <CardTitle>{action.title}</CardTitle>
-                      <CardDescription>{action.description}</CardDescription>
-                    </CardHeader>
-                  </Card>
-                ))
-              }
-            </div>
-          </div>
-        </div>
+    </Section>
+    <Section color="muted">
+      <Heading size="md">What do you want to do?</Heading>
+      <div
+        class="tw:grid tw:w-full tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
+      >
+        {
+          ACTIONS.filter((action) => action.show).map((action) => (
+            <Card href={action.path}>
+              <CardImage entry={action.image} height={200} />
+              <CardHeader>
+                <CardTitle>{action.title}</CardTitle>
+                <CardDescription>{action.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))
+        }
       </div>
-    </PageBody>
+    </Section>
   </Page>
 </Layout>
