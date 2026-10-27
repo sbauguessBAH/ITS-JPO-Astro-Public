@@ -62,7 +62,7 @@ const sections = [
   },
   {
     component: Section,
-    props: { color: "muted" },
+    props: { color: "muted", size: "lg" },
     slots: {
       default: [
         {
