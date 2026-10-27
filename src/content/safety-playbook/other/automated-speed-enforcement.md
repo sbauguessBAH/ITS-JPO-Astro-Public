@@ -17,7 +17,7 @@ facility:
   - "Arterial/Collector Segment"
 safety:
   - "Speeding"
-  - "Pedestrian"
+  - "Pedestrian Safety"
   - "Roadway Departure"
 keywords:
   - "Automated Speed Enforcement"
@@ -51,19 +51,19 @@ keywords:
 resources:
   - label: "Report: Speed Safety Camera Program Planning and Operations Guide"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop24063/fhwahop24063.pdf"
-    description: This resource provides background on Speed Safety Camera Program Planning and Operations Guide and its relevance to Automated Speed Enforcement.
+    description: This report provides guidance for planning, operating, and evaluating speed safety camera programs. It applies to ITS, roadway safety, and speed management because it discusses automated speed enforcement, program planning, site selection, equity considerations, public engagement, legal and policy needs, data collection, performance measures, violation processing, and strategies for reducing speeding-related crashes.
   - label: "Webpage: Speed Safety Cameras"
     url: "https://www.nhtsa.gov/book/countermeasures-that-work/speeding-and-speed-management/countermeasures/enforcement/speed"
-    description: This resource provides background on Speed Safety Cameras and its relevance to Automated Speed Enforcement.
-  - label: "Report: System Analysis of Automated Speed Enforcement Implementation (DOT HS 812 257"
+    description: This webpage provides information on speed safety cameras as a countermeasure for speeding and speed management. It applies to roadway safety and traffic enforcement because it discusses automated speed enforcement, crash reduction, speeding behavior, enforcement strategies, camera placement, program effectiveness, public awareness, and the use of speed safety cameras to reduce injuries and fatalities.
+  - label: "Report: System Analysis of Automated Speed Enforcement Implementation (DOT HS 812 257)"
     url: "https://rosap.ntl.bts.gov/view/dot/1983"
-    description: This resource provides background on System Analysis of Automated Speed Enforcement Implementation (DOT HS 812 257 and its relevance to Automated Speed Enforcement.
+    description: This technical report examines how U.S. jurisdictions planned, deployed, operated, and ended automated speed enforcement programs. It noted that program success depended on alignment with FHWA/NHTSA guidance, state laws, technology, administration, and public acceptance.
   - label: "Report: LIDAR Speed-Measuring Device Performance Specifications"
     url: "https://rosap.ntl.bts.gov/view/dot/40783"
-    description: This resource provides background on LIDAR Speed-Measuring Device Performance Specifications and its relevance to Automated Speed Enforcement.
-  - label: "Report: Exploring Driver Adaptation to L2 Driving Automation Using Existing Naturalistic Driving Data (DOT HS 813 827"
+    description: This report defines baseline performance and testing requirements for traffic LIDAR devices used to measure vehicle speed. Developed with input from International Association of Chiefs of Police (IACP) and National Institute of Standards and Technology/Office of Law Enforcement Standards (NIST/OLES), the guidance helps agencies select compliant equipment and supports confidence in the accuracy, reliability, and serviceability of LIDAR speed-measurement systems.
+  - label: "Report: Exploring Driver Adaptation to L2 Driving Automation Using Existing Naturalistic Driving Data (DOT HS 813 827)"
     url: "https://rosap.ntl.bts.gov/view/dot/93144"
-    description: This resource provides background on Exploring Driver Adaptation to L2 Driving Automation Using Existing Naturalistic Driving Data (DOT HS 813 827 and its relevance to Automated Speed Enforcement.
+    description: This report examines how driver behavior evolves with repeated use of SAE L2 automation. Drawing on three real life driving datasets, the report found that drivers tended to look away from the road more often, engage more frequently in higher risk secondary tasks, and set speeds above the limit more often when L2 systems were active.
 order: 34
 ---
 Automated speed enforcement systems are advanced technologies designed to enhance traffic safety and reduce speed-related incidents. These systems use speed cameras and sensors to detect vehicles exceeding posted speed limits, capturing violations and issuing citations automatically. By consistently enforcing speed limits, they encourage safer driving behaviors and reduce the likelihood of crashes caused by excessive speed.

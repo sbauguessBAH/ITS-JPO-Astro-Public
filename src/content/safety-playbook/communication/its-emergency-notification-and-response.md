@@ -14,7 +14,6 @@ facility:
   - "n/a"
 safety:
   - "Emergency Response"
-  - "Secondary Crashes"
   - "Congestion"
 keywords:
   - "ITS Emergency Notification and Response"

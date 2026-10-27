@@ -398,6 +398,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
               <div class="playbook-pagination-pages" data-playbook-page-numbers></div>
               <button class="playbook-pagination-button" data-playbook-page-next type="button">Next</button>
             </nav>
+            <button class="playbook-pagination-button" data-playbook-view-all type="button" aria-pressed="false">View all</button>
           </div>
 
           <div class="playbook-grid" id="playbook-grid">
@@ -416,6 +417,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
               <div class="playbook-pagination-pages" data-playbook-page-numbers></div>
               <button class="playbook-pagination-button" data-playbook-page-next type="button">Next</button>
             </nav>
+            <button class="playbook-pagination-button" data-playbook-view-all type="button" aria-pressed="false">View all</button>
           </div>
         </section>
       </div>
@@ -455,6 +457,8 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
   const PAGE_SIZE = 9;
   // Tracks the current page in the paginated card grid.
   let currentPage = 1;
+  // When enabled, show every filtered card instead of the current page slice.
+  let showAllItems = false;
   // User-entered search text used to query the Fuse index.
   let activeSearchQuery = "";
   // Fuse instance built once from card metadata and reused for search updates.
@@ -608,6 +612,14 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
       return;
     }
 
+    if (showAllItems) {
+      const label = `Showing all ${visibleCount} tool${visibleCount !== 1 ? "s" : ""}`;
+      elements.forEach((element) => {
+        element.textContent = label;
+      });
+      return;
+    }
+
     const startIndex = (currentPage - 1) * PAGE_SIZE + 1;
     const endIndex = Math.min(currentPage * PAGE_SIZE, visibleCount);
     const label = `Showing ${startIndex}-${endIndex} of ${visibleCount} tool${visibleCount !== 1 ? "s" : ""}`;
@@ -648,6 +660,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     const cards = document.querySelectorAll<HTMLElement>(".playbook-card");
     const resultsCount = document.querySelectorAll<HTMLElement>("[data-playbook-results-count]");
     const pagination = document.querySelectorAll<HTMLElement>("[data-playbook-pagination]");
+    const viewAllButtons = document.querySelectorAll<HTMLButtonElement>("[data-playbook-view-all]");
     const prevButtons = document.querySelectorAll<HTMLButtonElement>("[data-playbook-page-prev]");
     const nextButtons = document.querySelectorAll<HTMLButtonElement>("[data-playbook-page-next]");
     const pageNumberContainers = document.querySelectorAll<HTMLElement>("[data-playbook-page-numbers]");
@@ -671,7 +684,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
 
     const start = (currentPage - 1) * PAGE_SIZE;
     const end = start + PAGE_SIZE;
-    const cardsForPage = new Set(filteredCards.slice(start, end));
+    const cardsForPage = new Set(showAllItems ? filteredCards : filteredCards.slice(start, end));
 
     cards.forEach((card) => {
       const shouldShow = cardsForPage.has(card);
@@ -683,7 +696,13 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
     renderPageNumbers(pageNumberContainers, totalPages);
 
     pagination.forEach((element) => {
-      element.hidden = totalPages <= 1;
+      element.hidden = showAllItems || totalPages <= 1;
+    });
+
+    viewAllButtons.forEach((button) => {
+      button.hidden = !showAllItems && totalPages <= 1;
+      button.textContent = showAllItems ? "Show pages" : "View all";
+      button.setAttribute("aria-pressed", String(showAllItems));
     });
 
     prevButtons.forEach((button) => {
@@ -706,6 +725,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
 
   const prevButtons = document.querySelectorAll<HTMLButtonElement>("[data-playbook-page-prev]");
   const nextButtons = document.querySelectorAll<HTMLButtonElement>("[data-playbook-page-next]");
+  const viewAllButtons = document.querySelectorAll<HTMLButtonElement>("[data-playbook-view-all]");
   const searchInput = document.getElementById("playbook-search-input") as HTMLInputElement | null;
   const clearSearchButton = document.getElementById("playbook-search-clear") as HTMLButtonElement | null;
 
@@ -716,6 +736,14 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
 
   nextButtons.forEach((button) => {
     button.addEventListener("click", () => changePage(1));
+  });
+
+  viewAllButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      showAllItems = !showAllItems;
+      currentPage = 1;
+      updatePaginationView();
+    });
   });
 
   // Search input updates the match set, resets to page 1, then rerenders.
