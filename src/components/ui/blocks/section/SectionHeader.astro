@@ -1,0 +1,57 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+import Heading from "../../elements/heading/Heading.astro";
+
+type Props = Omit<HTMLAttributes<"header">, "title"> & {
+  /** Intro text below the title; use the `description` slot for custom markup */
+  description?: string;
+  /** Small text above the title */
+  headline?: string;
+  /** Main title; use the `title` slot for custom markup */
+  title?: string;
+};
+
+const { class: className, description, headline, title, ...rest } = Astro.props;
+
+const hasHeadline = !!headline || Astro.slots.has("headline");
+const hasTitle = !!title || Astro.slots.has("title");
+const hasDescription = !!description || Astro.slots.has("description");
+---
+
+<header
+  class={cn("tw:flex tw:w-full tw:flex-col tw:gap-1", className)}
+  data-slot="ui-section_header"
+  {...rest}
+>
+  {
+    hasHeadline && (
+      <div
+        class="tw:text-sm tw:font-semibold tw:tracking-wide tw:text-muted-foreground tw:uppercase"
+        data-slot="ui-section_header-headline"
+      >
+        <slot name="headline">{headline}</slot>
+      </div>
+    )
+  }
+  {
+    hasTitle && (
+      <Heading as="h2" data-slot="ui-section_header-title" size="md">
+        <slot name="title">{title}</slot>
+      </Heading>
+    )
+  }
+  {
+    hasDescription && (
+      <div
+        class="tw:flex tw:flex-col tw:gap-4 tw:text-base tw:leading-[1.6] tw:text-muted-foreground tw:[&_p]:m-0!"
+        data-slot="ui-section_header-description"
+      >
+        <slot name="description">{description}</slot>
+      </div>
+    )
+  }
+  <slot />
+</header>

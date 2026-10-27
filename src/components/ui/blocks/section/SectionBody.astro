@@ -3,18 +3,18 @@ import type { HTMLAttributes } from "astro/types";
 
 import { cn } from "@/src/lib/utils";
 
-type Props = HTMLAttributes<"p">;
+type Props = HTMLAttributes<"div">;
 
 const { class: className, ...rest } = Astro.props;
 ---
 
-<p
+<div
   class={cn(
-    "tw:m-0! tw:text-base tw:leading-[1.6] tw:text-muted-foreground",
+    "tw:flex tw:w-full tw:min-w-0 tw:flex-col tw:items-start tw:gap-4",
     className,
   )}
-  data-slot="section-description"
+  data-slot="ui-section_body"
   {...rest}
 >
   <slot />
-</p>
+</div>
