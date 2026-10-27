@@ -1,8 +1,10 @@
 import Button from "../../elements/button/Button.astro";
-import Heading from "../../elements/heading/Heading.astro";
-import Message from "../message/Message.astro";
+import Section from "../section/Section.astro";
+import SectionBody from "../section/SectionBody.astro";
+import SectionHeader from "../section/SectionHeader.astro";
 import Page from "./Page.astro";
 import PageBody from "./PageBody.astro";
+import PageContainer from "./PageContainer.astro";
 import PageHeader from "./PageHeader.astro";
 
 const header = {
@@ -20,33 +22,70 @@ const body = {
   slots: {
     default: [
       {
-        component: Heading,
-        props: { size: "md" },
-        slots: { default: "Why it matters" },
-      },
-      "<p>The ITS PCB Program works with Federal, State, and local transportation stakeholders to ensure they have adequate knowledge of ITS and that the United States has a workforce capable of developing, operating, and maintaining it.</p>",
-      {
-        component: Message,
-        props: {
-          headline: "Technical assistance",
-          icon: "telephone-outbound-fill",
-          title: "Connect with the ITS Help Desk",
-        },
+        component: PageContainer,
         slots: {
-          content:
-            "Get support finding resources, standards, and training for your deployment.",
+          default: [
+            '<div class="tw:h-64 tw:w-full tw:rounded-lg tw:bg-muted"></div>',
+          ],
         },
       },
     ],
   },
 };
 
+const sectionBody = {
+  component: SectionBody,
+  slots: {
+    default: [
+      '<div class="tw:h-48 tw:w-full tw:rounded-lg tw:bg-black/10"></div>',
+    ],
+  },
+};
+
+const sections = [
+  {
+    component: Section,
+    slots: {
+      default: [
+        {
+          component: SectionHeader,
+          props: {
+            description:
+              "Foundational trainings for practitioners as well as technical trainings on V2X standards.",
+            headline: "Trainings",
+            title: "Build your knowledge",
+          },
+        },
+        sectionBody,
+      ],
+    },
+  },
+  {
+    component: Section,
+    props: { color: "muted" },
+    slots: {
+      default: [
+        {
+          component: SectionHeader,
+          props: {
+            description:
+              "Hands-on learning experiences for community colleges and trade schools.",
+            headline: "Education",
+            title: "Teach the next generation",
+          },
+        },
+        sectionBody,
+      ],
+    },
+  },
+];
+
 const meta = {
   title: "UI/Blocks/Page",
   component: Page,
   argTypes: {
     as: {
-      options: ["main", "div", "section"],
+      options: ["main", "div"],
       control: { type: "select" },
     },
   },
@@ -66,6 +105,17 @@ export const HeaderOnly = {
   args: {
     slots: {
       default: [header],
+    },
+  },
+};
+
+/**
+ * Sections span the full page width; `color="muted"` bleeds the background edge to edge
+ */
+export const WithSections = {
+  args: {
+    slots: {
+      default: [header, ...sections],
     },
   },
 };
