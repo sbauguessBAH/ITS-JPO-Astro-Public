@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+type Props = HTMLAttributes<"table"> & {
+  hasBorder?: boolean;
+};
+
+const {
+  class: className,
+  hasBorder = false,
+  ...props
+} = Astro.props;
+---
+
+<div
+  class={cn(
+    "tw:relative tw:w-full tw:overflow-auto",
+    hasBorder &&
+      "tw:rounded-md tw:border tw:border-border tw:[&_th]:border tw:[&_th]:border-border tw:[&_td]:border tw:[&_td]:border-border",
+  )}
+  data-bordered={hasBorder ? "" : undefined}
+  data-slot="table-container"
+>
+  <table
+    class={cn("tw:w-full tw:caption-bottom tw:text-sm", className)}
+    data-slot="table"
+    {...props}
+  >
+    <slot />
+  </table>
+</div>

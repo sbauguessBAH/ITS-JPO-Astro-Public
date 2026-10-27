@@ -1,0 +1,52 @@
+import { Meta, Title } from "@storybook/addon-docs/blocks";
+import * as TableStories from "./Table.stories";
+
+<Meta of={TableStories} name="Docs" />
+
+<Title />
+
+## Composition
+
+Compose a table from header, body, row, and cell components. Add `hasBorder` to show borders around the table and its cells.
+
+```astro
+---
+import Table from "@/src/components/ui/elements/table/Table.astro";
+import TableBody from "@/src/components/ui/elements/table/TableBody.astro";
+import TableCaption from "@/src/components/ui/elements/table/TableCaption.astro";
+import TableCell from "@/src/components/ui/elements/table/TableCell.astro";
+import TableFooter from "@/src/components/ui/elements/table/TableFooter.astro";
+import TableHead from "@/src/components/ui/elements/table/TableHead.astro";
+import TableHeader from "@/src/components/ui/elements/table/TableHeader.astro";
+import TableRow from "@/src/components/ui/elements/table/TableRow.astro";
+---
+
+<Table hasBorder>
+  <TableCaption>Recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Invoice</TableHead>
+      <TableHead>Status</TableHead>
+      <TableHead>Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>INV001</TableCell>
+      <TableCell>Paid</TableCell>
+      <TableCell>$250.00</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>INV002</TableCell>
+      <TableCell>Pending</TableCell>
+      <TableCell>$150.00</TableCell>
+    </TableRow>
+  </TableBody>
+  <TableFooter>
+    <TableRow>
+      <TableCell colspan={2}>Total</TableCell>
+      <TableCell>$400.00</TableCell>
+    </TableRow>
+  </TableFooter>
+</Table>
+```
