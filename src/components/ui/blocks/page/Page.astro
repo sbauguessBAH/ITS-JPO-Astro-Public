@@ -10,27 +10,18 @@ type Props = HTMLAttributes<"div"> & {
    * @default `main`
    */
   as?: "div" | "main" | "section";
-  /**
-   * Lets the page span the full width of its parent instead of being
-   * contained to `max-w-7xl`.
-   *
-   * @default `false`
-   */
-  fullWidth?: boolean;
 };
 
 const {
   as: Tag = "main",
   class: className,
-  fullWidth = false,
   ...rest
 } = Astro.props;
 ---
 
 <Tag
   class={cn(
-    "tw:flex tw:flex-col tw:gap-8 tw:pb-12",
-    !fullWidth && "tw:mx-auto tw:w-full tw:max-w-7xl tw:px-4 tw:xl:px-0",
+    "tw:flex tw:flex-col tw:gap-8 tw:px-4 tw:xl:px-0 tw:w-full",
     className,
   )}
   data-slot="page"
