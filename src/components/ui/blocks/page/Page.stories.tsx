@@ -12,24 +12,7 @@ const header = {
       "The ITS Professional Capacity Building (PCB) Program delivers multimodal ITS learning opportunities to transportation professionals through trainings, webinars, cohorts, and technical assistance.",
     headline: "Resources",
     title: "Program Overview",
-  },
-  slots: {
-    links: [
-      {
-        component: Button,
-        props: { link: { href: "/resources/pcb/trainings" } },
-        slots: { default: "Explore trainings" },
-      },
-      {
-        component: Button,
-        props: {
-          link: { href: "/resources/pcb/peer-exchanges" },
-          variant: "outline",
-        },
-        slots: { default: "Peer exchanges" },
-      },
-    ],
-  },
+  }
 };
 
 const body = {
