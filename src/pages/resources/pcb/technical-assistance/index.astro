@@ -68,9 +68,9 @@ const RESOURCES = [
     </PageHeader>
     <Section>
       <div
-        class="tw:flex tw:flex-row tw:items-center tw:justify-between tw:gap-16 tw:rounded-2xl tw:bg-secondary tw:p-12"
+        class="tw:flex tw:flex-col tw:lg:flex-row tw:items-center tw:justify-between tw:gap-16 tw:rounded-2xl tw:bg-secondary tw:p-12"
       >
-        <div class="tw:flex tw:basis-2/5 tw:flex-col tw:justify-center">
+        <div class="tw:flex tw:lg:basis-2/5 tw:flex-col tw:justify-center">
           <HelpDeskLogo class="tw:h-auto tw:w-full" />
         </div>
         <div
@@ -87,7 +87,6 @@ const RESOURCES = [
             equipment at no cost, to make informed procurement decisions.
           </p>
           <Button
-            class="ui:w-fit"
             color="accent"
             link={{
               href: base_url("/resources/pcb/technical-assistance/help-desk"),
