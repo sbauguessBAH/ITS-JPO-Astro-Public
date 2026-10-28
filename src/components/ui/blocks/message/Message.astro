@@ -1,0 +1,50 @@
+---
+import { cn } from "@/src/lib/utils";
+
+import type { IconName } from "../../icon/icons";
+
+import Icon from "../../icon/Icon.astro";
+
+type Props = {
+  class?: string;
+  /** Text above title */
+  headline?: string;
+  icon?: IconName;
+  /** Main title */
+  title?: string;
+};
+
+const { class: className, headline, icon, title } = Astro.props;
+---
+
+<div
+  class={cn(
+    "tw:flex tw:flex-col tw:gap-2 tw:rounded-2xl tw:p-6",
+    // "tw:bg-primary/5",
+    "tw:border tw:border-l-4",
+    // "tw:border-primary/10 tw:border-l-primary",
+    className,
+  )}
+  data-slot="message"
+>
+  <div
+    class="tw:flex tw:flex-row tw:items-center tw:gap-4"
+    data-slot="message-body"
+  >
+    {icon && <Icon data-slot="message-icon" name={icon} size={32} />}
+    <div class="tw:flex tw:flex-col tw:gap-0" data-slot="message-header">
+      <div class="tw:text-sm" data-slot="message-headline">
+        <slot name="headline">{headline}</slot>
+      </div>
+      <div
+        class="tw:text-xl tw:leading-snug tw:font-bold"
+        data-slot="message-title"
+      >
+        <slot name="title">{title}</slot>
+      </div>
+    </div>
+  </div>
+  <div data-slot="message-content">
+    <slot name="content" />
+  </div>
+</div>

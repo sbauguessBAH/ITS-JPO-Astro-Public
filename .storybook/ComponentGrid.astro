@@ -1,0 +1,18 @@
+---
+type Props = {
+  minWidth?: string;
+  align?: "start" | "end";
+};
+
+const { minWidth = "8rem", align = "start" } = Astro.props;
+---
+
+<div
+  class:list={[
+    "tw:grid tw:gap-3",
+    align === "end" ? "tw:items-end" : "tw:items-start",
+  ]}
+  style={`grid-template-columns: repeat(auto-fill, minmax(${minWidth}, 1fr));`}
+>
+  <slot />
+</div>

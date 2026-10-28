@@ -1,0 +1,57 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cva } from "class-variance-authority";
+
+import { cn } from "@/src/lib/utils";
+
+/**
+ * IconTile component for displaying an icon within a styled tile.
+ *
+ * You can use `tw:bg-` classes to customize the background of the tile.
+ */
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+  size?: "default" | "lg" | "sm";
+  variant?: "outline" | "soft";
+};
+
+const {
+  class: className,
+  size = "default",
+  variant = "soft",
+  ...props
+} = Astro.props;
+
+const iconTileVariants = cva(
+  "tw:inline-flex tw:shrink-0 tw:items-center tw:justify-center tw:rounded-md tw:border tw:[&_svg]:pointer-events-none tw:[&_svg]:shrink-0",
+  {
+    defaultVariants: {
+      size: "default",
+      variant: "soft",
+    },
+    variants: {
+      size: {
+        default: "tw:size-10 tw:[&_svg]:size-5",
+        lg: "tw:size-14 tw:[&_svg]:size-7",
+        sm: "tw:size-8 tw:[&_svg]:size-4",
+      },
+      variant: {
+        outline: "tw:border-border tw:bg-transparent tw:text-foreground",
+        soft: "tw:border-transparent tw:bg-muted tw:text-foreground",
+      },
+    },
+  },
+);
+---
+
+<div
+  aria-hidden="true"
+  class={cn(iconTileVariants({ size, variant }), className)}
+  data-size={size}
+  data-slot="icon-tile"
+  data-variant={variant}
+  {...props}
+>
+  <slot />
+</div>

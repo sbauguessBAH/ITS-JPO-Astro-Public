@@ -1,0 +1,31 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+type Props = HTMLAttributes<"div">;
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<div
+  class={cn(
+    // Layout
+    "tw:group/card-header tw:@container/card-header",
+    "tw:grid tw:auto-rows-min tw:items-start tw:gap-1",
+    "tw:has-data-[slot=card-action]:grid-cols-[1fr_auto]",
+    "tw:has-data-[slot=card-description]:grid-rows-[auto_auto]",
+
+    // Spacing
+    "tw:data-[size=sm]:tw:px-4 tw:px-5",
+    "tw:[.border-b]:pb-4 tw:data-[size=sm]:[.border-b]:pb-4",
+
+    // Appearance
+    "tw:rounded-t-2xl",
+    className,
+  )}
+  data-slot="card-header"
+  {...rest}
+>
+  <slot />
+</div>

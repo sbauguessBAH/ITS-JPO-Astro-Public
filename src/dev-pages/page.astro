@@ -1,0 +1,68 @@
+---
+import OverlayCard from "@/src/components/ui/blocks/overlay-card/OverlayCard.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import "@/src/styles/globals.css";
+---
+
+<PageLayout
+  currentBreadcrumb="Page Block"
+  description="Mockup of the Page block"
+  title="ITS Professional Capacity Building"
+>
+  <Fragment slot="banner">ITS Professional Capacity Building</Fragment>
+  <Page>
+    <PageHeader
+      description="The ITS Professional Capacity Building (PCB) Program supports activities that deliver multimodal ITS learning opportunities to transportation professionals by providing ITS trainings and webinars, fostering cohorts, and providing technical assistance to agencies deploying ITS technologies, as authorized by 23 USC 514."
+      headline="Resources"
+      title="Program Overview"
+    >
+      <Fragment slot="links">
+        <Button link={{ href: "/resources/pcb/trainings" }}>
+          Explore trainings
+        </Button>
+        <Button
+          link={{ href: "/resources/pcb/peer-exchanges" }}
+          variant="outline"
+        >
+          Peer exchanges
+        </Button>
+      </Fragment>
+    </PageHeader>
+    <PageBody>
+      <section class="tw:flex tw:flex-col tw:gap-4" id="overview">
+        <Heading as="h2" size="md">Why it matters</Heading>
+        <p class="tw:m-0">
+          The ITS PCB Program works with Federal, State, and local
+          transportation stakeholders to ensure they have adequate knowledge of
+          ITS for consideration in the transportation planning process and that
+          the United States has a workforce capable of developing, operating,
+          and maintaining ITS.
+        </p>
+      </section>
+      <section class="tw:flex tw:flex-col tw:gap-4" id="resources">
+        <Heading as="h2" size="md">Spotlight resources</Heading>
+        <div class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2">
+          <OverlayCard
+            backgroundImage="pcb/resources/v2x-intersection"
+            color="lime"
+            description="Foundational trainings for practitioners as well as technical trainings on V2X standards."
+            name="V2X Training"
+            path="/resources/pcb/trainings/v2x-trainings"
+          />
+          <OverlayCard
+            backgroundImage="pcb/resources/cave"
+            color="orange"
+            description="Hands-on learning experience to support instruction for community colleges and trade schools."
+            name="CAVe"
+            path="/resources/pcb/technical-assistance/cave"
+          />
+        </div>
+      </section>
+    </PageBody>
+  </Page>
+</PageLayout>

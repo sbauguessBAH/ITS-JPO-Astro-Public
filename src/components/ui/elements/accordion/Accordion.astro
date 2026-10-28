@@ -1,0 +1,160 @@
+---
+/**
+ * Accordion root. Compose with `AccordionItem`, `AccordionTrigger` and `AccordionContent`.
+ *
+ * @remarks
+ * Rendered as a `<ui-accordion>` custom element. It follows the WAI-ARIA
+ * accordion pattern:
+ *
+ * - Trigger: `Enter`/`Space` toggles its panel
+ * - `ArrowUp`/`ArrowDown` move focus between triggers (wrapping), `Home`/`End` jump to the first/last
+ * - `type="single"` keeps at most one item open; `type="multiple"` lets any number stay open
+ *
+ * Nested accordions are supported; each one only controls its own items.
+ */
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+/**
+ * Accordion displays a list of collapsible items, each with a trigger and content panel.
+ */
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+  /**
+   * The type of accordion. `single` allows only one item to be open at a time, while `multiple` allows multiple items to be open simultaneously.
+   *
+   * @default `multiple`
+   */
+  type?: "multiple" | "single";
+};
+
+const { class: className, type = "multiple", ...props } = Astro.props;
+---
+
+<ui-accordion
+  class={cn("tw:block tw:w-full", className)}
+  data-slot="accordion"
+  data-type={type}
+  {...props}
+>
+  <slot />
+</ui-accordion>
+
+<script>
+  const ROOT = '[data-slot="accordion"]';
+  const ITEM = '[data-slot="accordion-item"]';
+  const TRIGGER = '[data-slot="accordion-trigger"]';
+  const CONTENT = '[data-slot="accordion-content"]';
+
+  let idCounter = 0;
+
+  class Accordion extends HTMLElement {
+    connectedCallback() {
+      this.addEventListener("click", this.#onClick);
+      this.addEventListener("keydown", this.#onKeydown);
+      this.#items().forEach((item) => this.#setOpen(item, this.#isOpen(item)));
+    }
+
+    disconnectedCallback() {
+      this.removeEventListener("click", this.#onClick);
+      this.removeEventListener("keydown", this.#onKeydown);
+    }
+
+    // Only items that belong to this accordion, not to a nested one
+    #items() {
+      return Array.from(this.querySelectorAll<HTMLElement>(ITEM)).filter(
+        (item) => item.parentElement?.closest(ROOT) === this,
+      );
+    }
+
+    #triggers() {
+      return this.#items()
+        .map((item) => item.querySelector<HTMLButtonElement>(TRIGGER))
+        .filter(
+          (trigger): trigger is HTMLButtonElement =>
+            !!trigger &&
+            trigger.closest(ITEM)?.parentElement?.closest(ROOT) === this &&
+            !trigger.disabled,
+        );
+    }
+
+    #isOpen(item: HTMLElement) {
+      return item.dataset.state === "open";
+    }
+
+    // Links trigger and content with ids so no manual wiring is needed
+    #setOpen(item: HTMLElement, open: boolean) {
+      const trigger = item.querySelector<HTMLElement>(TRIGGER);
+      const content = item.querySelector<HTMLElement>(CONTENT);
+      if (!trigger || !content) return;
+
+      if (!content.id) content.id = `accordion-content-${++idCounter}`;
+      if (!trigger.id) trigger.id = `accordion-trigger-${++idCounter}`;
+      trigger.setAttribute("aria-controls", content.id);
+      content.setAttribute("aria-labelledby", trigger.id);
+
+      const state = open ? "open" : "closed";
+      item.dataset.state = state;
+      trigger.dataset.state = state;
+      content.dataset.state = state;
+      trigger.setAttribute("aria-expanded", String(open));
+    }
+
+    #toggle(item: HTMLElement) {
+      const open = !this.#isOpen(item);
+      if (open && this.dataset.type === "single") {
+        this.#items().forEach((other) => {
+          if (other !== item) this.#setOpen(other, false);
+        });
+      }
+      this.#setOpen(item, open);
+    }
+
+    #onClick = (event: MouseEvent) => {
+      const trigger = (event.target as Element).closest<HTMLButtonElement>(
+        TRIGGER,
+      );
+      const item = trigger?.closest<HTMLElement>(ITEM);
+      if (!trigger || !item || trigger.disabled) return;
+      if (item.parentElement?.closest(ROOT) !== this) return;
+
+      this.#toggle(item);
+    };
+
+    #onKeydown = (event: KeyboardEvent) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement) || !target.matches(TRIGGER)) return;
+
+      const triggers = this.#triggers();
+      const index = triggers.indexOf(target as HTMLButtonElement);
+      if (index < 0) return;
+
+      let next: number;
+      switch (event.key) {
+        case "ArrowDown":
+          next = (index + 1) % triggers.length;
+          break;
+        case "ArrowUp":
+          next = (index - 1 + triggers.length) % triggers.length;
+          break;
+        case "Home":
+          next = 0;
+          break;
+        case "End":
+          next = triggers.length - 1;
+          break;
+        default:
+          return;
+      }
+
+      event.preventDefault();
+      triggers[next].focus();
+    };
+  }
+
+  // Guard against double registration when the script is re-evaluated (HMR)
+  if (!customElements.get("ui-accordion")) {
+    customElements.define("ui-accordion", Accordion);
+  }
+</script>
