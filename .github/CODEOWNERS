@@ -1,0 +1,49 @@
+# ##############################################################################
+# The CODEOWNERS file lets you track who the author of a file is so you are able
+# to get in touch with the appropriate person when you have an issue with a file.
+#
+# Given the distributed nature of development, this should help ensure we can
+# track changes and get in touch with the right people when problems occur.
+#
+# https://docs.github.com/articles/about-codeowners
+#
+# ##############################################################################
+
+# Shawn is the primary maintainer of the repository.
+# He will be the default owner unless a later match takes precedence.
+*                                                 @sbauguessBAH
+
+# ######################################
+# Pages
+# ######################################
+
+# Program sites
+src/pages/resources/pcb/                          @cadenyoung-st
+src/pages/resources/library/                      @cadenyoung-st
+src/pages/research-areas/intersection-safety/     @cadenyoung-st
+src/pages/research-areas/automation-program/      @cadenyoung-st
+
+# Developer resources
+src/pages/resources/library/                      @cadenyoung-st
+
+# ######################################
+# Components
+# ######################################
+
+# Generic UI components
+src/components/ui/                                @cadenyoung-st
+
+# Components for program sites
+src/components/programs/                          @cadenyoung-st
+
+# ######################################
+# Content collections
+# ######################################
+
+# Program-specific libraries
+src/content/asc/                                  @cadenyoung-st
+src/content/automation/                           @cadenyoung-st
+src/content/pcb/                                  @cadenyoung-st
+
+# General media library
+src/content/library/                              @cadenyoung-st
