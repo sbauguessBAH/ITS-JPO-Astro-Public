@@ -31,7 +31,9 @@ let hideTimeout: ReturnType<typeof setTimeout> | null = null;
  * @param event MouseEvent
  */
 const updateTempMouse = (event: MouseEvent) => {
-  const container = document.querySelector('.map-container') as HTMLElement | null;
+  const container = document.querySelector(
+    ".map-container",
+  ) as HTMLElement | null;
   if (container) {
     const rect = container.getBoundingClientRect();
     tempX.value = event.clientX - rect.left;
@@ -61,19 +63,25 @@ const clearTimeouts = () => {
  * @param state State object
  * @param delay Delay in milliseconds
  */
-const handleSelect = (event: MouseEvent, key: string, state: State, delay: number) => {
+const handleSelect = (
+  event: MouseEvent,
+  key: string,
+  state: State,
+  delay: number,
+) => {
   // If state has no members, don't show tooltip
   if (!state.members || state.members.length === 0) return;
 
   clearTimeouts();
-  window.removeEventListener('mousemove', updateTempMouse);
+  window.removeEventListener("mousemove", updateTempMouse);
 
   hoveringShape.value = true;
   currentStateId.value = key;
 
-
   // Start tracking live mouse coords during delay (relative to container)
-  const container = document.querySelector('.map-container') as HTMLElement | null;
+  const container = document.querySelector(
+    ".map-container",
+  ) as HTMLElement | null;
   if (container) {
     const rect = container.getBoundingClientRect();
     tempX.value = event.clientX - rect.left;
@@ -82,11 +90,11 @@ const handleSelect = (event: MouseEvent, key: string, state: State, delay: numbe
     tempX.value = event.clientX;
     tempY.value = event.clientY;
   }
-  window.addEventListener('mousemove', updateTempMouse);
+  window.addEventListener("mousemove", updateTempMouse);
 
   // Delay before showing tooltip
   showTimeout = setTimeout(() => {
-    window.removeEventListener('mousemove', updateTempMouse);
+    window.removeEventListener("mousemove", updateTempMouse);
 
     // If still hovering over the same shape after delay, show tooltip
     if (currentStateId.value === key) {
@@ -104,7 +112,7 @@ const handleSelect = (event: MouseEvent, key: string, state: State, delay: numbe
  */
 const handleDeselect = () => {
   clearTimeouts();
-  window.removeEventListener('mousemove', updateTempMouse);
+  window.removeEventListener("mousemove", updateTempMouse);
 
   hoveringShape.value = false;
   currentStateId.value = null;
@@ -120,7 +128,7 @@ const handleDeselect = () => {
  */
 const hideTooltip = () => {
   clearTimeouts();
-  window.removeEventListener('mousemove', updateTempMouse);
+  window.removeEventListener("mousemove", updateTempMouse);
 
   showTooltip.value = false;
   currentState.value = null;
@@ -135,7 +143,10 @@ const hideTooltip = () => {
  */
 const onGlobalMouseEnter = (event: MouseEvent) => {
   const target = event.target as Element;
-  if (target.classList.contains('map-tooltip') || target.closest('.map-tooltip')) {
+  if (
+    target.classList.contains("map-tooltip") ||
+    target.closest(".map-tooltip")
+  ) {
     hoveringTooltip.value = true;
     clearTimeouts();
   }
@@ -147,7 +158,10 @@ const onGlobalMouseEnter = (event: MouseEvent) => {
  */
 const onGlobalMouseLeave = (event: MouseEvent) => {
   const target = event.target as Element;
-  if (target.classList.contains('map-tooltip') || target.closest('.map-tooltip')) {
+  if (
+    target.classList.contains("map-tooltip") ||
+    target.closest(".map-tooltip")
+  ) {
     hoveringTooltip.value = false;
 
     if (!hoveringShape.value) {
@@ -163,7 +177,11 @@ const onGlobalMouseLeave = (event: MouseEvent) => {
  */
 const handleContainerClick = (event: MouseEvent) => {
   const target = event.target as Element;
-  if (!target.closest('.state') && !target.classList.contains('map-tooltip') && !target.closest('.map-tooltip')) {
+  if (
+    !target.closest(".state") &&
+    !target.classList.contains("map-tooltip") &&
+    !target.closest(".map-tooltip")
+  ) {
     hideTooltip();
   }
 };
@@ -175,9 +193,13 @@ onMounted(() => {
     container.addEventListener("mouseleave", onGlobalMouseLeave, true);
   }
 
-  document.addEventListener('click', (event) => {
+  document.addEventListener("click", (event) => {
     const target = event.target as Element;
-    if (!target.closest('.state') && !target.classList.contains('map-tooltip') && !target.closest('.map-tooltip')) {
+    if (
+      !target.closest(".state") &&
+      !target.classList.contains("map-tooltip") &&
+      !target.closest(".map-tooltip")
+    ) {
       hideTooltip();
     }
   });
@@ -185,15 +207,14 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   clearTimeouts();
-  window.removeEventListener('mousemove', updateTempMouse);
-  
-  const container = document.querySelector('.map-container');
+  window.removeEventListener("mousemove", updateTempMouse);
+
+  const container = document.querySelector(".map-container");
   if (container) {
-    container.removeEventListener('mouseenter', onGlobalMouseEnter, true);
-    container.removeEventListener('mouseleave', onGlobalMouseLeave, true);
+    container.removeEventListener("mouseenter", onGlobalMouseEnter, true);
+    container.removeEventListener("mouseleave", onGlobalMouseLeave, true);
   }
 });
-
 </script>
 <template>
   <div
@@ -235,7 +256,9 @@ onBeforeUnmount(() => {
             :cy="member.y"
             :r="mapSettings.cohortRadius"
             class="member-point"
-            @mouseenter="handleSelect($event, key, state, mapSettings.hoverDelay)"
+            @mouseenter="
+              handleSelect($event, key, state, mapSettings.hoverDelay)
+            "
             @click="handleSelect($event, key, state, mapSettings.clickDelay)"
           ></circle>
         </g>
@@ -277,7 +300,8 @@ onBeforeUnmount(() => {
     fill: #122e50;
   }
 
-  >path:hover, >circle:hover {
+  > path:hover,
+  > circle:hover {
     cursor: pointer;
   }
 
@@ -324,14 +348,15 @@ onBeforeUnmount(() => {
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid #64748b;
   padding: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: 6px;
   transition: all 0.2s;
   z-index: 1000;
   pointer-events: none;
   max-width: 250px;
-  
+
   h1 {
     all: revert;
     font-weight: bold;
