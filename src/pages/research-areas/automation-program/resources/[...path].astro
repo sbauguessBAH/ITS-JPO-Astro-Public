@@ -106,114 +106,11 @@ const projects = resources
     return acc;
   }, [] as Project[]);
 ---
-
-<style>
-  .resource-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size);
-  }
-
-  .resource-card-header {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: var(--size-sm);
-    padding: var(--size);
-    /* padding-bottom: 0; */
-  }
-
-  .resource-card-body {
-    padding: 0;
-    background: rgb(var(--color-gray-light));
-  }
-
-  /* .resource-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .resource-menu-item {
-    padding: 0.5rem 1rem;
-    width: 100%;
-    text-decoration: none;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-light);
-    font-weight: 600;
-  }
-  .resource-menu-item:hover {
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .resource-menu-item-active {
-    background: rgb(var(--color-brand));
-    color: white;
-  } */
-
-  .resource-area-badge {
-    background: rgb(var(--color-gray-light));
-    border: 1px solid var(--border-light);
-    border-radius: 1rem;
-    font-size: 0.9rem;
-    height: 24px;
-    width: fit-content;
-    padding: 0 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-  }
-
-  .deliverable-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    /* gap: 0.5rem; */
-  }
-
-  .deliverable-list-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: var(--size-sm) var(--size);
-    border-bottom: 1px solid var(--border-light);
-  }
-
-  .deliverable-title {
-    flex-basis: calc(9 / 10 * 100%);
-  }
-
-  .deliverable-title:hover {
-    font-weight: 400;
-  }
-
-  .deliverable-year {
-    font-weight: 600;
-  }
-
-  @media (min-width: 992px) {
-    .resource-container {
-      flex-direction: row;
-    }
-    .resource-menu {
-      flex-basis: 25%;
-    }
-    .resource-menu-item {
-    }
-    .resource-list {
-      flex-basis: 75%;
-    }
-  }
-</style>
 <Layout title="Automation Program">
   <Page>
     <PageHeader title="Resources" />
     <Section>
-      <div class="resource-container">
+      <div class="tw:flex tw:flex-col tw:gap-4 tw:lg:flex-row">
         <div class="tw:basis-1/4">
           <Panel label="Resource areas">
             <PanelHeader>Areas</PanelHeader>
@@ -248,7 +145,7 @@ const projects = resources
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ItemGroup class="tw:grid tw:grid-cols-2">
+                    <ItemGroup>
                       {sortedDeliverables.map((deliverable) => (
                         <Item
                           href={deliverable.url}
