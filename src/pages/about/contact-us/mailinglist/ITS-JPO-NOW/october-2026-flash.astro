@@ -1,0 +1,182 @@
+---
+import PageLayout from "@/src/layouts/PageLayout.astro";
+
+const keywords = ["ITS JPO", "newsletter", "Flash Edition", "October 2026", "ITS4US", "Deployment Accelerator"];
+const description = "ITS JPO NOW - Flash Edition (October 2026). The ITS4US Deployment Accelerator Broad Agency Announcement is now live and accepting proposals.";
+---
+
+<PageLayout title="ITS JPO NOW - Flash Edition (October 2026)" keywords={keywords} description={description}>
+  <Fragment slot="banner">ITS JPO NOW - Flash Edition</Fragment>
+
+  <main class="container-xl newsletter-container shadow rounded-4 p-4 mt-5">
+    <img
+      src="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/04/13450898/6819164/govdelivery-banners-flash_crop.jpg"
+      alt="ITS JPO Now - Flash Edition"
+      class="newsletter-banner"
+    />
+
+    <div class="newsletter-divider"><hr /></div>
+
+    <article id="its4us-deployment-accelerator-proposals" class="newsletter-article">
+      <figure class="newsletter-image">
+        <img
+          src="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/09/14376959/its4us-accelerator-logo_original.png"
+          alt="ITS4US Deployment Accelerator Logo"
+        />
+        <figcaption><strong>Source:</strong> USDOT</figcaption>
+      </figure>
+
+      <h2 class="newsletter-article-title text-center">ITS4US Deployment Accelerator Now Accepting Proposals</h2>
+
+      <div class="newsletter-article-content">
+        <p>
+          The ITS4US Deployment Accelerator Broad Agency Announcement is now live! The Program will provide seed funding to up to five sites to rapidly replicate the ITS4US Heart of Iowa Regional Transit Agency’s Health Connector project, which connects transportation to healthcare appointments. Awardees will join a cohort of deployers receiving technical assistance and support to deploy solutions within their communities within 12 months. Proposed multi-disciplinary teams must include a mobility service operator or provider, a software integrator, and a public or private healthcare partner.
+        </p>
+
+        <div class="newsletter-cta-wrapper align-right">
+          <a
+            href="https://sam.gov/workspace/contract/opp/8433753e4422447fa62b661ec5d8b9da/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="newsletter-cta"
+          >
+            <strong>View the Funding Opportunity</strong>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <div class="row">
+      <div class="col-12">
+        <img
+          src="https://content.govdelivery.com/attachments/fancy_images/USDOTFHWA/2026/02/13220765/6730572/govdelivery-newletter-template-25anniversary-footer_crop.jpg"
+          alt="ITS JPO footer"
+          class="newsletter-footer"
+        />
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  p {
+    font-size: 0.85rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  .newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .newsletter-divider {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  .newsletter-divider hr {
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+    margin: 0;
+  }
+
+  .newsletter-article {
+    margin: 1.5rem 0;
+  }
+
+  .newsletter-image {
+    margin: 0 0 1rem 0;
+  }
+
+  .newsletter-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .newsletter-image figcaption {
+    font-size: 0.75rem;
+    color: #666;
+    text-align: right;
+    margin-top: 0.75rem;
+    font-family: "Tahoma", sans-serif;
+  }
+
+  .newsletter-article-title {
+    font-size: 1.15rem;
+    color: #1e3769;
+    font-family: "Tahoma", sans-serif;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .newsletter-article-content {
+    font-size: 0.85rem;
+    font-family: "Tahoma", sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .newsletter-article-content p {
+    margin-bottom: 1rem;
+  }
+
+  .newsletter-cta-wrapper {
+    padding: 0 0 0.5rem 0;
+    margin: 0.75rem 0;
+  }
+
+  .newsletter-cta-wrapper.align-right {
+    text-align: right;
+  }
+
+  .newsletter-cta {
+    display: inline-block;
+    background-color: #0c77cf;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+  }
+
+  .newsletter-cta:hover {
+    background-color: #095a9c;
+    color: white !important;
+  }
+
+  .newsletter-cta strong {
+    font-weight: 600;
+  }
+
+  .newsletter-banner,
+  .newsletter-footer {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .newsletter-footer {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .newsletter-container {
+      padding: 1rem 0.5rem;
+    }
+  }
+</style>
