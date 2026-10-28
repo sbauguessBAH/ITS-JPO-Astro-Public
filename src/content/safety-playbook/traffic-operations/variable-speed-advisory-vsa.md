@@ -60,19 +60,24 @@ keywords:
 resources:
   - label: "Fact Sheet: Variable Speed Limits"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/Variable%20Speed%20Limits_508.pdf"
-    description: This resource provides background on Variable Speed Limits and its relevance to Variable Speed Advisory (VSA).
+    description: >-
+      This fact sheet explains how variable speed limits use current roadway information, including traffic speed, volume, weather, and surface conditions, to display appropriate speeds. VSLs can reduce speed variance, improve harmonization, and lower crash risk during congestion, work zones, and adverse weather.
   - label: "Report: Development and Field Evaluation of Variable Advisory Speed Limit System for Work Zones"
     url: "https://www.mndot.org/trafficeng/workzone/doc/Var-Adv-SpeedSystem-WZ-Report.pdf"
-    description: This resource provides background on Development and Field Evaluation of Variable Advisory Speed Limit System for Work Zones and its relevance to Variable Speed Advisory (VSA).
+    description: >-
+      This report evaluates a variable advisory speed system implemented on I-494 in the Twin Cities. It describes how real-time traffic measurements and advisory speed signs can reduce speed differences, improve traffic flow, and lower rear-end collision potential near work zone bottlenecks.
   - label: "Manual: CA Manual for Setting Speed Limits"
     url: "https://dot.ca.gov/-/media/dot-media/programs/safety-programs/documents/202503-ca-manual-setting-speed-limits-a11y.pdf"
-    description: This resource provides background on CA Manual for Setting Speed Limits and its relevance to Variable Speed Advisory (VSA).
+    description: >-
+      This manual explains the legal framework, engineering principles, and survey requirements used to establish safe, enforceable speed limits in California, including the Basic Speed Law and Engineering and Traffic Surveys.
   - label: "Fact Sheet: Appropriate Speed Limits for All Road Users"
     url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/App%20Speed%20Limits_508.pdf"
-    description: This resource provides background on Appropriate Speed Limits for All Road Users and its relevance to Variable Speed Advisory (VSA).
+    description: >-
+      This fact sheet recommends setting speed limits through engineering studies, Safe System principles, and tools such as USLIMITS2, accounting for roadway context, crash history, and mixed-user environments. It notes that modest reductions in posted speeds can measurably decrease crashes and improve compliance.
   - label: "Manual: Speed Limit Setting Handbook"
     url: "https://rosap.ntl.bts.gov/view/dot/82276"
-    description: This resource provides background on Speed Limit Setting Handbook and its relevance to Variable Speed Advisory (VSA).
+    description: >-
+      This handbook provides an engineering-based process for setting speed limits consistent with the MUTCD. It covers preparing and conducting speed studies, evaluating roadway and traffic factors, and implementing results, with real-world case studies.
 order: 44
 ---
 Variable Speed Advisory is an innovative traffic management system designed to optimize driving behavior by providing real-time, adaptive speed recommendations to drivers. Unlike static speed limits, this system dynamically adjusts suggested speeds based on evolving traffic, roadway, and environmental conditions. Leveraging data from IoT-enabled sensors, weather detectors, and live traffic monitors, Variable Speed Advisory uses predictive analytics to anticipate congestion, crashes, and delays, and communicates this information to drivers through connected in-vehicle systems, roadside displays, or mobile apps.

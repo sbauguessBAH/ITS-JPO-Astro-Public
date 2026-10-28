@@ -56,16 +56,20 @@ keywords:
 resources:
   - label: "Web Page: ARC-IT Roadway Warning"
     url: "https://www.arc-it.net/html/functionalobjects/funobj73.html"
-    description: This resource provides background on ARC-IT Roadway Warning and its relevance to TMC Signal Enforcement.
+    description: >-
+      This ARC-IT page explains how roadway equipment can detect hazards such as stopped vehicles, wrong-way drivers, queues, animals, pedestrians, debris, and reduced visibility, then warn drivers through signs, beacons, and in-vehicle messages.
   - label: "Web Page: ARC-IT Field Equipment Support"
     url: "https://www.arc-it.org/html/functionalobjects/funobj500.html"
-    description: This resource provides background on ARC-IT Field Equipment Support and its relevance to TMC Signal Enforcement.
+    description: >-
+      This ARC-IT page describes field-equipment monitoring, maintenance, control, and fault reporting for roadside ITS devices such as sensors, signs, and cameras.
   - label: "Executive Briefing: Next Generation Transportation Management Centers and Transportation Management Systems"
     url: "https://www.itskrs.its.dot.gov/briefings/executive-briefing/next-generation-transportation-management-centers-and-transportation"
-    description: "This resource provides background on Executive Briefing: Next Generation Transportation Management Centers and Transportation Management Systems and its relevance to TMC Signal Enforcement."
+    description: >-
+      This briefing covers modern TMC functions, integrated corridor management, predictive analytics, and advanced traffic control, with agency examples of TMC operations and signal management.
   - label: "Web Page: Welcome to Crowdsourcing for Advancing Operations"
     url: "https://ops.fhwa.dot.gov/crowdsourcing/index.cfm"
-    description: This resource provides background on Welcome to Crowdsourcing for Advancing Operations and its relevance to TMC Signal Enforcement.
+    description: >-
+      This FHWA page helps agencies integrate crowdsourced data streams to improve situational awareness, incident response, and decision-making, and provides adoption guidance, tools, and case studies.
 order: 12
 ---
 The TMC Signal Enforcement system is a comprehensive traffic management solution designed to enhance the safety and efficiency of signalized intersections. It allows operators at a centralized Traffic Management Center to remotely monitor and control signal enforcement equipment, providing real-time configuration information and status updates. This capability ensures that traffic signals operate reliably and respond effectively to varying traffic demands. In addition to remote control, the system supports traffic managers in analyzing and managing traffic flow using data from surveillance equipment such as cameras, sensors, and vehicle detectors. By collecting and aggregating this information, operators can identify congestion patterns, optimize signal timing, and implement strategies to improve traffic throughput while reducing delays.

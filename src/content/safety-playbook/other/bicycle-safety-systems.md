@@ -17,8 +17,8 @@ facility:
   - "Arterial/Collector Segment"
   - "Local Segment"
 safety:
-  - "Cyclist Safety"
-  - "Intersection Safety"
+  - "Cyclist"
+  - "Intersection"
   - "Nighttime Visibility"
 keywords:
   - "Bicycle Safety Systems"

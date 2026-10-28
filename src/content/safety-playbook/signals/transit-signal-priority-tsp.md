@@ -54,16 +54,24 @@ keywords:
 resources:
   - label: "Webpage: Signal Priority"
     url: "https://www.transit.dot.gov/research-innovation/signal-priority"
-    description: This resource provides background on Signal Priority and its relevance to Transit Signal Priority (TSP).
+    description: >-
+      This webpage explains passive and active transit signal priority, real-time signal control, schedule adherence, early greens, green extensions, and queue-jump lanes.
   - label: "Brief: Use Case: Transit Signal Priority Benefit-Cost Analysis"
     url: "https://rosap.ntl.bts.gov/view/dot/65729"
-    description: "This resource provides background on Use Case: Transit Signal Priority Benefit-Cost Analysis and its relevance to Transit Signal Priority (TSP)."
+    description: >-
+      This brief presents a benefit-cost analysis use case for a hypothetical TSP project, including bus delay reduction, bus-signal communication, priority requests, equipment, algorithms, and corridor deployment.
   - label: "Web Page: Transit Signal Priority"
     url: "https://www.itskrs.its.dot.gov/atm/transit-signal-priority"
-    description: This resource provides background on Transit Signal Priority and its relevance to Transit Signal Priority (TSP).
-  - label: "Handbook: ’WSDOTs Handbook for Corridor Capacity Evaluation"
+    description: >-
+      This page aggregates TSP briefings and visualizations, including bus rapid transit and V2X-based priority, and discusses bus delay, schedule reliability, traffic impacts, and person-throughput.
+  - label: "Handbook: WSDOT's Handbook for Corridor Capacity Evaluation"
     url: "https://www.wsdot.wa.gov/publications/fulltext/graynotebook/CCR_methodology_2nd_edition.pdf"
-    description: This resource provides background on ’WSDOTs Handbook for Corridor Capacity Evaluation and its relevance to Transit Signal Priority (TSP).
+    description: >-
+      This handbook provides a framework for assessing multimodal corridor performance, identifying congestion sources, and evaluating operational strategies to improve reliability.
+  - label: "Report: Assessing the Feasibility of Deploying Transit Signal Priority With Connected Vehicle Technology"
+    url: "https://rosap.ntl.bts.gov/view/dot/92709"
+    description: >-
+      This report assesses connected-vehicle-enabled TSP to reduce bus delays and improve schedule reliability using real-time traffic and connectivity data while limiting impacts on other vehicles.
 order: 16
 ---
 Transit Signal Priority (TSP) is an advanced strategy used by transit agencies to improve the speed, reliability, and efficiency of bus and high-capacity transit services. It is particularly effective for bus rapid transit and high-frequency routes along busy urban corridors, where traffic signals often cause significant delays. TSP works by giving transit vehicles priority at signalized intersections through a combination of hardware, software, and communication technologies. Advanced traffic signal controllers receive these priority requests and adjust signal timing to reduce delays. Centralized traffic management systems monitor real-time traffic and transit conditions, allowing dynamic adjustments to signal priority based on current congestion levels. Wireless communication technologies, such as dedicated short-range communications or cellular networks, enable buses and traffic signals to exchange information quickly and reliably. In addition, predictive algorithms and data analytics are used to optimize signal timing, minimize disruptions to general traffic, and improve overall transit reliability.

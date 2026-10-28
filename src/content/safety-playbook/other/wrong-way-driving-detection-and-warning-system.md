@@ -64,15 +64,16 @@ resources:
   - label: "Technical Report: Detection and Warning Systems for Wrong-Way Driving"
     url: "https://rosap.ntl.bts.gov/view/dot/29573"
     description: This technical report provides guidance on detecting and warning against wrong-way driving on highways. It applies to ITS, roadway safety, and traffic operations because it discusses wrong-way crash data, impaired driving, detection technologies, driver warning systems, traffic operations center notifications, law enforcement coordination, vehicle tracking, and integration with freeway management system infrastructure.
-  - label: "Technical Brief: Development of Crash Modification Factors for Wrong-Way Driving Treatments"
+  - label: "Tech Brief: Development of Crash Modification Factors for Wrong-Way Driving Treatments (FHWA-HRT-22-112)"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-22-112.pdf"
-    description: This brief summarizes a national evaluation of wrong-way driving treatments, including ITS strategies such as detection, active warning, and driver notification components. It presents crash modification factors and benefit cost ratios for geometric changes, traffic control; devices, and intelligent systems, supporting investment decisions in wrong-way detection and alert technologies.
+    description: This brief summarizes a national evaluation of wrong-way driving treatments, including ITS strategies such as detection, active warning, and driver notification components. It presents crash modification factors and benefit cost ratios for geometric changes, traffic control devices, and intelligent systems, supporting investment decisions in wrong-way detection and alert technologies.
   - label: "Executive Briefing: Errant Driving Behavior Countermeasure Systems"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-05/executive-briefing/12_Errant%20Driving_FINAL508_05222025.pdf"
     description: This briefing discusses ITS countermeasures for errant driving, including wrong-way driving detection and warning concepts. It highlights system performance issues such as false alerts, payback periods, and the importance of early-stage evaluation for detection and alert-generation systems.
   - label: "Video: FDOT Wrong-Way Driving Initiative"
     url: "https://www.youtube.com/watch?v=c8BAMdHT6GE"
-    description: The FDoT addresses wrong-way driving as a key safety initiative within the state of Florida. This video provides a brief overview of transportation engineering as the field focused on moving people and goods safely and efficiently.
+    description: >-
+      FDOT addresses wrong-way driving as a key safety initiative in Florida. This video provides a brief overview of transportation engineering as the field focused on moving people and goods safely and efficiently.
 order: 33
 ---
 Wrong-way driving detection and warning systems are advanced traffic safety technologies designed to prevent severe and often high-impact crashes caused by vehicles traveling against traffic flow. These systems detect vehicles entering highways or freeways via exit ramps and immediately alert drivers through LED-enhanced warning signs, encouraging them to self-correct. When a wrong-way event occurs, the system automatically notifies traffic management centers and law enforcement, sending images, timestamps, and metadata to support rapid response.

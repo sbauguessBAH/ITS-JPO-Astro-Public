@@ -53,21 +53,26 @@ keywords:
   - "Incident detection camera"
   - "Roadway surveillance camera"
 resources:
-  - label: "Guide: An Overview"
+  - label: "Fact Sheet: Speed Safety Camera Program Planning and Operations Guide: An Overview (FHWA-HOP-24-063)"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop24063/fhwahop24063.pdf"
-    description: This resource provides background on An Overview and its relevance to Traffic Management Cameras.
+    description: >-
+      This fact sheet introduces FHWA and NHTSA's Speed Safety Camera Program Planning and Operations Guide and explains how agencies can plan, deploy, operate, and evaluate speed safety camera programs. It addresses comprehensive safety strategies, crash reduction, accountability, transparency, and public trust.
   - label: "Fact Sheet: The Next Generation of Traffic Management Systems and Centers"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-24-153.pdf"
-    description: This resource provides background on The Next Generation of Traffic Management Systems and Centers and its relevance to Traffic Management Cameras.
+    description: >-
+      This fact sheet describes how traffic management systems and centers can evolve through improved monitoring, data analysis, traveler information, automation, and integration with emerging technologies. It covers connected vehicles, third-party data, expanded surveillance, and system performance.
   - label: "Guide: Speed Enforcement Camera Systems Operational Guidelines"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/Speed_enforcement_camera_systems_operational_guidelines.pdf"
-    description: This resource provides background on Speed Enforcement Camera Systems Operational Guidelines and its relevance to Traffic Management Cameras.
+    description: >-
+      This guide outlines how agencies can plan, deploy, and manage automated speed-camera programs, emphasizing site selection, public communication, equipment calibration, and consistent operations.
   - label: "Webpage: NHTSA Speed Safety Camera Enforcement"
     url: "https://www.nhtsa.gov/book/countermeasures-that-work/speeding-and-speed-management/countermeasures/enforcement/speed"
-    description: This resource provides background on NHTSA Speed Safety Camera Enforcement and its relevance to Traffic Management Cameras.
+    description: >-
+      This NHTSA resource promotes automated speed monitoring to reduce crashes, injuries, and fatalities and provides guidance and best practices for states and local agencies deploying speed cameras.
   - label: "Fact Sheet: Coordinating High-Resolution Traffic Cameras"
     url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-15-068.pdf"
-    description: This resource provides background on Coordinating High-Resolution Traffic Cameras and its relevance to Traffic Management Cameras.
+    description: >-
+      This fact sheet describes how high-resolution traffic cameras support real-time roadway monitoring, incident detection, traffic-model validation, and documentation of work zones and complex roadway environments.
 order: 41
 ---
 Traffic management cameras play a critical role in modern transportation systems by providing continuous monitoring and data collection for roadways and intersections. These cameras analyze vehicle movements to determine traffic flow patterns, peak hours, average speeds, and congestion levels, allowing transportation agencies to optimize signal timing and manage traffic efficiently.

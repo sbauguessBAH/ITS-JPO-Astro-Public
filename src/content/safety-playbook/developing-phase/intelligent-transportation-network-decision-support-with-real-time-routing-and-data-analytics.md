@@ -57,19 +57,24 @@ keywords:
 resources:
   - label: "Report: Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics"
     url: "https://www.bing.com/ck/a?!&&p=87a5e9986a1c5f3bd78a3c26cbd27b2ce4497c3a40f6e1a04ba46ccdc282f23fJmltdHM9MTc3MzAxNDQwMA&ptn=3&ver=2&hsh=4&fclid=2720647a-db9e-6db5-2404-7249da156c08&psq=Intelligent+Transportation+Network+Decision+Support+with+Real-time+Routing+and+Data+Analytics++FWHA+DOT+pdf+resource&u=a1aHR0cHM6Ly9yb3NhcC5udGwuYnRzLmdvdi92aWV3L2RvdC84NTE1MC9kb3RfODUxNTBfRFMxLnBkZg"
-    description: This resource provides background on Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics and its relevance to Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics.
+    description: >-
+      This report provides a real-time data analytics framework for transportation network decision support during disasters, particularly flooding, integrating road and traffic conditions, shelters, evacuation, emergency services, and population data.
   - label: "Report: Predictive Analytics for Traffic Management Systems"
     url: "https://www.itskrs.its.dot.gov/SRC-2024-3"
-    description: This resource provides background on Predictive Analytics for Traffic Management Systems and its relevance to Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics.
+    description: >-
+      This report explains how forecasting models and decision-support tools can anticipate congestion, incidents, and system needs, with integration considerations, readiness steps, and use cases.
   - label: "Report: Decision Support for Traffic Management Systems-Current Practices"
     url: "https://www.fhwa.dot.gov/publications/research/operations/21108/21108.pdf"
-    description: This resource provides background on Decision Support for Traffic Management Systems-Current Practices and its relevance to Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics.
+    description: >-
+      This report examines current decision-support practices and helps agencies compare TMC capabilities, data sources, workflows, and institutional readiness.
   - label: "Webpage: Applying Predictive Analytics into the Real-time Management and Operation of Traffic Management Systems (TMSs)"
     url: "https://tmcpfs.ops.fhwa.dot.gov/projects/predictiveanalytics.htm"
-    description: This resource provides background on Applying Predictive Analytics into the Real-time Management and Operation of Traffic Management Systems and its relevance to Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics.
+    description: >-
+      This webpage assembles completed projects, tools, methods, and considerations for integrating predictive analytics into real-time monitoring, detection, prediction, and traffic management operations.
   - label: "Report: Decision Support Methods and Tools for Traffic Management Systems"
     url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-23-071.pdf"
-    description: This resource provides background on Decision Support Methods and Tools for Traffic Management Systems and its relevance to Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics.
+    description: >-
+      This report provides methods and tools for evaluating traffic management decisions, including operational objectives, modeling, response selection, and performance measurement.
 order: 48
 ---
 Intelligent Transportation Network Decision Support with Real-time Routing and Data Analytics is a comprehensive system that uses advanced data collection, communication, and processing technologies to enhance the efficiency and functionality of modern transportation networks. This system gathers data from diverse sources, including IoT-enabled sensors, GPS-equipped vehicles, crowdsourced traffic reporting apps, and geographic information systems (GIS). These inputs are combined and analyzed using big data analytics and artificial intelligence to deliver actionable insights for real-time traffic management and decision-making.

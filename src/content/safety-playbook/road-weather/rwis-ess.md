@@ -60,18 +60,22 @@ keywords:
   - "Maintenance Decision Support System"
   - "MDSS"
 resources:
-  - label: "Web Page: FHWA’s Road Weather Management Program’s Frequently Asked Questions (RWMP's Frequently Asked Questions"
+  - label: "Web Page: FHWA's Road Weather Management Program Frequently Asked Questions"
     url: "https://ops.fhwa.dot.gov/Weather/faq.htm"
-    description: This resource provides background on FHWA’s Road Weather Management Program’s Frequently Asked Questions (RWMP's Frequently Asked Questions and its relevance to Road Weather Information Systems (RWIS) & Environmental Sensor Stations (ESS).
+    description: >-
+      The first two questions on this page explain what a Road Weather Information System (RWIS) is and what types and sources of road weather information are available, providing background on RWIS and ESS.
   - label: "Fact Sheet: Florida Department of Transportation Bridge Wind Speed Alerting System"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop21088/fhwahop21088.pdf"
-    description: This resource provides background on Florida Department of Transportation Bridge Wind Speed Alerting System and its relevance to Road Weather Information Systems (RWIS) & Environmental Sensor Stations (ESS).
+    description: >-
+      This fact sheet describes how Florida DOT implemented a high-wind alert system on multiple road bridges to assist transportation managers with bridge-closure decisions.
   - label: "Fact Sheet: Weather-Savvy Roads: Getting Data into the Weather Data Environment (FHWA-HOP-18-029)"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop18029/fhwahop18029.pdf"
-    description: "This resource provides background on Weather-Savvy Roads: Getting Data into the Weather Data Environment and its relevance to Road Weather Information Systems (RWIS) & Environmental Sensor Stations (ESS)."
+    description: >-
+      This fact sheet discusses how integrating mobile observations can help states share and use roadway weather data more effectively, provide real-time access to road-weather conditions, improve traffic management center situational awareness, and add data sources for traffic operations.
   - label: "Report: Integrating Road Weather Technology Data in Highway Operations (MC-24-SHA/UM/612)"
     url: "https://rosap.ntl.bts.gov/view/dot/78701/dot_78701_DS1.pdf?utm_source"
-    description: This resource provides background on Integrating Road Weather Technology Data in Highway Operations and its relevance to Road Weather Information Systems (RWIS) & Environmental Sensor Stations (ESS).
+    description: >-
+      This Maryland DOT/FHWA final research report addresses RWIS and mobile RWIS, pavement, surface, and subsurface sensors, weather-data integration, and operational forecasting to improve road-weather awareness and support faster, better-informed transportation decisions during inclement weather.
 order: 1
 ---
 Road Weather Information Systems (RWIS) play a vital role in transportation operations by providing accurate, real time, and predictive information about weather and road conditions. These systems support transportation managers, road operators, and maintenance crews by enabling data driven decisions that enhance safety, reduce operational costs, and maintain efficient traffic flow, particularly during winter weather events.

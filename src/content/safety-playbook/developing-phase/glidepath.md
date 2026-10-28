@@ -54,22 +54,26 @@ keywords:
   - "Eco-driving"
   - "Traffic flow optimization"
 resources:
-  - label: "Report: Eco-Approach and Departure at Signalized IntersectionsFHWA-HRT-15-011"
+  - label: "Report: Eco-Approach and Departure at Signalized Intersections (FHWA-HRT-15-011)"
     url: "https://rosap.ntl.bts.gov/view/dot/34781"
-    description: This resource provides background on Eco-Approach and Departure at Signalized IntersectionsFHWA-HRT-15-011 and its relevance to Glidepath.
+    description: >-
+      This report describes a connected-vehicle application that uses wireless signal phase and timing data to recommend fuel-efficient approaches to traffic signals, reducing stops, idling, fuel use, and emissions.
   - label: "Briefing: Cooperative Driving Automation (CDA) Update for the Research and Technology Coordinating Committee Meeting"
     url: "https://www.nationalacademies.org/cdn/materials/9fba1271-edaa-46f2-8144-4f66113db38b"
-    description: This resource provides background on Cooperative Driving Automation (CDA) Update for the Research and Technology Coordinating Committee Meeting and its relevance to Glidepath.
+    description: >-
+      This briefing explains why vehicles, infrastructure, and road users need to communicate and coordinate. It highlights FHWA research including GlidePath, connected cruise control, CARMA, and signal optimization.
   - label: "Report: Cooperative Automation Research CARMA Proof-of-Concept TSMO Use Case 2"
     url: "https://www.fhwa.dot.gov/publications/research/operations/21069/21069.pdf"
-    description: This resource provides background on Cooperative Automation Research CARMA Proof-of-Concept TSMO Use Case 2 and its relevance to Glidepath.
+    description: >-
+      This report documents proof-of-concept algorithms, communications, system components, and safety and mobility testing for cooperative automation research.
   - label: "Brief: Eco-Drive Experiment on Rolling Terrain for Fuel Consumption Optimization"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-18-010.pdf"
-    description: This resource provides background on Eco-Drive Experiment on Rolling Terrain for Fuel Consumption Optimization and its relevance to Glidepath.
+    description: >-
+      This brief describes a V2I eco-drive concept in which roadway profile information and an onboard algorithm produce a recommended speed trajectory that accounts for terrain, speed limits, safety, comfort, and vehicle capability.
 order: 47
 ---
-Glidepath is a transportation system enhancement that leverages advanced communication and sensor technologies to optimize traffic flow and improve fuel efficiency. By incorporating tools such as GPS tracking, traffic signal phase and timing (SPaT) messages, and vehicle-to-infrastructure (V2I) communication, Glidepath provides vehicles with guidance on the optimal speed needed to synchronize their travel with traffic signal changes. This functionality aims to minimize stop-and-going driving by helping vehicles seamlessly "glide" through green lights, reducing delays and enhancing the overall efficiency of roadway networks.
+Glidepath is a transportation system enhancement that leverages advanced communication and sensor technologies to optimize traffic flow and improve fuel efficiency. By incorporating tools such as GPS tracking, traffic signal phase and timing (SPaT) messages, and vehicle-to-infrastructure (V2I) communication, Glidepath provides vehicles with guidance on the optimal speed needed to synchronize their travel with traffic signal changes. This functionality aims to minimize stop-and-go driving by helping vehicles seamlessly "glide" through green lights, reducing delays and enhancing the overall efficiency of roadway networks.
 
-The system works through connected vehicle platforms that continuously analyze vehicle speed, location, and upcoming traffic light timing. For example, a connected vehicle approaching an intersection would receive a signal advising the driver to decelerate slightly to match the green light phase. This reduces abrupt breaking and allows vehicles to maintain consistent speeds. Glidepath also prioritizes eco-friendly transportation goals by reducing fuel consumption and harmful emissions associated with frequent stopping and acceleration.
+The system works through connected vehicle platforms that continuously analyze vehicle speed, location, and upcoming traffic light timing. For example, a connected vehicle approaching an intersection would receive a signal advising the driver to decelerate slightly to match the green light phase. This reduces abrupt braking and allows vehicles to maintain consistent speeds. Glidepath also prioritizes eco-friendly transportation goals by reducing fuel consumption and harmful emissions associated with frequent stopping and acceleration.
 
 Glidepath's benefits extend to the broader transportation system by decreasing congestion, improving safety near intersections, and fostering more predictable travel conditions. It can integrate seamlessly with adaptive traffic signal control systems to further refine its impact on traffic flow. With its focus on leveraging communication between vehicles and infrastructure, Glidepath exemplifies the potential of intelligent transportation systems to transform daily commutes, reduce environmental impacts, and optimize roadway efficiency for all users.

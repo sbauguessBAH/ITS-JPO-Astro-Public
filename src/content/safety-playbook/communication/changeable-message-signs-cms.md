@@ -60,19 +60,24 @@ keywords:
 resources:
   - label: "Fact Sheet: Efficient Messaging for Changeable-Message Signs During Nonrecurring Events"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-19-012.pdf"
-    description: This resource provides background on Efficient Messaging for Changeable-Message Signs During Nonrecurring Events and its relevance to Changeable Message Signs (CMS).
+    description: >-
+      This fact sheet explains how agencies can improve CMS messages during nonrecurring events by using brief, consistent, action-focused information. It recommends avoiding redundant or vague wording and prioritizing the problem, location, and recommended driver action.
   - label: "Fact Sheet: Pedestrian Safety Guide and Countermeasure Selection System"
     url: "https://highways.dot.gov/media/67556"
-    description: This resource provides background on Pedestrian Safety Guide and Countermeasure Selection System and its relevance to Changeable Message Signs (CMS).
+    description: >-
+      This fact sheet provides tools and approaches to help agencies identify pedestrian safety issues and select countermeasures for different roadway contexts.
   - label: "Report: Effectiveness of Safety and Public Service Announcement Messages on Dynamic Message Signs (FHWA-HOP-14-015)"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop14015/fhwahop14015.pdf"
-    description: This resource provides background on Effectiveness of Safety and Public Service Announcement Messages on Dynamic Message Signs and its relevance to Changeable Message Signs (CMS).
-  - label: "Report: Creating Effective Graphic Changeable Dynamic Messager Sign (DMS) Messaging (K-TRAN: KU-24-3"
+    description: >-
+      This report evaluates how safety and public-service messages on DMS influence driver understanding, attitudes, and self-reported behavior, providing guidance on message content, style, and deployment.
+  - label: "Report: Creating Effective Graphic Changeable Message Sign (DMS) Messaging (K-TRAN: KU-24-3)"
     url: "https://rosap.ntl.bts.gov/view/dot/89747"
-    description: "This resource provides background on Creating Effective Graphic Changeable Dynamic Messager Sign (DMS) Messaging (K-TRAN: KU-24-3 and its relevance to Changeable Message Signs (CMS)."
+    description: >-
+      This simulator-based study compares graphic-only with graphic-plus-text DMS messages for crashes, alternate routes, adverse weather, and work zones. It concludes that adding text improves conspicuity, comprehension, and compliance intent.
   - label: "Report: Use of Color Changeable Message Signs - Current Practices and Research"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop18067/fhwahop18067.pdf"
-    description: This resource provides background on Use of Color Changeable Message Signs - Current Practices and Research and its relevance to Changeable Message Signs (CMS).
+    description: >-
+      This report summarizes agency practices and research on using color CMS to display roadway information. It reviews formats that combine text, symbols, and color and identifies future policy, technical, and research needs.
 order: 4
 ---
 Changeable Message Signs (CMS) are electronic traffic control devices used by transportation agencies to deliver real-time traveler information directly to motorists. CMS are a critical tool for enhancing roadway safety and improving traffic flow by providing timely, clear, and actionable messages about current and upcoming roadway conditions, particularly during nonrecurring events such as crashes, severe weather, construction, or special events.

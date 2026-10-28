@@ -55,34 +55,42 @@ keywords:
 resources:
   - label: "Report: Guidance on Using Traffic Management Centers for Work Zone Management"
     url: "https://ai.studio/apps/2461fc58-68bf-4590-a0e6-3efe76afbd79"
-    description: This resource provides background on Guidance on Using Traffic Management Centers for Work Zone Management and its relevance to Nighttime Visibility for Safety.
+    description: >-
+      This report provides guidance on using TMC staff, data, and tools to support work zone planning, operations, evaluation, traveler information, and performance management.
   - label: "Report: Methods for Maintaining Traffic Sign Retroreflectivity"
     url: "https://highways.dot.gov/safety/other/visibility/methods-maintaining-traffic-sign-retroreflectivity"
-    description: This resource provides background on Methods for Maintaining Traffic Sign Retroreflectivity and its relevance to Nighttime Visibility for Safety.
+    description: >-
+      This report describes methods agencies can use to keep signs at or above MUTCD minimum retroreflectivity levels, including nighttime visual inspections, measured retroreflectivity, and expected sign life.
+  - label: "Fact Sheet: Maintaining Traffic Sign Retroreflectivity (FHWA-SA-07-020)"
+    url: "https://highways.dot.gov/media/20746"
+    description: >-
+      This fact sheet describes methods for assessing and maintaining traffic sign retroreflectivity to keep signs visible at night and in low-light conditions and support federal standards.
   - label: "Website: Sign Retroreflectivity"
     url: "https://highways.dot.gov/safety/other/visibility/sign-retroreflectivity"
-    description: This resource provides background on Sign Retroreflectivity and its relevance to Nighttime Visibility for Safety.
+    description: >-
+      This FHWA website provides an overview of sign retroreflectivity methods and links to regulations, technical guidance, implementation tools, FAQs, research, and technical contacts.
   - label: "· Regulations / Standards"
     url: "https://highways.dot.gov/safety/other/visibility/nighttime-visibility-sign-retroreflectivity-regulations-standards"
-    description: This resource provides background on · Regulations / Standards and its relevance to Nighttime Visibility for Safety.
+    description: FHWA regulations and standards related to nighttime sign retroreflectivity.
   - label: "· Technical Guidance"
     url: "https://highways.dot.gov/safety/other/visibility/nighttime-visibility-sign-retroreflectivity-technical-guidance"
-    description: This resource provides background on · Technical Guidance and its relevance to Nighttime Visibility for Safety.
+    description: FHWA technical guidance related to nighttime sign retroreflectivity.
   - label: "· Implementation Tools"
     url: "https://highways.dot.gov/safety/other/visibility/nighttime-visibility-sign-retroreflectivity-implementation-tools"
-    description: This resource provides background on · Implementation Tools and its relevance to Nighttime Visibility for Safety.
+    description: FHWA implementation tools for maintaining nighttime sign retroreflectivity.
   - label: "· Frequently Asked Questions"
     url: "https://highways.dot.gov/safety/other/visibility/nighttime-visibility-sign-retroreflectivity-frequently-asked-questions"
-    description: This resource provides background on · Frequently Asked Questions and its relevance to Nighttime Visibility for Safety.
+    description: Frequently asked questions about nighttime sign retroreflectivity.
   - label: "· Research"
     url: "https://highways.dot.gov/safety/other/visibility/nighttime-visibility-sign-retroreflectivity-research"
-    description: This resource provides background on · Research and its relevance to Nighttime Visibility for Safety.
+    description: FHWA research related to nighttime sign retroreflectivity.
   - label: "· Technical Contacts"
     url: "https://highways.dot.gov/safety/other/visibility/technical-contacts"
-    description: This resource provides background on · Technical Contacts and its relevance to Nighttime Visibility for Safety.
+    description: Technical contacts for FHWA sign retroreflectivity resources.
   - label: "Report: Research on Traffic Sign Retroreflective Sheeting Performance: A Synthesis of Practice"
     url: "https://rosap.ntl.bts.gov/view/dot/56868"
-    description: "This resource provides background on Research on Traffic Sign Retroreflective Sheeting Performance: A Synthesis of Practice and its relevance to Nighttime Visibility for Safety."
+    description: >-
+      This report reviews retroreflective sheeting materials, degradation, measurement methods, performance assessment, and safety impacts in nighttime environments.
 order: 37
 ---
 Nighttime visibility plays a critical role in ensuring road safety, as the risk of crashes is significantly higher after dark. Enhanced lighting and visibility measures help drivers detect hazards earlier, reducing reaction times and lowering the nighttime fatality rate, which is approximately three times higher than during the day. Well-designed lighting improves pedestrian safety by making crosswalks and walkways more visible, helping prevent crashes and fatalities.

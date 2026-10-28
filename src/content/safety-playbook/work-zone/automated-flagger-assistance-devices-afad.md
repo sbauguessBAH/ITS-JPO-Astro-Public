@@ -53,22 +53,28 @@ keywords:
 resources:
   - label: "Report: Integrating Emerging Data Sources into Operational Practice: State of the Practice Review"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop17042/fhwahop17042.pdf"
-    description: "This resource provides background on Integrating Emerging Data Sources into Operational Practice: State of the Practice Review and its relevance to Automated Flagger Assistance Devices."
+    description: >-
+      This report reviews how transportation agencies can use emerging data sources, such as connected-vehicle, crowdsourced, probe, and mobile-device data, to improve transportation systems management and operations. These sources can support real-time monitoring, incident management, traveler information, performance measurement, and operational decisions.
   - label: "Fact Sheet: FHWA Road Weather Management Program - Integrating Mobile Observations"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop17042/index.htm"
-    description: This resource provides background on FHWA Road Weather Management Program - Integrating Mobile Observations and its relevance to Automated Flagger Assistance Devices.
+    description: >-
+      This fact sheet describes FHWA's efforts to integrate mobile observations into road weather management. Vehicle-based data can supplement traditional sensing, improve situational awareness, and support maintenance and operational decisions.
   - label: "Webpage: Highway Work Zones and Signs, Signals, and Barricades"
     url: "https://www.osha.gov/highway-workzones"
-    description: This resource provides background on Highway Work Zones and Signs, Signals, and Barricades and its relevance to Automated Flagger Assistance Devices.
+    description: >-
+      OSHA's webpage provides workers and employers with current information on highway work zones, signs, signals, and barricades, including MUTCD-based guidance, training materials, and safety bulletins.
   - label: "Report: User-Centered Smart Traffic Sign Development Implementation Study"
     url: "https://rosap.ntl.bts.gov/view/dot/92357"
-    description: This resource provides background on User-Centered Smart Traffic Sign Development Implementation Study and its relevance to Automated Flagger Assistance Devices.
+    description: >-
+      This MnDOT study develops a smart traffic sign to assist flagger control, using radar-based intrusion detection and audio-visual alerts. Simulator and field tests found reduced failures to remain stopped compared with traditional flagging.
   - label: "Desktop Reference: Proven Safety Countermeasures in Work Zones"
     url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/2024-10/PSCs_Work%20Zone%20Desktop%20Reference_508.pdf"
-    description: "This resource provides background on Desktop Reference: Proven Safety Countermeasures in Work Zones and its relevance to Automated Flagger Assistance Devices."
+    description: >-
+      This reference maps FHWA's Proven Safety Countermeasures to work zone applications, emphasizing speed management, conflict reduction, and worker protection. It provides crash-reduction ranges and cost tiers to support countermeasure selection.
   - label: "Webpage: Worker Safety"
     url: "https://ops.fhwa.dot.gov/wz/workersafety/index.htm"
-    description: This resource provides background on Worker Safety and its relevance to Automated Flagger Assistance Devices.
+    description: >-
+      This webpage outlines leading causes of highway construction worker injuries and fatalities and promotes positive protection and robust temporary traffic control planning for work zones.
 order: 30
 ---
 Automated Flagger Assistance Devices (AFADs) are designed to enhance safety and efficiency in roadway work zones by replacing or assisting human flaggers in one-lane, two-way traffic situations. These devices allow operators to control traffic from a protected location away from the roadway, significantly reducing the risk of traffic-related injuries. AFADs improve operational efficiency by using standardized and consistent signal cycles, which help minimize human error and maintain smoother traffic flow through work zones.

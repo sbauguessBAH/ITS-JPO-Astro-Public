@@ -58,16 +58,24 @@ keywords:
 resources:
   - label: "Presentation: Traffic Management Systems (TMSs) Actively Managing the Display of Queue Warning Messages"
     url: "https://highways.dot.gov/media/67636"
-    description: This resource provides background on Traffic Management Systems (TMSs) Actively Managing the Display of Queue Warning Messages and its relevance to Queue Warning Systems.
+    description: >-
+      This FHWA presentation explains how traffic management systems use sensors, traffic data, software, and changeable message signs to detect queues and warn drivers before they reach stopped or slow traffic, helping reduce rear-end crash risks and support work zone management.
   - label: "Guide: Work Zone Intelligent Transportation Systems Implementation Guide"
     url: "https://www.transportationops.org/publications/work-zone-intelligent-transportation-systems-implementation-guide"
-    description: This resource provides background on Work Zone Intelligent Transportation Systems Implementation Guide and its relevance to Queue Warning Systems.
+    description: >-
+      This guide provides a structured approach to planning and deploying Work Zone ITS, including queue warning, dynamic speed management, congestion detection, and flashing warning systems as part of integrated work zone operations.
   - label: "Report: Benefits Related to Traffic Congestion and Safety Can Be Limited by Various Factors"
     url: "https://www.gao.gov/assets/gao-23-105740.pdf"
-    description: This resource provides background on Benefits Related to Traffic Congestion and Safety Can Be Limited by Various Factors and its relevance to Queue Warning Systems.
+    description: >-
+      This GAO report highlights limits in federal research coordination, tracking, and evaluation, and recommends stronger oversight, clearer data standards, and more consistent interagency collaboration.
   - label: "Report: System Monitoring of Auto Traffic Queue Detection and Congestion Impact Assessment"
     url: "https://rosap.ntl.bts.gov/view/dot/63565"
-    description: This resource provides background on System Monitoring of Auto Traffic Queue Detection and Congestion Impact Assessment and its relevance to Queue Warning Systems.
+    description: >-
+      This report describes monitoring traffic queues and assessing congestion impacts to provide real-time visibility that supports faster, data-driven decisions for roadway safety and flow.
+  - label: "Fact Sheet: Traffic Management Systems Actively Managing the Display of Queue Warning Messages"
+    url: "https://rosap.ntl.bts.gov/view/dot/79733"
+    description: >-
+      This fact sheet describes how traffic management systems can generate and display warnings before travelers encounter unexpected unstable flow, stopped traffic, or queued vehicles. It covers desired outcomes, considerations, benefits, lessons learned, and evaluation.
 order: 7
 ---
 Queue Warning Systems are advanced traffic management tools that enhance road safety and optimize traffic flow by providing real-time alerts about slowdowns, stopped vehicles, or potential congestion ahead. These systems use technologies such as radar sensors, loop detectors, cameras, and wireless communication networks to monitor traffic conditions continuously. When a queue or sudden reduction in speed is detected, the system activates dynamic warning signs, flashing lights, or variable message displays to alert drivers, giving them sufficient time to react and avoid collisions.

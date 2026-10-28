@@ -52,19 +52,24 @@ keywords:
 resources:
   - label: "Brief: Safety Evaluation of Pedestrian Countdown Signals"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-19-046.pdf"
-    description: This resource provides background on Safety Evaluation of Pedestrian Countdown Signals and its relevance to Pedestrian Countdown Signals.
+    description: >-
+      This technical brief evaluates pedestrian countdown signals at signalized intersections, covering timing, crossing information, crash frequency, driver behavior, crash modification factors, and benefit-cost findings.
   - label: "Report: The Effects of Innovative Pedestrian Signs at Unsignalized Locations: A Tale of Three Treatments"
     url: "https://www.pedbikeinfo.org/downloads/InnovativePedSigns_Unsignalized.pdf"
-    description: "This resource provides background on The Effects of Innovative Pedestrian Signs at Unsignalized Locations: A Tale of Three Treatments and its relevance to Pedestrian Countdown Signals."
+    description: >-
+      This report evaluates pedestrian signs at unsignalized crossings and treatments designed to improve driver yielding, reduce conflicts, and support safer crossings.
   - label: "Report: The Effects of Pedestrian Countdown Timers on Safety and Efficiency of Operations at Signalized Intersections"
     url: "https://rosap.ntl.bts.gov/view/dot/25907"
-    description: This resource provides background on The Effects of Pedestrian Countdown Timers on Safety and Efficiency of Operations at Signalized Intersections and its relevance to Pedestrian Countdown Signals.
+    description: >-
+      This report uses before-and-after data at two urban intersections to assess countdown timers' effects on pedestrian compliance, walking speed, and driver behavior. It found faster pedestrian walking and fewer violations, with modest indications of improved driver safety.
   - label: "Report: Safety Evaluation of Pedestrian Countdown Signals"
     url: "https://www.fhwa.dot.gov/publications/research/safety/19045/19045.pdf"
-    description: This resource provides background on Safety Evaluation of Pedestrian Countdown Signals and its relevance to Pedestrian Countdown Signals.
+    description: >-
+      This report evaluates pedestrian countdown signals using an empirical Bayes before-and-after analysis in Charlotte and Philadelphia and found significant reductions in total, pedestrian, and rear-end crashes.
   - label: "Report: Countdown Pedestrian Signals (CPS) Legibility and Comprehension without Flashing Hand: Phase I and Phase II Final Report"
     url: "https://rosap.ntl.bts.gov/view/dot/62438"
-    description: "This resource provides background on Countdown Pedestrian Signals (CPS) Legibility and Comprehension without Flashing Hand: Phase I and Phase II Final Report and its relevance to Pedestrian Countdown Signals."
+    description: >-
+      This report examines countdown pedestrian signal comprehension with and without the flashing hand, including effects on crossing decisions and times for pedestrians, including people with low vision.
 order: 27
 ---
 Pedestrian countdown signals are traffic safety devices designed to enhance pedestrian safety and improve traffic efficiency at intersections. By displaying the remaining time for pedestrians to safely cross the street, these signals help individuals make informed decisions about when to begin or finish crossing. This reduces the likelihood of pedestrians being caught in the roadway as traffic resumes, lowering the risk of collisions.

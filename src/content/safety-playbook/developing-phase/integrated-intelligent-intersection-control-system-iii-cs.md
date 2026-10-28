@@ -52,16 +52,24 @@ keywords:
 resources:
   - label: "Tech Report: An Integrated Intelligent Intersection Control System (III-CS) for Safety Improvement and Delay Minimization"
     url: "https://rosap.ntl.bts.gov/view/dot/61151"
-    description: This resource provides background on An Integrated Intelligent Intersection Control System (III-CS) for Safety Improvement and Delay Minimization and its relevance to Integrated Intelligent Intersection Control System (III-CS).
+    description: >-
+      This report describes an integrated intersection system using dilemma-zone protection, actuated controllers, optimal green termination, dynamic green extension, all-red extension, and red-light-running detection to reduce crashes and delay.
   - label: "Research Brief: Practical Performance Indices to Enable Ranking of Signalized Corridors"
     url: "https://rosap.ntl.bts.gov/view/dot/92712"
-    description: This resource provides background on Practical Performance Indices to Enable Ranking of Signalized Corridors and its relevance to Integrated Intelligent Intersection Control System (III-CS).
+    description: >-
+      This brief presents methods for ranking signalized corridors using loop detectors and connected-vehicle data to assess delay, fuel use, and emissions and prioritize operational improvements.
   - label: "Report: Safety Evaluation of Intersection Conflict Warning System"
     url: "https://rosap.ntl.bts.gov/view/dot/35745"
-    description: This resource provides background on Safety Evaluation of Intersection Conflict Warning System and its relevance to Integrated Intelligent Intersection Control System (III-CS).
+    description: >-
+      This report evaluates intersection conflict warning systems at rural intersections and found significant crash reductions for several crash types and configurations.
+  - label: "Report: Surrogate Safety Assessment Model and Validation: Final Report (FHWA-HRT-08-051)"
+    url: "https://rosap.ntl.bts.gov/view/dot/39210"
+    description: >-
+      This report describes a surrogate safety assessment approach that analyzes the frequency and characteristics of near-collisions using vehicle trajectory data.
   - label: "Webpage: Surrogate Safety Assessment Model Overview"
     url: "https://highways.dot.gov/turner-fairbank-highway-research-center/software/ssam"
-    description: This resource provides background on Surrogate Safety Assessment Model Overview and its relevance to Integrated Intelligent Intersection Control System (III-CS).
+    description: >-
+      This page describes SSAM, a software application that identifies, classifies, and evaluates traffic conflicts in vehicle-trajectory data from microscopic simulations.
 order: 29
 ---
 The Integrated Intelligent Intersection Control System (III-CS) is an advanced intelligent transportation system designed to address safety and operational challenges at signalized intersections. It uses real-time traffic data to dynamically control signal phases, reducing rear-end collisions through an optimal green termination algorithm that prevents sudden stops and improves driver response. To mitigate severe angled crashes, the system detects red-light running vehicles and activates an all-red extension, allowing the intersection to clear before conflicting movements are released. In addition to improving safety, III-CS reduces overall traffic delays by adaptively optimizing signal timing based on current traffic demand.

@@ -52,16 +52,20 @@ keywords:
 resources:
   - label: "Flyer: Multi-Agency Radio Communication System (MARCS)"
     url: "https://dam.assets.ohio.gov/image/upload/das.ohio.gov/technology-strategy/marcs/marcs_flyer_copy.pdf"
-    description: This resource provides background on Multi-Agency Radio Communication System and its relevance to Multi-Agency Radio Communication System (MARCS).
+    description: >-
+      This flyer explains how Ohio's MARCS provides a statewide digital wireless communications network for first responders and public safety agencies, including interoperable communications, GPS-based vehicle location, resource recommendations, mobile data, and 24/7 network support.
   - label: "Web Page: Ohio DAS MARCS First Responder Communications"
     url: "https://das.ohio.gov/about/first-responder-comms-initiatives/07-marcs"
-    description: This resource provides background on Ohio DAS MARCS First Responder Communications and its relevance to Multi-Agency Radio Communication System (MARCS).
+    description: >-
+      This webpage provides information about Ohio MARCS capabilities, user resources, and statewide initiatives for reliable, interoperable first-responder communications.
   - label: "Article: Governor DeWine mobilizes Ohio MARCS equipment and staff to support North Carolina"
     url: "https://das.ohio.gov/home/media-center/all-news/dewine-mobilizes-marcs-to-aid-nc"
-    description: This resource provides background on Governor DeWine mobilizes Ohio MARCS equipment and staff to support North Carolina and its relevance to Multi-Agency Radio Communication System (MARCS).
+    description: >-
+      This article describes Ohio DAS MARCS staff and emergency communications equipment deployed to Asheville, North Carolina, to support Hurricane Helene recovery. The deployment included a mobile tower, radios, a generator, and telecommunicator emergency response support.
   - label: "Fact Sheet: MARCS Tower Co-Location"
     url: "https://das.ohio.gov/technology-and-strategy/marcs/tower-colocation-card"
-    description: This resource provides background on MARCS Tower Co-Location and its relevance to Multi-Agency Radio Communication System (MARCS).
+    description: >-
+      This document explains how to request equipment placement on Ohio MARCS towers, including application steps, engineering review, structural analysis, and applicant responsibilities to protect first-responder communications.
 order: 5
 ---
 The Multi Agency Radio Communication System (MARCS) is a critical public safety communications platform used by first responders and public safety agencies throughout Ohio. Designed to support both daily operations and large-scale emergency events, MARCS provides a unified and reliable communication system that allows agencies to work together seamlessly when it matters most.

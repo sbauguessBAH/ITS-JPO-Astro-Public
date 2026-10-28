@@ -55,16 +55,24 @@ keywords:
 resources:
   - label: "Lesson Learned: Video Cameras Equipped With Lens Cleaning Systems Are Universally Recommended To Help Winter Maintenance Vehicle Drivers Observe and Operate Plow Equipment More Safely and Effectively"
     url: "https://www.itskrs.its.dot.gov/2022-l01144"
-    description: "This resource provides background on Lesson Learned: Video Cameras Equipped With Lens Cleaning Systems Are Universally Recommended To Help Winter Maintenance Vehicle Drivers Observe and Operate Plow Equipment More Safely and Effectively and its relevance to Plow Equipment Video Cameras."
+    description: >-
+      This lesson learned reviews how cameras and in-vehicle displays help snowplow operators monitor areas not visible from the cab, such as the rear, wing plow, and spreader. Cameras improve situational awareness, support safer equipment operation, and provide video data for traveler information and agency operations.
   - label: "Innovation Summary: Snowplow Cameras and Automated Vehicle Locator Innovation"
     url: "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/images/about-us/statetransportationinnovationcouncil/innovations/publishingimages/snow-plow-cameras-and-avl/snow%20plow%20camera%20and%20avl%20lessons%20learned.pdf"
-    description: "This resource provides background on Innovation Summary: Snowplow Cameras and Automated Vehicle Locator Innovation and its relevance to Plow Equipment Video Cameras."
+    description: >-
+      This PennDOT summary explains how snowplow cameras integrated with automated vehicle location provide real-time video, images, and vehicle location during winter operations. The system helps staff view road conditions, track plows, reallocate resources, and improve situational awareness.
   - label: "Research Brief: Recommendations for Adding Camera Systems on Snowplows"
     url: "https://mdl.mndot.gov/items/CR1703B"
-    description: This resource provides background on Recommendations for Adding Camera Systems on Snowplows and its relevance to Plow Equipment Video Cameras.
+    description: >-
+      This brief provides guidance for DOTs adding or expanding aftermarket snowplow camera systems. It compares camera types, installations, and uses, including front, rear, spreader, tow-plow, and wing-plow views, and notes image-quality and recording/transmission challenges.
   - label: "Report: Aftermarket Cameras in Winter Maintenance Vehicles"
     url: "https://rosap.ntl.bts.gov/view/dot/60913"
-    description: This resource provides background on Aftermarket Cameras in Winter Maintenance Vehicles and its relevance to Plow Equipment Video Cameras.
+    description: >-
+      This report examines roadway safety fundamentals, analytical methods, and strategies for reducing crashes and improving transportation system performance for winter maintenance vehicles.
+  - label: "Report: Snowplow Operations Management System: Final Report (FHWA/TX-22/5-6996-01-1)"
+    url: "https://rosap.ntl.bts.gov/view/dot/62758"
+    description: >-
+      This FHWA-funded project developed a real-time snowplow operations system using tablet-mounted cameras to stream roadway images, weather data, and surface-temperature estimates. Its map-based ArcGIS interface helps supervisors monitor plow locations and road conditions.
 order: 9
 ---
 Video cameras installed on plow equipment are essential tools for improving both safety and operational efficiency in winter maintenance operations. These cameras allow operators to monitor the functioning of snowplows and associated equipment in real time, ensuring that all processes are performed correctly and efficiently. They also provide valuable guidance for material application, helping to ensure that salt, sand, or other de-icing materials are spread evenly across road surfaces for maximum effectiveness.

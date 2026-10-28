@@ -64,19 +64,28 @@ keywords:
 resources:
   - label: "Webpage: Ramp Metering"
     url: "https://www.in.gov/indot/traffic-engineering/ramp-metering/"
-    description: This resource provides background on Ramp Metering and its relevance to Coordinated Ramp Metering (CRM).
-  - label: "Webpage: -Freeway Management Program Freeway Operations and Traffic Management"
+    description: >-
+      This webpage explains ramp metering as a freeway management strategy that regulates vehicles entering freeways to improve merging, reduce congestion and delay, improve travel-time reliability, and support safer freeway operations.
+  - label: "Webpage: Freeway Management Program - Freeway Operations and Traffic Management"
     url: "https://ops.fhwa.dot.gov/freewaymgmt/frwy_ops.htm"
-    description: This resource provides background on -Freeway Management Program Freeway Operations and Traffic Management and its relevance to Coordinated Ramp Metering (CRM).
-  - label: "· -Ramp Metering: Informational Brief A Proven, Effective Strategy"
+    description: >-
+      This webpage provides guidance, tools, workshops, and peer support to agencies implementing and improving freeway operations and ramp metering using real-time traffic conditions. It links to ramp-metering primers and briefs and the Freeway Management and Operations Handbook.
+  - label: "Primer: Ramp Metering: A Proven, Cost-Effective Operational Strategy (FHWA-HOP-14-020)"
+    url: "https://ops.fhwa.dot.gov/publications/fhwahop14020/"
+    description: >-
+      This primer describes ramp metering as a proven, cost-effective strategy for improving freeway operations.
+  - label: "Brief: Ramp Metering: Informational Brief - A Proven, Effective Strategy (FHWA-HOP-14-021)"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop14021/index.htm"
-    description: "This resource provides background on · -Ramp Metering: Informational Brief A Proven, Effective Strategy and its relevance to Coordinated Ramp Metering (CRM)."
-  - label: "· Freeway Management and Operations Handbook, September 2003,"
+    description: >-
+      This informational brief describes ramp metering as an effective strategy for improving freeway operations.
+  - label: "Handbook: Freeway Management and Operations Handbook (FHWA-OP-04-003)"
     url: "https://ops.fhwa.dot.gov/freewaymgmt/publications/frwy_mgmt_handbook/fmoh_complete_all.pdf"
-    description: This resource provides background on · Freeway Management and Operations Handbook, September 2003, and its relevance to Coordinated Ramp Metering (CRM).
-  - label: "Report: Integration of Ramp Metering and Off-RampProgression"
+    description: >-
+      This handbook provides guidance on freeway management and operations, including ramp metering.
+  - label: "Report: Integration of Ramp Metering and Off-Ramp Progression"
     url: "https://rosap.ntl.bts.gov/view/dot/53605"
-    description: This resource provides background on Integration of Ramp Metering and Off-RampProgression and its relevance to Coordinated Ramp Metering (CRM).
+    description: >-
+      This report presents an integrated freeway control approach that coordinates ramp metering with off-ramp signal progression to manage recurring congestion. Its models can operate independently or together using scheduled or real-time traffic data for local or corridor-wide control.
 order: 43
 ---
 Coordinated Ramp Metering is a sophisticated transportation management strategy designed to regulate traffic entering highways through a system of interconnected on-ramp signals. Unlike isolated ramp metering, which controls individual ramps independently, coordinated ramp metering employs advanced technologies such as sensors, predictive modeling, and communication platforms to manage multiple ramps as a unified system. By analyzing real-time data on vehicle speeds, volumes, and congestion levels across the network, the system dynamically adjusts the metering rates to maintain optimal traffic flow on both the highways and feeder ramps.

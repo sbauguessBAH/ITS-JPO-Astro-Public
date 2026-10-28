@@ -54,19 +54,24 @@ keywords:
 resources:
   - label: "Report: Integrated Corridor Management and Traffic Incident Management: A Primer"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop16035/index.htm"
-    description: "This resource provides background on Integrated Corridor Management and Traffic Incident Management: A Primer and its relevance to Integrated Corridor Management (ICM)."
+    description: >-
+      This report explains how Integrated Corridor Management (ICM) and Traffic Incident Management (TIM) can work together to improve safety, mobility, incident response, and corridor operations. It highlights coordination across institutional, operational, and technical areas, including incident detection, rerouting, traveler information, and responder safety.
   - label: "Report: Integrated Corridor Management: ICM Implementation Guide"
     url: "https://rosap.ntl.bts.gov/view/dot/3667"
-    description: "This resource provides background on Integrated Corridor Management: ICM Implementation Guide and its relevance to Integrated Corridor Management (ICM)."
+    description: >-
+      This report provides guidance for transportation agencies planning, developing, and implementing ICM strategies. It explains how agencies can coordinate freeway, arterial, transit, incident management, traveler information, and other systems to manage a corridor as an integrated network.
   - label: "Report: Elements of Business Rules and Decision Support Systems within Integrated Corridor Management: Understanding the Intersection of These Three Components"
     url: "https://rosap.ntl.bts.gov/view/dot/42533"
-    description: "This resource provides background on Elements of Business Rules and Decision Support Systems within Integrated Corridor Management: Understanding the Intersection of These Three Components and its relevance to Integrated Corridor Management (ICM)."
+    description: >-
+      This report explains how business rules and decision support systems underpin ICM, including data requirements, response-plan generation, and levels of automation. It is relevant to predictive corridor modeling and real-time corridor operations decisions.
   - label: "Media: Mainstreaming Integrated Corridor Management (ICM) 6-Video Series"
     url: "https://highways.dot.gov/media/82506"
-    description: This resource provides background on Mainstreaming Integrated Corridor Management (ICM) 6-Video Series and its relevance to Integrated Corridor Management (ICM).
+    description: >-
+      Sponsored by FHWA, this six-video series uses a fictitious city scenario to explain identifying ICM opportunities, building stakeholder support, and implementing coordinated corridor congestion responses. It covers ICM basics, decision support, phased implementation, defining characteristics, and evaluation methods.
   - label: "Report: Integrated Corridor Management (ICM) Program: Major Achievements, Key Findings, and Outlook"
     url: "https://rosap.ntl.bts.gov/view/dot/43581"
-    description: "This resource provides background on Integrated Corridor Management (ICM) Program: Major Achievements, Key Findings, and Outlook and its relevance to Integrated Corridor Management (ICM)."
+    description: >-
+      This report synthesizes outcomes from the San Diego and Dallas ICM demonstrations, highlighting benefits, challenges, and evaluation findings for multimodal corridor operations. It describes the ICM research program and offers guidance for future deployments and performance analytics.
 order: 54
 ---
 Integrated Corridor Management (ICM) is a strategic approach that seeks to unify and optimize the operations of diverse transportation modes and systems along a single corridor. This includes highways, arterial roads, public transit systems, freight hubs, and even non-motorized travel options like pedestrian and cycling pathways. By managing these systems as a cohesive whole, ICM ensures that traffic flow, capacity, and traveler experience are maximized through real-time coordination and dynamic responses to traffic conditions, incidents, or surges in demand.

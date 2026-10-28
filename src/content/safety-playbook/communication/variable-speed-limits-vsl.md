@@ -51,13 +51,20 @@ keywords:
 resources:
   - label: "Web Page: Variable Speed Limits"
     url: "https://highways.dot.gov/safety/proven-safety-countermeasures/variable-speed-limits"
-    description: This resource provides background on Variable Speed Limits and its relevance to Variable Speed Limits (VSL).
+    description: >-
+      This FHWA webpage explains how VSLs adapt posted speeds to changing roadway, traffic, weather, and visibility conditions to help reduce crash frequency and severity.
   - label: "Fact Sheet: Proven Safety Countermeasures: Variable Speed Limits"
     url: "https://rosap.ntl.bts.gov/view/dot/66686"
-    description: "This resource provides background on Proven Safety Countermeasures: Variable Speed Limits and its relevance to Variable Speed Limits (VSL)."
+    description: >-
+      This fact sheet describes VSL as an FHWA Proven Safety Countermeasure that can support safer speeds during congestion, adverse weather, reduced visibility, work zones, and other changing conditions.
+  - label: "Report: Effectiveness of Automated Speed Enforcement in School Zones and Guidance for Continuous Usage in Georgia (FHWA-GA-26-2315)"
+    url: "https://rosap.ntl.bts.gov/view/dot/88896"
+    description: >-
+      This research evaluates automated speed enforcement in school zones and finds that continuous, year-round use helps maintain driver compliance and safety outcomes. It recommends standardized guidance for transparency, signage, and consistent operations.
   - label: "Snapshot: Active Traffic Management: Variable Speed Limits"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2026-06/snapshot/Snapshot__Variable%20Speed%20Limits_1.pdf"
-    description: "This resource provides background on Active Traffic Management: Variable Speed Limits and its relevance to Variable Speed Limits (VSL)."
+    description: >-
+      This snapshot highlights VSL benefits, including crash reductions, lower delays, and improved operations during adverse conditions. It explains how VSLs dynamically adjust posted speeds based on traffic, weather, queues, or incidents.
 order: 17
 ---
 Variable Speed Limits (VSL) are an advanced traffic management strategy designed to enhance roadway safety and optimize traffic flow by dynamically adjusting speed limits in real time. Using data collected from sensors, cameras, and other monitoring technologies, VSL systems assess current road conditions, such as traffic congestion, weather events, construction zones, or crashes, and modify speed limits accordingly. Electronic signage displays the updated speed limits, informing drivers of the most appropriate speed for prevailing conditions.

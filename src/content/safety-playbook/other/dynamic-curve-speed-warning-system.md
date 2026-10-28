@@ -51,16 +51,24 @@ keywords:
 resources:
   - label: "Report: Evaluation of Dynamic Speed Feedback Signs on Curves: A National Demonstration Project"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-14-020.pdf"
-    description: "This resource provides background on Evaluation of Dynamic Speed Feedback Signs on Curves: A National Demonstration Project and its relevance to Dynamic Curve Speed Warning System."
+    description: >-
+      This report evaluates speed-activated feedback signs on rural roadway curves, including driver speed behavior, advisory speeds, lane-departure crashes, and before-and-after speed and crash analysis.
   - label: "Report: In-Vehicle Dynamic Curve-Speed Warnings at High-Risk Rural Curves"
     url: "https://mdl.mndot.gov/_flysystem/fedora/2023-01/201812.pdf"
-    description: This resource provides background on In-Vehicle Dynamic Curve-Speed Warnings at High-Risk Rural Curves and its relevance to Dynamic Curve Speed Warning System.
+    description: >-
+      This report evaluates in-vehicle curve-speed warnings at high-risk rural curves, including driver alerts, advisory speeds, and technology approaches to reducing curve-related crashes.
   - label: "Flyer: Horizontal Curve Safety"
     url: "https://highways.dot.gov/safety/rwd/keep-vehicles-road/horizontal-curve-safety"
-    description: This resource provides background on Horizontal Curve Safety and its relevance to Dynamic Curve Speed Warning System.
-  - label: "Report: Making Our Roads Safer: One Countermeasure at a Time"
+    description: >-
+      This FHWA page introduces underused but effective treatments for horizontal curves, which account for over 25 percent of fatal crashes and have crash rates about three times those of tangent segments.
+  - label: "Brief: Proven Safety Countermeasures: Roadside Design Improvements at Curves (FHWA-SA-21-029)"
+    url: "https://rosap.ntl.bts.gov/view/dot/66699"
+    description: >-
+      This brief describes widened shoulders, flattened slopes, expanded clear zones, and strategic barriers to help drivers recover when leaving the roadway and reduce crash severity at high-risk curves.
+  - label: "Report: Making Our Roads Safer: One Countermeasure at a Time (FHWA-SA-21-071)"
     url: "https://rosap.ntl.bts.gov/view/dot/88186"
-    description: "This resource provides background on Making Our Roads Safer: One Countermeasure at a Time and its relevance to Dynamic Curve Speed Warning System."
+    description: >-
+      This report highlights proven safety countermeasures with potential to reduce roadway fatalities and serious injuries, organized by focus areas such as pedestrians and cyclists, speed management, and crosscutting strategies.
 order: 26
 ---
 Dynamic curve warning systems are traffic safety technologies designed to reduce crashes on road segments with sharp or high-risk horizontal curves. These systems monitor approaching vehicle speeds and activate advanced warning signs when a driver exceeds a safe threshold speed for the curve. By providing timely visual and, in some cases, auditory alerts, dynamic curve systems prompt drivers to slow down and navigate curves more safely.

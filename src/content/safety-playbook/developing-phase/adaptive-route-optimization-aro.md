@@ -63,16 +63,24 @@ keywords:
 resources:
   - label: "Report: Complete Trip Data: Data Integration, Sharing, and Use"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop22063/fhwahop22063.pdf"
-    description: "This resource provides background on Complete Trip Data: Data Integration, Sharing, and Use and its relevance to Adaptive Route Optimization (ARO)."
+    description: >-
+      This report guides agencies in integrating and using data across travel modes, covering data sharing, multimodal trip planning, accessibility, connected systems, and transportation operations.
   - label: "Report: Adaptive Route Optimization"
     url: "https://ops-dr.fhwa.dot.gov/publications/fhwahop22055/fhwahop22055.pdf"
-    description: This resource provides background on Adaptive Route Optimization and its relevance to Adaptive Route Optimization (ARO).
+    description: >-
+      This concept of operations describes a proposed ARO system from winter-maintenance stakeholders' perspectives and explains how changing weather, incidents, work zones, resources, and public expectations affect maintenance routes.
   - label: "Report: Adaptive Route Optimization for Operations: Feasibility and Readiness Report"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop24043/fhwahop24043.pdf"
-    description: "This resource provides background on Adaptive Route Optimization for Operations: Feasibility and Readiness Report and its relevance to Adaptive Route Optimization (ARO)."
+    description: >-
+      This report defines ARO for winter-maintenance fleets, evaluates network-wide dynamic routing under real-time weather, congestion, incidents, work zones, and resource constraints, and assesses readiness, data needs, and system integration.
   - label: "Handbook: Application of Travel Time Data and Statistics to Travel Time Reliability Analyses"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop21058/fhwahop21058.pdf"
-    description: This resource provides background on Application of Travel Time Data and Statistics to Travel Time Reliability Analyses and its relevance to Adaptive Route Optimization (ARO).
+    description: >-
+      This handbook provides methods and Python workflows for processing detector, probe, and connected-vehicle data into travel-time distributions and reliability measures that can support routing strategies.
+  - label: "Report: AI for Safety and Efficiency Program Roadmap (FHWA-HRT-26-059)"
+    url: "https://rosap.ntl.bts.gov/view/dot/93374"
+    description: >-
+      This roadmap defines FHWA's AI for Safety and Efficiency program, promoting integration of AI research, identifying research gaps, and establishing an evidence base for future roadway transportation research and development.
 order: 51
 ---
 Adaptive Route Optimization (ARO) represents a cutting-edge evolution in traffic and navigation systems, leveraging real-time communication, robust data analytics, and artificial intelligence to optimize travel routes dynamically. Unlike static routing systems, ARO continuously monitors traffic flow, road conditions, and live incidents through a network of sensors, GPS-equipped vehicles, and crowdsourced data platforms. This data is processed using AI-powered algorithms and predictive analytics, enabling the system to compute the most efficient routes instantly. Whether for daily commuters, logistics fleets, or public transit, ARO delivers actionable, real-time routing guidance tailored to the current transportation ecosystem.

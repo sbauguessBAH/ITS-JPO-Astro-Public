@@ -55,13 +55,24 @@ keywords:
 resources:
   - label: "Executive Briefing: Artificial Intelligence and Machine Learning for Transportation"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/doc/06_AI%20ML%20in%20Transportation_Final%20508_01_25_22.pdf"
-    description: "This resource provides background on Executive Briefing: Artificial Intelligence and Machine Learning for Transportation and its relevance to Machine Learning (ML) Assessment for Traffic Signals."
+    description: >-
+      This briefing surveys AI and machine learning in transportation, including decision support, multimodal signals, incident management, asset management, safety, mobility, video analytics, crash prediction, and responsible AI practices.
   - label: "Final Report: Artificial Intelligence (AI)-Enabled Intelligent Transportation Systems (ITS) Capability Maturity Model (CMM) and Readiness Checklists"
     url: "https://www.bing.com/ck/a?!&&p=9e309be301236912a67241aa7018ec5c5607810e114aeda7515bf6c73d5ad059JmltdHM9MTc3MzAxNDQwMA&ptn=3&ver=2&hsh=4&fclid=2720647a-db9e-6db5-2404-7249da156c08&psq=Machine+Learning+(ML)+Assessment+for+Traffic+Signals+FWHA+DOT+pdf+resource&u=a1aHR0cHM6Ly9yb3NhcC5udGwuYnRzLmdvdi92aWV3L2RvdC83ODg3OS9kb3RfNzg4NzlfRFMxLnBkZg"
-    description: This resource provides background on Artificial Intelligence (AI)-Enabled Intelligent Transportation Systems (ITS) Capability Maturity Model (CMM) and Readiness Checklists and its relevance to Machine Learning (ML) Assessment for Traffic Signals.
+    description: >-
+      This report provides guidance for assessing agency readiness to use AI-enabled ITS, including capability models, organizational processes, cybersecurity, data, AI models, integration, operations, and performance measurement.
   - label: "Report: ATCMTD Final Report for the TDOT Artificial Intelligence-Based Decision Support System"
     url: "https://ops.fhwa.dot.gov/fastact/atcmtd/2018/awards/TDOT_ATCMTD_Final_Report_for_ICM_DSS.pdf"
-    description: This resource provides background on ATCMTD Final Report for the TDOT Artificial Intelligence-Based Decision Support System and its relevance to Machine Learning (ML) Assessment for Traffic Signals.
+    description: >-
+      This report describes TDOT's I-24 AI decision-support deployment for recommending real-time traffic controls and evaluates safety, mobility, traffic-management operations, and user satisfaction.
+  - label: "Tech Report: Developing Robust Smart Traffic Signal Control"
+    url: "https://rosap.ntl.bts.gov/view/dot/72367"
+    description: >-
+      This report explores reinforcement-learning strategies for smart signal control and uses simulation and detector data to assess corridor flow, congestion, and intersection safety.
+  - label: "Report: The Role of Artificial Intelligence and Machine Learning in Federally Supported Surface Transportation - 2024 Updates (FHWA-HRT-25-020)"
+    url: "https://rosap.ntl.bts.gov/view/dot/79060"
+    description: >-
+      This updated report covers federally supported AI/ML projects, including video analytics for traffic safety and machine learning for vulnerable road users, within a national transportation research strategy.
 order: 50
 ---
 Machine Learning Assessment for Traffic Signals represents a transformative advancement in traffic management, offering an intelligent framework for analyzing and improving signal timing across complex transportation systems. By utilizing real-time data collected from sensors tracking vehicles, pedestrians, and cyclists, along with historical traffic flow and incident data, machine learning algorithms provide unparalleled insights into the performance of traffic signals. These algorithms can identify inefficiencies such as long queues, uneven green light durations, or conflicts between different modes of transportation (e.g., buses, cars, and pedestrians) at intersections.

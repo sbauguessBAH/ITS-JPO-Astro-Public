@@ -52,19 +52,24 @@ keywords:
 resources:
   - label: "Report: Next Generation of Traffic Management Systems and Centers: A Primer"
     url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-24-081.pdf"
-    description: "This resource provides background on Next Generation of Traffic Management Systems and Centers: A Primer and its relevance to Advanced Traffic Management Systems Software."
+    description: >-
+      This report explains how agencies can improve and transition traffic management systems and centers to meet future needs. It covers system capabilities, emerging technologies, software, data integration, monitoring, and performance measurement.
   - label: "Report: Active Traffic Management (ATM) Implementation and Operations Guide"
     url: "https://rosap.ntl.bts.gov/view/dot/41042/dot_41042_DS1.pdf"
-    description: This resource provides background on Active Traffic Management (ATM) Implementation and Operations Guide and its relevance to Advanced Traffic Management Systems Software.
+    description: >-
+      This report guides agencies in planning, implementing, operating, and maintaining active traffic management strategies. It discusses real-time and predicted conditions, TMC connectivity, system integration, software, coordination, and strategies for recurrent and nonrecurrent congestion.
   - label: "Web Page: Real-Time System Management Information Program"
     url: "https://ops.fhwa.dot.gov/1201/"
-    description: This resource provides background on Real-Time System Management Information Program and its relevance to Advanced Traffic Management Systems Software.
+    description: >-
+      This resource provides standards, tools, and guidance for collecting, analyzing, and sharing real-time traffic data to support analytics-driven operations, including travel-time reliability and congestion monitoring.
   - label: "Fact Sheet: Decision Support for Traffic Management Systems"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-23-044.pdf"
-    description: This resource provides background on Decision Support for Traffic Management Systems and its relevance to Advanced Traffic Management Systems Software.
-  - label: "Report: Review of Traffic Management Systems-Current Practice"
+    description: >-
+      This fact sheet examines how decision-support tools can improve the speed, consistency, and quality of traffic management decisions. It describes knowledge-driven, data-driven, and model-driven tools for monitoring conditions, verifying incidents, and selecting responses.
+  - label: "Report: Review of Traffic Management Systems - Current Practice (FHWA-HRT-23-051)"
     url: "https://rosap.ntl.bts.gov/view/dot/72446"
-    description: This resource provides background on Review of Traffic Management Systems-Current Practice and its relevance to Advanced Traffic Management Systems Software.
+    description: >-
+      This report reviews current traffic management system practices, innovative methods and technologies, agency approaches to assessing and reporting performance, and plans for enhancing TMS.
 order: 55
 ---
 Advanced Traffic Management Systems (ATMS) Software is an integral part of modern intelligent transportation systems, offering comprehensive solutions for monitoring, controlling, and optimizing traffic operations in urban and regional networks. ATMS software serves as the centralized hub for transportation agencies, collecting data from IoT-enabled traffic sensors, cameras, and connected vehicle systems. This data is processed in real-time using cloud-based platforms and artificial intelligence algorithms to provide actionable insights, such as identifying bottlenecks, predicting traffic surges, and detecting incidents like accidents or stalled vehicles.

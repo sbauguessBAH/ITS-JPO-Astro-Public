@@ -54,16 +54,20 @@ keywords:
 resources:
   - label: "Web Page: ARC-IT MCM Environmental Information Collection"
     url: "https://www.arc-it.us/html/functionalobjects/funobj35.html"
-    description: This resource provides background on ARC-IT MCM Environmental Information Collection and its relevance to Maintenance and Construction Management (MCM) Environmental Information Collection.
+    description: >-
+      This ARC-IT web page explains how Maintenance and Construction Management Centers collect current road and weather conditions using environmental sensors on roadways, roadside stations, maintenance vehicles, probe vehicles, and other weather information systems. It describes how this information is aggregated and shared with traffic management, traveler information, and weather service systems.
   - label: "Web Page: Virginia Statewide ITS Architecture MCM Environmental Information Collection"
     url: "https://local.iteris.com/virginiaitsarchitecture/architectures/statewide/html/requirements/funcarea35.html"
-    description: This resource provides background on Virginia Statewide ITS Architecture MCM Environmental Information Collection and its relevance to Maintenance and Construction Management (MCM) Environmental Information Collection.
+    description: >-
+      This Virginia ITS Architecture page describes functional requirements for collecting road and weather data from environmental sensors, maintenance and probe vehicles, and weather service providers. It explains how environmental information supports sensor control, equipment monitoring, data sharing, and maintenance decisions.
   - label: "Web Page: MCM Environmental Informational Collection Functional"
     url: "https://www.bing.com/ck/a?!&&p=bd849fe9ec2d01dfa4dfcd41fcb1b7a848963cb83da01946689da65339d95628JmltdHM9MTc4NTk3NDQwMA&ptn=3&ver=2&hsh=4&fclid=2acfcda7-a5e3-69ee-2bc5-dbaaa4826833&psq=mcm+environmental+information+collection&u=a1aHR0cDovL3d3dy5ydGMud2EuZ292L3dwLWNvbnRlbnQvdXBsb2Fkcy92Zi1hcmNoZGIyL2h0bWwvcmVxL2Z1bjM1Lmh0bQ"
-    description: This resource provides background on MCM Environmental Informational Collection Functional and its relevance to Maintenance and Construction Management (MCM) Environmental Information Collection.
+    description: >-
+      This Vast Regional ITS Architecture page describes collecting current road and weather conditions from roadside and vehicle-based environmental sensors, as well as forecasts from other systems. It explains how the functional device aggregates sensor data and attributes for other applications.
   - label: "Executive Briefing: Rural Road Weather Management Systems"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-05/executive-briefing/11_Rural%20Road%20Weather%20Management%20Systems_FINAL508_05072025.pdf"
-    description: "This resource provides background on Executive Briefing: Rural Road Weather Management Systems and its relevance to Maintenance and Construction Management (MCM) Environmental Information Collection."
+    description: >-
+      This briefing highlights how ITS and weather-responsive traffic management improve safety and operations during adverse weather. It cites tools such as automated weather alerts, salt management dashboards, connected-vehicle data, and mobile observations that help rural agencies reduce delays, optimize maintenance resources, and improve traveler information.
 order: 11
 ---
 The MCM Environmental Information Collection system is a comprehensive solution for monitoring and assessing environmental conditions on roadways. It collects real-time data from a network of environmental sensors deployed along roads and mounted on maintenance vehicles, capturing key parameters such as road surface temperature, moisture levels, ice formation, salinity, and overall weather conditions. By aggregating this data, the system provides a detailed and continuously updated picture of roadway conditions, helping transportation agencies maintain safe and efficient travel.

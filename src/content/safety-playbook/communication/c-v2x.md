@@ -57,19 +57,24 @@ keywords:
 resources:
   - label: "Video: Ford C-V2X Technology"
     url: "https://youtu.be/1HrPAMDIOoQ"
-    description: This resource provides background on Ford C-V2X Technology and its relevance to C-V2X.
-  - label: "Fact Sheet: Cellular Vehicle to Everything C V2X Resource (FHWA Publication"
+    description: >-
+      This video explains Ford's C-V2X technology and how vehicles can communicate with other vehicles, infrastructure, pedestrians, and roadway systems to support safety warnings and situational awareness.
+  - label: "Fact Sheet: Cellular Vehicle-to-Everything (C-V2X) Resource (FHWA Publication)"
     url: "https://www.bing.com/ck/a?!&&p=67562ae9059c07c2fa7539f46d2048c40aef909251f048c41340331219761ee7JmltdHM9MTc4NDA3MzYwMA&ptn=3&ver=2&hsh=4&fclid=2720647a-db9e-6db5-2404-7249da156c08&psq=Cellular+Vehicle-to-Everything%2c+C-V2X+FHWS+resource&u=a1aHR0cHM6Ly9yb3NhcC5udGwuYnRzLmdvdi92aWV3L2RvdC83OTIxNS9kb3RfNzkyMTVfRFMxLnBkZg"
-    description: This resource provides background on Cellular Vehicle to Everything C V2X Resource (FHWA Publication and its relevance to C-V2X.
+    description: >-
+      This fact sheet explains how C-V2X supports communication between vehicles, infrastructure, and other road users, and summarizes capabilities, operational benefits, and considerations for agencies exploring the technology.
   - label: "Fact Sheet: Scenario Development for Cooperative Driving Automation (CDA) Prototypes"
     url: "https://rosap.ntl.bts.gov/view/dot/92509"
-    description: This resource provides background on Scenario Development for Cooperative Driving Automation (CDA) Prototypes and its relevance to C-V2X.
+    description: >-
+      This fact sheet explains how cooperative driving automation uses V2X communication and recommends structured scenarios to safely test prototypes before pilot deployment.
   - label: "Report: Vehicle-to-Everything (V2X) Deployer Resource"
     url: "https://rosap.ntl.bts.gov/view/dot/79215"
-    description: This resource provides background on Vehicle-to-Everything (V2X) Deployer Resource and its relevance to C-V2X.
+    description: >-
+      This resource explains V2X fundamentals and deployment strategies, including LTE-V2X in the 5.9 GHz band, cellular-network-based V2X, interoperability, cloud and edge computing, and connected-vehicle deployment guidance.
   - label: "Report: Interoperable Connectivity - National V2X Deployment Plan Supplement"
     url: "https://rosap.ntl.bts.gov/view/dot/79091"
-    description: This resource provides background on Interoperable Connectivity - National V2X Deployment Plan Supplement and its relevance to C-V2X.
+    description: >-
+      This report provides planning and deployment guidance for interoperable V2X systems, with additional technical information for agencies considering V2X technologies.
 order: 19
 ---
 Cellular Vehicle-to-Everything (C-V2X) technology is a cutting-edge communication system designed to improve road safety, traffic efficiency, and vehicle connectivity. C-V2X allows vehicles to communicate directly with other vehicles (V2V), enabling collision warnings, coordinated maneuvers, and reduced congestion. It also facilitates communication between vehicles and infrastructure (V2I), such as traffic signals, roadside sensors, and dynamic signs, allowing traffic flow optimization and enhanced safety at intersections and other critical points.

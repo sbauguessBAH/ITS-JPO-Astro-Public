@@ -17,7 +17,7 @@ facility:
   - "Arterial/Collector Segment"
 safety:
   - "Speeding"
-  - "Pedestrian Safety"
+  - "Pedestrian"
   - "Roadway Departure"
 keywords:
   - "Automated Speed Enforcement"
@@ -70,4 +70,4 @@ Automated speed enforcement systems are advanced technologies designed to enhanc
 
 Beyond enforcement, automated speed systems contribute to traffic management by analyzing real-time data to optimize traffic flow and minimize congestion. They provide immediate information to law enforcement agencies and, in some cases, the public, allowing for quick responses to traffic incidents. Additionally, automated enforcement helps mitigate human bias in processing violations, ensuring more objective and consistent enforcement. As part of a broader strategy for roadway safety, these systems demonstrate how technology can support safer driving, protect road users, and improve overall traffic efficiency.
 
-This technology uses cameras and sensors to automatically detect vehicles exceeding the speed limit and captures images or video. of the offending vehicles. The system can issue warnings or citations based on the data, supporting safety by enforcing speed limits, and reducing crashes.
+This technology uses cameras and sensors to automatically detect vehicles exceeding the speed limit and captures images or video of the offending vehicles. The system can issue warnings or citations based on the data, supporting safety by enforcing speed limits and reducing crashes.

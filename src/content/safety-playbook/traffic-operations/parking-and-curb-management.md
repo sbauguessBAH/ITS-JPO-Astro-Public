@@ -46,19 +46,24 @@ keywords:
 resources:
   - label: "Infographic: Essential ITS: Parking and Curb Management"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/doc/Parking%20and%20Curb%20Management_FINAL508.pdf"
-    description: "This resource provides background on Infographic: Essential ITS: Parking and Curb Management and its relevance to Parking and Curb Management."
+    description: >-
+      This infographic explains how parking and curb management can improve infrastructure use, reduce congestion, improve safety, and optimize curb productivity. Examples include demand-based pricing, delivery reservations, automated parking, and reduced time spent searching for parking.
   - label: "Web Page: Essential ITS: Parking and Curb Management"
     url: "https://www.itskrs.its.dot.gov/benefits/essential-its/parking-and-curb-management"
-    description: "This resource provides background on Essential ITS: Parking and Curb Management and its relevance to Parking and Curb Management."
+    description: >-
+      This webpage explains how dynamic parking and curb management can coordinate parking facilities, traffic management, transit, pedestrians, micromobility, and curbside activity. Strategies can improve parking capacity, reduce congestion and illegal curbside behavior, and use limited curb space more efficiently.
   - label: "Plan: An Open Data Approach to Curbside Management [Data Management Plan]"
     url: "https://rosap.ntl.bts.gov/view/dot/88673"
-    description: "This resource provides background on Plan: An Open Data Approach to Curbside Management [Data Management Plan] and its relevance to Parking and Curb Management."
+    description: >-
+      This plan outlines how cities can digitize curb assets, standardize curb data, and integrate loading-zone reservation systems. It emphasizes open-data APIs, real-time curb availability, and interoperability for future curb reservations and dynamic pricing.
   - label: "Executive Briefing: Curbside Management"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2024-02/executive-briefing/2023%20Executive%20Briefing_Curbside%20Management_v2.pdf"
-    description: "This resource provides background on Executive Briefing: Curbside Management and its relevance to Parking and Curb Management."
-  - label: "Dataset: An Open Data Approach to Curbside Management [supporting dataset"
+    description: >-
+      This briefing emphasizes digital inventories, real-time data, and management applications to allocate and regulate curb space efficiently. It highlights mapping and dynamic management tools that improve multimodal access and outlines FHWA's framework for planning and evaluating curbside treatments around community priorities.
+  - label: "Dataset: An Open Data Approach to Curbside Management [supporting dataset]"
     url: "https://rosap.ntl.bts.gov/view/dot/88674#tabs-4"
-    description: This resource provides background on An Open Data Approach to Curbside Management [supporting dataset and its relevance to Parking and Curb Management.
+    description: >-
+      This dataset supports an open-data approach to curbside management by creating a digital source of curb inventories and real-time regulations. Open APIs can share policies, current use, and historical patterns to support transparent operations, planning, and public access.
 order: 56
 ---
 Parking and Curb Management is a forward-thinking framework that addresses the challenges of limited urban curbside space and parking availability. With increasing demands from personal vehicles, delivery fleets, ride-share services, transit stops, and micromobility options like scooters and bikes, curbside areas have become critical bottlenecks in city transportation systems. This management strategy uses technology to monitor, allocate, and optimize the utilization of curbside resources in real time, ensuring they meet dynamic urban demands effectively and equitably.

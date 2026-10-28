@@ -51,16 +51,20 @@ keywords:
 resources:
   - label: "Webpage: Pedestrian Hybrid Beacons"
     url: "https://highways.dot.gov/safety/proven-safety-countermeasures/pedestrian-hybrid-beacons"
-    description: This resource provides background on Pedestrian Hybrid Beacons and its relevance to Rectangular Rapid Flashing Beacons (RRFBs).
+    description: >-
+      This webpage describes PHBs as a proven countermeasure for higher-speed roadways, midblock crossings, and uncontrolled intersections, including pedestrian activation and the signal sequence that prompts drivers to stop.
   - label: "Brief: Pedestrian Hybrid Beacons"
     url: "https://rosap.ntl.bts.gov/view/dot/86138"
-    description: This resource provides background on Pedestrian Hybrid Beacons and its relevance to Rectangular Rapid Flashing Beacons (RRFBs).
+    description: >-
+      This brief explains PHB design and operation, including pedestrian activation, the yellow-to-red sequence, driver stopping, and use at higher-speed and uncontrolled crossings.
   - label: "Report: Evaluation of Pedestrian Hybrid Beacons and Rapid Flashing Beacons"
     url: "https://www.fhwa.dot.gov/publications/research/safety/16040/001.cfm"
-    description: This resource provides background on Evaluation of Pedestrian Hybrid Beacons and Rapid Flashing Beacons and its relevance to Rectangular Rapid Flashing Beacons (RRFBs).
+    description: >-
+      This report examines how PHB and RRFB features affect driver yielding and pedestrian detection, informing safer crosswalk design and beacon placement.
   - label: "Study: Pedestrian Hybrid Beacon Guide- Recommendations and Case Study"
     url: "https://highways.dot.gov/safety/pedestrian-bicyclist/safety-countermeasures/pedestrian-hybrid-beacon-guide-recommendations"
-    description: This resource provides background on Pedestrian Hybrid Beacon Guide- Recommendations and Case Study and its relevance to Rectangular Rapid Flashing Beacons (RRFBs).
+    description: >-
+      This guide explains PHBs as a pedestrian-activated treatment for uncontrolled or midblock crossings where driver yielding is inadequate and describes how they can improve motorist compliance.
 order: 22
 ---
 Pedestrian Hybrid Beacons (PHBs) are innovative traffic control devices designed to enhance pedestrian safety and manage vehicle flow at mid-block crosswalks without requiring full traffic signals. PHBs are particularly useful in locations where natural gaps in traffic are insufficient for pedestrians to cross safely, such as mid-block crossings, uncontrolled intersections, or areas with high traffic volumes and speed limits exceeding 35 miles per hour. By providing a clear visual signal to drivers, PHBs instruct motorists to stop and allow pedestrians to cross, resulting in compliance rates exceeding 90% for complete stops.

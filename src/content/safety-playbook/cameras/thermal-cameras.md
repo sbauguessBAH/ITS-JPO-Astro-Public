@@ -50,13 +50,20 @@ keywords:
 resources:
   - label: "Fact Sheet: Enhancing Vulnerable Road User Detection and Volume Data Through the Use of Infrared Thermal Imaging Sensors"
     url: "https://highways.dot.gov/media/52641"
-    description: This resource provides background on Enhancing Vulnerable Road User Detection and Volume Data Through the Use of Infrared Thermal Imaging Sensors and its relevance to Thermal Cameras.
+    description: >-
+      This fact sheet explains how infrared thermal imaging sensors can improve vulnerable road user detection and volume data, including the technology approach, observed benefits, and deployment considerations.
+  - label: "Project: Computer Vision Automation of Wildlife Monitoring on WSDOT's I-90 Snoqualmie Pass East Project"
+    url: "https://roadecology.ucdavis.edu/conference-proceedings-and-papers/computer-vision-automation-wildlife-monitoring-wsdots-i-90"
+    description: >-
+      This project describes using computer vision to automate wildlife-crossing monitoring from thermal camera footage. Models filter false detections and classify species, reducing labor and supporting scalable wildlife monitoring.
   - label: "Fact Sheet: Wildlife Crossing Web-Connected Cameras Offer Improved Monitoring for Highways"
     url: "https://www.fhwa.dot.gov/publications/research/ear/16033/index.cfm"
-    description: This resource provides background on Wildlife Crossing Web-Connected Cameras Offer Improved Monitoring for Highways and its relevance to Thermal Cameras.
+    description: >-
+      This fact sheet describes wireless, web-connected cameras for monitoring wildlife movement and ecological processes near highways. It focuses on continuous data streaming, remote access, and integration with traffic camera infrastructure.
   - label: "Lessons Learned: Choose Thermal Cameras To Detect Pedestrians in Dark Non-Lit Areas As They Can Outperform CCTV Night Vision Under Conditions With Low to No Light"
     url: "https://www.itskrs.its.dot.gov/2021-l01076"
-    description: "This resource provides background on Lessons Learned: Choose Thermal Cameras To Detect Pedestrians in Dark Non-Lit Areas As They Can Outperform CCTV Night Vision Under Conditions With Low to No Light and its relevance to Thermal Cameras."
+    description: >-
+      This lesson compares a thermal IP camera with a pan-tilt-zoom night-vision CCTV camera for pedestrian detection on unlit roads. Thermal cameras performed better in low- to no-light conditions, with detection distances up to 300 feet.
 order: 13
 ---
 Thermal cameras are powerful tools in transportation systems, providing enhanced monitoring and safety capabilities by detecting heat signatures from vehicles, infrastructure, and pedestrians. In public transportation, these cameras help identify incidents such as overheating components or stopped vehicles on tracks, allowing operators to respond quickly and prevent crashes.

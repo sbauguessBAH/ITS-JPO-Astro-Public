@@ -61,16 +61,24 @@ keywords:
 resources:
   - label: "Report: Vehicle-to-Everything (V2X) Deployer Resource"
     url: "https://rosap.ntl.bts.gov/view/dot/79215/dot_79215_DS1.pdf"
-    description: This resource provides background on Vehicle-to-Everything (V2X) Deployer Resource and its relevance to V2X.
+    description: >-
+      This report guides agencies planning or implementing V2X deployments and covers fundamentals, strategies, interoperability, communications, system security, data management, applications, funding, and performance measurement.
   - label: "Presentation: V2X Training and Technical Assistance"
     url: "https://engineering.virginia.edu/sites/default/files/Connected-Vehicle-PFS/Annual%20Meetings/Winter%202024%20-%20San%20Diego%2C%20CA/CVPFS%20-%20ITS%20JPO%20PCB%20-%20December%202024%20Presentation_%20Final_0.pdf"
-    description: This resource provides background on V2X Training and Technical Assistance and its relevance to V2X.
+    description: >-
+      This presentation describes USDOT's V2X training and technical assistance through the Accelerating V2X Cohort, including deployment mapping, funding, standards, roadside-unit costs, technical support, and foundational training.
   - label: "Snapshot: Vehicle-to-Everything (V2X) Communications"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2024-06/snapshot/V2X%20Snapshot_FINAL508_06072024.pdf"
-    description: This resource provides background on Vehicle-to-Everything (V2X) Communications and its relevance to V2X.
+    description: >-
+      This snapshot describes how standardized message sets, low-latency wireless links, and interoperable architectures support applications such as collision warnings, signal priority, and eco-driving.
+  - label: "Executive Briefing: Vehicle-to-Everything (V2X) Technology"
+    url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-05/executive-briefing/Executive%20Briefing%202024_V2X%20Technology_FINAL508_05302025.pdf"
+    description: >-
+      This briefing summarizes V2X pilot deployment benefits for safety, mobility, efficiency, and environmental outcomes and emphasizes interoperable, secure, privacy-protected connectivity.
   - label: "Executive Briefing: Connected Vehicle Pilot Deployment Program (2024 Update)"
     url: "https://www.itskrs.its.dot.gov/briefings/executive-briefing/connected-vehicle-pilot-deployment-program-2024-update"
-    description: "This resource provides background on Executive Briefing: Connected Vehicle Pilot Deployment Program and its relevance to V2X."
+    description: >-
+      This briefing outlines USDOT's connected-vehicle pilots in New York City, Wyoming, and Tampa, including deployments, interoperability, operational evaluations, lessons learned, and practices for future deployments.
 order: 42
 ---
 Vehicle-to-Everything (V2X) is an advanced communication technology that enables vehicles to interact with various elements of the transportation ecosystem, including other vehicles, roadway infrastructure, pedestrians, and even remote networked systems. By exchanging real-time data such as location, speed, traffic signal status, and environmental conditions, V2X systems create an intelligent network where road users and infrastructure collaborate to enhance safety and efficiency.

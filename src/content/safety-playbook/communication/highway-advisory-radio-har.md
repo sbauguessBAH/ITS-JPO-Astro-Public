@@ -50,18 +50,22 @@ keywords:
   - "Low-power AM broadcast"
   - "Incident advisory broadcast"
 resources:
-  - label: "Report: Highway Advisory Radio Message Development Guide (FHWA/RD-82/059"
+  - label: "Report: Highway Advisory Radio Message Development Guide (FHWA/RD-82/059)"
     url: "https://rosap.ntl.bts.gov/view/dot/3217/dot_3217_DS1.pdf"
-    description: This resource provides background on Highway Advisory Radio Message Development Guide (FHWA/RD-82/059 and its relevance to Highway Advisory Radio (HAR).
+    description: >-
+      This report provides guidance for developing highway advisory radio messages for motorists, including message principles and operating considerations for construction, lane blockages, detours, and parking control.
   - label: "Web Page: Incident and Emergency Response Essential ITS Benefits"
     url: "https://www.itskrs.its.dot.gov/benefits/essential-its/incident-and-emergency-response"
-    description: This resource provides background on Incident and Emergency Response Essential ITS Benefits and its relevance to Highway Advisory Radio (HAR).
+    description: >-
+      This webpage summarizes ITS benefits for incident and emergency response, including technologies and strategies that improve response times, situational awareness, and operational safety.
   - label: "Chapter 13 - 13.2.7: Highway Advisory Radio"
     url: "https://ops.fhwa.dot.gov/freewaymgmt/publications/frwy_mgmt_handbook/chapter13_02.htm"
-    description: "This resource provides background on Chapter 13 - 13.2.7: Highway Advisory Radio and its relevance to Highway Advisory Radio (HAR)."
+    description: >-
+      This handbook chapter describes HAR as a tool for providing timely traffic and travel information across its broadcast range, in contrast with CMS that reach motorists at a particular point and carry shorter messages.
   - label: "Survey: Highway Advisory Radio (HAR) can provide route diversion information during periods of congestion when phone and internet travel advisory systems are not available; benefit-to-cost ratios can range from 4:1 to 16:1 assuming a 5 to 20 percent compliance rate"
     url: "https://www.itskrs.its.dot.gov/2018-b01254"
-    description: This resource provides background on Highway Advisory Radio (HAR) can provide route diversion information during periods of congestion when phone and internet travel advisory systems are not available; benefit-to-cost ratios can range from 4:1 to 16:1 assuming a 5 to 20 percent compliance rate and its relevance to Highway Advisory Radio (HAR).
+    description: >-
+      This survey found HAR remains useful for regional traveler information, especially during congestion and emergencies. A Florida Turnpike cost-benefit analysis estimated benefit-cost ratios of about 4:1 to 16:1 at compliance rates of 5 to 20 percent.
 order: 40
 ---
 Highway Advisory Radio (HAR) is a vital tool for providing motorists with timely, localized information while minimizing distractions. HAR broadcasts updates on traffic conditions, road closures, and construction, helping drivers plan their routes and avoid delays. In emergency situations, HAR delivers critical alerts to ensure the safety of drivers and other road users.

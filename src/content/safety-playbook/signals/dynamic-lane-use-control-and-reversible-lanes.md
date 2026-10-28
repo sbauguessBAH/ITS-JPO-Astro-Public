@@ -54,19 +54,24 @@ keywords:
 resources:
   - label: "Executive Briefing: Advanced Traffic Management Strategies"
     url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-06/executive-briefing/EB04-ATM%20STRATEGIES%202019_FINAL508_06022025.pdf"
-    description: "This resource provides background on Executive Briefing: Advanced Traffic Management Strategies and its relevance to Dynamic Lane Use Control and Reversible Lanes."
+    description: >-
+      This briefing covers active traffic management strategies, including variable speed limits, ramp metering, queue warning, dynamic lane control, dynamic shoulder use, work zone safety, travel-time reliability, costs, and deployment practices.
   - label: "Technical Brief: Simulator Assessment of Alternative Lane Grouping at Signalized Intersections"
     url: "https://rosap.ntl.bts.gov/view/dot/42421"
-    description: This resource provides background on Simulator Assessment of Alternative Lane Grouping at Signalized Intersections and its relevance to Dynamic Lane Use Control and Reversible Lanes.
+    description: >-
+      This technical brief uses driving simulators to study driver behavior and sign comprehension for dynamic reversible left-turn and contraflow left-turn lanes. It emphasizes clear, adaptive signs and pavement markings to indicate lane status.
   - label: "Technical Report: Active Traffic Management (ATM) Implementation and Operations Guide"
     url: "https://ops-dr.fhwa.dot.gov/publications/fhwahop17056/fhwahop17056.pdf"
-    description: This resource provides background on Active Traffic Management (ATM) Implementation and Operations Guide and its relevance to Dynamic Lane Use Control and Reversible Lanes.
+    description: >-
+      This guide provides agencies with a stepwise approach to planning, implementing, and operating active traffic management strategies, including systems engineering, organizational considerations, capabilities, and design.
   - label: "Report: Simulator Assessment of Alternative Lane Grouping at Signalized Intersections"
     url: "https://rosap.ntl.bts.gov/view/dot/40085"
-    description: This resource provides background on Simulator Assessment of Alternative Lane Grouping at Signalized Intersections and its relevance to Dynamic Lane Use Control and Reversible Lanes.
-  - label: "Report: Cooperative Driving Automation-Highway Driving Simulator Architecture: High-Level Architecture Design"
+    description: >-
+      This report evaluates driver understanding of dynamic reversible left-turn and contraflow left-turn lane designs. FHWA simulator results support clearer signs and pavement markings to improve safety and comprehension.
+  - label: "Report: Cooperative Driving Automation - Highway Driving Simulator Architecture: High-Level Architecture Design (FHWA-HRT-25-047)"
     url: "https://rosap.ntl.bts.gov/view/dot/86226"
-    description: "This resource provides background on Cooperative Driving Automation-Highway Driving Simulator Architecture: High-Level Architecture Design and its relevance to Dynamic Lane Use Control and Reversible Lanes."
+    description: >-
+      This report presents a high-level design for integrating CARMA cooperative driving automation with FHWA's Highway Driving Simulator to support human-in-the-loop and software-in-the-loop testing of V2X-enabled automated vehicle interactions.
 order: 31
 ---
 Dynamic Lane Use Control is a proactive traffic operations approach designed to optimize roadway performance by dynamically managing how lanes are used in response to real-time traffic conditions. Using data from traffic sensors, cameras, and traffic management centers, the system can open or close lanes, shift lane directions, or designate special-use lanes to maximize facility throughput. This flexibility allows transportation agencies to make better use of existing roadway capacity without the need for physical expansion.

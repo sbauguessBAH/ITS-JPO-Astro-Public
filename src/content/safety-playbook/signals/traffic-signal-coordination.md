@@ -50,19 +50,24 @@ keywords:
 resources:
   - label: "Handbook: Traffic Signal Program Handbook"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop23041/fhwahop23041.pdf"
-    description: This resource provides background on Traffic Signal Program Handbook and its relevance to Traffic Signal Coordination.
+    description: >-
+      This handbook guides agencies in developing and improving traffic signal programs using objectives- and performance-based approaches. It covers operations, maintenance, capabilities, workforce, technology, performance measures, and continuous improvement.
   - label: "Manual Chapter: Traffic Signal Timing Manual, Chapter 6"
     url: "https://ops.fhwa.dot.gov/publications/fhwahop08024/chapter6.htm"
-    description: "This resource provides background on Manual Chapter: Traffic Signal Timing Manual, Chapter 6 and its relevance to Traffic Signal Coordination."
+    description: >-
+      This chapter provides guidance on coordinated traffic signal timing, including arterial progression, downtown networks, timing plans, offsets, cycle lengths, and strategies for improving corridor mobility.
   - label: "Guide: Signal Timing Under Saturated Conditions"
     url: "https://rosap.ntl.bts.gov/view/dot/20668"
-    description: This resource provides background on Signal Timing Under Saturated Conditions and its relevance to Traffic Signal Coordination.
+    description: >-
+      This guide addresses signal timing near or over capacity and synthesizes practice on cycle lengths, green times, queue management, progression, and offsets under heavy congestion.
   - label: "Fact Sheet: Advanced Traffic Signal Control Optimization in a Cooperative Driving Automation Environment"
     url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-096.pdf"
-    description: This resource provides background on Advanced Traffic Signal Control Optimization in a Cooperative Driving Automation Environment and its relevance to Traffic Signal Coordination.
+    description: >-
+      This fact sheet describes signal control using cooperative driving automation to exchange vehicle status and intent with roadside infrastructure and optimize timing. Testing showed smoother flow, reduced energy use, and less stopping time.
   - label: "Report: Signal Timing on a Shoestring"
     url: "https://rosap.ntl.bts.gov/view/dot/732"
-    description: This resource provides background on Signal Timing on a Shoestring and its relevance to Traffic Signal Coordination.
+    description: >-
+      This report outlines cost-effective methods for developing signal timing plans when agencies have limited budgets, including an eight-step process and approaches for different resource levels.
 order: 32
 ---
 Traffic signal coordination is a key component of intelligent transportation systems (ITS) designed to optimize traffic flow along arterial corridors. By synchronizing the timing of multiple traffic signals, vehicles can pass through consecutive intersections with minimal stopping, reducing delays and improving overall travel efficiency. This coordination relies on advanced technologies, including traffic sensors, adaptive algorithms, and central traffic management software, which monitors traffic patterns and adjusts signal phases in real time.

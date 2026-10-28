@@ -53,12 +53,22 @@ keywords:
   - "Vehicle-to-Everything"
   - "V2X"
 resources:
+  - label: "Fact Sheet: Arizona Department of Transportation Dual Use Safety Technology (DUST) Warning System (FHWA-HOP-22-071)"
+    url: "https://boozallen.sharepoint.us/teams/ITSJPOIDIQ-SafetyPlaybook-Toolkit/Shared%20Documents/Safety%20Playbook-Toolkit/Task%202%20-%20Playbook%20-%20Toolkit/03%20ITS%20Strategies%20Report/DELIVERABLE%20693JJ325F00085N%20ITS%20JPO%20Strategies%20Report%20v0.docx"
+    description: >-
+      This fact sheet reviews how the Arizona DOT deployed environmental sensor stations, visibility sensors, precipitation sensors, and CCTV cameras along I-10 to provide early warning of dust storms, snow, and ice hazards.
   - label: "Web Page: Arizona DOT Dust Detection and Warning System"
     url: "https://www.transportationops.org/case-studies/arizona-dot-dust-detection-and-warning-system"
-    description: This resource provides background on Arizona DOT Dust Detection and Warning System and its relevance to Dual Use Safety Technology (DUST) Warning System.
+    description: >-
+      This web page describes how the Arizona Department of Transportation deployed a dust detection and warning system to reduce crash risks caused by sudden, severe dust storms. It outlines the system's purpose, approach, and benefits for improving driver safety and supporting transportation management.
   - label: "Report: Early Warning Sensor Network for Brown-Out Conditions: Phase II - Field Testing and Assessment"
     url: "https://rosap.ntl.bts.gov/view/dot/32233"
-    description: "This resource provides background on Early Warning Sensor Network for Brown-Out Conditions: Phase II - Field Testing and Assessment and its relevance to Dual Use Safety Technology (DUST) Warning System."
+    description: >-
+      This report evaluates field tests of a ground-based sensor network designed to warn drivers and agencies of dust-related brownout hazards. It presents the SANTRI sand movement sensing instrument as a practical field tool for detecting blowing dust early, identifying source areas, and reducing dust storm crash risks.
+  - label: "Manual: UFM 3-260-17 O&M Manual: Standard Practice for Dust Control on Roads, Airfields, Base Camps, and Adjacent Areas"
+    url: "https://legacy.wbdg.org/dod/ufc/ufc-3-260-17"
+    description: >-
+      This Unified Facilities Manual provides practical guidance for controlling dust on roads, airfields, base camps, and adjacent areas. It explains how to evaluate site conditions and select, apply, and maintain suitable dust control measures while accounting for traffic, climate, soils, environmental effects, and safety.
 order: 2
 ---
 The Dual Use Safety Technology (DUST) Warning System is designed to address weather-related challenges along Interstate 10 in Arizona, particularly in areas prone to dust storms and winter icing. Developed and deployed by the Arizona Department of Transportation, the system provides early detection and warning capabilities that help drivers and transportation managers respond more effectively to hazardous road conditions.

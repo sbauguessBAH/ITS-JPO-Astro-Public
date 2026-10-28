@@ -48,15 +48,22 @@ keywords:
   - "Traffic control support"
   - "Protective barriers"
 resources:
-  - label: "Report: Investigation of Truck Mounted Attenuator (TMA) Crashes in Work Zones in Virginia (VTRC 16-R7"
+  - label: "Report: Automated Truck Mounted Attenuator: Phase 2 Performance Measurement and Testing (VTTI-06-005)"
+    url: "https://rosap.ntl.bts.gov/view/dot/73294"
+    description: >-
+      This report evaluates an automated truck-mounted attenuator using leader-follower control to remove drivers from high-risk work-zone vehicles. Phase 2 testing confirmed reliable automated following at speeds up to 40 mph.
+  - label: "Report: Investigation of Truck Mounted Attenuator (TMA) Crashes in Work Zones in Virginia (VTRC 16-R7)"
     url: "https://rosap.ntl.bts.gov/view/dot/29718"
-    description: This resource provides background on Investigation of Truck Mounted Attenuator (TMA) Crashes in Work Zones in Virginia (VTRC 16-R7 and its relevance to Truck Mounted Attenuators (Leader-Follower TMA).
+    description: >-
+      This report analyzes Virginia TMA crash trends, contributing factors, and exposure, identifying driver behavior, sight distance, mobile operations, and work-area protection as concerns and recommending training and layout strategies.
   - label: "Report: Design and Development of an Automated Truck Mounted Attenuator"
     url: "https://rosap.ntl.bts.gov/view/dot/56912"
-    description: This resource provides background on Design and Development of an Automated Truck Mounted Attenuator and its relevance to Truck Mounted Attenuators (Leader-Follower TMA).
+    description: >-
+      This report documents the design and development of a leader-follower automated TMA intended to remove the driver from exposed work-zone operations; testing demonstrated reliable operation at speeds up to 15 mph.
   - label: "Report: Strategies to Reduce Truck Mounted Attenuator Crashes (FHWA/VTRC 24-R15"
     url: "https://vtrc.virginia.gov/media/vtrc/vtrc-pdf/vtrc-pdf/24-R15.pdf"
-    description: This resource provides background on Strategies to Reduce Truck Mounted Attenuator Crashes (FHWA/VTRC 24-R15 and its relevance to Truck Mounted Attenuators (Leader-Follower TMA).
+    description: >-
+      This report identifies promising methods to reduce TMA crashes and their severity in stationary and mobile work zones, including how retroreflective panel configurations affect traffic speed and lane choice.
 order: 20
 ---
 The Leader-Follower Truck-Mounted Attenuator (TMA) system is a critical safety technology designed to protect work zone personnel, emergency responders, and equipment while improving operational efficiency. By employing automated leader-follower vehicle systems, the TMA separates workers from potential hazards during activities such as lane striping, sweeping, bridge flushing, and pothole repair. For emergency response, TMAs safeguard personnel and equipment at roadway incidents by absorbing the impact of colliding with vehicles, reducing injury severity, and enhancing survivability.
