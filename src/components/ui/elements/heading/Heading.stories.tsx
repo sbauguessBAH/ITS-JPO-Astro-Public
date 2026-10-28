@@ -37,7 +37,6 @@ export default meta;
 export const Default = {};
 
 export const Sizes = {
-  // @ts-expect-error storybook-astro does not export types
   render: () => ({
     component: ComponentStory,
     props: { columns: 1 },
