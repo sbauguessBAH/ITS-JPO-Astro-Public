@@ -22,6 +22,9 @@ import IconTile from "@/src/components/ui/icon/IconTile.astro";
 
 import Layout from "../_layout.astro";
 import HelpDeskLogo from "./_help-desk-logo.astro";
+import PageContainer from "@/src/components/ui/blocks/page/PageContainer.astro";
+import PageBody from "@/src/components/ui/blocks/page/PageBody.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 
 const COMMON_TOPICS = [
   "Building compliant MAP messages",
@@ -156,204 +159,208 @@ const LOAN_PROGRAM_BENEFITS: {
 </style>
 <Layout>
   <Page>
-    <div class="hd-banner-wrapper">
-      <LibraryImage class="hd-banner-image" entry="pcb/carma" />
-      <HelpDeskLogo class="tw:absolute tw:top-0 tw:left-0 tw:z-10" />
-    </div>
-    <Section>
+    <PageHeader>
+      <div class="hd-banner-wrapper">
+        <LibraryImage class="hd-banner-image" entry="pcb/carma" />
+        <HelpDeskLogo class="tw:absolute tw:top-0 tw:left-0 tw:z-10" />
+      </div>
       <Heading>V2X Interoperability Help Desk</Heading>
-      <div
-        class="tw:space-between tw:flex tw:flex-row tw:items-start tw:gap-32"
-      >
-        <div class="tw:flex tw:basis-3/5 tw:flex-col tw:gap-2">
-          <Heading size="md">What is the help desk?</Heading>
-          <p class="program-text">
-            The help desk is your direct line to technical experts supporting
-            your V2X deployment. Whether you're selecting equipment, creating
-            MAP messages, integrating signal phase and timing, or
-            troubleshooting data flow, the help desk is here to help ensure
-            interoperability and compliance with standards.
-          </p>
-          <Heading size="md">Why use the help desk?</Heading>
-          <div class="tw:flex tw:flex-col tw:gap-4 tw:p-4">
-            {
-              HELP_DESK_BENEFITS.map((item) => (
-                <div class="tw:flex tw:gap-4">
-                  <div
-                    aria-hidden="true"
-                    class="tw:flex tw:size-8 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--help-desk-blue-dark) tw:font-semibold tw:text-white"
-                  >
-                    {item.number}
+    </PageHeader>
+    <PageBody>
+      <Section>
+        <div
+          class="tw:space-between tw:flex tw:flex-col tw:lg:flex-row tw:items-start tw:gap-4 tw:lg:gap-16"
+        >
+          <div class="tw:flex tw:basis-3/5 tw:flex-col tw:gap-2">
+            <Heading size="md">What is the help desk?</Heading>
+            <p class="program-text">
+              The help desk is your direct line to technical experts supporting
+              your V2X deployment. Whether you're selecting equipment, creating
+              MAP messages, integrating signal phase and timing, or
+              troubleshooting data flow, the help desk is here to help ensure
+              interoperability and compliance with standards.
+            </p>
+            <Heading size="md">Why use the help desk?</Heading>
+            <div class="tw:flex tw:flex-col tw:gap-4 tw:p-4">
+              {
+                HELP_DESK_BENEFITS.map((item) => (
+                  <div class="tw:flex tw:gap-4">
+                    <div
+                      aria-hidden="true"
+                      class="tw:flex tw:size-8 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--help-desk-blue-dark) tw:font-semibold tw:text-white"
+                    >
+                      {item.number}
+                    </div>
+                    <div class="tw:flex tw:flex-col tw:gap-px" role="listitem">
+                      <h5 class="tw:m-0! tw:p-0! tw:text-xl! tw:font-semibold! tw:text-(--help-desk-blue-dark)">
+                        {item.title}
+                      </h5>
+                      <p class="tw:m-0! tw:p-0! tw:text-base!">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                  <div class="tw:flex tw:flex-col tw:gap-px" role="listitem">
-                    <h5 class="tw:m-0! tw:p-0! tw:text-xl! tw:font-semibold! tw:text-(--help-desk-blue-dark)">
-                      {item.title}
-                    </h5>
-                    <p class="tw:m-0! tw:p-0! tw:text-base!">
-                      {item.description}
-                    </p>
-                  </div>
+                ))
+              }
+            </div>
+            <h5 class="strategy-title">All at no cost to you!</h5>
+          </div>
+          <div class="tw:flex tw:basis-2/5 tw:flex-col tw:gap-4">
+            <Message
+              class="tw:border-(--help-desk-blue)/10 tw:border-l-(--help-desk-blue) tw:bg-(--help-desk-blue)/3"
+            >
+              <slot slot="title">
+                <span class="tw:uppercase">Common Topics</span>
+              </slot>
+              <slot slot="content">
+                <div class="tw:flex tw:flex-col tw:divide-y tw:divide-muted">
+                  {
+                    COMMON_TOPICS.map((item) => (
+                      <div class="tw:flex tw:gap-2 tw:py-2">
+                        <div class="tw:flex tw:size-5 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--help-desk-blue)/10">
+                          <Icon class="tw:fill-(--help-desk-blue)" name="check" />
+                        </div>
+                        <div class="tw:text-sm">{item}</div>
+                      </div>
+                    ))
+                  }
                 </div>
+              </slot>
+            </Message>
+            <Message
+              class="tw:border-(--help-desk-blue)/10 tw:border-l-(--help-desk-blue) tw:bg-(--help-desk-blue)/3"
+            >
+              <slot slot="content">
+                <p>
+                  <strong>Deployment doesn't have to be complicated.</strong> Get expert
+                  support at every stage — from planning to deployment — at no cost.
+                </p>
+                <Button
+                  color="primary"
+                  link={{ href: "mailto:cavsupportservices@dot.gov" }}
+                  size="lg"
+                  variant="default"
+                >
+                  <Icon name="email" />
+                  Contact the help desk
+                </Button>
+              </slot>
+            </Message>
+          </div>
+        </div>
+      </Section>
+      <Section>
+        <Heading>Connected Vehicle Equipment Loan Program</Heading>
+        <div
+          class="tw:space-between tw:flex tw:flex-col tw:lg:flex-row tw:items-center tw:gap-4 tw:lg:gap-12 tw:rounded-2xl tw:bg-secondary"
+        >
+          <div
+            class="tw:flex tw:basis-2/5 tw:flex-col tw:justify-center tw:overflow-hidden tw:rounded-t-2xl tw:lg:rounded-t-none tw:lg:rounded-l-2xl"
+          >
+            <LibraryImage
+              class="tw:h-auto tw:w-full tw:scale-150 tw:rounded-l-2xl tw:object-cover"
+              entry="pcb/cave-box-ground"
+            />
+          </div>
+          <div class="tw:flex tw:basis-3/5 tw:flex-col tw:justify-center tw:p-4">
+            <h3 class="tw:text-2xl! tw:text-white! tw:normal-case!">
+              Accelerate Your V2X Deployment with USDOT's Open-Source Connected
+              Vehicle Equipment Loan Program
+            </h3>
+            <p class="tw:text-lg! tw:text-white!">
+              Get access to real-world roadside and vehicle onboard equipment at
+              no cost, to make informed procurement decisions.
+            </p>
+            <p class="tw:text-2xl! tw:font-bold!">
+              <span style="color: rgb(255, 255, 255);">Borrow. </span>
+              <span style="color: rgb(244, 205, 82);">Test. </span>
+              <span style="color: rgb(143, 207, 122);">Deploy. </span>
+            </p>
+          </div>
+        </div>
+        <div class="tw:flex tw:flex-col tw:gap-2">
+          <Heading size="md">Why use the loan program?</Heading>
+          <p class="program-text">
+            The Connected Vehicle Equipment Loan Program gives agencies,
+            researchers, and developers no-cost access to connected vehicle
+            hardware. Use real devices — roadside units, onboard units, antennas,
+            test tools, and more — to test vehicle-to-everything (V2X)
+            applications, validate interoperability, and accelerate deployment
+            timelines.
+          </p>
+          <div class="tw:grid tw:grid-cols-1 tw:md:grid-cols-2 tw:gap-4">
+            {
+              LOAN_PROGRAM_BENEFITS.map((item) => (
+                <Item class="p-3 items-start" variant="outline">
+                  <ItemMedia>
+                    <IconTile
+                      size="lg"
+                      style={{
+                        backgroundColor: item.color.background,
+                        color: item.color.text,
+                      }}
+                    >
+                      <Icon name={item.icon} />
+                    </IconTile>
+                  </ItemMedia>
+                  <ItemContent>
+                    <ItemTitle>{item.title}</ItemTitle>
+                    <ItemDescription>{item.description}</ItemDescription>
+                  </ItemContent>
+                </Item>
               ))
             }
           </div>
-          <h5 class="strategy-title">All at no cost to you!</h5>
         </div>
-        <div class="tw:flex tw:basis-2/5 tw:flex-col tw:gap-4">
-          <Message
-            class="tw:border-(--help-desk-blue)/10 tw:border-l-(--help-desk-blue) tw:bg-(--help-desk-blue)/3"
-          >
-            <slot slot="title">
-              <span class="tw:uppercase">Common Topics</span>
-            </slot>
-            <slot slot="content">
-              <div class="tw:flex tw:flex-col tw:divide-y tw:divide-muted">
-                {
-                  COMMON_TOPICS.map((item) => (
-                    <div class="tw:flex tw:gap-2 tw:py-2">
-                      <div class="tw:flex tw:size-5 tw:shrink-0 tw:items-center tw:justify-center tw:rounded-full tw:bg-(--help-desk-blue)/10">
-                        <Icon class="tw:fill-(--help-desk-blue)" name="check" />
-                      </div>
-                      <div class="tw:text-sm">{item}</div>
-                    </div>
-                  ))
-                }
-              </div>
-            </slot>
-          </Message>
-          <Message
-            class="tw:border-(--help-desk-blue)/10 tw:border-l-(--help-desk-blue) tw:bg-(--help-desk-blue)/3"
-          >
-            <slot slot="content">
-              <p>
-                <strong>Deployment doesn't have to be complicated.</strong> Get expert
-                support at every stage — from planning to deployment — at no cost.
-              </p>
-              <Button
-                color="primary"
-                link={{ href: "mailto:cavsupportservices@dot.gov" }}
-                size="lg"
-                variant="default"
-              >
-                <Icon name="email" />
-                Contact the help desk
-              </Button>
-            </slot>
-          </Message>
+        <div>
+          <div class="tw:flex tw:flex-col tw:gap-2">
+            <Heading size="md">Available Equipment</Heading>
+            <p class="program-text">
+              The Connected Vehicle Equipment Loan Program provides a wide range
+              of equipment for agencies including:
+            </p>
+          </div>
+          <div class="tw:flex tw:max-w-5xl tw:flex-row tw:flex-wrap tw:gap-1.5">
+            {
+              AVAILABLE_EQUIPMENT.map((item) => (
+                <Badge
+                  size="xl"
+                  style={{
+                    backgroundColor: "rgb(230, 184, 47, 0.2)",
+                    // borderColor: "rgb(138, 106, 19)",
+                    borderColor: "transparent",
+                    color: "rgb(138, 106, 19)",
+                  }}
+                  variant="subtle"
+                >
+                  {item}
+                </Badge>
+              ))
+            }
+          </div>
         </div>
-      </div>
-    </Section>
-    <Section>
-      <Heading>Connected Vehicle Equipment Loan Program</Heading>
-      <div
-        class="tw:space-between tw:flex tw:flex-row tw:items-center tw:gap-12 tw:rounded-2xl tw:bg-secondary"
-      >
-        <div
-          class="tw:flex tw:basis-2/5 tw:flex-col tw:justify-center tw:overflow-hidden tw:rounded-l-2xl"
-        >
-          <LibraryImage
-            class="tw:h-auto tw:w-full tw:scale-150 tw:rounded-l-2xl tw:object-cover"
-            entry="pcb/cave-box-ground"
-          />
-        </div>
-        <div class="tw:flex tw:basis-3/5 tw:flex-col tw:justify-center">
-          <h3 class="tw:text-2xl! tw:text-white! tw:normal-case!">
-            Accelerate Your V2X Deployment with USDOT's Open-Source Connected
-            Vehicle Equipment Loan Program
-          </h3>
-          <p class="tw:text-lg! tw:text-white!">
-            Get access to real-world roadside and vehicle onboard equipment at
-            no cost, to make informed procurement decisions.
-          </p>
-          <p class="tw:text-2xl! tw:font-bold!">
-            <span style="color: rgb(255, 255, 255);">Borrow. </span>
-            <span style="color: rgb(244, 205, 82);">Test. </span>
-            <span style="color: rgb(143, 207, 122);">Deploy. </span>
-          </p>
-        </div>
-      </div>
-      <div class="tw:flex tw:flex-col tw:gap-2">
-        <Heading size="md">Why use the loan program?</Heading>
-        <p class="program-text">
-          The Connected Vehicle Equipment Loan Program gives agencies,
-          researchers, and developers no-cost access to connected vehicle
-          hardware. Use real devices — roadside units, onboard units, antennas,
-          test tools, and more — to test vehicle-to-everything (V2X)
-          applications, validate interoperability, and accelerate deployment
-          timelines.
-        </p>
-        <div class="tw:grid tw:grid-cols-2 tw:gap-4">
-          {
-            LOAN_PROGRAM_BENEFITS.map((item) => (
-              <Item class="p-3 items-start" variant="outline">
-                <ItemMedia>
-                  <IconTile
-                    size="lg"
-                    style={{
-                      backgroundColor: item.color.background,
-                      color: item.color.text,
-                    }}
-                  >
-                    <Icon name={item.icon} />
-                  </IconTile>
-                </ItemMedia>
-                <ItemContent>
-                  <ItemTitle>{item.title}</ItemTitle>
-                  <ItemDescription>{item.description}</ItemDescription>
-                </ItemContent>
-              </Item>
-            ))
-          }
-        </div>
-      </div>
-      <div>
-        <div class="tw:flex tw:flex-col tw:gap-2">
-          <Heading size="md">Available Equipment</Heading>
-          <p class="program-text">
-            The Connected Vehicle Equipment Loan Program provides a wide range
-            of equipment for agencies including:
-          </p>
-        </div>
-        <div class="tw:flex tw:max-w-5xl tw:flex-row tw:flex-wrap tw:gap-1.5">
-          {
-            AVAILABLE_EQUIPMENT.map((item) => (
-              <Badge
-                size="xl"
-                style={{
-                  backgroundColor: "rgb(230, 184, 47, 0.2)",
-                  // borderColor: "rgb(138, 106, 19)",
-                  borderColor: "transparent",
-                  color: "rgb(138, 106, 19)",
-                }}
-                variant="subtle"
-              >
-                {item}
-              </Badge>
-            ))
-          }
-        </div>
-      </div>
-      <Alert color="secondary">
-        <AlertTitle>Ready to get started?</AlertTitle>
-        <AlertDescription>
-          Explore the full equipment list, learn how the program works, and
-          submit your loan request at <a
-            href="mailto:cavsupportservices@dot.gov"
-            >cavsupportservices@dot.gov</a
-          >.
-        </AlertDescription>
-        <AlertAction>
-          <Button
-            color="accent"
-            link={{ href: "mailto:cavsupportservices@dot.gov" }}
-            size="lg"
-            variant="default"
-          >
-            <Icon name="email" />
-            Request a loan
-          </Button>
-        </AlertAction>
-      </Alert>
-    </Section>
+        <Alert color="secondary">
+          <AlertTitle>Ready to get started?</AlertTitle>
+          <AlertDescription>
+            Explore the full equipment list, learn how the program works, and
+            submit your loan request at <a
+              href="mailto:cavsupportservices@dot.gov"
+              >cavsupportservices@dot.gov</a
+            >.
+          </AlertDescription>
+          <AlertAction>
+            <Button
+              color="accent"
+              link={{ href: "mailto:cavsupportservices@dot.gov" }}
+              size="lg"
+              variant="default"
+            >
+              <Icon name="email" />
+              Request a loan
+            </Button>
+          </AlertAction>
+        </Alert>
+      </Section>
+    </PageBody>
   </Page>
 </Layout>
