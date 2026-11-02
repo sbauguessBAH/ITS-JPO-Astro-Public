@@ -11,68 +11,62 @@ location:
   - "Suburban"
   - "Urban"
 facility:
-  - "Intersection"
+  - Intersection
 safety:
-  - "Emergency Response"
-  - "Intersection"
-  - "Congestion"
-  - "Heavy Vehicle"
+  - Emergency Response
+  - Intersection
+  - Congestion
+  - Heavy Vehicle
 keywords:
-  - "Emergency Vehicle Preemption"
-  - "EVP"
-  - "Emergency vehicle signal preemption system"
-  - "Traffic signal preemption system"
-  - "Signal timing interruption system"
-  - "Vehicle-based preemption system"
-  - "System-based preemption system"
-  - "Emergency response support system"
-  - "Emergency vehicle operations support"
-  - "Intersection movement control system"
-  - "Green light provision system"
-  - "Red signal display control system"
-  - "Traffic signal indication change system"
-  - "Traffic signal coordination system"
-  - "Priority control system"
-  - "Queue clearing system"
-  - "Response time reduction system"
-  - "Collision reduction system"
-  - "Driver alert system"
-  - "Driver awareness system"
-  - "Yield right-of-way enforcement support"
-  - "Emergency vehicle safety enhancement system"
-  - "Real-time intersection control system"
-  - "CMS"
-  - "DMS"
-  - "PMS integration"
-  - "Dynamic traffic signal adjustment system"
-  - "Emergency response"
-  - "Emergency vehicle operations"
-  - "Traffic signals"
-  - "Signal timing strategies"
-  - "Traffic signal coordination"
-  - "PMS"
+  - Emergency Vehicle Preemption
+  - EVP
+  - Emergency vehicle signal preemption system
+  - Traffic signal preemption system
+  - Signal timing interruption system
+  - Vehicle-based preemption system
+  - System-based preemption system
+  - Emergency response support system
+  - Emergency vehicle operations support
+  - Intersection movement control system
+  - Green light provision system
+  - Red signal display control system
+  - Traffic signal indication change system
+  - Traffic signal coordination system
+  - Priority control system
+  - Queue clearing system
+  - Response time reduction system
+  - Collision reduction system
+  - Driver alert system
+  - Driver awareness system
+  - Yield right-of-way enforcement support
+  - Emergency vehicle safety enhancement system
+  - Real-time intersection control system
+  - CMS
+  - DMS
+  - PMS integration
+  - Dynamic traffic signal adjustment system
+  - Emergency response
+  - Emergency vehicle operations
+  - Traffic signals
+  - Signal timing strategies
+  - Traffic signal coordination
+  - PMS
 resources:
   - label: "Brief: Next-Generation Traffic Incident Management: Emergency Vehicle Preemption"
-    url: "https://ops.fhwa.dot.gov/publications/fhwahop24019/fhwahop24019.pdf"
-    description: >-
-      This brief covers EVP as part of next-generation traffic incident management, including vehicle- and system-based approaches, safety, response times, vehicle location, CAD and ATMS integration, scalability, coordination, training, and performance reporting.
+    url: https://ops.fhwa.dot.gov/publications/fhwahop24019/fhwahop24019.pdf
+    description: This brief provides an overview of emergency vehicle preemption, or EVP, as part of Next-Generation Traffic Incident Management. It applies to ITS, traffic operations, and emergency response because it explains how EVP changes traffic signals for approaching emergency vehicles, discusses vehicle-based and system-based approaches, and highlights benefits such as improved safety, reduced response times, real-time vehicle location, CAD integration, ATMS coordination, and scalable signal preemption across a network.
   - label: "Study: Traffic Signal Preemption for Emergency Vehicles A Cross-Cutting Study"
-    url: "https://rosap.ntl.bts.gov/view/dot/3655"
-    description: >-
-      This study provides historical evaluation evidence and implementation lessons on response time, safety, signal operations, and deployment considerations, including balancing emergency access with traffic flow.
+    url: https://rosap.ntl.bts.gov/view/dot/3655
+    description: This study provides historical evaluation evidence and implementation lessons on response time, safety, signal operations, and agency deployment considerations. Overall, it highlights the balance between improving emergency access and maintaining efficient traffic flow for all road users.
   - label: "Report: Emergency Vehicle Preemption Traffic Guidelines and Processes 624"
-    url: "https://azdot.gov/sites/default/files/media/2021/08/TGP0624-2021-08.pdf"
-    description: >-
-      This Arizona DOT report gives state-level requirements for approval, intergovernmental agreements, maintenance responsibilities, joint operational testing, pedestrian clearance, and intersection phasing.
-  - label: "Article: Giving First Responders the Green Light - Innovator Magazine (2023)"
-    url: "https://www.fhwa.dot.gov/innovation/innovator/issue99/page_03.html"
-    description: >-
-      This article explains how EVP changes traffic signals for approaching emergency vehicles and describes Phoenix's regional system and San Jose's GPS-based centralized system.
-  - label: "Fact Sheet: Next-Generation Traffic Incident Management for Saving Lives - Emergency Vehicle Preemption"
-    url: "https://ops.fhwa.dot.gov/publications/fhwahop24019/fhwahop24019.pdf"
-    description: >-
-      This fact sheet compares vehicle- and system-based EVP, discusses AVL, CAD, and ATMS integration, scalability, agency coordination, training, and performance reporting.
-order: 18
+    url: https://azdot.gov/sites/default/files/media/2021/08/TGP0624-2021-08.pdf
+    description: This ADOT report gives concrete state-level requirements for approval, intergovernmental agreements, maintenance responsibilities, joint operational testing, pedestrian clearance, and intersection phasing
+  - label: "Article: Giving First Responders the Green Light – Innovator Magazine (2023)"
+    url: https://www.fhwa.dot.gov/innovation/innovator/issue99/page_03.html
+    description: This article discusses how EVP improves incident responder safety and response time by changing traffic signals to green for an approaching response vehicle. Upon receiving a visual, audible, radio, or global positioning system (GPS) signal that a vehicle in emergency response mode is approaching, signal systems and controllers preempt the timing plans and give preference to the appropriate intersection approach. It includes Phoenix MAG regional EVP system and San Jose’s GPS based centralized EVP.
+  - label: "Fact Sheet: Next-Generation Traffic Incident Management for Saving Lives Emergency Vehicle Preemption"
+    url: https://ops.fhwa.dot.gov/publications/fhwahop24019/fhwahop24019.pdf
+    description: This fact sheet provides the strongest current overview. It compares vehicle-based and system-based EVP, discusses AVL/CAD/ATMS integration, scalability, agency coordination, training, and performance reporting.
 ---
 Emergency Vehicle Preemption (EVP) is a critical traffic management technology designed to improve the safety and efficiency of emergency response operations. EVP allows emergency vehicles, such as fire trucks, ambulances, and police vehicles, to request priority at signalized intersections. By granting a green light to approach emergency vehicles and holding crossing traffic at red lights, EVP reduces response times and helps ensure that emergency personnel can reach incidents promptly.
 

@@ -110,7 +110,10 @@ onBeforeUnmount(() => {
 
 <template>
   <div ref="rootEl" class="dropdown-filter" :class="`dropdown-filter-${variant}`">
-    <label class="dropdown-label" :for="`${id}-trigger`">{{ label }}</label>
+    <div class="dropdown-heading">
+      <label class="dropdown-label" :for="`${id}-trigger`">{{ label }}</label>
+      <slot name="help" />
+    </div>
 
     <button :id="`${id}-trigger`" type="button" class="dropdown-trigger" :class="{ 'dropdown-trigger-open': isOpen }"
       :aria-controls="`${id}-menu`" :aria-expanded="isOpen" @click="toggleOpen">
@@ -179,6 +182,13 @@ onBeforeUnmount(() => {
   font-weight: 700;
   color: var(--filter-color);
   font-size: 0.95rem;
+}
+
+.dropdown-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--filter-color);
 }
 
 .dropdown-trigger {

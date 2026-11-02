@@ -7,71 +7,65 @@ additionalToolsSensors:
   - "Radar for trajectory prediction"
   - "Vehicle path conflict visualization"
 location:
-  - "Rural"
-  - "Suburban"
-  - "Urban"
+  - Rural
+  - Suburban
+  - Urban
 facility:
-  - "Intersection"
+  - Intersection
 safety:
-  - "Intersection"
-  - "Speeding"
-  - "Nighttime Visibility"
+  - Intersection
+  - Speeding
+  - Nighttime Visibility
 keywords:
-  - "Intersection Conflict Warning Systems"
-  - "ICWS"
-  - "Intersection conflict detection system"
-  - "Real-time intersection warning system"
-  - "Approach detection system"
-  - "Radar-based vehicle detection system"
-  - "Traffic detection system"
-  - "Cross-traffic alert system"
-  - "Side-road warning system"
-  - "Mainline warning system"
-  - "Rural intersection warning system"
-  - "Driver alert communication system"
-  - "Automated warning activation system"
-  - "Flashing beacon warning system"
-  - "LED warning beacon system"
-  - "CMS integration"
-  - "DMS integration"
-  - "Advance warning system"
-  - "Hazard alert system"
-  - "Conflict alert system"
-  - "Crash reduction system"
-  - "Intersection safety enhancement system"
-  - "Vehicle detection system"
-  - "Real-time warning system"
-  - "Traffic conflict monitoring system"
-  - "Warning activation system"
-  - "Intersection safety"
-  - "Cross-traffic alert"
-  - "Vehicle detection"
-  - "Radar detection"
-  - "CMS"
-  - "DMS"
-  - "Flashing warning beacon"
+  - Intersection Conflict Warning Systems
+  - ICWS
+  - Intersection conflict detection system
+  - Real-time intersection warning system
+  - Approach detection system
+  - Radar-based vehicle detection system
+  - Traffic detection system
+  - Cross-traffic alert system
+  - Side-road warning system
+  - Mainline warning system
+  - Rural intersection warning system
+  - Driver alert communication system
+  - Automated warning activation system
+  - Flashing beacon warning system
+  - LED warning beacon system
+  - CMS integration
+  - DMS integration
+  - Advance warning system
+  - Hazard alert system
+  - Conflict alert system
+  - Crash reduction system
+  - Intersection safety enhancement system
+  - Vehicle detection system
+  - Real-time warning system
+  - Traffic conflict monitoring system
+  - Warning activation system
+  - Intersection safety
+  - Cross-traffic alert
+  - Vehicle detection
+  - Radar detection
+  - CMS
+  - DMS
+  - Flashing warning beacon
 resources:
   - label: "Report: Intersection Conflict Warning System Human Factors"
-    url: "https://www.fhwa.dot.gov/publications/research/safety/16061/16061.pdf"
-    description: >-
-      This report examines ICWS from a human-factors perspective, including driver behavior, warning signs, flashing beacons, comprehension, stop-controlled intersections, conflict paths, design, and evaluation.
+    url: https://www.fhwa.dot.gov/publications/research/safety/16061/16061.pdf
+    description: This report provides guidance on intersection conflict warning systems, or ICWS, from a human factors perspective. It applies to ITS, roadway safety, and intersection operations because it discusses driver behavior, warning signs, flashing beacons, driver comprehension, stop-controlled intersections, conflicting vehicle paths, design considerations, and evaluation methods for improving safety at unsignalized intersections.
   - label: "Flyer: Intersection Conflict Warning Systems"
-    url: "https://www.in.gov/indot/files/ICWS-Flyer.pdf"
-    description: >-
-      This flyer explains how additional signs and flashing amber lights alert drivers to approaching traffic at two-way stop-controlled intersections.
-  - label: "Brief: Safety Evaluation of Intersection Conflict Warning Systems (ICWS)"
-    url: "https://rosap.ntl.bts.gov/view/dot/35746"
-    description: >-
-      This brief summarizes ICWS crash-reduction and cost-effectiveness findings and describes configurations using LED beacon signs on major and minor approaches.
+    url: https://www.in.gov/indot/files/ICWS-Flyer.pdf
+    description: This flyer provides an overview of intersection conflict warning systems used by INDOT. It applies to ITS and intersection safety because it explains how added signs and flashing amber lights alert drivers to approach traffic at two-way stop-controlled intersections, improving driver awareness and supporting safer crossing and turning decisions.
+  - label: "Tech Brief: Safety Evaluation of Intersection Conflict Warning Systems (ICWS) (FHWA-HRT-15-076)"
+    url: https://rosap.ntl.bts.gov/view/dot/35746
+    description: This brief summarizes the key findings of the full ICWS safety evaluation, focusing on crash reduction performance and cost-effectiveness. It describes typical ICWS configurations including “Vehicle Entering When Flashing” and “Crossing Traffic When Flashing” LED beacon signs on major and minor approaches.
   - label: "Report: Safety Evaluation of Intersection Conflict Warning Systems (FHWA-HRT-16-035)"
-    url: "https://rosap.ntl.bts.gov/view/dot/35745"
-    description: >-
-      This report evaluates ICWS at rural intersections and found crash reductions for several crash types and configurations, concluding that ICWS can be a cost-effective strategy for warning drivers about conflicting traffic.
+    url: https://rosap.ntl.bts.gov/view/dot/35745
+    description: This report evaluates ICWS at rural intersections. The study found significant crash reductions for several crash types and intersection configurations. The report concludes that ICWS can be cost effective safety strategy for alerting drivers to conflicting traffic on adjacent approaches.
   - label: "Tech Brief: Safety Evaluation of Flashing Beacons at Stop-Controlled Intersections (FHWA-HRT-08-048)"
-    url: "https://rosap.ntl.bts.gov/view/dot/16525"
-    description: >-
-      This brief reports that flashing beacons at rural stop-controlled intersections improved driver awareness and reduced severe angle crashes, supporting them as a low-cost safety treatment.
-order: 25
+    url: https://rosap.ntl.bts.gov/view/dot/16525
+    description: This brief found that adding flashing beacons to rural stop-controlled intersections significantly improved driver awareness of cross traffic conditions. It reported measurable reductions in severe angle crashes demonstrating that visual awareness can improve intersection safety. It concluded that flashing beacons are a low-cost high impact countermeasure for reducing crash risk at rural intersections.
 ---
 Intersection Conflict Warning Systems (ICWS) are advanced traffic safety technologies designed to proactively enhance intersection safety. These systems continuously monitor traffic flow and vehicle movements to identify developing hazards before they escalate, giving drivers timely alerts to adjust their behavior and avoid potential collisions. Unlike traditional traffic signals, ICWS act as dynamic safety interventions, providing real-time feedback based on immediate conditions rather than fixed control patterns.
 

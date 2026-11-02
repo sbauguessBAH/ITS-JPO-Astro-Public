@@ -15,78 +15,70 @@ location:
   - "Suburban"
   - "Urban"
 facility:
-  - "Interchange"
-  - "Freeway Segment"
+  - Interchange
+  - Freeway Segment
 safety:
-  - "Speeding"
-  - "Congestion"
-  - "Roadway Departure"
-  - "Heavy Vehicle"
+  - Speeding
+  - Congestion
+  - Roadway Departure
+  - Heavy Vehicle
 keywords:
-  - "Coordinated Ramp Metering"
-  - "CRM"
-  - "Coordinated ramp metering system"
-  - "Ramp metering control system"
-  - "Traffic flow optimization system"
-  - "Freeway congestion management system"
-  - "Predictive traffic modeling system"
-  - "Real-time traffic management system"
-  - "Sensor-based traffic control system"
-  - "Traffic management center control system"
-  - "Message activation system"
-  - "Message controller system"
-  - "NTCIP sign controller system"
-  - "Communication-enabled traffic control system"
-  - "Dynamic message sign integration system"
-  - "Changeable message sign integration system"
-  - "Variable message sign system"
-  - "Real-time traveler information display system"
-  - "Incident message display system"
-  - "Lane status display system"
-  - "Highway advisory sign system"
-  - "Work zone message sign system"
-  - "Portable changeable message sign system"
-  - "LED message sign system"
-  - "Full-matrix display system"
-  - "Line-matrix display system"
-  - "Traffic demand management system"
-  - "Highway capacity optimization system"
-  - "Ramp metering"
-  - "Traffic flow"
-  - "Changeable Message Signs"
-  - "CMS"
-  - "Dynamic Message Signs"
-  - "DMS"
-  - "Variable Message Signs"
-  - "VMS"
-  - "Traffic management center"
-  - "Sensors"
+  - Coordinated Ramp Metering
+  - CRM
+  - Coordinated ramp metering system
+  - Ramp metering control system
+  - Traffic flow optimization system
+  - Freeway congestion management system
+  - Predictive traffic modeling system
+  - Real-time traffic management system
+  - Sensor-based traffic control system
+  - Traffic management center control system
+  - Message activation system
+  - Message controller system
+  - NTCIP sign controller system
+  - Communication-enabled traffic control system
+  - Dynamic message sign integration system
+  - Changeable message sign integration system
+  - Variable message sign system
+  - Real-time traveler information display system
+  - Incident message display system
+  - Lane status display system
+  - Highway advisory sign system
+  - Work zone message sign system
+  - Portable changeable message sign system
+  - LED message sign system
+  - Full-matrix display system
+  - Line-matrix display system
+  - Traffic demand management system
+  - Highway capacity optimization system
+  - Ramp metering
+  - Traffic flow
+  - Changeable Message Signs
+  - CMS
+  - Dynamic Message Signs
+  - DMS
+  - Variable Message Signs
+  - VMS
+  - Traffic management center
+  - Sensors
 resources:
   - label: "Webpage: Ramp Metering"
-    url: "https://www.in.gov/indot/traffic-engineering/ramp-metering/"
-    description: >-
-      This webpage explains ramp metering as a freeway management strategy that regulates vehicles entering freeways to improve merging, reduce congestion and delay, improve travel-time reliability, and support safer freeway operations.
-  - label: "Webpage: Freeway Management Program - Freeway Operations and Traffic Management"
-    url: "https://ops.fhwa.dot.gov/freewaymgmt/frwy_ops.htm"
-    description: >-
-      This webpage provides guidance, tools, workshops, and peer support to agencies implementing and improving freeway operations and ramp metering using real-time traffic conditions. It links to ramp-metering primers and briefs and the Freeway Management and Operations Handbook.
-  - label: "Primer: Ramp Metering: A Proven, Cost-Effective Operational Strategy (FHWA-HOP-14-020)"
-    url: "https://ops.fhwa.dot.gov/publications/fhwahop14020/"
-    description: >-
-      This primer describes ramp metering as a proven, cost-effective strategy for improving freeway operations.
-  - label: "Brief: Ramp Metering: Informational Brief - A Proven, Effective Strategy (FHWA-HOP-14-021)"
-    url: "https://ops.fhwa.dot.gov/publications/fhwahop14021/index.htm"
-    description: >-
-      This informational brief describes ramp metering as an effective strategy for improving freeway operations.
-  - label: "Handbook: Freeway Management and Operations Handbook (FHWA-OP-04-003)"
-    url: "https://ops.fhwa.dot.gov/freewaymgmt/publications/frwy_mgmt_handbook/fmoh_complete_all.pdf"
-    description: >-
-      This handbook provides guidance on freeway management and operations, including ramp metering.
-  - label: "Report: Integration of Ramp Metering and Off-Ramp Progression"
-    url: "https://rosap.ntl.bts.gov/view/dot/53605"
-    description: >-
-      This report presents an integrated freeway control approach that coordinates ramp metering with off-ramp signal progression to manage recurring congestion. Its models can operate independently or together using scheduled or real-time traffic data for local or corridor-wide control.
-order: 43
+    url: https://www.in.gov/indot/traffic-engineering/ramp-metering/
+    description: This webpage provides an overview of ramp metering as a freeway management strategy. It applies to ITS, freeway operations, and congestion management because it explains how traffic signals on entrance ramps regulate vehicle flow onto freeways, improve merging conditions, reduce congestion, support travel time reliability, improve safety, and help agencies manage freeway demand during peak travel periods.
+  - label: "Webpage: Freeway Management Program – Freeway Operations and Traffic Management"
+    url: https://ops.fhwa.dot.gov/freewaymgmt/frwy_ops.htm
+    description: "This webpage helps transportation agencies implement, expand, and improve traffc signals that regulate vehicles entering freeways using real time traffic conditions. The program provides guidance, tools, workshops, and peer support to improve safety, reduce congestion and delay increase travel time reliability, and support more efficient freeway operations. Some of the resources attached to this page are:"
+  - label: "Report: Design and Demonstration of an Arterial Friendly Local Ramp Metering Control System"
+    url: https://www.roads.maryland.gov/OPR_Research/MD-25-SHAMSU6-1_Ramp-Metering_Report.pdf
+    description: This report discusses in detail how local ramp metering improves freeway flow while minimizing queues from spillback onto nearby streets. It uses real time traffic conditions to balance freeway and arterial conditions.
+  - label: "Report: Integration of Ramp Metering and Off-Ramp"
+    url: https://rosap.ntl.bts.gov/view/dot/53605
+  - label: Progression
+    url: https://rosap.ntl.bts.gov/view/dot/53605
+    description: This report presents an integrated freeway control approach that coordinates ramp metering with off-ramp signal progression to manage recuring congestion. Its various models can operate independently or together, using scheduled or real-time traffic data for local or corridor-wide control.
+  - label: "Report: Interchange Design to Accommodate Ramp Metering System"
+    url: https://www.bing.com/ck/a?!&&p=717026b00bace627e02ff927de552baeec829232ebcd5fae98a4b9a4a495e69dJmltdHM9MTc5MzE0NTYwMA&ptn=3&ver=2&hsh=4&fclid=2acfcda7-a5e3-69ee-2bc5-dbaaa4826833&psq=Interchange+Design+to+Accommodate+Ramp+Metering+System+&u=a1aHR0cHM6Ly9yb3NhcC5udGwuYnRzLmdvdi92aWV3L2RvdC81OTEyOS9kb3RfNTkxMjlfRFMxLnBkZg
+    description: This report provides planning level guidance for designing interchanges that can accommodate ramp metering and covers key designs, operations, and queue analysis considerations.
 ---
 Coordinated Ramp Metering is a sophisticated transportation management strategy designed to regulate traffic entering highways through a system of interconnected on-ramp signals. Unlike isolated ramp metering, which controls individual ramps independently, coordinated ramp metering employs advanced technologies such as sensors, predictive modeling, and communication platforms to manage multiple ramps as a unified system. By analyzing real-time data on vehicle speeds, volumes, and congestion levels across the network, the system dynamically adjusts the metering rates to maintain optimal traffic flow on both the highways and feeder ramps.
 

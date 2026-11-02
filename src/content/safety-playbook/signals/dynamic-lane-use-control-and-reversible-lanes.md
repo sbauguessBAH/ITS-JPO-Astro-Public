@@ -12,67 +12,61 @@ location:
   - "Suburban"
   - "Urban"
 facility:
-  - "Intersection"
-  - "Freeway Segment"
-  - "Arterial/Collector Segment"
+  - Intersection
+  - Freeway Segment
+  - Arterial/Collector Segment
 safety:
-  - "Congestion"
-  - "Speeding"
-  - "Work Zone"
+  - Congestion
+  - Speeding
+  - Work Zone
 keywords:
-  - "Dynamic Lane Use Control and Reversible Lanes"
-  - "Dynamic lane control system"
-  - "Real-time lane assignment system"
-  - "Reversible lane operation system"
-  - "Variable lane control system"
-  - "Managed lane operation system"
-  - "Dynamic shoulder use system"
-  - "Hard shoulder running system"
-  - "Lane closure indication system"
-  - "Lane status indication system"
-  - "Lane use control system"
-  - "Lane control signal system"
-  - "Overhead lane signal system"
-  - "Green arrow lane permission system"
-  - "Red lane closure indication system"
-  - "Shift lane operation system"
-  - "Traffic management system"
-  - "Real-time traffic condition responsive control system"
-  - "CMS integration"
-  - "DMS integration"
-  - "PMS integration"
-  - "Traffic flow optimization system"
-  - "Congestion management system"
-  - "Lane capacity management system"
-  - "Driver guidance system"
-  - "CMS"
-  - "DMS"
-  - "PMS"
-  - "Lane control system"
-  - "Reversible lanes"
-  - "Managed lanes"
+  - Dynamic Lane Use Control and Reversible Lanes
+  - Dynamic lane control system
+  - Real-time lane assignment system
+  - Reversible lane operation system
+  - Variable lane control system
+  - Managed lane operation system
+  - Dynamic shoulder use system
+  - Hard shoulder running system
+  - Lane closure indication system
+  - Lane status indication system
+  - Lane use control system
+  - Lane control signal system
+  - Overhead lane signal system
+  - Green arrow lane permission system
+  - Red lane closure indication system
+  - Shift lane operation system
+  - Traffic management system
+  - Real-time traffic condition responsive control system
+  - CMS integration
+  - DMS integration
+  - PMS integration
+  - Traffic flow optimization system
+  - Congestion management system
+  - Lane capacity management system
+  - Driver guidance system
+  - CMS
+  - DMS
+  - PMS
+  - Lane control system
+  - Reversible lanes
+  - Managed lanes
 resources:
   - label: "Executive Briefing: Advanced Traffic Management Strategies"
-    url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-06/executive-briefing/EB04-ATM%20STRATEGIES%202019_FINAL508_06022025.pdf"
-    description: >-
-      This briefing covers active traffic management strategies, including variable speed limits, ramp metering, queue warning, dynamic lane control, dynamic shoulder use, work zone safety, travel-time reliability, costs, and deployment practices.
-  - label: "Technical Brief: Simulator Assessment of Alternative Lane Grouping at Signalized Intersections"
-    url: "https://rosap.ntl.bts.gov/view/dot/42421"
-    description: >-
-      This technical brief uses driving simulators to study driver behavior and sign comprehension for dynamic reversible left-turn and contraflow left-turn lanes. It emphasizes clear, adaptive signs and pavement markings to indicate lane status.
-  - label: "Technical Report: Active Traffic Management (ATM) Implementation and Operations Guide"
-    url: "https://ops-dr.fhwa.dot.gov/publications/fhwahop17056/fhwahop17056.pdf"
-    description: >-
-      This guide provides agencies with a stepwise approach to planning, implementing, and operating active traffic management strategies, including systems engineering, organizational considerations, capabilities, and design.
-  - label: "Report: Simulator Assessment of Alternative Lane Grouping at Signalized Intersections"
-    url: "https://rosap.ntl.bts.gov/view/dot/40085"
-    description: >-
-      This report evaluates driver understanding of dynamic reversible left-turn and contraflow left-turn lane designs. FHWA simulator results support clearer signs and pavement markings to improve safety and comprehension.
-  - label: "Report: Cooperative Driving Automation - Highway Driving Simulator Architecture: High-Level Architecture Design (FHWA-HRT-25-047)"
-    url: "https://rosap.ntl.bts.gov/view/dot/86226"
-    description: >-
-      This report presents a high-level design for integrating CARMA cooperative driving automation with FHWA's Highway Driving Simulator to support human-in-the-loop and software-in-the-loop testing of V2X-enabled automated vehicle interactions.
-order: 31
+    url: https://www.itskrs.its.dot.gov/sites/default/files/2025-06/executive-briefing/EB04-ATM%20STRATEGIES%202019_FINAL508_06022025.pdf
+    description: This executive briefing provides an overview of active traffic management, or ATM, strategies used to improve freeway operations. It applies to ITS, traffic operations, and congestion management because it discusses variable speed limits, ramp metering, queue warning, dynamic lane control, dynamic shoulder use, work zone safety, travel time reliability, crash reduction, deployment costs, best practices, and the I-66 Active Traffic Management System case study in Northern Virginia.
+  - label: "Tech Brief: Simulator Assessment of Alternative Lane Grouping at Signalized Intersections (FHWA-HRT-19-034)"
+    url: https://rosap.ntl.bts.gov/view/dot/42421
+    description: This research uses driving simulators to study driver behavior and sign comprehension for dynamic reversible left turn lanes and contraflow left turn lanes. It emphasizes the importance of clear, adaptive control signs and makings to indicate lane status and ensure safe use of reversible lanes at intersections.
+  - label: "Tech Report: Active Traffic Management (ATM) Implementation and Operations Guide (FHWA-HOP-17-056)"
+    url: https://ops-dr.fhwa.dot.gov/publications/fhwahop17056/fhwahop17056.pdf
+    description: This report provides regional and local agencies the guidance on how to strategically and effectively implement and operate ATM strategies. It describes the stepwise approach to accomplishing this implementation through the application of the system engineering process; comprehensive planning; and organizational considerations, capabilities, and design considerations. It utilizes a combination of relevant existing resources and documents along with best practices and lessons learned gleaned from early adopters to offer practical guidance.
+  - label: "Report: Simulator Assessment of Alternative Lane Grouping at Signalized Intersections (FHWA-HRT-19-025)"
+    url: https://rosap.ntl.bts.gov/view/dot/40085
+    description: "This report evaluates driver understanding of dynamic reversible left turn and contraflow left turn lane designs. FHWA simulator results support clearer signs and pavement markings to improve safety and driver comprehension. Report: Cooperative Driving Automation—Highway Driving Simulator"
+  - label: "Architecture: High-Level Architecture Design (FHWA-HRT-25-047)"
+    url: https://rosap.ntl.bts.gov/view/dot/86226
+    description: This report presents a high-level design for integrating CARMA CDA capabilities with FHWA’s Highway Driving Simulator. The architecture supports human-in-the-loop and software-in-the-loop testing of V2X-enabled automated vehicle interactions, helping evaluate CDA safety, effectiveness, and user acceptance.
 ---
 Dynamic Lane Use Control is a proactive traffic operations approach designed to optimize roadway performance by dynamically managing how lanes are used in response to real-time traffic conditions. Using data from traffic sensors, cameras, and traffic management centers, the system can open or close lanes, shift lane directions, or designate special-use lanes to maximize facility throughput. This flexibility allows transportation agencies to make better use of existing roadway capacity without the need for physical expansion.
 

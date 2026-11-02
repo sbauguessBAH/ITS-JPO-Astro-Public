@@ -14,71 +14,65 @@ location:
   - "Suburban"
   - "Urban"
 facility:
-  - "Freeway Segment"
-  - "Arterial/Collector Segment"
+  - Freeway Segment
+  - Arterial/Collector Segment
 safety:
-  - "Congestion"
-  - "Speeding"
-  - "Work Zone"
-  - "Road Weather"
-  - "Heavy Vehicle"
+  - Congestion
+  - Speeding
+  - Work Zone
+  - Road Weather
+  - Heavy Vehicle
 keywords:
-  - "Changeable Message Signs"
-  - "CMS"
-  - "Dynamic Message Signs"
-  - "DMS"
-  - "Automated traffic messaging system"
-  - "Real-time traffic information display"
-  - "Incident management messaging"
-  - "Safety alerts"
-  - "Road weather alerts"
-  - "Roadway condition messaging"
-  - "Severe weather alerts"
-  - "Lane closure communication"
-  - "Work zone information messaging"
-  - "Traveler information dissemination"
-  - "Pavement condition alerts"
-  - "Roadside information display"
-  - "Traffic operations support"
-  - "Variable messaging"
-  - "Portable message deployment"
-  - "Portable message signs"
-  - "PMS"
-  - "Variable Message Signs"
-  - "VMS"
-  - "Electronic road signs"
-  - "Digital signage system"
-  - "Dynamic roadway communication"
-  - "Driver alert system"
-  - "Roadway safety communication"
-  - "Portable Message Signs"
-  - "Traffic operations"
-  - "Traveler information"
-  - "Road weather"
-  - "Weather"
-  - "Signage"
+  - Changeable Message Signs
+  - CMS
+  - Dynamic Message Signs
+  - DMS
+  - Automated traffic messaging system
+  - Real-time traffic information display
+  - Incident management messaging
+  - Safety alerts
+  - Road weather alerts
+  - Roadway condition messaging
+  - Severe weather alerts
+  - Lane closure communication
+  - Work zone information messaging
+  - Traveler information dissemination
+  - Pavement condition alerts
+  - Roadside information display
+  - Traffic operations support
+  - Variable messaging
+  - Portable message deployment
+  - Portable message signs
+  - PMS
+  - Variable Message Signs
+  - VMS
+  - Electronic road signs
+  - Digital signage system
+  - Dynamic roadway communication
+  - Driver alert system
+  - Roadway safety communication
+  - Portable Message Signs
+  - Traffic operations
+  - Traveler information
+  - Road weather
+  - Weather
+  - Signage
 resources:
-  - label: "Fact Sheet: Efficient Messaging for Changeable-Message Signs During Nonrecurring Events"
-    url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-19-012.pdf"
-    description: >-
-      This fact sheet explains how agencies can improve CMS messages during nonrecurring events by using brief, consistent, action-focused information. It recommends avoiding redundant or vague wording and prioritizing the problem, location, and recommended driver action.
-  - label: "Fact Sheet: Pedestrian Safety Guide and Countermeasure Selection System"
-    url: "https://highways.dot.gov/media/67556"
-    description: >-
-      This fact sheet provides tools and approaches to help agencies identify pedestrian safety issues and select countermeasures for different roadway contexts.
+  - label: "Fact Sheet: Efficient Messaging for Changeable-Message Signs During Nonrecurring Events (FHWA-HRT-19-012)"
+    url: https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-19-012.pdf
+    description: This fact sheet explains how transportation agencies can improve changeable-message signs, or CMS, messaging during nonrecurring events by using brief, consistent, and action-focused information. It applies to roadway operations because it gives guidance on reducing redundant wording, avoiding vague phrases, and prioritizing messages that help drivers understand the problem, location, and recommended action.
+  - label: "Fact Sheet: Pedestrian Safety Guide and Countermeasure Selection System (FHWA-SA-24-014)"
+    url: https://highways.dot.gov/media/67556
+    description: This fact sheet provides an overview of tools and approaches that help agencies identify pedestrian safety issues and select appropriate countermeasures. It outlines key considerations for improving pedestrian safety and offers guidance on choosing effective strategies for different roadway contexts.
   - label: "Report: Effectiveness of Safety and Public Service Announcement Messages on Dynamic Message Signs (FHWA-HOP-14-015)"
-    url: "https://ops.fhwa.dot.gov/publications/fhwahop14015/fhwahop14015.pdf"
-    description: >-
-      This report evaluates how safety and public-service messages on DMS influence driver understanding, attitudes, and self-reported behavior, providing guidance on message content, style, and deployment.
-  - label: "Report: Creating Effective Graphic Changeable Message Sign (DMS) Messaging (K-TRAN: KU-24-3)"
-    url: "https://rosap.ntl.bts.gov/view/dot/89747"
-    description: >-
-      This simulator-based study compares graphic-only with graphic-plus-text DMS messages for crashes, alternate routes, adverse weather, and work zones. It concludes that adding text improves conspicuity, comprehension, and compliance intent.
-  - label: "Report: Use of Color Changeable Message Signs - Current Practices and Research"
-    url: "https://ops.fhwa.dot.gov/publications/fhwahop18067/fhwahop18067.pdf"
-    description: >-
-      This report summarizes agency practices and research on using color CMS to display roadway information. It reviews formats that combine text, symbols, and color and identifies future policy, technical, and research needs.
-order: 4
+    url: https://ops.fhwa.dot.gov/publications/fhwahop14015/fhwahop14015.pdf
+    description: This technical report evaluates how safety and PSA messages on DMS influenced driver understanding, attitudes, and self-reported behavior in several major urban areas. It gives guidance on message content, style, and deployment strategies for roadside information displays and digital signage systems.
+  - label: "Report: Creating Effective Graphic Changeable Dynamic Messager Sign (DMS) Messaging (K-TRAN: KU-24-3)"
+    url: https://rosap.ntl.bts.gov/view/dot/89747
+    description: This simulator-based study compares graphic-only versus graphic-plus-text DMS messages for crashes, alternate routes, adverse weather, and work zones. It concludes that adding text improves conspicuity, comprehension, and compliance intent useful for designing digital signage systems and roadside information displays.
+  - label: "Report: Use of Color Changeable Message Signs – Current Practices and Research (FHWA-HOP-18-067)"
+    url: https://ops.fhwa.dot.gov/publications/fhwahop18067/fhwahop18067.pdf
+    description: This report summarizes how transportation agencies use color CMS to display roadway information. It assesses available research, literature, and current practices from states using color CMS. The report highlights variations for combining text, symbols, and color in different formats. It identifies future policies, technical, and research needs for color CMS displays.
 ---
 Changeable Message Signs (CMS) are electronic traffic control devices used by transportation agencies to deliver real-time traveler information directly to motorists. CMS are a critical tool for enhancing roadway safety and improving traffic flow by providing timely, clear, and actionable messages about current and upcoming roadway conditions, particularly during nonrecurring events such as crashes, severe weather, construction, or special events.
 

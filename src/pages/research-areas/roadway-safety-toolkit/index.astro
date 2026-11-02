@@ -90,6 +90,7 @@ const categories = buildMultiValueOptions(playbookItems.map((item) => [item.data
 const locations = buildMultiValueOptions(playbookItems.map((item) => item.data.location));
 const facilities = buildMultiValueOptions(playbookItems.map((item) => item.data.facility));
 const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.safety));
+const glossaryUrl = base_url("/research-areas/roadway-safety-toolkit/glossary/");
 ---
 
 <style scoped>
@@ -339,7 +340,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
           systems. Use the primary safety area filter and secondary multi-select filters to narrow the list by
           context and safety focus.
         </p>
-        <a href={base_url("/research-areas/safety-playbook/glossary/")} class="btn playbook-intro-cta">View Safety Glossary</a>
+        <a href={glossaryUrl} class="btn playbook-intro-cta">View Safety Glossary</a>
       </div>
     </div>
 
@@ -348,6 +349,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
         <aside class="playbook-sidebar">
           <SafetyPlaybookFilters
             client:load
+            glossaryUrl={glossaryUrl}
             safeties={safeties}
             playbooks={playbookItems.map((item) => ({
               slug: item.id.replace(/\.(md|mdx)$/i, ""),
@@ -377,6 +379,7 @@ const safeties = buildMultiValueOptions(playbookItems.map((item) => item.data.sa
 
           <SafetyPlaybookTopFilters
             client:load
+            glossaryUrl={glossaryUrl}
             categories={categories}
             locations={locations}
             facilities={facilities}

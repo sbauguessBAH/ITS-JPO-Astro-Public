@@ -9,67 +9,61 @@ additionalToolsSensors:
   - "Vehicle speed-estimation tools"
   - "License plate recognition"
 location:
-  - "Rural"
-  - "Suburban"
-  - "Urban"
+  - Rural
+  - Suburban
+  - Urban
 facility:
-  - "Intersection"
+  - Intersection
 safety:
-  - "Intersection"
-  - "Speeding"
+  - Intersection
+  - Speeding
 keywords:
-  - "Red Light Cameras"
-  - "RLCs"
-  - "Automated traffic enforcement system"
-  - "Red light running detection system"
-  - "Traffic signal violation monitoring"
-  - "Intersection safety enforcement system"
-  - "Signalized intersection monitoring"
-  - "Violation detection system"
-  - "Automated violation processing system"
-  - "Camera-based enforcement technology"
-  - "Photo enforcement system"
-  - "Sensor-based violation detection"
-  - "Intersection safety monitoring"
-  - "Crash reduction support"
-  - "Roadway safety enforcement"
-  - "Speed enforcement support"
-  - "Traffic safety camera system"
-  - "Traffic light compliance monitoring"
-  - "Real-time violation capture"
-  - "Automated citation generation"
-  - "Crash reduction strategy support"
-  - "Driver behavior enforcement"
-  - "Intersection conflict monitoring"
-  - "Traffic signals"
-  - "Traffic lights"
-  - "Intersection safety"
-  - "Traffic safety cameras"
-  - "Automated enforcement systems"
-  - "Photo enforcement technology"
-  - "Violation-based enforcement"
+  - Red Light Cameras
+  - "RLCs Function: Automated traffic enforcement system"
+  - Red light running detection system
+  - Traffic signal violation monitoring
+  - Intersection safety enforcement system
+  - Signalized intersection monitoring
+  - Violation detection system
+  - Automated violation processing system
+  - Camera-based enforcement technology
+  - Photo enforcement system
+  - Sensor-based violation detection
+  - Intersection safety monitoring
+  - Crash reduction support
+  - Roadway safety enforcement
+  - Speed enforcement support
+  - Traffic safety camera system
+  - Traffic light compliance monitoring
+  - Real-time violation capture
+  - Automated citation generation
+  - Crash reduction strategy support
+  - Driver behavior enforcement
+  - "Intersection conflict monitoring Related concepts: Red Light Cameras"
+  - RLCs
+  - Traffic signals
+  - Traffic lights
+  - Intersection safety
+  - Traffic safety cameras
+  - Automated enforcement systems
+  - Photo enforcement technology
+  - Violation-based enforcement
 resources:
   - label: "Report: Traffic Detector Handbook: Third Edition, Volume I (FHWA-HRT-06-108)"
-    url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/2022-06/fhwasa05002.pdf"
-    description: >-
-      This report provides guidance on traffic detector technologies used to collect roadway data such as vehicle presence, volume, speed, occupancy, and classification. Detector data supports traffic signal control, freeway management, incident detection, traveler information, and other ITS applications.
+    url: https://highways.dot.gov/sites/fhwa.dot.gov/files/2022-06/fhwasa05002.pdf
+    description: This report provides guidance on traffic detector technologies used to collect roadway data such as vehicle presence, volume, speed, occupancy, and classification. It applies to traffic operations because detector data supports systems such as traffic signal control, freeway management, incident detection, traveler information, and other intelligent transportation system applications.
   - label: "Fact Sheet: FHWA Resource Center Red Light Running Safety Materials"
-    url: "https://www.fhwa.dot.gov/resourcecenter/teams/safety/safe_mrt_redlight.pdf"
-    description: >-
-      This fact sheet provides strategies and data for reducing red-light-running crashes, including safety considerations, engineering countermeasures, and educational approaches for intersection risks.
+    url: https://www.fhwa.dot.gov/resourcecenter/teams/safety/safe_mrt_redlight.pdf
+    description: This fact sheet provides information on strategies and data related to reducing red light running crashes. It outlines safety considerations, engineering countermeasures, and educational approaches to help agencies address intersection related crash risks.
   - label: "Review: Red-Light Camera Interventions for Reducing Traffic Violations and Traffic Crashes: A Systematic Review"
-    url: "https://www.ojp.gov/library/publications/red-light-camera-interventions-reducing-traffic-violations-and-traffic-crashes"
-    description: >-
-      This Campbell systematic review examines red-light cameras' effects on violations and crashes across jurisdictions. It summarizes driver-compliance findings from 38 studies covering 41 evaluations in the United States and Australia and notes the potential increase in rear-end crashes.
+    url: https://www.ojp.gov/library/publications/red-light-camera-interventions-reducing-traffic-violations-and-traffic-crashes
+    description: This Campbell systematic review examines the effect of red-light cameras on red light running and various types of traffic crashes across diverse jurisdictions. The article summarizes improved driver compliance results from 38 studies covering 41 evaluations that were conducted in the U.S. or Australia. This study noted the increase risk in rear-end crashes.
   - label: "Webpage: Signalized Intersections"
-    url: "https://highways.dot.gov/safety/intersection-safety/intersection-types/signalized-intersections"
-    description: >-
-      This webpage notes the safety importance of signalized intersections and links to additional intersection safety strategies.
-  - label: "Report: Safety Evaluation of Red-Light Cameras"
-    url: "https://rosap.ntl.bts.gov/view/dot/4081"
-    description: >-
-      This report evaluates red-light-camera effectiveness using an empirical Bayes before-and-after study at 132 treatment sites in seven U.S. jurisdictions. Its economic analysis examines whether increased rear-end crashes offset reductions in right-angle crashes.
-order: 8
+    url: https://highways.dot.gov/safety/intersection-safety/intersection-types/signalized-intersections
+    description: With approximately one–third of all intersection fatalities occurring at signalized intersections, it is important to assess and design these intersections with safety in mind. This webpage offers a plethora of links to learn more about other signalized intersection safety strategies.
+  - label: "Report: Safety Evaluation of Red-Light Cameras (FHWA-HRT-05-048)"
+    url: https://rosap.ntl.bts.gov/view/dot/4081
+    description: This report evaluates the effectiveness of red-light-camera (RLC) systems in reducing crashes. The study used empirical Bayes before-and-after research using data from seven jurisdictions across the United States at 132 treatment sites. The economic analysis examined the extent to which the increase in rear end crashes negates the benefits for decreased right-angle crashes.
 ---
 Red Light Cameras are advanced traffic safety and law enforcement tools designed to detect and document vehicles that run red lights. These systems are typically installed at busy intersections with high crash rates and are intended to enhance road safety by discouraging drivers from poor decisions at traffic signals. They operate using a combination of technologies, including inductive loop sensors embedded in the pavement, radar or lidar sensors, and pole-mounted detection devices.
 

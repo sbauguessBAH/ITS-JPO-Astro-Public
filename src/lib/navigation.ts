@@ -244,15 +244,15 @@ export const navigation: NavigationItem[] = [
       },
       {
         name: "Roadway Safety Toolkit",
-        url: "/research-areas/safety-playbook",
+        url: "/research-areas/roadway-safety-toolkit",
         pages: [
           {
             name: "Roadway Safety Toolkit Home",
-            url: "/research-areas/safety-playbook/",
+            url: "/research-areas/roadway-safety-toolkit/",
           },
           {
             name: "Safety Areas and Descriptions Glossary",
-            url: "/research-areas/safety-playbook/glossary",
+            url: "/research-areas/roadway-safety-toolkit/glossary",
           },
         ],
       },

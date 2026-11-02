@@ -13,69 +13,62 @@ location:
   - "Suburban"
   - "Urban"
 facility:
-  - "Interchange"
-  - "Freeway Segment"
-  - "Arterial/Collector Segment"
+  - Interchange
+  - Freeway Segment
+  - Arterial/Collector Segment
 safety:
-  - "Speeding"
-  - "Roadway Departure"
-  - "Pedestrian"
+  - Speeding
+  - Roadway Departure
+  - Pedestrian
 keywords:
-  - "Dynamic Speed Feedback Signs"
-  - "DSFS"
-  - "Radar-based speed detection system"
-  - "Real-time vehicle speed measurement"
-  - "Real-time speed display"
-  - "Driver speed feedback system"
-  - "Driver speed awareness enhancement"
-  - "Speed compliance messaging"
-  - "Speed reduction support"
-  - "Speed management system"
-  - "Speed enforcement support"
-  - "Traffic calming device"
-  - "Variable speed warning system"
-  - "Speed display signage"
-  - "Flashing beacon alerts"
-  - "Warning signal activation"
-  - "Speeding detection"
-  - "Speed sensors"
-  - "Roadway safety countermeasure"
-  - "Work zone speed control"
-  - "Work zone speed warning"
-  - "Traffic management support"
-  - "Driver behavior modification"
-  - "Speed feedback technology"
-  - "Traffic devices"
-  - "Traffic management"
-  - "Roadway safety countermeasures"
-  - "Speed management strategies"
-  - "Variable speed warning signs"
+  - Dynamic Speed Feedback Signs
+  - DSFS
+  - Radar-based speed detection system
+  - Real-time vehicle speed measurement
+  - Real-time speed display
+  - Driver speed feedback system
+  - Driver speed awareness enhancement
+  - Speed compliance messaging
+  - Speed reduction support
+  - Speed management system
+  - Speed enforcement support
+  - Traffic calming device
+  - Variable speed warning system
+  - Speed display signage
+  - Flashing beacon alerts
+  - Warning signal activation
+  - Speeding detection
+  - Speed sensors
+  - Roadway safety countermeasure
+  - Work zone speed control
+  - Work zone speed warning
+  - Traffic management support
+  - Driver behavior modification
+  - Speed feedback technology
+  - Traffic devices
+  - Traffic management
+  - Roadway safety countermeasures
+  - Speed management strategies
+  - Variable speed warning signs
 resources:
-  - label: "Report: Evaluation of Dynamic Speed Feedback Signs on Curves: A National Demonstration Project"
-    url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-14-020.pdf"
-    description: >-
-      This report evaluates dynamic speed feedback signs on rural horizontal curves and found reductions in average and 85th-percentile speeds and in the number of vehicles exceeding posted or advisory speeds.
+  - label: "Report: Evaluation of Dynamic Speed Feedback Signs on Curves: A National Demonstration Project (FHWA-HRT-14-020)"
+    url: https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-14-020.pdf
+    description: This report evaluates how dynamic speed feedback signs can reduce speeding and crash risks on rural horizontal curves. It applies to speed management because the study found that these signs helped reduce average speeds, 85th percentile speeds, and the number of vehicles traveling above the posted or advisory speed limit.
   - label: "Web Page: Dynamic Speed Display/Feedback Signs"
-    url: "https://www.nhtsa.gov/book/countermeasures-that-work/speeding-and-speed-management/countermeasures/other-strategies-0"
-    description: >-
-      This NHTSA webpage explains how dynamic speed display and feedback signs show drivers their current speed and encourage them to slow down when speeding.
+    url: https://www.nhtsa.gov/book/countermeasures-that-work/speeding-and-speed-management/countermeasures/other-strategies-0
+    description: This NHTSA web page explains how dynamic speed display and feedback signs show drivers their current speed and encourage them to slow down when they are traveling too fast. It applies to roadway safety because these signs are used as a speed management countermeasure to improve driver awareness and reduce speeding.
   - label: "Study: Effectiveness of Dynamic Speed Feedback Signs, Volume I: Literature Review and Meta-Analysis"
-    url: "https://rosap.ntl.bts.gov/view/dot/57513"
-    description: >-
-      This study quantitatively reviews published research on DSFS effectiveness across contexts, measuring vehicle speed reductions and finding that DSFS can be effective for speed management.
-  - label: "Note: Effectiveness of Dynamic Speed Feedback Signs, Volume II: Technical Appendices and Annotated Bibliography"
-    url: "https://rosap.ntl.bts.gov/view/dot/57512"
-    description: >-
-      Volume II presents the technical appendices and annotated bibliography supporting the literature review and meta-analysis.
-  - label: "Final Report: Evaluation of Dynamic Speed Feedback Signs on Freeway Interchange Ramps"
-    url: "https://rosap.ntl.bts.gov/view/dot/62892"
-    description: >-
-      This report found that dynamic speed feedback signs on freeway interchange ramps alert drivers to excessive speeds and encourage deceleration, improving speed compliance and reducing high-risk speed variability.
+    url: https://rosap.ntl.bts.gov/view/dot/57513
+  - label: "This study uses published research to perform a comprehensive, quantitative review of the effectiveness of dynamic speed feedback signs (DSFSs) in different contexts where effectiveness was measured by vehicle speed reductions. It presents evidence that a DSFS can be an effective tool for managing speeds and improving safety. NOTE: Volume II presents Technical Appendices and Annotated Bibliography"
+    url: https://rosap.ntl.bts.gov/view/dot/57512
+  - label: "Final Report: Evaluation of Dynamic Speed Feedback Signs on"
+    url: https://rosap.ntl.bts.gov/view/dot/62892
+  - label: Freeway Interchange Ramps
+    url: https://rosap.ntl.bts.gov/view/dot/62892
+    description: This final report discussed how the signs were shown to effectively alert drivers to excessive speeds and encourage immediate deceleration. The evaluation found that these real-time warnings improved overall speed compliance and reduced high risk speed variability, especially at tight-radius or visually constrained ramps.
   - label: "Brief Summary: Effectiveness of Dynamic Speed Feedback Signs"
-    url: "https://rosap.ntl.bts.gov/view/dot/57510"
-    description: >-
-      This brief summarizes the DSFS literature review and technical appendices, highlighting radar-based speed detection and speed-reduction impacts.
-order: 6
+    url: https://rosap.ntl.bts.gov/view/dot/57510
+    description: This brief provides a summary of Volumes I and II. It highlights radar-based speed detection and DSFS speed reduction impacts.
 ---
 Dynamic Speed Feedback Signs (DSFS) are traffic management systems designed to improve road safety and manage vehicle speeds. They use technologies such as radar, lidar sensors, or video-based speed detection to accurately measure vehicle speeds in real time. When a vehicle exceeds a designated speed limit, the system displays the driver’s speed using LED signs, often accompanied by visual alerts such as flashing lights or beacons.
 

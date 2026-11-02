@@ -9,72 +9,66 @@ additionalToolsSensors:
   - "Variable speed advisories"
   - "Traffic flow analytics"
 location:
-  - "Suburban"
-  - "Urban"
+  - Suburban
+  - Urban
 facility:
-  - "Freeway Segment"
-  - "Arterial/Collector Segment"
+  - Freeway Segment
+  - Arterial/Collector Segment
 safety:
-  - "Heavy Vehicle"
-  - "Speeding"
-  - "Congestion"
-  - "Work Zone"
+  - Heavy Vehicle
+  - Speeding
+  - Congestion
+  - Work Zone
 keywords:
-  - "Virtual Queue Protection Corridors"
-  - "Virtual queue protection corridor system"
-  - "Real-time queue detection system"
-  - "Queue length estimation system"
-  - "Queue spillback monitoring system"
-  - "Queue threshold activation system"
-  - "Queue warning system"
-  - "Congestion queue alert system"
-  - "Connected vehicle queue alert system"
-  - "V2X queue warning message system"
-  - "V2I queue communication system"
-  - "Corridor-level queue management system"
-  - "Corridor safety management system"
-  - "Upstream queue protection system"
-  - "Dynamic queue protection system"
-  - "Work zone queue protection system"
-  - "Incident-related queue protection system"
-  - "Queue mitigation strategy system"
-  - "Queue-based routing advisory system"
-  - "Speed harmonization advisory system"
-  - "Traffic operations queue monitoring system"
-  - "Traffic queue analytics system"
-  - "IoT sensor-based queue detection system"
-  - "Infrastructure-based traffic monitoring system"
-  - "Crash reduction system"
-  - "Driver safety enhancement system"
-  - "Communication-enabled queue management system"
-  - "Queue spillback"
-  - "Speed harmonization"
-  - "V2X"
-  - "V2I"
-  - "Work zones"
-  - "Traffic queue analytics"
+  - Virtual Queue Protection Corridors
+  - Virtual queue protection corridor system
+  - Real-time queue detection system
+  - Queue length estimation system
+  - Queue spillback monitoring system
+  - Queue threshold activation system
+  - Queue warning system
+  - Congestion queue alert system
+  - Connected vehicle queue alert system
+  - V2X queue warning message system
+  - V2I queue communication system
+  - Corridor-level queue management system
+  - Corridor safety management system
+  - Upstream queue protection system
+  - Dynamic queue protection system
+  - Work zone queue protection system
+  - Incident-related queue protection system
+  - Queue mitigation strategy system
+  - Queue-based routing advisory system
+  - Speed harmonization advisory system
+  - Traffic operations queue monitoring system
+  - Traffic queue analytics system
+  - IoT sensor-based queue detection system
+  - Infrastructure-based traffic monitoring system
+  - Crash reduction system
+  - Driver safety enhancement system
+  - Communication-enabled queue management system
+  - Queue spillback
+  - Speed harmonization
+  - V2X
+  - V2I
+  - Work zones
+  - Traffic queue analytics
 resources:
   - label: "Presentation: Traffic Management Systems (TMSs) Actively Managing the Display of Queue Warning Messages"
-    url: "https://tmcpfs.ops.fhwa.dot.gov/pdfs/Task-2396_Presentation.pdf"
-    description: >-
-      This presentation explains how traffic management systems use sensors, probe, crowdsourced, and connected-vehicle data, software, and changeable message signs to detect queues and warn drivers of slow or stopped traffic ahead. Queue warnings can reduce rear-end crash risks and support safer freeway and corridor operations.
-  - label: "Executive Briefing: Vehicle-to-Everything (V2X) Technology - Queue Warning"
-    url: "https://www.itskrs.its.dot.gov/briefings/executive-briefing/vehicle-everything-v2x-technology-queue-warning"
-    description: >-
-      This briefing explains how connected vehicles, roadside infrastructure, and mobile devices share real-time queue alerts. In work zones, equipped vehicles can detect slowdowns and warn drivers before they reach stopped traffic, improving awareness and reaction time.
-  - label: "Virtual Queue Protection Corridors Case Study"
-    url: "https://www.transportationops.org/case-studies/virtual-queue-protection-corridors"
-    description: >-
-      This case study highlights how agencies deploy virtual buffers and automated warnings to protect drivers from sudden encounters with queues across work zones and congested freeway segments. It reports improved driver compliance, fewer severe slowdowns, and safer, more predictable corridor operations.
+    url: https://tmcpfs.ops.fhwa.dot.gov/pdfs/Task-2396_Presentation.pdf
+    description: This presentation explains how traffic management systems can use sensors, probe data, crowdsourced data, connected vehicle data, software, and changeable message signs to detect queues and warn drivers of slow or stopped traffic ahead. It applies to traffic operations and work zone management because queue warning messages can help reduce rear-end crash risks, improve traffic flow, and support safer freeway and corridor operations.
+  - label: "Case Study: Virtual Queue Protection Corridors"
+    url: https://www.transportationops.org/case-studies/virtual-queue-protection-corridors
+    description: This case study highlights how agencies deploy “virtual buffers”, automated warnings to shield drivers from sudden encounters, across work zones and congested freeway segments to stabilize speeds and smooth traffic flow. Results show improved driver compliance, fewer severe slowdowns, and safer, more predictable corridor operations.
   - label: "Newsletter: STIC Innovation in Motion e-Newsletter, February 2025 Edition"
-    url: "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/about-us/commissions-committees/statetransportationinnovationcouncil/documents/e-newsletter/2025/february%202025%20edition.pdf"
-    description: >-
-      This newsletter highlights PennDOT's Virtual Queue Protection Corridor project, which uses existing changeable message signs and real-time statewide traffic speed data to automatically warn travelers of slow or stopped traffic ahead. PennDOT reported crash reductions at long-running locations and plans to expand the system to more corridors and temporary work zones.
+    url: https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/about-us/commissions-committees/statetransportationinnovationcouncil/documents/e-newsletter/2025/february%202025%20edition.pdf
+    description: This newsletter highlights PennDOT’s Virtual Queue Protection Corridor project, which uses existing changeable message signs and real-time statewide traffic speed data to automatically warn travelers of slow or stopped traffic ahead. It applies to queue warning and roadway safety because PennDOT reported crash reductions at long-running locations and plans to expand the system to more corridors and temporary work zone situations.
   - label: "Report: Traffic Management Systems Actively Managing the Display of Queue Warning Messages (FHWA-HRT-25-04)"
-    url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-049.pdf"
-    description: >-
-      This report describes how traffic management systems use real-time sensor data to detect the back of a queue, trigger automated warning messages, and coordinate with variable speed limits to reduce rear-end crashes on freeways and in work zones. It details detection logic, thresholds, corridor deployment, and operational considerations.
-order: 17
+    url: https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-25-049.pdf
+    description: This report describes how TMS use real-time sensor data to detect the back-of-queue, trigger automated warning messages, and coordinate with variable speed limits to reduce rear-end crashes on freeways and in work zones. It details detection logic, thresholds, corridor deployment strategies, and operational considerations for actively managing queues and improving safety.
+  - label: "Executive Briefing: Vehicle-to-Everything (V2X) Technology - Queue Warning"
+    url: https://www.itskrs.its.dot.gov/briefings/executive-briefing/vehicle-everything-v2x-technology-queue-warning
+    description: This briefing explains how connected vehicles, roadside infrastructure, and mobile devices share real-time queue alerts. In work zones, equipped vehicles can detect slowdowns and warn drivers before they reach stopped traffic, improving diver awareness, reaction time, and roadway safety.
 ---
 Virtual Queue Protection Corridors are an advanced traffic safety and management solution aimed at preventing collisions and improving driver safety in and around work zones. These corridors use a combination of IoT-enabled sensors, automated detection systems, and real-time communication technologies to monitor and manage vehicle queues dynamically. By detecting the formation and progression of queues in real-time, these systems can identify when vehicles are slowing down or coming to a stop, which often occurs suddenly in construction zones, posing significant safety risks. The gathered data, combined with AI-powered traffic flow models, enables dynamic responses, such as activating warning signs, adjusting speed limits, or providing direct notifications to connected vehicles.
 

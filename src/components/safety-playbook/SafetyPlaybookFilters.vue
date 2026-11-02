@@ -1,7 +1,12 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import FilterHelpPopover from "./FilterHelpPopover.vue";
 
 const props = defineProps({
+  glossaryUrl: {
+    type: String,
+    required: true,
+  },
   safeties: {
     type: Array,
     required: true,
@@ -147,7 +152,16 @@ onBeforeUnmount(() => {
 
 <template>
   <nav class="panel sticky-top" aria-label="Safety playbook filters">
-    <h3 class="panel-title">Safety Areas</h3>
+    <div class="panel-title">
+      <h3>Safety Areas</h3>
+      <FilterHelpPopover
+        id="playbook-safety-help"
+        title="Safety Areas"
+        description="Safety areas identify the roadway users, crash risks, and safety concerns that a strategy addresses."
+        instructions="Select one safety area to show related strategies. Select Total Strategies to remove the safety-area restriction while keeping other filters. Counts reflect the other active filters and search. Clear All Filters resets all four filter groups."
+        :glossary-href="`${props.glossaryUrl}#safety-areas`"
+      />
+    </div>
 
     <div class="panel-section">
      
@@ -191,12 +205,22 @@ onBeforeUnmount(() => {
 }
 
 .panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
   background: rgb(5, 86, 129);
   color: #fff;
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 1rem;
   text-transform: none;
   font-size: 1.4rem;
+  margin: 0;
+}
+
+.panel-title h3 {
+  color: inherit;
+  font-size: inherit;
   margin: 0;
 }
 

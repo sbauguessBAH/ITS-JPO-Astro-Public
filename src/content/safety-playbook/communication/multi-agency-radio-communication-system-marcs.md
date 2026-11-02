@@ -11,62 +11,57 @@ location:
   - "Suburban"
   - "Urban"
 facility:
-  - "n/a"
+  - n/a
 safety:
-  - "Emergency Response"
-  - "Work Zone"
-  - "Congestion"
+  - Emergency Response
+  - Work Zone
+  - Congestion
 keywords:
-  - "Multi-Agency Radio Communication System"
-  - "MARCS"
-  - "Interoperable radio communication system"
-  - "Real-time voice communication"
-  - "Emergency communication"
-  - "Critical situation coordination"
-  - "Emergency incident response"
-  - "Multi-agency coordination"
-  - "Public safety communications"
-  - "Federal agency operations communication"
-  - "Major incident management"
-  - "Natural disaster response coordination"
-  - "Field communication"
-  - "Field data collection"
-  - "Infrastructure condition monitoring"
-  - "Roadway condition reporting"
-  - "Pavement condition reporting"
-  - "Real-time maintenance data sharing"
-  - "Maintenance and Roadway Condition System integration"
-  - "Maintenance decision support"
-  - "Asset management support"
-  - "Work order management"
-  - "Dispatch communication"
-  - "Mobile radio communications"
-  - "Operational coordination"
-  - "Incident reporting support"
-  - "Radio communications"
-  - "Voice communication"
-  - "public safety"
-  - "Emergency incidents"
-  - "Emergency events"
-  - "Natural disasters"
+  - Multi-Agency Radio Communication System
+  - MARCS
+  - Interoperable radio communication system
+  - Real-time voice communication
+  - Emergency communication
+  - Critical situation coordination
+  - Emergency incident response
+  - Multi-agency coordination
+  - Public safety communications
+  - Federal agency operations communication
+  - Major incident management
+  - Natural disaster response coordination
+  - Field communication
+  - Field data collection
+  - Infrastructure condition monitoring
+  - Roadway condition reporting
+  - Pavement condition reporting
+  - Real-time maintenance data sharing
+  - Maintenance and Roadway Condition System integration
+  - Maintenance decision support
+  - Asset management support
+  - Work order management
+  - Dispatch communication
+  - Mobile radio communications
+  - Operational coordination
+  - Incident reporting support
+  - Radio communications
+  - Voice communication
+  - public safety
+  - Emergency incidents
+  - Emergency events
+  - Natural disasters
 resources:
   - label: "Flyer: Multi-Agency Radio Communication System (MARCS)"
-    url: "https://dam.assets.ohio.gov/image/upload/das.ohio.gov/technology-strategy/marcs/marcs_flyer_copy.pdf"
-    description: >-
-      This flyer explains how Ohio's MARCS provides a statewide digital wireless communications network for first responders and public safety agencies, including interoperable communications, GPS-based vehicle location, resource recommendations, mobile data, and 24/7 network support.
+    url: https://dam.assets.ohio.gov/image/upload/das.ohio.gov/technology-strategy/marcs/marcs_flyer_copy.pdf
+    description: This flyer explains how Ohio’s MARCS system provides statewide wireless, digital communication network for first responders and public safety agencies. It applies to emergency transportation and operations planning because the system supports interoperable communication, GPS-based vehicle location, resource recommendation, mobile data, and 24/7 network support during public safety events and emergencies.
   - label: "Web Page: Ohio DAS MARCS First Responder Communications"
-    url: "https://das.ohio.gov/about/first-responder-comms-initiatives/07-marcs"
-    description: >-
-      This webpage provides information about Ohio MARCS capabilities, user resources, and statewide initiatives for reliable, interoperable first-responder communications.
+    url: https://das.ohio.gov/about/first-responder-comms-initiatives/07-marcs
+    description: This web page provides information on the Ohio MARCS system, which supports reliable communications for first responders. It outlines system capabilities, user resources, and statewide initiatives aimed at improving interoperable emergency communications.
   - label: "Article: Governor DeWine mobilizes Ohio MARCS equipment and staff to support North Carolina"
-    url: "https://das.ohio.gov/home/media-center/all-news/dewine-mobilizes-marcs-to-aid-nc"
-    description: >-
-      This article describes Ohio DAS MARCS staff and emergency communications equipment deployed to Asheville, North Carolina, to support Hurricane Helene recovery. The deployment included a mobile tower, radios, a generator, and telecommunicator emergency response support.
+    url: https://das.ohio.gov/home/media-center/all-news/dewine-mobilizes-marcs-to-aid-nc
+    description: The Governor deployed the Ohio DAS MARCS staff and emergency communications equipment to Asheville, NC, to support Hurricane Helene recovery. The deployment included a mobile tower, radios, generator, and support from the Ohio Telecommunicator Emergency Response Task Force. The effort restored first-responder communications.
   - label: "Fact Sheet: MARCS Tower Co-Location"
-    url: "https://das.ohio.gov/technology-and-strategy/marcs/tower-colocation-card"
-    description: >-
-      This document explains how to request equipment placement on Ohio MARCS towers, including application steps, engineering review, structural analysis, and applicant responsibilities to protect first-responder communications.
-order: 5
+    url: https://das.ohio.gov/technology-and-strategy/marcs/tower-colocation-card
+    description: This document explains how to submit a request to place equipment on Ohio’s MARCS communication towers. It outlines policies, application steps, engineering reviews, structural analysis requirements, and applicant responsibilities for co-location. The process helps protect first responder communications while allowing approved use of available tower capacity.
 ---
 The Multi Agency Radio Communication System (MARCS) is a critical public safety communications platform used by first responders and public safety agencies throughout Ohio. Designed to support both daily operations and large-scale emergency events, MARCS provides a unified and reliable communication system that allows agencies to work together seamlessly when it matters most.
 

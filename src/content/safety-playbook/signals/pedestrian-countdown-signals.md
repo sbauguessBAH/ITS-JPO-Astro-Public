@@ -12,65 +12,59 @@ location:
   - "Suburban"
   - "Urban"
 facility:
-  - "Intersection"
+  - Intersection
 safety:
-  - "Pedestrian"
-  - "Intersection"
+  - Pedestrian
+  - Intersection
 keywords:
-  - "Pedestrian Countdown Signals"
-  - "Pedestrian timing display system"
-  - "Countdown timer system"
-  - "Pedestrian clearance interval indication system"
-  - "Pedestrian phase timing system"
-  - "Signalized crosswalk control system"
-  - "MUTCD-compliant pedestrian signal system"
-  - "Pedestrian signal head system"
-  - "Pedestrian interval display system"
-  - "Pedestrian safety enhancement system"
-  - "Real-time crossing time display system"
-  - "Collision awareness support system"
-  - "Driver and pedestrian awareness system"
-  - "CMS integration"
-  - "DMS integration"
-  - "Signal timing communication system"
-  - "Traffic safety device system"
-  - "Pedestrian signal indication system"
-  - "Flashing hand indication system"
-  - "Steady hand indication system"
-  - "Upraised hand symbol display system"
-  - "Walking person symbol display system"
-  - "Pedestrian signal timing accuracy system"
-  - "Pedestrian safety"
-  - "Pedestrian signal heads"
-  - "Signalized crosswalk"
-  - "MUTCD pedestrian signal"
-  - "Pedestrian clearance interval"
-  - "Countdown display"
-  - "Countdown timer"
-  - "CMS"
-  - "DMS"
+  - Pedestrian Countdown Signals
+  - Pedestrian timing display system
+  - Countdown timer system
+  - Pedestrian clearance interval indication system
+  - Pedestrian phase timing system
+  - Signalized crosswalk control system
+  - MUTCD-compliant pedestrian signal system
+  - Pedestrian signal head system
+  - Pedestrian interval display system
+  - Pedestrian safety enhancement system
+  - Real-time crossing time display system
+  - Collision awareness support system
+  - Driver and pedestrian awareness system
+  - CMS integration
+  - DMS integration
+  - Signal timing communication system
+  - Traffic safety device system
+  - Pedestrian signal indication system
+  - Flashing hand indication system
+  - Steady hand indication system
+  - Upraised hand symbol display system
+  - Walking person symbol display system
+  - Pedestrian signal timing accuracy system
+  - Pedestrian safety
+  - Pedestrian signal heads
+  - Signalized crosswalk
+  - MUTCD pedestrian signal
+  - Pedestrian clearance interval
+  - Countdown display
+  - Countdown timer
+  - CMS
+  - DMS
 resources:
   - label: "Brief: Safety Evaluation of Pedestrian Countdown Signals"
-    url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-19-046.pdf"
-    description: >-
-      This technical brief evaluates pedestrian countdown signals at signalized intersections, covering timing, crossing information, crash frequency, driver behavior, crash modification factors, and benefit-cost findings.
+    url: https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-19-046.pdf
+    description: This tech brief provides a safety evaluation of pedestrian countdown signals, or PCS, at signalized intersections. It applies to pedestrian safety, ITS, and traffic operations because it discusses countdown signal timing, pedestrian crossing information, crash frequency, driver behavior, rear-end and angle crashes, crash modification factors, before-and-after analysis, and benefit-cost findings for PCS installation.
   - label: "Report: The Effects of Innovative Pedestrian Signs at Unsignalized Locations: A Tale of Three Treatments"
-    url: "https://www.pedbikeinfo.org/downloads/InnovativePedSigns_Unsignalized.pdf"
-    description: >-
-      This report evaluates pedestrian signs at unsignalized crossings and treatments designed to improve driver yielding, reduce conflicts, and support safer crossings.
+    url: https://www.pedbikeinfo.org/downloads/InnovativePedSigns_Unsignalized.pdf
+    description: This report evaluates innovative pedestrian signs used at unsignalized crossing locations. It applies to pedestrian safety and roadway operations because it discusses treatments designed to improve driver yielding, reduce pedestrian conflicts, support safer crossings, and provide practical countermeasures for agencies addressing pedestrian and cyclist safety at uncontrolled locations.
   - label: "Report: The Effects of Pedestrian Countdown Timers on Safety and Efficiency of Operations at Signalized Intersections"
-    url: "https://rosap.ntl.bts.gov/view/dot/25907"
-    description: >-
-      This report uses before-and-after data at two urban intersections to assess countdown timers' effects on pedestrian compliance, walking speed, and driver behavior. It found faster pedestrian walking and fewer violations, with modest indications of improved driver safety.
-  - label: "Report: Safety Evaluation of Pedestrian Countdown Signals"
-    url: "https://www.fhwa.dot.gov/publications/research/safety/19045/19045.pdf"
-    description: >-
-      This report evaluates pedestrian countdown signals using an empirical Bayes before-and-after analysis in Charlotte and Philadelphia and found significant reductions in total, pedestrian, and rear-end crashes.
-  - label: "Report: Countdown Pedestrian Signals (CPS) Legibility and Comprehension without Flashing Hand: Phase I and Phase II Final Report"
-    url: "https://rosap.ntl.bts.gov/view/dot/62438"
-    description: >-
-      This report examines countdown pedestrian signal comprehension with and without the flashing hand, including effects on crossing decisions and times for pedestrians, including people with low vision.
-order: 27
+    url: https://rosap.ntl.bts.gov/view/dot/25907
+    description: This report, using before and after data at two urban intersections, evaluates how countdown timers affect pedestrian compliance, walking speed, and driver behavior during yellow and red phases. It finds increased pedestrian walking speed and fewer violations, with modest, not statistically strong, indications of improved driver safety.
+  - label: "Report: Safety Evaluation of Pedestrian Countdown Signals (FHWA-HRT-19-045)"
+    url: https://www.fhwa.dot.gov/publications/research/safety/19045/19045.pdf
+    description: This full report evaluates pedestrian countdown signals using a before/after empirical Bayes analysis at treated intersections in Charlotte and Philadelphia. The study found statistically significant reductions in total, pedestrian and rearend crashes after installation. It supports PCS as a low-cost safety treatment with strong benefit-cost performance.
+  - label: "Report: Countdown Pedestrian Signals (CPS) Legibility and Comprehension without Flashing Hand: Phase I and Phase II Final Report (FHWA-HRT-22-059)"
+    url: https://rosap.ntl.bts.gov/view/dot/62438
+    description: This report documents an FHWA project examining the comprehension of the countdown pedestrian signal (CPS) with and without the Flashing Don’t Walk (FDW) signal, and the effect of removing the FDW on pedestrians (including pedestrians with low vision). The project focused on evaluating the effect that this manipulation had on crossing decisions and crossing times, as well as pedestrian cross behavior at intersections with and without the FDW signal.
 ---
 Pedestrian countdown signals are traffic safety devices designed to enhance pedestrian safety and improve traffic efficiency at intersections. By displaying the remaining time for pedestrians to safely cross the street, these signals help individuals make informed decisions about when to begin or finish crossing. This reduces the likelihood of pedestrians being caught in the roadway as traffic resumes, lowering the risk of collisions.
 

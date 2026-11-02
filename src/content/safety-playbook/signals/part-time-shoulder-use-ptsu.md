@@ -14,66 +14,60 @@ additionalToolsSensors:
 location:
   - "Urban"
 facility:
-  - "Interchange"
-  - "Freeway Segment"
+  - Interchange
+  - Freeway Segment
 safety:
-  - "Congestion"
-  - "Roadway Departure"
-  - "Speeding"
-  - "Emergency Response"
+  - Congestion
+  - Roadway Departure
+  - Speeding
+  - Emergency Response
 keywords:
-  - "Part-time Shoulder Use"
-  - "PTSU"
-  - "Dynamic shoulder use system"
-  - "Hard shoulder running system"
-  - "Managed shoulder lane system"
-  - "Congestion-responsive shoulder use system"
-  - "Peak-period shoulder use system"
-  - "Lane capacity expansion system"
-  - "Traffic flow improvement system"
-  - "Traffic operations center-controlled system"
-  - "Shoulder lane control system"
-  - "Lane control signal system integration"
-  - "Shoulder opening and closure management system"
-  - "Shoulder use detection system"
-  - "Shoulder use enforcement system"
-  - "Shoulder operations monitoring system"
-  - "Shoulder usage management system"
-  - "Real-time roadway performance optimization system"
-  - "Travel lane capacity expansion system"
-  - "Roadway congestion mitigation system"
-  - "Traffic operations management system"
-  - "Safety-controlled shoulder deployment system"
-  - "Dynamic roadway configuration system"
-  - "Hard shoulder running"
-  - "Managed lanes"
-  - "Lane control signal system"
-  - "Traffic operations center"
-  - "Travel lanes"
-  - "Shoulder use signing"
-  - "Shoulder closure criteria"
+  - Part-time Shoulder Use
+  - PTSU
+  - Dynamic shoulder use system
+  - Hard shoulder running system
+  - Managed shoulder lane system
+  - Congestion-responsive shoulder use system
+  - Peak-period shoulder use system
+  - Lane capacity expansion system
+  - Traffic flow improvement system
+  - Traffic operations center-controlled system
+  - Shoulder lane control system
+  - Lane control signal system integration
+  - Shoulder opening and closure management system
+  - Shoulder use detection system
+  - Shoulder use enforcement system
+  - Shoulder operations monitoring system
+  - Shoulder usage management system
+  - Real-time roadway performance optimization system
+  - Travel lane capacity expansion system
+  - Roadway congestion mitigation system
+  - Traffic operations management system
+  - Safety-controlled shoulder deployment system
+  - Dynamic roadway configuration system
+  - Hard shoulder running
+  - Managed lanes
+  - Lane control signal system
+  - Traffic operations center
+  - Travel lanes
+  - Shoulder use signing
+  - Shoulder closure criteria
 resources:
   - label: "Tech Report: Decision Support Framework and Parameters for Dynamic Part-Time Shoulder Use"
-    url: "https://rosap.ntl.bts.gov/view/dot/43718"
-    description: >-
-      This report provides guidance on dynamic part-time shoulder use, including opening shoulders based on traffic conditions, speed and volume thresholds, decision parameters, safety, operating practices, and corridor suitability.
-  - label: "Fact Sheet: FHWA Decision Support Framework and Parameters for Dynamic Part-Time Shoulder Use: Considerations for Opening Freeway Shoulders for Travel as a Traffic Management Strategy"
-    url: "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-24-172.pdf"
-    description: >-
-      This fact sheet summarizes evaluation of Phase 3 prototype enhancements designed to improve nighttime roadway visibility, including methods, performance, and findings for agencies.
-  - label: "Report: Part-Time Shoulder Use Synthesis of Practice"
-    url: "https://rosap.ntl.bts.gov/view/dot/77376"
-    description: >-
-      This report reviews recent part-time shoulder use projects and agency practices for opening shoulders to traffic during congested periods, noting guidance gaps.
-  - label: "Fact Sheet: Traffic Management Systems (TMSs) Supporting the Use of Part-Time Shoulders"
-    url: "https://rosap.ntl.bts.gov/view/dot/78201"
-    description: >-
-      This fact sheet explains how traffic management systems operate part-time shoulders to add capacity during congestion while preserving shoulders as refuges when closed. It highlights desired outcomes, considerations, benefits, lessons, and current agency practices.
-  - label: "Chapter 4: -Use of Freeway Shoulders for Travel Guide for Planning, Evaluating, and Designing Part-Time Shoulder Use as a Traffic Management Strategy"
-    url: "https://ops-dr.fhwa.dot.gov/publications/fhwahop15023/ch4.htm"
-    description: >-
-      This chapter explains how to assess part-time shoulder use safety effects using crash data, geometry, prior studies, and prediction methods. It notes potential reductions in rear-end crashes from less congestion and increased risks from constrained clearances, ramps, and weaving.
-order: 45
+    url: https://rosap.ntl.bts.gov/view/dot/43718
+    description: This tech report provides guidance on dynamic part-time shoulder use, or D-PTSU, as a freeway traffic management strategy. It applies to ITS, active traffic management, and freeway operations because it discusses opening shoulders for travel based on traffic conditions, speed and volume thresholds, decision parameters, safety considerations, operational best practices, and whether D-PTSU is appropriate for corridors with or without existing part-time shoulder use.
+  - label: "Fact Sheet: FHWA Decision Support Framework and Parameters for Dynamic Part-Time Shoulder Use: Considerations for Opening Freeway Shoulders for Travel as a Traffic Management Strategy (FHWA-HRT-24-172)"
+    url: https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-24-172.pdf
+    description: This fact sheet provides information on the evaluation of Phase 3 prototype system enhancements designed to improve nighttime roadway visibility. It outlines the methods used, the performance of the enhanced system, and key findings that can support agencies in advancing roadway visibility and safety.
+  - label: "Report: Part-Time Shoulder Use Synthesis of Practice (FHWA-HOP-23-066)"
+    url: https://rosap.ntl.bts.gov/view/dot/77376
+    description: This report reviews recently implemented part-time shoulder use projects, a strategy that opens roadway shoulders to travel during congested periods. Agency interviews highlight current practices and guidance gaps.
+  - label: "Fact Sheet: Traffic Management Systems (TMSs) Supporting the Use of Part-Time Shoulders (FHWA-HRT-24-172)"
+    url: https://rosap.ntl.bts.gov/view/dot/78201
+    description: This fact sheet explains how traffic management systems actively operate part-time shoulders to add capacity during congestion while preserving shoulders as refuges when closed. It highlights desired outcomes; key issues to consider; benefits; lessons learned; in addition to NJDOT, MDOT, VDOT, GDOT, and WSDOT current practices.
+  - label: "Chapter 4: Use of Freeway Shoulders for Travel — Guide for Planning, Evaluating, and Designing Part-Time Shoulder Use as a Traffic Management Strategy"
+    url: https://ops-dr.fhwa.dot.gov/publications/fhwahop15023/ch4.htm
+    description: This chapter outlines how to assess the safety effects of part-time shoulder use using historical crash data, facility geometry, prior studies, and crash prediction methods. It notes that reduced congestion may lower rear-end crashes, while narrower clearances, ramps, and weaving areas can increase other crash risks.
 ---
 Part-Time Shoulder Use (PTSU) is a dynamic and efficient traffic management solution aimed at improving roadway performance by temporarily converting shoulders into operational travel lanes. This strategy is typically employed during peak congestion hours, unexpected traffic surges, or specific events, offering a cost-effective alternative to extensive roadway expansion. Using advanced traffic sensors and monitoring technologies, PTSU systems assess real-time traffic and roadway conditions to determine when it's safe and beneficial to open shoulders for vehicular use.
 

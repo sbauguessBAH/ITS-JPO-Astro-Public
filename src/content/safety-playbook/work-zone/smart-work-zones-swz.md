@@ -8,75 +8,68 @@ additionalToolsSensors:
   - "Dynamic speed limit signs"
   - "AI-based congestion prediction"
 location:
-  - "Suburban"
-  - "Urban"
+  - Suburban
+  - Urban
 facility:
-  - "Intersection"
-  - "Freeway Segment"
-  - "Arterial/Collector Segment"
-  - "Local Segment"
+  - Intersection
+  - Freeway Segment
+  - Arterial/Collector Segment
+  - Local Segment
 safety:
-  - "Work Zone"
-  - "Speeding"
-  - "Congestion"
+  - Work Zone
+  - Speeding
+  - Congestion
 keywords:
-  - "Smart Work Zones"
-  - "SWZ"
-  - "Intelligent work zone management system"
-  - "Real-time work zone monitoring system"
-  - "Work zone traffic management system"
-  - "Automated queue warning system"
-  - "Incident detection in work zones"
-  - "Dynamic lane merge system"
-  - "Lane closure coordination system"
-  - "Variable speed advisory system"
-  - "Real-time traveler information messaging system"
-  - "CMS"
-  - "DMS"
-  - "PMS integration"
-  - "Connected work zone device system"
-  - "Portable sensor network system"
-  - "Sensor-based traffic monitoring"
-  - "Work zone data collection system"
-  - "Traffic flow monitoring in work zones"
-  - "Traffic operations support system"
-  - "Congestion and queue management"
-  - "Driver alerting system"
-  - "Work zone safety enhancement system"
-  - "Advanced work zone alerting system"
-  - "Emergency and incident response support in work zones"
-  - "Intelligent work zone systems"
-  - "Work zone safety"
-  - "Work zone safety technology"
-  - "Work zone traffic management"
-  - "Sensors"
-  - "PMS"
-  - "Portable sensor networks"
-  - "Variable speed advisories"
+  - Smart Work Zones
+  - SWZ
+  - Intelligent work zone management system
+  - Real-time work zone monitoring system
+  - Work zone traffic management system
+  - Automated queue warning system
+  - Incident detection in work zones
+  - Dynamic lane merge system
+  - Lane closure coordination system
+  - Variable speed advisory system
+  - Real-time traveler information messaging system
+  - CMS
+  - DMS
+  - PMS integration
+  - Connected work zone device system
+  - Portable sensor network system
+  - Sensor-based traffic monitoring
+  - Work zone data collection system
+  - Traffic flow monitoring in work zones
+  - Traffic operations support system
+  - Congestion and queue management
+  - Driver alerting system
+  - Work zone safety enhancement system
+  - Advanced work zone alerting system
+  - Emergency and incident response support in work zones
+  - Intelligent work zone systems
+  - Work zone safety
+  - Work zone safety technology
+  - Work zone traffic management
+  - Sensors
+  - PMS
+  - Portable sensor networks
+  - Variable speed advisories
 resources:
   - label: "Web Page: Essential ITS: Smart Work Zones"
-    url: "https://www.itskrs.its.dot.gov/benefits/essential-its/smart-work-zones"
-    description: >-
-      This webpage explains how Smart Work Zones use computers, communications, sensors, and real-time traffic data to provide motorists with travel times, delays, speeds, and alternate routes. They can reduce congestion, improve safety for drivers and workers, and support faster incident clearance.
-  - label: "Case Study: FDOT's Smart Work Zone Initiative"
-    url: "https://www.transportationops.org/case-studies/fdots-smart-work-zone-initiative"
-    description: >-
-      This case study explains how Florida DOT uses ITS, connected- and automated-vehicle applications, and real-time data to improve work zone safety and mobility. The initiative includes queue detection, speed monitoring, travel-time systems, vehicle-intrusion systems, and traveler information tools.
-  - label: "Report: Development of Design Guidance for Smart Work Zone Systems (FHWA-ICT-24-001)"
-    url: "https://rosap.ntl.bts.gov/view/dot/73130"
-    description: >-
-      This report presents IDOT-funded research and recommendations for standardizing Smart Work Zone systems, including design guidance for surveillance sensors, portable connected detection equipment, and dynamic lane merge systems.
+    url: https://www.itskrs.its.dot.gov/benefits/essential-its/smart-work-zones
+    description: This web page explains how Smart Work Zones, or SWZs, use computers, communications, sensors, and real-time traffic data to provide motorists with information about travel times, delays, speeds, and alternate routes. It applies to work zone traffic management because SWZs can reduce congestion, improve safety for drivers and workers, and support faster incident clearance.
+  - label: "Case Study: FDOT’s Smart Work Zone Initiative"
+    url: https://www.transportationops.org/case-studies/fdots-smart-work-zone-initiative
+    description: This case study explains how Florida DOT is using intelligent transportation systems, connected and automated vehicle applications, and real-time data to improve safety and mobility in work zones. It applies to work zone management because the initiative includes queue detection, speed monitoring, travel time systems, vehicle intrusion systems, and traveler information tools to reduce crashes, congestion, and secondary incidents.
+  - label: "Report: Development of Design Guidance for Smart Work Zone Systems (FHWA-ICT-24-001) This report presents the findings of a research project funded by the Illinois Department of Transportation (IDOT) to provide additional research and recommendations to IDOT on standardizing the deployment of SWZ systems. It also provides design guidance for SWZ systems, e.g., surveillance sensors, portable connected detection equipment, and dynamic lane merge."
+    url: https://rosap.ntl.bts.gov/view/dot/73130
   - label: "Executive Briefing: ITS Deployment Evaluation: ITS for Work Zones"
-    url: "https://rosap.ntl.bts.gov/view/dot/65711"
-    description: >-
-      This briefing explains how real-time technologies such as cameras and electronic signs monitor work zone conditions and warn drivers, helping reduce crashes and delays while improving mobility.
-  - label: "Report: Smarter Work Zones"
-    url: "https://rosap.ntl.bts.gov/view/dot/48718"
-    description: >-
-      This report presents project coordination and technology applications as strategies for reducing construction impacts while protecting motorists and workers. It describes corridor coordination and ITS applications such as queue warnings and variable speed limits.
-order: 15
+    url: https://rosap.ntl.bts.gov/view/dot/65711
+    description: This briefing explains how real-time technologies improve work zone traffic management. Tools lik,e cameras and electronic signs monitor conditions and Warn drivers. These systems reduce crashes and delays while improving mobility.
+  - label: "Report: Smarter Work Zones (FHWA-14-CAI-043)"
+    url: https://rosap.ntl.bts.gov/view/dot/48718
+    description: This report presents road project coordination and technology applications as two strategies for reducing construction impacts while protecting motorists and workers. It describes coordinating projects across corridors and agencies, using intelligent transportation systems, i.e., queue warnings and variable speed limits to manage traffic in real time, thereby improving safety and mobility.
 ---
-Smart work zones are technologically enhanced construction and maintenance areas designed to improve safety, efficiency, and traffic management. By leveraging tools such as Automated Flagger Assistance Devices, Queue Warning Systems, sensors, and real-time communication platforms, these zones actively monitor both traffic and worker activity. Traffic flow is optimized through dynamic speed limits, detour recommendations, and live updates to drivers, helping to reduce congestion and enhance travel efficiency.
+Lorem Smart work zones are technologically enhanced construction and maintenance areas designed to improve safety, efficiency, and traffic management. By leveraging tools such as Automated Flagger Assistance Devices, Queue Warning Systems, sensors, and real-time communication platforms, these zones actively monitor both traffic and worker activity. Traffic flow is optimized through dynamic speed limits, detour recommendations, and live updates to drivers, helping to reduce congestion and enhance travel efficiency.
 
 Safety is a primary focus in smart work zones. Queue Warning Systems and automated alert devices reduce the risk of rear-end collisions by warning drivers of upcoming work zones. Wearable safety technologies, including sensor-equipped vests, track workers’ locations and provide alerts if they enter hazardous areas, protecting both workers and drivers. In addition, smart work zones provide motorists with real-time information on travel times, delays, and recommended speeds, enabling informed routing decisions and smoother traffic flow.
 

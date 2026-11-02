@@ -1,8 +1,13 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import CheckboxMultiSelectDropdown from "./CheckboxMultiSelectDropdown.vue";
+import FilterHelpPopover from "./FilterHelpPopover.vue";
 
 const props = defineProps({
+  glossaryUrl: {
+    type: String,
+    required: true,
+  },
   categories: {
     type: Array,
     required: true,
@@ -206,7 +211,17 @@ onBeforeUnmount(() => {
       :options="props.locations"
       :disabled-options="disabledLocations"
       variant="location"
-    />
+    >
+      <template #help>
+        <FilterHelpPopover
+          id="playbook-location-help"
+          title="Area Types"
+          description="Area types describe the surrounding development context: rural, suburban, or urban."
+          instructions="Open the dropdown and check one or more area types. Results can match any selected area type and must also match the other active filters and search. Uncheck an option or use Clear to remove this restriction; All means no restriction. Grayed-out options have no matches with the other active filters and search."
+          :glossary-href="`${props.glossaryUrl}#area-type`"
+        />
+      </template>
+    </CheckboxMultiSelectDropdown>
 
     <CheckboxMultiSelectDropdown
       id="playbook-filter-facility"
@@ -215,7 +230,17 @@ onBeforeUnmount(() => {
       :options="props.facilities"
       :disabled-options="disabledFacilities"
       variant="facility"
-    />
+    >
+      <template #help>
+        <FilterHelpPopover
+          id="playbook-facility-help"
+          title="Facility Types"
+          description="Facility types describe the roadway setting where a strategy applies, such as a freeway segment, arterial/collector segment, local segment, interchange, or intersection."
+          instructions="Open the dropdown and check one or more facility types. Results can match any selected facility type and must also match the other active filters and search. Uncheck an option or use Clear to remove this restriction; All means no restriction. Grayed-out options have no matches with the other active filters and search."
+          :glossary-href="`${props.glossaryUrl}#facility-type`"
+        />
+      </template>
+    </CheckboxMultiSelectDropdown>
 
      <CheckboxMultiSelectDropdown
       id="playbook-filter-category"
@@ -224,7 +249,17 @@ onBeforeUnmount(() => {
       :options="props.categories"
       :disabled-options="disabledCategories"
       variant="category"
-    />
+    >
+      <template #help>
+        <FilterHelpPopover
+          id="playbook-category-help"
+          title="Categories"
+          description="Categories group strategies by technology or operational focus, such as cameras, signals, communication, road weather, and traffic operations."
+          instructions="Open the dropdown and check one or more categories. Results can match any selected category and must also match the other active filters and search. Uncheck an option or use Clear to remove this restriction; All means no restriction. Grayed-out options have no matches with the other active filters and search."
+          :glossary-href="`${props.glossaryUrl}#categories`"
+        />
+      </template>
+    </CheckboxMultiSelectDropdown>
 
 
   </div>

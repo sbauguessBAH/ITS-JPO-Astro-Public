@@ -233,7 +233,6 @@ const safetyPlaybook = defineCollection({
       url: z.string().url(),
       description: z.string().optional(),
     })).default([]),
-    order: z.number().int().optional(),
   })
 });
 

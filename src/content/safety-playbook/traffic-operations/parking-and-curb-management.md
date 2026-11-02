@@ -4,67 +4,61 @@ category: "Systems Monitoring"
 shortDescription: "Parking and Curb Management integrates technology and data analytics to optimize the use of parking spaces and curbside areas in urban environments. Using real-time sensors, dynamic pricing, and digital communication platforms, this approach ensures efficient allocation of parking for vehicles, delivery zones, and multimodal uses like ride-share pickups or bike parking. Parking and Curb Management enhances urban mobility, reduces congestion, and improves the efficient use of limited curbside resources in an evolving urban landscape."
 additionalToolsSensors: []
 location:
-  - "Suburban"
-  - "Urban"
+  - Suburban
+  - Urban
 facility:
-  - "Arterial/Collector Segment"
+  - Arterial/Collector Segment
 safety:
-  - "Pedestrian"
-  - "Cyclist"
-  - "Congestion"
-  - "Heavy Vehicle"
+  - Pedestrian
+  - Cyclist
+  - Congestion
+  - Heavy Vehicle
 keywords:
-  - "Parking and Curb Management"
-  - "Curb management system"
-  - "Smart parking system"
-  - "Parking management system"
-  - "Real-time curb monitoring system"
-  - "Parking occupancy detection system"
-  - "Parking guidance system"
-  - "Parking turnover analysis system"
-  - "Curbside operations management system"
-  - "Curb reservation system"
-  - "Dynamic curb allocation system"
-  - "Dynamic pricing for parking system"
-  - "Curbside demand analytics system"
-  - "Curbside enforcement analytics system"
-  - "Event-based curb management system"
-  - "Loading zone optimization system"
-  - "Freight loading management system"
-  - "Passenger pickup management system"
-  - "Parking space optimization system"
-  - "Urban mobility curbside allocation system"
-  - "Real-time parking availability system"
-  - "Demand-responsive curb management system"
-  - "Transportation demand management system"
-  - "Curb access control system"
-  - "Curb management"
-  - "Smart parking"
-  - "Curbside operations"
-  - "Dynamic pricing"
-  - "Loading zones"
+  - Parking and Curb Management
+  - Curb management system
+  - Smart parking system
+  - Parking management system
+  - Real-time curb monitoring system
+  - Parking occupancy detection system
+  - Parking guidance system
+  - Parking turnover analysis system
+  - Curbside operations management system
+  - Curb reservation system
+  - Dynamic curb allocation system
+  - Dynamic pricing for parking system
+  - Curbside demand analytics system
+  - Curbside enforcement analytics system
+  - Event-based curb management system
+  - Loading zone optimization system
+  - Freight loading management system
+  - Passenger pickup management system
+  - Parking space optimization system
+  - Urban mobility curbside allocation system
+  - Real-time parking availability system
+  - Demand-responsive curb management system
+  - Transportation demand management system
+  - Curb access control system
+  - Curb management
+  - Smart parking
+  - Curbside operations
+  - Dynamic pricing
+  - Loading zones
 resources:
   - label: "Infographic: Essential ITS: Parking and Curb Management"
-    url: "https://www.itskrs.its.dot.gov/sites/default/files/doc/Parking%20and%20Curb%20Management_FINAL508.pdf"
-    description: >-
-      This infographic explains how parking and curb management can improve infrastructure use, reduce congestion, improve safety, and optimize curb productivity. Examples include demand-based pricing, delivery reservations, automated parking, and reduced time spent searching for parking.
+    url: https://www.itskrs.its.dot.gov/sites/default/files/doc/Parking%20and%20Curb%20Management_FINAL508.pdf
+    description: This infographic explains how parking and curb management strategies can monitor and manage parking and curb facilities to improve infrastructure use, reduce congestion, improve safety, and optimize curb productivity. It applies to transportation operations because it highlights examples such as demand-based pricing, curbside delivery reservations, automated parking technology, and reduced time spent searching for parking.
   - label: "Web Page: Essential ITS: Parking and Curb Management"
-    url: "https://www.itskrs.its.dot.gov/benefits/essential-its/parking-and-curb-management"
-    description: >-
-      This webpage explains how dynamic parking and curb management can coordinate parking facilities, traffic management, transit, pedestrians, micromobility, and curbside activity. Strategies can improve parking capacity, reduce congestion and illegal curbside behavior, and use limited curb space more efficiently.
+    url: https://www.itskrs.its.dot.gov/benefits/essential-its/parking-and-curb-management
+    description: This web page explains how dynamic parking and curb management can coordinate parking facilities, traffic management systems, transit, pedestrians, micromobility users, and curbside activity. It applies to ITS and traffic operations because these strategies can improve parking capacity, reduce congestion, decrease illegal curbside behavior, and support more efficient use of limited roadway and curb space.
   - label: "Plan: An Open Data Approach to Curbside Management [Data Management Plan]"
-    url: "https://rosap.ntl.bts.gov/view/dot/88673"
-    description: >-
-      This plan outlines how cities can digitize curb assets, standardize curb data, and integrate loading-zone reservation systems. It emphasizes open-data APIs, real-time curb availability, and interoperability for future curb reservations and dynamic pricing.
+    url: https://rosap.ntl.bts.gov/view/dot/88673
+    description: This plan outlines how cities can digitize curb assets, standardize curb data, and integrate reservation systems for loading zones. It emphasizes open-data APIs, real-time curb availability, and interoperability for future curb reservation and dynamic pricing systems.
   - label: "Executive Briefing: Curbside Management"
-    url: "https://www.itskrs.its.dot.gov/sites/default/files/2024-02/executive-briefing/2023%20Executive%20Briefing_Curbside%20Management_v2.pdf"
-    description: >-
-      This briefing emphasizes digital inventories, real-time data, and management applications to allocate and regulate curb space efficiently. It highlights mapping and dynamic management tools that improve multimodal access and outlines FHWA's framework for planning and evaluating curbside treatments around community priorities.
+    url: https://www.itskrs.its.dot.gov/sites/default/files/2024-02/executive-briefing/2023%20Executive%20Briefing_Curbside%20Management_v2.pdf
+    description: This brief emphasizes using digital inventories, real-time data, and management applications to help cities allocate and regulate curb space more efficiently. It highlights how emerging technologies, e.g., curbside mapping tools and dynamic management applications that reduce unsafe behaviors, improve multimodal access, and support transparent adaptable curb operations. It also outlines the FHWA’s six-step framework for planning and implementing curbside treatments, grounded in data-driven evaluation and community priorities.
   - label: "Dataset: An Open Data Approach to Curbside Management [supporting dataset]"
-    url: "https://rosap.ntl.bts.gov/view/dot/88674#tabs-4"
-    description: >-
-      This dataset supports an open-data approach to curbside management by creating a digital source of curb inventories and real-time regulations. Open APIs can share policies, current use, and historical patterns to support transparent operations, planning, and public access.
-order: 56
+    url: https://rosap.ntl.bts.gov/view/dot/88674#tabs-4
+    description: This dataset provides a link to the open data curbside management approach -- creating a single digital source of truth for curb inventories and real-time regulations enabling transparent, dynamic operations. This information allows cities to share policies, live usage, and historical patterns through open APIs, improving planning and public access.
 ---
 Parking and Curb Management is a forward-thinking framework that addresses the challenges of limited urban curbside space and parking availability. With increasing demands from personal vehicles, delivery fleets, ride-share services, transit stops, and micromobility options like scooters and bikes, curbside areas have become critical bottlenecks in city transportation systems. This management strategy uses technology to monitor, allocate, and optimize the utilization of curbside resources in real time, ensuring they meet dynamic urban demands effectively and equitably.
 

@@ -8,67 +8,59 @@ additionalToolsSensors:
   - "Mobile vision analytics for surface detection"
   - "UAV monitoring"
 location:
-  - "Rural"
-  - "Suburban"
-  - "Urban"
+  - Rural
+  - Suburban
+  - Urban
 facility:
-  - "Freeway Segment"
-  - "Arterial/Collector Segment"
+  - Freeway Segment
+  - Arterial/Collector Segment
 safety:
-  - "Road Weather"
-  - "Work Zone"
+  - Road Weather
+  - Work Zone
 keywords:
-  - "MCM Environmental Information Collection"
-  - "MCM"
-  - "Environmental data collection system"
-  - "Real-time environmental data collection"
-  - "Environmental asset monitoring"
-  - "Maintenance condition monitoring"
-  - "Road weather data collection"
-  - "Roadway weather observations"
-  - "Roadside environmental monitoring"
-  - "Pavement condition monitoring"
-  - "Surface condition monitoring"
-  - "Field inspection documentation support"
-  - "Data collection system"
-  - "Data analysis support"
-  - "Environmental data reporting system"
-  - "Maintenance operations data collection"
-  - "Transportation maintenance data support"
-  - "Environmental sensors integration"
-  - "Temperature monitoring"
-  - "Precipitation monitoring"
-  - "Road weather monitoring"
-  - "Environmental operations support system"
-  - "Condition-based maintenance support"
-  - "Infrastructure condition reporting"
-  - "MCM environmental information collection"
-  - "Environmental sensors"
-  - "Road weather"
-  - "Pavement conditions"
-  - "Surface conditions"
-  - "Precipitation"
-  - "Temperature"
-  - "Data collection"
-  - "Environmental data reporting"
+  - MCM Environmental Information Collection
+  - MCM
+  - Environmental data collection system
+  - Real-time environmental data collection
+  - Environmental asset monitoring
+  - Maintenance condition monitoring
+  - Road weather data collection
+  - Roadway weather observations
+  - Roadside environmental monitoring
+  - Pavement condition monitoring
+  - Surface condition monitoring
+  - Field inspection documentation support
+  - Data collection system
+  - Data analysis support
+  - Environmental data reporting system
+  - Maintenance operations data collection
+  - Transportation maintenance data support
+  - Environmental sensors integration
+  - Temperature monitoring
+  - Precipitation monitoring
+  - Road weather monitoring
+  - Environmental operations support system
+  - Condition-based maintenance support
+  - Infrastructure condition reporting
+  - MCM environmental information collection
+  - Environmental sensors
+  - Road weather
+  - Pavement conditions
+  - Surface conditions
+  - Precipitation
+  - Temperature
+  - Data collection
+  - Environmental data reporting
 resources:
   - label: "Web Page: ARC-IT MCM Environmental Information Collection"
-    url: "https://www.arc-it.us/html/functionalobjects/funobj35.html"
-    description: >-
-      This ARC-IT web page explains how Maintenance and Construction Management Centers collect current road and weather conditions using environmental sensors on roadways, roadside stations, maintenance vehicles, probe vehicles, and other weather information systems. It describes how this information is aggregated and shared with traffic management, traveler information, and weather service systems.
+    url: https://www.arc-it.us/html/functionalobjects/funobj35.html
+    description: This ARC-IT web page explains how Maintenance and Construction Management Centers collect current road and weather conditions using environmental sensors on roadways, roadside stations, maintenance vehicles, probe vehicles, and other weather information systems. It applies to RWIS and ESS because it describes how environmental data is collected, aggregated, controlled, and shared with traffic management, traveler information, and weather service systems.
   - label: "Web Page: Virginia Statewide ITS Architecture MCM Environmental Information Collection"
-    url: "https://local.iteris.com/virginiaitsarchitecture/architectures/statewide/html/requirements/funcarea35.html"
-    description: >-
-      This Virginia ITS Architecture page describes functional requirements for collecting road and weather data from environmental sensors, maintenance and probe vehicles, and weather service providers. It explains how environmental information supports sensor control, equipment monitoring, data sharing, and maintenance decisions.
-  - label: "Web Page: MCM Environmental Informational Collection Functional"
-    url: "https://www.bing.com/ck/a?!&&p=bd849fe9ec2d01dfa4dfcd41fcb1b7a848963cb83da01946689da65339d95628JmltdHM9MTc4NTk3NDQwMA&ptn=3&ver=2&hsh=4&fclid=2acfcda7-a5e3-69ee-2bc5-dbaaa4826833&psq=mcm+environmental+information+collection&u=a1aHR0cDovL3d3dy5ydGMud2EuZ292L3dwLWNvbnRlbnQvdXBsb2Fkcy92Zi1hcmNoZGIyL2h0bWwvcmVxL2Z1bjM1Lmh0bQ"
-    description: >-
-      This Vast Regional ITS Architecture page describes collecting current road and weather conditions from roadside and vehicle-based environmental sensors, as well as forecasts from other systems. It explains how the functional device aggregates sensor data and attributes for other applications.
+    url: https://local.iteris.com/virginiaitsarchitecture/architectures/statewide/html/requirements/funcarea35.html
+    description: "This Virginia ITS Architecture page describes the functional requirements for collecting road and weather condition data from environmental sensors, maintenance vehicles, probe vehicles, and weather service providers. It applies to roadway weather management because it shows how environmental information collection supports sensor control, equipment monitoring, weather data sharing, and maintenance decision making. Web Page: MCM Environmental Informational Collection Functional Area This Vast Regional ITS Architecture web page collects current road and weather conditions using data collected from environmental sensors deployed on and about the roadway. In addition to fixed sensor stations at the roadside, this functional device also collects environmental information from sensor systems located on Maintenance and Construction Vehicles. It also collects current and forecast environmental conditions information that is made available by other systems. The functional device aggregates the sensor system data and provides it, along with data attributes to other applications."
   - label: "Executive Briefing: Rural Road Weather Management Systems"
-    url: "https://www.itskrs.its.dot.gov/sites/default/files/2025-05/executive-briefing/11_Rural%20Road%20Weather%20Management%20Systems_FINAL508_05072025.pdf"
-    description: >-
-      This briefing highlights how ITS and weather-responsive traffic management improve safety and operations during adverse weather. It cites tools such as automated weather alerts, salt management dashboards, connected-vehicle data, and mobile observations that help rural agencies reduce delays, optimize maintenance resources, and improve traveler information.
-order: 11
+    url: https://www.itskrs.its.dot.gov/sites/default/files/2025-05/executive-briefing/11_Rural%20Road%20Weather%20Management%20Systems_FINAL508_05072025.pdf
+    description: This briefing highlights how ITS and weather responsive traffic management improve safety and operations during adverse weather. It cites benefits from tools such as automated weather alerts, salt management dashboards, connected-vehicle data, and mobile observations. These systems help rural agencies reduce delays, optimize maintenance resources, and improve traveler information.
 ---
 The MCM Environmental Information Collection system is a comprehensive solution for monitoring and assessing environmental conditions on roadways. It collects real-time data from a network of environmental sensors deployed along roads and mounted on maintenance vehicles, capturing key parameters such as road surface temperature, moisture levels, ice formation, salinity, and overall weather conditions. By aggregating this data, the system provides a detailed and continuously updated picture of roadway conditions, helping transportation agencies maintain safe and efficient travel.
 

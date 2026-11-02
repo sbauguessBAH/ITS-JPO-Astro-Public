@@ -4,75 +4,68 @@ category: "Road Weather"
 shortDescription: "Road Weather Management uses weather monitoring systems, predictive analytics, and real-time communication tools to address the impact of adverse weather conditions on transportation. By integrating road-specific weather data and technologies like connected vehicles and automated alerts, it increases safety, reduces delays, and supports proactive decision-making for maintenance and operations. This approach ensures roads remain safe and operational despite challenges like heavy rainfall, snow, ice, fog, or wind."
 additionalToolsSensors: []
 location:
-  - "Rural"
-  - "Suburban"
+  - Rural
+  - Suburban
 facility:
-  - "Intersection"
-  - "Interchange"
-  - "Freeway Segment"
-  - "Arterial/Collector Segment"
-  - "Local Segment"
+  - Intersection
+  - Interchange
+  - Freeway Segment
+  - Arterial/Collector Segment
+  - Local Segment
 safety:
-  - "Road Weather"
-  - "Roadway Departure"
-  - "Congestion"
-  - "Emergency Response"
+  - Road Weather
+  - Roadway Departure
+  - Congestion
+  - Emergency Response
 keywords:
-  - "Road Weather Management"
-  - "Road weather management system"
-  - "Road weather information system integration"
-  - "Integrated road weather data system"
-  - "Real-time weather-traffic fusion system"
-  - "Environmental sensor station data integration system"
-  - "Road weather forecasting system"
-  - "Surface condition prediction system"
-  - "Pavement condition monitoring system"
-  - "Flooding detection system"
-  - "High-wind warning system"
-  - "Visibility hazard detection system"
-  - "Storm event monitoring system"
-  - "Weather impact analytics system"
-  - "Snow and ice control strategy system"
-  - "Winter operations management system"
-  - "Maintenance decision support system integration"
-  - "Weather-responsive traffic management system"
-  - "Weather-responsive operations system"
-  - "Weather-responsive corridor management system"
-  - "Weather-responsive signal timing system"
-  - "Weather-responsive routing system"
-  - "Weather-based speed management system"
-  - "Weather-triggered traveler alert system"
-  - "Weather-related incident management system"
-  - "Roadway performance monitoring system under weather conditions"
-  - "Road Weather Information System"
-  - "RWIS"
-  - "Environmental sensor station"
-  - "Winter maintenance"
-  - "Weather-responsive operations"
-  - "Storm events"
-  - "Pavement conditions"
+  - "Road Weather Management Function: Road weather management system"
+  - Road weather information system integration
+  - Integrated road weather data system
+  - Real-time weather-traffic fusion system
+  - Environmental sensor station data integration system
+  - Road weather forecasting system
+  - Surface condition prediction system
+  - Pavement condition monitoring system
+  - Flooding detection system
+  - High-wind warning system
+  - Visibility hazard detection system
+  - Storm event monitoring system
+  - Weather impact analytics system
+  - Snow and ice control strategy system
+  - Winter operations management system
+  - Maintenance decision support system integration
+  - Weather-responsive traffic management system
+  - Weather-responsive operations system
+  - Weather-responsive corridor management system
+  - Weather-responsive signal timing system
+  - Weather-responsive routing system
+  - Weather-based speed management system
+  - Weather-triggered traveler alert system
+  - Weather-related incident management system
+  - "Roadway performance monitoring system under weather conditions Related concepts: Road Weather Management"
+  - Road Weather Information System
+  - RWIS
+  - Environmental sensor station
+  - Winter maintenance
+  - Weather-responsive operations
+  - Storm events
+  - Pavement conditions
 resources:
-  - label: "Report: Road Weather Management Product Guide"
-    url: "https://ops-dr.fhwa.dot.gov/weather/resources/publications/fhwa/rwmpg05.pdf"
-    description: >-
-      This product guide provides an overview of FHWA Road Weather Management Program resources, including training materials, tools, reports, publications, and project flyers. It includes resources related to RWIS, ESS siting guidelines, MDSS, low-visibility warning systems, 511 traveler information, and other weather-responsive transportation strategies.
-  - label: "Fact Sheet: Road Weather Management Best Practices, Version 3.0"
-    url: "https://rosap.ntl.bts.gov/view/dot/25953/dot_25953_DS1.pdf"
-    description: >-
-      This fact sheet summarizes FHWA's Road Weather Management Best Practices Library, which highlights state DOT practices for advisory, control, and treatment strategies during adverse weather. Examples include Florida's bridge wind alerting system, Arizona's DUST Warning System, California's fog detection and warning system, and South Dakota's MDSS.
+  - label: "Report: Road Weather Management Product Guide (FHWA-HOP-05-057)"
+    url: https://ops-dr.fhwa.dot.gov/weather/resources/publications/fhwa/rwmpg05.pdf
+    description: This product guide provides an overview of FHWA Road Weather Management Program resources, including training materials, tools, reports, publications, and project flyers. It applies to road weather management because it identifies resources related to RWIS, ESS siting guidelines, MDSS, low-visibility warning systems, 511 traveler information, and other weather-responsive transportation strategies.
+  - label: "Fact Sheet: Road Weather Management Best Practices, Version 3.0 (FHWA-JPO-13-036)"
+    url: https://rosap.ntl.bts.gov/view/dot/25953/dot_25953_DS1.pdf
+    description: This fact sheet summarizes FHWA’s Road Weather Management Best Practices Library, which highlights state DOT practices for advisory, control, and treatment strategies during adverse weather. It applies to roadway weather management because it includes examples such as Florida’s bridge wind alerting system, Arizona’s DUST Warning System, California’s fog detection and warning system, and South Dakota’s Maintenance Decision Support System.
   - label: "Presentation: FHWA Road Weather Management Program Update"
-    url: "https://transportation.org/winter-weather-management/wp-content/uploads/sites/50/2023/03/S1_FHWA-1.pdf"
-    description: >-
-      This presentation provides an update on FHWA's Road Weather Management Program and its use of current and predicted weather information to support decisions by road users and transportation operators.
+    url: https://transportation.org/winter-weather-management/wp-content/uploads/sites/50/2023/03/S1_FHWA-1.pdf
+    description: This presentation provides an update on FHWA’s Road Weather Management Program and its efforts to use current and predicted weather information to support decision-making for road users and transportation operators. It applies to winter weather management because it focuses on tools, strategies, and technologies that help agencies improve safety, mobility, and operations during adverse weather conditions.
   - label: "Web Page: FHWA Road Weather Management Program"
-    url: "https://ops.fhwa.dot.gov/Weather/"
-    description: >-
-      This FHWA web page is a central hub for research, guidance, and deployment support on managing highway operations under adverse weather. It covers RWIS, weather-responsive traffic management, winter maintenance, resilience, and related reports, tools, and fact sheets.
+    url: https://ops.fhwa.dot.gov/Weather/
+    description: This web page is a central hub for research, guidance, and deployment support on managing highway operations under adverse weather. It covers road weather information systems (RWIS), weather-responsive traffic management, winter maintenance, and resilience, with links to reports, tools, and fact sheets for agencies.
   - label: "Report: 2015 Road Weather Management Performance Measures Survey, Analysis, and Report (FHWA-HOP-16-001)"
-    url: "https://ops.fhwa.dot.gov/publications/fhwahop16001/fhwahop16001.pdf"
-    description: >-
-      This report evaluates how state transportation agencies assess and improve operations during unfavorable weather. It focuses on storm response, weather-responsive traffic management, and winter maintenance using a nationwide survey, analysis, and performance measures.
-order: 53
+    url: https://ops.fhwa.dot.gov/publications/fhwahop16001/fhwahop16001.pdf
+    description: This report evaluates how state transportation agencies across the U.S. assess and improve their operations during unfavorable weather, focusing on storm responses, weather responsive traffic management, and winter maintenance. The report utilizes nationwide survey, analysis, and performance metrics to understand how effective roadway safety and mobility is maintained during storms.
 ---
 Road Weather Management is a critical domain within intelligent transportation systems (ITS), dedicated to mitigating the effects of adverse weather on road safety and mobility. Weather conditions such as snow, ice, heavy rain, fog, and high winds can significantly impair visibility, traction, and traffic flow, leading to increased risks of accidents and disruptions. Road Weather Management leverages a combination of cutting-edge sensors, data analytics, and communication tools to monitor, predict, and respond to these challenges in real time, ensuring that transportation systems operate smoothly under varying weather conditions.
 

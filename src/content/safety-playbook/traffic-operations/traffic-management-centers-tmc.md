@@ -8,75 +8,69 @@ additionalToolsSensors:
   - "Cybersecurity-enabled ITS dashboards"
   - "Centralized incident response hubs"
 location:
-  - "Rural"
-  - "Suburban"
-  - "Urban"
+  - Rural
+  - Suburban
+  - Urban
 facility:
-  - "Intersection"
-  - "Interchange"
-  - "Freeway Segment"
-  - "Arterial/Collector Segment"
-  - "Local Segment"
+  - Intersection
+  - Interchange
+  - Freeway Segment
+  - Arterial/Collector Segment
+  - Local Segment
 safety:
-  - "Congestion"
-  - "Emergency Response"
-  - "Road Weather"
+  - Congestion
+  - Emergency Response
+  - Road Weather
 keywords:
-  - "Traffic Management Centers"
-  - "TMC"
-  - "Traffic operations management system"
-  - "Real-time traffic monitoring system"
-  - "Network surveillance system"
-  - "CCTV monitoring system"
-  - "Incident management system"
-  - "Traffic incident management system"
-  - "Emergency roadway services coordination system"
-  - "Congestion management system"
-  - "Crash reduction support system"
-  - "Detector data processing system"
-  - "Dynamic message sign control system"
-  - "Lane control operations system"
-  - "Ramp metering operations system"
-  - "Traffic signal control system"
-  - "Traveler information system management"
-  - "Roadway conditions monitoring system"
-  - "Roadway hazards detection system"
-  - "Event management system"
-  - "Operations dashboard system"
-  - "System integration platform for traffic operations"
-  - "Traffic flow optimization system"
-  - "Real-time decision support system"
-  - "Transportation system operations center"
-  - "Traffic management center"
-  - "Traffic operations center"
-  - "Traffic management system"
-  - "Traffic operations staff"
-  - "CCTV monitoring"
-  - "Dynamic message signs"
-  - "Ramp metering"
-  - "Traffic signal control"
+  - Traffic Management Centers
+  - TMC
+  - Traffic operations management system
+  - Real-time traffic monitoring system
+  - Network surveillance system
+  - CCTV monitoring system
+  - Incident management system
+  - Traffic incident management system
+  - Emergency roadway services coordination system
+  - Congestion management system
+  - Crash reduction support system
+  - Detector data processing system
+  - Dynamic message sign control system
+  - Lane control operations system
+  - Ramp metering operations system
+  - Traffic signal control system
+  - Traveler information system management
+  - Roadway conditions monitoring system
+  - Roadway hazards detection system
+  - Event management system
+  - Operations dashboard system
+  - System integration platform for traffic operations
+  - Traffic flow optimization system
+  - Real-time decision support system
+  - Transportation system operations center
+  - Traffic management center
+  - Traffic operations center
+  - Traffic management system
+  - Traffic operations staff
+  - CCTV monitoring
+  - Dynamic message signs
+  - Ramp metering
+  - Traffic signal control
 resources:
-  - label: "Report: Next Generation of Traffic Management Systems and Centers: A Primer"
-    url: "https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-24-081.pdf"
-    description: >-
-      This report explains how agencies can plan, improve, and transition traffic management systems and centers to meet future transportation needs. It focuses on capabilities, technology integration, emerging data sources, and safer, more efficient mobility.
+  - label: "Report: Next Generation of Traffic Management Systems and Centers: A Primer (FHWA-HRT-24-081)"
+    url: https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-24-081.pdf
+    description: This report explains how agencies can plan, improve, and transition traffic management systems and centers to meet future transportation needs. It applies to traffic operations because it focuses on improving TMS capabilities, integrating technologies, using emerging data sources, and supporting safer, more efficient mobility across the transportation network.
   - label: "Web Page: Transportation Management Center Pooled Fund Study (TMC PFS)"
-    url: "https://tmcpfs.ops.fhwa.dot.gov/"
-    description: >-
-      This webpage describes the Transportation Management Center Pooled Fund Study, which supports research, evaluation, and information sharing among transportation agencies. It highlights collaborative projects and resources for improving TMC operations and traffic management practices.
+    url: https://tmcpfs.ops.fhwa.dot.gov/
+    description: This web page provides an overview of the Transportation Management Center Pooled Fund Study, which supports research, evaluation, and information sharing across transportation agencies. It highlights resources, projects, and collaborative efforts aimed at improving TMC operations and advancing traffic management practices nationwide.
   - label: "Web Page: Transportation Management Centers"
-    url: "https://ops.fhwa.dot.gov/freewaymgmt/trans_mgmnt.htm"
-    description: >-
-      This page describes the operational hub for monitoring, controlling, and coordinating freeway and arterial systems, integrating data from sensors, cameras, and field devices to manage real-time conditions.
-  - label: "Report: Review of Traffic Management Systems - Current Practice (FHWA-HRT-23-051)"
-    url: "https://rosap.ntl.bts.gov/view/dot/72446"
-    description: >-
-      This report reviews current traffic management system practices, new methods and technologies, and approaches for improving active system management and operations.
+    url: https://ops.fhwa.dot.gov/freewaymgmt/trans_mgmnt.htm
+    description: This page serves as the operational hub for monitoring, controlling, and coordinating freeway and arterial systems integrating data from sensors, cameras, and field devices to manage real-time conditions.
+  - label: "Report: Review of Traffic Management Systems — Current Practice (FHWA-HRT-23-051)"
+    url: https://rosap.ntl.bts.gov/view/dot/72446
+    description: The purpose of this report is to provide an appreciation of the current practices, new methods, emerging technologies, and approaches to improve the active management and operation of a traffic management system (TMS).
   - label: "Web Page: Model Systems Engineering Documents for Closed Circuit Television (CCTV) Systems"
-    url: "https://ops.fhwa.dot.gov/publications/fhwahop18060/index.htm#toc"
-    description: >-
-      This page provides an overview for planning, procuring, verifying, and validating CCTV deployments, helping agencies define needs, requirements, and concepts of operation.
-order: 36
+    url: https://ops.fhwa.dot.gov/publications/fhwahop18060/index.htm#toc
+    description: This page provides agencies with an overview for planning, procuring, verifying, and validating Closed-Circuit Television (CCTV) deployments. It helps agencies define needs, requirements, and operation concepts efficiently.
 ---
 Traffic Management Centers (TMCs) are critical facilities responsible for overseeing and optimizing transportation systems. They monitor traffic signals, intersections, and roadway conditions in real time, ensuring efficient traffic flow and rapid identification of issues. In the event of incidents such as crashes or road hazards, TMCs coordinate response efforts with emergency services to minimize disruptions and maintain safety.
 

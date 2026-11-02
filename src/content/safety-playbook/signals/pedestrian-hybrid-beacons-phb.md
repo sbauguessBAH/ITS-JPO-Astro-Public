@@ -33,7 +33,6 @@ resources:
     url: https://rosap.ntl.bts.gov/view/dot/86138
     description: >-
       This brief describes PHB design and operation, including pedestrian activation, the yellow-to-red sequence, driver yielding and stopping, and use at higher-speed and uncontrolled crossings.
-order: 23
 ---
 Pedestrian Hybrid Beacons are signalized crossing treatments typically used where pedestrian demand and vehicle speeds make unsignalized crossing difficult.
 

@@ -13,60 +13,55 @@ location:
   - "Suburban"
   - "Urban"
 facility:
-  - "n/a"
+  - n/a
 safety:
-  - "Emergency Response"
-  - "Work Zone"
-  - "Congestion"
+  - Emergency Response
+  - Work Zone
+  - Congestion
 keywords:
-  - "Highway Advisory Radio"
-  - "HAR"
-  - "Low-power AM roadway broadcast system"
-  - "Traveler information radio system"
-  - "Emergency advisory broadcast system"
-  - "Incident advisory broadcast system"
-  - "Work zone advisory broadcast system"
-  - "Weather advisory broadcast system"
-  - "Real-time traffic information broadcasting system"
-  - "Traveler alert message dissemination system"
-  - "Roadway information broadcast system"
-  - "Portable roadway information broadcasting system"
-  - "HAR transmitter system"
-  - "HAR antenna broadcast system"
-  - "Tune-to-radio sign activation system"
-  - "Flashing beacon sign integration system"
-  - "Driver alert communication system"
-  - "Traffic information radio system"
-  - "Emergency notification broadcast system"
-  - "Highway information dissemination system"
-  - "Public traveler information system"
-  - "Incident response communication support system"
-  - "Roadway safety information broadcasting system"
-  - "Traveler information system"
-  - "Traffic information radio"
-  - "Tune-to-radio sign"
-  - "Work zone advisory radio"
-  - "Emergency advisory radio"
-  - "Low-power AM broadcast"
-  - "Incident advisory broadcast"
+  - Highway Advisory Radio
+  - HAR
+  - Low-power AM roadway broadcast system
+  - Traveler information radio system
+  - Emergency advisory broadcast system
+  - Incident advisory broadcast system
+  - Work zone advisory broadcast system
+  - Weather advisory broadcast system
+  - Real-time traffic information broadcasting system
+  - Traveler alert message dissemination system
+  - Roadway information broadcast system
+  - Portable roadway information broadcasting system
+  - HAR transmitter system
+  - HAR antenna broadcast system
+  - Tune-to-radio sign activation system
+  - Flashing beacon sign integration system
+  - Driver alert communication system
+  - Traffic information radio system
+  - Emergency notification broadcast system
+  - Highway information dissemination system
+  - Public traveler information system
+  - Incident response communication support system
+  - Roadway safety information broadcasting system
+  - Traveler information system
+  - Traffic information radio
+  - Tune-to-radio sign
+  - Work zone advisory radio
+  - Emergency advisory radio
+  - Low-power AM broadcast
+  - Incident advisory broadcast
 resources:
   - label: "Report: Highway Advisory Radio Message Development Guide (FHWA/RD-82/059)"
-    url: "https://rosap.ntl.bts.gov/view/dot/3217/dot_3217_DS1.pdf"
-    description: >-
-      This report provides guidance for developing highway advisory radio messages for motorists, including message principles and operating considerations for construction, lane blockages, detours, and parking control.
+    url: https://rosap.ntl.bts.gov/view/dot/3217/dot_3217_DS1.pdf
+    description: This report provides guidance for developing Highway Advisory Radio, or HAR, messages that communicate traffic and travel information to motorists through their vehicle’s AM radio. It applies to traveler information and traffic operations because it explains message development principles, operating considerations, and examples for situations such as construction zones, lane blockages, detours, and parking control.
   - label: "Web Page: Incident and Emergency Response Essential ITS Benefits"
-    url: "https://www.itskrs.its.dot.gov/benefits/essential-its/incident-and-emergency-response"
-    description: >-
-      This webpage summarizes ITS benefits for incident and emergency response, including technologies and strategies that improve response times, situational awareness, and operational safety.
-  - label: "Chapter 13 - 13.2.7: Highway Advisory Radio"
-    url: "https://ops.fhwa.dot.gov/freewaymgmt/publications/frwy_mgmt_handbook/chapter13_02.htm"
-    description: >-
-      This handbook chapter describes HAR as a tool for providing timely traffic and travel information across its broadcast range, in contrast with CMS that reach motorists at a particular point and carry shorter messages.
-  - label: "Survey: Highway Advisory Radio (HAR) can provide route diversion information during periods of congestion when phone and internet travel advisory systems are not available; benefit-to-cost ratios can range from 4:1 to 16:1 assuming a 5 to 20 percent compliance rate"
-    url: "https://www.itskrs.its.dot.gov/2018-b01254"
-    description: >-
-      This survey found HAR remains useful for regional traveler information, especially during congestion and emergencies. A Florida Turnpike cost-benefit analysis estimated benefit-cost ratios of about 4:1 to 16:1 at compliance rates of 5 to 20 percent.
-order: 40
+    url: https://www.itskrs.its.dot.gov/benefits/essential-its/incident-and-emergency-response
+    description: This web page provides information on Intelligent Transportation Systems benefits related to incident and emergency response. It highlights technologies and strategies that improve response times, enhance situational awareness, and support safer and more efficient operations during roadway incidents and emergencies.
+  - label: "Chapter 13 – 13.2.7: Highway Advisory Radio"
+    url: https://ops.fhwa.dot.gov/freewaymgmt/publications/frwy_mgmt_handbook/chapter13_02.htm
+    description: This chapter highlights the highway advisory radio (HAR) as an effective tool for providing timely traffic and travel condition information to the public. It has various advantages and disadvantages. It's most important advantage is that it can reach more travelers, or potential travelers, than Changeable Message Signs (CMS). While CMS's reach only those motorists at a particular point, and can only convey a short message, HAR has the advantage of being able to communicate with any persons in their broadcast range.
+  - label: "Survey: Highway Advisory Radio (HAR) can provide route diversion information during periods of congestion when phone and internet travel advisory systems are not available; benefit-to-cost ratios can range from 4:1 to 16:1 assuming a 5 to 20 percent compliance rate (2018-B01254)"
+    url: https://www.itskrs.its.dot.gov/2018-b01254
+    description: This survey found that the HAR remains useful for regional traveler information, especially during congestion and emergencies. Surveys and a Florida Turnpike cost benefit analysis showed HAR can supplement signs, provide audio updates, and serve as backup when other systems are unavailable, with estimated benefit cost ratios of about 4:1 to 16:1.
 ---
 Highway Advisory Radio (HAR) is a vital tool for providing motorists with timely, localized information while minimizing distractions. HAR broadcasts updates on traffic conditions, road closures, and construction, helping drivers plan their routes and avoid delays. In emergency situations, HAR delivers critical alerts to ensure the safety of drivers and other road users.
 

@@ -8,7 +8,7 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
   <main>
     <h2>Safety Areas and Descriptions Glossary</h2>
     <p>
-      Explore safety area definitions and deployment context used across the Safety Playbook.
+      Explore safety area definitions, area and facility types, strategy categories, and deployment context used across the Safety Playbook.
       Use the tabs below to jump between glossary sections.
     </p>
 
@@ -16,6 +16,7 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
       <a href="#safety-areas" class="tab-link">Safety Areas</a>
       <a href="#area-type" class="tab-link">Area Type</a>
       <a href="#facility-type" class="tab-link">Facility Type</a>
+      <a href="#categories" class="tab-link">Categories</a>
       <a href="#deployment-considerations" class="tab-link">Deployment Considerations</a>
     </nav>
 
@@ -146,6 +147,63 @@ import PageLayout from "@/src/layouts/PageLayout.astro";
               <tr>
                 <td><strong>Local Segment</strong></td>
                 <td>A roadway with no access control and high level of access to properties.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="categories" class="tab-section">
+        <h3 class="section-heading">Categories</h3>
+        <p>Categories group strategies by technology or operational focus. Use the Categories filter to select one or more groups.</p>
+        <div class="table-wrap">
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cameras</strong></td>
+                <td>Camera-based technologies for observing roadway conditions, detecting road users or incidents, and supporting traffic enforcement.</td>
+              </tr>
+              <tr>
+                <td><strong>Communication</strong></td>
+                <td>Technologies that share warnings, roadway information, or coordination messages with travelers, vehicles, infrastructure, and responders.</td>
+              </tr>
+              <tr>
+                <td><strong>Developing Phase</strong></td>
+                <td>Emerging strategies and technologies still being developed or evaluated for roadway safety applications.</td>
+              </tr>
+              <tr>
+                <td><strong>Lighting</strong></td>
+                <td>Roadway lighting strategies that improve visibility and help road users detect hazards, particularly at night.</td>
+              </tr>
+              <tr>
+                <td><strong>Other</strong></td>
+                <td>Additional safety technologies and strategies that do not fall within the other category groups.</td>
+              </tr>
+              <tr>
+                <td><strong>Road Weather</strong></td>
+                <td>Systems that monitor weather and road conditions or support warnings, maintenance, and operations during adverse weather.</td>
+              </tr>
+              <tr>
+                <td><strong>Signals</strong></td>
+                <td>Traffic signals, beacons, and roadway control devices that manage movements, speeds, and conflicts among road users.</td>
+              </tr>
+              <tr>
+                <td><strong>Systems Monitoring</strong></td>
+                <td>Equipment and software for monitoring roadway networks and supporting transportation system management.</td>
+              </tr>
+              <tr>
+                <td><strong>Traffic Operations</strong></td>
+                <td>Strategies for managing traffic flow, congestion, incidents, corridors, and roadway access to improve safety and mobility.</td>
+              </tr>
+              <tr>
+                <td><strong>Work Zone</strong></td>
+                <td>Technologies and strategies that manage traffic, warn travelers, and protect workers in roadway work zones.</td>
               </tr>
             </tbody>
           </table>
