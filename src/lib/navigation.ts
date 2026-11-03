@@ -59,7 +59,7 @@ export const navigation: NavigationItem[] = [
     url: "/research-areas",
     pages: [
       {
-        name: "Artificial Intelligence",
+        name: "Super Intelligence",
         url: "/research-areas/super-intelligence",
         isEnabled: true,
         pages: [
@@ -80,7 +80,7 @@ export const navigation: NavigationItem[] = [
             url: "/research-areas/super-intelligence/focus-areas",
             isEnabled: true,
             pages: [
-              { name: "Get sI-Ready", url: "/research-areas/super-intelligence/focus-areas/get-si-ready" },
+              { name: "Get SI-Ready", url: "/research-areas/super-intelligence/focus-areas/get-si-ready" },
               { name: "Put SI into Practice", url: "/research-areas/super-intelligence/focus-areas/put-si-into-practice" },
               {
                 name: "Learn & Connect",
