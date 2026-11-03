@@ -11,7 +11,7 @@ const { BASE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), "");
 // https://astro.build/config
 export default defineConfig({
   // If hosting on a subdomain, set the base here such as /itsjpo, /demo, etc.
-  base: BASE_URL,
+  base: `/${(BASE_URL || "").replace(/^\/+|\/+$/g, "")}`,
   site: "https://www.its.dot.gov",
   output: "static",
   integrations: [partytown(), sitemap(), vue()],

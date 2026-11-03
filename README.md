@@ -25,6 +25,13 @@ Required Node V19 or above (V22 recomended).
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## Deployment Base Path
+
+Set `BASE_URL` in `.env` to the deployment subdirectory, such as `/Safety-test`,
+or leave it empty for a root deployment. Leading and trailing slashes are
+normalized. Use `src/lib/base_url.ts` for site-local links so they remain
+root-relative on nested pages; pass paths without the deployment prefix.
+
 ## Safety Playbook Content Template
 
 Safety Playbook entries are managed as Astro content collection markdown files in `src/content/safety-playbook/`.
@@ -57,6 +64,5 @@ Notes:
 - `category` is used as the primary filter.
 - `location`, `facility`, and `safety` are multi-select filters.
 - `order` is optional and controls display order before alphabetical title sorting.
-
 
 
