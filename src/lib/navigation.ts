@@ -248,7 +248,7 @@ export const navigation: NavigationItem[] = [
         pages: [
           {
             name: "Roadway Safety Toolkit Home",
-            url: "/research-areas/roadway-safety-toolkit/",
+            url: "/research-areas/roadway-safety-toolkit",
           },
           {
             name: "Safety Areas and Descriptions Glossary",

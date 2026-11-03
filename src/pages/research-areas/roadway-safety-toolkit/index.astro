@@ -8,14 +8,14 @@ import SafetyPlaybookTopFilters from "@/src/components/safety-playbook/SafetyPla
 import SafetyPlaybookCard from "@/src/components/safety-playbook/SafetyPlaybookCard.astro";
 
 const keywords = [
-  "Safety Playbook",
+  "ITS toolkit for Roadway Safety",
   "ITS",
   "Transportation Safety",
   "Deployment",
   "Best Practices",
 ];
 
-const description = "Safety Playbook compiles practical guidance, tools, and implementation strategies to support safer transportation systems.";
+const description = "ITS toolkit for Roadway Safety compiles practical guidance, tools, and implementation strategies to support safer transportation systems.";
 
 // Normalize filter labels into a stable slug format shared by cards and filters.
 const normalize = (value: string) =>
@@ -328,15 +328,14 @@ const glossaryUrl = base_url("/research-areas/roadway-safety-toolkit/glossary/")
   }
 </style>
 
-<PageLayout title="Roadway Safety Toolkit" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">Roadway Safety Toolkit</Fragment>
+<PageLayout title="ITS toolkit for Roadway Safety" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">ITS toolkit for Roadway Safety</Fragment>
   <main>
-    <h2 class="py-3">Roadway Safety Toolkit</h2>
 
     <div class="playbook-intro">
       <div class="playbook-intro-row">
         <p class="playbook-intro-text">
-          The Safety Playbook provides practical tools and implementation guidance for safer transportation
+          The Safety Toolkit provides practical tools and implementation guidance for safer transportation
           systems. Use the primary safety area filter and secondary multi-select filters to narrow the list by
           context and safety focus.
         </p>
@@ -396,7 +395,7 @@ const glossaryUrl = base_url("/research-areas/roadway-safety-toolkit/glossary/")
               Showing 1-{Math.min(9, playbookItems.length)} of {playbookItems.length} tool{playbookItems.length !== 1 ? "s" : ""}
             </div>
 
-            <nav class="playbook-pagination" data-playbook-pagination aria-label="Safety Playbook pagination (top)">
+            <nav class="playbook-pagination" data-playbook-pagination aria-label="ITS toolkit for Roadway Safety pagination (top)">
               <button class="playbook-pagination-button" data-playbook-page-prev type="button">Previous</button>
               <div class="playbook-pagination-pages" data-playbook-page-numbers></div>
               <button class="playbook-pagination-button" data-playbook-page-next type="button">Next</button>
@@ -415,7 +414,7 @@ const glossaryUrl = base_url("/research-areas/roadway-safety-toolkit/glossary/")
               Showing 1-{Math.min(9, playbookItems.length)} of {playbookItems.length} tool{playbookItems.length !== 1 ? "s" : ""}
             </div>
 
-            <nav class="playbook-pagination" data-playbook-pagination aria-label="Safety Playbook pagination (bottom)">
+            <nav class="playbook-pagination" data-playbook-pagination aria-label="ITS toolkit for Roadway Safety pagination (bottom)">
               <button class="playbook-pagination-button" data-playbook-page-prev type="button">Previous</button>
               <div class="playbook-pagination-pages" data-playbook-page-numbers></div>
               <button class="playbook-pagination-button" data-playbook-page-next type="button">Next</button>
@@ -425,7 +424,7 @@ const glossaryUrl = base_url("/research-areas/roadway-safety-toolkit/glossary/")
         </section>
       </div>
     ) : (
-      <p class="playbook-empty">No Safety Playbook entries are available yet.</p>
+      <p class="playbook-empty">No ITS toolkit for Roadway Safety entries are available yet.</p>
     )}
   </main>
 </PageLayout>

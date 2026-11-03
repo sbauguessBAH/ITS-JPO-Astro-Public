@@ -32,9 +32,9 @@ or leave it empty for a root deployment. Leading and trailing slashes are
 normalized. Use `src/lib/base_url.ts` for site-local links so they remain
 root-relative on nested pages; pass paths without the deployment prefix.
 
-## Safety Playbook Content Template
+## ITS toolkit for Roadway Safety Content Template
 
-Safety Playbook entries are managed as Astro content collection markdown files in `src/content/safety-playbook/`.
+ITS toolkit for Roadway Safety entries are managed as Astro content collection markdown files in `src/content/safety-playbook/`.
 Add new files using this frontmatter template:
 
 ```md
