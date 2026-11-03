@@ -34,7 +34,7 @@ const onInserted = () => {
   }
 };
 
-const onShown = () => content.value?.querySelector<HTMLAnchorElement>("a")?.focus();
+const onShown = () => content.value?.querySelector<HTMLAnchorElement>("a")?.focus({ preventScroll: true });
 const onHidden = () => {
   isOpen.value = false;
   tip = null;
@@ -42,7 +42,7 @@ const onHidden = () => {
 
 const close = () => {
   popover?.hide();
-  trigger.value?.focus();
+  trigger.value?.focus({ preventScroll: true });
 };
 
 const onOutsidePointerDown = (event: PointerEvent) => {

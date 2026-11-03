@@ -202,7 +202,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="playbook-top-filters" aria-label="Secondary ITS toolkit for Roadway Safety filters">
+  <div class="playbook-top-filters" aria-label="Secondary ITS Toolkit for Roadway Safety filters">
    
     <CheckboxMultiSelectDropdown
       id="playbook-filter-location"

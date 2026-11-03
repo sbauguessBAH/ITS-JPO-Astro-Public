@@ -8,14 +8,14 @@ import SafetyPlaybookTopFilters from "@/src/components/safety-playbook/SafetyPla
 import SafetyPlaybookCard from "@/src/components/safety-playbook/SafetyPlaybookCard.astro";
 
 const keywords = [
-  "ITS toolkit for Roadway Safety",
+  "ITS Toolkit for Roadway Safety",
   "ITS",
   "Transportation Safety",
   "Deployment",
   "Best Practices",
 ];
 
-const description = "ITS toolkit for Roadway Safety compiles practical guidance, tools, and implementation strategies to support safer transportation systems.";
+const description = "ITS Toolkit for Roadway Safety compiles practical guidance, tools, and implementation strategies to support safer transportation systems.";
 
 // Normalize filter labels into a stable slug format shared by cards and filters.
 const normalize = (value: string) =>
@@ -328,8 +328,8 @@ const glossaryUrl = base_url("/research-areas/roadway-safety-toolkit/glossary/")
   }
 </style>
 
-<PageLayout title="ITS toolkit for Roadway Safety" bannerImage={banner} keywords={keywords} description={description}>
-  <Fragment slot="banner">ITS toolkit for Roadway Safety</Fragment>
+<PageLayout title="ITS Toolkit for Roadway Safety" bannerImage={banner} keywords={keywords} description={description}>
+  <Fragment slot="banner">ITS Toolkit for Roadway Safety</Fragment>
   <main>
 
     <div class="playbook-intro">
@@ -395,7 +395,7 @@ const glossaryUrl = base_url("/research-areas/roadway-safety-toolkit/glossary/")
               Showing 1-{Math.min(9, playbookItems.length)} of {playbookItems.length} tool{playbookItems.length !== 1 ? "s" : ""}
             </div>
 
-            <nav class="playbook-pagination" data-playbook-pagination aria-label="ITS toolkit for Roadway Safety pagination (top)">
+            <nav class="playbook-pagination" data-playbook-pagination aria-label="ITS Toolkit for Roadway Safety pagination (top)">
               <button class="playbook-pagination-button" data-playbook-page-prev type="button">Previous</button>
               <div class="playbook-pagination-pages" data-playbook-page-numbers></div>
               <button class="playbook-pagination-button" data-playbook-page-next type="button">Next</button>
@@ -414,7 +414,7 @@ const glossaryUrl = base_url("/research-areas/roadway-safety-toolkit/glossary/")
               Showing 1-{Math.min(9, playbookItems.length)} of {playbookItems.length} tool{playbookItems.length !== 1 ? "s" : ""}
             </div>
 
-            <nav class="playbook-pagination" data-playbook-pagination aria-label="ITS toolkit for Roadway Safety pagination (bottom)">
+            <nav class="playbook-pagination" data-playbook-pagination aria-label="ITS Toolkit for Roadway Safety pagination (bottom)">
               <button class="playbook-pagination-button" data-playbook-page-prev type="button">Previous</button>
               <div class="playbook-pagination-pages" data-playbook-page-numbers></div>
               <button class="playbook-pagination-button" data-playbook-page-next type="button">Next</button>
@@ -424,7 +424,7 @@ const glossaryUrl = base_url("/research-areas/roadway-safety-toolkit/glossary/")
         </section>
       </div>
     ) : (
-      <p class="playbook-empty">No ITS toolkit for Roadway Safety entries are available yet.</p>
+      <p class="playbook-empty">No ITS Toolkit for Roadway Safety entries are available yet.</p>
     )}
   </main>
 </PageLayout>
