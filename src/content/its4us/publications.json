@@ -2164,5 +2164,188 @@
       "accessibility"
     ],
     "publicationLink": "https://rosap.ntl.bts.gov/view/dot/91212"
+  },
+  {
+    "id": "fhwa-jpo-21-860-nfta-phase-2",
+    "resourceTitle": "Phase 2 Updated Concept of Operations - Buffalo NY ITS4US Deployment Project",
+    "publicationCode": "FHWA-JPO-21-860",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-B: Systems Architecture and Design",
+    "phase": 2,
+    "publishDate": "2026-09-18",
+    "type": "Publication",
+    "keywords": [
+      "Complete Trip",
+      "Self-Driving Shuttle",
+      "Open Trip Planner",
+      "Systems Integration"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/93417"
+  },
+  {
+    "id": "fhwa-jpo-21-883-nfta-phase-2",
+    "resourceTitle": "Phase 2 Updated Systems Requirements - Buffalo NY ITS4US Deployment Project",
+    "publicationCode": "FHWA-JPO-21-883",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-B: Systems Architecture and Design",
+    "phase": 2,
+    "publishDate": "2026-09-18",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete Trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "System Requirements"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/93416"
+  },
+  {
+    "id": "fhwa-jpo-22-947-nfta-phase-2",
+    "resourceTitle": "Phase 2 Updated Integrated Complete Trip Deployment Plan - Buffalo NY ITS4US Deployment Project",
+    "publicationCode": "FHWA-JPO-22-947",
+    "awardeeDeploy": "Niagara Frontier Transportation Authority",
+    "deploymentAcronym": "NFTA",
+    "taskName": "Task 2-B: Systems Architecture and Design",
+    "phase": 2,
+    "publishDate": "2026-09-18",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete Trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "participant training",
+      "stakeholder education"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/93415"
+  },
+  {
+    "id": "fhwa-jpo-26-045",
+    "resourceTitle": "Phase 3 Participation in Standards Development - Heart of Iowa Regional Transit Agency ITS4US Deployment Project",
+    "publicationCode": "FHWA-JPO-26-045",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 3-F: Participation in Standards Development",
+    "phase": 3,
+    "publishDate": "2026-10-05",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete Trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "Standards Development"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/93806"
+  },
+  {
+    "id": "fhwa-jpo-22-971",
+    "resourceTitle": "Phase 3 Data Privacy Plan (DPP) Heart of Iowa Regional Transit Agency ITS4US Deployment Project",
+    "publicationCode": "FHWA-JPO-22-971",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 3-D: Performance Measurement and Independent Evaluation Support",
+    "phase": 3,
+    "publishDate": "2026-10-05",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Healthcare",
+      "NEMT",
+      "MOD",
+      "PMP",
+      "ITS"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/93804"
+  },
+  {
+    "id": "fhwa-jpo-24-151",
+    "resourceTitle": "Phase 3 Operational Capability Showcase Plan (OCSP) Heart of Iowa Regional Transit Agency ITS4US Deployment Project",
+    "publicationCode": "FHWA-JPO-24-151",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 3-C: Stakeholder Outreach",
+    "phase": 3,
+    "publishDate": "2026-10-05",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Healthcare",
+      "NEMT",
+      "MOD",
+      "OCSP",
+      "ITS"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/93802"
+  },
+  {
+    "id": "fhwa-jpo-26-010",
+    "resourceTitle": "Operational Capability Showcase Summary (OCSS) - Heart of Iowa Regional Transit Agency ITS4US Deployment Project",
+    "publicationCode": "FHWA-JPO-26-010",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 3-C: Stakeholder Outreach",
+    "phase": 3,
+    "publishDate": "2026-10-05",
+    "type": "Publication",
+    "keywords": [
+      "Operations",
+      "ITS4US",
+      "Showcase",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "Transit"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/93807"
+  },
+  {
+    "id": "fhwa-jpo-26-016",
+    "resourceTitle": "Performance Measurement Summary Memo - Heart of Iowa Regional Transit Agency ITS4US Deployment Project",
+    "publicationCode": "FHWA-JPO-26-016",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 3-D: Performance Measurement and Independent Evaluation Support",
+    "phase": 3,
+    "publishDate": "2026-10-05",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete Trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "Performance Measurement",
+      "Independent Evaluation",
+      "Data Management"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/93803"
+  },
+  {
+    "id": "fhwa-jpo-21-877-hirta-phase-3",
+    "resourceTitle": "Phase 3 Performance Management and Evaluation Support Plan - Heart of Iowa Regional Transit Agency ITS4US Deployment Project",
+    "publicationCode": "FHWA-JPO-21-877",
+    "awardeeDeploy": "Heart of Iowa Regional Transit Agency",
+    "deploymentAcronym": "HIRTA",
+    "taskName": "Task 3-D: Performance Measurement and Independent Evaluation Support",
+    "phase": 3,
+    "publishDate": "2026-10-05",
+    "type": "Publication",
+    "keywords": [
+      "ITS4US",
+      "Complete Trip",
+      "Deployment",
+      "ITS",
+      "Intelligent Transportation Systems",
+      "Performance Measurement",
+      "Independent Evaluation",
+      "Data Management"
+    ],
+    "publicationLink": "https://rosap.ntl.bts.gov/view/dot/90801"
   }
 ]

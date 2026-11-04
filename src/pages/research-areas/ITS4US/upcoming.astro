@@ -11,6 +11,7 @@ import linkImage3 from "@/src/assets/images/its4us/DataHub-link.png";
 import linkImage4 from "@/src/assets/images/its4us/CodeHub-link.png";
 import postcardImage from "@/src/assets/images/ai/ITS4US-Deployment-Accelerator-Postcard.png";
 import factsheetImage from "@/src/assets/images/ai/ITS4US-Deployment-Accelerator-Factsheet.png";
+import checklistImage from "@/src/assets/images/its4us/upcoming/ITS4US-Deployment-Accelerator-Eligibility-Checklist.png";
 import "@/src/styles/deployments.css";
 ---
 
@@ -100,11 +101,11 @@ import "@/src/styles/deployments.css";
     gap: 0.5rem 2rem;
   }
 
-  /* Arrange the solicitation milestones in a horizontal, four-stage timeline. */
+  /* Arrange the solicitation milestones in a horizontal, five-stage timeline. */
   .solicitation-timeline {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
     margin: 2rem 0 3rem;
   }
 
@@ -136,10 +137,10 @@ import "@/src/styles/deployments.css";
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 1.25rem;
+    padding: 0.75rem 0.5rem;
     background: #06235d;
     color: white;
-    font-size: clamp(1.15rem, 2vw, 1.75rem);
+    font-size: clamp(1rem, 1.35vw, 1.35rem);
     font-weight: 700;
     line-height: 1.1;
     border-radius: 0.75rem 0.75rem 0 0;
@@ -153,10 +154,10 @@ import "@/src/styles/deployments.css";
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.75rem 0.5rem;
     background: #f1f1f1;
     color: #111;
-    font-size: clamp(1.1rem, 2vw, 1.75rem);
+    font-size: clamp(0.95rem, 1.2vw, 1.2rem);
     line-height: 1.1;
     margin-top: 2.15rem;
     border-radius: 0 0 0.75rem 0.75rem;
@@ -440,7 +441,19 @@ import "@/src/styles/deployments.css";
                   <p class="fs-4 fst-italic mb-0">Bringing American Innovation to Your Community</p>
                 </div>
                 <div class="text-md-end">
-                  <p class="fs-3 text-gold mb-0">Coming Soon</p>
+                  <p class="fs-3 text-gold mb-0">Submit Proposals Now!</p>
+                </div>
+              </div>
+              <div class="announcement-details rounded-4 p-4 mx-auto my-4 d-flex align-items-center gap-3">
+                <span class="replicator-icon flex-shrink-0" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></span>
+                <div class="fs-5 lh-base">
+                  ITS4US Deployment Accelerator Program accepting proposals now on
+                  <a
+                    href="https://sam.gov/workspace/contract/opp/8433753e4422447fa62b661ec5d8b9da/view"
+                    class="text-gold fw-bold text-decoration-underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >SAM.gov</a>!
                 </div>
               </div>
               <p>
@@ -472,19 +485,24 @@ import "@/src/styles/deployments.css";
 
               <div class="solicitation-timeline" aria-label="Planned solicitation timeline">
                 <div class="timeline-step">
-                  <div class="timeline-heading">BAA Postedon SAM.gov</div>
+                  <div class="timeline-heading">BAA Posted on SAM.gov</div>
                   <span class="timeline-marker" aria-hidden="true"></span>
-                  <div class="timeline-detail">2026</div>
+                  <div class="timeline-detail">Oct 20, 2026</div>
                 </div>
                 <div class="timeline-step">
-                  <div class="timeline-heading">Question &amp; Answer Period</div>
+                  <div class="timeline-heading">Questions Due</div>
                   <span class="timeline-marker" aria-hidden="true"></span>
-                  <div class="timeline-detail">2 Weeks Post-BAA Release</div>
+                  <div class="timeline-detail">Nov 4, 2026</div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-heading">Answers Provided</div>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-detail">Nov 18, 2026</div>
                 </div>
                 <div class="timeline-step">
                   <div class="timeline-heading">Proposal Deadline</div>
                   <span class="timeline-marker" aria-hidden="true"></span>
-                  <div class="timeline-detail">45 Days Post-BAA Release</div>
+                  <div class="timeline-detail">Jan 11, 2027</div>
                 </div>
                 <div class="timeline-step">
                   <div class="timeline-heading">Awards Anticipated</div>
@@ -581,6 +599,15 @@ import "@/src/styles/deployments.css";
                   </article>
 
                   <article class="resource-material">
+                    <Image src={checklistImage} alt="ITS4US Deployment Accelerator Eligibility Checklist" class="img-fluid rounded" />
+                    <div>
+                      <h3>ITS4US Deployment Accelerator Eligibility Checklist</h3>
+                      <p>Checklist outlining eligibility requirements for the planned ITS4US Deployment Accelerator Program funding opportunity.</p>
+                      <a class="btn" href={base_url("/assets/documents/its4us/ITS4US-Deployment-Accelerator-Checklist-Flyer.pdf")} download>Download</a>
+                    </div>
+                  </article>
+
+                  <article class="resource-material">
                     <div class="video-container">
                       <iframe
                         src="https://www.youtube.com/embed/9DkjQLxPtPM"
@@ -649,7 +676,6 @@ import "@/src/styles/deployments.css";
                 </div>
               </div>
 
-              <p class="text-center fs-3 fw-bold mt-5 text-gold text-uppercase" style="letter-spacing: 2px;">STAY TUNED FOR PLANNED 2026 SOLICITATION</p>
 
               <div class="bg-white rounded-4 shadow p-4 mt-5 mx-auto" style="max-width: 900px;">
                 <h3 class="text-center fs-4 mb-3" style="color: #1e5a7d;">Want to Learn More?</h3>
