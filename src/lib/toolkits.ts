@@ -322,6 +322,24 @@ const hasText = (value: string | null | undefined): value is string => typeof va
 
 const cleanText = (value?: string | null): string => (typeof value === "string" ? value.trim() : "");
 
+const normalizeToolkitUrl = (value?: string | null): string => {
+  const cleanedValue = cleanText(value);
+  const url = cleanedValue.startsWith("assets/") ? `/${cleanedValue}` : cleanedValue;
+
+  if (!url.startsWith("/") || url.startsWith("//")) {
+    return url;
+  }
+
+  const basePath = import.meta.env.BASE_URL.replace(/\/+$/, "");
+  const pathname = url.split(/[?#]/, 1)[0];
+
+  if (!basePath || pathname === basePath || pathname.startsWith(`${basePath}/`)) {
+    return url;
+  }
+
+  return `${basePath}${url}`;
+};
+
 const uniqueStrings = (values: Array<string | undefined>): string[] => {
   return [...new Set(values.filter((value): value is string => hasText(value)).map((value) => value.trim()))];
 };
@@ -420,7 +438,7 @@ const normalizeLinks = (items?: RawLinkItem[]): ToolkitLinkItem[] => {
       }
 
       return {
-        href: cleanText(item.href) || undefined,
+        href: normalizeToolkitUrl(item.href) || undefined,
         title,
       };
     })
@@ -431,11 +449,11 @@ const normalizeMediaItems = (items?: RawMediaItem[]): ToolkitMediaItem[] => {
   return (Array.isArray(items) ? items : [])
     .map((item) => {
       const title = cleanText(item.title) || cleanText(item["link-text"]);
-      const href = cleanText(item.href);
+      const href = normalizeToolkitUrl(item.href);
       const imageValue = cleanText(item.image_src) || cleanText(item.img_src) || cleanText(item.image);
-      const image = imageValue?.startsWith("assets/") ? `/${imageValue}` : imageValue;
+      const image = normalizeToolkitUrl(imageValue);
       const altDescription = cleanText(item.alt_description) || cleanText(item.alt_text) || cleanText(item.alt);
-      const downloadHref = cleanText(item.download_href);
+      const downloadHref = normalizeToolkitUrl(item.download_href);
       const actionLabel = cleanText(item.actionLabel) || cleanText(item.cta_text);
 
       if (!title && !href && !image && !downloadHref) {
@@ -511,9 +529,9 @@ const normalizeCta = (rawCta?: RawCta): ToolkitCta | undefined => {
   return {
     buttonText: cleanText(rawCta?.button_text) || undefined,
     description: cleanText(rawCta?.description) || undefined,
-    href: cleanText(rawCta?.href) || undefined,
+    href: normalizeToolkitUrl(rawCta?.href) || undefined,
     previewAlt: cleanText(rawCta?.preview_alt) || undefined,
-    previewImage: cleanText(rawCta?.preview_image) || undefined,
+    previewImage: normalizeToolkitUrl(rawCta?.preview_image) || undefined,
     title,
   };
 };

@@ -15,9 +15,10 @@ interface Props {
   currentBreadcrumb?: string;
   description?: string;
   keywords?: string[] | string;
+  sectionNavigationPath?: string;
 }
 
-const { additionalBreadcrumbs, title, bannerImage, currentBreadcrumb, description, keywords } = Astro.props;
+const { additionalBreadcrumbs, title, bannerImage, currentBreadcrumb, description, keywords, sectionNavigationPath } = Astro.props;
 
 const getTrimmedPath = (path: string): string => path.replaceAll("/", "");
 
@@ -32,7 +33,7 @@ const isActive = (item: NavigationItem | ChildNavigationItem): boolean => {
 const activeSection: NavigationItem | undefined = navigation.find(section => isActive(section));
 ---
 <BaseLayout title={title} keywords={keywords} description={description}>
-  <Banner image={bannerImage}>
+  <Banner image={bannerImage} sectionNavigationPath={sectionNavigationPath}>
     <slot name="banner" title="banner"/>
     <slot name="image" slot="image" />
   </Banner>

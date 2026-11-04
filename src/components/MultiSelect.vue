@@ -137,7 +137,7 @@ onBeforeUnmount(() => {
   min-width: 0;
   --filter-bg: #fff;
   --filter-color: rgb(5, 86, 129);
-  --filter-border: #e5e7eb;
+  --filter-border: #b6b7bb;
 }
 
 .multi-select-trigger {
@@ -207,7 +207,7 @@ onBeforeUnmount(() => {
   width: 100%;
   max-height: 18rem;
   overflow-y: auto;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #b6b7bb;
   border-radius: 0.375rem;
   background: #fff;
   box-shadow: 0 10px 24px rgb(0 0 0 / 12%);
@@ -219,7 +219,7 @@ onBeforeUnmount(() => {
   z-index: 1;
   padding: 0.5rem 0.65rem;
   background: #fff;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #b6b7bb;
 }
 
 .multi-select-clear {

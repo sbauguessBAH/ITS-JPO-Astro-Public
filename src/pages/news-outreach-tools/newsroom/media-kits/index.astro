@@ -52,21 +52,21 @@ const description = "Browse ITS JPO media kits and filter by content type and to
     <form class="row g-4 reduced-gutters filter my-2 p-3" aria-label="Media kit filter">
       <div class="col-12 col-lg-3">
         <label class="form-label" for="content-type-toggle">Content Type</label>
-        <div class="dropdown multi-select-dropdown">
-          <button id="content-type-toggle" type="button" class="dropdown-toggle w-100 text-start" aria-haspopup="listbox" aria-expanded="false">
+        <div class="multi-select-dropdown" id="media-content-type-dropdown">
+          <button id="content-type-toggle" type="button" class="w-100 text-start" aria-controls="content-type-list" aria-expanded="false">
             <span class="dropdown-label">Select content types</span>
           </button>
-          <div class="dropdown-menu w-100 p-2" aria-labelledby="content-type-toggle" role="listbox" id="content-type-list" style="max-height: 240px; overflow:auto;">
+          <div class="w-100" aria-label="Content type options" role="group" id="content-type-list">
             {
               contentTypes.map((type) => {
                 const id = `content-type-${slugifyForId(type)}`;
                 return (
-                  <div class="content-type-option">
-                    <input class="visually-hidden content-type-input" type="checkbox" id={id} name="content-type" value={type} />
-                    <label class="content-type-label" for={id}>
+                  <label class="content-type-option" for={id}>
+                    <input class="content-type-input" type="checkbox" id={id} name="content-type" value={type} />
+                    <span class="content-type-label">
                       {type.charAt(0).toUpperCase() + type.slice(1)}
-                    </label>
-                  </div>
+                    </span>
+                  </label>
                 );
               })
             }
@@ -251,10 +251,12 @@ const description = "Browse ITS JPO media kits and filter by content type and to
     }
   });
 
-  dropdownToggle?.addEventListener("keydown", (e) => {
+  document.getElementById("media-content-type-dropdown")?.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      e.preventDefault();
+      e.stopPropagation();
       toggleDropdown(false);
-      dropdownToggle.focus();
+      dropdownToggle?.focus();
     }
   });
 
@@ -323,65 +325,120 @@ const description = "Browse ITS JPO media kits and filter by content type and to
     box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
   }
 
-  .content-type-option {
+  #media-content-type-dropdown {
+    position: relative;
+    min-width: 0;
+    --filter-color: rgb(5, 86, 129);
+    --filter-border: #b6b7bb;
+  }
+
+  #content-type-toggle {
     display: flex;
-  }
-
-  .content-type-label {
-    width: 100%;
-    padding: 0.375rem 0.5rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .content-type-option > input:checked + .content-type-label {
-    color: #055581;
-    font-weight: 600;
-    background-color: #d1e7ff;
-    border-radius: 999rem;
-    border: 1px solid white;
-  }
-
-  .content-type-option > input:focus-visible + .content-type-label {
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
-  }
-
-  #content-type-toggle.dropdown-toggle {
-    display: flex;
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    min-height: 2.5rem;
+    border: 1px solid var(--filter-border);
+    border-radius: 1.25rem;
+    padding: 0.45rem 0.75rem;
+    font: inherit;
+    font-weight: 600;
+    color: #111827;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
   }
 
-  #content-type-toggle.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  #content-type-toggle:hover,
+  #content-type-toggle:focus,
+  #content-type-toggle[aria-expanded="true"] {
+    border-color: var(--filter-color);
   }
 
-  #content-type-toggle.dropdown-toggle:after {
+  #content-type-toggle:focus,
+  #content-type-toggle[aria-expanded="true"] {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--filter-color) 18%, transparent);
+  }
+
+  #media-content-type-dropdown :focus-visible {
+    outline: 2px solid var(--filter-color);
+    outline-offset: 2px;
+  }
+
+  #content-type-toggle .dropdown-label {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  #content-type-toggle::after {
     content: '\f078';
+    flex-shrink: 0;
+    width: 1.25rem;
+    margin: 0;
+    border: 0;
+    color: #666;
     font-family: "Font Awesome 6 Free";
-    font-weight: 800;
-    font-size: 16px;
+    font-weight: 900;
+    font-size: 1rem;
+    text-align: center;
+    transition: transform 0.2s ease;
   }
 
-  .multi-select-dropdown .dropdown-menu {
+  #content-type-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+
+  #content-type-list {
     display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    z-index: 50;
+    min-width: 0;
+    max-height: 18rem;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--filter-border);
+    border-radius: 0.375rem;
+    background: #fff;
+    box-shadow: 0 10px 24px rgb(0 0 0 / 12%);
   }
 
-  .multi-select-dropdown .dropdown-menu.show {
+  #content-type-list.show {
     display: block;
   }
 
-  .multi-select-dropdown .dropdown-label {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-block;
-    max-width: 100%;
+  #content-type-list .content-type-option {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0.6rem 0.75rem;
+    font: inherit;
+    font-size: 0.95rem;
+    color: #1f2937;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+    transition: background-color 0.15s ease;
+  }
+
+  #content-type-list .content-type-option + .content-type-option {
+    border-top: 1px solid #f3f4f6;
+  }
+
+  #content-type-list .content-type-option:hover,
+  #content-type-list .content-type-option:focus-within {
+    background: #f9fafb;
+  }
+
+  #content-type-list input {
+    margin: 0;
+    accent-color: var(--filter-color);
+    cursor: pointer;
   }
 
   .toolkit-empty-state {

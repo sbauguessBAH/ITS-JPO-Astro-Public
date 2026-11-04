@@ -70,7 +70,5 @@ onMounted(() => {
         <input id="searchInput" :value="searchQuery" type="text" class="news-filter-input" @input="updateSearchQuery" />
       </div>
     </div>
-
-    <button type="button" class="news-filter-clear" @click="clearFilters">Clear filters</button>
   </section>
 </template>

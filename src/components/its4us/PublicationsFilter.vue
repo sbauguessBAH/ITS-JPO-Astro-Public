@@ -133,7 +133,7 @@ const getAcronymTooltipId = (value) => `deployment-acronym-tooltip-${slugifyForI
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #b6b7bb;
 }
 
 .panel-title {
@@ -147,7 +147,7 @@ const getAcronymTooltipId = (value) => `deployment-acronym-tooltip-${slugifyForI
 }
 
 .panel-section {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #b6b7bb;
 }
 
 .panel-section:last-child {
@@ -160,7 +160,7 @@ const getAcronymTooltipId = (value) => `deployment-acronym-tooltip-${slugifyForI
   padding: 0.75rem 1rem;
   margin: 0;
   background: rgb(249, 250, 251);
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #b6b7bb;
 }
 
 .panel-item {
@@ -170,7 +170,7 @@ const getAcronymTooltipId = (value) => `deployment-acronym-tooltip-${slugifyForI
   align-items: center;
   text-decoration: none;
   border: none;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #b6b7bb;
   padding: 0.5rem 1rem;
   font-weight: 600;
   width: 100%;

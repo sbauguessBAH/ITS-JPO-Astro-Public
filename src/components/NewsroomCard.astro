@@ -1,5 +1,6 @@
 ---
 import type { NewsroomCardItem, Newsletter, Toolkit } from "@/src/types";
+import base_url from "@/src/lib/base_url";
 
 type NewsroomCardInput = NewsroomCardItem | Toolkit | Newsletter;
 
@@ -71,6 +72,11 @@ const imageAltText = normalizedItem.title?.trim() || "Newsletter image";
 
 // External links open in a new tab with safe rel attributes.
 const isExternalUrl = Boolean(normalizedItem.url && /^https?:\/\//i.test(normalizedItem.url));
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const hasBasePath = normalizedItem.url === basePath || normalizedItem.url?.startsWith(`${basePath}/`);
+const cardHref = normalizedItem.url?.startsWith("/") && !normalizedItem.url.startsWith("//") && !hasBasePath
+  ? base_url(normalizedItem.url)
+  : normalizedItem.url;
 const shouldShowSubtitle = Boolean(normalizedItem.subtitle && (showSubtitle ?? !showPills));
 const pillItems = pillSource === "content_types" ? (normalizedItem.content_types?.length ? normalizedItem.content_types : normalizedItem.topics) : normalizedItem.topics;
 const shouldShowBadges = Boolean(showPills && pillItems?.length);
@@ -115,7 +121,7 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
       </div>
       {
         normalizedItem.url && (
-          <a href={normalizedItem.url} class={btnClass} target={isExternalUrl ? "_blank" : undefined} rel={isExternalUrl ? "noopener noreferrer" : undefined}>
+          <a href={cardHref} class={btnClass} target={isExternalUrl ? "_blank" : undefined} rel={isExternalUrl ? "noopener noreferrer" : undefined}>
             {ctaText}
           </a>
         )
