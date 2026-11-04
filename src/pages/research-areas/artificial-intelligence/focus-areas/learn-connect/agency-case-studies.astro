@@ -1,0 +1,113 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import "@/src/styles/ai-section.css";
+
+const caseStudies = [
+  {
+    agency: "Nebraska Department of Transportation",
+    title: "Machine Learning-Enhanced Roadway Asset Identification and Classification",
+    summary: "Statewide guardrail and endcap inventory plus classification of more than 1,300 marked crosswalks, with agency review of all model outputs",
+    tags: ["Asset management", "Pilot project"],
+    document: "/assets/documents/ai/Asset.Management.and.Machine.Learning.CaseStudy_NebraskaDOT_Final.pdf",
+  },
+  {
+    agency: "North Carolina Department of Transportation",
+    title: "Crash Scene Reconstruction Using Unmanned Aircraft System Imagery",
+    summary: "Reduced crash scene mapping time from 1 hour and 51 minutes to 25 minutes (~77% faster), with measurement accuracy within 0.03 feet",
+    tags: ["Transportation safety \u2013 crash reconstruction", "Exploratory research/field demonstration"],
+    document: "/assets/documents/ai/Drone.Imagery.Analytics.CaseStudy_NCDOT_Final.pdf",
+  },
+];
+---
+
+<PageLayout title="Agency Case Studies" bannerImage={banner}>
+  <Fragment slot="banner">Artificial Intelligence (AI)</Fragment>
+  <main>
+    <h2>Agency Case Studies</h2>
+    <p>
+      Explore case studies from peer agencies to learn how they applied advanced analytics and intelligence solutions in transportation to meet their needs. Learn about current effective
+      practices, lessons learned, and key outcomes from exploratory research, pilots, and larger deployments.
+    </p>
+
+    <div class="row mt-4">
+      {caseStudies.map((study) => (
+        <div class="col-lg-6 mb-4">
+          <article class="card case-study-card h-100">
+            <div class="card-body d-flex flex-column">
+              <p class="case-study-agency">{study.agency}</p>
+              <h3 class="card-title">{study.title}</h3>
+              <p class="case-study-summary">{study.summary}</p>
+              <ul class="case-study-tags list-unstyled d-flex flex-wrap">
+                {study.tags.map((tag) => <li>{tag}</li>)}
+              </ul>
+              <a
+                href={base_url(study.document)}
+                class="btn Pagebtn case-study-download mt-auto"
+                download
+                aria-label={`Download ${study.agency} case study (PDF)`}
+              >
+                DOWNLOAD
+              </a>
+            </div>
+          </article>
+        </div>
+      ))}
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .case-study-card .card-body {
+    padding: 1.5rem;
+  }
+
+  .case-study-agency {
+    color: var(--ai-blue-teal);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .case-study-card h3 {
+    color: var(--ai-text-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .case-study-summary {
+    color: var(--ai-text-light);
+  }
+
+  .case-study-tags {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-study-tags li {
+    background-color: #ececf6;
+    border-radius: 2rem;
+    color: var(--ai-text-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .case-study-download {
+    background-color: #efcc1c;
+    color: #000;
+    white-space: normal;
+  }
+
+  .case-study-download:hover {
+    background-color: #dbba14;
+    color: #000;
+  }
+
+  .case-study-download:focus-visible {
+    outline: 3px solid var(--ai-blue-secondary);
+    outline-offset: 3px;
+  }
+</style>

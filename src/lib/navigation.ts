@@ -91,6 +91,7 @@ export const navigation: NavigationItem[] = [
                   { name: "AI Definitions & Concepts", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-definitions-concepts" },
                   { name: "AI Methods & Sub-Methods", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-methods-sub-methods" },
                   { name: "AI Procurement National Webinar", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-procurement-national-webinar" },
+                  { name: "Agency Case Studies", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/agency-case-studies" },
                 ],
               },
             ],

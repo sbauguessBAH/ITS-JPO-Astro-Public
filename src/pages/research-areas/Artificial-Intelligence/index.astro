@@ -7,7 +7,7 @@ import intelligenceInMotionBg from "@/src/assets/images/ai/intelligenc-in-motion
 import getAIReadyImage from "@/src/assets/images/ai/GetAIReady.png";
 import putAIIntoPracticeImage from "@/src/assets/images/ai/PutAIIntoPractice.png";
 import learnConnectImage from "@/src/assets/images/ai/Learn-Connect.jpeg";
-import procurementWebinarImage from "@/src/assets/images/ai/JPO-National-AI-Procurement-Webinar-Image.jpg";
+import procurementWebinarImage from "@/src/assets/images/ai/SI-Spotlight-Procurement-webinar.jpg";
 import "@/src/styles/ai-section.css";
 ---
 
@@ -20,10 +20,10 @@ import "@/src/styles/ai-section.css";
       <h2 class="text-white">Transforming Transportation with AI</h2>
     </div>
     <p class="read-more-wrap pt-0">
-      The Intelligent Transportation Systems Joint Program Office (ITS JPO) Artificial Intelligence Program is driving innovation in surface transportation through responsible AI development and adoption. The ITS JPO works collaboratively with State, local,
-      and regional partners as well as Tribal Nations to develop, test, and deploy AI solutions that make our transportation systems safer, more efficient, productive, and resilient. By engaging
-      private industry, original equipment manufacturers (OEMs), national associations, and leading academic institutions, we bridge the gap between cutting-edge research
-      and real-world deployment.
+      The Intelligent Transportation Systems Joint Program Office (ITS JPO) Artificial Intelligence Program is driving innovation in surface transportation through responsible AI development and
+      adoption. The ITS JPO works collaboratively with State, local, and regional partners as well as Tribal Nations to develop, test, and deploy AI solutions that make our transportation systems
+      safer, more efficient, productive, and resilient. By engaging private industry, original equipment manufacturers (OEMs), national associations, and leading academic institutions, we bridge the
+      gap between cutting-edge research and real-world deployment.
     </p>
     <p class="read-more-wrap pt-0">
       From real-world pilots to practical guidance and tools, we're helping transportation agencies harness AI's transformative potential across varied transportation modes and use cases.
@@ -73,30 +73,25 @@ import "@/src/styles/ai-section.css";
         <!-- Spotlight: National Webinar -->
         <div class="spotlight-card rounded-4 overflow-hidden mb-4">
           <div class="row g-0 h-100">
-            <div class="col-md-7 d-flex flex-column justify-content-center p-4 p-lg-5">
-              <span class="spotlight-tag mb-3">Recording Available</span>
-              <h3 class="text-white fw-bold mb-3">National Webinar: Demystifying AI Procurement</h3>
-              <p class="text-white mb-3" style="opacity: 0.9;">Discover actionable strategies from agencies navigating AI procurement across the multimodal transportation landscape.</p>
-              <p class="spotlight-date mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16" style="vertical-align: -2px;">
-                  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                </svg>
-                Held on September 17, 2026 &nbsp;&bull;&nbsp; 1:00 PM–4:00 PM ET &nbsp;&bull;&nbsp; Virtual
+            <div class="col-md-7 d-flex flex-column justify-content-center p-4 p-lg-5 spotlight-gradient">
+              <span class="spotlight-tag mb-3">Featured Resource</span>
+              <h3 class="text-white fw-bold mb-3">Agency Case Studies</h3>
+              <p class="text-white mb-3" style="opacity: 0.9;">
+                Explore how transportation agencies are applying advanced analytics and intelligence solutions to real-world transportation challenges. Discover effective practices, lessons learned,
+                and key outcomes from research, pilot programs, and larger deployments.
               </p>
+
               <div>
-                <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-procurement-national-webinar")} class="btn btn-light fw-semibold px-4">Learn More</a>
+                <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect/agency-case-studies")} class="btn btn-light fw-semibold px-4">EXPLORE CASE STUDIES</a>
               </div>
             </div>
             <div class="col-md-5 spotlight-img-col">
-              <Image src={procurementWebinarImage} alt="National Webinar: Demystifying AI Procurement" class="spotlight-img" />
+              <Image src={procurementWebinarImage} alt="Agency Case Studies" class="spotlight-img" />
             </div>
           </div>
         </div>
-
       </div>
-      </div>
-
-
+    </div>
 
     <!-- <h2>Objectives and Approach</h2>
 
@@ -171,10 +166,14 @@ import "@/src/styles/ai-section.css";
 </PageLayout>
 <style>
   .spotlight-card {
-    background: linear-gradient(120deg, #01141e 0%, #0a5c8a 55%, #05547e 100%);
     box-shadow: 0 6px 24px rgba(3, 43, 82, 0.25);
     max-height: 350px;
   }
+
+   .spotlight-gradient{
+        background: linear-gradient(90deg, #01141e 0%, #0a5c8a 100%);
+
+   }
 
   .spotlight-tag {
     display: inline-block;
@@ -198,6 +197,15 @@ import "@/src/styles/ai-section.css";
   .spotlight-img-col {
     position: relative;
     min-height: 0;
+  }
+
+  .spotlight-img-col::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, #0a5c8a 1%, transparent 50%);
+    pointer-events: none;
   }
 
   .spotlight-img {
