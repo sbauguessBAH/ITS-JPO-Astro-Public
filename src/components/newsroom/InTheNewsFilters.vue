@@ -51,7 +51,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="news-filter-panel" aria-label="In the News filters">
+  <section class="news-filter-panel row g-4  my-2 p-3 pt-0" aria-label="In the News filters">
     <div class="news-filter-grid">
 
       <div class="news-filter-field">
