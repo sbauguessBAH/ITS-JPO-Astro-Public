@@ -6,7 +6,7 @@ Source: `Copy of AI_to_SI_Language_Update_Tracker_ITS JPO_Website.xlsx`, includi
 
 ## Scope
 
-Updated current website copy from **Artificial Intelligence / AI** to **Super Intelligence / SI**, following the workbook's exemptions for historical documents, existing awards, and third-party content.
+Updated website copy, including older ITS JPO newsletters, from **Artificial Intelligence / AI** to **Super Intelligence / SI**, following the workbook's specific exemptions for historical documents, existing awards, and third-party content. A newsletter's age alone does not exempt its agency-authored copy from this update.
 
 The branch already contained the renamed `super-intelligence` directory and SI page filenames. This update completes the remaining copy and links; it does not claim those earlier file moves as new work.
 
@@ -40,7 +40,7 @@ The branch already contained the renamed `super-intelligence` directory and SI p
 | [Intersection Safety Challenge](src/pages/research-areas/intersection-safety/challenge.astro) | General challenge summary now uses SI. Submitted team/project names and descriptions retain their original wording, with a historical note. | Keyword Scrub row 17; guidance exemptions |
 | [ITS4US](src/pages/research-areas/ITS4US/index.astro) | Technology bullet now reads `Super Intelligence (SI) and Machine Learning (ML)`. | Keyword Scrub row 19 |
 | [PCB Early Career](src/pages/resources/pcb/early-career/index.astro) | ITS Careers and Student Competitions descriptive copy now use SI. | Keyword Scrub row 52 |
-| [Newsletter Archive](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/index.astro) | Current July/September listing descriptions use SI; added a note that historical issues and event names retain their original terminology. | Guidance: historical documents |
+| [Newsletter Archive](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/index.astro) | July, August Flash, and September listing descriptions use SI. Removed the blanket notice exempting historical newsletter issues. | Newsletter scope clarified during review |
 | [November Newsletter](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/november-2026.astro) | Webinar link updated to the renamed SI page. Existing content, formatting, and heading sizes are preserved. | Internal-link continuity |
 | [Redirect Configuration](astro.config.mjs) | Added 27 canonical legacy AI-to-SI page redirects and corrected the older short planning/design alias. All 28 entries specify status 301. | Content Detail rows 3, 17, 20, 25, 28, 31, 35, 38 |
 
@@ -60,10 +60,20 @@ For each of these 11 existing award/project pages, updated the program banner an
 - [Skylite Geo LLM](src/pages/research-areas/super-intelligence/focus-areas/put-si-into-practice/transportation-planning-design/projects/skylite-geollm-platform.astro)
 - [Urbanomy](src/pages/research-areas/super-intelligence/focus-areas/put-si-into-practice/transportation-planning-design/projects/urbanomy-si-decision-support.astro)
 
-Historical notes were also added to the [May](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026.astro), [July](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026.astro), [August Flash](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/august-2026-flash.astro), and [September](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/september-2026.astro) newsletters. Their originally published AI wording was not rewritten.
+## Newsletter Scope Correction
+
+Older mailing-list newsletters are included in the SI migration. Removed the blanket historical-newsletter notices from all four issues below; updated agency-authored prose, descriptive article headings, link labels, alternative text, and metadata wherever applicable. URLs, asset filenames, and article fragment IDs were not changed.
+
+- [May](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026.astro): conference-booth promotional copy now refers to SI and V2X technology. The exact cited presentation title, `Bridging the Gap: USDOT Resources for Trustworthy AI Implementations`, remains unchanged.
+- [July](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026.astro): program names, staff role, website-revamp story, decision-making technology, webinar summaries, recording-link labels, alternative text, and keywords now use SI. Exact quoted webinar/presentation titles retain their original wording.
+- [August Flash](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/august-2026-flash.astro): procurement copy, keywords, description, alternative text, and the descriptive headline now use SI. The headline is `National Webinar on SI Procurement`, rather than a rewritten quotation of the original event title.
+- [September](src/pages/about/contact-us/mailinglist/ITS-JPO-NOW/september-2026.astro): program references, the planning/design initiative, decision-making technology, procurement copy, descriptive headings, alternative text, and metadata now use SI. RIDOT's original third-party event/session names and exact cited presentation/resource titles retain their original wording.
+
+The remaining AI wording in these newsletter pages is limited to specific source titles, third-party event/session names, and technical references such as URLs and fragment IDs, not a blanket historical exemption for newsletter content.
 
 ## Review Decisions and Remaining Work
 
+- **Newsletter eligibility:** older newsletters remain in scope. Exemptions are applied to individual cited documents, titles, or third-party material, not automatically to an entire issue. This corrects the earlier broad historical-newsletter interpretation.
 - **Historical webinar:** retained the recording promotion and original event title, rather than retroactively renaming it. The tracker reviewer suggested removing the past-event promotion; removal remains an editorial decision. Current surrounding promotional copy uses SI.
 - **Glossary:** original sourced definitions and legal citations remain unchanged. An approved federal SI definition was not supplied in the workbook, so none was invented or substituted for the historical AI definition.
 - **Images and multimedia:** existing graphics may still visibly contain AI text, including the planning/design logo and older resource thumbnails. Replacement artwork, edited recordings, and revised slide decks require approved source assets. File paths were deliberately not renamed.
@@ -73,8 +83,10 @@ Historical notes were also added to the [May](src/pages/about/contact-us/mailing
 
 ## Verification
 
-- Full Astro check: **198 files, 0 errors, 0 warnings, 98 hints**. Existing unused-import and similar hints were not cleaned up as part of this language-only change.
-- Focused compiler check: **all 40 changed Astro files compile**.
+- Full Astro check for the initial migration, before the newsletter follow-up: **198 files, 0 errors, 0 warnings, 98 hints**. Existing unused-import and similar hints were not cleaned up as part of this language-only change.
+- Initial migration compiler check: **all 40 changed Astro files compile**.
+- Newsletter follow-up compiler check: **all five updated pages compile** (May, July, August Flash, September, and the archive index); the four blanket historical-newsletter notices were removed.
+- Newsletter wording audit: **all seven newsletter pages reviewed**; remaining AI wording in rendered text and accessible labels matches the explicit list of retained cited titles and third-party event/session names.
 - Link audit: **29 SI href references checked**, with existing destination pages.
 - Redirect audit: **28 unique legacy redirect entries**, all status 301 and all pointing to existing SI pages.
 - Local browser redirect checks: the legacy AI landing page and `overview/how-ai-works/` both returned **HTTP 301** and reached their SI destinations.
