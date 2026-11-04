@@ -63,6 +63,7 @@ onMounted(() => {
           :options="props.technologyAreasList"
           @update:model-value="updateTechnologyAreas"
         />
+        <div class="form-text">Click to open, then check items to select multiple.</div>
       </div>
 
       <div class="news-filter-field">
