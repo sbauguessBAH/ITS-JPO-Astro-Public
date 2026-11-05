@@ -30,6 +30,14 @@ Agency-authored SI terminology updates outside the AI program, retaining the rev
 - Outside-page links continue to target existing AI program URLs, even where their surrounding public-facing copy uses SI. The homepage link and November newsletter webinar link do not depend on deferred SI routes.
 - Assets, PDFs, videos, email addresses, technical identifiers, and externally controlled names were not renamed or edited as part of this split.
 
+## First-Use Terminology
+
+Updated November 5, 2026: the first reader-facing use of SI on each in-scope page is introduced as **Super Intelligence (SI)**. Later mentions may use SI alone. Metadata or a later expansion does not substitute for introducing the term in the visible content.
+
+The schedule, newsletter/archive pages, and news introductions were checked in reading order. Where image alternative text appears before the visible introduction, it also spells out the term. The deferred AI program and quoted source titles remain unchanged.
+
+Validation: all 13 in-scope Astro pages/components and eight Markdown pages containing reader-facing SI passed the first-use audit, including both earlier image alternative-text occurrences. Edited Astro pages compile, and the four updated Markdown introductions pass frontmatter parsing and rendering.
+
 ## Review
 
 Compare this branch with `main` to review only the outside-program work. The complete program migration remains available separately on `feature/ai-to-si`.
