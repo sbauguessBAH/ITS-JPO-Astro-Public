@@ -14,6 +14,7 @@ const { date, image, title } = post.data;
 const markdownString = post.body?.slice(0, 600);
 
 // Define a function to remove Markdown syntax
+// @ts-expect-error TODO: type param
 function removeMarkdownSyntax(str) {
   return str
   .replace(/\*\*([^*]+)\*\*/g, '$1')
