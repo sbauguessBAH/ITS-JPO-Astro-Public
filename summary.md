@@ -35,3 +35,13 @@ Agency-authored SI terminology updates outside the AI program, retaining the rev
 Compare this branch with `main` to review only the outside-program work. The complete program migration remains available separately on `feature/ai-to-si`.
 
 The earlier full-program validation results belong to the original branch; they are not presented as verification of this isolated branch.
+
+## Verification for This Branch
+
+- 29 changed source files checked: 15 Astro files compiled and 14 Markdown files passed frontmatter parsing and rendering.
+- AI program files, navigation, and redirect configuration verified identical to `main`.
+- No outside-page links depend on the deferred `/research-areas/super-intelligence` routes.
+- URLs, email addresses, source image imports, and stylesheet imports verified unchanged from `main`.
+- Original `feature/ai-to-si` branch verified unchanged at `7eaf81f`.
+- All 18 local review links in this summary resolve to existing files.
+- Full Astro check: 199 files, 0 errors, 0 warnings, 101 hints.
