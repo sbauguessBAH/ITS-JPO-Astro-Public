@@ -3,7 +3,10 @@ import vue from "@astrojs/vue";
 
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
+
 import { loadEnv } from "vite";
+
+import tailwindcss from "@tailwindcss/vite";
 
 /** Load the BASE_URL from a `.env` file */
 const { BASE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), "");
@@ -34,5 +37,11 @@ export default defineConfig({
     "/research_areas/emerging_tech/htm/Next_landing.htm": "/research-areas/V2X-Deployment",
     "/research-areas/artificial-intelligence/transportation-planning-design": "/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice/transportation-planning-design"
   
+  },
+  vite: {
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["@storybook/addon-docs"],
+    },
   },
 });

@@ -1,0 +1,70 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+import Heading from "../../elements/heading/Heading.astro";
+import PageContainer from "./PageContainer.astro";
+
+type Props = Omit<HTMLAttributes<"header">, "title"> & {
+  /** Intro text below the title */
+  description?: string;
+  /** Small text above the title */
+  headline?: string;
+  /** Width of the inner container */
+  size?: "default" | "sm";
+  /** Main title */
+  title?: string;
+};
+
+const {
+  class: className,
+  description,
+  headline,
+  size = "default",
+  title,
+  ...rest
+} = Astro.props;
+
+const hasHeadline = !!headline || Astro.slots.has("headline");
+const hasTitle = !!title || Astro.slots.has("title");
+const hasDescription = !!description || Astro.slots.has("description");
+---
+
+<header
+  class={cn("tw:w-full", className)}
+  data-slot="ui-page_header"
+  {...rest}
+>
+  <PageContainer class="tw:flex tw:flex-col tw:gap-1" size={size}>
+    {
+      hasHeadline && (
+        <div
+          class="tw:text-sm tw:font-semibold tw:tracking-wide tw:text-muted-foreground tw:uppercase"
+          data-slot="ui-page_header-headline"
+        >
+          <slot name="headline">{headline}</slot>
+        </div>
+      )
+    }
+    {
+      hasTitle && (
+        <Heading data-slot="ui-page_header-title">
+          <slot name="title">{title}</slot>
+        </Heading>
+      )
+    }
+    {
+      hasDescription && (
+        // tw:max-w-3xl
+        <div
+          class="tw:flex tw:flex-col tw:gap-4 tw:text-lg tw:leading-relaxed tw:[&_p]:m-0!"
+          data-slot="ui-page_header-description"
+        >
+          <slot name="description">{description}</slot>
+        </div>
+      )
+    }
+    <slot />
+  </PageContainer>
+</header>
