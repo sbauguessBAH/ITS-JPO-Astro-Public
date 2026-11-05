@@ -14,7 +14,7 @@ location:
   - Urban
 facility:
   - Interchange
-  - Freeway
+  - Freeway Segment
 safety:
   - Roadway Departure
   - Speeding

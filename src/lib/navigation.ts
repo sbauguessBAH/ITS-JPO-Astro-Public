@@ -243,11 +243,11 @@ export const navigation: NavigationItem[] = [
         ],
       },
       {
-        name: "Roadway Safety Toolkit",
+        name: "ITS Toolkit for Roadway Safety",
         url: "/research-areas/roadway-safety-toolkit",
         pages: [
           {
-            name: "Roadway Safety Toolkit Home",
+            name: "ITS Toolkit for Roadway Safety Home",
             url: "/research-areas/roadway-safety-toolkit",
           },
           {
