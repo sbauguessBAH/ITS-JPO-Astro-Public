@@ -130,9 +130,9 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
   sectionNavigationPath="/news-outreach-tools/newsroom/media-kits"
 >
   <Fragment slot="banner">Newsroom</Fragment>
-  <main class="my-5 toolkit-page">
+  <main class="toolkit-page">
   <div class="toolkit-header d-grid gap-3">
-    <h1 class="sideways blue kit-page-title">{page.title}</h1>
+    <h1 class="sideways kit-page-title">{page.title}</h1>
     {page.intro && <p class="kit-copy kit-page-intro">{page.intro}</p>}
   </div>
 
@@ -217,11 +217,7 @@ const getVideoEmbedSrc = (value?: string): string | undefined => {
 
                         <div class="kit-thumb-body">
                           {
-                            primaryHref ? (
-                              <a href={primaryHref} class="kit-thumb-title-link">
-                                <h4 class="kit-thumb-title">{item.title}</h4>
-                              </a>
-                            ) : (
+                            (
                               <h4 class="kit-thumb-title">{item.title}</h4>
                             )
                           }

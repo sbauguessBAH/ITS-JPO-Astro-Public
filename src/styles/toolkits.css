@@ -7,6 +7,7 @@
   --kit-surface: #f4f6f8;
   --kit-surface-dark: #F5F5F5;
   --kit-highlight: #f2c84b;
+  --kit-button-hover: #66a3cc;
   --kit-shadow: 0 18px 38px rgba(7, 46, 85, 0.08);
   display: flex;
   flex-direction: column;
@@ -30,6 +31,8 @@
   margin: 0;
   font-size: 32px;
   text-wrap: balance;
+  color: #055681;
+  text-transform: none;
 }
 
 .kit-copy {
@@ -340,13 +343,14 @@
   border-radius: 999px;
   background: var(--kit-highlight);
   color: #1d2430;
-  box-shadow: 0 10px 20px rgba(242, 200, 75, 0.3);
+  box-shadow: 0 5px 10px rgba(70, 70, 70, 0.2);
 }
 
 .kit-thumb-secondary.is-button:hover,
 .kit-thumb-secondary.is-button:focus-visible {
-  color: #1d2430;
+  color: #fff;
   transform: translateY(-1px);
+  background: var(--kit-button-hover);
 }
 
 .kit-thumb-secondary.is-link {
