@@ -1,31 +1,31 @@
 ---
-import type { CollectionEntry } from "astro:content";
-
 import { getCollection } from "astro:content";
-
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import LibraryImage from "@/src/components/programs/LibraryImage.astro";
-import { getEntry } from "astro:content";
 import { render } from "astro:content";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import Layout from "../_layout.astro";
-import Link from "@/src/components/Link.astro";
 
+import CopyButton from "@/src/components/ui/blocks/copy-button/CopyButton.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import Button from "@/src/components/ui/elements/button/Button.astro";
+import Card from "@/src/components/ui/elements/card/Card.astro";
+import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
+import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
+import Icon from "@/src/components/ui/icon/Icon.astro";
+
+import Layout from "../_layout.astro";
 
 export async function getStaticPaths() {
   const modules = await getCollection("pcbModules");
   return modules.map((module) => ({
     params: { id: module.id },
     props: { module },
-  }))
+  }));
 }
 
 const { module } = Astro.props;
-const { Content,  } = await render(module);
+const { Content } = await render(module);
 ---
+
 <style lang="scss">
   $screen-lg: 992px;
 
@@ -42,17 +42,6 @@ const { Content,  } = await render(module);
   .module-meta {
     @media (min-width: $screen-lg) {
       flex-basis: 30%;
-    }
-
-    .meta-header {
-      padding: 0;
-      margin: 0;
-
-      .meta-image {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-      }
     }
 
     .meta-disclaimer {
@@ -72,11 +61,6 @@ const { Content,  } = await render(module);
       font-weight: 600;
       color: rgb(var(--color-gray));
     }
-
-    .meta-body {
-      padding: var(--size);
-    }
-
     .meta-attributes {
       margin-bottom: 0;
       display: grid;
@@ -103,8 +87,6 @@ const { Content,  } = await render(module);
         line-height: 1.2;
       }
     }
-
-    
   }
 
   .module-content {
@@ -114,53 +96,62 @@ const { Content,  } = await render(module);
   }
 </style>
 <Layout>
-  <ProgramSection>
-    <div class="module-layout">
-      <div class="module-content">
-        <h2 class="program-title-lg mb-4">{module.data.title}</h2>
-        <Content />
-      </div>
-      <div class="module-meta">
-        <Card radius="md" shadow="sm">
-          <CardHeader class="meta-header">
-            <LibraryImage entry={module.data.image} class="meta-image" />
-          </CardHeader>
-          <CardBody class="meta-body">
-            <dl class="meta-attributes">
-              <!-- <div class="meta-attribute"> -->
+  <Page>
+    <PageHeader title={module.data.title} />
+    <Section>
+      <div class="module-layout">
+        <div class="module-content">
+          <Content />
+        </div>
+        <div class="module-meta">
+          <Card>
+            <CardImage entry={module.data.image} height={250} />
+            <CardContent>
+              <dl class="meta-attributes">
+                <!-- <div class="meta-attribute"> -->
                 <dt>Name</dt>
                 <dd>{module.data.title}</dd>
-              <!-- </div> -->
-              <!-- <div class="meta-attribute"> -->
+                <!-- </div> -->
+                <!-- <div class="meta-attribute"> -->
                 <dt>Number</dt>
-                <dd>{module.data.source.id}</dd>
-              <!-- </div> -->
-              <!-- <div class="meta-attribute"> -->
+                <dd>
+                  <CopyButton
+                    label={module.data.source.id}
+                    text={module.data.source.id}
+                  />
+                </dd>
+                <!-- </div> -->
+                <!-- <div class="meta-attribute"> -->
                 <dt>Type</dt>
                 <dd>{module.data.type}</dd>
-              <!-- </div> -->
-              <!-- <div class="meta-attribute"> -->
+                <!-- </div> -->
+                <!-- <div class="meta-attribute"> -->
                 <dt>Source</dt>
                 <dd>{module.data.source.name}</dd>
-              <!-- </div> -->
-            </dl>
-            <hr class="meta-divider" />
-            <p class="meta-disclaimer">
-              This link will take you to the NHI Catalog. Search for the course name or number to register.
-            </p>
-            <Link 
-              isExternal 
-              variant="button" 
-              href={module.data.source.url} 
-              class="text-center"
-            >
-              Register
-            </Link>
-          </CardBody>
-        </Card>
+                <!-- </div> -->
+              </dl>
+              <hr class="meta-divider" />
+              <p class="meta-disclaimer">
+                This link will take you to the NHI Catalog. Search for the
+                course name or number to register.
+              </p>
+              <Button
+                class="ui:w-fit"
+                link={{
+                  href: module.data.source.url,
+                  isExternal: true,
+                }}
+                size="lg"
+              >
+                Register
+                <Icon name="external-link" />
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
       </div>
-    </div>
-  </ProgramSection>
+    </Section>
+  </Page>
 </Layout>
 <script>
   const content = document.querySelector(".module-content");

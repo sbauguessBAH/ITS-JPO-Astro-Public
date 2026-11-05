@@ -299,12 +299,16 @@ export const navigation: NavigationItem[] = [
               {
                 name: "Applying Systems Engineering to ITS Projects",
                 url: "/resources/pcb/early-career/applying-se-to-its-projects",
-              }
-            ]
+              },
+            ],
           },
           {
             name: "Technical Assistance",
             pages: [
+              {
+                name: "V2X Interoperability Help Desk",
+                url: "/resources/pcb/technical-assistance/help-desk",
+              },
               {
                 name: "Connected and Automated Vehicle Education (CAVe)",
                 url: "/resources/pcb/technical-assistance/cave",
@@ -355,14 +359,21 @@ function checkIfDuplicateExists(pages: AnyNavigationItem[]) {
  *  - Make sure there are no duplicate URLs in the same page list
  *  - Make sure that every child page includes the full parent page path
  */
-export function validateNavigation(navigationItems: AnyNavigationItem[], parentItem?: AnyNavigationItem) {
+export function validateNavigation(
+  navigationItems: AnyNavigationItem[],
+  parentItem?: AnyNavigationItem,
+) {
   if (checkIfDuplicateExists(navigationItems)) {
-    throw new Error(`Duplicate page routes exist under section: ${parentItem ? `${parentItem.name} (${parentItem.url})` : "Main"}`);
+    throw new Error(
+      `Duplicate page routes exist under section: ${parentItem ? `${parentItem.name} (${parentItem.url})` : "Main"}`,
+    );
   }
   for (const item of navigationItems) {
     if (parentItem && !item.isExternal) {
       if (!item.url.startsWith(parentItem.url)) {
-        throw new Error(`Page route for ${item.name} (${item.url}) does not include parent route: ${parentItem.url}`);
+        throw new Error(
+          `Page route for ${item.name} (${item.url}) does not include parent route: ${parentItem.url}`,
+        );
       }
     }
     if (item.pages) {
@@ -377,7 +388,9 @@ export function validateNavigation(navigationItems: AnyNavigationItem[], parentI
  * @returns
  */
 export function getTrimmedPathname(pathname: string): string {
-  const path = pathname.endsWith("/") ? pathname.slice(0, pathname.length - 1) : pathname;
+  const path = pathname.endsWith("/")
+    ? pathname.slice(0, pathname.length - 1)
+    : pathname;
   const basePath = import.meta.env.BASE_URL;
   const trimmedPath = basePath !== "/" ? path.replace(basePath, "") : path;
   return trimmedPath;
@@ -398,10 +411,85 @@ export function comparePathname(currentPath: string, pageUrl: string, startsWith
 // Generate a breadcrumb item type from a navigation item
 export function generateBreadcrumbItem(navigationItem: AnyNavigationItem) {
   return {
+    isEnabled: navigationItem.isEnabled || false,
     name: navigationItem.name,
     url: navigationItem.url,
-    isEnabled: navigationItem.isEnabled || false,
   };
+}
+
+export function findBreadcrumbItem(
+  pathname: string,
+): [
+  NavigationItem | undefined,
+  ChildNavigationItem | undefined,
+  ChildNavigationItem | undefined,
+  ChildNavigationItem | undefined,
+] {
+  const trimmedPathname = getTrimmedPathname(pathname);
+
+  // Find the parent section--if it doesn't exist, then there's no matching navigation item
+  const section = navigation.find((section) =>
+    trimmedPathname.startsWith(section.url),
+  );
+  if (!section) return [undefined, undefined, undefined, undefined];
+
+  for (const page of section.pages) {
+    // if (trimmedPathname === page.url) return [page, undefined];
+    if (trimmedPathname.startsWith(page.url)) {
+      if (page.pages) {
+        for (const subPage of page.pages) {
+          if (trimmedPathname === subPage.url)
+            return [section, page, subPage, undefined];
+          if (trimmedPathname.includes(subPage.url) && subPage.pages) {
+            for (const subSubPage of subPage.pages) {
+              if (trimmedPathname === subSubPage.url)
+                return [section, page, subPage, subSubPage];
+            }
+          }
+        }
+      } else {
+        return [section, page, undefined, undefined];
+      }
+    }
+  }
+  return [section, undefined, undefined, undefined];
+}
+
+export function findNavigationItem(
+  pathname: string,
+): [
+  ChildNavigationItem | undefined,
+  ChildNavigationItem | undefined,
+  ChildNavigationItem | undefined,
+] {
+  const trimmedPathname = getTrimmedPathname(pathname);
+
+  // Find the parent section--if it doesn't exist, then there's no matching navigation item
+  const section = navigation.find((section) =>
+    trimmedPathname.startsWith(section.url),
+  );
+  if (!section) return [undefined, undefined, undefined];
+
+  for (const page of section.pages) {
+    // if (trimmedPathname === page.url) return [page, undefined];
+    if (trimmedPathname.startsWith(page.url)) {
+      if (page.pages) {
+        for (const subPage of page.pages) {
+          if (trimmedPathname === subPage.url)
+            return [page, subPage, undefined];
+          if (trimmedPathname.includes(subPage.url) && subPage.pages) {
+            for (const subSubPage of subPage.pages) {
+              if (trimmedPathname === subSubPage.url)
+                return [page, subPage, subSubPage];
+            }
+          }
+        }
+      } else {
+        return [page, undefined, undefined];
+      }
+    }
+  }
+  return [undefined, undefined, undefined];
 }
 
 /**
@@ -418,7 +506,9 @@ export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
 
   const breadcrumbs: BreadcrumbItem[] = [];
 
-  let navigationItem: AnyNavigationItem | undefined = navigation.find((section) => normalizedPathname.startsWith(section.url.toLowerCase()));
+  let navigationItem: AnyNavigationItem | undefined = navigation.find(
+    (section) => normalizedPathname.startsWith(section.url.toLowerCase()),
+  );
 
   while (navigationItem !== undefined) {
     // If it exists, add it to the current breadcrumb list
@@ -426,12 +516,16 @@ export function findBreadcrumbItems(pathname: string): BreadcrumbItem[] {
 
     // If it's an exact match, it's already been added
     // If it's not a match but there are no subpages, then there's nothing left to add
-    if (normalizedPathname === navigationItem.url.toLowerCase() || !navigationItem.pages) break;
+    if (
+      normalizedPathname === navigationItem.url.toLowerCase() ||
+      !navigationItem.pages
+    )
+      break;
 
     // Track the next best descendant; do not mutate in-loop to avoid stale/self references.
     let nextNavigationItem: AnyNavigationItem | undefined;
 
-    // If it's not an exact match, look through child items to see if there's an exact match
+    const nextItem: AnyNavigationItem | undefined = undefined;
     for (const page of navigationItem.pages) {
       const pageUrl = page.url.toLowerCase();
 
@@ -466,11 +560,14 @@ export function findSection(pathname: string): AnyNavigationItem | undefined {
   // Normalize case so route matching is stable across case-insensitive file systems.
   const normalizedPathname = trimmedPathname.toLowerCase();
 
-  let navigationItem: AnyNavigationItem | undefined = navigation.find((section) => normalizedPathname.startsWith(section.url.toLowerCase()));
+  let navigationItem: AnyNavigationItem | undefined = navigation.find(
+    (section) => normalizedPathname.startsWith(section.url.toLowerCase()),
+  );
 
   while (navigationItem !== undefined) {
     // If the item is an exact match, return it now
-    if (normalizedPathname === navigationItem.url.toLowerCase()) return navigationItem;
+    if (normalizedPathname === navigationItem.url.toLowerCase())
+      return navigationItem;
 
     // If there are no child pages, there's nothing left to match. Return undefined;
     if (!navigationItem.pages) return undefined;
@@ -489,64 +586,11 @@ export function findSection(pathname: string): AnyNavigationItem | undefined {
     }
 
     // Return undefined if traversal cannot progress to a deeper matching node.
-    if (!nextNavigationItem || nextNavigationItem === navigationItem) return undefined;
+    if (!nextNavigationItem || nextNavigationItem === navigationItem)
+      return undefined;
     navigationItem = nextNavigationItem;
   }
 
   // Catch undefined navigation item and return it
   return navigationItem;
-}
-
-export function findNavigationItem(pathname: string): [ChildNavigationItem | undefined, ChildNavigationItem | undefined, ChildNavigationItem | undefined] {
-  const trimmedPathname = getTrimmedPathname(pathname);
-
-  // Find the parent section--if it doesn't exist, then there's no matching navigation item
-  const section = navigation.find((section) => trimmedPathname.startsWith(section.url));
-  if (!section) return [undefined, undefined, undefined];
-
-  for (const page of section.pages) {
-    // if (trimmedPathname === page.url) return [page, undefined];
-    if (trimmedPathname.startsWith(page.url)) {
-      if (page.pages) {
-        for (const subPage of page.pages) {
-          if (trimmedPathname === subPage.url) return [page, subPage, undefined];
-          if (trimmedPathname.includes(subPage.url) && subPage.pages) {
-            for (const subSubPage of subPage.pages) {
-              if (trimmedPathname === subSubPage.url) return [page, subPage, subSubPage];
-            }
-          }
-        }
-      } else {
-        return [page, undefined, undefined];
-      }
-    }
-  }
-  return [undefined, undefined, undefined];
-}
-
-export function findBreadcrumbItem(pathname: string): [NavigationItem | undefined, ChildNavigationItem | undefined, ChildNavigationItem | undefined, ChildNavigationItem | undefined] {
-  const trimmedPathname = getTrimmedPathname(pathname);
-
-  // Find the parent section--if it doesn't exist, then there's no matching navigation item
-  const section = navigation.find((section) => trimmedPathname.startsWith(section.url));
-  if (!section) return [undefined, undefined, undefined, undefined];
-
-  for (const page of section.pages) {
-    // if (trimmedPathname === page.url) return [page, undefined];
-    if (trimmedPathname.startsWith(page.url)) {
-      if (page.pages) {
-        for (const subPage of page.pages) {
-          if (trimmedPathname === subPage.url) return [section, page, subPage, undefined];
-          if (trimmedPathname.includes(subPage.url) && subPage.pages) {
-            for (const subSubPage of subPage.pages) {
-              if (trimmedPathname === subSubPage.url) return [section, page, subPage, subSubPage];
-            }
-          }
-        }
-      } else {
-        return [section, page, undefined, undefined];
-      }
-    }
-  }
-  return [section, undefined, undefined, undefined];
 }

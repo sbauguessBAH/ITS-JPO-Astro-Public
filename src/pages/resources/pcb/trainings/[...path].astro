@@ -3,139 +3,65 @@ import type { CollectionEntry } from "astro:content";
 
 import { getCollection } from "astro:content";
 
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import CardFooter from "@/src/components/programs/card/CardFooter.astro";
-import CardHeader from "@/src/components/programs/card/CardHeader.astro";
-import LibraryImage from "@/src/components/programs/LibraryImage.astro";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
-import base_url from "@/src/lib/base_url";
+import ExternalLinkBadge from "@/src/components/ui/blocks/external-link-badge/ExternalLinkBadge.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Panel from "@/src/components/ui/blocks/panel/Panel.astro";
+import PanelGroup from "@/src/components/ui/blocks/panel/PanelGroup.astro";
+import PanelHeader from "@/src/components/ui/blocks/panel/PanelHeader.astro";
+import PanelItem from "@/src/components/ui/blocks/panel/PanelItem.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import Badge from "@/src/components/ui/elements/badge/Badge.astro";
+import Card from "@/src/components/ui/elements/card/Card.astro";
+import CardDescription from "@/src/components/ui/elements/card/CardDescription.astro";
+import CardFooter from "@/src/components/ui/elements/card/CardFooter.astro";
+import CardHeader from "@/src/components/ui/elements/card/CardHeader.astro";
+import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
+import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
 
 import Layout from "../_layout.astro";
 
-export const categories: { category?: string, title: string }[] = [
-  { category: undefined, title: "All Courses" },
-  { category: "its-basics", title: "ITS Basics" },
-  { category: "its-architecture", title: "ITS Architecture" },
-  { category: "systems-engineering", title: "Systems Engineering" },
-  { category: "v2x", title: "Vehicle-to-Everything (V2X)" },
-  { category: "tsmo", title: "Transportation Systems Management and Operations (TSMO)" },
-  { category: "rwm", title: "Road Weather Management (RWM)" },
-  { category: "tim", title: "Traffic Incident Management (TIM)" },
-  { category: "cybersecurity", title: "Cybersecurity" },
-  { category: "standards", title: "Standards" },
-]
-
 export function getStaticPaths() {
-  return categories.map(item => ({
-    params: {
-      path: item.category
+  const categories: { category?: string; title: string }[] = [
+    { category: undefined, title: "All Courses" },
+    { category: "its-basics", title: "ITS Basics" },
+    { category: "its-architecture", title: "ITS Architecture" },
+    { category: "systems-engineering", title: "Systems Engineering" },
+    { category: "v2x", title: "Vehicle-to-Everything (V2X)" },
+    {
+      category: "tsmo",
+      title: "Transportation Systems Management and Operations (TSMO)",
     },
-    props: {
-      title: item.title
-    }
-  }))
+    { category: "rwm", title: "Road Weather Management (RWM)" },
+    { category: "tim", title: "Traffic Incident Management (TIM)" },
+    { category: "cybersecurity", title: "Cybersecurity" },
+    { category: "standards", title: "Standards" },
+  ];
+
+  return categories.map((item) => ({
+    params: { path: item.category },
+    props: { categories, title: item.title },
+  }));
 }
 
 const { path } = Astro.params;
+const { categories } = Astro.props;
 
-const pathIsCategory = (entry: CollectionEntry<"pcbTrainings">, path?: string) => {
-  return !path || entry.data.category === path
-}
+const pathIsCategory = (
+  entry: CollectionEntry<"pcbTrainings">,
+  path?: string,
+) => {
+  return !path || entry.data.category === path;
+};
 
 // Load once and derive filtered views to avoid duplicating collection work at build time.
 const courses = await getCollection("pcbTrainings");
 const filteredCourses = courses.filter((entry) => pathIsCategory(entry, path));
-const getCourseCount = (path?: string) => courses.filter((entry) => pathIsCategory(entry, path)).length;
+const getCourseCount = (path?: string) =>
+  courses.filter((entry) => pathIsCategory(entry, path)).length;
 ---
-<style>
-  .trainings-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size);
-  }
 
-  @media (min-width: 992px) {
-    .trainings-container {
-      flex-direction: row;
-    }
-
-    .trainings-panel {
-      flex-basis: 25%;
-    }
-
-    .trainings {
-      flex-basis: 75%;
-    }
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--size)
-    }
-  }
-</style>
 <style>
-  .panel {
-    border-radius: var(--radius-md);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--border-light);
-    /* box-shadow: var(--box-shadow); */
-  }
-  .panel-title {
-    background: rgb(var(--color-brand-dark));
-    color: white;
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
-    padding: 1rem;
-    text-transform: none;
-    font-size: 1.4rem;
-    margin: 0;
-  }
-  .panel-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-decoration: none;
-    border-bottom: 1px solid var(--border-light);
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    /* color: black; */
-  }
-  .panel-count {
-    background: rgb(var(--color-gray-light));
-    padding: 0 0.75rem;
-    height: 1.5rem;
-    border-radius: var(--radius-lg)
-  }
-  .panel-item:hover {
-    font-weight: 600;
-    background: rgb(var(--color-brand-light));
-  }
-  .panel-item-active {
-    background: rgb(var(--color-brand-light));
-  }
-  .panel-item-active .panel-count {
-    background: rgb(var(--color-brand-dark));
-    color: white;
-  }
-  .panel-item-active:hover {
-    background: rgb(var(--color-brand-light));
-  }
-</style>
-<style>
-  .course-card:hover {
-    box-shadow: var(--box-shadow-lg);
-    background: rgba(var(--color-brand-light), 0.5);
-  }
-  .course-card-header {
-    padding: 0;
-    position: relative;
-  }
-  .course-card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
   .course-card-type {
     margin: 0;
     text-transform: uppercase;
@@ -148,113 +74,98 @@ const getCourseCount = (path?: string) => courses.filter((entry) => pathIsCatego
     color: white;
     background: rgb(var(--color-brand));
   }
-  .course-card-title {
-    text-transform: none;
-    margin: 0;
-    padding: 0;
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-  .course-card-body {
-    padding: var(--size);
-  }
   .course-card-category {
     margin: 0;
+    padding: 0;
     text-transform: uppercase;
     font-weight: 600;
     color: rgb(var(--color-gray));
   }
-  .course-card-footer {
-    padding: var(--size);
-    /* background: rgb(var(--color-gray-light)) */
-    color: rgb(var(--color-gray))
-  }
 </style>
 <Layout>
-  <main class="program-main">
-    <ProgramSection>
-      <h2 class="program-title-lg mb-4">
-        ITS Trainings
-      </h2>
-      <p class="program-text">
-        The ITS PCB Program offers a comprehensive suite of trainings covering a range 
-        of topics from foundational concepts to emerging transportation technologies. 
-        Discover and take these free trainings to help enhance your ITS knowledge and skills.
-      </p>
-      <p class="program-text mb-4">
-        For National Highway Institute (NHI) Trainings, the link will take you to the NHI catalog. From there, you can
-        search for the course you're interested in.
-      </p>
-      <div class="trainings-container">
-        <div class="trainings-panel">
-          <nav class="panel">
-            <h3 class="panel-title">Categories</h3>
-            {categories.filter(item => getCourseCount(item.category) > 0).map(item => (
-              <a 
-                class:list={["panel-item", {"panel-item-active": item.category === path }]}
-                data-bs-title={item.title}
-                data-bs-toggle="tooltip" 
-                href={base_url(`/resources/pcb/trainings/${item.category ?? ""}`)} 
-              >
-                <div class="panel-item-text">
-                  {item.title}
-                </div>
-                <div class="panel-count">
-                  {getCourseCount(item.category)}
-                </div>
-              </a>
-            ))}
-          </nav>
+  <Page>
+    <PageHeader title="ITS Trainings" />
+    <Section>
+      <div class="tw:flex tw:flex-col tw:gap-4">
+        <p class="program-text tw:m-0!">
+          The ITS PCB Program offers a comprehensive suite of trainings covering
+          a range of topics from foundational concepts to emerging
+          transportation technologies. Discover and take these free trainings to
+          help enhance your ITS knowledge and skills.
+        </p>
+        <p class="program-text tw:m-0!">
+          For National Highway Institute (NHI) Trainings, the link will take you
+          to the NHI catalog. From there, you can search for the course you're
+          interested in.
+        </p>
+      </div>
+      <div class="tw:flex tw:flex-col tw:gap-6 tw:lg:flex-row">
+        <div class="tw:basis-1/4">
+          <Panel label="Course categories">
+            <PanelHeader>Categories</PanelHeader>
+            <PanelGroup>
+              {
+                categories
+                  .filter((item) => getCourseCount(item.category) > 0)
+                  .map((item) => (
+                    <PanelItem
+                      active={item.category === path}
+                      data-bs-title={item.title}
+                      data-bs-toggle="tooltip"
+                      href={`/resources/pcb/trainings/${item.category ?? ""}`}
+                    >
+                      {item.title}
+                      <Fragment slot="end">
+                        {getCourseCount(item.category)}
+                      </Fragment>
+                    </PanelItem>
+                  ))
+              }
+            </PanelGroup>
+          </Panel>
         </div>
-        <div class="trainings">
-          <!-- <div class="course-grid">
-            {filteredCourses.map(course => (
-              <CourseCard {...course}/>
-            ))}
-          </div> -->
-          <div class="course-grid">
-            {filteredCourses.map(({ data: course }) => (
-              <Card 
-                class="course-card" 
-                href={course.url} 
-                isExternal={course.isExternal} 
-                radius="md"
-                shadow="sm"
-              >
-                <CardHeader class="course-card-header">
-                  {course.image && (
-                    <>
-                      <LibraryImage
-                        class="course-card-image"
-                        entry={course.image}
-                      />
-                      <p class="course-card-type">
-                        {course.type}
-                      </p>
-                    </>
+        <div class="tw:basis-3/4">
+          <div class="tw:grid tw:grid-cols-1 tw:gap-4 tw:md:grid-cols-2">
+            {
+              filteredCourses.map(({ data: course }) => (
+                <Card href={course.url} isExternal={course.isExternal}>
+                  <CardImage entry={course.image} height={200} />
+                  <Badge
+                    size="xl"
+                    style={{
+                      left: "8px",
+                      position: "absolute",
+                      textTransform: "uppercase",
+                      top: "8px",
+                    }}
+                  >
+                    {course.type}
+                  </Badge>
+                  {course.isExternal && (
+                    <ExternalLinkBadge color="neutral" size="xl" />
                   )}
-                </CardHeader>
-                <CardBody class="course-card-body">
-                  <p class="course-card-category">
+                  {/* <p class="course-card-type">
+                  {course.type}
+                </p> */}
+                  <CardHeader>
+                    <p class="course-card-category">
                       {course.category.replace("-", " ")}
                     </p>
-                  <h3 class="course-card-title mb-2">
-                    {course.title}
-                  </h3>
-                  <p class="course-card-description">
-                    {course.description}
-                  </p>
-                </CardBody>
-                {course.action === "Register" && (
-                  <CardFooter class="course-card-footer">
-                    This link will take you to the NHI Catalog. Search for the course name or number to register.
-                  </CardFooter>
-                )}
-              </Card>
-            ))}
+                    <CardTitle>{course.title}</CardTitle>
+                    <CardDescription>{course.description}</CardDescription>
+                  </CardHeader>
+                  {course.action === "Register" && (
+                    <CardFooter class="tw:text-muted-foreground">
+                      This link will take you to the NHI Catalog. Search for the
+                      course name or number to register.
+                    </CardFooter>
+                  )}
+                </Card>
+              ))
+            }
           </div>
         </div>
       </div>
-    </ProgramSection>
-  </main>
+    </Section>
+  </Page>
 </Layout>
