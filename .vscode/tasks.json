@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Validate isolated outside-program SI branch",
+			"type": "shell",
+			"command": "C:\\Program Files\\nodejs\\node.exe",
+			"args": [
+				"--input-type=module",
+				"-e",
+				"import fs from 'node:fs'; import {execFileSync} from 'node:child_process'; import {transform} from '@astrojs/compiler'; import {parseDocument} from 'yaml'; import {createMarkdownProcessor} from '@astrojs/markdown-remark'; const git=args=>execFileSync('git',args,{encoding:'utf8'}).trim(); const changed=git(['diff','--name-only','main']).split('\\n').filter(Boolean); const forbidden=changed.filter(filename=>/^src\\/pages\\/research-areas\\/(?:artificial-intelligence|super-intelligence)(?:\\/|$)/i.test(filename)).concat(changed.filter(filename=>['src/lib/navigation.ts','astro.config.mjs'].includes(filename))); if(forbidden.length)throw new Error('Deferred program changed: '+forbidden.join(', ')); if(git(['rev-parse','--short','feature/ai-to-si'])!=='7eaf81f')throw new Error('Original branch moved'); if(fs.existsSync('src/pages/research-areas/super-intelligence'))throw new Error('SI program directory should be absent'); const renderer=await createMarkdownProcessor(); const refs=source=>Array.from(source.matchAll(/(?:https?:\\/\\/|mailto:|@\\/src\\/assets\\/|@\\/src\\/styles\\/)[^\\s\\x22\\x27<>)}]+/g),match=>match[0]); let astro=0; let markdown=0; for(const filename of changed){ if(!filename.startsWith('src/'))continue; const source=fs.readFileSync(filename,'utf8'); const before=git(['show','main:'+filename]); if(source.includes('/research-areas/super-intelligence'))throw new Error('Deferred route: '+filename); if(JSON.stringify(refs(before))!==JSON.stringify(refs(source)))throw new Error('Protected reference changed: '+filename); if(filename.endsWith('.astro')){const result=await transform(source,{filename}); if(result.diagnostics.some(item=>item.severity===1))throw new Error('Astro compilation failed: '+filename); astro++;} if(filename.endsWith('.md')){const normalized=source.replaceAll('\\r\\n','\\n'); const front=normalized.match(/^---\\n([\\s\\S]*?)\\n---\\n/); if(!front)throw new Error('Missing frontmatter: '+filename); if(parseDocument(front[1]).errors.length)throw new Error('Invalid frontmatter: '+filename); await renderer.render(normalized.slice(front[0].length)); markdown++;}} console.log(JSON.stringify({branch:git(['branch','--show-current']),changedSourceFiles:changed.length,astroFilesCompiled:astro,markdownFilesValidated:markdown,deferredProgram:'identical to main',originalBranch:'preserved at 7eaf81f',protectedReferences:'unchanged from main'},null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check isolated outside-program SI branch",
+			"type": "shell",
+			"command": "C:\\Program Files\\nodejs\\node.exe",
+			"args": [
+				"--max-old-space-size=8192",
+				"./node_modules/astro/astro.js",
+				"check"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,9 +1,11 @@
 ---
-title: The U.S. Department of Transportation Seeks Input About the Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence
+title: The U.S. Department of Transportation Seeks Input About the Safe, Secure, and Trustworthy Development and Use of Super Intelligence
 date: 2024-05-08
 ---
 
-The U.S. Department of Transportation’s Advanced Research Projects Agency - Infrastructure (ARPA-I) is seeking input from interested parties on the potential applications of artificial intelligence (AI) in transportation, as well as emerging challenges and opportunities in creating and deploying AI technologies in applications across all modes of transportation. The purpose of this [**Request for Information (RFI)**](https://www.federalregister.gov/documents/2024/05/03/2024-09645/opportunities-and-challenges-of-artificial-intelligence-ai-in-transportation-request-for-information) is to obtain input from a broad array of stakeholders on AI opportunities, challenges and related issues in transportation pursuant to Executive Order (E.O.) 14110 of October 30, 2023 entitled “Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence”.
+*Quoted statements, original award titles, and archival source titles retain their original wording.*
+
+The U.S. Department of Transportation’s Advanced Research Projects Agency - Infrastructure (ARPA-I) is seeking input from interested parties on the potential applications of super intelligence (SI) in transportation, as well as emerging challenges and opportunities in creating and deploying SI technologies in applications across all modes of transportation. The purpose of this [**Request for Information (RFI)**](https://www.federalregister.gov/documents/2024/05/03/2024-09645/opportunities-and-challenges-of-artificial-intelligence-ai-in-transportation-request-for-information) is to obtain input from a broad array of stakeholders on SI opportunities, challenges and related issues in transportation pursuant to Executive Order (E.O.) 14110 of October 30, 2023 entitled “Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence”.
 
 Written submissions must be received by July 2, 2024.
 
