@@ -24,16 +24,17 @@ Course Developer: Paula Okunieff
 
 ### Target Audiences
 
-* Emergency Management and Public Safety Staff
-* First Responders
-* Transit Executives
-* Transit Managers
-* Transit Planning, Operations, and Maintenance Staff
+- Emergency Management and Public Safety Staff
+- First Responders
+- Transit Executives
+- Transit Managers
+- Transit Planning, Operations, and Maintenance Staff
 
 ### Prerequisite(s)
 
 **Recommended Prior Knowledge for this Course:**
-* General information on the National ITS Architecture/Regional ITS Architecture
+
+- General information on the National ITS Architecture/Regional ITS Architecture
 
 ### Learning Objectives/Key Elements
 

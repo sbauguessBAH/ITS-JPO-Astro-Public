@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { getCollection } from "astro:content";
+
+import TrainingModuleItem from "@/src/components/programs/TrainingModuleItem.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import ItemGroup from "@/src/components/ui/elements/item/ItemGroup.astro";
+import base_url from "@/src/lib/base_url";
+import { getMarkdownPreview } from "@/src/lib/markdown";
+
+import Layout from "../../_layout.astro";
+
+const trainings: CollectionEntry<"pcbTransitStandardsTrainings">[] =
+  await getCollection("pcbTransitStandardsTrainings");
+---
+
+<Layout>
+  <Page>
+    <PageHeader>
+      <slot slot="title">Transit Standards Trainings</slot>
+    </PageHeader>
+    <Section>
+      <div>
+        <p class="program-text">
+          The USDOT's ITS Professional Capacity Building Program (PCB) provides
+          this training series on standards used in ITS transit deployments to
+          the transit community. These modules were developed with partners in
+          the Institute of Transportation Engineers (ITE) and with support from
+          the American Public Transit Association (APTA). They give
+          transportation professionals the skills to help them effectively
+          utilize transit-applicable ITS standards to procure, install, test,
+          and operate ITS technologies.
+        </p>
+        <p class="program-text mb-4">
+          Also available is a <a
+            href={base_url("/resources/pcb/trainings/standards-trainings")}
+            >standards training series</a
+          > that discusses standards used mostly in ITS highway applications and includes
+          crosscutting information about test cases, test plans, and requirements
+          specification.
+        </p>
+        <p class="program-text mb-4">
+          Documents linked below were last updated in 2021. They remain
+          available in their original published format to ensure public access.
+          Click the title to view additional information about each training
+          module.
+        </p>
+      </div>
+      <ItemGroup class="tw:gap-4">
+        {
+          trainings
+            .toSorted((a, b) => a.data.module - b.data.module)
+            .map((training) => (
+              <TrainingModuleItem
+                href={`/resources/pcb/trainings/transit-standards-trainings/${training.id}`}
+                length={training.data.length}
+                module={training.data.module}
+                summary={getMarkdownPreview(training.body)}
+                title={training.data.title}
+              />
+            ))
+        }
+      </ItemGroup>
+    </Section>
+  </Page>
+</Layout>
