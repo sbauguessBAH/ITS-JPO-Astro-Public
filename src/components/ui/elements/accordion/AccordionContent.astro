@@ -19,7 +19,7 @@ const { class: className, ...props } = Astro.props;
   {...props}
 >
   <div class="tw:min-h-0 tw:overflow-hidden">
-    <div class={cn("tw:pb-4", className)}>
+    <div class={cn("tw:p-4 tw:bg-background tw:rounded-2xl", className)}>
       <slot />
     </div>
   </div>

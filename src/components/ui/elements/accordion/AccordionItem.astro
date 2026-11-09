@@ -13,10 +13,11 @@ type Props = HTMLAttributes<"div"> & {
 };
 
 const { class: className, open, ...props } = Astro.props;
+// "tw:border-border tw:not-last:border-b"
 ---
 
 <div
-  class={cn("tw:border-border tw:not-last:border-b", className)}
+  class={cn(className)}
   data-slot="accordion-item"
   data-state={open ? "open" : "closed"}
   {...props}
