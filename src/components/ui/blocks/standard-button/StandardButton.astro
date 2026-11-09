@@ -1,0 +1,116 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+import base_url from "../../../../lib/base_url";
+
+type LinkProps = {
+  href: string;
+  isExternal?: boolean;
+  isNewWindow?: boolean;
+  isSameWindow?: boolean;
+};
+
+type Props = HTMLAttributes<"button"> & {
+  class?: string;
+  link?: LinkProps;
+  size?: "default" | "lg";
+  type?: "button" | "reset" | "submit";
+};
+
+const {
+  class: className,
+  disabled,
+  link,
+  size = "default",
+  type = "button",
+  ...props
+} = Astro.props;
+
+const isLink = !!link;
+const Component = isLink ? "a" : "button";
+
+let linkHref: string | undefined;
+let linkRel: string | undefined;
+let linkTarget: string | undefined;
+
+if (link) {
+  const isTelOrMail =
+    link.href.startsWith("mailto:") || link.href.startsWith("tel:");
+  linkHref = link.isExternal || isTelOrMail ? link.href : base_url(link.href);
+  linkRel = !isTelOrMail && link.isExternal ? "noopener noreferrer" : undefined;
+  linkTarget =
+    !isTelOrMail &&
+    (link.isNewWindow || (link.isExternal && !link.isSameWindow))
+      ? "_blank"
+      : undefined;
+}
+---
+
+<Component
+  aria-disabled={isLink && disabled ? "true" : undefined}
+  class={cn(
+    "standard-button",
+    { "standard-button--lg": size === "lg" },
+    className,
+  )}
+  data-slot="standard-button"
+  data-ui-button
+  disabled={!isLink ? disabled : undefined}
+  href={linkHref}
+  rel={linkRel}
+  tabindex={isLink && disabled ? -1 : undefined}
+  target={linkTarget}
+  type={!isLink ? type : undefined}
+  {...props}
+>
+  <slot />
+</Component>
+
+<style>
+  /* Plain CSS (not Tailwind) so it works on legacy Bootstrap pages that don't load globals.css. */
+  .standard-button {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 8px 25px 6px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    background-color: #efbd27;
+    color: #212529;
+    font-family: inherit;
+    font-size: 10pt;
+    font-weight: 800;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.35s;
+  }
+
+  .standard-button--lg {
+    padding: 12px 24px;
+    font-size: 1.25rem;
+  }
+
+  .standard-button:hover,
+  .standard-button:focus {
+    background-color: #66a3cc;
+    color: #212529;
+    text-decoration: none;
+  }
+
+  .standard-button:focus-visible {
+    outline: 2px solid #212529;
+    outline-offset: 2px;
+  }
+
+  .standard-button:disabled,
+  .standard-button[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+</style>

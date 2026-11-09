@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+type Props = HTMLAttributes<"div">;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<div
+  class={cn(
+    "tw:cn-font-heading tw:text-base tw:leading-snug tw:text-foreground",
+    "tw:font-bold tw:group-data-[size=sm]/card:font-semibold",
+    "tw:text-xl tw:group-data-[size=sm]/card:text-lg",
+    className,
+  )}
+  data-slot="card-title"
+  {...props}
+>
+  <slot />
+</div>
