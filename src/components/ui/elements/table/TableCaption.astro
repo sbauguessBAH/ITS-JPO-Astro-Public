@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+type Props = HTMLAttributes<"caption"> & {
+  class?: string;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<caption
+  class={cn("tw:mt-4 tw:text-sm tw:text-muted-foreground", className)}
+  data-slot="table-caption"
+  {...props}
+>
+  <slot />
+</caption>

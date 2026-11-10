@@ -1,0 +1,38 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+/**
+ * Centers content at the site's content width. Used inside blocks that
+ * can span the full page width, such as PageHeader and Section.
+ */
+type Props = HTMLAttributes<"div"> & {
+  /**
+   * `sm` is a narrower container for focused reading.
+   *
+   * @default `default`
+   */
+  size?: "default" | "sm";
+};
+
+const { class: className, size = "default", ...rest } = Astro.props;
+
+const sizeClasses = {
+  default: "tw:max-w-7xl",
+  sm: "tw:max-w-5xl",
+};
+---
+
+<div
+  class={cn(
+    "tw:mx-auto tw:box-border tw:w-full tw:px-4 tw:xl:px-0",
+    sizeClasses[size],
+    className,
+  )}
+  data-size={size}
+  data-slot="ui-page_container"
+  {...rest}
+>
+  <slot />
+</div>

@@ -1,0 +1,41 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+import { menuContentClass } from "./styles";
+
+type Props = HTMLAttributes<"div"> & {
+  /** @default `start` */
+  align?: "center" | "end" | "start";
+  class?: string;
+  /** @default `bottom` */
+  side?: "bottom" | "top";
+};
+
+const {
+  align = "start",
+  class: className,
+  side = "bottom",
+  ...props
+} = Astro.props;
+---
+
+<div
+  aria-orientation="vertical"
+  class={cn(
+    menuContentClass,
+    "tw:data-[side=bottom]:top-full tw:data-[side=bottom]:mt-1 tw:data-[side=top]:bottom-full tw:data-[side=top]:mb-1",
+    "tw:data-[align=center]:left-1/2 tw:data-[align=center]:-translate-x-1/2 tw:data-[align=end]:right-0 tw:data-[align=start]:left-0",
+    className,
+  )}
+  data-align={align}
+  data-side={side}
+  data-slot="dropdown-menu-content"
+  data-state="closed"
+  role="menu"
+  tabindex="-1"
+  {...props}
+>
+  <slot />
+</div>

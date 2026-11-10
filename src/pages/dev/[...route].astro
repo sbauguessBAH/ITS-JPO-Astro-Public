@@ -1,0 +1,37 @@
+---
+// src/pages/dev/[...route].astro
+
+export async function getStaticPaths() {
+  // 1. Immediately drop out in production (returns 0 pages to build)
+  if (import.meta.env.PROD) {
+    return [];
+  }
+
+  // 2. In local development, scan your custom dev-pages folder
+  // (Matches all .astro files, including nested subfolders)
+  const devModules = import.meta.glob("../../dev-pages/**/*.astro");
+
+  return Object.keys(devModules).map((filePath) => {
+    // Convert the file system path into a clean URL slug
+    // e.g., "../../dev-pages/tools/logs.astro" -> "tools/logs"
+    const routeSlug = filePath
+      .replace("../../dev-pages/", "")
+      .replace(".astro", "")
+      .replace(/\/index$/, ""); // Handle index files cleanly
+
+    return {
+      params: { route: routeSlug },
+      props: { componentModule: devModules[filePath] },
+    };
+  });
+}
+
+// 3. Extract the targeted page component dynamically
+const { componentModule } = Astro.props;
+
+// @ts-expect-error Dynamic import of astro component
+const TargetPageComponent = (await componentModule()).default;
+---
+
+<!-- 4. Render the component exactly as if it were a native page -->
+<TargetPageComponent />
