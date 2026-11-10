@@ -4,61 +4,50 @@ import base_url from "@/src/lib/base_url";
 import hero1 from "@/src/assets/images/hero-bg/Hero-Background-4.png";
 import hero2 from "@/src/assets/images/hero-bg/Hero-ITS-JPO-NOW.png";
 import hero3 from "@/src/assets/images/hero-bg/Hero-V2X-A.png";
-
-import hero4 from "@/src/assets/images/hero-bg/Hero-HIRTA.png";
-import hero5 from "@/src/assets/images/hero-bg/Hero-Background-4.png";
-import heroAI from "@/src/assets/images/hero-bg/AI-Procurement-Webinar.jpg";
-import heroCdaBaa from "@/src/assets/images/hero-bg/Hero-CDABAA.jpg";
+import heroIntersectionSafety from "@/src/assets/images/hero-bg/Hero-IntersectionSafety.png";
 ---
 
 <div class="hero-carousel">
   <div class="slides">
-    
-<!-- THIS IS THE NEW ROTATING HERO that needs an update link!!!!
-
-    <section class="slide" style={`background-image: url(${heroAI.src})`}>
-      <div class="container-xl">
-        <div class="content-box">
-          <h2 class="newsLetterHeader">Digital Corridors Initiative NOFO LIVE!</h2>
-          <p>The Digital Corridors Initiative NOFO is live! Over $10M available for states, industry, & academia to fix roadway congestion nationwide.</p>
-          <a href="#" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">View the NOFO Here</a>
-        </div>
-      </div>
-    </section> 
-    
-
-    <section class="slide" style={`background-image: url(${heroAI.src})`}>
-      <div class="container-xl">
-        <div class="content-box">
-          <h2 class="newsLetterHeader">ITS4US Deployment Accelerator Now Accepting Proposals</h2>
-          <p>ITS4US Accelerator BAA is live! Seed funding for up to 5 sites to replicate healthcare transit tech in 12 months.</p>
-          <a href="#" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">View the Funding Opportunity</a>
-        </div>
-      </div>
-    </section> 
-    
-    
-    -->
-
-    <!-- <section class="slide" style={`background-image: url(${heroCdaBaa.src})`}>
-      <div class="container-xl">
-        <div class="content-box">
-          <h2 class="newsLetterHeader">CDA Small-Scale Industry Prototype BAA is Live!</h2>
-          <p>The official Cooperative Driving Automation (CDA) Small-Scale Industry Prototype Broad Agency Announcement (BAA) is live on SAM.gov with up to $5M funding. Open to U.S. entities. Proposals due Sept 28, 2026.</p>
-          <a href="https://sam.gov/workspace/contract/opp/fa7c3868d1de4478942fab3856ce243e/view" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
-      </div>
-    </section> -->
-
-  
 
     <section class="slide" style={`background-image: url(${hero2.src})`}>
       <div class="container-xl">
         <div class="content-box">
           <h2 class="newsLetterHeader">ITS JPO Now</h2>
-          <p class="fw-bold">September 2026</p>
-          <p>Check out the September ITS JPO Now, JPO's bimonthly digest! This issue covers exciting V2X Accelerator milestones, HIRTA Health Connector completion, AI procurement webinar, and more.</p>
-          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/september-2026/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-4 icon-arrow-button">Read Latest Issue</a>
+          <p class="fw-bold">November 2026</p>
+          <p>November features ISS Prototyping awardees, V2X Accelerator Phase 2 advances, ITS DataHub video tutorials, and the Road Safety Innovation Expo.</p>
+          <a href={base_url("/about/contact-us/mailinglist/ITS-JPO-NOW/november-2026/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-4 icon-arrow-button">Read Latest Issue</a>
+        </div>
+      </div>
+    </section>
+
+       <section class="slide" style={`background-image: url(${hero1.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2 class="newsLetterHeader">ITS4US Deployment Accelerator Now Accepting Proposals</h2>
+          <p>ITS4US Deployment Accelerator BAA is live! Seed funding for up to 5 sites to replicate healthcare transit tech in 12 months. Proposals are due January 11, 2027.</p>
+          <a href="https://sam.gov/workspace/contract/opp/8433753e4422447fa62b661ec5d8b9da/view" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">View the Funding Opportunity</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="slide" style={`background-image: url(${heroIntersectionSafety.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2 class="newsLetterHeader">ISS Prototyping Awardees Announced!</h2>
+          <p>Three teams selected from 23 proposals for $5.5M in Phase 1 funding to develop intersection safety prototypes. Up to $11.5M available for Phase 2.</p>
+          <a href="https://www.its.dot.gov/research-areas/intersection-safety/systems/" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">Learn More About ISS Prototyping</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" style={`background-image: url(${hero1.src})`}>
+      <div class="container-xl">
+        <div class="content-box">
+          <h2 class="newsLetterHeader">ITS DataHub Tutorial Videos Available Now</h2>
+          <p>New video tutorials help users navigate, search, query, and visualize 150+ data assets available on the ITS DataHub.</p>
+          <a href="https://www.youtube.com/playlist?list=PLVedntD3sGqY" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">View the Videos</a>
         </div>
       </div>
     </section>
@@ -66,34 +55,15 @@ import heroCdaBaa from "@/src/assets/images/hero-bg/Hero-CDABAA.jpg";
     <section class="slide" style={`background-image: url(${hero3.src})`}>
       <div class="container-xl">
         <div class="content-box">
-          <h2 class="newsLetterHeader">V2X Accelerator Reaches Critical Milestone</h2>
-          <p>The V2X Accelerator sites in Arizona, Texas, and Utah have completed two of three key Operational Readiness Demonstrations (ORDs) with the other slated for later this year—proving life-saving V2X technology is ready for prime time, even during stormy weather.</p>
-          <a href={base_url("/research-areas/V2X-Deployment/deployment/accelerator/")} class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">Explore the V2X Accelerator Website</a>
+          <h2 class="newsLetterHeader">V2X Accelerator Sites Advance to Phase 2</h2>
+          <p>Utah and Texas V2X Accelerator sites completed Phase 1: Finalize Design, Build and Test and are now entering Phase 2: Operate and Evaluate. Maricopa County is on track for Phase 2 in early 2027.</p>
+          <a href="https://www.its.dot.gov/research-areas/V2X-Deployment/deployment/accelerator/" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">Explore V2X Program</a>
         </div>
       </div>
     </section>
 
-    <section class="slide" style={`background-image: url(${hero4.src})`}>
-      <div class="container-xl">
-        <div class="content-box">
-          <h2 class="newsLetterHeader">ITS4US HIRTA Project Officially Complete</h2>
-          <p>The HIRTA Health Connector completed its 24-month Operate and Evaluate Phase on August 17th—connecting rural Iowans to healthcare. Middleware code is now open-source on ITS CodeHub.</p>
-          <a href="https://www.its.dot.gov/code/" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">Check Out Health Connector Code</a>
-        </div>
-      </div>
-    </section>
+ 
 
-    <section class="slide" style={`background-image: url(${hero5.src})`}>
-      <div class="container-xl">
-        <div class="content-box">
-          <h2 class="newsLetterHeader">ITS4US Deployment Accelerator Now Accepting Proposals</h2>
-          <p>ITS4US Deployment Accelerator BAA is live! Seed funding for up to 5 sites to replicate healthcare transit tech in 12 months.</p>
-          <a href="https://sam.gov/workspace/contract/opp/8433753e4422447fa62b661ec5d8b9da/view" class="btn btn-outline-light btn-lg text-dark m-0 fs-5 mb-1 icon-external-link" target="_blank" rel="noopener noreferrer">View the Funding Opportunity</a>
-        </div>
-      </div>
-    </section>
-
-    
   </div>
 </div>
 
