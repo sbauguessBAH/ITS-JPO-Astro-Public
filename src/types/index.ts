@@ -65,6 +65,7 @@ export type Toolkit = {
   description?: string;
   date?: string;
   subtitle?: string;
+  imageUrl?: string;
 };
 
 // Newsletter payload shape for newsroom card usage.

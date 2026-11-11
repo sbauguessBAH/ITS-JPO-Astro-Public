@@ -213,8 +213,9 @@ type DefaultSectionSeed = {
 
 const toolkitCollection = rawToolkits as RawToolkitCollection;
 
-const contactImageMap: Record<string, ImageMetadata> = {
+const contactImageMap: Record<string, string | ImageMetadata> = {
   brian_c: brianC,
+  justin_a: "/assets/images/toolkits/Justin-Anderson.png",
   norah_o: norahO,
 };
 
@@ -415,13 +416,16 @@ const normalizeContacts = (contacts?: RawContact[]): ToolkitContact[] => {
       }
 
       const imageKey = cleanText(contact.profile_image_key);
+      const mappedImage = imageKey ? contactImageMap[imageKey] : undefined;
 
       return {
         contact: cleanText(contact.contact) || undefined,
         department: cleanText(contact.department) || undefined,
         name,
         office: cleanText(contact.office) || undefined,
-        profileImage: imageKey ? contactImageMap[imageKey] ?? cleanText(contact.profile_image) : cleanText(contact.profile_image) || undefined,
+        profileImage: typeof mappedImage === "string"
+          ? normalizeToolkitUrl(mappedImage)
+          : mappedImage ?? (cleanText(contact.profile_image) || undefined),
         title: cleanText(contact.title) || undefined,
       };
     })

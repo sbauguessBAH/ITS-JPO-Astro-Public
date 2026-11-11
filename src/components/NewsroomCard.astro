@@ -89,6 +89,7 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
       shouldRenderImage && (
         <div class="card-title-image-wrap">
           <img class="card-title-image" src={normalizedItem.imageUrl} alt={imageAltText} loading="lazy" decoding="async" />
+          {showColoredLabel && <h3 class="colored-label card-image-label" data-topic={topicSlug}>{labelText}</h3>}
           {showNewBadge && <span class="card-new-badge">New</span>}
         </div>
       )
@@ -96,7 +97,7 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
 
     <div class="toolkit-card-content">
       {
-        showColoredLabel && (
+        showColoredLabel && !shouldRenderImage && (
           <h3 class="colored-label" data-topic={topicSlug}>
             {labelText}
           </h3>
@@ -113,7 +114,7 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
           shouldShowBadges && (
             <div class="d-flex flex-wrap badge-container">
               {pillItems?.map((ct) => (
-                <p class="badge me-1">{ct}</p>
+                <p class="badge">{ct}</p>
               ))}
             </div>
           )
@@ -142,7 +143,6 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
     min-height: 280px;
   }
   .badge-container {
-    min-height: 75px;
     align-items: flex-start;
     align-content: flex-start;
   }
@@ -192,6 +192,16 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
     margin: 0;
   }
 
+  .card-image-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+    max-width: calc(100% - 2rem);
+    margin: 0;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.22);
+  }
+
   .card-new-badge {
     position: absolute;
     top: 0.75rem;
@@ -239,6 +249,7 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
     color: #1f5493;
     text-transform: capitalize;
     border-radius: 100rem;
+    margin: 0 0.25rem 0.25rem 0; ;
   }
   .toolkit-card {
     display: flex;
@@ -256,37 +267,37 @@ const shouldShowBadges = Boolean(showPills && pillItems?.length);
     font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.2;
-    background-color: rgba(108, 117, 125, 0.18);
-    color: rgb(38, 42, 46);
+    background-color: #6c757d;
+    color: #ffffff;
   }
 
   .colored-label[data-topic="v2x"] {
-    background-color: rgba(0, 123, 255, 0.18);
-    color: rgb(1, 16, 32);
+    background-color: #0056b3;
+    color: #ffffff;
   }
 
   .colored-label[data-topic="ai"] {
-    background-color: rgba(23, 162, 184, 0.18);
-    color: rgb(2, 32, 36);
+    background-color: #0b6674;
+    color: #ffffff;
   }
 
   .colored-label[data-topic="intersection-safety"] {
-    background-color: rgba(220, 53, 69, 0.18);
-    color: rgb(220, 53, 69);
+    background-color: #b02a37;
+    color: #ffffff;
   }
 
   .colored-label[data-topic="automation"] {
-    background-color: rgba(40, 167, 69, 0.18);
-    color: rgb(3, 29, 9);
+    background-color: #146c2e;
+    color: #ffffff;
   }
 
   .colored-label[data-topic="its4us"] {
-    background-color: rgba(255, 193, 7, 0.18);
-    color: rgb(34, 32, 26);
+    background-color: #ffc107;
+    color: #212529;
   }
 
   .colored-label[data-topic="freight"] {
-    background-color: rgba(52, 58, 64, 0.12);
-    color: rgb(52, 58, 64);
+    background-color: #343a40;
+    color: #ffffff;
   }
 </style>

@@ -96,20 +96,23 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 				<legend class="col-form-label pt-0">Topics</legend>
 				{
 					topics.length > 0 ? (
-						<div class="topic-pills">
-							{
-								topics.map((topic) => {
-									const topicId = `topic-${topic.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
-									return (
-										<div class="topic-pill-option">
-											<input class="visually-hidden topic-input" type="checkbox" id={topicId} name="topic" value={topic} />
-											<label class="topic-pill" for={topicId}>
-												{topic}
+						<div class="multi-select-dropdown" id="archive-topic-dropdown">
+							<button id="topic-toggle" type="button" class="w-100 text-start" aria-controls="topic-list" aria-expanded="false">
+								<span class="dropdown-label">Select topics</span>
+							</button>
+							<div class="w-100" aria-label="Topic options" role="group" id="topic-list">
+								{
+									topics.map((topic) => {
+										const topicId = `topic-${topic.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+										return (
+											<label class="topic-option" for={topicId}>
+												<input class="topic-input" type="checkbox" id={topicId} name="topic" value={topic} />
+												<span class="topic-option-label">{topic}</span>
 											</label>
-										</div>
-									);
-								})
-							}
+										);
+									})
+								}
+							</div>
 						</div>
 					) : (
 						<div class="form-text">No topic tags are available for these issues yet.</div>
@@ -133,6 +136,8 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 <script define:vars={{ newsletterRows }}>
 	const yearToggle = document.getElementById("year-toggle");
 	const yearMenu = document.getElementById("year-list");
+	const topicToggle = document.getElementById("topic-toggle");
+	const topicMenu = document.getElementById("topic-list");
 
 	const updateYearLabel = () => {
 		const selected = Array.from(document.querySelectorAll('input[name="year"]:checked'))
@@ -147,6 +152,13 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
 			.filter((el) => el instanceof HTMLInputElement)
 			.map((cb) => cb.value);
+
+	const updateTopicLabel = () => {
+		const selected = getSelectedValues("topic");
+		const labelEl = document.querySelector("#topic-toggle .dropdown-label");
+		if (!labelEl) return;
+		labelEl.textContent = selected.length === 0 ? "Select topics" : selected.join(", ");
+	};
 
 	const getFilteredMatches = (selectedYears, selectedTopics) => {
 		return newsletterRows.map((row) => {
@@ -168,6 +180,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		const selectedTopics = getSelectedValues("topic");
 		applyToDOM(getFilteredMatches(selectedYears, selectedTopics));
 		updateYearLabel();
+		updateTopicLabel();
 	};
 
 	const toggleYearDropdown = (show) => {
@@ -179,15 +192,32 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		}
 	};
 
+	const toggleTopicDropdown = (show) => {
+		const expanded = typeof show === "boolean" ? show : !(topicToggle?.getAttribute("aria-expanded") === "true");
+		topicToggle?.setAttribute("aria-expanded", expanded ? "true" : "false");
+		if (topicMenu) {
+			if (expanded) topicMenu.classList.add("show");
+			else topicMenu.classList.remove("show");
+		}
+	};
+
 	yearToggle?.addEventListener("click", (e) => {
 		e.stopPropagation();
 		toggleYearDropdown();
+	});
+
+	topicToggle?.addEventListener("click", (e) => {
+		e.stopPropagation();
+		toggleTopicDropdown();
 	});
 
 	document.addEventListener("click", (e) => {
 		const target = e.target;
 		if (!yearMenu?.contains(target) && !yearToggle?.contains(target)) {
 			toggleYearDropdown(false);
+		}
+		if (!topicMenu?.contains(target) && !topicToggle?.contains(target)) {
+			toggleTopicDropdown(false);
 		}
 	});
 
@@ -197,6 +227,15 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 			e.stopPropagation();
 			toggleYearDropdown(false);
 			yearToggle?.focus();
+		}
+	});
+
+	document.getElementById("archive-topic-dropdown")?.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") {
+			e.preventDefault();
+			e.stopPropagation();
+			toggleTopicDropdown(false);
+			topicToggle?.focus();
 		}
 	});
 
@@ -222,36 +261,6 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 		background-color: var(--bs-light);
 		border: 1px solid var(--bs-border-color);
 		border-radius: 12px;
-	}
-
-	.topic-pills {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-	}
-
-	.topic-pill {
-		display: inline-flex;
-		align-items: center;
-		border: 1px solid grey;
-		border-radius: 999px;
-		padding: 0.35rem 0.75rem;
-		line-height: 1.2;
-		cursor: pointer;
-		user-select: none;
-		background-color: white;
-		color: black;
-	}
-
-	.topic-pill-option > input:checked + .topic-pill {
-		background-color: #055581;
-		border-color: #055581;
-		color: white;
-	}
-
-	.topic-pill-option > input:focus-visible + .topic-pill {
-		outline: 0;
-		box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
 	}
 
 	#archive-year-dropdown {
@@ -365,6 +374,122 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 	}
 
 	#year-list input {
+		margin: 0;
+		accent-color: var(--filter-color);
+		cursor: pointer;
+	}
+
+	#archive-topic-dropdown {
+		position: relative;
+		min-width: 0;
+		--filter-color: rgb(5, 86, 129);
+		--filter-border: #b6b7bb;
+	}
+
+	#topic-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		min-height: 2.5rem;
+		border: 1px solid var(--filter-border);
+		border-radius: 1.25rem;
+		padding: 0.45rem 0.75rem;
+		font: inherit;
+		font-weight: 600;
+		color: #111827;
+		background: #fff;
+		cursor: pointer;
+		transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	#topic-toggle:hover,
+	#topic-toggle:focus,
+	#topic-toggle[aria-expanded="true"] {
+		border-color: var(--filter-color);
+	}
+
+	#topic-toggle:focus,
+	#topic-toggle[aria-expanded="true"] {
+		box-shadow: 0 0 0 3px color-mix(in srgb, var(--filter-color) 18%, transparent);
+	}
+
+	#archive-topic-dropdown :focus-visible {
+		outline: 2px solid var(--filter-color);
+		outline-offset: 2px;
+	}
+
+	#topic-toggle .dropdown-label {
+		flex: 1;
+		min-width: 0;
+		overflow-wrap: anywhere;
+		white-space: normal;
+	}
+
+	#topic-toggle::after {
+		content: '\f078';
+		flex-shrink: 0;
+		width: 1.25rem;
+		margin: 0;
+		border: 0;
+		color: #666;
+		font-family: "Font Awesome 6 Free";
+		font-weight: 900;
+		font-size: 1rem;
+		text-align: center;
+		transition: transform 0.2s ease;
+	}
+
+	#topic-toggle[aria-expanded="true"]::after {
+		transform: rotate(180deg);
+	}
+
+	#topic-list {
+		display: none;
+		position: absolute;
+		top: calc(100% + 0.5rem);
+		left: 0;
+		z-index: 50;
+		min-width: 0;
+		max-height: 18rem;
+		overflow-y: auto;
+		margin: 0;
+		padding: 0;
+		border: 1px solid var(--filter-border);
+		border-radius: 0.375rem;
+		background: #fff;
+		box-shadow: 0 10px 24px rgb(0 0 0 / 12%);
+	}
+
+	#topic-list.show {
+		display: block;
+	}
+
+	#topic-list .topic-option {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		align-items: center;
+		gap: 0.6rem;
+		margin: 0;
+		padding: 0.6rem 0.75rem;
+		font: inherit;
+		font-size: 0.95rem;
+		color: #1f2937;
+		cursor: pointer;
+		overflow-wrap: anywhere;
+		transition: background-color 0.15s ease;
+	}
+
+	#topic-list .topic-option + .topic-option {
+		border-top: 1px solid #f3f4f6;
+	}
+
+	#topic-list .topic-option:hover,
+	#topic-list .topic-option:focus-within {
+		background: #f9fafb;
+	}
+
+	#topic-list input {
 		margin: 0;
 		accent-color: var(--filter-color);
 		cursor: pointer;
