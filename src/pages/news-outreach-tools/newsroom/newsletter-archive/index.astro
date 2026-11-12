@@ -57,6 +57,15 @@ const newsletterRows: FilterableNewsletter[] = rawNewsletters.map((item) => {
 
 const years = uniqueStrings(newsletterRows.map((row) => row.year)).sort((a, b) => b.localeCompare(a));
 const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
+const topicDisplayLabels: Record<string, string> = {
+	ITS4US: "ITS4US",
+	ITSPAC: "Intelligent Transportation Systems Program Advisory Committee (ITSPAC)",
+	SCRC: "Smart Community Resource Center (SCRC)",
+	V2X: "Vehicle-to-Everything (V2X)",
+};
+const topicOptions = topics
+	.map((topic) => ({ value: topic, label: topicDisplayLabels[topic] ?? topic }))
+	.sort((a, b) => a.label.localeCompare(b.label));
 ---
 
 <PageLayout title="Newsletter Archive" bannerImage={banner} keywords={keywords} description={description}>
@@ -102,12 +111,12 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 							</button>
 							<div class="w-100" aria-label="Topic options" role="group" id="topic-list">
 								{
-									topics.map((topic) => {
+									topicOptions.map(({ value: topic, label }) => {
 										const topicId = `topic-${topic.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 										return (
 											<label class="topic-option" for={topicId}>
 												<input class="topic-input" type="checkbox" id={topicId} name="topic" value={topic} />
-												<span class="topic-option-label">{topic}</span>
+												<span class="topic-option-label">{label}</span>
 											</label>
 										);
 									})
@@ -133,7 +142,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 	</main>
 </PageLayout>
 
-<script define:vars={{ newsletterRows }}>
+<script define:vars={{ newsletterRows, topicDisplayLabels }}>
 	const yearToggle = document.getElementById("year-toggle");
 	const yearMenu = document.getElementById("year-list");
 	const topicToggle = document.getElementById("topic-toggle");
@@ -154,7 +163,7 @@ const topics = uniqueStrings(newsletterRows.flatMap((row) => row.topics ?? []));
 			.map((cb) => cb.value);
 
 	const updateTopicLabel = () => {
-		const selected = getSelectedValues("topic");
+		const selected = getSelectedValues("topic").map((topic) => topicDisplayLabels[topic] ?? topic);
 		const labelEl = document.querySelector("#topic-toggle .dropdown-label");
 		if (!labelEl) return;
 		labelEl.textContent = selected.length === 0 ? "Select topics" : selected.join(", ");
