@@ -12,8 +12,8 @@ import { getTrimmedPathname, navigation } from "@/src/lib/navigation";
 const pathname = Astro.url.pathname;
 const trimmedPathname = getTrimmedPathname(pathname);
 // return true when the current trimmedPathname is the section or any child of it
-const isActiveSection = (sectionUrl) => {
-  const normalize = (u) => (u || "").replace(/\/+$/g, "");
+const isActiveSection = (sectionUrl: string) => {
+  const normalize = (u: string) => (u || "").replace(/\/+$/g, "");
   const normSection = normalize(sectionUrl);
   const normCurrent = normalize(trimmedPathname);
   return normCurrent === normSection || normCurrent.startsWith(normSection + "/");

@@ -8,9 +8,10 @@ import type { ChildNavigationItem } from "@/src/types";
 
 interface Props {
   image?: ImageMetadata;
+  sectionNavigationPath?: string;
 }
 
-const { image }: Props = Astro.props;
+const { image, sectionNavigationPath }: Props = Astro.props;
 
 // Optimize banner image
 const optimizedImage = await getImage({
@@ -23,7 +24,7 @@ const optimizedImage = await getImage({
 const bannerImageUrl = optimizedImage.src;
 
 // Navigation helpers
-const pathname = Astro.url.pathname;
+const pathname = sectionNavigationPath ?? Astro.url.pathname;
 const trimmedPathname = getTrimmedPathname(pathname);
 
 const findSecondLevelPage = (): ChildNavigationItem | undefined => {
@@ -289,6 +290,8 @@ const SUBNAV_ID = "navbar-content2";
 
   .dropdown-toggle::after,
   .dropend .dropdown-toggle::after {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 800;
     content: "\f078";
     border: 0;
     color: black;

@@ -38,5 +38,5 @@ const preview = post.body?.slice(0, 400); // Adjust the number of characters as 
     <time datetime={date.toISOString()}>{date.toLocaleDateString(undefined, { dateStyle: "medium", timeZone: "UTC" })}</time><br />
     <h2>{title}</h2> 
   <p>{preview}</p>
-  <a href={base_url(`/news-info/blog/${post.id}`)} class="btn">Read Post</a>
+  <a href={base_url(`/news-outreach-tools/blog/${post.id}`)} class="btn">Read Post</a>
 </div>

@@ -1,0 +1,183 @@
+---
+
+interface Props {
+  date: string;
+  subtitle: string;
+title: string;
+description: string;
+duration: string;
+recordingLink: string;
+slidesLink: string;
+  class?: string;
+  showPills?: boolean;
+  showColoredLabel?: boolean;
+  ctaText?: string;
+}
+
+const {
+  date,
+  subtitle,
+  title,
+  description,
+  duration,
+  recordingLink,
+  slidesLink,
+  class: className = "",
+} = Astro.props;
+
+const details = [description, duration].filter(Boolean).join(" | ");
+
+const monthNames = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+const normalizedDate = date.trim().replace(/,/g, "");
+const splitDate = normalizedDate.split(/\s+/);
+
+const monthPart = splitDate[0] ?? "";
+const dayPart = splitDate.length >= 3 ? splitDate[1] : "";
+const yearPart = splitDate[splitDate.length - 1] ?? "";
+
+const monthIndex = monthNames.findIndex((month) => month.toLowerCase() === monthPart.slice(0, 3).toLowerCase());
+const displayMonth = monthIndex >= 0 ? monthNames[monthIndex].toUpperCase() : monthPart.slice(0, 3).toUpperCase();
+const displayDay = dayPart.replace(/\D/g, "");
+const displayYear = /^\d{4}$/.test(yearPart) ? yearPart : "";
+const hasRecordingLink = Boolean(recordingLink.trim());
+const hasSlidesLink = Boolean(slidesLink.trim());
+
+
+---
+
+<div class:list={["h-100 webinar-card", className]}>
+  <p class="card-date" aria-label={date}>
+    {displayMonth && <span class="date-month">{displayMonth}</span>}
+    {displayDay && <span class="date-day">{displayDay}</span>}
+    {displayYear && <span class="date-year">{displayYear}</span>}
+    {!displayMonth && !displayDay && !displayYear && <span>{date}</span>}
+  </p>
+  <div class="webinar-content">
+    <h3 class="card-title">{title}</h3>
+    {details && <p class="card-description">{details}</p>}
+  </div>
+
+  {
+    (hasRecordingLink || hasSlidesLink) && (
+      <div class="webinar-actions">
+        {hasRecordingLink && <a href={recordingLink} class="btn btn-warning webinar-btn" target="_blank" rel="noopener noreferrer">Watch Recording</a>}
+        {hasSlidesLink && <a href={slidesLink} class="btn btn-warning webinar-btn" target="_blank" rel="noopener noreferrer">View Slides</a>}
+      </div>
+    )
+  }
+</div>
+
+<style>
+
+.webinar-card {
+  border: 1px solid #dfdfdf;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+
+
+.card-date {
+  margin: 0;
+  font-weight: 600;
+  color: #365f91;
+  background-color: #e1e9f7;
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.1;
+  width: 5.25rem;
+  height: 5.25rem;
+  flex-shrink: 0;
+}
+
+.card-date > span {
+  display: block;
+}
+
+.date-month {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.date-day {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.date-year {
+  font-size: 0.8rem;
+}
+
+.card-program {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #5f6670;
+}
+
+.webinar-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.card-description {
+  margin: 0.65rem 0 0;
+  color: #454b53;
+}
+
+.webinar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.webinar-btn {
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+}
+
+.btn:hover {
+  padding: 0.45rem 0.85rem !important;
+}
+
+@media (max-width: 767.98px) {
+  .webinar-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .webinar-actions {
+    justify-content: flex-start;
+  }
+}
+</style>
