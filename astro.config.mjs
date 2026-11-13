@@ -17,6 +17,7 @@ export default defineConfig({
   integrations: [partytown(), sitemap(), vue()],
   redirects: {
     "/index.htm": "/",
+    "/news-info/project-delivery-templates": "/news-outreach-tools/project-delivery-templates",
     "/about/its_jpo.htm": "/about",
     "/research_areas/automation/index.htm": "/research-areas/automation-program",
     "/contacts/stafflisting.htm": "/about/contact-us/staff-listing",

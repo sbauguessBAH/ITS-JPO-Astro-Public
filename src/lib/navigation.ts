@@ -33,8 +33,6 @@ export const navigation: NavigationItem[] = [
     url: "/news-outreach-tools",
     pages: [
       { name: "Latest News from USDOT", url: "https://www.transportation.gov/newsroom", isExternal: true },
-      { name: "Image Library", url: "/news-outreach-tools/image-library" },
-      { name: "Video Library", url: "/news-outreach-tools/video-library" },
       {
         name: "Newsroom",
         url: "/news-outreach-tools/newsroom",
@@ -45,6 +43,10 @@ export const navigation: NavigationItem[] = [
           { name: "Media Kits", url: "/news-outreach-tools/newsroom/media-kits" },
         ],
       },
+      { name: "Image Library", url: "/news-outreach-tools/image-library" },
+      { name: "Video Library", url: "/news-outreach-tools/video-library" },
+      { name: "Project Delivery Templates", url: "/news-outreach-tools/project-delivery-templates" },
+      
       {
         name: "Publication Editorial Guidelines",
         url: "/news-outreach-tools/Publication-Editorial-Guidelines",
