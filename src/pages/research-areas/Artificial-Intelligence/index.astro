@@ -84,9 +84,6 @@ import "@/src/styles/ai-section.css";
                 <a href={base_url("/research-areas/artificial-intelligence/focus-areas/learn-connect")} class="btn btn-light fw-semibold px-4">Explore Case Studies</a>
               </div>
             </div>
-            <div class="col-md-5 spotlight-img-col">
-              <Image src={procurementWebinarImage} alt="National Webinar: Demystifying AI Procurement" class="spotlight-img" />
-            </div>
           </div>
         </div>
 
@@ -123,14 +120,16 @@ import "@/src/styles/ai-section.css";
       <div class="px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl">
         <h2 class="text-center mb-5 fw-bold">Focus Areas</h2>
         <div class="row g-4">
-          <!-- Card 1: Get AI-Ready -->
+          <!-- Card 1: Get Ready -->
           <div class="col-md-4">
             <a href={base_url("/research-areas/artificial-intelligence/focus-areas/get-ai-ready")} class="text-decoration-none">
               <div class="card h-100 shadow-sm border-0 card-hoverable">
                 <Image src={getAIReadyImage} alt="Get AI-Ready" class="card-image" width={800} />
                 <div class="p-4">
-                  <h3 class="fw-bold">Get AI-Ready</h3>
-                  <p class="card-text mt-3">Datasets, frameworks, and best practices to support your AI development.</p>
+                  <h3 class="fw-bold">
+                    <a class="text-decoration-none" href={base_url("/research-areas/artificial-intelligence/focus-areas/get-ai-ready")}>Get Ready</a>
+                  </h3>
+                  <p class="card-text mt-3 mb-3">Resources and frameworks on governance data, risk management, testing and evaluation and other foundational topics needed to support your development of advanced analytics and intelligence solutions in transportation.</p>
                 </div>
               </div>
             </a>
@@ -142,8 +141,8 @@ import "@/src/styles/ai-section.css";
               <div class="card h-100 shadow-sm border-0 card-hoverable">
                 <Image src={putAIIntoPracticeImage} alt="Put AI into Practice" class="card-image" width={800} />
                 <div class="p-4">
-                  <h3 class="fw-bold">Put AI into Practice</h3>
-                  <p class="card-text mt-3">Funding opportunities, initiatives, and project insights to support real-world AI implementation.</p>
+                  <h3 class="fw-bold">Put Advanced Analytics and Intelligence into Practice</h3>
+                  <p class="card-text mt-3">Funding opportunities, initiatives, and project insights to support real-world implementation of intelligence-based solutions for transportation.</p>
                 </div>
               </div>
             </a>
@@ -156,7 +155,7 @@ import "@/src/styles/ai-section.css";
                 <Image src={learnConnectImage} alt="Learn & Connect" class="card-image" width={800} />
                 <div class="p-4">
                   <h3 class="fw-bold">Learn & Connect</h3>
-                  <p class="card-text mt-3">Case studies, peer exchanges, and learning resources to support shared AI knowledge.</p>
+                  <p class="card-text mt-3">Case studies, assessment frameworks, informational materials, webinars, and learning resources to support shared knowledge.</p>
                 </div>
               </div>
             </a>
