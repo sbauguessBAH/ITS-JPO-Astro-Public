@@ -26,6 +26,22 @@ The existing `in-the-news-filter-change` event still supplies `technologyAreas`
 and `searchQuery` to the archive. Field and dropdown styling is maintained in the
 component and the [archive page](src/pages/news-outreach-tools/newsroom/in-the-news/index.astro).
 
+### Advanced Analytics and Super Intelligence program
+
+The program pages are maintained in
+[src/pages/research-areas/super-intelligence](src/pages/research-areas/super-intelligence).
+Current program copy uses the approved SI terminology; historical publication,
+webinar, contract, and project names retain their original AI terminology.
+Existing document filenames and external resource links remain unchanged.
+
+Legacy program URLs redirect to the corresponding new pages through
+[astro.config.mjs](astro.config.mjs). The withdrawn program Contact page redirects
+to the program home. Agency Case Studies is currently displayed without a link
+until a destination is supplied.
+
+Run the program's route and content regression checks with
+`node --test tests/super-intelligence.test.mjs`.
+
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
