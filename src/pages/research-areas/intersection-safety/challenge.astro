@@ -23,24 +23,25 @@ import Layout from "./_layout.astro";
 ---
 
 <Layout>
-  <Page>
+  <Page class="tw:gap-12">
     <Section>
-      <p class="program-text">Original challenge team and award titles retain their historical wording; agency-authored summaries use Super Intelligence (SI) terminology.</p>
-      <SectionHeader title="Challenge Summary" />
-      <div class="tw:flex tw:flex-col tw:gap-6 tw:md:flex-row">
-        <div class="tw:md:basis-2/3">
-          <p class="program-text tw:text-pretty">
-            In response to growing concerns regarding the safety of vulnerable
-            road users at intersections, the U.S. DOT launched the Intersection
-            Safety Challenge to transform intersection safety through the
-            development of innovative intersection safety systems (ISS) that can
-            identify, predict, and mitigate unsafe conditions involving vehicles
-            and vulnerable road users in real time. The Challenge was organized
-            as a multi-stage prize competition that launched in April 2023 and
-            concluded in January 2025. The Challenge aimed to assess the
-            maturity and incentivize the development of new, cost-effective,
-            real-time roadway ISS concepts that leverage sensor fusion and SI.
-          </p>
+      <div class="tw:flex tw:flex-col tw:items-center tw:gap-6 tw:lg:flex-row">
+        <div class="tw:md:basis-2/3 tw:flex tw:flex-col tw:gap-4">
+          <Heading>Challenge Summary</Heading>
+          <div>
+            <p class="program-text tw:text-pretty">
+              In response to growing concerns regarding the safety of vulnerable
+              road users at intersections, the U.S. DOT launched the Intersection
+              Safety Challenge to transform intersection safety through the
+              development of innovative intersection safety systems (ISS) that can
+              identify, predict, and mitigate unsafe conditions involving vehicles
+              and vulnerable road users in real time. The Challenge was organized
+              as a multi-stage prize competition that launched in April 2023 and
+              concluded in January 2025. The Challenge aimed to assess the
+              maturity and incentivize the development of new, cost-effective,
+              real-time roadway ISS concepts that leverage sensor fusion and SI.
+            </p>
+          </div>
         </div>
         <div class="tw:md:basis-1/3">
           <Image
@@ -50,6 +51,7 @@ import Layout from "./_layout.astro";
           />
         </div>
       </div>
+      <p class="program-text tw:italic">Original challenge team and award titles retain their historical wording; agency-authored summaries use Super Intelligence (SI) terminology.</p>
     </Section>
     <Section color="muted" size="lg">
       <SectionHeader class="tw:text-center tw:max-w-5xl tw:mx-auto" title="Challenge Structure">
@@ -186,7 +188,7 @@ import Layout from "./_layout.astro";
     <Section>
       <SectionHeader title="Stage 1A — Concept Assessment" />
       <div class="tw:rounded-lg tw:bg-muted tw:p-8">
-        <Heading as="h3" class="tw:my-2!" size="md">Summary</Heading>
+        <Heading size="sm" class="tw:my-2!">Summary</Heading>
         <p class="program-text tw:text-pretty">
           Stage 1A brought together innovative teams combining expertise in
           emerging technologies with experience in traffic and safety
@@ -196,7 +198,7 @@ import Layout from "./_layout.astro";
           mitigate unsafe conditions involving vehicles and vulnerable road
           users.
         </p>
-        <Heading as="h3" class="tw:my-2!" size="md">Results</Heading>
+        <Heading size="sm" class="tw:my-2!">Results</Heading>
         <p class="program-text tw:text-pretty">
           The U.S. DOT evaluated 120 innovative concept papers, selecting 15
           teams for prizes. Of these 15 teams, 2 were led by State DOTs, 7 by
@@ -335,11 +337,10 @@ import Layout from "./_layout.astro";
       </div>
     </Section>
     <Section>
-      <Separator />
       <SectionHeader title="Stage 1B — System Assessment and Virtual Testing" />
       <div class="tw:rounded-lg tw:bg-muted">
         <div class="tw:p-8">
-          <Heading as="h3" class="tw:mb-2!" size="md">Summary</Heading>
+          <Heading size="sm">Summary</Heading>
           <p class="program-text tw:text-pretty">
             Stage 1B challenged the winning teams from Stage 1A to develop,
             train, and improve algorithms for the detection, localization,
@@ -351,7 +352,7 @@ import Layout from "./_layout.astro";
           </p>
         </div>
         <div class="tw:bg-[rgb(var(--color-brand-light))] tw:p-8">
-          <Heading as="h3" class="tw:my-2!" size="md">
+          <Heading size="sm">
             Data Collection
           </Heading>
           <div
@@ -406,7 +407,7 @@ import Layout from "./_layout.astro";
           </div>
         </div>
         <div class="tw:p-8">
-          <Heading as="h3" class="tw:mt-4! tw:mb-2!" size="md">Results</Heading>
+          <Heading size="sm">Results</Heading>
           <div
             class="tw:flex tw:flex-col tw:gap-8 tw:lg:flex-row tw:lg:items-start tw:lg:justify-between"
           >
@@ -858,8 +859,7 @@ import Layout from "./_layout.astro";
       </div>
     </Section>
     <Section>
-      <SectionHeader title="Additional Resources" />
-
+      <Heading size="md">Additional Resources</Heading>
       <div
         class="tw:grid tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
       >
