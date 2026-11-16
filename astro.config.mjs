@@ -35,6 +35,7 @@ export default defineConfig({
     "/research_areas/emerging_tech/htm/Next_landing.htm": "/research-areas/V2X-Deployment",
     "/research-areas/artificial-intelligence/transportation-planning-design": "/research-areas/super-intelligence/focus-areas/put-si-into-practice/transportation-planning-design",
     "/research-areas/artificial-intelligence/contact": "/research-areas/super-intelligence",
+    "/research-areas/artificial-intelligence": "/research-areas/super-intelligence",
     "/research-areas/artificial-intelligence/focus-areas/get-ai-ready": "/research-areas/super-intelligence/focus-areas/get-ready",
     "/research-areas/artificial-intelligence/focus-areas": "/research-areas/super-intelligence/focus-areas",
     "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-definitions-concepts": "/research-areas/super-intelligence/focus-areas/learn-connect/definitions-concepts",
