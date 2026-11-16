@@ -44,6 +44,13 @@
   --color-orange: oklch(0.7015 0.1476 57.27);
   --color-gold: oklch(0.8105 0.1682 79.31);
   --color-yellow: oklch(0.8396 0.1716 90.43);
+
+  /* Updates both viewport media queries AND .container max-widths */
+  --breakpoint-sm: 36rem;   /* 576px */
+  --breakpoint-md: 48rem;   /* 768px */
+  --breakpoint-lg: 62rem;   /* 992px */
+  --breakpoint-xl: 75rem;   /* 1200px */
+  --breakpoint-2xl: 88rem;  /* 1408px */
 }
 
 /* =============================================================================
