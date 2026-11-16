@@ -585,7 +585,7 @@ border-radius: 1rem;
 .reset-link .data-card::after {
   content: "\f061";
   font-family: "Font Awesome 6 Free";
-font-weight: 800;
+  font-weight: 900;
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -594,7 +594,6 @@ font-weight: 800;
   opacity: 1;
   transition: transform 0.2s ease;
   color: var(--ai-blue-darkest);
-  font-weight: bold;
 }
 
 .reset-link:hover .data-card {
@@ -610,9 +609,8 @@ font-weight: 800;
 .card h5:after {
   content: "\00a0\f08e";
   font-family: "Font Awesome 6 Free";
-font-weight: 800;
+  font-weight: 900;
   font-style: normal;
-  font-weight: normal;
   text-decoration: none;
   font-size: 14px;
 }
