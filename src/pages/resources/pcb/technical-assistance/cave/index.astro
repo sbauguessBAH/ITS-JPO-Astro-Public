@@ -17,7 +17,7 @@ import Layout from "../../_layout.astro";
 ---
 
 <Layout>
-  <Page>
+  <Page class="tw:gap-12">
     <Section>
       <div
         class="tw:flex tw:w-full tw:flex-col tw:items-center tw:gap-6 tw:lg:flex-row"
@@ -41,24 +41,25 @@ import Layout from "../../_layout.astro";
               transportation systems directly and gain practical real-world
               experience.
             </p>
-            <Button
-              link={{
-                href: "https://usdot-carma.atlassian.net/wiki/spaces/CMNT/pages/2628485130/CAVe-in-a-box+Training",
-                isExternal: true,
-              }}
-              size="lg"
-            >
-              Learn More
-              <Icon name="external-link" />
-            </Button>
           </div>
+          <Button
+            link={{
+              href: "https://usdot-carma.atlassian.net/wiki/spaces/CMNT/pages/2628485130/CAVe-in-a-box+Training",
+              isExternal: true,
+            }}
+            size="lg"
+            class="tw:w-fit"
+          >
+            Learn More
+            <Icon name="external-link" />
+          </Button>
         </div>
         <div
           class="tw:flex tw:w-full tw:max-w-4xl tw:items-center tw:justify-center tw:lg:basis-1/3"
         >
           <figure class="figure">
             <LibraryImage
-              class="tw:h-auto tw:max-w-[350px]"
+              class="tw:h-auto tw:max-w-87.5"
               entry="pcb/cave-box-transparent"
             />
             <figcaption
@@ -177,22 +178,23 @@ import Layout from "../../_layout.astro";
               Get the tools and knowledge you need to bring your connected and
               automated vehicle projects to life!
             </p>
-            <Button
-              link={{
-                href: "mailto:cavsupportservices@dot.gov?subject=CAVe-in-a-box Equipment Request",
-                isExternal: true,
-              }}
-              size="lg"
-            >
-              Get Equipment
-              <Icon name="email" />
-            </Button>
           </div>
+          <Button
+            link={{
+              href: "mailto:cavsupportservices@dot.gov?subject=CAVe-in-a-box Equipment Request",
+              isExternal: true,
+            }}
+            size="lg"
+            class="tw:w-fit"
+          >
+            Get Equipment
+            <Icon name="email" />
+          </Button>
         </div>
         <div class="tw:flex tw:items-center tw:justify-center tw:lg:basis-1/3">
           <LibraryImage
             alt="CAVe-in-a-box"
-            class="tw:h-auto tw:w-full tw:max-w-[250px] tw:rotate-20"
+            class="tw:h-auto tw:w-full tw:max-w-62.5 tw:rotate-20"
             entry="pcb/rsu-transparent"
           />
         </div>

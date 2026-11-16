@@ -52,7 +52,7 @@ const modules = await getCollection("pcbModules").then((modules) =>
 </style>
 
 <Layout>
-  <Page>
+  <Page class="tw:gap-12">
     <PageHeader>
       <slot slot="title">Early Career Development Resources</slot>
       <slot slot="description">
@@ -118,7 +118,7 @@ const modules = await getCollection("pcbModules").then((modules) =>
     </Section>
     <Section color="muted" size="lg">
       <div
-        class="tw:flex tw:flex-col-reverse tw:gap-8 tw:lg:flex-row tw:lg:items-center"
+        class="tw:flex tw:flex-col-reverse tw:gap-12 tw:lg:flex-row tw:lg:items-center"
       >
         <div class="tw:flex tw:basis-2/3 tw:flex-col tw:gap-2">
           <SectionHeader title="ITS Careers" />
@@ -144,6 +144,7 @@ const modules = await getCollection("pcbModules").then((modules) =>
           </p>
           <Button
             class="tw:w-fit"
+            size="lg"
             link={{
               href: "https://rosap.ntl.bts.gov/view/dot/89169",
               isExternal: true,
@@ -163,7 +164,7 @@ const modules = await getCollection("pcbModules").then((modules) =>
     </Section>
     <Section>
       <div
-        class="tw:flex tw:flex-col tw:gap-8 tw:lg:flex-row tw:lg:items-center"
+        class="tw:flex tw:flex-col tw:gap-12 tw:lg:flex-row tw:lg:items-center"
       >
         <div class="tw:basis-2/5">
           <LibraryImage class="tw:rounded-2xl tw:w-full tw:h-auto tw:object-cover" entry="pcb/ttt-winners-2025" />
@@ -184,6 +185,7 @@ const modules = await getCollection("pcbModules").then((modules) =>
           </p>
           <Button
             class="tw:w-fit"
+            size="lg"
             link={{
               href: "https://transportationops.org/transportation-technology-tournament",
               isExternal: true,

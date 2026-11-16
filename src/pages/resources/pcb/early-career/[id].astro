@@ -26,126 +26,47 @@ const { module } = Astro.props;
 const { Content } = await render(module);
 ---
 
-<style lang="scss">
-  $screen-lg: 992px;
-
-  .module-layout {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: var(--size);
-
-    @media (min-width: $screen-lg) {
-      flex-direction: row;
-    }
-  }
-
-  .module-meta {
-    @media (min-width: $screen-lg) {
-      flex-basis: 30%;
-    }
-
-    .meta-disclaimer {
-      color: rgb(var(--color-gray));
-      font-size: 1rem;
-    }
-
-    .meta-divider {
-      margin: var(--size-sm) 0;
-      border: none;
-      border-top: 1px solid rgb(var(--color-gray));
-    }
-
-    .meta-source-id {
-      margin: 0;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: rgb(var(--color-gray));
-    }
-    .meta-attributes {
-      margin-bottom: 0;
-      display: grid;
-      grid-template-columns: 2fr 5fr;
-      row-gap: 0.2rem;
-
-      .meta-title {
-        margin: 0;
-        padding: 0;
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
-
-      dt {
-        color: rgb(var(--color-gray));
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 0.9rem;
-      }
-
-      dd {
-        text-transform: capitalize;
-        font-weight: 600;
-        line-height: 1.2;
-      }
-    }
-  }
-
-  .module-content {
-    @media (min-width: $screen-lg) {
-      flex-basis: 70%;
-    }
-  }
-</style>
 <Layout>
   <Page>
     <PageHeader title={module.data.title} />
     <Section>
-      <div class="module-layout">
-        <div class="module-content">
+      <div class="tw:flex tw:flex-col-reverse tw:gap-12 tw:min-[992px]:flex-row">
+        <div class="module-content tw:min-[992px]:basis-[70%] tw:[&_h3]:mt-0! tw:[&_h3]:not-first:mt-4! tw:[&_h3]:mb-3! tw:[&_h3]:p-0! tw:[&_h3]:text-3xl! tw:[&_h3]:leading-tight tw:[&_h3]:font-semibold tw:[&_h3]:tracking-tight tw:[&_h3]:text-primary! tw:[&_h3]:normal-case! tw:[&_h4]:mt-0! tw:[&_h4]:mb-2! tw:[&_h4]:p-0! tw:[&_h4]:text-lg! tw:[&_h4]:leading-tight tw:[&_h4]:font-semibold tw:[&_h4]:tracking-tight tw:[&_h4]:text-primary! tw:[&_h4]:normal-case! tw:[&_p]:m-0 tw:[&_p]:mb-4 tw:[&_p]:text-[1.1rem] tw:[&_p]:leading-normal tw:[&_ul]:mb-4 tw:[&_ul]:text-[1.1rem] tw:[&_ul]:leading-normal tw:[&_li]:mb-1">
           <Content />
         </div>
-        <div class="module-meta">
+        <div class="tw:min-[992px]:basis-[30%]">
           <Card>
             <CardImage entry={module.data.image} height={250} />
             <CardContent>
-              <dl class="meta-attributes">
-                <!-- <div class="meta-attribute"> -->
+              <dl class="tw:mb-0 tw:grid tw:grid-cols-[2fr_5fr] tw:gap-y-[0.2rem] tw:[&_dt]:font-medium! tw:[&_dt]:text-sm! tw:[&_dd]:text-md! tw:[&_dt]:text-muted-foreground tw:[&_dt]:uppercase tw:[&_dd]:leading-tight tw:[&_dd]:capitalize">
                 <dt>Name</dt>
-                <dd>{module.data.title}</dd>
-                <!-- </div> -->
-                <!-- <div class="meta-attribute"> -->
+                <dd class="tw:text-md!">{module.data.title}</dd>
                 <dt>Number</dt>
-                <dd>
+                <dd class="tw:text-md!">
                   <CopyButton
                     label={module.data.source.id}
                     text={module.data.source.id}
                   />
                 </dd>
-                <!-- </div> -->
-                <!-- <div class="meta-attribute"> -->
                 <dt>Type</dt>
-                <dd>{module.data.type}</dd>
-                <!-- </div> -->
-                <!-- <div class="meta-attribute"> -->
+                <dd class="tw:text-md!">{module.data.type}</dd>
                 <dt>Source</dt>
-                <dd>{module.data.source.name}</dd>
-                <!-- </div> -->
+                <dd class="tw:text-md!">{module.data.source.name}</dd>
               </dl>
-              <hr class="meta-divider" />
-              <p class="meta-disclaimer">
-                This link will take you to the NHI Catalog. Search for the
-                course name or number to register.
-              </p>
               <Button
                 class="ui:w-fit"
                 link={{
                   href: module.data.source.url,
                   isExternal: true,
                 }}
-                size="lg"
               >
                 Register
                 <Icon name="external-link" />
               </Button>
+              <p class="tw:text-sm! tw:text-muted-foreground tw:pt-4!">
+                This link will take you to the NHI Catalog. Search for the
+                course name or number to register.
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -153,16 +74,3 @@ const { Content } = await render(module);
     </Section>
   </Page>
 </Layout>
-<script>
-  const content = document.querySelector(".module-content");
-  if (content) {
-    const h3s = content.querySelectorAll("h3");
-    h3s.forEach((h3) => h3.classList.add("program-title-md", "mb-3"));
-    const h4s = content.querySelectorAll("h4");
-    h4s.forEach((h4) => h4.classList.add("program-title-sm", "mb-2"));
-    const ps = content.querySelectorAll("p");
-    ps.forEach((p) => p.classList.add("program-text", "mb-3"));
-    const uls = content.querySelectorAll("ul");
-    uls.forEach((ul) => ul.classList.add("program-list", "mb-3"));
-  }
-</script>
