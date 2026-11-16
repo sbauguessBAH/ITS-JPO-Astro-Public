@@ -9,7 +9,7 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <div
-  class={cn("tw:flex-1", "data-[size=sm]:tw:px-4 tw:px-5", className)}
+  class={cn("tw:flex-1", "tw:data-[size=sm]:px-4 tw:px-5", className)}
   data-slot="card-content"
   {...props}
 >
