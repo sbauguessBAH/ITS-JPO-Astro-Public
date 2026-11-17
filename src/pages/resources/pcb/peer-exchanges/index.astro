@@ -1,177 +1,197 @@
 ---
-// import { Image } from "astro:assets";
-
-// import arlingtonImage from "@/src/assets/images/pcb/peer-exchanges/arlington-mod.jpg";
-// import modImage from "@/src/assets/images/pcb/peer-exchanges/mod.jpg";
-// import qWarnImage from "@/src/assets/images/pcb/peer-exchanges/queue-warning.png";
-// import qwsImage from "@/src/assets/images/pcb/peer-exchanges/qws.png";
-import Link from "@/src/components/Link.astro";
-// import Card from "@/src/components/programs/card/Card.astro";
-// import CardBody from "@/src/components/programs/card/CardBody.astro";
-// import CardFooter from "@/src/components/programs/card/CardFooter.astro";
-// import CardHeader from "@/src/components/programs/card/CardHeader.astro";
+import { Image } from "astro:assets";
+import automatedVehicleImage from "@/src/assets/images/pcb/peer-exchanges/Automated-Vehicle-Peer-Exchanges-Thumb.png";
+import v2xTollingImage from "@/src/assets/images/pcb/peer-exchanges/V2X-and-Tolling-Peer-Exchange-thumb.png";
+import Card from "@/src/components/programs/card/Card.astro";
+import CardBody from "@/src/components/programs/card/CardBody.astro";
 import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+import base_url from "@/src/lib/base_url";
 
 import Layout from "../_layout.astro";
-
-// const resources = [
-//   {
-//     description: "The U.S. Department of Transportation (USDOT) facilitated a series of virtual peer exchanges designed to share best practices and lessons learned in planning and deploying Queue Warning Systems (QWS).",
-//     image: qWarnImage,
-//     slug: "queue-warning",
-//     title: "Queue Warning Peer Exchange"
-//   },
-//   {
-//     description: "The U.S. Department of Transportation (USDOT) facilitated interactive dialogues that brought together stakeholders to discuss key, targeted topics that impact MOD deployment and adoption.",
-//     image: modImage,
-//     slug: "mod",
-//     title: "Mobility on Demand (MOD) Peer Exchange"
-//   }
-// ]
 ---
+
 <style>
-  .overview-section {
+  .exchange-navigation {
     display: flex;
-    flex-direction: column;
-    gap: var(--size);
-  }
-  .overview-image {
-    border-radius: var(--border-radius);
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
-  @media (min-width: 992px) {
-    .overview-section {
-      flex-direction: row;
-      align-items: start;
-    }
-    .overview-image {
-      flex-basis: 40%;
-    }
-    .overview-text {
-      flex-basis: 60%;
-    }
-  }
-</style>
-<style>
-  .resource-card:hover {
-    background: rgba(var(--color-brand-light), 0.5);
-    box-shadow: var(--box-shadow-lg);
-  }
-  .resource-card-image {
-    width: 100%;
-    object-fit: cover;
-    height: 220px;
+  .exchange-section {
+    scroll-margin-top: 2rem;
   }
 
-  .resource-card-header {
-    overflow: visible;
-    padding: 0;
-  }
-  .resource-card-footer {
-    background: rgb(var(--color-gray-light));
-    padding: 1.5rem;
-  }
-
-  .resource-card-body {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.4rem;
-    height: 100%;
-  }
-
-  .card-grid {
+  .exchange-layout {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: var(--size);
+    gap: var(--size-lg);
+    align-items: start;
+  }
+
+  .exchange-image {
+    display: block;
+    width: 100%;
+    max-width: 28rem;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .materials-body {
+    padding: var(--size);
+  }
+
+  .materials-list {
+    margin-bottom: 0;
+  }
+
+  .materials-list li + li {
+    margin-top: 1rem;
+  }
+
+  .materials-list a {
+    overflow-wrap: anywhere;
+  }
+
+  .materials-note {
+    color: #595959;
+    font-size: 1rem;
+    margin-bottom: 0;
   }
 
   @media (min-width: 992px) {
-    .card-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .exchange-layout {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr) minmax(0, 1.5fr);
     }
   }
 </style>
+
 <Layout>
   <main class="program-main">
-    <ProgramSection>
-      <h2 class="program-title-lg mb-4">
-        Peer Exchanges
-      </h2>
+    <ProgramSection size="small">
+      <h2 class="program-title-lg mb-4">ITS Peer Exchanges</h2>
       <p class="program-text">
-        The ITS PCB Program facilitates peer exchanges to allow practitioners to share knowledge, experiences, and best practices with one another. 
-        These knowledge transfer events may be conducted as in-person or virtual events that cover a variety of topics related 
-        to intelligent transportation systems (ITS) and emerging transportation technologies.
+        Intelligent Transportation Systems (ITS) Peer Exchanges bring together
+        transportation professionals, public agencies, industry partners, and
+        subject matter experts to share experiences, explore emerging technologies,
+        and discuss opportunities and challenges related to the deployment of
+        intelligent transportation systems.
       </p>
       <p class="program-text">
-        If your agency is interested in conducting a peer exchange, please contact the ITS PCB Program 
-        at <Link href="mailto:itspcb@dot.gov" isExternal>itspcb@dot.gov</Link>.
+        These peer exchanges provide a collaborative environment for sharing
+        knowledge, highlighting lessons learned, discussing best practices, and
+        identifying opportunities to advance ITS deployment across the
+        transportation community.
       </p>
-      <!-- <div class="card-grid">
-        {resources.map(resource => (
-          <Card href={`/resources/pcb/peer-exchanges/${resource.slug}`} shadow="none" radius="lg" class="resource-card">
-            <CardHeader class="resource-card-header">
-              <Image 
-                src={resource.image}
-                alt={resource.title}
-                class="resource-card-image radius-none shadow"
-              />
-            </CardHeader>
-            <CardBody class="resource-card-body">
-              <h3 class="program-title-sm mb-2 text-foreground">
-                {resource.title}
-              </h3>
+      <p class="program-text">
+        Explore the peer exchanges below and access presentation materials,
+        resources, and other event-related content.
+      </p>
+      
+    </ProgramSection>
+
+    <ProgramSection color="gray">
+      <article id="automated-vehicle" class="exchange-section" aria-labelledby="automated-vehicle-title">
+        <h3 id="automated-vehicle-title" class="program-title-md mb-4">
+          Automated Vehicle Peer Exchanges
+        </h3>
+        <div class="exchange-layout">
+          <Image
+            src={automatedVehicleImage}
+            alt="View from inside an automated vehicle near the Golden Gate Bridge."
+            class="exchange-image"
+            widths={[320, 520, 780]}
+            sizes="(min-width: 992px) 260px, (min-width: 496px) 448px, calc(100vw - 48px)"
+          />
+          <div>
+            <p class="program-text">
+              The Automated Vehicle Peer Exchange brought together state and local
+              agencies and other stakeholders to share experiences, lessons
+              learned, and perspectives on automated vehicle deployments. The peer
+              exchange was led by USDOT in partnership with the San Francisco
+              County Transportation Authority (SFCTA) and was conducted September
+              9-11, 2026 in San Francisco, CA. Throughout the peer exchange,
+              participants engaged in discussion and interactive activities
+              grounded around four topic areas:
+            </p>
+            <ol class="program-list mb-0">
+              <li>Planning, Policy, and Public Engagement</li>
+              <li>Permitting Frameworks and Regulations</li>
+              <li>Operations, Enforcement, and Emergency Response</li>
+              <li>Data Collection and Performance Assessment</li>
+            </ol>
+          </div>
+          <Card id="automated-vehicle-materials" shadow="none" radius="lg">
+            <CardBody class="materials-body">
+              <h4 class="program-title-sm mb-3">Download Peer Exchange Materials</h4>
               <p class="program-text">
-                {resource.description}
+                Access presentation slides, meeting materials, and other resources
+                from the Automated Vehicle Peer Exchanges.
               </p>
+              <!-- Replace the presentations placeholder href when the file is available. -->
+              <ul class="program-list materials-list">
+                <li>
+                  <a href={base_url("/assets/pcb/peer-exchanges/USDOT-Automated-Vehicle-Peer-Exchange-Agenda.pdf")}>USDOT Automated Vehicle Peer Exchange Agenda</a>
+                </li>
+                <li>
+                  <a href="#automated-vehicle-materials">USDOT Automated Vehicle Peer Exchange Presentations</a>
+                </li>
+                <li>
+                  <a href={base_url("/assets/pcb/peer-exchanges/USDOT-Automated-Vehicle-Peer-Exchange-Posters.pdf")}>USDOT Automated Vehicle Peer Exchange - Poster Session</a>
+                </li>
+              </ul>
             </CardBody>
           </Card>
-        ))}
-      </div> -->
-    </ProgramSection>
-    <!-- <ProgramSection>
-      <div class="overview-section">
-        <div class="overview-text">
-          <h3 class="program-title-md">Queue Warning Peer Exchange</h3>
-          <p class="program-text">
-            The Queue Warning Peer Exchange, hosted by the U.S. Department of Transportation (USDOT), 
-            brought together transportation professionals to discuss the implementation and benefits 
-            of queue warning systems. These systems are designed to alert drivers of potential hazards 
-            caused by stopped or slow-moving traffic ahead, enhancing safety and reducing the risk of rear-end collisions.
-          </p>
-          <p class="program-text">
-            Participants shared experiences, challenges, and best practices in deploying queue warning technologies 
-            across various jurisdictions, fostering a collaborative environment for knowledge exchange.
-          </p>
         </div>
-        <div class="overview-image">
-          <Image src={qwsImage} alt="Queue Warning System" class="img-fluid radius-md shadow" />
-        </div>
-      </div>
+      </article>
     </ProgramSection>
+
     <ProgramSection>
-      <div class="overview-section">
-        <div class="overview-text">
-          <h3 class="program-title-md">
-            Mobility on Demand (MOD) Peer Exchange
-          </h3>
-          <p class="program-text">
-            The Mobility on Demand (MOD) Peer Exchange Series, hosted by the U.S. Department 
-            of Transportation (USDOT), facilitated interactive dialogues that brought together 
-            stakeholders to discuss key, targeted topics that impact MOD deployment and adoption. 
-          </p>
-          <p class="program-text">
-            This series aimed to support state-of-the-industry knowledge sharing 
-            regarding topic-specific needs and lessons learned, as well as opportunities 
-            for growth to advance MOD as a tool to support mobility and efficiency. 
-            These virtual peer exchanges featured presentations by subject matter experts 
-            and opportunities for attendees to engage with these experts as well 
-            as other peers in the space.
-          </p>
+      <article id="v2x-and-tolling" class="exchange-section" aria-labelledby="v2x-and-tolling-title">
+        <h3 id="v2x-and-tolling-title" class="program-title-md mb-4">
+          V2X and Tolling Peer Exchange
+        </h3>
+        <div class="exchange-layout">
+          <Image
+            src={v2xTollingImage}
+            alt="Connected vehicle demonstration with a display showing a toll zone ahead."
+            class="exchange-image"
+            widths={[320, 520, 780]}
+            sizes="(min-width: 992px) 260px, (min-width: 496px) 448px, calc(100vw - 48px)"
+          />
+          <div>
+            <p class="program-text mb-0">
+              The V2X and Tolling Peer Exchange explores the intersection of
+              vehicle-to-everything (V2X) technologies and electronic tolling
+              systems. This virtual exchange provided a forum to discuss
+              opportunities for leveraging V2X technologies to support tolling
+              operations, improve transportation system efficiency, and advance
+              interoperability. Topics include V2X applications, connected vehicle
+              infrastructure, tolling technology integration, deployment
+              considerations, and opportunities for collaboration across the
+              transportation and tolling communities.
+            </p>
+          </div>
+          <Card id="v2x-and-tolling-materials" shadow="none" radius="lg">
+            <CardBody class="materials-body">
+              <h4 class="program-title-sm mb-3">Download Peer Exchange Materials</h4>
+              <p class="program-text">
+                Access presentation slides, discussion materials, and other
+                resources from the V2X and Tolling Peer Exchange.
+              </p>
+              <h5 class="program-title-xs mb-3">October 28th Peer Exchange Session</h5>
+              <!-- Replace the presentations placeholder href when the file is available. -->
+              <ul class="program-list materials-list">
+                <li>
+                  <a href={base_url("/assets/pcb/peer-exchanges/USDOT-V2X-and-Tolling-Peer-Exchange-Agenda-Final.pdf")}>USDOT V2X and Tolling Peer Exchange Agenda &ndash; October 28, 2026</a>
+                </li>
+                <li>
+                  <a href="#v2x-and-tolling-materials">USDOT V2X and Tolling Peer Exchange Presentations &ndash; October 28, 2026</a>
+                </li>
+              </ul>
+            
+            </CardBody>
+          </Card>
         </div>
-        <div class="overview-image">
-          <Image src={arlingtonImage} alt="Arlington MOD Vehicle" class="img-fluid radius-md shadow" />
-        </div>
-      </div>
-    </ProgramSection> -->
+      </article>
+    </ProgramSection>
   </main>
 </Layout>
