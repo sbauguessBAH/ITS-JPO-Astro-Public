@@ -605,8 +605,8 @@ border-radius: 1rem;
   transform: translateY(-50%) translateX(5px);
 }
 
-/* Card H5 with external link icon */
-.card h5:after {
+/* Linked headings already receive an external-link icon from main.css. */
+.card h5:not(:has(a[href^="http://"], a[href^="https://"])):after {
   content: "\00a0\f08e";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
@@ -691,5 +691,4 @@ hr {
   line-height: 1.7;
   margin-bottom: 2rem;
 }
-
 
