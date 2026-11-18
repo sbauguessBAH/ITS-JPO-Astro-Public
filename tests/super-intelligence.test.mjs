@@ -70,7 +70,7 @@ test("revised resources and glossary follow the approved content structure", () 
   assert.ok(learning.includes("Find real-world examples and applications."));
   assert.ok(learning.includes("summer 2027"));
   const home = read("index.astro");
-  assert.ok(home.includes("<span class=\"fw-semibold\">Explore Case Studies</span>"));
+  assert.ok(home.includes("<span class=\"spotlight-cta fw-semibold\">Explore Case Studies</span>"));
   const practice = read(path.join("focus-areas", "put-si-into-practice", "index.astro"));
   assert.ok(!practice.includes("transportation-planning-design"));
   for (const heading of ["Freight Corridor Predictive Intelligence (FCPI)", "Connect Dynamics", "ecoLong", "FACTOR", "Advanced Analytical Methods to Improve Categorization of Land Use Contexts"]) {
