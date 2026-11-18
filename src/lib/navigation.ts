@@ -87,6 +87,7 @@ export const navigation: NavigationItem[] = [
                 url: "/research-areas/super-intelligence/focus-areas/learn-connect",
                 isEnabled: true,
                 pages: [
+                  { name: "Agency Case Studies", url: "/research-areas/super-intelligence/focus-areas/learn-connect/agency-case-studies" },
                   { name: "Governance", url: "/research-areas/super-intelligence/focus-areas/learn-connect/governance" },
                   { name: "Definitions & Concepts", url: "/research-areas/super-intelligence/focus-areas/learn-connect/definitions-concepts" },
                   { name: "Methods & Sub-Methods", url: "/research-areas/super-intelligence/focus-areas/learn-connect/methods-sub-methods" },

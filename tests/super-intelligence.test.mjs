@@ -8,6 +8,7 @@ import config from "../astro.config.mjs";
 const root = fileURLToPath(new URL("../", import.meta.url));
 const pages = path.join(root, "src", "pages");
 const programRoute = "/research-areas/super-intelligence";
+const agencyCaseStudiesRoute = `${programRoute}/focus-areas/learn-connect/agency-case-studies`;
 const program = path.join(pages, ...programRoute.split("/"));
 const read = relative => readFileSync(path.join(program, relative), "utf8");
 const files = directory => readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
@@ -31,6 +32,8 @@ test("legacy program URLs redirect directly to existing SI pages", () => {
   for (const file of sourceFiles) {
     const relative = path.relative(pages, file).split(path.sep).join("/");
     const route = `/${relative.replace(/(?:\/)?index\.astro$|\.astro$/g, "")}`;
+    // New SI pages have no historical AI URL to redirect.
+    if (route === agencyCaseStudiesRoute) continue;
     assert.ok(redirects.some(([, to]) => to === route), `Missing legacy redirect for ${route}`);
   }
 });
@@ -69,8 +72,6 @@ test("revised resources and glossary follow the approved content structure", () 
   assert.deepEqual(sections, ["ai-materials", "ai-foundations", "ai-knowledge-sharing", "ai-readiness"]);
   assert.ok(learning.includes("Find real-world examples and applications."));
   assert.ok(learning.includes("summer 2027"));
-  const home = read("index.astro");
-  assert.ok(home.includes("<span class=\"fw-semibold\">Explore Case Studies</span>"));
   const practice = read(path.join("focus-areas", "put-si-into-practice", "index.astro"));
   assert.ok(!practice.includes("transportation-planning-design"));
   for (const heading of ["Freight Corridor Predictive Intelligence (FCPI)", "Connect Dynamics", "ecoLong", "FACTOR", "Advanced Analytical Methods to Improve Categorization of Land Use Contexts"]) {
@@ -82,4 +83,25 @@ test("revised resources and glossary follow the approved content structure", () 
     assert.ok(sectionS.includes(`<h4 class="term-title">${term}</h4>`), term);
   }
   assert.ok(!glossary.includes('<h4 class="term-title">Artificial Intelligence (AI)</h4>'));
+});
+
+test("agency case studies are discoverable and reference the supplied PDFs", () => {
+  assert.ok(routeExists(agencyCaseStudiesRoute));
+  for (const relative of ["index.astro", path.join("focus-areas", "learn-connect", "index.astro")]) {
+    assert.ok(read(relative).includes(`href={base_url("${agencyCaseStudiesRoute}")}`), relative);
+  }
+  const navigation = readFileSync(path.join(root, "src", "lib", "navigation.ts"), "utf8");
+  assert.ok(navigation.includes(`{ name: "Agency Case Studies", url: "${agencyCaseStudiesRoute}" }`));
+  const source = read(path.join("focus-areas", "learn-connect", "agency-case-studies.astro"));
+  const documents = [...source.matchAll(/import \w+ from "@\/(src\/assets\/documents\/[^"]+\.pdf)"/g)].map(([, file]) => file);
+  assert.equal(documents.length, 2);
+  for (const file of documents) {
+    assert.equal(readFileSync(path.join(root, file)).subarray(0, 5).toString(), "%PDF-", file);
+  }
+  for (const agency of ["Nebraska Department of Transportation", "North Carolina Department of Transportation"]) {
+    assert.ok(source.includes(agency), agency);
+  }
+  assert.ok(source.includes("href={study.document}"));
+  assert.match(source, /\sdownload\s/);
+  assert.ok(source.includes("case study (PDF)"));
 });

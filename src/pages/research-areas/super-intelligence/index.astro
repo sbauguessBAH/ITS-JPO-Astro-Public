@@ -7,6 +7,7 @@ import intelligenceInMotionBg from "@/src/assets/images/ai/intelligenc-in-motion
 import getAIReadyImage from "@/src/assets/images/ai/GetAIReady.png";
 import putAIIntoPracticeImage from "@/src/assets/images/ai/PutAIIntoPractice.png";
 import learnConnectImage from "@/src/assets/images/ai/Learn-Connect.jpeg";
+import agencyCaseStudiesImage from "@/src/assets/images/ai/AI Home Spotlight Image_Agency Case Studies.jpg";
 import "@/src/styles/ai-section.css";
 ---
 
@@ -67,16 +68,19 @@ import "@/src/styles/ai-section.css";
       <div class="col-12 col-md">
         <h2>Spotlight</h2>
 
-        <!-- Spotlight: National Webinar -->
-        <div class="spotlight-card rounded-4 overflow-hidden mb-4">
+        <!-- Spotlight: Agency Case Studies -->
+        <div class="spotlight-card overflow-hidden mb-4">
           <div class="row g-0 h-100">
-            <div class="col-12 d-flex flex-column justify-content-center p-4 p-lg-5">
+            <div class="col-12 col-md-6 spotlight-content d-flex flex-column justify-content-center">
               <span class="spotlight-tag mb-3">Featured Resource</span>
               <h3 class="text-white fw-bold mb-3">Agency Case Studies</h3>
-              <p class="text-white mb-3" style="opacity: 0.9;">Explore how transportation agencies are applying advanced analytics and intelligence solutions to real-world transportation challenges. Discover effective practices, lessons learned, and key outcomes from research, pilot programs, and larger deployments.</p>
+              <p class="text-white mb-3">Explore how transportation agencies are applying advanced analytics and intelligence solutions to real-world transportation challenges. Discover effective practices, lessons learned, and key outcomes from research, pilot programs, and larger deployments.</p>
               <div>
-                <span class="fw-semibold">Explore Case Studies</span>
+                <a href={base_url("/research-areas/super-intelligence/focus-areas/learn-connect/agency-case-studies")} class="spotlight-cta fw-semibold">Explore Case Studies</a>
               </div>
+            </div>
+            <div class="col-12 col-md-6 spotlight-img-col">
+              <Image src={agencyCaseStudiesImage} alt="" class="spotlight-img" width={800} />
             </div>
           </div>
         </div>
@@ -138,8 +142,41 @@ import "@/src/styles/ai-section.css";
 </PageLayout>
 <style>
   .spotlight-card {
-    background: linear-gradient(120deg, #01141e 0%, #0a5c8a 55%, #05547e 100%);
-    box-shadow: 0 6px 24px rgba(3, 43, 82, 0.25);
+    position: relative;
+    background: linear-gradient(to right, #03435d 25%, #42758a 70%);
+    border-radius: 0.375rem;
+  }
+
+  .spotlight-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+  }
+
+  .spotlight-content h3 {
+    text-transform: none;
+  }
+
+  .spotlight-cta {
+    display: inline-block;
+    padding: 0.65rem 1.25rem;
+    border-radius: 0.25rem;
+    background: var(--bs-yellow, #ffc107);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .spotlight-cta:hover {
+    background: #ffca2c;
+    color: #000;
+  }
+
+  .spotlight-cta:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
   }
 
   .spotlight-tag {
@@ -162,29 +199,35 @@ import "@/src/styles/ai-section.css";
   }
 
   .spotlight-img-col {
-    position: relative;
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 55%;
     min-height: 0;
   }
 
   .spotlight-img {
+    position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    mask-image: linear-gradient(to right, transparent, black 60%);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 767.98px) {
     .spotlight-card {
       max-height: none;
     }
 
     .spotlight-img-col {
+      position: relative;
+      inset: auto;
+      width: 100%;
       min-height: 200px;
     }
 
     .spotlight-img {
-      position: absolute;
-      inset: 0;
+      mask-image: linear-gradient(to bottom, transparent, black 35%);
     }
   }
 
