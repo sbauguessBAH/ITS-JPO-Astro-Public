@@ -7,6 +7,7 @@ import intelligenceInMotionBg from "@/src/assets/images/ai/intelligenc-in-motion
 import getAIReadyImage from "@/src/assets/images/ai/GetAIReady.png";
 import putAIIntoPracticeImage from "@/src/assets/images/ai/PutAIIntoPractice.png";
 import learnConnectImage from "@/src/assets/images/ai/Learn-Connect.jpeg";
+import agencyCaseStudiesImage from "@/src/assets/images/ai/AI Home Spotlight Image_Agency Case Studies.jpg";
 import "@/src/styles/ai-section.css";
 ---
 
@@ -67,16 +68,19 @@ import "@/src/styles/ai-section.css";
       <div class="col-12 col-md">
         <h2>Spotlight</h2>
 
-        <!-- Spotlight: National Webinar -->
+        <!-- Spotlight: Agency Case Studies -->
         <div class="spotlight-card rounded-4 overflow-hidden mb-4">
           <div class="row g-0 h-100">
-            <div class="col-12 d-flex flex-column justify-content-center p-4 p-lg-5">
+            <div class="col-12 col-md-7 d-flex flex-column justify-content-center p-4 p-lg-5">
               <span class="spotlight-tag mb-3">Featured Resource</span>
               <h3 class="text-white fw-bold mb-3">Agency Case Studies</h3>
               <p class="text-white mb-3" style="opacity: 0.9;">Explore how transportation agencies are applying advanced analytics and intelligence solutions to real-world transportation challenges. Discover effective practices, lessons learned, and key outcomes from research, pilot programs, and larger deployments.</p>
               <div>
                 <span class="fw-semibold">Explore Case Studies</span>
               </div>
+            </div>
+            <div class="col-12 col-md-5 spotlight-img-col">
+              <Image src={agencyCaseStudiesImage} alt="" class="spotlight-img" width={800} />
             </div>
           </div>
         </div>
@@ -167,13 +171,15 @@ import "@/src/styles/ai-section.css";
   }
 
   .spotlight-img {
+    position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    mask-image: linear-gradient(to right, transparent, black 35%);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 767.98px) {
     .spotlight-card {
       max-height: none;
     }
@@ -183,8 +189,7 @@ import "@/src/styles/ai-section.css";
     }
 
     .spotlight-img {
-      position: absolute;
-      inset: 0;
+      mask-image: linear-gradient(to bottom, transparent, black 35%);
     }
   }
 
