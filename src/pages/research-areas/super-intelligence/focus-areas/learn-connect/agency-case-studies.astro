@@ -31,16 +31,16 @@ const caseStudies = [
 
     <div class="case-studies-grid">
       {caseStudies.map(study => (
-        <article class="case-study-card">
+        <article class="card info-card case-study-card">
           <p class="case-study-agency">{study.agency}</p>
-          <h3>{study.title}</h3>
+          <h3 class="card-title">{study.title}</h3>
           <p class="case-study-summary">{study.summary}</p>
           <ul class="case-study-tags" aria-label="Topics and project stage">
             {study.tags.map(tag => <li>{tag}</li>)}
           </ul>
           <a
             href={study.document}
-            class="btn btn-warning case-study-download"
+            class="btn case-study-download"
             download
             aria-label={`Download ${study.agency} case study (PDF)`}
           >
@@ -53,6 +53,11 @@ const caseStudies = [
 </PageLayout>
 
 <style>
+  .card-title{
+    font-size: 1.125rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
   .case-studies-title {
     border-bottom: 3px solid var(--ai-blue-secondary);
     padding-bottom: 0.25rem;
@@ -70,28 +75,17 @@ const caseStudies = [
     display: flex;
     flex-direction: column;
     padding: 1.25rem;
-    border: 2px solid var(--ai-card-gray-border);
-    border-radius: 1.5rem;
   }
 
   .case-study-agency {
-    color: var(--ai-blue-secondary);
+    color: black;
     font-size: 0.9rem;
     font-weight: 700;
     margin: 0 0 1rem;
     padding: 0;
   }
 
-  .case-study-card h3 {
-    color: #17233c;
-    font-size: 1.125rem;
-    font-weight: 700;
-    text-transform: none;
-    margin-bottom: 0.5rem;
-  }
-
   .case-study-summary {
-    color: #5e6872;
     line-height: 1.5;
     margin-bottom: 0.75rem;
     padding: 0;
@@ -117,24 +111,6 @@ const caseStudies = [
 
   .case-study-download {
     margin-top: auto;
-    background: #f0ce18;
-    border-color: #f0ce18;
-    color: #000;
-    font-size: 0.875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 0.75rem;
-  }
-
-  .case-study-download:hover {
-    background: #dfbd08;
-    border-color: #dfbd08;
-    color: #000;
-  }
-
-  .case-study-download:focus-visible {
-    outline: 3px solid var(--ai-blue-primary);
-    outline-offset: 3px;
   }
 
   @media (max-width: 767.98px) {
