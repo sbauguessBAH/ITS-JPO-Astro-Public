@@ -1,0 +1,145 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import nebraskaCaseStudy from "@/src/assets/documents/advanced-analytics-and-si/Asset Management and Machine Learning CaseStudy_NebraskaDOT_Final.pdf";
+import northCarolinaCaseStudy from "@/src/assets/documents/advanced-analytics-and-si/Drone Imagery Analytics CaseStudy_NCDOT_Final.pdf";
+import "@/src/styles/ai-section.css";
+
+const caseStudies = [
+  {
+    agency: "Nebraska Department of Transportation",
+    title: "Machine Learning-Enhanced Roadway Asset Identification and Classification",
+    summary: "Statewide guardrail and endcap inventory plus classification of more than 1,300 marked crosswalks, with agency review of all model outputs",
+    tags: ["Asset management", "Pilot project"],
+    document: nebraskaCaseStudy,
+  },
+  {
+    agency: "North Carolina Department of Transportation",
+    title: "Crash Scene Reconstruction Using Unmanned Aircraft System Imagery",
+    summary: "Reduced crash scene mapping time from 1 hour and 51 minutes to 25 minutes (~77% faster), with measurement accuracy within 0.03 feet",
+    tags: ["Transportation safety - crash reconstruction", "Exploratory research/field demonstration"],
+    document: northCarolinaCaseStudy,
+  },
+];
+---
+
+<PageLayout title="Agency Case Studies" bannerImage={banner}>
+  <Fragment slot="banner">Advanced Analytics and Super Intelligence (SI)</Fragment>
+  <main>
+    <h2 class="case-studies-title">Agency Case Studies</h2>
+    <p>Explore case studies from peer agencies to learn how they applied advanced analytics and intelligence solutions in transportation to meet their needs. Learn about current effective practices, lessons learned, and key outcomes from exploratory research, pilots, and larger deployments.</p>
+
+    <div class="case-studies-grid">
+      {caseStudies.map(study => (
+        <article class="case-study-card">
+          <p class="case-study-agency">{study.agency}</p>
+          <h3>{study.title}</h3>
+          <p class="case-study-summary">{study.summary}</p>
+          <ul class="case-study-tags" aria-label="Topics and project stage">
+            {study.tags.map(tag => <li>{tag}</li>)}
+          </ul>
+          <a
+            href={study.document}
+            class="btn btn-warning case-study-download"
+            download
+            aria-label={`Download ${study.agency} case study (PDF)`}
+          >
+            Download
+          </a>
+        </article>
+      ))}
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .case-studies-title {
+    border-bottom: 3px solid var(--ai-blue-secondary);
+    padding-bottom: 0.25rem;
+  }
+
+  .case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    max-width: 58rem;
+    margin-top: 2rem;
+  }
+
+  .case-study-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    border: 2px solid var(--ai-card-gray-border);
+    border-radius: 1.5rem;
+  }
+
+  .case-study-agency {
+    color: var(--ai-blue-secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+
+  .case-study-card h3 {
+    color: #17233c;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: none;
+    margin-bottom: 0.5rem;
+  }
+
+  .case-study-summary {
+    color: #5e6872;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    padding: 0;
+  }
+
+  .case-study-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  .case-study-tags li {
+    background: #e9edf5;
+    color: #33415c;
+    border-radius: 2rem;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .case-study-download {
+    margin-top: auto;
+    background: #f0ce18;
+    border-color: #f0ce18;
+    color: #000;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.75rem;
+  }
+
+  .case-study-download:hover {
+    background: #dfbd08;
+    border-color: #dfbd08;
+    color: #000;
+  }
+
+  .case-study-download:focus-visible {
+    outline: 3px solid var(--ai-blue-primary);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 767.98px) {
+    .case-studies-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

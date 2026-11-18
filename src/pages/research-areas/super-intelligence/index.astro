@@ -76,7 +76,7 @@ import "@/src/styles/ai-section.css";
               <h3 class="text-white fw-bold mb-3">Agency Case Studies</h3>
               <p class="text-white mb-3">Explore how transportation agencies are applying advanced analytics and intelligence solutions to real-world transportation challenges. Discover effective practices, lessons learned, and key outcomes from research, pilot programs, and larger deployments.</p>
               <div>
-                <span class="spotlight-cta fw-semibold">Explore Case Studies</span>
+                <a href={base_url("/research-areas/super-intelligence/focus-areas/learn-connect/agency-case-studies")} class="spotlight-cta fw-semibold">Explore Case Studies</a>
               </div>
             </div>
             <div class="col-12 col-md-6 spotlight-img-col">
@@ -166,6 +166,17 @@ import "@/src/styles/ai-section.css";
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .spotlight-cta:hover {
+    background: #ffca2c;
+    color: #000;
+  }
+
+  .spotlight-cta:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
   }
 
   .spotlight-tag {
