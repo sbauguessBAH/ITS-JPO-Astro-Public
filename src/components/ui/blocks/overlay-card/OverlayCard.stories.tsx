@@ -18,7 +18,7 @@ const meta = {
     },
   },
   args: {
-    backgroundImage: "pcb/resources/cohort",
+    backgroundImage: "pcb/cohort",
     class: "tw:max-w-md",
     color: "primary",
     description:
