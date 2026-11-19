@@ -125,6 +125,12 @@ export const navigation: NavigationItem[] = [
               {
                 name: "Automated Driving System (ADS) Integration",
                 url: "/research-areas/automation-program/focus-areas/ads",
+                pages: [
+                  {
+                    name: "Automated Shuttle Pilots in National Parks",
+                    url: "/research-areas/automation-program/focus-areas/ads/national-parks",
+                  },
+                ]
               },
             ],
           },

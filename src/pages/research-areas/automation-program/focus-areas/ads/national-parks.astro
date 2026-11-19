@@ -1,0 +1,204 @@
+---
+
+import MapOriginal from "@/src/assets/images/automation/AutomationNPS.png";
+import Map from "@/src/assets/images/automation/MapStars.png";
+import Acadia from "@/src/assets/images/automation/Acadia.png";
+import Yosemite from "@/src/assets/images/automation/Yosemite.png";
+import Layout from "../../_layout.astro";
+import ProgramSection from "src/components/programs/ProgramSection.astro";
+import { Image } from "astro:assets";
+---
+
+<style>
+  /* General Styles */
+  .subtitle {
+    color: rgb(var(--color-brand-dark));
+    font-size: 22px;
+    text-transform: none;
+  }
+</style>
+<style>
+  /* Focus Area Cards */
+  .area-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  @media (min-width: 992px) {
+    .area-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .area-card {
+    border: 1px solid var(--border-light);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 8px;
+  }
+  .area-card-header {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    color: rgb(var(--color-brand-dark));
+  }
+  .area-card-title {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    color: inherit;
+    text-wrap: balance;
+  }
+  @media (min-width: 992px) {
+    .image-collage {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+    .vert-split{
+      display:grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr;
+    }    
+  }
+
+  @media (max-width: 992px) {
+    .image-collage {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1rem;
+    }
+    .vert-split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
+  }
+  
+
+  .side-image, .map-image{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  } 
+  .map-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .collage-bullets {
+    list-style-type: disc;
+    margin: 0px 0px;
+  }
+</style>
+<style>
+  .highlight-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* padding: 1rem; */
+  }
+  /* Highlight Cards */
+  .highlight-card {
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border-left: 4px solid rgb(var(--color-brand-dark));
+  }
+  .highlight-card-header {
+    background: rgb(var(--color-gray-light));
+    padding: 1rem 1rem;
+    margin: 0;
+    color: rgb(var(--color-brand-dark));
+    font-size: 18px;
+    font-weight: medium;
+  }
+  .highlight-card-content {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.1rem;
+  }
+</style>
+<Layout title="Automation Program">
+  <main class="program-main">
+    <ProgramSection size="small">
+      
+      <h2 class="program-title-lg">
+        Automated Shuttle Pilots in National Parks
+      </h2>
+      <p class="max-w-lg program-text">
+        <b>ITS JPO</b> has partnered with <b>Federal Highway Administration (FHWA) Office of Federal Lands Highway</b> and the <b>National Park Service (NPS)</b> 
+        to pilot four automated buses at Acadia and Yosemite National Parks during the Summer 2027 operating season. These pilots aim to demonstrate 
+        safe, reliable fixed-route service in National Park roadways which are remote, include varied terrain, and often experience limited GPS and 
+        communications environments. Performance data and results will be used to inform NPS planning for Automated Driving Systems (ADS) in future park 
+        transportation. This project will build a deeper understanding of current automated shuttle capabilities and performance on federally-managed 
+        roadways in distinct environments within our nation’s transportation system. Automated shuttle operational pilots are planned for the Summer/early-Fall 
+        operating season, complementing existing shuttle services and will be followed by Data Analysis and Pilot Evaluation activities concluding in early 2028.
+      </p>
+      <div class="image-collage max-w-lg">
+        <div class="vert-split">
+          <div class="area-card">
+            <div class="area-card-header">
+              
+              <h3 class="area-card-title">Yosemite National Park</h3>
+            </div>
+            <ul>
+              <li class="program-text collage-bullets">Established in 1890</li>
+              <li class="program-text collage-bullets">~3,000 km²</li>
+              <li class="program-text collage-bullets">~4.3 million annual visitors</li>
+            </ul>
+          </div>
+          <Image src={Yosemite} alt="Yosemite National Park Image"  class="side-image"/>
+        </div>
+        <div class="map-div">
+          <Image src={Map} alt="Map of Automated Shuttle Pilots in National Parks" class="map-image"/>
+        </div>
+        <div class="vert-split">
+          <div class="area-card">
+            <div class="area-card-header">
+              
+              <h3 class="area-card-title">Acadia National Park</h3>
+            </div>
+            <ul>
+              <li class="program-text collage-bullets">Established in 1916</li>
+              <li class="program-text collage-bullets">~200 km²</li>
+              <li class="program-text collage-bullets">~4.1 million annual visitors</li>
+            </ul>
+          </div>
+          <Image src={Acadia} alt="Acadia National Park Image" class="side-image"/>
+        </div>
+      </div>
+      
+      
+      
+      <div class="area-container mt-4 max-w-lg">
+        <div class="area-card">
+          <div class="area-card-header">
+            
+            <h3 class="area-card-title">Planned operations at Yosemite National Park</h3>
+          </div>
+          <ul>
+            <li class="program-text">Two automated shuttle buses (28-foot, 43 passengers) operating at 25 mph</li>
+            <li class="program-text">Shuttle for visitors between Mariposa Grove Welcome Center and trailhead (2 miles)</li>
+            <li class="program-text">Numerous curves and approximately 500 feet in elevation change along route</li>
+            <li class="program-text">Operations scheduled for June-November 2027</li>
+          </ul>
+        </div>
+        <div class="area-card">
+          <div class="area-card-header">
+            
+            <h3 class="area-card-title">Planned operations at Acadia National Park</h3>
+          </div>
+          <ul>
+            <li class="program-text">Two automated shuttle buses (28-foot, 43 passengers) operating at 25 mph</li>
+            <li class="program-text">Fixed route from Hulls Cove Visitor Center and three different trailhead stops (9 miles)</li>
+            <li class="program-text">Operations scheduled for June-October, 2027</li>
+          </ul>
+        </div>
+      </div>
+    </ProgramSection>
+  </main>
+</Layout>
