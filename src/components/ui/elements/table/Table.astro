@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+type Props = HTMLAttributes<"table">;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<div class="tw:relative tw:w-full tw:overflow-x-auto" data-slot="table-container">
+  <table
+    class={cn(
+      "tw:w-full tw:caption-bottom tw:border-collapse tw:text-sm",
+      className,
+    )}
+    data-slot="table"
+    {...props}
+  >
+    <slot />
+  </table>
+</div>

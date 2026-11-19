@@ -3,7 +3,10 @@ import vue from "@astrojs/vue";
 
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
+
 import { loadEnv } from "vite";
+
+import tailwindcss from "@tailwindcss/vite";
 
 /** Load the BASE_URL from a `.env` file */
 const { BASE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), "");
@@ -63,5 +66,11 @@ export default defineConfig({
     "/research-areas/artificial-intelligence/overview/jpo-implementation-approach": "/research-areas/super-intelligence/overview/jpo-implementation-approach",
     "/research-areas/artificial-intelligence/overview/where-ai-advances-transportation": "/research-areas/super-intelligence/overview/where-si-advances-transportation"
   
+  },
+  vite: {
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["@storybook/addon-docs"],
+    },
   },
 });
