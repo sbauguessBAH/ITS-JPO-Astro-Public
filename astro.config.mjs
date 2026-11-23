@@ -14,6 +14,14 @@ export default defineConfig({
   base: BASE_URL,
   site: "https://www.its.dot.gov",
   output: "static",
+  vite: {
+    build: {
+      assetsInlineLimit(filePath) {
+        // Keep runtime Pagefind imports out of Astro's script-inlining pass.
+        if (filePath.includes("search.astro_astro_type_script")) return false;
+      },
+    },
+  },
   integrations: [partytown(), sitemap(), vue()],
   redirects: {
     "/index.htm": "/",

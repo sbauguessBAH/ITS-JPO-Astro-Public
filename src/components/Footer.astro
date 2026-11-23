@@ -1,17 +1,42 @@
 ---
+import { Image } from "astro:assets";
+import youtubeIcon from "@/src/assets/images/Youtube.png";
+import facebookIcon from "@/src/assets/images/Facebook.png";
+import twitterIcon from "@/src/assets/images/Twitter.png";
+import linkedinIcon from "@/src/assets/images/inDeed.png";
 ---
 <footer>
     <div class=" container">
-    <p class="mb-3">
-        <a href="https://www.transportation.gov/administrations/research-and-technology/" target="_blank"
-            rel="noopener noreferrer">Office of the Assistant Secretary for Research and Technology
-            (OST-R)</a>
-         <br />
-        <a href="https://www.transportation.gov/" target="_blank" rel="noopener noreferrer">U.S. Department of
-            Transportation (US DOT)</a>
-        <br />
-        1200 New Jersey Avenue, SE • Washington, DC 20590 • 800.853.1351
-    </p>
+    <div class="row align-items-start">
+      <div class="col-sm-8 col-lg-9">
+        <p class="mb-3">
+          <a href="https://www.transportation.gov/administrations/research-and-technology/" target="_blank"
+              rel="noopener noreferrer">Office of the Assistant Secretary for Research and Technology
+              (OST-R)</a>
+          <br />
+          <a href="https://www.transportation.gov/" target="_blank" rel="noopener noreferrer">U.S. Department of
+              Transportation (US DOT)</a>
+          <br />
+          1200 New Jersey Avenue, SE • Washington, DC 20590 • 800.853.1351
+        </p>
+      </div>
+      <div class="col-sm-4 col-lg-3 d-none d-sm-block">
+        <div class="d-flex flex-wrap justify-content-end align-items-center gap-2" role="group" aria-label="Social media">
+          <a href="https://www.youtube.com/@itsjpo" target="_blank" rel="noopener noreferrer">
+            <Image src={youtubeIcon} class="SocialMediaIcon" alt="YouTube" />
+          </a>
+          <a href="https://www.facebook.com/USDOTResearch" target="_blank" rel="noopener noreferrer">
+            <Image src={facebookIcon} class="SocialMediaIcon" alt="Facebook" />
+          </a>
+          <a href="https://x.com/ITS_USDOT" target="_blank" rel="noopener noreferrer">
+            <Image src={twitterIcon} class="SocialMediaIcon" alt="X (formerly Twitter)" />
+          </a>
+          <a href="https://www.linkedin.com/company/usdot/" target="_blank" rel="noopener noreferrer">
+            <Image src={linkedinIcon} class="SocialMediaIcon" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+    </div>
 
     
         <h3 class="text-light">Policies, Rights, and Legal</h3>

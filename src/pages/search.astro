@@ -1,0 +1,105 @@
+---
+import BaseLayout from "@/src/layouts/BaseLayout.astro";
+import SearchForm from "@/src/components/SearchForm.astro";
+---
+
+<BaseLayout title="Search" description="Search ITS Joint Program Office pages." searchable={false}>
+  <main class="container-xl search-page">
+    <h1 class="search-page-title">Search this site</h1>
+    <p>Search ITS JPO pages. PDF and other document contents are not included.</p>
+    <SearchForm id="results-site-search" />
+    <div id="site-search-results" data-base-url={import.meta.env.BASE_URL}>
+      <p id="search-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      <p id="search-error" role="alert" hidden>
+        Search could not be loaded. Check your connection and
+        <a href="">reload to try again</a>. If the problem continues, please try later.
+      </p>
+      <ol id="search-results" role="list"></ol>
+      <button id="search-more" class="btn btn-primary" type="button" hidden>Load more results</button>
+    </div>
+    <noscript><p>JavaScript is required to search. You can also use the navigation menu to browse the site.</p></noscript>
+    {import.meta.env.DEV && <p>Search requires a production index. Run npm run build, then npm run preview to test search.</p>}
+  </main>
+</BaseLayout>
+
+<script>
+  import "@/src/scripts/search";
+</script>
+
+<style>
+  .search-page {
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    min-height: 50vh;
+  }
+
+  .search-page-title {
+    font-size: 2rem;
+    color: #055681;
+    text-transform: none;
+  }
+
+  #search-status {
+    margin-top: 1.5rem;
+    color: #495057;
+    font-weight: 600;
+  }
+
+  #search-error {
+    color: #a32020;
+  }
+
+  #search-results {
+    list-style: none;
+    padding: 0;
+    counter-reset: search-result;
+  }
+
+  #search-results :global(li) {
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 0.35rem 0.85rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #dce5eb;
+    counter-increment: search-result;
+    overflow-wrap: anywhere;
+  }
+
+  #search-results :global(li::before) {
+    content: counter(search-result);
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: #e8f2f8;
+    color: #055681;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #search-results :global(h2) {
+    grid-column: 2;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  #search-results :global(p) {
+    grid-column: 2;
+    margin: 0;
+    color: #495057;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  #search-results :global(a:focus-visible),
+  #search-more:focus-visible {
+    outline: 3px solid #09638c;
+    outline-offset: 3px;
+  }
+</style>

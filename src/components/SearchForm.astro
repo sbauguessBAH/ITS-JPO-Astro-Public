@@ -1,0 +1,67 @@
+---
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/+$/, "") + "/";
+---
+
+<form class="site-search-form" role="search" aria-label="Site search" action={`${base}search/`} method="get">
+  <label class="visually-hidden" for={id}>Search this site</label>
+  <input id={id} name="q" type="search" placeholder="Search this site" />
+  <button type="submit" aria-label="Search">
+    <i class="fas fa-search" aria-hidden="true"></i>
+  </button>
+</form>
+
+<style>
+  .site-search-form {
+    display: flex;
+    width: 100%;
+    max-width: 28rem;
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  input {
+    flex: 1;
+    max-height: 30px;
+    min-width: 0;
+    width: 100%;
+    border: 1px solid #6c757d;
+    border-radius: 100rem;
+    background: white;
+    color: #212529;
+    padding: 0.4rem 0.65rem;
+    font: inherit;
+  }
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+    border-radius: 100rem;
+    background: #3170b4;
+    color: white;
+    padding: 0;
+    font: inherit;
+    line-height: 1;
+    font-weight: 600;
+  }
+
+  button:hover {
+    background: #091f61;
+  }
+
+  input:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #ffcc00;
+    outline-offset: 2px;
+  }
+</style>

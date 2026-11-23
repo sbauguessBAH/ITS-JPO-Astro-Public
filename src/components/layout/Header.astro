@@ -1,17 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import USDOTLogo from "@/src/assets/images/DOT-Logo.svg";
-import youtubeIcon from "@/src/assets/images/Youtube.png";
-import facebookIcon from "@/src/assets/images/Facebook.png";
-import instgramIcon from "@/src/assets/images/Instagram.png";
-import twitterIcon from "@/src/assets/images/Twitter.png";
-import inDeedIcon from "@/src/assets/images/inDeed.png";
 import base_url from "@/src/lib/base_url";
 import { getTrimmedPathname, navigation } from "@/src/lib/navigation";
+import SearchForm from "@/src/components/SearchForm.astro";
 
 const pathname = Astro.url.pathname;
 const trimmedPathname = getTrimmedPathname(pathname);
-// return true when the current trimmedPathname is the section or any child of it
+// Match the section and its descendants without matching similarly prefixed section names.
 const isActiveSection = (sectionUrl: string) => {
   const normalize = (u: string) => (u || "").replace(/\/+$/g, "");
   const normSection = normalize(sectionUrl);
@@ -21,7 +17,7 @@ const isActiveSection = (sectionUrl: string) => {
 ---
 
 <style>
-  /* ===== Global / header layout ===== */
+  /* ===== Shared header: DOT/search strip above the site title and menu ===== */
   .navbar-toggler {
     display: none;
   }
@@ -29,8 +25,27 @@ const isActiveSection = (sectionUrl: string) => {
     background-color: #091f61;
     width: 100%;
   }
+  /* Allow the strip to grow when its logo and search form wrap. */
   .top-bar-container {
-    height: 50px;
+    min-height: 50px;
+    gap: 0.75rem 1.5rem;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Search placement and width only; input/button styling lives in SearchForm.astro. */
+  .header-search {
+    flex: 1 1 18rem;
+    max-width: 28rem;
+  }
+
+  /* Keep search visible on its own row on phones, outside the collapsible menu. */
+  @media (max-width: 575px) {
+    .header-search {
+      flex-basis: 100%;
+      max-width: none;
+    }
   }
 
   .header-bar {
@@ -227,7 +242,7 @@ const isActiveSection = (sectionUrl: string) => {
       opacity: 1;
       color: black;
     }
-    /* Show dropdowns when aria-expanded is true (keyboard navigation) */
+    /* Preserve Bootstrap's click/keyboard-expanded state alongside desktop hover. */
     .navbar-nav .dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
       display: block !important;
       visibility: visible;
@@ -238,7 +253,7 @@ const isActiveSection = (sectionUrl: string) => {
       color: black !important;
       background-color: white;
     }
-    /* hide dropdowns by default on desktop until hover */
+    /* Hide desktop dropdowns unless hover or the expanded-state rule opens them. */
     .navbar-nav .dropdown-menu {
       display: none;
     }
@@ -247,6 +262,7 @@ const isActiveSection = (sectionUrl: string) => {
   }
 
   /* ===== Responsive adjustments ===== */
+  /* Stack the title above the menu when there is not enough horizontal space. */
   @media (max-width: 1200px) {
     .header-bar {
       flex-wrap: wrap;
@@ -294,13 +310,13 @@ const isActiveSection = (sectionUrl: string) => {
       margin-bottom: 10px;
     }
 
-    /* Show an 'X' when the toggler is expanded (i.e. doesn't have `collapsed`) */
+    /* Bootstrap updates aria-expanded; use it to switch between close and menu icons. */
     .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' d='M6 6 L24 24 M24 6 L6 24'/%3e%3c/svg%3e");
       align-self: center;
     }
 
-    /* Show hamburger when the toggler has the `collapsed` class (default) */
+    /* The collapsed menu uses the hamburger icon. */
     .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
       align-self: center;
@@ -372,30 +388,18 @@ const isActiveSection = (sectionUrl: string) => {
   }
 </style>
 
+<!-- Utility strip: DOT branding and persistent search. -->
 <div class="top-bar">
   <div class="container-xl d-flex justify-content-between align-items-center top-bar-container">
     <a href="https://www.transportation.gov/">
       <Image src={USDOTLogo} class="dot-logo" alt="U.S Department of Transportation Logo" />
     </a>
-    <div class="d-none d-sm-flex flex-row align-items-center gap-2">
-      <a href="https://www.youtube.com/@itsjpo" target="_blank">
-        <Image src={youtubeIcon} class="SocialMediaIcon" alt="Youtube Logo" />
-      </a>
-      <a href="https://www.facebook.com/USDOTResearch" target="_blank">
-        <Image src={facebookIcon} class="SocialMediaIcon" alt="Facebook Logo" />
-      </a>
-      <!-- <a href="https://x.com/ITS_USDOT" target="_blank">
-    <Image src={instgramIcon} class="SocialMediaIcon" alt="Instagram Logo" />
-    </a> -->
-      <a href="https://x.com/ITS_USDOT" target="_blank">
-        <Image src={twitterIcon} class="SocialMediaIcon" alt="Twiter Logo" />
-      </a>
-      <a href="https://www.linkedin.com/company/usdot/" target="_blank">
-        <Image src={inDeedIcon} class="SocialMediaIcon" alt="LinkedIn Logo" />
-      </a>
+    <div class="header-search">
+      <SearchForm id="header-site-search" />
     </div>
   </div>
 </div>
+<!-- Main header: site title/home link and the responsive primary navigation. -->
 <div class="header-bar">
   <div class="container-xl">
     <div class="header-content">
@@ -406,11 +410,13 @@ const isActiveSection = (sectionUrl: string) => {
             <br />
             Joint Program Office
           </a>
+          <!-- This target must match the collapsible navigation container's id below. -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
       </div>
+      <!-- Menu labels and links come from the shared navigation data, not a local list. -->
       <nav class="navbar navbar-expand-lg navbar-dark navbar-marginbottom">
         <div class="container-xl">
           <div class="collapse navbar-collapse" id="navbar-content">
@@ -423,6 +429,7 @@ const isActiveSection = (sectionUrl: string) => {
                     </a>
                     <ul class="dropdown-menu mt-0 shadow" aria-labelledby={"navbarDropdown-" + link.name.replaceAll(" ", "-")}>
                       {link.pages.map((pageLink) => {
+                        // External destinations bypass base_url, which is only for local site paths.
                         if (pageLink.isExternal)
                           return (
                             <li>

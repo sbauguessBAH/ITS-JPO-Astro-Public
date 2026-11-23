@@ -44,6 +44,32 @@ Its Nebraska and North Carolina PDF downloads are imported from
 Run the program's route and content regression checks with
 `node --test tests/super-intelligence.test.mjs`.
 
+### Site-wide search
+
+The shared DOT banner includes a search form on desktop and mobile.
+Submitting opens `/search/?q=...`, with relevance-ranked page titles, excerpts,
+and a Load more action. Queries can be shared or refined on the results page.
+
+[Pagefind](https://pagefind.app/) indexes rendered HTML after both production
+build commands. Search runs locally in the browser, with no search backend or
+external search service. It includes published page text, including generated
+content pages, but not PDF/document contents, external sites, or text loaded
+only by client-side scripts. Shared header, navigation, sidebars, footer,
+redirects, the 404 page, and the results page are excluded.
+
+The [index configuration](pagefind.yml) controls shared element exclusions.
+[BaseLayout](src/layouts/BaseLayout.astro) marks searchable pages; use
+`searchable={false}` for utility pages that should not appear in results.
+Changes become searchable after the next build.
+
+To test full search, run `npm run build`, then `npm run preview`. Astro's dev
+server alone does not generate a current index. Deploy the **entire** build
+output, including `dist/pagefind/`; generated search assets are not committed.
+Search requires JavaScript and reports asset/network failures explicitly.
+The form, index requests, and result links support the configured `BASE_URL`.
+After building, run `node --test tests/site-search.test.mjs` to check the actual
+index coverage, exclusions, rendered page text, and shared search forms.
+
 ## Commands
 
 All commands are run from the root of the project, from a terminal:

@@ -1,0 +1,6 @@
+site: dist
+exclude_selectors:
+  - "body > header"
+  - "footer"
+  - "nav"
+  - "aside"
