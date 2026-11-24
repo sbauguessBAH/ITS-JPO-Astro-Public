@@ -1,0 +1,31 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+type Props = HTMLAttributes<"div"> & {
+  /**
+   * Root element. Use `main` when the page owns the primary landmark.
+   *
+   * @default `main`
+   */
+  as?: "div" | "main";
+};
+
+const {
+  as: Tag = "main",
+  class: className,
+  ...rest
+} = Astro.props;
+---
+
+<Tag
+  class={cn(
+    "tw:flex tw:flex-col tw:gap-8 tw:w-full",
+    className,
+  )}
+  data-slot="page"
+  {...rest}
+>
+  <slot />
+</Tag>

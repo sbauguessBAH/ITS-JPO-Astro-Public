@@ -1,0 +1,53 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+import PageContainer from "../page/PageContainer.astro";
+
+/**
+ * Section is a full-width band whose content sits in a `PageContainer`.
+ * Put a `SectionBody` inside and pass it classes to control the layout.
+ */
+type Props = {
+  /**
+   * `muted` fills the full width of the section with a light gray
+   * background. The inner container stays the same width either way.
+   *
+   * @default `default`
+   */
+  color?: "default" | "muted";
+  /**
+   * `default` and `sm` have no vertical padding, so the section only takes
+   * up the space of its content. `sm` also narrows the inner container for
+   * focused reading. `lg` adds vertical padding, which suits sections with
+   * a `muted` background.
+   *
+   * @default `default`
+   */
+  size?: "default" | "lg" | "sm";
+} & HTMLAttributes<"section">;
+
+const { class: className, color = "default", size = "default", ...rest } = Astro.props;
+---
+
+<section
+  class={cn(
+    "tw:relative tw:box-border tw:w-full",
+    "tw:bg-transparent tw:text-foreground",
+    "tw:data-[color=muted]:bg-muted",
+    "tw:data-[size=lg]:py-12",
+    className,
+  )}
+  data-color={color}
+  data-size={size}
+  data-slot="ui-section"
+  {...rest}
+>
+  <PageContainer
+    class="tw:flex tw:flex-col tw:gap-6"
+    size={size === "sm" ? "sm" : "default"}
+  >
+    <slot />
+  </PageContainer>
+</section>

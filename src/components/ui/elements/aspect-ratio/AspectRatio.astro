@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+/**
+ * A container that maintains a specified aspect ratio for its content.
+ */
+type Props = Omit<HTMLAttributes<"div">, "style"> & {
+  class?: string;
+  /**
+   * The aspect ratio of the container, expressed as width divided by height.
+   */
+  ratio: number;
+};
+
+const { class: className, ratio, ...props } = Astro.props;
+---
+
+<div
+  {...props}
+  class={cn("tw:w-full tw:max-w-2xl", className)}
+  data-slot="ui_aspect_ratio"
+  style={`aspect-ratio: ${ratio};`}
+>
+  <slot />
+</div>

@@ -1,0 +1,212 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cva } from "class-variance-authority";
+
+import { cn } from "@/src/lib/utils";
+
+import base_url from "../../../../lib/base_url";
+
+type LinkProps = {
+  href: string;
+  isExternal?: boolean;
+  isNewWindow?: boolean;
+  isSameWindow?: boolean;
+};
+
+type Props = HTMLAttributes<"button"> & {
+  class?: string;
+  color?: "accent" | "neutral" | "primary" | "secondary";
+  link?: LinkProps;
+  size?: "default" | "icon" | "icon-lg" | "icon-sm" | "lg" | "sm";
+  type?: "button" | "reset" | "submit";
+  variant?: "default" | "ghost" | "outline" | "subtle";
+};
+
+const {
+  class: className,
+  color = "primary",
+  disabled,
+  link,
+  size = "default",
+  type = "button",
+  variant = "default",
+  ...props
+} = Astro.props;
+
+const isLink = !!link;
+const Component = isLink ? "a" : "button";
+
+let linkHref: string | undefined;
+let linkRel: string | undefined;
+let linkTarget: string | undefined;
+
+if (link) {
+  const isTelOrMail =
+    link.href.startsWith("mailto:") || link.href.startsWith("tel:");
+  linkHref = link.isExternal || isTelOrMail ? link.href : base_url(link.href);
+  linkRel = !isTelOrMail && link.isExternal ? "noopener noreferrer" : undefined;
+  linkTarget =
+    !isTelOrMail &&
+    (link.isNewWindow || (link.isExternal && !link.isSameWindow))
+      ? "_blank"
+      : undefined;
+}
+
+const buttonVariants = cva(
+  "tw:group/button tw:inline-flex tw:box-border tw:shrink-0 tw:items-center tw:justify-center tw:align-middle tw:whitespace-nowrap tw:font-medium tw:text-sm! tw:leading-none! tw:tracking-[0.01em] tw:no-underline! tw:border tw:border-solid tw:transition-[color,background-color,border-color,opacity,box-shadow,translate] tw:duration-150 tw:ease-[ease] tw:cursor-pointer tw:select-none tw:outline-hidden tw:disabled:opacity-50 tw:disabled:pointer-events-none tw:aria-[disabled=true]:opacity-50 tw:aria-[disabled=true]:pointer-events-none tw:focus-visible:border-ring tw:focus-visible:ring-3 tw:focus-visible:ring-ring/50 tw:active:not-aria-[haspopup]:translate-y-px tw:[&_svg]:shrink-0 tw:[&_svg]:pointer-events-none",
+  {
+    compoundVariants: [
+      // primary
+      {
+        class:
+          "tw:bg-primary tw:text-primary-foreground! tw:border-primary tw:hover:opacity-75 tw:active:opacity-65",
+        color: "primary",
+        variant: "default",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-primary! tw:border-primary tw:hover:bg-primary/18 tw:active:bg-primary/26",
+        color: "primary",
+        variant: "outline",
+      },
+      {
+        class:
+          "tw:bg-primary/12 tw:text-primary! tw:border-primary/35 tw:hover:bg-primary/28 tw:active:bg-primary/36",
+        color: "primary",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-primary! tw:border-transparent tw:hover:bg-primary/18 tw:active:bg-primary/26",
+        color: "primary",
+        variant: "ghost",
+      },
+
+      // secondary
+      {
+        class:
+          "tw:bg-secondary tw:text-secondary-foreground! tw:border-secondary tw:hover:opacity-75 tw:active:opacity-65",
+        color: "secondary",
+        variant: "default",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-secondary! tw:border-secondary tw:hover:bg-secondary/18 tw:active:bg-secondary/26",
+        color: "secondary",
+        variant: "outline",
+      },
+      {
+        class:
+          "tw:bg-secondary/12 tw:text-secondary! tw:border-secondary/35 tw:hover:bg-secondary/28 tw:active:bg-secondary/36",
+        color: "secondary",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-secondary! tw:border-transparent tw:hover:bg-secondary/18 tw:active:bg-secondary/26",
+        color: "secondary",
+        variant: "ghost",
+      },
+
+      // neutral
+      {
+        class:
+          "tw:bg-neutral tw:text-neutral-foreground! tw:border-neutral tw:hover:opacity-75 tw:active:opacity-65",
+        color: "neutral",
+        variant: "default",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-neutral-foreground! tw:border-neutral-foreground/40 tw:hover:bg-neutral-foreground/14 tw:active:bg-neutral-foreground/22",
+        color: "neutral",
+        variant: "outline",
+      },
+      {
+        class:
+          "tw:bg-neutral tw:text-neutral-foreground! tw:border-neutral-foreground/15 tw:hover:bg-neutral-foreground/18 tw:active:bg-neutral-foreground/26",
+        color: "neutral",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-neutral-foreground! tw:border-transparent tw:hover:bg-neutral-foreground/14 tw:active:bg-neutral-foreground/22",
+        color: "neutral",
+        variant: "ghost",
+      },
+
+      // accent
+      {
+        class:
+          "tw:bg-accent tw:text-accent-foreground! tw:border-accent tw:hover:opacity-75 tw:active:opacity-65",
+        color: "accent",
+        variant: "default",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-accent! tw:border-accent tw:hover:bg-accent/18 tw:active:bg-accent/26",
+        color: "accent",
+        variant: "outline",
+      },
+      {
+        class:
+          "tw:bg-accent/12 tw:text-accent! tw:border-accent/35 tw:hover:bg-accent/28 tw:active:bg-accent/36",
+        color: "accent",
+        variant: "subtle",
+      },
+      {
+        class:
+          "tw:bg-transparent tw:text-accent! tw:border-transparent tw:hover:bg-accent/18 tw:active:bg-accent/26",
+        color: "accent",
+        variant: "ghost",
+      },
+    ],
+
+    defaultVariants: {
+      color: "primary",
+      size: "default",
+      variant: "default",
+    },
+
+    variants: {
+      color: {
+        accent: "",
+        neutral: "",
+        primary: "",
+        secondary: "",
+      },
+      size: {
+        default:
+          "tw:rounded-lg! tw:h-9 tw:gap-1.5 tw:px-2.5 tw:has-[>svg:first-child]:pl-2 tw:has-[>svg:last-child]:pr-2 tw:has-data-[icon=inline-start]:pl-2 tw:has-data-[icon=inline-end]:pr-2 tw:[&_svg]:size-4",
+        icon: "tw:rounded-lg! tw:size-9 tw:[&_svg]:size-4",
+        "icon-lg": "tw:rounded-lg! tw:size-10 tw:[&_svg]:size-4",
+        "icon-sm": "tw:rounded-lg! tw:size-8 tw:[&_svg]:size-4",
+        lg: "tw:rounded-lg! tw:h-10 tw:gap-1.5 tw:px-2.5 tw:has-[>svg:first-child]:pl-2 tw:has-[>svg:last-child]:pr-2 tw:has-data-[icon=inline-start]:pl-2 tw:has-data-[icon=inline-end]:pr-2 tw:[&_svg]:size-4",
+        sm: "tw:rounded-lg! tw:h-8 tw:gap-1 tw:px-2.5 tw:text-[0.8rem]! tw:has-[>svg:first-child]:pl-1.5 tw:has-[>svg:last-child]:pr-1.5 tw:has-data-[icon=inline-start]:pl-1.5 tw:has-data-[icon=inline-end]:pr-1.5 tw:[&_svg]:size-3.5",
+      },
+      variant: {
+        default: "",
+        ghost: "",
+        outline: "",
+        subtle: "",
+      },
+    },
+  },
+);
+---
+
+<Component
+  aria-disabled={isLink && disabled ? "true" : undefined}
+  class={cn(buttonVariants({ color, size, variant }), className)}
+  data-slot="ui_button"
+  data-ui-button
+  disabled={!isLink ? disabled : undefined}
+  href={linkHref}
+  rel={linkRel}
+  tabindex={isLink && disabled ? -1 : undefined}
+  target={linkTarget}
+  type={!isLink ? type : undefined}
+  {...props}
+>
+  <slot />
+</Component>

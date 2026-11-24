@@ -1,0 +1,51 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import Icon from "../../icon/Icon.astro";
+import Button from "../button/Button.astro";
+
+type Props = Omit<HTMLAttributes<"button">, "type"> & {
+  caret?: boolean;
+  class?: string;
+  /** Delay in ms before closing after the pointer leaves. @default `150` */
+  closeDelay?: number;
+  color?: "accent" | "primary" | "secondary";
+  /** Delay in ms before opening on hover. @default `50` */
+  delay?: number;
+  /** Open when hovered; clicking keeps it open */
+  openOnHover?: boolean;
+  size?: "default" | "icon" | "icon-lg" | "icon-sm" | "lg" | "sm";
+  variant?: "default" | "ghost" | "outline" | "subtle";
+};
+
+const {
+  caret = true,
+  class: className,
+  closeDelay,
+  color,
+  delay,
+  openOnHover,
+  size,
+  variant = "outline",
+  ...props
+} = Astro.props;
+---
+
+<Button
+  aria-expanded="false"
+  aria-haspopup="menu"
+  class={className}
+  color={color}
+  data-hover-close-delay={closeDelay}
+  data-hover-delay={delay}
+  data-open-on-hover={openOnHover ? "" : undefined}
+  data-slot="dropdown-menu-trigger"
+  data-state="closed"
+  size={size}
+  type="button"
+  variant={variant}
+  {...props}
+>
+  <slot />
+  {caret && <Icon name="chevron-down" size={16} />}
+</Button>

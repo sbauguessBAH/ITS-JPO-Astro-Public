@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<!-- Grid rows animate the height; `invisible` keeps closed content out of the tab order -->
+<div
+  class="tw:invisible tw:grid tw:grid-rows-[0fr] tw:transition-[grid-template-rows,visibility] tw:duration-200 tw:data-[state=open]:visible tw:data-[state=open]:grid-rows-[1fr] tw:motion-reduce:transition-none"
+  data-slot="accordion-content"
+  data-state="closed"
+  role="region"
+  {...props}
+>
+  <div class="tw:min-h-0 tw:overflow-hidden">
+    <div class={cn("tw:pb-4", className)}>
+      <slot />
+    </div>
+  </div>
+</div>

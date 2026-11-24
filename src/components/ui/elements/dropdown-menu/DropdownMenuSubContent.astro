@@ -1,0 +1,29 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cn } from "@/src/lib/utils";
+
+import { menuContentClass } from "./styles";
+
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+};
+
+const { class: className, ...props } = Astro.props;
+---
+
+<div
+  aria-orientation="vertical"
+  class={cn(
+    menuContentClass,
+    "tw:top-0 tw:left-full tw:-mt-[5px] tw:ml-[7px]",
+    className,
+  )}
+  data-slot="dropdown-menu-sub-content"
+  data-state="closed"
+  role="menu"
+  tabindex="-1"
+  {...props}
+>
+  <slot />
+</div>

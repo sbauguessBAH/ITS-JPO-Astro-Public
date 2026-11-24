@@ -1,0 +1,63 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { cva } from "class-variance-authority";
+
+import { cn } from "@/src/lib/utils";
+
+/**
+ * @privateRemarks
+ * TODO: Add outline variants and perhaps variants for other colors
+ */
+type Props = HTMLAttributes<"div"> & {
+  class?: string;
+  color?: "primary" | "secondary";
+  variant?: "default";
+};
+
+const { class: className, color, variant, ...props } = Astro.props;
+
+const alertVariants = cva(
+  "tw:group/alert tw:w-full tw:gap-0.5 tw:rounded-2xl tw:border tw:border-transparent tw:px-8 tw:py-6 tw:text-left tw:grid tw:auto-rows-min tw:items-start tw:has-data-[slot=alert-action]:grid-cols-[1fr_auto] tw:has-data-[slot=alert-description]:grid-rows-[auto_auto]",
+  {
+    compoundVariants: [
+      {
+        class:
+          "tw:bg-primary tw:text-primary-foreground tw:*:data-[slot=alert-description]:[&_a]:text-primary-foreground! tw:*:data-[slot=alert-title]:[&_a]:text-primary-foreground! tw:[&_a]:underline-offset-3",
+        color: "primary",
+        variant: "default",
+      },
+      {
+        class:
+          "tw:bg-secondary tw:text-secondary-foreground tw:*:data-[slot=alert-description]:[&_a]:text-secondary-foreground! tw:*:data-[slot=alert-title]:[&_a]:text-secondary-foreground! tw:[&_a]:underline-offset-3",
+        color: "secondary",
+        variant: "default",
+      },
+    ],
+    defaultVariants: {
+      color: "primary",
+      variant: "default",
+    },
+    variants: {
+      color: {
+        primary: "",
+        secondary: "",
+      },
+      variant: {
+        default: "",
+      },
+    },
+  },
+);
+---
+
+<div
+  class={cn(alertVariants({ color, variant }), className)}
+  data-color={color}
+  data-slot="alert"
+  data-variant={variant}
+  role="alert"
+  {...props}
+>
+  <slot />
+</div>
