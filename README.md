@@ -57,3 +57,7 @@ Required Node V19 or above (V22 recomended).
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## Troubleshooting
+
+Use Astro extension version 2.16.13 instead of 2.16.17. There's a bug that affects auto-import parsing.
