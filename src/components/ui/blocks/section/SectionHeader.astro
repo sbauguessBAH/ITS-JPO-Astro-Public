@@ -38,7 +38,7 @@ const hasDescription = !!description || Astro.slots.has("description");
   }
   {
     hasTitle && (
-      <Heading as="h2" data-slot="ui-section_header-title" size="md">
+      <Heading data-slot="ui-section_header-title" size="md">
         <slot name="title">{title}</slot>
       </Heading>
     )
