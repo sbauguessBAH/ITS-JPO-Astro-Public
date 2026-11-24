@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from "astro:content";
+
+import TrainingModuleDetail from "@/src/components/programs/TrainingModuleDetail.astro";
+
+import Layout from "../../_layout.astro";
+
+export async function getStaticPaths() {
+  const trainings = await getCollection("pcbTransitStandardsTrainings");
+  return trainings.map((training) => ({
+    params: { slug: training.id },
+    props: { training },
+  }));
+}
+
+const { training } = Astro.props;
+const { Content } = await render(training);
+---
+
+<Layout>
+  <TrainingModuleDetail
+    {...training.data}
+    parent={{
+      name: "Transit Standards Trainings",
+      path: "/resources/pcb/trainings/transit-standards-trainings",
+    }}
+  >
+    <Content />
+  </TrainingModuleDetail>
+</Layout>

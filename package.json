@@ -28,7 +28,6 @@
     "cn": "^0.5.0",
     "datatables.net": "^2.1.4",
     "fuse.js": "^7.5.0",
-    "sass": "^1.93.2",
     "vue": "^3.5.28"
   },
   "engines": {
@@ -37,7 +36,6 @@
     "pnpm": ">=7.1.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "@astrojs/check": "^0.9.9",
     "@astrojs/prism": "^3.3.0",
     "@astrojs/sitemap": "^3.7.0",
@@ -53,6 +51,7 @@
     "@types/prismjs": "^1.26.6",
     "@typescript-eslint/parser": "^8.63.0",
     "astro-eslint-parser": "^1.4.0",
+    "cross-env": "^7.0.3",
     "eslint": "^10.6.0",
     "eslint-plugin-astro": "^3.2.1",
     "eslint-plugin-jsx-a11y-x": "^0.2.0",

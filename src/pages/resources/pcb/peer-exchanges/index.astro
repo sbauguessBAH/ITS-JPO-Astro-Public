@@ -1,10 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import automatedVehicleImage from "@/src/assets/images/pcb/peer-exchanges/Automated-Vehicle-Peer-Exchanges-Thumb.png";
-import v2xTollingImage from "@/src/assets/images/pcb/peer-exchanges/V2X-and-Tolling-Peer-Exchange-thumb.png";
-import Card from "@/src/components/programs/card/Card.astro";
-import CardBody from "@/src/components/programs/card/CardBody.astro";
-import ProgramSection from "@/src/components/programs/ProgramSection.astro";
+
+import Link from "@/src/components/Link.astro";
+import Page from "@/src/components/ui/blocks/page/Page.astro";
+import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
+import Section from "@/src/components/ui/blocks/section/Section.astro";
+import Card from "@/src/components/ui/elements/card/Card.astro";
+import CardContent from "@/src/components/ui/elements/card/CardContent.astro";
+import automatedVehicleImage from "@/src/content/library/pcb/images/Automated-Vehicle-Peer-Exchanges-Thumb.png";
+import v2xTollingImage from "@/src/content/library/pcb/images/V2X-and-Tolling-Peer-Exchange-thumb.png";
 import base_url from "@/src/lib/base_url";
 
 import Layout from "../_layout.astro";
@@ -35,10 +39,6 @@ import Layout from "../_layout.astro";
     border-radius: var(--radius-lg);
   }
 
-  .materials-body {
-    padding: var(--size);
-  }
-
   .materials-list {
     margin-bottom: 0;
   }
@@ -65,52 +65,63 @@ import Layout from "../_layout.astro";
 </style>
 
 <Layout>
-  <main class="program-main">
-    <ProgramSection size="small">
-      <h2 class="program-title-lg mb-4">ITS Peer Exchanges</h2>
-      <p class="program-text">
-        Intelligent Transportation Systems (ITS) Peer Exchanges bring together
-        transportation professionals, public agencies, industry partners, and
-        subject matter experts to share experiences, explore emerging technologies,
-        and discuss opportunities and challenges related to the deployment of
-        intelligent transportation systems.
-      </p>
-      <p class="program-text">
-        These peer exchanges provide a collaborative environment for sharing
-        knowledge, highlighting lessons learned, discussing best practices, and
-        identifying opportunities to advance ITS deployment across the
-        transportation community.
-      </p>
-      <p class="program-text">
-        Explore the peer exchanges below and access presentation materials,
-        resources, and other event-related content.
-      </p>
-      
-    </ProgramSection>
+  <Page as="div" class="tw:gap-12">
+    <PageHeader title="ITS Peer Exchanges">
+      <Fragment slot="description">
+        <p class="program-text">
+          Intelligent Transportation Systems (ITS) Peer Exchanges bring together
+          transportation professionals, public agencies, industry partners, and
+          subject matter experts to share experiences, explore emerging
+          technologies, and discuss opportunities and challenges related to the
+          deployment of intelligent transportation systems.
+        </p>
+        <p class="program-text">
+          These peer exchanges provide a collaborative environment for sharing
+          knowledge, highlighting lessons learned, discussing best practices,
+          and identifying opportunities to advance ITS deployment across the
+          transportation community.
+        </p>
+        <p class="program-text">
+          Explore the peer exchanges below and access presentation materials,
+          resources, and other event-related content.
+        </p>
+        <p class="program-text">
+          If your agency is interested in conducting a peer exchange, please
+          contact the ITS PCB Program at <Link
+            href="mailto:itspcb@dot.gov"
+            isExternal>itspcb@dot.gov</Link
+          >.
+        </p>
+      </Fragment>
+    </PageHeader>
 
-    <ProgramSection color="gray">
-      <article id="automated-vehicle" class="exchange-section" aria-labelledby="automated-vehicle-title">
-        <h3 id="automated-vehicle-title" class="program-title-md mb-4">
+    <Section color="muted" size="lg">
+      <article
+        aria-labelledby="automated-vehicle-title"
+        class="exchange-section"
+        id="automated-vehicle"
+      >
+        <h3 class="program-title-md mb-4" id="automated-vehicle-title">
           Automated Vehicle Peer Exchanges
         </h3>
         <div class="exchange-layout">
           <Image
-            src={automatedVehicleImage}
             alt="View from inside an automated vehicle near the Golden Gate Bridge."
             class="exchange-image"
-            widths={[320, 520, 780]}
             sizes="(min-width: 992px) 260px, (min-width: 496px) 448px, calc(100vw - 48px)"
+            src={automatedVehicleImage}
+            widths={[320, 520, 780]}
           />
           <div>
             <p class="program-text">
-              The Automated Vehicle Peer Exchange brought together state and local
-              agencies and other stakeholders to share experiences, lessons
-              learned, and perspectives on automated vehicle deployments. The peer
-              exchange was led by USDOT in partnership with the San Francisco
-              County Transportation Authority (SFCTA) and was conducted September
-              9-11, 2026 in San Francisco, CA. Throughout the peer exchange,
-              participants engaged in discussion and interactive activities
-              grounded around four topic areas:
+              The Automated Vehicle Peer Exchange brought together state and
+              local agencies and other stakeholders to share experiences,
+              lessons learned, and perspectives on automated vehicle
+              deployments. The peer exchange was led by USDOT in partnership
+              with the San Francisco County Transportation Authority (SFCTA) and
+              was conducted September 9-11, 2026 in San Francisco, CA.
+              Throughout the peer exchange, participants engaged in discussion
+              and interactive activities grounded around four topic areas:
             </p>
             <ol class="program-list mb-0">
               <li>Planning, Policy, and Public Engagement</li>
@@ -119,43 +130,57 @@ import Layout from "../_layout.astro";
               <li>Data Collection and Performance Assessment</li>
             </ol>
           </div>
-          <Card id="automated-vehicle-materials" shadow="none" radius="lg">
-            <CardBody class="materials-body">
-              <h4 class="program-title-sm mb-3">Download Peer Exchange Materials</h4>
+          <Card class="tw:shadow-none" id="automated-vehicle-materials">
+            <CardContent>
+              <h4 class="program-title-sm mb-3">
+                Download Peer Exchange Materials
+              </h4>
               <p class="program-text">
-                Access presentation slides, meeting materials, and other resources
-                from the Automated Vehicle Peer Exchanges.
+                Access presentation slides, meeting materials, and other
+                resources from the Automated Vehicle Peer Exchanges.
               </p>
-              <!-- Replace the presentations placeholder href when the file is available. -->
               <ul class="program-list materials-list">
                 <li>
-                  <a href={base_url("/assets/pcb/peer-exchanges/USDOT-Automated-Vehicle-Peer-Exchange-Agenda.pdf")}>USDOT Automated Vehicle Peer Exchange Agenda</a>
+                  <a
+                    href={base_url(
+                      "/assets/pcb/peer-exchanges/USDOT-Automated-Vehicle-Peer-Exchange-Agenda.pdf",
+                    )}>USDOT Automated Vehicle Peer Exchange Agenda</a
+                  >
                 </li>
                 <li>
-                  <a href={base_url("/assets/pcb/peer-exchanges/Automated-Vehicle-Peer-Exchange-FINAL-Sept 9-11-2026.pdf")}>USDOT Automated Vehicle Peer Exchange Presentations</a>
+                  USDOT Automated Vehicle Peer Exchange Presentations
+                  (not yet available)
                 </li>
                 <li>
-                  <a href={base_url("/assets/pcb/peer-exchanges/USDOT-Automated-Vehicle-Peer-Exchange-Posters.pdf")}>USDOT Automated Vehicle Peer Exchange - Poster Session</a>
+                  <a
+                    href={base_url(
+                      "/assets/pcb/peer-exchanges/USDOT-Automated-Vehicle-Peer-Exchange-Posters.pdf",
+                    )}>USDOT Automated Vehicle Peer Exchange - Poster Session</a
+                  >
                 </li>
               </ul>
-            </CardBody>
+            </CardContent>
           </Card>
         </div>
       </article>
-    </ProgramSection>
+    </Section>
 
-    <ProgramSection>
-      <article id="v2x-and-tolling" class="exchange-section" aria-labelledby="v2x-and-tolling-title">
-        <h3 id="v2x-and-tolling-title" class="program-title-md mb-4">
+    <Section>
+      <article
+        aria-labelledby="v2x-and-tolling-title"
+        class="exchange-section"
+        id="v2x-and-tolling"
+      >
+        <h3 class="program-title-md mb-4" id="v2x-and-tolling-title">
           V2X and Tolling Peer Exchange
         </h3>
         <div class="exchange-layout">
           <Image
-            src={v2xTollingImage}
             alt="Connected vehicle demonstration with a display showing a toll zone ahead."
             class="exchange-image"
-            widths={[320, 520, 780]}
             sizes="(min-width: 992px) 260px, (min-width: 496px) 448px, calc(100vw - 48px)"
+            src={v2xTollingImage}
+            widths={[320, 520, 780]}
           />
           <div>
             <p class="program-text mb-0">
@@ -164,34 +189,43 @@ import Layout from "../_layout.astro";
               systems. This virtual exchange provided a forum to discuss
               opportunities for leveraging V2X technologies to support tolling
               operations, improve transportation system efficiency, and advance
-              interoperability. Topics include V2X applications, connected vehicle
-              infrastructure, tolling technology integration, deployment
+              interoperability. Topics include V2X applications, connected
+              vehicle infrastructure, tolling technology integration, deployment
               considerations, and opportunities for collaboration across the
               transportation and tolling communities.
             </p>
           </div>
-          <Card id="v2x-and-tolling-materials" shadow="none" radius="lg">
-            <CardBody class="materials-body">
-              <h4 class="program-title-sm mb-3">Download Peer Exchange Materials</h4>
+          <Card class="tw:shadow-none" id="v2x-and-tolling-materials">
+            <CardContent>
+              <h4 class="program-title-sm mb-3">
+                Download Peer Exchange Materials
+              </h4>
               <p class="program-text">
                 Access presentation slides, discussion materials, and other
                 resources from the V2X and Tolling Peer Exchange.
               </p>
-              <h5 class="program-title-xs mb-3">October 28th Peer Exchange Session</h5>
-              <!-- Replace the presentations placeholder href when the file is available. -->
+              <h5 class="program-title-xs mb-3">
+                October 28th Peer Exchange Session
+              </h5>
               <ul class="program-list materials-list">
                 <li>
-                  <a href={base_url("/assets/pcb/peer-exchanges/USDOT-V2X-and-Tolling-Peer-Exchange-Agenda-Final.pdf")}>USDOT V2X and Tolling Peer Exchange Agenda &ndash; October 28, 2026</a>
+                  <a
+                    href={base_url(
+                      "/assets/pcb/peer-exchanges/USDOT-V2X-and-Tolling-Peer-Exchange-Agenda-Final.pdf",
+                    )}
+                    >USDOT V2X and Tolling Peer Exchange Agenda &ndash; October
+                    28, 2026</a
+                  >
                 </li>
                 <li>
-                  <a href={base_url("/assets/pcb/peer-exchanges/V2X-Tolling-Peer-Exchange-FINAL-Oct-28-2026.pdf")}>USDOT V2X and Tolling Peer Exchange Presentations &ndash; October 28, 2026</a>
+                  USDOT V2X and Tolling Peer Exchange Presentations &ndash;
+                  October 28, 2026 (not yet available)
                 </li>
               </ul>
-            
-            </CardBody>
+            </CardContent>
           </Card>
         </div>
       </article>
-    </ProgramSection>
-  </main>
+    </Section>
+  </Page>
 </Layout>
