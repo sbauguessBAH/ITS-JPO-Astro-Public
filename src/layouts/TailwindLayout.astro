@@ -11,6 +11,7 @@ import { navigation } from "@/src/lib/navigation";
 import BaseLayout from "./BaseLayout.astro";
 import "@/src/styles/programs.scss";
 import "@/src/styles/globals.css";
+import PageContainer from "@/src/components/ui/blocks/page/PageContainer.astro";
 
 /**
  * Page Layout using Tailwind CSS for styling
@@ -47,9 +48,9 @@ const activeSection: NavigationItem | undefined = navigation.find((section) =>
     <slot name="image" slot="image" />
   </Banner>
   <main>
-    <div class="tw:mx-auto tw:w-full tw:max-w-7xl tw:pt-3">
+    <PageContainer class="tw:pt-3">
       <Breadcrumbs currentBreadcrumb={currentBreadcrumb} />
-    </div>
+    </PageContainer>
     <slot />
   </main>
   <slot name="footer" title="footer" />
