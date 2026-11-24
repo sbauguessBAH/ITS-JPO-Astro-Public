@@ -153,6 +153,7 @@ section h2.sideways{
   border-bottom: #055581 3px solid;
 }
 
+
 .text-blue {
   color: #055581;
 }
@@ -427,9 +428,6 @@ header.masthead .header-content p {
 
 p.subtitle {
   font-size: 18pt;
-}
-section {
-  padding-right:3em;
 }
 
 section.acceleratingGradient {

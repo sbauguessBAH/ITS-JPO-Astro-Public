@@ -12,7 +12,7 @@ const { class: className, ...props } = Astro.props;
 
 <div
   class={cn(
-    "group-data-[size=xs]/item:tw:gap-0 [&+[data-slot=item-content]]:tw:flex-none tw:flex tw:flex-1 tw:flex-col tw:gap-1",
+    "tw:group-data-[size=xs]/item:gap-0 tw:[&+[data-slot=item-content]]:flex-none tw:flex tw:flex-1 tw:flex-col tw:gap-1",
     className,
   )}
   data-slot="item-content"

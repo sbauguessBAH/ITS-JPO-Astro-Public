@@ -102,7 +102,7 @@ const RESOURCES: OverlayCardProps[] = [
 ---
 
 <Layout>
-  <Page class="tw:pb-0">
+  <Page class="tw:pb-0 tw:gap-12">
     <Section>
       <div
         class="tw:flex tw:w-full tw:flex-col tw:items-center tw:gap-6 tw:lg:flex-row"
@@ -156,9 +156,7 @@ const RESOURCES: OverlayCardProps[] = [
     </Section>
     <Section color="muted" size="lg">
       <Heading size="md">What do you want to do?</Heading>
-      <div
-        class="tw:grid tw:w-full tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3"
-      >
+      <div class="tw:grid tw:w-full tw:grid-cols-1 tw:gap-6 tw:md:grid-cols-2 tw:lg:grid-cols-3">
         {
           ACTIONS.filter((action) => action.show).map((action) => (
             <Card href={action.path}>

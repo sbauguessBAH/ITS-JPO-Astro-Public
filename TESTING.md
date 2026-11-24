@@ -6,6 +6,8 @@ The official [Testing](https://docs.astro.build/en/guides/testing/) guide from A
 
 Tests live in `tests/` and run against the **built** site, served by `astro preview`. Playwright starts the server itself (and reuses one if it is already running on port 4321), but it does not build, so build first.
 
+The PCB smoke tests verify peer-exchange content, images, contact details, and PDF downloads at mobile and desktop widths.
+
 ```zsh
 npm run build:noWarn
 

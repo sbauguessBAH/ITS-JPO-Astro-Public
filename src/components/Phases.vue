@@ -349,8 +349,8 @@ h4 {
 
 .phase-item-circle.award::after {
   content: "\f024";
-  font-family: "Font Awesome 5 Free";
-  /* Ensure you have Font Awesome included in your project */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
   color: white;
   position: absolute;
   width: 100%;

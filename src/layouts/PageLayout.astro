@@ -5,18 +5,20 @@ import Banner from '@/src/components/layout/Banner.astro';
 import base_url from '@/src/lib/base_url';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '@/src/components/layout/Breadcrumbs.astro';
-import type { ChildNavigationItem, NavigationItem } from '@/src/types';
+import type { BreadcrumbItem, ChildNavigationItem, NavigationItem } from '@/src/types';
 import { navigation } from '@/src/lib/navigation';
 
 interface Props {
+  additionalBreadcrumbs?: BreadcrumbItem[];
   bannerImage?: ImageMetadata;
 	title: string;
   currentBreadcrumb?: string;
   description?: string;
   keywords?: string[] | string;
+  sectionNavigationPath?: string;
 }
 
-const { title, bannerImage, currentBreadcrumb, description, keywords } = Astro.props;
+const { additionalBreadcrumbs, title, bannerImage, currentBreadcrumb, description, keywords, sectionNavigationPath } = Astro.props;
 
 const getTrimmedPath = (path: string): string => path.replaceAll("/", "");
 
@@ -31,12 +33,12 @@ const isActive = (item: NavigationItem | ChildNavigationItem): boolean => {
 const activeSection: NavigationItem | undefined = navigation.find(section => isActive(section));
 ---
 <BaseLayout title={title} keywords={keywords} description={description}>
-  <Banner image={bannerImage}>
+  <Banner image={bannerImage} sectionNavigationPath={sectionNavigationPath}>
     <slot name="banner" title="banner"/>
     <slot name="image" slot="image" />
   </Banner>
   <div class="page-content px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl ">
-    <Breadcrumbs currentBreadcrumb={currentBreadcrumb}/>
+    <Breadcrumbs additionalBreadcrumbs={additionalBreadcrumbs} currentBreadcrumb={currentBreadcrumb}/>
     
       
       <slot/>

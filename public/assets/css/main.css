@@ -212,8 +212,8 @@ a {
 
 .dropdown-toggle::after {
     border: none;
-    font-family: FontAwesome;
-    font: normal normal normal 12px/1 'Font Awesome 5 Free';
+    font: normal normal normal 12px/1 'Font Awesome 6 Free';
+    font-weight: 900;
     vertical-align: 0;
 }
 
@@ -570,9 +570,9 @@ footer {
 
 .externalLink:after {
     content: '\f08e';
-    font-family: FontAwesome;
+    font-family: "Font Awesome 6 Free";
+   font-weight: 900 !important;
     font-style: normal;
-    font-weight: normal;
     text-decoration: none;
     display: inline-block;
     font-size:14px;
@@ -582,9 +582,9 @@ footer {
 }
 .externalLink_left:after {
     content: '\f08e';
-    font-family: FontAwesome;
+    font-family: "Font Awesome 6 Free";
+   font-weight: 900 !important;
     font-style: normal;
-    font-weight: normal;
     text-decoration: none;
     font-size:14px;
     margin-top: 0px;
@@ -593,9 +593,9 @@ footer {
 }
 .externalLink_White:after {
     content: '\f08e';
-    font-family: FontAwesome;
+    font-family: "Font Awesome 6 Free";
+   font-weight: 900;
     font-style: normal;
-    font-weight: normal;
     text-decoration: none;
     font-size:12px;
     margin-left:6px;
@@ -604,9 +604,9 @@ footer {
 }
 .Carousel_button.externalLink:after {
     content: '\f08e';
-    font-family: FontAwesome;
+    font-family: "Font Awesome 6 Free";
+   font-weight: 900 !important;
     font-style: normal;
-    font-weight: normal;
     text-decoration: none;
     font-size:14px;
     margin-left:6px;
@@ -867,7 +867,8 @@ table.dataTable thead .sorting_desc_disabled:before {
 }
 .cardButton p:after {
     content: '\f054';
-    font-family: FontAwesome;
+    font-family: "Font Awesome 6 Free";
+   font-weight: 900;
 }
 .cardButton:hover {
     background-color: #e4f0fb;
@@ -983,19 +984,15 @@ hr.content {
 }
 
 
-.dropdown-toggle:after{
-    content: '\f078';
-    font-family: FontAwesome;
-    font-size:16px;
-}
 
 
 /* This adds some icons for different link types*/
 main a[href^="http://"]:after, main a[href^="https://"]:after {
     content: '\00a0\f08e';
-    font-family: FontAwesome;
+    font-family: "Font Awesome 6 Free";
+   font-weight: 900 !important;
+
     font-style: normal;
-    font-weight: normal;
     text-decoration: none;
     display: inline-block;
     font-size:14px;
@@ -1005,9 +1002,10 @@ main a[href^="http://"]:after, main a[href^="https://"]:after {
 
 main a[href$=".pdf"]::after {
     content: "\f1c1"; /* Unicode for Font Awesome PDF icon */
-    font-family: FontAwesome;
+    font-family: "Font Awesome 6 Free";
+   font-weight: 900 !important;
+
     font-style: normal;
-    font-weight: normal;
     text-decoration: none;
     display: inline-block;
     font-size:14px;
@@ -1016,9 +1014,10 @@ main a[href$=".pdf"]::after {
 
 main a[href^="mailto:"]::after {
     content: "\f0e0";
-    font-family: FontAwesome;
+    font-family: "Font Awesome 6 Free";
+   font-weight: 900 !important;
+
     font-style: normal;
-    font-weight: normal;
     text-decoration-line: none;
     display: inline-block;
     font-size: 14px;
@@ -1027,9 +1026,9 @@ main a[href^="mailto:"]::after {
 
 main a[href$=".docx"]::after {
     content: "\f1c2"; /* Unicode for Font Awesome PDF icon */
-    font-family: FontAwesome;
+    font-family: "Font Awesome 6 Free";
+   font-weight: 900 !important;
     font-style: normal;
-    font-weight: normal;
     text-decoration: none;
     display: inline-block;
     font-size:14px;
@@ -1038,9 +1037,10 @@ main a[href$=".docx"]::after {
 
 main a[href$=".pptx"]::after {
     content: "\f1c4"; /* Unicode for Font Awesome PDF icon */
-    font-family: FontAwesome;
+    font-family: "Font Awesome 6 Free";
+   font-weight: 900 !important;
+
     font-style: normal;
-    font-weight: normal;
     text-decoration: none;
     display: inline-block;
     font-size:14px;

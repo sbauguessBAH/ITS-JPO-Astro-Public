@@ -1,0 +1,62 @@
+---
+import banner from "@/src/assets/images/banners/Emerging_Tech_Banner.png";
+import PageLayout from "@/src/layouts/PageLayout.astro";
+import base_url from "@/src/lib/base_url";
+import { Image } from "astro:assets";
+import getAIReadyImage from "@/src/assets/images/ai/GetAIReady.png";
+import putAIIntoPracticeImage from "@/src/assets/images/ai/PutAIIntoPractice.png";
+import learnConnectImage from "@/src/assets/images/ai/Learn-Connect.jpeg";
+import "@/src/styles/ai-section.css";
+---
+
+<PageLayout title="Focus Areas" bannerImage={banner}>
+  <Fragment slot="banner">Advanced Analytics and Super Intelligence (SI)</Fragment>
+  <main>
+    <!-- FOCUS AREAS SECTION -->
+    <section class="py-5 gray-edge-to-edge">
+      <div class="px-xs-4 px-sm-4 px-md-4 px-lg-4 container-xl">
+        <h2 class="text-center mb-5 fw-bold">Focus Areas</h2>
+        <div class="row g-4">
+          <!-- Card 1: Get Ready -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/super-intelligence/focus-areas/get-ready")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0 card-hoverable">
+                <Image src={getAIReadyImage} alt="Get Ready" class="card-image" width={800}/>
+                <div class="p-4">
+                  <h3 class="fw-bold">Get Ready</h3>
+                  <p class="card-text mt-3">Resources and frameworks on governance data, risk management, testing and evaluation and other foundational topics needed to support your development of advanced analytics and intelligence solutions in transportation.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 2: Put Advanced Analytics and Intelligence into Practice -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/super-intelligence/focus-areas/put-si-into-practice")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0 card-hoverable">
+                <Image src={putAIIntoPracticeImage} alt="Put Advanced Analytics and Intelligence into Practice" class="card-image" width={800}/>
+                <div class="p-4">
+                  <h3 class="fw-bold">Put Advanced Analytics and Intelligence into Practice</h3>
+                  <p class="card-text mt-3">Funding opportunities, initiatives, and project insights to support real-world implementation of intelligence-based solutions for transportation.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 3: Learn & Connect -->
+          <div class="col-md-4">
+            <a href={base_url("/research-areas/super-intelligence/focus-areas/learn-connect")} class="text-decoration-none">
+              <div class="card h-100 shadow-sm border-0 card-hoverable">
+                <Image src={learnConnectImage} alt="Learn & Connect" class="card-image" width={800}/>
+                <div class="p-4">
+                  <h3 class="fw-bold">Learn & Connect</h3>
+                  <p class="card-text mt-3">Case studies, assessment frameworks, informational materials, webinars, and learning resources to support shared knowledge.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</PageLayout>

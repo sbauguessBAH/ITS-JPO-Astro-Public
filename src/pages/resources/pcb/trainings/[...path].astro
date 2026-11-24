@@ -5,7 +5,6 @@ import { getCollection } from "astro:content";
 
 import ExternalLinkBadge from "@/src/components/ui/blocks/external-link-badge/ExternalLinkBadge.astro";
 import Page from "@/src/components/ui/blocks/page/Page.astro";
-import PageHeader from "@/src/components/ui/blocks/page/PageHeader.astro";
 import Panel from "@/src/components/ui/blocks/panel/Panel.astro";
 import PanelGroup from "@/src/components/ui/blocks/panel/PanelGroup.astro";
 import PanelHeader from "@/src/components/ui/blocks/panel/PanelHeader.astro";
@@ -20,6 +19,7 @@ import CardImage from "@/src/components/ui/elements/card/CardImage.astro";
 import CardTitle from "@/src/components/ui/elements/card/CardTitle.astro";
 
 import Layout from "../_layout.astro";
+import Heading from "@/src/components/ui/elements/heading/Heading.astro";
 
 export function getStaticPaths() {
   const categories: { category?: string; title: string }[] = [
@@ -61,32 +61,11 @@ const getCourseCount = (path?: string) =>
   courses.filter((entry) => pathIsCategory(entry, path)).length;
 ---
 
-<style>
-  .course-card-type {
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 600;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0.5rem 1rem;
-    /* color: rgb(var(--color-gray)); */
-    color: white;
-    background: rgb(var(--color-brand));
-  }
-  .course-card-category {
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: rgb(var(--color-gray));
-  }
-</style>
 <Layout>
   <Page>
-    <PageHeader title="ITS Trainings" />
     <Section>
-      <div class="tw:flex tw:flex-col tw:gap-4">
+      <div class="tw:flex tw:flex-col tw:gap-2">
+        <Heading>ITS Trainings</Heading>
         <p class="program-text tw:m-0!">
           The ITS PCB Program offers a comprehensive suite of trainings covering
           a range of topics from foundational concepts to emerging
@@ -99,6 +78,8 @@ const getCourseCount = (path?: string) =>
           interested in.
         </p>
       </div>
+    </Section>
+    <Section>
       <div class="tw:flex tw:flex-col tw:gap-6 tw:lg:flex-row">
         <div class="tw:basis-1/4">
           <Panel label="Course categories">
@@ -144,13 +125,10 @@ const getCourseCount = (path?: string) =>
                   {course.isExternal && (
                     <ExternalLinkBadge color="neutral" size="xl" />
                   )}
-                  {/* <p class="course-card-type">
-                  {course.type}
-                </p> */}
                   <CardHeader>
-                    <p class="course-card-category">
+                    <div class="tw:uppercase tw:font-semibold tw:text-sm tw:text-muted-foreground">
                       {course.category.replace("-", " ")}
-                    </p>
+                    </div>
                     <CardTitle>{course.title}</CardTitle>
                     <CardDescription>{course.description}</CardDescription>
                   </CardHeader>

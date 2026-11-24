@@ -19,38 +19,38 @@ export const navigation: NavigationItem[] = [
           { name: "Charter", url: "/about/itspac/charter" },
         ],
       },
-      { 
-        name: "Join Our Mailing List", 
+      {
+        name: "Join Our Mailing List",
         url: "/about/contact-us/mailinglist",
         isEnabled: true,
-        pages: [
-          { name: "ITS JPO NOW", url: "/about/contact-us/mailinglist/ITS-JPO-NOW", pages: [
-            
-            { name: "October 2026 Flash Edition", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/october-2026-flash" },
-            { name: "September 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/september-2026" },
-            { name: "August 2026 Flash Edition", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/august-2026-flash" },
-            { name: "May 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/may-2026" },
-            { name: "July 2026", url: "/about/contact-us/mailinglist/ITS-JPO-NOW/july-2026" },
-
-          ] },
-        ],
+       
       },
     ],
   },
 
   {
-    name: "News & Info",
-    url: "/news-info",
+    name: "News & Outreach Tools",
+    url: "/news-outreach-tools",
     pages: [
       { name: "Latest News from USDOT", url: "https://www.transportation.gov/newsroom", isExternal: true },
-      { name: "Image Library", url: "/news-info/image-library" },
-      { name: "Video Library", url: "/news-info/video-library" },
-      { name: "Project Delivery Templates", url: "/news-info/project-delivery-templates" },
+      {
+        name: "Newsroom",
+        url: "/news-outreach-tools/newsroom",
+        pages: [
+          { name: "Home", url: "/news-outreach-tools/newsroom/" },
+          { name: "ITS JPO Now Newsletter", url: "/news-outreach-tools/newsroom/newsletter-archive" },
+          { name: "In the News", url: "/news-outreach-tools/newsroom/in-the-news" },
+          { name: "Media Kits", url: "/news-outreach-tools/newsroom/media-kits" },
+        ],
+      },
+      { name: "Image Library", url: "/news-outreach-tools/image-library" },
+      { name: "Video Library", url: "/news-outreach-tools/video-library" },
+      { name: "Project Delivery Templates", url: "/news-outreach-tools/project-delivery-templates" },
+      
       {
         name: "Publication Editorial Guidelines",
-        url: "/news-info/Publication-Editorial-Guidelines",
+        url: "/news-outreach-tools/Publication-Editorial-Guidelines",
         isEnabled: true,
-       
       },
     ],
   },
@@ -59,46 +59,41 @@ export const navigation: NavigationItem[] = [
     url: "/research-areas",
     pages: [
       {
-        name: "Artificial Intelligence",
-        url: "/research-areas/artificial-intelligence",
+        name: "Advanced Analytics & Super Intelligence",
+        url: "/research-areas/super-intelligence",
         isEnabled: true,
         pages: [
-          { name: "Home", url: "/research-areas/artificial-intelligence" },
+          { name: "Home", url: "/research-areas/super-intelligence" },
           {
             name: "Overview",
-            url: "/research-areas/artificial-intelligence/overview",
+            url: "/research-areas/super-intelligence/overview",
             isEnabled: true,
             pages: [
-              { name: "How Does AI Work", url: "/research-areas/artificial-intelligence/overview/how-ai-works" },
-              { name: "Where Can AI Advance Transportation", url: "/research-areas/artificial-intelligence/overview/where-ai-advances-transportation" },
-              { name: "What Are AI Transportation Use Cases", url: "/research-areas/artificial-intelligence/overview/ai-use-cases" },
-              { name: "What Is The JPO AI Implementation Approach", url: "/research-areas/artificial-intelligence/overview/jpo-implementation-approach" },
+              { name: "How Does Advanced Analytics and Intelligence Work", url: "/research-areas/super-intelligence/overview/how-si-works" },
+              { name: "Where Can Advanced Analytics and SI Advance Transportation", url: "/research-areas/super-intelligence/overview/where-si-advances-transportation" },
+              { name: "Applicable Transportation Use Cases", url: "/research-areas/super-intelligence/overview/si-use-cases" },
+              { name: "What Is the Implementation Approach", url: "/research-areas/super-intelligence/overview/jpo-implementation-approach" },
             ],
           },
           {
             name: "Focus Areas",
-            url: "/research-areas/artificial-intelligence/focus-areas",
+            url: "/research-areas/super-intelligence/focus-areas",
             isEnabled: true,
             pages: [
-              { name: "Get AI-Ready", url: "/research-areas/artificial-intelligence/focus-areas/get-ai-ready" },
-              { name: "Put AI into Practice", url: "/research-areas/artificial-intelligence/focus-areas/put-ai-into-practice" },
+              { name: "Get-Ready", url: "/research-areas/super-intelligence/focus-areas/get-ready" },
+              { name: "Put Advanced Analytics and Intelligence into Practice", url: "/research-areas/super-intelligence/focus-areas/put-si-into-practice" },
               {
                 name: "Learn & Connect",
-                url: "/research-areas/artificial-intelligence/focus-areas/learn-connect",
+                url: "/research-areas/super-intelligence/focus-areas/learn-connect",
                 isEnabled: true,
                 pages: [
-                  { name: "AI Governance", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-governance" },
-                  { name: "AI Definitions & Concepts", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-definitions-concepts" },
-                  { name: "AI Methods & Sub-Methods", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-methods-sub-methods" },
-                  { name: "AI Procurement National Webinar", url: "/research-areas/artificial-intelligence/focus-areas/learn-connect/ai-procurement-national-webinar" },
+                  { name: "Governance", url: "/research-areas/super-intelligence/focus-areas/learn-connect/governance" },
+                  { name: "Definitions & Concepts", url: "/research-areas/super-intelligence/focus-areas/learn-connect/definitions-concepts" },
+                  { name: "Methods & Sub-Methods", url: "/research-areas/super-intelligence/focus-areas/learn-connect/methods-sub-methods" },
+                  { name: "Procurement National Webinar", url: "/research-areas/super-intelligence/focus-areas/learn-connect/procurement-national-webinar" },
                 ],
               },
             ],
-          },
-          {
-            name: "Contact",
-            url: "/research-areas/artificial-intelligence/contact",
-            isEnabled: true,
           },
         ],
       },
@@ -179,7 +174,6 @@ export const navigation: NavigationItem[] = [
           { name: "Videos", url: "/research-areas/ITS4US/videos" },
           { name: "Documentation", url: "/research-areas/ITS4US/documents" },
           { name: "Upcoming Activities", url: "/research-areas/ITS4US/upcoming" },
-
         ],
       },
       {
@@ -266,7 +260,6 @@ export const navigation: NavigationItem[] = [
           { name: "Overview", url: "/resources/architecture-and-standards" },
           { name: "National ITS Reference Architecture", url: "/resources/architecture-and-standards/reference-architecture" },
           { name: "Standards", url: "/resources/architecture-and-standards/standards" },
-
         ],
       },
       { name: "Cybersecurity", url: "/resources/Cybersecurity" },

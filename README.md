@@ -11,6 +11,37 @@ Welcome to the ITS JPO DOT Website project! This repository is dedicated to crea
 - **Modular Design**: Implement a modular architecture to simplify updates and maintenance.
 - **Responsive Design**: Ensure the website is accessible and user-friendly across all devices.
 
+### Newsroom filters
+
+The In the News filters use a native text input and the local Vue
+[MultiSelect](src/components/MultiSelect.vue), with no UI-library dependency.
+The multiselect accepts string options and a string-array `v-model`, plus an
+`id` and accessible `label`. Its presentation follows the Safety-Playbook branch's
+checkbox dropdown: a rounded trigger displaying "All" or the selected option names,
+a rotating chevron, and a Clear action inside the scrollable menu. Selected names
+wrap rather than being truncated. Clicking an option's text or checkbox toggles it.
+It retains native checkboxes,
+arrow/Home/End navigation, and Escape, Tab-away, or outside-click dismissal.
+The existing `in-the-news-filter-change` event still supplies `technologyAreas`
+and `searchQuery` to the archive. Field and dropdown styling is maintained in the
+component and the [archive page](src/pages/news-outreach-tools/newsroom/in-the-news/index.astro).
+
+### Advanced Analytics and Super Intelligence program
+
+The program pages are maintained in
+[src/pages/research-areas/super-intelligence](src/pages/research-areas/super-intelligence).
+Current program copy uses the approved SI terminology; historical publication,
+webinar, contract, and project names retain their original AI terminology.
+Existing document filenames and external resource links remain unchanged.
+
+Legacy program URLs redirect to the corresponding new pages through
+[astro.config.mjs](astro.config.mjs). The withdrawn program Contact page redirects
+to the program home. Agency Case Studies is currently displayed without a link
+until a destination is supplied.
+
+Run the program's route and content regression checks with
+`node --test tests/super-intelligence.test.mjs`.
+
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
