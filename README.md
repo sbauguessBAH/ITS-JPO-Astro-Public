@@ -36,8 +36,10 @@ Existing document filenames and external resource links remain unchanged.
 
 Legacy program URLs redirect to the corresponding new pages through
 [astro.config.mjs](astro.config.mjs). The withdrawn program Contact page redirects
-to the program home. Agency Case Studies is currently displayed without a link
-until a destination is supplied.
+to the program home. Agency Case Studies is available under Learn & Connect,
+linked from the SI home spotlight and the Learn & Connect resource card.
+Its Nebraska and North Carolina PDF downloads are imported from
+[src/assets/documents/advanced-analytics-and-si](src/assets/documents/advanced-analytics-and-si).
 
 Run the program's route and content regression checks with
 `node --test tests/super-intelligence.test.mjs`.

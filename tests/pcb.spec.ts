@@ -30,6 +30,9 @@ for (const width of [390, 1280]) {
     }
 
     const downloads = page.locator('article a[href$=".pdf"]');
+    await expect(
+      page.locator("article li").filter({ hasText: "(not yet available)" }),
+    ).toHaveCount(2);
     await expect(downloads).toHaveCount(3);
     for (const download of await downloads.all()) {
       const href = await download.evaluate((link: HTMLAnchorElement) => link.href);
